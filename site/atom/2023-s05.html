@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>激光砂带协同加工技术及装备 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-s05.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-s05</div>
+  <h1>激光砂带协同加工技术及装备</h1>
+  <div class="meta-line"><b>2023 年度银奖</b><span>重庆大学,重庆三磨海达磨床有限公司,中国科学院上海光学精密机械研究所</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">重庆大学,重庆三磨海达磨床有限公司,中国科学院上海光学精密机械研究所</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">肖贵坚,黄云,赵全忠,林瓯川,贺毅</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 制造装备（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>伴随技术的发展新一代高端装备制造对零部件服役性能提升的需求进一步扩大，并促进了先进材料的发展，钛合金、复合材料、多层材料等高性能难加工材料逐渐成为新一代高端装备的主要材料。然而传统数控加工难以提升其性能，表面完整性及其纹理精度调控困难、加工损伤难以抑制，由此提出了激光砂带协同加工技术及装备，结合了超快激光加工的高精度、无损伤和砂带磨削高效率、高表面完整性的加工特点，能实现多种难加工材料表面低损伤加工、仿生或功能性微纳结构高效加工。对突破国外主流公司和科研机构对我国的技术封锁与保障国家经济和军事安全具有重大意义。成果主要创新点如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>研究了基于离焦控制技术的激光能量分布大小对加工表面形貌和材料去除的影响规律，实现了材料的精准去除，材料去除效率最高大可提高11.6%；揭示了激光辅助砂带砂带磨削复合能场下材料表面形成过程和机制；形成了航空航天等难加工材料的高效低损伤加工方法，亚表面损伤深度降低49%。</div></div><div class="p-li"><span class="p-mk">2</span><div>揭示了伴随着材料熔融、溅射、挤压、切削等加工特征约束下的功能性结构创成机制，实现了跨尺度仿生结构规模化高效加工，较于传统激光加工效率提高180倍，明确了温度场作用材料软化与磨料快速挤压下对微结构表面的强化规律，在保障功能性的前提下协同加工微结构表面的耐磨性提升了59%。</div></div><div class="p-li"><span class="p-mk">3</span><div>建立了激光和砂带双椭圆接触理论模型，解决了激光砂带“双倾斜”协同作用下的复杂曲面加工及实时激光焦点的精确控制难题，其控制精度可达5μm，研制出了激光砂带协同加工装备，设计了激光砂带协同加工装置集成控制系统，实现了激光与砂带协同程度达到90%。</div></div></div><p>围绕该装备和技术申请或授权国际专利2项、国家发明专利31项，行业标准6项，撰写专著1部，软件著作权2项，在国内外顶级期刊发表高水平SCI/EI论文42篇，其中ESI高被引论文3篇、热点论文2篇。研制出激光砂带协同加工技术及装备，属于国际首台/套，达到国际领先水平，并考虑人机交互与人工智能，数控软件清晰、易编程、易操作，减少“人工技能及知识”对装备加工质量的影响。激光砂带协同加工技术及装备获得2022年度重庆市十大科技进展，延伸出的科研成果获中国产学研合作创新成果奖一等奖、重庆市科技进步奖一等奖。低损伤加工技术与微纳加工技术成功在航空发动机叶片、汽轮机叶片、舰船螺旋桨等表面应用提升其服役性能，极大缩减了运维成本，为实现绿色节能制造奠定技术基础。项目成果在相关行业得到了推广应用，效益显著，并入选 “科创中国” 绿色智造专业科技服务团优选案例，推动了行业科技进步。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>（1）立项背景及总体思路</p><p>先进高性能制造技术是实现航空发动机、燃气轮机等高端装备零部件服役性能提升的关键，例如新一代高端飞行装备在满载时需要将发动机瞬时功率提升60%以上，对其零部件服役性能提升的需求进一步扩大，需要强度更高、机械性能更优异的先进材料，钛合金、复合材料、多层梯度材料等高性能难加工材料逐渐成为新一代高端装备的主要材料，然而先进材料由于其复杂的增强相设计、材料各向异性、硬脆特性等特征，使传统数控加工难以提升其性能，表面完整性及其纹理精度、曲面全/局部性能等难以调控，容易发生加工损伤致使服役性能无法保证。制造具有高服役性能的新材料构件将直接决定装备转动系统的振动、噪音、寿命等服役性能及其核心竞争力。</p><p>激光砂带协同加工技术及其装备结合激光改性技术、高精密加工技术与微纳制造技术，是面向新型材料低损伤加工与表面强化的新工艺。高能束激光的热效应会使材料表面发生反应，并使表面/亚表面的材料晶体发生破坏形成易于材料去除的改性层并抵消各向异性。砂带磨削由于其柔性贴合的加工特性不仅能高效去除改性层，也能保证型面精度，降低加工损伤。而激光与砂带结合下的微纳制造技术能够进一步强化表面的服役性能，最终实现高服役性复合材料构件加工。因此，开展本技术与装备研究，对突破国外主流公司和科研机构对我国的技术封锁与保障国家经济和军事安全具有重大意义。</p><p>图1 整体研究思路（2）主要创新点</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>探究了复合能场下材料表面形成过程和机制，揭示了不同典型难加工材料（如钛合金、陶瓷基复合材料的）激光砂带协同加工材料去除机理，形成了航空航天等难加工材料的高效低损伤加工方法。</div></div></div><p>建立了激光砂带协同加工的激光砂带“熔擦”物理模型，给出了复合能场影响下材料物理化学性能改变的材料去除力热数值模型；基于Abaqus、LAMMP等软件，仿真分析了宏观表面形貌和微观结构演变、亚表面损伤形式，揭示了复合能场下材料表面形成过程和机理；探究了钛合金、陶瓷基复合材料在多能场参数耦合下的磨削力、温度场、材料去除率等去除规律及其对表面完整性的影响机制，揭示了激光砂带高效加工机理。</p><p>钛合金主要仍然以延性去除为主，切削力最大可减小40%，材料去除效率最高大可提高11.6%；亚表面的变形层从4.8 μm减小到2.45 μm，损伤深度降低49%，损伤深度得到了显著抑制；TEM检测及分子动力学仿真结果表明，由于激光热累计所导致的再结晶过程抑制了加工表面的非晶相变，亚表面主要发生了不连续和连续动态再结晶导致的晶粒细化。</p><p>发现了Cf/SiC复合材料在砂带磨削过程中的延性域去除行为，阐明了金刚石砂带磨损行为与演变规律，磨粒磨损有助于提升材料塑性去除行为；提出了陶瓷基复合材料的激光诱导烧蚀辅助磨削方法，发现表面粗糙度可以降低26%，磨削力和温度分别降低47%和40%；Cf/SiC复合材料在激光诱导烧蚀过程中产生了结构疏松且硬度低的变质层，其在磨削过程中更容易被去除，因此达到了高效、低损伤、低磨损的加工效果。</p><p>图2 难加工材料激光砂带协同加工材料去除机理研究 2、揭示了基于表面性能需求与加工特征的表面仿生结构创成机制，明确了微米级结构高效高精度加工工艺与纳米级结构调控方法，实现了超亲水/疏水、抗磨损、降噪、减阻等仿生微结构加工。</p><p>提出了基于Hertz解析算法、数值解法及接触理论的立体渐变多能场接触特征算法，分析了磨头接触轮与激光光斑融合多能场加工下形成的接触特征；建立了基于“熔擦”模型的多能场去除廓形曲面模型，提出了基于最小二乘法和迭代最近算法的规模化微结构拟合方法；采用提取灰度图像、灰度级量化、计算特征值、纹理特征影像生成四步法构筑灰度共生矩阵，可实现类水稻叶、荷叶、蜂窝、鲨鱼皮表面等10余种仿生微结构表面创成；</p><p>利用正交实验法分析了加工参数（激光束功率、扫描速率、扫描路径、磨削压力、线速度、进给速度等）对激光砂带协同加工多能场的影响关系；揭示了加工参数与能场之间的影响规律以及对应数学关系，建立了基于算法迭代优化的加工参数与微结构特征的映射模型；明确了微结构空间排布、宽深比、结构尺度等特征与加工工艺之间的映射关系，实现了100nm、1μm~100μm、以及宏观尺度的跨尺度微纳结构复合加工；</p><p>建立了不同微结构特征的物理模型，开展了基于微结构物理模型的服役性能仿真与实验，揭示了不同结构特征对微结构表面服役性能的影响规律；明确了表面接触角从超亲水0°到超疏水150°的调控规律，激光砂带协同加工表面微结构的耐磨性对比激光提高了59%，并提升加工效率180倍；优化激光砂带协同加工工艺实现了高精度层叠仿生鲨鱼皮表面微结构加工，通过仿真分析验证在螺旋桨表面制备微结构能减低表面噪声5%。</p><p>图3 激光砂带协同表面微纳结构创成机理研 3、提出了激光砂带协同加工技术，建立了激光和砂带双椭圆接触理论模型，形成了激光砂带协同精度控制方法。基于此，研制出了激光砂带协同加工装备，设计了激光砂带协同加工装置集成控制系统。</p><p>建立了激光砂带双椭圆接触动态加工数学模型，研究了激光不同的入射角度以及激光的离焦和在焦状态下激光和砂带之间的协同关系。解决了激光砂带“双倾斜”协同作用下的复杂曲面加工及实时激光焦点的精确控制难题，其控制精度可达5μm。</p><p>以激光砂带双椭圆接触为理论基础，研究分析了激光的离焦程度、激光入射角度、法向磨削力、磨头接触轮直径及位置对协同性的影响规律。设计了激光砂带协同加工装置集成控制系统，实现了激光与砂带协同程度达到90%，解决了激光砂带协同精度的精确调控。</p><p>基于激光砂带协同加工原理，研制出了激光砂带协同加工装备。形成了钛合金、高温合金、超高强度钢、以及高温结构陶瓷材料等难加工材料高效低损伤的加工工艺；实现了材料表面具备超疏水、耐磨减摩、降噪减阻等功能特性的微纳结构加工工艺，在航空航天、微电子、生物材料等领域得到广泛应用。</p><p>图4 激光砂带协同加工装备及应用（3）实施效果</p><p>研制出激光砂带协同加工技术及装备，达到国际首创的水平，入选2022年度重庆市十大科技进展、“科创中国”绿色智造专业科技服务团优选案例，获得2021年度中国产学研合作创新成果奖一等奖，2021年度重庆市科技进步奖一等奖。激光砂带协同加工技术及其装面向新型材料低损伤加工与表面强化的新工艺，在国内外处于先进制造领域，能实现面向航空发动机叶片、汽轮机叶片、舰船螺旋桨等表面上的超疏水、减阻、降噪等功能表面的规模化、高效率、低损伤加工及表面强化。</p><p>激光砂带协同加工装备数控软件清晰、易编程、易操作，激光砂带协同加工技术能够提升钛合金、高温合金、复合材料等先进材料的材料去除效率，并降低加工后表面损伤深度，其表面服役性能提升显著，极大缩减了运维成本，低磨损、高效、高质量加工技术为实现绿色节能制造奠定技术基础，并广泛应用于四川大学、重庆大学机械传动国家重点实验室、重庆大学能源与动力工程学院-工程热物理研究所、南京帝耐激光科技有限公司、西安中科光凝科技有限公司、重庆三磨海达磨床有限公司等，用于完善基础科研体系并应用于重大装备零部件的生产加工中，产生直接经济效益达到2492万元，间接经济效益近2亿元。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

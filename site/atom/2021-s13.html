@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>航空发动机叶片精密冷辊轧智能成形平台设计 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-s13.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-s13</div>
+  <h1>航空发动机叶片精密冷辊轧智能成形平台设计</h1>
+  <div class="meta-line"><b>2021 年度银奖</b><span>东北大学中国航发沈阳黎明航空发动机有限责任公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">东北大学中国航发沈阳黎明航空发动机有限责任公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">邰清安,国振兴,胡智勇,李深亮</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 航空航天（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>高温合金叶片等复杂零件在航空发动机、燃气轮机等高端装备得到广泛应用。针对叶身型面精确成形困难及使役性能差等问题，从叶片辊轧过程金属流动模拟与参数优化、考核验证等方面开展研究工作，对辊轧叶片三维智能设计平台进行开发。本项目以GH4169叶片精密成形为研究对象，基于能量泛函解析方法，采用辊径变值差异速度场与弹性解析补偿技术，提出考虑弹性补偿及辊径变值差异速度场叶片弹-塑性变形过程的总功率泛函解析理论，精确描述叶片宏观弹塑性变形行为。以基体晶粒结构和强化相分布为调控指标，综合分析包含辊轧及热处理在内的全工艺流程，优化叶片辊轧道次、轧制力及热处理工艺参数。开发本构模型并利用二次开发嵌入现有分析中，进行工艺参数优化分析，实现叶身型面的宏、微观协同调控。采用区域权重评价方法，经数值模拟确定变形关键区域，建立叶片辊轧晶体塑性仿</p><p>真模型，基于晶体塑性变形理论，开展跨尺度仿真并对成形参数进行联合多目标优化, 更加真实反应微观层次表征宏观变形行为，保证叶片的成形精度与微观组织均匀。对叶片辊轧过程中金属流动状态进行模拟分析，模拟叶身各部分变形状态，并进行利用应力分布状态实现回弹预测。开发冷辊轧叶片毛坯及辊轧模具三维设计平台，实现模型自动化建立。联合动态神经网络辨识器和基于质量预测的事件触发机制，提出基于数据驱动增强学习-策略网络的变截面扭曲叶片精密辊轧质量稳定控制策略，将微尺度模拟与实验结果反演到宏观尺度叶片强度与疲劳性能控制中，并建立叶片质量数据库，完善复杂型面辊轧精密成形质量控制策略。本项目旨在提出叶片精密成形控形控性理论，解决了传统方法无法兼顾成形质量与性能要求的问题，对提高高端装备疲劳寿命与服役可靠性具有重要意义。使得冷辊轧叶片水平达到现行精锻和数控铣削工艺的叶片标准。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>三维辅助智能建模设计平台开发。目前辊轧叶片的模型及模具的设计工作主要是通过手工计算各尺寸具体参数，通过CAD 等软件逐步建立模型。传统建模方法设计周期长，操作步骤繁琐，需长时间训练才能保证设计效率。目前叶片生产过程中由于发动机型号换代较快，且叶片种类较多，急需一种可以模块化建模的辅助软件。鉴于目前国内设计过程中遇到的问题，利用二次开发技术形成了一套计算机辅助智能设计平台。基于现代最优化设计方法及数值分析理论，建立了辊轧叶片零件及模具的数学模型，完成叶身形面的余量自动加减，并利用加权系数等方式对叶片顶点处曲面进行光顺处理。实现了从零件图到毛坯图、模具图等工艺文件的快速转化和输出过程，在对叶片的设计和加工流程等方面进行具体分析的情况下合理地安排专用系统的数据流程，实现对叶片及叶片模具的几何信息和非几何信息的统一管理。简单快速实现数字化设计与制造，大幅度缩减设计和制造周期，加快研制和生产效率，满足新机试制和科研快速反应的需要。</div></div><div class="p-li"><span class="p-mk">2</span><div>建立叶片辊轧成形模拟仿真平台。用Excel管理叶身设计数据，实现设计数据的自动存取，实现了叶片辊轧前处理参数化建模模块的实现及验证。同时在ABAQUS软件中的Plug-ins模块中创建用工艺参数变量的图形用户界面。通过GUI界面与内核文件的交互，实现叶片辊轧过程前处理的参数化建模。实现叶片辊轧后叶片型面形状显示模块的开发，获取模拟分析后叶片型面的坐标，并通过图形的形式进行显示。</div></div><div class="p-li"><span class="p-mk">3</span><div>辊轧泛函解析模型建立。基于三维辊径变值差异速度场的弹塑性能量泛函及参数优化开发辊轧过程应变速率分量、辊轧模具半径函数及考虑叶片弹塑性变形的辊轧接触弧长解析模型，构建空间三维辊径变值差异速度场，建立非对称速度场下考虑回弹影响的总功率泛函模型。引入前滑补偿与扭曲投影生成辊模几何特征曲面，并以该曲面与叶片曲面间的函数关系阐明叶片宏观变形行为；以辊轧变形力解析表达式为基础，基于轧辊弹跳方程获得预摆辊模位置，精确解析设定成形工艺参数。</div></div><div class="p-li"><span class="p-mk">4</span><div>冷辊轧叶片微观晶体塑性数值仿真。基于晶体塑性理论与连续介质力学，采用数值模拟研究辊轧叶片外部载荷作用下晶粒形貌演化，分析晶粒形貌演化与应力之间的变化规律，建立微观变形与宏观应力间的跨尺度映射关系。采用Voronoi算法实现多晶体几何模型的建立，使用欧拉空间分割方法生成和赋予晶体取向，实现了晶体塑性有限元模型的建立。通过拉伸压缩实验数据与模拟结果对比，确定了晶体塑性模型中的材料参数，验证了晶体塑性模型在模拟晶体织构演化的能力，实现了织构演化规律的预测。最后使用子模型法和晶体塑性有限元方法，建立叶片局部区域建立细观晶体塑性有限元模型，可用于分析叶片辊轧中不同区域、不同压下量的织构演化规律。</div></div><div class="p-li"><span class="p-mk">5</span><div>构建叶片质量数据库及智能控制策略。提出一套以压下量、轧制速度、叶片装卡转动三自由度等工艺参数为优化变量的多目标优化方案，实现叶片微观组织均匀和精密成形。以优化数据为基础，实现工艺参数在线可测信息的数据驱动增强学习-策略网络的质量稳定智能控制策略，成功解决了冷辊轧过程中多非线性耦合变量影响批量产品稳定性的问题，为保证叶片控形、控性设计要求提供了新的控制模型。</div></div></div></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

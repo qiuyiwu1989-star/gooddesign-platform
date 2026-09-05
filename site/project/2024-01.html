@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>空间可展结构成形-展开-性能保持设计方法与技术 · 2024金奖 · 好设计</title>
+<meta name="description" content="空间可展结构是随航天科技发展而诞生的一种新型宇航结构，是大型航天器有效载荷的主要结构形式，其在发射过程以折叠收拢状态固定安置在运载工具有效载荷舱内，待发射入轨后，按设计要求逐渐展开锁定并保持服役状态。作为国之重器，空间可展结构的设计研发是建">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%87%91%E5%A5%96&amp;year=2024">← 返回 2024 年金奖名录</a>
+  <div class="kicker"><span class="lv">金奖</span><span class="yr">· 2024 · 第九届</span></div>
+  <h1>空间可展结构成形-展开-性能保持设计方法与技术</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">天津大学,西安空间无线电技术研究所,天津航天机电设备研究所</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">何柏岩,聂锐,朱佳龙,张大羽,王国彪,王玉凤,陈国辉,王辉,高奔,闫莉佳</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">2024060126</div></div>
+  </div>
+  <div class="hero"><img src="../cases/gal/2024-01-0.jpg" alt="空间可展结构成形-展开-性能保持设计方法与技术"></div>
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>空间可展结构是随航天科技发展而诞生的一种新型宇航结构，是大型航天器有效载荷的主要结构形式，其在发射过程以折叠收拢状态固定安置在运载工具有效载荷舱内，待发射入轨后，按设计要求逐渐展开锁定并保持服役状态。作为国之重器，空间可展结构的设计研发是建设航天强国的牵引性技术。</p><p>本项目在国家自然科学基金、国家重大航天计划等资助下，历经十余年攻关，解决了空间可展结构高精度成形设计、高可靠展收设计、服役性能保持设计等关键难题，打通了从自主设计到工程应用的全链条，并成功完成了在轨验证，实现了我国在该领域从追赶到领跑的突破，取得了如下创新成果：</p><p>（1）形成了空间可展结构形-性高精度设计方法。系统考虑了几何拓扑、形面精度、构件应力、装配误差等对结构拓扑设计、形面设计、工艺设计的影响，有效解决了传统力密度设计方法找形精度低等难题，将天线设计精度提高一个数量级。成果应用于嫦娥四号鹊桥中继卫星搭载4.2米径向肋天线等，实现了地面测试形面精度优于0.7mm。</p><p>（2）发展了刚-柔-软多体系统展开动力学设计理论。有效融合了复杂结构的几何特征、动力学品质需求并考虑地面试验重力卸载影响，实现多链路桁架式天线收展比突破1:10，全系列天线在轨展开成功率达100%。</p><p>（3）突破了在轨耐高低温和抗局部构件失效设计技术。实现了结构精度设计与空间热环境的有效匹配，解决了嫦娥四号鹊桥中继卫星搭载天线长周期（≥3年）、宽温域（-200℃-120℃）下稳定服役难题。</p><p>项目成果获授权发明专利36件，编制标准6部，发表论文83篇（其中SCI 28篇、EI 20篇）。成果应用于多种空间可展结构设计研发，满足了我国通信导航、气象防灾、深空探测等领域的重大需求，近三年直接经济效益1.3972亿元，带动卫星产业产生间接经济效益超十亿元，经济和社会效益显著。为我国空间可展天线技术步入世界先进行列做出了重要贡献。</p><p>以张卫红院士为组长的鉴定委员会认为该项目总体达到了“国际领先”水平。2023年，项目获得天津市技术发明一等奖。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>空间可展结构具有尺度大（几十至上百平方米）-精度要求高（毫米至亚毫米级表面精度）、构件多（数千组件）-需在轨可靠展开、地面试验-极端环境（-200℃~120℃）长时服役等特点。这类兼具机构和结构特性的装备设计面临结构精确成形、机构顺利展开、在轨性能保持等关键问题，本项目通过机构-结构设计平衡与兼顾“结构成形-机构展开-性能保持”需求，实现了空间可展结构表面高精度创成与服役性能高效保持，主要设计创新点如下。</p><div class="p-h">3.1 设计创新点</div><p>设计创新点1：提出了空间可展结构形-性高精度设计方法（如图1），系统考虑了几何拓扑、形面精度、构件应力、装配误差等对结构成形精度影响，将可展天线表面设计精度提高一个数量级。实现了复杂索网表面拓扑自动化设计、大型柔性支撑索网形面高精度设计、铰接可展结构装调工艺设计等创新。成果应用于我国嫦娥四号鹊桥中继卫星等重大科技专项，助力4.2m口径伞天线地面测试形面精度优于0.7 mm。</p><p>有形化成果：授权发明专利9件、发表高水平论文17篇，编制标准2项。</p><p>图1 空间可展结构高精度成形设计</p><p>设计难点与挑战：空间可展结构尺寸和形面精度是其结构设计的重要指标，以可展天线为例：天线反射面口径和形面精度是保证其频段、增益和功率等电性能的重要依据。口径大的天线能够发射大量的高分辨率数据，提高微弱信号接收信噪比；高反射面精度可实现高工作频段、宽频带和高增益。但口径和形面精度二者是矛盾的，口径越大的结构形面精度就越难保障。1）如何在尺寸/材料/载荷限制下快速高效生成可实现高频段、高增益、高通量等电磁性能需求的反射面构型是可展天线表面拓扑设计的首要难题。反射面精度要求与结构尺寸之比远超一般结构精度范围。成千上万索段拉力下桁架发生变形，进而影响索网张力分布，二者存在强烈耦合效应。2）如何揭示柔性支撑张力结构零应力状态（结构放样依据）与成形状态间的映射机理是结构高精度形面设计的关键难点。可展结构包含铰链、杆件、锁定释放机构、反射面组件等众多构件，装配阶段杆件尺寸偏差、铰链间隙、杆件变形、装配应力等影响结构形面精度和指向精度，结构精度要求（亚毫米级或更高）高于组件尺寸叠加误差。3）如何实现大量组件微应力高精度装调和装配工艺优化设计，是保证结构成形精度的核心。</p><p>图2 网面拓扑自动化设计方法</p><p>设计创新点：</p><p>1）提出结构表面拓扑自动化设计方法。</p><p>针对大型空间可展结构广泛使用的轻质索网，本项目创新提出基于图论的网面拓扑描述与网格自动化设计方法（如图2），根据天线电磁性能需求、反射面方程、满足形面误差的网格最大允许尺寸、背架与索网连接点限制，实现任意索网面几何构型自动化生成，并基于网面和可展桁架拓扑实现索-桁连接方式优化设计，大幅提升网面张力均匀性，保障网面索段热变形稳定性。开发了网面拓扑自动化设计平台，完成了环形桁架式、径向肋式、构架式等多种形式可展天线网面设计，有效解决复杂功能形面难设计、网面拓扑无法自动化生成等技术难题，提高了大型天线网面设计效率。</p><p>图3 柔性支撑索网找形设计理论</p><p>2）形成柔性支撑索网找形设计理论。</p><p>提出了柔性支撑索网找形设计理论（如图3），更新了本领域经典力密度方法，解决了商业软件无法用于柔性支撑索网高精度设计的瓶颈问题。建立了包含欧拉伯努利梁、三维弹性体铰链、索单元本构的柔性杆件-柔性铰链-柔性索网一体化静力平衡模型，揭示了支撑桁架柔性变形与柔索体系静力平衡态映射关系，实现了柔性支撑索网综合找形及网面预应力合理配置，针对数千索段的大型网面可高效求解目标形面精度对应索段放样长度。本项目形成的索网设计方法将网状天线形面设计精度有效提高1个数量级。成果应用于我国嫦娥四号鹊桥中继卫星搭载4.2米口径天线，地面测试形面精度优于0.7mm。</p><p>图4 柔性支撑索网找形设计理论</p><p>3）创新铰接可展结构高精度装配工艺设计技术。</p><p>提出航天异构铰链间隙控制和基于均匀性装配的零件配对方法；攻克可展机构重复展开精度保障瓶颈问题；形成基于装配校准的固面可展天线形面装调方法，创新设计了高精度装调专用装置、基于多神经网络的高精度装调算法和工艺（如图4），可根据形面测量结果优化设计装调工艺参数，实现结构亚毫米级精度快速高效装调。相关技术应用于海洋二号、天问一号卫星搭载的多类型空间可展结构高精度装配，有效保证了产品形面精度和指向精度。</p><p>设计创新点2：创新提出刚-柔-软多体系统展开动力学设计方法（如图5），有效融合了复杂结构几何特征、动力学品质需求并考虑地面试验重力卸载影响。提出功能驱动的可展机构构型设计新方法；针对多链路桁架机构在空间高低温、微重力环境下与柔索相互耦合的复杂展开过程，突破刚-柔耦合索-桁机构展开分析与设计技术；设计了可展天线展开过程主动高效重力卸载装置。成果应用于多链路桁架式天线展开设计，助力机构收展比突破1:10，全系列天线在轨展开成功率达100%。</p><p>有形化成果：授权发明专利19件、发表论文42篇，编制标准1项。</p><p>图5 空间可展结构刚-柔-软多体系统展开动力学设计</p><p>设计难点与挑战：空间可展结构构型设计关系到其能否在有限收拢体积下实现最大展开面积，形成理想功能形面，并完成可靠展开任务。1）如何在收展比、机构运动特性、材料/载荷限制下实现高刚度、高可靠性机构创新设计是保障天线顺利展开的首要前提。可展结构能否在轨一次顺利平稳展开至关重要，一旦展开失败将导致整星通讯功能丧失，引发整个卫星任务失败。2）如何准确进行索-桁复杂机构展开过程动力学分析及驱动设计是保障可靠展开的基础难题。空间可展结构运动部件多、运动副多、运动范围大，且需在太空微低重力环境下展开。为确保在轨顺利展开，降低故障率，需在地面进行微低重力等效展开试验。3）如何设计微低重力模拟装置，以开展微低重力环境下展开过程的准确模拟是保障天线在轨顺利展开的核心挑战。</p><p>设计创新点</p><p>1）提出功能驱动的可展机构构型设计新方法。</p><p>提出模块化、高表面精度、高收纳比可展机构创新设计方法（如图6）。以期望运动轨迹为目标开展逆向设计，以机构运动协调性为约束实现正向设计。阐明模块化空间可展机构设计原理与方法，揭示可展机构构型、几何、材料、载荷等设计因素与机构功能性能映射机理。有效解决了复杂功能形面难设计、机构展开运动不协调、期望运动轨迹难实现等问题，为空间可展结构构型创新和机构详细设计提供理论基础。成果应用于多链路桁架式可展天线设计，机构收展比突破1:10。</p><p>图6 多链路桁架式可展天线构型设计</p><p>2）突破刚-柔-软多体系统展开动力学设计技术。</p><p>提出了软索网展开分析和桁架刚-柔耦合展开动力学分析与设计方法（如图7），实现了包含数千个运动构件的全尺寸、全链路大型反射器展开过程刚-柔-软多体系统动力学分析与设计。攻克索网时变张力计算瓶颈问题：有效捕获天线展开过程大量索段松弛/张紧态实时切换，可快速实时求解各拓扑索网展开时变张力，为索-桁机构展开过程驱动设计提供准确阻力数据。突破多链路桁架机构展开驱动设计难题：建立叠加杆件柔性和桁架大范围运动的桁架刚-柔耦合多体动力学模型，实现刚-柔-软多体系统展开过程动态耦合，为刚-柔-软多体系统展开驱动设计和展开过程有效控制提供理论基础。成果应用于桁架式天线展开分析，计算结果与实测数据相比准确率达80%，有效保证了桁架式天线地面试验和在轨展开成功率。</p><p>图7 刚-柔-软多体系统展开动力学设计</p><p>3）创新设计了空间可展结构展开试验微低重力模拟装置。</p><p>创新设计了吊丝主动水平定位与运动的重力补偿方案，利用桁架各节点水平位移成比例且与展开姿态存在确定关系的特点，采用电机驱动获得吊丝水平定位与运动，实现展开过程桁架节点位置精确跟随，消除了运动中吊丝非铅锤效应的原理误差，设计研制了可展结构多索悬吊式重力卸载装置（如图8），实现了多类型可展天线展开过程微低重力高效模拟。针对国内首款圆形柔性太阳翼地面重复展收试验需求，设计研制了单套重载高精度加载装置和成套压紧设备，开发了太阳翼多点同步加载控制软件，可实现单点压紧力（≤6000N）加载精度优于1‰，多点压紧力加载同步性偏差小于3‰，保证了收拢压紧效果和太阳翼表面电池片安全。设备应用于“天问二号”探测器国内首款圆形柔性太阳翼重复展收试验，将单次收拢压紧时间由原有数小时减小到十几分钟，由数名人员操作减少到单人操作，大大提高了重复展收试验效率。获天津新闻“奋斗者，正青春”节目报道（如图8）。</p><p>图8 空间可展结构展收试验装置设计</p><p>设计创新点3：发展了空间可展结构耐高低温和抗局部构件失效设计方法，实现了结构精度设计与空间热环境的有效匹配（如图9）。提出面向太空极端环境的可展结构优化设计方法，形成关键构件失效响应及构件重要度预判技术，攻克极端环境下结构关重件天地等效测试与评价难题，设计并研制高低温力学测试、高低温形面精度测试、高低温展开试验等专用测试系统及设备20台/套。成果解决了嫦娥四号鹊桥中继卫星搭载天线长周期（≥3年）、宽温域（-200℃-120℃）下稳定服役难题。</p><p>有形化成果：授权发明专利9件、发表论文24篇，编制标准1项。</p><p>图9 空间可展结构耐高低温抗局部失效设计</p><p>关键技术难点与挑战：高真空、强辐射、宽温域等极端环境下的结构服役性能是空间可展结构设计重点关注的问题。1）如何开展面向空间服役环境的结构设计、性能分析、仿真模拟、等效测试是保障空间可展结构在轨性能稳定性面临的重要挑战。空间可展结构构件众多，各组件作用相互耦合，恶劣太空环境中周期性高低温、电磁辐射、外物冲击以及长周期服役下材料变异、构件裂纹、折断等都会导致局部构件失效，进而引发形面精度劣化、结构刚度变差、频率特性偏离原始设计等问题，严重影响结构正常服役。2）如何有效获知局部构件失效对结构整体性能影响，从而开展构件重要性预判和冗余设计是提高可展结构在轨服役性能和寿命的必要手段。可展结构在地面装调，太空极端环境下服役，空间环境下材料/组件/结构的热特性、疲劳、蠕变、松弛等行为与地面测试差异较大。3）如何设计极端环境下关键材料和构件的等效测试系统，是保障可展结构在轨性能稳定性需要攻克的关键技术难题。</p><p>设计创新点：</p><p>1）提出面向在轨热环境的结构预应力优化设计方法。</p><p>本项目建立了包含特征轨道位置的结构温度场数据库，形成了面向在轨非均匀温度分布的空间可展结构预应力优化设计方法（如图10）。揭示了常温设计参数与在轨温度场下天线表面精度映射机理，阐明了极端服役环境天线性能演化规律，实现了空间可展结构精度设计与在轨热环境有效匹配。成果应用于周边桁架式天线、径向肋式天线结构优化设计，实现天线形面在轨精度波动低于0.2 mm，助力空间可展天线在轨性能高效保持。</p><p>图10 空间可展结构在轨热设计</p><p>2）突破空间可展结构抗局部构件失效设计技术。</p><p>针对恶劣太空环境和长周期服役可能引发的构件失效问题，探明了局部构件失效对空间可展结构形面精度、结构刚度、频率特性等的影响规律，开发了构件失效响应分析算法，可高效仿真关键部组件失效对结构服役性能的影响。提出了可展天线构件重要性预判准则，对局部失效可能引发的反射面精度劣化、连续失效导致的结构功能丧失等进行了等效模拟，通过设计结果与失效分析的迭代优化，实现了空间可展结构抗局部构件失效的冗余设计（如图11）。</p><p>图11 空间可展结构抗局部构件失效设计</p><p>3）设计了关键组件和结构天地等效测试系统。</p><p>设计了关键材料和构件太空服役环境等效测试系统，成功应用于某空间天线碳纤维杆件的热真空测试，探明结构在空间环境下可能存在的缺陷，并进行了热真空处理，提高了在轨应用可靠性；攻克了高温环境下核心弹簧部件的松弛蠕变测试难题，实现高温力热耦合的弹簧蠕变形和蠕变速率曲线精准测试，依据测试结果预判了10年以上蠕变量小于0.06mm，保障了弹簧部件长期在轨稳定服役；提出了高低温展开机构锁定试验方法，应用该方法开展某型号天线展开机构极端环境锁定试验，通过多次重复试验保证了机构在轨成功锁定；形成了宽温域下组件热变形和结构形面精度测试技术，可用于预测和评价结构在轨形面精度和整体刚度。设计研发了关键部组件和结构天地等效测试系统，保障了空间可展结构在轨稳定性和服役寿命。</p><p>图12 关键组件天地等效测试系统</p><div class="p-h">3.2 国内外同类技术对比</div><p>项目组主持了我国目前所有大型可展天线的型号研制任务，设计了系列化天线产品，与国外同类技术相比具有明显优势，性能对比如表1。</p><p>表1 国内外同类可展天线设计技术及产品性能对比</p></div>
+  <div class="sec">图集 / GALLERY</div><div class="gal"><img loading="lazy" src="../cases/gal/2024-01-1.jpg" alt=""><img loading="lazy" src="../cases/gal/2024-01-2.jpg" alt=""></div>
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2024%E5%B9%B4%E9%87%91%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E7%A9%BA%E9%97%B4%E5%8F%AF%E5%B1%95%E7%BB%93%E6%9E%84%E6%88%90%E5%BD%A2-%E5%B1%95%E5%BC%80-%E6%80%A7%E8%83%BD%E4%BF%9D%E6%8C%81%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E4%B8%8E%E6%8A%80%E6%9C%AF%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">延伸阅读 / CURATED（人工核选 · 检索于 2026-08-09）</div><a href="https://cgd.cmes.org/exhibit/detail/e325d1b0645f4e2d8ab2b090f4116b46" target="_blank" rel="noopener"><span class="arr">↗</span><span>空间可展结构成形-展开-性能保持设计方法与技术 - 好设计奖</span><span class="src">cgd.cmes.org</span></a><a href="https://me.tju.edu.cn/info/1870/23401.htm" target="_blank" rel="noopener"><span class="arr">↗</span><span>天津市科学技术奖机械工程学院再创佳绩 - 天津大学</span><span class="src">me.tju.edu.cn</span></a><a href="https://baike.baidu.com/item/%E7%A9%BA%E9%97%B4%E5%8F%AF%E5%B1%95%E7%BB%93%E6%9E%84/252556" target="_blank" rel="noopener"><span class="arr">↗</span><span>空间可展结构 - 百度百科</span><span class="src">baike.baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2024-00.html"><span class="d">← 上一项</span>仿生微纳结构防冰减阻蒙皮</a>
+    <a class="next" href="2024-02.html"><span class="d">下一项 →</span>国和一号屏蔽电机主泵</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

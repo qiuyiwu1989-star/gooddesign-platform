@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>7000吨高速冲压线设计 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2020-s00.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2020-s00</div>
+  <h1>7000吨高速冲压线设计</h1>
+  <div class="meta-line"><b>2020 年度银奖</b><span>中国第一重型机械股份公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2020 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中国第一重型机械股份公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">喻宝林,樊晓松,葛浩,陈冠宇</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 制造装备（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>在重型冲压线领域，最高生产节拍达到或高于15SPM的冲压线称为高速冲压线，最高生产节拍也是高速冲压线的最重要考核指标。2016至2017年中国一重立项重点研究开发高速冲压线，设开发出适合连续模式的新型八连杆杆系、偏置六连杆杆系、高速变动惯量下的同步控制技术、整线三维智能化设计等新技术。2017年11月中国一重与长安汽车签订2条7000吨高速冲压线合同，2019年1月冲压线成功SOP，真正达到了最高生产节拍15SPM，可动率≥95%。 本项目在机械传动系统优化设计、同步驱动精确控制等技术创新明显，经济效益和社会效益显著，总体达到国际先进水平，压力机机械传动系统优化设计技术达到国际领先。获得国家发明专利1项、软件著作权1项、制定行业标准一项。</p><p>高速冲压线由2400吨新型八连杆压力机+1600吨偏置六连杆压力机+1000吨×3偏置六连杆压力机共5台多连杆压力机和双臂机械手传输自动化系统组成，生产过程中压力机滑块连续模式运动，最高生产节拍15SPM。板垛料经过拆垛、清洗和对中，双臂机械手给第一序压力机上料后，新型八连杆压力机拉延，双臂机械手下料送到第二台六连杆压力机修边、冲孔，依次经过后几台六连杆压力机的翻边、整形等工序，双臂机械手下料，冲压件在皮带机上质检后人工装框，长安汽车车间另配有AGV小车运送料框。</p><p>本项目开发并应用了八连杆和六连杆压力机杆系优化设计软件，完成适合连续模式冲压生产的新型八连杆压力机杆系的设计，其工作行程可达1400mm，运动曲线具有在拉伸成形区域内速度平稳，回程速度快、冲击小的特点，机械手工作角度可由传统的140度提高到180度。后序4台1350mm行程的偏置六连杆压力机，提节拍难度高于采用1250至1350mm行程的偏心式压力机，但成品率高。</p><p>本项目设计开发出与大惯量高转速系统匹配的动力驱动控制系统，解决了单机4点传动同步精度调整及惯量平衡难题，实现了5台压力机之间变动载荷下同步角度互差低于2.5度的控制精度。</p><p>本项目2019年1月投入冲压件的生产，投产至今新增CS75PLUS车的销量为14万多辆,利税5亿多元，提高了用户的汽车销量和利润，开拓了国际高端市场，推进了国内冲压技术的发展和技术进步，促进了汽车行业节能降耗，取得了显著的经济和社会效益。中国一重以此项目为契机，后续冲压线项目成功进入国际高</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>开发了八连杆和六连杆压力机杆系优化设计软件，能对各种杆系进行快速开发和优化，新杆系的开发时间减少提高70%。应用自主开发的优化软件设计开发出适合连续模式、机械手传输的新型八连杆压力机杆系，其工作行程可达1400mm，运动曲线具有在拉伸成形区域内速度平稳，回程速度快、冲击小的特点，机械手工作角度可由传统的140度提高到180度。 应用该技术的八连杆压力机的滑块运动在下半行程的时间可少于上半行程，提高了40度以上的机械手可用上下料角度，在满足冲压件成品率的基础上保证生产节拍。后序压力机采用偏置六连杆。 结点偏置六连杆的曲线与新型八连杆的曲线比传统偏心式更为接近，上下模接触时速度比偏心式小，提高成品率。</div></div><div class="p-li"><span class="p-mk">2</span><div>设计开发出与大惯量高转速系统匹配的动力驱动控制系统，解决了单机4点传动同步精度调整及惯量平衡难题，实现了5台压力机之间变动载荷下同步角度互差低于2.5度的控制精度。通过优化控制规则，解决了拉伸压力机主电机发热的难题。</div></div><div class="p-li"><span class="p-mk">3</span><div>设计开发出在拉伸成形区域4个拉伸压力点变压力独立控制技术，扩大了压力机适应不同材料和拉伸量的成形窗口，冲压件一次成品率合格率98%以上。</div></div><div class="p-li"><span class="p-mk">4</span><div>开发出调整压力机精度的结构，压力机精度，保证压力机重复运行精度，提高成品率。现场实测压力机下死点时滑块与工作台平行度误差小于0.2mm，优于≤0.26mm的设计技术指标，更优于行业≤0.51mm的指标。</div></div><div class="p-li"><span class="p-mk">5</span><div>全行程滑块锁紧技术。该技术应用高速轴锁紧器，使滑块在任意行程位置能快速锁紧，保障人员、自动化设备、模具的安全。自主开发的高速轴锁紧器已经提交专利申请。</div></div><div class="p-li"><span class="p-mk">6</span><div>不串油的快速每点独立过载保护技术。四点都设置独立的过载保护阀，过载发生时在0.05秒以内四点均卸荷，恢复时间小于60秒。</div></div><div class="p-li"><span class="p-mk">7</span><div>高速移动工作台技术。移动工作台移动速度15米 /分，对应介质拖链采用顶板链结构，每个工作台两端设置雷达，防止高速移动时撞人或物，保护操作者或相关人群的健康。</div></div><div class="p-li"><span class="p-mk">8</span><div>废料堵塞检查技术。废料槽内如果废料意外堆积不能被发现，会造成长时间的停线来清理堵塞的废料。堵塞检查能在废料轻微堵塞时就发出报警，利用线外清理孔，不停线就能得到及时处理。</div></div><div class="p-li"><span class="p-mk">9</span><div>轴温和振动监测技术。对易出故障的轴承、轴套温度实时监控，趋势分析，提前预防故障发生，提高设备可动率。</div></div><div class="p-li"><span class="p-mk">10</span><div>冲压智能制造系统。此系统能完成对生产线PLC、模具、板料、零件等数据的采集，对生产过程进行监控、管理、看板指挥、统计分析，实现生产现场的智能化、自动化和信息实时共享。</div></div><div class="p-li"><span class="p-mk">11</span><div>节能环保与降噪。连续模式比断续模式节能20%以上。压力机主传动电机带能量回馈，压力机滑块减速时进行能量回馈。使用牌号中铅含量的铜套防止有害重金属进入环境。全线封闭空运转工作时噪音在80dB以内。</div></div></div></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

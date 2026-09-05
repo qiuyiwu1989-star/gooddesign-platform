@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>复兴号高原双源动力集中动车组内燃动力车 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2024-s11.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2024-s11</div>
+  <h1>复兴号高原双源动力集中动车组内燃动力车</h1>
+  <div class="meta-line"><b>2024 年度银奖</b><span>中车大连机车车辆有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2024 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中车大连机车车辆有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">杨曦亮,杜静远,王肇凯,戚百灵,王世和,杜慧勇,高俊帅,徐朝林,陈宇辞,杨帅</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 轨道交通（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>主要技术内容</div></div></div><p>青藏、川藏铁路的修建对促进民族团结、助力脱贫攻坚、推动区域协调发展等都具有重大而深远的历史和现实意义。青藏、川藏铁路的沿线气候环境恶劣，高原缺氧、低温低压、强紫外线、大风沙、雨雪和雷击频繁，其修建、运营难度可谓世界之最，被世人称之为“天路”。作为青藏、川藏铁路的重要组成部分的拉林、拉日铁路全线线路条件复杂，动车组需在电气化和非电气化线路上贯通运用。因此，针对高原严苛特殊工况启动了适应世界最高海拔运用环境的高原型双源制动力集中动车组研制项目。国内动力集中电动车组平台建设已基本成熟，高原双源动力集中动车组的技术难点主要在适应高原缺氧环境的内燃动力车配套保障技术。</p><p>中车大连公司完成研制方案及关键部件的试制，同时研发大功率高原型柴油机及动力车相关配套保障技术，内燃、电力双端双控技术，主、辅、列供共用中间直流环节技术及大功率高频率LLC技术等关键核心技术，填补了高原双源动力集中动车组技术空白，打造了适应世界最高海拔运用环境的中速柴油机内燃动力车动车组产品，丰富了复兴号动车组的产品谱系和运用场景。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>专利授权情况</div></div></div><p>本项目获得授权发明专利10项，外观设计专利1项，发表论文9篇。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>技术经济指标</div></div></div><p>复兴号高原双源动力集中动车组内燃动力车填补了高原双源动力集中动车组世界级空白，完善了机车产品谱系，其研发的多项技术填补了国内外技术空白，在高海拔、多隧道、跨线运营的复杂环境下，本项目内燃动力车可以在高原环境下满足最大12列编组牵引的需求，在提供900kW列供的前提下，提供3880kW的轮周功率，总体技术达到了国际领先水平。</p><p>同时，产品对比传统内燃客运机车节油10%左右，已销售的3台产品运用两年来已节约燃油费用234万元。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>应用推广及效益情况</div></div></div><p>为深入落实习近平总书记关于建设川藏铁路重要指示精神，贯彻落实新时代党的治藏方略，推动西部地区特别是川藏两省区经济社会发展，在中国共产党成立100周年、西藏和平解放70周年之际，中车大连公司启动了高原双源动力集中动车组内燃动力车的研制开发工作。2021年内燃动力车研制成功，保障了复兴号高原双源动力集中动车组顺利驶入拉萨，确保了拉林、拉日铁路按计划贯通运行，实现了复兴号动车组中国内陆省份的全覆盖。产品运用至今性能稳定、质量可靠、运行状态良好，得到了用户的充分肯定。该产品的成功研发对民族团结、边疆稳定起到了巨大促进作用，社会效益明</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>主要技术创新点</div></div></div><p>（一）国际首创内电双端双控技术。首次实现了涵盖内电双源特性控制及诊断、信息智能显示及推送、电化区段应急供电、自救援及快速脱困、动车组运行状态健康管理及预警等多项国际先进控制技术的工程化应用。</p><p>（1）学科分类名称：铁路机车车辆工程/5803030</p><p>（2）旁证：发明专利 一种内燃机车柴油机远程自起停控制方法； 发明专利 一种动力车重联测试的系统和方法； 2021-GTJ（JL）字第050号-高原双源动力集中动车组研究试验报告；论文-动力集中型内燃动车组动力车技术研究及发展； 论文-青藏高原双源内燃动力车空气压缩机启停控制逻辑优化设计</p><p>（3）创新内容简述：</p><p>创新研发动车组内、电双端互控的运用技术，实现内燃、电力动力车双动力源一体化操控。具备电控电牵、电控内牵、内控电牵、内控内牵4种牵引组合模式，内、电系统状态互联互通，可在运行中进行内、电牵引动力和供电电源快速切换，故障单元自动隔离和转换。柴油机发电机组、通风系统、牵引变流和部件工作负荷等具备典型健康状态诊断功能，实现防火、视频、制动、走行、列供、绝缘、车门、防滑八大安全监控。内燃动力车除在非电气化区段实施动车组牵引外，还可在电气化区段运行时进行列车供电，过分项时确保整列过分相不断电，在电网发生故障时实现动车组自救援。</p><p>（二）首次实现世界范围内运用海拔最高，功率最大的高原柴油机的装车运用。首次实现在高海拔环境下采用可变喷嘴环(VTG)，配合高压比叶轮，提升增压压力和柴油机燃烧进气量。</p><p>（1）学科分类名称：铁路机车车辆工程/5803030</p><p>（2）旁证： 中车科技评字（2022）第 015 号-复兴号高原双源动力集中动车组内燃动力车研发及应用；发明专利-内燃机车停机延续润滑控制装置；发明专利-柴油机变频起动方法及柴油发电机组、机车； 2021-GTJ（JL）字第050号-高原双源动力集中动车组研究试验报告； 2021-GTJ（JL）字第W0065号高原双源动力集中动车组青藏线行适应性研究试验报告</p><p>（3）创新内容简述：</p><p>装用的12V265B型柴油机标定功率3200kW。为了应对高原（运用海拔5100米）空气稀薄的运用环境，采用变频起动柴油机技术和可变喷嘴环(VTG)，配合高压比叶轮提升增压压力和柴油机燃烧进气量保障柴油机在高海拔环境下的大功率输出。同时采用强化防爆阀、防火罩、中冷器隔热套等防火安全设计提升高原环境应用安全性和可靠性；采用消音器实施降噪控制。实现在世界最高海拔运用的动车组中速柴油机性能指标达到世界先进水平。</p><p>（三）首次实现将柴油机健康诊断管理融入动车组整列安全监测网，增强柴油机数据感知和自检，提升故障预警、诊断和处置能力，进一步提高柴油机运维管理效率。</p><p>（1）学科分类名称：铁路机车车辆工程/5803030</p><p>（2）旁证：发明专利 一种机车发动机故障诊断方法、系统及实现装置；论文-柴油机健康诊断技术研究； 论文-机车柴油机故障预测与健康管理系统设计； 2021-GTJ（JL）字第W0057号-高原双源动力集中动车组专项试验检测报告</p><p>（3）创新内容简述：柴油机PHM健康诊断技术增强了基于数据的自感知、自检查、自诊断能力，可分等级做出故障预警，提供处置意见，显著提升了动车组核心关键器件的运用维护效率。纳入柴油机PHM系统的动车组列车安全监测网，丰富了司乘人员和运维人员保障动车组安全的手段，提升了动车组运行的安全可靠性。</p><p>（四）采用主、辅、列供共用中间直流环节技术，打造适应高原应用环境的牵引传动系统，具备动力制动能量回收功能，动车组实现节能10%。国际上首次在高原客运内燃牵引模式中实现符合动车组要求的快速平稳加载功能，和大功率、宽电压范围高频LLC技术，实现了全功率范围内的软开关控制，满足变流系统小型化、轻量化要求。</p><p>（1）学科分类名称：铁路机车车辆工程/5803030</p><p>（2）旁证：发明专利 一种机车车辆及其加权参数粘着控制方法；发明专利 牵引电机通风系统及其防水结构和防水方法；发明专利-一种机车及其定速巡航方法；论文-FXN3型速度160km/h交流传动客运内燃机车牵引传动系统设计；2021-GTJ（JL）字第W0057号-高原双源动力集中动车组专项试验检测报告；2021-GTJ（JL）字第W0059号-高原双源动力集中动车组内燃动力车试验检测报告。</p><p>（3）创新内容简述：该车型为内燃机车和动车的主、辅、列供共用中间直流环节技术在国内的首次正式商业运用。在高海拔、多隧道、跨线运营的复杂环境下，在满足双路450kW大功率列车供电需求和整列0-40km/h内加速能力达到0.3m/s2的前提下，兼顾了柴油机负荷率发挥与整列运行平稳性，在高原环境首次应用功率、宽电压范围的高频LLC谐振技术，实现了辅助列供系统的小型化、轻量化，缓解了装用大功率高原型中速柴油机的内燃动力车轴重问题，同时实现动力制动能量的回收利用，达到了10%的节油指标。</p><p>（五）国际首创适应高原应用环境的车内弥散式+分布式双模制氧系统，结合独立式司机室结构设计和减振、降噪设计，全面保障了司乘人员在高海拔缺氧环境中的身心健康和驾乘体验。</p><p>（1）学科分类名称：铁路机车车辆工程/5803030</p><p>（2）旁证：外观专利 高原双源动力集中动车组内燃动力车；论文动车组司机室空调出风结构优化； 论文-机车独立式司机室振动试验和仿真分析/噪声与振动控制；论文-机车制造中柔性化吊装工艺装备的开发；2021-GTJ（JL）字第W0057号-高原双源动力集中动车组专项试验检测报告</p><p>（3）创新内容简述：国际上的列车司机室供氧方案均采用分布式供氧。为适应高海拔地区的运用，采用弥散式+分布式双模制氧系统，制氧机组与空调机组互联、互控。正常运行时通过弥散式持续提供浓度适宜的氧气；紧急情况时采用分布式为司乘人员提供高浓度紧急供氧，全面保障了司乘人员在高海拔、缺氧环境中的身心健康。</p><p>（六）国内首创柴发机组自启停及两级保温自动控制技术，使动力车在电气化线路区段运行时具备热备保障能力。</p><p>（1）学科分类名称：铁路机车车辆工程/5803030</p><p>（2）旁证：发明专利 提高发动机冷却效果的系统、方法及包含该系统的车辆；论文-动力集中型内燃动车组动力车技术研究及发展；2021-GTJ（JL）字第W0057号-高原双源动力集中动车组专项试验检测报告</p><p>（3）创新内容简述：动车组采用内、电分置式编组形式，采用基于冷却水温控制的柴发机组自启停及两级保温自动控制技术，保障了内燃动力车长期在电力模式下运行时的柴油机冷却水温范围。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>经济和社会效益</div></div></div><p>截止目前，项目产品累计销售3台，实现销售收入14079万元，新增利润262万元。对比传统内燃客运机车节油率可达10%左右，运用两年来节约燃油费用234万元。内燃动力车的研制成功，保障了复兴号高原双源动力集中动车组在建党100周年之际顺利驶入拉萨，确保了拉林、拉日铁路按计划贯通运行，实现了复兴号动车组中国内陆身份的全覆盖。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>应用效益和推广前景</div></div></div><p>复兴号高原双源动力集中动车组内燃动力车作为既有高原地区线路客车的升级替代产品，具有广阔的市场前景。目前，哈尔滨-齐齐哈尔-加格达奇，吐鲁番-库尔勒-喀什等电化、非电化衔接运输有潜在市场需求，预计产生10台份的预期订单，预期收入46930万元。对于促进名族团结、边疆稳定起到了巨大的社会效益。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>国内外技术对比</div></div></div><p>美国运用的ALP-45DP列车内燃电力集成式动力车，配置2台1567 kW柴油机组，采用柴油机组和弓网牵引设备集成在1辆动力车上的设计方式，电力模式下的轮周功率为4000kW，内燃模式下的轮周功率为2700kW；</p><p>西班牙运用的RENFE 730动力集中型动 车组动力车是在Talgo 250的头车（电力动力车）后部 加1辆内燃发电车，内燃发电车配置1台1800kW柴油机组，采用电力动力车+内燃发电车AB节动力车组的方式，电力模式下的轮周功率为2400 kW，内燃模式下的轮周功率为 1200 kW。</p><p>上述动车组均存在总功率偏小、载客量偏低的问题，且无法满足高原环境的运用需求。当前世界上适用于高原铁路的机车车辆主要在我国境内，主要有NJ2 型机车、高原HXN3型内燃机车等，适用于高原环境的双源动力集中动车组还属世界空白。本项目内燃动力车可以在高原环境下满足最大12列编组牵引的需求，在提供900kW列供的前提下，提供3880kW的轮周功率。</p><p>5主要知识产权和标准规范</p><p>授权专利：</p><p>1-发明专利-一种机车车辆及其加权参数粘着控制方法</p><p>2-发明专利-一种机车发动机故障诊断方法、系统及实现装置</p><p>3-发明专利-内燃机车停机延续润滑控制装置</p><p>4-发明专利-牵引电机通风系统及其防水结构和防水方法</p><p>5-发明专利-柴油机变频起动方法及柴油发电机组、机车</p><p>6-发明专利-一种机车及其定速巡航方法</p><p>7-外观专利-高原双源动力集中动车组内燃动力车</p><p>8-发明专利-一种内燃机车柴油机远程自起停控制方法</p><p>9-发明专利-一种动力车重联测试的系统和方法</p><p>10-发明专利-一种机车发动机故障诊断方法、系统及实现装置</p><p>11-发明专利-提高发动机冷却效果的系统、方法及包含该系统的车辆</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>环境友好型大容量输电线路 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-s03.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-s03</div>
+  <h1>环境友好型大容量输电线路</h1>
+  <div class="meta-line"><b>2023 年度银奖</b><span>平高集团有限公司,河南平高电气股份有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">平高集团有限公司,河南平高电气股份有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">钟建英,张博,姚永其,金光耀,王向克</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与社会 · 绿色能源（逐条初审，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>气体绝缘金属封闭输电线路（GIL）是一种环境友好型大容量电力传输设备，在地形复杂、环境苛刻、位置重要等场合应用时，具有无可替代的技术优势。然而，世界上GIL最高电压等级为800kV，核心技术被国外垄断和封锁。项目历经10余年持续攻关，攻克了高可靠性绝缘、异物控制、超低漏气率密封、管道柔性布置4大世界难题，为特高压电网建设贡献了“大国重器”，为国家能源通道建设提供了坚强支撑。创新成果如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>独创1100kV GIL轻量化三支柱绝缘子，绝缘、机械等性能参数国际领先。提出多参数扫描结构优化计算方法，独创轻量化哑铃型三支柱绝缘子及其与导体、壳体的连接方法，降低绝缘子重量48.8%，绝缘性能达到1.1倍标准参数以上；首次通过0-100℃冷热冲击与15000次滑动触头插拔等高可靠性试验。</div></div><div class="p-li"><span class="p-mk">2</span><div>首次探明1100kV GIL内金属微粒运动特性，提出金属异物抑制方法，实现了17100米1100kV GIL一次性通过交接试验。提出了金属微粒运动多物理场耦合仿真方法，实现了GIL用绝缘子与微粒捕捉器的匹配优化设计；搭建了1100kV GIL金属微粒运动真型试验平台，首次探明真型样机中金属微粒运动特性，提出阶梯加压现场老练试验方法，并应用于苏通GIL综合管廊工程。</div></div><div class="p-li"><span class="p-mk">3</span><div>创新研制高性能密封系统，研制出世界上漏气率最低的GIL产品，年漏气率≤0.01%，为国际标准的1/50。优化提出法兰密封结构、尺寸配合方案，构建高可靠法兰密封系统；攻克超长GIL制造技术，发明长母线和无操作手孔可拆单元结构，减少密封对接面60%以上；研制的1100kV GIL年漏气率≤0.01%，为国际标准的1/50，是世界上漏气率最低的GIL产品。</div></div><div class="p-li"><span class="p-mk">4</span><div>探明不同工况下1100kV GIL形变规律，实现长距离三维复杂姿态GIL的全管系柔性设计，降低管廊基础承受载荷73%，解决了隧道载荷控制难题。搭建世界上首个1100kV GIL真型力学特性试验平台，提出了整站三维建模和GIL管道柔性力学仿真方法，设计多段转角拟合弧形线位的复杂空间全管系柔性布置方案，实现了刚性GIL与蜿蜒隧道的精准匹配和整体柔性设计。</div></div></div><p>项目获授权专利25项（发明专利21项），软著4项；论文5篇，主编国家标准1项，参编专著1部，荣获中国电力科技创新一等奖。项目研制出世界首台1100kV GIL，填补了国际空白，经中国机械工业联合会鉴定，达到国际领先水平，荣列国家能源局第一批能源领域首台（套）重大技术装备。项目成果应用于苏通综合管廊工程，被国际同行称为“GIL梦工程”，并反哺800kV及以下系列化GIL，近三年新增合同额5.18亿元。项目研制的三支柱绝缘子受到习近平总书记和李克强总理的视察，并荣登中央电视台《驭电过江》栏目，产生了重大社会影响。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>1．立项背景</p><p>我国能源及负荷分布决定了大规模电能需进行远距离、大容量输送的特点。随着我国特高压电网建设规模的不断扩大，输电走廊限制问题日益凸显，如苏通特高压工程越江段采用传统架空跨越方案就存在影响通航和生态环境等问题，迫切需要研制出满足特高压输电需求的环境友好型大容量1100kV GIL。</p><p>多年来，GIL的核心技术主要被AZZ、西门子等国外设备厂家垄断，且投运的GIL最高电压等级为800kV，1100kV GIL研制尚属空白，缺乏产品设计、批量化制造及工程应用经验。苏通长江隧道1100kV GIL的研制和工程应用面临四项重大难题：（1）1100kV GIL位于线路中部，工频电压耐受水平和可靠性要求均高于变电站GIS，GIL总长度相当于20个变电站母线长度，近6000个绝缘子，实现零放电的技术难度极大。（2）GIL运输、组装、运行等阶段内部滑动部件之间存在碰撞、振动、热胀冷缩摩擦等不可控因素，不可避免的产生微粒等，引起绝缘放电的潜在风险高，对金属微粒控制提出严苛要求。（3）GIL气室超过400个，SF6气体用量近760吨，约2000个对接面、70000米焊缝，应用于隧道封闭空间，对密封可靠性要求极高。（4）GIL沿隧道内有限空间三维蜿蜒敷设，多段横、纵向弧度叠加复杂隧道工况下的GIL柔性布置难度大；GIL形变补偿复杂，但隧道内基础承载力低，柔性补偿难度大。</p><p>针对上述难题，系统开展了1100kV GIL用三支柱绝缘子研制、金属微粒控制、高可靠性的GIL密封及GIL柔性设计等相关技术研究，历经10余年持续攻关，全面攻克上述难题，取得系列原创成果，成功研制出世界首台高参数1100kV GIL，并成功应用于苏通GIL综合管廊工程。项目技术进一步延伸到110-800kV，形成了系列化GIL研发制造产业，为民族装备制造业崛起作出重要贡献。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>科技创新内容（主要创新点）</div></div></div><p>主要创新点1：独创1100kV GIL轻量化三支柱绝缘子，绝缘、机械等性能参数国际领先。【旁证材料：授权发明专利5项（附件1.1-1.5），授权实用新型3项（附件2.1-2.3），起草标准1项（附件3.1），发表学术论文2篇（附件4.1、4.3），登记软著1项（附件7.1）】。</p><p>提出多参数扫描结构优化计算方法，探明绝缘子金属嵌件埋入深度、支腿外轮廓、腹部环氧包覆厚度等结构尺寸对绝缘强度的影响规律，首创1100kV GIL用三支柱绝缘子，有效降低重量48.8%，绝缘性能达到标准要求的1.1倍以上；设计了三支柱绝缘子与中心导体压接连接方法，解决了传统螺栓及焊接连接方法带来的电场分布不均匀、同轴度误差大、易产生异物等难题；发明了三支柱绝缘子与壳体弹性接地连接结构，解决了绝缘子在大尺寸、长距离壳体内移动时尺寸配合及易划伤壳体等难题。研发的三支柱绝缘子通过了高参数绝缘、机械强度等苛刻性能试验验证，其中，0℃-100℃冷热冲击循环耐受能力试验和15000次滑动触头的特殊机械试验属国际首次通过。</p><p>图1 三支柱绝缘子优化及试验 主要创新点2：探明了1100kV GIL内金属微粒运动特性，提出了金属异物无害化处理方法，实现了17100米1100kV GIL一次性通过交接试验。【旁证材料：授权发明专利3项（附件1.6-1.8），授权实用新型专利1项（附件2.4），起草标准2项（附件3.2、3.3），发表学术论文1篇（附件4.4），登记软著1项（附件7.2）】。</p><p>提出静电场与粒子追踪耦合计算的金属微粒输运特性仿真计算方法，获得绝缘子外形倾角、微粒陷阱结构与壳体间隙等对不同粒径、材质的微粒碰撞频率、运动轨迹的影响规律，提出GIL用绝缘子与微粒陷阱结构的匹配优化设计方案，创新性设计出环形陷阱结构的微粒捕捉器；搭建了国际首个1100kV GIL金属微粒运动特性真型试验平台，试验探明了不同交、直流电压（最高交流有效值1150kV，最高直流664kV）工况下，掌握了不同材质、形状、大小金属微粒在真实1100kV GIL内部的起举电压、起跳高度及运动轨迹等特性，验证了微粒捕捉器的有效性，提出了更有利于金属微粒捕捉的缓慢阶梯加压现场老练试验程序，攻克了GIL内部金属微粒难清除、不受控的技术难题，实现了对1100kV GIL管道中金属微粒的有效控制和捕捉。</p><p>图2 金属微粒运动特性真型试验平台 图3 老练试验方案及微粒捕捉器 主要创新点3：创新研制高性能密封系统，研制出世界上漏气率最低的GIL产品，年漏气率≤0.01%，为国际标准的1/50。【旁证材料：授权发明专利3项（附件1.9-1.11），起草标准1项（附件3.4），登记软著2项（附件7.3、7.4）】。</p><p>建立考虑密封圈超弹特性的非线性动力学仿真模型，获得密封圈等效应力随压缩量的变化规律以及截面直径尺寸对密封性能的影响，设计出高可靠性的法兰密封系统：盆式绝缘子采用内置式结构，法兰密封面采用双道密封设计，配合独特防密封圈掉落的“T”型密封槽、防密封圈磕碰/划伤的凸凹面止口结构；攻克超长导体、超长壳体等加工制造技术，研制出世界上标准单元长度最长的18m GIL，可减少密封对接面60%以上；发明新型可拆单元结构，减少了标准壳体种类，实现了GIL母线100%无检修操作手孔，有效避免了常规检修预留窗口带来的漏气风险。研制出的1100kV GIL年漏气率≤0.01%，低至国际标准的1/50，是世界上漏气率最低的GIL产品。采用壳体螺旋焊缝相控阵超声检测技术及氦质谱检漏法，攻克了批量生产高精度、高效率密封检测难题，实现了约2000个法兰密封面和70000m焊缝的可靠密封。</p><p>图4 高性能密封系统设计 图5 密封性能试验 主要创新点4：探明不同工况下1100kV GIL形变规律，提出多段转角拟合弧形线位的复杂空间全管系柔性布置方案，实现管廊基础承受载荷降低约73%，解决了隧道载荷控制难题。【旁证材料：授权发明专利10项（附件1.12-1.21），发表学术论文2篇（附件4.2、4.5），撰写专著1部（附件8.10）】。</p><p>搭建世界上首个1100kV GIL真型力学特性试验平台，探明了气体压力、管道重力、管道发热等载荷作用下GIL形变规律。提出有限空间内长距离、多转角1100kV GIL柔性补偿方案，建立了全管系GIL轴向、径向、角向补偿体系，实现了三维复杂姿态GIL管线柔性布置和温升、基础沉降等多工况下综合作用下的形变补偿，使GIL支撑载荷降低约73%（与特高压GIS相比），解决了刚性GIL与蜿蜒隧道的精准匹配、整体柔性设计及隧道的载荷控制难题。</p><p>图6 1100kV GIL 真型力学特性试验 图7 GIL与隧道精准匹配 基于上述技术突破与创新，率先研制出首个标准单元长度最长、绝缘能力最强、漏气率最低的1100kV GIL产品，填补了世界空白，并成功应用于我国淮南-南京-上海特高压交流工程和苏通GIL综合管廊工程等国家重大电力工程，使得我国全面掌握了1100kV GIL设计、生产的核心技术，提升了自主研发能力，推动了行业进步与发展，标志着我国特高压输变电技术领域取得了又一项世界级重大创新成果。该技术进一步延伸至110-800kV电压等级，形成了系列化GIL产业，为我国民族装备崛起做出了重要贡献。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>与当前国内外同类研究、同类技术的综合比较</div></div></div><p>本项目研发成果的多项指标均优于国内外同类技术，达国际领先水平。关键技术和参数对比如表1所示。</p><p>表1 本项目成果水平与国际最高水平的综合比较</p><p>序号</p><p>比较项目</p><p>本项目水平</p><p>国际最高水平</p><p>对比结果</p><p>1</p><p>工频耐受电压</p><p>1265 kV</p><p>1100 kV</p><p>国际领先</p><p>2</p><p>雷电冲击耐受电压</p><p>2640 kV</p><p>2400 kV</p><p>国际领先</p><p>3</p><p>操作冲击耐受电压</p><p>1980 kV</p><p>1800 kV</p><p>国际领先</p><p>4</p><p>密封试验（年漏气率）</p><p>&amp;lt;0.01%/Y</p><p>&amp;lt;0.5%/Y(IEC)</p><p>国际领先</p><p>5</p><p>内部电弧试验</p><p>63kA/0.3s</p><p>不烧穿</p><p>63kA/0.1s</p><p>不烧穿</p><p>国际领先</p><p>6</p><p>滑动触头特殊机械试验</p><p>15000次</p><p>无</p><p>填补空白</p><p>7</p><p>GIL中金属微粒运动特性试验</p><p>真型样机试验</p><p>模拟实验</p><p>填补空白</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

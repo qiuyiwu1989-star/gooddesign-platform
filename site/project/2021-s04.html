@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>高性能制冷红外焦平面探测器 · 2021银奖 · 好设计</title>
+<meta name="description" content="（一）项目设计背景
+红外焦平面探测器可探测目标的红外辐射，并将目标的温度分布转换成视频图像，其成像具有作用距离远、抗干扰性好、穿透能力强、可全天候、全天时工作等优点，是具有战略意义的军民两用技术。
+由于红外焦平面探测器的军事敏感性，探测器长">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2021">← 返回 2021 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>高性能制冷红外焦平面探测器</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">武汉高德红外股份有限公司中国科学院半导体研究所,武汉高芯科技有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">曾海波,张燕,黄晟,周文洪</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101357</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>（一）项目设计背景</p><p>红外焦平面探测器可探测目标的红外辐射，并将目标的温度分布转换成视频图像，其成像具有作用距离远、抗干扰性好、穿透能力强、可全天候、全天时工作等优点，是具有战略意义的军民两用技术。</p><p>由于红外焦平面探测器的军事敏感性，探测器长期被欧美国家列入控制清单，对我国实行严苛的技术封锁和产品禁运。我国红外探测器研制起步较晚，核心技术依然受制于人。面对国内外因素的双重压迫，为保障国防安全，加上武器装备、航空航天、安全环保、安防监控等领域对超大面阵、多色红外成像、可适用极端工作环境的高性能制冷探测器的急迫需求，国内急需突破高性能制冷探测器的核心关键技术，形成自主研发能力，真正拥有“中国红外芯”，解决西方国家在高端红外芯片领域对我们的“卡脖子”问题。</p><p>（二）项目设计特点</p><p>我司通过材料、芯片、制冷机等关键技术和方法的自主创新，研制出基于碲镉汞（MCT）和II类超晶格材料的高性能制冷型焦平面探测器，主要创新成果如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>研发大尺寸锑化物红外焦平面探测器材料外延技术。创新性地通过分子束分步控制技术有效实现了锑化物超晶格材料的高重复性、高可控性大面积制备，率先在国内制备完成了大尺寸锑化物外延材料。</div></div><div class="p-li"><span class="p-mk">2</span><div>研发碲锌镉衬底低振动模式下的生长技术、垂直液相外延大面积均匀化以及低位错密度技术，解决了高质量碲镉汞材料大批量生产难题，首次实现了该材料在国内批量自制。</div></div><div class="p-li"><span class="p-mk">3</span><div>研发高密度、小尺寸铟柱制备技术和大规模面阵倒焊互连技术，实现了国内第一款百万像素的12微米像元制冷探测器的芯片制备。</div></div><div class="p-li"><span class="p-mk">4</span><div>研发超晶格双色探测器单电极工作模式，攻克了超晶格低损伤、高深宽比的微台面成型技术及低暗电流的双层钝化技术，制备了国内首款基于锑化物超晶格中长波双色探测器芯片。</div></div><div class="p-li"><span class="p-mk">5</span><div>研发制冷机全温区整机动态仿真和高耐磨纳米涂层技术，解决了制冷探测器在极端环境下的应用难题。</div></div></div><p>（三）设计成果的市场应用情况</p><p>项目获得授权的知识产权40余项，发明专利29项，实用新型专利10项，集成电路1项。发表论文22篇，参与制定国家军用标准1项。</p><p>项目成果广泛应用于军民领域，近三年实现销售额22.3亿元，利润4.46亿，带动相关行业产值50亿余元。新增出口3.32亿元，连续三年出口额稳居国内第一，出口美国、欧盟、日本、南美等70余个国家或地区。该项目实现多项技术创新和突破，引领我国红外探测器核心器件技术达到国际第一梯队水平，成功打破国外技术</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-h">一、创新设计背景</div><p>任何物体每时每刻都会对外辐射红外能量，因此红外成像探测是一种全被动、高灵敏的探测技术，具有作用距离远、抗干扰性好、穿透烟雾能力强、可全天候、全天时工作等优点，是具有战略意义的军民两用技术。</p><p>制冷型红外焦平面探测器由对红外辐射敏感的红外芯片、超高真空的金属杜瓦和能够实现深低温工作条件的微型制冷机等组成，涉及红外材料生长技术、红外芯片设计制造技术、红外读出集成电路技术、高真空封装技术和微型深低温制冷机设计制造技术，覆盖光、机、电多个领域。制冷型红外焦平面探测器代表一个国家在红外技术领域的最高技术水平。</p><p>目前国际上最先进的第三代高性能红外探测器主要是基于碲镉汞（MCT）和II类超晶格材料的制冷型红外探测器，只有美、英、法等几个国家有相对成熟的产品。由于红外成像技术的军事敏感性，美、法、英等西方发达国家一直对我国进行严格的技术封锁和产品禁运，国内急需通过自主研发打破国外技术垄断，形成具有自主知识产权的核心技术能力。</p><p>本项目在国家重点研发计划、科技部973课题、工信部工业强基工程专项、国家自然科学基金、湖北省技术创新重大项目的支持下，我司通过材料、芯片、制冷机等关键技术和方法的自主创新，研制出基于碲镉汞（MCT）和II类超晶格材料的高性能制冷型焦平面探测器。</p><div class="p-h">二、项目技术创新特点</div><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>创新性地通过分子束分步控制技术实现了锑化物超晶格材料的高重复性、高可控性大面积制备，率先在国内制备完成了大尺寸锑化物外延材料。</div></div></div><p>采用独创的高性能锑化物材料设计技术,有效提高了锑化物超晶格的载流子寿命,为改进分子束外延方案和更全面地探究锑化物红外探测器载流子复合机制提供可靠依据。通过对经验紧束缚模型和8带k.p微扰能带理论的研究，改变超晶格的超元胞结构属性，以Matlab中的稀疏矩阵本征值和差分法微分方程工具箱为基础设计代码，计算得到超晶格材料结构的能带参数，通过能带结构优化设计，使得轻重空穴分离，通过超晶格材料结构的优化以及外延工艺改进，长波超晶格材料载流子寿命由约50ns提高到约150ns以上，有效提高锑化物超晶格的载流子寿命。</p><p>针对锑化物材料外延的技术难点，创新提出了交叉双控制技术,解决了大尺寸锑化物超晶格材料的生长难题，为提高器件量子效率，降低暗电流提供了稳定可靠的材料制备基础保障。针对锑化物外延工艺生长窗口窄的技术难点，研发了As/Sb交叉、Ga/In交叉双控制技术，有效控制了材料的应变、界面、元素互混等参数，实现了超晶格晶体结构、掺杂结构及应力结构三大指标体系的精准控制。同时，创新性的研发了生长中断法、表面迁移增强法和V族元素浸润法的超晶格界面控制生长方法。通过上述方法开发了M型超晶格材料的大失配生长技术，并采用独创设计的系统型测试分析方法进行分析表征，结果表明此结构在应变条件下晶体质量保持不变，为提高器件量子效率，降低暗电流提供了稳定可靠的材料制备基础保障。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>开发了碲锌镉衬底低振动模式生长技术、垂直液相外延大面积均匀化技术以及低位错密度技术，解决了高质量碲镉汞材料大批量生产的技术难题，首次实现了国内高质量碲镉汞材料批量自制。</div></div></div><p>首创了一种外延自动运动装置系统，解决了制约垂直液相外延批量化生产的关键技术难题，在国内首次实现垂直液相外延生长技术实际应用于HgCdTe外延材料的批量化生产。与国内外通常采用的水平液相外延生长方式相比，垂直液相外延在批产中具有显著优势。但垂直液相外延厚度、组分一致性控制难度高，母液均匀性等因素是制约垂直液相外延批产的关键技术难题，目前国内尚无公司及研究单位将垂直液相外延真正应用于批量化生产中。</p><p>首创出一种碲镉汞外延晶格常数调控方法，在满足高质量外延失配控制要求的同时，衬底可用率从28%提升到接近95%，突破了低位错密度高质量外延材料量产的技术瓶颈。</p><p>为降低由于失配导致的位错密度及缺陷增值，获得低位错密度的高质量外延材料，需要对外延/衬底的失配进行严格的控制。而碲锌镉晶锭存在组分分凝导致的纵向组分梯度，为满足高质量外延材料需求的失配范围，碲锌镉衬底可用比例仅有28%左右，此瓶颈制约了碲锌镉衬底的可用率及高质量碲镉汞外延的产能提升。通过大量外延生长数据拟合与理论论证，首创出一种碲镉汞外延晶格常数的调控方法，在满足高质量外延失配控制要求的同时，衬底的使用率从28%提升到95%左右。同时开发了碲锌镉衬底低振动模式下的生长技术以降低衬底位错密度，使得外延位错密度进一步降低，基本控制在105cm-2，比中波碲镉汞外延位错密度的理论影响值低一个量级，突破了低位错密度的高质量外延材料量产的技术瓶颈。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>研究开发出高密度、小尺寸铟柱制备技术和大规模面阵倒装焊技术，实现了国内第一款百万像元的12µm制冷红外探测器的芯片制备。</div></div></div><p>针对传统技术制备的小铟柱成型困难的技术难题，突破了高密度、小尺寸铟柱制备技术，实现12µm中心距面阵内铟柱高度差由37%以上降低到4%以下，倒装焊后像元不通率由3.6%降低到0.001%以下。</p><p>针对小像元、大规模面阵探测器存在的倒装焊异常率高的难题，开发了倒装焊错位抑制技术和非平行适应技术，倒装焊良率从2%提高到70%以上，实现12µm百万像元探测器的批产。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>研究开发了超晶格双色探测器单电极工作模式，攻克了超晶格低损伤、高深宽比的微台面成型技术及低暗电流的双层钝化技术，制备了国内首款基于锑化物超晶格中长波双色探测器芯片。</div></div></div><p>针对双色叠层探测器多电极占空比低的问题，研制开发了双色单电极工作模式及低损伤、高深宽比的微台面隔离技术，解决了双色器件占空比低的问题，单波段像元占空比提高50%。本项目攻克了低损伤、高深宽比的台面成型技术，开发了湿法检测损伤的方式，实现了深宽比10:3、阵列占空比81%的双色台面低损伤成型技术，并应用在640x512制式长波、320x256制式双色探测器。</p><p>针对InAs/GaSb超晶格器件传统钝化方式带来的表面氧化物不稳定的问题，研制开发了电化学钝化与物理钝化相结合的表面处理和钝化新工艺技术，实现了锑化物超晶格表面高化学稳定性的钝化技术。</p><div class="p-list"><div class="p-li"><span class="p-mk">5</span><div>研究开发了一套制冷机全温区整机动态仿真平台及高耐磨纳米涂层技术，确保制冷探测器能够在低温-55℃的环境下长期稳定工作，解决了制冷红外探测器在极端环境下的应用难题。</div></div></div><p>针对传统制冷机设计方法存在的缺陷，建立了一种斯特林制冷机全温区动态仿真模型，使制冷机在低温-55℃的环境下工作电流波动降低约25%，实现制冷机在低温环境下稳定工作。</p><p>本项目开发出一种高耐磨纳米涂层，具有高硬度、低摩擦系数、高耐磨性及高化学稳定性等优点。通过磁控溅射和PACVD制备工艺，将活塞的涂层膜厚控制在3.0±0.75μm，结合力为HF1-2，摩擦系数小于0.2。这种涂层能够保证摩擦副在极端环境（如-55℃低温环境）下工作的稳定性和可靠性，运行频次达到1010次数量级，设计寿命约5.7年，相比TiN涂层提升近5倍，有效提升了制冷红外探测器的环境适应性。</p><div class="p-list"><div class="p-li"><span class="p-mk">6</span><div>为了彰显独立自主的高性能制冷型焦平面探测器形象，在产品外观形象设计上采用了高德红外的PI色彩元素，特别是微型制冷机下沿采用氧化喷砂工艺加工的红色装饰圈，进一步凸显了“中国自主红外芯”的高性能形象。</div></div></div></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E9%AB%98%E6%80%A7%E8%83%BD%E5%88%B6%E5%86%B7%E7%BA%A2%E5%A4%96%E7%84%A6%E5%B9%B3%E9%9D%A2%E6%8E%A2%E6%B5%8B%E5%99%A8%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E9%AB%98%E6%80%A7%E8%83%BD%E5%88%B6%E5%86%B7%E7%BA%A2%E5%A4%96%E7%84%A6%E5%B9%B3%E9%9D%A2%E6%8E%A2%E6%B5%8B%E5%99%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「高性能制冷红外焦平面探测器」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E9%AB%98%E6%80%A7%E8%83%BD%E5%88%B6%E5%86%B7%E7%BA%A2%E5%A4%96%E7%84%A6%E5%B9%B3%E9%9D%A2%E6%8E%A2%E6%B5%8B%E5%99%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「高性能制冷红外焦平面探测器」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-s03.html"><span class="d">← 上一项</span>可重构机器人模块及系统</a>
+    <a class="next" href="2021-s05.html"><span class="d">下一项 →</span>倾斜带式输送机胶带安装更换关键技术与装备</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

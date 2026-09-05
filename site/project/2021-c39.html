@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小蚁多安—首款多机协同清洁消杀机器人 · 2021创意奖 · 好设计</title>
+<meta name="description" content="蚁创科技团队针对当前防疫机器人具有体型大不安全、作业效率低、运行不稳定、作业不精细灵活、成本高昂等痛点，研发出稳定安全、避障能力强、防疫精细的清洁消杀机器人，并开发出全球首款多机器人协同式清洁系统，满足安全低价稳定高效四大清洁与消杀需求，从">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E5%88%9B%E6%84%8F%E5%A5%96&amp;year=2021">← 返回 2021 年创意奖名录</a>
+  <div class="kicker"><span class="lv other">创意奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>小蚁多安—首款多机协同清洁消杀机器人</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">陕西蚁创汇能科技有限公司西北工业大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">刘科邦,张景秦,罗益严,蒋志毅</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202104491</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>蚁创科技团队针对当前防疫机器人具有体型大不安全、作业效率低、运行不稳定、作业不精细灵活、成本高昂等痛点，研发出稳定安全、避障能力强、防疫精细的清洁消杀机器人，并开发出全球首款多机器人协同式清洁系统，满足安全低价稳定高效四大清洁与消杀需求，从而在大空间高人流的公共卫生场所快速有效防疫。产品具有消毒、清洁、加湿、运输、导引五项功能。</p><p>本项目的创新点主要包括以下两个方面：（1）针对机器人的最核心硬件，类似于人类的大脑，自研全国稀缺的底层硬件一体化机载电脑，将上层解算与底层控制合二为一。该电脑具有最高2080Ti的卷积运算效率，性能上限比肩高性能个人电脑，而功耗仅为个人电脑的大约1/30，做到与市面上机器人完成任务相同的情况下，续航能力显著提高，采用轻量级的硬件设计使得投产后的成本小于1000元，远低于目前广泛采用的工控机的4000~6000元，满足低价高壁垒的需求；（2）团队自研多机协同系统，成功率指标行业领先，某台机器人产生故障时，剩余机器人可以完成其未作业的区域。异构机器人间分配不同防疫任务，达到高效协同的防疫作业模式，高度协同性使得每台机器人负责作业的区域变少且无需高强度完成任务，从而使得作业成功率与稳定性大幅提升，且可在小型轻量的单机器人中嵌入中等精度且低功耗的传感器与低排量喷洒装置，成功提升了机器人的安全性与续航能力。</p><p>团队已入驻两个国家级众创空间，公开或授权国家专利11项，其中包含4项公开的发明专利。产品已应用于酒店、工厂、医院、园区，应用案例约10个，客户反馈良好，并受到了央视频、江苏省电视台、铜川日报等媒体报道。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>原理创新</div></div></div><p>本团队技术部门从以上7项市场痛点出发，成功设计并研发出作业效率更高、整体运行更安全稳定、作业更精细灵活、避障能力更强的小型轻量消毒与清洁一体化机器人，并利用群体智能技术，开发出可在大空间高人流环境下实现自主定位与建图，并且能够进行实时在线路径规划的多机器人系统。以使得智能消毒清洁能够应用于更多大空间下难以作业的环境，且在高人流时段里能够快速及时地消灭潜在的病毒，避免其在传染源增加的场景中快速传播。其相对于单机器人消毒清洁系统，具有四个本质的区别：</p><p>（1）单机器人所无法企及的高效消毒清洁；</p><p>（2）单机器人所无法完成的特大环境消毒清洁；</p><p>（3）安全且无干扰；</p><p>（4）消毒精准化无死角。</p><p>对于多台机器人之间协同工作而言，其具有以下几项固有的优势：</p><p>（1）对环境的高度适应性：相比单个机器人而言，多机器人系统对工作任务表现出较强的灵活性和变通能力，在功能上和空间上的分布性优于单个机器人，对于未知环境，可通过信息共享快速适应并做出合理的决策，从而大幅提升了机器人的安全性。</p><p>（2）高效性：“众人拾柴火焰高”，多机器人系统是一个群体，每个机器人各自工作的同时协调配合其他机器人的工作，使得工作时间大大缩短，有效提高生产效率，工作承载能力较强。</p><p>（3）强稳定性：在多机器人系统中，任务的完成需要每个机器人的参与，而不是完全取决于一个机器人。一旦一方出现错误或者故障情况，可以通过控制调配系统，交由其他机器人完成相应任务。如果工作环境发生了变化或者系统产生了故障，机器人可以通过中央控制器和自身的协调系统重新规划工作任务适应环境，因此具有较强的容错能力和稳定性。</p><p>（4）更广泛的任务领域：多机器人系统将复杂任务分解、复杂问题简单化，处理困难任务的能力显著增强。</p><p>（5）强鲁棒性：系统对来自外界或内部的干扰具有抗干扰性能。例如有人走进了机器人的工作环境，机器人会避开动态障碍，系统依然能正常工作。</p><p>（6）更低的经济成本：对于复杂任务的分解极大的降低了机器人本身的复杂性、高难度性，减少了研究人员的工作量和机器人开发的软硬件成本。</p><p>（7）更加精确的数据收集分析：对于复杂环境单机工作会限制工作的范围和地区，工作能力有限，那么通过一台机器人收集的数据不具有全面性和规律性，而多机器人协同工作可以提高数据收集效率扩大数据收集样本容量，从而有利于数据结果分析。</p><p>（8）更加精准的定位：</p><p>多机器人协同工作可以互相帮助确定位置，不断更迭完善导航地图，防止但机器人在定位导航中偶尔失灵导致确定位置失败，同时可以相互提醒和警告，形成多机器人协同工作的“互联网”，保证业务有效进行。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>功能创新</div></div></div><p>本项目技术方面的创新点主要有两个方面，分别对应硬件与软件：</p><p>（1）针对机器人的最核心硬件，类似于人类的大脑，自研全国稀缺的底层硬件一体化机载电脑，将上层解算与底层控制合二为一。该电脑具有最高2080Ti的卷积运算效率，性能上限比肩高性能个人电脑，而功耗仅为个人电脑的大约1/30，做到与市面上机器人完成任务相同的情况下，续航能力显著提高，采用轻量级的硬件设计使得投产后的成本小于1000元，远低于目前广泛采用的工控机的4000~6000元，满足低价高壁垒的需求；（2）团队自研多机协同系统，成功率指标行业领先，某台机器人产生故障时，剩余机器人可以完成其未作业的区域。异构机器人间分配不同防疫任务，达到高效协同的防疫作业模式，高度协同性使得每台机器人负责作业的区域变少且无需高强度完成任务，从而使得作业成功率与稳定性大幅提升，且可在小型轻量的单机器人中嵌入中等精度且低功耗的传感器与低排量喷洒装置，成功提升了机器人的安全性与续航能力。</p><p>本团队全部的核心部件都是由团队成员自行研发，技术硬核，实力可靠，性能稳定性以及优越性远超于市面上的同类产品，极大地降低了产品成本。本团队成功研发了硬件一体化控制板，其性能上限比肩个人电脑，而功耗仅为个人电脑的约1/30，机器人续航能力大幅度提高，且量产后的成本仅为1000元，远低于个人电脑，此项技术在全行业处于领先地位，且整个消毒清洁机器人核心硬件的原理图、PCB、制板、电装、测试、嵌入式程序设计编写均自主设计与创新，具有核心硬件完全自主的正向研发能力。本产品自身可实现至少80*80m2大场景下的精确建图工作，并具有在多达20个底面积为0.25*0.25m2方形障碍物，环境总面积为8.6*7.3m2下10台机器人高达99%成功率的路径规划，该环境之下，本团队研发的多机协同消毒清洁系统，机器人数量在1~10台的情况下，成功率均持续优于所有现有主流多机协同技术，做到了行业内的顶尖。本团队设计并调试了包括2套多机地图融合算法、5套多机冲突解决算法、2套重调度算法、7套多机信息交互算法在内的多达16套算法，顺利搭建了这套多机器人消毒清洁系统，具有研发的独创性，相关技术共有10余项国家发明专利与实用新型专利成功申请，另有几项在申请中。</p><p>本团队正在攻克将AI强化学习用于多机器人协同系统，此项技术可极大程度的提高多机协同系统的运行效率，且大幅提高系统的智能协同程度。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>商业模式创新</div></div></div><p>在未来2年之内，我们主要通过区域合伙人的模式进行产品的市场占有，B端通过保洁和物业公司的渠道，投放至医院与产业园区，G端主要与政府部门合作。而在2-3年中，我们将对于我们自研的机器人通用底盘搭载不同的上部功能装置，实现高端订制型的市场投放，多机协同信息服务满足工业4.0需求。在未来的3-5年当中，我们通过多机器人在大环境下进行协同建图与数据库建立，作为上游企业，采集细微真实的文化景点场景信息，与下游VR、AR企业进行合作，将其应用于智慧文旅产业，实现文化开发。</p></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E5%88%9B%E6%84%8F%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%B0%8F%E8%9A%81%E5%A4%9A%E5%AE%89%E2%80%94%E9%A6%96%E6%AC%BE%E5%A4%9A%E6%9C%BA%E5%8D%8F%E5%90%8C%E6%B8%85%E6%B4%81%E6%B6%88%E6%9D%80%E6%9C%BA%E5%99%A8%E4%BA%BA%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%B0%8F%E8%9A%81%E5%A4%9A%E5%AE%89%E2%80%94%E9%A6%96%E6%AC%BE%E5%A4%9A%E6%9C%BA%E5%8D%8F%E5%90%8C%E6%B8%85%E6%B4%81%E6%B6%88%E6%9D%80%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「小蚁多安—首款多机协同清洁消杀机器人」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%B0%8F%E8%9A%81%E5%A4%9A%E5%AE%89%E2%80%94%E9%A6%96%E6%AC%BE%E5%A4%9A%E6%9C%BA%E5%8D%8F%E5%90%8C%E6%B8%85%E6%B4%81%E6%B6%88%E6%9D%80%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「小蚁多安—首款多机协同清洁消杀机器人」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-c38.html"><span class="d">← 上一项</span>行走用半自动机械大腿假肢</a>
+    
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

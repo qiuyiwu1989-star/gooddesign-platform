@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国之重器拆解 · 展厅大屏版 — 好设计馆</title>
+<style>
+  :root{
+    --bg:#0E111A; --panel:#171B28; --panel2:#1E2436; --line:rgba(255,255,255,.09);
+    --ink:#F2F3F7; --muted:#8E94A6; --accent:#5E6AD2; --accent-bright:#7C86E8; --gold:#D8B36A; --green:#5FA88A;
+    --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --mono:"JetBrains Mono","SF Mono","Consolas",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:radial-gradient(ellipse 60% 50% at 50% 20%,#1B2140,#0E111A 75%);color:var(--ink);
+    min-height:100vh;overflow:hidden;-webkit-font-smoothing:antialiased;user-select:none}
+  .top{height:72px;display:flex;align-items:center;gap:18px;padding:0 36px;border-bottom:1px solid var(--line)}
+  .top .badge{font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--gold);border:1px solid rgba(216,179,106,.4);border-radius:8px;padding:6px 14px}
+  .top h1{font-size:22px;font-weight:700}
+  .top .sub{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+  .main{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(340px,.75fr);gap:24px;padding:26px 36px;height:calc(100vh - 72px)}
+  @media(max-width:1100px){.main{grid-template-columns:1fr;overflow:auto}.top .sub{display:none}}
+
+  /* 图区 */
+  .stage{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden;display:flex;flex-direction:column}
+  .stage .bar{height:52px;display:flex;align-items:center;gap:12px;padding:0 22px;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px}
+  .stage .bar .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(95,168,138,.15)}
+  .stage .bar b{color:var(--ink);font-family:var(--mono);font-weight:500}
+  .imgwrap{flex:1;position:relative;display:flex;align-items:center;justify-content:center;background:#141826}
+  .imgwrap img{max-width:92%;max-height:92%;object-fit:contain;border-radius:10px}
+  .imgwrap .cap{position:absolute;left:24px;bottom:18px;color:#fff;display:flex;align-items:baseline;gap:16px;pointer-events:none}
+  .imgwrap .cap span{color:var(--gold);font-size:13px;letter-spacing:1px;font-family:var(--mono)}
+  .imgwrap .cap b{font-size:19px}
+  .speak{position:absolute;top:16px;right:18px;width:52px;height:52px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:24px;pointer-events:none}
+  .speak.on{animation:pulse 1.2s infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 12px rgba(94,106,210,.2)}}
+
+  /* 部件列表 */
+  .list{display:flex;flex-direction:column;gap:14px}
+  .panel{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:20px}
+  .panel h2{font-size:13px;color:var(--muted);font-family:var(--mono);letter-spacing:2px;margin-bottom:14px}
+  .exh-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .exh-chips button{height:52px;padding:0 20px;border:1px solid var(--line);border-radius:9999px;background:var(--panel2);
+    color:var(--ink);font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:all .15s}
+  .exh-chips button.on{background:var(--accent);border-color:var(--accent)}
+  .parts{display:flex;flex-direction:column;gap:10px;overflow:auto;flex:1}
+  .part-btn{width:100%;min-height:74px;border:1px solid var(--line);border-radius:14px;background:var(--panel2);color:var(--ink);
+    text-align:left;padding:14px 18px;cursor:pointer;font-family:var(--sans);display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;transition:all .15s}
+  .part-btn:hover{border-color:var(--accent-bright)}
+  .part-btn.on{border-color:var(--accent);background:rgba(94,106,210,.14)}
+  .part-btn .no{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;
+    font-family:var(--mono);font-size:18px;font-weight:700}
+  .part-btn .tx b{font-size:17px}
+  .part-btn .tx small{display:block;color:var(--muted);font-size:12.5px;margin-top:4px;line-height:1.5}
+
+  /* 详情弹层 */
+  .detail{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);width:min(1080px,94vw);z-index:20;
+    border:1px solid var(--line);border-radius:20px;background:rgba(23,27,40,.96);backdrop-filter:blur(10px);
+    padding:26px 34px 22px;box-shadow:0 20px 80px rgba(0,0,0,.55);display:none;max-height:52vh;overflow:auto}
+  .detail.show{display:block;animation:rise .35s}
+  @keyframes rise{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
+  .detail .dh{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+  .detail .dh .no{width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;
+    font-family:var(--mono);font-size:20px;font-weight:700;flex:none}
+  .detail .dh h3{font-size:24px}
+  .detail .dh .proj{font-size:12.5px;color:var(--gold);font-family:var(--mono);letter-spacing:1px}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .fields .f{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--panel2)}
+  .fields .f.wide{grid-column:1/-1}
+  .fields .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;margin-bottom:8px}
+  .tag.w{color:#7C86E8;background:rgba(94,106,210,.16)} .tag.y{color:var(--gold);background:rgba(216,179,106,.14)}
+  .tag.b{color:#6FB1DC;background:rgba(111,177,220,.14)} .tag.g{color:var(--green);background:rgba(95,168,138,.14)}
+  .tag.r{color:#E09B95;background:rgba(224,104,95,.14)}
+  .fields p{font-size:14.5px;color:var(--ink);line-height:1.8}
+  .detail .close{position:absolute;top:16px;right:20px;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;
+    background:var(--panel2);color:var(--ink);font-size:20px;cursor:pointer}
+  .demo-hint{position:absolute;right:24px;bottom:18px;font-size:12px;color:rgba(142,148,166,.6);font-family:var(--mono)}
+</style>
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">好设计应用体验 · 互动模拟用于理解设计原理，不作为工程参数或专业仿真依据。</div>
+
+<div class="top">
+  <span class="badge">好设计馆 · 展厅展项</span>
+  <h1>国之重器拆解</h1>
+  <span class="sub">EXHIBIT · X-RAY WALL · 点部件,看门道</span>
+</div>
+
+<div class="main">
+  <div class="stage">
+    <div class="bar"><span class="dot"></span>馆藏影像 <b id="exhName">—</b></div>
+    <div class="imgwrap">
+      <img id="exhImg" src="" alt="">
+      <div class="cap"><span id="exhAward"></span><b id="exhImgName"></b></div>
+      <div class="speak" id="speak">🔊</div>
+    </div>
+  </div>
+
+  <div class="list">
+    <div class="panel">
+      <h2>馆藏选择 · EXHIBITS</h2>
+      <div class="exh-chips" id="exhChips"></div>
+    </div>
+    <div class="panel" style="display:flex;flex-direction:column;flex:1">
+      <h2>部件舱 · COMPONENTS</h2>
+      <div class="parts" id="parts"></div>
+    </div>
+  </div>
+</div>
+
+<div class="detail" id="detail">
+  <button class="close" id="dClose">×</button>
+  <div class="dh"><div class="no" id="dNo"></div><div><div class="proj" id="dProj"></div><h3 id="dTitle"></h3></div></div>
+  <div class="fields" id="dFields"></div>
+</div>
+
+<div class="demo-hint" id="demoHint">无人操作时将自动演示</div>
+
+<script>
+(function(){
+  function $(id){ return document.getElementById(id); }
+  var EXHIBITS = [
+    { slug:'2015-02', name:'蛟龙号载人潜水器' }, { slug:'2015-01', name:'海洋石油981' },
+    { slug:'2015-00', name:'CRH380A' }, { slug:'2021-01', name:'白鹤滩机组' },
+    { slug:'2023-00', name:'800MN模锻压机' }, { slug:'2024-03', name:'F级50MW燃气轮机' },
+    { slug:'2024-02', name:'国和一号主泵' }, { slug:'2025-00', name:'嫦娥五/六号采样系统' }
+  ];
+  var data = null, enhance = null, cur = 0, curPart = -1;
+
+  /* 语音(TTS,浏览器内置) */
+  function speak(text){
+    try {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN'; u.rate = 1.05; u.pitch = 1;
+      window.speechSynthesis.speak(u);
+      $('speak').classList.add('on');
+      u.onend = function(){ $('speak').classList.remove('on'); };
+    } catch(e){}
+  }
+
+  /* 馆藏选择 */
+  var chips = $('exhChips');
+  EXHIBITS.forEach(function(e, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.textContent = e.name;
+    b.addEventListener('click', function(){ loadExhibit(i); });
+    chips.appendChild(b);
+  });
+
+  function loadExhibit(i){
+    cur = i;
+    Array.prototype.forEach.call(chips.children, function(c, k){ c.classList.toggle('on', k === i); });
+    data = null;
+    $('parts').innerHTML = '';
+    fetch('dismantle/' + EXHIBITS[i].slug + '.json').then(function(r){ return r.json(); }).then(function(d){
+      data = d;
+      $('exhName').textContent = d.name;
+      $('exhImg').src = d.image || '';
+      $('exhImgName').textContent = d.name;
+      $('exhAward').textContent = d.year + ' · 好设计金奖';
+      renderParts();
+    }).catch(function(){});
+  }
+
+  function renderParts(){
+    $('parts').innerHTML = '';
+    data.parts.forEach(function(p, i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'part-btn' + (i === curPart ? ' on' : '');
+      var enh = enhance && enhance[data.slug] && enhance[data.slug].parts ? enhance[data.slug].parts[p.id] : null;
+      b.innerHTML = '<span class="no">' + String(i + 1).padStart(2, '0') + '</span>' +
+        '<span class="tx"><b>' + p.name + '</b><small>' + (enh && enh.short ? enh.short : (p.num || '')) + '</small></span>';
+      b.addEventListener('click', function(){ openDetail(i); });
+      $('parts').appendChild(b);
+    });
+  }
+
+  function openDetail(i){
+    curPart = i;
+    var p = data.parts[i];
+    Array.prototype.forEach.call($('parts').children, function(c, k){ c.classList.toggle('on', k === i); });
+    var enh = enhance && enhance[data.slug] && enhance[data.slug].parts ? enhance[data.slug].parts[p.id] : null;
+    var fields = [
+      { cls:'w', label:'它是什么', v: p.what, wide:false },
+      { cls:'y', label:'为什么这样设计', v: p.why, wide:false },
+      { cls:'b', label:'工作原理', v: enh && enh.principle, wide:false },
+      { cls:'g', label:'关键数据', v: p.num, wide:false },
+      { cls:'r', label:'安全与可靠性', v: enh && enh.reliability, wide:true }
+    ];
+    $('dNo').textContent = String(i + 1).padStart(2, '0');
+    $('dProj').textContent = data.year + ' · 好设计金奖 · ' + EXHIBITS[cur].name;
+    $('dTitle').textContent = p.name;
+    $('dFields').innerHTML = fields.filter(function(f){ return f.v; }).map(function(f){
+      return '<div class="f' + (f.wide ? ' wide' : '') + '"><span class="tag ' + f.cls + '">' + f.label + '</span><p>' + f.v + '</p></div>';
+    }).join('');
+    $('detail').classList.add('show');
+    var txt = p.name + '。' + (enh && enh.short ? enh.short + '。' : '') + p.why;
+    speak(txt);
+  }
+  function closeDetail(){ $('detail').classList.remove('show'); window.speechSynthesis && window.speechSynthesis.cancel(); }
+  $('dClose').addEventListener('click', closeDetail);
+
+  /* 自动演示:40 秒无操作 → 馆藏轮流,部件逐个讲解 */
+  var IDLE = 40000, timer = null;
+  function wake(){
+    clearTimeout(timer);
+    $('demoHint').textContent = '无人操作时将自动演示';
+    timer = setTimeout(autoDemo, IDLE);
+  }
+  function autoDemo(){
+    $('demoHint').textContent = '自动演示中…';
+    var e = 0, p = 0;
+    function next(){
+      if (p === 0) loadExhibit(e);
+      setTimeout(function(){
+        if (data && data.parts[p]) {
+          openDetail(p);
+          p++;
+          if (p >= data.parts.length) { p = 0; e = (e + 1) % EXHIBITS.length; }
+          setTimeout(next, 7000);
+        } else {
+          setTimeout(next, 800);
+        }
+      }, p === 0 ? 2500 : 7000);
+    }
+    next();
+    setTimeout(function(){ closeDetail(); wake(); }, EXHIBITS.length * 8 * 7000 + 8000);
+  }
+  document.addEventListener('click', wake, true);
+  document.addEventListener('touchstart', wake, true);
+
+  fetch('enhance.json').then(function(r){ return r.json(); }).then(function(j){
+    enhance = j;
+    if (data) renderParts();
+  }).catch(function(){});
+  loadExhibit(0);
+  wake();
+})();
+</script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>磁悬浮离心机 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-s00.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-s00</div>
+  <h1>磁悬浮离心机</h1>
+  <div class="meta-line"><b>2023 年度银奖</b><span>珠海格力电器股份有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">珠海格力电器股份有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">李莎,陈光宇,刘佳池,刘瑞江,钟瑞兴</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 制造装备（逐条初审，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>作为空调行业的龙头企业，格力电器一直致力于研发更为低碳、节能、环保的空调产品。经过持续的研究和大量的投入，推出了格力磁悬浮变频中央空调，超强的节能性和全球最高的单机制冷量在业内引起了极大的反响。假如将全国公共建筑面积的30%改造成为格力磁悬浮离心机，每年可节约电费204.8亿元，二氧化碳排放减少1850万吨。</p><p>对于许多人来说，“磁悬浮”并非一个陌生的名词，磁悬浮技术已经成功地应用到了交通之中。而当磁悬浮技术被运用到空调领域，一种极具变革意义的磁悬浮中央空调就诞生了。搭乘过磁悬浮列车的乘客就能深刻的体会到，磁悬浮列车的速度是普通列车远远不能达到的，这正是磁悬浮技术带来的一大优势——高效，格力磁悬浮中央空调再一次证明了磁悬浮技术的优势所在。</p><p>在格力尚未推出磁悬浮变频离心机之前，这一技术不仅被独家外资企业垄断，而且磁悬浮离心机还受限于冷量而无法大规模地发展。外资企业推出的磁悬浮离心机仅有100冷吨至700冷吨的冷量，并无法满足许多大型项目的需要。格力磁悬浮变频离心机的出现改变了这一现状，它将单台压缩机的制冷量提高到1000冷吨，这也是格力磁悬浮中央空调会震撼业内的一个重要原因。格力磁悬浮离心机是目前为止中央空调行业单机冷量最大的产品，它填补了国内外大冷量磁悬浮压缩机研究与产品的空白。格力磁悬浮离心机是继温湿度独立控制高效离心机组、永磁同步变频离心机组、光伏直驱变频离心机组之后，格力电器获得的又一项“国际领先”科技成果，格力在中央空调的研发上不断取得突破。得益于技术上的领先，格力电器在中央空调市场占有率正在不断提高，同时也赢得了国际上的广泛认可。此次，格力推出的磁悬浮变频中央空调以超强的节能性和超高的单机制冷量开启了中央空调的“磁悬浮时代”，同时也成为格力开拓大型中央空调市场的重大筹码。</p><p>目前，格力磁悬浮离心机作为格力的明星产品，服务于：全国人大机关办公楼、北京冬季奥运会冬奥村、万豪国际集团、深圳地铁、郑州地铁、北京铁路枢纽丰台站改造项目、新建鲁南高速铁路、中共广州市委、安徽淮北市行政中心大楼等国内场所。</p><p>格力磁悬浮离心机拥有发明专利153项，通过国际领先鉴定，荣获日内瓦发明金奖，摩洛哥特别金奖，荣获国际质量创新奖，中国专利奖等国内外各大奖项，为格力重点及明星产品。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>随着能源结构转型、可再生电力普及，用能终端将实现电气化，能源转换链条将从传统“燃料生热”方式变革为“绿电制热”。热泵是电转热的最高效路径，双碳战略下，清洁高效的热泵技术将迎来重大发展需求。当前，全社会用于建筑采暖、生活热水、工农业生产中所产生的热量需求是最大能耗终端，其中生活采暖、农业及非流程工业150℃以下中低温用热需求完全具备热泵覆盖的技术可行性，全面推广热泵可降低用电2.6万亿度。所以热泵有望成为中低温用热中实现碳中和的最佳技术途径。热泵具有高效、节能、绿色、环保的特点，在建筑供暖供冷、除湿、热水供应、工业生产过程以及农业环境调控中都有着广阔的应用。一直以来，大家都十分关注建筑领域的节能技术，往往忽视了工业领域，格力大容量高效离心式热泵填补了工业高温热泵领域的技术空白，对推动工业领域的电节能化发展具有重要意义。近年来国家不断提出“碳达峰、碳中和”的能源战略，在空调制造领域也鼓励企业以创新来推进促进节能减排</p><p>目前，我国工业热泵技术逐步得到规模化应用，现行的高温热泵产品国家标准中最高出水温度仅为 90℃，不能满足 100℃以上热水与水蒸气的需求。面向更高供热温度、更大容量的热泵，亟需开展核心技术链条的全面重构，研制兆瓦级大容量、供热温度120℃高温热泵离心机，实现对非流程工业现有电热、燃煤燃气锅炉的替代。</p><p>在我国纺织、印染、皮革、造纸、食品、制药、印刷、干燥等非流程工业中，热量需求约 70 亿 GJ。此外，工业生产过程中 50%-70%的能耗是以热量的形式进行消耗,普遍存在大量余热废热。基于热泵技术回收这部分余热的同时生产温度品位更高的热能来满足非流程工业用热需求，是工业能源脱碳的关键技术路径。发展清洁高效供热技术，突破余热等低品位热源的高效综合利用瓶颈，解决全社会的热能需求供应是能源结构转型过程中的国家重大战略需求。格力工业大容量高温离心式热泵机组，热水出水温度高达 120℃，最高温升 80K，填补高温热泵市场空白，具有突出的节能性、可靠性与适应性，可推广至纺织、印染、食品等典型非流程工业用热需求的领域。</p><p>产品功能特点：</p><p>1）单机大容量</p><p>本产品采用 10kV 大功率永磁同步电机，单个电机额定功率高达 1800kW,单台机组制热量可达 10MW。</p><p>2）高出水温度</p><p>本产品采用双压缩机串联、多级压缩技术，最高出水温度高达 140℃。</p><p>3）稳定可靠、节能高效</p><p>设计创新</p><p>1）双压缩机串联高压比热泵压缩机</p><p>研制双压机串联、多级压缩高压比热泵离心压缩机，运行压比突破 10.0，机组最大温升 80K，最高出水温度高达 140℃，填补高温热泵市场空白。</p><p>2）10kV 大功率永磁电机直驱结构</p><p>构建高速电机直驱双级叶轮的结构体系，取消常规离心机增速齿轮装置，机械损失减小 70%，运动部件只有一个转子，无齿轮啮合，运转平稳。首创 10kV 大功率永磁同 步电机，全工况范围电机效率≥95%，最高可达 98.2%，提升机组运行能效。</p><p>3）工业级高压变频器</p><p>研制工业级专用高压变频器，整合高压开关柜与变频器于一体，减小机房占地面积 15%；多模块级联、机械式旁路设计，故障模块自动旁通，保持 94%容量输出，可在线维护不停机；应对工业电网瞬时电压跌落，变频器反向充电，短时运行不停机。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

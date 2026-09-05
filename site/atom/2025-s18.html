@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>可降解软组织植入物柔性化设计与3D打印 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2025-s18.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2025-s18</div>
+  <h1>可降解软组织植入物柔性化设计与3D打印</h1>
+  <div class="meta-line"><b>2025 年度银奖</b><span>西安交通大学,深圳博瑞捷生物科技有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2025 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">西安交通大学,深圳博瑞捷生物科技有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">贺健康,孟子捷,李涤尘,苏艳文,张亚博</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与生活 · 高端医疗（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>人体软组织的个性化、活性化修复是当今医学界的重大挑战，临床需求巨大。以乳腺癌为例，中国每年新发病例高达30万例，并呈现年轻化、高增长趋势。传统的乳腺癌根治术对患者造成了严重的身心伤害，局部乳房肿瘤切除后因缺乏有效的柔性填充物导致保乳率低下。因此，急需发展面向软组织精准修复的柔性植入物设计制造技术。本项目提出了可降解/可再生软组织植入物的柔性曲线多孔结构设计与3D打印方法，突破了人工可降解植入物向活性组织转化过程中面临的形态、力学及生长-降解速率匹配等技术难题，2016年实现了国际首例3D打印可降解乳房植入物的临床试验，引领了可降解植入物3D打印技术在软组织精准修复领域的应用。设计创新如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>提出了可降解软组织植入物柔性曲线多孔结构的设计思路，解决了可降解植入物力学性能大范围柔性调控与循环大变形服役条件下形态维持难题，推动了软组织植入物力学匹配从单纯依赖材料柔性向结构主动设计发展。</div></div><div class="p-li"><span class="p-mk">2</span><div>发明了可降解软组织植入物小光斑选区激光烧结与原位重熔-再凝固后处理技术，显著提升了柔性曲线结构的特征分辨率、纤维表面质量与力学稳定性，为3D打印柔性可降解植入物走向临床提供了创新制造技术支撑。</div></div><div class="p-li"><span class="p-mk">3</span><div>阐明了3D打印可降解软组织植入物体内降解、引导组织生长及动态力学的时变规律，解决了材料降解与组织再生的不匹配难题，实现了人工结构向活性组织的转化，为软组织缺损的活性化再生修复提供了科学理论与实验基础。</div></div><div class="p-li"><span class="p-mk">4</span><div>基于上述技术，建立了几何外形、力学性能与宿主组织缺损匹配的软组织植入物的个性化设计制造方法，设计开发的可降解植入物在乳腺肿瘤局部切除填充、婴幼儿气管软化、气管/食管瘘、巨大肾积水等领域实现临床应用，取得了显著临床疗效，解决了长期困扰医学界的部分软组织再生修复难题，被评价为“科学家、工程师与医生成功合作解决医学挑战的优秀范例”。</div></div></div><p>研究成果获2019年教育部自然科学一等奖，被CCTV新闻联播、CCTV10、人民日报等媒体广泛报道，通过专利技术转化孵化的3D打印可降解医疗器械高科技公司获天使轮融资数千万元，取得了良好的社会效益和经济效益。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>人体组织与器官制造是制造学科与生物医学交叉形成的前沿研究领域，是先进制造技术从为工农业服务向为人类生命健康服务发展的引领方向。目前，3D打印等先进制造技术已在个性化骨替代物设计制造方面取得了巨大进展，并实现了大面积临床应用与产业推广，但在软组织精准修复领域尚未取得技术突破。人体软组织的个性化修复已成为当今医学界面临的国际性难题，市场需求巨大。以乳腺癌为例，其发病率高居女性恶性肿瘤之首，仅中国每年新发病例就高达30万，并呈现年轻化、高增长趋势。传统乳房切除术后，硅胶假体或自体组织移植实现乳房重建面临移位、老化、泄露，组织坏死及二次手术等风险；而可保留大部分乳房组织的保乳术因后续缺乏有效的柔性填充物导致使用率低下，这严重影响了患者术后的身心健康。因此，亟待发展软组织植入物的设计理论与制造方法。</p><p>生物可降解植入物3D打印被认为是实现人体软组织缺损个性化、活性化修复的最理想途径。当支架植入体内后，自体细胞与组织会沿着支架微结构进行生长，从而实现材料降解过程中机械结构向自体活性功能组织的转化。但是，3D打印可降解植入物用于软组织临床修复治疗仍面临诸多难题挑战。（1）现有的临床可用的可降解高分子生物材料多是为硬组织而研发，其力学性能难以满足软组织体内大变形服役需求；（2）现有的可降解高分子材料3D打印技术成形精度低、表面质量差，其力学稳定性难以满足可降解植入物的临床使用要求；（3）可降解植入物在体内处于动态变化环境，其外形与力学时变行为与降解/再生规律不明晰，严重阻碍着生物可降解支架在软组织修复领域的临床应用。</p><p>为此，本项目在国家杰出青年科学基金、优秀青年科学基金及陕西省重点研发计划的支持下（详见其他附件材料1），提出了柔性曲线多孔结构设计适配软组织力学柔性的创新思路，建立了可降解/可再生柔性软组织植入物微观多孔结构设计与3D打印技术方法体系，阐明了3D打印可降解软组织植入物体内降解、引导组织生长及动态力学的时变规律，实现了人工结构向自体活性组织的再生转化与国际首例临床试验，取得了显著临床疗效，引领了3D打印可降解软组织植入物向临床应用的发展。</p><p>创新点一：提出了可降解软组织植入物柔性曲线多孔结构设计思路，解决了可降解植入物力学性能大范围柔性调控与循环大变形条件下形态维持难题。</p><p>现有临床可用的可降解高分子材料如聚乳酸、聚己内酯等多是为骨组织修复研发的，其力学模量高达数百兆帕，难以满足软组织临床修复的力学需求。针对该问题，本项目突破了传统依靠材料柔性与直线多孔结构设计的思想限制，提出了曲线多孔结构主动设计来适配软组织力学性能的新思路，从而为可降解材料的力学性能调控提供了可能（图1）。以正弦曲线结构为例，研究了曲线结构周期与幅值对其变形行为及力学模量的影响关系。在相同载荷作用与曲线线宽条件下，通过将正弦曲线的幅值与周期比例从0.05增加到0.25，多孔结构的垂直位移可从0.01mm大幅增加到0.33mm，进而实现多孔结构等效模量在1944.0 ± 228.7 kPa至27.3 ± 12.0 kPa区间的大范围调控，极大提升了多孔结构的力学柔性，覆盖不同软组织的力学需求。该方法有望推动软组织植入物力学匹配从单纯依赖材料柔性向结构主动设计方向发展。</p><p>图1 柔性曲线多孔结构的设计与力学模量调控</p><p>柔性可降解植入物在植入体内后经历复杂多变的力学环境，其在周期性大变形条件下的形状恢复能力对软组织的成功修复极其重要。通过周期性压缩实验发现，研发的正弦曲线多孔结构在10%、30%和50%的应变条件下，在经历了应变软化过程后均可迅速达到新的力学平衡状态，随着压缩周期增加，可实现压缩-回弹曲线的良好重合，在经历200次的循环压缩后，柔性可降解植入物的高度均可恢复到初始高度的97.5%、93.8%和89.2%（图2），表现出了良好的抗应变形态恢复能力。在此基础上，以柔性可降解乳房植入物为例，通过将其植入柔性硅胶假体内部来模拟体内服役环境，以研究其力学变形响应机制与疲劳性能。结果表明，随着压缩位移逐渐增加到15 mm，柔性可降解乳房植入物在硅胶假体内部发生倾斜与位移，但植入物的宏观结构形态仍可保持完好，结构内部普遍处于低应力环境，提示柔性多孔结构无破坏断裂风险。进一步在24%的大应变条件下进行了10000次循环压缩实验，发现所设计的柔性可降解乳房植入物可完全恢复其原始形状，表现出优异的力学稳定性。</p><p>图2 柔性可降解植入物在大变形及模拟服役条件下的形态恢复能力</p><p>创新点二：发明了可降解软组织植入物小光斑选区激光烧结与原位重熔-再凝固后处理技术，显著提升了柔性曲线结构的特征分辨率、纤维表面质量与力学稳定性，为柔性可降解植入物走向临床提供了创新制造技术支撑。</p><p>针对所设计的可降解软组织植入物柔性曲线多孔结构，激光选区烧结技术可避免复杂支撑结构的使用，是其最理想的3D打印制造方法。但是，生物可降解高分子材料熔点较低（&amp;lt;200℃），当前普遍采用的红外激光选区烧结技术存在光斑大（＞200μm）、热影响区广等缺点，导致制造的可降解植入物的成形特征精度低（800~1500 μm），难以满足柔性曲线结构的高精度制造需求。为此，本项目发明了基于小光斑、低能量紫外激光的选区激光烧结新技术，可在成型面上将激光光斑直径精确控制在60 μm以下，进而通过微激光烧结工艺优化，最终实现了特征尺寸＜150μm的结构成形。在此基础上，通过可降解粉末作为自支撑实现了可降解柔性曲线多孔植入物的三维自由成形（图3）。</p><p>选区激光烧结制造的可降解植入物存在表面粉末残留的问题，这些随机分布粉末不仅会极大影响结构的力学稳定性，在体内受力与降解环境下容易出现粉末脱落的风险，严重影响临床安全性。针对该问题，本项目发明了采用微米尺度氯化钠颗粒作为支撑材料，通过包裹3D打印可降解柔性支架进行原位重熔-再凝固的后处理新策略（图4）。当微激光选区烧结制备的柔性多孔支架被包埋于氯化钠颗粒内后，通过将复合体升温至可降解材料熔点后使得整体重熔，微米尺度的氯化钠悬浮颗粒可作为临时支撑限制高粘度聚合物熔体向外流动，从而维持结构整体形态不变。随后，逐步将温度冷却至室温，可降解聚合物熔体在原位重新凝固为更加致密的结构，表面残留的氯化钠颗粒可通过超纯水完全溶解去除，不引入任何杂质。研究表明，相比未处理的结构，可降解支架的曲线纤维尺寸从683.3 ± 28.0 µm显著缩小到601.6 ± 17.4 µm，其微观表面形貌从疏松多孔转变为光洁致密状态，支架的表面质量得到大幅提高。Micro-CT检查发现，所发明的重熔-再凝固后处理工艺可在维持支架宏观结构不变的前提下，大幅提升其内部结构致密性，从而为柔性可降解植入物走向临床提供了创新制造技术支撑。</p><p>图3 柔性可降解软组织支架空间曲线网络结构微激光烧结成形</p><p>图4 柔性可降解软组织支架原位重熔-再凝固后处理技术体系</p><p>创新点三：阐明了3D打印可降解软组织植入物体内降解、引导组织生长及动态力学的时变规律，解决了材料降解与组织再生不匹配难题，实现了人工结构向活性组织的转化，为软组织缺损的活性化再生修复提供了科学理论与实验基础。</p><p>柔性可降解支架在植入体内后，其处于动态的形状、力学与组织生长变化过程。因此，阐明其在体内降解、组织生长与力学性能的动态时变规律对推动其走向临床应用至关重要（图5）。研究发现，初始力学强度为208.8 ± 14.5 kPa的可降解支架在植入体内初期能够维持良好的整体形貌，随着植入时间的延长，可以明显看到自体组织逐步长入支架多孔结构内部，植入6个月后自体组织已长满整个支架的多孔结构区域，植入12个月后支架已被自体再生组织完全包裹，而支架的纤维结构尺寸与整体宏观外形仍维持良好。</p><p>图5 可降解软组织植入物体内降解、组织生长及动态力学的时变规律</p><p>在体内降解方面，植入物的降解主要表现为分子量降低，植入3个月后材料的分子量显著降低，降解速率随着时间延长逐渐变缓，植入12月后其分子量约为初始值的50%。植入物的降解并未引起明显的生理反应，表现出良好的生物相容性。在力学性能演化方面，随着植入物的降解与自体组织的长入，植入6个月内其力学支撑能力主要来自可降解支架，而在植入12个月后，其力学性能逐渐接近再生组织，最终实现了人工结构向自体组织的活性转化。通过对3D打印可降解曲线多孔植入物体内降解-再生规律的深入研究，为软组织缺损的活性化再生修复提供了科学理论依据与实验基础。</p><p>创新点四：建立了几何外形、力学性能与宿主组织缺损匹配的软组织植入物的个性化设计制造方法，率先实现3D打印可降解乳房植入物等的临床试验，为部分软组织缺损精确/活性化修复提供创新手段。</p><p>通过上述基础研究，项目建立了可降解/可再生软组织植入物柔性曲线多孔结构设计与3D打印技术方法体系，阐明了3D打印可降解软组织植入物体内降解、引导组织生长及动态力学的时变规律。在此基础上，建立了几何外形、力学性能与宿主组织缺损匹配的软组织植入物的个性化设计制造方法，设计开发的可降解植入物在乳腺癌局部切除填充、婴幼儿气管软化、气管/食管瘘、巨大肾积水等领域实现临床应用，取得了显著临床疗效，解决了长期困扰医学界的部分软组织再生修复难题。</p><p>（1）可降解柔性乳房植入物设计制造与临床试验</p><p>乳腺癌患者乳房及肿瘤区域的形状和大小各异，因此乳房重建的一个重要挑战是建立乳房及肿瘤切除区域的个性化模型，以便定制外形匹配的柔性可降解乳房植入物。首先，采用患者的核磁影像学数据进行逆向建模，建立乳腺肿瘤及其相邻软组织的几何模型（图6）。肿瘤切除边界可作为支架的宏观外形，在切除边界和阵列的柔性曲线纤维结构之间进行布尔运算即可获得具有患者个性化外形及柔性力学性能的乳房植入物。利用已建立的可降解/可再生柔性软组织植入物3D打印技术方法体系，完成了个性化可降解乳房植入物的成形。</p><p>图6 3D打印可降解乳房植入物率先实现国际首例临床试验</p><p>项目团队进一步与中国人民解放军空军军医大学西京医院合作，推广3D打印柔性可降解乳房植入物临床应用。2016年，率先完成了世界首例3D打印可再生乳房植入物的临床试验，用于乳腺肿瘤切除术后的患者乳的个性化再生修复填充，目前共完成临床应用33例，临床报告详见成果应用证明。随访结果显示，33名患者术后没有严重不良反应。91%例患者术后切口疼痛正常，所有患者均未出现感染、切口愈合障碍、血肿及血清肿等并发症。患者总生存率为96.70%，与保乳手术（97%）相当，表明3D打印可降解乳房植入物不影响患者生存期，具有良好的肿瘤安全性。</p><p>通过患者术后不同时间节点的宏观图像资料评估了3D打印可降解乳房植入物修复乳房的形态学效果。术后患者乳房外形维持良好，手术侧乳房外观与非手术侧乳房外观基本对称，无局部凹陷，且在随访期间具有较高的维持率，患者对乳房外形满意。对称性数据进一步表明，接受可降解乳房植入物患者的乳房对称度在各个时间点均维持良好，充分证明了3D打印柔性可降解乳房支架用于乳房整复的有效性。</p><p>在体内降解层面，核磁影像学随访数据表明，植入一个月后，3D打印可降解乳房植入物的柔性曲线网格结构清晰可见。随植入时间延长至6个月，植入物结构清晰度逐渐降低。植入时间延长至1年，可观察到植入物与自体组织之间的腔隙进一步缩小，植入物的曲线网格形态模糊，直至2年后，植入物附近少数区域呈现与脂肪组织相近的信号强度，提示组织长入，而植入物结构无法分辨，提示其实现有效降解，随时间逐渐被人体所吸收（图7）。</p><p>图7 3D打印可降解乳房植入物植入人体后的形态与降解研究</p><p>综上所述，3D打印柔性可降解乳房植入物突破了传统保乳手术受患者病灶大小及自身乳房体积等情况的限制，为乳腺癌患者提供了传统“一刀切，填硅胶”之外的乳腺肿瘤治疗及整复新选择，维持患者乳房满意度的同时，优化了患者的躯体健康相关生活质量及性健康体验，扩大了保乳手术的适应症。</p><p>（2）可降解柔性气管外支架设计制造与临床应用</p><p>气管软化/狭窄是临床常见的气管疾病，其病情发展迅速、危及生命，现有医疗技术尚缺乏有效的治疗途径。针对该问题，团队利用已建立的可降解/可再生柔性软组织植入物微观多孔结构设计与3D打印技术方法体系，提出了基于可降解气管外支架的气管悬吊手术。通过将软化气管悬吊在气管外支架上，重建呼吸通道，缓解患者呼吸困难症状。其设计制造流程简述如下：提取患者医疗影像学数据对患者气道进行重建，根据医生的手术方案规划，并通过管状支架壁面的多孔结构优化设计，实现形态贴合且力学性能适配的可降解气管外支架（图8）。</p><p>术中将狭窄气道悬吊于3D打印的可降解柔性气管外支架后，狭窄的气道即刻恢复通畅。术后影像学数据提示气道畅通，呼吸道症状均得到缓解，未发生任何支架相关并发症。此外，可降解气管外支架不仅可以限制外部压迫，防止气道塌陷，还可以保证气道的生长潜力。因其可降解特性，植入后随组织生长重塑逐渐降解消失而无需二次取出，特别适用于具有生长发育需求的婴幼儿患者，填补了婴幼儿先天性心脏病伴气管狭窄治疗的空白，为气管外科发展提供新支持。这一技术衍生的一系列可降解管状植入物已与南京儿童医院、中国人民解放军空军军医大学唐都医院、西京医院、交大二附院及郑大一附院等国内三甲医院合作，累计完成临床试验26例。</p><p>图8 可降解柔性气管外支架设计制造与临床应用</p><p>（3）可降解柔性纤维支架设计制造与临床应用</p><p>常规解除尿路梗阻后，需进行肾折叠术以减小肾内无效腔、改善肾内尿液排出，避免感染和结石等因素对残存肾单位的损害，最大限度地保护肾脏功能。然而，这一传统术式需时长，缝合部位的选择和打结时的力度难以精确控制，对医生的经验和技术依赖度较高，不良操作可能会诱发肾实质出血、漏尿、感染等并发症。针对这一临床问题，项目团队利用已建立的可降解/可再生柔性软组织植入物微观多孔结构设计与3D打印技术方法体系，联合中国人民解放军空军军医大学唐都医院，提出在解除尿路梗阻后，将巨大的肾脏放入3D打印可降解柔性纤维支架中，并通过肾门处的锁紧装置实现快速的肾脏紧缩，而不再使用传统的缝合方式来折叠肾脏的新的构想。</p><p>根据临床沟通的手术方案结合患者肾脏实际大小，完成了由微米纤维编织而成的多孔纤维网兜支架的设计方案。打印制造的纤维网兜支架结构完整，纤维结构致密，多孔网络结构的等效杨氏模量为17.05 ± 0.70 MPa，抗拉性能为2.10 ± 0.25 MPa，断裂伸长率为668.9 ± 104.9％，满足临床植入的缝合与力学承载需求（图9）。通过可降解纤维网兜支架进行肾脏折叠的患者未出现任何术后并发症。三个月后的肾脏影像学数据显示，患者肾脏体积明显缩小，位置正常，功能恢复。这一创新技术简化了手术操作，实现了巨大肾积水治疗上的重大突破。</p><p>图9 可降解柔性纤维网兜支架设计制造与临床应用</p><p>（4）可降解柔性肋骨植入物设计制造与临床应用</p><p>肿瘤切除导致的肋骨缺失将影响胸廓的完整性，对人体脊柱形态、呼吸功能与外观美感带来严重危害，导致脊柱侧弯、反常呼吸、胸廓畸形，严重时甚至危及患者生命。传统机加工制造的肋骨假体可为胸壁重建提供力学支撑，但难以实现形态匹配；增材制造的肋骨假体解决了形态个性化匹配的难题，但多采用钛合金、聚醚醚酮等不可降解生物材料制造，无法满足生长发育期儿童或青少年肋骨缺损患者对生长发育的需求。</p><p>针对这一临床问题，项目团队基于已建立的可降解/可再生柔性软组织植入物微观多孔结构设计与3D打印技术方法体系拓展研发了一种“中心实体，外周多孔”的可降解肋骨植入物。通过有限元仿真分析，优化了可降解肋骨植入物承力结构的直径。仿真与试验结果均表明，具有圆形截面、直径为9.5 mm承力结构的可降解多孔肋骨植入物在模拟呼吸载荷下的力-位移曲线与自然肋骨运动曲线吻合良好，而三点弯曲压缩测定的力-位移曲线进一步展现出其与自然肋骨具有优异的力学匹配性（图10）。在此基础上，项目团队和中国人民解放军空军军医大学唐都医院合作，开展了3D打印可降解肋骨植入物的临床试验。植入后，3D打印柔性可降解肋骨植入物与自体骨残端完美对接，固定端稳定可靠，可维持患者胸廓外形的完整性，有效解决了可降解胸肋骨植入物的力学支撑及组织生长难题。后期通过结缔组织生长与植入物降解，实现人工结构支撑向自体组织支撑的力学转化，为患者胸廓功能重建开辟了新的发展方向。</p><p>图10 可降解柔性肋骨植入物设计制造与临床应用</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

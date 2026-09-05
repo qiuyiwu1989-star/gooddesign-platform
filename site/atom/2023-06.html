@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>三维地球磁层空间等离子体环境地面模拟装置 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-06.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-06</div>
+  <h1>三维地球磁层空间等离子体环境地面模拟装置</h1>
+  <div class="meta-line"><b>2023 年度金奖</b><span>哈尔滨工业大学</span>
+  <span class="grade grade-B">B</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 金奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨工业大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">鄂鹏,金成刚,凌文斌,关键,万杰</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 航空航天（金奖领域标签映射，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>在太阳风的作用下，地球周围存在一个磁场与等离子体强耦合的结构，被称为地球磁层，它是地球的屏障，也是人类走向外太空的窗口。然而，地球磁层中存在许多爆发性的现象，如磁暴、亚暴和高能粒子暴，它们对航天器、通信系统和电力设施等构成严重威胁。因此，研究空间等离子体环境的演化规律具有重大意义。目前，受制于卫星探测的局限性，人们对地球空间等离子体演化规律的认识还很不充分，直接影响了绝大部分航天器所处的地球磁层空间等离子体环境模型建立、航天器与等离子体相互作用、航天器防护设计和任务规划等一系列重要问题的深入研究。由于在全局测量、可控性、可重复性等方面的优势，实验室模拟已经成为研究空间等离子体的重要手段。目前，虽然国际上存在多个空间等离子体环境的模拟装置，但它们均无法实现地球磁层三维整体结构的模拟。本项目来源于“十二五”国家重大科技基础设施—空间环境地面模拟装置【发改委批复文件参见附件】，国际上首次针对地球磁层三维整体结构模拟，解决了从物理设计到工程技术的诸多难题，取得了如下创新成果：（1）提出了地球磁层三维整体结构的模拟方法，通过一组特殊设计的多自由度磁体线圈组合与脉冲电源系统首次实现了地球磁层三维整体结构的模拟，为开展地球磁层顶三维非对称磁重联、辐射带波—粒相互作用、磁暴等空间关键物理过程的研究提供了必要的支撑条件。（2）解决了极端脉冲电磁力载荷条件下磁体线圈在高真空环境中的支撑、运动、密封和连接问题，实现了多自由度偶极磁场线圈位形、磁层顶位形精确控制等一系列世界首创的独特设计，保障了高真空下线圈组的可靠运行。（3）针对磁体线圈强耦合、参数差异大的特点，提出了脉冲电源的模块化设计方法，并研制了20 kV、3 kA/μs条件下的半导体开关组件，结合5ns的高精度同步控制，实现了电源系统的集成控制和可靠运行，保障了磁体线圈产生磁场的同步以及磁场拓扑结构的快速变化。</p><p>本项目授权发明专利20项，发表SCI论文19篇，获批国家重点研发计划常规项目1项。本项目在国际上首次实现了地球磁层三维整体结构的模拟，使我国直接进入了国际空间等离子体环境地面模拟研究领域的前沿，将促进具有我国自主知识产权的地球磁层空间等离子体环境模型建立，推动我国空间基础科学的研究，并支撑航天任务的设计与规划。本项目通过了以时任美国等离子体物理学会主席Stewart Prager为组长的国际专家组评审，专家组认为：“空间等离子体地面模拟装置”的设计是非常巧妙、非常具有创新性、非常独特的，这个新实验装置已处于世界领先水平，将会在国际空间科学领域获得独一无二的重要地位。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>地球磁层是一个磁场与等离子体强关联耦合的环境体系，它既是地球的屏障，又是从地球走向深空的窗口。99%以上的航天器运行在地球磁层空间，但地球磁层的磁-等离子体环境参数瞬息万变，许多爆发性现象，比如磁暴、磁层亚暴、高能粒子暴等不仅对地球空间环境造成灾害性的影响，也是引起航天器故障的主要原因。受制于卫星探测单点、有限时间序列、固定轨道区域、研究周期长、偶然性、难以复现等多方面的因素影响，本项目的设计基于物理参数的相似定标，通过地面装置实验模拟（容易改变参数和边界条件，并实施重复检验）地球磁层空间等离子体环境，可以形象地认为是把地球磁层装进真空罐，从而研究主导空间磁-等离子体环境和空间天气变化的物理过程。</p><p>下表列出了本项目装置与国际上同类装置的参数指标、研究功能对比，可以看出：本项目无论是其参数指标，还是其研究功能在全世界都是首屈一指，它在国际上首次实现了跨尺度的三维地球磁层整体结构模拟。</p><p>在空间等离子体环境地面模拟装置完成设计之际，召开了“空间等离子体环境地面模拟装置设计国际评审会”，时任黑龙江省副省长胡亚枫、哈尔滨工业大学校长周玉院士参会，《黑龙江日报》对本次会议进行了报道。来自普林斯顿大学、哥伦比亚大学、加州大学洛杉矶分校、伯克利分校、东京大学、北京大学、中国科学技术大学、中科院等离子体物理研究所、地质与地球物理研究所等20多个研究机构的30余位专家参会，对系统的设计、科学目标与研究内容进行了评估。美国物理学会等离子体物理分会主席、普林斯顿等离子体物理国家实验室主任Stewart Prager组长代表专家组对装置的设计给予了高度评价：“空间等离子体地面模拟装置”投入使用后，将会被公认为空间等离子体科学的国际一流实验装置，它提供了比世界上任何其它实验装置更全面的空间等离子体环境模拟实验条件，并且其参数与真实空间参数的物理相关性也会优于以往的模拟实验。【详见附件】</p><p>装置完成初步设计后，经过近8年的建设，目前已竣工并投入试运行，成功实现了三维地球磁层空间的地面模拟，并与普林斯顿大学、哥伦比亚大学、东京大学、悉尼大学、加州大学洛杉矶分校、伯克利分校、瑞典空间技术研究院、北京大学、中国科学技术大学、中科院等离子体物理研究所、地质与地球物理研究所等20多个国内外顶尖研究机构签署了用户需求协议。装置所涉及到的关键技术和创新点主要有：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>三维地球磁层整体结构模拟方法</div></div></div><p>（1）提出了使用四个磁通量线圈模拟行星际磁场与太阳风的方法，每个磁通量线圈由极向场线圈和环向场线圈组成，极向场线圈产生模拟行星际磁场，环向场线圈在线圈电流快速爬升的过程中激发等离子体，产生的等离子体在极向磁场磁压的作用下被迅速推开，从而实现高速太阳风等离子体流的模拟。</p><p>（2）提出了模拟三维地球磁场拓扑结构的方法，采用一个圆环形的线圈模拟地球偶极磁场，其与四个磁通量线圈产生的模拟行星际磁场组合，可形成类似地球磁层顶的三维磁场拓扑结构，进而为研究地球磁层顶三维非对称磁重联提供实验条件。</p><p>（3）提出了使用四个直线段的线圈产生的磁场调节模拟地球磁层顶的磁场位形，以实现地球磁层极尖区磁场拓扑结构的模拟。</p><p>（4）提出了在偶极磁场线圈的外侧增加一个圆环形线圈来模拟地球磁暴期间的地球磁场扰动，通过调控线圈脉冲电流的上升时间来调控磁场扰动的时间尺度，从而为研究地球磁暴期间内磁层对地球磁场扰动的响应问题提供技术支撑。</p><p>（5）提出了模拟地球磁尾磁场的方法，使用两个椭圆形的线圈产生的磁镜场来模拟地球磁尾偶极化锋面结构，结合偶极磁场线圈模拟的磁场结构，可构建与地球磁尾磁重联相关的磁场位形。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>高真空大电流条件下的脉冲磁体技术</div></div></div><p>（1）提出了在磁场拓扑结构、特征时间和能量利用效率等参数约束下的磁体平衡优化设计方法，完成了三维磁层模拟磁体线圈本体的设计。</p><p>（2）考虑多场耦合强脉冲电磁力的极端载荷作用，设计了轻量化、可靠性高、安全性高的自适应多位姿支撑运动机构，解决了脉冲电磁力最高达70吨以上的冲击问题。</p><p>（3）解决了放气率过高影响真空度和等离子体特性的问题，设计了一套基于环氧树脂真空浸渍、铝壳密封、Inconel喷涂等先进技术的工艺，磁体的放气率降低了4个数量级。</p><p>（4）提出了高压大电流条件下脉冲磁体的真空穿舱连接方法，解决了穿舱结构的密封、绝缘、水电分离与抗电磁力冲击等关键技术问题，实现了7类共18个磁体线圈在高真空条件下的可靠穿舱。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>针对多负载协同组合的大能库脉冲电源系统同步控制与可靠运行</div></div></div><p>（1）针对负载系统耦合特性复杂多变导致磁场位形难以精确调控的问题，提出了基于电源模块参数和放电时序组合调节的脉冲磁场调控技术，实现了总储能高达18.3MJ、电流输出能力超过500kA，结合5ns的高精度同步控制，实现了129个电源模块的集成控制和可靠运行，保障了磁体线圈产生磁场的同步以及磁场拓扑结构的快速变化。</p><p>（2）提出了一种基于负载系统多路连接方式切换的汇流结构，实现了7类共18个磁体线圈绕组连接方式的任意变换及电流极性反转，丰富了装置可模拟的磁场位形，为地球磁层顶重联、辐射带波粒相互作用、磁暴等关键空间物理过程地面模拟研究提供了重要技术支撑。</p><p>（3）提出了大电流回路的浮地设计、固态开关组件状态监测、基于能量沉积分析的系统状态监测方法，解决了运行在20kV、3kA/μs电流爬升条件下的半导体开关组件研究、大电流放电时地电位抬升与耦合、开关器件状态可检可控、需使用大量电压电流探头进行状态监测的难题，提高了系统整体可靠性。</p></div>
+  <div class="sec-h"><span class="no">03</span><h2>图集</h2><span class="st st-ok">官方档案</span></div><div class="gal"><img loading="lazy" src="../cases/gal/2023-06-0.jpg" alt="三维地球磁层空间等离子体环境地面模拟装置"><img loading="lazy" src="../cases/gal/2023-06-1.jpg" alt="三维地球磁层空间等离子体环境地面模拟装置"><img loading="lazy" src="../cases/gal/2023-06-2.jpg" alt="三维地球磁层空间等离子体环境地面模拟装置"></div>
+  <div class="sec-h"><span class="no">04</span><h2>设计五维</h2><span class="st st-draft">内容团队人工编目 · 解读非官方评价</span></div><div class="dims"><div class="dim"><div class="dim-h"><span class="dim-n">科技</span><span class="dim-s">5/5</span></div><div class="dim-bar"><i style="width:100%"></i></div><p>三维地球磁层等离子体地面模拟装置,世界级大科学装置</p></div><div class="dim"><div class="dim-h"><span class="dim-n">艺术</span><span class="dim-s">2/5</span></div><div class="dim-bar"><i style="width:40%"></i></div><p>科学装置</p></div><div class="dim"><div class="dim-h"><span class="dim-n">人本</span><span class="dim-s">2/5</span></div><div class="dim-bar"><i style="width:40%"></i></div><p>服务空间科学研究</p></div><div class="dim"><div class="dim-h"><span class="dim-n">商业</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>空间环境模拟能力服务航天/通信产业</p></div><div class="dim"><div class="dim-h"><span class="dim-n">文化</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>空间科学大装置的国之重器</p></div></div>
+  
+  
+  
+  
+  <div class="sec-h"><span class="no">07</span><h2>权威溯源</h2><span class="st st-ok">人工核选 · 检索于 2026-08-09</span></div><div class="srcs"><a class="srclink" href="http://www.news.cn/20240606/7ad1513fb786462da27d3f425ae95aec/c.html" target="_blank" rel="noopener">揭秘“地面空间站”：如何把地球磁层装到一个“真空罐”里？ - 新华网</a><a class="srclink" href="https://www.stdaily.com/web/gdxw/2024-12/25/content_278311.html" target="_blank" rel="noopener">探访我国首个“空间环境地面模拟装置” - 中国科技网</a><a class="srclink" href="https://news.hit.edu.cn/2026/0309/c1510a241360/page.htm" target="_blank" rel="noopener">《人民日报》报道哈工大联合建设的空间环境地面模拟装置把空间站“搬”来地球</a></div>
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 B（7 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

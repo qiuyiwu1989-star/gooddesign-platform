@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>应急与救援机器人关键技术及应用 · 2023银奖 · 好设计</title>
+<meta name="description" content="应急救援事关人民生命和财产安全，是国家公共安全的重要组成部分。2014年，《国务院办公厅关于加快应急产业发展的意见》，指出“发展应急产业是提高公共安全基础水平的迫切要求；是提升应急技术装备核心竞争力的重要途径。”近年来，我国发生了天津危化品">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2023">← 返回 2023 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2023 · 第八届</span></div>
+  <h1>应急与救援机器人关键技术及应用</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">中国科学院沈阳自动化研究所</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">赵新刚,王挺,卜春光,王聪,刘连庆</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202301295</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>应急救援事关人民生命和财产安全，是国家公共安全的重要组成部分。2014年，《国务院办公厅关于加快应急产业发展的意见》，指出“发展应急产业是提高公共安全基础水平的迫切要求；是提升应急技术装备核心竞争力的重要途径。”近年来，我国发生了天津危化品爆炸、汶川/雅安地震等灾难事件，对应急救援装备的快速布置、高效处理提出了迫切需求。</p><p>面临极其恶劣的灾难环境，救援机器人能代替救援人员深入灾难现场，完成伤员的搬移、转运和应急处置。在国家重大项目支持下，项目团队开展系列化救援机器人关键技术攻关与集成研制，通过十余年技术攻关与验证，针对机构设计、自主运行及运动控制等问题，突破了多项关键技术，取得了多项原创性发明。</p><p>取得的成果包括：</p><p>一、提出了面向复杂灾难救援环境的系列化机器人移动机构设计方法，构建出多种类型高通过性救援机器人移动平台，有效解决了救援机器人灾难环境可达性问题，提升了救援机器人在城市、野外、废墟等复杂环境的快速通过能力。</p><p>二、提出了一种伤员自主探测与安全搬运救援方法，设计了机器人化自主生命探测系统、室内外伤员搬运机器人和救援通道建立属具，有效解决了掩埋状态下幸存者探测、受限空间伤员转运技术难题，实现了危楼废墟、生产设施、核生化环境等灾难环境下伤员的有效搜救。</p><p>三、提出了主从式仿生遥操作协同控制技术，构建了主从同构/异构拟人化遥操作机器人系统，解决了人机协同作业中的高临场感复现与复杂精细操控问题，实现了遥操作救援机器人完成伤员救治与危险品处置任务；提出了基于肌电神经解码的手势动作识别技术，开发了基于肌电手势的人机自然交互系统，实现了机器人智能意图理解与灵巧操控作业。</p><p>项目获授权发明专利18项，授权实用新型专利13项，技术成果累计经济效益超过1亿元。所研制的可变形搜救机器人曾参与2013年四川雅安芦山地震的搜救工作，被国家地震局评为“十一五”以来最具应用实效的10项科技成果之一；灵蜥系列反恐排爆机器人已对外销售19台，累计收益798万元；此外所研制的伤员抢运、勘察等机器人平台多次参与各级消防支队、公安支队等部门的应急演练与应用示范，为保障人民生命财产安全，推动我国救援机器人技术的发展，做出了巨大贡献。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-h">一、复杂环境适应性移动机构设计方案与控制方法</div><p>提出了面向复杂灾难救援环境的系列化机器人移动机构设计方法，构建出多种类型高通过性救援机器人移动平台，有效解决了救援机器人灾难环境可达性问题，提升了救援机器人在城市、野外、废墟等复杂环境的快速通过能力。</p><p>创新成果1：针对现有移动机器人平台复杂环境通过能力的不足，发明了一种可变形三角履带式移动机构，有效提高了救援机器人复杂环境的适应能力。</p><p>设计中采用可转动式独立四驱三角腿履带机构，每个三角履带机构由独立电机驱动，机器人前侧的两个三角履带可绕转轴旋转，改变与地面的接触角。当遇到障碍物时，前旋的三角履带机构可以显著提高机器人的越障能力。利用该机构构造的移动机器人平台，可以适应沙地、草地、泥泞等多种复杂野外地形，也能适应楼梯、斜坡、台阶等各种结构化地形，解决了单一机构的移动机器人复杂环境适应能力不足的问题。移动平台爬坡能力到达40°，越障能力到达300mm，移动速度达到80m/min.</p><p>图1 基于可变形三角履带机构的非结构环境高适应性移动平台 创新成果2：针对结构化环境中，移动机器人高速高通过性难以同时满足的问题，提出了基于平衡的复合移动机构运动控制技术，通过为机器人提供自主平衡控制能力提高机器人地形通过效率，实现地形通过高效性。</p><p>机器人移动机构由平衡轮，摆腿，履带组成。机器人能够在自平衡模式和履带模式之间自动切换，机器人摆腿收起，平衡轮自动放下，机器人能够自动从倒地状态切换到自平衡状态，依靠智能控制算法保持本体姿态平衡。该平台综合了平衡式和履带式机器人的优点，在楼梯、斜坡、台阶环境中，以履带式模式运行；在平坦道路上以两轮动平衡模式运行，速度快，机动灵活，从而解决机器人平台高速高通过性难以兼顾的问题。同时，在两轮行走的状态下，机器人控制中所采用的自平衡算法可以保证在两轮着地的状态下，具备极高的抗扰动能力和抗冲击能力。移动平台最大移动速度120m/min，平衡状态抗冲击能力150kg，最大爬坡30°。</p><p>图2 机器人自平衡移动与复合机构越障二、救援目标自主化勘察与伤员抢运技术</p><p>提出了一种伤员自主探测与安全搬运救援方法，设计了机器人化自主生命探测系统、室内外伤员搬运机器人和救援通道建立属具，有效解决了掩埋状态下幸存者探测、受限空间伤员转运技术难题，实现了危楼废墟、生产设施、核生化环境等灾难环境下伤员的有效搜救。</p><p>创新成果1：针对灾难现场搜救效率低的问题，提出了一种移动式生命体自主探测技术，有效解决了远距离、复杂环境下的救援目标有效识别和精准定位问题。</p><p>针对地震灾难现场复杂目标环境，融合生命探测雷达、视频、音频的多感知生命探测技术，复杂地形环境适应机构，先进的机器人救援技术等，研制移动式机器人化生命探测装备，深入废墟内部，可克服温度、湿度、地形等不利因素影响，穿透土壤、岩石、混凝土、木材、烟气等障碍介质，探测与搜索生命迹象，并能实时监控幸存者的生命信息，为救援人员提供救援通道信息，实现非接触、强穿透力、远距离幸存者搜救。本成果面向地震救援任务，代替或辅助救援人员完成生命迹象搜索任务，随着相关技术发展，移动式机器人化生命探测设备必将成为灾害救援领域智能救援装备。</p><p>图3 移动式机器人化生命探测装备及构型转换 创新成果2：为适应危楼和化工设施区受限空间救援需要，提出了机器人化伤员抱运转运解决方案，研制了仿人上身-履腿复合式室内伤员转运机器人和叉形摇臂-越野底盘混合式伤员高机动转运机器人，攻克了大载荷关节驱动设计、全状态反馈柔顺控制等关键技术，实现了危楼内部灾难环境伤员抱运、房门、楼梯、缓步台等危楼内部受限环境适应，解决了灾难救援“最后一公里”痛点问题。</p><p>仿人履腿复合式机器人上身包括两自由度机械腰、可协调双机械臂，下身为履腿复合式移动机构。针对幸存者体态差异性、危楼内部受限空间适应性问题，和幸存者掩埋物清除需要，成果提出了双机械臂搬运处置机构方案和幸存者抱运构型策略；针对正面探身抱托伤员、侧身通过狭窄门口、地形切换楼梯、空间受限缓步台、弯腰放置伤员等对机器人的环境通过性和安全性要求，设计了两自由度机械腰；融合双臂抱运策略、履腿机构越障策略，提出危楼内部伤员抱运过程的基于稳定锥的机器人构型优化方法，提高了机器人危楼内部伤员抱运过程的重心稳定自主性。针对室外/野外幸存者快速转运需要，研制了叉型摇臂与越野底盘混合移动机构，开发了多模式构型与运动控制算法，提高了伤员转运平台转向可空性、机动性、通过性、负载自重比等综合性能和救援机器人的实用性。在上述关键技术突破的基础上，研制出室内外伤员转运等多型机器人，其中室内救援机器人在抱运75公斤幸存者的情况下可通过30度折返楼梯，室外救援机器人最大速度20公里每小时、可越0.5米垂直障碍，具有实时障碍物检测能力。</p><p>图4 伤员高机动转运机器人构型设计三、面向救援作业任务的拟人化遥操作协同控制与人机自然交互技术</p><p>提出了主从式仿生遥操作协同控制技术，构建了主从同构/异构拟人化遥操作机器人系统，解决了人机协同作业中的高临场感复现与复杂精细操控问题，实现了遥操作救援机器人完成伤员救治与危险品处置任务；提出了基于肌电神经解码的手势动作识别技术，开发了一系列基于肌电手势的人机自然交互系统，实现了机器人智能意图理解与灵巧操控作业。</p><p>创新成果1：面向复杂协同作业的精细操作需求，提出了主从式仿生遥操作协同控制技术，研制具备高度人机相容性的穿戴式外骨骼遥操作主手，构建主从同构/异构拟人化遥操作机器人系统，实现了远程化、机器人化伤员救治与危险品应急处置。</p><p>围绕可穿戴性、灵巧性、临在感遥操作等要求，发明了一种具有局部力反馈的轻型可穿戴式拟人化双臂外骨骼遥操作主手系统，解决了轻量化仿生设计和人体相容性等问题。遥操作主手由3自由度球面剪叉肩部机构、1自由度肘部机构、3自由度腕部机构和多功能力反馈手柄构成，其中主手单臂具有7个自由度，涵盖了80%以上肢体运动范围，具有高度人机相容性。针对复杂作业任务对精细操作的需求，创新性提出了主从式仿生遥操作协同控制技术，构建了主从同构/异构拟人化遥操作机器人系统平台，可将大范围操控与精细作业进行有机结合，建立高临场感远程操作方法，实现类人的灵巧复杂操作。研制的原型系统在非结构化环境下成功开展了伤员救治与危险品应急处置等复杂精细作业任务测试，提高了救援机器人系统的作业效能。</p><p>图5 基于外骨骼式拟人化主手的主从仿生遥操作协同控制 创新成果2：针对机器人精细作业对高级层面人机交互的需求，提出了基于表面肌电神经解码与手势动作编码的人机自然操控技术，与机器人协同交互实现对微小、弹性、易碎目标物的快速、稳定、准确抓取，极大提高作业效率。</p><p>传统的基于程式控制的人机交互方式严重桎梏了对智能机器人装备的高效操控与自主适应能力，如鼠标、手柄、操纵杆等，难以有效应用到需要与人协作、直接接触人的机器人系统中。针对机器人系统在精细作业中对自然精准操控的需求，提出了基于表面肌电动作电位神经解码的手势动作识别技术，借助肌电信号以解码人的行为/动作，实现机器人主动理解人意图的能力；重点解决噪声干扰、电极偏移/脱落、肌肉疲劳等因素影响下的肌电信号识别问题，创新提出面向非理想肌电信号的鲁棒性增强识别方法，提升手势识别模型的抗干扰能力；为满足机器人对复杂作业任务和高噪声环境交互的需求，发明了一种基于肌电手势编码的新型人机自然交互系统，实现协作机械臂、灵巧手等机器人完成对目标物的快速、稳定、准确抓取，为救援机器人系统的智能人机交互控制提供技术支撑。</p><p>图6 基于肌电手势动作识别的人机智能自然交互</p></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2023%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%BA%94%E6%80%A5%E4%B8%8E%E6%95%91%E6%8F%B4%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%BA%94%E6%80%A5%E4%B8%8E%E6%95%91%E6%8F%B4%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「应急与救援机器人关键技术及应用」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%BA%94%E6%80%A5%E4%B8%8E%E6%95%91%E6%8F%B4%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「应急与救援机器人关键技术及应用」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2023-s03.html"><span class="d">← 上一项</span>环境友好型大容量输电线路</a>
+    <a class="next" href="2023-s05.html"><span class="d">下一项 →</span>激光砂带协同加工技术及装备</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>铁路桥梁多功能弹性约束装置 · 2023银奖 · 好设计</title>
+<meta name="description" content="高速铁路技术标准高、平面曲线半径大，线路与既有道路、铁路、河流小角度交叉频繁，需要建设大量跨度120～200m的大跨梁桥，且多采用刚度大、经济性好的混凝土桥。当混凝土桥温度联长超过200m时，需设置钢轨伸缩调节器，以消除钢轨内过高的温度应力">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2023">← 返回 2023 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2023 · 第八届</span></div>
+  <h1>铁路桥梁多功能弹性约束装置</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">中铁第四勘察设计院集团有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">严爱国,王德志,杨得旺,史娣,王明亮</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202301148</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>高速铁路技术标准高、平面曲线半径大，线路与既有道路、铁路、河流小角度交叉频繁，需要建设大量跨度120～200m的大跨梁桥，且多采用刚度大、经济性好的混凝土桥。当混凝土桥温度联长超过200m时，需设置钢轨伸缩调节器，以消除钢轨内过高的温度应力。而伸缩调节器造价昂贵，后期养护工作量大，还存在行车不平顺，且曲线、大纵坡路段不能设置，直接影响线路局部走向和车站设置条件。</p><p>聚焦高铁建设重大需求，项目组从新装置、新体系、设计方法、智能运维等方面开展技术攻关，研发了铁路桥梁多功能弹性约束装置，改变了传统的桥梁结构体系和变形模式，突破了大跨桥上需设置伸缩调节器的技术限制。</p><p>主要设计创新如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>发明了铁路桥梁弹性约束新装置，实现了桥梁温度变形零点主动调控。发明了“U型挡臂+双向压缩碟簧”结构，力学性能稳定、可靠、耐久，实现结构温度变形的自动复位，同时兼顾减隔震作用。研发了精准调位装置，实现了装置弹性变形零点及容许位移的主动调控。发明了“转动球冠+内置导轨”球型支承结构，实现装置转动与平动分离、互不干扰，有效保证了装置形态不受桥梁转动影响。</div></div><div class="p-li"><span class="p-mk">2</span><div>构建了铁路梁桥弹性约束新体系，解决了大跨梁桥无需设钢轨伸缩调节器的技术难题。创新提出在大跨梁桥两主墩设置弹性约束新装置，构建大跨梁桥弹性约束新体系，使温度变形零点由固定墩处调整至中跨跨中，梁端温度变形减小约30%，钢轨温度伸缩力减小约35%。提出了装置弹性刚度、容许弹性位移计算公式，实现了多目标一体化设计。</div></div><div class="p-li"><span class="p-mk">3</span><div>创新提出了弹性约束体系桥梁-轨道设计方法，为大规模应用提供了科学依据。建立了新装置力学模型，提出了新体系桥梁在组合刚度、限幅变形条件下，多墩水平力分配与抗震计算方法，为新体系应用提供了理论支撑。研发了新体系动态条件下桥梁-轨道分析软件，实现了多工况批量计算，为新体系应用提供了高效的分析手段。</div></div><div class="p-li"><span class="p-mk">4</span><div>研发了新装置位移智能监测系统，监测装置服役性能及桥梁变形规律，建立了位移智能预报警模型和诊断体系，为运营养护提供实时可靠的依据。</div></div></div><p>项目获专利19项、软著2项，制定通用图1部，发表学术论文12篇。项目成果颠覆了铁路大跨梁桥设钢轨伸缩调节器的传统建设模式，已应用于杭温高铁、珠肇高铁、武荆高铁等项目数十座大跨桥梁中，累计创经济效益3.92亿元，显著提升了我国高铁建设水平，降低了工程建设及运维成本。</p><p>由陈政清院士、聂建国院士、卢春房院士等7位业内专家组成的专家组一致认为项目成果“整体达到国际领先水平”。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>创新设计总体思路</div></div></div><p>大跨连续梁桥设置钢轨伸缩调节器的技术方案面临以下挑战：①钢轨伸缩调节器造价昂贵，后期养护工作量大，存在固有行车不平顺，《高速铁路设计规范》要求减少钢轨伸缩调解器设置；②当大跨桥梁位于曲线上，而不具备设置钢轨伸缩调解器时，则需要局部改线，增加工程投资。</p><p>项目组以突破大跨梁桥设钢轨伸缩调节器的技术限制为核心开展技术攻关，研发了桥梁多功能弹性约束新装置，构建了铁路大跨梁桥弹性约束新体系，主动调控桥梁的温度变形零点，实现了结构联长400m以内的高铁桥梁不设钢轨伸缩调节器。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>主要设计创新</div></div></div><p>主要创新点一：发明了桥梁弹性约束新装置，具备弹性约束、主动调位和支承功能，实现了桥梁温度变形零点主动调控，获桥梁的下限位活动球型支座（ZL202020244425.8）、环向弹性减隔震支座（ZL202210329822.9）等专利4项。</p><p>关键技术1：发明了“U型挡臂+双向压缩碟簧”结构，采用体积小、刚度可调、缓冲减振能力强的碟簧结构，力学性能稳定、可靠、耐久，实现结构温度变形的自动复位，同时兼顾减隔震作用。</p><p>双向压缩碟簧结构位于U型挡臂之间，通过带U型挡臂传递弹性力。止挡块、传力环将碟簧组固定于活塞杆中部，通过L型挡臂、传力环将荷载传递至碟簧组，两侧止挡块形成了碟簧组单向限位结构，实现同一组碟簧左右移动均承压。两端连接装置设有调位螺栓，精准定位弹性约束装置。</p><p>图1 “U型挡臂+双向压缩碟簧”结构 关键技术2：研发了精准调位装置，实现了装置弹性变形零点及容许位移的主动调控。</p><p>1）研发了弹性变形零点调位装置。通过在弹性约束装置两端连接装置中设置弹性调位螺栓，可实现对装置实现弹性变形零点精准调控，解决了施工误差、桥梁徐变变形、安装温度等因素引起的不均衡位移。</p><p>2）研发了容许位移调位装置。通过在装置纵桥向两侧设计“限位板+承压板+分级调位垫片”结构，通过增减垫片数量，调整装置容许位移，实现了容许位移锁定，同时兼顾纵向防落梁挡块作用。调位垫片的数量和厚度级配根据调位量大小、调位精度确定，有效提升了装置的适用性。</p><p>图2 精准调位装置构造 关键技术3：发明了高性能支承装置，实现了高承载力，装置转动与平动分离、互不干扰。</p><p>1）研发了“转动球冠+内置导轨”结构，具有高承载、多向转动、耐久性好等特点。在中、上座板间设置转动球冠，实现支承装置转动功能；在中、下座板间设置导轨，实现了导向、水平承剪作用。转动球冠采用凸球面外包覆不锈钢滑板结构，避免了球冠锈蚀影响转动摩擦性能，保证装置使用寿命。</p><p>2）研发了带U型挡臂的中座板，结构呈盆环状，转动球冠置于中座板中部，中座板底部水平滑动面不受装置转动影响，使弹性约束装置传力路径始终处于水平状态。</p><p>图3 高性能支承装置 主要创新点二：构建了铁路梁桥弹性约束新体系，解决了大跨梁桥无需设钢轨伸缩调节器的技术难题，实现了结构联长400m以内的铁路大跨连续桥不设轨伸缩调节器。</p><p>关键技术1：创新提出在大跨梁桥两主墩设置弹性约束新装置，构建大跨梁桥弹性约束新体系，使温度变形零点由固定墩处调整至中跨跨中，梁端温度变形减小约30%，钢轨温度伸缩力减小约35%。</p><p>图4 铁路梁桥弹性约束新体系示意 关键技术2：基于桥梁跨度、桥址温差变化幅度、结构受力与变形、行车舒适性等，提出了装置弹性刚度、容许弹性位移计算公式，实现了多目标一体化设计。</p><p>基于“下部结构-弹性约束装置-主梁”协调约束体系的荷载传递途径及变形特征，综合考虑下部结构强度、梁轨作用纵向水平线刚度、梁端伸缩位移、三水准抗震设防等静、动力设计目标，以综合减震率及技术经济性为优化目标，提出了弹性约束体系弹性刚度、容许弹性位移的合理取值理论公式。</p><p>图5 弹性约束体系多目标一体化设计方法 主要创新点三：创新提出了弹性约束体系桥梁-轨道设计方法，为大规模应用提供了科学依据，获软件著作权《桥上无缝线路附加力计算软件》（软著登字第5601639号）。</p><p>关键技术1：建立了新装置力学模型，提出了新体系桥梁在组合刚度、限幅变形条件下，多墩水平力分配与抗震计算方法，为新体系应用提供了理论支撑。</p><p>铁路大跨梁桥弹性约束体系为国内外首创，具有变量因素多、分阶段受力等特点，体系中存在摩擦力、装置弹性约束刚度、桥墩弹性刚度、纵向限位等变量。首先基于多功能弹性约束装置工作原理，深入分析摩擦力、弹性力、限幅位移等约束条件，构建了三阶段力学模型，形成了弹性约束体系桥梁的通用设计方法。</p><p>图6 多功能弹性约束装置力学模型 基于多墩协同受力原理，提出了弹性约束体系桥梁组合刚度、容许位移条件下的多墩水平力分配及抗震设计方法，为大规模工程应用提供科学依据。</p><p>关键技术2：研发了新体系动态条件下桥梁-轨道分析软件，实现了多工况批量计算，为新体系应用提供了高效的分析手段。</p><p>提出了新体系桥上无缝线路伸缩力及制动力计算理论，建立了考虑弹性位移及弹性刚度的无缝线路精细化分析模型，揭示了温度及列车荷载作用下轨道-桥梁体系的受力变形机理。根据桥梁参数、约束体系参数、轨道参数等，动态生成桥梁-轨道模型布置示意图，研发新体系动态条件下桥梁-轨道分析软件，对提升桥-轨设计智能化具有重要意义。</p><p>图7 新体系动态条件下桥梁-轨道分析软件 主要创新点四：研发了新装置位移智能监测系统，建立了位移智能预报警模型和诊断体系，为运营养护提供实时可靠的依据，获软件著作权《智能桥梁监测数据管理系统》（软著登字第5804177号）。</p><p>通过对弹性约束装置位移变化量、环境温度的长期监测数据的统计分析，研究梁体及弹性约束装置长期服役下的位移情况，智能反馈装置运营养护方案，为铁路安全运营提供了技术保障。同时，该智能监测系统具备很强的可移植性，可适用于各种桥型。相较于传统的人工巡检方式，本系统可降低巡检成本约40%。</p><p>图8 新装置位移智能监测系统</p></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2023%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E9%93%81%E8%B7%AF%E6%A1%A5%E6%A2%81%E5%A4%9A%E5%8A%9F%E8%83%BD%E5%BC%B9%E6%80%A7%E7%BA%A6%E6%9D%9F%E8%A3%85%E7%BD%AE%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E9%93%81%E8%B7%AF%E6%A1%A5%E6%A2%81%E5%A4%9A%E5%8A%9F%E8%83%BD%E5%BC%B9%E6%80%A7%E7%BA%A6%E6%9D%9F%E8%A3%85%E7%BD%AE" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「铁路桥梁多功能弹性约束装置」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E9%93%81%E8%B7%AF%E6%A1%A5%E6%A2%81%E5%A4%9A%E5%8A%9F%E8%83%BD%E5%BC%B9%E6%80%A7%E7%BA%A6%E6%9D%9F%E8%A3%85%E7%BD%AE" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「铁路桥梁多功能弹性约束装置」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2023-s05.html"><span class="d">← 上一项</span>激光砂带协同加工技术及装备</a>
+    <a class="next" href="2023-s07.html"><span class="d">下一项 →</span>隧道桥梁清筛机</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

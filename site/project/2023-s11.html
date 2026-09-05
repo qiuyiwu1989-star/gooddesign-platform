@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>脑机接口神经肌肉电刺激下肢外骨骼康复训练机器人 · 2023银奖 · 好设计</title>
+<meta name="description" content="“十四五”时期是我国全面建设社会主义现代化国家新征程的第一个五年，以习近平同志为核心的党中央把保障人民健康放在优先发展的战略位置。然而，随着人口老龄化发展，脑卒中（又称“中风”）已逐渐成为居民的主要死亡原因和疾病负担，被称为人类健康的“第一">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2023">← 返回 2023 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2023 · 第八届</span></div>
+  <h1>脑机接口神经肌肉电刺激下肢外骨骼康复训练机器人</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">天津大学,脑机交互与人机共融海河实验室,燧世（天津）智能科技有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">刘源,王壮,黄帅飞,张宇剑,顾斌</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202302060</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>“十四五”时期是我国全面建设社会主义现代化国家新征程的第一个五年，以习近平同志为核心的党中央把保障人民健康放在优先发展的战略位置。然而，随着人口老龄化发展，脑卒中（又称“中风”）已逐渐成为居民的主要死亡原因和疾病负担，被称为人类健康的“第一杀手”。世界卫生组织调查数据显示，与欧美等发达国家相比，我国脑卒中患者人数日益攀升，每12秒就有一名新发患者，约75%患者留有不同程度的下肢功能障碍，严重危害了我国国民身体健康。</p><p>常规康复治疗多采用站立训练、步态训练、按摩和手法治疗等方式，病人患病肢体多在康复治疗师带动下被动运动，患者主动参与度低，康复效果不佳，且有限的医师资源无法满足庞大的脑卒中康复需求。外骨骼是当前一种典型的康复类医疗器械产品，截至目前，国际国内已获注册的下肢康复外骨骼产品，均为电机带动式外骨骼，患者行走意愿和动作未直接关联，仍是一种被动训练模式。因此，在国内均属二类注册产品管理，核心技术原理的临床实验效果并无公开论文可查。</p><p>本项目开发了一款脑机接口神经肌肉电刺激下肢外骨骼康复训练机器人，打破现有运动康复产品被动训练的传统模式。在国际上首次实现了脑机接口、神经肌肉电刺激和机械外骨骼的全国产自主研发和集成应用。感觉增强型脑机接口实现患者行走意图的准确解码，时空编码型功能性电刺激与机械外骨骼耦合，采用自适应迭代方式，驱动患肢行走逐渐接近健侧运动规律，实现患者行走意图驱动下的主动式康复训练，重塑脑卒中患者的运动感觉神经，有效解决了目前脑卒中康复患者被动参与、干预手段单一、治疗模式不精准的技术痛点。</p><p>脑控神经肌肉电刺激核心原理的临床效果，团队已经过千例级临床实验检验，取得显著神经康复效果，发表高水平临床研究论文。临床实验结果显示：患者经过2周共6次（一个疗程）康复训练后，步态对称性显著提高，步速提升近50%，持久性行走能力明显提升；髋膝踝关节运动范围显著增加，临床量表评估结果明显提升，脑电和磁共振显示大脑激活和连接性有增强表现，病人及家属对系统康复性能均给予高度评价，取得显著的神经康复效果，相关案例作为行业代表入选国家工信部和药监局《人工智能医疗器械产业发展白皮书》。</p><p>截止目前，该系统获得6项国家和省部级科技奖励，包括中国专利奖、黄家驷生物医学工程奖和天津市技术发明一等奖等，入选国家工信部和药监局“人工智能医疗器械创新任务揭榜名单”（全国前十），排名无创脑机接口第1位（揭榜单位）。科技查新报告显示，国内未见其它与该项目主要技术特点相同的文献报道，技术原理属国内首创。该系统拥有完整知识产权体系，包括专利7项（5项发明专利，2项外观专利），发表高水平期刊及顶级国际会议学术论文5篇。基于以上成果，该系统已入选国家工信部、药监局和天津市药监局重点支持产品，在外骨骼和脑机接口领域国家创新医疗器械和三类医疗器械、标准制定、临床实验研究、共识指南等方面填补国内空白，努力让脑机康复机器人早日纳入医保，走入医院，服务民生，惠及大众。该项目将为形成相关标准、规范行业秩序、提升我国康复医疗器械核心科技竞争力贡献力量。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>① 创新点1-基于脑-机-体（肌）闭环人工神经信息环路系统</p><p>本项目针对脑卒中下肢偏瘫患者创新性的提出了一种脑-机-体闭环人工神经信息环路康复系统，如图1。中风偏瘫患者由于脑部局部血管破裂或阻塞引起脑组织损伤，导致患者无法正常运动。大脑具有神经可塑性，通过正确的引导可让大脑受损区域恢复或在某些区域产生代偿作用，从而重建一条新的神经控制环路。其先进性在于脑机接口通过解码大脑运动意图，借助外围系统形成一条“体外神经环路”，可将“意念”转化为“行动”，具有显著的临床价值，已成为国际学界共识。本项目创新采用基于复合肢体及序列性感觉电刺激运动想象范式（一种基于序列性复合肢体想象动作的脑-机接口方法，CN104571505B；Enhanced Motor Imagery of Lower Limbs Induced by Gait Phase Encoding Sensory Electrical Stimulation， 2022.12），利用脑机接口编解码算法识别患者运动意图，时空编码型功能性电刺激与机械外骨骼耦合，采用自适应迭代方式，驱动患肢行走逐渐接近健侧运动规律，实现患者行走意图驱动下的主动式康复训练，重塑脑卒中患者的运动感觉神经（Application of BCI-FES System on Stroke Rehabilitation， 2015.04），从神经层面对肢体康复方式做出根本有效的改变，有效解决目前卒中康复过程中患者被动参与、无法重塑神经的技术痛点。</p><p>图1 体外神经环路原理图在应用效益方面，对比国内外目前传统的助行外骨骼多以被动辅助为主，缺少大脑与肢体之间神经传递的互动过程，不利于脑卒中患者损伤神经系统的康复。本项目设计的脑-机-体闭环人工神经环路康复策略（基于脑电控制的功能性电刺激康复系统设计及应用， 2019.09），旨在实现患者主动参与式运动神经康复训练模式，核心技术已应用多地三甲医院，开展1500余例脑卒中下肢偏瘫临床康复训练，结果显示大部分患者在运动控制能力和肌力方面有显著提升，总体有效率达72.5%，如图3所示，部分临床结果已发表于一区TOP期刊 （IF=8.1） 《Frontiers of Medicine》（EEG-controlled Functional Electrical Stimulation Rehabilitation for Chronic Stroke: System Design and Clinical Application， 2021.07）。</p><p>在社会价值方面，该项目提出的康复策略安全性更高，极大提高了患者的康复信心。对比当前国外广泛采用的侵入式脑电采集系统，虽然获得了更高质量的脑电信号，但植入式电极与大脑组织的长期兼容性与副作用尚不明确，有安全隐患。本项目结合团队深耕多年的无创脑机接口技术，采用了非侵入式脑电信号采集设备，仅通过脑电帽和脑电放大器设备即可实现，更贴近我国患者的实际使用需求，符合我国的伦理道德要求，更具社会应用价值。并且，传统助行外骨骼机器人通过伺服电机对患侧肢体进行被动式牵拉，具有一定安全隐患，而本项目采取的无创电刺激非电机驱动的外骨骼康复策略设计，充分保证患者的使用安全性，避免二次损伤。</p><p>图2 外骨骼集成化示意图② 创新点2-高度集成化的脑控神经肌肉电刺激机械外骨骼机器人系统</p><p>本系统针对现有融合多技术手段的智能助行机器人设备结构复杂、不便携、环境场地要求高、设备穿戴困难、安全性能低等问题，本项目研发了集成化的脑控神经肌肉电刺激机械外骨骼机器人系统，其先进性在于是国际上首次实现了脑机接口、神经肌肉电刺激和机械外骨骼的全国产自主研发和集成应用，克服多设备交互困难的问题，形成的多功能康复（脑神经和肢体运动功能）、穿戴方便的下肢外骨骼康复机器人（集成化脑控神经肌肉电刺激外骨骼机器人，CN307663495S；脑控神经肌肉电刺激外骨骼控制箱，CN 307928663 S；一种以功能性肌肉电刺激驱动的外骨骼助行系统，CN106377838B；高度集成化脑控神经电刺激外骨骼机器人系统及控制方法，CN202111487147.4；下肢康复用膝关节弹性自锁装置及使用方法，CN202011440622.8）。</p><p>在应用效益方面，无创式脑电采集、多特征脑电处理和神经肌肉电刺激施加等功能在硬件上进行系统化集成，无过多外露电缆和康复辅助支具，另外腰部和腿部分别设有固定带，与病患贴合部位设有柔性缓冲，舒适可调，在实现下肢运动意图脑电信息的无创采集、精准识别和有效实施的同时保证患者行走训练过程的安全性与舒适性。团队基于该集成化脑控外骨骼系统，于天津市人民医院与天津市环湖医院开展50余例脑卒中患者临床康复实验，康复前后评估结果对比，患者肌耐力明显提高，走路持久性得到提升，步态对称性得到改善，膝关节、踝关节运动范围明显增加，并且FMA-LE和BBS临床量表评分也均有显著提升，如图3所示。数十例患者对该系统康复有效性与安全性给予高度赞扬，表示“脑机接口新型环路疗法优于传统针灸、作业疗法”。</p><p>在社会价值方面，系统脑机交互核心器件“数字脑电图机”已获批国家医疗器械注册证，推动了我国脑机接口关键核心技术自主化，突破国外核心技术壁垒。并且较现有的下肢被动式康复辅具，本项目利用脑机接口技术实现患者的主动式康复，打破现有运动康复产品被动训练的传统模式，减小康复医师的工作强度，从而节约大量的社会医疗资源；集成化背包底壳上安装有快拆机构，可以实现腰带和外骨骼背包快速装拆，节省设备装配时间，提升患者康复效率。并且，下肢外骨骼设计满足穿戴普适性要求，其尺寸设计基于国家标准《中国成年人人体尺寸》，关节机构保持10~20cm的可调节范围，最大范围满足我国脑卒中患者的穿戴需求。</p><p>图3 临床康复效果图③ 创新点3-基于迭代学习的下肢外骨骼步行康复训练方法</p><p>功能电刺激的实际效果受不同个体肌肉参数影响较大，此外传统步行康复训练方法不能根据患者的行走状态对电刺激参数进行实时调整，因此针对实际训练过程中不同被试及电刺激参数不确定性的问题，提出一种基于迭代学习的下肢外骨骼步行康复训练方法（迭代学习脑控电刺激和智能支撑系统与下肢康复训练方法，CN202111487176.0）。其先进性在于，通过高精度传感单元采集患者异常步态信息，利用人工智能优化算法，对比健康人与病患行走时的运动轨迹，时空编码型功能性电刺激与机械外骨骼耦合，自适应迭代调整电刺激输出参数，驱动患肢行走逐渐接近健侧运动规律（A Trajectory-Adaptive Walking Assistance Strategy Based on Functional Electrical Stimulation for Exoskeleton to Help Stroke Patients Restore Natural Gait， 2021.07）。</p><p>在应用效益方面，团队已于天津市多家三甲医院开展了数十例临床对照实验，结果显示，迭代学习的步行康复训练方法，可即时有效改善患者行走步态，患者步行时肌肉协同模式趋于正常，极大提升患者步态对称性，降低患者走路摔伤风险。</p><p>在社会价值方面，迭代学习的训练方法，依据个体步态改善自适应调整电刺激参数，无需进行不同康复时期的各个参数的手动调节，节约时间成本，缓解国家脑卒中疾病防治康复压力；并且该方法采集多模人体生物学数据并联合比对分析，实现康复效果客观量化，不过度依赖医生主观评价水平，提升我国医疗评价指标智能化、数字化程度。</p></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2023%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E7%A5%9E%E7%BB%8F%E8%82%8C%E8%82%89%E7%94%B5%E5%88%BA%E6%BF%80%E4%B8%8B%E8%82%A2%E5%A4%96%E9%AA%A8%E9%AA%BC%E5%BA%B7%E5%A4%8D%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E4%BA%BA%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E7%A5%9E%E7%BB%8F%E8%82%8C%E8%82%89%E7%94%B5%E5%88%BA%E6%BF%80%E4%B8%8B%E8%82%A2%E5%A4%96%E9%AA%A8%E9%AA%BC%E5%BA%B7%E5%A4%8D%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「脑机接口神经肌肉电刺激下肢外骨骼康复训练机器人」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E7%A5%9E%E7%BB%8F%E8%82%8C%E8%82%89%E7%94%B5%E5%88%BA%E6%BF%80%E4%B8%8B%E8%82%A2%E5%A4%96%E9%AA%A8%E9%AA%BC%E5%BA%B7%E5%A4%8D%E8%AE%AD%E7%BB%83%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「脑机接口神经肌肉电刺激下肢外骨骼康复训练机器人」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2023-s10.html"><span class="d">← 上一项</span>300MN超塑性等温锻造智能成型工艺技术与成套装备</a>
+    <a class="next" href="2023-s12.html"><span class="d">下一项 →</span>重型燃气轮机高温端用复杂部件加工成套刀具</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

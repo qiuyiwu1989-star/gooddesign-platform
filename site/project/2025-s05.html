@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>远程微创医疗手术机器人的研制 · 2025银奖 · 好设计</title>
+<meta name="description" content="一、立项背景及意义：（一）美国直觉外科公司研制的达芬奇外科手术机器人在泌尿外科、妇科等领域有独特优势，在腔镜手术机器人市场中处于垄断地位，但价格昂贵，难以短期内惠及普通民众。思哲睿与哈尔滨工业大学医疗机器人团队合作，旨在通过项目技术攻关突破">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2025">← 返回 2025 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2025 · 第十届</span></div>
+  <h1>远程微创医疗手术机器人的研制</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨思哲睿智能医疗设备股份有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">闫志远,杜志江</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">12025050001</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>一、立项背景及意义：（一）美国直觉外科公司研制的达芬奇外科手术机器人在泌尿外科、妇科等领域有独特优势，在腔镜手术机器人市场中处于垄断地位，但价格昂贵，难以短期内惠及普通民众。思哲睿与哈尔滨工业大学医疗机器人团队合作，旨在通过项目技术攻关突破国外技术封锁，将符合中国国情的高性价比国产手术机器人产业化，填补国内相关技术空白。结合远程操控技术，实现优质医疗资源下沉，提高高端医疗服务的可及性，有效解决我国医疗资源分配不均衡的问题，让普通民众用得上、用得起，充分享受科技带来的健康幸福感。（二）远程微创医疗手术机器人集成临床技术和高精尖机器人技术，具有创伤小、疼痛轻、失血少、感染风险低、术后恢复快的优点。远程操作使医疗资源的配置更加公平合理。项目以智能机器人技术为主体，带动多专业交叉应用，极具创新性，是在高端医疗装备领域中率先打破国外垄断的典型案例。</p><p>二、主要设计创新点：该款腔镜机器人手术系统的诞生能够引领最新的导航和远程手术创新理念，极大降低复杂手术的技术难度，以科技守护病患生命健康，为患者提供了进一步的健康保障。同时，该系统显著改善人体工效学，减轻医生的职业健康损害。</p><p>融合智慧医疗：传统腔镜机器人手术技术历经二十余年发展，在临床应用中积累了丰富经验，但仍存在术中实时影像融合能力不足、手术策略制定数据源单一等瓶颈问题。针对这一行业痛点，该系统提出“影像导航与机器人手术技术深度整合”的创新理念，通过多模态影像导航技术（三维重建影像、分子荧光显像、超声等）的应用，全面解析病患病理特征，为手术路径规划与风险预判提供智能化决策依据，显著提高复杂病灶手术的安全性、精确性和可行性。</p><p>实现患者“普惠&quot;理念：当前国内医疗体系面临两大挑战：其一，国外手术机器人长期垄断国内腔镜手术机器人市场，其高昂的设备购置费与耗材成本严重制约普惠医疗发展。其二，医疗资源呈现显著的地域性分布失衡，优质医疗资源（如顶级专家团队、先进诊疗设备）高度集中在大城市和三甲医院，偏远地区及基层医疗机构普遍存在人才匮乏、设备落后的问题。针对上述挑战，本团队依托自主核心技术攻关，成功突破技术壁垒，研发出具有完全知识产权的高端腔镜手术机器人系统，设备成本与耗材费用显著降低，真正做到让医院买得起，百姓用得起。同时构建5G远程医疗技术平台，突破地域限制，为偏远地区患者提供精准治疗，推动优质医疗资源向基层下沉，实现患者就近就医，专家远程赋能。</p><p>对医生友好的人机工效学设计：该款腔镜机器人手术系统致力于提升手术效率与精准度，同时优化医生与患者的心理体验。系统造型简洁流畅，以稳重的白色为主，搭配科技感十足的深灰色，营造出专业、可靠且舒适的视觉效果。传统暗箱式控制台采用封闭式架构，物理布局缺乏个性化调整空间，容易引发肩颈肌肉劳损等职业病。针对这一问题，该系统设计开放式控制台，使医生可根据身高、手部习惯灵活调整姿态，降低医生长时间操作的疲劳感，让医生能以更佳状态投入手术，提升操作精准度。</p><p>三、项目技术经济指标：（一）产品样机成果：机械臂可实现模块化配置，手术机器人单臂自由度12个，机器人手术器械工具15种。（二）知识产权成果：项目预期申请发明专利3项、软件著作权2项；实际共授权发明专利46项、软件著作权19项、实用新型专利65项。（三）经济效益及产业化成果：项目预期实现手术机器人5G远程手术应用示范2项，生产销售微创手术机器人3台/套以上，项目执行期内新增营业收入不少于2500万元。实际完成应用示范3项，销售5台/套，新增营业收入2566.37万元。各项指标均已超额完成。</p><p>四、推广应用情况：康多机器人已在北京大学第一医院、四川华西等全国近百家三甲医院开展手术7800余例。在临床医学方面，专业的医疗机构使用后，已在国内外权威医学研究期刊上发表了超过40篇相关学术文章，文章数量位居国产腔镜手术机器人第一。2024年国内已销售腹腔手术机器人21台，包括省内12台、省外9台；国外11台；手术耗材销售额达3千余万元。国外已签订合同国家包括沙特阿拉伯、白俄罗斯、巴西、印度尼西亚、印度等国家。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-h">一、项目团队研发基础：</div><p>团队完成了国家“863”项目“微创腹腔外科手术机器人系统研究”，成果成功通过科技部验收。团队核心人员作为技术负责人参加国家 “863”计划重点项目“腹胸腔微创手术机器人共性关键技术与示范应用”，并主持 863 计划项目“专科型微创手术及手术辅助机器人系统的研制”等相关项目或课题。突破了医疗机器人系统创成、人机协调控制等关键技术。团队核心人员主持完成了面向新疆边远地区创伤医疗中心的智能骨科诊疗装备研究及应用示范和单孔腔内微型机器人外科手术系统优化设计与控制技术研究等科技部和自然科学基金委项目。结合思哲睿与哈尔滨工业大学的技术基础和研发经验，该项目团队具备突破国外手术机器人技术垄断的可能性和技术研发的先进性。项目在腹腔镜手术机器人领域获得多项独创性成果，在多自由度主手、三维视觉技术、虚拟培训系统、RCM 机械臂集成与制造、微机械设计与制造工艺、手术机器人控制算法等领域形成了核心技术壁垒，拥有全自主知识产权，具有无可争议的原创性。</p><div class="p-h">二、项目主要技术创新点：</div><p>（一）融合智慧医疗：为融合先进的影像导航技术，团队创新性设计临床可拓展的多屏开放式控制台，为医生实现“多模态医学影像导航”（如术前影像三维重建导航、术中超声影像导航、术中分子影像荧光图像导航，AR、VR等）融合技术提供了实施平台，突破传统手术对单一影像的依赖，推动手术决策从“经验驱动”向“数据驱动”转型，为微创外科精准化、智能化发展提供关键技术支撑。</p><p>（二）实现患者“普惠&quot;理念：本系统在腹腔镜手术机器人领域有多项独创性成果，通过自主研发的多自由度主手、三维视觉技术、手术机器人控制算法等核心技术成功突破国外技术垄断，形成完全自主知识产权体系，显著降低设备成本，使更多患者能享有先进医疗服务。同时融合5G远程医疗技术，通过构建低延迟、高稳定性的远程手术协作网络，推动优质医疗资源向基层延伸，让更多偏远地区患者享受高效、精准的优质医疗服务。医生控制台右侧集成多端互联HUB功能，支持PC/平板/手机端接入，实现远程操作者与手术室的实时互动。依托5G大宽带和低延时特性，系统可构建远程手术室场景与远程手术操作者的遥操作环境，将微创医疗手术机器人技术与5G高速网络通讯技术无缝结合，确保医生手术操作的稳定性、准确性与安全性。同时，在远程手术室中构建完整的医疗信息系统、医疗服务系统、图像管理与通信系统、远程监控系统、非标格式流媒体处理系统、远程协作系统和手术机器人系统等子系统，通过5G专用医疗网络实现各子系统多维度数据协同与信息共融，提高了远程医疗手术的信息化和专业化水平。</p><p>（三）对医生友好的人机工效学设计：系统深度优化人体工程学设计，通过开放式控制台布局，多角度屏幕排布以及触控操作界面，全面提升术中医生的操作体验和视觉感受。操作区严格遵循人体四肢活动范围的水平区域和垂直区域划分，确保医生在操作过程中动作自然、高效且无疲劳感。以主屏幕为中心，向四周分散排列多屏的设计，将关键信息置于医生视线的黄金识别区，同时增加四周辅助信息交互，提升手术沉浸感。整体设计通过沉浸式视觉体验与精准操作结合，不仅提升了手术专注度和效率，更实现了以医生为中心的人性化操作环境，兼顾生理舒适性与医疗安全需求。</p><div class="p-h">三、技术成果：</div><p>（一）发明专利：</p><p>共授权发明专利46项。另外授权软件著作权19项、实用新型专利65项。</p><p>（二）临床应用：</p><p>自主品牌康多机器人于2022年获批全科注册证，应用于泌尿外科、普外科、妇科、胸外科等多个科室，是国际公认的拥有最高等级循证医学证据的多孔腔镜手术机器人，临床研究论文数量居国内首位，临床价值明确，已在北京大学第一医院、四川华西、哈医大附属各医院等全国近百家三甲医院完成7800余例手术，商业化手术量居国产腔镜手术机器人首位。思哲睿在工信部和国家卫健委“高端医疗装备推广应用项目”腔镜手术机器人领域排名全国第一名。</p><p>（三）标准制定：</p><p>参与制订项目相关国际标准5项（已发布4项，国标委采标2项）、国家标准5项（已发布4项）、行业标准3项（已发布1项）、团体标准8项（已发布5项）。获批国家知识产权优势企业，是黑龙江省专利标准融合创新试点单位。</p><div class="p-h">四、核心技术掌握情况：</div><p>思哲睿坚持自主研发和技术创新，突破了腔镜手术器人领域的多项高难度技术壁垒，掌握了微创应用条件下RCM手术机械臂技术、对临床手术动作具有高适应性的主操作手技术、精密手术器械技术、低延时高精度主从遥操作技术、精准手术导航技术等多项核心技术。</p><p>（一）RCM机构机械臂优化设计和控制技术：</p><p>腔镜手术机器人机械臂带动手术器械进行手术时，手术器械细长杆围绕患者体表切口做锥摆运动，称为远心点运动（Remote Center of Motion, RCM）。为防止机械臂失效后器械脱离切口伤害患者，RCM机构要保证患者体表切口不受牵拉作用，在机构安全和精度控制方面有极高的要求。康多机器人基于双级平行四边形连杆RCM原理和结构空间、负载均化及可靠性约束，基于结构拓扑优化方法优化设计了高安全性、高刚度、轻量化的RCM机构机械臂，可进行高频控制响应，并基于阻尼材料实现了机构振动的快速衰减，实现了高精度控制。</p><p>（二）医生自由输入并具有滤抖功能的主操作手技术：</p><p>医生控制台主操作手是腔镜手术机器人的核心组成部分，其技术水平和性能直接影响手术操作效果。在术中，医生控制台的两只主操作手记录医生的手部动作信息，并经运动学和动力学解算后，传输至患者手术平台，患者手术平台的手术器械复现医生动作实现手术操作。因主操作手动力学模型和主从速度映射模型复杂度高，性能受多参数共同制约，技术门槛高，设计难度大。康多机器人主操作手基于最优算法进行了构型综合优化设计，实现了主操作手灵巧工作空间和人手舒适操作空间的良好匹配；基于动态自平衡技术实现了主操作手的零外力柔顺操作，保证了操作的柔顺性和舒适性；基于分布式驱动技术实现了精准位置控制；基于主动安全约束技术，实现了风险操作时的实时力和视觉信息提示，保证了主操作手性能和手术安全。</p><p>（三）精密手术器械技术：</p><p>手术器械是腔镜手术机器人的末端执行机构，是医生手术过程中直观的体现，直接影响手术安全性与手术操作感受。公司突破了高灵巧性拟人手腕的手术器械结构设计，优化了长距离柔性丝传动设计，实现了刚柔耦合传动和器械精准控制，并提升了手术器械传动效率和使用寿命，开发出20余种微型手术器械。建立了手术器械位-力混合控制及传动扰动补偿的主从器械控制模型，设计了具有自主知识产权的多级器械快换接口解决方案，保证了器械控制精度。面向手术器械的批量化生产制造，完成了微小零件配合、铆接、表面处理、精密传动装配等工艺研究，开发了手术器械结构精度、传动精度、耐腐蚀性、操作功能等标准化检验流程和标准，实现了手术器械生产全流程质量管控，具备了精密手术器械批量化制造能力。</p><p>（四）低延时高精度主从遥操作技术：</p><p>腔镜手术机器人主要由医生控制台（主端）和患者手术平台（从端）组成，依靠主从遥操作技术实现机器人对医生手术操作的精准复制与能力扩展。公司自主研发的康多机器人控制器嵌入了最新一代主从遥操作算法，有效保障了主从操作过程中的动态控制响应精度，在滤除主端指令信号干扰（人手的自然抖动）的同时，抑制控制过程中从端机械臂和器械的末端抖动。通过机构间隙主动补偿算法消除了动态误差，实现了手术器械末端位置及姿态对医生手部动作轨迹的流畅和高精度跟随。自主开发的控制信号处理技术保证了控制信息、人机交互信息等数据的融合和实时传输，实现了低延时主从控制。</p><p>（五）精准手术导航技术：</p><p>手术导航技术是基于医学影像、计算机技术及空间定位技术实现术中精准定位、器械跟踪与操作引导。公司开发了多模态影像融合、影像精准重建、器械跟踪等手术导航相关技术。通过迭代重建优化模型实现了三维图像的快速智能重建，为手术操作提供精准的三维模型。基于多模态医学图像在时空上的相关性及信息上的互补性，应用人工智能深度学习方法，完成了多源影像的图像分割和融合，融合后的图像对术区有更全面、清晰的描述，方便引导医生手术操作。基于数字孪生技术，构建了虚拟现实交互与计算仿真相结合的个性化三维虚拟手术系统，可实现术前方案论证与过程仿真，医生手术培训和术前手术演练，以及术中实时监控与可视化导引。</p><div class="p-h">五、国内外情况对比：</div><p>近年来，国内高端医疗设备行业取得了显著进展，与以往相比，无论在技术水平、市场占有率还是品牌影响力上，都实现了质的飞跃。康多机器人相较于其他国产品牌腔镜手术机器人，也有着独特的优势。不同于其他品牌的暗箱式操作，康多机器人独创的开放式多模态多屏幕医生控制台，让医生抬起头来做手术，操作更舒适；同时，康多机器人可兼容其他3D腹腔镜系统，可以降低成本、提高设备通用性及利用率。然而与国际先进水平相比仍存在一定的差距。</p><p>例如全系列模块化腔镜手术机器人方面与美国达芬奇对比，Intuitive Surgical的Da Vinci 5系统将力传感器集成在微器械上实现0.1N分辨率的三维力反馈；Asensus Surgical的Senhance系统通过检测微器械受力实现三维力反馈。国内手术机器人企业在该技术上上不具备竞争力。另外，对比超声刀、多自由度血管闭合器、多自由度吻合器等手术器械上，在自由度和智能化精准控制方面与国外产品仍存在一定差距。</p></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2025%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E8%BF%9C%E7%A8%8B%E5%BE%AE%E5%88%9B%E5%8C%BB%E7%96%97%E6%89%8B%E6%9C%AF%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E7%A0%94%E5%88%B6%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E8%BF%9C%E7%A8%8B%E5%BE%AE%E5%88%9B%E5%8C%BB%E7%96%97%E6%89%8B%E6%9C%AF%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E7%A0%94%E5%88%B6" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「远程微创医疗手术机器人的研制」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E8%BF%9C%E7%A8%8B%E5%BE%AE%E5%88%9B%E5%8C%BB%E7%96%97%E6%89%8B%E6%9C%AF%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E7%A0%94%E5%88%B6" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「远程微创医疗手术机器人的研制」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2025-s04.html"><span class="d">← 上一项</span>高性能复杂管类构件三维矢量柔性弯曲成形技术及装备</a>
+    <a class="next" href="2025-s06.html"><span class="d">下一项 →</span>乘用车高效多模混合动力系统</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

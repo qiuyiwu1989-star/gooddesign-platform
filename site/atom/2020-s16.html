@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>新冠病毒猎手—格力杀新冠病毒空气净化器 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2020-s16.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2020-s16</div>
+  <h1>新冠病毒猎手—格力杀新冠病毒空气净化器</h1>
+  <div class="meta-line"><b>2020 年度银奖</b><span>珠海格力电器股份有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2020 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">珠海格力电器股份有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">陈光宇,刘佳池,许思陵,阮燕</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与生活 · 家用电器（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><div class="p-h">一、设计背景、定位、目的与意义：</div><p>2020年新年前后，新冠肺炎疫情突袭中华大地，扰乱我们正常的生活、学习、工作。截止目前，全球累计确认人数已经超过三千七百万人，死亡人数超过一百万人，现存确诊人数超过一千万。在防疫的紧急时刻，格力电器迅速响应，紧急研发出“新冠病毒猎手—格力杀新冠病毒空气净化器”。从大年初2开始，项目团队开始了“夜以继日”的技术攻关，用了不到两个月时间，完成了平时12个月才能完成的项目。市场上的空气净化器形形色色，但只有格力净化器可以杀新冠病毒。经武汉金银潭医院实地测试，中国科学院气溶胶化学与物理重点实验室检测，“新冠病毒猎手—格力杀新冠病毒空气净化器”能杀灭空气中99%的新冠病毒。格力自主研发的病毒净化系统，通过“杀、滤、消”，降低高危病毒在空气环境中的传播，适用于医院、学校、办公室等公共场所。格力“猎手”空气净化器正在以科技力量守护“健康中国”，相信我们一定能够打胜这场疫情攻坚战。</p><div class="p-h">二、产品原创性、独特性、引领性、颠覆性贡献：</div><p>（1）“新冠病毒猎手—格力杀新冠病毒空气净化器”是全球首款能够消杀病毒的空气净化器。格力凭借自主技术，夜以继日55天成功研发“猎手”空气净化器，可杀灭空气中99%的新冠病毒。真正做到设计赋能产业，并带动整个行业的工匠意识推动国人对中国制造业的信心。</p><p>（2）为了满足不同场所的病毒消杀，格力电器基于“杀病毒平台”已经研制出了三款不同型号的杀病毒空气净化器。普通净化器大多采用单纯滤网过滤技术，对污染物拦而不杀，容易造成二次污染。</p><p>（3） 格力杀新冠病毒空气净化器颠覆了传统空气进化器，在净化空气的基础上能够有效杀灭病毒。当前，新冠肺炎无症状感染者管理工作成为重点，疫情防控进入常态化。由于没有任何明显的症状与体征，无症状感染者在人群中难以被发现，其导致的传播也难以预防。在各大城市全面复工复产的情况下，更精准科学的防疫体现在全面、细致的防控手段上，科研攻关成果是最高效的武器。</p><div class="p-h">三、设计成果的市场应用情况：</div><p>（1）3月21日，格力将首批下线的60台“猎手”系列空气净化器捐赠给武汉市金银潭医院和泰康同济医院。</p><p>（2）在两会期间，为与会人员保驾护航，每个会场都能够看到“格力杀新冠病毒空气净化器”的身影。</p><p>（3）据不完全统计，能够杀灭病毒的格力“猎手”空气净化器已销往全球近40个国家和地区。</p><p>（4）得到央视重点关注及报道。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-h">一、项目创新设计思想，设计起源、创意过程或启发因素；</div><p>2020年春节过后，各大城市停工停产，社会各界科技防疫的需求迫在眉睫。然而新冠肺炎由于没有任何明显的症状与体征，无症状感染者在人群中难以被发现，其导致的传播也难以预防。在防疫的紧急时刻，格力电器迅速响应，从大年初2开始，项目团队在办公室里“扎了根”，开始了“夜以继日”的技术攻关，用了不到两个月时间，完成了平时12个月才能完成的项目。充分发挥出企业自主创新的科技优势，奋战在这场防疫战的第一线。</p><div class="p-h">二、结构和外观设计创新、项目技术原理创新、功能创新；</div><p>（1）在结构和外观创新方面：</p><p>格力电器搭建了“杀病毒平台”通过格力的“杀病毒”核心技术将产品研发不断扩展，目前该系列产品已研发出三款，分别为家用杀病毒消毒机、商用杀病毒消毒机、电梯消毒机。可广泛应用于办公楼、商场、医院、学校的公共场所和电梯间等场所，格力“猎手”系列空气净化器目前已在全国各地的企业、医院发挥着重要的防疫作用。</p><p>家用杀病毒消毒机：</p><p>日常生活中对病毒的防控将是一项长期工作，我们要特别关注日常生活中的杀菌消毒。我们与病毒的斗争也很难在短时间内结束。疫情之下，让人安心出门，放心消费，健康回家是关键。这款产品的使用场所主要在家庭。</p><p>家庭中不同的空间都需要消杀，该机型一台机器就可消杀36平方米的距离。底部搭载了万向轮，能否方便的推向各个房间使用，同时为了防止老人，小孩碰撞，我们为它设计了大圆角的造型。在触摸屏中间，设计了能够实时显示空气质量的三色灯，红色表示污染严重，绿色表示空气清新。内凹型的腰线除了外观好看，最重要的原因是能够降低外观成本。同时他还拥有一键开机，智能进化的功能。颜色易识别，操作更便捷。</p><p>这款产品外观简单大方，能够满足各种装修需求，放在家中也犹如一件艺术品。</p><p>商用杀病毒消毒机：</p><p>这款产品的使用场合基本上为医院，商场，办公楼，学校等公共场所。所以造型以简约大气为主，不易藏污纳垢，更卫生、更安全。全钣金机身，金属质感，安全可靠，由于疫情的严重影响，我们研发出该产品后要马上投入市场，所以采用了全钣金件，由于等不及注塑开模、钣金开模。我们产品外观全部采用数控加工，日夜不歇，生产出的第一批产品立刻运送到金银潭医院和康泰医院。</p><p>电梯杀病毒消毒机：</p><p>早在2月初，全国最初启动复工复产之时，“抗疫先锋”钟南山院士就曾表明，按危险程度分，电梯间是办公场所中最高危之地：“不要迷信电梯间那些‘此处已消毒’的纸条。在电梯间里，如果刚刚有人咳嗽或打了喷嚏后离开，你以为走进了空无一人的电梯间，其实全是细菌！</p><p>所以，格力依托“杀病毒平台”紧急研制了电梯杀病毒消毒机。通过创新“隐形”设计。消毒机主机安装在电梯顶部，不占用电梯轿厢内部空间，同时实现大口径风道设计，达到极高的进出风效率。搭配电梯轿厢顶部左右分布的隐藏式进出风口，实现电梯内空气的急速稀释、净化、消毒，悄无声息间净化每个角落的空气，不放过任何“漏网之鱼”，不让病毒有生存的空间。</p><p>外观秉承去繁求简的设计原则。正面采用弧形面板设计，整体白色注塑和喷涂，体现产品整体感以及契合防疫理念的神圣感。规整化人性化设计的三层抽屉式滤网盒，可快速更换滤网，保证设备高效长久运行。打破了传统公共设备生硬死板、粗糙、无美感的印象，打造简洁大气、精致美观、充满亲和力的外观造型。</p><p>大疫当前，战疫容不下半分侥幸和麻痹大意。面对电梯间消杀盲区，不同于传统表面消毒的方式，格力电梯空气消毒机直接杀灭徘徊在电梯空气中的新冠病毒。急防疫所急，补防疫所需，为助力群众恢复正常生活而“战斗”，进一步填补“电梯防疫”的盲区，推进疫情防控常态化。筑起疫情新常态之下人民生命安全和身体健康的坚实防线，更为稳住疫情防控成果，促进经济有效复苏、保障经济高效有序运行提供新的抓手和契机。</p><p>（2）技术原理创新：</p><p>CKER病毒净化系统是“猎手”系列空气净化器杀灭空气中新冠病毒的核心。</p><p>通过“杀”、“滤”、“消”三重技术手段，能够有效捕捉杀灭空气中的病毒，降低空气中的病毒浓度。其中，CEP等离子体恒效净化技术可以利用高压电离技术在发生极产生等离子体，破坏细菌的细胞壁及病毒的蛋白质，杀灭细菌和病毒；H13级别强效过滤网的单次过滤效率高达99.95%，可在1h内对密闭空间中100nm（0.1微米）大小的颗粒物，包括新型冠状病毒或其他尺寸相近的污染物，有效进行过滤净化；基于目标值的表面温度控制技术则通过格力自主研发的智能控温系统，在不同风速、复杂风场、以及不同环境温度、湿度条件下实现自动感知并精准控温，使整个滤网的表面温度均匀维持在56℃以上，有效杀灭附着在滤网上的新型冠状病毒。</p><p>（3）功能创新</p><p>项目团队在原有的CEP技术基础上，研发推出针对新冠病毒的“猎手”系列空气净化器，搭载CKER病毒净化系统，经武汉金银潭医院实地测试，中国科学院气溶胶化学与物理重点实验室检测，可以杀灭空气中99%以上新冠病毒、流感病毒、肠道病毒等等。格力电器获颁首批“消费类电器产品卫生健康认证，该标准在钟南山院士的指导下完成制定。</p><p>三、项目在设计方法科学性、功能设计有效性、工艺流程与材料设计领先性、软件及网络大数据设计智能性，以及可持续性、人性化、审美性、体验性等意义创造的特点；</p><p>新冠病毒猎手—格力杀新冠病毒空气净化器是全球首款能够有效杀灭99%新冠病毒的家电产品，通过自主研发，衍生开发了基于杀病毒平台的多款产品，能够满足不同场合的杀毒净化需求，并且到目前为止，国内外均无产品能超越。众所周知，本次肆虐的新冠状病毒存在明显人传人现象，普通净化器只能过滤灰尘、PM2.5、甲醛等常见污染物，对病毒的净化能力微弱甚至无效。而格力“猎手”系列空气净化器，除了可以净化常见污染物之外，还能高效杀灭空气中的病毒。其秘密在于，格力“猎手”系列空气净化器，装备了格力核心科技——CKER病毒净化系统，即低温等离子体高效过滤协同热处理技术，包含格力自主研发的CEP等离子体恒效净化技术，以及基于目标温度的复杂风场内表面温度控制技术，能够有效捕捉杀灭空气中的病毒，降低空气中病毒浓度。CKER病毒净化系统分为三个步骤：杀、滤、消。</p><p>“杀”：CEP等离子体恒效净化技术，破坏病毒细菌的细胞壁、蛋白质，将病毒尸体收集集中处理，杜绝滋生。</p><p>“滤”：H13级别强效滤网，针对0.1微米大小的颗粒物可以有效净化；</p><p>“灭”：通过格力自研的智能温控系统，智能感知周边所有温度、湿度等参数，做到滤网始终保持在56℃以上，高温灭病毒；</p><p>在可持续性方面新冠病毒猎手—格力杀新冠病毒空气净化器不仅具备杀新冠病毒的功能，还能够杀灭流感病毒，肠道病毒，等等，每年因流感死亡的人数也是非常高的。</p><p>在人性化、审美性、体验性方面格力杀新冠病毒空气净化器完全围绕着如何能够高效杀毒的人机体验进行设计，操作简单方便。</p><div class="p-h">四、项目（产品）创新设计的实践过程、典型经验、品牌战略、团队优势等。</div><p>格力电器于2020年5月30日建设完成AHAM实验室，荣获INTERTEK天祥集团（以下简称INTERTEK）颁发的亚太首张空气净化器实验室“卫星计划”证书，标志着格力实验室顺利通过AHAM-AC1(美国家用电器制造商测试标准)的严格评估，格力由此成为亚太首家拥有第三方认可且符合AHAM标准CADR实验室的企业，该成就为企业助力全球疫情抗击、守护用户健康生活和拓宽我国空气净化器行业的国际市场起到重要促进作用。</p><p>公司组建了跨专业团队，包括经验丰富的市场情况与产业研究专家、小家电技术专家、质量管理专家，市场运维专家等骨干研发团队。拟在空气净化及病毒消杀方面取得突破，攻关研究了格力杀新冠病毒空气净化器CEP等离子体恒效净化技术、H13级别强效滤网，智能温控系统，高温灭病毒等关键技术。通过研制CEP等离子体恒效净化技术，成功地解决了如何快速破坏病毒细菌的细胞壁、蛋白质，将病毒尸体收集集中处理等技术难题，实现了杀灭空气中99%的新冠病毒的目标。实现了以设计引领技术开发和商业模式创新成果。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>柔性全钢高塔架风电机组的设计 · 2021银奖 · 好设计</title>
+<meta name="description" content="风能是资源潜力巨大、适合大规模开发的可再生能源。发展风电是构建我国清洁低碳、安全高效能源体系的重要战略举措，目前我国陆上风电重心已从高风速区域向低风速区域发展。根据国家能源局的规划（2018-2020年），低风速区域新增风电装机主要分布在河">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2021">← 返回 2021 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>柔性全钢高塔架风电机组的设计</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">浙江运达风电股份有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">王瑞良,宋恭杰,章培成,王克峰</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101350</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>风能是资源潜力巨大、适合大规模开发的可再生能源。发展风电是构建我国清洁低碳、安全高效能源体系的重要战略举措，目前我国陆上风电重心已从高风速区域向低风速区域发展。根据国家能源局的规划（2018-2020年），低风速区域新增风电装机主要分布在河南、山东、安徽、江苏、河北南部等地，其中平原风场超过1500万千瓦；这些低风速区域的平原风场普遍存在年平均风速低、湍流小、风切变大的风况的特点，若采用塔架高度为100米以下的常规塔架风电机组，这些低风速高切变的风电场不具备开发经济价值；若采用塔架高度为120米以上的刚性塔架风电机组，虽然能够较大幅度的提升发电量，但是刚性高塔的重量也会大幅增加，导致风电场项目的整体收益不佳。运达研发的柔性全钢高塔架技术，既能提升风电场的发电量，又能有效控制塔架重量的增加，从而明显提升低风速区域平原风电场的经济性与项目投资收益。</p><p>运达开发的全钢柔塔机组采用最先进的共振穿越技术、降载技术保证机组的高可靠性与经济型，在机组研发的同时，针对重要的关键核心部件进行攻关，开发出运达自研高压变桨系统，打破技术壁垒，实现完全自主的知识产权。为解决大部件的结构受力不均以及局部应力集中的问题，运达采用最新的拓扑优化技术提高设计合理性，在结构上采用国际上最先进的滑动偏航方案与控制策略，以提高机组的发电性能。运达研发的柔塔机组包含国内最大叶轮直径与最高轮毂高度，较传统钢塔机组发电量提高10%以上，除了发电量的优势，柔塔机组具有良好的电网适应性，不仅满足电能质量等电网要求，同时机组还具备一次调频与惯量调频的功能。</p><p>运达先后完成了2.X-4.X MW系列多款柔性全钢高塔架风电机组的开发，塔架高度达120-140米，叶轮直径可横跨140-164m,塔架重量较相同高度的传统塔架减少30%以上，产品通过权威机构的安全性评估，整体技术达到国际先进水平。项目已申请多项知识产权，其中发明专利15项，实用新型专利5项，软件著作权12项；</p><p>运达开发的全钢柔塔机组具有低成本、高发电量、高可靠性以及高安全性的特点，可大幅降低风电上网电价，推动了我国可再生能源利用的发展，同时对于改善我们能源结构保护环境意义重大，在关键核心技术上做到了完全的自主知识产权，打破国外技术壁垒，推动了风电产业的健康发展，助力实现国家能源战略“碳中和、碳达峰”目标。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>运达股份研发的全钢柔塔机组叶轮直径从140m至164m，功率等级从2.xMW扩展到4.xMW, 其中公司自主研发的柔塔穿越控制算法，高压变桨技术以及三电平电气系统等处于国际领先水平，同时机组采用模块设计，同时配备自主研发的PHM系统，用于机组的健康诊断，大幅提高机组的可靠性。</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>先进控制策略</div></div></div><p>控制策略是柔塔风电机组的核心技术。传统控制策略基于变速变桨的控制策略，其目的是在额定风速以下时，保障风机运行在最优Cp（功率系数）；但是柔塔机组由于塔架高度增加，塔架固有频率下降，会与机组运行时的1P（叶轮转频）产生交点，从而发生共振。为避免共振，通过控制策略研发，有效避免机组在共振区域长期运行，当风速变化时，采用控制系统智能识别并快速穿越共振区间。</p><div class="p-h">1.1 基于频率自识别的谐振点穿越技术。</div><p>机组配备自主研发的柔性塔架风电机组基于频率自识别的谐振点穿越技术，采用RBF神经网络技术实时在线处理塔架振动信号，实现塔架固有频率自动识别，进而实现动态调整机组转速控制目标避开谐振转速，解决了柔塔固有频率与风电机组转频出现谐振点交叉的国际性技术难题。</p><div class="p-h">1.2 塔架左右一阶模态动态阻尼自适应控制控制技术。</div><p>针对柔性全钢风电机组塔架的左右模态弱阻尼特性，发明了基于PSO寻优的塔架左右一阶模态动态阻尼自适应控制技术，通过叶片桨距角的动作增加风电机组气动阻尼，抑制了风电机组左右振动，实现风电机组塔底疲劳载荷降低10%以上。</p><div class="p-h">1.3 智能推力消减控制技术</div><p>为减少机组阵风对机组的载荷影响，运达通过对发电机转速信号的加速度以及转速误差信号的控制输入，通过算法输出机组的桨角控制指令，通过这种控制策略可以大幅降低机组的叶轮推力，以减少机组以及塔架的极限载荷20%以上</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>涡激振动解决方案</div></div></div><p>柔塔地设计不仅要考虑机组转频与塔架固有频率引发地共振，同时也要考虑由于风引起地涡激振动，在解决涡激振动问题，主要从以下下两个方面制定涡激振动解决方案。</p><div class="p-h">2.1 一阶涡激振动</div><p>针对一阶涡激振动，通常发生在吊装阶段，通过采用加装扰流条的方式来抑制涡激的振动，通过机组采用冗余的控制手段来抑制涡激振动；机组配备自主研发抗涡控制策略，通过控制桨角的动作来提高塔架阻尼，大大提高了机组的可靠性。</p><div class="p-h">2.2 二阶涡激振动</div><p>全钢柔塔机组除了会发生一阶涡激振动以外，在高风速下停机状态下还会发生二阶涡激振动，为避免二阶涡激振动，机组所有柔塔机组均配备自主设计的TLD阻尼器，通过加装阻尼器，使得塔架的二阶阻尼大幅提高，阻尼效果提升30%以上，并且得到第三方机构的评估证书。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>结构优化技术</div></div></div><p>在结构优化设计上，采用三位一体的设计优化方法，将拓扑优化、形状优化以及参数优化充分地结合了起来， 首先以单元密度作为设计变量，在设计空间内寻找材料质量的最优分布。主要应用于结构概念设计阶段，以得到结构的初步优化设计，然后以结构形状作为设计变量，在设计空间内寻找最优结构形状。主要用于对结构中高应力区域的局部优化，最后以结构设计参数作为设计变量，在设计空间内寻找设计参数的最优组合。主要应用于可参数化设计的结构的DOE设计探索、学习与优化，在轮毂、机架等关键零部件的结构优化上已经处于行业领先地位</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>高压变桨系统</div></div></div><p>变桨系统是机组最关键的控制系统之一，它的稳定性、可靠性直接影响机组的安全，运达自主研发的高压变桨系统具有完整的自主知识产权，其中核心部件已经完成全部国产化，整体国产化率95%以上，解决了产业关键部件卡脖子问题，故障率降低30%以上，同时对备件以及售后支持问题也有极大改善，极大地提高机组可靠性。</p><div class="p-h">4.1 集成式模块化，故障节点少</div><p>集传统充电器、开关电源和变桨控制器于驱动器一身，元器件布局更简易，散热性能更好，故障节点更少，利于轮毂轻量化设计。</p><div class="p-h">4.2 平台化设计，拓展兼容性强</div><p>核心部件驱动器、超级电容、变桨电机均可模块式兼容配置，电气原理方案可应用不同功率风电机组，为后续维护保养提供便利性。</p><div class="p-h">4.3 控制精度高，动态特性好</div><p>力矩特性更加线性的永磁电机配合驱动器矢量控制方式使得电机响应更快，效率更高，自由调节电机运动输出特性。</p><div class="p-h">4.4 优化设计方案，安全性高</div><p>双安全链设计方案、后备电源健康度检测方案、共因失效分析及解决方案、抗涡激振动方案等一系列先进的控制方案的应用，极大的提高了整机的安全性。</p><div class="p-list"><div class="p-li"><span class="p-mk">5</span><div>滑动偏航系统</div></div></div><p>滑动偏航系统相对于滚动偏航系统存在较大改变，包括偏航齿圈、轴向承载面摩擦片、径向承载面摩擦片、偏航制动器及偏航驱动机构；结构上更加简单、稳定性更高、故障率更低，滑动偏航系统具有以下特点：</p><div class="p-h">5.1 自润滑，免维护</div><p>滑动偏航系统省去了滚动偏航轴承滚道及润滑系统的定期注脂等维护，其中润滑系统需要每半年维护一次，维护成本高；滑动偏航系统采用偏航齿圈与偏航制动器上的摩擦片相对滑动的形式，实现偏航运动；制动器配套的摩擦片采用自润滑材料，摩擦面上设计有油沟，一次注油终身免维护。</p><div class="p-h">5.2 结构简单，可靠性高</div><p>滑动偏航系统包括偏航齿圈、偏航驱动、偏航制动器等三大模块，相对于滚动偏航中偏航轴承、偏航润滑系统的使用，结构更加简单。制动器采用机械式预紧，性能更加稳定和可靠；此外，随着风电机组的逐渐增大，对轴承的要求越来越来高，相应的轴承的失效概率随之增大，滑动偏航在超大机组中可靠性的优势更加明显。</p><div class="p-list"><div class="p-li"><span class="p-mk">6</span><div>1140V电气系统创新设计</div></div></div><p>基于现有大MW风电机组平台，将原有690V电气系统提升至1140V新电气系统，重新设计1140V发电机、1.8/3kV动力电缆、1140V三电平空空冷变流器、1.8/3kV箱变低压电缆、35kV/1140V箱变、1140V/690V/400V辅助变压器，相较690V电气系统，新一代1140V电气系统具有电能质量更好、度电成本更低地特点，通过1140V三电平等先进技术的运用，使得风机变频器输出开关状态组合由8种提升到27种，变流器输出波形更加接近正弦波，变流器输出电压变化率du/dt在800V/s以内；同时电气系统采用平台化设计，具有较强地扩展兼容性。</p><div class="p-list"><div class="p-li"><span class="p-mk">7</span><div>先进的主控系统设计</div></div></div><p>运达自主研发的主控系统设计了独特的自检系统，在控制系统上电，系统能够自动检测系统的紧急停机刹车信号、变桨后备电源能力与状态，如果测试发现异常，禁止机组启机。同时具备国内领先的电网主动支撑能力设计，采用实时以太网等快速通讯技术，提高机组与场级系统的通讯速率，优化原因有功功率控制，大幅提高机组有功功率响应速率，20%Pn有功功率阶段响应时间小于5s，满足以东北电网为代表的目前要求最高的电网主动支撑要求。</p><div class="p-list"><div class="p-li"><span class="p-mk">8</span><div>故障预测与健康管理系统</div></div></div><p>为提高风电场运维的数字化、信息化、智能化水平，运达搭建了基于阿里云的故障预测与健康管理系统。该系统研究开发了齿轮箱齿轮断齿、齿轮箱高速轴轴承异常磨损、发电机轴承跑圈等几十个故障预警模型，覆盖了传动链、发电系统、变桨系统、偏航系统等风电机组主要子系统，为主动运维策略提供必要的技术支撑。该系统把重点放在基于振动数据智能预警技术，能预警大部件机械故障，避免风电场重大事故发生，每年减少运维成本约3000万，产生巨大的经济价值，技术处于行业领先水平，具有巨大的市场前景。</p></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%9F%94%E6%80%A7%E5%85%A8%E9%92%A2%E9%AB%98%E5%A1%94%E6%9E%B6%E9%A3%8E%E7%94%B5%E6%9C%BA%E7%BB%84%E7%9A%84%E8%AE%BE%E8%AE%A1%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E6%9F%94%E6%80%A7%E5%85%A8%E9%92%A2%E9%AB%98%E5%A1%94%E6%9E%B6%E9%A3%8E%E7%94%B5%E6%9C%BA%E7%BB%84%E7%9A%84%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「柔性全钢高塔架风电机组的设计」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E6%9F%94%E6%80%A7%E5%85%A8%E9%92%A2%E9%AB%98%E5%A1%94%E6%9E%B6%E9%A3%8E%E7%94%B5%E6%9C%BA%E7%BB%84%E7%9A%84%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「柔性全钢高塔架风电机组的设计」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-s16.html"><span class="d">← 上一项</span>K系列智能全液压推土机</a>
+    <a class="next" href="2021-s18.html"><span class="d">下一项 →</span>智能化自行走升降工作平台</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>好设计与生活福祉｜初一科学课件</title>
+  <style>
+    :root {
+      --bg: #f6f8f7;
+      --ink: #172326;
+      --muted: #617075;
+      --line: #dbe5e2;
+      --panel: #ffffff;
+      --deep: #143848;
+      --sea: #0c7380;
+      --mint: #3f9c84;
+      --coral: #c84f44;
+      --gold: #d99b36;
+      --blue: #3468a7;
+      --shadow: 0 18px 48px rgba(18, 49, 61, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+    button, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 26px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(246, 248, 247, 0.94);
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--deep);
+      font-weight: 800;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--sea);
+      color: white;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .nav a, .btn {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 12px;
+      background: white;
+      color: var(--deep);
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .nav a:hover, .btn:hover, .btn:focus-visible {
+      border-color: var(--sea);
+      outline: none;
+    }
+    .btn.primary {
+      background: var(--deep);
+      border-color: var(--deep);
+      color: white;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: grid;
+      align-items: center;
+      padding: 9vh 6vw 10vh;
+      background:
+        linear-gradient(90deg, rgba(20, 56, 72, 0.92), rgba(20, 56, 72, 0.72)),
+        url("../cases/case-2025-03.jpg") center / cover;
+      color: white;
+    }
+    .hero-inner { width: min(1120px, 100%); }
+    .kicker {
+      display: inline-flex;
+      margin-bottom: 16px;
+      color: #d8eeee;
+      font-weight: 800;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      max-width: 980px;
+    }
+    h2 {
+      color: var(--deep);
+      font-size: clamp(30px, 4.2vw, 54px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h3 {
+      color: var(--deep);
+      font-size: 22px;
+      line-height: 1.25;
+    }
+    .lead {
+      margin-top: 22px;
+      color: #eef9fa;
+      font-size: clamp(20px, 2.3vw, 30px);
+      line-height: 1.55;
+      max-width: 900px;
+    }
+    .hero-actions, .tag-row, .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+    .tag {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      border-radius: 7px;
+      padding: 5px 11px;
+      background: rgba(255, 255, 255, 0.13);
+      color: white;
+      font-weight: 800;
+    }
+
+    .section { padding: 70px 6vw; }
+    .section-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+    .section-kicker {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--sea);
+      font-weight: 800;
+    }
+    .plain-lead {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.55;
+      max-width: 920px;
+    }
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card, .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 10px 24px rgba(18, 49, 61, 0.08);
+    }
+    .card {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      padding: 20px;
+      border-top: 5px solid var(--sea);
+    }
+    .card.coral { border-top-color: var(--coral); }
+    .card.gold { border-top-color: var(--gold); }
+    .card.mint { border-top-color: var(--mint); }
+    .card.blue { border-top-color: var(--blue); }
+    .card p, .note {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .case-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .case-tab {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 14px;
+      background: white;
+      color: var(--deep);
+      font-weight: 800;
+    }
+    .case-tab.active {
+      background: var(--deep);
+      border-color: var(--deep);
+      color: white;
+    }
+    .case-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .case-main {
+      display: grid;
+      gap: 14px;
+      padding: 24px;
+    }
+    .case-main h3 { font-size: 30px; }
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill {
+      display: inline-flex;
+      min-height: 30px;
+      align-items: center;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: #eef7f5;
+      color: var(--deep);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .case-visual {
+      min-height: 270px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 18px;
+    }
+    .case-visual img {
+      width: 100%;
+      max-height: 290px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .diagram {
+      width: min(240px, 100%);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #eef7f5;
+      color: var(--deep);
+      font-size: 64px;
+      font-weight: 800;
+    }
+
+    .welfare-board {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .score-buttons {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+    .score-btn {
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      color: var(--deep);
+      font-weight: 800;
+      text-align: left;
+      padding: 10px 12px;
+    }
+    .score-btn.done {
+      border-color: rgba(63, 156, 132, 0.45);
+      background: #e8f5ef;
+      color: #17614f;
+    }
+    .welfare-result {
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+    }
+    .meter {
+      height: 14px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #dfe9e7;
+    }
+    .meter-fill {
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--coral), var(--gold), var(--mint));
+      transition: width 180ms ease;
+    }
+    .big-score {
+      color: var(--sea);
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .quiz-box {
+      display: grid;
+      gap: 14px;
+      padding: 22px;
+    }
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .option {
+      min-height: 58px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdfc;
+      color: var(--deep);
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 800;
+    }
+    .option.correct {
+      border-color: var(--mint);
+      background: #e8f5ef;
+      color: #17614f;
+    }
+    .option.wrong {
+      border-color: var(--coral);
+      background: #fff0ee;
+      color: #91372f;
+    }
+    .feedback {
+      min-height: 28px;
+      color: var(--deep);
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 96px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--ink);
+      background: #fbfdfc;
+      line-height: 1.55;
+    }
+    .worksheet {
+      display: grid;
+      gap: 14px;
+      padding: 22px;
+      margin-top: 28px;
+    }
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+    .field label {
+      color: var(--deep);
+      font-weight: 800;
+    }
+    .save-result {
+      padding: 14px;
+      border-radius: 8px;
+      background: #eef7f5;
+      color: var(--deep);
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .footer {
+      padding: 34px 6vw;
+      border-top: 1px solid var(--line);
+      background: #eaf1ef;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .footer-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .nav { justify-content: flex-start; }
+      .grid-2, .grid-3, .grid-4, .case-stage, .welfare-board, .options {
+        grid-template-columns: 1fr;
+      }
+      .section { padding: 54px 22px; }
+      .hero { min-height: 78vh; padding: 9vh 22px 10vh; }
+    }
+    @media print {
+      .topbar, .hero-actions, .case-tabs, .score-buttons, .action-row { display: none; }
+      .hero, .section { page-break-after: always; }
+    }
+  </style>
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">福</div>
+      <span>好设计与生活福祉</span>
+    </div>
+    <header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">好设计应用体验 · 互动模拟用于理解设计原理，不作为工程参数或专业仿真依据。</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="kicker">初一科学 · 45分钟互动课件</span>
+        <h1>福利不是“发东西”，也可以是一个好设计</h1>
+        <p class="lead">从医疗、养老、医院运行和城市施工案例出发，理解科学技术怎样帮助人过得更安全、更健康、更方便。</p>
+        <div class="tag-row">
+          <span class="tag">生活福祉</span>
+          <span class="tag">人本设计</span>
+          <span class="tag">科学证据</span>
+          <span class="tag">公共价值</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#goal">开始上课</a>
+          <a class="btn" href="#cases">直接看案例</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="goal">
+      <div class="section-inner">
+        <span class="section-kicker">课堂问题</span>
+        <h2>一个设计怎样变成“福利”？</h2>
+        <p class="plain-lead">这节课不讲政策条文，而是从科学课角度理解“生活福祉”：它是否帮助真实的人，是否降低风险，是否让更多人用得起、用得上、用得安全。</p>
+        <div class="grid-4">
+          <div class="card">
+            <h3>健康</h3>
+            <p>能不能帮助人更早发现疾病、更安全治疗、更少受伤？</p>
+          </div>
+          <div class="card coral">
+            <h3>照护</h3>
+            <p>能不能帮助老人、病人、行动不便者提高自主生活能力？</p>
+          </div>
+          <div class="card gold">
+            <h3>安全</h3>
+            <p>能不能减少感染、事故、劳动风险或环境破坏？</p>
+          </div>
+          <div class="card mint">
+            <h3>可及</h3>
+            <p>能不能让服务更高效、更稳定，让更多人获得帮助？</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="section-inner">
+        <span class="section-kicker">案例精选</span>
+        <h2>从好设计案例里看见人的需要</h2>
+        <p class="plain-lead">下面4个案例来自本项目已有好设计案例资料。课堂上建议先看“它帮助了谁”，再看“它用了什么科学或工程方法”。</p>
+        <div class="case-tabs">
+          <button class="case-tab active" type="button" data-case="medical">医疗早诊</button>
+          <button class="case-tab" type="button" data-case="elder">居家养老</button>
+          <button class="case-tab" type="button" data-case="hospital">医院配送</button>
+          <button class="case-tab" type="button" data-case="city">绿色施工</button>
+        </div>
+        <div class="case-stage">
+          <div class="case-main panel">
+            <div class="case-meta" id="caseMeta"></div>
+            <h3 id="caseTitle"></h3>
+            <p class="note" id="caseNeed"></p>
+            <p class="note" id="caseScience"></p>
+            <p class="note" id="caseWelfare"></p>
+          </div>
+          <div class="case-visual panel" id="caseVisual"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="judge">
+      <div class="section-inner">
+        <span class="section-kicker">课堂工具</span>
+        <h2>福祉判断器</h2>
+        <p class="plain-lead">选中你认为这个设计做到的方面。它不是标准答案，而是帮助学生把“我觉得好”变成“我能说出理由”。</p>
+        <div class="welfare-board">
+          <div class="score-buttons">
+            <button class="score-btn" type="button" data-score-item="health">帮助健康或治疗</button>
+            <button class="score-btn" type="button" data-score-item="safety">降低风险或事故</button>
+            <button class="score-btn" type="button" data-score-item="care">减轻照护负担</button>
+            <button class="score-btn" type="button" data-score-item="access">让更多人用得上</button>
+            <button class="score-btn" type="button" data-score-item="evidence">能说出科学证据</button>
+          </div>
+          <div class="welfare-result panel">
+            <span class="small">当前福祉指数</span>
+            <div class="big-score" id="welfareScore">0%</div>
+            <div class="meter"><div class="meter-fill" id="welfareFill"></div></div>
+            <p class="note" id="welfareText">请先选择一个案例，再勾选它带来的福祉价值。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quiz">
+      <div class="section-inner">
+        <span class="section-kicker">即时小测</span>
+        <h2>判断“福利设计”不能只看愿望</h2>
+        <div class="grid-2">
+          <div class="quiz-box panel" data-quiz>
+            <h3>1. 下面哪一句更像科学课里的证据？</h3>
+            <div class="options">
+              <button class="option" type="button" data-correct="false">这个产品看起来很高级。</button>
+              <button class="option" type="button" data-correct="true">它用传感器、避障和路径规划减少医院配送错误。</button>
+            </div>
+            <div class="feedback" aria-live="polite"></div>
+          </div>
+          <div class="quiz-box panel" data-quiz>
+            <h3>2. 设计提升生活福祉，最应该先问什么？</h3>
+            <div class="options">
+              <button class="option" type="button" data-correct="true">它帮助了谁，解决了什么真实困难？</button>
+              <button class="option" type="button" data-correct="false">它的名字是不是听起来很厉害？</button>
+            </div>
+            <div class="feedback" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-inner">
+        <span class="section-kicker">学生任务</span>
+        <h2>设计一个校园福祉小作品</h2>
+        <p class="plain-lead">请学生从校园里找一个真实困难，设计一个小产品或小系统。可以是防近视台灯、安静午休提醒、楼梯安全提示、健康饮水提醒、书包减负装置等。</p>
+        <div class="worksheet panel">
+          <div class="field">
+            <label for="person">1. 我想帮助的人</label>
+            <textarea id="person" placeholder="例如：容易忘记喝水的同学、楼梯上容易拥挤的同学、长时间写作业眼睛疲劳的同学。"></textarea>
+          </div>
+          <div class="field">
+            <label for="problem">2. 他们遇到的真实困难</label>
+            <textarea id="problem" placeholder="请写清楚具体场景，不要只写“不方便”。"></textarea>
+          </div>
+          <div class="field">
+            <label for="solution">3. 我的设计方案</label>
+            <textarea id="solution" placeholder="说明它有什么结构、传感器、材料、提醒方式或使用流程。"></textarea>
+          </div>
+          <div class="field">
+            <label for="reason">4. 科学依据</label>
+            <textarea id="reason" placeholder="可以从光、力、声音、材料、人体健康、能量、信息传递等角度说明。"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="btn primary" type="button" id="saveWork">保存</button>
+            <button class="btn" type="button" id="fillExample">填入示例</button>
+            <button class="btn" type="button" id="clearWork">清空</button>
+            <button class="btn" type="button" id="printWork">打印</button>
+          </div>
+          <div class="save-result" id="saveResult">填写后可以保存到当前浏览器。打印时会隐藏导航和按钮。</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>课堂结论：好的福利设计 = 看见真实困难 + 用科学方法降低困难。</span>
+      <span>案例依据：当前项目内好设计案例资料；图片使用项目内案例图。</span>
+    </div>
+  </footer>
+
+  <script>
+    const cases = {
+      medical: {
+        meta: ["2025", "消化道早癌诊疗", "医疗健康"],
+        title: "消化道早癌诊疗柔性手术机器人系统设计及应用",
+        need: "帮助对象：消化道早癌患者和医生。真实困难是消化道空间狭窄、弯曲，早诊早治需要更精准、更稳定、更安全的操作。",
+        science: "科学与工程方法：柔性机构、力和形状感知、定位导航、显微成像等，让器械能在狭小空间中完成诊疗操作。",
+        welfare: "福祉价值：提高早诊早治能力，降低医生操作难度，服务人民生命健康。",
+        visual: "image",
+        image: "../cases/case-2025-03.jpg"
+      },
+      elder: {
+        meta: ["2021", "居家养老轮椅床", "养老照护"],
+        title: "住行无缝居家养老轮椅床",
+        need: "帮助对象：自理能力不足、需要起身和出行帮助的老人。真实困难是从床上坐起、上下床、独自移动都不容易。",
+        science: "科学与工程方法：床椅变形机构、电动推杆、连杆机构、移动控制、传感器生命体征监测。",
+        welfare: "福祉价值：增强老人自主起居和移动能力，也减轻家庭照护压力。",
+        visual: "text",
+        mark: "老"
+      },
+      hospital: {
+        meta: ["2021", "智能医药配送机器人", "医院运行"],
+        title: "智能医药配送机器人",
+        need: "帮助对象：医护人员和患者。真实困难是医院配送任务多、感染风险高、药品和设备配送需要安全高效。",
+        science: "科学与工程方法：路径规划、激光雷达、深度视觉、多传感器融合、动态避障和机械臂识别抓取。",
+        welfare: "福祉价值：减少医护人员重复劳动和高风险接触，提高药品配送效率和准确性。",
+        visual: "text",
+        mark: "药"
+      },
+      city: {
+        meta: ["2020", "智能化非开挖定向钻进装备", "绿色城市"],
+        title: "智能化非开挖定向钻进装备",
+        need: "帮助对象：城市居民、施工人员和市政建设。真实困难是铺设管线时传统开挖会破坏道路、影响交通和环境。",
+        science: "科学与工程方法：锂电驱动、钻进导航、作业监测、故障自诊断、人机交互和低噪声设计。",
+        welfare: "福祉价值：减少城市施工扰民和环境影响，提高施工安全与效率。",
+        visual: "text",
+        mark: "城"
+      }
+    };
+
+    const caseTabs = Array.from(document.querySelectorAll("[data-case]"));
+    const caseMeta = document.querySelector("#caseMeta");
+    const caseTitle = document.querySelector("#caseTitle");
+    const caseNeed = document.querySelector("#caseNeed");
+    const caseScience = document.querySelector("#caseScience");
+    const caseWelfare = document.querySelector("#caseWelfare");
+    const caseVisual = document.querySelector("#caseVisual");
+    const scoreButtons = Array.from(document.querySelectorAll("[data-score-item]"));
+    const welfareScore = document.querySelector("#welfareScore");
+    const welfareFill = document.querySelector("#welfareFill");
+    const welfareText = document.querySelector("#welfareText");
+    const workFields = ["person", "problem", "solution", "reason"].map(id => document.querySelector(`#${id}`));
+    const saveResult = document.querySelector("#saveResult");
+
+    function renderCase(key) {
+      const item = cases[key];
+      caseTabs.forEach(tab => tab.classList.toggle("active", tab.dataset.case === key));
+      caseMeta.innerHTML = item.meta.map(text => `<span class="pill">${text}</span>`).join("");
+      caseTitle.textContent = item.title;
+      caseNeed.textContent = item.need;
+      caseScience.textContent = item.science;
+      caseWelfare.textContent = item.welfare;
+      if (item.visual === "image") {
+        caseVisual.innerHTML = `<img src="${item.image}" alt="${item.title}">`;
+      } else {
+        caseVisual.innerHTML = `<div class="diagram">${item.mark}</div>`;
+      }
+      scoreButtons.forEach(btn => btn.classList.remove("done"));
+      updateWelfareScore();
+    }
+
+    function updateWelfareScore() {
+      const count = scoreButtons.filter(btn => btn.classList.contains("done")).length;
+      const score = count * 20;
+      welfareScore.textContent = `${score}%`;
+      welfareFill.style.width = `${score}%`;
+      welfareText.textContent = score >= 80
+        ? "这个设计已经能从多个角度说明福祉价值。请让学生补充具体证据。"
+        : "继续追问：它帮助了谁？降低了什么风险？科学依据是什么？";
+    }
+
+    document.querySelectorAll("[data-quiz]").forEach(box => {
+      const feedback = box.querySelector(".feedback");
+      box.querySelectorAll(".option").forEach(option => {
+        option.addEventListener("click", () => {
+          box.querySelectorAll(".option").forEach(item => item.classList.remove("correct", "wrong"));
+          const correct = option.dataset.correct === "true";
+          option.classList.add(correct ? "correct" : "wrong");
+          feedback.textContent = correct ? "回答正确。请把这句话改写成自己的证据。" : "再想想：福利设计要回到真实困难和科学证据。";
+        });
+      });
+    });
+
+    caseTabs.forEach(tab => tab.addEventListener("click", () => renderCase(tab.dataset.case)));
+    scoreButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("done");
+        updateWelfareScore();
+      });
+    });
+
+    document.querySelector("#saveWork").addEventListener("click", () => {
+      const data = {
+        person: workFields[0].value,
+        problem: workFields[1].value,
+        solution: workFields[2].value,
+        reason: workFields[3].value
+      };
+      localStorage.setItem("welfareDesignWork", JSON.stringify(data));
+      saveResult.textContent = "已保存到当前浏览器。";
+    });
+    document.querySelector("#fillExample").addEventListener("click", () => {
+      workFields[0].value = "长时间写作业、看书后眼睛容易疲劳的同学。";
+      workFields[1].value = "有些同学写作业时灯光太暗或太刺眼，坐姿也容易离书本太近。";
+      workFields[2].value = "我设计一盏校园护眼提醒台灯：用光线传感器判断亮度，用距离传感器提醒坐得太近，并用柔和灯光提示休息。";
+      workFields[3].value = "科学依据是光照太强或太弱都会影响视觉舒适；距离太近会增加眼睛调节负担。传感器可以把环境变化转成提醒信息。";
+      saveResult.textContent = "已填入示例。课堂上请学生改成自己的校园问题。";
+    });
+    document.querySelector("#clearWork").addEventListener("click", () => {
+      workFields.forEach(field => field.value = "");
+      localStorage.removeItem("welfareDesignWork");
+      saveResult.textContent = "已清空当前浏览器保存内容。";
+    });
+    document.querySelector("#printWork").addEventListener("click", () => window.print());
+
+    try {
+      const raw = localStorage.getItem("welfareDesignWork");
+      if (raw) {
+        const data = JSON.parse(raw);
+        workFields[0].value = data.person || "";
+        workFields[1].value = data.problem || "";
+        workFields[2].value = data.solution || "";
+        workFields[3].value = data.reason || "";
+        saveResult.textContent = "已读取上次保存的学生作品。";
+      }
+    } catch {
+      saveResult.textContent = "上次保存内容读取失败，可以重新填写。";
+    }
+
+    renderCase("medical");
+  </script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>低碳高效插电式混合动力系统及起重机 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2025-s10.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2025-s10</div>
+  <h1>低碳高效插电式混合动力系统及起重机</h1>
+  <div class="meta-line"><b>2025 年度银奖</b><span>徐州重型机械有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2025 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">徐州重型机械有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">陈向东,丁宏刚,赵建国,刘建利,王吉龙,马云超,高强,曹希存,张连第,孙东名</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 工程装备（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>针对起重机行驶、作业需求功率差异大、工况复杂，动力源协同困难等难题，创新研发了油电双引擎并联驱动技术、功率跟踪式油电混合自适应控制技术、充放并行电源智能管理技术、多功能控制器设计及主动安全技术、行驶作业双工况高效低排再生控制等5项关键核心技术，实现起重机多源动力作业，研发系列插电式混合动力起重机，产品综合节油32%以上，技术水平达到国际领先。本项目主要技术创新如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>油电双引擎并联驱动技术：首创需求扭矩预分配、轮边扭矩动态加载、电机多模式换挡调速等起重机行驶、作业双工况混合动力控制算法，攻克了行驶及作业复杂多变工况下的发动机和电机动力耦合难题，实现油、电两种动力的最佳匹配输出。整机起步及加速响应提升25%以上，动力性能提升30%以上。</div></div><div class="p-li"><span class="p-mk">2</span><div>功率跟踪式油电混合自适应控制技术：构建并联驱动非线性时变模型，创新引入燃油转化惩罚因子，研发功率跟踪式油电混合自适应控制策略，攻克复杂多变工况下油电切换最佳时机及响应差异的难题。经测试，25t级起重机产品百公里油耗24.1L，节油32.3% 。</div></div><div class="p-li"><span class="p-mk">3</span><div>充放并行电源智能管理技术：首创可变压差蓄能式电源管理系统，实现起重机插电作业，即插即用，燃油零消耗，打破“先充再用”的传统模式，大幅降低动力电池充放电深度，提高电池使用寿命。</div></div><div class="p-li"><span class="p-mk">4</span><div>多功能控制器设计及主动安全技术：多功能控制器集成整流、逆变功能，攻关控制器空间矢量算法，提高处理器计算速度，实现系统效率≥85%，电机控制器模块最高效率≥98%；首创主动安全控制技术，实现有源交流电绝缘监测、电机主动短路，大幅提升起重机行驶、作业安全性提高电能效率及高压系统用电安全性。</div></div><div class="p-li"><span class="p-mk">5</span><div>行驶作业双工况高效低排再生控制技术：首创起重机混合动力排放控制模型，自寻优发动机最佳经济运行曲线和排放运行曲线，电机对发动机扭矩、功率削峰填谷，解耦发动机低速高排放工况，实现起重机作业DPF碳载量动态平衡，作业无需再生，技术水平国际领先。</div></div></div><p>本项目授权国内发明和实用新型专利共计10余件。项目关键技术经鉴定达到国际领先水平，突破了技术无人区，引领行业迈向高端化、智能化、绿色化的发展之路。项目关键技术应用至300t及以下10余款起重机产品研发，是中国制造业高质量发展的典型案例，对中国工程机械行业起着引领和示范作用。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>立项背景</div></div></div><p>起重机作为上路车辆，行驶重量重，平均车速低，行驶油耗高；作为定点作业设备，发动机功率远大于作业平均功率，发动机负荷低，作业经济性差，起重机每年平均油耗费用超15万，成为了用户用车的主要成本支出，市场对于新能源起重机的呼声越来越高。</p><p>插电式混合动力技术可以大幅降低起重机燃油消耗，还能做到有电用电、没电用油，不受作业范围、作业时长和作业场所限制，既无续航焦虑，又能充分利用自身电能和作业场所电源设备，非常适合汽车起重机使用。</p><p>为了响应国家“双碳”战略，提升产品使用经济性，本项目计划攻关油电双引擎并联驱动、油电混合自适应控制、充放并行电源智能管理等5项核心技术并进行产业化，解决起重机行驶、作业双工况动力需求差异大、难以平衡的难题，跨越式提高产品节能、排放水平，实现起重机行业对国际标杆企业的换道引领。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>关键技术及创新点</div></div></div><p>本研究内容针对起重机行驶、作业需求功率差异大、工况复杂，动力源协同困难等难题，创新研发了油电双引擎并联驱动技术、功率跟踪式油电混合自适应控制技术、充放并行电源智能管理技术研究、多功能控制器设计及主动安全技术、行驶作业双工况高效低排再生控制等5项关键核心技术，研发系列插电式混合动力起重机，实现起重机多源动力作业，产品综合节油32%以上，技术水平达到国际领先。</p><p>关键技术一：油电双引擎并联驱动技术。研发紧凑型重载双动力系统，首创需求扭矩预分配、轮边扭矩动态加载等起重机行驶、作业双工况混合动力控制算法，攻克了行驶及作业复杂多变工况下的发动机和电机动力耦合难题，实现油、电两种动力的最佳匹配输出。</p><p>背景与难点</p><p>起重机转场行驶需携带配重、副臂等配件，自身重量大，对驱动系统功率和扭矩要求高，现有驱动电机功率密度低、体积大，与发动机组成并联驱动系统时，纵向尺寸大幅增加，整车布置空间不足；发动机、电机和变速箱同轴串联，多源、多频振动耦合，容易造成齿轮、花键加速磨损；发动机、电机多模式多自由度驱动，扭矩分配、扭矩加载控制难度大，行业缺乏可借鉴经验，容易出现耦合抖动、行驶顿挫的问题。</p><p>技术创新点</p><p>创新点1：高比功率永磁同步电机技术。建立同步电机转子结构径向电磁力的表达式，确定各个转子结构径向电磁力最低的空间阶数，创新研发表贴式永磁转子和同步转子轴向组合的拓扑结构，解决传统永磁同步电机永磁体利用不充分问题，提高电机比功率至3.8kW/kg。</p><p>图1 高比功率永磁同步电机设计</p><p>创新点2：紧凑型重载双动力系统技术。创新研发行业最大输出能力（≥3.7万Nm）的并联驱动系统，通过紧凑型飞轮、胀紧式传力结构和短尺寸三段轴串联设计，缩短轴向尺寸10%，实现系统纵向尺寸行业最短；构建系统有限元模型，对轴承、齿轮啮合刚度、支撑刚度、系统传递误差进行分析，研究传动系统的振动特性和动态载荷分布，建立花键、齿轮啮合误差补偿机制，解决了同轴振动和齿轮磨损等问题。</p><p>创新点3：多模式多自由度耦合控制策略。创新设计需求扭矩预分配和轮边扭矩动态加载算法，基于电机扭矩响应速度快的特点，由电机负责需求扭矩的初期响应，根据发动机扭矩加载和需求扭矩变化情况，由电机执行扭矩快速补偿和卸载，实现扭矩响应速度提升57%，解决了扭矩加载顿挫、抖动等问题。</p><p>图4 多模式多自由度耦合控制策略</p><p>实施效果</p><p>行业首创基于行驶作业双工况的多模式多自由度动力系统耦合控制策略，填补行业空白。经测试，整机起步及加速响应提升25%以上，动力性能提升30%以上，技术水平国际领先。</p><p>关键技术二：功率跟踪式油电混合自适应控制技术。构建并联驱动非线性时变模型，创新引入燃油转化惩罚因子，研发功率跟踪式油电混合自适应控制策略，攻克复杂多变工况下油电切换最佳时机及响应差异的难题。</p><p>背景与难点</p><p>起重机行驶和作业功率需求差异大，难以同时兼顾行驶和作业的经济性，插电式混合动力系统具有发动机、电机、动力电池和外接插电多个动力源及能量源，起重机多源动力能量管理处于行业空白阶段，无可借鉴经验；起重机工况复杂多变，油电切换时机、响应时序控制困难，如何在节能和强劲动力之间找到平衡点也是行业难题。</p><p>技术创新点</p><p>创新点1：基于动态“电价”的等效燃油消耗能量管理策略。基于物联网大数据平台，制定起重机行驶、作业双工况下的动力传动系统载荷谱，创新引入燃油转化惩罚因子，根据行驶距离、作业时长、电池SOC和驾驶员需求，预设油电使用比例，对油电转化的“电价” 动态调整，实现起重机行驶和作业双场景下的最佳使用成本。</p><p>创新点2：多源动力扭矩实时分配算法。根据发动机万有特性和驱动电机效率Map，建立以油门、刹车、档位、车速等信息为输入，以电机目标扭矩、发动机目标扭矩为输出的多动力源在线扭矩分配算法，全局动态分析整机动力需求和能量传递效率，实时计算输出，解决传统控制策略查表维度不足、精度低的行业难题，提高系统控制精度。</p><p>图6 多源动力扭矩实时分配算法</p><p>创新点3：油电混合自适应切换技术。建立并联驱动非线性时变模型，进行在线功率解析、动力源效率比对、变速箱控制、模式决策，输出最佳动力或最佳经济性工作模式，实现复杂多变工况下纯电、纯油、混动和插电模式自适应平顺切换，达成系统最佳经济效率。</p><p>图7 功率跟踪式油电混合自适应控制架构</p><p>实施效果</p><p>整机动力性、经济性达到最佳平衡。经测试，25吨级起重机百公里油耗24.1L，节油32.3%，技术水平国际领先。</p><p>关键技术三：充放并行电源智能管理技术。首创可变压差蓄能式电源管理系统，实现起重机插电作业，即插即用，燃油零消耗，打破“先充再用”的传统模式，大幅降低动力电池充放电深度，提高电池使用寿命。</p><p>背景与难点</p><p>传统新能源行业中，交流车载充电机功率小，通常为7kW、11kW，无法满足起重机插电作业功率需求。此外车辆充电系统均采用恒压或恒流充电方法，在车载充电机工作过程中，存在输出功率跟随困难、充电目标不可调等问题，导致起重机在插电作业时，车载充电机一直处于满功率输出状态，电池需要反复进行充电、放电，降低电池使用寿命。</p><p>技术创新点</p><p>创新点1：高效、高功率车载充电机。研究三电平三相VIENNA整流器功率矫正单元和多级BOOST电路并联的直流转换单元，攻关VIENNA滞环控制法，以电流为内环，矫正功率因素，以电压为外环，调节输出电压，提升车载充电机输出效率的同时，实现800V平台、40kW大功率输出，充电效率≥96%，满足起重机插电作业功率需求。</p><p>图8 三相VIENNA整流原理</p><p>创新点2：可变压差蓄能式电源管理技术。行业首创了可变压差蓄能式电源管理系统，车载充电机根据电池SOC动态调整充电电压，电池电量高于平衡点时降低输出电压，车载充电机停止工作，仅作业功率大于阈值时，才进行放电；低于平衡点时，调高输出电压，车载充电机进行放电，最终电池稳定在平衡点附近，电池仅对用电功率削峰填谷，电池放电深度降低20%，突破传统恒压、恒流充电方法，输出功率跟随困难、充电目标不可调、电池电量无法平衡的行业难题，首次实现插电作业时，充电目标与功率双控，既满足了作业功率需求，又提高了电池使用寿命。</p><p>实施效果</p><p>实现起重机插电作业，即插即用，插电作业功率≥40kW，燃油0消耗，打破“先充再用”的传统模式，电池放电深度降低20%，大幅降低电池循环使用次数，提高电池使用寿命，技术水平国际领先。</p><p>关键技术四：多功能控制器设计及主动安全技术。攻关控制器空间矢量算法，提高处理器计算速度；首创主动安全控制技术，实现有源交流电绝缘监测、电机主动短路，大幅提升起重机行驶、作业安全性提高电能效率及高压系统用电安全性。</p><p>背景与难点</p><p>多功能集成控制器缺少整流、逆变集成模块，存在狭小空间热管理效率低、载频动态调整过调制技术等难题未被攻克，难以满足新能源起重机对高效、高能量密度需求日益提高的要求。同时还面临高压电源异常时，外接有源交流电绝缘监测困难、故障处理不及时、高速被动滑行导致反向电压击穿控制器IGBT等问题。</p><p>技术创新点</p><p>创新点1：多功能控制器集成及热管理技术。设计多合一集成控制器结构，集成整流、逆变、DC/DC等模块为一体，提升箱体空间利用率。在结构集成的基础上，基于IGBT温度估算方法，建立IGBT损耗实时估算模型，根据系统热阻抗参数，计算IGBT最高热点温度，实时调整热管理控制参数，在缓解热冲击的同时保证输出电流，降低系统功耗、提升运行效率。</p><p>创新点2：多功能控制器电驱动高效算法。根据起重机使用工况，采用优化脉宽调制方式、变载频技术等手段，在兼顾控制器性能的同时提高效率。研究空间矢量算法，在低速重载工况下使用七段式调制，提高控制精度，高速轻载工况下使用五段式调制，降低开关损耗；采用变载频技术，在怠速等待工况下降低IGBT载频，减少开关损耗，提升系统效率；攻关过调制算法，在高速工况下提升MCU输出电压，降低系统电流，减少发热损耗。</p><p>创新点3：高压系统主动安全技术。建立控制器绝缘检测安全控制策略，设计主动短路结构，通过电机三相线短接、主动短路，使永磁同步电机处于小功率发电状态满足转矩安全要求，实现起重机下长下坡无制动情况下，控制器不损坏、拖车不限速，提高整车行驶安全性。</p><p>实施效果</p><p>多功能控制器集成整流、逆变功能，额定输出电流200A，系统效率≥85%，电机控制器模块最高效率≥98%，行业首创主动安全控制技术，实现有源交流电绝缘监测、电机主动短路，大幅提升了起重机行驶、作业安全性。</p><p>关键技术创新五：行驶作业双工况高效低排再生控制技术。首创起重机混合动力排放控制模型，自寻优发动机最佳经济运行曲线和排放运行曲线，电机对发动机扭矩、功率削峰填谷，解耦发动机低速高排放工况，实现起重机作业DPF碳载量动态平衡，作业无需再生。</p><p>背景与难点</p><p>起重机作业时间占整体运行时间80%以上，长时间间歇式作业，发动机转速低、负荷低，发动机排气温度不能满足DOC的起燃温度要求，导致DPF无法被动再生，需要用户频繁进行DPF手动再生，再生油耗高、时间长，且需停止上车作业，影响吊装作业效率，造成较大抱怨。</p><p>技术创新点</p><p>创新点1：混合动力专用高效燃烧室。研发起重机混合动力系统专用发动机燃烧室，冲程缸径比由1.18提升至1.2，热损失减少1.7%；优化燃烧室碗口形状，碗口深度由3.5mm加大至4.85mm，减少柴油液滴碰壁、湿壁，提高混合气均匀性，宽速域内最高燃烧温度低且分布均匀，降低了NOx和颗粒物排放，热效率提升2.3%。</p><p>创新点2：发动机-电机协同排放控制技术。行业首创起重机混合动力排放控制模型，利用多动力、单目标管理原则，电机主动控制发动机运行。根据不同碳排放量，自寻优发动机最佳经济运行曲线和排放运行曲线，电机对发动机扭矩、功率削峰填谷，解耦发动机低速高排放工况，实现起重机作业DPF碳载量动态平衡，行业首次实现了起重机行驶、作业无需手动再生。</p><p>实施效果</p><p>经测试，排放污染物CO排放量降低85.7%，N0x排放量降低75.9%，PN颗粒数降低72.8% ；作业DPF碳载量17.5g达到平衡，无需进行手动再生，技术水平国际领先。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>与当前国内外同类技术主要参数、效益、市场竞争力的比较</div></div></div><p>行业内首次完成混动起重机设计、生产、测试、上市及销售。为充分验证插电式混合动力技术及产品可靠性，台架试验累计超过5万小时，道路试验累计超过10万公里，攻克了多源动力耦合抖动、多工况多模式功率跟踪困难等行业难题，产品经过了高温、高寒、高原的“三高”严苛环境考验，在45℃高温、4800米高海拔、-35℃高寒环境下，完成高温热平衡、低温冷启动以及极限吊重作业能力等96项验证，确保了混合动力技术及产品的高性能和高可靠性。项目相关技术、指标经过中国工程机械工业协会鉴定，达到国际领先水平。</p><p>表1 相关技术指标对比统计表</p><p>项目</p><p>关键技术参数</p><p>竞品</p><p>（最高水平）</p><p>徐工</p><p>对比结论</p><p>动力性能</p><p>最高车速(km/h)</p><p>80</p><div class="p-list"><div class="p-li"><span class="p-mk">90</span><div>8</div></div></div><p>动力性能领先竞品</p><p>最大爬坡度（%）</p><p>45</p><p>54</p><p>0-50km/h加速时间(s)</p><p>40</p><p>23</p><p>经济性能</p><p>百公里油耗</p><div class="p-list"><div class="p-li"><span class="p-mk">35</span><div>6</div></div><div class="p-li"><span class="p-mk">24</span><div>1</div></div></div><p>经济性能领先竞品</p><p>排放指标</p><p>CO（mg/kWh）</p><div class="p-list"><div class="p-li"><span class="p-mk">436</span><div>3</div></div><div class="p-li"><span class="p-mk">62</span><div>4</div></div></div><p>排放指标领先竞品</p><p>NOx（mg/kWh）</p><div class="p-list"><div class="p-li"><span class="p-mk">378</span><div>9</div></div><div class="p-li"><span class="p-mk">91</span><div>3</div></div></div><p>PN（#/kWh）</p><div class="p-h">5.37 ×1010</div><div class="p-h">1.46 ×1010</div><p>载碳平衡量（g）</p><p>无法平衡</p><div class="p-list"><div class="p-li"><span class="p-mk">17</span><div>5</div></div></div></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

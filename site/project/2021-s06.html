@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>“以微带宏”刚柔耦合超精密运动平台 · 2021银奖 · 好设计</title>
+<meta name="description" content="高速精密运动平台是高端装备的核心部件。电子制造、精密检测技术的发展对运动平台的精度需求进入了亚微米级甚至纳米级。然而，现有机械导轨式运动平台受摩擦和弹性变形的影响，精度难于突破亚微米级。宏微复合平台虽然能解决运动平台长行程与高精度需求之间的">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2021">← 返回 2021 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>“以微带宏”刚柔耦合超精密运动平台</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">广东工业大学佛山市华道超精科技有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">白有盾,陈新,黄建彬</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101070</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>高速精密运动平台是高端装备的核心部件。电子制造、精密检测技术的发展对运动平台的精度需求进入了亚微米级甚至纳米级。然而，现有机械导轨式运动平台受摩擦和弹性变形的影响，精度难于突破亚微米级。宏微复合平台虽然能解决运动平台长行程与高精度需求之间的矛盾，但是存在宏微切换控制效率低，两套驱动成本高的弊端。</p><p>本项目颠覆传统“以宏带微”的双驱切换控制模式，首创“以微带宏”的单驱模式，宏微自适应切换控制，效率高，成本低。因势利导，利用柔性铰链大变形非线性行为，实现刚柔运动自适应切换；化弊为利，以弹性变形补偿摩擦死区，精度更高；变形集中在柔性铰链，位移更加均匀；化难为易，将摩擦力转化为弹性力来补偿，为摩擦力的补偿提供新的途径。受高铁技术启发，首创运动平台悬挂减振新原理，使用柔性铰链为平台装上悬挂系统，并发明了无缝导轨，满足了悬挂减振条件，使平台运行更加平稳。项目申请了52件发明专利，已经授权26件，14件核心专利进入美英德日韩等发达国家，已获授权10件，形成了完善的专利保护池，获广东省专利金奖3项和粤港澳大湾区高价值专利培育布局大赛初创组第二名。</p><p>专利技术孵化了佛山市华道超精科技有限公司，获得2020年佛山市南海区“蓝海人才计划”创新创业团队A类资助，设计并注册了“华道超精”图形商标，正在制定刚柔耦合超精密运动平台技术规范行业标准。项目开发了基于直线电机、伺服滚珠丝杠、旋转直驱电机等驱动形式的三大系列刚柔耦合超精密运动平台，精度均突破导轨平台的精度极限，打破Aerotech、PI等国外品牌对超精密运动平台的垄断，支撑国产装备升级换代。开发的光电雷达双轴旋转平台，解决了低速爬行和折返误差大的问题，跟踪精度提高了五倍，有力提升了激光武器的探测和打击距离，为国防安全提供保障。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>本项目融合长行程机械导轨与高精度柔性铰链纳米平台，开发了宏微一体化刚柔耦合运动平台，解决了运动平台长行程与高精度的矛盾。在结构上，采用柔性铰链弹性变形来补偿摩擦死区，实现更高精度。在控制上，将非线性摩擦扰动转换为弹性变形扰动，并采用基于指南车的自抗扰控制算法，提前对扰动进行估计补偿，使之等效为无摩擦运动平台，并具有机械导轨的高加速性能。创新点体现在：</p><p>1)工作模式创新</p><p>颠覆传统“以宏带微”的双驱切换控制模式，利用柔性铰链非线性变形特性，首创“以微带宏”的单驱模式，宏微自适应切换控制，效率高。</p><p>2)结构设计创新</p><p>化弊为利，采用柔性铰链的弹性变形补偿摩擦死区，实现更高精度。主动优化变形分布，从而使平台整体位移更均匀，克服PI等高精度平台被动依变形分布设置输出点的局限。紧凑型连接结构设计，提高了平台刚度、降低了平台重心，有利于多轴宏微一体化刚柔耦合平台的高速精密运动。</p><p>3)控制方法创新</p><p>摩擦扰动和多轴同步控制是运动控制中的量大难点，本项目采用刚柔耦合设计，将非线性摩擦扰动转换为可测量的弹性变形扰动。采用自抗扰控制算法，将弹性扰动、负载变化、多轴运动引起的惯性变化逐项等效考虑为统一的复杂总扰动，实现高精度同步控制。另外，还将测量、执行机构导致的时延问题进行补偿，实现纳米级运动。</p><p>4)驱动器创新</p><p>现有驱动器主要采用PID控制，当出现偏差时才会补偿，本项目根据自抗扰控制算法需要，开发双通道同步反馈的高响应驱动器，将平台的扰动在驱动器中进行补偿，实现环境自适应的智能驱动，并将控制方法与工艺程序进行隔离，方便宏微一体化刚柔耦合平台的推广应用。</p><p>运动平台是制造装备和检测仪器的核心部件。长期以来，受导轨摩擦和弹性变形的影响，运动平台在结构和控制上都存在局限：结构上，驱动力导致运动平台产生非均匀弹性变形，使得工作点与测量点之间的位移不一致。控制上，由于导轨制造和装配误差，使得导轨摩擦力呈非均匀随机分布，无法用模型进行准确描述。另外，定位阶段速度过零点时存在摩擦死区和黏滑现象，无法实现连续位移输出。</p><p>本项目研究团队经过十余年的积累，从高速、精准、平稳等角度对运动平台的结构、控制方法和导轨进行了重新发明。申请专利近百件，已获授权50件，其中美英德日韩等发达国家专利14件（已获授权10件，附件8.2），涵盖电子制造和超精密加工的主要国际市场。专利池估价4721万元，获得了2020年大湾区高价值专利培育布局大赛初创组银奖（第二名，金奖只有1名），三大关键技术的核心专利均获得广东省专利金奖，并作为主要创新点获得了2016年广东省科学技术奖励一等奖和2019年国家技术发明二等奖，支撑了精密电子制造技术与装备教育部重点实验室成为国家重点实验室。在产业化方面，获得了2019年广东省高校成果转化大赛路演初创组二等奖（第二名，一等奖仅1名）。2020年获得第十一届佛山市南海区“蓝海人才计划”创新创业团队A类资助。已经申请发明专利11件，其中用于解决运动平台平稳性的无缝导轨系列专利4件，此外还开发了包括Mini/Micro LED巨量转移、用于国防领域的刚柔耦合双轴超精密旋转平台和用于下一代光刻机的气浮导轨式接触切换双工件台及其控制方法。开发的Aerotech对标平台，仅通过结构的创新，重复定位精度比国外顶尖平台高3-5倍，售价仅为对标平台的50%~70%，性价比高；开发了双轴旋转平台，实现了低速跟随精度和正弦扫描折返跟踪精度五倍提升，支撑了探测和打击距离的成倍提升；开发了纤维显微结构快速图像采集系统，扫描采样速度从30分钟降低至5分钟，支撑了服装行业衣料成分的快速检测。</p><p>为了实现品牌建设，以太极阴阳代表刚柔双极，指南针代表自抗扰控制，设计了刚柔耦合结构与自抗扰控制的图形商标，获得了美术作品著作权，并中华智慧、道法自然之意，取华道超精为商标，用科学理论指导，设计符合自然规律的产品，引领超精密运动平台的技术创新，并让华道超精成为刚柔耦合超精密运动平台的代名词。 项目已经开发了系列产品，通过技术发开、专利转让、专利实施许可、创新创业项目等方式，累计获得874.5万元（见附件一）。核心专利许可直线电机龙头企业（附件4.2），三年销售额1.6亿元（见附件七），高端运动平台基础部件打破国外垄断，并带动了国产装备挺进国际高端（附件4.1）。刚柔耦合双轴旋转平台提高激光武器的探测和打击距离，实现先敌制胜，对国防现代化建设意义重大。</p><p>项目开发了基于直线电机、伺服滚珠丝杠、旋转直驱电机等驱动形式的三大系列刚柔耦合超精密运动平台，精度均突破导轨平台的精度极限，打破Aerotech、PI等国外品牌对超精密运动平台的垄断，支撑国产装备升级换代。显著提升了我国电子后封装设备的国际竞争力，对我国半导体器件封装装备制造业的跨越式发展起到了重要推动和引领作用，为行业的技术进步做出了突出贡献。</p></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E2%80%9C%E4%BB%A5%E5%BE%AE%E5%B8%A6%E5%AE%8F%E2%80%9D%E5%88%9A%E6%9F%94%E8%80%A6%E5%90%88%E8%B6%85%E7%B2%BE%E5%AF%86%E8%BF%90%E5%8A%A8%E5%B9%B3%E5%8F%B0%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E2%80%9C%E4%BB%A5%E5%BE%AE%E5%B8%A6%E5%AE%8F%E2%80%9D%E5%88%9A%E6%9F%94%E8%80%A6%E5%90%88%E8%B6%85%E7%B2%BE%E5%AF%86%E8%BF%90%E5%8A%A8%E5%B9%B3%E5%8F%B0" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「“以微带宏”刚柔耦合超精密运动平台」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E2%80%9C%E4%BB%A5%E5%BE%AE%E5%B8%A6%E5%AE%8F%E2%80%9D%E5%88%9A%E6%9F%94%E8%80%A6%E5%90%88%E8%B6%85%E7%B2%BE%E5%AF%86%E8%BF%90%E5%8A%A8%E5%B9%B3%E5%8F%B0" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「“以微带宏”刚柔耦合超精密运动平台」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-s05.html"><span class="d">← 上一项</span>倾斜带式输送机胶带安装更换关键技术与装备</a>
+    <a class="next" href="2021-s07.html"><span class="d">下一项 →</span>新一代中低速磁浮列车车辆</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

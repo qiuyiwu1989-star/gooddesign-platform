@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>Antobot模块化智能蔬菜移栽机器人 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-c21.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-c21</div>
+  <h1>Antobot模块化智能蔬菜移栽机器人</h1>
+  <div class="meta-line"><b>2021 年度创意奖</b><span>华南农业大学</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 创意奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">华南农业大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">周美伶,曾海能,陈炜瀚,陈紫珣</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 农机装备（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>丘陵山地是我国蔬菜重要产地，由于地形复杂、地块细碎和机耕道缺乏，蔬菜种植环节长期面临机械化程度水平低、种植化标准低、农机农业融合少，人力成本高等问题。Antobot模块化智能蔬菜移栽机器人是“丘陵山区智能移栽机器人关键技术与应用研究”的中期成果，着力突破丘陵山区蔬菜移栽环节存在的技术难题，解决蔬菜种植过程中面临的劳动强度大、农艺复杂、作业效率低等严峻问题。</p><p>本产品利用模块化设计理念，创新性设计左右两侧独立驱动装置，实现整机快速拆装。模块化通用底盘，可兼容除草、打药、种植等各种作业模块，未来可应用在不同作物生产环节。随时随地更换电池、物料箱和作业模块，更可以有效解决传统农业装备因地形复杂、田块高差大带来的田间转运难题。 Antobot模块化智能蔬菜种植机器人采用全自动机械手臂精准取苗、投苗、苗盘可自动送苗和自主回收，实现同步打穴、自动施肥、投苗和喷淋定根水。同时利用液压强制仿形技术，保证蔬菜移栽质量。采用环境建模、SLAM 地图构建、GNSS\INS 组合导航控制和多传感器信息融合等技术，解决机器人的实时作业路径规划、自主导航、自动避障等关键问题。手机APP实时监控，随时随地了解作业情况，灵活更改作业模式。Led灯带增强科技感的同时精准提示物料余量，仿生设计不仅能够有效增强产品识别性，更能够为美丽乡村建设增添亮色。多台装备协同作业，充分发挥蚁群效应，打造丘陵山区智慧农场模式。本项目旨在为丘陵山区农业机械化提出全新的解决方案。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>商业模式创新</div></div></div><p>本项目借助蚁群效应，创新农业作业模式，同时采用多信息融合技术，旨在打造出丘陵山区智慧农场农业服务流程体系。</p><p>蚁群效应是人们从蚂蚁群体的组织和分工中总结出来的灵活的组织建设和运转方式，是“高效”的代名词。智能蔬菜移栽机器人采用了微型化设计，仿生蚂蚁，从而能够在相同成本和作业面积下，投放多台机器人同步作业，实现有组织、有分工的群体作业，充分发挥蚁群效应。这种灵活的作业模式，适用于丘陵山区等各种特殊地理环境，有利于实现丘陵山区农业机械化，从而极大程度上提高耕作效率，解放劳动力。</p><p>此外，我们团队从丘陵山区耕作系统出发，深入思考了未来智慧农场的服务流程。利用多信息融合技术，农民通过智能手机或PC端便可以在任何地方进行耕作的远程操控，随时随地了解机器人作业情况，并根据情况进行灵活调整。这不仅提高了农场管理效率，还降低了人工成本，能够将传统农业管理转变为智能大数据管理，从而打造丘陵山区智慧农场农业服务流程体系。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>功能工艺创新</div></div></div><p>（1）创新设计模块化通用底盘，实现“一机多用”</p><p>目前农业机械业中，涉及模块化设计的农机较少，因此在农业机械上进行模块化设计是一次创新性尝试。近年来，越来越多的设计呈现模块化的设计趋势，即集多功能于一体，针对不同时期的耕作需求，农民可以通过模块的替换组合，满足不同耕作时期的多样化需求。</p><p>本产品根据模块化设计理念，创新性设计了模块化通用底盘，将机器人分为电池模块、物料箱模块等，实现了整机快速拆装，有效地解决了传统农业装备因地形复杂、田块高差大带来的田间转运难题。根据蔬菜种植的不同阶段和不同农艺，机器人可以通过更新模块来满足作业需求，实现“一机多用”，降低耕作机具的成本。模块化通用底盘的设计，在未来不仅可以解决蔬菜、水稻、烟叶、茶叶等不同农作物的种植问题，还能为丘陵山地等不同种植生产环境提供了新的解决方案。</p><p>（2）实现同步作业，提高机器人智能化和作业效率</p><p>机械化生产要求各生产环节实现有机衔接，但蔬菜种植工序多，目前来看蔬菜种植与机械化生产方式的系统性不强、集成度不高，因此造成农艺与农机、种植与机具之间的明显脱节。农艺与农机、种植与机具无法配套，使蔬菜生产机械化难度较大。</p><p>本产品针对丘陵山区蔬菜生产面临的问题，着力突破蔬菜移栽、田间管理等薄弱环节。提出智能化可同步完成打穴、自动投肥、投苗和喷淋作业的方案，同时采用液压强制仿形技术，保证蔬菜移栽质量。作业时，连接APP操作整机运行，操作简单，人工只需要进行更换物料、充电、启动、停止等四项操作，无需额外操作，则可基本实现整机可自主在垄间行走。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>技术集成创新</div></div></div><p>智能蔬菜移栽机器人集成多项前沿技术，采用环境建模、SLAM 地图构建、GNSS\INS 组合导航控制和多传感器信息融合等技术，解决机器人的实时作业路径规划、自主导航、自动避障等关键问题，满足功能设计中的动态传感、信息收集、实时监控、信息传输的需求。</p><p>结构分析与改造主要包括移植机构优化、模块化通用底盘优化、运动轨迹精度分析、精准定量投肥、同步投苗和喷淋等。在研究中，基于ADAMS对蔬菜移栽机的双曲柄连杆机构运动进行了仿真分析，研究了蔬菜移栽机双曲柄连杆机构的工作原理；对偏心圆盘指夹式幼苗移栽机栽植机构进行运动轨迹分析，设计Visual Basic 程序分析栽植轨迹，结合 VB 中对轨迹参数的输入、输出数据进行分析，获得栽植机构的相关参数范围；利用UG、AUTOCAD完成蔬菜移栽机链箱设计；基于 HT46R24 单片机控制，提出了一种鸭嘴式蔬菜移栽机栽苗直立度的测量方法。基于 AT89S51 系列单片机，改进了蔬菜移栽机苗株距的控制技术，并由89C51单片机控制投苗盘位置，实现了高精度相对位置控制，有效解决了打穴、移植机构运动轨迹精度低地问题。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>文化艺术创新</div></div></div><p>基于“蚁群效应”的概念，本产品在造型设计上采用了仿生手法，提取蚂蚁特征元素及丘陵多层次的特点，并加以抽象化运用，使产品与其使用环境相呼应。由于农耕工作的特殊性，产品需要在造型上给人以安全稳重的心理感受，机器人的体块叠加和侧面三角形稳定结构，很好地保留了沉稳特性，传递出力量感和耕种使命的庄重感。外观采用流线型形体和大量圆角边缘，有效地缓解了农业装备的笨重感，具有现代科技的时代气息。</p><p>为了提高产品的功能性，产品运用了色彩设计的方法，在机身处设计了在不同状态下会闪烁不同颜色的灯带，可以准确的传达信息和表达语意，让操作流程更加清晰，降低用户使用的操作成本。此外，机器人主体采用橙色为主，橙色是高饱和度色彩，具有较好的识别性，赋予机器人个性与独特性，使其在工作环境中鲜亮而醒目，便于农户监测和管理；同时，橙色也是欢快、热情的色彩，在中国文化中也象征丰收和吉祥，不仅能够对人产生积极的心理作用，也具有较好的文化意义。辅助色以黑色和银灰色为主，既起到功能分区的作用，又通过色块分割丰富了造型，营造出前卫的科技感和未来感，符合数字时代下的设计定位和时代背景。</p><div class="p-list"><div class="p-li"><span class="p-mk">5</span><div>生态人本创新</div></div></div><p>最大化利用丘陵山区土地，是对生态保护采取的重大举措。我们团队希望结合现代化机械技术，将丘陵山地转变为良好的耕地，形成梯田系统。梯田是一种集约利用丘陵山地的农业生产方式，可以与自然形成和谐关系，演变为一种地形地貌，以及自己的梯田小型气候。如果不加以利用，任其荒废，则会引发泥石流等灾害。梯田利用率低的主要原因是梯田耕作的机械程度低，而智能蔬菜移栽机器人在极大程度上解决了该问题，可以促进大规模种植，并对梯田进行充分利用，促进梯田系统的良性循环，从而保护生态。</p><p>此外，本产品的能源是锂动力电池——一种绿色高能化学电源，在中等放电电流时，放电时间可达碱锰电池的6倍左右，显示出非常优越的性能；它与镍氢电池相比，在储存时长上也具有显著优势，是一种高效、环保、安全、绿色的电池。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

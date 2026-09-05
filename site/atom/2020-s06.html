@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>南方电网网级电能量数据平台建设及创新应用 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2020-s06.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2020-s06</div>
+  <h1>南方电网网级电能量数据平台建设及创新应用</h1>
+  <div class="meta-line"><b>2020 年度银奖</b><span>南方电网数字电网研究院有限公司,浙江大学</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2020 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">南方电网数字电网研究院有限公司,浙江大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">郑楷洪,孙凌云,张文瀚,王鑫</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与社会 · 绿色能源（逐条初审，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>南方电网网级电能量数据平台（下称“网级平台”）是支撑南方电网公司开展全网电能量数据宏观分析的重要平台。公司从2009年开始建设网级平台，经过多年的建设与升级改造，建成了目前全世界规模最大的电能量数据采集管理系统，全面接入南方五省区（广东、广西、云南、贵州、海南）9.8万座厂站、70.1万台专变、84.4万台公变以及9404.6万户低压用户的用电数据，数据涵盖指标、电量、负荷、线损、停电等信息，日新增数据量2TB。建设过程中，形成以下创新成果：</p><p>（1）提出了分布式文件系统(OLTP)与大规模并行处理(MPP)数据库的电能量大数据资源分配、数据同步备份及高性能计算分析解决方案，设计了基于CDH分布式存储与Storm流式计算的用电大数据集群信息物理架构，解决了PB级海量电能量数据的实时存储计算和业务并发访问瓶颈问题。</p><p>（2）设计了一种基于大数据全栈全分布式架构的电能量数据集约化管理架构，对电能量数据进行集约化采集、处理以及存储，实现全网9000多万用户电能量数据的统一采集、处理、存储和应用。</p><p>（3）提出了基于大数据与人工智能的电能量数据全生命周期质量管理方法，运用大数据技术开展电能量数据全链路监控，实现对数据产生-采集-传输-存储-计算-应用各环节数据质量监测和问题发现，开展数据异常实时诊断与智能修复，实现海量电能量数据的质量提升。</p><p>（4）建立了基于数据挖掘的电能量数据创新应用体系，全面推广电能量数据“十大创新应用”。一是促进电量抄核收转型升级。二是支撑线损同期管理和日线损统计分析。三是提升客户优质服务水平。四是有效防控窃电漏电。五是支撑电力现货市场建设。六是辅助开展用电市场分析。七是实现计量装置智能在线监测。八是支撑供电可靠性管理。九是支撑电压质量监测。十是支撑配变负载监测。</p><p>项目累计授权专利23项，登记软件著作权10项，发表SCI论文2篇、EI论文3篇、核心论文6篇。成果已在广东、广西、云南、贵州、海南等省公司推广应用，充分发挥了电能量数据的应用价值。2020年疫情期间，本项目成果实现的多维度行业电量统计分析功能，在公司对接数字政府助力疫情期间复工复产监测工作中发挥了至关重要的作用，先后向国办、发改委、工信部、国资委报送南方区域企业复工复产相关报告1000余份，获得国务院办公厅、国家发改委的感谢信，取得了显著的社会效益。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>创新点1：首次实现全南方电网区域内的电能量数据集约化管理，建成全世界规模最大的电能量数据采集与管理系统。提出一种基于大数据全栈全分布式架构的电能量数据集约化管理方法，基于分布式采集、分布式技术、分布式存储技术，实现对广东、广西、云南、贵州、海南五省区9.8万座厂站、70.1万台专变、84.4万台公变以及9404.6万户低压用户数据的集约化采集、处理、存储及应用。</p><p>创新点2：提出一种面向异地多频数据的高效采集与高性能实时计算方法。攻克了海量客户多态数据的实时采集和并发处理关键技术，通过引用EPOLL技术提高了前置机的采集能力，构建从不同数据源向网级电能量数据中心汇聚的稳定的数据传输通道，实现异地海量数据的高效稳定获取，并针对不同类型、不同量级、不同产生频率的数据，匹配相应的采集技术，配置不同的采集频率，基于Spark分布式高性能实时计算技术，建立了高效的数据批量计算能力和实时计算能力，全面支撑全网计量、计费、发行等数据的采集和处理时效从“日级”大幅缩短至“分钟级”。</p><p>创新点3：提出一种基于大数据技术的电能量数据全链路可视化监控方法。基于累计和控制图计算和休哈特图计算技术，对电能量数据产生-采集-传输-存储-计算-应用各个环节开展数据质量实时可视化监测，研发上线电能量数据质量看板，对数据上传情况、集群情况以及作业运行情况进行可视化监控，实现数据全链路监测和质量问题发现。</p><p>创新点4：提出基于机器学习技术的电能量数据异常诊断方法和数据智能修复方法。（1）提出基于三次指数平滑模型与DBSCAN聚类的数据异常诊断方法，实现异常数据的识别。（2）提出基于残差连接LSTM模型的数据修复方法，辅助开展异常数据的修复。通过上述两种方法，有效解决海量数据的运维难题，大大降低人工数据运维成本，数据运维效率提升了30%。</p><p>创新点5：构建了基于数据挖掘技术的电能量数据深化应用体系，创新提出电能量数据“十大应用”。（1）推行“抄表自动准确、核算智能高效、电费快捷透明”的抄核收新模式，促进抄核收转型升级，全网累计转岗抄表员19034名，电费发行时间缩短10天，分散复核率降幅超过80%，截至2019年12月，全网电子化结算率99.3%。（2）基于电能量数据构建线损全维度分析模型，通过日线损监控实现对计量准确性、环网柜开关状态、变压器开关状态进行实时监控，支撑线损同期管理和日线损统计分析，截至2019年12月，计量同期线损值与理论值偏差小于1%，波动小于0.5%，馈线、台区日线损计算率96%。（3）开展精细化用电分析服务技术研究，研发非侵入式负荷监测终端，为客户提供精细化用电分析服务。（4）综合线损、电压、电流等多维度用电大数据，建立窃漏电模型专家库，有效防控窃电漏电。广东电网公司2019年应用电能量数据加大反窃电力度，共查处窃电7036宗，追补电量3900万千瓦时，挽回经济损失1.13亿元。（5）建立“主站-终端-表计”三级自动对时机制，完成2万个现货用户“双终端”、采集冻结负荷曲线等现场计量装置升级改造，开发计量自动化系统交易用户电能数据采集、智能监控及数据发布等功能，截至2019年12月，现货用户自动抄表率达99.6%，有力支撑了电力现货市场建设。（6）建立规范、高效的电量发布机制，常态化开展购、供、售电量以及开工率情况、行业电量等数据按日监测、统计和发布，辅助开展用电市场分析，利用电能量数据，构建复工复产电力指数，按照国务院办公厅、国家工信部、国家发改委、国资委以及地方政府相关部门要求，按日统计报送企业复工复产情况、行业电量增长情况，得到政府相关部门高度肯定，获得国务院办公厅、国家发改委感谢信。（7）构建“计量自动化系统故障智能诊断，营销系统工单分派流转，计量运维APP作业现场支撑”的计量运维新模式，全面加强计量运维闭环管控，2019年累计闭环处理故障工单7.97万单。全网自动抄表率99.3%，同比提升1.6个百分点。（8）利用负荷管理终端和配变监测计量终端停复电告警功能，结合采集的计量点15分钟运行数据，开展用户停电主动告警和实时监测，实现10kV用户停电事件1分钟内准实时监测、5分钟送到停电池，支撑供电可靠性管理。（9）充分挖掘低压集抄本地通信潜力和终端处理能力，全面推广台区末端用户电压数据采集，有效辅助低电压治理，截至2019年12月，完成59万个台区、700万低压用户电压数据接入，台区电压数据采集覆盖率达到65%。（10）计量自动化系统采集的计量点15分钟负荷数据和三相不平衡率监测数据，结合配变容量信息，统计配变负载率，实现配变负载实时监测，为配变运行人员提供了在线监测技术手段，同时通过计量自动化系统台区三相负载和三相不平衡率监测数据，支撑生产部门开展台区三相不平衡治理。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

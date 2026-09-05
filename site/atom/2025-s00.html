@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>华龙一号反应堆冷却剂泵组 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2025-s00.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2025-s00</div>
+  <h1>华龙一号反应堆冷却剂泵组</h1>
+  <div class="meta-line"><b>2025 年度银奖</b><span>哈尔滨电气动力装备有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2025 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨电气动力装备有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">刘祥松,徐坚,蔡龙,王泽宇,盛志伟,王文彬,贾允,王锐,张锁瑶,徐娜</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与社会 · 绿色能源（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>华龙一号反应堆是我国具有完全自主知识产权的三代压水堆核电技术，反应堆冷却剂泵组（通称“核主泵”）是核电站一回路的核心设备，主要功能是通过驱动冷却剂循环，为反应堆“输送能量”并维持“生命体征”（温度、压力稳定），故被誉为反应堆的“心脏”。此前，核主泵关键技术长期被国外垄断，成为我国核电发展的“卡脖子”难题。2014年，哈电集团哈尔滨电气动力装备有限公司（哈电动装）勇担中核集团“华龙一号”核主泵研制重任，成功突破技术壁垒，设计出具有完全自主知识产权的三代核电“泵王”。</p><p>该核主泵采用立式轴封式设计，设计寿命60年，能够在事故发生之后的至少 72 小时内实现主泵压力边界的完整性。其设计温度350℃，设计压力 7.23MPa，扬程 95.5m，流量23790/h。截止目前，该产品获授权发明专利41项，以创新技术成果构建起完整的自主知识产权体系。</p><p>在技术创新方面，实现了多项重大突破。研制的先进型三级流体动压机械密封国内首次实现了工程化应用。核主泵辅助冷却系统的设计引入“能动与非能动相结合”的安全设计理念，保证事故工况下的安全性，在安全性上满足国际最高安全标准要求。2023年6月经中国核能行业协会技术成果鉴定，专家组一致评价该成果具有自主知识产权，达到国际先进水平，取得了显著的社会效益、经济效益，具有广泛的推广应用前景。</p><p>凭借卓越的技术创新与工程化应用，该产品屡获殊荣。研制及其工程化应用荣获2024年黑龙江省科技成果转化一等奖；2024年中国机械工业科技技术一等奖。关键制造工艺技术荣获2024年中国电力企业联合会电力创新奖一等奖。一项发明专利荣获中国专利优秀奖。</p><p>2021 年，全球首堆“华龙一号”福清 5 号机组和海外首堆巴基斯坦 K2 机组投入商业运行，这不仅实现了中国百万千瓦级先进核电技术“走出去”的战略目标，更成为中国核电走向世界的“国家名片”，为我国实现“双碳”目标、筑牢国家能源安全防线提供了强有力的技术支撑。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>技术内容</div></div></div><p>核主泵是压水堆核电站中最关键的核岛一回路主设备，是核岛内唯一的旋转设备。核主泵采用立式、轴封式，其设计符合三代核电技术要求。核主泵设计温度350℃，设计压力17.23MPa，扬程95.5m，流量23790m3/h，转速1485r/min，机组总高约8.95米、总重约119.5吨，属高温、高压、受辐照的压力边界设备。其功能是驱动反应堆内一回路中带有放射性的冷却剂连续循环，实现堆芯与蒸汽发生器之间的热能交换，从而产生高压蒸汽，经由汽轮机及汽轮发电机实现发电，主泵相当于反应堆的心脏。</p><p>主泵设计寿命 60年，为核安全一级、抗震Ⅰ类、规范 1级设备，无备用配置，对可靠性要求极高，主泵运行故障，将直接导致核反应堆停堆，甚至造成核安全事故。核主泵代表着当代泵类产品设计、制造最高水平。</p><p>三代核电“华龙一号”核主泵关键技术有高效、稳定的水力设计克服了高温和长期高频水力脉动影响；开发的先进型三级流体动压机械密封，每一级都可承受15.16MPa系统压力，可以互换，泄漏可控，所研制的机械密封完全经受了全厂断电SBO工况的热态考核试验，国内首次实现了工程化应用，解决了“卡脖子”关键部套的自主化。；全厂断电SBO工况考核下，主轴密封保证一回路压力边界的完整性，双向推力轴承在无顶油惰转停机后，无需拆检，满足启机条件，降低运维周期；基于多尺度涡流瞬态解析，开展了叶轮、导叶体、环形壳体的高效匹配设计技术，开发出了高效、稳定的水力模型，首次获得了气、液两相流主泵降级函数；主泵辅助冷却系统的设计采用“能动与非能动相结合”的安全设计理念，保证事故工况下主泵的安全性等，并攻克了高精度复杂部件加工及检测等难题，核主泵机组的总装技术及高温高压全流量试验考核。核主泵的设计和制造难度极大，所采用的技术均属于行业的高精尖技术，开发技术可以用于核电、军工等特殊领域，具有极高的技术附加值。功能示意图见图1，结构示意见图2。</p><p>图1“华龙一号”机组布置</p><p>“华龙一号”主泵技术是基于300MW轴封式核主泵和二代加1000MW 轴封式核主泵的基础上，总结经验，优化结构设计，改进连锁控制系统，充分考虑拆装的便利及维修时间，提高了设备的保护力度，减少了因小故障导致停机的概率。其设计优势在于采用模块化设计、部套式拆装，零部件的设计尽可能保证互换性，尽可能少拆或不拆，在极短的时间完成拆装与维修，提高工作效率缩短电站大修周期，提高发电量。机组由5个模块，26个部套组成，总计16507个单项部件，其中转子部套2373件，主轴密封部套1862件，水力部套127件，推力轴承部套 2309件，电机部套 5407件，辅助系统4429 件，专用工具 237 项，。零部件的设计尽可能保证互换性。该主泵在原材料上主要以国内供货为主，或进行材料替代（如：无质保级不锈钢板、棒材等），或按照ASME 等国外国际标准进行材料配制，但不降低技术要求，国产材料比重占有额预估可达95%左右。综观已完成的“华龙一号”主泵技术设计，结构设计已日臻完善，充分顾及了拆装、维护、可靠、制造工序简化等，既利于缩短核电站的维修时间，又降低了制造过程中的废品率。目前，轴封主泵为核电站较成熟的产品，相较于其它核主泵技术，其更易于维修和更换。</p><p>图2“华龙一号”核主泵结构布置</p><p>通过百万千瓦级核主泵的技术及关键技术的科研攻关，实现主泵的自主化与创新。开发后的轴封型核主泵的创新点有：</p><p>(1) 核主泵关键技术研制</p><p>学科：机械工程、流体力学。</p><p>授权发明专利4项：ZL201710803378.9、 ZL201720480054.1、ZL201510593757.0、ZL201910215857.8。新型6项 ：ZL201922309267.X、ZL201822115065.7、ZL201821325271.4、ZL201720396497.2、 ZL201822090197.9、ZL201720396402.7。发表核心期刊论文 7 篇。</p><p>研制了第三代反应堆主冷却剂泵组，大转动惯量主泵电机，发明了一套核主泵半流量惰转曲线建模方法，带背叶片轴封式核主泵叶轮，反应堆冷却剂泵流体动压三级机械密封，水润滑导轴承等关键技术，建立了一套主泵设计、试验及连锁保护安全评价体系及技术标准。解决了第三代核电提出的全厂断电 SBO 事故工况下，主轴密封压力边界的完整性，主泵半流量惰转时间满足16秒要求。</p><p>(2) 流体动压机械密封</p><p>学科：流体机械及工程、流体力学。</p><p>授权发明专利：ZL201210322167.0、ZL201310190154.7；ZL201922278842.4；发表论文5篇。</p><p>开发了新材料、提出了新的加工方法、新的计算及试验方法。哈电动装所研制的核主泵波形端面动压轴密封结构如图5所示，由三级结构完全相同的流体动压型机械密封串联组成，其作用是预防核主泵反应堆介质的外泄。每级机械密封的设计标准是承压 17.3 MPa。任何一级机械密封发生故障时，其它两级机封均能在系统压力下维持运转，泄漏可控设计寿命达到 60000h。机械密封动静环间为微米级润滑液膜，极易发生接触摩擦磨损而损伤密封端面，或者由于机械应力、摩擦生热、液膜破裂与失稳、端面腐蚀等因素使机械密封的寿命缩短，同时增加轴密封系统的故障率，致使其运行稳定性和可靠性大为降低。为防止动静环密封副磨损失效，哈电设计了静环密封端面沿径向9个水力波形，见图6所示，以产生流体动压效应，避免动静环的接触磨损。正常运转时，动环和静环之间因波形的存在而产生微米级非等厚润滑液膜，在流体动压效应下形成较强的液膜承载能力，从而避免动静环表面直接接触的同时实现对泄漏率的控制。</p><p>图5三级流体动压密封结构图</p><p>图6水力型线</p><p>(3) 流体动压机械密封副</p><p>(3)流体动压机械密封副</p><p>学科：流体机械及工程、流体力学。</p><p>授权发明专利2 项：ZL201210322167.0、</p><p>ZL201310190154.7；新型专利1 项：ZL201922278842.4。发表论文5 篇。</p><p>发明的流体动压密封副实现了低摩擦15 微米级密封水力型线设计、精密抛及检验，解决了主泵启停阶段润滑水膜建立的技术难题，实现了低压泄漏量可控。材料选型优化，模拟电站400 次正常运行工况启停试验后，摩擦磨损试验后的密封副满足全厂断电SBO 试验考核，确保密封在稳态和瞬态工况可靠运行。</p><p>图7 SBO全厂断电试验后密封副拆检状态（动环、静环）</p><p>(4) 水力部件型线检测及评定技术</p><p>学科：机械共性技术；机械设计;机械设计原理与方法</p><p>授权发明专利：ZL201310581270.1; ZL201310624535.1</p><p>目前水力部件型线的检测及验收国内还未能提出一套严格标准及方法。哈电动装发明的该项技术解决空间扭曲叶片检测问题，提出的叶片进出口型线偏离角度的计算方程以及叶距角偏离方程。实现了空间扭曲叶片测量及量化分析，解决了因加工制造导致水力部件水力性能不一致问题，为主泵开展性能评估提供了理论依据，并已经用于国内运行机组主泵叶轮、导叶体检测及评价，见图4。</p><p>图4翼型测点布置及叶片进、处口型线偏离评定曲线</p><p>(5) 主泵非能动辅助冷却系统设计</p><p>学科：机械共性技术；机械安全和可靠性;失效分析</p><p>授权发明专利：ZL 201620533987.8、ZL 201810537979.4</p><p>主泵轴封注入水系统在国际上首次采用双冗余设计，辅助冷却系统的设计引入“能动与非能动相结合”的安全设计理念，利用固有的热工水力特性。额定运行工况下，由轴封注入水管路输入轴封注入水经旋液分离器后注入主泵的轴封腔中；当RCV系统失效，无法通过轴封注入水管路输入轴封注水时，由应急轴封注入水管路输入的轴封注入水经旋液分离器和高压冷却器的冷却后注入主泵的轴封腔中，此时，应急轴封注入水管路输入的轴封注入水的驱动力来自主泵的叶轮轮毂处的副叶轮，为能动的方式，保障主泵注入水断失工况下长期正常运转。在第二循环回路中采用喷射泵的设计；当注入水量不足时，应急轴封注入水管路上的注入水通过喷射泵引导第一循环回路中的冷却剂增加注入水量；当主泵停运且注入水断失工况下，高压冷却器一次侧盘管与二次侧冷却水热交换，为非能动方式，形成自然循环保证泵内温度降低，保护机械密封等关键部件，保证主泵在多种情况下的可靠性。</p><p>(6) 模拟反应堆一回路全工况全流量（满负荷）测试验证技术</p><p>学科：机械共性技术；机械工业自动化技术；自动检测与监控</p><p>授权发明专利：多功能高温高压综合试验装置ZL202022125578.3</p><p>为了验证主泵机组性能及可靠性，哈电动装设计、建造国内首个百万机组全尺寸核主泵全流量试验台，该试验台是国内外目前最大尺寸、最大载荷、最高回路温度和压力的大型综合试验台，可进行高温高压带载启停试验；具有显著的创新性，2018 年“华龙一号”首堆首泵机组完成了所有的测试项目及耐久考核试验，包括机组联调试验，200小时连续运行试验，瞬态考核试验，见图9。</p><p>图9 “华龙一号”核主泵高温高压全流量试验台</p><p>(7) 主泵半流量惰转</p><p>学科：流体机械及工程、流体力学。</p><p>授权发明专利1 项：ZL202011015675.5，发表论文2 篇。</p><p>考虑管路中冷却剂动能和电机磁损，通过启-停机过程中功率守恒方程和泵</p><p>相似定律，推导并建立了一种新的惰转瞬态计算方法，该计算方法可应用于核工</p><p>程中核主泵机组惰转惯量设计和惰转时间估计的核主泵惰转计算，也可用于对转</p><p>动惯量要求精确的其它类型的泵机组中，见公式1发明的主泵惰转瞬态计算方法，解决了机组转动惯量惰转曲线与半流量惰转时间的要求，确保事故工况下反应堆安全停堆。</p><p>公式1 预估机组惰转时间公式</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

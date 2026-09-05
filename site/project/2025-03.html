@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>消化道早癌诊疗柔性手术机器人系统设计及应用 · 2025金奖 · 好设计</title>
+<meta name="description" content="消化道癌占我国恶性肿瘤发病率的38%，消化道癌的早诊、早治可以显著提高患者的生存率，对人民生命健康具有重要意义。近年，经自然腔道柔性手术机器人不断出现，机器人辅助技术可以降低手术难度、缩短医生学习曲线。但是，消化道狭窄多曲动态环境约束下，如">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%87%91%E5%A5%96&amp;year=2025">← 返回 2025 年金奖名录</a>
+  <div class="kicker"><span class="lv">金奖</span><span class="yr">· 2025 · 第十届</span></div>
+  <h1>消化道早癌诊疗柔性手术机器人系统设计及应用</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">天津大学,北京柏惠维康科技股份有限公司,北京乐普智影科技股份有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">左思洋,孔康,周智峰,刘达,徐兴丰,梁涛,陈保君,谢永召</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">12025060002</div></div>
+  </div>
+  <div class="hero"><img src="../cases/gal/2025-03-0.jpg" alt="消化道早癌诊疗柔性手术机器人系统设计及应用"></div>
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>消化道癌占我国恶性肿瘤发病率的38%，消化道癌的早诊、早治可以显著提高患者的生存率，对人民生命健康具有重要意义。近年，经自然腔道柔性手术机器人不断出现，机器人辅助技术可以降低手术难度、缩短医生学习曲线。但是，消化道狭窄多曲动态环境约束下，如何实现柔性手术机器人的小型化集成设计、精准丝鞘驱传动与刚柔可控机构设计、高精度力/形感知方案设计、精确定位导航与高效自主介入方法设计等是需要突破的技术瓶颈。</p><p>项目在国家重点研发计划、国家自然科学基金等项目支持下，围绕消化道早癌诊疗需求，从诊疗器械创新、入路载体创新、定位导航创新、应用集成创新四个层面开展系统设计，成功研制了具有完全自主知识产权的消化道早癌诊疗柔性手术机器人整机系统，突破了上述技术瓶颈，解决了诊疗过程中“不精准、不稳定、不安全、不高效”四大问题，实现了高端医疗装备设计的颠覆性创新。主要设计创新点为：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>诊疗器械创新：基于动作微元思想，设计了层叠混合型运动解耦柔顺机构，形成了柔性诊疗器械小型化与力感知的成熟设计方案，开创了基于多模态显微成像的诊疗一体化新模式，实现了狭小空间下更灵巧、安全的诊疗操作，延伸了医生的诊断与手术能力；</div></div><div class="p-li"><span class="p-mk">2</span><div>入路载体创新：面向消化道早癌诊疗手术实际需求，设计了具备入路刚柔可控、触觉及形态感知、多内窥镜功能一体化融合的消化道柔性手术机器人平台，在降低消化道手术操作难度的同时，提升了医生操作的稳定性与可靠性；</div></div><div class="p-li"><span class="p-mk">3</span><div>定位导航创新：为解决内窥镜下手术不精准、不高效的问题，设计了基于自监督单目深度估计的入路载体自主介入算法，建立了消化道内镜图像解剖学位置分类数据库，研发了柔性诊疗器械的定位与导航方法，实现了术中腔道全景建模与实时定位导航，减少了医生操作负担；</div></div><div class="p-li"><span class="p-mk">4</span><div>应用集成创新：结合消化道诊疗约束条件及各设计创新点技术特征，从内窥镜成像、人机协同与诊疗空间、合规性与可靠性设计、无菌设计等层面突破机器人系统集成设计技术，研制了具有自主知识产权的机器人整机，形成了术中病理诊断与精准手术一体化的临床应用新范式。</div></div></div><p>项目授权发明专利24项、实用新型专利1项、软件著作权1项；发表相关期刊论文100余篇，获国际会议学术奖5项；获医疗器械注册证12项。自主设计的手术机器人以及内窥镜、导航定位等核心部件，在150余家医院顺利开展了临床手术上千余例，验证了系统的安全性与稳定性，体现了所研发系统相对于传统技术的巨大优势。国家重点研发计划项目综合绩效评价等级为优秀，实现柔性手术机器人整体外径9.8mm兼具多种灵巧诊疗器械、变刚度、力感知与显微成像功能，属于国际首创，主要技术指标均超越国际领先水平。通过颠覆性机器人机构与系统设计，解除了以往柔性机器人设计中，小型化与多功能化之间、灵活性和负载能力之间、手术效率与安全性之间的相互制约关系，可实现“看探诊治”一体化，为癌症诊疗提供了新的技术模式，引领了高端医疗装备新兴产业变革。国内首个获批经口入路手术机器人三类医疗器械注册证，消化道入路载体实现了同类产品全球最小。三年累计新增销售额6064.36万元、新增利润4459.28万元，产品推广至26个省级行政区，对于打破国外手术机器人系统在该领域的垄断地位具有重大意义。消化内镜手术机器人需求与潜在市场巨大，本项目应用前景广阔，符合国家新质生产力布局，可为国内经济发展注入活力，显著提升人民健康水平。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>本项目结合消化道超级微创诊疗操作的实际需求，充分考虑相关标准及行业规范，以设计安全高效的新型柔性手术机器人系统为目标，从柔性诊疗器械（手）、消化道柔性手术机器人平台（躯干）、内窥镜系统（眼）、导航定位系统（脑）等层面突破机器人辅助消化道诊疗的传统技术局限，开展智能消化道早癌诊疗柔性手术机器人系统设计与应用评价。本项目满足我国内镜手术量大面广的临床需求，为产品赢得高利润海内外市场奠定坚实基础。</p><p>图 1 总体设计路线</p><p>设计创新点1：基于动作微元思想，设计了层叠混合型运动解耦柔顺机构，形成了柔性诊疗器械小型化与力感知的成熟设计方案，开创了基于多模态显微成像的诊疗一体化新模式，实现了狭小空间下更灵巧、安全的诊疗操作，延伸了医生的诊断与手术能力。(支撑材料：主要知识产权1-9；代表性论文1-12)。其创新性体现在：</p><p>（1）层叠混合型柔顺机构设计</p><p>设计了一种融合离散堆叠关节与缺口型管状连续体的新型柔顺机构，基于典型手术操作的动作分解，确定诊疗器械所需的自由度数目与布局，形成基于动作微元的器械设计方案。该方案通过结合不同类型的连续体柔顺机构及材料的力学性能，搭配紧凑的小型化驱动装置、非均匀受力丝鞘传动模型及空间自适应实时张紧机构，能够显著提升柔顺机构的机械性能。</p><p>对比现有柔顺连续体机构，其主要优势包括：1）结构紧凑小巧，减少对手术区域的干扰，中央通道可集成电刀、夹钳、注射针以及成像探头等各种末端执行器，极大提升了器械的集成度和适用能力；2）实现了诊疗器械的7自由度大范围运动，有效提高了力传递效率，适应性更强，满足了复杂手术对灵活性和精确性的要求；3）大幅提高了运动精度，能够执行更细微的手术动作，实现狭小空间下的手术操作；4）轴向刚性与径向弯曲柔性特性兼具，消除了中央肌腱驱动受力对连续体运动的影响，更符合操作应用需求；5）在保持高灵活性的同时，提高了耐用性，延长了器械的使用寿命，降低了手术成本。</p><p>（2）运动解耦机构设计与操作三角</p><p>设计了一种基于对称多段弯曲结构的新型解耦方案，构建了2自由度展开的外科手术三角操作空间，以满足复杂手术任务的操作需求。</p><p>对比现有技术，其主要优势在于：1）实现了更高效的运动解耦和多段连续体之间的独立精准控制，使得器械在操作中能够保持更高的稳定性和方向性。显著提升了手术的精确性和安全性，轻松应对复杂手术环境；2）突破了传统水平方向的展开限制，增加了垂直展开的能力，使得器械在复杂区域内（如消化道侧壁）能提供更广泛的操作范围，极大地丰富了手术类型；3）结构更加紧凑，分段弯曲解耦设计，简化了运动模型分析难度，提升了末端运动精度，并减少了手术器械对手术区域的干扰。该方案克服了现有三角机构在运动解耦与操作精度之间难以兼顾的局限性，显著提升了操作的精确性与稳定性，满足复杂手术环境的应用需求。</p><p>（3）操作力感知方法设计</p><p>基于力敏弹性体与悬置光纤光栅的灵巧空间配置，设计了多种多轴力感知的小型化柔性诊疗器械末端执行器：1）设计了一种具备中空通道的全新的双点光纤光栅配置方式与全新三轴力解耦算法，解决了注射针难以实现三轴力感知的难题；2）设计了具备夹持力与拖拽力的力反馈夹钳，均实现了毫牛级测力分辨率；3）设计了具备中空通道的超高三轴力测量分辨率的高频电刀，突破了ESD手术过程中电刀与组织交互力原位精准测量的技术瓶颈；4）设计了基于层叠矩形槽结构的三轴力传感方案与高精度解耦算法，解决了柔性显微成像诊断器械缺乏力感知的问题。同时，上述设计均采用优化的光纤布置方案，实现了温度补偿。此外，器械均可通过主手实现操作力反馈，保障诊疗过程中的安全控制。</p><p>（4）多模态显微图像拼接融合算法设计</p><p>针对共聚焦显微成像视野小、软组织形变等问题，基于研发的力感知柔性显微成像诊断器械，设计了显微图像位置视觉伺服控制方案。</p><p>对比现有显微成像诊断器械，其优势体现在：1）结合显微图像位置信息减小了组织形变产生的轨迹误差；2）结合OCT深度检测技术保持稳定组织接触，确保了高质量显微图像采集；3）满足了高精度的显微成像诊断器械自适应控制需求，实现了显微图像大面积扫描和精准轨迹控制。进一步突破了显微图像快速弹性配准机制，设计了基于纹理加权条件方差和的拼接模型以及全新的分层快速拼接框架，具有拼接速度快，累计误差小的特点，实现了大面积小误差的微观显微图像的快速全景重建。并基于高分辨率共聚焦显微图像表面信息与OCT、超声图像深度信息，设计了基于真实位置配准的多模态显微图像融合算法，实现了目标组织微观结构的三维立体显示，提供了更加直观、准确的术中病理诊断依据。表面高分辨率显微图像可判别病灶类型，深度显微图像可判断病灶发展阶段，最终形成了基于多模态显微成像的诊疗一体化新模式。</p><p>（5）高保真力反馈主手设计</p><p>采用平移-旋转-旋转-旋转相结合的多自由度布局方式，设计了一种具有5自由度的串-并混联型力反馈主手，主手关节高度集成了高精度磁敏式角度传感器、扭矩测量装置与柔性气动力反馈单元。</p><p>对比现有力反馈主手，其优势在于：1）兼具多自由度灵巧运动及运动解耦；2）融合了双平行四边形与齿轮副的可展开平移结构，阻尼低、结构紧凑；3）动态扭矩实时监测与扭矩精准闭环可控；4）柔性气驱方式提供了安全的被动式柔顺反馈力。该方案解决了传统力反馈主手缺乏全局自由度力反馈信息的问题，突破小范围空间扭矩监测技术瓶颈，具有准确采集手部运动信息与提供真实力反馈的功能，实现高效率人机交互。进一步设计了基于虚拟算法墙的安全避碰控制策略，结合多元信息融合的力-位协同控制算法，建立了三位一体的高直觉性器械主从运动映射方法与高实时性力反馈比例控制器，达到了主手端与从手器械端一致性运动的效果。</p><p>图 2 柔性诊疗器械</p><p>设计创新点2：面向消化道早癌诊疗手术实际需求，设计了具备入路刚柔可控、触觉及形态感知、多内窥镜功能一体化融合的消化道柔性手术机器人平台，在降低消化道手术操作难度的同时，提升了医生操作的稳定性与可靠性。(支撑材料：主要知识产权10-17；代表性论文13-20)。其创新性体现在：</p><p>（1）刚柔灵活可控入路载体设计</p><p>提出一种基于低熔点合金的驱动-变刚度一体化设计方案，使入路载体具有尺寸小、弯曲角度大、刚度增益大的优点，突破了控形与控性一体化理论及实现方法。</p><p>结合消化道大长径比形态特征约束，设计了基于丝驱动的叠片式瞬时可控的变刚度机构。对比现有变刚度机构，其优势在于：1）大刚柔转换比与快速刚度响应特性兼具；2）弯曲刚度与扭转刚度解耦可控；3）结构紧凑小巧且易于集成。本设计解决了传统结构刚柔本构特征分离的问题，可在秒级时间内完成高倍率刚度变化，实现了入路载体高效刚柔转换与动态调控。</p><p>（2）触觉及形态感知传感器设计</p><p>基于触须仿生与折线型光纤光栅配置新方案，设计了一种入路载体仿生触须力传感器，对比现有力传感器，其优势体现在：1）提出了一种折线型光纤多点分布式配置方案，确保了传感结构的紧凑性；2）采用刚度低、串扰小的触须传感单元，确保了介入力的高精度检测；3）进行了有效的温度补偿，消除了温度对力的影响。此外，创新性地提出了一种基于单根光纤光栅螺旋配置的柔性机器人三维形态检测与重建方案。对比现有形状感知方法，其优势突出体现在：1）设计了单根多点光纤光栅传感器螺旋配置新结构，提高了柔性机器人的弯曲顺应性；2）构建了应变与柔性体模型离散曲率的映射关系，实现了柔性机器人曲率和扭矩的同步检测与重构；3）设计了一种差分温度补偿模型，消除了光纤光栅传感器的温度效应。所研发的力/形感知技术，极大的提高了消化道介入过程的安全性与精准性。</p><p>（3）多自由度多功能内窥镜设计</p><p>突破了小尺度约束下多自由度运动机构与多功能通道一体化集成设计方法，设计了一种兼具成像、照明、冲水与充气等多功能且可并行插入双器械的四自由度柔性内窥镜。</p><p>对比现有消化道内窥镜，其优势在于：1）双钳道布局使机器人具备双器械协同手术操作能力；2）满足高灵活性前提下具有更小截面外径；3）融入刚柔可控机制，以柔性状态入路，以刚性状态操作。该方案解决了传统单器械柔性操作时无牵引、不稳定、不精准等问题，实现了刚柔可控多功能内窥镜的高度集成，可适应复杂手术环境，扩展手术范式，提高通过性的同时提升机器人的运动精度和负载能力。</p><p>（4）介入式自重平衡机械臂设计</p><p>针对手术场景下高安全性与高鲁棒性的设计需求，设计了一种包括驱传动装置、位姿锁定机构、重力平衡装置的介入式自重平衡机械臂。对比现有内窥镜机器人持镜臂，其优势体现在：1）采用同构式虎克铰链驱动装置，简化了驱动模型降低了控制成本；2）引入广域近重力平衡机构，方便医生术前术后伶俐拖动；3）将双平行四连杆机构与可控气弹簧相结合，纯机械锁定解锁机构具备更高的稳定性与安全性。该方案解决了现有多段连续体丝驱动机构力位耦合、运动学复杂、控制困难问题，保证了机器人刚度与运动独立解耦控制，实现了机械臂的广域近重力平衡与任意位姿下的实时定位。</p><p>图 3 消化道手术机器人平台</p><p>设计创新点3：为解决内窥镜下手术不精准、不高效的问题，设计了基于自监督单目深度估计的入路载体自主介入算法，建立了消化道内镜图像解剖学位置分类数据库，研发了柔性诊疗器械的定位与导航方法，实现了术中腔道全景建模与实时定位导航，减少了医生操作负担。(支撑材料：主要知识产权18、25；代表性论文21-27)。其创新性体现在：</p><p>（1）自监督单目深度估计模型设计</p><p>提出了点匹配损失和图像批量重排方法相结合的方式，设计了适应消化道弱纹理场景的自监督单目深度估计模型MonoLoT，并设计了高效、直观的虚拟内镜方案。</p><p>与现有技术相比，其优势包括：1）准确率高，在高仿真消化道数据集上取得94.4%的深度估计准确率；2）实时性高，为机器人运动提供导航信息，实现29.42fps的实时处理速度；3）可移植性强，基于MonoLoT算法预测出深度图，采用最小化光度误差估计相机姿态并跟踪相机运动轨迹，术中实时重建完整的点云消化道三维场景；4）直观性强，采用术中点云重建与术前模型三维非刚性配准算法，生成虚拟内镜，为医生提供直观全面的腔道实景信息。该方案实现了诊疗过程中的实时导航，为诊断和手术提供安全和精确保障。</p><p>（2）上消化道内镜图像解剖学位置分类模型设计</p><p>设计了一种基于深度学习的上消化道内镜图像解剖学位置分类算法，实现了完整的消化道检查图像分类流程，达到了提高检查效率、增强诊断准确性的效果。</p><p>与现有技术相比，其优势体现在：1）通过深度学习算法，显著提高了内镜图像解剖学位置分类的准确率，减少了人为判断的主观性和错误率；2）自主介入过程中，能够实时检测胃镜盲点，为医生提供消化道地标信息，辅助提高病灶的检出效率；3）实现了从图像输入到分类结果输出的全自动化流程，减轻了医护人员的工作负担，并提高了检查流程的标准化水平。</p><p>（3）入路载体自主介入策略设计</p><p>突破了入路载体定位与安全约束控制，设计了方便移植以及结构紧凑的多自由度内镜操控模块，以及基于MonoLoT单目深度预测模型的主动约束视觉伺服控制算法。</p><p>其优势体现在：1）实时准确提取靶点，实时估计内镜图像的深度图，提取深度图中深度最大区域作为自主介入的靶点，为机器人运动提供导航信息；2）视觉伺服控制策略，基于内镜操控模块和入路载体的运动学建模实时控制入路载体的介入方向，控制介入靶点始终位于机器人内窥镜的视野中心；3）主动约束控制，融合术中的消化道地标、定位跟踪与力感知安全阈值信息约束内窥镜的运动空间，实现柔性入路载体在消化道中的自主安全高效介入。</p><p>（4）柔性诊疗器械分割方法设计</p><p>设计了一种高效轻量级的注意力引导双分支网络ADNet，实现了复杂手术场景中器械的精准实时分割。</p><p>其优势体现在：1）高精度与高效率并存，ADNet通过创新的双分支解码器结构，不仅促进了特征信息的交互，还丰富了图像特征空间，有效提升了器械分割精度，在Kvasir-instrument数据集上实现了高达94.98%的平均交并比，其处理速度达到29.13fps，确保了实时性的要求；2）跳跃注意力（SK_A）机制和全局可分离注意力（GSA）模块，智能地识别并抑制图像中的不相关或干扰特征，增强对关键信息的关注，同时充分利用底层特征并为权衡高层特征提供指导，显著提升分割的准确性。</p><p>（5）柔性手术机器人定位与导航设计</p><p>设计了基于术中高精度光学定位和多尺度解耦神经网络4STDH的全流程定位导航方法，提高了机器人实时定位精度和手术导航效率。</p><p>与现有技术相比，其优势体现在：1）术中光学、定位标记物等位姿检测方法，结合入路载体精确的运动学，实现高效的特征提取与快速空间映射计算；2）多尺度定位，4STDH能够有效解决器械与变内径腔道手术目标区域因尺寸差异大而导致的定位难题，实现对体内不同尺寸目标的精确捕捉；3）特征区分性能，嵌入Swin Transformer模块显著提升了模型对手术目标区域组织纹理与消化道背景的区分能力，显著提高了解剖结构自动分割的定位精度；4）分类与回归解耦策略，4STDH解决了手术目标区域与器械中心点位置不确定的问题，实现了对诊疗器械的鲁棒性定位与导航。</p><p>图 4 柔性手术机器人自主介入与导航</p><p>设计创新点4：结合消化道诊疗约束条件及各设计创新点技术特征，从内窥镜成像设计、人机协同与诊疗空间设计、合规性与可靠性设计、无菌设计等层面突破机器人系统集成设计技术，研制了具有自主知识产权的机器人整机与核心部件，形成了术中病理诊断与精准手术一体化的临床应用新范式。(支撑材料：主要知识产权19-24、26；代表性论文28-30)。其创新性体现在：</p><p>（1）内窥镜成像设计</p><p>在机器人成像方面解决了CCD成像模块视频信号长线传输阻抗匹配、高频噪声消除、微弱电流信号放大、发射接收脉冲信号同步等微电技术难点，攻克了光学成像镜头与图像传感器的精准装配、调试、校准等关键工艺，实现了高气密性生物相容性粘接，提高了成像质量及其稳定性。根据声波的传播特点及其与人体组织相互作用原理，设计了合成孔径成像、螺旋成像、超声编码激励成像等核心成像元器件，实现了三维超声断层成像。设计了高频超声换能器、超声成像探头、探头旋转驱动器、超声图像处理器等核心部件，实现了国产化。</p><p>（2）人机协同与诊疗空间设计</p><p>设计了基于计算机视觉的光学跟踪定位、空间坐标映射等核心定位算法，实现了机械臂精准位置定位与术中随动功能，始终锁定手术位置。设计了满足经口入路约束、实时跟踪约束的术中机械臂位姿动态规划控制与力觉交互方法，结合主被动避碰提升操作安全性，实现实时引导下在狭窄空间内的人机协同高精度手术操作。在诊疗过程中，需结合病灶位置及患者体位，设计不同的机器人摆位与介入方向。机械臂旋转关节突破了灵活极限，可自动实现定向，结合新型折叠连接装置调整入路载体与腔道入口的位置关系，从而满足手术各种体位及介入路径需求。</p><p>（3）合规性与可靠性设计</p><p>依据医用行业标准，设计并自主研发了医用电子内窥镜成像质量测试平台，可实现对亮度响应特性、信噪比、空间频率响应和静态图像宽容度的快速测试，验证了所研究成像系统的稳定性。由国内权威检测机构天津市医疗器械质量监督检验中心、国家食品药品监督管理局结合相关法律法规及医疗环境需求，开展了电磁兼容、性能及安规等层面的检测，目前分别完成了机器人配套内窥镜、成像质量检测系统、导航定位设备等产品的合规性检测。在整机失效模型与加速寿命模型分析的基础上，进行可靠性性能测试，形成整机的可靠产品研发体系。完成了产品高低温/湿度/电气安全/弯曲疲劳等可靠性验证，产品满足有效期5年的寿命要求。</p><p>（4）无菌设计</p><p>从减少术后感染等方面出发，通过诊疗器械、入路载体与机械臂等的模块化与即插即用式设计，并使用标准化的接口，实现机器人的方便可靠安装，缩短了术前的准备时间。通过研发的蠕动泵，极大减少了流体污染的风险，维持了手术环境的无菌性。</p><p>（5）系统集成设计</p><p>依据安全性设计准则，实现主从操作手、机械臂等各结构，与内窥镜系统、导航定位系统、内窥镜用超声诊断设备、蠕动泵等功能模块的集成，保证了系统的完整性，实现了机器人主从操作的空间映射与实时安全控制，最终完成机器人系统集成。</p><p>（6）应用与评价</p><p>为保证系统的有效性，与北京柏惠维康科技股份有限公司、北京乐普智影科技股份有限公司紧密合作展开应用研究。消化道早癌诊疗柔性手术机器人依托天津医科大学总医院、中国人民解放军总医院第一医学中心开展了大量的动物实验研究，验证了机器人系统开展消化道手术的安全性与稳定性，实现了术中多模态显微成像，有助于协助临床医生判断肿瘤残余情况，明确内镜下切除的根治效果。并建立了消化道早癌诊疗柔性手术机器人手术操作指南与规范，形成了术中病理诊断与精准手术一体化的临床应用新范式。</p><p>自主研发的机器人系统核心部件电子内窥镜系统在哈尔滨呼兰区中医院东城分院等单位完成了临床试验，顺利完成了30例的病灶检查，医生对产品的操作性能较为满意。超声成像是机器人系统立体显微成像的一种，核心部件内窥镜用超声诊断设备，在27家医院进行了临床应用，图像质量得到了临床医生认可，并销往山西、福建、郑州、杭州、呼和浩特等地。</p><p>在上述系统检测基础上，制定合理的临床方案，率先开展了经口入路的机器人手术研究，在150余家医院开展了应用，提升了患者的生活质量。产品已在浙江、福建、河北、四川、重庆、山东、陕西、安徽、贵州等地进行销售，并成功实施数次5G通讯异地远程手术，取得良好社会经济效益。</p><p>图 5 系统集成设计与临床应用新范式</p><p>国内外同类研究、同类设计的综合比较：</p><p>本项目在机器人小型化设计和多功能化设计方面取得了巨大突破，国际上首次实现机器人整体外径9.8mm（全球最小）兼具两个多自由度诊疗器械、变刚度、力感知与显微成像功能（图 6）。</p><p>小型化的灵巧诊疗器械(外径2.8mm)可形成操作三角，用软镜实现硬镜操作。用瞬时刚柔可控机构替代入路载体的主体结构，解除了以往柔性机器人设计中灵活性和负载能力之间的相互制约关系。结合多模态显微成像功能，可以实现术中病理诊断与超级微创手术，解决检查与病理分离、病理与手术分离的临床难题。</p><p>设计了具备高分辨率三轴力感知功能的多种类柔性灵巧诊疗器械，属于国际领先成果（图 7），在器械力感知分辨率方面有较大提升。特别是，国际首创设计了融合三轴力传感的消化道显微成像灵巧器械完整样机，并在显微图像拼接算法精度方面显著高于国际同类技术（图 8）。实现了高达33.52mm^2的显微图像拼接面积，是其他研究的10倍之多，对于判断肿瘤分布具有重要的临床价值。</p><p>所设计的自主介入自监督单目深度估计模型，在深度估计准确率方面超越国际领先水平（图 9）。颠覆性的力感知与自主介入方法设计，极大地提升了手术效率与安全性。</p><p>图 6 消化道内镜手术机器人系统对比</p><p>图 7 力感知诊疗器械对比</p><p>图 8 显微图像拼接算法对比</p><p>图 9 单目深度估计算法对比</p></div>
+  <div class="sec">图集 / GALLERY</div><div class="gal"><img loading="lazy" src="../cases/gal/2025-03-1.jpg" alt=""><img loading="lazy" src="../cases/gal/2025-03-2.jpg" alt=""></div>
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2025%E5%B9%B4%E9%87%91%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%B6%88%E5%8C%96%E9%81%93%E6%97%A9%E7%99%8C%E8%AF%8A%E7%96%97%E6%9F%94%E6%80%A7%E6%89%8B%E6%9C%AF%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E5%8F%8A%E5%BA%94%E7%94%A8%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">延伸阅读 / CURATED（人工核选 · 检索于 2026-08-09）</div><a href="http://me.tju.edu.cn/info/1042/46241.htm" target="_blank" rel="noopener"><span class="arr">↗</span><span>再获佳绩！天津大学机械工程学院项目荣获好设计金奖</span><span class="src">me.tju.edu.cn</span></a><a href="https://news.tju.edu.cn/info/1003/87189.htm" target="_blank" rel="noopener"><span class="arr">↗</span><span>国家重点研发计划“面向消化道早癌的诊疗一体化手术机器人关键技术及系统”项目启动会召开</span><span class="src">news.tju.edu.cn</span></a><a href="https://cgd.cmes.org/exhibit/detail/1f23b7b4035d483f806c798c4cd83e6b" target="_blank" rel="noopener"><span class="arr">↗</span><span>消化道早癌诊疗柔性手术机器人系统设计及应用（好设计官网）</span><span class="src">cgd.cmes.org</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2025-02.html"><span class="d">← 上一项</span>三维集成芯片制造用的超精密减薄装备</a>
+    <a class="next" href="2025-04.html"><span class="d">下一项 →</span>高性能零件复杂内腔抛光磨料介质与装备</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

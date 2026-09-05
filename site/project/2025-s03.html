@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>绿色动力-船用发动机高效低碳燃料喷射系统设计 · 2025银奖 · 好设计</title>
+<meta name="description" content="发展清洁燃料动力是航运发展和“双碳”战略的迫切需求。船舶动力碳排放占航运业碳排放量的80%以上，采用甲醇、氨等清洁燃料是碳减排最直接有效的方式。喷射系统是船舶动力核心部件，其性能直接影响整机碳排放。国内因甲醇、氨等清洁燃料燃烧机理及喷射规律">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2025">← 返回 2025 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2025 · 第十届</span></div>
+  <h1>绿色动力-船用发动机高效低碳燃料喷射系统设计</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">重庆红江机械有限责任公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">黄都,李栋,屈超,吴学东,周勇,周小虎,周家勇,扈爽,李许庆,胡玉针</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">12025070015</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>发展清洁燃料动力是航运发展和“双碳”战略的迫切需求。船舶动力碳排放占航运业碳排放量的80%以上，采用甲醇、氨等清洁燃料是碳减排最直接有效的方式。喷射系统是船舶动力核心部件，其性能直接影响整机碳排放。国内因甲醇、氨等清洁燃料燃烧机理及喷射规律研究较少，且燃料存在易汽化、易腐蚀、安全防护要求高等难题，亟待设计开发安全可靠的清洁燃料喷射系统。在国家自然科学基金、工信部等重大科研项目支持下，经过多年产学研用协同攻关，设计了具有自主知识产权的清洁燃料喷射系统，并批量应用。主要创新点如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>设计了船用发动机氨柴双燃料燃烧状态辨识与控制技术。基于多段柴油喷射参数与氨气替代率等控制参数对燃烧过程的敏感性与相关性影响、多燃烧状态参数闭环反馈规律进行研究设计，实现了氨柴发动机燃烧过程多目标优化控制，指示热效率超过48%，未燃氨排放减少70%。</div></div><div class="p-li"><span class="p-mk">2</span><div>设计了船用发动机清洁燃料汽化抑制技术。基于空化理论及多油路分离技术，设计开发了高压端调控式液氨高压泵、多流道机电液耦合控制及连续渐变流道喷射器，解决了低沸点燃料相变空化问题，实现了70MPa级高压力波动空化体积分数最大值由94%降低至15%。</div></div><div class="p-li"><span class="p-mk">3</span><div>设计了船用发动机多燃料协同控制喷射技术。基于喷射系统机电液多学科耦合设计技术，设计优化了甲醇、柴油等多燃料主、微一体式双喷结构，设计了同轴/异轴喷射系统，实现了多燃料分层燃烧，使清洁燃料发动机最高替代率达到95%。</div></div><div class="p-li"><span class="p-mk">4</span><div>设计了船用发动机清洁燃料喷射系统安全性设计技术。基于惰化吹扫、双壁防护及无泄漏式运动副等设计技术，设计开发了甲醇、氨燃料安全防护系统，取得了国家“0区”防爆认证，实现了清洁燃料系统零泄漏安全运行8000h以上。</div></div></div><p>基于该成果，设计研制了L230、N210等多种规格产品，批量应用于淄柴、中船三井等单位，并在国内首艘甲醇柴油双燃料集散两用“民厚”轮、重庆市首艘万吨级江海直达“创新5”轮、国家绿色珠江工程“达峰3000”及“中和2000”系列船舶成功应用。国内市场占有率低速机提升至85%、中高速机提升至72%，部分产品远销德国、阿联酋等海外市场，液化石油气燃气喷射阀入选重庆市首台（套）重大技术装备产品。获授权实用新型专利和发明专利16项，牵头制定行业标准1项。近三年实现销售收入30亿元，取得了重大经济和社会效益，为推进国家双碳战略和重庆市“33618”现代制造业集群体系建设做出了重要贡献。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>技术创新点</p><p>创新点1：设计了船用发动机氨柴双燃料燃烧状态辨识与控制技术。基于多段柴油喷射参数与氨气替代率等控制参数对燃烧过程的敏感性与相关性影响、多燃烧状态参数闭环反馈规律进行设计研究，实现了氨柴发动机燃烧过程多目标优化控制，指示热效率超过48%，未燃氨排放减少70%。</p><p>针对船用氨柴双燃料发动机油气控制参数多，控制与性能参数耦合规律模糊等问题，设计了基于多段柴油喷射参数与氨气替代率等控制参数对燃烧过程的敏感性与相关性影响、多燃烧状态参数闭环反馈规律的研究方法。</p><p>针对氨柴双燃料发动机燃烧过程中存在的燃烧状态变化大，燃烧闭环反馈难等问题，通过将物理燃烧模型与数据驱动相结合，设计了氨柴双燃料发动机燃烧状态辨识与反馈方法。</p><p>针对船用氨-柴双燃料发动机在燃烧过程中的经济性与排放较差等问题，基于燃烧实时辨识反馈，设计了燃烧过程多目标自适应优化控制方法，指示热效率超过48%，未燃氨排放减少70%。</p><p>创新点2：设计了船用发动机清洁燃料汽化抑制技术。基于空化理论及多油路分离技术，设计开发了高压端调控式液氨高压泵、多油路机-电-液耦合控制及连续渐变流道喷射器，解决了低沸点燃料相变引起的空化问题，实现了70MPa级高压力波动空化体积分数最大值由94%降低至15%。</p><p>针对液氨流过高压泵中高温或低压区域易汽化的难题，基于流体空化理论，提出了高压泵高压端调节输出流量控制方法，并通过控制高压泵入口液氨关键参数（温度≤30℃、液氨压力≥5MPa），设计了高可靠性氨燃料高压泵。</p><p>针对甲醇/氨燃料流过电控喷射器电磁阀高压密封面易汽化的难题，基于多油路分离及机电-液耦合控制技术，提出了控制油和燃料分离控制方法，成功设计了甲醇/氨燃料电控喷射器，实现了70MPa级高压力波动空化体积分数最大值由94%降低至15%。</p><p>针对甲醇/氨燃料流过喷射器中狭窄流道易汽化的难题，基于流体力学和传热学原理的流道梯度连续设计优化方法，优化设计了甲醇/氨燃料喷射器梯度连续变化的流道结构，抑制了流道中燃料的空化。</p><p>创新点3：设计了船用发动机多燃料协同控制喷射方法。基于喷射系统机-电-液多学科耦合设计技术，优化设计了甲醇、柴油等多燃料主、微一体式双喷结构，设计开发了同轴/异轴喷射系统，实现了多燃料分层燃烧，使清洁燃料发动机最高替代率达到95%。</p><p>针对大功率清洁燃料发动机燃烧效果不佳、经济性较差的问题，基于分层燃料理论，提出了同轴/异轴多燃料协同喷射方法，设计开发了同轴/异轴多燃料一体式喷射器，使清洁燃料发动机最高替代率达到95%。</p><p>针对甲醇/氨-柴油喷射系统多燃料协同喷射的技术难题，基于机-电-液耦合控制技术，设计开发了双电控喷射系统耦合技术，研制了电控多燃料协同喷射系统，构建了甲醇/氨燃料喷射系统解决方案。</p><p>创新点4：设计了船用发动机清洁燃料喷射系统安全性设计技术。基于惰化吹扫、双壁防护及无泄漏式运动副等设计技术，设计开发了甲醇、氨燃料安全防护系统，取得了国家“0 区”防爆认证，实现了清洁燃料系统零泄漏安全运行8000h以上。</p><p>针对喷射系统中残留甲醇/氨燃料易导致健康风险、爆炸等问题，设计了甲醇/氨燃料喷射系统双壁防护及吹扫惰化处理技术，研制了惰性气体吹扫系统，实现了清洁燃料系统零泄漏安全运行8000h以上。</p><p>针对甲醇/氨燃料多燃料发动机中“0 区”（即燃料可能直接泄漏的区域）的防爆需求，设计了多重防爆复合安全保护技术，取得了国家“0 区”防爆认证，解决了发动机在“0 区”的安全性技术难题。</p><p>针对甲醇/氨燃料喷射过程中运动副易磨损或燃料泄漏的问题，基于流体压力差密封技术，设计开发了运动副密封结构，实现了运动副的润滑和70MPa级燃料零泄漏。</p><p>国内外同类技术对比</p><p>项目设计研制的 LNG 燃气喷射阀、低压甲醇喷射系统、集成式高压甲醇喷射系统、氨燃料喷射系统广泛应用于国内外船舶主辅机，在喷射系统泄漏量、喷射压力、燃料系统安全性等方面，处于国际先进水平。</p></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2025%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E7%BB%BF%E8%89%B2%E5%8A%A8%E5%8A%9B-%E8%88%B9%E7%94%A8%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%AB%98%E6%95%88%E4%BD%8E%E7%A2%B3%E7%87%83%E6%96%99%E5%96%B7%E5%B0%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E7%BB%BF%E8%89%B2%E5%8A%A8%E5%8A%9B-%E8%88%B9%E7%94%A8%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%AB%98%E6%95%88%E4%BD%8E%E7%A2%B3%E7%87%83%E6%96%99%E5%96%B7%E5%B0%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「绿色动力-船用发动机高效低碳燃料喷射系统设计」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E7%BB%BF%E8%89%B2%E5%8A%A8%E5%8A%9B-%E8%88%B9%E7%94%A8%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%AB%98%E6%95%88%E4%BD%8E%E7%A2%B3%E7%87%83%E6%96%99%E5%96%B7%E5%B0%84%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「绿色动力-船用发动机高效低碳燃料喷射系统设计」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2025-s02.html"><span class="d">← 上一项</span>特种减振材料金属橡胶设计关键技术及应用</a>
+    <a class="next" href="2025-s04.html"><span class="d">下一项 →</span>高性能复杂管类构件三维矢量柔性弯曲成形技术及装备</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

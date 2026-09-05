@@ -1,0 +1,53 @@
+/* 好设计馆设计系统 · 全站换肤层（yongle DS 镜像）
+   用法：在页面自身 <style> 之后引入 <link rel="stylesheet" href="gd-ds.css">
+   通过重定义 CSS 变量 + 统一导航/标题，让既有页面无损继承设计系统。 */
+:root{
+  --night-0:#050B22;--night-1:#0E1F4D;--night-2:#1A3A7A;
+  --blue:#2D4FAF;--blue-2:#5984D6;--blue-soft:#8FAAD5;
+  --paper:#F7F2E8;--paper-2:#EFE7D5;--paper-3:#E4DBC1;
+  --bg:#F7F2E8;
+  --bg-soft:rgba(14,18,24,0.05);
+  --bg-quiet:rgba(14,18,24,0.025);
+  --ink:#0E1218;--ink-soft:#2A3142;
+  --muted:#5C6577;--muted-soft:#3E4454;
+  --ink-mute:#5C6577;
+  --line:rgba(14,18,24,0.14);
+  --line-soft:rgba(14,18,24,0.10);
+  --accent:#3D60BD;--accent-bright:#2D4FB3;--accent-deep:#1E3A7A;
+  --accent-soft:rgba(61,96,189,.10);
+  --gold:#D4A858;--gold-light:#E8C97C;--gold-deep:#7E5F18;
+  --gold-soft:rgba(212,168,88,.16);
+  --serif:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;
+  --sans:'Noto Sans SC','Source Han Sans SC','PingFang SC','Inter',sans-serif;
+  --latin:'Cormorant Garamond','Georgia',serif;
+  --mono:'JetBrains Mono','SF Mono','Consolas','Noto Sans SC',monospace;
+  --r-sm:4px;--r-md:8px;--r-lg:12px;--r-xl:18px;--r-pill:99px;
+  --sh-1:0 4px 12px -4px rgba(14,18,24,.12);
+  --sh-2:0 8px 24px -10px rgba(14,18,24,.18);
+  --sh-3:0 18px 50px -25px rgba(14,18,24,.25);
+  --ease:cubic-bezier(.4,1,.6,1);
+}
+::selection{background:#D4A858;color:#0E1218}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans)}
+
+/* ── 标题衬线化（DS 签名） ── */
+h1,h2{font-family:var(--serif);letter-spacing:.03em}
+
+/* ── 统一导航（覆盖各页自有 nav 样式） ── */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;
+  padding:0 32px !important;height:60px;min-height:60px;
+  background:rgba(247,242,232,.86) !important;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft) !important;box-shadow:none !important}
+nav .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);line-height:1;
+  font-family:var(--serif)}
+nav .brand .mark-img{width:30px;height:30px;display:block;border-radius:8px;box-shadow:var(--sh-1)}
+nav .brand .bt{display:block;font:700 16px/1.15 var(--serif);letter-spacing:.1em;color:var(--ink)}
+nav .brand .en{display:block;font:italic 500 9px/1.2 var(--latin);letter-spacing:1.4px;
+  color:var(--ink-mute);margin-top:2px;white-space:nowrap;text-transform:none}
+nav .links{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--ink-mute);padding:7px 14px;
+  border-radius:99px;transition:all 150ms cubic-bezier(.4,1,.6,1);border:none;background:transparent}
+nav .links a:hover{color:var(--ink);background:var(--paper-2)}
+nav .links a.act{color:#fff !important;background:var(--ink) !important}
+@media(max-width:900px){nav{padding:0 16px !important}nav .links a{padding:7px 9px;font-size:12px}}

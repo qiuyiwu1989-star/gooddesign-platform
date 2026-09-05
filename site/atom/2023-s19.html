@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>&quot;弓&quot;系转向架 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-s19.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-s19</div>
+  <h1>&quot;弓&quot;系转向架</h1>
+  <div class="meta-line"><b>2023 年度银奖</b><span>中车唐山机车车辆有限公司,石家庄市轨道交通集团有限责任公司,天津轨道交通运营集团有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中车唐山机车车辆有限公司,石家庄市轨道交通集团有限责任公司,天津轨道交通运营集团有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">陈彦宏,李建加,秦成伟,刘东宇,邱利伟</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 轨道交通（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>欧美日等发达国家提出先进制造、智慧城市和环保高效为未来科技创新发展趋势的未来十年国家创新战略计划，中国在“交通强国”纲要、新基建重点、京津冀交通规划等一系列建议规划也均提出以节能环保、智能化、轻量化、先进材料及先进工艺应用制造为代表的高效、绿色、智能为现代轨道交通未来发展趋势。中车唐山机车车辆有限公司(以下简称中车唐山公司)坚持“四个面向”，贯彻国家“碳达峰、碳中和”战略，针对当前轨道车辆面临的运营单位在改善自重大、运营能耗高、运行噪声及轮轨磨耗大、维护成本高、智能化程度低等方面的问题的迫切需求，瞄准轻量化、低能耗、绿色化、智能化的发展目标不断探索，致力于设计轻量化、模块化；制造环节低碳化；运用过程低能耗、高效率、高安全性，研制绿色产品，为用户创造价值，增强轨道车辆产品市场竞争力。</p><p>弓系转向架以功能需求为导向，基于“按材设计”理念，首次提出全装配无焊接、多级刚度挠性构架的全新设计理念，阐释轨道交通轻量、绿色、智慧的发展方向。全新构型设计提升转向架产品的本质安全，在脱轨系数、轮轴横向力等指标对比传统技术均有明显改善。弓系转向架较传统转向架产品重量轻25%-35%，将使列车整体减重约10%，车辆运行能耗减少15%，轮轨磨耗降低30%，轮轨作用力降低30%，曲线脱轨系数降低30%，噪声降低2-5dB(A)。</p><p>弓系转向架在时速80公里地铁列车、时速120公里快速地铁、时速160公里城际动车组、时速200公里市域快轨列车上装车验证，并已成功在石家庄地铁一号线完成5000公里线示范应用，通过试验数据对比，各项指标优于常规转向架，得到用户一致好评。实现了主要运营成本的降低，每列每年可节约用电约164.88万千瓦时，每列全寿命周期（30年）可节约近4946.4千瓦时，每列全寿命周期减排CO2约4.9万吨；降低车轮/轨道磨耗，轮轨作用力降低30%，全寿命周期轮轨维护成本降低 30%，长久经济收益；永磁直驱并与轴箱轴承集成，减少齿轮箱、联轴器等部件，减少润滑油/脂、轴承、机械磨耗件等更换维护成本，全寿命周期节约超200万元。实现了主要社会效益的提升，低噪音、低振动，减少对环境及居民影响，长久的社会效益。</p><p>在2021年10月作为十三五科技创新成果，弓系转向架实物在国家“十三五”科技创新成就展展出。2022年9月弓系转向架代表中国轨道交通核心部件原始创新能力参加德国柏林国际轨道交通技术展览会，引起海内外参展观众的强烈反响和高度关注，提高了技术知名度和影响力。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>随着经济社会快速发展，轨道车辆在自重大、运营能耗高、运行噪声及轮轨磨耗大、维护成本高、环境污染大、智能化程度低等方面的问题越发突出。对此欧美日等发达国家未来十年国家创新战略计划提出先进制造、智慧城市和环保高效为未来科技创新发展趋势，同时国家“交通强国”纲要、新基建重点及各级交通规划等一系列建议规划也均提出以节能环保、智能化、轻量化为代表的高效、绿色、智能为现代轨道交通未来发展趋势。中车唐山公司以问题为导向，以行业发展趋势及用户需求为指引，开展基于跨学科融合和颠覆性创新的探索与实践，将汽车、航空、新材料领域特点与轨道交通核心部件走行部功能进行深度融合，基于“按材设计”理念，首次提出“全装配、无焊接、多级刚度、挠性构架”的弓系转向架设计概念。</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>结构集成及跨界融合创新</div></div></div><div class="p-h">1.1 无焊接全装配式结构</div><p>转向架构架从“承重”的功能和转向架的安装接口载体的功能出发进行新构型设计，同时将铝合金、碳钢与碳纤维等不同材质以“按需施材”的理念，充分发挥材料的最优特性，按照转向架产品结构功能需求进行组合运用，最大限度利用材料特性并实现转向架功能。将汽车、航空、新材料领域特点与轨道交通核心部件走行部功能进行深度融合，通过承载与弹性功能结合，并将不同功能零部件通过机械联结（螺栓联结、铆钉联结）方式固结装配，形成无焊接全装配式创新结构转向架。装配式无焊接结构，大幅降低焊接产业的固定资产投资，提升效益、降低能耗、减少技术依赖度。利于“一带一路”沿线国家的本地化快速组装，商业模式及技术模式易于复制和推广，实现对用户的变革，构建全新的发展格局。</p><div class="p-h">1.2 多级刚度、挠性构架结构</div><p>多级刚度主要体现在转向架构架侧梁。转向架构架侧梁采用碳纤维复合材料制成的弓形结构，是集弹性功能和承载功能于一身的部件。侧梁在垂向具有弹性，利用碳纤维抗拉性能作为垂向载荷承载部件。借助复合材料的高阻尼比特性，在振动传递路径中具有阻尼，减少轮轨振动传递到车体，起到减振作用。通过“弓”的能量转换原理，可满足不同线路、客货运需求。侧梁采用两侧梁板配合发挥作用，通过在不同载荷下两侧梁板接触和分离实现多级刚度，提升不同载重下乘坐舒适性，并为客货灵活运输提供解决方案，有效解决城市物流困境和提升城市货运效率，降低陆路交通造成的尾气排放和交通拥堵，实现城市最后一公里配送顺利实施。</p><p>传统的轨道交通车辆转向架普遍采用刚性焊接构架，其中以“H”形构架居多，构架横梁和两个侧梁刚性焊接在一起，构架扭转刚度过大，在通过轨道不平顺时构架难以变形，导致车辆轮重减载率高，车辆易脱轨，同时对构架强度要求较高。本转向架横梁分成左右两体，两侧横梁在其中间部分设置可自由旋转的绞接点，在通过轨道的不平顺和三角坑时，绞接点可变形适应，改善轮重减载率、提升列车运行安全性，同时降低轮轨力对于构架强度的要求，提高构架使用寿命。</p><div class="p-h">1.3 直接驱动结构</div><p>减少驱动装置的传递路径，采用永磁直驱牵引电机并于轮轴系统高度集成：</p><p>1）无传统的齿轮箱和联轴器，降低机械损耗2.5%；</p><p>2）永磁牵引系统相对传统牵引系统传递效率提高2.5%；</p><p>3）轴箱轴承作为电机轴承，每台转向架减少驱动装置用的14套轴承。减少日常检查、换油等工作，降低检修维护成本。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>新材料应用创新</div></div></div><div class="p-h">2.1 碳纤维复合材料侧梁</div><p>碳纤维复合材料具有高比强度、比模量，独特的轻量化效果，高强的抗冲击性，耐疲劳性强，振动阻尼性高等特点。随着轨道交通行业对轨道客车的安全性、舒适性、绿色节能性提出的更高的要求，碳纤维复合材料作为一种新型材料正在引起广泛关注。中车唐山公司迎合行业发展需求，本着创新驱动发展的基本方针，率先开展碳纤维复合材料承载结构件的研制研发工作。以弓系转向架为契机，深入探索碳纤维在轨道列车行业的应用，完成碳纤维复合材料从非承载结构、次承载结构迈向主承载结构的应用示范。</p><p>弓系转向架侧梁充分利用碳纤维复合材料性能特点，在承载车辆重量的同时还具备悬挂减振属性，提升车辆的平稳性、舒适性。碳纤维侧梁较传统钢制侧梁质量减轻75%以上，提高整车轻量化水平，降低整车能耗。</p><div class="p-h">2.2 铝合金横梁</div><p>通过对高强轻质铝合金结构-功能-仿真一体化研究，材料成分、杂质元素控制、晶粒细化、热处理工艺等材料成分性能研究，流动性、热裂性、导温率、收缩率等材料工艺特性研究，精炼除气及低压铸造成型工艺研究，形成高强轻质铝合金横梁方案，在满足同等功能前提下较传统钢制横梁质量减轻60%以上，有效减轻车辆重量、降低车辆运行能耗。</p><div class="p-h">2.3 铝基碳化硅制动盘</div><p>弓系转向架铝基碳化硅制动盘分为复合层和基体层，复合层采用SiC增强铝基复合材料制备，由于其硬度高，能提供较好的耐磨性，同时具有良好的导热性能。基体层主要起承载作用，需求较高的力学性能和导热能力。基体层选用铝硅合金，铝硅合金密度约为铸铁材料的三分之一，导热率约为铸铁材料的5倍，在制动时能够有效的将摩擦层产生的热量传递到空气中，降低盘体的温升。采用搅拌摩擦方式将复合层与基体层连接，减少了铸造过程因密度差带来的偏析问题，颗粒分布均匀性较好，有效减少铸造缺陷，实现最优的摩擦磨损性能。</p><div class="p-h">2.4 石墨烯橡胶簧</div><p>未补强的橡胶材料强度低、模量低、耐磨差、抗疲劳差，没有实用性，因此绝大多橡胶都需要填充补强。目前，炭黑和白炭黑作为橡胶材料的主要补强剂，广泛使用于各种橡胶材料中。但是炭黑、白炭黑补强效率低，需要大量填充补强剂，在动态作用力下填料-填料，填料-聚合物之间的内摩擦多，生热多，恶化材料的使用性能和使用寿命。传统的补强填料一般仅具有补强单一效应，为了实现橡胶材料的阻燃、导热、导电性往往需要额外添加其他功能性填料，这些功能性填料将影响材料的物理机械性能和使用寿命，需要在材料力学性能和功能性取舍平衡。石墨烯材料具有优异的力学性能、电性能、热性能和气体阻隔性能以及超高的比表面积，是一种多种功能化的填充剂，作为二维层状纳米材料，填充效率高，填充量少，且分布形态可设计，使得橡胶材料性能可设计，因此石墨烯是橡胶材料的理想填料。</p><p>弓系转向架一系橡胶弹簧采用石墨烯橡胶材料，提升一系橡胶弹簧的耐动态疲劳次数，从而延长一系橡胶弹簧的使用寿命，减少产品的检修频次。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>智能感知创新</div></div></div><p>中车唐山公司以实现转向架复合材料侧梁板状态监测、提升可靠性为目标，首先研究了复合材料力学内嵌光纤传感器对复合材料力学性能的影响规律，确认了内嵌光纤传感器对复合材料力学性能的影响可以忽略不计；然后推导建立的复合材料弯曲载荷作用力与内部应变分布的关系，为复合材料侧梁板状态监测建立的理论基础；进一步研究了复合材料弯曲载荷和复杂载荷作用下有限元分析，确认了弯曲载荷和复杂载荷作用下应力和应变的分布情况；开展了基于光纤光栅（FBG）传感器监测的复合材料弯曲载荷和复杂载荷作用下应变监测研究，实现了复合材料所受弯曲载荷的实时状态监测和损伤状态的监测；通过开发基于FBG传感器的复合材料载荷及损伤状态监测系统，实现了复合材料载荷状态和损伤状态的实时显示。</p><p>针对高铁转向架复合材料侧梁板等复合材料构件运行过程中受到重载荷、振动冲击载荷作用，对转向架复合材料侧梁板进行实时在线监测，确保当转向架复合材料侧梁板载荷过大或内部出现损伤时，将信息及时反馈到列车控制系统进一步实现高铁动车组控制系统的网络化和智能化，保证列车的安全运行。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>外观设计创新</div></div></div><p>以“按材设计”为指引，以原始创新为基础，以绿色、轻量为目标，形成“全装配、无焊接、多级刚度、挠性构架”转向架创新外观，同时将铝合金、碳钢与碳纤维等不同材质以“按需施材”的理念，按照转向架产品结构功能需求进行组合运用，在统一中蕴含变化。主色调以材料在人的认识中的颜色进行配色，同时主要以产品的制造材质为展现，减少涂漆等工艺，降低环境污染。产品主体为灰色，辅以铝合金的银灰色和碳纤维黑色网状质感，再结合产品的功能性标识搭配，体现产品的工业美和技术美。</p><div class="p-list"><div class="p-li"><span class="p-mk">5</span><div>产学研用合作创新</div></div></div><p>弓系转向架以“为用户持续创造价值”为导向，在构思概念阶段就充分调研结合用户的痛点难点，紧密结合需求。设计中广泛开展合作，开展国内研发团队、科研院校、国外设计机构联合的跨学科、跨领域创新设计，广泛开拓思路，带来全新的设计理念。验证实践中采用六级验证法，充分开展材料到产品的各级试验验证，充分验证技术方案的可行性和产品的可靠性，在时速80公里地铁列车开展了实际线路的示范应用，充分发挥“用”端的产品实践，并拟合了仿真分析、台架试验、线路试验的一致性，充分完善数字模型，以此为基础，利用试验线和样车资源，将弓系转向架安装到时速120公里快速地铁、时速160公里CJ3型城际动车组、时速200公里市域快轨列车上开展试验线试验验证。</p><p>中车唐山公司投入院士2名，中车科学家3名，中车资深专家6名，中车专家16人等，约500多人的课题研究开发团队，基于结构-功能-材料一体化设计方法，开展基于跨学科融合和颠覆性创新的探索与实践，对转向架进行功能分解和结构重组，采用正向设计方法，形成“全装配、无焊接、多级刚度、挠性构架”转向架技术方案。利用结构力学对轨道车辆及转向架关键零部件进行强度、刚度、模态分析，利用多体动力学理论，建立多刚体柔性连接分布式驱动整车动力学模型，确保轨道车辆在运行过程中的稳定性和舒适性。在借鉴航空航天、汽车领域复合材料应用经验的基础上，探索轨道交通行业复合材料应用技术，并在此基础上进行大量的复杂环境安全性和适应性试验、装车服役考核试验等进一步验证成果以具备工程化和产业化的条件。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

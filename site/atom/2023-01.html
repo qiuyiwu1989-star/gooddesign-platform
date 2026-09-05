@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>宽幅不锈钢薄带钢热连轧生产线设计及应用 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-01.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-01</div>
+  <h1>宽幅不锈钢薄带钢热连轧生产线设计及应用</h1>
+  <div class="meta-line"><b>2023 年度金奖</b><span>中国第一重型机械股份公司,一重集团大连工程技术有限公司,太原理工大学</span>
+  <span class="grade grade-B">B</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 金奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中国第一重型机械股份公司,一重集团大连工程技术有限公司,太原理工大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">马博,王涛,孙韶辉,孙丰迎,路春宇</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 制造装备（金奖领域标签映射，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>该项目针对我国高附加值不锈钢产品的核心关键技术长期被德国西马克、日本三菱等垄断，核心技术受国外制约等“堵点”问题，解决不锈钢热连轧工艺“黑匣子”与装备设计及生产“卡脖子”关键技术难题而研制的。</p><p>宽幅不锈钢薄带钢热连轧生产线用于生产航空航天、海洋工程、核电、建筑等国民经济重要领域高端不锈钢板材。由于不锈钢变形抗力大、轧制温度区间窄、质量要求高，本项目所生产的不锈钢板材的超薄、超宽，超出了国际现有产品规格的极限，且国家发展战略要求设备智能化、绿色化，使该热轧成套装备的研制难度极大。为此，中国一重与太原理工大学以不锈钢“轧制关键技术设计→成套装备自主设计→智能优化系统集成”为技术路线，创新设计出世界首套最宽幅不锈钢超薄带钢热连轧生产线并应用。其创新如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>首创出“1+8”宽幅不锈钢热连轧生产线工艺配置，开发了基于负荷分配和板形良好的高精度分配策略、温度模型、力能模型、微观组织与力学性能预测模型，构建了全流程模拟分析系统与工艺优化技术，与国际通用的“1+7”和“2+7”形式相比，实现了多品种、多规格不锈钢热轧产品高效稳定生产以及厚度与宽度极限突破。</div></div><div class="p-li"><span class="p-mk">2</span><div>开发出新型精轧机工作辊弯辊横移装置、粗轧全区域保温罩及新一代热卷箱精准温控装备、超高压水/高压蒸汽除鳞装备、闭口式机架夹送辊装置、绿色环保喷雾除尘装置，实现了宽幅不锈钢薄带热连轧成套装备自主设计开发与绿色化应用示范。</div></div><div class="p-li"><span class="p-mk">3</span><div>构建出热轧不锈钢全系列本构模型和变形抗力数据库以及多规格轧线数据库，研发出融合机理模型、生产数据与深度学习算法的不锈钢热轧生产线与工艺参数设计软件，开发出适合带钢板凸度控制和均匀辊间压力的辊型曲线设计优化系统，增强了产品板形精确调控能力及轧制稳定性，实现了热连轧生产线总体布局、设备配置、参数优化等数字化与智能化控制。</div></div></div><p>对比国内外最先进产线，设备布局、产能及规格等指标优于国外，设计成果对解决我国高端领域超薄不锈钢热轧板材“卡脖子”难题具有重要意义。授权发明专利17项，实用新型专利7项，软件著作权2项，发表专著1部及论文16篇。</p><p>鉴定专家认为：“项目具有自主知识产权，总体技术达到国际先进水平，在“1+8”热连轧工艺技术、弯窜辊装置及板形调控方面达到了国际领先水平”。</p><p>已应用于河北钢铁、福建鼎信等10余家企业，实现了1.8mm极限厚度和2400mm极限宽度不锈钢稳定生产，国内同类生产线市场占有率达90%以上，仅福建鼎信使用本技术近3年就新增产值785.70亿元，利税28.91亿元，并出口一带一路沿线国家印尼，创汇6.51亿美元，助力我国“一带一路”战略实施，为其控股集团进入世界500强奠定了可靠基础。其经济和社会效益十分显著。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>1设计原创性（创新点）</p><p>(1)宽幅不锈钢热连轧“1+8”型生产线设备配置与轧制工艺开发。首创出“1+8”宽幅不锈钢热连轧生产线工艺配置，开发了基于负荷分配和板形良好的高精度分配策略、温度模型、力能模型、微观组织与力学性能预测模型，构建了全流程模拟分析系统与工艺优化技术，与国际通用的“1+7”和“2+7”形式相比，实现了多品种、多规格不锈钢热轧产品高效稳定生产以及厚度与宽度极限突破。获发明专利6项(ZL201210500662.6、ZL201310752022.9、ZL201410653405.5、ZL202011452203.6、ZL201410653123.5、ZL 2021 1 0159121.0）。</p><p>(2)宽幅不锈钢薄带热连轧成套装备的自主设计。设计开发出新型精轧机工作辊弯辊横移装置、粗轧全区域保温罩及新一代热卷箱精准温控装备、超高压水/高压蒸汽除鳞装备、闭口式机架夹送辊装置、绿色环保喷雾除尘装置，实现了宽幅不锈钢薄带热连轧成套装备自主设计开发与绿色化应用示范。获发明专利11项(ZL201810137638.8、ZL201310752000.2、ZL201310750345.4、ZL201910833415.X、ZL201510567740.8、ZL201410653546.7、ZL202010666212.9、ZL201710958167.2、ZL201910126075.7、ZL201910053450.X、ZL202010155470.0)</p><p>(3)机理和数据双驱动的不锈钢热连轧模拟分析系统与智能化设计。构建出热轧不锈钢全系列本构模型和变形抗力数据库以及多规格轧线数据库，研发出融合机理模型、生产数据与深度学习算法的不锈钢热轧生产线与工艺参数设计软件，开发出适合带钢板凸度控制和均匀辊间压力的辊型曲线设计优化系统，增强了产品板形精确调控能力及轧制稳定性，实现了热连轧生产线总体布局、设备配置、参数优化等数字化与智能化控制。获软件著作权2项(2020SR1833326、2021SR039735)，专著1部(CIP数据核字（2021）第067777号）。</p><p>2关键技术</p><div class="p-h">2.1 宽幅不锈钢薄带钢热连轧“1+8”型生产线设备配置与轧制工艺开发</div><p>生产线设备配置与轧制工艺参数是产品生产控制质量、提升产量、降低成本、提高效率的重要保障。项目首创出“1+8”设备配置，建立全流程温度、力能、板形计算模型和最优负荷分配策略，构建了全流程模拟分析系统与工艺优化技术，研发出高效率、低成本、高质量的宽幅不锈钢薄带钢热连轧轧制规程。</p><p>1）首创“1+8”型不锈钢热连轧生产线设备配置方案，突破厚度与宽度极限规格轧制难题。综合考虑不锈钢变形抗力大的难点，在工艺上制定了更合理的各道次分配策略和温度控制策略。</p><p>2）建立不锈钢热连轧生产过程从出炉、粗轧、热卷箱、精轧、冷却到卷取的全流程温度计算模型，提升轧制过程温度计算精度，为变形抗力精准预测提供支撑。建立轧制入口、变形区、出口温度预报模型；融合各区域温度模型，提出一种以温度和轧制力为目标函数的解耦方法，得到轧制中温度分布情况。</p><p>3）建立了高精度轧制力能参数计算模型，提升轧制过程板厚、板形协调控制能力，为高质量产品提供理论支撑。构建不锈钢热连轧过程中轧制力和板形参数的精准预测模型。创新性地建立了融合双流函数法和变分法的立辊轧制的轧制力和轧件形状参数模型，构建了高精度宽度控制策略。</p><p>4）建立基于粗轧电机功率道次均衡与精轧板形最优原则的轧制过程负荷最优分配方案，实现高效、高质量轧制。粗轧基于各道次电机功率均衡原则，实现各道次轧制压下合理分配。精轧基于板形最优的道次负荷分配原则，建立了相对等负荷、板形良好等多目标优化策略，实现负荷最优分配。</p><p>5）开发了轧件塑性变形三维有限元法与辊系弹性变形影响函数法耦合的板形计算模型。开发和完善适用于不锈钢轧制过程的基于刚塑性有限元法的轧件三维塑性变形计算方法。构建基于影响函数法的轧辊弹性变形计算方法。该算法具有计算耗时少、结果精度高的优点。</p><p>6）构建了全流程设计分析系统与工艺优化技术，设计集成了不锈钢极限规格轧制规程智能化设计软件。采用该软件对“1+8”以及国际通用的“1+7”和“2+7”热连轧生产线工艺配置进行模拟计算。结果表明：“1+8”具有压下负荷分配更均匀、成品厚度更薄和宽度尺寸更大、头尾温差小、板形控制更优异的优势。</p><div class="p-h">2.2 宽幅不锈钢薄带钢热连轧成套装备的自主设计</div><p>针对不锈钢轧制生产难点和“1+8”型生产线工艺布置方案，自主设计开发出工作辊弯辊横移装置、热卷箱、高压水/蒸汽除鳞装备、夹送辊装置、喷雾除尘装置、智能化钢卷运输线，实现了宽幅不锈钢薄带钢高效绿色智能生产。</p><p>1）设计开发了新型工作辊弯辊横移装置，增强产品板形精确调控能力，延长工作辊使用寿命。减少了液压缸、密封件和泄油点数量，提高了使用安全可靠性；避免误操作造成换辊事故，提高效率10%以上；提高辊缝调整的控制精度；零部件数量减少50%。该工作辊弯辊横移装置已广泛应用于1250至2680mm等热连轧生产线中，实现了规格范围全覆盖，打破了国外技术垄断。</p><p>2）建立了基于多目标函数优化原则的轧机机架和辊系尺寸设计优化模型。建立机架参数化结构模型并进行模拟加载分析。建立以板凸度影响系数、轧机机座重量、轧机刚度等为多目标函数的轧机机座和辊系尺寸设计与优化模型，获得设计参数最优值，提升了热连轧生产过程的工艺控制精度。</p><p>3）提出适合带钢板凸度控制和均匀辊间压力的辊型曲线设计优化方法。提出一种既可连续改变辊缝凸度值，又可根据板带断面形状目标板形要求改变辊缝曲线形状的轧辊辊型，有效解决了工作辊与支承辊间接触载荷不均匀问题。</p><p>4）提出了不锈钢热连轧保温罩、热卷箱等多种保温工艺及装备配置方案，实现了带钢温度精准控制。设计的新型热卷箱设备，采用入出口弯曲辊辊缝单独可调技术，有效控制卷眼形状；应用双工位开卷技术，提高产线生产节奏，并设计出世界最宽规格2680mm热卷箱设备。</p><p>5）设计开发了超高压水/高压蒸汽除鳞技术，有效去除不锈钢表面氧化铁皮，提高了带钢产品表面质量。在生产6mm厚度以下成品带钢时，采用高压蒸汽吹扫除鳞，减小中间坯温降。除鳞喷嘴前高压水压力达到30MPa。</p><p>6）设计了新型闭口式机架夹送辊，提高了上夹送辊总成对带钢夹持的稳定性与上夹送辊总成的更换效率。解决了机架结构刚性不足问题，同时也提高了卷取机前夹送辊对夹持带钢的稳定性。</p><p>7）设计了绿色环保的喷雾除尘系统，减小了不锈钢热连轧精轧出口大量烟尘污染。该喷雾除尘系统根据轧机粉尘特性进行定制化的精确喷雾设计，从源头大幅消除氧化颗粒粉尘，并抑制细颗粒粉尘的逸散，从而有效达到除尘目的。</p><p>8）设计了智能双排并列式滑触线钢卷运输系统。该系统具备简单、高效、高速、节能、环保、事故率低、易维护等优点，同时配合使用无线通迅技术，实现钢卷智能运输的目标。</p><div class="p-h">2.3 机理和数据双驱动的不锈钢热连轧设计分析系统与智能化设计</div><p>以热轧不锈钢生产数据为基础，构建出热轧不锈钢全系列本构模型和变形抗力数据库以及多规格轧线数据库；深度融合机理模型和生产数据，开发机理和数据双驱动的热轧不锈钢板带力学性能精准预测模型，实现热轧板带形性精细化调控。设计了新型不锈钢热连轧全流程设备、工艺、产品柔性适配的数字孪生系统，实现了“1+8”型热连轧生产线布置、关键设备和工艺参数的快速优化。</p><p>1）构建全系不锈钢高温变形本构模型和材料变形抗力数据库，提升轧制过程力能参数预测精度，为优化轧制规程、板形控制和装备提升提供理论基础。</p><p>2）开发了多约束规则条件的人工智能设计方法和推理机制，建立了产品大纲齐全、设备布置合理、生产效率高的不锈钢热连轧生产线总体工艺方案数据库，满足用户对定制化、个性化产品的需求。</p><p>3）构建基于生产数据和板形控制机理模型相融合的热轧不锈钢板形智能预测模型，实现对热轧现场板形相关数据的在线收集、深度挖掘和高效利用。</p><p>4）开发全流程再结晶和相变模型，构建机理模型和数据双驱动的不锈钢微观组织与宏观力学性能精准预测模型，实现热轧过程板带性能精细化调控。</p><p>5）构建融合机理模型、生产数据与深度学习算法的工艺参数预测与优化模型，设计了新型不锈钢热连轧全流程设备、工艺、产品柔性适配的数字孪生系统，实现轧机关键设备和工艺参数的精准预测与优化。</p><p>3设计先进性</p><div class="p-h">3.1 与国内外最先进设计相比总体创新水平</div><p>本项目自主设计的溧阳德龙2680mm是目前世界上最宽规格的不锈钢热连轧生产线，稳定生产宽度为2400mm的不锈钢产品，远超国外技术指标(以西马克、三菱为代表）。该成果实现1.8mm极限薄规格产品的稳定生产，优于国外2.0mm厚度规格，设计成果解决了我国高端领域超薄不锈钢热轧板材“卡脖子”难题。</p><div class="p-h">3.2 经济指标的先进性</div><p>以福建鼎信为例，使用本技术近3年产生新增产值785.70亿元，新增销售额865.54亿元，新增利税28.91亿元，创收外汇6.51亿美元，其中使用本项目技术产生新增销售额占比为82.66%。可稳定生产各类不锈钢产品约360万吨/年，并可以生产厚度为1.8mm不锈钢的极限产品，创造了行业纪录。产品经过检验，其主要指标达到或超过国外同类产品，填补国内不锈钢的产能不足。</p><div class="p-h">3.3 环保指标的先进性</div><p>本项目创新设计的新型喷雾除尘系统，可根据轧机粉尘特性进行定制化的精确喷雾，从源头大幅消除氧化颗粒粉尘，并抑制细颗粒粉尘的逸散，从而有效消除了粉尘对环境的污染，使原污染严重的传统热连轧生产线变成了清洁绿色工厂，实现了宽幅不锈钢薄带钢热连轧生产线的绿色化应用示范。</p><p>4设计效益水平</p><p>经济效益：成果成功应用于福建鼎信，后续又推广至上海鼎信（印尼）1780mm（成套出口）、江苏德龙1450mm、溧阳德龙2680mm（世界上最宽规格）等8条不锈钢生产线，总合同额达到631830万元，创造了巨大的经济效益。国内宽幅不锈钢热连轧生产线市场占有率高达90%以上，具有强力的市场竞争力。</p><p>社会效益：该项目打破了国际垄断，为国内冶金热轧技术的发展做出巨大的贡献。同时，将成套设备出口至印尼、马来西亚和土耳其等国家，支撑我国实施“一带一路”战略，取得了显著的经济与社会效益。</p></div>
+  <div class="sec-h"><span class="no">03</span><h2>图集</h2><span class="st st-ok">官方档案</span></div><div class="gal"><img loading="lazy" src="../cases/gal/2023-01-0.jpg" alt="宽幅不锈钢薄带钢热连轧生产线设计及应用"><img loading="lazy" src="../cases/gal/2023-01-1.jpg" alt="宽幅不锈钢薄带钢热连轧生产线设计及应用"><img loading="lazy" src="../cases/gal/2023-01-2.jpg" alt="宽幅不锈钢薄带钢热连轧生产线设计及应用"></div>
+  <div class="sec-h"><span class="no">04</span><h2>设计五维</h2><span class="st st-draft">内容团队人工编目 · 解读非官方评价</span></div><div class="dims"><div class="dim"><div class="dim-h"><span class="dim-n">科技</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>宽幅不锈钢薄带热连轧线,打破西马克/三菱垄断</p></div><div class="dim"><div class="dim-h"><span class="dim-n">艺术</span><span class="dim-s">2/5</span></div><div class="dim-bar"><i style="width:40%"></i></div><p>冶金生产线</p></div><div class="dim"><div class="dim-h"><span class="dim-n">人本</span><span class="dim-s">2/5</span></div><div class="dim-bar"><i style="width:40%"></i></div><p>间接服务航空/核电高端板材</p></div><div class="dim"><div class="dim-h"><span class="dim-n">商业</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>高附加值不锈钢板材战略产线</p></div><div class="dim"><div class="dim-h"><span class="dim-n">文化</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>冶金装备自主化的代表</p></div></div>
+  
+  
+  
+  
+  <div class="sec-h"><span class="no">07</span><h2>权威溯源</h2><span class="st st-ok">人工核选 · 检索于 2026-08-09</span></div><div class="srcs"><a class="srclink" href="https://www.thepaper.cn/newsDetail_forward_25581073" target="_blank" rel="noopener">中国一重斩获2023年度中国“好设计”金奖</a><a class="srclink" href="http://www.chmia.org/zhuantiDetail.html?id=61&amp;contentId=2890" target="_blank" rel="noopener">世界上最宽规格（2680mm）的不锈钢热连轧生产线</a><a class="srclink" href="https://www.thepaper.cn/newsDetail_forward_20022890" target="_blank" rel="noopener">世界首台套最大规格的热连轧机项目顺利通过验收</a></div>
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 B（7 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

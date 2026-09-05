@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>力与运动单元 — 好设计馆教育线</title>
+
+
+
+<style>
+  :root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;--gold-soft:rgba(168,126,42,.12);--green:#3E7A5A;--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","SF Mono","Consolas",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);--r-md:6px;--r-lg:12px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:60px;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:600;color:var(--ink)}
+  nav .brand .mark{width:24px;height:24px;border-radius:var(--r-md);background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+  nav .links a{color:var(--muted-soft);text-decoration:none;font-size:13.5px;padding:6px 12px;border-radius:var(--r-md)}
+  nav .links a:hover{color:var(--ink);background:var(--bg-soft)}
+  @media(max-width:900px){nav .links{display:none}}
+  .wrap{max-width:860px;margin:0 auto;padding:100px 28px 60px}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:1.5px;color:var(--muted-soft);border:1px solid var(--line);border-radius:9999px;padding:6px 14px;background:var(--bg-quiet)}
+  h1{font-size:clamp(26px,4vw,38px);font-weight:600;margin:16px 0 8px}
+  .en{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--muted)}
+  .lead{color:var(--ink-soft);font-size:15px;line-height:1.8;margin-top:10px}
+  section{margin-top:34px}
+  h2{font-size:19px;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  h2 .no{font-family:var(--mono);font-size:11.5px;color:var(--accent-bright);border:1px solid var(--accent);border-radius:6px;padding:2px 8px}
+  .card{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:10px;background:#fff}
+  .card .nm{font-size:15px;font-weight:600}
+  .card .meta{font-size:12px;color:var(--gold);margin-top:4px;font-family:var(--mono)}
+  .card .kp{font-size:12.5px;color:var(--muted-soft);margin-top:5px}
+  .card a{text-decoration:none;color:inherit}
+  .card:hover{border-color:var(--accent)}
+  .task{border-left:3px solid var(--gold);background:var(--gold-soft);border-radius:0 12px 12px 0;padding:12px 16px;margin-bottom:10px;font-size:14px;color:var(--ink-soft)}
+  .quiz{border-left:3px solid var(--green);background:rgba(62,122,90,.07);border-radius:0 12px 12px 0;padding:12px 16px;margin-bottom:10px;font-size:14px;color:var(--ink-soft)}
+  .quiz b{color:var(--green)}
+  footer{border-top:1px solid var(--line);color:var(--muted);padding:30px;font-size:12px;text-align:center}
+</style>
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">好设计应用体验 · 互动模拟用于理解设计原理，不作为工程参数或专业仿真依据。</div>
+<div class="wrap">
+  <span class="kicker"><span class="dot"></span>好设计馆 · 单元课程包 · 初中科学</span>
+  <h1>🚄 力与运动单元</h1>
+  <div class="en">UNIT · FORCE & MOTION</div>
+  <p class="lead">350 公里时速下,空气变成「墙」、交会瞬间压力波能震碎车窗——运动的世界里,设计就是与看不见的力博弈。</p>
+
+  <section>
+    <h2><span class="no">01</span>课时安排(3 课时)</h2>
+    <div class="card"><a href="../2015-00.html"><div class="nm">CRH380A · 时速 350 公里的「风」难题</div><div class="meta">运动与力 · 空气阻力 · 噪声</div><div class="kp">重点:流线头型 + 铝合金整体车体</div></a></div><div class="card"><a href="../2025-00.html"><div class="nm">嫦娥钻取 · 在真空中「钻土」</div><div class="meta">真空环境 · 力与传动</div><div class="kp">重点:冲-切-排-拨-挤组合工艺</div></a></div><div class="card"><a href="../2015-02.html"><div class="nm">蛟龙号 · 六自由度机动</div><div class="meta">运动与力 · 控制</div><div class="kp">重点:7 台矢量推力器</div></a></div>
+  </section>
+
+  <section>
+    <h2><span class="no">02</span>单元任务单</h2>
+    <div class="task">📝 两列 350km/h 的列车交会,相对速度是多少?为什么压力波危险?</div><div class="task">📝 月球表面是真空:没有空气,钻头排屑靠什么?(提示:螺旋槽)</div><div class="task">📝 设计题:如果你要给嫦娥钻头加一个「转速表」,数据会怎么变化?</div>
+  </section>
+
+  <section>
+    <h2><span class="no">03</span>单元测验(口答或组卷)</h2>
+    <div class="quiz">❓ CRH380A 车头灵感来自?<br>✅ <b>长征火箭</b></div><div class="quiz">❓ 嫦娥钻取靠什么组合工艺?<br>✅ <b>冲-切-排-拨-挤</b></div><div class="quiz">❓ 蛟龙号有几台推力器?<br>✅ <b>7 台(矢量布置)</b></div>
+  </section>
+</div>
+<footer>好设计馆教育线 · 单元课程包(力与运动单元) · 内容基于官方设计阐述</footer>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>半导体金刚石散热材料制备关键工艺与核心装备设计 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2025-08.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2025-08</div>
+  <h1>半导体金刚石散热材料制备关键工艺与核心装备设计</h1>
+  <div class="meta-line"><b>2025 年度金奖</b><span>北京科技大学,湘潭大学</span>
+  <span class="grade grade-B">B</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2025 年度 · 金奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">北京科技大学,湘潭大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">陈良贤,李成明,刘金龙,魏俊俊,原晓芦,安康,郑宇亭,张建军,黄珂,欧阳晓平</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 制造装备（金奖领域标签映射，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>有源相控阵雷达广泛应用于卫星通信、先进战斗机、预警系统及电子侦察等关键装备，芯片作为有源相控阵雷达的关键核心，其发热问题成为制约有源相控阵雷达T/R组件输出功率的核心瓶颈，芯片工作温度每升高10℃，使用寿命和可靠性下降50%，直接限制了武器装备探测距离、跟踪精度等性能提升。铜（热导率398 W/(m·K)）作为传统散热材料的性能天花板，已无法满足高功率芯片的散热需求，亟需更高热导率的新型材料。金刚石是自然界热导率最高（铜的5倍以上）的材料，密度仅为铜的40%（重量更轻），项目团队国内首次提出并将金刚石设计应用于卫星和先进战机有源相控阵雷达芯片散热。</p><p>微波化学气相沉积法是国外制备金刚石散热材料主流技术，美西方等国家将化学气相沉积金刚石材料及相关技术列入出口管制清单实施技术封锁。项目团队提出并设计了具有自身特色的直流电弧等离子体喷射化学气相沉积制备金刚石散热材料方法，对高导热金刚石材料制备面临的“面积做不大、厚度长不厚、应力致开裂”国际共性技术难题展开攻关，构建了完全自主可控的核心装备和关键工艺。设计创新成果如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>设计制造了口径φ220 mm的双磁场驱动等离子体炬，为等离子体炬口径国际最大的化学气相沉积金刚石装置，制备出直径202 mm、平均厚度2.8 mm、热导率大于1676 W/(m·K)的金刚石散热材料，其直径、厚度和热导率综合效果为国际最佳。突破了高导热金刚石散热材料大面积制备瓶颈。</div></div><div class="p-li"><span class="p-mk">2</span><div>设计制造了多级涡旋式进气与辅助阳极电弧等离子体放电装置，连续稳定工作时长提升2倍以上，制备出厚度6 mm金刚石散热材料，优于此前2 mm厚度国际最高水平。攻克了电弧化学气相沉积易积碳导致无法长厚难关。</div></div><div class="p-li"><span class="p-mk">3</span><div>设计制作了自摧毁过渡层复合衬底，过渡层自摧毁释放了生长和热应力，避免了金刚石的开裂。采用此项设计技术实现了4英寸金刚石膜批量制备，整膜率高达80%以上，与此前30%相比大大提升。破解了大尺寸金刚石散热材料应力大易开裂难题。</div></div></div><p>基于本项目设计技术研制的金刚石散热材料，制备出有源相控阵天线和高功率放大器，均温、降温和减重效果显著，先后批量应用于“北斗三号”导航卫星、“小蜘蛛网”卫星星座、某型先进战机等多种重大装备。其中，北斗三号导航卫星在轨运行已有近7年，目前T/R组件温度稳定，相控阵天线性能良好。高导热大尺寸金刚石材料制备设计技术在战机和卫星探测距离、目标跟踪精度等性能提升方面发挥了重要助力作用，是提高新质生产力和增强新质战斗力的重要技术基础。本项目技术实现成果转化，近三年新增销售收入10.22亿元、利润4.25亿元。</p><p>项目获授权发明专利48项，实用新型专利4项，发表论文80篇，培养硕博研究生专业人才70余人，打造了国际上最大的4英寸超高导热CVD金刚石材料生产基地，年产能达到8200片。杨孟飞、胡石林、冯志海等院士专家鉴定评价：“项目拥有自主知识产权，技术复杂，难度很大，有重大创新。整体达到国际先进水平，在双磁场驱动等离子体电弧装置稳定时间、无裂纹金刚石可控制备、金刚石膜尺寸和金刚石生长效率等方面居国际领先水平”。实现了高导热金刚石材料在先进装备制造中的首次批量应用，在北斗导航卫星的成功应用被称为“行业里程碑”。本项目成果曾获教育部科学技术发明一等奖及其他重要奖项共计5项。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>主要设计创新</div></div></div><p>功率器件性能与工作温度直接相关，阿伦尼乌斯模型指出晶体管温度每升高10℃，使用寿命及可靠性下降50%，芯片发热已成为第三代半导体功率器件性能提升的关键障碍，高温会导致半导体器件及模块主要性能迅速衰减，甚至直接烧毁。金刚石材料热导率高达2200 W/(m·K)（常规散热材料铜的5倍以上）是自然界热导率最高的材料，成为高功率器件散热的终极选择。</p><p>项目研究团队提出直流电弧等离子体喷射化学气相沉积方法制备芯片散热用金刚石设计思路，针对金刚石面积做不大、厚度长不厚和应力致开裂等问题，从核心装备和关键工艺两个角度开展设计攻关，设计了双磁场驱动大口径等离子体炬、多级涡旋进气和辅助阳极放电装置和自摧毁过渡层复合衬底结构，突破了金刚石大面积制备瓶颈、攻克了稳定生长金刚石厚膜难关、破解了大尺寸金刚石易开裂难题。项目整体路线如图2所示。</p><p>（1）双磁场驱动大口径等离体子炬设计（大尺寸金刚石制备核心装备）</p><p>创新点一：设计了双磁场驱动大口径直流电弧等离子体喷射放电结构。制造了直径220 mm大口径等离子体炬，优化了双磁场驱动等离子体密度空间分布特征和大尺寸衬底生长温度分布，突破了高导热金刚石材料大面积制备瓶颈。（该创新点授权国家发明专利7项，发表论文11篇，专利1-2，附件13-14）</p><p>【设计难点】金刚石散热材料制备技术主要包括：热丝化学气相沉积、微波化学气相沉积和直流电弧等离子体喷射化学气相沉积三种。热丝化学气相沉积技术可实现大尺寸金刚石材料制备，但是制备的金刚石材料热导率偏低（低于800 W/(m·K)），且生长速率偏低（3-5微米/小时）。915MHz微波化学气相沉积技术可以实现6-8英寸高导热金刚石材料制备，但生长速率也只能达到3-5微米/小时，且915MHz微波谐振腔设计技术不成熟、稳定性差，大功率915MHz电源价格昂贵，主要靠国外进口。直流电弧等离子体喷射化学气相沉积技术生长速率大于10微米/小时，制备大面积金刚石散热材料需要设计大口径等离子体炬，大口径等离子炬存在放电不均匀、工作不稳定的问题，成为大尺寸金刚石散热材料制备的瓶颈。</p><p>【设计成果】基于磁驱动旋转电弧等离子体设计准则，设计了双磁场驱动等离子体电弧调控装置，研制了国际上最大的220 mm口径直流电弧等离子体炬，建立了大尺寸金刚石材料沉积系统，突破了8英寸金刚石材料制备障碍。</p><p>1）仿真磁驱动高速旋转“L”形电弧形态，突破电弧稳定均匀放电尺寸局限</p><p>通常，直流电弧等离子体喷射化学气相沉积技术利用绕轴向高速旋转的“L”形电弧束流（图3(a)）形成“丄”形电弧，覆盖生长平面，实现金刚石材料沉积。随着等离子体炬口径的加大，中心气流进入等离子体炬后会迅速膨胀导致流速降低，等离子体电弧中心会远离生长表面（图3(b)），中心生长速率和质量降低。加大中心气体流量和降低磁场强度，可改善生长均匀性，但会大幅度提升气体消耗，降低电弧等离子体密度和稳定性，导致金刚石生长质量降低。</p><p>本项目创新地提出双磁场驱动等离子体电弧方案，保留传统直流电弧等离子体放电装置稳弧磁场（图3(c)上磁场），增加了用于调整等离子体电弧形态的扩弧磁场（图3(c)下磁场），模拟仿真结果显示通过调节双磁场可改变轴向和径向磁场强度分布（图3(d)），扩弧磁场电流增大可降低中心轴向磁场、提升径向磁场，实现中心电弧更加靠近生长平面，提升径向电弧聚焦能力，可实现直流电弧等离子体形态调控、等离子体密度和电弧长时间工作稳定性提升。</p><p>2）设计双磁场驱动直流电弧等离子体炬结构，建立大尺寸金刚石材料沉积系统</p><p>针对直流电弧等离子体放电温度较高、电弧放电用氢气和甲烷安全要求高、金刚石材料生长用真空环境杂质含量低等挑战，设计了铜基双层焊接水冷阳极结构，上线圈置于真空室外、水冷阳极外侧实现间接水冷，下线圈置于真空室内、沉浸式水冷和金属真空密封结构，实现双磁场驱动220 mm口径等离子体炬的结构制造（图4），其口径为国际最大。</p><p>3）双磁场驱动调控电弧形态和基团分布，突破8英寸金刚石材料稳定制备</p><p>探究了双磁场参数对等离子体电弧形态和等离子体活性基团分布影响规律，澄清了工艺参数与金刚石膜生长特征的复杂关联规律，实现了8英寸范围内金刚石膜的稳定沉积（图5(c)）。保持上磁场线圈电流不变，随着下磁场线圈电流逐步升高，电弧弧干长度变长、弧心长度减小，等离子体电弧中心逐渐下移更加接近衬底（图5(a)），等离子体电弧整体更加接近金刚石生长面，中心生长温度提升，碳基活性团分布均匀性得到提高（图5(b)），中心温度升高和碳基活性基团分布均匀性提升综合作用，使得8英寸金刚石散热材料生长均匀性得到提升。</p><p>【应用效果】基于双磁场调控驱动大口径等离子体电弧设计，实现了国际上最大口径220 mm的等离子体炬制造，较原有口径138 mm等离子体炬口径增加59%，并且能够稳定制备出厚度范围2.5-3.2 mm的8英寸金刚石膜（附件27）。</p><p>（2）多级涡旋进气与辅助阳极电弧等离子体放电装置设计（长时间稳定运行）</p><p>创新点二：设计了多级涡旋进气与辅助阳极电弧等离子体放电装置，基于理论和实验优化了多级涡旋进气与辅助阳极凸台结构，揭示了多级涡旋进气与辅助阳极凸台结构的抑制结碳机理，解决了因积碳问题导致直流电弧等离子体的工作不稳定问题，实现了金刚石厚膜制备。（该创新点授权国家发明专利16项，发表论文32篇，专利3-6，附件15-19）</p><p>【设计难点】化学气相沉积金刚石利用原子氢在合适温度区间对sp2碳（石墨）比sp3碳（金刚石）高的刻蚀速率实现金刚石材料的生长。若生长环境中局部温度过高，将导致sp2碳生长速率超出刻蚀速率导致碳的快速积聚，即积碳。积碳问题是全球化学气相沉积金刚石痛点之一。直流电弧等离子体喷射化学气相沉积技术因电弧温度高达5000-6000 K，积碳问题更为严重，阴极放电区、阳极放电区和阳极通道等多区域易积碳，影响电弧放电稳定性，且容易掉落到生长表面导致金刚石生长无法进行。</p><p>【设计成果】设计了多级涡旋进气和辅助阳极凸台结构，优化了多级涡旋式进气孔径、孔数和辅助阳极凸台结构形态，揭示了多级涡旋进气与辅助阳极凸台结构抑制积碳机理，解决了直流电弧等离子体喷射化学气相沉积长期工作稳定性问题。</p><p>1）仿真分析等离子体流场和温度场，揭示结构“抑制积碳”机理</p><p>仿真分析表明涡旋进气流量与辅助阳极凸台高度升高可显著提升等离子体的流速（图6(a)(d)）和电弧等离子体电弧中心区温度（图6(b)(e)），抑制气体向阴极放电区的回吸，增强气流吹扫清洁作用，显著降低电弧激活含碳基团在阴极和阳极放电区富集，抑制金刚石生长过程中积碳，提升等离子体稳定性。基于模拟结果设计了图6(c)所示的多级涡旋进气结构和图6(f)所示的辅助阳极凸台结构。</p><p>2）多级涡旋进气与辅助阳极抑制积碳，攻克金刚石散热材料长厚难关</p><p>涡旋式进气结构设计中心氩气、中间氢气和外侧循环气三级结构，中心氩气和中间氢气可以保护放电阴极同时阻挡含碳基团向阴极放电区扩散，循环气体涡旋进气可以加强对阳极通道和阳极口的吹扫抑制阳极区结碳，氩气、氢气、循环气体三级涡旋进气流量，可调控不同电弧形态（图7(a)-(c)），实现4英寸金刚石膜的均匀沉积。基于涡旋进气和辅助阳极凸台结构的直流电弧等离子体可以连续工作600小时以上，辅助阳极无积碳（图7(d)），获得制备态厚度大于6 mm金刚石膜，研磨后厚度5.39 mm（图7(e)），金刚石膜厚度是国内外报道最高值。超厚金刚石应用于金刚石微槽道、歧管式微通道等极高热流密度金刚石散热器。</p><p>【应用效果】搭建了面向4英寸多晶金刚石的多级涡旋进气结构与辅助阳极凸台结构的直流电弧等离子体化学气相沉积装置120余套，建立了4英寸金刚石散热材料的生产线。基于本设计成果解决了生产过程中因积碳问题导致生产不稳定问题，平均3-5天可生产1片4英寸金刚石，累计年产能8200片（附件28），打造了国际上生产4英寸金刚石散热材料最大的基地。</p><p>（3）无裂纹自支撑金刚石自摧毁过渡层复合衬底设计（高效率、低成本工程化）</p><p>创新点三：设计了自摧毁过渡层应力释放机制的石墨/金属梯度/非晶碳与超纳米金刚石复合衬底结构。明确了无裂纹金刚石制备的过渡层设计准则，阐明了金刚石制备过程中过渡层组织演变规律，实现了4英寸无裂纹金刚石散热材料的批量制备和加工应用。基于自摧毁过渡层、应力限域和图形化效应制备了6英寸曲面金刚石和8英寸平面金刚石。（该创新点授权国家发明专利24项，发表论文32篇，专利7-10，附件20-25）</p><p>【设计难点】直流电弧等离子体喷射CVD金刚石材料通常需在钼、钨等耐高温易碳化元素衬底上高温合成，电弧温度5000-6000 K，衬底温度800-1100 ℃，由于金刚石与衬底热膨胀系数差异较大，使其在制备过程中产生巨大的热应力，极易导致金刚石发生破裂。随金刚石散热材料尺寸的增加，由热应力导致的开裂问题加重。</p><p>【设计成果】创新性地提出过渡层梯度演变自摧毁应力释放理论，设计了石墨/复合过渡层衬底结构，实现了4英寸无裂纹金刚石散热材料批量化制备。设计了基于自摧毁过渡层复合结构的应力限域和图形化结构，实现了6英寸曲面和8英寸平面金刚石的制备。</p><p>1）仿真分析复合衬底结构生长金刚石应力，揭示金刚石材料破裂机理</p><p>针对金刚石散热材料制备过程中由于热应力、生长应力与电弧热冲击导致的金刚石易于开裂问题，提出了金刚石材料制备过程中过渡层自摧毁应力释放机制，确立了金刚石断裂强度、界面结合强度与界面轴向应力的关联作用和自摧毁过渡层设计准则（图8(a)-(c)）。仿真分析了6英寸曲面周期性结构应力限域效应和8英寸平面图形化结构应力分布（图8(d)(e)），提出了基于自摧毁过渡层的大尺寸金刚石散热材料应力释放方案。</p><p>2）设计自摧毁过渡层复合衬底结构，破解大尺寸无裂纹金刚石材料制备难题</p><p>设计了石墨/钛复合过渡层衬底结构（图9(a)），保障了金刚石稳定形核与生长关键条件，通过高形核密度非晶碳与超纳米金刚石，获得石墨/金属梯度/非晶碳与超纳米金刚石复合过渡层衬底结构；诠释了金刚石形核和生长过程中钛过渡层碳化演变规律（图9(b)(c)），冷却过程中利用复合过渡层自摧毁和界面弱结合力剥离释放生长和热应力，实现了无裂纹金刚石散热材料的制备。</p><p>基于石墨/钛复合过渡层衬底结构，设计了6英寸曲面周期性结构（图9(d)）和8英寸平面图形化衬底（图9(f)）进一步缓解应力。在衬底背面进行周期性开孔和表面激光图形化加工，增强金刚石与衬底协同变形，同时优化形核和提升金刚石膜强度、韧性等力学性能，实现了大尺寸金刚石膜裂纹有效抑制（图9(e)(g)）。</p><p>3）批量研制金刚石散热材料，开创金刚石工程应用先河</p><p>设计的自摧毁过渡层复合衬底批量应用于研制4英寸金刚石散热材料，实现了停机过程中金刚石自由完整剥离（图10(a)-(c)），成功实现了金刚石散热材料批量研制（图10(d)），整膜率由30%提升至80%以上。设计开发了激光快速平整化、抑制裂纹萌生抛光装置等金刚石加工方法，加工获得翘曲度7.1微米金刚石散热材料（附件29），解决了高硬度金刚石加工难题。研制的金刚石材料批量应用于GaN芯片键合散热、T/R组件散热、金刚石负载等领域。</p><p>【应用效果】基于自摧毁过渡层复合衬底设计，实现了4英寸无裂纹金刚石散热材料的批量制备和加工应用。金刚石散热材料成功批量应用于北斗三号导航卫星有源相控阵天线散热，相关成果获教育部科学技术发明一等奖。用基于自摧毁过渡层、应力限域和图形化设计的衬底仿形膨胀系数适配结构和周期性图形结构，实现了直径162 mm、厚度2.3 mm无裂纹曲面和直径202 mm、厚度2.8 mm的平面金刚石膜制备。曲面和平面金刚石膜的尺寸和厚度均显著优于目前国际最高水平。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>与当前国内外同类技术主要参数对比</div></div></div><p>基于项目创新设计成果，获得了在金刚石制备核心装备等离子体炬的口径、装备稳定运行时长、金刚石散热材料尺寸和厚度、金刚石散热材料制备成品率和产能等方面优于国内外同类技术的指标，主要指标对比如表1所示。（技术评价报告，附件26-28）</p><p>表1 国内外同类技术指标对比</p><p>编号</p><p>指标名称</p><p>国内外同类项目</p><p>本项目</p><p>对比</p><p>1</p><p>等离子体炬口径</p><p>最大138 mm</p><p>最大220 mm</p><p>增加59%</p><p>2</p><p>金刚石尺寸</p><p>平面125 mm</p><p>平面202 mm</p><p>优于</p><p>3</p><p>稳定工作时长</p><p>200小时</p><p>600小时</p><p>提升3倍</p><p>4</p><p>4英寸金刚石厚度</p><div class="p-h">2.0 mm</div><div class="p-h">6.0 mm</div><p>提升3倍</p><p>5</p><p>8英寸金刚石厚度</p><p>＜2.0 mm</p><div class="p-h">2.6 mm</div><p>优于</p><p>6</p><p>曲面金刚石厚度</p><p>＜2.0 mm</p><div class="p-h">2.3 mm</div><p>优于</p><p>7</p><p>曲面金刚石尺寸</p><p>100 mm</p><p>162 mm</p><p>优于</p><p>8</p><p>金刚石整膜率</p><p>30%</p><p>80%以上</p><p>提升50%以上</p><p>9</p><p>4英寸年产能</p><p>1000片</p><p>8200片</p><p>8倍以上</p><p>【综上所述】本项目取得三大首创设计成果：设计了双磁场驱动大口径等离子炬，突破了高导热金刚石散热材料大面积制备瓶颈；设计了多级涡旋进气与辅助阳极凸台协同抑制积碳结构，攻克了美日等国无法解决的电弧等离子体喷射化学气相沉积易积碳导致无法长时间稳定生长难关；设计了自摧毁过渡层复合衬底结构，实现了4英寸金刚石散热材料批量制备，破解了全球同行最为头痛的大尺寸金刚石易开裂问题。成功构建了半导体金刚石散热材料制备的核心装备与关键工艺，实现了金刚石散热材料在尺寸、厚度及成品率等关键指标达国际领先水平。项目建成了全球产能最大的4英寸金刚石散热材料生产基地，标志着我国在该领域实现重大突破。</p></div>
+  <div class="sec-h"><span class="no">03</span><h2>图集</h2><span class="st st-ok">官方档案</span></div><div class="gal"><img loading="lazy" src="../cases/gal/2025-08-0.jpg" alt="半导体金刚石散热材料制备关键工艺与核心装备设计"><img loading="lazy" src="../cases/gal/2025-08-1.jpg" alt="半导体金刚石散热材料制备关键工艺与核心装备设计"><img loading="lazy" src="../cases/gal/2025-08-2.jpg" alt="半导体金刚石散热材料制备关键工艺与核心装备设计"></div>
+  <div class="sec-h"><span class="no">04</span><h2>设计五维</h2><span class="st st-draft">内容团队人工编目 · 解读非官方评价</span></div><div class="dims"><div class="dim"><div class="dim-h"><span class="dim-n">科技</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>半导体金刚石散热材料与装备,解决有源相控阵雷达芯片发热瓶颈</p></div><div class="dim"><div class="dim-h"><span class="dim-n">艺术</span><span class="dim-s">2/5</span></div><div class="dim-bar"><i style="width:40%"></i></div><p>材料与装备</p></div><div class="dim"><div class="dim-h"><span class="dim-n">人本</span><span class="dim-s">2/5</span></div><div class="dim-bar"><i style="width:40%"></i></div><p>间接服务国防与通信</p></div><div class="dim"><div class="dim-h"><span class="dim-n">商业</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>高功率芯片散热战略材料,需求明确</p></div><div class="dim"><div class="dim-h"><span class="dim-n">文化</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>「热管理」攻关的行业级样本</p></div></div>
+  
+  
+  
+  
+  <div class="sec-h"><span class="no">07</span><h2>权威溯源</h2><span class="st st-ok">人工核选 · 检索于 2026-08-09</span></div><div class="srcs"><a class="srclink" href="https://heec.cahe.edu.cn/school/science-project/33006.html" target="_blank" rel="noopener">高质量CVD金刚石及其制备关键技术_北京科技大学</a><a class="srclink" href="http://www.idacn.org/news/49580.html" target="_blank" rel="noopener">金刚石助力半导体器件散热</a></div>
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 B（7 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

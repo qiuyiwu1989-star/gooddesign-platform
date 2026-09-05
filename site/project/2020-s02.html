@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>左心耳封堵器系统 · 2020银奖 · 好设计</title>
+<meta name="description" content="房颤是最常见的心律失常，全球约有3350万房颤患者，我国约850万。平均每3位房颤病人中有1位罹患卒中，致死致残率大于70%。导致非瓣膜性房颤患者脑卒中的血栓超过90%来自左心耳。左心耳封堵器系统用于预防由非瓣膜性房颤引起的卒中。医生在血管">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2020">← 返回 2020 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2020 · 第六届</span></div>
+  <h1>左心耳封堵器系统</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">先健科技（深圳）有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">刘建勇,林逸贤,唐辉强,谢粤辉</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202001036</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>房颤是最常见的心律失常，全球约有3350万房颤患者，我国约850万。平均每3位房颤病人中有1位罹患卒中，致死致残率大于70%。导致非瓣膜性房颤患者脑卒中的血栓超过90%来自左心耳。左心耳封堵器系统用于预防由非瓣膜性房颤引起的卒中。医生在血管造影及超声引导下，在患者股静脉伸入导管，跨过房间隔，将封堵器通过导管输送到左心耳并植入。封堵器封堵左心耳入口，形成一道屏障阻止左心耳内血栓脱落，降低中风风险。</p><p>针对市面上2种主流的国外左心耳封堵器的局限性，包括调节能力有限、不能重复定位、需要较大的输送鞘管等问题。项目进行十多年潜心研发，自主研制出了中国首个左心耳封堵器LAmbre™。秉承着“人无我有，人有我优”的设计理念，LAmbre™左心耳封堵器系统具有最广泛的临时适应性、最稳定的固定及最小尺寸的鞘管，较其他器械，医生学习曲线更短，可轻松重复定位，更易于操作且更安全，特定病人只需局部麻醉，所受痛苦少，手术时间短，术后一小时病人即可下床，一至三天可出院。LAmbre™左心耳封堵器系统核心创新点在于：1.国际首创独特的双层封堵设计及多重固定机制，适应复杂的左心耳解剖结构封堵，可实现重复定位、反复回收和再释放，产品有17种规格，较国外同类产品具有更广的适用性和更强的稳定性；2.输送鞘管为全球同类器械中最小（8-10F）；3.采用国际首创生物纳米涂层，减少镍离子释放，进一步提升材料的生物相容性。经专家鉴定，整体水平国际领先。LAmbre™左心耳封堵器系统不仅打破国外垄断，促进进口产品降价，且多次在国际尖端学术会议上，被术者用来对挑战性病例进行手术封堵演示，在其他品牌产品难以达成手术效果时“挺身而出”救场，解救患者病痛，减少患者身体创伤。</p><p>LAmbre™左心耳封堵器系统获得“健康中国（2018）年度十大医疗器械”殊荣，入围国家科技部《创新医疗器械产品目录（2018）》；作为唯一的国产左心耳封堵器纳入国家卫生和计划生育委员会十三五规划教材《医用材料概论》；截至2020年9月，已申请专利90件，获得授权38件，其中中国发明专利12件，美国发明专利7件，欧、日、韩、澳发明专利各2件。截至2020年8月累计营收1.52亿元，创汇624.09万美元。产品已在全球40多个国家的200多家医院开展应用，累计植入量超过8000个，其应用价值得到了CCTV在内的多家媒体报道。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>市面上大部分左心耳封堵器塞入左心耳的部分是封闭的结构，难以适应不同的左心耳内腔形状，另外还有其他局限性包括调节能力有限、不能重复定位、需要较大的输送鞘管、未能有效控制镍离子释放、内皮化慢。基于市场调研和临床需求，理想左心耳封堵器性能包括：1.固定牢靠，密封效果好；2.可适应所有解剖结构；3.可以随时调整（可完全回收）；4.操作简单；5.尽量少的器械血栓（内皮化快）。秉承着 “人无我有，人有我优”的创新设计理念，LAmbre™左心耳封堵器系统设计团队突破上述痛点，设计出具有以下优势的左心耳封堵器:1.最大限度适应左心耳腔体的多种结构和多种尺寸；2.保证在左心耳腔壁上更加稳定的定位和在左心耳口的更加严密的密封，达到定位和密封两个关键效果之间的最佳平衡；3.封堵器容易重复定位，在脱离输送器之前还可回收。医生在手术操作时，可以根据病人左心耳实际的形态和尺寸选定定位区，不必因器械的局限而选定不合适的定位区，降低手术的风险；4.操作步骤简单顺畅，最大限度地减少医生的重复定位的次数，减少对病人的损伤；5.能够匹配较小的鞘管，减少鞘管对病人血管壁的损伤；6.封堵器表面镀多层纳米陶瓷膜,减少镍离子的释放，提高内皮爬覆。</p><p>左心耳封堵器属于风险等级最高的三类植介入医疗器械，需要通过国家食品药品监督管理总局的审批，LAmbre™左心耳封堵器系统匠心研发13年，经历从设计开发、体外测试、临床试验等过程。研发团队分为产品设计开发小组，性能验证小组，动物实验小组和临床试验小组，团队成员均在介入医疗器械材料和产品的研发中拥有丰富的经验。为更贴近临床需求，产品在设计过程中医工结合，综合像亚太结构性心脏病年会主席林逸贤教授、德国法兰克福CVC中心Horst Seivert教授、武汉大学人民医院黄从新教授等行业内全球著名专家的建议，对产品进行了持续的优化。</p><p>LAmbre™左心耳封堵器系统包括左心耳封堵器和输送系统两部分。左心耳封堵器由固定伞和密封盘两部分组成。固定伞设计灵感来自雨伞，LAmbre意为“左心耳的保护伞”。伞盘-支架设计，径向支撑左心耳。利用镍钛管通过激光切割成一定的花纹，再利用热处理做成一定的骨架。在骨架设有固定锚，骨架具有弹性，固定锚可以刺入左心耳壁，以固定器械在左心耳上。固定伞的打开方式为“渐进式”，灵感来自于喷泉，固定伞各支撑杆可以像喷泉一样从中间打开，像喷泉回落时一样各支撑杆和左心耳内壁贴合，支撑杆上的锚刺随着支撑杆刺入左心耳壁，当封堵器需要回收入鞘时，固定伞会反着以上“喷泉”的动作。这样不但可以使鞘不深入左心耳，封堵器在左心耳的口部部分打开，然后滚动推入左心耳，可以使封堵器固定伞很好的适应左心耳内部不规则结构，提高固定性，也避免鞘深入左心耳导致的左心耳的损伤，而固定伞回收时，锚刺是被藏在固定伞及膜里面的，也大大地减少了对左心耳的损伤。密封盘为由镍钛丝编织热定型而成的盘，密封盘的近端装有连接螺母，可与输送钢缆的连接螺母连接，以便于通过输送鞘管把左心耳封堵器输送到预定部位。固定伞和密封盘上都缝有阻流膜，阻断进入左心耳的血流。密封盘表面镀有一层TiN薄膜，有利于封堵器植入后内皮的快速爬覆。固定伞设计为16-36mm、间隔2mm，共计11种不同的型号，用于固定在左心耳内壁。为适应用于深度较浅、分叶较多类型的左心耳，还特别设计了“小伞大盘”的型号。输送系统的外观设计灵感来自生物体的自然曲线，并结合人体黄金比例。产品外观设计简洁，体现医疗产品高精密度的严谨性、宜人性和未来科技感。材料符合医疗卫生标准，圆润造型表现亲和力，摆脱工具感。术者可根据病人左心耳的形态和尺寸选定位区，有效降低手术风险。输送器的输送鞘管和扩张器的远端角度分为为45°×30°和45°两种，输送鞘顶端设计为“双弯”，增加了鞘管的操作性，更加有利于进入左心耳。</p><p>LAmbre™左心耳封堵器在设计上更新颖、更精巧，满足左心耳不同形态及特点的封堵要求，收放自如，稳如泰山。产品为国内首款左心耳封堵器，其创新设计为国际首创。</p><p>LAmbre™左心耳封堵器具有完全自主知识产权，专利布局完整。截至2020年9月，项目团队已申请专利90件，获得授权38件，其中中国发明专利12件，美国发明专利7件，欧、日、韩、澳发明专利各2件，项目团队制订了中国首个左心耳封堵器团体标准：《左心耳封堵器系统》（T/GDMES 0017—2020）。产品主要创新点如下：</p><p>一、机械结构创新设计。结合临床需求，对封堵器及输送系统进行创新设计，使器械封堵更加牢固，操作安全可靠，并减小术中对患者的损伤。</p><p>（1）封堵器主体结构创新设计：在充分研究心脏以及左心耳生理解剖结构以及搏动过程的基础上，国际首创提出“固定伞-密封盘”组合的封堵器结构。固定伞固定在左心耳内部，实现了与左心耳腔体的紧密贴合，达到稳定固定。伞盘-支架设计，径向支撑左心耳，加强固定效果；8个倒刺可插入心耳壁，帮助固定封堵器；8个U型倒钩可嵌入不同结构的梳状肌,增加锚定稳固性；固定伞伞状辐射设计的左心耳封堵器植入后可以被完全回收，无损心内组织。通过多重固定机制，充分保证左心耳封堵器植入后在心脏搏动的状态下不会脱落。LAmbre™左心耳封堵器密封盘贴合在左心耳口部，实现了左心耳口部的有效封闭；设置固定伞与密封盘的规格匹配关系，最大限度适应左心房、左心耳的复杂结构和多种尺寸；器械的阻流部分和固定部分具有相对独立变形能力 ，同时调整二者位置和形态，实现重复定位和反复释放，收放自如，较国外同类产品具有更广的适用性和更强的稳定性。</p><p>（2）双伞可调整机制，器械操作性创新：首创固定伞可控的渐进式展开技术，左心耳近端锚定，输送鞘管不用进入左心耳内部，避免穿孔风险。</p><p>（3）输送系统设计：输送鞘管（直径8-10Fr.）为同行业最小，最大程度减少植入过程对心脏系统的损伤；远端标记环（前缘对前缘距离：10mm）,可帮助鞘管定位及测量心耳参数。</p><div class="p-h">二、首创表面纳米涂层材料。提高安全性及生物相容性。</div><p>全球首创氮化钛纳米涂层，降低镍离子释放率，提升了材料的生物相容性和安全性。对比无纳米涂层封堵器，新生内膜中镍离子浓度由40μg/kg降至20μg/kg（植入180天）。</p><div class="p-h">三、首次提出渐进式植入和极简术式，简化手术操作，提高安全性。</div><p>（1）国际首创的植入方式：输送鞘放在左心耳口部，推送固定伞渐进式打开，极大地减少器械深入左心耳造成的损伤，同时可避免左心耳中有血栓时器械干扰血栓脱落引起术中卒中。</p><p>（2）国内首创极简术式：依靠介入影像进行左心耳封堵，手术全程无需或少使用食道超声，使用局麻，减少病人痛苦和并发症。</p><div class="p-h">四、开发生产工艺，提高良率，提升生产效率。</div><p>团队开发自动喷砂工艺、新定型工艺及自动焊接工艺，有效提升了产品整体支撑性，避免了产品塑性变形造成基材结构链损坏，并提升了产品生产效率。</p><p>LAmbre™左心耳封堵器系统相比市面主流的美国品牌的WATCHMAN®左心耳封堵器、ACP左心耳封堵器的优势在于：</p><p>适用患者范围方面：WATCHMAN®左心耳封堵器系统设计外形是半球装，对左心耳的本身形状有要求。目前来看，长条形左心耳患者是最适合使用WATCHMAN®左心耳封堵器系统的，仍有部分患者无法使用WATCHMAN®左心耳封堵器系统。ACP左心耳封堵器系统虽然为双盘设计，但其固定盘是一个封闭结构，有一部分左心耳无法适应。而LAmbre™左心耳封堵器则通过双伞形设计避免了该问题，可以适合所有人群。</p><p>疗效方面：LAmbre™左心耳封堵器系统即刻阻断血流效果更好，无血栓漏出，疗效显著。已发表的大样本临床文献研究表明，WATCHMAN®左心耳封堵器系统植入成功率为91%，患者术后中风率为1.1%，器械脱落率0.3%；ACP的植入成功率为96%，患者术后中风率为2.1%，器械脱落率1.4%；LAmbre™左心耳封堵器系统植入成功率为99.6%，患者术后中风率为0.5%，器械脱落率0%。</p><p>安全性方面：LAmbre™左心耳封堵器系统并发症发生率小，手术安全性更高。植入LAmbre™左心耳封堵器系统的患者术后不用口服抗左心耳封堵器系统凝剂，而WATCHMAN®左心耳封堵器系统在植入后的45天内需服用抗凝剂直到表面聚酯膜内皮化，对于有抗凝药禁忌的患者，LAmbre™左心耳封堵器系统无疑是更安全的选择。</p><p>操作方面：LAmbre™左心耳封堵器系统优化设计带来较低的操作风险。1.LAmbre™左心耳封堵器的输送鞘尺寸最细，便于手术操作者使用；2.LAmbre™左心耳封堵器系统可以反复回鞘，若第一次位置放置不当，还可以完全回收到鞘中反复操作，可增加医生实施左心耳封堵术的信心，WATCHMAN®左心耳封堵器系统和ACP左心耳封堵器系统均不具备此项功能。以上两点功能使得LAmbre™左心耳封堵器系统的学习曲线远远优于WATCHMAN®左心耳封堵器系统，基本上有介入经验的心内科医生都可以比较方便的学会该手术。</p><p>这些优势，使得LAmbre™左心耳封堵器具有独一无二的市场竞争力，产品上市以来迅速占据了重要的市场份额。截止2018年，LAmbre™左心耳封堵器系统中国市场的市场份额为30%，排在第二名。该产品曾多次在国际尖端学术会议上被术者用来对挑战性病例进行手术封堵演示，并曾多次在其他品牌左心耳封堵器产品难以达成手术效果时“挺身而出”，完美演绎。</p><p>LAmbre™左心耳封堵器系统于2016年6月已在欧洲上市，于2020年9月在美国的密歇根州底特律的亨利·福特医院进行首例植入，产品能够在对质量要求几近苛刻的欧美市场使用，说明该产品拥有极高的质量标准。截至2020年5月31日LAmbre™左心耳封堵器系统已累计植入超过8000个。</p></div>
+  
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2020%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%B7%A6%E5%BF%83%E8%80%B3%E5%B0%81%E5%A0%B5%E5%99%A8%E7%B3%BB%E7%BB%9F%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%B7%A6%E5%BF%83%E8%80%B3%E5%B0%81%E5%A0%B5%E5%99%A8%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「左心耳封堵器系统」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%B7%A6%E5%BF%83%E8%80%B3%E5%B0%81%E5%A0%B5%E5%99%A8%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「左心耳封堵器系统」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2020-s01.html"><span class="d">← 上一项</span>中国自主研发全球首台宽体能谱CT（NeuViz Glory）</a>
+    <a class="next" href="2020-s03.html"><span class="d">下一项 →</span>智能化非开挖定向钻进装备</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

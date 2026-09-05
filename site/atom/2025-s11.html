@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>高功率锂电池关键材料与储能系统高效管控设计 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2025-s11.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2025-s11</div>
+  <h1>高功率锂电池关键材料与储能系统高效管控设计</h1>
+  <div class="meta-line"><b>2025 年度银奖</b><span>哈尔滨理工大学,清华大学,浙江南都电源动力股份有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2025 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨理工大学,清华大学,浙江南都电源动力股份有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">陈明华,李誉,陈桢,张家伟,王凡,刘欣,李会华,相佳媛,韩雪冰,吴晓刚</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与社会 · 绿色能源（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>发展储能技术对于实现我国“双碳”战略目标意义重大。新能源发电、电气化交通等多场景均对以锂电池为代表的储能系统功率特性提出迫切需求。本项目从高功率锂电池材料研发-主动电热控制-安全监测预警三个层面展开研究，主要创新包括：</p><p>（1）针对电芯单体功率密度难突破的关键问题，首创了锂化磷酸酯修饰、梯度嵌锂负极、三维互联导电剂等多界面协同的电芯表界面调控技术，解决了电芯多界面动力学失配、高功率加速老化的难题，研制出6C高功率电芯产品，功率密度提高约50%，支撑宝泰隆、光宇等省内企业进入高端产品供应链，年利润增长近40%。</p><p>（2）针对高功率工况下电池可靠电热管控难的问题，开发了基于固相扩散模型的高精度电池状态估计算法及预热/冷却一体化热管理技术，高功率下电池状态估计误差&amp;lt;2%，系统内最大温差&amp;lt;3.7℃，对比宁德时代、特斯拉等企业分别降低&amp;lt;2%、&amp;lt;3.7℃。研制出高功率锂电池主动电热管控系统，在黑龙江电网多个储能项目中应用，累计节电4.9亿千瓦时。</p><p>（3）针对高功率下电池失效诱因不明、热失控难以精准提前检出的难题，首创了电池机-电-热多场植入式传感技术，在其指导下发明了人工智能-机理模型融合增强的电池热失控预警大模型，最终开发出AI安全监控平台，电池故障检出率达到93%，误报率低至0.5%，较国家预警平台检出率提高30%、误报率降低4倍。</p><p>项目获授权发明专利54件，转化31项；发表SCI论文71余篇，其中ESI高被引论文5篇；主要完成人分别入选了俄罗斯科学院外籍院士、国家优青、国家海外优青、全球高被引学者、全球前2%顶尖科学家。</p><p>项目实现了锂电池高功率技术突破，研制出可在6C下安全工作的高功率锂电池电芯、模组及储能系统产品，服务于国内外30余个重大储能工程项目，装机量累计&amp;gt;8GWh，提升了我国新能源高端装备国际竞争力。近3年创造经济效益47.8亿元，节支2.1亿元。</p><p>经科技成果评价认为本项目整体技术国际先进、在高功率锂电池关键材料及应用方面达到国际领先水平。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>立项背景</div></div></div><p>电化学储能技术作为国家政策重点扶持的战略性新兴产业，是我国能源结构转型、现代化产业体系建设的关键。大规模新能源并网需要高功率储能技术提供惯量支撑，以提高电网供电稳定性和可靠性；电动汽车及电动飞机、电动船等新兴产业的发展急需锂离子电池技术提供高功率支撑及高续航能力等。锂电池的安全性、比能量/功率密度、循环寿命、成本等综合性能最优，是目前应用规模最大、发展最快的储能技术，2024年市场规模已超2万亿元，预计2030年将突破4万亿元。然而，受反应动力学和安全性综合限制，锂电池及其系统应用的功率特性无法支撑新型电力系统、电动载具突破发展瓶颈，其主要关键点在于：</p><p>①电芯本体设计：电极体相及表界面处电子/离子传输迟缓，严重限制电芯储能反应动力学，且离子快速脱嵌易引起电极结构劣化，功率及循环寿命无法满足严苛需求。</p><p>②电池模组管理：高功率工况下模组及电池簇内电池荷电状态一致性差，导致输出功率及电池寿命降低，且电池及模组内部升温快、温差大，热失控风险激增。</p><p>③系统监测运维：高功率工况下电池内部信息难以实时准确监测，热失控特征辨识参数、关键阶段及时序未知，难以支撑储能系统安全预警设计及高效管控。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>主要设计创新</div></div></div><p>针对上述难题，在国家重点研发计划、国家自然科学基金、中央引导地方科技发展专项等支持下，通过产学研用联合攻关，实现了高功率电芯关键材料调控、宽温域电-热高效管控、系统监控与云-边协同运维等关键突破，并得到广泛应用，主要成果及创新如图1所示。</p><p>图1 本项目整体创新思路及主要成果</p><p>创新1：高功率电芯关键材料及表界面调控技术。首创了聚阴离子、溴化磷酸酯、锂化磷酸酯基聚合物正极材料表界面调控技术，通过引入Li+快速迁移路径和强P-O共价键界面锚定作用，抑制了正极在宽温域、高倍率条件下的性能衰减；创立了碳材料微结构定量表征新方法及高功率碳基复合负极规模制备技术；研发了多元溶剂竞争配位弱溶剂化新型电解液，助力负极界面实现快速脱溶，突破了电池功率密度和寿命的技术瓶颈。</p><p>问题与挑战：高功率下电极离子-电子输运动力学迟缓、电极-电解液界面劣化严重，限制电芯的比功率密度和服役寿命；能量密度与功率密度的提升相互制约，难以解耦提升。</p><p>（1）提出了功能化定制高功率正极材料表面修饰技术</p><p>高功率下正极材料由于离子传输迟缓、金属离子溶解、不可逆结构相变等问题，电池性能衰退严重。项目首创了基于聚阴离子、有机溴化磷酸酯小分子、锂化磷酸酯聚合物的多功能正极修饰材料，界面P-O键提供大量Li+快速迁移路径，并抑制正极中Li+及表面基团受水分子亲核攻击形成的有害副产物，进而提高电极/电解液界面的Li+扩散动力学及界面稳定性；强共价键界面可承受高温诱导的晶格振动并抑制晶格氧析出，改善了高温下正极晶体结构稳定性及循环寿命，已在磷酸铁锂、三元正极中验证并实现规模应用。</p><p>图2 功能化定制高功率正极材料包覆技术</p><p>（2）研发了高功率复合负极及电解液界面结构调控策略及方法</p><p>石墨负极端面Li+嵌入机制的扩散路径长，倍率性能较差，且高倍率下Li+快速嵌入/脱出易引起层状结构变形或破坏或形成枝晶。项目提出了硬碳/石墨复合负极的梯度嵌锂策略，可诱导界面内电场形成进而调控Li+嵌入位点、扩散路径，并为Li+扩散提供额外电场力。基于多元溶剂竞争性配位、阴/阳离子特异性吸附及屏蔽作用等方法，发明了弱溶剂化、富阴离子配位的新型电解液，构建了兼具高离子电导、快速脱溶、化学/电化学稳定的钝化层，协同实现了高功率下负极均匀锂沉积、均衡电流密度并保持高能量密度，综合正负极和电解液技术，将电池工作电流密度提高至6C。</p><p>图3 快充复合负极及电解液界面结构调控技术</p><p>应用与影响：以上研发的高功率锂电池关键材料已应用于宝泰隆、光宇和昆宇，专利转让5项【附件6】，新增收入约21亿【附件3】，高功率电芯通过了6C认证检测【附件2-1】。提出的碳材料表征技术已成为国际通用方法。加拿大科学院/工程院孙学良院士称本项目提出的电极修饰层“可提供优异的离子传输能力并有效抑制了结构劣化失效”【附件4】。</p><p>创新2：高功率锂电池主动电热管理技术。研发了高功率电池组的预热/冷却一体化热管理系统，提出了基于电池内部固相扩散及浓差极化的电池模型及高精度SOC计算方法，建立了基于Buck-Boost的双向拓扑结构的串并联电池组均衡管理系统，实现了电池-模组-系统多层级电-热高效管理及快速均衡。</p><p>问题与挑战：高功率下电池组内电芯衰退不一致，电热分布不均匀，导致电芯高功率特性无法充分发挥、热失控事故风险高。</p><p>（1）发明了高功率电池簇电-热管理与效能优化技术</p><p>针对高功率工况下冷媒热管理性能下降、SOC线性估计方法误差大的问题，项目揭示了电芯、模组不可逆产热及非同步增大的规律，通过差异化调控不同功率、温度工况下冷媒流量/预热功率，实现了宽温域、多倍率工况下电池组高效热管理与效能优化，6C电流密度下电芯最高温度&amp;lt;55℃，温差&amp;lt;3.7℃，并通过构建基于固相扩散及浓差极化的等效电路模型，提高了多倍率下电池SOC估计精度，与宁德时代、特斯拉等相比，多工况SOC估计误差从3%-6%降低到2%以下。</p><p>图4 长时服役高功率电池储能系统均衡调控技术</p><p>（2）发明了长时服役高功率电池储能系统均衡调控技术</p><p>针对长时服役导致并联储能电池组不一致程度可观测性差的难题，项目提出了不一致并联电池组的等效电路模型及不一致状态识别方法，开发了基于改进Buck-Boost的双向均衡电路拓扑结构，在此基础上提出了基于电压一致性（电压差异及变化率，高灵敏度和响应速率）和荷电状态一致性（无迹卡尔曼滤波算法，适配非线性系统）判据的分层均衡控制策略，实现了不一致电芯、电池组的快速识别与宽电压范围高效均衡，支撑了高功率（非线性）电池系统的能效优化与高效均衡管理，与电容交换、电感耦合等DC-DC双向均衡技术相比，均衡速度提升20%。</p><p>图5 长时服役高功率电池储能系统均衡调控技术</p><p>应用与影响：项目设计的电池模组通过技术认证，相关成果在国网、浙江南都、哈尔滨昆宇等企业实现转化应用【附件3】。中国工程院孙逢春院士大段引用该SOC估计方法并对其能解耦电池正负极的老化模式给予积极评价【附件4】。</p><p>创新3：电池多场信号监测与机理-AI协同的安全预警技术。首创了电池机-电-热多场植入式传感技术，阐明了失效情况下多场信号特征阈值与发生时序；发明了电池缺陷模拟触发方法，建立了电池失效的电-热耦合模型；发明了机理模型融合人工智能增强的电池热失控预警大模型，依托大模型综合建立电池安全监控平台，电池故障的检出率达到93%，误报率低至0.5%，达到国际先进水平。</p><p>问题与挑战：电池系统安全演化路径复杂，其传感监测仅采集端电压、表面温度等数据无法有效反应电池内部真实状态，且缺乏预测分析功能，导致电池安全监控与运维难。</p><p>（1）首创了植入式多参量融合传感及智能感知技术</p><p>针对电池安全失效演化路径多样、失效诱因不明的问题，项目发明了缺陷电池制造技术，揭示了电池缺陷-枝晶生长-内短路触发-热失控的全过程演化路径，阐明了储能电池猝死型热失控机理。为提高电芯关键参数的监测精度，首创了可植入到电池内部的多参量融合传感技术，实现了压力-温度-电位多参量精确监控及智能感知，高功率下电位测量误差&amp;lt;50 mV，容量影响&amp;lt;1%，优于特斯拉、宁德时代等国内外头部企业技术水平（容量影响&amp;gt;3%）。</p><p>图6 植入式多参量一体化传感技术</p><p>（2）发明了机理-数据融合的异常电芯监测及云边结合安全管理技术</p><p>针对高功率电池系统分级预警与应急处置难题，项目解析了热失控全过程温度、电压、力等多传感信号特征阈值与发生时序，揭示了热失控起点的温度/电压辨识特征及扩散机理，开发了行业首个基于AI大模型的云端预警策略，云边结合综合实现对电池热失控的多维度安全防护，攻克了大规模、高功率储能场站及海量电动车无效低秩信息规模大、预测能力弱、精确度低的数据治理难题，故障检出率93%且误报率0.5%，优于国家预警平台（预警率62.9%）、华为（故障检出率90%，误报率&amp;gt;2%）等国内外水平。</p><p>图7 基于多参量传感与大数据AI的高功率储能系统运维技术</p><p>应用与影响：以上技术及监控平台已应用于南都电源、比亚迪、蔚来、埃安等，AI赋能的高诊断准确率电池故障预警技术，已接入车辆100万辆【附件3】。成果被中国工程院孙逢春院士、瑞典皇家工程院查尔摩斯院士等专家大篇幅正面引用，在电芯内部观测、无析锂快充应用等方面给予高度肯定【附件4】。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>与当前国内外同类技术主要参数、效益、市场竞争力的比较</div></div></div><p>本项目关键技术指标对比如表1所示。项目在高功率电极材料、高功率电池组热电均衡调控、高功率储能系统传感预警管理等达到部分国际领先、整体国际先进水平。</p><p>表1 国内外技术对比情况表</p><p>技术内容</p><p>国内外同类技术</p><p>本项目指标</p><p>先进性</p><p>结论</p><p>主流厂商</p><p>对比项</p><p>技术指标</p><p>高功率</p><p>电芯本体</p><p>LG</p><p>特斯拉</p><p>最大工作电流密度</p><p>4C</p><p>6C</p><p>提高50%</p><p>国际领先</p><p>高功率</p><p>模组电热管控</p><p>宁德时代</p><p>最大温度及温差</p><p>最大温度55℃</p><p>最大温差&amp;gt;5℃</p><p>最大温度&amp;lt;50℃</p><p>最大温差&amp;lt;3.7℃</p><p>降低~26%</p><p>国际先进</p><p>特斯拉</p><p>荷电状态估计误差</p><p>&amp;gt;3%</p><p>高功率估计误差&amp;lt;2%</p><p>降低33%</p><p>高功率</p><p>系统监测预警</p><p>国家监测预警平台</p><p>故障</p><p>检出率</p><div class="p-h">62.9 %</div><p>93%</p><p>提高30%</p><p>国际先进</p><p>误报率</p><p>&amp;gt;2%</p><div class="p-h">0.5 %</div><p>降低4倍</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

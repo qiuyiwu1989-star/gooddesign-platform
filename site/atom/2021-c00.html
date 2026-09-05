@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>重心适应辅助椅 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-c00.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-c00</div>
+  <h1>重心适应辅助椅</h1>
+  <div class="meta-line"><b>2021 年度创意奖</b><span>哈尔滨工业大学机电工程学院</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 创意奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨工业大学机电工程学院</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">蒲子涵,马逸暄,唐斌,蒋涵睿</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与生活 · 家居生活（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>我国的老龄化程度在日趋加深，老龄化人口数量也在不断加大，相应的对于助老产品的需求也日趋增加。并且随着电子商务等新型商业模式的兴起，极大的拓展了助老产品的销售模式，激活了整个市场的活力。</p><p>但在现有的市场中，助老产品还仍以手动轮椅为主，鲜有电动轮椅也现有可以实现姿态变换与帮扶功能的产品，而与市场反差鲜明的是，老年人对于助老产品的质量与功能要求也在不断提升，这就要求一款及能实现多种功能，有具有优秀市场特性的新型辅助椅。且现有的具电动轮椅普遍存在诸多方面的缺陷，对老年使用者较为不友好，大大限制了生活质量的提升。为了提升独居老年人居家生活能力，我们设计了一种可进行重心变换的重心适应辅助椅来满足老年人在居家生活中的种种需求。本款设备可实现坐立姿态的变换、帮扶站立以及爬楼梯等诸多对老年人居家生活具有重要意义的功能。</p><p>本款重心适应辅助椅是一种机电一体化设备，具有远程遥控与反馈系统，并同时利用偏置式行星轮系统实现灵活移动与上台阶，也可实现帮扶捡拾、帮扶站立与自动充电等功能，并针对老年使用者的生理特点进行的迭代与设计修正，更加贴合使用者的特点与需求，可显著提升老年使用者的生活质量。</p><p>现在市场售卖的轮椅可实现坐立变换的轮椅结构较为简单，底盘通过辅助轮防止其在站立后由于重心的前移而翻倒。但该设计没有解决站立过程中的重心问题，对此我组设计了一种全新的复合连杆姿态变化机构，可实现在坐立姿态变换的过程中重心投影位置保持恒定，使整体保持稳定，不会翻倒。 同时我们设计了一种嵌套结构的偏心行星轮，它可以利用重心位置的变化实现越障，也可实现台阶的爬升，高效而可靠。另外由于它可以将动能与重力势能进行转换，其冲击载荷小，使用体感平缓，符合老年人生理特点。 除此我们还设计了可实现帮扶站立、行走、捡拾等功能的机构，使老年人更便利。由于相当部分的老人受伤发生在弯腰过程中，这使得传统充电装置成了受伤的一大风险，对此我组设计了自动充电桩，在充电时无需弯腰，直接将辅助椅后侧“靠”到充电桩上即可，依靠导向面与充电触点自动完成对位、充电等操作，更为安全可靠。目前市场具有坐立变换功能的轮椅普遍存在充电困难、无法爬楼、站立后重心不稳等问题，并无同功能产品。本项目最大的意义在于实现了代步、站立帮扶、捡拾帮扶、爬楼等诸多功能的集成，包含了老年人居家生活的绝大部分隐患，一次性覆盖并解决了大部分问题。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>对于重心适应辅助椅，其主要功能是帮助使用者实现姿态的变换，同时在有限的空间内辅以夹取、一定程度的越障等较为简单且便利的功能，使得整个设计更加的多元化。</p><p>该产品在室内使用的一些现有轮椅不便实现的功能方面进行优化，例如使用者需要从较高的货架上取物、在厨房内做菜、洗碗等。对于此类需要站立才便于完成的动作，考虑机械方面的辅佐是很有必要的。</p><p>对此，为了实现上述诸多功能，一款重心适应辅助椅应运而生。帮助使用者在坐姿和站姿两种姿态间转换，辅助使用者捡拾夹取，有能够越过门槛台阶的简单越障能力。而相比于传统的姿态变换椅，我们在功能方面增加了一些设计，例如前段的辅助支撑轮，帮助整车在姿态变换的过程中结构更加稳定。双轮采用行星轮，在便于越障的同时使得上楼梯也成为了可能。也如在姿态变换的过程中，底部滑移模块也会随着整个座椅的抬升而产生水平方向的移动，更加符合人在站立过程中的姿态，使整个过程更加平滑。</p><p>另外根据调查，约有的老年人受伤发生在弯腰捡拾的过程中，有很大的风险引起纤维环破裂和体位性高血压引起的椎间盘脱出与主动脉剥离。而公寓中的插座多安装于高度较低的墙面上，这就使得弯腰为装置充电成为了受伤的一大风险。为避免这一风险，我组设计了一种接触时充电桩，在充电时无需弯腰操作，直接将辅助椅后侧“靠”到充电桩上即可，依靠导向面与充电触点可自动完成对位、充电等操作，使操作更安全。</p><p>如前文所言，老年人在弯腰捡拾的过程中极易受伤，但物品掉落再所难免，为此我组设计了一种可集成在辅助椅摇臂上的捡拾器，使用者无需走下辅助椅即可完成捡拾，从根本上规避了由捡拾物品导致的损伤风险。该捡拾器主体为SLA与MJF工艺的3D打印尼龙零件，管材与连杆为碳纤维材质，整体质量为346g，虽然有些重，但质心在近手掌处，整体持握十分稳固舒适。在不需使用时可通过卡扣+磁吸的方式固定于辅助椅的摇臂上，不妨碍其他操作，取用较为方便。</p><p>本项目具有以下创新点：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>在坐-立姿态变换的过程中同时进行重心的偏转，保证在运动过程中使用者的重心基本保持稳定，省去传统轮椅设计下方的辅助轮，简化设计，同时高效实现功能。</div></div><div class="p-li"><span class="p-mk">2</span><div>设计了一种内置动力的偏置行星轮机构，其在正常平地工作时利用气动刹车锁住内圈，使之和普通车轮一样工作。遇到障碍时松开气动刹车，同时配合车身上层结构通过前部的重心变换变相实现越障，由于其重心变换使其在遇到冲击时可将冲击反向转换为重心变换，即使用者与辅助椅的重力势能，可使使用体验更柔和。</div></div><div class="p-li"><span class="p-mk">3</span><div>可实现远程遥控，操作者可以直接取下机身摇臂握把处配置的遥控器来控制整车，辅助椅不在身边时可直接通过遥控器遥控至身旁，这使得操作者不再需要时刻将辅助椅放在身旁，对使用者提供了极大的便利，加强了使用的灵活性。</div></div><div class="p-li"><span class="p-mk">4</span><div>辅助椅可自动寻找充电器进行充电，使用自动充电系统，避免手动操作充电带来的风险与不便。同时集成捡拾机构，避免老年人在捡拾物品时做出弯腰、前倾等高风险动作，更符合老年人的生理特点。</div></div></div></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

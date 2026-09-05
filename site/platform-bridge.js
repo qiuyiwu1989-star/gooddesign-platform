@@ -1,0 +1,1 @@
+document.addEventListener('click',function(e){var a=e.target.closest('[data-copilot],[data-ask]');if(a){e.preventDefault();location.href='/assistant.html';}},true);document.querySelectorAll('a[href]').forEach(a=>{const u=new URL(a.href,location.href);if(u.origin===location.origin&&u.pathname.endsWith('/index.html')&&u.pathname.includes('/atom/'))a.href='/knowledge.html';});

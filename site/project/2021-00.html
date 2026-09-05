@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>星球车复合式移动系统设计及运动性能验证 · 2021金奖 · 好设计</title>
+<meta name="description" content="一、设计目的
+月球探测和火星探测是国家科技重大专项，星球车是实现大范围移动探测的核心装备，而移动系统是星球车最为关键的组成部分。项目团队在2004-2013年期间设计并研制了月球车移动系统，在2013-2020年期间设计并研制了火星车移动系">
+
+
+
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+<header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">项目档案 · 按历史收录资料展示，设计解读不代表官方评价。<a href="/projects.html">返回项目库 ↗</a></div>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%87%91%E5%A5%96&amp;year=2021">← 返回 2021 年金奖名录</a>
+  <div class="kicker"><span class="lv">金奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>星球车复合式移动系统设计及运动性能验证</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨工业大学北京空间飞行器总体设计部,北京卫星环境工程研究所</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">党兆龙,杨晓宁,潘冬,牛福亮</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101048</div></div>
+  </div>
+  <div class="hero"><img src="../cases/gal/2021-00-0.jpg" alt="星球车复合式移动系统设计及运动性能验证"></div>
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><div class="p-h">一、设计目的</div><p>月球探测和火星探测是国家科技重大专项，星球车是实现大范围移动探测的核心装备，而移动系统是星球车最为关键的组成部分。项目团队在2004-2013年期间设计并研制了月球车移动系统，在2013-2020年期间设计并研制了火星车移动系统。本项目重点阐述火星车移动系统。</p><div class="p-h">二、设计创新</div><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>发明并研制了具有蠕动脱陷等功能的主被动复合式火星车移动系统</div></div></div><p>针对美国被动悬架式火星车出现的通过性问题，采用主被动复合悬架方案，突破了轮式滚动对牵引力的限制，大幅提高了火星车脱陷和爬坡性能。提出了主被动复合式悬架自由度设计准则；发明了具有蠕动功能的主被动复合式火星车移动系统构型；结合火表特殊环境要求，研制出火星车主被动复合式移动系统。该移动系统具有蠕动脱陷、蠕动爬坡、车厢升降防托底、悬架主动折展、车轮抬起、全向移动等功能，解决了美国火星车移动系统存在的问题。我国复合式移动系统占火星车总重17.4%，低于美国被动式移动系统的20%。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>创建了火星车蠕动模式的运动控制策略</div></div></div><p>脱陷和爬坡时车轮处于大沉陷、高打滑状态，受到滚动牵引力、推土阻力、轮轴推/拉力的复杂作用，现有理论无法适用。根据车轮运动和受力特点，将轮-壤作用关系划分为驱动轮、脱陷轮和止退轮三类，继而建立了驱动轮滑转沉陷本构模型、揭示了脱陷轮阻力系数与推送距离间的规律、建立了止退轮最大止退力模型。创建了火星车蠕动脱陷、蠕动爬坡的运动控制策略，使我国火星车可稳定、快速地脱离深达2倍车轮半径的沉陷，最大爬坡角达25°；美国火星车脱离1倍车轮半径的沉陷耗时冗长、策略复杂且效果不明显，最大爬坡角是15°。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>发明了星球车整车运动性能模拟验证方法</div></div></div><p>由于无法长时间、大范围模拟星球低重力场，因此建立重力场-悬吊力等效转换理论模型，将模拟“场”等效转换为模拟“轮地接触力”，该方法对于多类星球车具有普遍适用性；发明了悬吊力等效施加机构、悬吊点六自由度位姿跟踪控制技术；研制出火星车整车运动性能模拟验证系统。在国际上首次实现了火星车整车的低重力运动性能模拟验证，具有运动范围大、试验时间长、模拟精度高的特点。</p><div class="p-h">三、设计价值</div><p>本项目社会效益显著，“祝融号”火星车已成功开始巡视探测，主被动复合式火星车移动系统是我国“天问一号”的技术亮点。</p><p>本项目获发明专利66项、软件著作权8项。获省部级技术发明一等奖2项。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>具有蠕动脱陷等功能的主被动复合式火星车移动系统</div></div></div><p>蠕动行驶原理：通过控制车轮前后间距的伸缩，使部分车轮具有向后方推土的趋势，将向后推土的阻力转化为向前的牵引力，提高星球车通过性能。行驶过程中轮距伸缩的动作形似蠕动。</p><p>1) 提出了具有蠕动功能的主被动复合式悬架自由度设计准则</p><p>悬架是移动系统中连接车厢与车轮的部分。具有蠕动功能的主被动复合式悬架含有被动自由度和主动自由度：被动自由度保证车轮与崎岖地面的贴合；主动自由度用于控制悬架变形。</p><p>（1）悬架被动自由度的设计准则：记移动系统车轮数和悬架被动自由度数为m和n，“ n = m – 3 ”是“所有车轮在任意崎岖地形上同时着地”的充要条件。锁止悬架部分被动自由度使n &lt; m – 3，获得抬起部分车轮的被动自由度必要条件；锁止被动自由度数等于可抬起的车轮数。抬起车轮可实现辅助脱陷或故障车轮隔离。</p><p>（2）悬架主动自由度的设计准则：在悬架中设置主动自由度，通过主动自由度控制悬架变形：控制各轮前后间距周期性的伸缩，实现蠕动运动；控制各轮竖直方向相对位置关系调整，实现抬轮或车厢高度调整运动。</p><p>（3）蠕动/轮式行驶模式切换准则：采用主动或被动悬架行驶模式时，悬架被动自由度都应满足“n = m – 3”；在主动悬架行驶模式下，主动自由度周期性调整各轮前后间距，各车轮按节拍转动或停止，实现整车慢速蠕动行驶，该模式用于蠕动脱陷和蠕动爬坡工况；在被动悬架行驶模式下，主动自由度不工作，主被动复合悬架退化为被动悬架，实现快速轮式行驶，该模式用于常规移动工况。</p><p>2) 发明了具有蠕动脱陷等功能的主被动复合式火星车移动系统构型</p><p>（1）建立了具有蠕动功能的主被动复合式移动系统构型图谱。在左右悬架采用差动机构连接的前提下，基于主被动复合悬架自由度设计准则，建立变轮-臂间距类移动系统构型11种，通过车轮推出机构实现车轮与其摇臂连接点前后间距的伸缩；变摇臂张角类移动系统构型23种，通过摇臂张角变化实现车轮前后间距的伸缩。</p><p>（2）具有蠕动功能的主被动复合式火星车移动系统构型优选。变摇臂张角类移动系统的优点：主动关节数量少，系统复杂程度低，可同时实现车轮蠕动与车厢高度调节。因此，按照继承性好、轮压均布、主动关节少、系统复杂程度低等原则建立评价方法，结合工程约束条件，优选得到六轮变主摇臂张角构型。</p><p>3) 设计并研制出火星车主被动复合式移动系统</p><p>（1）发明了主动张角调节-被动差动均姿的复合角度调整机构。此机构是具有蠕动功能的主被动复合式火星车移动系统的核心机构。中部被动差动机构作用：在被动和主动悬架模式下，使与系杆固连的车厢俯仰角都等于两侧主摇臂整体俯仰角的平均值，实现车厢与两侧悬架间的角度均化。差动机构两侧的主动张角调节机构作用：利用行星轮系的单输入双输出特性，通过单个驱动按比例同时控制主摇臂张角和车身俯仰角，使张角调节与车厢姿态变化解耦。</p><p>（2）研制出火星车主被动复合式移动系统。该系统具有高低温适应性强、防尘等级高、轻量化程度高等特点。具备以下美国火星车没有的功能：蠕动行驶、车厢升降（高度为 0～500mm）、车轮抬升（高度为 0～300mm）、全向行驶（六轮转向）。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>创建了火星车蠕动模式的运动控制策略</div></div></div><p>1) 建立了蠕动状态下的轮-壤相互作用模型</p><p>根据蠕动工况中车轮运动状态特点，将轮壤作用关系分为驱动轮、脱陷轮和止退轮。蠕动脱陷工况中，车轮运动状态在脱陷轮和止退轮之间切换；蠕动爬坡工况中，车轮运动状态在驱动轮和止退轮之间切换。</p><p>（1）建立了“驱动轮”的轮-壤作用滑转沉陷本构模型。基于单轮和整车试验，建立了驱动轮的轮-壤作用滑转沉陷本构模型，解决了经典模型中未考虑沉陷量随滑转率变化的问题，奠定了星球车轮-壤作用力学理论基础。</p><p>（2）揭示了“脱陷轮”前进阻力系数与推送距离之间的规律。定义脱陷轮的前进阻力系数λfc为推送车轮阻力与法向支持力之比。通过单轮试验，获得了脱陷轮在不同滑转率/滑移率时进行脱陷的推送阻力系数。</p><p>（3）建立了“止退轮”的最大止退力模型。基于切应力-正应力间关系、朗肯土力学和太沙基弹性压密核理论，考虑车轮对土壤的压实作用、轮前土壤的主动滑移和轮后土壤的被动滑移，建立了止退轮的最大止退力计算模型。</p><p>2) 创建了火星车蠕动脱陷运动控制策略</p><p>根据脱陷轮前进阻力系数和止退轮最大止退力模型，结合蠕动脱陷试验，确定了最佳的前向和后向蠕动脱陷时各轮的滑转率、主摇臂前段摆动区间和运动节拍，以两个运动节拍为一个蠕动脱陷周期，建立了蠕动脱陷控制策略。</p><p>3) 创建了火星车蠕动爬大角度坡运动控制策略</p><p>根据驱动轮本构模型和止退轮的最大止退力模型，结合蠕动爬大角度坡试验，确定了最佳的前向和后向蠕动爬坡时各轮的滑转率、主摇臂前段摆动区间和运动节拍，以两个运动节拍为一个蠕动爬坡周期，建立了蠕动爬大角度坡控制策略。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>发明了星球车整车运动性能的模拟验证方法</div></div></div><p>1) 发明了基于场-力等效转换的宇航空间机构低重力模拟方法</p><p>（1） 建立了宇航空间机构的重力场-悬吊力等效转换理论模型。 提出了真实/模拟低重力场中机构动力学行为一致性的等效原则，建立了重力场-悬吊力等效转换的充要条件，获得了串联、并联、混联空间机构悬吊力解系的统一化解析表达。</p><p>（2） 发明了星球车整车运动性能验证的低重力模拟方法。将恒定的单点悬吊力竖直作用于车厢内理论悬吊点，使星球车轮压总和达到低重力状态预期值；将多个随悬架姿态被动变化的“轮压校正转矩”作用于各车轮，实现崎岖地形中星球车轮压与星球重力场中的轮压动态等效。</p><p>（3）发明了具有三转动自由度被动自适应功能的星球车悬吊力等效施加机构。使理论悬吊点-车厢球铰点构成的几何图形与力等效施加机构上球铰点构成的图形位似全等。此机构被动自适应车厢三自由度姿态，将作用于车厢外部悬吊力始终等效作用于车厢内部的理论悬吊点。</p><p>2) 发明了悬吊点三平动自由度的高精度大范围跟踪控制技术</p><p>（1）发明了悬吊点水平位置的高精度大范围跟踪技术。针对火星车的大范围整车低重力模拟，提出粗精耦合的双层冗余跟踪方案。一级跟踪平台采用低频、大滞后控制策略，实现了大惯量、低刚度跟踪平台的大范围运动控制与振动抑制；低惯量、高精度的二级跟踪平台采用高频、微超调控制策略，解决了悬吊点跟踪滞后、精度差的控制难题。</p><p>（2）发明了主被动结合式高精度恒悬吊力控制技术。提出主被动结合式恒悬吊力系统方案，使用被动缓冲机构抑制高频扰动分量并降低带宽需求，使用电机主动抑制对象竖直运动的中低频扰动分量。发明了低惯量、低刚度、工作点大范围可调的被动缓冲机构，解决了悬吊索高刚度带来的悬吊力随微小干扰位移剧烈波动的难题。</p><p>3)研制出火星车整车运动性能模拟验证系统</p><p>设计并研制出火星车整车运动性能模拟验证系统。最大的运动跟踪范围30m×30m×4m；40t跟踪系统在30m×30m运动范围内的二维跟踪误差引起的水平干扰力小于悬吊力的3‰（1σ）；悬吊索长10m，悬吊力控制误差小于5‰（1σ）；低重力轮压模拟误差小于5%。成功完成了火星车多工况运动性能模拟验证。在国际上首次实现了模拟火星重力的火星车整车大范围、长时间、高精度运动性能验证。</p></div>
+  <div class="sec">图集 / GALLERY</div><div class="gal"><img loading="lazy" src="../cases/gal/2021-00-1.jpg" alt=""><img loading="lazy" src="../cases/gal/2021-00-2.jpg" alt=""></div>
+  <a class="ask" href="../assistant.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E9%87%91%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%98%9F%E7%90%83%E8%BD%A6%E5%A4%8D%E5%90%88%E5%BC%8F%E7%A7%BB%E5%8A%A8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E5%8F%8A%E8%BF%90%E5%8A%A8%E6%80%A7%E8%83%BD%E9%AA%8C%E8%AF%81%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">延伸阅读 / CURATED（人工核选 · 检索于 2026-08-09）</div><a href="https://www.chinanews.com/gn/2021/05-23/9483960.shtml" target="_blank" rel="noopener"><span class="arr">↗</span><span>哈工大技术为火星车移动与转移添亮点</span><span class="src">chinanews.com</span></a><a href="https://news.sciencenet.cn/htmlnews/2021/5/458192.shtm" target="_blank" rel="noopener"><span class="arr">↗</span><span>哈工大技术为火星车移动与转移添亮点 - 科学网</span><span class="src">news.sciencenet.cn</span></a><a href="https://www.kczg.org.cn/article/detail?id=6034095&amp;type=3" target="_blank" rel="noopener"><span class="arr">↗</span><span>21年产业组-星球车复合式移动系统设计及运动性能验证_科创中国</span><span class="src">kczg.org.cn</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <span></span>
+    <a class="next" href="2021-01.html"><span class="d">下一项 →</span>白鹤滩1000MW水轮发电机组</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

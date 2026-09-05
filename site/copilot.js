@@ -1,0 +1,1 @@
+/* Static launch: use the project search. Generative assistant is not enabled. */window.GoodCopilot={open:function(){location.href='/assistant.html';}};

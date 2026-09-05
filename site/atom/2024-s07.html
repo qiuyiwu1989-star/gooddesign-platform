@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>复杂铸件机器人磨抛关键技术及装备 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2024-s07.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2024-s07</div>
+  <h1>复杂铸件机器人磨抛关键技术及装备</h1>
+  <div class="meta-line"><b>2024 年度银奖</b><span>武汉理工大学,武汉深海弈智科技有限公司,湖北京山轻工机械股份有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2024 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">武汉理工大学,武汉深海弈智科技有限公司,湖北京山轻工机械股份有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">吴超群,朱大虎,曹诗宇,庄可佳,黄文健,刘红帝,刘辉,李健</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 智能装备与机器人（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>铸造行业是国民经济的支柱产业，其铸件产品广泛应用于汽车、工程机械、轨道交通等领域，具有品种多批量大、型面/结构复杂、尺寸偏差与余量分布不均等典型特点，对高质高效加工工艺技术提出了极大挑战。该项目提出的机器人加工是一种变革性的高柔顺、高效率加工新模式，是突破铸件现有磨抛工艺技术瓶颈的利器，已成为先进制造业的重要发展方向。但亟待突破非正则曲面机器人磨抛轨迹规划、铸件收缩变形下非均匀余量去除、高效率机器人磨抛工艺装备集成等关键难题。为此项目组经过十余年“产学研用”联合攻关，攻克了复杂铸件机器人磨抛的核心理论与关键技术，研制出适用性广、稳定性强、成本低的磨抛工艺与装备。关键技术和创新点如下：</p><p>（1）非正则形体铸件机器人磨抛轨迹自适应规划技术。建立了基于机器人关节运动学误差补偿的高精度手眼标定模型，复杂铸件多帧测量点云拼接精度达到0.17 mm；提出了基于加权正负余量方差最小化算法的铸件匹配方法，匹配精度较主流的ICP和VMM匹配算法分别提升60%和17%；发明了基于自适应权重的机器人轨迹多目标规划技术，解决了非正则形体铸件机器人磨抛轨迹自适应规划的难题。</p><p>（2）铸件非均匀余量去除柔顺力控制与加工误差补偿技术。提出了非均匀余量铸件机器人磨抛力/速度混合控制方法，发明了铸件收缩变形下基于力控与拓扑的加工误差在线补偿技术，解决了铸件非均匀余量精确去除柔顺控制的难题；提出了基于刚度补偿的铸件仿人手高质量磨抛策略，克服了单调路径磨抛对加工表面质量的影响，机器人加工精度达到0.085 mm，较单调路径磨抛的加工精度提升一个数量级。</p><p>（3）高效低成本机器人磨抛工艺与模块化快速重组装备。提出了低工具成本高效磨抛工艺方法，铸件加工成本由现有方法的1441.59元/吨降低至700.49元/吨，实现了复杂铸件机器人磨抛低成本制造；开发了“测量-操作-加工”闭环控制的机器人磨抛工艺软件以及模块化功能组件，研制出系列化可快速重组的机器人磨抛装备，应用于汽车铸件机器人批量化磨抛，加工效率较人工平均提升30%以上，产品合格率提升至98.6%，装备无故障运行时间达到8560小时，取得了显著的经济社会效益。</p><p>项目共授权发明专利33项，登记软件著作权8项，发表论文20篇，出版专著《机器人磨抛理论、技术与应用》。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>主要设计创新点</div></div></div><div class="p-h">1.1 立项背景</div><p>铸造行业是国民经济的支柱产业，其铸件产品广泛应用于汽车、工程机械、轨道交通等领域，具有品种多批量大、型面/结构复杂（非正则曲面）、尺寸偏差（平均收缩率1%）与余量分布不均（毫米至十毫米）等典型特点，对高质高效加工工艺技术提出了极大挑战。以汽车铸件清理为例，目前国内的加工模式普遍以人工为主、专机为辅。传统人工清理存在劳动强度大、作业环境恶劣、安全性低等问题，易导致加工效率低、产品质量难以保障；专用数控机床的加工模式固定、制造柔性不足、工装配置复杂，难以形成测量加工一体化。机器人加工是一种变革性的高柔顺、高效率加工新模式，是突破汽车铸件现有磨抛工艺技术瓶颈的利器。国内外相继提出“欧盟COMET计划”、“智能机器人”等计划支持机器人加工技术的发展。</p><p>然而，与国际先进水平（日本FANUC公司等）相比，国内机器人磨抛技术在汽车铸件批量生产应用中主要面临三大难题亟需解决：（1）非正则曲面机器人磨抛轨迹规划难。铸件的加工面具有狭小突变、阶梯跳跃等复杂几何特征，是典型的非正则曲面，机器人磨抛轨迹规划面临路径特征、姿态刚度等多种几何或性能约束，最终引起机器人加工误差，这已成为国际公认的技术难题；（2）铸件收缩变形下非均匀余量去除难。铸件收缩引起的尺寸偏差易导致铸件边缘区域磨抛可能出现“空跑”或“过切”，非均匀余量去除过程由于受力不均产生磨抛颤振，影响加工过程的稳定性，这属于铸件产业发展的行业技术瓶颈；（3）高效率机器人磨抛工艺装备集成难。汽车铸件飞边/毛刺/浇冒口等余量加工工艺复杂多变，工具磨损快，难以实现连续加工，且现有软件难以集成“测量-操作-加工”一体化工艺，从而导致铸件磨抛成本高、效率低，装备研制短板突出。</p><div class="p-h">1.2 研究思路</div><p>图1 项目总体技术路线</p><p>针对复杂铸件高质高效磨抛面临的三大难题，提出研究思路如图1所示：聚焦非正则形体铸件机器人磨抛轨迹自适应规划、铸件非均匀余量去除柔顺力控制与加工误差补偿、高效低成本机器人磨抛工艺与模块化快速重组装备等关键技术，“产学研用”联合攻关，取得系统性的技术创新和重大突破，研制出适用性广、稳定性强、成本低的磨抛工艺与装备，应用于省内外汽车制造龙头/骨干企业，取得了显著的经济社会效益。</p><div class="p-h">1.3 创新内容</div><p>科技创新点1：非正则形体铸件机器人磨抛轨迹自适应规划技术。建立了补偿机器人运动学误差的高精度手眼标定模型，提出了加权正负余量方差最小化匹配方法，克服了机器人加工系统位姿误差对加工轨迹精度的影响；发明了基于自适应权重的机器人轨迹多目标规划技术，解决了非正则形体铸件机器人磨抛轨迹自适应规划的难题。</p><p>【所属学科：工业机器人技术，460.5030。旁证材料：授权发明专利ZL202110573411.X等7件；登记软件著作权3项；在RCIM、JMP等重要期刊上发表论文6篇，1篇入选ESI高被引论文】</p><p>1）基于机器人关节运动学误差补偿的高精度手眼标定模型：针对手眼标定引入机器人绝对定位误差的问题，建立了手眼标定、多空间点四元数耦合等数学模型，提出了基于机器人“重定位”运动的“眼在手外”型手眼标定方法，以及基于机器人末端工具坐标系下的“眼在手上”型手眼标定方法，突破了传统方法手眼矩阵易累积机器人关节运动学误差的局限性（图2），标准球半径拟合偏差仅为两步迭代解法的1/3，复杂铸件多帧测量点云拼接精度达到0.17 mm（附件-【检测报告】复杂铸件机器人视觉测量系统-国家机器人质量检测检验中心）。</p><p>图2 基于机器人关节运动学误差补偿的高精度手眼标定模型</p><p>2）基于加权正负余量方差最小化算法的铸件匹配方法：首次提出了以加权正负余量方差最小化为优化目标的匹配算法（WPMAVM匹配），解决了国际上通用的点-点距离最小化算法（ICP匹配）面对密度不均、点云缺失等测量固有缺陷会陷入局部最优解的难题，突破了点-面距离方差最小化算法（VMM匹配）易受余量未知且分布不均所引起的匹配失真（图3），汽车壳体、盘类等铸件点云匹配误差仅为0.182 mm（附件-【检测报告】复杂铸件机器人视觉测量系统-国家机器人质量检测检验中心），较ICP和VMM匹配算法分别降低60%和17%。</p><p>图3 该项目WPMAVM点云匹配方法与其它方法比较</p><p>3）基于路径特征和位姿刚度的机器人轨迹自适应规划技术：构建了基于非正则曲面路径特征（线面梯度、间隔突变率）和机器人位姿刚度的自适应权重函数，建立了以加工稳定性和加工效率为优化目标、以机器人关节角为物理约束的自适应权重轨迹规划模型，通过COVIDOA智能算法求解得到机器人最优运动轨迹，解决了非正则形体铸件加工路径自适应规划难题（图4），机器人刚度辨识精度达到0.021 mm（附件-【检测报告】复杂铸件机器人视觉测量系统-国家机器人质量检测检验中心），飞轮壳机器人加工效率和稳定性较现有轨迹规划方法（固定权重）分别提高27.9%和7.4%。</p><p>图4 基于自适应权重的多目标轨迹规划及非正则曲面路径规划仿真</p><p>科技创新点2：铸件非均匀余量去除柔顺力控制与加工误差补偿技术。提出了非均匀余量铸件机器人磨抛力/速度混合控制方法，发明了铸件收缩变形下基于力控与拓扑的加工误差在线补偿技术，解决了非均匀余量精确去除柔顺控制的难题；提出了基于刚度补偿的铸件仿人手高质量磨抛策略，攻克了铸件机器人磨抛表面质量差的行业共性关键技术。</p><p>【所属学科：机械制造工艺与设备，460.2599。旁证材料：授权发明专利ZL201811242193.6等7件；登记软件著作权2项；在RCIM、TRIBOL INT等重要期刊上发表论文8篇】</p><p>1）非均匀余量铸件机器人柔性磨抛力/速度混合控制方法：建立了工件-砂带-接触轮的刚柔耦合模型，提出了基于单颗球形磨粒运动轨迹的微小接触区比切削能传递的材料去除率预测模型，预测精度较经典的Hertz模型提升了18.9%；提出了基于力/速度混合控制的机器人磨抛力控制策略，通过实时调整机器人进给速度以保证恒定的材料去除率，解决了力/位混合控制策略无法适用于铸件非均匀余量精确去除的难题（图5）。</p><p>图5 柔性接触状态下的铸件非均匀余量去除磨抛力控制策略</p><p>图6 基于力控制与拓扑结构的机器人磨抛几何误差在位补偿</p><p>2）铸件收缩变形下基于力控/拓扑的加工误差补偿技术：构建了铸件收缩与几何拓扑之间的映射模型，发明了力控制与拓扑结构相结合的机器人磨抛误差在线补偿新方法；建立了基于Usui磨损理论的非正则曲面铸件砂轮磨损率模型，提出了考虑砂轮轮廓时变磨损的加工误差预补偿策略，实现了工件-工具的几何误差在位综合补偿，解决了复杂铸件批量生产一致性差、磨抛过程工具磨损快所引起的加工误差难题（图6）。</p><p>3）基于刚度补偿的铸件仿人手高质量磨抛策略：建立了基于机器人位姿参数和接触力的系统刚度模型，提出了考虑Lyapunov稳定性的自适应阻抗控制策略，解决了机器人磨抛过程中刚度不稳定和阻抗参数选取不当所导致的力控制性能降低问题；提出了仿人手机器人柔顺控制策略，通过双向偏置路径规划-正弦加减速度控制算法实现了机器人末端残余振动的合理利用，借助末端工具产生的随机小幅振动交错抵消恒力磨抛的规则性划痕，加工精度达到0.085 mm（附件-【检测报告】工业机器人铸件自动打磨系统-常州检验检测标准认证研究院），较现有主流方法（单调路径磨抛）提升一个数量级（图7）。</p><p>图7 基于刚度补偿的铸件仿人手高质量磨抛策略</p><p>科技创新点3：高效低成本机器人磨抛工艺与模块化快速重组装备。提出了低工具成本高效磨抛工艺方法，实现了复杂铸件机器人磨抛低成本制造；开发了“测量-操作-加工”闭环控制的机器人磨抛工艺软件以及模块化功能组件，研制出系列化可快速重组的机器人磨抛装备，应用于汽车复杂铸件机器人批量化磨抛，取得显著的经济社会效益。</p><p>【所属学科：机械制造工艺与设备，460.2599。旁证材料：授权发明专利ZL201811243450.8等19件；登记软件著作权3项；在J MANUF SYST, MEASUREMENT等重要期刊上发表论文6篇；出版专著《机器人磨抛理论、技术与应用》1部】</p><p>1）低工具成本高效磨抛工艺方法：建立了高速机械主轴热力耦合模型，优化机械主轴的支撑结构，研究了不同工况下高速机械主轴动态特性，提高了加工系统的稳定性；提出了结构化金刚石砂轮高速磨削工艺方法，与传统棕刚玉砂轮相比，将磨削速度从40 m/s提升至100 m/s以上（附件-【检测报告】工业机器人铸件自动打磨系统-常州检验检测标准认证研究院），服役时间从60小时提升至5000小时（附件-【检测报告】车用复杂铸件机器人自动打磨系统-湖北机电院机械产品质量检测中心）；建立了铣刀角度、旋向、刃形等特征和铣削速度、进给、切深等工艺参数共同影响下的铣削力热预测模型，提出了长寿命低成本工艺调控策略，将铸件加工成本从1441.59元/吨降低至700.49元/吨（附件-【检测报告】车用复杂铸件机器人自动打磨系统-湖北机电院机械产品质量检测中心）（图8）。</p><p>图8 低工具成本机器人磨抛工艺方法</p><p>2）铸件机器人测量-操作-加工一体化工艺软件：建立了面向不同材料的磨抛工艺数据库，开发了融合多维感知数据与工艺知识的复杂铸件机器人磨抛工艺软件（图9），具有手眼标定、点云配准、轨迹规划、力控磨抛、误差补偿等自主可控的核心功能，实现了非正则形体铸件机器人“测量-操作-加工”一体化工艺，形成了一系列具有自主知识产权的汽车复杂铸件机器人磨抛工艺软件包，将铸件加工前准备周期由小时级别缩减至分钟级别，支撑了机器人磨抛智能装备研制开发。</p><p>图9 机器人测量-操作-加工一体化软件及其在汽车铸件磨抛中的应用</p><p>图10 自主研制的系列化机器人磨抛装备及其应用</p><p>3）融合工艺知识的模块化快速重组成套装备：研发了视觉测量、上下料、自动抓手、柔性工装等模块化功能组件，设计了面向铸件浇冒口清理的高速磨削工具单元，研制出系列化可快速重组型机器人磨抛装备（图10），形成了制动卡钳、支架、飞轮壳、缸盖等20类典型汽车复杂铸件高质高效、低成本磨抛工艺，140余套装备应用于东风汽车、上汽通用五菱、京山轻机等10家汽车制造领域龙头/骨干企业大批量生产，加工效率较人工提升30%，加工成本降低20%（附件-【科学技术成果鉴定书】汽车复杂铸件机器人高效磨抛关键技术、装备及产业化）。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>项目技术指标与国内外水平对比</div></div></div><p>项目突破了非正则形体铸件机器人磨抛轨迹自适应规划、铸件非均匀余量去除柔顺力控制与加工误差补偿、高效低成本机器人磨抛工艺与模块化快速重组装备等关键技术，研制出适用性广、稳定性强、成本低的磨抛工艺与装备，相关技术与国内外同类技术先进性对比如表1所示。</p><p>表1 项目技术指标与国内外水平对比</p><p>备注：[1]论文—PROC AIM, 2018: 316-321; [2]论文—IEEE T CYBERNETICS, 2016, 46(11): 2634-2642; [3]附件—【检测报告】复杂铸件机器人视觉测量系统-国家机器人质量检测检验中心; [4]论文—ROBOT CIM-INT MANUF, 2021; 71:102142; [5]论文—INT J ADV MANUF TECH, 2019, 105: 4773-4782; [6]论文—ENG COMPUT-GERMANY, 2020, 37(4):2891–2909; [7]论文—COMPUT COMMUN, 2023, 203: 48-59; [8]论文—ROBOT CIM-INT MANUF, 2022, 73: 102249; [9]论文—华中科技大学学报(自然科学版),2023,51(06):23-28; [10]【检测报告】工业机器人铸件自动打磨系统-常州检验检测标准认证研究院; [11]专利ZL201811243420.7[P]. 2020-02-14; [12]https://www.shanghai-fanuc.com.cn; [13]http://www.dalianyuyang.com; [14]附件-【应用证明】湖北京山轻工机械股份有限公司; [15]附件-【检测报告】车用复杂铸件机器人自动打磨系统-湖北机电院机械产品质量检测中心; [16]附件-【应用证明】湖北长鑫源汽车实业有限公司; [17]附件-【应用证明】东风汽车股份有限公司; [18] 附件-【应用证明】安徽合力股份有限公司合肥铸锻厂; [19] 论文—铸造, 2022,71(11):1427-1430。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

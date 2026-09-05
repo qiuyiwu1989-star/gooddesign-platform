@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>高效动压气悬浮离心机 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+<link rel="stylesheet" href="/platform.css"></head>
+<body><header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">知识整理稿 · 历史字段与AI解读尚需逐条复核；页面数量不代表已完成原子化。</div>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2024-08.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2024-08</div>
+  <h1>高效动压气悬浮离心机</h1>
+  <div class="meta-line"><b>2024 年度金奖</b><span>珠海格力电器股份有限公司</span>
+  <span class="grade grade-B">B</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（历史标注·待复核）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2024 年度 · 金奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">珠海格力电器股份有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">李莎,张治平,刘佳池,陈光宇,董建波,董亚西,杨劲松,钟瑞兴,杨玉明,陈玉辉</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与社会 · 绿色能源（金奖领域标签映射，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div>
+  <div class="rich"><p>小型离心压缩机体积小、能效高，被美国能源部列为最具节能潜力的技术之一，格力推出的气悬浮制冷离心机开创了通过气体动压悬浮控制的先河，开启了中央空调的“气悬浮时代”。</p><p>近年来，小型离心压缩机因能效高、体积小、噪音低、易实现无油化，在中小型中央空调、数据中心等领域应用越来越广泛，是离心压缩机重要发展方向。</p><p>气悬浮离心机开创了通过气体动压悬浮控制的先河，是继高效离心机组、永磁同步变频离心机组、光伏直驱变频离心机组之后，格力电器获得的又一项“国际领先”科技成果，在中央空调的研发上不断取得突破。格力电器在中央空调市场占有率正在不断提高，同时也赢得了国际上的广泛认可。</p><p>目前，格力气悬浮离心机作为格力的明星产品，服务于海南国税局、开平依利电子厂、新元电子厂等场所。拥有发明专利130项，通过国际领先鉴定，入选国家工业节能技术推荐目录（2021），荣获中国机械工业科学技术一等奖、“科创中国”先导技术榜单。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 历史标注·待复核</span></div><div class="rich"><p>首创气动悬浮制冷离心机，引领制冷离心压缩机进入“气悬浮”时代。</p><p>气悬浮制冷离心机，高效气动，集成箔片动压气体轴承技术、高速永磁电机技术、双极气体压缩增焓技术，实现压缩机高效、无油、低噪、安全运行。</p><p>（一）高速气体动压悬浮轴承</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>零摩擦运行：高速动压气悬浮轴承采用气态制冷剂代替润滑油，转子在高速运行过程中处于悬浮状态，100% 无油，且转子与轴承间无摩擦。</div></div><div class="p-li"><span class="p-mk">2</span><div>高精度悬浮：全工况下转子悬浮精度达到12μm，转子振动小，机组稳定性强、可靠性高。</div></div><div class="p-li"><span class="p-mk">3</span><div>零功耗：利用转子高速旋转的楔形效应产生的浮力，支撑转子悬浮，无需额外动力。</div></div><div class="p-li"><span class="p-mk">4</span><div>使用寿命长：轴承表面涂有耐磨、润滑涂层，同时采用快速启停算法，大幅降低轴承启停阶段磨损，压缩机实测启停次数超过12万次，相当于使用寿命32年（按3650次/年）。</div></div><div class="p-li"><span class="p-mk">5</span><div>高可靠性：超过1000次喘振测试，恶劣工况可靠性高；通过1.14g随机振动测试，抗振能力强。</div></div></div><p>气体动压悬浮轴承，稳定性高、承载高、可调控。采用了气体悬浮轴承替代传统的机械轴承，实现了制冷系统无油高效气动运行，避免复杂的润滑油系统，进一步提升性能。可靠的工业级微机控制系统，群控技术及楼宇通讯接口，保证了机组优良的操作性能。</p><p>（二）双级压缩补气增焓</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>循环效率高：双级压缩补气增焓技术，相比单级制冷循环系统循环效率提升5～6%。</div></div><div class="p-li"><span class="p-mk">2</span><div>运行范围宽：双级压缩的叶轮出口气流角较小，喘振裕度大，运行范围宽。</div></div></div><p>压缩机按双级压缩设计，可比单级压缩制冷循环效率提高5～6%。达到相同压比，比单级压缩转速低30%，提高压缩机运转可靠性，机组振动小，噪音低。双级压缩叶轮出口气流角比单级压缩增大，可获得更大的喘振裕度，拓宽运行范围。</p><p>（三）背靠背双调节环叶轮，高效气动</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>低比转速、强后弯角叶轮，大幅提升气动效率。</div></div><div class="p-li"><span class="p-mk">2</span><div>背靠背叶轮+双调节环负载匹配，安全裕度大于2.4</div></div><div class="p-li"><span class="p-mk">3</span><div>匹配轴径向混合密封双击压缩，泄露减少72%</div></div></div><p>背靠背双调节环叶轮，通过全曲面流线控制，叶片结构与流场高度吻合，有效减小叶轮内部分离和漩涡产生，拓展气动效率高效范围，实现综合效率最优。</p><p>(四）永磁同步变频电机</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>大功率、高转速：专用于制冷离心压缩机的高速永磁同步电机，转速达25000r/min以上。</div></div><div class="p-li"><span class="p-mk">2</span><div>全工况超高效率：在机组运行的范围内，电机效率均达到96%以上，最高效率可达97.5%。</div></div></div><p>行业内首创大功率高速永磁同步变频电机，电机转子采用高密度永磁体，消除了励磁铜耗与铁耗，降低电机谐波损耗，电机效率均达到96%以上，最高效率达98.3%；发明一种内置式“一”字形磁路结构，转子冲片设置多重加强结构，可靠地固定转子永磁体，解决了磁路设计与强度设计的矛盾，提高电机高速运转的可靠性。</p><p>采用螺旋环绕制冷剂喷射冷却技术，充分冷却电机定子绕组与转子磁钢，温度场分布均匀，电机绕组温度控制在30～40℃，远低于180 ℃退磁温度，杜绝高温退磁风险；内置电机绕组温度检测PT100精确控温，与PTC热敏开关双重保护，确保电机可靠运行；电机绝缘等级H级，绝缘层加厚设计，整体浸漆。</p><p>（五）集成式变频器</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>结构紧凑：集成式变频器，结构紧凑，节省空间。</div></div><div class="p-li"><span class="p-mk">2</span><div>冷却可靠：后节流冷却与精准控温技术，杜绝过热或过冷产生凝露。</div></div></div><p>总结</p><p>气悬浮制冷离心机集成动压气悬浮轴承、永磁变频电机、高效气动背靠背双调节叶轮双级补气、四象限变频等多项技术，提升了机组的节能性、高效性。其优势：承载能力强，无起停次数限制；主动控制、实时监测；体积小、承载能力强；无需供电或者外部供气，系统简单、可靠、免维护。该机组可广泛用于酒店、机场、写字楼等场所的空调系统，特别适用于大型冷水机组的改造项目。</p><p>随着现代化工业的飞速发展，我国航空航天、新能源、工业设备等领域不断聚集行业高精尖技术，越来越多的核心技术难题由中国自主攻克，“爆破式”打破了关键技术被垄断的局面，中国工业化进程加快。</p><p>在中央空调领域，早前被日韩、欧美系品牌占领的国内市场已重新由中国品牌主导。</p></div>
+  <div class="sec-h"><span class="no">03</span><h2>图集</h2><span class="st st-ok">官方档案</span></div><div class="gal"><img loading="lazy" src="../cases/gal/2024-08-0.jpg" alt="高效动压气悬浮离心机"><img loading="lazy" src="../cases/gal/2024-08-1.jpg" alt="高效动压气悬浮离心机"><img loading="lazy" src="../cases/gal/2024-08-2.jpg" alt="高效动压气悬浮离心机"></div>
+  <div class="sec-h"><span class="no">04</span><h2>设计五维</h2><span class="st st-draft">内容团队人工编目 · 解读非官方评价</span></div><div class="dims"><div class="dim"><div class="dim-h"><span class="dim-n">科技</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>气悬浮离心机,开创中央空调「气悬浮时代」</p></div><div class="dim"><div class="dim-h"><span class="dim-n">艺术</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>家电产品的科技美学</p></div><div class="dim"><div class="dim-h"><span class="dim-n">人本</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>节能降噪直接改善楼宇使用体验</p></div><div class="dim"><div class="dim-h"><span class="dim-n">商业</span><span class="dim-s">5/5</span></div><div class="dim-bar"><i style="width:100%"></i></div><p>格力产业化成熟,数据中心/空调市场大</p></div><div class="dim"><div class="dim-h"><span class="dim-n">文化</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>家电企业硬科技的转型代表</p></div></div>
+  
+  
+  
+  
+  <div class="sec-h"><span class="no">07</span><h2>权威溯源</h2><span class="st st-ok">人工核选 · 检索于 2026-08-09</span></div><div class="srcs"><a class="srclink" href="https://www.kczg.org.cn/article/detail?id=5096957" target="_blank" rel="noopener">“高效动压气悬浮制冷离心压缩机技术”入选2020年“科创中国”先导技术榜单</a><a class="srclink" href="https://ccfe.hnu.edu.cn/info/1460/4074.htm" target="_blank" rel="noopener">实验室联合格力电器开发的气悬浮制冷压缩机被鉴定为国际领先水平 - 湖南大学</a><a class="srclink" href="http://ip.people.com.cn/n1/2019/1231/c179663-31530500.html" target="_blank" rel="noopener">2019让世界爱上中国造高峰论坛在格力珠海总部举办 - 人民网</a></div>
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 B（6 分）· 评级规则见管理台</div></footer>
+</div>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>

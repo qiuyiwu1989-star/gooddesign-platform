@@ -1,0 +1,1643 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>好设计里的科学｜学生互动学习页</title>
+  
+  
+  
+  <style>
+    :root {
+      --bg: #f4f7f6;
+      --ink: #172326;
+      --muted: #607176;
+      --line: #d8e2df;
+      --panel: #ffffff;
+      --deep: #153846;
+      --sea: #0c7380;
+      --mint: #3f9c84;
+      --coral: #c84f44;
+      --gold: #d99b36;
+      --blue: #3468a7;
+      --shadow: 0 18px 48px rgba(18, 49, 61, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 26px;
+      background: rgba(244, 247, 246, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      color: var(--deep);
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--sea);
+      color: white;
+      flex: 0 0 auto;
+    }
+
+    .brand span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a,
+    .action-btn {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 12px;
+      background: white;
+      color: var(--deep);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible,
+    .action-btn:hover,
+    .action-btn:focus-visible {
+      border-color: var(--sea);
+      outline: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: grid;
+      align-items: end;
+      padding: 9vh 6vw 10vh;
+      overflow: hidden;
+      background: var(--deep);
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.62) saturate(0.96);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(7, 27, 35, 0.78), rgba(7, 27, 35, 0.34) 56%, rgba(7, 27, 35, 0.08));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(1040px, 100%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #d8eeee;
+      font-weight: 800;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      color: white;
+      font-size: clamp(42px, 7vw, 88px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    h2 {
+      color: var(--deep);
+      font-size: clamp(30px, 4.2vw, 56px);
+      line-height: 1.12;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    h3 {
+      color: var(--deep);
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .lead {
+      margin-top: 20px;
+      color: #eef9fa;
+      font-size: clamp(20px, 2.3vw, 30px);
+      line-height: 1.55;
+      max-width: 860px;
+    }
+
+    .hero-actions,
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .primary-link {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 1px solid white;
+      padding: 0 16px;
+      background: white;
+      color: var(--deep);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .ghost-link,
+    .tag {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 5px 11px;
+      background: rgba(255, 255, 255, 0.13);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .source {
+      position: absolute;
+      left: 20px;
+      bottom: 14px;
+      z-index: 2;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 12px;
+    }
+
+    .section {
+      padding: 70px 6vw;
+    }
+
+    .section-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      color: var(--sea);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .plain-lead {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 25px);
+      line-height: 1.55;
+      max-width: 900px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-5 {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .grid-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 10px 24px rgba(18, 49, 61, 0.08);
+    }
+
+    .card.accent {
+      border-top: 5px solid var(--sea);
+    }
+
+    .card.coral {
+      border-top-color: var(--coral);
+    }
+
+    .card.mint {
+      border-top-color: var(--mint);
+    }
+
+    .card.gold {
+      border-top-color: var(--gold);
+    }
+
+    .card.blue {
+      border-top-color: var(--blue);
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--deep);
+      font-size: 20px;
+    }
+
+    .card p,
+    .note-text {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .fact {
+      min-height: 128px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px;
+      border-radius: 8px;
+      background: var(--deep);
+      color: white;
+    }
+
+    .fact b {
+      font-size: clamp(32px, 4.3vw, 52px);
+      line-height: 1;
+    }
+
+    .fact span {
+      margin-top: 10px;
+      color: #d9eff1;
+      font-size: 15px;
+      line-height: 1.38;
+    }
+
+    .challenge {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 24px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(18, 49, 61, 0.08);
+    }
+
+    .challenge p {
+      color: var(--deep);
+      font-size: clamp(24px, 3.2vw, 40px);
+      line-height: 1.25;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .question-badge {
+      width: 92px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--sea), var(--deep));
+      color: white;
+      font-size: 52px;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    .pressure-lab {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .ocean {
+      position: relative;
+      min-height: 420px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(#b8e5e6 0%, #4ca4a8 26%, #0d5a6a 58%, #071f31 100%);
+      box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .sub {
+      position: absolute;
+      left: 50%;
+      top: 8%;
+      width: 124px;
+      height: 48px;
+      transform: translateX(-50%);
+      transition: top 160ms ease;
+    }
+
+    .sub-body {
+      width: 100%;
+      height: 100%;
+      border-radius: 55% 45% 45% 55%;
+      background: #f2f5f2;
+      border: 4px solid rgba(21, 56, 70, 0.7);
+      position: relative;
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.22);
+    }
+
+    .sub-body::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      right: 20px;
+      top: 10px;
+      background: #2d6271;
+      border: 3px solid #b5d5d8;
+    }
+
+    .sub-tail {
+      position: absolute;
+      right: -16px;
+      top: 11px;
+      width: 24px;
+      height: 28px;
+      background: var(--coral);
+      clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    }
+
+    .depth-label {
+      position: absolute;
+      left: 14px;
+      color: white;
+      font-weight: 800;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+    }
+
+    .d0 { top: 12px; }
+    .d3000 { top: 42%; }
+    .d7000 { bottom: 16px; }
+
+    .lab-panel,
+    .quiz-box,
+    .score-box,
+    .design-box {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(18, 49, 61, 0.08);
+    }
+
+    .range {
+      width: 100%;
+      accent-color: var(--sea);
+    }
+
+    .metric {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric:last-child {
+      border-bottom: 0;
+    }
+
+    .metric b {
+      color: var(--deep);
+      font-size: 28px;
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .option {
+      min-height: 56px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f9fbfa;
+      color: var(--deep);
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 700;
+    }
+
+    .option:hover,
+    .option:focus-visible {
+      border-color: var(--sea);
+      outline: none;
+    }
+
+    .option.correct {
+      border-color: var(--mint);
+      background: #e8f5ef;
+      color: #17614f;
+    }
+
+    .option.wrong {
+      border-color: var(--coral);
+      background: #fff0ee;
+      color: #91372f;
+    }
+
+    .feedback {
+      min-height: 30px;
+      color: var(--deep);
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--sea);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: 88px 1fr 44px;
+      align-items: center;
+      gap: 12px;
+      margin: 8px 0;
+    }
+
+    .score-row input {
+      width: 100%;
+      accent-color: var(--sea);
+    }
+
+    .score-value {
+      text-align: right;
+      color: var(--deep);
+      font-weight: 800;
+    }
+
+    .score-result,
+    .save-result {
+      margin-top: 8px;
+      padding: 14px;
+      border-radius: 8px;
+      background: #eef7f5;
+      color: var(--deep);
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .idea-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .idea-card {
+      display: grid;
+      gap: 10px;
+      min-height: 190px;
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--sea);
+      border-radius: 8px;
+      padding: 18px;
+      background: #fff;
+      color: var(--ink);
+      text-align: left;
+      box-shadow: 0 10px 24px rgba(18, 49, 61, 0.08);
+    }
+
+    .idea-card:hover,
+    .idea-card:focus-visible {
+      border-color: var(--sea);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .idea-card strong {
+      color: var(--deep);
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .idea-card span {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .idea-card small {
+      color: var(--sea);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .idea-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .mission-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 190px;
+      gap: 16px;
+      align-items: stretch;
+      margin-top: 24px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(18, 49, 61, 0.08);
+    }
+
+    .mission-card {
+      display: grid;
+      gap: 8px;
+      min-height: 132px;
+      padding: 18px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #153846, #0c7380);
+      color: white;
+    }
+
+    .mission-card b {
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .mission-card span {
+      color: #d8eeee;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .mission-tools {
+      display: grid;
+      align-content: center;
+      gap: 10px;
+    }
+
+    .quality-box {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdfc;
+    }
+
+    .quality-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .quality-title {
+      color: var(--deep);
+      font-weight: 800;
+    }
+
+    .quality-score {
+      color: var(--sea);
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .quality-track {
+      height: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #dfe9e7;
+    }
+
+    .quality-fill {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--coral), var(--gold), var(--mint));
+      transition: width 180ms ease;
+    }
+
+    .check-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .check-item {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      background: white;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .check-item.done {
+      border-color: rgba(63, 156, 132, 0.45);
+      color: #17614f;
+      background: #e8f5ef;
+    }
+
+    .game-box {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .game-sea {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(#aee4e3 0%, #3e9ba5 34%, #0a5265 68%, #061b2a 100%);
+      box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.25);
+    }
+
+    .game-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      border-top: 1px dashed rgba(255, 255, 255, 0.55);
+    }
+
+    .game-line span {
+      position: absolute;
+      left: 12px;
+      top: 8px;
+      color: white;
+      font-weight: 800;
+      text-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+    }
+
+    .game-line.mid { top: 45%; }
+    .game-line.deep { top: 78%; }
+
+    .game-sub {
+      position: absolute;
+      left: 50%;
+      top: 8%;
+      width: 138px;
+      height: 54px;
+      transform: translateX(-50%);
+      transition: top 180ms ease, filter 180ms ease;
+    }
+
+    .game-sub::before {
+      content: "";
+      position: absolute;
+      inset: 5px 18px 5px 0;
+      border: 4px solid rgba(21, 56, 70, 0.75);
+      border-radius: 55% 45% 45% 55%;
+      background: #f2f5f2;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .game-sub::after {
+      content: "";
+      position: absolute;
+      right: 2px;
+      top: 15px;
+      width: 30px;
+      height: 24px;
+      clip-path: polygon(0 50%, 100% 0, 100% 100%);
+      background: var(--coral);
+    }
+
+    .game-window {
+      position: absolute;
+      right: 44px;
+      top: 17px;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #b5d5d8;
+      border-radius: 50%;
+      background: #2d6271;
+      z-index: 1;
+    }
+
+    .sample-dot {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border: 3px solid rgba(255, 255, 255, 0.72);
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(217, 155, 54, 0.72);
+    }
+
+    .sample-dot.collected {
+      opacity: 0.22;
+      box-shadow: none;
+    }
+
+    .game-panel {
+      display: grid;
+      align-content: start;
+      gap: 14px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(18, 49, 61, 0.08);
+    }
+
+    .game-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .game-stat {
+      min-height: 82px;
+      display: grid;
+      align-content: center;
+      gap: 4px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdfc;
+    }
+
+    .game-stat span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .game-stat b {
+      color: var(--deep);
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .game-controls {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .game-log {
+      min-height: 98px;
+      padding: 14px;
+      border-radius: 8px;
+      background: #eef7f5;
+      color: var(--deep);
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 104px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--ink);
+      background: #fbfdfc;
+      line-height: 1.55;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      color: var(--deep);
+      font-weight: 800;
+    }
+
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .action-btn.primary {
+      background: var(--deep);
+      border-color: var(--deep);
+      color: white;
+    }
+
+    .footer {
+      padding: 34px 6vw;
+      border-top: 1px solid var(--line);
+      background: #eaf1ef;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .grid-5,
+      .idea-grid,
+      .mission-panel,
+      .check-list,
+      .game-box,
+      .facts,
+      .pressure-lab,
+      .options,
+      .challenge {
+        grid-template-columns: 1fr;
+      }
+
+      .question-badge {
+        display: none;
+      }
+
+      .section {
+        padding: 54px 22px;
+      }
+
+      .hero {
+        min-height: 82vh;
+        padding: 10vh 22px 11vh;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .hero-actions,
+      .idea-grid,
+      .mission-panel,
+      .game-controls,
+      .action-row {
+        display: none;
+      }
+
+      .hero,
+      .section {
+        page-break-after: always;
+      }
+    }
+  </style>
+<link rel="stylesheet" href="/platform.css"></head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">科</div>
+      <span>好设计里的科学</span>
+    </div>
+    <header class="gd-header"><a class="gd-brand" href="/index.html"><img src="/assets/brand/logo-seal.svg" alt="" onerror="this.hidden=true"><span>好设计<small>GOOD DESIGN</small></span></a><nav class="gd-nav" aria-label="主导航"><a href="/projects.html">项目库</a><a href="/knowledge.html">知识库</a><a href="/applications.html">应用</a><a href="/about.html">关于平台</a></nav><a class="gd-search" href="/projects.html#search">搜索作品 ↗</a></header><div class="gd-note">好设计应用体验 · 互动模拟用于理解设计原理，不作为工程参数或专业仿真依据。</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="./assets/jiaolong-xinhua-2024.png" alt="蛟龙号载人潜水器海试画面">
+      <div class="source">图片来源：新华网公开报道图片</div>
+      <div class="hero-content">
+        <div class="eyebrow">初一科学 · 学生互动学习页</div>
+        <h1>好设计里的科学</h1>
+        <p class="lead">跟随“蛟龙号”进入深海，完成一次科学探究和工程设计挑战。</p>
+        <div class="tags">
+          <span class="tag">深海环境</span>
+          <span class="tag">压强与材料</span>
+          <span class="tag">水声通信</span>
+          <span class="tag">五大构成</span>
+        </div>
+        <div class="hero-actions">
+          <a class="primary-link" href="#mission">开始学习</a>
+          <a class="ghost-link" href="#work">直接做设计任务</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mission">
+      <div class="section-inner">
+        <span class="section-kicker">学习任务</span>
+        <h2>你是一名深海装备设计师</h2>
+        <p class="plain-lead">今天的任务不是背资料，而是回答一个真实工程问题：如果要把3个人安全送到7000米深海，设计师必须先解决什么？</p>
+        <div class="challenge">
+          <p>请先想一想：压力、氧气、黑暗、通信、方向控制，哪一个最让你担心？为什么？</p>
+          <div class="question-badge">?</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="facts">
+      <div class="section-inner">
+        <span class="section-kicker">案例认识</span>
+        <h2>蛟龙号是一台把人送进深海的工程系统</h2>
+        <p class="plain-lead">先看几条可以核对的事实。后面做判断时，要尽量用事实作为证据。</p>
+        <div class="facts">
+          <div class="fact"><b>7000m</b><span>最大设计下潜深度</span></div>
+          <div class="fact"><b>7062m</b><span>2012年实测最大下潜深度</span></div>
+          <div class="fact"><b>3人</b><span>最多搭载作业人员</span></div>
+          <div class="fact"><b>12h+</b><span>极端环境下连续作业能力</span></div>
+        </div>
+        <div class="quiz-box" data-quiz>
+          <h3>先练一下：下面哪一句是“事实”？</h3>
+          <div class="options">
+            <button class="option" type="button" data-correct="false">蛟龙号体现了探索精神。</button>
+            <button class="option" type="button" data-correct="true">蛟龙号实测最大下潜深度为7062米。</button>
+          </div>
+          <div class="feedback" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pressure">
+      <div class="section-inner">
+        <span class="section-kicker">互动实验</span>
+        <h2>拖动深度，看看压力怎样变化</h2>
+        <p class="plain-lead">这里用近似值帮助理解：海水越深，物体受到的压强越大。7000米深海大约有700个大气压。</p>
+        <div class="pressure-lab">
+          <div class="ocean">
+            <span class="depth-label d0">海面 0m</span>
+            <span class="depth-label d3000">3000m</span>
+            <span class="depth-label d7000">7000m</span>
+            <div class="sub" id="submarine">
+              <div class="sub-body"></div>
+              <div class="sub-tail"></div>
+            </div>
+          </div>
+          <div class="lab-panel">
+            <h3>深度控制</h3>
+            <input class="range" id="depthRange" type="range" min="0" max="7000" step="100" value="0">
+            <div class="metric"><span>当前深度</span><b id="depthText">0 m</b></div>
+            <div class="metric"><span>约等于大气压</span><b id="pressureText">1 个</b></div>
+            <p class="note-text">思考：如果外壳材料不够强，潜水器会发生什么？如果外壳无限加厚，又会带来什么新问题？</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <span class="section-kicker">科学拆解</span>
+        <h2>蛟龙号为什么要这样设计？</h2>
+        <div class="grid-4">
+          <div class="card accent">
+            <strong>耐压结构</strong>
+            <p>深海压力从四面八方压向潜水器，外壳必须足够强。</p>
+          </div>
+          <div class="card accent coral">
+            <strong>钛合金材料</strong>
+            <p>材料要兼顾强度、重量和耐腐蚀，不能只追求“厚”。</p>
+          </div>
+          <div class="card accent gold">
+            <strong>水声通信</strong>
+            <p>水下普通无线电和光传播受限，声波更适合传递信息。</p>
+          </div>
+          <div class="card accent mint">
+            <strong>悬停控制</strong>
+            <p>稳定停在水中，才能更安全地观察、采样和测绘。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="design">
+      <div class="section-inner">
+        <span class="section-kicker">评价方法</span>
+        <h2>好设计不只是“好看”</h2>
+        <p class="plain-lead">请用“五大构成”看一个设计。初一阶段重点看科技、人本和文化，也可以尝试加入艺术和商业。</p>
+        <div class="grid-5">
+          <div class="card">
+            <div class="icon">科</div>
+            <strong>科技构成</strong>
+            <p>突破了什么科学或技术难题？</p>
+          </div>
+          <div class="card">
+            <div class="icon" style="background:var(--coral);">艺</div>
+            <strong>艺术构成</strong>
+            <p>外形、颜色、识别度有什么价值？</p>
+          </div>
+          <div class="card">
+            <div class="icon" style="background:var(--mint);">人</div>
+            <strong>人本构成</strong>
+            <p>它为谁服务？怎样保证安全和体验？</p>
+          </div>
+          <div class="card">
+            <div class="icon" style="background:var(--gold);">商</div>
+            <strong>商业构成</strong>
+            <p>能否带动应用、产业和持续价值？</p>
+          </div>
+          <div class="card">
+            <div class="icon" style="background:var(--deep);">文</div>
+            <strong>文化构成</strong>
+            <p>它承载了怎样的时代意义？</p>
+          </div>
+        </div>
+        <div class="score-box">
+          <h3>给蛟龙号做一个课堂版五维评价</h3>
+          <div class="score-row"><span>科技</span><input type="range" min="1" max="5" value="5" data-score="科技"><span class="score-value">5</span></div>
+          <div class="score-row"><span>艺术</span><input type="range" min="1" max="5" value="3" data-score="艺术"><span class="score-value">3</span></div>
+          <div class="score-row"><span>人本</span><input type="range" min="1" max="5" value="4" data-score="人本"><span class="score-value">4</span></div>
+          <div class="score-row"><span>商业</span><input type="range" min="1" max="5" value="3" data-score="商业"><span class="score-value">3</span></div>
+          <div class="score-row"><span>文化</span><input type="range" min="1" max="5" value="5" data-score="文化"><span class="score-value">5</span></div>
+          <div class="score-result" id="scoreResult">峰值维度：科技、文化。请为高分找证据。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quiz">
+      <div class="section-inner">
+        <span class="section-kicker">即时小测</span>
+        <h2>检查一下你是否抓住了关键</h2>
+        <div class="grid-2">
+          <div class="quiz-box" data-quiz>
+            <h3>1. 为什么深海潜水器不能只把外壳做得特别厚？</h3>
+            <div class="options">
+              <button class="option" type="button" data-correct="false">因为厚外壳不好看。</button>
+              <button class="option" type="button" data-correct="true">因为还要考虑重量、浮沉、空间和制造难度。</button>
+            </div>
+            <div class="feedback" aria-live="polite"></div>
+          </div>
+          <div class="quiz-box" data-quiz>
+            <h3>2. 水下远距离通信更常用哪种方式？</h3>
+            <div class="options">
+              <button class="option" type="button" data-correct="true">声波通信。</button>
+              <button class="option" type="button" data-correct="false">普通手机信号。</button>
+            </div>
+            <div class="feedback" aria-live="polite"></div>
+          </div>
+          <div class="quiz-box" data-quiz>
+            <h3>3. “悬停控制”的主要价值是什么？</h3>
+            <div class="options">
+              <button class="option" type="button" data-correct="true">让潜水器稳定作业，提高观察和采样安全性。</button>
+              <button class="option" type="button" data-correct="false">让潜水器颜色更明显。</button>
+            </div>
+            <div class="feedback" aria-live="polite"></div>
+          </div>
+          <div class="quiz-box" data-quiz>
+            <h3>4. 判断一个设计好不好，最好怎么做？</h3>
+            <div class="options">
+              <button class="option" type="button" data-correct="false">只看外观是否漂亮。</button>
+              <button class="option" type="button" data-correct="true">看它是否解决真实问题，并能说出证据。</button>
+            </div>
+            <div class="feedback" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="game">
+      <div class="section-inner">
+        <span class="section-kicker">内部小程序</span>
+        <h2>深海采样挑战</h2>
+        <p class="plain-lead">控制潜水器下潜、采样、上浮。目标是在氧气和电量耗尽前，采到至少2份样品并安全回到海面。</p>
+        <div class="game-box">
+          <div class="game-sea" aria-label="深海采样小游戏画面">
+            <div class="game-line mid"><span>3500m 中层</span></div>
+            <div class="game-line deep"><span>6200m 样品区</span></div>
+            <div class="sample-dot" data-sample="0" style="left:22%; top:72%;"></div>
+            <div class="sample-dot" data-sample="1" style="left:62%; top:82%;"></div>
+            <div class="sample-dot" data-sample="2" style="left:76%; top:64%;"></div>
+            <div class="game-sub" id="gameSub"><div class="game-window"></div></div>
+          </div>
+          <div class="game-panel">
+            <h3>任务控制台</h3>
+            <div class="game-stats">
+              <div class="game-stat"><span>深度</span><b id="gameDepth">0 m</b></div>
+              <div class="game-stat"><span>压力</span><b id="gamePressure">1 个</b></div>
+              <div class="game-stat"><span>氧气</span><b id="gameOxygen">100%</b></div>
+              <div class="game-stat"><span>电量</span><b id="gamePower">100%</b></div>
+              <div class="game-stat"><span>样品</span><b id="gameSamples">0 / 3</b></div>
+              <div class="game-stat"><span>状态</span><b id="gameStateText">待命</b></div>
+            </div>
+            <div class="game-controls">
+              <button class="action-btn primary" type="button" id="diveBtn">下潜</button>
+              <button class="action-btn" type="button" id="riseBtn">上浮</button>
+              <button class="action-btn" type="button" id="sampleBtn">采样</button>
+              <button class="action-btn" type="button" id="surfaceBtn">返回海面</button>
+              <button class="action-btn" type="button" id="resetGameBtn">重新开始</button>
+            </div>
+            <div class="game-log" id="gameLog">提示：深度越大，压力越大；采样需要到达6000米以下，但每次操作都会消耗氧气和电量。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-inner">
+        <span class="section-kicker">作品任务</span>
+        <h2>设计你的“蛟龙号2.0”</h2>
+        <p class="plain-lead">只改一个地方。不要只写“更先进”，要说清楚你解决了什么问题，用到了什么科学依据。</p>
+        <div class="idea-grid" aria-label="创意作品灵感">
+          <button class="idea-card" type="button" data-idea="sample">
+            <strong>稳定采样机械臂</strong>
+            <span>解决深海取样时容易晃动、夹取不准的问题。</span>
+            <small>关键词：悬停控制、力、稳定结构</small>
+          </button>
+          <button class="idea-card" type="button" data-idea="comfort">
+            <strong>安全舒适载人舱</strong>
+            <span>解决长时间作业中空间紧张、疲劳和应急保护的问题。</span>
+            <small>关键词：人本设计、氧气、舱内布局</small>
+          </button>
+          <button class="idea-card" type="button" data-idea="observe">
+            <strong>低光观察系统</strong>
+            <span>解决深海黑暗环境下看不清、记录不完整的问题。</span>
+            <small>关键词：光、传感器、能量利用</small>
+          </button>
+        </div>
+        <p class="idea-note">点一个方向可以先生成作品草稿，再改成你自己的想法。</p>
+        <div class="mission-panel">
+          <div class="mission-card" id="missionCard" aria-live="polite">
+            <b>今日挑战：让潜水器在海底更稳</b>
+            <span>限制条件：只能改一个系统，并说明它和压力、材料、通信或控制中的哪一个有关。</span>
+          </div>
+          <div class="mission-tools">
+            <button class="action-btn primary" type="button" id="drawMission">抽一个挑战</button>
+            <button class="action-btn" type="button" id="useMission">把挑战写进作品</button>
+          </div>
+        </div>
+        <div class="design-box">
+          <div class="field">
+            <label for="problem">1. 我想解决的问题</label>
+            <textarea id="problem" placeholder="例如：深海中通信延迟、舱内空间小、采样不稳定、观察范围有限……"></textarea>
+          </div>
+          <div class="field">
+            <label for="change">2. 我的改进方案</label>
+            <textarea id="change" placeholder="例如：增加更稳定的机械臂、优化外壳形状、改进舱内布局、增加传感器……"></textarea>
+          </div>
+          <div class="field">
+            <label for="evidence">3. 我的科学依据</label>
+            <textarea id="evidence" placeholder="请用压力、材料、通信、控制、人体安全等角度说明理由。"></textarea>
+          </div>
+          <div class="quality-box" aria-live="polite">
+            <div class="quality-top">
+              <span class="quality-title">作品成熟度</span>
+              <span class="quality-score" id="qualityScore">0%</span>
+            </div>
+            <div class="quality-track"><div class="quality-fill" id="qualityFill"></div></div>
+            <div class="check-list">
+              <div class="check-item" data-check="problem">写清楚真实问题</div>
+              <div class="check-item" data-check="change">提出具体改进</div>
+              <div class="check-item" data-check="science">说出科学关键词</div>
+              <div class="check-item" data-check="reason">解释为什么有效</div>
+            </div>
+          </div>
+          <div class="action-row">
+            <button class="action-btn primary" type="button" id="saveWork">保存到本机</button>
+            <button class="action-btn" type="button" id="clearWork">清空</button>
+            <button class="action-btn" type="button" id="printWork">打印</button>
+          </div>
+          <div class="save-result" id="saveResult">填写后可以保存到当前浏览器。刷新页面后仍可继续修改。</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>学习结论：好设计 = 解决真实问题 + 有科学证据 + 能服务人。</span>
+      <span>资料依据：上传的好设计案例资料；图片来源：新华网公开报道图片。</span>
+    </div>
+  </footer>
+
+  <script>
+    const depthRange = document.querySelector("#depthRange");
+    const depthText = document.querySelector("#depthText");
+    const pressureText = document.querySelector("#pressureText");
+    const submarine = document.querySelector("#submarine");
+    const scoreInputs = Array.from(document.querySelectorAll("[data-score]"));
+    const scoreResult = document.querySelector("#scoreResult");
+    const fields = ["problem", "change", "evidence"].map(id => document.querySelector(`#${id}`));
+    const saveResult = document.querySelector("#saveResult");
+    const missionCard = document.querySelector("#missionCard");
+    const qualityScore = document.querySelector("#qualityScore");
+    const qualityFill = document.querySelector("#qualityFill");
+    const checkItems = Array.from(document.querySelectorAll("[data-check]"));
+    const gameSub = document.querySelector("#gameSub");
+    const gameDepth = document.querySelector("#gameDepth");
+    const gamePressure = document.querySelector("#gamePressure");
+    const gameOxygen = document.querySelector("#gameOxygen");
+    const gamePower = document.querySelector("#gamePower");
+    const gameSamples = document.querySelector("#gameSamples");
+    const gameStateText = document.querySelector("#gameStateText");
+    const gameLog = document.querySelector("#gameLog");
+    const sampleDots = Array.from(document.querySelectorAll("[data-sample]"));
+    const gameState = {
+      depth: 0,
+      oxygen: 100,
+      power: 100,
+      samples: 0,
+      active: true,
+      collected: [false, false, false]
+    };
+    const ideaDrafts = {
+      sample: {
+        problem: "深海采样时，潜水器受到水流影响可能会轻微晃动，机械臂夹取岩石或生物样品时不够稳定。",
+        change: "我想增加一套稳定采样机械臂：机械臂前端加防滑夹爪，靠近样品时自动放慢速度，并和悬停控制系统配合，让潜水器保持位置稳定。",
+        evidence: "科学依据是稳定作业需要减少晃动。深海压力很大，不能让潜水器随便触底；悬停控制能保持位置，防滑夹爪能增大接触稳定性，提高采样安全。"
+      },
+      comfort: {
+        problem: "蛟龙号一次作业时间较长，载人舱空间有限，乘员需要同时保证氧气、安全和操作舒适。",
+        change: "我想优化载人舱布局：把常用控制按钮放在更容易够到的位置，增加氧气和温度状态提醒，并设计更清楚的应急提示灯。",
+        evidence: "科学依据是人本设计要服务真实使用者。深海低温、高压、黑暗，乘员不能快速离开设备，所以舱内信息要清楚，操作要减少失误，生命保障系统要容易观察。"
+      },
+      observe: {
+        problem: "深海环境黑暗，普通观察方式容易看不清，可能漏掉重要的地形、生物或样品信息。",
+        change: "我想增加低光观察系统：使用可调亮度照明和高清摄像头，遇到近距离样品时自动降低强光，避免反光影响观察。",
+        evidence: "科学依据是光在水中传播会被吸收和散射，深海几乎没有自然光。可调光照明能帮助观察，同时减少强光反射，让图像记录更清楚。"
+      }
+    };
+    const missions = [
+      {
+        title: "今日挑战：让潜水器在海底更稳",
+        limit: "限制条件：只能改一个系统，并说明它和压力、材料、通信或控制中的哪一个有关。",
+        problem: "深海水流可能让潜水器轻微晃动，影响观察和采样。",
+        change: "我想改进悬停控制系统，让潜水器在靠近样品时自动降低移动速度，并用多个方向的小推进器保持位置。"
+      },
+      {
+        title: "今日挑战：让乘员更安全",
+        limit: "限制条件：改进方案必须和氧气、温度、报警或逃生提示有关。",
+        problem: "深海作业时间长，乘员需要随时知道舱内氧气、温度和设备状态。",
+        change: "我想增加舱内安全提醒面板，用颜色和声音提示氧气、温度和设备异常，让乘员更快做出判断。"
+      },
+      {
+        title: "今日挑战：让深海看得更清楚",
+        limit: "限制条件：改进方案必须考虑深海黑暗、光照或图像记录。",
+        problem: "深海缺少自然光，观察地形和生物时容易看不清细节。",
+        change: "我想增加可调亮度照明和低光摄像头，近距离观察时自动降低强光，减少反光。"
+      },
+      {
+        title: "今日挑战：让通信更可靠",
+        limit: "限制条件：要说明为什么水下不能只靠普通手机信号。",
+        problem: "深海中普通无线电传播受限，潜水器和母船之间的信息传递可能不稳定。",
+        change: "我想优化水声通信模块，把重要状态信息压缩成短消息，优先发送深度、位置和安全警报。"
+      }
+    ];
+    let currentMission = missions[0];
+
+    function updatePressure() {
+      const depth = Number(depthRange.value);
+      const atm = Math.max(1, Math.round(depth / 10));
+      depthText.textContent = `${depth} m`;
+      pressureText.textContent = `${atm} 个`;
+      submarine.style.top = `${8 + (depth / 7000) * 78}%`;
+    }
+
+    function updateScores() {
+      const values = scoreInputs.map(input => ({
+        name: input.dataset.score,
+        value: Number(input.value)
+      }));
+      scoreInputs.forEach(input => {
+        input.nextElementSibling.textContent = input.value;
+      });
+      const max = Math.max(...values.map(item => item.value));
+      const min = Math.min(...values.map(item => item.value));
+      const peaks = values.filter(item => item.value === max).map(item => item.name).join("、");
+      const lows = values.filter(item => item.value === min).map(item => item.name).join("、");
+      scoreResult.textContent = `峰值维度：${peaks}。相对短板：${lows}。请为最高分找一条证据，并为最低分提出一个改进方向。`;
+    }
+
+    function updateMission() {
+      missionCard.innerHTML = `<b>${currentMission.title}</b><span>${currentMission.limit}</span>`;
+    }
+
+    function updateQuality() {
+      const problemText = fields[0].value.trim();
+      const changeText = fields[1].value.trim();
+      const evidenceText = fields[2].value.trim();
+      const allText = `${problemText} ${changeText} ${evidenceText}`;
+      const checks = {
+        problem: problemText.length >= 18,
+        change: changeText.length >= 18,
+        science: /压力|压强|材料|通信|声波|控制|悬停|光|氧气|温度|安全|稳定|水流|传感器/.test(allText),
+        reason: /因为|所以|能够|可以|为了|依据|原理|减少|提高|避免/.test(allText) && evidenceText.length >= 24
+      };
+      const doneCount = Object.values(checks).filter(Boolean).length;
+      const score = doneCount * 25;
+      qualityScore.textContent = `${score}%`;
+      qualityFill.style.width = `${score}%`;
+      checkItems.forEach(item => {
+        item.classList.toggle("done", Boolean(checks[item.dataset.check]));
+      });
+    }
+
+    function setGameLog(text) {
+      gameLog.textContent = text;
+    }
+
+    function finishGame(message, stateText) {
+      gameState.active = false;
+      gameStateText.textContent = stateText;
+      setGameLog(message);
+    }
+
+    function updateGame() {
+      const pressure = Math.max(1, Math.round(gameState.depth / 10));
+      gameDepth.textContent = `${gameState.depth} m`;
+      gamePressure.textContent = `${pressure} 个`;
+      gameOxygen.textContent = `${gameState.oxygen}%`;
+      gamePower.textContent = `${gameState.power}%`;
+      gameSamples.textContent = `${gameState.samples} / 3`;
+      gameSub.style.top = `${8 + (gameState.depth / 7000) * 78}%`;
+      gameSub.style.filter = gameState.active ? "none" : "grayscale(0.85)";
+      sampleDots.forEach((dot, index) => {
+        dot.classList.toggle("collected", gameState.collected[index]);
+      });
+      if (gameState.active) {
+        gameStateText.textContent = gameState.depth >= 6000 ? "作业区" : "航行中";
+      }
+    }
+
+    function spend(oxygen, power) {
+      if (!gameState.active) return false;
+      gameState.oxygen = Math.max(0, gameState.oxygen - oxygen);
+      gameState.power = Math.max(0, gameState.power - power);
+      if (gameState.oxygen <= 0 || gameState.power <= 0) {
+        updateGame();
+        finishGame("任务失败：氧气或电量耗尽。设计深海装备时，资源管理和安全冗余很重要。", "失败");
+        return false;
+      }
+      return true;
+    }
+
+    function diveGame() {
+      if (!spend(6, 7)) return;
+      gameState.depth = Math.min(7000, gameState.depth + 1000);
+      updateGame();
+      setGameLog(gameState.depth >= 6000 ? "已进入样品区。现在可以尝试采样，但不要忘记保留返航资源。" : "继续下潜。注意：深度增加，压力也会明显增加。");
+    }
+
+    function riseGame() {
+      if (!spend(4, 5)) return;
+      gameState.depth = Math.max(0, gameState.depth - 1000);
+      updateGame();
+      setGameLog(gameState.depth === 0 ? "已回到海面。样品够不够？" : "正在上浮。上浮也会消耗资源，不能等到最后一刻才返航。");
+      if (gameState.depth === 0 && gameState.samples >= 2) {
+        finishGame("任务成功：你采到了足够样品并安全返回海面。这个游戏体现了压力、控制、采样和资源管理之间的平衡。", "成功");
+      }
+    }
+
+    function sampleGame() {
+      if (gameState.depth < 6000) {
+        setGameLog("还不能采样：请先下潜到6000米以下的样品区。");
+        return;
+      }
+      if (!spend(6, 8)) return;
+      const next = gameState.collected.findIndex(item => !item);
+      if (next === -1) {
+        setGameLog("样品已经全部采完。现在应该尽快返回海面。");
+      } else {
+        gameState.collected[next] = true;
+        gameState.samples += 1;
+        setGameLog(gameState.samples >= 2 ? "已经达到任务目标。请判断资源是否足够，然后安全返航。" : "采样成功。继续采样会提高成果，但也会消耗更多氧气和电量。");
+      }
+      updateGame();
+    }
+
+    function surfaceGame() {
+      if (!gameState.active) return;
+      const steps = Math.ceil(gameState.depth / 1000);
+      const oxygenCost = steps * 4;
+      const powerCost = steps * 5;
+      if (!spend(oxygenCost, powerCost)) return;
+      gameState.depth = 0;
+      updateGame();
+      if (gameState.samples >= 2) {
+        finishGame("任务成功：你带着样品安全回到海面。真正的工程设计也需要先保证人和设备安全。", "成功");
+      } else {
+        finishGame("任务结束：你安全回到海面，但样品不足。下次可以更早规划下潜、采样和返航节奏。", "未完成");
+      }
+    }
+
+    function resetGame() {
+      gameState.depth = 0;
+      gameState.oxygen = 100;
+      gameState.power = 100;
+      gameState.samples = 0;
+      gameState.active = true;
+      gameState.collected = [false, false, false];
+      setGameLog("提示：深度越大，压力越大；采样需要到达6000米以下，但每次操作都会消耗氧气和电量。");
+      updateGame();
+    }
+
+    document.querySelectorAll("[data-quiz]").forEach(box => {
+      const feedback = box.querySelector(".feedback");
+      box.querySelectorAll(".option").forEach(option => {
+        option.addEventListener("click", () => {
+          box.querySelectorAll(".option").forEach(item => item.classList.remove("correct", "wrong"));
+          const correct = option.dataset.correct === "true";
+          option.classList.add(correct ? "correct" : "wrong");
+          feedback.textContent = correct ? "回答正确。请再说出你的证据。" : "再想想：判断设计要回到真实问题和科学证据。";
+        });
+      });
+    });
+
+    function saveWork() {
+      const data = {
+        problem: fields[0].value,
+        change: fields[1].value,
+        evidence: fields[2].value
+      };
+      localStorage.setItem("jiaolongDesignWork", JSON.stringify(data));
+      saveResult.textContent = "已保存到当前浏览器。";
+    }
+
+    function loadWork() {
+      const raw = localStorage.getItem("jiaolongDesignWork");
+      if (!raw) return;
+      try {
+        const data = JSON.parse(raw);
+        fields[0].value = data.problem || "";
+        fields[1].value = data.change || "";
+        fields[2].value = data.evidence || "";
+        saveResult.textContent = "已读取上次保存的内容。";
+      } catch {
+        saveResult.textContent = "上次保存内容读取失败，可以重新填写。";
+      }
+    }
+
+    document.querySelectorAll("[data-idea]").forEach(button => {
+      button.addEventListener("click", () => {
+        const draft = ideaDrafts[button.dataset.idea];
+        if (!draft) return;
+        fields[0].value = draft.problem;
+        fields[1].value = draft.change;
+        fields[2].value = draft.evidence;
+        saveResult.textContent = "已填入一个作品草稿。请继续改成你自己的表达。";
+        updateQuality();
+        fields[0].focus();
+      });
+    });
+
+    document.querySelector("#drawMission").addEventListener("click", () => {
+      const index = Math.floor(Math.random() * missions.length);
+      currentMission = missions[index];
+      updateMission();
+      saveResult.textContent = "已抽到新的深海挑战。可以把它写进作品，也可以继续抽。";
+    });
+    document.querySelector("#useMission").addEventListener("click", () => {
+      fields[0].value = currentMission.problem;
+      fields[1].value = currentMission.change;
+      if (!fields[2].value.trim()) {
+        fields[2].value = "我的科学依据是：这个改进要结合深海环境的压力、黑暗、通信困难或稳定控制来判断，不能只看外观是否好看。";
+      }
+      saveResult.textContent = "已把挑战写进作品。请补充更具体的科学依据。";
+      updateQuality();
+      fields[2].focus();
+    });
+
+    document.querySelector("#saveWork").addEventListener("click", saveWork);
+    document.querySelector("#clearWork").addEventListener("click", () => {
+      fields.forEach(field => field.value = "");
+      localStorage.removeItem("jiaolongDesignWork");
+      saveResult.textContent = "已清空当前浏览器保存内容。";
+      updateQuality();
+    });
+    document.querySelector("#printWork").addEventListener("click", () => window.print());
+    document.querySelector("#diveBtn").addEventListener("click", diveGame);
+    document.querySelector("#riseBtn").addEventListener("click", riseGame);
+    document.querySelector("#sampleBtn").addEventListener("click", sampleGame);
+    document.querySelector("#surfaceBtn").addEventListener("click", surfaceGame);
+    document.querySelector("#resetGameBtn").addEventListener("click", resetGame);
+    depthRange.addEventListener("input", updatePressure);
+    scoreInputs.forEach(input => input.addEventListener("input", updateScores));
+    fields.forEach(field => field.addEventListener("input", updateQuality));
+
+    loadWork();
+    updatePressure();
+    updateScores();
+    updateMission();
+    updateQuality();
+    updateGame();
+  </script>
+<footer class="gd-footer"><a href="/index.html">好设计 · 创新设计知识平台</a><p>基于公开资料整理的项目探索站。奖项信息以<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官方发布</a>为准。设计解读与知识草稿不代表官方评审意见。</p><a href="/about.html#sources">内容来源与使用说明 ↗</a></footer><script src="/platform-bridge.js" defer></script></body>
+</html>
