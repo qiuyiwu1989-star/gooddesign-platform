@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>基于苏州轨道交通五号线工程的智能车辆研制 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-n06.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-n06</div>
+  <h1>基于苏州轨道交通五号线工程的智能车辆研制</h1>
+  <div class="meta-line"><b>2021 年度提名奖</b><span>中车南京浦镇车辆有限公司苏州市轨道交通集团有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 提名奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中车南京浦镇车辆有限公司苏州市轨道交通集团有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">钱曙杰,王俊伟,陈志,时蒙</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 轨道交通（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>（1）设计目的：苏州轨道交通五号线工程是苏州轨道交通“十三五”期间规划建设的一条重要轨道交通线路，是当下全自动驾驶技术蓬勃发展大趋势下的领头项目，也是江苏省内第一条全自动驾驶项目，按照全自动驾驶标准最高自动化等级GOA4进行设计研制，通过成功执行，实现完全自主掌握GOA4等级自主化全自动驾驶车辆技术，具有重要的行业技术引领作用。（2）设计创新：除满足无人值守的全自动驾驶运用需求，车辆在列车自动化、安全性、可靠性、智能化等多方面进行了创新性设计与提升，主要体现如下：1.列车自动化水平更高，可实现所有电气子系统自检和自检状态反馈，可按照远程指令实现自动唤醒和休眠，相比以往列车，自动化程度更高且更节能；2.列车安全冗余设计更全面，采用MVB控制主网+以太维护网双网设计，网络系统由浦镇公司自主设计。车辆设置“司机眼”系统，具备列车运行前方障碍物探测、列车车门和屏蔽门之间的障碍物探测（简称二门防夹）功能；3.列车可靠性更高，采用网络化、智能化、高可靠性、长寿命的逻辑控制单元（LCU）代替传统的继电器有触点硬接线控制系统；4.列车智能化程度更高。配置有公网监测系统、被动障碍物探测系统、主动障碍物检测系统等，全方位监控车辆状态；5.司机室空间设计更灵活。本车辆创新使用了司机室隔间移门；6.车辆内外饰工业设计柔美灵动，外观造型流畅自然，视觉效果简约现代且具有江南水乡的柔美灵动之感。（3）设计价值：通过苏州轨道交通五号线工程的智能车辆研制，深入研究了全自动驾驶车辆技术，研发了全自动车辆控制技术，进一步增强了城市轨道交通系统装备的功能和性能，该项目的成功研制，填补了全自动驾驶地铁列车在江苏省内的应用空白，树立了良好的标杆，为省内甚至国内全自动驾驶地铁列车的快速发展奠定了基础，具有积极的示范作用和重要的战略意义。据不完全统计，“十三五”期间通过全自动驾驶项目的建设，可以带来相关产业链供应商产值近8000亿元，同时全自动驾驶项目的建设，可拉动相关工程基建及数字化产业提升。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>基于苏州轨道交通五号线工程的智能车辆研制，是按照全自动驾驶标准最高自动化等级GOA4进行自主化设计，能够实现无人值守的全自动驾驶运营需求，车辆设计亮点主要体现在以下方面：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>列车自动化水平更高。列车可实现可以实现自动唤醒、自动自检、自动发车、自动洗车、自动正线运行、自动停站、自动开关车门、自动折返、自动休眠、故障情况下自动恢复等功能。牵引辅助系统故障可远程复位、车门对位隔离、跳跃停车、实用的远程控制、微断复位等功能。可实现所有电气子系统自检和自检状态反馈，可按照远程指令实现自动唤醒和休眠，相比以往列车的做法是每天运营结束后处于热备状态（即不休眠）才便于次日的运营，本车辆自动化程度更高且更节能。</div></div><div class="p-li"><span class="p-mk">2</span><div>列车安全冗余设计更全面。列车采用MVB控制主网+以太维护网双网设计，网络系统由浦镇公司自主设计，通信网络由独立冗余的MVB总线构成，维护网络采用以太网，用于设备维护、车载数据的下载以及故障信息传输。列车有完善的智能监测体系，主动预警、保护车辆安全。网络系统安全功能安全完整性等级达到SIL2级。车辆设置“司机眼”系统，具有列车运行前方障碍物探测、列车车门和屏蔽门之间的障碍物探测（简称二门防夹）功能，同时在底架障碍物检测装置旁设置摄像机。该系统实时监控障碍物信息，当探测到障碍物，将提示信息发给TCMS，同时通过WIFI将相关信息实时传送给OCC。列车停站时，车门和屏蔽门之间缝隙探测到人或物品时，会让列车保持静止不发车，以保证旅客和列车的安全。</div></div><div class="p-li"><span class="p-mk">3</span><div>列车可靠性更高。列车采用网络化、智能化、高可靠性、长寿命的逻辑控制单元（LCU）代替传统的继电器有触点硬接线控制系统，更好的保障地铁列车的安全运行、免维护和高效检修。</div></div><div class="p-li"><span class="p-mk">4</span><div>列车智能化程度更高。列车还配置弓网检测系统、被动障碍物探测系统、主动障碍物检测系统、独立的脱轨检测系统、烟火报警系统、轴温监测、走行部监测系统等，全方位监控车辆的状态。</div></div><div class="p-li"><span class="p-mk">5</span><div>司机室空间设计更灵活。本车辆创新灵活设计的司机室隔间移门：司机室隔间首次采用移门的型式，在全自动行驶时，移门处于常开状态，净开度为1500mm。在需要有人驾驶时，可随时将隔间移门关闭，并在司机室内部锁闭，将客室区域和司机室区域隔离开。</div></div><div class="p-li"><span class="p-mk">6</span><div>车辆内外饰工业设计柔美灵动。外观造型流畅自然，车身点缀优雅高贵的桃红色带体现苏州5号线的线路色，搭配富有现代感的深灰色，整体色彩丰富，视觉效果简约现代且具有水乡的柔美灵动之感。客室内部整体色彩与外观呼应，内饰侧顶板的内凹造型增加了车厢的空间感，座椅采用分色形式，通过流畅的线条体现苏州水乡的柔美特征，凸显了车辆的现代感和江南水乡的灵动感。</div></div></div></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

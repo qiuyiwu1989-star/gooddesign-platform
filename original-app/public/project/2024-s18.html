@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>时速350公里自适应转向架关键技术研究及装备研制 · 2024银奖 · 好设计</title>
+<meta name="description" content="1、项目内容
+为满足我国轨道交通作为全局战略性骨干运输网络的高效能、综合性、一体化、可持续发展需求，形成显著的国际竞争优势，开展时速350公里自适应转向架关键技术研究及装备研制，提出适用于跨线运行的多系统耦合主动控制策略，提出自适应转向架复">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2024">← 返回 2024 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2024 · 第九届</span></div>
+  <h1>时速350公里自适应转向架关键技术研究及装备研制</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">中车青岛四方机车车辆股份有限公司,北京交通大学,中南大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">陶桂东,冯永华,张振先,公衍军,杨欣,王田天,杨广雪,邹晓龙,唐明军,高乐乐</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">2024060028</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>项目内容</div></div></div><p>为满足我国轨道交通作为全局战略性骨干运输网络的高效能、综合性、一体化、可持续发展需求，形成显著的国际竞争优势，开展时速350公里自适应转向架关键技术研究及装备研制，提出适用于跨线运行的多系统耦合主动控制策略，提出自适应转向架复杂边界多目标优化及评估方法，有效降低轮轨动作用力和轮轨磨耗，改善车辆性能，提升转向架对不同线路的适应能力，解决传统转向架难以适应多种线路跨线运行的技术瓶颈，有力支撑国家“一带一路”倡议、“走出去”和“制造强国战略”。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>技术创新</div></div></div><p>（1）首次研制350km/h轴箱内置转向架：首次完成350km/h速度级动车及拖车轴箱内置转向架系统集成，突破大功率紧凑式一体化驱动装置技术、小空间分布式三向解耦轴箱定位技术。</p><p>（2）首次提出轮对径向、悬挂自适应多系统耦合的主动控制策略：针对列车跨线运行需求，开发了主动轮对连接机构与主动悬挂相结合的自适应技术，提出了自感知、自训练、自提升的列车悬挂系统减振控制智能算法，形成了线路自适应的主动控制策略，可在不同环境下迁移应用，具备高度自洽性。（3）首次提出自适应转向架复杂边界多目标优化及评估方法：针对自适应转向架多目标、多参数的优化需求，提出全局灵敏度分析与智能优化算法，搭建了集复杂边界模型、车辆非线性模型和优化算法三位一体的仿真优化技术平台，形成自适应转向架动力学、结构强度性能试验和评估方法。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>技术成果</div></div></div><p>授权发明专利9项、实用新型专利7项，发表论文3篇。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>技术指标</div></div></div><p>滚振试验速度＞445km/h，基于线路试验仿真推演，车轮磨耗功降低30.8%，脱轨系数降低15.6%，轮轴横向力降低31.7%，轮重减载率降低23.6%，舒适度提升32%，垂向平稳性提升20%，横向平稳性提升28%。</p><div class="p-list"><div class="p-li"><span class="p-mk">5</span><div>应用推广</div></div></div><p>相关技术或整体方案实现了在阿联酋动车组、广州地铁等项目的工业化应用，并为部分在研的城际市域动车组、地铁车辆提供了技术支撑，在轨道交通高端装备制造领域起到了重要的引领示范作用。近3年新增产值7.1亿元，利润1亿元。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>项目背景及总体思路</div></div></div><p>为满足我国轨道交通作为全局战略性骨干运输网络的高效能、综合性、一体化、可持续发展需求，改善车辆性能，提升转向架对不同线路的适应能力，解决传统转向架难以适应多种线路跨线运行的技术瓶颈，开展时速350公里自适应转向架关键技术研究及装备研制，提出适用于跨线运行的多系统耦合主动控制策略，提出自适应转向架复杂边界多目标优化及评估方法。</p><p>自适应转向架需满足高速客专线和既有线的跨线运行，复杂线路条件、轨道结构型式和环境特性，对车辆运行稳定性及轮轨磨耗等综合优化提出挑战。该项目建立复杂边界条件的车辆系统非线性动力学模型，提出自感知、自训练、自提升的轮对径向、悬挂自适应多系统耦合的主动控制策略，基于车辆安全性、舒适性、轮轨磨耗、轮轨动态作用力和噪声等多目标灵敏度分析及协同优化算法，综合考虑各参数对所有目标性能的影响，得到自适应转向架在不同线路下的实时最优参数族，保证转向架在复杂环境跨线运行时的最优性能。突破大弯矩构架、小空间高速轴箱定位、大功率紧凑式驱动等关键零部件技术及质量分布、参数匹配、悬挂解耦、机电一体化等高速轴箱内置转向架系统集成技术，完成转向架研制及试验验证，形成高速铁路和既有铁路跨线运行的转向架设计、制造和评估技术能力。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>主要技术创新内容</div></div></div><p>【创新点 1】研制350km/h轴箱内置转向架。首次完成350km/h速度级动车及拖车轴箱内置转向架系统集成，突破大功率紧凑式一体化驱动装置技术、小空间分布式三向解耦轴箱定位技术。</p><p>证明材料：RU2779799轨道车辆及转向架（附件1），ZL202011393484.2轨道车辆及其转向架二系垂向止挡（附件5），ZL202110467633.3基于CATIA软件的转向架建模系统及方法、存储器（附件12），ZL202120039832.X一种悬挂定位装置及转向架（附件13），ZL202022861765.8一种轨道车辆、转向架及集成式抗侧滚扭杆装置（附件14），ZL202022741147.X一种安装于构架的集成组件及构架（附件15），ZL202022741207.8轨道车辆及转向架（附件16），ZL202022695868.1轨道车辆、驱动装置及其齿轮箱输入轴端安装结构（附件17），ZL202021298300.X轨道车辆及二系垂向止挡装置（附件18），ZL202022837869.5一体式齿轮箱牵引电机及轨道车辆（附件19）。</p><p>（1）首次突破大弯矩构架、小空间高速轴箱定位、柔性轮对、扁平化Z型牵引、大功率紧凑式驱动等关键零部件技术及质量分布、参数匹配、悬挂解耦、机电一体化等高速轴箱内置转向架系统集成技术，研制满足350km/h的动车、拖车轴箱内置转向架，较传统转向架簧下重量降低20%、横向包络降低15%。</p><p>自适应转向架系统集成</p><p>（2）首次完成大功率紧凑式一体化驱动装置研制，针对时速350公里内置式转向架驱动装置功率大、安装空间小的特点，提出牵引电机、联轴节、齿轮箱一体式二级传动驱动装置，实现牵引功率不降低、安装轴向空间降低30%。同时为降低轮轨作用力、提高动力学稳定性，突破大簧间重量解耦技术，提出内置式转向架驱动装置2节点+1拉杆的弹性架悬安装方式。</p><p>大功率紧凑式一体化驱动装置</p><p>（3）首次提出适用于紧凑空间的三向刚度解耦分布式轴箱定位技术，双钢圆弹簧提供垂向刚度，顶置橡胶节点提供横向定位刚度，定位拉杆提供纵向定位刚度，安装空间较既有动车组转臂式轴箱定位降低50%，可根据物理结构及动力学参数要求对三向刚度的悬挂元件进行匹配优化设计，兼顾高速稳定性与一系悬挂振动传递。</p><p>小空间分布式三向解耦轴箱定位技术</p><p>【创新点 2】提出轮对径向、悬挂自适应多系统耦合的主动控制策略：针对列车跨线运行需求，开发了主动轮对连接机构与主动悬挂相结合的自适应技术，提出了自感知、自训练、自提升的列车悬挂系统减振控制智能算法，形成了线路自适应的主动控制策略，可在不同环境下迁移应用，具备高度自洽性。</p><p>证明材料：ZL202110038187.4一种轨道车辆及一种轨道车辆的控制方法和系统（附件3），ZL202011254231.7轨道车辆及垂向减振器的控制方法和控制系统（附件4），ZL202110121694.4轨道线路曲率半径在线实时测量系统及方法（附件9）、ZL202011393449.0一种轨道车辆、轨道车辆踏面廓形的控制方法及控制系统（附件11）。</p><p>（1）突破紧凑式主动轮对连接技术。为解决转向架高速运行稳定性和既有线路小曲线通过性的矛盾，开展基于线路参数自感知的主动径向技术研究，研制紧凑型主动轮对连接驱动机构，保持转向架高速性能的前提下，提高曲线通过能力，较传统转向架，车轮磨耗功降低30.8%，脱轨系数降低15.6%，轮轴横向力降低31.7%，轮重减载率降低23.6%</p><p>紧凑式主动轮对连接技术</p><p>（2）提出自适应多系统耦合主动控制策略。目前高速动车组悬挂系统为传统被动式，尚不具备主动适应不同线路的鲁棒保持能力和舒适度调节能力。随着我国铁路全网运输需求的提升，对在途列车悬挂系统提出更高的适应性要求。通过主动获取车辆运行姿态信息作为控制参数，利用人工智能技术生成主动控制策略，以节能控制为要求优化控制效果，实现主动轮对、主动悬挂协同高效能控制，解决列车跨线环境下的稳定运行难题，较传统转向架舒适度提升32%，垂向平稳性提升20%，横向平稳性提升28%。</p><p>主动轮对、主动悬挂自适应多系统耦合的主动控制策略</p><p>【创新点 3】提出自适应转向架复杂边界多目标优化及评估方法：针对自适应转向架多目标、多参数的优化需求，提出全局灵敏度分析与智能优化算法，搭建了集复杂边界模型、车辆非线性模型和优化算法三位一体的仿真优化技术平台，形成自适应转向架动力学、结构强度性能试验和评估方法。</p><p>证明材料：论文《基于线路实测载荷的转向架构架台架试验方法研究》（附件2），论文《高速动车组牵引拉杆载荷特性研究》（附件6），论文《Towards Prognostic and Health Management of Train Wheels in the Chinese Railway Industry》（附件7），ZL202110004115.8基于等效载荷的构架疲劳损伤评估方法（附件8），ZL201610321829.0一种轨道交通机车的车轮强度的评估方法以及装置（附件10）。</p><p>（1）反映自适应转向架运行能力的目标参数多、控制参数耦合性强，依靠传统手段对单一性能下的单一参数进行优选，工作量大且优化效果难以达到最佳。因此提出针对自适应转向架的灵敏度分析算法,获得不同参数对目标性能的影响权重与规律，搭建集复杂边界模型、车辆非线性模型和优化算法三位一体的仿真优化技术平台，利用多目标优化算法进行参数优化，综合考虑各参数对所有目标性能的影响，得到自适应转向架在不同条件下的实时最优参数族，保证转向架在复杂环境跨线运行时具有最优性能。</p><p>复杂边界多目标优化方法</p><p>（2）通过主动轮对连接系统、主动悬挂系统等关键零部件及转向架总成台架和运行示范试验研究，验证控制逻辑与执行部件的匹配性，提出自适应转向架试验平台和线路试验技术要求，形成关键部件及转向架系统的试验规范、评价标准，进而掌握自适应转向架关键功能和性能的试验评估技术，具备满足高速铁路和既有铁路跨线运行需求的列车转向架设计、制造和评估技术能力。</p><p>自适应转向架设计、制造和评估技术</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>国内外同类技术对比</div></div></div><p>世界范围内，各国铁路线路条件及运营情况复杂不一、各不相同，提高转向架及车辆适应不同复杂条件下的能力在当今铁路发展趋势下尤为重要。该项目基于适用于空间紧凑、线路曲线多的内置转向架技术，创造性的融入主动径向、主动悬挂技术，首次研制350km/h速度级动车及拖车轴箱内置转向架。</p><p>轴箱内置转向架</p><p>速度等级</p><p>自适应转向架（该项目）</p><p>350km/h</p><p>B5000 型转向架</p><p>200km/h</p><p>FLEXX Eco型转向架</p><p>250km/h</p><p>SF7000型转向架</p><p>160km/h</p><p>SF9000型转向架（NOVO）</p><p>360km/h（仅拖车）</p><p>波士顿地铁转向架</p><p>110km/h</p><p>该项目较传统转向架，簧下重量降低20%、轮轨动态作用力降低20%、车轮磨耗降低30%、平稳性提升20%，技术成果达到国内领先水平。</p><p>技术指标</p><p>传统转向架</p><p>自适应转向架</p><p>簧下重量 t</p><p>4</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>2</div></div></div><p>舒适度</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>8</div></div></div><div class="p-h">1.0 1</div><p>垂向平稳性</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>3</div></div></div><div class="p-h">1.7 3</div><p>横向平稳性</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>4</div></div></div><div class="p-h">1.94 1</div><p>轮重减载率</p><div class="p-h">0.7 4</div><div class="p-h">0.5 6</div><p>脱轨系数</p><div class="p-h">0.5 5</div><div class="p-h">0.4 6</div><p>轮轴横向力kN</p><p>22</p><div class="p-h">15.0 3</div><p>磨耗功W</p><p>3500</p><p>2422</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2024%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%97%B6%E9%80%9F350%E5%85%AC%E9%87%8C%E8%87%AA%E9%80%82%E5%BA%94%E8%BD%AC%E5%90%91%E6%9E%B6%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E5%8F%8A%E8%A3%85%E5%A4%87%E7%A0%94%E5%88%B6%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E6%97%B6%E9%80%9F350%E5%85%AC%E9%87%8C%E8%87%AA%E9%80%82%E5%BA%94%E8%BD%AC%E5%90%91%E6%9E%B6%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E5%8F%8A%E8%A3%85%E5%A4%87%E7%A0%94%E5%88%B6" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「时速350公里自适应转向架关键技术研究及装备研制」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E6%97%B6%E9%80%9F350%E5%85%AC%E9%87%8C%E8%87%AA%E9%80%82%E5%BA%94%E8%BD%AC%E5%90%91%E6%9E%B6%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E5%8F%8A%E8%A3%85%E5%A4%87%E7%A0%94%E5%88%B6" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「时速350公里自适应转向架关键技术研究及装备研制」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2024-s17.html"><span class="d">← 上一项</span>一次成型纺织双面数码印花机</a>
+    <a class="next" href="2024-s19.html"><span class="d">下一项 →</span>12英寸高精度全自动晶圆划片机</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

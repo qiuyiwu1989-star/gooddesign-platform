@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>高性能锻件智能化成形生产线 · 2021金奖 · 好设计</title>
+<meta name="description" content="锻造是制造高性能零件的重要加工工艺，但锻造过程的工艺影响因素多、工况扰动随机性强，且缺乏在线监测和调控技术，导致产品质量波动大，制约了军车控制臂、重型转向节等高性能锻件的制造。智能制造技术能够实现多因素复杂工况下的优化决策，提升产品质量和制">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%87%91%E5%A5%96&amp;year=2021">← 返回 2021 年金奖名录</a>
+  <div class="kicker"><span class="lv">金奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>高性能锻件智能化成形生产线</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">华中科技大学武汉新威奇科技有限公司,湖北三环锻造有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">邓磊,唐学峰,余俊,陈天赋</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101313</div></div>
+  </div>
+  <div class="hero"><img src="../cases/gal/2021-05-0.jpg" alt="高性能锻件智能化成形生产线"></div>
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>锻造是制造高性能零件的重要加工工艺，但锻造过程的工艺影响因素多、工况扰动随机性强，且缺乏在线监测和调控技术，导致产品质量波动大，制约了军车控制臂、重型转向节等高性能锻件的制造。智能制造技术能够实现多因素复杂工况下的优化决策，提升产品质量和制造水平，对推动我国由制造大国向制造强国转型具有重要意义。本项目在开展锻造工艺及装备的设计创新时，率先将智能化技术应用于锻造全过程，设计出精确感知、智能学习和灵活调控的智能化锻造生产线，解决工况扰动引起的质量不稳定难题，从而实现高性能锻件制造，满足国防战车等关键装备的需求。</p><p>项目从生产线的执行、感知和决策三个方面提出全新的设计理念，主要设计创新包括：</p><p>1）针对传统压力机多级传动导致响应慢、精度低，难以满足实时高响应高精度调控的问题，设计了由伺服电机直接驱动滑块的高响应传动机构，以及平-弧面结合的可控防偏载精密导向结构，并将训练后的人工神经网络计算模块内置于运动控制系统，研制出新型智能伺服直驱压力机，实现了锻造速度等关键参数的快速精确调控。</p><p>2）针对锻造工艺状态随机非线性扰动难以精确感知的问题，设计了由工业相机、热成像仪、双目扫描仪等构成的在线检测装置，开发了上料位置、坯料温度、模腔温度和锻件形状/身份识别的智能图像获取方法，研发出基于机器视觉的多参数变量精确感知系统，实现了锻造参数和工况扰动的精确感知。</p><p>3）针对工况扰动难以实时优化调节的问题，设计了锻造信息数据库，开发了工艺-扰动-质量的自学习深度神经网络模型，构建了智能工艺决策系统，研发了设备间通讯协议，实现了锻造生产全链条数据驱动。最终设计出集成感知、决策和执行系统的智能锻造生产线，实现高性能锻件的制造。</p><p>基于上述设计创新，建立智能化锻造生产线7条，实现了军车控制臂、重型转向节等锻件的稳定生产，生产线运行效率与国际先进的德国拉斯科水平相当；产品合格率达99.8%，尺寸精度达±0.5mm，同时节材12%，节能24%。由湖北省机械工程学会组织、丁汉院士为主任的鉴定委员会认为：整体技术处于国际先进水平。</p><p>近3年新增产值6.4亿元，利润7600万元，产生了显著的经济效益。项目获发明专利15项，软件著作权9项，在国际重要期刊发表论文70余篇，制定智能制造相关国家标准3项，并支撑企业获得制造业单项冠军产品、国家级专精特新小巨人等荣誉，有效推动了锻造生产方式的革新，引领行业向智能化转型升级。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>技术原理和功能创新</div></div></div><p>（1）高响应高精度智能伺服直驱压力机</p><p>传统伺服螺旋压力机通过伺服电机驱动齿轮或者皮带等多级中间传动部件，间接带动螺杆和滑块运动，由于传动链条长、间隙大，导致整个传动系统的响应速度慢、精度低，难以满足智能锻造生产所需的实时高响应高精度调控。为此，本项目探明了伺服直驱传动系统的重载响应规律，分析了电机直接驱动螺杆和滑块的运动学模型，设计了一种高响应高精度智能伺服直驱压力机。其设计创新体现在以下三个方面：1）在传动系统结构设计方面，采用大功率交流永磁同步伺服直驱电机的转子与螺杆直接连接，将电机扭矩直接传递给螺杆，同时驱动滑块运动，实现了零传动，提高了滑块速度变换时的响应速度。2）在滑块运动导向结构设计方面，揭示了全能量作用下压力机各部位的弹性变形规律，优化了应力集中区域的局部加强结构，设计了高刚性框架机身和平-弧面结合的可控防偏载精密导向结构，利用平面与弧面多重约束提高设备抗偏载能力，保证了滑块运动的高精度导向。3）在运动控制系统设计方面，构建了螺杆负载及磨损量、电机转速及电流与滑块速度之间的人工神经网络模型，设计了高精度智能运动控制系统，基于上位机系统智能规划的目标运动曲线，结合实时采集的螺杆负载、磨损量（实际位移与理论位移的偏差值）、电机转速、电流等数据，通过人工神经网络模型和遗传优化算法获得所需的滑块速度和转矩，进而采用矢量控制方式对伺服电机进行调整，实现了全闭环控制。设计的智能伺服直驱压力机能够实现匀速/变速/往复渐进等多种运动模式，并根据实时工况智能优化电机参数，实现滑块的快速、精确和平稳调节，为执行不同锻造速度曲线奠定了基础。</p><p>（2）基于机器视觉的多参数变量精确感知系统</p><p>锻造生产的工艺参数和状态变量多，受外界扰动影响的随机性强，因此，必须实现锻造工况的实时全方位精确感知，才能实现生产过程的智能精准调控。但锻造过程中主要工艺参数（如坯料温度、模腔温度）以及状态变量（如上料位置、锻件形状）呈非线性波动，采用传统的接触式温度传感器、红外测温枪、光栅尺等检测装置，难以获得全面精确的数据。为此，本项目设计了基于机器视觉的多参数变量精确感知系统，利用工业CCD相机、红外热成像仪、双目蓝光扫描仪等机器视觉设备获取坯料温度、模腔温度、上料位置和锻件形状/身份识别等信息，并利用光栅尺、压力传感器等获取滑块位移、压力机载荷等非空间分布的物理量信息，实现了锻造工艺状态和锻件质量的全方位实时检测。采集的实时图像经现场总线通讯接口传送至上位机系统，再由开发的图像智能识别软件提取关键数据。对于上料位置图像和锻件形状图像，经颜色聚类分割和二值化处理，提取出物体轮廓，通过与标准图像对比，获得轮廓特征的关键点坐标。对于热成像采集的温度数据，沿平面坐标轴方向进行稀疏化，提取出不在合理温度范围的温度值及其坐标点。随后，智能识别出的图像数据被存储到锻造信息数据库，用于工艺过程的大数据分析和人工神经网络建模。</p><p>（3）全链条数据驱动的智能锻造生产线</p><p>传统的锻件质量控制依赖于合理的工艺方案设计和严格的生产过程管控，但生产线难以避免扰动因素的影响，导致生产过程不稳定，出现批量废品、故障停机等问题。由于扰动的随机性和不可预测性，难以采用预先设计变量的形式进行研究和建模，也难以在线进行实时优化。为此，本项目在生产线控制系统中设计了锻造信息数据库，记录生产线检测装置采集到的各项数据；并基于数据库内积累的大量数据和专家知识，利用特征提取、数据挖掘等深度学习技术，开发出工艺参数、工件位置偏差、参数扰动、材料性能与锻件质量之间的深度人工神经网络模型。同时，设计了锻造压力机、工业机器人、换模装置、自动润滑站、检测装置以及加热炉等设备之间标准的通讯协议、通讯模块和设备集成接口，实现了生产线设备的互联互通。最终，结合压力机速度、加热炉温度、喷淋润滑量灵活可调的特点，研发了智能工艺决策系统，设计了全链条数据驱动的锻造生产线。生产线运行时，根据实时采集到的坯料温度、上料位置、模腔温度等信息，利用深度人工神经网络模型预测锻件质量，并结合遗传算法优化获得当前工况下满足锻件质量要求的最优的压力机速度曲线、加热温度和润滑剂喷淋量，通过现场总线传输指令，控制伺服直驱压力机等设备按优化的工艺参数执行，以获得合格锻件。此外，智能工艺决策系统还可以根据锻件尺寸超差情况判断模具是否磨损过量或出现裂纹失效，利用自动换模装置实现模具快速更换。该智能锻造生产线实现了锻造过程从经验式向定量化、智能化的转变。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>设计方法科学性和功能实现有效性</div></div></div><p>在设计智能化锻造生产线时，本项目结合锻造工艺原理和成形特点，基于理论分析并采用精确数值仿真和智能数学建模等先进方法，进行科学的设计。具体包括，针对压力机结构设计，利用大型ANSYS有限元软件进行了框架机身在满负载情况下的强度和刚度分析，指导了机身结构优化；针对压力机驱动控制系统的设计，利用Matlab/Simulink进行了运动曲线仿真，验证了运动曲线加减速算法的可靠性；针对生产线布局和时序的设计，采用RobotStudio模拟了整个生产过程以及各设备的运动状态，分析优化了信息传输、运动干涉和生产节拍等。在设计上位机智能控制系统时，基于Pycharm编译器，采用Python语言开发程序，可以更好地利用人工智能方面的图像识别、神经网络建模、遗传算法优化等工具。上述设计方法都是以科学的理论模型和高精度的算法为支撑，具有很强的科学性。利用上述方法所获得的结果能够为智能化锻造生产线的设计和控制系统的开发提供科学指导。</p><p>本项目实现的核心功能是锻造生产线的智能化。项目在设计时，紧紧围绕感知、决策和执行三个方面进行创新开发： 1）配置了以机器视觉设备为核心的工况在线感知系统，实现了对坯料、模具、压力机及锻件状态的全面监测；2）设计了基于生产大数据进行自学习的智能控制系统，根据现场实时采集到的数据改进智能神经网络模型，保证了正向锻件质量预测精度和反向工艺参数优化精度；3）设计了集成新型高响应高精度伺服直驱压力机、工业机器人、自动换模装置、自动润滑站等设备的锻造生产线，并采用现场总线技术实现了各设备间的互联互通，生产线根据智能控制系统传送的信号，自动调节压力机速度、加热温度、润滑剂喷淋量等工艺参数，实现了对工况的实时调节。通过上述设计和开发，有效实现了锻造生产线的智能化调控。</p></div>
+  <div class="sec">图集 / GALLERY</div><div class="gal"><img loading="lazy" src="../cases/gal/2021-05-1.jpg" alt=""><img loading="lazy" src="../cases/gal/2021-05-2.jpg" alt=""></div>
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E9%87%91%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E9%AB%98%E6%80%A7%E8%83%BD%E9%94%BB%E4%BB%B6%E6%99%BA%E8%83%BD%E5%8C%96%E6%88%90%E5%BD%A2%E7%94%9F%E4%BA%A7%E7%BA%BF%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">延伸阅读 / CURATED（人工核选 · 检索于 2026-08-09）</div><a href="https://jxj.wuhan.gov.cn/xwzx_9/whjx/202404/t20240417_2389655.html" target="_blank" rel="noopener"><span class="arr">↗</span><span>全球头部企业青睐武汉“智造” 高端工业母机签下海外大单 - 武汉市经信局</span><span class="src">jxj.wuhan.gov.cn</span></a><a href="https://www.newwish.com.cn/index.php/List/4.html" target="_blank" rel="noopener"><span class="arr">↗</span><span>新威奇为您提供最为专业的解决方案 - 新威奇科技官网</span><span class="src">newwish.com.cn</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-04.html"><span class="d">← 上一项</span>隧道联络通道掘进机</a>
+    <a class="next" href="2021-06.html"><span class="d">下一项 →</span>深孔加工直线度控制技术及装备</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

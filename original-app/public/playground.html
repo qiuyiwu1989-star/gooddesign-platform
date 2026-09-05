@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>互动乐园 · 好设计馆 — 动手玩懂国之重器</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --bg-soft:rgba(15,23,42,0.045); --bg-quiet:rgba(15,23,42,0.02);
+    --ink:#16181D; --ink-soft:#3E4454; --muted:#8A8F98; --muted-soft:#62666D;
+    --line:rgba(15,23,42,0.09);
+    --accent:#5E6AD2; --accent-bright:#4F58C0; --accent-soft:rgba(94,106,210,.10); --gold:#A87E2A; --gold-soft:rgba(168,126,42,.12);
+    --green:#3E7A5A; --red:#C03B3B;
+    --sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --mono:"JetBrains Mono","SF Mono","Consolas",monospace;
+    --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+    --r-md:6px; --r-lg:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  ::selection{background:rgba(94,106,210,.25)}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:0 32px;height:60px;background:rgba(255,255,255,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:600;color:var(--ink)}
+  nav .brand .mark{width:24px;height:24px;border-radius:var(--r-md);background:var(--accent);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+  nav .links{display:flex;gap:4px;align-items:center}
+  nav .links a{color:var(--muted-soft);text-decoration:none;font-size:13.5px;padding:6px 12px;border-radius:var(--r-md);transition:all .16s var(--ease)}
+  nav .links a:hover{color:var(--ink);background:var(--bg-soft)}
+  @media(max-width:900px){nav .links{display:none}}
+  .burger{display:none;background:none;border:1px solid var(--line);border-radius:var(--r-md);width:38px;height:34px;
+    cursor:pointer;color:var(--ink-soft);font-size:16px;align-items:center;justify-content:center;font-family:var(--sans)}
+  .drop{position:fixed;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);display:none;
+    flex-direction:column;padding:6px 20px 14px;z-index:98;box-shadow:0 16px 40px rgba(15,23,42,.12)}
+  .drop.open{display:flex}
+  .drop a{padding:12px 4px;font-size:14.5px;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line)}
+  .drop a:last-child{border-bottom:0}
+  .drop a:hover{color:var(--accent-bright)}
+  @media(max-width:900px){.burger{display:flex}}
+  @media(min-width:901px){.drop{display:none!important}}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:96px 28px 60px}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:1.5px;
+    color:var(--muted-soft);border:1px solid var(--line);border-radius:9999px;padding:6px 14px;background:var(--bg-quiet)}
+  .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  h1{font-size:clamp(34px,5vw,54px);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin:20px 0 14px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .lead{max-width:720px;color:var(--ink-soft);font-size:15.5px;line-height:1.8}
+
+  /* 页签 */
+  .tabs{position:sticky;top:60px;z-index:90;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;padding:0 24px}
+  .tab{min-width:0;padding:12px 18px;text-align:left;color:var(--muted-soft);cursor:pointer;border-bottom:2px solid transparent;transition:all .16s var(--ease);font-family:var(--sans);background:none;border-top:0;border-left:0;border-right:0}
+  .tab b{display:block;font-size:13.5px;font-weight:600;color:inherit;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tab span{display:block;margin-top:2px;font-size:11px;color:var(--muted);line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tab:hover{color:var(--ink);background:var(--bg-quiet)}
+  .tab.on{color:var(--accent-bright);border-bottom-color:var(--accent);background:var(--accent-soft)}
+  @media(max-width:760px){.tabs{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 14px}.tab{padding:10px 12px}.tab span{display:none}}
+
+  .panel{display:none;padding-top:38px}
+  .panel.on{display:block;animation:fadeIn .3s var(--ease)}
+  .panel.on + .panel.on{border-top:1px solid var(--line);margin-top:38px}
+  .module-head{padding-top:30px}
+  .module-card{border:1px solid var(--line);border-radius:var(--r-lg);background:linear-gradient(180deg,var(--bg-quiet),#fff);
+    padding:20px 22px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center}
+  .module-card .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--accent-bright);margin-bottom:6px}
+  .module-card h2{font-size:22px;font-weight:700;letter-spacing:-.01em;line-height:1.35}
+  .module-card p{margin-top:6px;color:var(--ink-soft);font-size:13.5px;line-height:1.75;max-width:720px}
+  .module-card .steps{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .module-card .steps span{border:1px solid var(--line);border-radius:9999px;padding:5px 10px;font-size:12px;color:var(--muted-soft);background:#fff;white-space:nowrap}
+  @media(max-width:760px){.module-card{grid-template-columns:1fr}.module-card .steps{justify-content:flex-start}}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:90px 20px;color:var(--muted);text-align:center}
+  .ph .big{font-size:40px}
+  .ph .t{font-size:17px;color:var(--ink-soft);font-weight:600}
+  .ph .s{font-size:13.5px;max-width:420px}
+
+  .sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:22px}
+  .sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:1px}
+  .sec-h h2{font-size:clamp(22px,3vw,30px);font-weight:600;letter-spacing:-.01em}
+  .sec-h p{color:var(--muted-soft);font-size:13.5px}
+
+  /* 实验台 */
+  .lab{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+  @media(max-width:960px){.lab{grid-template-columns:1fr}}
+  .sim{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+  .sim .head{padding:13px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--bg-quiet)}
+  .sim .head .t{font-size:14px;font-weight:600}
+  .sim .head .hint{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .sim svg{display:block;width:100%;background:#F6F7FA}
+  .ctrl{padding:18px;display:flex;flex-direction:column;gap:16px}
+  .ctrl .row .lbl{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);margin-bottom:7px}
+  .ctrl .row .lbl b{font-family:var(--mono);font-size:13px;color:var(--accent-bright)}
+  .ctrl input[type=range]{width:100%;accent-color:var(--accent);height:22px;cursor:pointer}
+  .ctrl .seg{display:flex;gap:6px}
+  .ctrl .seg button{flex:1;padding:8px 0;border:1px solid var(--line);border-radius:var(--r-md);background:var(--bg-quiet);font-size:12.5px;color:var(--muted-soft);cursor:pointer;font-family:var(--sans);transition:all .14s var(--ease)}
+  .ctrl .seg button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .go{padding:11px 0;border:none;border-radius:var(--r-md);background:var(--accent);color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .16s var(--ease)}
+  .go:hover{background:var(--accent-bright)}
+  .go:disabled{opacity:.5;cursor:not-allowed}
+  .result{border:1px solid var(--line);border-radius:var(--r-lg);padding:16px 18px;display:none}
+  .result.on{display:block;animation:fadeIn .3s var(--ease)}
+  .result .nums{display:flex;gap:14px;margin-bottom:12px}
+  .result .num{flex:1;border:1px solid var(--line);border-radius:var(--r-md);padding:10px 12px;text-align:center}
+  .result .num .v{font-family:var(--mono);font-size:24px;font-weight:600}
+  .result .num .k{font-size:11.5px;color:var(--muted);margin-top:2px}
+  .result .num.good .v{color:var(--green)}
+  .result .num.bad .v{color:var(--red)}
+  .result .verdict{font-size:13.5px;color:var(--ink-soft);line-height:1.75}
+  .strategy{margin-top:12px;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px 16px;background:#fff}
+  .strategy .t{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:13px;font-weight:600;margin-bottom:10px}
+  .strategy .t span{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:1px}
+  .strategy .bars{display:grid;gap:9px}
+  .strategy .bar{display:grid;grid-template-columns:78px 1fr 42px;gap:10px;align-items:center;font-size:12.5px;color:var(--muted-soft)}
+  .strategy .track{height:7px;border-radius:9999px;background:var(--bg-soft);overflow:hidden}
+  .strategy .fill{height:100%;width:0;background:var(--accent);transition:width .2s var(--ease)}
+  .strategy .fill.warn{background:var(--gold)}
+  .strategy .fill.bad{background:var(--red)}
+  .strategy .judgement{margin-top:12px;border-top:1px dashed var(--line);padding-top:10px;font-size:13px;color:var(--ink-soft);line-height:1.7}
+  .sim-design{margin-top:12px;border:1px solid rgba(94,106,210,.28);border-radius:var(--r-lg);background:var(--accent-soft);padding:16px 18px;display:none}
+  .sim-design.on{display:block;animation:fadeIn .3s var(--ease)}
+  .sim-design .t{font-size:13px;font-weight:700;color:var(--accent-bright);margin-bottom:8px}
+  .sim-design .b{font-size:13.5px;line-height:1.75;color:var(--ink-soft)}
+  .sim-design .mini-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .sim-design button,.sim-design a{border:1px solid rgba(94,106,210,.35);border-radius:var(--r-md);background:#fff;color:var(--accent-bright);padding:8px 12px;font-size:12.5px;font-family:var(--sans);font-weight:600;cursor:pointer;text-decoration:none}
+  .think{margin-top:18px;border:1px solid var(--gold);border-radius:var(--r-lg);background:var(--gold-soft);padding:16px 18px;display:none}
+  .think.on{display:block}
+  .think .t{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:8px}
+  .think .b{font-size:13.5px;color:var(--ink-soft);line-height:1.8}
+  .qa{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+  .qa .item{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+  .qa .q{padding:12px 16px;font-size:13.5px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:var(--bg-quiet)}
+  .qa .q .arr{transition:transform .2s var(--ease);color:var(--muted)}
+  .qa .item.open .q .arr{transform:rotate(180deg)}
+  .qa .a{display:none;padding:12px 16px;font-size:13px;color:var(--ink-soft);line-height:1.8;border-top:1px solid var(--line)}
+  .qa .item.open .a{display:block}
+
+  /* 装配拼图 */
+  .pz{display:grid;grid-template-columns:290px 1fr;gap:26px;align-items:start}
+  @media(max-width:860px){.pz{grid-template-columns:1fr}}
+  .pz-parts{display:flex;flex-direction:column;gap:10px}
+  .pz-part{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;cursor:pointer;transition:all .15s var(--ease);background:#fff}
+  .pz-part:hover{border-color:var(--accent)}
+  .pz-part.sel{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 2px var(--accent-soft)}
+  .pz-part .n{font-size:13.5px;font-weight:600}
+  .pz-part .d{font-size:12px;color:var(--muted-soft);margin-top:3px;line-height:1.5}
+  .pz-part.done{opacity:.38;pointer-events:none}
+  .pz-slots{display:flex;flex-direction:column;gap:8px}
+  .pz-slot{min-height:62px;border:2px dashed rgba(15,23,42,.16);border-radius:var(--r-md);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:all .15s var(--ease);background:#fff}
+  .pz-slot.empty{cursor:pointer}
+  .pz-slot.empty:hover{border-color:var(--accent);background:var(--bg-quiet)}
+  .pz-slot.filled{border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
+  .pz-slot .left .k{font-size:10.5px;color:var(--muted);font-family:var(--mono);letter-spacing:1px}
+  .pz-slot .left .nm{font-size:14px;font-weight:600;color:var(--accent-bright)}
+  .pz-slot .hint{font-size:12px;color:var(--muted)}
+  .pz-slot .hint b{color:var(--muted-soft)}
+  .pz-msg{min-height:24px;font-size:12.5px;color:var(--red);margin-top:10px}
+  .pz-msg.ok{color:var(--green)}
+  .pz-bar{margin-top:14px;border:1px solid var(--gold);border-radius:var(--r-lg);background:var(--gold-soft);padding:14px 18px;display:none;font-size:13.5px;color:var(--ink-soft);line-height:1.8}
+  .pz-bar.on{display:block;animation:fadeIn .4s var(--ease)}
+  .pz-bar b{color:var(--gold)}
+
+  /* 观展闯关 */
+  .q-top{display:flex;align-items:center;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+  .q-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold);border-radius:9999px;padding:7px 16px;font-size:13px;color:var(--gold);background:var(--gold-soft)}
+  .q-badge .n{font-family:var(--mono);font-size:15px;font-weight:700}
+  .q-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+  .q-card{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;cursor:pointer;transition:all .16s var(--ease);background:#fff}
+  .q-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,23,42,.08)}
+  .q-card img{width:100%;height:118px;object-fit:cover;display:block}
+  .q-card .b{padding:12px 14px}
+  .q-card .n{font-size:14px;font-weight:600;line-height:1.4}
+  .q-card .st{font-size:12px;color:var(--muted);margin-top:6px;display:flex;justify-content:space-between;align-items:center}
+  .q-card .st .medal{color:var(--gold);font-size:15px}
+  .q-mask{position:fixed;inset:0;z-index:220;background:rgba(10,13,22,.6);display:flex;align-items:center;justify-content:center;padding:24px}
+  .q-box{width:min(640px,100%);background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 24px 80px rgba(10,13,22,.4)}
+  .q-box .hd{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--bg-quiet)}
+  .q-box .hd .t{font-size:14.5px;font-weight:600}
+  .q-box .hd .x{cursor:pointer;color:var(--muted);font-size:18px;padding:0 6px}
+  .q-body{padding:22px 22px 26px}
+  .q-q{font-size:15.5px;font-weight:600;line-height:1.6;margin-bottom:18px}
+  .q-opts{display:flex;flex-direction:column;gap:9px}
+  .q-opt{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 15px;font-size:13.5px;cursor:pointer;transition:all .14s var(--ease);text-align:left;font-family:var(--sans);background:#fff}
+  .q-opt:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .q-opt.correct{border-color:var(--green);background:rgba(62,122,90,.1);color:var(--green);font-weight:600}
+  .q-opt.wrong{border-color:var(--red);background:rgba(192,59,59,.07);color:var(--red)}
+  .q-opt:disabled{cursor:default}
+  .q-fb{margin-top:16px;border-left:3px solid var(--accent);background:var(--bg-quiet);padding:11px 14px;font-size:13px;color:var(--ink-soft);line-height:1.7;display:none}
+  .q-fb.on{display:block}
+  .q-next{margin-top:16px;display:none}
+  .q-next button{width:100%;padding:11px 0;border:none;border-radius:var(--r-md);background:var(--accent);color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans)}
+  .q-congrats{text-align:center;padding:26px 10px}
+  .q-congrats .big{font-size:44px}
+  .q-congrats .t{font-size:18px;font-weight:700;margin-top:10px}
+  .q-congrats .s{font-size:13.5px;color:var(--muted-soft);margin-top:8px;line-height:1.7}
+
+  /* 猜猜看 */
+  .g-wrap{max-width:620px;margin:0 auto}
+  .g-card{border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;background:#fff}
+  .g-card .hd2{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+  .g-card .hd2 .t{font-size:15px;font-weight:600}
+  .g-card .hd2 .cnt{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .g-clues{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
+  .g-clue{border:1px dashed var(--line);border-radius:var(--r-md);padding:11px 14px;font-size:13.5px;color:var(--muted-soft);background:var(--bg-quiet);opacity:.5}
+  .g-clue.show{opacity:1;border-color:var(--accent);color:var(--ink);background:var(--accent-soft)}
+  .g-clue .no{font-family:var(--mono);font-size:11px;color:var(--accent-bright);margin-right:6px}
+  .g-ans{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .g-ans button{padding:10px 6px;border:1px solid var(--line);border-radius:var(--r-md);font-size:12px;cursor:pointer;background:#fff;color:var(--ink-soft);font-family:var(--sans);transition:all .13s var(--ease);line-height:1.35}
+  .g-ans button:hover{border-color:var(--accent);color:var(--accent-bright)}
+  .g-ans button:disabled{opacity:.45;cursor:default}
+  .g-ans button.right{border-color:var(--green);background:rgba(62,122,90,.1);color:var(--green);font-weight:600}
+  .g-fb{margin-top:16px;font-size:13.5px;line-height:1.7;display:none}
+  .g-fb.on{display:block}
+  .g-ctrl{display:flex;gap:10px;margin-top:18px;justify-content:center}
+  .g-ctrl button{padding:9px 20px;border-radius:var(--r-md);border:1px solid var(--line);background:var(--bg-quiet);color:var(--ink-soft);cursor:pointer;font-family:var(--sans);font-size:13px}
+  .g-ctrl button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .g-ctrl button:disabled{opacity:.45;cursor:default}
+
+  /* 数据故事 */
+  .st-chart{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;padding:18px 18px 10px;margin-bottom:18px}
+  .st-chart .ct{font-size:14px;font-weight:600;margin-bottom:4px}
+  .st-chart .cs{font-size:12px;color:var(--muted);margin-bottom:10px}
+  .st-chart svg{width:100%;display:block}
+  .st-insights{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:6px}
+  .st-ins{background:var(--gold-soft);border:1px solid var(--gold);border-radius:var(--r-md);padding:14px 16px;font-size:13px;color:var(--ink-soft);line-height:1.7}
+  .st-ins b{color:var(--gold)}
+
+  /* 设计挑战 */
+  .ch-card{border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;margin-bottom:18px;background:#fff}
+  .ch-card .hd3{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .ch-card .hd3 .no{font-family:var(--mono);font-size:11.5px;color:var(--accent-bright);border:1px solid var(--accent);border-radius:6px;padding:2px 8px}
+  .ch-card .sc{font-size:14px;color:var(--ink-soft);line-height:1.8;margin-bottom:16px}
+  .ch-opts{display:flex;flex-direction:column;gap:9px}
+  .ch-opt{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 15px;font-size:13.5px;cursor:pointer;text-align:left;font-family:var(--sans);background:#fff;transition:all .14s var(--ease)}
+  .ch-opt:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .ch-opt:disabled{cursor:default;opacity:.55}
+  .ch-opt.good{border-color:var(--green);background:rgba(62,122,90,.1);opacity:1}
+  .ch-opt.bad{border-color:var(--red);background:rgba(192,59,59,.06);opacity:.65}
+  .ch-fb{margin-top:14px;border-left:3px solid var(--accent);background:var(--bg-quiet);padding:12px 15px;font-size:13px;color:var(--ink-soft);line-height:1.75;display:none}
+  .ch-fb.on{display:block}
+  .ch-ask{margin-top:12px;display:none}
+  .ch-ask button{padding:9px 18px;border:none;border-radius:var(--r-md);background:var(--accent);color:#fff;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans)}
+
+  /* 我的设计卡 */
+  .dc-wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+  @media(max-width:900px){.dc-wrap{grid-template-columns:1fr}}
+  .dc-form{border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;background:#fff;display:flex;flex-direction:column;gap:14px}
+  .dc-form label{font-size:12.5px;color:var(--muted-soft);display:block;margin-bottom:6px}
+  .dc-form input[type=text],.dc-form textarea,.dc-form select{width:100%;border:1px solid var(--line);border-radius:var(--r-md);padding:10px 12px;font-size:13.5px;font-family:var(--sans);color:var(--ink);background:#fff}
+  .dc-form textarea{resize:vertical;min-height:70px}
+  .dc-form .go{margin-top:4px}
+  .dc-preview{position:sticky;top:130px}
+  .dc-card{border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(15,23,42,.14);font-family:var(--sans)}
+  .dc-card .band{height:10px;background:linear-gradient(90deg,#5E6AD2,#A87E2A)}
+  .dc-card .body{padding:24px 22px 20px;background:#fff}
+  .dc-card .field{display:inline-block;font-family:var(--mono);font-size:10.5px;color:var(--accent-bright);border:1px solid var(--accent);border-radius:9999px;padding:3px 10px;letter-spacing:1px}
+  .dc-card .nm{font-size:21px;font-weight:700;letter-spacing:-.01em;margin-top:12px;line-height:1.3}
+  .dc-card .ins{font-size:13.5px;color:var(--muted-soft);margin-top:6px}
+  .dc-card .desc{font-size:13.5px;color:var(--ink-soft);line-height:1.75;margin-top:14px;border-top:1px dashed var(--line);padding-top:14px}
+  .dc-card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:11.5px;color:var(--muted)}
+  .dc-card .foot .mark2{width:22px;height:22px;border-radius:6px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+  .dc-actions{display:flex;gap:10px;margin-top:14px}
+  .dc-actions button{flex:1;padding:10px 0;border-radius:var(--r-md);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans)}
+  .dc-dl{background:var(--accent);border:none;color:#fff}
+  .dc-save{border:1px solid var(--line);background:var(--bg-quiet);color:var(--ink-soft)}
+  .dc-mine{margin-top:26px}
+  .dc-mine .h4{font-size:13px;font-weight:600;color:var(--muted-soft);margin-bottom:10px;display:flex;justify-content:space-between}
+  .dc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .dc-item{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;position:relative;background:#fff}
+  .dc-item .b2{padding:9px 11px}
+  .dc-item .nm2{font-size:12.5px;font-weight:600;line-height:1.4}
+  .dc-item .in2{font-size:11px;color:var(--muted);margin-top:3px}
+  .dc-item .ds2{font-size:11.5px;color:var(--muted-soft);line-height:1.55;margin-top:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .dc-item .meta2{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid var(--line);margin-top:9px;padding-top:8px}
+  .dc-item .tm2{font-size:10.5px;color:var(--muted);font-family:var(--mono)}
+  .dc-item .dl2{border:0;background:transparent;color:var(--accent-bright);font-size:11px;cursor:pointer;font-family:var(--sans);padding:0}
+  .dc-item .x2{position:absolute;top:5px;right:7px;border:none;background:rgba(255,255,255,.85);border-radius:50%;width:20px;height:20px;cursor:pointer;color:var(--muted);font-size:12px;line-height:1}
+
+  /* 技术迁移 */
+  .mg{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+  @media(max-width:900px){.mg{grid-template-columns:1fr}}
+  .mg-pick{border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;background:#fff}
+  .mg-pick .lbl{font-size:12.5px;color:var(--muted-soft);margin-bottom:10px}
+  .mg-exh{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .mg-exh button{padding:7px 13px;border:1px solid var(--line);border-radius:9999px;font-size:12.5px;cursor:pointer;background:var(--bg-quiet);color:var(--ink-soft);font-family:var(--sans);transition:all .14s var(--ease)}
+  .mg-exh button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .mg-tags{display:flex;flex-wrap:wrap;gap:7px;min-height:34px}
+  .mg-tag{border:1px solid var(--gold);border-radius:9999px;padding:5px 12px;font-size:12px;color:var(--gold);background:var(--gold-soft)}
+  .mg-tags .ph2{font-size:12px;color:var(--muted);align-self:center}
+  .mg-ind{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .mg-ind button{flex:1;min-width:100px;padding:10px 6px;border:1px solid var(--line);border-radius:var(--r-md);font-size:12.5px;cursor:pointer;background:#fff;color:var(--ink-soft);font-family:var(--sans);transition:all .14s var(--ease)}
+  .mg-ind button:hover{border-color:var(--accent)}
+  .mg-ind button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .mg-out{border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;display:none;background:#fff}
+  .mg-out.on{display:block;animation:fadeIn .3s var(--ease)}
+  .mg-out .t{font-size:15px;font-weight:600;margin-bottom:12px}
+  .mg-list{display:flex;flex-direction:column;gap:10px}
+  .mg-item{border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;font-size:13px;line-height:1.7}
+  .mg-item .tag{font-weight:600;color:var(--accent-bright)}
+  .mg-item .why{color:var(--muted-soft)}
+  .mg-ask{margin-top:16px}
+  .mg-ask button{width:100%;padding:11px 0;border:none;border-radius:var(--r-md);background:var(--accent);color:#fff;font-size:13.5px;font-weight:600;cursor:pointer;font-family:var(--sans)}
+
+  footer{border-top:1px solid var(--line);color:var(--muted);padding:36px 32px;font-size:12.5px}
+  footer .row{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--muted-soft);text-decoration:none}
+  footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="x-ray.html"><span class="mark">玩</span>互动乐园<span style="font-family:var(--mono);font-size:11px;color:var(--muted-soft);font-weight:400;letter-spacing:1px;margin-left:2px">PLAYGROUND</span></a>
+  <div class="links">
+    <a href="x-ray.html">拆解实验室</a>
+    <a href="index.html">好设计馆</a>
+    <a href="index.html">平台首页</a>
+  </div>
+  <button class="burger" id="burger" type="button" aria-label="菜单">☰</button>
+  <div class="drop" id="drop">
+    <a href="index.html">平台首页</a>
+    <a href="index.html">好设计馆</a>
+    <a href="x-ray.html">拆解实验室</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <span class="kicker"><span class="dot"></span>好设计馆 · 互动乐园 PLAYGROUND</span>
+  <h1>动手玩懂<em>国之重器</em>。</h1>
+  <p class="lead">看完、拆完,再来亲手试一试:模拟月球钻取、拼装采样系统、闯关集徽章、猜猜是哪件重器、设计你的国之重器——从「看懂」到「再造」。</p>
+</div>
+
+<div class="tabs" id="tabs" aria-label="互动乐园主入口">
+  <button type="button" class="tab on" data-group="experiment"><b>动手实验</b><span>模拟器 · 装配拼图</span></button>
+  <button type="button" class="tab" data-group="questline"><b>观展闯关</b><span>问答 · 猜重器 · 数据故事</span></button>
+  <button type="button" class="tab" data-group="create"><b>成果创作</b><span>设计挑战 · 我的设计卡</span></button>
+  <button type="button" class="tab" data-group="migrate"><b>技术迁移</b><span>馆藏能力 · 产业匹配</span></button>
+</div>
+
+<div class="wrap" style="padding-top:0">
+
+  <section class="panel module-head on" data-group="experiment">
+    <div class="module-card">
+      <div><div class="eyebrow">MODULE 01 · HANDS-ON LAB</div><h2>动手实验模块</h2><p>把“看懂国之重器”变成可操作的实验：先调参数观察系统反馈，再通过装配拼图理解结构如何协同。</p></div>
+      <div class="steps"><span>月球钻取模拟器</span><span>装配拼图</span><span>设计观察卡</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 实验台 ============ -->
+  <section class="panel on" id="panel-lab" data-group="experiment">
+    <div class="sec-h"><span class="no">01-A</span><h2>月球钻取模拟器</h2><p>你是钻取系统的操控员——调转速、进给和冲击,把月壤样芯完好取回来。</p></div>
+    <div class="lab">
+      <div class="sim">
+        <div class="head"><span class="t">月壤剖面 · 钻进作业</span><span class="hint" id="simStatus">教学模拟,非工程精确</span></div>
+        <svg id="simSvg" viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+      <div>
+        <div class="sim">
+          <div class="head"><span class="t">操控台</span><span class="hint">CONSOLE</span></div>
+          <div class="ctrl">
+            <div class="row"><div class="lbl"><span>钻头转速(回转)</span><b id="vRpm">180 rpm</b></div>
+              <input type="range" id="rRpm" min="60" max="300" step="10" value="180"></div>
+            <div class="row"><div class="lbl"><span>进给速度(下压)</span><b id="vFeed">8 mm/s</b></div>
+              <input type="range" id="rFeed" min="2" max="20" step="1" value="8"></div>
+            <div class="row"><div class="lbl"><span>冲击功率</span></div>
+              <div class="seg" id="segHit">
+                <button type="button" data-v="0">低</button>
+                <button type="button" class="on" data-v="1">中</button>
+                <button type="button" data-v="2">高</button>
+              </div></div>
+            <div class="strategy" id="simStrategy">
+              <div class="t">当前策略预判 <span>LIVE</span></div>
+              <div class="bars">
+                <div class="bar"><span>样芯完整</span><div class="track"><div class="fill" id="barCore"></div></div><b id="nCore">--</b></div>
+                <div class="bar"><span>设备风险</span><div class="track"><div class="fill" id="barRisk"></div></div><b id="nRisk">--</b></div>
+                <div class="bar"><span>能耗压力</span><div class="track"><div class="fill" id="barEnergy"></div></div><b id="nEnergy">--</b></div>
+              </div>
+              <div class="judgement" id="simJudgement">调整参数，观察取芯质量、设备风险和能耗压力之间的变化。</div>
+            </div>
+            <button class="go" id="btnStart" type="button">开始钻进</button>
+            <div class="result" id="simResult"></div>
+          </div>
+        </div>
+        <div class="think" id="simThink">
+          <div class="t">设计者是怎么想的?</div>
+          <div class="b" id="simThinkTxt"></div>
+        </div>
+        <div class="sim-design" id="simDesign">
+          <div class="t">生成一张设计观察卡</div>
+          <div class="b" id="simDesignTxt"></div>
+          <div class="mini-actions">
+            <button type="button" id="simToCard">生成观察卡</button>
+            <a href="learn.html?slug=2025-00">带入学习路径</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="qa" id="simQa"></div>
+  </section>
+
+  <!-- ============ 装配拼图 ============ -->
+  <section class="panel" id="panel-puzzle" data-group="experiment">
+    <div class="sec-h"><span class="no">01-B</span><h2>装配嫦娥钻取系统</h2><p>先点左侧部件,再点右侧槽位——每块都是拆解实验室里讲过的。</p></div>
+    <div class="pz">
+      <div class="pz-parts" id="pzParts"></div>
+      <div>
+        <div class="pz-slots" id="pzSlots"></div>
+        <div class="pz-msg" id="pzMsg"></div>
+        <div class="pz-bar" id="pzBar"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel module-head" data-group="questline">
+    <div class="module-card">
+      <div><div class="eyebrow">MODULE 02 · VISIT QUEST</div><h2>观展闯关模块</h2><p>面向公众参观和研学课堂，把展品知识压缩成轻量任务：答题、猜测、看数据，形成一条可完成的观展路线。</p></div>
+      <div class="steps"><span>观展闯关</span><span>国之重器猜猜看</span><span>十年数据故事</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 观展闯关 ============ -->
+  <section class="panel" id="panel-quest" data-group="questline">
+    <div class="sec-h"><span class="no">02-A</span><h2>观展闯关</h2><p>8 件馆藏,每件 2 题——答案藏在拆解实验室的说明卡与官方图纸里。</p></div>
+    <div class="q-top"><div class="q-badge">🎖️ 已解锁 <span class="n" id="qBadgeN">0</span> / 8</div>
+      <button type="button" class="sch-btn" id="qExport" style="padding:8px 16px;border:1px solid var(--line);border-radius:8px;background:var(--bg-quiet);font-size:12.5px;color:var(--muted-soft);cursor:pointer;font-family:var(--sans)">📄 导出任务单</button></div>
+    <div class="q-list" id="qList"></div>
+  </section>
+
+  <!-- ============ 猜猜看 ============ -->
+  <section class="panel" id="panel-guess" data-group="questline">
+    <div class="sec-h"><span class="no">02-B</span><h2>国之重器猜猜看</h2><p>给线索,猜重器。线索逐条揭开,越早猜中越厉害。</p></div>
+    <div class="g-wrap">
+      <div class="g-card">
+        <div class="hd2"><span class="t" id="gTitle">第 1 题</span><span class="cnt" id="gCnt">0 / 10</span></div>
+        <div class="g-clues" id="gClues"></div>
+        <div class="g-ans" id="gAns"></div>
+        <div class="g-fb" id="gFb"></div>
+        <div class="g-ctrl">
+          <button type="button" id="gNext">下一条线索</button>
+          <button type="button" class="primary" id="gSkip">跳过(看答案)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 数据故事 ============ -->
+  <section class="panel" id="panel-story" data-group="questline">
+    <div class="sec-h"><span class="no">02-C</span><h2>十年数据故事</h2><p>2015–2025,十届 560 项获奖——中国制造从跟踪到原创的轨迹,数据会说话。</p></div>
+    <div class="st-chart"><div class="ct">历届获奖数量(按奖种)</div><div class="cs">金 / 银 / 菁英 / 创意 / 提名 · 数据源:好设计官网 560 项公开档案</div><div id="stChart1"></div></div>
+    <div class="st-chart"><div class="ct">金奖累计</div><div class="cs">十届累计 98 件金奖</div><div id="stChart2"></div></div>
+    <div class="st-chart"><div class="ct">金奖单位 TOP8</div><div class="cs">按金奖数量排名(联合申报按单位分别计入)</div><div id="stChart3"></div></div>
+    <div class="st-insights" id="stInsights"></div>
+  </section>
+
+  <section class="panel module-head" data-group="create">
+    <div class="module-card">
+      <div><div class="eyebrow">MODULE 03 · CREATE OUTPUT</div><h2>成果创作模块</h2><p>把参观后的理解转化成个人表达：先面对真实设计约束做判断，再生成可保存、可分享的设计卡。</p></div>
+      <div class="steps"><span>设计挑战</span><span>我的设计卡</span><span>作品收藏</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 设计挑战 ============ -->
+  <section class="panel" id="panel-challenge" data-group="create">
+    <div class="sec-h"><span class="no">03-A</span><h2>设计挑战</h2><p>给你真实的设计约束,你来当工程师——选完让 AI 裁判点评。</p></div>
+    <div id="chList"></div>
+  </section>
+
+  <!-- ============ 我的设计卡 ============ -->
+  <section class="panel" id="panel-mycard" data-group="create">
+    <div class="sec-h"><span class="no">03-B</span><h2>我的设计卡</h2><p>看完国之重器,写下你的小创意——生成一张可以保存分享的作品卡。</p></div>
+    <div class="dc-wrap">
+      <div class="dc-form">
+        <div><label>你的设计叫什么名字?</label><input type="text" id="dcName" maxlength="20" placeholder="例:会自己排月尘的钻头"></div>
+        <div><label>灵感来自哪件馆藏?</label>
+          <select id="dcFrom">
+            <option value="">选择一件馆藏(可跳过)</option>
+            <option>嫦娥五/六号月球钻取采样系统</option><option>F级50MW重型燃气轮机</option><option>国和一号屏蔽电机主泵</option>
+            <option>白鹤滩1000MW水轮发电机组</option><option>800MN大型模锻压机</option><option>蛟龙号载人潜水器</option>
+            <option>海洋石油981</option><option>CRH380A高速动车组</option>
+          </select></div>
+        <div><label>它解决什么问题?</label><textarea id="dcDesc" maxlength="80" placeholder="一句话说明你的设计思路(最多 80 字)"></textarea></div>
+        <div><label>领域标签</label>
+          <select id="dcField"><option>未来出行</option><option>智能生活</option><option>绿色能源</option><option>健康医疗</option><option>探索装备</option><option>其它</option></select></div>
+        <button class="go" id="dcGen" type="button">生成我的设计卡</button>
+      </div>
+      <div class="dc-preview">
+        <div class="dc-card" id="dcCard">
+          <div class="band"></div>
+          <div class="body">
+            <span class="field" id="dcCField">未来出行</span>
+            <div class="nm" id="dcCName">你的设计名</div>
+            <div class="ins" id="dcCFrom">灵感:—</div>
+            <div class="desc" id="dcCDesc">在这里写下你的设计简介。</div>
+            <div class="foot"><span>我的设计 · 好设计馆互动乐园</span><span class="mark2">设</span></div>
+          </div>
+        </div>
+        <div class="dc-actions">
+          <button class="dc-dl" id="dcDl" type="button">保存为图片</button>
+          <button class="dc-save" id="dcSave" type="button">收藏到我的作品</button>
+          <button class="dc-save" id="dcShare" type="button" style="flex-basis:100%">🚀 发布到小先生作品广场(复制分享链接)</button>
+        </div>
+        <div class="dc-mine">
+          <div class="h4"><span>我的作品</span><span id="dcCount"></span></div>
+          <div class="dc-grid" id="dcGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel module-head" data-group="migrate">
+    <div class="module-card">
+      <div><div class="eyebrow">MODULE 04 · INDUSTRY TRANSFER</div><h2>技术迁移模块</h2><p>面向企业和地方产业，把馆藏案例中的材料、结构、控制、工艺能力抽取出来，再匹配到具体产业场景。</p></div>
+      <div class="steps"><span>选馆藏</span><span>选产业</span><span>生成迁移建议</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 技术迁移 ============ -->
+  <section class="panel" id="panel-migrate" data-group="migrate">
+    <div class="sec-h"><span class="no">04-A</span><h2>技术迁移实验室</h2><p>国之重器里的技术,能迁移到哪些产业?选一件馆藏,再选一个产业看看。</p></div>
+    <div class="mg-mode" style="display:flex;gap:10px;margin-bottom:14px">
+      <button type="button" class="sch-btn on" id="mgModeA" style="padding:8px 18px;border:1px solid var(--line);border-radius:8px;background:var(--accent);color:#fff;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans)">从馆藏出发(正向)</button>
+      <button type="button" class="sch-btn" id="mgModeB" style="padding:8px 18px;border:1px solid var(--line);border-radius:8px;background:var(--bg-quiet);color:var(--muted-soft);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans)">从产业出发(反向)💡</button>
+    </div>
+    <div class="mg">
+      <div class="mg-pick">
+        <div class="lbl" id="mgLbl1">① 选一件馆藏</div>
+        <div class="mg-exh" id="mgExh"></div>
+        <div class="lbl" id="mgLbl2">它的可迁移能力</div>
+        <div class="mg-tags" id="mgTags"><span class="ph2">先选馆藏</span></div>
+        <div class="lbl" style="margin-top:16px" id="mgLbl3">② 选一个目标产业</div>
+        <div class="mg-ind" id="mgInd"></div>
+      </div>
+      <div class="mg-out" id="mgOut">
+        <div class="t" id="mgOutT"></div>
+        <div class="mg-list" id="mgList"></div>
+        <div class="mg-ask"><button type="button" id="mgAsk">问好设计助手:深入分析这个迁移方案</button></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="row">
+    <div>互动乐园 PLAYGROUND — 数据基于官方设计阐述(采集于 2026-08) · 模拟器为教学示意,非工程精确</div>
+    <div><a href="x-ray.html">拆解实验室</a> · <a href="index.html">好设计馆</a> · <a href="index.html">平台首页</a></div>
+  </div>
+</footer>
+
+<script src="js/play-data.js"></script>
+<script>
+(function(){
+  var burger = document.getElementById('burger');
+  var drop = document.getElementById('drop');
+  if (burger) burger.addEventListener('click', function(){ drop.classList.toggle('open'); });
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function downloadText(filename, text){
+    var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  /* ---------- 页签 ---------- */
+  var qs = new URLSearchParams(location.search);
+  var GROUP_BY_TAB = { lab:'experiment', puzzle:'experiment', quest:'questline', guess:'questline', story:'questline', challenge:'create', mycard:'create', migrate:'migrate' };
+  var want = qs.get('tab') || (qs.get('slug') ? 'migrate' : 'experiment');
+  var wantGroup = GROUP_BY_TAB[want] || want;
+  function openGroup(name){
+    Array.prototype.forEach.call(document.querySelectorAll('.tab'), function(x){ x.classList.toggle('on', x.getAttribute('data-group') === name); });
+    Array.prototype.forEach.call(document.querySelectorAll('.panel'), function(p){ p.classList.toggle('on', p.getAttribute('data-group') === name); });
+    window.scrollTo({ top: document.getElementById('tabs').offsetTop - 58, behavior: 'smooth' });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.tab'), function(b){
+    b.addEventListener('click', function(){
+      openGroup(b.getAttribute('data-group'));
+    });
+    if (b.getAttribute('data-group') === wantGroup) b.click();
+  });
+
+  /* ================= 月球钻取模拟器 ================= */
+  var NS = 'http://www.w3.org/2000/svg';
+  var svg = $('simSvg');
+  /* 剖面:5 层月壤 + 1 个岩块层 */
+  var LAYERS = [
+    { y: 120, h: 34, fill: '#C9A06B', name: '松软表层' },
+    { y: 154, h: 30, fill: '#B08D5C', name: '细颗粒层' },
+    { y: 184, h: 40, fill: '#96744A', name: '含岩块层', rock: true },
+    { y: 224, h: 36, fill: '#7E5F3C', name: '致密层' },
+    { y: 260, h: 44, fill: '#6A4F30', name: '基岩层' }
+  ];
+  var drillG, statusTxt;
+  function buildScene(){
+    svg.innerHTML = '';
+    var bg = document.createElementNS(NS, 'rect');
+    bg.setAttribute('width', 420); bg.setAttribute('height', 340); bg.setAttribute('fill', '#F6F7FA');
+    svg.appendChild(bg);
+    svg.innerHTML += '<text x="210" y="26" text-anchor="middle" font-size="12.5" fill="#8A8F98">模拟月壤剖面(含未知岩块)</text>';
+    LAYERS.forEach(function(l){
+      var r = document.createElementNS(NS, 'rect');
+      r.setAttribute('x', 70); r.setAttribute('y', l.y); r.setAttribute('width', 280); r.setAttribute('height', l.h);
+      r.setAttribute('fill', l.fill); r.setAttribute('rx', 3);
+      svg.appendChild(r);
+      if (l.rock) {
+        var rock = document.createElementNS(NS, 'circle');
+        rock.setAttribute('cx', 228); rock.setAttribute('cy', l.y + l.h * 0.62); rock.setAttribute('r', 15); rock.setAttribute('fill', '#57452E');
+        svg.appendChild(rock);
+        var rock2 = document.createElementNS(NS, 'circle');
+        rock2.setAttribute('cx', 160); rock2.setAttribute('cy', l.y + l.h * 0.32); rock2.setAttribute('r', 9); rock2.setAttribute('fill', '#5E4A30');
+        svg.appendChild(rock2);
+      }
+    });
+    var g = document.createElementNS(NS, 'g');
+    g.innerHTML =
+      '<rect x="-7" y="-74" width="14" height="74" fill="#B9BECB" rx="3"/>' +
+      '<path d="M-15 0 L-12 -26 L-7 -26 L-7 -60 L7 -60 L7 -26 L12 -26 L15 0 Z" fill="#B08936"/>' +
+      '<path d="M-12 -26 L-7 -26 L-7 -60 L7 -60 L7 -26 L12 -26" stroke="#fff" stroke-width="2" fill="none" opacity="0.6"/>' +
+      '<circle cx="0" cy="-42" r="3.5" fill="#4F58C0"/>';
+    g.setAttribute('transform', 'translate(210,56)');
+    svg.appendChild(g);
+    drillG = g;
+    statusTxt = document.createElementNS(NS, 'text');
+    statusTxt.setAttribute('x', 210); statusTxt.setAttribute('y', 318); statusTxt.setAttribute('text-anchor', 'middle');
+    statusTxt.setAttribute('font-size', '12.5'); statusTxt.setAttribute('fill', '#3E4454');
+    statusTxt.textContent = '准备就绪,点击「开始钻进」';
+    svg.appendChild(statusTxt);
+  }
+  buildScene();
+
+  /* 滑块联动 */
+  function bind(){
+    $('rRpm').addEventListener('input', function(){ $('vRpm').textContent = this.value + ' rpm'; updateStrategy(); });
+    $('rFeed').addEventListener('input', function(){ $('vFeed').textContent = this.value + ' mm/s'; updateStrategy(); });
+    var hit = 1;
+    Array.prototype.forEach.call($('segHit').children, function(b){
+      b.addEventListener('click', function(){
+        hit = +this.getAttribute('data-v');
+        Array.prototype.forEach.call($('segHit').children, function(x){ x.classList.toggle('on', x === b); });
+        updateStrategy();
+      });
+    });
+    $('btnStart').addEventListener('click', function(){ runSim(hit); });
+    $('simToCard').addEventListener('click', function(){ makeObservationCard(); });
+    updateStrategy();
+  }
+  bind();
+
+  var LAST_SIM = null;
+  function currentHit(){
+    var on = $('segHit').querySelector('.on');
+    return on ? +on.getAttribute('data-v') : 1;
+  }
+  function evaluate(rpm, feed, hit, ok){
+    var core = 92 - Math.abs(rpm - 180) * 0.18 - Math.max(0, feed - 8) * 1.8 + (hit === 1 ? 5 : (hit === 2 ? -4 : -8));
+    var risk = 24 + Math.abs(feed - 8) * 2.8 + Math.abs(rpm - 180) * 0.12 + (hit === 2 ? 18 : (hit === 0 ? 22 : 0));
+    var energy = 30 + rpm * 0.12 + feed * 1.4 + hit * 18;
+    if (ok === false) { core -= 26; risk += 24; }
+    core = Math.max(12, Math.min(98, Math.round(core)));
+    risk = Math.max(8, Math.min(98, Math.round(risk)));
+    energy = Math.max(18, Math.min(98, Math.round(energy)));
+    var score = Math.round(core * 0.52 + (100 - risk) * 0.28 + (100 - energy) * 0.20);
+    return {core:core, risk:risk, energy:energy, score:Math.max(20, Math.min(98, score))};
+  }
+  function setBar(id, n, badHigh){
+    var el = $(id), cls = badHigh ? (n > 68 ? 'bad' : (n > 46 ? 'warn' : '')) : (n < 55 ? 'bad' : (n < 72 ? 'warn' : ''));
+    el.className = 'fill ' + cls;
+    el.style.width = n + '%';
+  }
+  function strategyText(m, rpm, feed, hit){
+    if (m.risk > 70) return '当前策略风险偏高：下压、冲击或转速过激，可能提高卡钻和机构冲击风险。';
+    if (m.energy > 76) return '当前策略能耗压力偏高：适合短时破岩，但不适合长时间无人任务。';
+    if (m.core < 60) return '当前策略样芯完整度不足：取回材料可能破碎或层序信息受损。';
+    if (hit === 1 && feed <= 10 && Math.abs(rpm - 180) <= 40) return '当前策略较均衡：适合在未知月壤中兼顾取芯质量、风险和功耗。';
+    return '当前策略可执行，但还需要在样芯质量、能耗和设备风险之间继续权衡。';
+  }
+  function updateStrategy(){
+    var rpm = +$('rRpm').value, feed = +$('rFeed').value, hit = currentHit();
+    var m = evaluate(rpm, feed, hit, true);
+    setBar('barCore', m.core, false); setBar('barRisk', m.risk, true); setBar('barEnergy', m.energy, true);
+    $('nCore').textContent = m.core + '%'; $('nRisk').textContent = m.risk + '%'; $('nEnergy').textContent = m.energy + '%';
+    $('simJudgement').textContent = strategyText(m, rpm, feed, hit);
+  }
+
+  /* 模拟运行(教学简化模型) */
+  var RUNNING = false;
+  function runSim(hit){
+    if (RUNNING) return;
+    RUNNING = true;
+    var btn = $('btnStart'); btn.disabled = true; btn.textContent = '钻进中…';
+    $('simResult').classList.remove('on'); $('simThink').classList.remove('on'); $('simDesign').classList.remove('on');
+    var rpm = +$('rRpm').value, feed = +$('rFeed').value;
+    var t0 = performance.now(), dur = 3400, progress = 0, jammed = false, jamAt = 0;
+    var ROCK0 = 0.55, ROCK1 = 0.72;   /* 岩块层区间 */
+    /* 岩块层判定:冲击高必破;中且进给慢破;低基本卡 */
+    var canBreak = hit === 2 || (hit === 1 && feed <= 12) || (hit === 0 && feed <= 4);
+    function frame(now){
+      progress = Math.min(1, (now - t0) / dur);
+      if (!jammed && progress >= ROCK0 && progress < ROCK1) {
+        if (!canBreak) { jammed = true; jamAt = progress; }
+      }
+      var y = jammed ? 56 + 258 * jamAt : 56 + 258 * progress;
+      drillG.setAttribute('transform', 'translate(210,' + y + ')' + (jammed ? ' rotate(12)' : ''));
+      if (jammed) {
+        statusTxt.textContent = '⚠ 卡钻!岩块无法破碎,样芯中断 — 冲击功率是关键';
+        statusTxt.setAttribute('fill', '#C03B3B');
+      } else if (progress >= ROCK0 && progress < ROCK1) {
+        statusTxt.textContent = canBreak ? '岩块层:冲击破岩,继续钻进…' : '岩块层:冲击不足,钻头受阻…';
+      } else if (progress >= ROCK1) {
+        statusTxt.textContent = '保层序取芯中:软袋包覆样芯,无滑差收进…';
+      } else {
+        statusTxt.textContent = '表层钻进:渐阔排屑槽排出岩屑…';
+      }
+      if (progress < 1 && !jammed) { requestAnimationFrame(frame); return; }
+      finish(progress >= 1 && !jammed);
+    }
+    function finish(ok){
+      RUNNING = false; btn.disabled = false; btn.textContent = '再来一次';
+      if (ok) { statusTxt.textContent = '✅ 任务成功:取回保层序月壤样芯'; statusTxt.setAttribute('fill', '#3E7A5A'); }
+      else { statusTxt.textContent = '❌ 任务失败:卡钻,样芯中断'; statusTxt.setAttribute('fill', '#C03B3B'); }
+      var m = evaluate(rpm, feed, hit, ok);
+      LAST_SIM = {rpm:rpm, feed:feed, hit:hit, ok:ok, metrics:m, verdict:verdict(ok, hit, feed, rpm)};
+      var res = $('simResult');
+      res.className = 'result on';
+      res.innerHTML =
+        '<div class="nums">' +
+          '<div class="num ' + (m.core >= 70 ? 'good' : 'bad') + '"><div class="v">' + m.core + '%</div><div class="k">样芯完整度</div></div>' +
+          '<div class="num ' + (m.risk <= 42 ? 'good' : 'bad') + '"><div class="v">' + m.risk + '%</div><div class="k">设备风险</div></div>' +
+          '<div class="num ' + (m.energy <= 62 ? 'good' : 'bad') + '"><div class="v">' + m.energy + '%</div><div class="k">能耗压力</div></div>' +
+        '</div><div class="verdict">' + verdict(ok, hit, feed, rpm) + '</div>';
+      var th = $('simThink');
+      th.className = 'think on';
+      $('simThinkTxt').textContent = think(ok, hit, feed, rpm);
+      $('simDesign').className = 'sim-design on';
+      $('simDesignTxt').textContent = '本次策略显示：' + strategyText(m, rpm, feed, hit) + ' 可以把这次结果整理成“设计观察卡”，用于课堂讨论或研学记录。';
+      updateStrategy();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function verdict(ok, hit, feed, rpm){
+    if (!ok) return '这次钻进中断了。别灰心——月壤组构「非确知」正是嫦娥任务最大的挑战,工程团队也是靠反复试验才找到答案的。';
+    if (Math.abs(rpm - 180) > 70) return '任务成功,但转速偏离设计区较大:转速过高排屑跟不上、样芯品质会下降——设计上「不追求钻进深度,追求样芯品质」。';
+    if (feed > 14) return '任务成功,但进给偏快:进给速度与排屑能力必须匹配,快≠好,过快的下压会让力链卡滞、进样阻塞。';
+    return '漂亮的组合:转速、进给与冲击配合得当——这正是「冲-切-排-拨-挤」组合工艺各司其职的效果。';
+  }
+  function think(ok, hit, feed, rpm){
+    var base = '哈工大团队为嫦娥五/六号设计钻取系统时,面对的是未知的月壤:不知道哪里有岩块、不知道颗粒多粗。他们的解法不是「把钻头做得更硬」,而是「冲-切-排-拨-挤」五种动作随时组合:';
+    var add = !ok
+      ? '遇到岩块时,冲击档是破岩的关键——内刃多点冲击突破岩石,外刃切削破碎大颗粒;冲击不足,钻头就会像这次一样受阻。'
+      : '回转负责切削、冲击负责破岩、渐阔流道负责排屑、多点挤拨置换侧方颗粒——钻进工艺动态组合,见软就切、见硬就冲,这才是「非确知月壤」的正确应对。';
+    return base + add;
+  }
+  function makeObservationCard(){
+    if (!LAST_SIM) return;
+    var hitName = ['低冲击','中冲击','高冲击'][LAST_SIM.hit] || '中冲击';
+    var m = LAST_SIM.metrics;
+    $('dcName').value = LAST_SIM.ok ? '均衡取芯策略' : '防卡钻改进方案';
+    $('dcFrom').value = '嫦娥五/六号月球钻取采样系统';
+    $('dcField').value = '探索装备';
+    $('dcDesc').value = '我用' + LAST_SIM.rpm + 'rpm、' + LAST_SIM.feed + 'mm/s、' + hitName + '完成模拟，观察到样芯完整' + m.core + '%、设备风险' + m.risk + '%、能耗压力' + m.energy + '%。';
+    $('dcGen').click();
+    openTab('mycard');
+  }
+
+  /* 引导问题 */
+  $('simQa').innerHTML = [
+    ['为什么月球钻取比地球上钻洞难得多?', '月球表面是真空(约 10⁻¹⁴ 帕)、温差达 310℃、月尘极细极易卡进机构;而且月壤组构完全未知——设计必须对「不知道会钻到什么」做好准备。'],
+    ['既然冲击功率越大破岩越强,为什么不把冲击开到最大?', '因为月球探测器重量、功耗、包络都极其有限:系统要轻量化、高可靠,还得把能量留给取芯、封装和返回。设计理念是「钻进高适应优先,而非破碎能力最优」。']
+  ].map(function(qa, i){
+    return '<div class="item"><div class="q"><span>Q' + (i + 1) + '. ' + esc(qa[0]) + '</span><span class="arr">▾</span></div><div class="a">' + esc(qa[1]) + '</div></div>';
+  }).join('');
+  Array.prototype.forEach.call($('simQa').children, function(item){
+    item.querySelector('.q').addEventListener('click', function(){ item.classList.toggle('open'); });
+  });
+
+  /* ================= 装配拼图 ================= */
+  var PZ = window.PLAY_DATA.puzzle;
+  var selPart = null, pzDone = 0;
+  function pzRender(){
+    var partsBox = $('pzParts'), slotsBox = $('pzSlots');
+    partsBox.innerHTML = PZ.parts.map(function(pt){
+      var placed = PZ.slots.some(function(s){ return s.key === pt.key && s._done; });
+      return '<div class="pz-part' + (placed ? ' done' : '') + (selPart === pt.key ? ' sel' : '') + '" data-k="' + pt.key + '">' +
+        '<div class="n">' + esc(pt.name) + '</div><div class="d">' + esc(pt.desc) + '</div></div>';
+    }).join('');
+    slotsBox.innerHTML = PZ.slots.map(function(sl, i){
+      var pt = sl._done ? PZ.parts.filter(function(p){ return p.key === sl.key; })[0] : null;
+      return '<div class="pz-slot' + (pt ? ' filled' : ' empty') + '" data-k="' + sl.key + '">' +
+        '<div class="left">' + (pt
+          ? '<div class="k">SLOT ' + (i + 1) + ' ✓</div><div class="nm">' + esc(pt.name) + '</div>'
+          : '<div class="k">SLOT ' + (i + 1) + '</div><div class="nm" style="color:var(--muted)">待放置</div>') + '</div>' +
+        '<div class="hint"><b>' + esc(sl.hint) + '</b></div></div>';
+    }).join('');
+    Array.prototype.forEach.call(partsBox.children, function(el){
+      el.addEventListener('click', function(){ selPart = this.getAttribute('data-k'); pzRender(); });
+    });
+    Array.prototype.forEach.call(slotsBox.children, function(el){
+      el.addEventListener('click', function(){
+        var k = this.getAttribute('data-k');
+        if (!selPart) { $('pzMsg').textContent = '先点左侧选择一个部件。'; return; }
+        if (this.classList.contains('filled')) { $('pzMsg').textContent = '这个位置已经装好了。'; return; }
+        var slot = PZ.slots.filter(function(s){ return s.key === k; })[0];
+        if (slot.key === selPart) {
+          slot._done = true; pzDone++;
+          $('pzMsg').className = 'pz-msg ok'; $('pzMsg').textContent = '✓ ' + PZ.parts.filter(function(p){ return p.key === selPart; })[0].name + ' 装好了!';
+          selPart = null;
+          pzRender();
+          if (pzDone === PZ.slots.length) {
+            var bar = $('pzBar'); bar.className = 'pz-bar on';
+            bar.innerHTML = '<b>系统装配完成。</b>这就是嫦娥五/六号「钻-表-封」方案里的钻取链路:智能操控管全局、柔性进给管升降、回转-冲击驱动给动力、双管单袋保层序取芯、阶梯钻具接触月壤——五者环环相扣,任一环节失误都会导致任务失败,这正是官方说的「工程安全与科学品质双目标兼顾」。';
+          }
+        } else {
+          $('pzMsg').className = 'pz-msg';
+          $('pzMsg').textContent = '✗ 不对。' + PZ.parts.filter(function(p){ return p.key === selPart; })[0].wrong;
+        }
+      });
+    });
+  }
+  pzRender();
+
+  /* ================= 观展闯关 ================= */
+  var QUESTS = window.PLAY_DATA.quest;
+  var QKEY = 'play-quest-';
+  function qState(slug){
+    var s = {}; try { s = JSON.parse(localStorage.getItem(QKEY + slug) || '{}'); } catch (e) {}
+    return s;
+  }
+  function qSave(slug, s){ try { localStorage.setItem(QKEY + slug, JSON.stringify(s)); } catch (e) {} }
+  function qBadge(){
+    var done = QUESTS.filter(function(q){ var s = qState(q.slug); return s.done && s.done.length === q.questions.length; }).length;
+    $('qBadgeN').textContent = done;
+  }
+  /* 任务单导出:学习目标 + 展品任务 + 答题状态 + 反思题 */
+  $('qExport').addEventListener('click', function(){
+    var lines = [
+      '好设计馆 · 国之重器研学任务单',
+      '导出时间:' + new Date().toLocaleString('zh-CN'),
+      '',
+      '一、学习目标',
+      '1. 从获奖作品中识别真实工程任务和设计约束。',
+      '2. 通过拆解实验室理解系统结构、关键部件和安全逻辑。',
+      '3. 在互动乐园中完成问答、模拟或挑战,形成自己的设计判断。',
+      '',
+      '二、使用方法',
+      '1. 先在好设计馆选择一件国之重器。',
+      '2. 进入拆解实验室,看结构、部件和说明卡。',
+      '3. 回到互动乐园完成对应闯关题。',
+      '4. 最后写下一个可迁移到生活或产业场景的设计想法。',
+      '',
+      '三、展品闯关记录'
+    ];
+    var done = 0;
+    QUESTS.forEach(function(q){
+      var s = qState(q.slug);
+      var finished = s.done && s.done.length === q.questions.length;
+      if (finished) done++;
+      lines.push('');
+      lines.push('【' + q.name + '】' + (finished ? ' ✅ 通关' : ' 答对 ' + (s.done ? s.done.length : 0) + '/' + q.questions.length));
+      lines.push('观察任务:进入拆解实验室,找出这件展品最关键的一个设计约束。');
+      q.questions.forEach(function(it, i){
+        var st = s.done && s.done[i] ? '✓' : '○';
+        lines.push('  ' + st + ' ' + (i + 1) + '. ' + it.q);
+      });
+      lines.push('  我的发现:________________________________________');
+    });
+    lines.push('');
+    lines.push('四、徽章进度');
+    lines.push('已通关展品:' + done + ' / ' + QUESTS.length);
+    lines.push('');
+    lines.push('五、课后反思');
+    lines.push('1. 我认为最能体现“好设计”的一件展品是:________________');
+    lines.push('2. 它解决的核心问题是:________________');
+    lines.push('3. 我想把它的一个设计方法迁移到:________________');
+    lines.push('4. 需要专家继续验证的地方是:________________');
+    lines.push('');
+    lines.push('说明:题目与解析基于互动乐园和拆解实验室公开整理内容,模拟器为教学示意,非工程精确。');
+    downloadText('好设计馆-国之重器研学任务单.txt', lines.join('\n'));
+  });
+  function qRenderList(){
+    $('qList').innerHTML = QUESTS.map(function(q){
+      var s = qState(q.slug);
+      var finished = s.done && s.done.length === q.questions.length;
+      return '<div class="q-card" data-slug="' + q.slug + '">' +
+        '<img src="' + esc(q.image) + '" alt="" loading="lazy">' +
+        '<div class="b"><div class="n">' + esc(q.name) + '</div>' +
+        '<div class="st"><span>' + (finished ? '已完成 ✓' : '答对 ' + (s.done ? s.done.length : 0) + '/' + q.questions.length) + '</span>' +
+        '<span class="medal">' + (finished ? '🏅' : '🔒') + '</span></div>' +
+        '<div class="go-lab" style="font-size:11.5px;color:var(--accent-bright);margin-top:7px;cursor:pointer">🔬 去拆解实验室看答案 →</div></div></div>';
+    }).join('');
+    Array.prototype.forEach.call($('qList').children, function(el){
+      var lab = el.querySelector('.go-lab');
+      lab.addEventListener('click', function(e){
+        e.stopPropagation();
+        window.location.href = 'x-ray.html?slug=' + el.getAttribute('data-slug');
+      });
+      el.addEventListener('click', function(){ qOpen(el.getAttribute('data-slug')); });
+    });
+  }
+  function qOpen(slug){
+    var quest = QUESTS.filter(function(q){ return q.slug === slug; })[0];
+    var s = qState(slug);
+    var qi = s.done ? s.done.length : 0;
+    var mask = document.createElement('div');
+    mask.className = 'q-mask';
+    function render(){
+      if (qi >= quest.questions.length) {
+        mask.innerHTML = '<div class="q-box"><div class="q-congrats"><div class="big">🏅</div>' +
+          '<div class="t">「' + esc(quest.name) + '」通关!</div><div class="s">再看拆解实验室的官方图纸和说明卡,你能看出更多门道。</div>' +
+          '<div class="g-ctrl" style="justify-content:center"><button type="button" class="primary" id="qClose2">完成</button></div></div></div>';
+        mask.querySelector('#qClose2').addEventListener('click', close);
+        qSave(slug, { done: quest.questions.map(function(){ return true; }) });
+        qBadge(); qRenderList();
+        return;
+      }
+      var it = quest.questions[qi];
+      var opts = it.options.map(function(o, i){
+        return '<button type="button" class="q-opt" data-i="' + i + '">' + esc(o) + '</button>';
+      }).join('');
+      mask.innerHTML = '<div class="q-box">' +
+        '<div class="hd"><span class="t">' + esc(quest.name) + ' · 第 ' + (qi + 1) + '/' + quest.questions.length + ' 题</span><span class="x" id="qX">✕</span></div>' +
+        '<div class="q-body"><div class="q-q">' + esc(it.q) + '</div><div class="q-opts">' + opts + '</div>' +
+        '<div class="q-fb" id="qFb"></div>' +
+        '<div class="q-next"><button type="button" id="qNext2">下一题 →</button></div></div></div>';
+      mask.querySelector('#qX').addEventListener('click', close);
+      var answered = false;
+      Array.prototype.forEach.call(mask.querySelectorAll('.q-opt'), function(b){
+        b.addEventListener('click', function(){
+          if (answered) return; answered = true;
+          var i = +this.getAttribute('data-i');
+          Array.prototype.forEach.call(mask.querySelectorAll('.q-opt'), function(x){ x.disabled = true; });
+          if (i === it.answer) {
+            this.classList.add('correct');
+            s.done = s.done || []; s.done.push(true);
+          } else {
+            this.classList.add('wrong');
+            mask.querySelectorAll('.q-opt')[it.answer].classList.add('correct');
+            s.done = s.done || []; s.done.push(false);
+          }
+          qSave(slug, s); qBadge();
+          var fb = mask.querySelector('#qFb');
+          fb.className = 'q-fb on';
+          fb.innerHTML = '<b>' + (i === it.answer ? '✓ 答对了。' : '✗ 答错了。') + '</b> ' + esc(it.explain);
+          mask.querySelector('.q-next').style.display = 'block';
+          mask.querySelector('#qNext2').addEventListener('click', function(){ qi++; render(); });
+        });
+      });
+    }
+    function close(){ mask.parentNode && mask.parentNode.removeChild(mask); qRenderList(); }
+    render();
+    document.body.appendChild(mask);
+  }
+  qBadge(); qRenderList();
+
+  /* ================= 猜猜看 ================= */
+  var GUESS = window.PLAY_DATA.guess;
+  var gi = 0, gScore = 0, gShown = 0, gSolved = false;
+  var ANS8 = ['嫦娥五/六号月球钻取采样系统','蛟龙号载人潜水器','CRH380A型高速动车组','海洋石油981','白鹤滩1000MW水轮发电机组','800MN大型模锻压机','自主F级50MW重型燃气轮机','国和一号屏蔽电机主泵'];
+  function gRender(){
+    var it = GUESS[gi];
+    $('gTitle').textContent = '第 ' + (gi + 1) + ' 题';
+    $('gCnt').textContent = '已猜中 ' + gScore + ' / 10';
+    $('gClues').innerHTML = it.clues.map(function(c, i){
+      return '<div class="g-clue' + (i < gShown ? ' show' : '') + '"><span class="no">线索 ' + (i + 1) + '</span>' + esc(c) + '</div>';
+    }).join('');
+    var others = ANS8.filter(function(n){ return n !== it.name; });
+    var picked = [it.name];
+    while (picked.length < 4 && others.length) {
+      var idx = Math.floor(Math.random() * others.length);
+      picked.push(others.splice(idx, 1)[0]);
+    }
+    var opts = picked.sort(function(){ return Math.random() - 0.5; });
+    $('gAns').innerHTML = opts.map(function(n){
+      return '<button type="button" data-n="' + esc(n) + '">' + esc(n) + '</button>';
+    }).join('');
+    $('gFb').className = 'g-fb';
+    $('gFb').innerHTML = '';
+    $('gNext').disabled = gShown >= 3 || gSolved;
+    $('gSkip').style.display = 'inline-block';
+    if (gSolved) {
+      $('gFb').className = 'g-fb on';
+      $('gFb').innerHTML = '<b>✓ 答对了!</b> ' + esc(it.fact);
+    }
+    Array.prototype.forEach.call($('gAns').children, function(b){
+      b.addEventListener('click', function(){
+        if (gSolved) return;
+        var n = this.getAttribute('data-n');
+        if (n === it.name) {
+          gSolved = true; gScore++;
+          this.classList.add('right');
+          $('gFb').className = 'g-fb on';
+          $('gFb').innerHTML = '<b>✓ 猜中了(用了 ' + gShown + ' 条线索)!</b> ' + esc(it.fact);
+          $('gNext').disabled = false; $('gNext').textContent = '下一题 →';
+          Array.prototype.forEach.call($('gAns').children, function(x){ x.disabled = true; });
+        } else {
+          this.disabled = true;
+          $('gFb').className = 'g-fb on';
+          $('gFb').innerHTML = '✗ 不是「' + esc(n) + '」,再想想(可以再要一条线索)。';
+        }
+      });
+    });
+  }
+  $('gNext').addEventListener('click', function(){
+    if (gSolved || gShown >= 3) { gi = (gi + 1) % GUESS.length; gShown = 0; gSolved = false; gRender(); return; }
+    gShown++; gRender();
+  });
+  $('gSkip').addEventListener('click', function(){
+    gSolved = true;
+    $('gFb').className = 'g-fb on';
+    $('gFb').innerHTML = '答案是 <b>' + esc(GUESS[gi].name) + '</b>。' + esc(GUESS[gi].fact);
+    $('gNext').disabled = false; $('gNext').textContent = '下一题 →';
+    Array.prototype.forEach.call($('gAns').children, function(x){ x.disabled = true; });
+  });
+  gRender();
+
+  /* ================= 十年数据故事 ================= */
+  (function(){
+    var NS2 = 'http://www.w3.org/2000/svg';
+    function svg(w, h){ var s = document.createElementNS(NS2, 'svg'); s.setAttribute('viewBox', '0 0 ' + w + ' ' + h); return s; }
+    function el(tag, attrs, parent){
+      var e = document.createElementNS(NS2, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      if (parent) parent.appendChild(e);
+      return e;
+    }
+    var LEVELS = ['金奖','银奖','菁英奖','创意奖','提名奖'];
+    var COLORS = { '金奖':'#A87E2A', '银奖':'#8E95A6', '菁英奖':'#5E6AD2', '创意奖':'#7FA88F', '提名奖':'#C9CDD8' };
+    fetch('awards.json').then(function(r){ return r.json(); }).then(function(A){
+      var byY = {}, byL = {};
+      A.forEach(function(a){
+        (byY[a.year] = byY[a.year] || {}); byY[a.year][a.level] = (byY[a.year][a.level] || 0) + 1;
+        byL[a.level] = (byL[a.level] || 0) + 1;
+      });
+      var years = Object.keys(byY).sort();
+      /* 图 1:堆叠柱 */
+      var w = 940, h = 330, padL = 46, padB = 44, padT = 26;
+      var c1 = svg(w, h);
+      var maxY = Math.max.apply(null, years.map(function(y){ return Object.values(byY[y]).reduce(function(a, b){ return a + b; }, 0); })) * 1.12;
+      var bw = (w - padL - 30) / years.length * 0.62;
+      years.forEach(function(y, i){
+        var x = padL + (w - padL - 30) / years.length * i + (w - padL - 30) / years.length * 0.19;
+        var yAcc = 0;
+        LEVELS.forEach(function(lv){
+          var v = byY[y][lv] || 0;
+          if (!v) return;
+          var bh = v / maxY * (h - padT - padB);
+          el('rect', { x: x, y: h - padB - yAcc - bh, width: bw, height: bh, fill: COLORS[lv], rx: 1.5 }, c1);
+          if (bh > 18) el('text', { x: x + bw / 2, y: h - padB - yAcc - bh + 14, 'text-anchor': 'middle', 'font-size': 10, fill: '#fff' }, c1).textContent = v;
+          yAcc += bh;
+        });
+        el('text', { x: x + bw / 2, y: h - 16, 'text-anchor': 'middle', 'font-size': 12.5, fill: '#62666D' }, c1).textContent = y;
+      });
+      for (var gy = 0; gy <= maxY; gy += 20) {
+        var py = h - padB - gy / maxY * (h - padT - padB);
+        el('line', { x1: padL, y1: py, x2: w - 20, y2: py, stroke: 'rgba(15,23,42,.07)', 'stroke-width': 1 }, c1);
+        el('text', { x: padL - 8, y: py + 4, 'text-anchor': 'end', 'font-size': 11, fill: '#8A8F98' }, c1).textContent = gy;
+      }
+      var legX = w - 180;
+      LEVELS.forEach(function(lv, i){
+        el('rect', { x: legX, y: 8 + i * 20, width: 12, height: 12, fill: COLORS[lv], rx: 2 }, c1);
+        el('text', { x: legX + 17, y: 18 + i * 20, 'font-size': 12, fill: '#62666D' }, c1).textContent = lv + ' ' + (byL[lv] || 0);
+      });
+      $('stChart1').appendChild(c1);
+
+      /* 图 2:金奖累计折线 */
+      var w2 = 940, h2 = 300, padL2 = 46, padB2 = 44, padT2 = 26;
+      var c2 = svg(w2, h2);
+      var cum = 0, cumMax = 0, pts = [];
+      years.forEach(function(y, i){
+        cum += (byY[y]['金奖'] || 0);
+        cumMax = Math.max(cumMax, cum);
+        pts.push({ x: padL2 + (w2 - padL2 - 30) / (years.length - 1) * i, y: h2 - padB2 - cum / (cumMax * 1.15 || 1) * (h2 - padT2 - padB2), v: cum });
+      });
+      var path = 'M' + pts.map(function(p, i){ return (i ? ' L' : '') + p.x + ' ' + p.y; }).join('');
+      el('path', { d: path, stroke: '#5E6AD2', 'stroke-width': 3, fill: 'none', 'stroke-linejoin': 'round' }, c2);
+      pts.forEach(function(p){
+        el('circle', { cx: p.x, cy: p.y, r: 4.5, fill: '#5E6AD2' }, c2);
+        el('text', { x: p.x, y: p.y - 12, 'text-anchor': 'middle', 'font-size': 11.5, fill: '#4F58C0', 'font-weight': 600 }, c2).textContent = p.v;
+        el('text', { x: p.x, y: h2 - 16, 'text-anchor': 'middle', 'font-size': 12, fill: '#62666D' }, c2).textContent = years[pts.indexOf(p)];
+      });
+      for (var gy2 = 0; gy2 <= cumMax; gy2 += 20) {
+        var py2 = h2 - padB2 - gy2 / (cumMax * 1.15 || 1) * (h2 - padT2 - padB2);
+        el('line', { x1: padL2, y1: py2, x2: w2 - 20, y2: py2, stroke: 'rgba(15,23,42,.07)' }, c2);
+      }
+      $('stChart2').appendChild(c2);
+
+      /* 图 3:金奖单位 TOP8 */
+      var units = {};
+      A.filter(function(a){ return a.level === '金奖'; }).forEach(function(a){
+        String(a.unit || '').split(/[,，]/).forEach(function(u){
+          u = u.trim(); if (!u) return;
+          units[u] = (units[u] || 0) + 1;
+        });
+      });
+      var top = Object.keys(units).sort(function(a, b){ return units[b] - units[a]; }).slice(0, 8);
+      var w3 = 940, h3 = 40 + top.length * 46;
+      var c3 = svg(w3, h3);
+      var maxU = units[top[0]] || 1;
+      top.forEach(function(u, i){
+        var y = 30 + i * 46;
+        el('text', { x: 12, y: y + 14, 'font-size': 12.5, fill: '#3E4454' }, c3).textContent = u;
+        var bx = 320, bw2 = (w3 - 320 - 60) * units[u] / maxU;
+        el('rect', { x: bx, y: y, width: Math.max(bw2, 4), height: 20, fill: '#A87E2A', rx: 3 }, c3);
+        el('text', { x: bx + bw2 + 8, y: y + 15, 'font-size': 12, fill: '#62666D' }, c3).textContent = units[u] + ' 件';
+      });
+      $('stChart3').appendChild(c3);
+
+      /* 洞察 */
+      var total = A.length;
+      var gold = byL['金奖'] || 0;
+      var unitCount = Object.keys(units).length;
+      var maxYear = years.map(function(y){ return { y: y, v: Object.values(byY[y]).reduce(function(a, b){ return a + b; }, 0) }; }).sort(function(a, b){ return b.v - a.v; })[0];
+      var multiUnits = A.filter(function(a){ return a.level === '金奖' && String(a.unit).split(/[,，]/).length >= 2; }).length;
+      $('stInsights').innerHTML = [
+        '<div class="st-ins"><b>' + total + ' 项</b>获奖档案,十届一届不落——从 2015 到 2025,这份档案本身就是一部中国创新设计编年史。</div>',
+        '<div class="st-ins"><b>' + gold + ' 件</b>金奖来自 <b>' + unitCount + '</b> 家单位,其中 <b>' + multiUnits + ' 件</b>为跨单位联合攻关——大国重器从来不是单打独斗。</div>',
+        '<div class="st-ins"><b>' + maxYear.y + ' 年</b>获奖总数最多(' + maxYear.v + ' 项),其余年份各届数量详见上方柱状图——曲线背后是不同年份的赛道结构变化。</div>',
+        '<div class="st-ins">金奖十年累计 <b>98 件</b>:深海(蛟龙)、轨交(CRH380A)、能源(白鹤滩、燃机、主泵)、重型装备(模锻压机)、深空(嫦娥)——覆盖国家能力的关键节点。</div>'
+      ];
+    }).catch(function(){
+      $('stChart1').innerHTML = '<div class="ph" style="padding:40px"><div class="t">数据加载失败</div></div>';
+    });
+  })();
+
+  /* ================= 设计挑战 ================= */
+  (function(){
+    var CH = window.PLAY_DATA.challenge;
+    $('chList').innerHTML = CH.map(function(c, i){
+      return '<div class="ch-card"><div class="hd3"><span class="no">CHALLENGE ' + (i + 1) + '</span></div>' +
+        '<div class="sc">' + esc(c.scenario) + '</div>' +
+        '<div class="ch-opts">' + c.options.map(function(o, k){
+          return '<button type="button" class="ch-opt" data-i="' + k + '">' + esc(o.t) + '</button>';
+        }).join('') + '</div>' +
+        '<div class="ch-fb" id="chFb' + i + '"></div>' +
+        '<div class="ch-ask" id="chAsk' + i + '"><button type="button" data-a="' + esc(c.ask) + '">问 AI 裁判:点评我的方案</button></div></div>';
+    }).join('');
+    Array.prototype.forEach.call($('chList').children, function(card, i){
+      var done = false;
+      Array.prototype.forEach.call(card.querySelectorAll('.ch-opt'), function(b){
+        b.addEventListener('click', function(){
+          if (done) return; done = true;
+          var k = +this.getAttribute('data-i');
+          var opt = CH[i].options[k];
+          Array.prototype.forEach.call(card.querySelectorAll('.ch-opt'), function(x){
+            x.disabled = true;
+            x.classList.add(x.getAttribute('data-i') == k ? (opt.good ? 'good' : 'bad') : 'dim');
+          });
+          var fb = card.querySelector('#chFb' + i);
+          fb.className = 'ch-fb on';
+          fb.innerHTML = (opt.good ? '<b>✓ 方向对!</b> ' : '<b>✗ 再想想。</b> ') + esc(opt.verdict);
+          card.querySelector('#chAsk' + i).style.display = 'block';
+          card.querySelector('#chAsk' + i + ' button').addEventListener('click', function(){
+            window.location.href = 'index.html?ask=' + encodeURIComponent(this.getAttribute('data-a'));
+          });
+        });
+      });
+    });
+  })();
+
+  /* ================= 我的设计卡 ================= */
+  (function(){
+    var MKEY = 'play-mydesigns';
+    function loadMine(){ try { return JSON.parse(localStorage.getItem(MKEY) || '[]'); } catch (e) { return []; } }
+    function saveMine(list){ try { localStorage.setItem(MKEY, JSON.stringify(list)); } catch (e) {} }
+    function renderMine(){
+      var list = loadMine();
+      $('dcCount').textContent = list.length ? list.length + ' 件' : '';
+      $('dcGrid').innerHTML = list.length ? list.map(function(d, i){
+        return '<div class="dc-item"><button class="x2" type="button" data-i="' + i + '">✕</button>' +
+          '<div class="b2"><div class="nm2">' + esc(d.name) + '</div><div class="in2">' + esc(d.field) + (d.from ? ' · ' + esc(d.from) : '') + '</div>' +
+          '<div class="ds2">' + esc(d.desc || '暂无简介') + '</div>' +
+          '<div class="meta2"><span class="tm2">' + esc(d.createdAt || '') + '</span><button class="dl2" type="button" data-i="' + i + '">导出</button></div></div></div>';
+      }).join('') : '<div class="ph2" style="grid-column:1/-1;font-size:12px;color:var(--muted);padding:8px">还没有作品,先设计一张吧。</div>';
+      Array.prototype.forEach.call($('dcGrid').querySelectorAll('.x2'), function(b){
+        b.addEventListener('click', function(){
+          var list2 = loadMine(); list2.splice(+this.getAttribute('data-i'), 1);
+          saveMine(list2); renderMine();
+        });
+      });
+      Array.prototype.forEach.call($('dcGrid').querySelectorAll('.dl2'), function(b){
+        b.addEventListener('click', function(){
+          var d = loadMine()[+this.getAttribute('data-i')];
+          if (!d) return;
+          downloadText('好设计馆-设计观察卡-' + (d.name || '我的设计') + '.txt', [
+            '好设计馆 · 设计观察卡',
+            '生成时间:' + (d.createdAt || new Date().toLocaleString('zh-CN')),
+            '',
+            '设计名称:' + (d.name || ''),
+            '领域标签:' + (d.field || ''),
+            '灵感来源:' + (d.from || '—'),
+            '',
+            '设计说明:',
+            d.desc || '',
+            '',
+            '观察提示:',
+            '1. 这个设计想解决什么真实问题?',
+            '2. 它从哪件国之重器获得了方法启发?',
+            '3. 哪些内容只是概念启发,还需要专家验证?',
+            '',
+            '说明:本卡片由好设计馆互动乐园生成,用于课堂讨论和研学记录。'
+          ].join('\n'));
+        });
+      });
+    }
+    $('dcGen').addEventListener('click', function(){
+      var name = $('dcName').value.trim() || '我的设计';
+      var desc = $('dcDesc').value.trim() || '还没有写简介——看完国之重器,把灵感想清楚。';
+      var from = $('dcFrom').value;
+      var field = $('dcField').value;
+      $('dcCName').textContent = name;
+      $('dcCDesc').textContent = desc;
+      $('dcCFrom').textContent = from ? '灵感:' + from : '灵感:—';
+      $('dcCField').textContent = field;
+    });
+    $('dcDl').addEventListener('click', function(){
+      var cv = document.createElement('canvas');
+      cv.width = 640; cv.height = 800;
+      var x = cv.getContext('2d');
+      x.fillStyle = '#FFFFFF'; x.fillRect(0, 0, 640, 800);
+      var grad = x.createLinearGradient(0, 0, 640, 0);
+      grad.addColorStop(0, '#5E6AD2'); grad.addColorStop(1, '#A87E2A');
+      x.fillStyle = grad; x.fillRect(0, 0, 640, 12);
+      x.fillStyle = '#4F58C0'; x.font = '12px monospace'; x.fillText('未来出行', 40, 84);
+      x.fillStyle = '#16181D'; x.font = '700 34px sans-serif';
+      var name = ($('dcCName').textContent || '我的设计').slice(0, 12);
+      x.fillText(name, 40, 150);
+      x.fillStyle = '#8A8F98'; x.font = '14px sans-serif';
+      x.fillText($('dcCFrom').textContent || '灵感:—', 40, 190);
+      x.strokeStyle = 'rgba(15,23,42,.15)'; x.setLineDash([6, 6]);
+      x.beginPath(); x.moveTo(40, 230); x.lineTo(600, 230); x.stroke(); x.setLineDash([]);
+      x.fillStyle = '#3E4454'; x.font = '17px sans-serif';
+      var desc = ($('dcCDesc').textContent || '').slice(0, 90);
+      var lines = [];
+      for (var i = 0; i < desc.length; i += 26) lines.push(desc.slice(i, i + 26));
+      lines.forEach(function(ln, i){ x.fillText(ln, 40, 280 + i * 32); });
+      x.fillStyle = '#8A8F98'; x.font = '13px sans-serif';
+      x.fillText('我的设计 · 好设计馆互动乐园', 40, 740);
+      x.fillStyle = '#5E6AD2'; x.fillRect(560, 716, 40, 40);
+      x.fillStyle = '#fff'; x.font = '700 22px sans-serif'; x.fillText('设', 572, 744);
+      var a = document.createElement('a');
+      a.download = 'mydesign-' + Date.now() + '.png';
+      a.href = cv.toDataURL('image/png');
+      a.click();
+    });
+    $('dcShare').addEventListener('click', function(){
+      var d = {
+        name: $('dcCName').textContent || '我的设计',
+        desc: ($('dcCDesc').textContent || '').slice(0, 80),
+        from: ($('dcCFrom').textContent || '').replace('灵感:', ''),
+        field: $('dcCField').textContent || '其它'
+      };
+      if (!d.name || d.name === '你的设计名') { alert('先点「生成我的设计卡」再发布。'); return; }
+      var url = location.origin + location.pathname.replace('playground.html', 'workshop.html') + '?w=' + encodeURIComponent(JSON.stringify(d));
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url);
+        alert('分享链接已复制!发给同学/老师/家长,他们打开就能看到你的作品。');
+      } else {
+        window.prompt('复制这个分享链接发给别人:', url);
+      }
+    });
+    $('dcSave').addEventListener('click', function(){
+      var d = {
+        name: $('dcCName').textContent || '我的设计',
+        desc: ($('dcCDesc').textContent || '').slice(0, 80),
+        from: ($('dcCFrom').textContent || '').replace('灵感:', ''),
+        field: $('dcCField').textContent || '其它',
+        createdAt: new Date().toLocaleString('zh-CN')
+      };
+      if (!d.name || d.name === '你的设计名') { alert('先点「生成我的设计卡」再收藏。'); return; }
+      var list = loadMine();
+      list.unshift(d);
+      if (list.length > 12) list = list.slice(0, 12);
+      saveMine(list); renderMine();
+    });
+    renderMine();
+  })();
+
+  /* ================= 技术迁移:从产业出发(反向) ================= */
+  (function(){
+    var MG = window.PLAY_DATA.migrate;
+    var mode = 'A';
+    var awardsData = null;
+    fetch('awards.json').then(function(r){ return r.json(); }).then(function(j){ awardsData = j; }).catch(function(){});
+    function setMode(m){
+      mode = m;
+      document.getElementById('mgModeA').style.background = m === 'A' ? 'var(--accent)' : 'var(--bg-quiet)';
+      document.getElementById('mgModeA').style.color = m === 'A' ? '#fff' : 'var(--muted-soft)';
+      document.getElementById('mgModeB').style.background = m === 'B' ? 'var(--accent)' : 'var(--bg-quiet)';
+      document.getElementById('mgModeB').style.color = m === 'B' ? '#fff' : 'var(--muted-soft)';
+      document.getElementById('mgLbl1').textContent = m === 'A' ? '① 选一件馆藏' : '① 选一个目标产业';
+      document.getElementById('mgLbl2').textContent = m === 'A' ? '它的可迁移能力' : '可借鉴的金奖案例(按相关度)';
+      document.getElementById('mgLbl3').textContent = m === 'A' ? '② 选一个目标产业' : '提示:选产业后自动推荐';
+      document.getElementById('mgOut').className = 'mg-out';
+      if (m === 'A') {
+        document.getElementById('mgExh').style.display = '';
+        document.getElementById('mgTags').innerHTML = '<span class="ph2">先选馆藏</span>';
+      } else {
+        document.getElementById('mgExh').style.display = 'none';
+        document.getElementById('mgTags').innerHTML = '<span class="ph2">反向模式:从产业需求出发,推荐可借鉴案例</span>';
+      }
+    }
+    document.getElementById('mgModeA').addEventListener('click', function(){ setMode('A'); });
+    document.getElementById('mgModeB').addEventListener('click', function(){ setMode('B'); });
+    document.getElementById('mgInd').addEventListener('click', function(e){
+      if (mode !== 'B') return;
+      var btn = e.target.closest ? e.target.closest('button') : null;
+      if (!btn) return;
+      var key = btn.getAttribute('data-k');
+      var ind = MG.industries.filter(function(x){ return x.key === key; })[0];
+      if (!ind || !awardsData) return;
+      Array.prototype.forEach.call(this.children, function(x){ x.classList.toggle('on', x === btn); });
+      var kws = MG.industryKeywords[key] || [];
+      var golds = awardsData.filter(function(a){ return a.level === '金奖'; });
+      var hits = golds.map(function(a){
+        var text = (a.name || '') + ' ' + (a.summary || '') + ' ' + (a.unit || '');
+        var n = 0, found = [];
+        kws.forEach(function(kw){ if (text.indexOf(kw) >= 0) { n++; found.push(kw); } });
+        return { a: a, n: n, found: found };
+      }).filter(function(h){ return h.n > 0; }).sort(function(x, y){ return y.n - x.n; }).slice(0, 6);
+      var out = document.getElementById('mgOut');
+      out.className = 'mg-out on';
+      document.getElementById('mgOutT').textContent = ind.name + ' → 可借鉴的金奖案例(关键词:' + kws.join(' / ') + ')';
+      document.getElementById('mgList').innerHTML = hits.length ? hits.map(function(h){
+        return '<div class="mg-item"><span class="tag">' + esc(h.a.name) + '</span>(' + h.a.year + ' 金奖)' +
+          '<div class="why" style="margin-top:5px">匹配:' + h.found.join(' / ') + ' —— ' + esc((h.a.summary || '').slice(0, 90)) + '…</div>' +
+          '<button type="button" data-q="' + esc('我是' + ind.name + '行业,请分析金奖项目「' + h.a.name + '」有哪些技术或设计可以迁移到我的行业,并给出具体做法。') + '" style="margin-top:8px;padding:6px 12px;border:1px solid var(--accent);border-radius:6px;color:var(--accent-bright);background:transparent;font-size:12px;cursor:pointer">问好设计助手深入分析 →</button></div>';
+      }).join('') : '<div class="mg-item">未匹配到金奖案例,试试换个产业。</div>';
+      Array.prototype.forEach.call(document.querySelectorAll('#mgList [data-q]'), function(b){
+        b.addEventListener('click', function(){
+          window.location.href = 'index.html?ask=' + encodeURIComponent(this.getAttribute('data-q'));
+        });
+      });
+    });
+  })();
+
+  /* ================= 技术迁移实验室 ================= */
+  (function(){
+    var MG = window.PLAY_DATA.migrate;
+    var curExh = null, curInd = null;
+    var TAG_NOTE = {
+      '自适应钻进': '钻头随地层阻力自动切换「冲-切-排-拨-挤」动作组合', '柔性钢丝绳传动': '钢丝绳升降+冲击缓释,轻量且鲁棒',
+      '无滑差包覆收纳': '软袋全程包覆输送物料,不损伤不滑移', '真空低温润滑': '固体润滑+间隙配合,无油环境也能转',
+      '气膜冷却': '表面开孔让冷却介质形成气膜隔离热源', '高效轴流压缩': '多级叶片把流体逐级加压,压比 18、效率 91%',
+      '高温部件涂层': '热障涂层把热量挡在金属之外,可修复再制造', '拉杆组合转子': '盘片+拉杆+端面齿组合,替代整体锻件',
+      '屏蔽电机一体化': '电机转子直接泡在介质里,消灭动密封', '水润滑轴承': '用水当润滑剂,无油污染风险',
+      '飞轮惰转储能': '靠惯量在断电后维持运转,非能动安全', '全密封压力边界': 'C 型密封环+密封焊,一滴不漏',
+      '长短叶片水力设计': '长短叶片抑制涡流脉动,效率与稳定兼得', '低液位润滑冷却': '降低油位减少损耗,冷却更高效',
+      '高电压绝缘': '24kV 级绝缘评定体系,高压安全的考核标准', '800MPa 高强钢': '高强度钢减薄承压结构,轻且强',
+      '超大偏载均载结构': '把偏载力矩均匀分散到整个结构', '高强钢焊接': '超厚板窄间隙焊接,焊一道成一道',
+      '大流量液压同步': '多缸并联驱动+同步平衡,大惯性高精度', '少火次近净成形': '一次大变形锻造成形,材料省、火次少',
+      '钛合金深压结构': '钛合金球形耐压,深水环境的生命屏障', '应急抛载冗余': '冗余抛载通道,紧急时保命上浮',
+      '水下绝缘监测': '绝缘故障分级预警,深水电气安全', '矢量推进': '多推进器矢量合成,任意方向精准操控',
+      'DP3 动力定位': '自动顶风顶流保持船位,台风级冗余', '超深钻井绞车': '6000 马力级深水起下钻系统',
+      '高压泥浆泵': '3000 马力高压大排量泵送', '台风级结构设计': '按 200 年一遇台风校核的结构安全',
+      '低阻流线气动': '流线外形降阻降噪,高速运行的气动设计', '铝合金整体承载': '骨架蒙皮一体承载,轻量高刚性',
+      '分频段减震降噪': '按频段治理噪声源:减-隔-吸-降', '高压弓网系统': '高速受流的高压取电系统'
+    };
+    $('mgExh').innerHTML = MG.exhibits.map(function(e){
+      return '<button type="button" data-k="' + e.slug + '">' + esc(e.name) + '</button>';
+    }).join('');
+    $('mgInd').innerHTML = MG.industries.map(function(i2){
+      return '<button type="button" data-k="' + i2.key + '" title="' + esc(i2.hint) + '">' + esc(i2.name) + '</button>';
+    }).join('');
+    Array.prototype.forEach.call($('mgExh').children, function(b){
+      b.addEventListener('click', function(){
+        curExh = this.getAttribute('data-k');
+        Array.prototype.forEach.call($('mgExh').children, function(x){ x.classList.toggle('on', x === b); });
+        var e = MG.exhibits.filter(function(x){ return x.slug === curExh; })[0];
+        $('mgTags').innerHTML = e.tags.map(function(t){ return '<span class="mg-tag">' + esc(t) + '</span>'; }).join('');
+        curInd = null;
+        Array.prototype.forEach.call($('mgInd').children, function(x){ x.classList.remove('on'); });
+        $('mgOut').className = 'mg-out';
+      });
+    });
+    var wantedExh = qs.get('slug');
+    if (wantedExh) {
+      Array.prototype.forEach.call($('mgExh').children, function(b){
+        if (b.getAttribute('data-k') === wantedExh) b.click();
+      });
+    }
+    Array.prototype.forEach.call($('mgInd').children, function(b){
+      b.addEventListener('click', function(){
+        if (!curExh) { alert('先选一件馆藏。'); return; }
+        curInd = this.getAttribute('data-k');
+        Array.prototype.forEach.call($('mgInd').children, function(x){ x.classList.toggle('on', x === b); });
+        var e = MG.exhibits.filter(function(x){ return x.slug === curExh; })[0];
+        var ind = MG.industries.filter(function(x){ return x.key === curInd; })[0];
+        var hits = e.tags.filter(function(t){ return (MG.map[t] || []).indexOf(curInd) >= 0; });
+        var list = hits.length ? hits.map(function(t){
+          return '<div class="mg-item"><span class="tag">' + esc(t) + '</span> — ' + esc(TAG_NOTE[t] || t) +
+            '。迁移到<b>' + esc(ind.name) + '</b>:值得作为样板验证的方向,建议结合具体产品做可行性分析。</div>';
+        }) : e.tags.slice(0, 3).map(function(t){
+          return '<div class="mg-item"><span class="tag">' + esc(t) + '</span> — ' + esc(TAG_NOTE[t] || t) +
+            '。与<b>' + esc(ind.name) + '</b>的关联度低,但可留意跨场景启发。</div>';
+        });
+        $('mgOut').className = 'mg-out on';
+        $('mgOutT').textContent = e.name + ' → ' + ind.name + ' 迁移建议';
+        $('mgList').innerHTML = list.join('');
+        $('mgAsk').onclick = function(){
+          window.location.href = 'index.html?ask=' + encodeURIComponent(
+            '请基于好设计馆藏「' + e.name + '」的可迁移能力(' + e.tags.join('、') + '),分析迁移到' + ind.name + '产业的可行性与具体做法。');
+        };
+      });
+    });
+  })();
+})();
+</script>
+</body>
+</html>

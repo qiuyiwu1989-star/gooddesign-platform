@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>好设计 K12 教育工具</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F2E8;
+      --surface: #ffffff;
+      --surface-soft: #EFE7D5;
+      --ink: #0E1218;
+      --ink-soft: #2A3142;
+      --muted: #5C6577;
+      --line: rgba(14, 18, 24, 0.16);
+      --line-soft: rgba(14, 18, 24, 0.10);
+      --deep: #0E1218;
+      --sea: #3D60BD;
+      --gold: #D4A858;
+      --red: #C8472C;
+      --serif: "Noto Serif SC", "Source Han Serif SC", serif;
+      --sans: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      --latin: "Cormorant Garamond", "Georgia", serif;
+      --mono: "JetBrains Mono", "SFMono-Regular", monospace;
+      --radius-card: 12px;
+      --radius-control: 8px;
+      --radius-pill: 99px;
+      --shadow-card: 0 8px 24px -10px rgba(14, 18, 24, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.75;
+      letter-spacing: .005em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      width: min(1040px, 100%);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font: 700 16px/1 var(--serif);
+      letter-spacing: .08em;
+      margin-bottom: 26px;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-card);
+      background: var(--red);
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--ink);
+      font: 500 clamp(38px, 5.6vw, 72px)/1.12 var(--serif);
+      letter-spacing: .03em;
+      text-wrap: balance;
+    }
+
+    p {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.9;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    a {
+      display: grid;
+      gap: 14px;
+      min-height: 220px;
+      padding: 24px;
+      border: 1px solid var(--line-soft);
+      border-top: 4px solid var(--sea);
+      border-radius: var(--radius-card);
+      background: var(--surface);
+      color: var(--ink);
+      text-decoration: none;
+      box-shadow: var(--shadow-card);
+    }
+
+    a:last-child {
+      border-top-color: var(--gold);
+    }
+
+    a:hover,
+    a:focus-visible {
+      border-color: var(--sea);
+      outline: 3px solid rgba(61, 96, 189, 0.24);
+      outline-offset: 2px;
+    }
+
+    strong {
+      color: var(--ink);
+      font: 600 28px/1.3 var(--serif);
+      letter-spacing: .03em;
+    }
+
+    span {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .pill {
+      justify-self: start;
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--surface-soft);
+      color: var(--sea);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 22px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="brand">
+      <div class="brand-mark">K12</div>
+      <span>好设计教育场景</span>
+    </div>
+    <h1>从好设计案例，到可直接上课的学习任务</h1>
+    <p>这里包含教师备课工作台和学生互动课件。先用工作台生成课堂方案，再把学生端发给学生完成任务。</p>
+    <div class="grid">
+      <a href="/teacher-workbench/">
+        <span class="pill">教师使用</span>
+        <strong>好设计 K12 备课工作台</strong>
+        <span>选择年级、学科、目标和知识点，自动推荐案例并生成教案、课堂活动、任务单和评价量规。</span>
+      </a>
+      <a href="/education-tools/courseware/">
+        <span class="pill">学生使用</span>
+        <strong>好设计里的科学</strong>
+        <span>学生围绕“蛟龙号”完成压强实验、小测、小游戏、五维评价和“蛟龙号2.0”设计任务。</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>智能化自行走升降工作平台 · 2021银奖 · 好设计</title>
+<meta name="description" content="智能化自行走升降工作平台是徐工以用户和市场需求为导向，打造的智能化、人性化、绿色环保的高端高空载人作业设备，广泛应用于桥梁、机场、建筑、风电、场馆等施工作业领域。
+1) 设计目的
+本项目开发的XGS34K自行走升降工作平台以智能化控制技术、">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2021">← 返回 2021 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>智能化自行走升降工作平台</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">江苏徐工工程机械研究院有限公司徐工消防安全装备有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">刘贺,靳翠军,程婷,薛更</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101378</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>智能化自行走升降工作平台是徐工以用户和市场需求为导向，打造的智能化、人性化、绿色环保的高端高空载人作业设备，广泛应用于桥梁、机场、建筑、风电、场馆等施工作业领域。</p><p>1) 设计目的</p><p>本项目开发的XGS34K自行走升降工作平台以智能化控制技术、人性化交互体验、模块化创新设计为核心，突破了传统高空作业设备操纵风险大、车辆移动及定位精度要求高，专业化操作性强的技术难题，克服了操纵界面布局混乱，操控过程繁琐复杂的用户痛点，有效降低了生产成本，实现了高空作业过程的智能化、安全性和舒适性。</p><p>2) 设计创新</p><p>本项目整机性能行业领先，具备多项设计创新。（1）技术集成创新，以多项创新智能控制技术为基础，车辆可自动识别、自动感应障碍物及路面坑洼等复杂地面工况，爬坡越障能力行业领先，最大爬坡角度45°；车桥自适应平衡，自动调整最优运行路径，满足各种场景的作业要求；整机臂架智能调节作业幅度，可实现精准的水平、垂直运动，实现特定工况下的自主寻优。（2）人本创新，以全球首创的操纵件布局及量化分析技术，开发了多用途高效能操纵一体箱，实现整体操纵效率提升20%；开发行业独有的高空作业安全控制平台，可自动感应障碍物，限制整车动作，有效防挤压缓冲空间≥300mm，触发作用力≥3.5Kg，有效保护作业人员安全，整体技术水平达到国际领先。（3）结构和工艺创新，首创一体式+分块式模块化拆分与组装工艺技术，突破了行业普遍的部件无法集约化应用的瓶颈难题，实现同平台、跨品类产品通用，通用化率达到90%；（4）外观设计创新，突破整机布置的极限尺寸限制，实现了功能实现与美学形态的平衡性，突出了机械工业美感，塑造了全新的产品形象。</p><p>3) 设计价值</p><p>本项目产品以创新的设计、合理的人机布局、全新的形象设计，具有安全舒适、人性化及审美性等高品质特色，产出多种设计价值。（1）品牌引领，产品获得EC-Type认证、北美认证和CE认证，获得授权专利17件，具有完全的自主知识产权，打破了国外技术垄断。产品推动了高空行业技术进步，引领了行业新的发展方向；（2）市场效益，目前已实现销售3484台，同时批量出口澳大利亚、俄罗斯等国家，销售收入15.69亿元，稳固了徐工臂式自行走升降工作平台国内第一的地位；（3）社会效益，系列产品在疫情防控期间和复工复产期间，为各地医院建设以及工地施工的快速推进提供了有力的保障，具有较高的社会效益。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>本项目从用户需求为导向，突破行业技术限制，在技术集成创新、生态人本创新、功能工艺创新以及造型设计创新等方面进行了设计创新。</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>技术集成创新</div></div></div><p>行业领先的智能控制技术：以行业领先的自适应智能集成技术为支撑，实现车辆自动识别、自动感应障碍物和路面坑洼等复杂地面；实现最大爬坡角度45°；车桥自适应平衡，自动调整最优行走路径。越障、爬坡、平衡能力行业领先，适应各种复杂场景。以行业领先的电控四轮转向控制技术为支撑，行驶驱动能力突出，实现前后桥独立转向、全轮转向及蟹形转向等转向模式，最小转弯半径3.6m，可轻松应对狭窄空间；整机臂架双载重设计，智能调节作业幅度，复合动作性能突出，可实现精准的水平、垂直运动，实现动臂伸缩的自主寻优，提高作业效率。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>生态人本创新</div></div></div><p>1) 高效的交互体验设计：整机设计充分考虑人性化需求，从用户行为和操纵习惯出发，针对操纵界面和整体操纵流程进行优化调整，应用全球首创的操纵件布局及量化分析技术，开发了多用途高效能操纵一体箱，创新多控制器的总线控制系统，操纵灵活平稳、微动性好，动作响应速度快，实现整体操纵效率提升20%以上；</p><p>2) 人性化的安全防护设计：开发行业独有的高空作业安全控制平台，整车平台承载能力强，最大承重450kg；搭载人机交互系统，可自动感应障碍物，自动限制整车动作，有效提升安全性。应用防挤压创新设计，有效防挤压缓冲空间≥300mm，触发作用力≥3.5Kg，有效保护作业人员安全，安全技术确认符合IEC 61508标准SIL2安全级别，操纵舒适性满足90%以上人群，整体技术水平达到国际领先。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>功能工艺创新</div></div></div><p>绿色环保的模块化设计：以顶层规划为设计主线，首创一体式+分块式模块化拆分与组装工艺技术，实现核心单元与多材质工艺的适应性设计，涵盖14米-58米平台共12款臂式产品，成本降低10%，达到行业领先水平。全系列产品模块化创新设计，突破了行业普遍的部件无法集约化应用的瓶颈难题，实现同平台、跨品类产品通用，通用化率达到90%，减少了物料种类和生产运输成本，提高了管理效率，践行了碳达峰、碳中和的环保要求。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>造型设计创新</div></div></div><p>全新形象提升：以徐工家族化特征为指引，构成的硬朗式形态设计，突破整机布置尺寸限制，实现了功能实现与美学形态的平衡性，全面定义了徐工高空作业产品多种型号的家族化设计风格，延续了徐工一贯以人为本的设计思想，塑造出坚固、可靠的产品形象；色彩以徐工金为主，辅以亮蓝色图形和标识的全新的整机形象设计，突出了机械工业美感，形成统一视觉识别特征，塑造全新国际高端形象。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%99%BA%E8%83%BD%E5%8C%96%E8%87%AA%E8%A1%8C%E8%B5%B0%E5%8D%87%E9%99%8D%E5%B7%A5%E4%BD%9C%E5%B9%B3%E5%8F%B0%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E6%99%BA%E8%83%BD%E5%8C%96%E8%87%AA%E8%A1%8C%E8%B5%B0%E5%8D%87%E9%99%8D%E5%B7%A5%E4%BD%9C%E5%B9%B3%E5%8F%B0" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「智能化自行走升降工作平台」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E6%99%BA%E8%83%BD%E5%8C%96%E8%87%AA%E8%A1%8C%E8%B5%B0%E5%8D%87%E9%99%8D%E5%B7%A5%E4%BD%9C%E5%B9%B3%E5%8F%B0" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「智能化自行走升降工作平台」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-s17.html"><span class="d">← 上一项</span>柔性全钢高塔架风电机组的设计</a>
+    <a class="next" href="2021-s19.html"><span class="d">下一项 →</span>大型矿用挖掘机远程操作智能化设计与应用</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>微润滑超声织构表面形性协同加工装置 · 2021创意奖 · 好设计</title>
+<meta name="description" content="（1）设计目的：当今，石油、煤炭和天然气等不可再生能源的消耗日趋增多， 如何更加有效的减少能源损耗、提高能源利用率成为全球热点。而在精密机械领域，全球每年因摩擦导致的能源损耗约占40%，而磨损导致的机械零部件失效约占0.7。因此，如何改善精">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E5%88%9B%E6%84%8F%E5%A5%96&amp;year=2021">← 返回 2021 年创意奖名录</a>
+  <div class="kicker"><span class="lv other">创意奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>微润滑超声织构表面形性协同加工装置</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">中北大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">叶林征,李婧,弓文杰</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202104767</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>（1）设计目的：当今，石油、煤炭和天然气等不可再生能源的消耗日趋增多， 如何更加有效的减少能源损耗、提高能源利用率成为全球热点。而在精密机械领域，全球每年因摩擦导致的能源损耗约占40%，而磨损导致的机械零部件失效约占0.7。因此，如何改善精密机械摩擦磨损性能就成了节约能源的关键难点。</p><p>（2）设计创新：本装置通过特殊的振幅传递，能够通过特定的切削运动直接加工出具有一定几何形状和分布规律的微织构表面，包括微凹坑表面、微凹槽表面、鱼鳞状表面以及复杂的分层微织构表面等，从而达到改善表面特性的目的。由于经过设计的具有高能量转换的压电振子辐射端面能产生振幅为10μm以内、频率为20-50kHz的中高频机械振动，通过独有设计的超声谐振系统，将机械振动能进一步放大，通过声振系统的层层传递，最终可以获得10-30μm的高频振动，进行辅助加工微织构表面，此装置是一种极具发展潜力的高效制备微织构表面的形性协同加工设备。作为超声振动系统是微织构表面超声形性协同加工装置的核心，本装置中的压电振子是超声加工中十分重要的部件，通过对超声压电振子的三维设计计算、工作方式、振动方式和前端工具头的改进，使之产生不同的作用效果。超声中汇聚着巨大能量，可以瞬时产生高强度的冲击波和微射流。从超声空化应用到加工工件表面，会形成超过1000个大气压的瞬时高压，这种能量的释放是巨大、威力是迅猛的。因此，利用好这种清洁高效的能源，具有巨大的社会经济价值，堪称一次高效的能源革命。该装置采用的超声技术加工微织构效果比电解加工技术、电火花加工技术、激光表面微造型加工技术、磨料气射流技术和振动冲击加工技术等加工技术都更有优势，尤其要求在无污染、低成本、高效率的方式进行微织构加工更有绝对优势。特别地在贫油润滑状态下形成不同密度的微织构阵列，得到具有最佳摩擦学性能的摩擦副表面微织构阵列，特别在微坑处形成二次网纹，构成表面微润滑提供更好的思路。</p><p>（3）设计价值：结合新能源产业发展需求和微观空化效应，满足不同客户需求。通用的简易换能装置来满足客户的低端需求，来获取最佳性能比；定位于高能量传输的需求场合，追求高振幅、高匹配的能量转换场合来满足性能表面加工的客户；最后处于特殊复杂工况、需要定制化的使用场合，来满足加工对象表面特殊微织构性能的客户。三种形态的产品充分发挥大功率换能器循环寿命长、转换速度快以及成本低廉的优点。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>本装置特色是具有超声绿色、无污染、无粉尘、无有害气味，高效清洁，不会产生任何附加添加杂质，利用超声波在介质中的传播来进行能量加工。1.1自主研发的压电振子突破传统制造换能器低效、易损、功率低、应用面窄的局限，研制出低损耗高效能转换的大功率压电换能器，实现超声波的可控调制加工，降低能量传输过程中能量损耗；换能器装配要提供合适的预紧力，填充不同的超声结构性材料，实现声能转换率的提高和超声方向控制。 在能量转换上，本装置中配套的超声压电振子具有能量转换高效，比传统超声系统能量传递提高近30%，可以配置不同的声波传递接收晶体，可控传递声波，其次产品体积小、便于配合安装。本装置中采用的三维等效电路模型更贴近实际，比传统一维模型考虑了其他复杂受力情况；研制的压电振子，有一个数据库，可以根据温度受力的老化现象和经验数据，可供不同工况下提供客户不同能量的传输效果进行预判。其特色是特色性地增添声子晶体，在换能器辐射端粘结特性阻抗介于陶瓷和辐射负载介质之间的一种或多种材料，其设计的主要目的是满足换能器和辐射负载之间的声学匹配要求，使声波能量最大限度地向负载介质进行辐射。可以进行个性化定制超声振动方案，针对不同振幅的超声换能采用通用、定制、高能传输三种定制模式，满足消费者和使用者对振动效果不同的需求。1.2大功率超声换能器是产生功率超声的基础，设计和协调压电振子基本特性，波阻抗、频率响应、阻抗匹配、声学结构、换能材料及振动模式，来达到电与声的最佳转换。本装置根据波长特性，将超声换能器分成对应部件的几个独立模块，在这些模块的前后端考虑超声波非线性传播，采用等效法，根据边界条件，推导压电陶瓷、前后盖板和变幅杆的等效电路，当系统处于共振状态，考虑各个接触界面，建立系统的等效电路阻抗模型。通过有限元仿真模态，为换能器装配要提供合适的预紧力，填充不同超声结构性材料，实现声能转换率的提高和超声方向控制。该系统的等效参数可由原始系统的修正获得，等效电容和机电耦合系数都可由系统余能函数获得。根据振动频率方程，给定换能器工作频率和使用材料参数，进而优化。1.3 自主研制的压电振子，在机电耦合系数上提升两倍多，在体积、质量、性能上优势明显。采用充填声子晶体的高能量传递换能器方案，在能量易耗散部位让声波充分传递，使产品更加小巧，能量密度更高。提高产品性能并缩减制作成本的同时，提高性能密度的同时也提高了能量密度，在不同工况下作业更有效。本产品设有至少四片压电陶瓷、接触表面涂有功能性材料、前后端盖和变幅杆填充有声子晶体等智慧传递能量的设计产品。后盖板填充有声波抑制、接触界面特殊加工避免声波折射反射的金属选型，前盖板和变幅杆为能量传递的关键，其中高强度定制螺纹螺栓接触每一个元器件，其接触为前端盖留有1mm以内空隙，其中可填充不同功能介质，变幅杆末端填充匹配负载声子晶体，不同工况下使用。压电陶瓷两极外接高频电信号，使电能转成高频声能，通过特殊结构传递到被作用介质。</div></div><div class="p-li"><span class="p-mk">2</span><div>在不同工件上形成超声织构表面，不仅需要高能量转换的超声压电振子，产生纵向振动，也需要超声波振动转换模式系统精确作用到工件表面，产生形状可控、分布规律可预测、表面质量可改性的形性协同加工表面。2.1 超声波振动转换模式系统由振动圆盘、模式转换挠性杆、多槽微型油石（或者杯型复合高强度砂轮）、油石座等组成。2.2 其创新之处在于可以把高能量纵向振动进行模式转换成弯曲振动模式（径向振动），通过挠性杆把弯曲振动转换成油石条上的纵向振动，进行微织构表面加工，核心是挠性杆的设计和油石条油石座的工艺设计。2.3 在不改变纵向振动压电振子变幅杆基本结构的基础上，超声波振动转换模式装置浮动连接一个模式振动转换系统，把大功率超声电源产生的超声频电振荡通过能量高效转换的压电换能器转换为超声频纵向振动，其中复合变幅杆将换能器输出的超声频纵向振动放大后传给弯曲振动圆盘，再由弯曲振动圆盘通过模式转换挠性杆将其弯曲振动变成纵向振动传给油石座，经过特殊工艺的油石座带动与其固连在一起配比定制的多槽微型油石进行纵向振动，使直接作用于工件表面进行表面超声微织构，实现油石磨粒脉冲式分布。</div></div><div class="p-li"><span class="p-mk">3</span><div>超声波振动转换模式系统与大功率超声压电振子之间的耦合是制约能量能否高效转换、高效利用的关键技术。3.1在能量传递机理上，依据复合振动的三维压电换能器动力学模型，构建换能器系统中多维机电本构方程，获得机电耦合系统中系统能量和余能的函数表达。3.2 本装置中对于谐振系统中压电振子的电学品质因数、机械品质因素等对电声转换效率的影响均提高到80%，工作可在大负载、宽电压范围和100-130℃工作温度范围内稳定使用。3.3 超声振动模式转换系统，是通过弯曲圆盘和挠性杆有限元软件模拟，实验验证在超声转换模式系统中在弯曲振动圆盘加载20-40kHz的超声频振动时，圆盘波腹振幅可达到10μm以上，油石座上有最大纵向位移。通过雾化试验，可达15μm的稳定高频振幅，同时避免功率损失，挠性杆设计的尺寸确保180mm时是最小振幅。其中，设计变量有油石座基材为40铬镍钼A，通过振动波动方程计算出弯曲振动圆盘的直径58mm、厚度11mm，挠性杆长度为195mm，油石座长度为152mm，油石座厚度为7mm。3.4 通过弯曲振动圆盘、模式转换挠性杆和油石座的长、宽、高，以大功率超声压电振子系统ϕ50mm压电晶堆为振动源，通过锥形美制螺纹连接超声波振动转换模式系统，对装置进行实件试验，用于ϕ150mm薄壁缸套的超声加工，内表面形成了与加工轴线交叉角度的超声网纹，具有明显表面润滑效果，极大降低了表面滑擦或耕犁。</div></div><div class="p-li"><span class="p-mk">4</span><div>对于军工航天领域越来越多需求高功率化、高速化、轻量化和长寿命化的高端表面质量产品，独立微坑储油结构的表面均匀分布、相互独立、呈蜂窝状，数以万计的点坑来形成边界润滑摩擦微坑。4.1通过自行设计的微坑表面加工装置对精密部件不耐磨部位进行织构加工，可以形成润滑内孔表面的滑动区,防止粘着和咬合，避免干摩擦和拉缸现象,具有节能节油、绿色无污染、有效地缩短初期磨合时间和延长机械部件的使用寿命。4.2 微坑加工装置可安装在数控磨床上，主轴上以一定的转速旋转，微坑装置可沿轴向和横向进给，通过横向进给控制微坑的深度，依靠振动切削在工件内表面形成具有一定分布和一定尺寸参数的微坑阵列。由于工件的旋转运动，微坑成型装置的轴向运动，这两个运动合成后使得微坑分布呈现均匀分布的螺旋状。项目组以某型号摩托车缸套为例，通过对油膜厚度与微坑参数的关系和油膜承载力与微坑参数的关系调控，得到坑口直径0.25mm左右、微坑面积占有率在19％-22％之间、微坑深度0.2mm左右深径比、 0.7-0.8左右的现动压润滑矩阵式微坑。4.3 本装置利用微观空化效应、空泡溃灭微射流冲击机理，进行超声表面改性和材料去除（超声改形），涉及高速高压、多相及相变。</div></div><div class="p-li"><span class="p-mk">5</span><div>通过微坑和表面网纹多种织构的有机结合，不仅使工件造型表面的耐磨性和润滑性能大大提高，进一步形成多组最优的微造型表面参数数据库,使两种装置（大功率超声网纹织构装置和微坑表面加工装置）的加工参数对润滑效果有不同的影响，各个装置参数的影响不同而且独立，对高端精密制造零部件不同表面的性能可以操控，进而达到形性协同的目的。</div></div></div></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E5%88%9B%E6%84%8F%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%BE%AE%E6%B6%A6%E6%BB%91%E8%B6%85%E5%A3%B0%E7%BB%87%E6%9E%84%E8%A1%A8%E9%9D%A2%E5%BD%A2%E6%80%A7%E5%8D%8F%E5%90%8C%E5%8A%A0%E5%B7%A5%E8%A3%85%E7%BD%AE%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%BE%AE%E6%B6%A6%E6%BB%91%E8%B6%85%E5%A3%B0%E7%BB%87%E6%9E%84%E8%A1%A8%E9%9D%A2%E5%BD%A2%E6%80%A7%E5%8D%8F%E5%90%8C%E5%8A%A0%E5%B7%A5%E8%A3%85%E7%BD%AE" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「微润滑超声织构表面形性协同加工装置」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%BE%AE%E6%B6%A6%E6%BB%91%E8%B6%85%E5%A3%B0%E7%BB%87%E6%9E%84%E8%A1%A8%E9%9D%A2%E5%BD%A2%E6%80%A7%E5%8D%8F%E5%90%8C%E5%8A%A0%E5%B7%A5%E8%A3%85%E7%BD%AE" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「微润滑超声织构表面形性协同加工装置」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-c34.html"><span class="d">← 上一项</span>MRRA——医疗康复机械臂</a>
+    <a class="next" href="2021-c36.html"><span class="d">下一项 →</span>多功能护理床椅一体机</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

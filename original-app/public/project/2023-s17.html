@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自主重型燃气轮机热端部件高效长寿命防护涂层设计 · 2023银奖 · 好设计</title>
+<meta name="description" content="重型燃气轮机是关系国家能源和国防安全的国之重器，广泛应用于发电、舰船驱动等领域，其核心技术长期受西方发达国家控制，透平叶片、燃烧器等热端部件是影响其性能和安全的核心部件，在热-力-化耦合恶劣工况下极易失效，将引发重大安全事故，严重威胁能源电">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2023">← 返回 2023 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2023 · 第八届</span></div>
+  <h1>自主重型燃气轮机热端部件高效长寿命防护涂层设计</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">东方电气集团东方汽轮机有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">王伟,巩秀芳,李定骏,陈艺文,曹晓英</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202301087</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>重型燃气轮机是关系国家能源和国防安全的国之重器，广泛应用于发电、舰船驱动等领域，其核心技术长期受西方发达国家控制，透平叶片、燃烧器等热端部件是影响其性能和安全的核心部件，在热-力-化耦合恶劣工况下极易失效，将引发重大安全事故，严重威胁能源电力和国家安全。为了保障重型燃机安全运行，防护涂层是热端部件有效防护措施，该技术被GE、西门子、三菱等严格封锁，是典型的“卡脖子”难题，因此自主设计研发高效长寿命防护涂层技术对保障国家安全和能源安全至关重要。</p><p>重型燃机防护涂层面临3项主要挑战：（1）服役工况复杂苛刻，缺乏涂层材料和结构设计准则。（2）防护涂层失效演化形式多变，难以精准表征涂层性能劣化规律。（3）热端部件结构复杂，难以制备形性均一的高效长寿命防护涂层。面对以上挑战，项目组以国家973、两机专项等重点项目为支撑，历时十余年，攻克了涂层设计、性能评价、制备及工程应用等核心技术难题，取得重要创新成果如下：</p><p>【1】探明了热端部件基体/涂层材料界面相容性适配机理，构建了防护涂层材料、涂层结构设计准则，提出了基体/涂层热-力-化多参数耦合界面适配准则，设计了高效长寿命防护涂层材料成分和涂层结构，开发了满足工况的高性能防护涂层材料成分配方，形成了自主涂层材料牌号，建立了评价标准。</p><p>【2】阐明了防护涂层性能退化与失效演变规律，提出了模拟工况防护涂层性能加速考核评价方法，攻克了涂层性能劣化行为精准表征难题。自主设计研发了模拟工况的热循环、热冲击、微动磨损等试验台，揭示了防护涂层劣化行为和延寿机理，建立了涂层性能评价标准，突破了高效长寿命防护涂层评价手段缺失的技术瓶颈。</p><p>【3】研发了复杂异型构件喷涂轨迹规划与精确控制的柔性制备技术，建立了高速熔融粒子多参数耦合智能在线监控方法，攻克了复杂异型构件易变形、难均一的涂层制备技术难题。针对异型构件，开发了基于高速熔融粒子温度场和速度场冶金沉积过程精确控制技术，发明了柔性机器人喷涂用九轴系统，实现了长寿命防护涂层工程化批量生产。</p><p>成果应用于我国首台自主F级50MW重型燃气轮机（2次被评为“央企十大国之重器”），打破了国外技术垄断和封锁，攻克了国家在能源重大装备领域关键技术“卡脖子”难题。相关成果获授权发明专利10余项,参与制定国家标准2项，制定企业标准23项。并支撑企业获得3台50MW燃机国家示范项目，有效推动了自主燃机制造水平的提升，引领行业的发展。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-h">3.1 项目背景</div><p>国家“十四五”规划和2035年远景目标纲要中指出，要加快培育先进制造业集群，推动航空航天、先进电力装备等产业创新发展。先进电力装备是国家经济命脉和战略安全的重要保障，是实现制造业强国战略的基础，是实现“碳达峰、碳中和”目标的基石。重型燃气轮机与航空发动机并称为装备制造业“皇冠上的明珠”，具有清洁、低碳、高效、灵活的特点，是先进电力系统的“调节器”，是高新技术密集的重大装备，是高效清洁发电系统的核心动力装备和先进船舰的驱动设备，是关系国家能源和国防安全的国之重器，具有极高的战略地位和巨大的市场前景。</p><p>透平叶片、燃烧器等是影响重型燃气轮机服役寿命的核心热端部件，长期以来，只有美国、德国、日本等极少数发达国家掌握重型燃气轮机核心技术，我国在役燃机2000余台，热端部件对外依存度高，严重依赖国外。重型燃气轮机的恶劣服役环境致使叶片、燃烧器等核心部件极易发生高温氧化、热腐蚀、磨损失效，将引发重大安全事故，严重威胁国家能源电力安全和国防安全。高效长寿命高温防护涂层是应对核心热端部件失效的必要防护措施，被GE、西门子、三菱等国际能源巨头严格封锁，是典型“卡脖子”技术，亟需突破，自主设计和研发重型燃气轮机高效长寿命高温防护涂层技术是保障重型燃气轮机安全可靠运行的必经之路。</p><p>重型燃气轮机核心热端部件服役工况苛刻，不同基体和涂层材料界面的相容性差异大，核心部件性能失效演化形式多样，复杂结构部件涂层均一性难控制，这些难题带来了“防护涂层材料和涂层结构设计准则缺乏”“防护涂层性能劣化规律难以精确表征”“形性均一的长寿命防护涂层难制备”三方面主要挑战，核心部件无有效防护或防护技术无法满足重型燃气轮机安全运行要求。因此，本项目紧密围绕制造强国发展战略，以保障重型燃气轮机的自主可控、安全可靠运行为目标，展开了自主重型燃气轮机热端部件高效长寿命高温防护涂层设计及工程应用研究。</p><div class="p-h">3.2 项目主要创新特点</div><p>项目组在国家973、两机专项、四川省科技支撑计划等重点项目的支持下，攻克了涂层设计、性能评价、制备及工程化应用等核心技术难题，探明了重型燃气轮机热端部件基体-涂层界面的适配机理，构建了高温防护涂层材料与涂层结构设计准则，阐明了热端部件防护涂层性能退化与失效动态演变规律，提出了高效长寿命防护涂层多因素摩擦学性能加速考核评价方法，建立了高速熔融粒子多参数耦合智能在线控制方法，研发了复杂异型构件防护涂层喷涂机器人轨迹规划与精确控制的柔性制备技术。项目成果已应用于我国首台自主F级重型燃气轮机、某JG舰船、某型进口F级重型燃气轮机、某型高炉煤气用燃气轮机等多类产品，保障了重点型号产品长寿命（大于5年）安全服役与运行。项目成果打破了国外技术垄断和封锁，实现了自主F级50MW重型燃气轮机核心部件宽温长寿命耐磨涂层技术“0到1”的突破，总体技术达到国际先进水平，填补了国内重型燃气轮机耐磨涂层技术空白；实现了自主F级50MW重型燃气轮机热障涂层修复再制造技术的突破，总体技术水平达到国内领先水平，部分指标达到国际先进水平。总之，项目攻克了国家在能源先进电力装备领域关键技术“卡脖子”难题，保障了我国多种型号燃气轮机等重点高参数透平装备的安全、可靠、高效运行。</p><p>本设计充分考虑了重型燃气轮机热端部件运行工况，基于功能、性能、长寿命相容性原理，完成涂层需求设计；基于工况设计系列试验台，完成涂层需求设计可靠性验证；基于制造过程闭环质量控制，完成涂层容限设计，实现高效长寿命防护涂层在国内首台F级50MW重型燃气轮机的应用。</p><p>项目的主要创新特点如下：</p><p>创新点1：基于部件服役工况—涂层性能的防护涂层需求设计</p><p>透平动叶片、静叶片、燃烧器内筒、尾筒、透平轮盘等是影响重型燃气轮机核心热端部件，其可靠性和服役寿命将决定整机的性能和安全性，每类热端部件服役工况和环境不同，本项目首先针对重型燃气轮机热端部件运行温度场、应力场、腐蚀环境、摩擦磨损、微动磨损等复杂苛刻的服役工况进行了系统的分析。通过对燃机热端部件运行温度场、应力场、腐蚀环境、摩擦磨损、微动磨损等多状态耦合工况系统分析，结合热端部件对防护涂层隔热、抗热腐蚀、耐磨损、抗磨蚀等性能需求，开展了多种防护涂层的开发和性能测试，建立了涂层数据库。根据涂层数据库，综合燃气轮机不同热端部件设计和服役工况情况，完成自主重型燃气轮机热端部件高效长寿命防护涂层需求设计。</p><p>创新点2：基于热-力-化多参数耦合界面适配准则的防护涂层材料及结构设计</p><p>本项目针对重型燃机热端部件不同服役条件下的隔热、抗热腐蚀、耐磨损、抗磨蚀性能的需求设计，基于涂层材料热力学相图计算，对涂层材料与基体材料的物理化学参数（热导率、热膨胀系数、润湿性）匹配度等进行模拟分析，创建了基体/涂层适配性图谱数据库，探明了基体/涂层界面相容性演化与发展规律，并结合不同热端部件基体/涂层系统的应力及强度特性，提出基体/涂层材料热-力-化耦合界面相容性适配准则，构建了服役工况-性能匹配的基体/涂层材料系统，实现了核心部件基体/涂层材料的精准匹配。依据基体/涂层材料界面相容性适配准则，差异化设计了满足不同工况需求的高温防护涂层材料成分及涂层结构，完成了涂层材料及涂层结构设计。依据建立的基体/涂层材料界面相容性适配准则和涂层成分与涂层结构设计，研发了高效长寿命防护涂层材料成分配方，构建了铜镍铟粉末（6052B2）、碳化铬粉末（6201C3）、钴钼铬硅粉末（6002A1）、钴镍铬铝钇粉末（6000A1、6000A2）、氧化锆粉末（6134B1）等系列化涂层材料自主牌号，满足了重型燃机不同热端部件服役工况的需求。依据自主牌号涂层材料成分配方，提出了涂层材料化学成分、几何形态、微观结构、粒径分布、松装密度、流动性能等粉末特性关键技术指标，建立了高效长寿命防护涂层粉体材料评价标准和数据库。</p><p>创新点3：基于制备过程质量控制的防护涂层容限设计</p><p>项目主要采用超音速火焰喷涂（HVOF）和大气等离子喷涂（APS）方法制备高效长寿命防护涂层。燃料压力、燃料流量、氧气压力、氧气流量、送粉量、喷涂距离等是HVOF喷涂的主要工艺参数；氩气流量、氢气流量、电流、电压、送粉量、喷涂距离等是APS喷涂的主要工艺参数，针对以上诸多工艺参数，项目采用智能化热喷涂在线监测系统采集垂直和平行焰流方向的粒子束焰流温度、速度、粒径等参量数据，获取粒子束焰流参量的三维仿真数据动态云图，筛选优质粒子束焰流，通过调整喷涂工艺参数（气体流量、燃料配比、送粉量、喷涂距离等）控制优质粒子束占比，掌握了粒子束焰流特性与工艺参数之间的定量影响规律，建立了粒子束焰流参量、工艺参数、涂层组织结构、涂层性能四者之间的量化关系数据库，实现了长寿命耐磨涂层组织与性能的高效精准调控，有效缩短了喷涂工艺研发试验周期，提升了闭环控制涂层性能的效率。</p><p>针对复杂异型薄壁件（厚度约0.6mm）在粒子束焰流高温冲击作用下产生的热应力导致工件变形的问题，设计专用防变形柔性装置和涂层厚度测量装置，控制涂层厚度方向的工件变形量小于0.03mm。设计并开发了复杂异型薄壁构件防护涂层喷涂机器人轨迹规划与精确控制的柔性制备系统及技术，提出九轴联动调整喷涂速度和喷涂路径的柔性相对运动控制方法，通过仿真模拟方式构建了高精度喷涂过程轨迹，实现了喷枪与工件柔性化相对运动精确控制，涂层厚度公差小于0.02mm，实现窄厚度公差防护涂层制备。设计并实现基于多模态信息融合的防护涂层等离子体喷涂过程监测和诊断系统，实现制备过程涂层质量闭环控制，制备过程中关键设备功率波动≤2%，涂层抗热震寿命偏差≤5%，实现窄性能公差防护涂层制备，进一步优化涂层容限设计。</p><p>创新点4：模拟工况性能考核验证-防护涂层设计可靠性验证</p><p>针对重型燃气轮机核心热端部件多因素复杂服役工况和特性，采用本项目发明的多参数（接触应力、位移、振动频率、温度）微动磨损性能评价综合试验系统，运用摩擦耗散能和二类微动图理论，重构耐磨防护涂层在极限工况条件下的温度场与应力场、相对运动形式，加速了核心部件耐磨防护涂层失效过程考核，探明了耐磨涂层失效机制。项目建立了耐磨防护涂层材料关键性能评价指标，揭示了耐磨防护涂层在多因素耦合条件下摩擦副磨损行为，解决了高温长时的组织结构演化规律与热-力-化多场耦合条件下的摩擦磨损机制等关键科学问题，建立了模拟重型燃气轮机服役工况下的耐磨防护涂层设计-考核评价-优化方法。</p><p>同时，针对重型燃气轮机热端部件防护涂层真实服役工况，自主设计和开发了高温燃气热循环、联合热冲击、隔热测试、燃气热腐蚀等模拟重型燃气轮机真实服役工况测试系列试验台。利用自主设计和开发的试验台，开展了系列高效长寿命防护涂层模拟工况性能测试，并在燃烧器试验台、整机实验台实现了压气机、燃烧器、透平等关键部件在多重复杂服役环境、多种因素负载作用下的防护涂层工艺稳定性测试，实现了防护涂层性能在F级50MW重型燃气轮机整机试验台上的直接批量验证，对服役后防护涂层的缺陷进行了快速、精确识别与定量分析，形成了对热端部件防护涂层工艺稳定性的综合量化测定方法，实现了对防护涂层设计的效果、可靠性的系统考核验证。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2023%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E8%87%AA%E4%B8%BB%E9%87%8D%E5%9E%8B%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA%E7%83%AD%E7%AB%AF%E9%83%A8%E4%BB%B6%E9%AB%98%E6%95%88%E9%95%BF%E5%AF%BF%E5%91%BD%E9%98%B2%E6%8A%A4%E6%B6%82%E5%B1%82%E8%AE%BE%E8%AE%A1%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E8%87%AA%E4%B8%BB%E9%87%8D%E5%9E%8B%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA%E7%83%AD%E7%AB%AF%E9%83%A8%E4%BB%B6%E9%AB%98%E6%95%88%E9%95%BF%E5%AF%BF%E5%91%BD%E9%98%B2%E6%8A%A4%E6%B6%82%E5%B1%82%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「自主重型燃气轮机热端部件高效长寿命防护涂层设计」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E8%87%AA%E4%B8%BB%E9%87%8D%E5%9E%8B%E7%87%83%E6%B0%94%E8%BD%AE%E6%9C%BA%E7%83%AD%E7%AB%AF%E9%83%A8%E4%BB%B6%E9%AB%98%E6%95%88%E9%95%BF%E5%AF%BF%E5%91%BD%E9%98%B2%E6%8A%A4%E6%B6%82%E5%B1%82%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「自主重型燃气轮机热端部件高效长寿命防护涂层设计」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2023-s16.html"><span class="d">← 上一项</span>660MW超超临界高位布置汽轮机关键技术研究及应用</a>
+    <a class="next" href="2023-s18.html"><span class="d">下一项 →</span>“采金达人”—综采红臂套系</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>重心适应辅助椅 · 2021创意奖 · 好设计</title>
+<meta name="description" content="我国的老龄化程度在日趋加深，老龄化人口数量也在不断加大，相应的对于助老产品的需求也日趋增加。并且随着电子商务等新型商业模式的兴起，极大的拓展了助老产品的销售模式，激活了整个市场的活力。
+但在现有的市场中，助老产品还仍以手动轮椅为主，鲜有电动">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E5%88%9B%E6%84%8F%E5%A5%96&amp;year=2021">← 返回 2021 年创意奖名录</a>
+  <div class="kicker"><span class="lv other">创意奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>重心适应辅助椅</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨工业大学机电工程学院</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">蒲子涵,马逸暄,唐斌,蒋涵睿</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202102036</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>我国的老龄化程度在日趋加深，老龄化人口数量也在不断加大，相应的对于助老产品的需求也日趋增加。并且随着电子商务等新型商业模式的兴起，极大的拓展了助老产品的销售模式，激活了整个市场的活力。</p><p>但在现有的市场中，助老产品还仍以手动轮椅为主，鲜有电动轮椅也现有可以实现姿态变换与帮扶功能的产品，而与市场反差鲜明的是，老年人对于助老产品的质量与功能要求也在不断提升，这就要求一款及能实现多种功能，有具有优秀市场特性的新型辅助椅。且现有的具电动轮椅普遍存在诸多方面的缺陷，对老年使用者较为不友好，大大限制了生活质量的提升。为了提升独居老年人居家生活能力，我们设计了一种可进行重心变换的重心适应辅助椅来满足老年人在居家生活中的种种需求。本款设备可实现坐立姿态的变换、帮扶站立以及爬楼梯等诸多对老年人居家生活具有重要意义的功能。</p><p>本款重心适应辅助椅是一种机电一体化设备，具有远程遥控与反馈系统，并同时利用偏置式行星轮系统实现灵活移动与上台阶，也可实现帮扶捡拾、帮扶站立与自动充电等功能，并针对老年使用者的生理特点进行的迭代与设计修正，更加贴合使用者的特点与需求，可显著提升老年使用者的生活质量。</p><p>现在市场售卖的轮椅可实现坐立变换的轮椅结构较为简单，底盘通过辅助轮防止其在站立后由于重心的前移而翻倒。但该设计没有解决站立过程中的重心问题，对此我组设计了一种全新的复合连杆姿态变化机构，可实现在坐立姿态变换的过程中重心投影位置保持恒定，使整体保持稳定，不会翻倒。 同时我们设计了一种嵌套结构的偏心行星轮，它可以利用重心位置的变化实现越障，也可实现台阶的爬升，高效而可靠。另外由于它可以将动能与重力势能进行转换，其冲击载荷小，使用体感平缓，符合老年人生理特点。 除此我们还设计了可实现帮扶站立、行走、捡拾等功能的机构，使老年人更便利。由于相当部分的老人受伤发生在弯腰过程中，这使得传统充电装置成了受伤的一大风险，对此我组设计了自动充电桩，在充电时无需弯腰，直接将辅助椅后侧“靠”到充电桩上即可，依靠导向面与充电触点自动完成对位、充电等操作，更为安全可靠。目前市场具有坐立变换功能的轮椅普遍存在充电困难、无法爬楼、站立后重心不稳等问题，并无同功能产品。本项目最大的意义在于实现了代步、站立帮扶、捡拾帮扶、爬楼等诸多功能的集成，包含了老年人居家生活的绝大部分隐患，一次性覆盖并解决了大部分问题。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>对于重心适应辅助椅，其主要功能是帮助使用者实现姿态的变换，同时在有限的空间内辅以夹取、一定程度的越障等较为简单且便利的功能，使得整个设计更加的多元化。</p><p>该产品在室内使用的一些现有轮椅不便实现的功能方面进行优化，例如使用者需要从较高的货架上取物、在厨房内做菜、洗碗等。对于此类需要站立才便于完成的动作，考虑机械方面的辅佐是很有必要的。</p><p>对此，为了实现上述诸多功能，一款重心适应辅助椅应运而生。帮助使用者在坐姿和站姿两种姿态间转换，辅助使用者捡拾夹取，有能够越过门槛台阶的简单越障能力。而相比于传统的姿态变换椅，我们在功能方面增加了一些设计，例如前段的辅助支撑轮，帮助整车在姿态变换的过程中结构更加稳定。双轮采用行星轮，在便于越障的同时使得上楼梯也成为了可能。也如在姿态变换的过程中，底部滑移模块也会随着整个座椅的抬升而产生水平方向的移动，更加符合人在站立过程中的姿态，使整个过程更加平滑。</p><p>另外根据调查，约有的老年人受伤发生在弯腰捡拾的过程中，有很大的风险引起纤维环破裂和体位性高血压引起的椎间盘脱出与主动脉剥离。而公寓中的插座多安装于高度较低的墙面上，这就使得弯腰为装置充电成为了受伤的一大风险。为避免这一风险，我组设计了一种接触时充电桩，在充电时无需弯腰操作，直接将辅助椅后侧“靠”到充电桩上即可，依靠导向面与充电触点可自动完成对位、充电等操作，使操作更安全。</p><p>如前文所言，老年人在弯腰捡拾的过程中极易受伤，但物品掉落再所难免，为此我组设计了一种可集成在辅助椅摇臂上的捡拾器，使用者无需走下辅助椅即可完成捡拾，从根本上规避了由捡拾物品导致的损伤风险。该捡拾器主体为SLA与MJF工艺的3D打印尼龙零件，管材与连杆为碳纤维材质，整体质量为346g，虽然有些重，但质心在近手掌处，整体持握十分稳固舒适。在不需使用时可通过卡扣+磁吸的方式固定于辅助椅的摇臂上，不妨碍其他操作，取用较为方便。</p><p>本项目具有以下创新点：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>在坐-立姿态变换的过程中同时进行重心的偏转，保证在运动过程中使用者的重心基本保持稳定，省去传统轮椅设计下方的辅助轮，简化设计，同时高效实现功能。</div></div><div class="p-li"><span class="p-mk">2</span><div>设计了一种内置动力的偏置行星轮机构，其在正常平地工作时利用气动刹车锁住内圈，使之和普通车轮一样工作。遇到障碍时松开气动刹车，同时配合车身上层结构通过前部的重心变换变相实现越障，由于其重心变换使其在遇到冲击时可将冲击反向转换为重心变换，即使用者与辅助椅的重力势能，可使使用体验更柔和。</div></div><div class="p-li"><span class="p-mk">3</span><div>可实现远程遥控，操作者可以直接取下机身摇臂握把处配置的遥控器来控制整车，辅助椅不在身边时可直接通过遥控器遥控至身旁，这使得操作者不再需要时刻将辅助椅放在身旁，对使用者提供了极大的便利，加强了使用的灵活性。</div></div><div class="p-li"><span class="p-mk">4</span><div>辅助椅可自动寻找充电器进行充电，使用自动充电系统，避免手动操作充电带来的风险与不便。同时集成捡拾机构，避免老年人在捡拾物品时做出弯腰、前倾等高风险动作，更符合老年人的生理特点。</div></div></div></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E5%88%9B%E6%84%8F%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E9%87%8D%E5%BF%83%E9%80%82%E5%BA%94%E8%BE%85%E5%8A%A9%E6%A4%85%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E9%87%8D%E5%BF%83%E9%80%82%E5%BA%94%E8%BE%85%E5%8A%A9%E6%A4%85" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「重心适应辅助椅」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E9%87%8D%E5%BF%83%E9%80%82%E5%BA%94%E8%BE%85%E5%8A%A9%E6%A4%85" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「重心适应辅助椅」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <span></span>
+    <a class="next" href="2021-c01.html"><span class="d">下一项 →</span>可伸缩锥螺旋仿生瓣膜抗反流胆道支架</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

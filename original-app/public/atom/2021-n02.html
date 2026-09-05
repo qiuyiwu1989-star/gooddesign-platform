@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>CHD622V20CR相继增压柴油机研制 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-n02.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-n02</div>
+  <h1>CHD622V20CR相继增压柴油机研制</h1>
+  <div class="meta-line"><b>2021 年度提名奖</b><span>河南柴油机重工有限责任公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 提名奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">河南柴油机重工有限责任公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">聂志斌,季永会,史四强,董飞莹</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 制造装备（逐条初审，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>CHD622V20CR相继增压柴油机是由河南柴油机重工有限责任公司针对公务船、工程船、海洋工程装备动力等国民经济关键领域，急需3000kW左右的高速大功率动力装备，研发设计的具有自主品牌的高速大功率柴油机。目前我国船用高速大功率柴油机主要是上世纪八、九十年代引进的许可证产品，功率在500-2000kW，技术水平落后，3000kW左右功率段为空白。随着新排放法规的实施和装备大型化、集成化发展对动力需求的变化，市场用户对柴油机低工况性能要求更高，对全工况性能良好的高速大功率柴油机有巨大需求。国内现有船用高速大功率柴油机普遍存在：无自主产权、技术性能指标落后、功率偏小等主要问题，与我国船舶行业、国民经济快速发展严重不相适应，制约了我国船舶行业及重大装备制造业的快速稳定发展。该项目重点针对船舶及海洋工程装备配套等急需发展的动力装备领域，产、学、研、用相结合，自主研制3000kW左右的高速大功率柴油机，具有自主知识产权，解决市场急需，替代进口产品，形成高速大功率柴油机自主研发能力，为船舶动力装备的自主化、本土化发展奠定良好的基础，进一步促进我国柴油机动力行业的自主发展和船舶行业的持续快速发展。通过该项目实施，完成自主品牌高速大功率CHD622V20CR相继增压柴油机研制，突破高速大功率柴油机设计、制造关键技术，柴油机技术指标达到当前国际先进水平，从根本上打破高端船舶动力装备国外品牌一统天下的局面，实现船舶动力装备的自主化。满足市场急需，形成国内高速大功率柴油机自主研发能力及研发体系。通过项目实施，培养一支高水平的高速大功率柴油机产品设计、项目管理、市场应用领域的人才队伍，从本质上促进我国高速大功率柴油机行业的快速良性发展，提高我国船舶动力装备产业的国际竞争力，推动我国的船舶动力装备可持续发展，真正实现高速大功率柴油机的自主化、高水平、可持续发展的目的。为我国创建世界一流高速大功率柴油机研发、制造基地打下基础。</p><p>该项目历时多年产、学、研、用联合攻关，取得了一系列成果。项目实施过程中，完成了120余项技术研究、分析报告，2套工艺设计制造规范；18项专利，其中已授权的专利11项，实用新型专利6项，发明专利5项；各类科技奖励4项，30余篇论文；项目实施完成了任务书规定的要求，积累了柴油机从设计-制造-质检-装配-试验的数据库。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>1 总体方案设计主要包括CHD622V20CR相继增压柴油机顶层设计、CHD622V20CR相继增压柴油机总体布局和系统布置及主要零部件结构参数的确定和评估，依据不同的设计内容和各合作方的优势，采用不同的设计路线完成总体方案设计工作。</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>1自主完成柴油机顶层设计、总体结构设计和系统布置，对国内外先进机型的优缺点进行分析，在借鉴这些设计特点的基础上，利用虚拟装配、三维设计技术，以简洁、美观、便于维修为原则，进行柴油机概念设计、总体结构设计和系统布置；</div></div><div class="p-li"><span class="p-mk">1</span><div>2借鉴工厂现有机型引进、消化、吸收、积累的经验，以CHD622V20柴油机为基础，完成研制样机主要零部件材料、基本尺寸、主要系统基本参数的确定；</div></div><div class="p-li"><span class="p-mk">1</span><div>3充分利用国内院所、国外专业机构在基础数据丰富、理论分析计算能力强等方面的优势，联合分析并进行评估，吸取外方设计公司、国内高校院所、外聘专家的建议、意见，逐步完善、优化总体方案设计。</div></div><div class="p-li"><span class="p-mk">2</span><div>国内多年来对高速柴油机没有系统地开展研究工作以及自主开发工作，缺乏高速大功率柴油机整机开发所需的准则、规范、边界条件、判据等。本项目突破了以下关键技术：</div></div></div><div class="p-h">2.1 基于CAE仿真技术应用的高速大功率柴油机设计技术研究</div><div class="p-h">2.2 高效清洁燃烧技术研究</div><div class="p-h">2.3 高速柴油机高强化结构设计技术研究</div><div class="p-h">2.4 高效进排气系统设计及增压器匹配技术研究</div><div class="p-h">2.5 高压共轨系统开发及整机匹配技术研究</div><div class="p-h">2.6 凸轮型线的优化设计技术研究</div><div class="p-h">2.7 单缸机性能验证技术研究</div><div class="p-h">2.8 相继增压系统的智能控制技术研究</div><div class="p-h">2.9 紧凑型高温高压蝶阀设计技术研究</div><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>该项目历时多年产学研用联合攻关，完成了自主品牌高速大功率CHD622V20CR相继增压柴油机的研制，积累了多项创新技术，主要有：</div></div></div><div class="p-h">3.1 高可靠性的齿轮传动系统设计技术</div><p>针对中间齿轮轴在机体悬臂安装导致齿轮啮合均匀性差的问题，创新设了一种抵御重力及大扭矩波动、过盈可控的中间双联斜齿轮传动装置，提高了中间齿轮工作可靠性。</p><div class="p-h">3.2 智能可控高压燃油喷射技术</div><p>开发了一种适用于高速大功率柴油机安全可靠的高压共轨系统，实现了高压共轨柴油机喷油策略的柔性控制，其动力性，经济型及排放指标达到国际先进水平；</p><div class="p-h">3.3 高速柴油机曲轴、连杆强度测试技术</div><p>开发了一种一体化的数字仿真和单一零件测试及评估系统，验证并优化了曲轴、连杆等关键零部件的设计方案，缩短了研制周期，提高了零部件设计可靠性</p><div class="p-h">3.4 高性能振荡冷却的多孔油腔全钢活塞技术</div><p>研制了一种多空冷却油腔全钢活塞，减轻了活塞重量，减少了柴油机往复惯性力，解决了高爆压承载力下活塞的机械负荷和热负荷大的技术难题。</p><div class="p-h">3.5 高速大功率柴油机相继增压控制系统设计技术</div><p>研制了高速大功率柴油机相继增压控制系统，解决了相继增压柴油机在高低工况多台增压器控制的技术难题，实现了受控增压器投入与退出的自动控制，</p><div class="p-h">3.6 紧凑型对冲式涡后排气装置设计技术</div><p>创新设计一种紧凑型对冲涡后排气装置，解决了狭小空间内两个涡后排气管的布置困难，实现了两个涡后排气管的集成，结构紧凑，安装方便，保证了狭小空间内两个涡后排气管的安装。</p><div class="p-h">3.7 相继增压发动机专用高温蝶阀设计技术</div><p>设计了一种发动机专用高温蝶阀，解决了工业用蝶阀体积庞大，在柴油机上安装困难的难题，实现了高速大功率柴油机紧凑空间的安装，保证低工况时进排气气流的通与断；</p><div class="p-h">3.8 相继增压柴油机增压器设计技术</div><p>改进了相继增压轴承密封设计， 解决了部分负荷增压器停止工作时轴封漏油的技术难题，实现了增压器的动态与静态同时密封，保证了相继增压柴油机在低负荷时正常工作；</p><div class="p-h">3.9 基于燃烧仿真技术软件优化柴油机燃烧</div><p>采用仿真软件进行评估分析，确定活塞碗、喷油器喷孔直径、喷射角度等参数的最佳配合，解决了部分负荷烟度偏大的技术难题，实现了柴油机全工况燃烧优化，提高了柴油机的综合性能。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

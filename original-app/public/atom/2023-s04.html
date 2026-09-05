@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>应急与救援机器人关键技术及应用 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-s04.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-s04</div>
+  <h1>应急与救援机器人关键技术及应用</h1>
+  <div class="meta-line"><b>2023 年度银奖</b><span>中国科学院沈阳自动化研究所</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中国科学院沈阳自动化研究所</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">赵新刚,王挺,卜春光,王聪,刘连庆</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 智能装备与机器人（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>应急救援事关人民生命和财产安全，是国家公共安全的重要组成部分。2014年，《国务院办公厅关于加快应急产业发展的意见》，指出“发展应急产业是提高公共安全基础水平的迫切要求；是提升应急技术装备核心竞争力的重要途径。”近年来，我国发生了天津危化品爆炸、汶川/雅安地震等灾难事件，对应急救援装备的快速布置、高效处理提出了迫切需求。</p><p>面临极其恶劣的灾难环境，救援机器人能代替救援人员深入灾难现场，完成伤员的搬移、转运和应急处置。在国家重大项目支持下，项目团队开展系列化救援机器人关键技术攻关与集成研制，通过十余年技术攻关与验证，针对机构设计、自主运行及运动控制等问题，突破了多项关键技术，取得了多项原创性发明。</p><p>取得的成果包括：</p><p>一、提出了面向复杂灾难救援环境的系列化机器人移动机构设计方法，构建出多种类型高通过性救援机器人移动平台，有效解决了救援机器人灾难环境可达性问题，提升了救援机器人在城市、野外、废墟等复杂环境的快速通过能力。</p><p>二、提出了一种伤员自主探测与安全搬运救援方法，设计了机器人化自主生命探测系统、室内外伤员搬运机器人和救援通道建立属具，有效解决了掩埋状态下幸存者探测、受限空间伤员转运技术难题，实现了危楼废墟、生产设施、核生化环境等灾难环境下伤员的有效搜救。</p><p>三、提出了主从式仿生遥操作协同控制技术，构建了主从同构/异构拟人化遥操作机器人系统，解决了人机协同作业中的高临场感复现与复杂精细操控问题，实现了遥操作救援机器人完成伤员救治与危险品处置任务；提出了基于肌电神经解码的手势动作识别技术，开发了基于肌电手势的人机自然交互系统，实现了机器人智能意图理解与灵巧操控作业。</p><p>项目获授权发明专利18项，授权实用新型专利13项，技术成果累计经济效益超过1亿元。所研制的可变形搜救机器人曾参与2013年四川雅安芦山地震的搜救工作，被国家地震局评为“十一五”以来最具应用实效的10项科技成果之一；灵蜥系列反恐排爆机器人已对外销售19台，累计收益798万元；此外所研制的伤员抢运、勘察等机器人平台多次参与各级消防支队、公安支队等部门的应急演练与应用示范，为保障人民生命财产安全，推动我国救援机器人技术的发展，做出了巨大贡献。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><div class="p-h">一、复杂环境适应性移动机构设计方案与控制方法</div><p>提出了面向复杂灾难救援环境的系列化机器人移动机构设计方法，构建出多种类型高通过性救援机器人移动平台，有效解决了救援机器人灾难环境可达性问题，提升了救援机器人在城市、野外、废墟等复杂环境的快速通过能力。</p><p>创新成果1：针对现有移动机器人平台复杂环境通过能力的不足，发明了一种可变形三角履带式移动机构，有效提高了救援机器人复杂环境的适应能力。</p><p>设计中采用可转动式独立四驱三角腿履带机构，每个三角履带机构由独立电机驱动，机器人前侧的两个三角履带可绕转轴旋转，改变与地面的接触角。当遇到障碍物时，前旋的三角履带机构可以显著提高机器人的越障能力。利用该机构构造的移动机器人平台，可以适应沙地、草地、泥泞等多种复杂野外地形，也能适应楼梯、斜坡、台阶等各种结构化地形，解决了单一机构的移动机器人复杂环境适应能力不足的问题。移动平台爬坡能力到达40°，越障能力到达300mm，移动速度达到80m/min.</p><p>图1 基于可变形三角履带机构的非结构环境高适应性移动平台 创新成果2：针对结构化环境中，移动机器人高速高通过性难以同时满足的问题，提出了基于平衡的复合移动机构运动控制技术，通过为机器人提供自主平衡控制能力提高机器人地形通过效率，实现地形通过高效性。</p><p>机器人移动机构由平衡轮，摆腿，履带组成。机器人能够在自平衡模式和履带模式之间自动切换，机器人摆腿收起，平衡轮自动放下，机器人能够自动从倒地状态切换到自平衡状态，依靠智能控制算法保持本体姿态平衡。该平台综合了平衡式和履带式机器人的优点，在楼梯、斜坡、台阶环境中，以履带式模式运行；在平坦道路上以两轮动平衡模式运行，速度快，机动灵活，从而解决机器人平台高速高通过性难以兼顾的问题。同时，在两轮行走的状态下，机器人控制中所采用的自平衡算法可以保证在两轮着地的状态下，具备极高的抗扰动能力和抗冲击能力。移动平台最大移动速度120m/min，平衡状态抗冲击能力150kg，最大爬坡30°。</p><p>图2 机器人自平衡移动与复合机构越障二、救援目标自主化勘察与伤员抢运技术</p><p>提出了一种伤员自主探测与安全搬运救援方法，设计了机器人化自主生命探测系统、室内外伤员搬运机器人和救援通道建立属具，有效解决了掩埋状态下幸存者探测、受限空间伤员转运技术难题，实现了危楼废墟、生产设施、核生化环境等灾难环境下伤员的有效搜救。</p><p>创新成果1：针对灾难现场搜救效率低的问题，提出了一种移动式生命体自主探测技术，有效解决了远距离、复杂环境下的救援目标有效识别和精准定位问题。</p><p>针对地震灾难现场复杂目标环境，融合生命探测雷达、视频、音频的多感知生命探测技术，复杂地形环境适应机构，先进的机器人救援技术等，研制移动式机器人化生命探测装备，深入废墟内部，可克服温度、湿度、地形等不利因素影响，穿透土壤、岩石、混凝土、木材、烟气等障碍介质，探测与搜索生命迹象，并能实时监控幸存者的生命信息，为救援人员提供救援通道信息，实现非接触、强穿透力、远距离幸存者搜救。本成果面向地震救援任务，代替或辅助救援人员完成生命迹象搜索任务，随着相关技术发展，移动式机器人化生命探测设备必将成为灾害救援领域智能救援装备。</p><p>图3 移动式机器人化生命探测装备及构型转换 创新成果2：为适应危楼和化工设施区受限空间救援需要，提出了机器人化伤员抱运转运解决方案，研制了仿人上身-履腿复合式室内伤员转运机器人和叉形摇臂-越野底盘混合式伤员高机动转运机器人，攻克了大载荷关节驱动设计、全状态反馈柔顺控制等关键技术，实现了危楼内部灾难环境伤员抱运、房门、楼梯、缓步台等危楼内部受限环境适应，解决了灾难救援“最后一公里”痛点问题。</p><p>仿人履腿复合式机器人上身包括两自由度机械腰、可协调双机械臂，下身为履腿复合式移动机构。针对幸存者体态差异性、危楼内部受限空间适应性问题，和幸存者掩埋物清除需要，成果提出了双机械臂搬运处置机构方案和幸存者抱运构型策略；针对正面探身抱托伤员、侧身通过狭窄门口、地形切换楼梯、空间受限缓步台、弯腰放置伤员等对机器人的环境通过性和安全性要求，设计了两自由度机械腰；融合双臂抱运策略、履腿机构越障策略，提出危楼内部伤员抱运过程的基于稳定锥的机器人构型优化方法，提高了机器人危楼内部伤员抱运过程的重心稳定自主性。针对室外/野外幸存者快速转运需要，研制了叉型摇臂与越野底盘混合移动机构，开发了多模式构型与运动控制算法，提高了伤员转运平台转向可空性、机动性、通过性、负载自重比等综合性能和救援机器人的实用性。在上述关键技术突破的基础上，研制出室内外伤员转运等多型机器人，其中室内救援机器人在抱运75公斤幸存者的情况下可通过30度折返楼梯，室外救援机器人最大速度20公里每小时、可越0.5米垂直障碍，具有实时障碍物检测能力。</p><p>图4 伤员高机动转运机器人构型设计三、面向救援作业任务的拟人化遥操作协同控制与人机自然交互技术</p><p>提出了主从式仿生遥操作协同控制技术，构建了主从同构/异构拟人化遥操作机器人系统，解决了人机协同作业中的高临场感复现与复杂精细操控问题，实现了遥操作救援机器人完成伤员救治与危险品处置任务；提出了基于肌电神经解码的手势动作识别技术，开发了一系列基于肌电手势的人机自然交互系统，实现了机器人智能意图理解与灵巧操控作业。</p><p>创新成果1：面向复杂协同作业的精细操作需求，提出了主从式仿生遥操作协同控制技术，研制具备高度人机相容性的穿戴式外骨骼遥操作主手，构建主从同构/异构拟人化遥操作机器人系统，实现了远程化、机器人化伤员救治与危险品应急处置。</p><p>围绕可穿戴性、灵巧性、临在感遥操作等要求，发明了一种具有局部力反馈的轻型可穿戴式拟人化双臂外骨骼遥操作主手系统，解决了轻量化仿生设计和人体相容性等问题。遥操作主手由3自由度球面剪叉肩部机构、1自由度肘部机构、3自由度腕部机构和多功能力反馈手柄构成，其中主手单臂具有7个自由度，涵盖了80%以上肢体运动范围，具有高度人机相容性。针对复杂作业任务对精细操作的需求，创新性提出了主从式仿生遥操作协同控制技术，构建了主从同构/异构拟人化遥操作机器人系统平台，可将大范围操控与精细作业进行有机结合，建立高临场感远程操作方法，实现类人的灵巧复杂操作。研制的原型系统在非结构化环境下成功开展了伤员救治与危险品应急处置等复杂精细作业任务测试，提高了救援机器人系统的作业效能。</p><p>图5 基于外骨骼式拟人化主手的主从仿生遥操作协同控制 创新成果2：针对机器人精细作业对高级层面人机交互的需求，提出了基于表面肌电神经解码与手势动作编码的人机自然操控技术，与机器人协同交互实现对微小、弹性、易碎目标物的快速、稳定、准确抓取，极大提高作业效率。</p><p>传统的基于程式控制的人机交互方式严重桎梏了对智能机器人装备的高效操控与自主适应能力，如鼠标、手柄、操纵杆等，难以有效应用到需要与人协作、直接接触人的机器人系统中。针对机器人系统在精细作业中对自然精准操控的需求，提出了基于表面肌电动作电位神经解码的手势动作识别技术，借助肌电信号以解码人的行为/动作，实现机器人主动理解人意图的能力；重点解决噪声干扰、电极偏移/脱落、肌肉疲劳等因素影响下的肌电信号识别问题，创新提出面向非理想肌电信号的鲁棒性增强识别方法，提升手势识别模型的抗干扰能力；为满足机器人对复杂作业任务和高噪声环境交互的需求，发明了一种基于肌电手势编码的新型人机自然交互系统，实现协作机械臂、灵巧手等机器人完成对目标物的快速、稳定、准确抓取，为救援机器人系统的智能人机交互控制提供技术支撑。</p><p>图6 基于肌电手势动作识别的人机智能自然交互</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

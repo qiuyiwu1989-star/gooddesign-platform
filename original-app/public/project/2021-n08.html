@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>大型发电机定子绝缘状态智能评估系统设计 · 2021提名奖 · 好设计</title>
+<meta name="description" content="大型发电机的长期安全可靠运行是国家电网能稳定运行的基本保障，而导致发电机出现故障的主要因素之一就是绝缘失效，因此，对发电机绝缘状态作出有效评估是至关重要的。目前国内外对于大型发电机定子绝缘状态评估主要基于机组宏观性能测量（电性能为主），存在">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E6%8F%90%E5%90%8D%E5%A5%96&amp;year=2021">← 返回 2021 年提名奖名录</a>
+  <div class="kicker"><span class="lv other">提名奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>大型发电机定子绝缘状态智能评估系统设计</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">东方电气集团东方电机有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">张跃,谢志辉,何明鹏,梁智明</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101119</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>大型发电机的长期安全可靠运行是国家电网能稳定运行的基本保障，而导致发电机出现故障的主要因素之一就是绝缘失效，因此，对发电机绝缘状态作出有效评估是至关重要的。目前国内外对于大型发电机定子绝缘状态评估主要基于机组宏观性能测量（电性能为主），存在测试结果分散性大、与绝缘状态相关性差及可靠性低等问题。由于绝缘系统是以无机物、有机高分子材料为基础的多相多组分复合材料，其分子结构及官能团运动、凝聚态结构均伴随老化而逐渐发生变化，因此，材料基因高通量表征技术作为一种可直接评价、探测绝缘老化状态的技术而备受瞩目。然而，目前该领域在尚属于空白，具有很大的发展潜力。国内外发电设备制造企业和检修单位大多采用现场勘查、定性化验与经验分析相结合的方式进行原因分析，业内尚未建立标准化流程和量化分析。若能将绝缘材料微观结构与宏观电气性能的变化趋势联系起来，将大大提高绝缘状态评估的准确性及可靠性。课题组首次创新性将材料微观学与宏观电气学联合起来，采用人工智能算法建立了一种基于材料基因特征（包括绝缘微观分子与凝聚态结构与形态）测量的全新绝缘状态评估技术；结合图像识别技术、多模态数据融合技术和混合智能算法实现绝缘老化状态数字化表征，首次设计了一款基于人工智能算法评估发电机绝缘状态的智能软件系统。</p><p>新设计的智能评估系统将大大提高大型发电机组绝缘状态评估的准确性，填补该领域的国际空白，处于国际领先水平。目前，已在10余台大型发电机组（包括葛洲坝、漫湾、瀑布沟等水电；台山、秦山核电；莱州、湛江、惠州等火电）上开展了绝缘状态评估技术服务，创造直接经济效益达千万余元。该系统可用于所有大型发电机组的绝缘状态评估，可有效提升公司在发电机电站服务事业的竞争力，有利于国家电力行业的稳定运行，具有巨大的经济效益和社会效益。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>东方电机有限公司自主研发的大型发电机定子绝缘状态智能评估系统打破了以往主要基于机组宏观性能参数测量结果进行评估的模式，首次将材料基因高通量表征技术作为一种可直接评价、探测发电机定子绝缘老化状态的新技术。本项目综合采用了电学、热学、化学及显微等测试手段，结合图像识别技术与人工智能算法构建绝缘失效数学模型，开展定子线棒绝缘失效综合诊断技术研究，形成东方特色标准化和量化综合分析诊断技术和绝缘状态预测软件系统，填补该领域的国际空白。为大型发电机组绝缘全寿命周期管理提供必要的技术支持和评估标准，能够为运行和检修单位提供更加准确、高效、经济、可靠的全寿命管理方案，保证大型发电机组长期安全运行，具有良好的经济效益和社会效益。该技术的成功研发及应用离不开创新设计，以下将从多元融合、智能设计及维护电网安全三个方面详细介绍该项新技术的创新设计特点。</p><div class="p-h">一、多元融合、协同创新</div><p>东方电机有限公司自主研发的大型发电机定子绝缘状态智能评估技术及评估软件系统，首次将高电压技术、材料工程、微观化学分析、图像识别技术及人工智能算法等进行有机整合，实现了多领域、多学科交叉融合的协同创新研发及设计。正是由于这种开放融合的创新研发和设计模式，才攻克了项目研发过程中遇到的诸多行业难题，实现多项零突破，取得创新成果的同时还培养了一批复合型人才。</p><p>针对目前国内外绝缘状态评估一般仅针对发电机定子常规电气性能（电阻、工频交流耐压、介质损耗、局部放电等）测试为主，本项目创新性引入了绝缘材料的老化系统性研究。针对绝缘材料老化表征研究进行了大量科研工作。1）自主开发针对发电机定子线棒绝缘的定制化现场制样技术及装置。针对定子线棒绝缘的制样技术进行定制化研究，对相关测试的测试原理、样品状态要求进行调查研究、分析总结，在高标准、高要求下，定制化开发了针对电站机组现场可快速实施的定子线棒绝缘系统的材料学检测制样技术和制样装置，在研制过程中形成了多项新技术、新原理和新思路，总体制样技术水平达到国际领先水平，从未见国内外相关研究或报道。2）自主开发了发电机定子线棒绝缘的材料基因光能谱检测技术、检测标准和理论模型。针对发电机定子绝缘的典型聚合物-无机物所组成的多相多组分复合材料体系的特性展开研究，采用紫外光谱、傅里叶变换红外光谱、电子顺磁共振波谱、X射线光电子能谱、升温热态联用红外光谱、光热诱导纳米红外光谱等光电子能谱测试对发电机定子线棒绝缘展开材料基因特征研究，分别从不同角度剖析发电机定子线棒绝缘的分子结构、自由基状态、自由基变化动力学行为、颜色基团变化情况、特征官能团运动情况、元素含量变化情况及分布函数等关键物理状态参数，从而建立了从光能谱角度获取其材料基因关键信息的成套技术和标准。3）开发了发电机定子线棒绝缘的多尺度聚集态结构研究技术，并构建了定制化理论模型。采用扫描电子显微镜SEM、原子力显微镜AFM、激光共聚焦显微镜LCSM、超景深三维显微镜、二维广角X射线衍射（2D-WAXD）、二维小角X射线散射（2D-SAXS）研究定子线棒绝缘在微纳至宏观尺度下的相形态及各相分布情况，研究不同老化程度及典型故障状态下，其凝聚态结构与形态的变化规律，建立在老化过程中定子线棒绝缘分子结构-凝聚态结构与形态之间的联系机制及相应的高通量材料基因表征技术。4）针对不同老化程度的定子线棒绝缘进行的物理或化学方面的结构变化及官能团表征，采用二维相关红外光谱的高阶分析技术与计算机模拟相结合，提出定子线棒绝缘老化前后的关键结构转变，开发相应的高效表征技术（如形态、分子链构象运动情况、官能团演变等），提出判断定子线棒绝缘老化程度的关键判定指标以及相应的材料物理状态指标。在上述分子结构与官能团状态、多尺度凝聚态结构、宏观机械性能和电气性能研究的基础上，提出可以反映定子线棒绝缘老化程度及典型故障状态的结关键信息和特征参数，形成材料基因-电气性能-宏观失效的表征、判定及追溯，并形成相关的标准。</p><div class="p-h">二、数字孪生、智能设计</div><p>根据测定的定子线棒热绝缘在不同老化阶段环氧绝缘的老化缺陷微观形态特征序列图像，应用人工智能算法，对定子线棒热绝缘在不同老化阶段的序列图像进行融合归类，实现定子线棒热绝缘老化知识的自动识别与分类。在此基础上，进一步探讨利用上述分类模型对给定的定子线棒热绝缘进行老化阶段的预测为了提高预测的可靠度，利用Logistic回归、支持向量机、卷积神经网络等智能算法与工具，先对单谱图进行训练并得到训练结果，再将混合智能算法所得到的模型进行模型融合来提高预测的精度。</p><div class="p-h">三、共创共享、维护国家电网安全</div><p>通过约3年时间，成功自主研发的大型发电机定子绝缘状态智能评估技术及评估软件系统，实现多项关键核心技术零突破，大大提高了对发电机定子绝缘状态评估的准确性，填补该领域的国际空白，整体技术水平为国际领先水平。该成果的成功取得离不开每一位参与项目的研发科技人员，团队中既有经验丰富的老专家（省学科带头人等）、有有严谨细致的技术主管，有业务精通的技术骨干，也有精通各种理论和分析软件的大学教授和高材生，还有初生牛犊不怕虎，跃跃欲试的萌新。</p><p>创新成果人人共享，这个成果包含了技术专利等技术创新成果，还包含人才培养成果，在项目研制过程中，培养了和造就了一大批发电机绝缘状态评估的技术专家，为今后我国电力事业的深度发展储备了强大的后备力量。</p><p>随着我国电力负荷的日益增长和低碳环保要求的不断提高，我国大容量发电机组装机容量获得了快速增长。按2020年计，我国年发电量已达到8万亿千瓦，大型发电站电力装机朝着大容量、高参数的方向发展。目前国内对电站服务产业及发电机全寿命管理非常重视，视为发电设备制造企业未来市场营收及技术创新的新亮点。</p><p>我国是全球发电量第一大国，目前装机容量可以说远远超过世界其他任何一个国家，2018年时我国的电力装机容量就已经是排名第二的美国的1.59倍。据全国能源信息平台公布的国家统计局数据称：截止到2020年末，我国全国发电装机容量为220058万千瓦（约为22亿千瓦），比年末增长了9.5%，基本相当于三峡水电站装机容量的100倍。发电机属于电网中的前端，发电机的长期安全可靠运行是保障电网安全的根本，因此，如何科学、准确的对大型发电机定子绝缘状态进行有效评估，为运行和检修单位提供更加准确、高效、经济、可靠的全寿命管理方案，进而保证大型发电机组长期安全运行和电网安全来说是极其重要的。</p><p>以多学科融合为基本，借助人工智能这一工具，实现了开放融合、人人参与的协同创新设计，才成功研发了“大型发电机定子绝缘状态智能评估系统”。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E6%8F%90%E5%90%8D%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%A4%A7%E5%9E%8B%E5%8F%91%E7%94%B5%E6%9C%BA%E5%AE%9A%E5%AD%90%E7%BB%9D%E7%BC%98%E7%8A%B6%E6%80%81%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%A4%A7%E5%9E%8B%E5%8F%91%E7%94%B5%E6%9C%BA%E5%AE%9A%E5%AD%90%E7%BB%9D%E7%BC%98%E7%8A%B6%E6%80%81%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「大型发电机定子绝缘状态智能评估系统设计」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%A4%A7%E5%9E%8B%E5%8F%91%E7%94%B5%E6%9C%BA%E5%AE%9A%E5%AD%90%E7%BB%9D%E7%BC%98%E7%8A%B6%E6%80%81%E6%99%BA%E8%83%BD%E8%AF%84%E4%BC%B0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「大型发电机定子绝缘状态智能评估系统设计」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-n07.html"><span class="d">← 上一项</span>“破岩专家”薄煤层智能采煤机</a>
+    <a class="next" href="2021-n09.html"><span class="d">下一项 →</span>船舶合拢管数字化设计制造系统</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

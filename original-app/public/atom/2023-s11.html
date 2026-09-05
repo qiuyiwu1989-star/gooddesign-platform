@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>脑机接口神经肌肉电刺激下肢外骨骼康复训练机器人 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-s11.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-s11</div>
+  <h1>脑机接口神经肌肉电刺激下肢外骨骼康复训练机器人</h1>
+  <div class="meta-line"><b>2023 年度银奖</b><span>天津大学,脑机交互与人机共融海河实验室,燧世（天津）智能科技有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">天津大学,脑机交互与人机共融海河实验室,燧世（天津）智能科技有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">刘源,王壮,黄帅飞,张宇剑,顾斌</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与生活 · 高端医疗（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>“十四五”时期是我国全面建设社会主义现代化国家新征程的第一个五年，以习近平同志为核心的党中央把保障人民健康放在优先发展的战略位置。然而，随着人口老龄化发展，脑卒中（又称“中风”）已逐渐成为居民的主要死亡原因和疾病负担，被称为人类健康的“第一杀手”。世界卫生组织调查数据显示，与欧美等发达国家相比，我国脑卒中患者人数日益攀升，每12秒就有一名新发患者，约75%患者留有不同程度的下肢功能障碍，严重危害了我国国民身体健康。</p><p>常规康复治疗多采用站立训练、步态训练、按摩和手法治疗等方式，病人患病肢体多在康复治疗师带动下被动运动，患者主动参与度低，康复效果不佳，且有限的医师资源无法满足庞大的脑卒中康复需求。外骨骼是当前一种典型的康复类医疗器械产品，截至目前，国际国内已获注册的下肢康复外骨骼产品，均为电机带动式外骨骼，患者行走意愿和动作未直接关联，仍是一种被动训练模式。因此，在国内均属二类注册产品管理，核心技术原理的临床实验效果并无公开论文可查。</p><p>本项目开发了一款脑机接口神经肌肉电刺激下肢外骨骼康复训练机器人，打破现有运动康复产品被动训练的传统模式。在国际上首次实现了脑机接口、神经肌肉电刺激和机械外骨骼的全国产自主研发和集成应用。感觉增强型脑机接口实现患者行走意图的准确解码，时空编码型功能性电刺激与机械外骨骼耦合，采用自适应迭代方式，驱动患肢行走逐渐接近健侧运动规律，实现患者行走意图驱动下的主动式康复训练，重塑脑卒中患者的运动感觉神经，有效解决了目前脑卒中康复患者被动参与、干预手段单一、治疗模式不精准的技术痛点。</p><p>脑控神经肌肉电刺激核心原理的临床效果，团队已经过千例级临床实验检验，取得显著神经康复效果，发表高水平临床研究论文。临床实验结果显示：患者经过2周共6次（一个疗程）康复训练后，步态对称性显著提高，步速提升近50%，持久性行走能力明显提升；髋膝踝关节运动范围显著增加，临床量表评估结果明显提升，脑电和磁共振显示大脑激活和连接性有增强表现，病人及家属对系统康复性能均给予高度评价，取得显著的神经康复效果，相关案例作为行业代表入选国家工信部和药监局《人工智能医疗器械产业发展白皮书》。</p><p>截止目前，该系统获得6项国家和省部级科技奖励，包括中国专利奖、黄家驷生物医学工程奖和天津市技术发明一等奖等，入选国家工信部和药监局“人工智能医疗器械创新任务揭榜名单”（全国前十），排名无创脑机接口第1位（揭榜单位）。科技查新报告显示，国内未见其它与该项目主要技术特点相同的文献报道，技术原理属国内首创。该系统拥有完整知识产权体系，包括专利7项（5项发明专利，2项外观专利），发表高水平期刊及顶级国际会议学术论文5篇。基于以上成果，该系统已入选国家工信部、药监局和天津市药监局重点支持产品，在外骨骼和脑机接口领域国家创新医疗器械和三类医疗器械、标准制定、临床实验研究、共识指南等方面填补国内空白，努力让脑机康复机器人早日纳入医保，走入医院，服务民生，惠及大众。该项目将为形成相关标准、规范行业秩序、提升我国康复医疗器械核心科技竞争力贡献力量。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>① 创新点1-基于脑-机-体（肌）闭环人工神经信息环路系统</p><p>本项目针对脑卒中下肢偏瘫患者创新性的提出了一种脑-机-体闭环人工神经信息环路康复系统，如图1。中风偏瘫患者由于脑部局部血管破裂或阻塞引起脑组织损伤，导致患者无法正常运动。大脑具有神经可塑性，通过正确的引导可让大脑受损区域恢复或在某些区域产生代偿作用，从而重建一条新的神经控制环路。其先进性在于脑机接口通过解码大脑运动意图，借助外围系统形成一条“体外神经环路”，可将“意念”转化为“行动”，具有显著的临床价值，已成为国际学界共识。本项目创新采用基于复合肢体及序列性感觉电刺激运动想象范式（一种基于序列性复合肢体想象动作的脑-机接口方法，CN104571505B；Enhanced Motor Imagery of Lower Limbs Induced by Gait Phase Encoding Sensory Electrical Stimulation， 2022.12），利用脑机接口编解码算法识别患者运动意图，时空编码型功能性电刺激与机械外骨骼耦合，采用自适应迭代方式，驱动患肢行走逐渐接近健侧运动规律，实现患者行走意图驱动下的主动式康复训练，重塑脑卒中患者的运动感觉神经（Application of BCI-FES System on Stroke Rehabilitation， 2015.04），从神经层面对肢体康复方式做出根本有效的改变，有效解决目前卒中康复过程中患者被动参与、无法重塑神经的技术痛点。</p><p>图1 体外神经环路原理图在应用效益方面，对比国内外目前传统的助行外骨骼多以被动辅助为主，缺少大脑与肢体之间神经传递的互动过程，不利于脑卒中患者损伤神经系统的康复。本项目设计的脑-机-体闭环人工神经环路康复策略（基于脑电控制的功能性电刺激康复系统设计及应用， 2019.09），旨在实现患者主动参与式运动神经康复训练模式，核心技术已应用多地三甲医院，开展1500余例脑卒中下肢偏瘫临床康复训练，结果显示大部分患者在运动控制能力和肌力方面有显著提升，总体有效率达72.5%，如图3所示，部分临床结果已发表于一区TOP期刊 （IF=8.1） 《Frontiers of Medicine》（EEG-controlled Functional Electrical Stimulation Rehabilitation for Chronic Stroke: System Design and Clinical Application， 2021.07）。</p><p>在社会价值方面，该项目提出的康复策略安全性更高，极大提高了患者的康复信心。对比当前国外广泛采用的侵入式脑电采集系统，虽然获得了更高质量的脑电信号，但植入式电极与大脑组织的长期兼容性与副作用尚不明确，有安全隐患。本项目结合团队深耕多年的无创脑机接口技术，采用了非侵入式脑电信号采集设备，仅通过脑电帽和脑电放大器设备即可实现，更贴近我国患者的实际使用需求，符合我国的伦理道德要求，更具社会应用价值。并且，传统助行外骨骼机器人通过伺服电机对患侧肢体进行被动式牵拉，具有一定安全隐患，而本项目采取的无创电刺激非电机驱动的外骨骼康复策略设计，充分保证患者的使用安全性，避免二次损伤。</p><p>图2 外骨骼集成化示意图② 创新点2-高度集成化的脑控神经肌肉电刺激机械外骨骼机器人系统</p><p>本系统针对现有融合多技术手段的智能助行机器人设备结构复杂、不便携、环境场地要求高、设备穿戴困难、安全性能低等问题，本项目研发了集成化的脑控神经肌肉电刺激机械外骨骼机器人系统，其先进性在于是国际上首次实现了脑机接口、神经肌肉电刺激和机械外骨骼的全国产自主研发和集成应用，克服多设备交互困难的问题，形成的多功能康复（脑神经和肢体运动功能）、穿戴方便的下肢外骨骼康复机器人（集成化脑控神经肌肉电刺激外骨骼机器人，CN307663495S；脑控神经肌肉电刺激外骨骼控制箱，CN 307928663 S；一种以功能性肌肉电刺激驱动的外骨骼助行系统，CN106377838B；高度集成化脑控神经电刺激外骨骼机器人系统及控制方法，CN202111487147.4；下肢康复用膝关节弹性自锁装置及使用方法，CN202011440622.8）。</p><p>在应用效益方面，无创式脑电采集、多特征脑电处理和神经肌肉电刺激施加等功能在硬件上进行系统化集成，无过多外露电缆和康复辅助支具，另外腰部和腿部分别设有固定带，与病患贴合部位设有柔性缓冲，舒适可调，在实现下肢运动意图脑电信息的无创采集、精准识别和有效实施的同时保证患者行走训练过程的安全性与舒适性。团队基于该集成化脑控外骨骼系统，于天津市人民医院与天津市环湖医院开展50余例脑卒中患者临床康复实验，康复前后评估结果对比，患者肌耐力明显提高，走路持久性得到提升，步态对称性得到改善，膝关节、踝关节运动范围明显增加，并且FMA-LE和BBS临床量表评分也均有显著提升，如图3所示。数十例患者对该系统康复有效性与安全性给予高度赞扬，表示“脑机接口新型环路疗法优于传统针灸、作业疗法”。</p><p>在社会价值方面，系统脑机交互核心器件“数字脑电图机”已获批国家医疗器械注册证，推动了我国脑机接口关键核心技术自主化，突破国外核心技术壁垒。并且较现有的下肢被动式康复辅具，本项目利用脑机接口技术实现患者的主动式康复，打破现有运动康复产品被动训练的传统模式，减小康复医师的工作强度，从而节约大量的社会医疗资源；集成化背包底壳上安装有快拆机构，可以实现腰带和外骨骼背包快速装拆，节省设备装配时间，提升患者康复效率。并且，下肢外骨骼设计满足穿戴普适性要求，其尺寸设计基于国家标准《中国成年人人体尺寸》，关节机构保持10~20cm的可调节范围，最大范围满足我国脑卒中患者的穿戴需求。</p><p>图3 临床康复效果图③ 创新点3-基于迭代学习的下肢外骨骼步行康复训练方法</p><p>功能电刺激的实际效果受不同个体肌肉参数影响较大，此外传统步行康复训练方法不能根据患者的行走状态对电刺激参数进行实时调整，因此针对实际训练过程中不同被试及电刺激参数不确定性的问题，提出一种基于迭代学习的下肢外骨骼步行康复训练方法（迭代学习脑控电刺激和智能支撑系统与下肢康复训练方法，CN202111487176.0）。其先进性在于，通过高精度传感单元采集患者异常步态信息，利用人工智能优化算法，对比健康人与病患行走时的运动轨迹，时空编码型功能性电刺激与机械外骨骼耦合，自适应迭代调整电刺激输出参数，驱动患肢行走逐渐接近健侧运动规律（A Trajectory-Adaptive Walking Assistance Strategy Based on Functional Electrical Stimulation for Exoskeleton to Help Stroke Patients Restore Natural Gait， 2021.07）。</p><p>在应用效益方面，团队已于天津市多家三甲医院开展了数十例临床对照实验，结果显示，迭代学习的步行康复训练方法，可即时有效改善患者行走步态，患者步行时肌肉协同模式趋于正常，极大提升患者步态对称性，降低患者走路摔伤风险。</p><p>在社会价值方面，迭代学习的训练方法，依据个体步态改善自适应调整电刺激参数，无需进行不同康复时期的各个参数的手动调节，节约时间成本，缓解国家脑卒中疾病防治康复压力；并且该方法采集多模人体生物学数据并联合比对分析，实现康复效果客观量化，不过度依赖医生主观评价水平，提升我国医疗评价指标智能化、数字化程度。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

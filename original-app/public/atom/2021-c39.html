@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>小蚁多安—首款多机协同清洁消杀机器人 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-c39.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-c39</div>
+  <h1>小蚁多安—首款多机协同清洁消杀机器人</h1>
+  <div class="meta-line"><b>2021 年度创意奖</b><span>陕西蚁创汇能科技有限公司西北工业大学</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 创意奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">陕西蚁创汇能科技有限公司西北工业大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">刘科邦,张景秦,罗益严,蒋志毅</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 智能装备与机器人（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>蚁创科技团队针对当前防疫机器人具有体型大不安全、作业效率低、运行不稳定、作业不精细灵活、成本高昂等痛点，研发出稳定安全、避障能力强、防疫精细的清洁消杀机器人，并开发出全球首款多机器人协同式清洁系统，满足安全低价稳定高效四大清洁与消杀需求，从而在大空间高人流的公共卫生场所快速有效防疫。产品具有消毒、清洁、加湿、运输、导引五项功能。</p><p>本项目的创新点主要包括以下两个方面：（1）针对机器人的最核心硬件，类似于人类的大脑，自研全国稀缺的底层硬件一体化机载电脑，将上层解算与底层控制合二为一。该电脑具有最高2080Ti的卷积运算效率，性能上限比肩高性能个人电脑，而功耗仅为个人电脑的大约1/30，做到与市面上机器人完成任务相同的情况下，续航能力显著提高，采用轻量级的硬件设计使得投产后的成本小于1000元，远低于目前广泛采用的工控机的4000~6000元，满足低价高壁垒的需求；（2）团队自研多机协同系统，成功率指标行业领先，某台机器人产生故障时，剩余机器人可以完成其未作业的区域。异构机器人间分配不同防疫任务，达到高效协同的防疫作业模式，高度协同性使得每台机器人负责作业的区域变少且无需高强度完成任务，从而使得作业成功率与稳定性大幅提升，且可在小型轻量的单机器人中嵌入中等精度且低功耗的传感器与低排量喷洒装置，成功提升了机器人的安全性与续航能力。</p><p>团队已入驻两个国家级众创空间，公开或授权国家专利11项，其中包含4项公开的发明专利。产品已应用于酒店、工厂、医院、园区，应用案例约10个，客户反馈良好，并受到了央视频、江苏省电视台、铜川日报等媒体报道。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>原理创新</div></div></div><p>本团队技术部门从以上7项市场痛点出发，成功设计并研发出作业效率更高、整体运行更安全稳定、作业更精细灵活、避障能力更强的小型轻量消毒与清洁一体化机器人，并利用群体智能技术，开发出可在大空间高人流环境下实现自主定位与建图，并且能够进行实时在线路径规划的多机器人系统。以使得智能消毒清洁能够应用于更多大空间下难以作业的环境，且在高人流时段里能够快速及时地消灭潜在的病毒，避免其在传染源增加的场景中快速传播。其相对于单机器人消毒清洁系统，具有四个本质的区别：</p><p>（1）单机器人所无法企及的高效消毒清洁；</p><p>（2）单机器人所无法完成的特大环境消毒清洁；</p><p>（3）安全且无干扰；</p><p>（4）消毒精准化无死角。</p><p>对于多台机器人之间协同工作而言，其具有以下几项固有的优势：</p><p>（1）对环境的高度适应性：相比单个机器人而言，多机器人系统对工作任务表现出较强的灵活性和变通能力，在功能上和空间上的分布性优于单个机器人，对于未知环境，可通过信息共享快速适应并做出合理的决策，从而大幅提升了机器人的安全性。</p><p>（2）高效性：“众人拾柴火焰高”，多机器人系统是一个群体，每个机器人各自工作的同时协调配合其他机器人的工作，使得工作时间大大缩短，有效提高生产效率，工作承载能力较强。</p><p>（3）强稳定性：在多机器人系统中，任务的完成需要每个机器人的参与，而不是完全取决于一个机器人。一旦一方出现错误或者故障情况，可以通过控制调配系统，交由其他机器人完成相应任务。如果工作环境发生了变化或者系统产生了故障，机器人可以通过中央控制器和自身的协调系统重新规划工作任务适应环境，因此具有较强的容错能力和稳定性。</p><p>（4）更广泛的任务领域：多机器人系统将复杂任务分解、复杂问题简单化，处理困难任务的能力显著增强。</p><p>（5）强鲁棒性：系统对来自外界或内部的干扰具有抗干扰性能。例如有人走进了机器人的工作环境，机器人会避开动态障碍，系统依然能正常工作。</p><p>（6）更低的经济成本：对于复杂任务的分解极大的降低了机器人本身的复杂性、高难度性，减少了研究人员的工作量和机器人开发的软硬件成本。</p><p>（7）更加精确的数据收集分析：对于复杂环境单机工作会限制工作的范围和地区，工作能力有限，那么通过一台机器人收集的数据不具有全面性和规律性，而多机器人协同工作可以提高数据收集效率扩大数据收集样本容量，从而有利于数据结果分析。</p><p>（8）更加精准的定位：</p><p>多机器人协同工作可以互相帮助确定位置，不断更迭完善导航地图，防止但机器人在定位导航中偶尔失灵导致确定位置失败，同时可以相互提醒和警告，形成多机器人协同工作的“互联网”，保证业务有效进行。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>功能创新</div></div></div><p>本项目技术方面的创新点主要有两个方面，分别对应硬件与软件：</p><p>（1）针对机器人的最核心硬件，类似于人类的大脑，自研全国稀缺的底层硬件一体化机载电脑，将上层解算与底层控制合二为一。该电脑具有最高2080Ti的卷积运算效率，性能上限比肩高性能个人电脑，而功耗仅为个人电脑的大约1/30，做到与市面上机器人完成任务相同的情况下，续航能力显著提高，采用轻量级的硬件设计使得投产后的成本小于1000元，远低于目前广泛采用的工控机的4000~6000元，满足低价高壁垒的需求；（2）团队自研多机协同系统，成功率指标行业领先，某台机器人产生故障时，剩余机器人可以完成其未作业的区域。异构机器人间分配不同防疫任务，达到高效协同的防疫作业模式，高度协同性使得每台机器人负责作业的区域变少且无需高强度完成任务，从而使得作业成功率与稳定性大幅提升，且可在小型轻量的单机器人中嵌入中等精度且低功耗的传感器与低排量喷洒装置，成功提升了机器人的安全性与续航能力。</p><p>本团队全部的核心部件都是由团队成员自行研发，技术硬核，实力可靠，性能稳定性以及优越性远超于市面上的同类产品，极大地降低了产品成本。本团队成功研发了硬件一体化控制板，其性能上限比肩个人电脑，而功耗仅为个人电脑的约1/30，机器人续航能力大幅度提高，且量产后的成本仅为1000元，远低于个人电脑，此项技术在全行业处于领先地位，且整个消毒清洁机器人核心硬件的原理图、PCB、制板、电装、测试、嵌入式程序设计编写均自主设计与创新，具有核心硬件完全自主的正向研发能力。本产品自身可实现至少80*80m2大场景下的精确建图工作，并具有在多达20个底面积为0.25*0.25m2方形障碍物，环境总面积为8.6*7.3m2下10台机器人高达99%成功率的路径规划，该环境之下，本团队研发的多机协同消毒清洁系统，机器人数量在1~10台的情况下，成功率均持续优于所有现有主流多机协同技术，做到了行业内的顶尖。本团队设计并调试了包括2套多机地图融合算法、5套多机冲突解决算法、2套重调度算法、7套多机信息交互算法在内的多达16套算法，顺利搭建了这套多机器人消毒清洁系统，具有研发的独创性，相关技术共有10余项国家发明专利与实用新型专利成功申请，另有几项在申请中。</p><p>本团队正在攻克将AI强化学习用于多机器人协同系统，此项技术可极大程度的提高多机协同系统的运行效率，且大幅提高系统的智能协同程度。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>商业模式创新</div></div></div><p>在未来2年之内，我们主要通过区域合伙人的模式进行产品的市场占有，B端通过保洁和物业公司的渠道，投放至医院与产业园区，G端主要与政府部门合作。而在2-3年中，我们将对于我们自研的机器人通用底盘搭载不同的上部功能装置，实现高端订制型的市场投放，多机协同信息服务满足工业4.0需求。在未来的3-5年当中，我们通过多机器人在大环境下进行协同建图与数据库建立，作为上游企业，采集细微真实的文化景点场景信息，与下游VR、AR企业进行合作，将其应用于智慧文旅产业，实现文化开发。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>复杂环境智能化应急救援装备关键技术及应用 · 2025银奖 · 好设计</title>
+<meta name="description" content="我国是受地质灾害最为严重的国家之一，近十年（2014-2023 年），我国自然灾害年均造成 1.47 亿人次受灾、972 人死亡或失踪、3292.77 亿元直接经济损失。灾害现场常伴随“断路、断网、断电”等极端工况，传统救援装备面临通行受阻">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2025">← 返回 2025 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2025 · 第十届</span></div>
+  <h1>复杂环境智能化应急救援装备关键技术及应用</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">山河智能特种装备有限公司,中南大学,北京工业大学,中国安能集团第二工程局有限公司,山河智能装备股份有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">张大庆,刘昌盛,彭长锋,吴钪,赵喻明,赵京,张翼,于万利,施祖强,金生</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">12025070029</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>我国是受地质灾害最为严重的国家之一，近十年（2014-2023 年），我国自然灾害年均造成 1.47 亿人次受灾、972 人死亡或失踪、3292.77 亿元直接经济损失。灾害现场常伴随“断路、断网、断电”等极端工况，传统救援装备面临通行受阻、环境感知受限、作业能力不足以及次生灾害频发带来救援人员与装备的安全隐患等严峻挑战，严重制约“黄金72小时”救援效果。</p><p>本项目围绕灾害救援中存在的难题，提出了一系列前沿创新研究：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>复杂环境下救援装备高通过性越野越障技术。创新性基于仿生学建立尺蠖和骏马运动学模型，研制出可变接近角离去角的“尺蠖”式及八轮四摆臂“骏马”式仿生越障无人车和一种缩放式仿生轮腿无人救援作业平台，并基于生物运动力学模型场向量同步控制技术，开发出一种仿生无人车控制方法。越障高度提升31.25%，达到国际领先水平，有效解决灾后“最后一公里”通过难的问题。</div></div><div class="p-li"><span class="p-mk">2</span><div>复杂环境智能化应急救援装备场景感知及自主作业技术。创新提出了一种融合车辆-地形耦合动态响应的运动规划方法，与传统规划方法对比失效概率降低20%以上；提出一种机械臂关节空间路径规划的卷积神经网络，实现了非结构化复杂场景下机械臂快速路径规划；发明了一种多用途快速自装卸精准控制方法，整装整卸时间不超过1min、末端重复定位精度0.05m，有效解决灾后现场复杂救援环境感知受限以及路径规划精度差、人工作业效率低等问题。</div></div><div class="p-li"><span class="p-mk">3</span><div>复杂环境多功能属具一体化设计方法与应用技术。创造性提出了基于分体机架与变胞机构的钳剪抓多功能一体化属具、含公共约束机构的开孔取芯一体化属具设计方法，实现了钳剪抓三种功能以及钳剪与抱抓两种工作模式的高效切换，作业效率提升3倍以上，解决了传统属具功能单一和效率低等问题。</div></div></div><p>本项目拥有知识产权60项，其中发明专利授权32项（含PCT专利3项），实用新型专利授权10项，软件著作权11项，标准3项和论文4篇。本项目关键核心技术自主可控，经王耀南院士等专家组成的成果评估委员会，形成评审意见：“整体达到国际先进水平，其中高通过性无人越野越障技术和多功能一体化救援作业属具技术达到国际领先水平”。项目成果已批量列装在武警部队、应急管理部、中国安能集团等单位，并形成销售收入超16亿元。项目装备先后参加了甘肃积石山6.2级地震、福建上杭山体滑坡、湖南平江特大洪水等20多次灾害现场抢险救援，获灾区所在省、市救灾指挥部专报表彰，也被央视等多家媒体轮番报道。本项目为无人化、智能化应急救援装备提供了坚实技术支撑，在应急救援领域具有示范引领意义，有助于完善我国现代化应急救援体系，提升我国应急救援水平国际影响力。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>目前，现有救援装备存在主要难点，一是通行难：自然灾害往往引起“断路”且现场地形崎岖复杂，传统装备在复杂地形上的通行受限，难以顺利抵达受灾区域；二是感知难：灾害现场往往“断网、断电”且充满不确定性，次生灾害频发，传统装备难以自主感知周边环境态势，严重威胁救援人员自身生命安全，影响救援效果；三是作业难：针对地震地质灾害建筑物坍塌、人员受困的典型场景，常规救援装备存在功能单一、多个属具携带不便、更换频繁、作业效率低的问题，难以满足救援时效性、快速打通救生通道的需求。为提升救援的安全性与响应能力，亟需突破复杂环境下智能化应急救援装备的高效作业技术。</p><p>科技创新点一：复杂环境下救援装备高通过性越野越障技术</p><p>在重大自然灾害（如地震、塌方、山体滑坡等）发生后，道路受损，救援装备通行和物资运输受阻，严重影响救援工作时效性。本项目创新提出复杂地形地隙自适应可调及轮腿臂复合越障技术，有效解决灾后“最后一公里”装备快速抵达和物资运输投送难题。</p><div class="p-h">1.1 复杂地形地隙自适应可调及车身自动调平技术</div><p>针对灾后地形水文环境破坏、地貌变形重塑的复杂多变场景高通过性需求，研究提出离地间隙主动自适应可调的越障机构设计方法，发明基于仿生越障机理的可变接近角离去角“尺蠖”式及八轮四摆臂“骏马”式仿生越障机构（ZL201910237423.8《无人越障车》、ZL201610810817.4《一种可变接近角离去角的越障车》），通过调节车体可变形悬挂系统与驱动轮腿姿态改变车辆接近角、离去角及重心，实现对不同起伏路段的自适应匹配与正负障碍跨越，适用于地震、塌方等应急救援场景及野外勘探、军事行动等对车辆通过性要求极高的领域。</p><p>图3-4复杂地形地隙自适应可调及车身自动调平技术</p><div class="p-h">1.2 高通过性底盘轮腿臂复合越障技术</div><p>针对传统单摆臂悬挂系统刚性固定、难以适应复杂地形冲击的问题，提出基于浮动缸的柔性支撑特性，通过优化双腔浮动缸的结构与压力系统，解决悬挂系统在不同模式下的承载与稳定性瓶颈，设计并研制了一款基于双腔浮动缸的单摆臂悬挂系统（ZL201810788088.6《双腔浮动缸及其应用的单摆臂悬挂系统和悬挂调节方法》），实现了轮腿复合动作的升降调节、摆动调节、柔性支撑与刚性锁定四种悬挂模式的高效切换，解决了多自由度复合越障操纵难的问题。</p><p>图3-5高通过性底盘轮腿臂复合越障技术</p><p>提出基于支腿与地面模型的交叉耦合同步控制技术，解决面对不同地质地面支腿受力不均下的高精度同步控制问题，通过非线性力控的自适应行走技术实现底盘的自适应行走调平，最大越障高度 1.5m、最大越壕沟宽 3.1m、最大爬坡角度 42°，解决了灾后现场复杂环境救援困难的问题。</p><div class="p-h">1.3 复杂灾变地形多模态自主越野越障控制技术</div><p>针对灾变现场地面崎岖不平、复杂障碍尺度多变，无人车机动通过时面临地形冲击载荷大、车体姿态易失稳难题，研究多模态可变形机构仿生运动学及动力学数字模型，提出了基于悬挂系统补偿调制机制的姿态切换方法，发明了一种仿生无人车重心及车身姿态控制方法（ZL201611207990.1《一种仿生无人车控制系统及其控制方法》），融合多维环境信息感知模型实时解算地形特征参数与车辆运动状态，预先评估地形与障碍变化趋势，预测重心偏移并生成最优补偿策略，通过控制重心偏移补偿量、变阻尼悬挂系统参数与驱动扭矩分配的动态匹配，实现复杂崎岖地形下的缓冲击高稳定性机动行驶。在地质灾害等灾变救援作业环境中，该装备可跨越1.05m 垂直障碍、1.8m壕沟，爬32°纵坡，最大越野速度不低于15km/h，综合性能优于国内外同类产品。</p><p>图3-6多模态自主越野越障组合动作控制技术</p><p>该创新点已应用于龙马系列无人平台、复杂环境应急救援机器人和履带式无人平台等装备。</p><p>图3-7创新点一成果展示</p><p>科技创新点二：复杂环境智能化应急救援装备场景感知及自主作业技术</p><p>装备和物资抵达现场后，灾害救援现场往往“断网、断电”且充满不确定性，次生灾害频发，传统装备面临感知受限以及救援作业路径规划精度差、效率低等问题，严重威胁救援人员自身生命安全，影响救援效果。本项目提出了复杂环境下场景感知及可通行路面路径规划技术、基于快速随机探索树的非结构化复杂场景机械臂关节空间路径规划技术和远程自装卸精准控制技术，提高应急救援装备在极端复杂灾害场景下动态感知、精准规划和安全救援能力。</p><div class="p-h">2.1 动态场景感知及可通行路面路径规划技术</div><p>针对越野环境复杂多变、无人越野车与可变形地面相互作用复杂、几何障碍与非几何障碍共存等难题，本项目设计了一种双分支分割融合网络感知方法，通过引入自监督模块提高了可通行性估计的准确性，与主流自监督方法FollowFt比较准确率提高了5%，提高了越野导航任务中机器学习模型的鲁棒性。提出了一种融合车辆-地形耦合动态响应的运动规划方法（SCI论文《Trajectory Tracking Control of a Skid-Steer Mobile Robot Based on Nonlinear Model Predictive Control with a Hydraulic MotorVelocity Mapping》、《Motion Planning Integrated with Vehicle-Terrain Interactions for Off-Road Autonomous Ground Vehicles》），通过车辆地面力学建模深入刻画车辆与地形的相互作用，提高了车地动态响应预测精度，采用了强化学习方法通过最大化奖励获得最优可通行路径，与当前未考虑非几何障碍的规划方法对比失效概率降低20%以上，感知距离≥10m、目标识别率≥90%，自主循迹最大速度≥30km/h，卫星失锁环境下融合定位精度优于测量距离的3‰，提高了无人越野车自主行驶的安全性。</p><p>图3-8动态场景感知及可通行路面路径规划技术</p><div class="p-h">2.2 智能救援装备远程自装卸精准控制技术</div><p>针对地质灾害发生时交通道路损毁、大型救援装备物资运输困难、难以在第一时间运抵灾害现场的难题，本项目创新提出了救援装备物资自装卸方法，发明了一种高集成度、重载稳定的多用途快速自装卸机构及无人车系统（ZL202011024456.3《一种货物装卸装置及货物装卸车》），具备模块化装备物资快速、平稳及灵活装卸载的能力；基于环境信息反馈的高临场感超视距远程控制方法，研究提出了复杂灾变环境下低延时远程精准装卸作业交互系统（202SR268212《全地形物资输送无人车人机交互系统》、2023SR68214《SWUT260运投车人机交互系统》），实现了操作人员远程可视化遥控的精准作业；一次可运载17.5t装备物资、整装整卸时间不超过1min，遥控距离超过1km、末端重复定位精度0.05m，有效避免了操作人员身处危险区域的风险，为救援工作的高效开展提供了坚实保障，综合性能超过国内外同类产品。</p><p>图3-9智能救援装备远程自装卸精准控制技术</p><div class="p-h">2.3 基于快速随机探索树的非结构化复杂场景机械臂关节空间路径规划技术</div><p>针对应急救援机器人在非结构化复杂场景下多功能机械臂路径规划可能引发装备碰撞或人员误伤的安全隐患，本项目提出一种融合动态增益超螺旋滑模控制与三维扫描自校准的机械臂协同规划方法（ZL201510923855.6《一种管道抓取摆放装置》、ZL201611232244.8《一种双缸六节臂顺序伸缩吊臂》、ZL202011252672.3《一种基于可变增益的超螺旋滑模控制方法》）。通过可变增益超螺旋算法动态调整控制增益，将轨迹跟踪误差收敛时间缩短42%并抑制67%的末端抖振，从根本上降低因运动失控导致的装备撞击风险；同时结合时延估计理论在线补偿动力学误差，确保机械臂在复杂动力学环境下的运动稳定性。采用改进RRT算法（ZL202210062116.2《一种适用于机械臂关节空间路径规划的新型双向RRT方法》）融合扫描感知数据预筛选采样区域，减少35%无效节点，在10障碍物场景下实现1.5s平均规划耗时（较传统方法提升60%）和小于0.02rad的跟踪精度，确保机械臂在复杂环境中以快速响应和精准控制规避安全威胁，显著提升了救援机械臂在复杂环境中运动的准确性和安全性。</p><p>图3-10基于双向 RRT方法的机械臂路径规划</p><p>该创新点已应用于防汛抢险救援水陆两用多功能智能装备、无人运投车、智能遥控装载机、智能遥控挖掘机等产品。</p><p>图3-11创新点二成果展示</p><p>科技创新点三：复杂环境多功能属具一体化设计方法与应用技术</p><p>在灾害救援过程中，需迅速完成大量废墟破拆、移除及打通生命通道等任务。传统工程属具常因功能单一、无法兼顾多项作业、效率低等问题，严重制约了救援成效。本项目提出基于分体机架与变胞机构的钳剪抓多功能多模式属具设计方法以及包含公共约束抱爪锁紧机构的开孔取芯一体化属具设计方法。成功研制出两款全新的多功能救援属具，实现了破拆与移除，以及开孔与取芯的一体化高效作业，有效解决了一种属具难以执行多种救援任务的难题。</p><div class="p-h">3.1 多领域多目标优化及多功能属具一体化设计方法</div><p>针对多功能属具设计中同时面临机构构型离散决策、连续尺度优化以及运动学性能、动力学稳定性与轻量化多目标冲突的复杂难题，创新性地提出了一种面向多领域的多目标优化方法（SCI论文《Design and optimization of clamp–shear–grab integrated attachment》）。以机构构型拓扑、参数灵敏度与机构尺度为核心，构建了包含离散拓扑变量与连续尺寸变量的复合多目标函数，并设计了由构型拓扑搜索、灵敏度排序与尺度优化三层递进的优化框架：通过改进遗传算法的精英策略、交叉算子与变异算子进行拓扑候选筛选，引入灵敏度分析集中优化关键维度，并在并行计算加速下对关键尺寸开展精细求解，从而高效实现了属具在运动学、动力学及轻量化方面的同步优化（US09770829 《Multifunctional Engineering Accessory with 6-bar Mechanism》、US11446749《Multi-functional engineering attachment for clamping, cutting, and grasping with a single degree of freedom variable topology mechanism》）。该方法不仅一体化解决了构型与尺度同步综合的难题，还因其对多物理场耦合与混合变量空间的卓越适应性，其技术框架可应用于特种车辆、应急救援装备用多功能一体化属具的研究设计。</p><p>图3-12多功能属具构型与尺度同步优化流程图</p><div class="p-h">3.2 基于分体机架与变胞机构的钳剪抓多功能多模式属具设计与应用</div><p>针对传统工程属具功能单一、难以满足复杂救援与作业需求的挑战，本项目基于分体机架与变胞机构设计理念，采用滑块摇杆机构与双摇杆机构并联组合的对称设计，优化了变胞机构的尺度与结构，突破了两种工作模式下钳片与抱爪运动干涉的技术瓶颈，解决了分体机架承载的技术难题，设计并研制了一款钳剪抓一体的多功能属具（ZL202211218767.2《一种基于变胞机构的钳剪抓一体属具及工程机械》）。实现了钳剪抓三种功能以及钳剪与抱抓两种工作模式的高效切换。在剪切模式下，它能够高效地完成钢筋剪切和水泥柱破碎作业；在抱抓模式下，抱爪能够实现更大的展开尺寸，完成大尺寸重物抓取与移除；最大剪切钢筋直径12mm，最大抱抓重量达150kg；广泛适用于灾后救援和工程施工等场景，在作业效率与稳定性上实现了突破，为多功能属具的推广应用奠定了坚实基础。</p><p>图3-13基于分体机架与变胞机构的钳剪抓多功能多模式属具设计与应用</p><div class="p-h">3.3 含公共约束机构的开孔取芯一体化属具设计与应用</div><p>针对目前开孔与取芯一体化工程属具的空白，本项目研发了一种含公共约束抱爪锁紧机构的开孔取芯一体化属具（ZL202210904062.X《一种用于开孔取芯属具的抱爪锁紧机构》），可同步实现建筑墙/板的高效切割与芯块的安全提取。通过创新性的运动方案、机构尺度以及结构的优化设计。将抱爪平面与安装基座法平面设置为15°夹角，显著优化了属具的力学性能与运动灵活性。经过多次实验验证，该属具样机表现出色，能够高效完成混凝土墙/板的开孔作业，以及芯块抱紧与转移任务；最大开孔取芯尺寸580 mm*580 mm、最大开孔取芯厚度150mm、可实现一套机构独立完成切割和取芯工序，无需辅助机构；开孔取芯属具可同时双边切割，切割效率是普通墙锯的2倍，为灾后救援中迅速打通生命通道提供了强有力的技术支持。</p><p>图3-14含公共约束机构的开孔取芯一体化属具设计与应用</p><p>该创新点已应用复杂地形灾害应急救援机器人等产品。</p><p>图3-15创新点三成果展示</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2025%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%A4%8D%E6%9D%82%E7%8E%AF%E5%A2%83%E6%99%BA%E8%83%BD%E5%8C%96%E5%BA%94%E6%80%A5%E6%95%91%E6%8F%B4%E8%A3%85%E5%A4%87%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%A4%8D%E6%9D%82%E7%8E%AF%E5%A2%83%E6%99%BA%E8%83%BD%E5%8C%96%E5%BA%94%E6%80%A5%E6%95%91%E6%8F%B4%E8%A3%85%E5%A4%87%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「复杂环境智能化应急救援装备关键技术及应用」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%A4%8D%E6%9D%82%E7%8E%AF%E5%A2%83%E6%99%BA%E8%83%BD%E5%8C%96%E5%BA%94%E6%80%A5%E6%95%91%E6%8F%B4%E8%A3%85%E5%A4%87%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「复杂环境智能化应急救援装备关键技术及应用」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2025-s00.html"><span class="d">← 上一项</span>华龙一号反应堆冷却剂泵组</a>
+    <a class="next" href="2025-s02.html"><span class="d">下一项 →</span>特种减振材料金属橡胶设计关键技术及应用</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

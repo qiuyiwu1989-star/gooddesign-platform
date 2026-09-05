@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>护航——孕妇家用柔性可穿戴医疗检测设备 · 2021创意奖 · 好设计</title>
+<meta name="description" content="（一）设计目的——从国家推行“二孩政策”到推行“三胎政策”，孕妇这一特殊群体一直备受关注，但“孕检”这一怀孕过程中的重要环节却常常被人们所忽视。在频繁去往医院进行孕检的过程中，孕妇需要时常需要忍受拥堵的交通、嘈杂的医院环境以及冰冷的医疗器械">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E5%88%9B%E6%84%8F%E5%A5%96&amp;year=2021">← 返回 2021 年创意奖名录</a>
+  <div class="kicker"><span class="lv other">创意奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>护航——孕妇家用柔性可穿戴医疗检测设备</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">华中科技大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">符洛瑜,高梓昆,孙佳豪,甘艳</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202104358</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>（一）设计目的——从国家推行“二孩政策”到推行“三胎政策”，孕妇这一特殊群体一直备受关注，但“孕检”这一怀孕过程中的重要环节却常常被人们所忽视。在频繁去往医院进行孕检的过程中，孕妇需要时常需要忍受拥堵的交通、嘈杂的医院环境以及冰冷的医疗器械，这些都会在一定程度上影响到孕妇的生理与心理健康。在产检过程中，孕妇难以从各项专业的医疗数据中获取关键的身体信息，医生也很难从有限的几次检查中将了解到孕妇及胎儿的实时变化状态与发展趋势。同时，在“后疫情时代”，孕妇高频率地暴露在病毒潜伏、人员混杂的医院环境，会对其自身和胎儿的健康带来极大威胁，这势必影响我国政策的推行。在医疗资源的不足，并且常规孕检可能会对孕妇健康带来不良影响的情况下，我们希望设计一项产品以满足孕妇在远离公共环境时也能实时获取胎儿的健康数据的需求。</p><p>（二）设计创新——着眼于孕妇在产检这一方面难以被察觉的需求，采用柔性传感器技术原理，通过贴在孕妇肚脐上方的贴片收集孕妇的体温、心跳、血压及胎儿的胎心、胎动等数据，并采用机器学习、深度学习等前沿人工智能技术原理将数据进行分类整理和可视化处理，与配套APP相结合，使孕妇、家属与医生三方联动，实时清晰地获得孕妇及胎儿的健康数据，保障其身体安全。</p><p>（三）设计价值——在社会角度上，本设计有利于保护庞大孕妇及胎儿群体的健康，促进国家“三胎政策”的实施，节约后疫情时代下社会公共资源；在医疗服务方面，本设计力求实现孕妇、家属、医生三方对孕妇及胎儿的健康的远程实时检测与预警，符合“云医疗”的医疗发展方向与趋势，有利于促进我国医疗水平的进一步发展与我国人民整体身体健康素质的提升。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>本项目预计将感性工学、人性化设计与前沿科技创新进行创造性融合，试通过技术与设计的跨学科交流，使感性的设计得到科学的支持保障，也使前沿的科学技术实现人性化的社会关怀。</p><p>（一）在使用流程上：</p><p>本项目计划达到“孕妇在家进行简单产检工作”到“检测到胎儿及孕妇存在安全隐患，医院进行救助”的流程闭环。不仅减少孕妇前往医院的风险，保护孕妇在医院外场所的健康与安全，而且能提升孕妇在孕期的体验感。</p><p>（二）在技术角度上：</p><p>本项目创新性地用柔性的传感材料代替传统冰冷的医疗仪器收集孕妇的体温、心跳、血压及胎儿的胎心、胎动等数据，将极大地提高产品的便利性和人性化程度，提升用户体验感与幸福感。并计划采用机器学习、深度学习等前沿的人工智能技术，将数据进行分类整理和可视化处理，让非医学专业的用户也能直观的了解自己的身体健康信息，使产品更加普适化。</p><p>（三）在设计角度上：</p><p>本项目采用目前设计界前沿的感性工学、人性化设计、可视化设计等设计方法，结合美学角度的思考与鉴赏，完成社会责任感在设计上的实现与落地。本组成员采用完善科学的设计流程，从用户体验感角度出发，找到设计的突破口与创新点。并用可视化方式，使本产品实现更广泛更普遍的传播。</p><p>（四）在人文关怀角度上：</p><p>在设计目的方面，本团队成员敏锐地察觉到这个特殊的时代背景下孕妇在产检过程中各种现实问题，希望通过本次项目设计创造出一款可以改善孕妇妊娠体验的产品，让准妈妈们在这段辛苦的待产阶段少一些来自客观世界的阻碍，感受到科技带来的关怀与温暖。在设计细节方面，本产品采用柔软舒适的柔性传感器材料、可爱温馨的脚丫造型，配套有界面温馨并带有“心灵鸡汤”等功能的APP供孕妇使用，提升孕妇使用产品的舒适度，同时给孕妇带来心理上的正面指导。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E5%88%9B%E6%84%8F%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%8A%A4%E8%88%AA%E2%80%94%E2%80%94%E5%AD%95%E5%A6%87%E5%AE%B6%E7%94%A8%E6%9F%94%E6%80%A7%E5%8F%AF%E7%A9%BF%E6%88%B4%E5%8C%BB%E7%96%97%E6%A3%80%E6%B5%8B%E8%AE%BE%E5%A4%87%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E6%8A%A4%E8%88%AA%E2%80%94%E2%80%94%E5%AD%95%E5%A6%87%E5%AE%B6%E7%94%A8%E6%9F%94%E6%80%A7%E5%8F%AF%E7%A9%BF%E6%88%B4%E5%8C%BB%E7%96%97%E6%A3%80%E6%B5%8B%E8%AE%BE%E5%A4%87" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「护航——孕妇家用柔性可穿戴医疗检测设备」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E6%8A%A4%E8%88%AA%E2%80%94%E2%80%94%E5%AD%95%E5%A6%87%E5%AE%B6%E7%94%A8%E6%9F%94%E6%80%A7%E5%8F%AF%E7%A9%BF%E6%88%B4%E5%8C%BB%E7%96%97%E6%A3%80%E6%B5%8B%E8%AE%BE%E5%A4%87" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「护航——孕妇家用柔性可穿戴医疗检测设备」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-c19.html"><span class="d">← 上一项</span>基于位姿变换的轮式智能助老机械装置</a>
+    <a class="next" href="2021-c21.html"><span class="d">下一项 →</span>Antobot模块化智能蔬菜移栽机器人</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

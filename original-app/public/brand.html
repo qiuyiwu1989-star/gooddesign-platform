@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>品牌与字体规范 · 好设计馆</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--night-1:#0E1F4D;--night-2:#1A3A7A;--blue:#2D4FAF;--blue-2:#5984D6;--blue-soft:#8FAAD5;
+--paper:#F7F2E8;--paper-2:#EFE7D5;--paper-3:#E4DBC1;
+--ink:#0E1218;--ink-soft:#2A3142;--ink-mute:#5C6577;
+--line-soft:rgba(14,18,24,.10);--line:rgba(14,18,24,.16);
+--accent:#3D60BD;--gold:#D4A858;--gold-light:#E8C97C;--gold-deep:#7E5F18;--red:#C8472C;
+--serif:'Noto Serif SC','Source Han Serif SC',serif;
+--sans:'Noto Sans SC','Source Han Sans SC','PingFang SC',sans-serif;
+--latin:'Cormorant Garamond','Georgia',serif;
+--mono:'JetBrains Mono',monospace;
+--r-md:8px;--r-lg:12px;--r-pill:99px;
+--sh-1:0 4px 12px -4px rgba(14,18,24,.12);--sh-2:0 8px 24px -10px rgba(14,18,24,.18);
+--ease:cubic-bezier(.4,1,.6,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:48px 32px 80px}
+.back{font:400 12px/1 var(--mono);color:var(--ink-mute);text-decoration:none;letter-spacing:1px}
+.back:hover{color:var(--accent)}
+.kicker{display:inline-flex;align-items:center;gap:10px;font:400 11px/1 var(--mono);letter-spacing:3px;color:var(--accent);margin:26px 0 14px}
+.kicker::before{content:"";width:30px;height:1px;background:var(--accent)}
+h1{font:500 clamp(34px,4.6vw,52px)/1.2 var(--serif);letter-spacing:.04em}
+.sub{font-size:14px;color:var(--ink-mute);margin-top:10px;max-width:56em}
+.sec{margin-top:56px}
+.sec-h{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:26px}
+.sec-h .no{font:400 12px/1 var(--mono);color:var(--accent);letter-spacing:2px}
+.sec-h h2{font:600 24px/1.2 var(--serif);letter-spacing:.05em}
+.sec-h .en{font:italic 500 11px/1 var(--latin);letter-spacing:2.5px;color:var(--ink-mute)}
+
+.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.logo-card{border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.logo-card .stage{display:grid;place-items:center;padding:44px 24px}
+.logo-card.dark .stage{background:linear-gradient(160deg,var(--night-1),var(--night-2))}
+.logo-card .meta{padding:14px 18px;border-top:1px solid var(--line-soft)}
+.logo-card .meta b{font-size:13.5px}
+.logo-card .meta p{font:400 11px/1.7 var(--mono);color:var(--ink-mute);margin-top:4px}
+
+.type-role{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line-soft);align-items:baseline}
+.type-role .role{font:400 11px/1.8 var(--mono);color:var(--ink-mute);letter-spacing:1px}
+.type-role .role b{display:block;color:var(--ink);font-size:12px;letter-spacing:2px}
+.scale-row{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--line-soft);align-items:baseline}
+.scale-row .spec{font:400 10.5px/1.7 var(--mono);color:var(--ink-mute)}
+
+.colors{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.swatch{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line-soft);background:#fff}
+.swatch .c{height:72px}
+.swatch .n{padding:9px 12px;font:400 10.5px/1.6 var(--mono);color:var(--ink-soft)}
+.swatch .n span{display:block;color:var(--ink-mute)}
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line-soft);font:400 11px/1.8 var(--mono);color:var(--ink-mute);letter-spacing:1px}
+@media(max-width:720px){.type-role,.scale-row{grid-template-columns:1fr;gap:8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← 好设计馆首页</a>
+  <div class="kicker">BRAND &amp; TYPOGRAPHY · V1</div>
+  <h1>品牌标识与字体规范</h1>
+  <p class="sub">好设计馆 = 中国创新设计能力档案馆。标识取「收藏印」意象：档案馆为每件藏品盖印存证；朱红印章色仅用于标识，不作界面主色。字体系统四角色整合：展示衬线 / 正文黑体 / 拉丁衬线 / 数据等宽。</p>
+
+  <div class="sec">
+    <div class="sec-h"><span class="no">01</span><h2>标识 · 收藏印</h2><span class="en">Logotype</span></div>
+    <div class="logos">
+      <div class="logo-card"><div class="stage"><img src="assets/brand/logo-seal.svg" alt="朱红收藏印" width="96" height="96"></div>
+        <div class="meta"><b>主标识 · 朱红收藏印</b><p>logo-seal.svg · 用于封面/名片/导览牌/品牌时刻</p></div></div>
+      <div class="logo-card"><div class="stage"><img src="assets/brand/logo-ink.svg" alt="墨金标识" width="96" height="96"></div>
+        <div class="meta"><b>副标识 · 墨金版</b><p>logo-ink.svg · 用于导航/页脚等界面常驻位</p></div></div>
+      <div class="logo-card"><div class="stage"><img src="assets/brand/logo-lockup.svg" alt="横排组合" width="240"></div>
+        <div class="meta"><b>横排组合标</b><p>logo-lockup.svg · 用于页眉/物料/对外文档</p></div></div>
+      <div class="logo-card dark"><div class="stage"><img src="assets/brand/logo-seal.svg" alt="夜色底上的收藏印" width="96" height="96"></div>
+        <div class="meta"><b>夜色底效果</b><p>朱红印在夜空渐变上保持辨识度 · favicon.svg 同款</p></div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="no">02</span><h2>字体四角色</h2><span class="en">Type Roles</span></div>
+    <div class="type-role"><div class="role"><b>展示衬线 DISPLAY</b>Noto Serif SC · 500–900<br>标题/区名/引言</div>
+      <div style="font:600 30px/1.5 var(--serif);letter-spacing:.05em">好设计馆 · 三大展区<span style="color:var(--ink-mute);font-weight:400">，为制造强国而设计。</span></div></div>
+    <div class="type-role"><div class="role"><b>正文黑体 TEXT</b>Noto Sans SC · 300–600<br>正文/界面/说明</div>
+      <div style="font-size:15.5px;max-width:36em">这里收藏的不是“好看的东西”，而是中国制造业十年间从跟踪模仿走向原创设计的证据。十年 560 项获奖成果，可学习、可交互、可迁移、可再创造。</div></div>
+    <div class="type-role"><div class="role"><b>拉丁衬线 LATIN</b>Cormorant Garamond Italic<br>英文眉题/展签</div>
+      <div style="font:italic 500 22px/1.4 var(--latin);letter-spacing:2px;color:var(--ink-soft)">A National Archive of Chinese Innovation Design</div></div>
+    <div class="type-role"><div class="role"><b>数据等宽 DATA</b>JetBrains Mono · 300–500<br>编号/计数/元信息</div>
+      <div style="font:400 15px/1.8 var(--mono);letter-spacing:2px;color:var(--ink-soft)">GALLERY 01 · 560 ITEMS · 2015—2025</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="no">03</span><h2>字阶</h2><span class="en">Scale</span></div>
+    <div class="scale-row"><div class="spec">DISPLAY<br>clamp(48,7vw,110) · serif 500</div><div style="font:500 44px/1.15 var(--serif)">好设计馆。</div></div>
+    <div class="scale-row"><div class="spec">PAGE H1<br>clamp(38,5.2vw,64) · serif 500</div><div style="font:500 34px/1.2 var(--serif)">三大展区。</div></div>
+    <div class="scale-row"><div class="spec">SECTION H2<br>32 · serif 600</div><div style="font:600 26px/1.25 var(--serif)">馆内体验</div></div>
+    <div class="scale-row"><div class="spec">CARD TITLE<br>16.5–18 · serif 600</div><div style="font:600 17px/1.4 var(--serif)">“复兴号”中国标准动车组</div></div>
+    <div class="scale-row"><div class="spec">BODY<br>15.5 · sans 400 · lh 1.75</div><div style="font-size:15.5px">展区按设计价值分类，不按专业领域：产业 = 制造强国（物）、生活 = 美好生活（人）、社会 = 可持续（环境）。</div></div>
+    <div class="scale-row"><div class="spec">SMALL<br>13 · sans 400</div><div style="font-size:13px;color:var(--ink-mute)">火星车、复兴号、白鹤滩、华龙一号——十年金奖重器全景长卷。</div></div>
+    <div class="scale-row"><div class="spec">META<br>10–12 · mono · ls 2–3px</div><div style="font:400 11px/1 var(--mono);letter-spacing:2.5px;color:var(--ink-mute)">GALLERIES · 2026-08</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-h"><span class="no">04</span><h2>色彩</h2><span class="en">Colors</span></div>
+    <div class="colors">
+      <div class="swatch"><div class="c" style="background:#F7F2E8"></div><div class="n">paper<span>#F7F2E8 · 页面底色</span></div></div>
+      <div class="swatch"><div class="c" style="background:#EFE7D5"></div><div class="n">paper-2<span>#EFE7D5 · 次级面</span></div></div>
+      <div class="swatch"><div class="c" style="background:#0E1218"></div><div class="n">ink<span>#0E1218 · 主文字</span></div></div>
+      <div class="swatch"><div class="c" style="background:#5C6577"></div><div class="n">ink-mute<span>#5C6577 · 弱文字</span></div></div>
+      <div class="swatch"><div class="c" style="background:#3D60BD"></div><div class="n">accent<span>#3D60BD · 品牌蓝</span></div></div>
+      <div class="swatch"><div class="c" style="background:#D4A858"></div><div class="n">gold<span>#D4A858 · 品牌金</span></div></div>
+      <div class="swatch"><div class="c" style="background:#C8472C"></div><div class="n">red<span>#C8472C · 仅限标识/印章</span></div></div>
+      <div class="swatch"><div class="c" style="background:linear-gradient(135deg,#0E1F4D,#2D4FAF,#5984D6)"></div><div class="n">night gradient<span>夜空色阶 · 页头/深色带</span></div></div>
+      <div class="swatch"><div class="c" style="background:#C81623"></div><div class="n">zone 产业<span>#C81623 · 展区身份色</span></div></div>
+      <div class="swatch"><div class="c" style="background:#F5C400"></div><div class="n">zone 生活<span>#F5C400 · 展区身份色</span></div></div>
+      <div class="swatch"><div class="c" style="background:#1F9D55"></div><div class="n">zone 社会<span>#1F9D55 · 展区身份色</span></div></div>
+    </div>
+  </div>
+
+  <footer>好设计馆 · 品牌与字体规范 V1 · 2026-08-19 · 全站换肤以此为准（已落地：首页 / 三大展区页）</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>技术迁移分析报告 · 好设计馆产业频道</title>
+<meta name="description" content="基于好设计奖十年 560 项获奖成果的技术迁移分析报告：问题定义、匹配馆藏技术、迁移路径、约束风险与对接建议。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--night-1:#0E1F4D;--night-2:#1A3A7A;
+--paper:#F7F2E8;--paper-2:#EFE7D5;
+--ink:#0E1218;--ink-soft:#2A3142;--ink-mute:#5C6577;
+--line-soft:rgba(14,18,24,.10);--line:rgba(14,18,24,.16);
+--accent:#3D60BD;--gold:#D4A858;--gold-deep:#7E5F18;
+--serif:'Noto Serif SC','Source Han Serif SC',serif;
+--sans:'Noto Sans SC','Source Han Sans SC','PingFang SC','Inter',sans-serif;
+--latin:'Cormorant Garamond','Georgia',serif;
+--mono:'JetBrains Mono','SFMono-Regular',monospace;
+--r-md:8px;--r-lg:12px;--r-pill:99px;
+--sh-1:0 4px 12px -4px rgba(14,18,24,.12);--sh-2:0 8px 24px -10px rgba(14,18,24,.18);
+--ease:cubic-bezier(.4,1,.6,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:var(--gold);color:var(--ink)}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:0 32px;height:60px;
+background:rgba(247,242,232,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);line-height:1}
+.brand .mark-img{width:30px;height:30px;display:block;border-radius:8px;box-shadow:var(--sh-1)}
+.brand .bt{display:block;font:700 16px/1.15 var(--serif);letter-spacing:.1em}
+.brand .en{display:block;font:italic 500 9px/1.2 var(--latin);letter-spacing:1.4px;color:var(--ink-mute);margin-top:2px;white-space:nowrap}
+nav .links{margin-left:auto;display:flex;gap:4px}
+nav .links a{text-decoration:none;font-size:13px;color:var(--ink-mute);padding:7px 14px;border-radius:var(--r-pill)}
+nav .links a:hover{color:var(--ink);background:var(--paper-2)}
+
+.page{max-width:920px;margin:0 auto;padding:48px 32px 80px}
+
+/* 报告纸面 */
+.sheet{background:#fff;border:1px solid var(--line-soft);border-radius:var(--r-lg);box-shadow:var(--sh-2);overflow:hidden}
+.sheet-head{padding:36px 44px 28px;border-bottom:2px solid var(--ink);position:relative}
+.sheet-head .kicker{font:400 11px/1 var(--mono);letter-spacing:3px;color:var(--gold-deep);margin-bottom:14px}
+.sheet-head h1{font:600 clamp(24px,3.4vw,34px)/1.35 var(--serif);letter-spacing:.03em}
+.sheet-head .en{margin-top:8px;font:italic 500 11.5px/1.5 var(--latin);letter-spacing:2px;color:var(--ink-mute)}
+.badge{position:absolute;top:36px;right:44px;font:400 10.5px/1 var(--mono);letter-spacing:1px;
+padding:7px 14px;border-radius:var(--r-pill);background:rgba(212,168,88,.16);color:var(--gold-deep);border:1px solid rgba(212,168,88,.45)}
+.meta{display:grid;grid-template-columns:110px 1fr;border:1px solid var(--line-soft);border-bottom:0}
+.meta .k{font:400 11px/1 var(--mono);letter-spacing:1px;color:var(--ink-mute);padding:13px 16px;border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);display:flex;align-items:center}
+.meta .v{font-size:13.5px;color:var(--ink-soft);padding:13px 16px;border-bottom:1px solid var(--line-soft);line-height:1.7}
+.report-body{padding:36px 44px}
+.report-body h3{font:600 17px/1.5 var(--serif);letter-spacing:.04em;margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--gold)}
+.report-body h3:first-child{margin-top:0}
+.report-body p{font-size:14px;color:var(--ink-soft);line-height:1.95;margin:0 0 12px;text-align:justify}
+.report-body li{font-size:14px;color:var(--ink-soft);line-height:1.9;margin:0 0 6px 1.4em}
+.sheet-foot{padding:20px 44px;border-top:1px solid var(--line-soft);background:var(--paper-2);
+font-size:11.5px;color:var(--ink-mute);line-height:1.9}
+.sheet-foot b{color:var(--gold-deep)}
+
+/* 状态区 */
+.state{padding:72px 44px;text-align:center}
+.state .spin{display:inline-block;width:26px;height:26px;border:2.5px solid var(--paper-3,#E4DBC1);border-top-color:var(--gold);
+border-radius:50%;animation:sp 900ms linear infinite;margin-bottom:18px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.state .t{font:600 17px/1.6 var(--serif);letter-spacing:.03em}
+.state .s{margin-top:8px;font:400 11.5px/1.8 var(--mono);color:var(--ink-mute);letter-spacing:1px}
+.state .err-act{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer;border:0;
+font:500 13px/1 var(--sans);padding:11px 22px;border-radius:var(--r-pill);transition:all 150ms var(--ease)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#c29a4a}
+.btn-ghost{border:1.5px solid var(--accent);color:var(--accent);background:transparent}
+.btn-ghost:hover{background:var(--accent);color:#fff}
+
+.actions{max-width:920px;margin:18px auto 0;display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}
+
+footer{margin-top:48px;border-top:1px solid var(--line-soft)}
+footer .inner{max-width:920px;margin:0 auto;padding:26px 32px;display:flex;justify-content:space-between;
+flex-wrap:wrap;gap:12px;font:400 11px/1.9 var(--mono);letter-spacing:1px;color:var(--ink-mute)}
+
+@media(max-width:640px){
+.page{padding:32px 16px 56px}
+.sheet-head,.report-body,.state{padding-left:24px;padding-right:24px}
+.badge{position:static;display:inline-block;margin-top:14px}
+}
+@media print{
+nav,.actions,footer{display:none}
+body{background:#fff}
+.page{padding:0;max-width:none}
+.sheet{border:0;box-shadow:none;border-radius:0}
+}
+</style>
+<link rel="stylesheet" href="gd-ds.css">
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html"><img class="mark-img" src="assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="index.html">好设计馆</a>
+    <a href="award.html">奖项</a>
+    <a href="laureates.html">数据库</a>
+    <a href="connect.html" class="act">产业</a>
+    <a href="learn.html">教育</a>
+  </div>
+</nav>
+
+<main class="page">
+  <div class="sheet">
+    <div class="sheet-head">
+      <div class="kicker">TECHNOLOGY TRANSFER REPORT</div>
+      <h1>技术迁移分析报告</h1>
+      <div class="en">From Award-Winning Design to Industry Innovation</div>
+      <span class="badge" id="badge">AI 推断 · 待专家校准</span>
+    </div>
+    <div class="meta">
+      <div class="k">企业</div><div class="v" id="mCo">—</div>
+      <div class="k">所属行业</div><div class="v" id="mInd">—</div>
+      <div class="k">企业问题</div><div class="v" id="mQ">—</div>
+      <div class="k">出具日期</div><div class="v" id="mDate">—</div>
+    </div>
+    <div class="report-body" id="body" hidden></div>
+    <div class="state" id="state">
+      <div class="spin"></div>
+      <div class="t">正在出具报告…</div>
+      <div class="s">深度推理模式（pro 模型）· 通常需要 20–60 秒，请勿关闭页面</div>
+    </div>
+    <div class="sheet-foot">
+      <b>可信原则：</b>本报告由「好设计助手」基于十年 560 项获奖项目档案自动生成，属「AI 推断」级建议——有原理依据，但尚未经获奖团队与评审专家校准。报告匹配的获奖项目均可点击溯源至官方档案；进入具体转化时，由获奖团队与工程师补充深层技术细节并校对把关。本报告不构成工程实施承诺。
+    </div>
+  </div>
+  <div class="actions" id="actions" hidden>
+    <button class="btn btn-ghost" id="printBtn">打印 / 存为 PDF</button>
+    <a class="btn btn-gold" href="connect.html#inquiry">提交留资，转入专家协同 →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="inner">
+    <div>好设计馆 · 产业频道 · 迁移报告卡 v1</div>
+    <div>匹配的获奖项目档案：十年 560 项 · 官网全量比对 0 缺失</div>
+  </div>
+</footer>
+
+<script src="copilot.js" defer></script>
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var q = (params.get('q') || '').trim().slice(0, 1000);
+  var co = (params.get('co') || '').trim().slice(0, 100);
+  var ind = (params.get('ind') || '').trim().slice(0, 50);
+
+  var stateEl = document.getElementById('state');
+  var bodyEl = document.getElementById('body');
+  var actionsEl = document.getElementById('actions');
+
+  document.getElementById('mCo').textContent = co || '（未署名）';
+  document.getElementById('mInd').textContent = ind || '（未标注）';
+  document.getElementById('mQ').textContent = q || '—';
+  document.getElementById('mDate').textContent = new Date().toLocaleDateString('zh-CN', {year:'numeric',month:'long',day:'numeric'});
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  /* 轻量 Markdown 渲染：### 标题 / - 列表 / 数字列表 / 段落（先转义防注入） */
+  function renderMd(md){
+    var html = '', inList = false;
+    md.split('\n').forEach(function(line){
+      var t = line.trim();
+      if (/^#{2,4}\s+/.test(t)) {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += '<h3>' + esc(t.replace(/^#{2,4}\s+/, '')) + '</h3>';
+      } else if (/^[-•*]\s+/.test(t)) {
+        if (!inList) { html += '<ul>'; inList = true; }
+        html += '<li>' + esc(t.replace(/^[-•*]\s+/, '')) + '</li>';
+      } else if (/^\d+[.、]\s*/.test(t)) {
+        if (!inList) { html += '<ul>'; inList = true; }
+        html += '<li>' + esc(t) + '</li>';
+      } else if (t) {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += '<p>' + esc(t) + '</p>';
+      }
+    });
+    if (inList) html += '</ul>';
+    return html;
+  }
+
+  function fail(msg){
+    stateEl.innerHTML = '<div class="t">报告生成未完成</div>' +
+      '<div class="s">' + esc(msg) + '</div>' +
+      '<div class="err-act">' +
+      '<button class="btn btn-gold" onclick="location.reload()">重试一次</button>' +
+      '<a class="btn btn-ghost" href="assistant.html?ask=' + encodeURIComponent(q) + '">改用好设计助手直接问 →</a>' +
+      '</div>';
+  }
+
+  if (!q) {
+    fail('缺少企业问题参数。请从「产业」页提交问题后进入本页。');
+    document.querySelector('.spin') && document.querySelector('.spin').remove();
+    return;
+  }
+
+  var prompt =
+    '请以下列「技术迁移分析报告」的固定结构作答，面向制造企业，专业、克制、可落地。\n' +
+    '硬性要求：\n' +
+    '1. 只能用知识库中真实存在的获奖项目举例，写出项目全名与年份；不确定是否存在的项目绝不提名；\n' +
+    '2. 所有建议属于初步推断，不得写成已验证事实；\n' +
+    '3. 严格使用以下五个小节标题（### 开头），每节 2–5 个要点：\n' +
+    '### 一、问题定义\n' +
+    '### 二、匹配的获奖技术\n' +
+    '### 三、迁移路径分析\n' +
+    '### 四、约束与风险\n' +
+    '### 五、对接建议\n\n' +
+    (co ? '企业：' + co + '\n' : '') +
+    (ind ? '所属行业：' + ind + '\n' : '') +
+    '企业问题：' + q;
+
+  fetch('api/chat', {
+    method: 'POST',
+    headers: {'content-type': 'application/json'},
+    body: JSON.stringify({ message: prompt, history: [], deep: true, persona: 'enterprise' })
+  }).then(function(r){
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(function(d){
+    if (!d.reply || !d.reply.trim()) throw new Error('empty');
+    bodyEl.innerHTML = renderMd(d.reply);
+    bodyEl.hidden = false;
+    stateEl.hidden = true;
+    actionsEl.hidden = false;
+    document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+  }).catch(function(){
+    fail('模型服务暂时不可用或生成超时（深度模式耗时较长）。');
+  });
+})();
+</script>
+</body>
+</html>

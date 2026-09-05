@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>远海原油转驳核心装备关键设计制造技术 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-05.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-05</div>
+  <h1>远海原油转驳核心装备关键设计制造技术</h1>
+  <div class="meta-line"><b>2023 年度金奖</b><span>广东工业大学,南通中远海运船务工程有限公司,广东中远海运重工有限公司</span>
+  <span class="grade grade-B">B</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 金奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">广东工业大学,南通中远海运船务工程有限公司,广东中远海运重工有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">张永康,万家平,蔡灵,吴承恩,李娟</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 船舶海工（金奖领域标签映射，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>石油被誉为“工业血液”，远海深水区蕴藏着全球44%和我国南海80%的油气资源。深远海油气资源开发是国家战略，浮式生产储卸油船（FPSO）和原油转驳装备（CTV）是海油开发核心装备，如何将原油从FPSO直接转驳到超大型油轮（VLCC），而无需陆地储油库中转，一直是亟待解决的世界性难题。在国家工信部重点研发专项和国家自然科学基金等资助下，通过产学研用十多年的联合攻关，设计制造了全球首艘原油转驳装备/船（CTV）、首座圆筒形FPSO和首套“FPSO+CTV+VLCC”多浮体原油转驳系统。首次实现了将原油直接从FPSO转驳到VLCC，突破了离岸距离的限制，填补了国际空白，主要创新如下：</p><p>创新点1：提出一种无需船坞的在水上“分层制造，逐层叠加”直接制造巨型FPSO的浮态制造新方法，建立了水下旋转角度数学模型，发明了旋转角度可变的水下旋转工艺装置，形成了平台底层分段划分、扇形分段对接精度控制、逐层吊装重心控制等成套浮态制造工艺与技术，解决了船坞建造接触应力大易变形的技术难题。设计制造了世界首座圆筒型浮式生产储卸油船（FPSO），船平台主甲板直径78米，高60米，重2.8万吨，储油量40万桶。</p><p>创新点2：针对CTV整体空间狭小、管线密集、敞口式结构复杂、焊接容易变形等难点，建立了CTV复杂结构焊接变形力学模型，形成了肋板横舱壁等横向复杂构件的分段焊接变形补偿、船台合拢缝焊接变形补偿等成套工艺，解决了敞口式CTV焊接变形量大的技术难题。设计制造了世界首艘深远海原油转驳装备（CTV）：尺寸规格：长宽深89m× 20m×10m；排水量7000t。</p><p>创新点3：建立了风-浪-流耦合作用的柔性链接多浮体水动力运动数学模型，研发了基于实时监测风浪流及VLCC牵引力调整CTV主推进力及侧推力的多浮体动态定位系统。设计制造了世界首个“FPSO+CTV+VLCC”多浮体系统成套装备：7级风、流速≤1m/s、浪高≤4m，突破了远海复杂海况下将原油从FPSO直接转驳到VLCC的技术难题，原油转驳速度8000/h@10bar，比常规设备提升 50%。</p><p>授权发明专利36件，其中国际专利6件。获得中国专利奖金奖和中国发明协会创新成果奖一等奖1项。被列入国家工信部首台（套）重大装备推广应用目录。近三年新增高端装备销售额75.6亿元、新增利税7.1亿元、创汇9.9亿美元。世界首制2艘CTV已在我国权益区示范应用，在“一带一路”建设和国际能源合作国巴西水深2200 米的深海油田商业化应用，三年转驳的原油价值超1200亿美元。中央电视台、人民网、Ocean Engineering等国内外重要媒体和专业刊物纷纷报道。中央电视台报道：“中国国之重器，填补了国际空白”。国务院国资委评价：革命性简化了现有外输模式，带动了深海石油开发领域装备制造技术的发展。用户评价：历史上首次将原油直接从FPSO 转驳到VLCC。经院士专家技术鉴定委员会鉴定：“该项目成果具有自主知识产权，技术创新性强，项目成果总体技术达到国际先进水平，其中多浮体原油转驳装备技术处于国际领先水平”。成果已形成了显著的经济社会效益和国际影响力。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>（一）背景与意义</p><p>石油不仅是国家能源安全的重要保障，更被誉为“工业血液”，是现代化的工业、农业、国防军事的重要战略物资。据欧佩克估计，全球海洋石油总储量达1400-2000亿吨，其中44%在远海深水区。我国南海油气资源极为丰富，已探明石油储量达300多亿吨，是国家未来石油安全的重要保障。但是，其中80%蕴藏于远离我国陆地的远海。例如，曾母暗沙盆地石油储量达150亿吨，能保障我国使用20多年，离我国陆地达1800km，至今尚未能开发。</p><p>浮式生产储油装置(FPSO，俗称海上采油平台) 对来自海底井筒的油/气/水等混合液加工成原油。通过小型穿梭油轮（ST）或者海底管道，将原油转驳到岸上储油库，然后再将储油库中的原油转驳超大型油轮（VLCC），并运往世界各地，这称为近海原油转驳技术，离岸作业距离约300km，不能满足远海油气田开发的需求。某些国家采用近海原油转驳技术，在我国曾母暗沙盆地等南海海域大肆盗采原油，根据报道：每年盗产原油超过5000万吨。</p><p>全球行业一直在寻求将FPSO上的原油直接转驳到VLCC的新技术，但尚无成功先例。如何将原油从FPSO直接转驳到VLCC，而无需陆地储油库中转，一直是亟待解决的世界性难题，更是制约我国南海油气资源开发的主要技术瓶颈之一。</p><p>在国家工信部重点研发专项、国家自然基金等资助下，产学研用深度融合，本项目设计并开发出“FPSO+原油转驳装备（CTV）”的远海原油转驳成套装备新技术，设计制造了全球首艘原油转驳装备/船（CTV）、首座圆筒形FPSO和首套“FPSO+CTV+VLCC”多浮体原油转驳系统。首次实现了将原油直接从FPSO转驳到VLCC，突破了离岸距离的限制，填补了国际空白。授权发明专利36件，其中国际专利6件。主要创新如下：</p><p>（二）主要设计创新</p><p>创新点1：提出一种无需船坞的在水上“分层制造，逐层叠加”直接制造巨型FPSO的浮态制造新方法，建立了水下旋转角度数学模型，发明了旋转角度可变的水下旋转工艺装置，形成了平台底层分段划分、扇形分段对接精度控制、逐层吊装重心控制等成套浮态制造工艺与技术，解决了船坞建造接触应力大易变形的技术难题。研制了世界首座圆筒型浮式海上油气生产储卸平台（FPSO），平台主甲板直径78 米，高60米，重2.8万吨，储油量40万桶。</p><p>所属学科：机械制造及自动化。旁证材料：授权发明专利 18件 、实用新型专利1件，其中核心发明专利：ZL201610680577.0（附件4.4）、ZL201610806143.0（附件4.5）、ZL201610808323.2（附件4.6）、ZL201610807932.6（附件4.7）。</p><p>FPSO属于小批量个性化产品，采用船坞或者船台建造时，由于FPSO平台重量重且底部面积小，导致船坞底部坞墩的接触应力大易变形，在服役中变形释放容易产生疲劳裂纹。其次，FPSO平台建造周期一般是4～6年，一个船坞仅仅容纳一个平台建造，利用率太低，成本高。针对上述难题，本项目提出了FPSO浮态模块化制造新方法，即：以水的浮力作为支撑，直接在水上“分层制造，逐层叠加”制造巨型FPSO的新方法。具体如下：</p><p>（1）首先利用小尺寸半潜驳甲板作为底层合拢平台，将圆形FPSO底层总段分为若干层，每层分为若干个扇形分段，对在半潜驳长度方向和宽度尺寸限度内的每个分段逐一吊装，然后进行焊接合拢，见图1（a）。（2）根据建立的水下旋转角度数学模型，半潜驳下沉，使层底漂浮在水面上，利用研发的旋转角度可变的水下旋转工艺装置将半潜驳原地旋转一定的角度，使层底宽度部分转为长度方向，见图1（b）；上浮，然后继续吊装合拢其余分段和底层总段。（3）半潜驳下沉，与底层分段脱离，以底层分段作为合拢平台，以水的浮力作为支撑，逐层分段吊装，直至建造完成整个FPSO平台，见图1（c）。形成了平台底层分段划分、扇形分段对接精度控制、逐层吊装重心控制等成套浮态制造工艺与技术，解决了船坞建造接触应力大易变形的技术难题。研制了世界首座圆筒型浮式海上油气生产储卸平台，总高近60 米（18 层楼高），见图1（d）。平台主甲板直径78 米，总重2.8 万吨；最大原油处理能力44000桶/天，最大天然气处理能力1130000m3/天，最大原油存储量40 万桶，极端恶劣海况下服役寿命20年。</p><p>(a)小半潜驳甲板上建造底层 (b)下潜旋转一定的角度 (c)浮在水面上逐层建造 （d）FPSO服役照片 图1：FPSO浮态建造新方法和世界首座圆筒形FPSO创新点2：针对CTV整体空间狭小、管线密集、结构形式复杂、焊接容易变形等难点，建立了CTV复杂结构焊接变形力学模型，提出了肋板横舱壁等横向复杂构件的分段焊接变形补偿、船台合拢缝焊接变形补偿。研制了世界首艘深远海原油转驳装备（CTV）：尺寸规格：长宽深89m×20m×10m；排水量7000t；功能：原油转驳、动力定位、油轮系泊牵引。</p><p>所属学科：机械制造及自动化。旁证材料：授权发明专利 17件、实用新型专利2件，其中核心发明专利：ZL201610586893.1（附件4.1）、ZL201610685324.2（附件4.2）、ZL 202111575067.4（附件4.3）。</p><p>图2:基于固有应变法和人工智能优化算法预测焊后复杂结构的变形量和残余应力创新点3：建立了风-浪-流耦合作用的柔性链接多浮体水动力运动数学模型，研发了基于实时监测风浪流及VLCC牵引力变化来调整CTV主推进力及侧推力的多浮体动态定位系统。研制了世界首个“FPSO+CTV+VLCC”多浮体系统成套装备：7级风、流速≤1m/s、浪高≤4m，突破了远海复杂海况下将原油从FPSO直接转驳到VLCC的技术难题，原油转驳速度 8000m3 /h@10bar，比常规设备提升 50%。</p><p>所属学科：机械工程。旁证材料：授权发明专利 11件、实用新型专利1件、软件著作权3项（附件4.11），其中核心发明专利：ZL202110182612.7（附件4.8）、ZL 20210182843.8（附件4.9）、ZL20211077094.9（附件4.10）。</p><p>由于CTV结构紧小，在恶劣海况下受到强烈摇晃。建立了风-浪-流耦合作用的柔性链接多浮体水动力运动数学模型（图3），研发了基于实时监测风浪流及VLCC牵引力变化来调整主推进力及侧推力的动态定位系统，并使其能够适应全球海域中不同的水文环境和工况。研制了世界首个“FPSO+CTV+VLCC”多浮体系统成套装备（图3）：在7级风、流速≤1m/s和浪高≤4m的海况下，稳定控制住了VLCC与FPSO之间作业距离为350-400m的恒定值，从而确保了转驳的安全性。原油转驳速度达 8000m3 /h@10bar，比常规设备提升 50%。</p><p>图3：多浮体建模和世界套“FPSO+CTV+VLCC”多浮体原油转驳系统</p></div>
+  <div class="sec-h"><span class="no">03</span><h2>图集</h2><span class="st st-ok">官方档案</span></div><div class="gal"><img loading="lazy" src="../cases/gal/2023-05-0.jpg" alt="远海原油转驳核心装备关键设计制造技术"><img loading="lazy" src="../cases/gal/2023-05-1.jpg" alt="远海原油转驳核心装备关键设计制造技术"><img loading="lazy" src="../cases/gal/2023-05-2.jpg" alt="远海原油转驳核心装备关键设计制造技术"></div>
+  <div class="sec-h"><span class="no">04</span><h2>设计五维</h2><span class="st st-draft">内容团队人工编目 · 解读非官方评价</span></div><div class="dims"><div class="dim"><div class="dim-h"><span class="dim-n">科技</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>远海原油转驳装备,破解 FPSO 直驳 VLCC 世界难题</p></div><div class="dim"><div class="dim-h"><span class="dim-n">艺术</span><span class="dim-s">2/5</span></div><div class="dim-bar"><i style="width:40%"></i></div><p>海工装备</p></div><div class="dim"><div class="dim-h"><span class="dim-n">人本</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>服务南海 80% 油气资源开发与能源安全</p></div><div class="dim"><div class="dim-h"><span class="dim-n">商业</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>深远海油气开发核心装备</p></div><div class="dim"><div class="dim-h"><span class="dim-n">文化</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>海洋能源装备的行业代表</p></div></div>
+  
+  
+  
+  
+  <div class="sec-h"><span class="no">07</span><h2>权威溯源</h2><span class="st st-ok">人工核选 · 检索于 2026-08-09</span></div><div class="srcs"><a class="srclink" href="https://lnida.com/nd.jsp?id=504" target="_blank" rel="noopener">第八届“好设计奖”金奖获奖作品——远海原油转驳核心装备关键设计制造技术</a><a class="srclink" href="https://cgd.cmes.org/exhibit/detail/9cb71056520f428190394f3841fbcc87" target="_blank" rel="noopener">远海原油转驳核心装备关键设计制造技术 - 好设计奖</a></div>
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 B（7 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

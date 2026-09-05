@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>大型露天矿自移式排岩成套装备 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2020-s11.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2020-s11</div>
+  <h1>大型露天矿自移式排岩成套装备</h1>
+  <div class="meta-line"><b>2020 年度银奖</b><span>太原重工股份有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2020 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">太原重工股份有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">张珏,谭磊,吕晓林,王波</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 工程装备（逐条初审，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>大型露天矿自移式排岩成套装备（以下简称“排岩装备”）是露天矿连续/半连续开采系统中关键的物料输送和排放装备，具有装载、运输、转载三位一体能力，其生产效率和可靠性决定了整个露天矿山的生产率和安全性，是保障国家能源供给和资源开采急需的重大技术装备。</p><p>该项目实施前，排岩装备关键技术和市场长期被国外垄断，用户迫切希望国内厂商能提供同类产品。针对上述技术难题，该项目展开一系列技术研究与攻关，实现了多项关键技术突破，主要成果如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>建立了面向装载、运输、转载能力匹配的多学科协同设计方法，创新研制出配重臂下置式大型排岩装备。与配重臂上置式结构相比，自重降低约4%，抗风等级从8级提升至9级，年作业率提升10％。</div></div><div class="p-li"><span class="p-mk">2</span><div>研制出内置拓扑加强筋的箱体式高承载、轻量化履带结构。针对排岩装备工作载荷大、行走时容易发生履带下陷的难题，采用三维拓扑优化设计方法，创新研制出一种内置拓扑加强筋箱体式新型履带结构，具有高刚度、轻量化特点，与常规履带装置相比减重6%，提高了大型排岩装备松软地面作业能力。</div></div><div class="p-li"><span class="p-mk">3</span><div>开发出大型重载高强度焊接结构件低应力制造技术。针对排岩装备大跨度、多尺度、多组件焊接的特点，解决了排岩装备大跨度、多组件焊接造成的残余应力高、变形大的难题，确保了结构件的制造质量和精度，提高了排岩装备的安全性和可靠性。</div></div><div class="p-li"><span class="p-mk">4</span><div>研发出适应排岩装备高效作业的主从式智能协同控制技术。针对传统排岩装备主、辅机对中精度低、速度慢，协同效率低的难题，开发出具有智能排料功能的排岩机，构建了高精度和高效率的排岩机-卸料车的主从式智能协同控制系统，各机构单次对位时间为现有技术的1/7、对中精度提高50%，实现了排岩成套装备的智能化运行。</div></div></div><p>该项目获授权专利14项，其中发明专利7项；已制定2项行业标准，发表论文10余篇。2020年获得中国机械工业科技进步二等奖。产品累计销售5台套，其中出口1台套，累计新增销售约2.37亿元。</p><p>本项目的实施，一举打破了国外企业的垄断地位，使我国成为继德国和瑞典之后第三个具备自主研制大型露天矿自移式排岩成套装备能力的国家。对促进国产排岩装备从价值链低端向高端迁移，推动露天采矿工艺技术的进步及保障国家能源和资源供给具有重要意义。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><div class="p-h">一、关键技术研究与设计方法</div><p>1．建立了面向装载、运输、转载能力匹配的多学科协同设计方法</p><p>本项目结合现代露天采矿工艺发展的新特点，采用现代设计理论与现场实测验证相结合的方法，结合有限元计算方法、离散元计算方法、计算流体动力学方法、工程优化方法等，建立了面向装载、运输、转载能力相匹配的多学科协同设计方法与理论。实现了整机布局与主要设计参数与关键性能的合理匹配与优化，大幅提高了整机的抗风能力、结构安全性，满足露天矿山高效、安全、绿色环保生产的要求。</p><div class="p-h">1.1 开发排岩装备的整机参数化三维设计平台</div><p>建立了排岩装备的整机参数化设计平台，实现了排岩装备的参数化建模与虚拟装配，可以在设计阶段对整机的工艺性和装配性进行初步验证和完善，同时设置了关键结构变量，为后续的多学科、多物理场耦合建模提供了基础，降低了研发成本，提升了设计效率和设计质量。</p><div class="p-h">1.2 构建流-固-粒多物理场耦合建模方法</div><p>融合计算流体动力学（CFD）、离散元（DEM）、有限元（FEM）以及动力学等理论和技术，构建了流-固-粒多物理场耦合建模方法和流程，设计了满足不同学科耦合计算分析的接口，解决了不同学科之间能量流、数据流的有效传递问题，实现了从单一物理场仿真到多载荷多物理场计算仿真的跨越，提高了计算模型和方法的有效性。</p><div class="p-h">1.3 建立了整机多学科、多系统协同优化设计方法</div><p>通过分析排岩装备的结构参数（臂长、高度、斜度、配重臂位置等）、排岩装备的性能指标（结构安全性、输送效率、抗风性等），以及物料排放工艺参数（排岩场平盘宽度、排岩带宽度、物料安息角、上排高度、下排高度等），建立了结构参数的多输入和性能指标的多目标，以及工艺要求的多约束的多学科整机一体化协同优化设计模型。由于排岩装备的多学科优化是典型的多目标多约束优化问题，因此通过多目标进化算法进行参数与参数之间、参数与性能之间以及性能与性能之间的匹配与折中，获得满足现代物料排放工艺的最优化系统设计方案，彻底改变了传统基于经验公式的排岩装备优化设计方法和理论，大幅缩短了设计周期，提高了装备的综合性能。</p><p>优化后的排岩装备，摈弃国外常用的上置式配重臂设计，提出全新的配重臂下置式优化布局，重心高度降低了32.6%，九级烈风条件下倾覆力矩仅1359.2kN•m，相比降低12.6%，可以在九级烈风下安全平稳运行。</p><p>2．研制出内置拓扑加强筋的箱体式高承载、轻量化履带结构</p><p>为了保证排岩机安全稳定运行，排岩机接地比压不能超过排岩场允许的接地比压。按常规的思路重型履带板为铸件结构，但铸件履带板笨重、缺陷多、废品率高，给生产制造和用户备件带来极大的困难。本项目基于材料非均匀最优布置的思想，在保证现有加工工艺尽量不变的前提下，采用三维拓扑优化设计方法，研制出一种高承载、高刚度和低重量的内置拓扑加强筋的新型箱体式履带结构，比常规履带结构减重6%，解决了大型排岩机行走时容易发生履带下陷的难题。</p><p>履带行走装置的行走驱动机构为行星减速机驱动，结构紧凑，传动效率高；行走减速机与驱动轴采用法兰连接，刚性好、可靠性高，便于拆装；驱动轴系采用专用的密封、润滑通道和滑动轴承结构，安全可靠且易于维护；履带驱动轮轮齿可拆卸，便利轮齿更换；履带支重轮为多支点静定结构，各支轮受力均匀。履带张紧机构采用调节螺纹杆、锁紧螺母和伸缩油缸组合式结构，可快速张紧履带链并锁定张紧轮位置。经过带载运行试验，证明该装置完全适应排岩装备的恶劣工况。</p><p>3．开发出大型重载高强度焊接结构件低应力制造技术</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>1 低合金高强钢的焊接变形控制工艺。针对主要件的结构特点、钢板的性能特点和要求，结合装焊过程的实际工况条件，优化了装焊工序。通过分析低合金高强钢的裂纹敏感性和焊接热影响区的力学性能，采用多层多道焊的焊道布置和焊接变形控制工艺，采用变位器及工装卡具固定零部件，通过变位器旋转进行施焊，焊后焊缝均匀一致。低合金高强钢的焊接主要考虑焊接方法、焊接材料、焊接工艺参数、焊接技术、预热温度和后热处理。通过大量的工艺试验和工艺评定确定了工艺参数（预热温度、焊接电流、焊接电压、焊接速度及多层多道焊接等），编制了低合金高强钢的焊接工艺规程，预热工艺规程和焊后热处理工艺要求来指导大型结构件的焊接生产。</div></div><div class="p-li"><span class="p-mk">3</span><div>2 焊后热处理工艺。针对排岩装备主架结构件的厚钢板、大焊肉、焊接后应力集中等问题，提出了自动化温度控制的焊后整体退火处理工艺，大幅降低了残余应力，在消除焊接应力的同时，减小了对人的依赖。对主要焊接结构件采用了整体退火处理工艺，合理优化工艺参数，快速有效地消除了焊接残余应力，确保了焊接结构件的制造质量和制造精度，显著提高了焊接结构件的疲劳强度和使用寿命。</div></div></div><p>4．研发出适应排岩装备高效作业的主从式智能协同控制技术</p><p>开发了排岩装备无线/有线的远程监控及健康状态管理系统，故障自诊断及故障预警系统，运行数据的实时采集与状态监控系统等。安全防护方面实现了传统被动防护向主动防护的转变。</p><p>系统中监控信息通过无线/有线通信网络与远程监控中心的服务器进行数据传输。远程监控终端运行于监控中心的服务器上，远程监控中心接收监控终端传送的数据，进行显示、存储、分析处理及控制信息产生等工作，并实时再现、更新设备动作；也可以反向传送各种指令到现场监控目标, 控制整机各部分设备的运行。远程监控中心的服务器搜集设备的数据和信息，通过数据处理提取出有价值的信息，通过对数据进行模型分析、历史数据对比分析，得到与管理、生产、维护、操作有关的高附加值数据，辅助矿山管理部门、操作团队、维护团队得到更优的设备状态、更合理的维护时间、更短的维修时间以及更合理的库存等，最终提高设备的利用率、生产率和可靠性。</p><div class="p-h">4.1 排岩机、卸料车协同运行技术</div><p>排料臂排料端处设有料位传感器，实时监测排料臂与料堆的距离，当排料臂离料堆达到某值时，排料臂自动抬升，减少扬尘；当排料臂举升到最高位置同时距离料堆较近时，则停止抬升并报警，排料臂自动回转避开料堆，并缓慢下降；为达到灰尘最小的程度，随着料堆的升高，排料臂也缓慢抬升。当物料无法排放时，排岩装备的排岩机、卸料车、电缆卷筒等自动协调运行，主动避让开料堆，使得装备继续安全工作。</p><div class="p-h">4.2 运行数据的实时采集、状态监控系统、故障自诊断及故障预警系统</div><p>通过排岩装备运行状态实时监测与数据积累构建专家知识库，形成设备自主健康诊断系统。包括本地健康诊断（故障自诊断）和远程健康监测（故障预判）两大部分。</p><p>通过故障预判系统把大量的数据和信息转化成具有价值的健康诊断，并向操作人员和维护管理团队提供实时、高效的设备健康和性能数据。快速定位潜在故障隐患点，减少突发故障，降低设备维修成本，节省维护恢复时间，提高露天矿山整体生产效率。</p><div class="p-h">二、项目研究取得的理论成果</div><p>排岩装备研制过程中取得如下成果：</p><p>1．授权发明专利7项，实用新型专利7项。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>发表论文10余篇。</div></div><div class="p-li"><span class="p-mk">3</span><div>制定机械行业标准2项。</div></div><div class="p-li"><span class="p-mk">4</span><div>通过机械工业科技成果评估中心组织的科学技术成果评价，并获得中国机械工业科技进步类二等奖。</div></div></div><div class="p-h">三、主要技术创新点</div><p>大型露天矿自移式排岩成套装备主要技术创新点有：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>建立了面向装载、运输、转载能力匹配的多学科协同设计方法，创新研制出配重臂下置式大型排岩装备。建立了多学科、多系统的优化模型，实现了排岩装备的多目标协同优化设计；创新研制出配重臂下置式大型排岩装备，与配重臂上置式结构相比，自重降低约4%，抗风等级从8级提升至9级，年作业率提升10％。</div></div><div class="p-li"><span class="p-mk">2</span><div>研制出内置拓扑加强筋的箱体式高承载、轻量化履带结构。针对排岩装备工作载荷大、行走时容易发生履带下陷的难题，基于材料非均匀最优布置的思想，采用三维拓扑优化设计方法，创新研制出一种内置拓扑加强筋箱体式新型履带结构，具有高刚度、轻量化特点，与常规履带装置相比减重6%，提高了大型排岩装备松软地面作业能力。</div></div><div class="p-li"><span class="p-mk">3</span><div>开发出大型重载高强度焊接结构件低应力制造技术。针对排岩装备大跨度、多尺度、多组件焊接的特点，提出了焊前预变形、分中对称施焊、整体退火的全流程成套低应力、低变形制造工艺，解决了排岩装备大跨度、多组件焊接造成的残余应力高、变形大的难题，确保了结构件的制造质量和精度，提高了排岩装备的安全性和可靠性。</div></div><div class="p-li"><span class="p-mk">4</span><div>研发出适应排岩装备高效作业的主从式智能协同控制技术。针对传统排岩装备主、辅机对中精度低、速度慢，协同效率低的难题，开发出具有智能排料功能的排岩机，以及可以跟随排岩机自动行走、对中的卸料车，构建了高精度和高效率的排岩机-卸料车的主从式智能协同控制系统，各机构单次对位时间为现有技术的1/7、对中精度提高50%，实现了排岩成套装备的智能化运行。</div></div></div><div class="p-h">四、国内外同类技术主要参数、效益、市场竞争力对比</div><p>太原重工股份有限公司研制的排岩装备与国内外同类技术指标相比，通过整机配重臂下置式结构设计方案的突破，其抗风等级从8级提高到9级，装备的有效运作时间提高10%；开发的智能协同控制技术使系统各机构单次对位时间为现有技术的1/7、对中精度提高50%。该装备总体技术达到国际先进水平，配重臂下置式结构设计方案、智能协同控制技术和装备抗风载能力达到国际领先水平。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>三大展区 · 好设计馆</title>
+<meta name="description" content="好设计馆三大展区：设计与产业（物）、设计与生活（人）、设计与社会（环境）——按设计价值组织的获奖项目展陈。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--night-0:#050B22;--night-1:#0E1F4D;--night-2:#1A3A7A;
+--blue:#2D4FAF;--blue-2:#5984D6;--blue-soft:#8FAAD5;
+--paper:#F7F2E8;--paper-2:#EFE7D5;--paper-3:#E4DBC1;
+--ink:#0E1218;--ink-soft:#2A3142;--ink-mute:#5C6577;
+--line-soft:rgba(14,18,24,.10);--line:rgba(14,18,24,.16);
+--accent:#3D60BD;--accent-deep:#1E3A7A;
+--gold:#D4A858;--gold-light:#E8C97C;--gold-deep:#7E5F18;
+--serif:'Noto Serif SC','Source Han Serif SC',serif;
+--sans:'Noto Sans SC','Source Han Sans SC','PingFang SC','Inter',sans-serif;
+--latin:'Cormorant Garamond','Georgia',serif;
+--mono:'JetBrains Mono','SFMono-Regular',monospace;
+--r-md:8px;--r-lg:12px;--r-pill:99px;
+--sh-1:0 4px 12px -4px rgba(14,18,24,.12);--sh-2:0 8px 24px -10px rgba(14,18,24,.18);
+--sh-3:0 18px 50px -25px rgba(14,18,24,.25);
+--t-fast:150ms;--t-base:250ms;--t-slow:400ms;--ease:cubic-bezier(.4,1,.6,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:var(--gold);color:var(--ink)}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.75;letter-spacing:.005em;-webkit-font-smoothing:antialiased}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:0 32px;height:60px;
+background:rgba(247,242,232,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);line-height:1}
+.brand .mark-img{width:30px;height:30px;display:block;border-radius:8px;box-shadow:var(--sh-1)}
+.brand .bt{display:block;font:700 16px/1.15 var(--serif);letter-spacing:.1em}
+.brand .en{display:block;font:italic 500 9px/1.2 var(--latin);letter-spacing:1.4px;color:var(--ink-mute);margin-top:2px;white-space:nowrap}
+nav .links{margin-left:auto;display:flex;gap:4px}
+nav .links a{text-decoration:none;font-size:13px;color:var(--ink-mute);padding:7px 14px;border-radius:var(--r-pill);transition:all var(--t-fast) var(--ease)}
+nav .links a:hover{color:var(--ink);background:var(--paper-2)}
+nav .links a.act{color:#fff;background:var(--ink)}
+
+.page-hero{position:relative;overflow:hidden;color:#fff;
+background:linear-gradient(180deg,var(--night-1) 0%,var(--night-2) 34%,var(--blue) 68%,var(--blue-2) 100%)}
+.page-hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+background:radial-gradient(ellipse 46% 40% at 82% 14%,rgba(212,168,88,.20),transparent 70%)}
+.page-hero .inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:96px 32px 72px}
+.ph-kicker{display:inline-flex;align-items:center;gap:10px;font:400 11px/1 var(--mono);letter-spacing:3px;color:var(--gold-light);margin-bottom:22px}
+.ph-kicker::before{content:"";width:34px;height:1px;background:var(--gold)}
+.page-hero h1{font:500 clamp(38px,5.2vw,64px)/1.15 var(--serif);letter-spacing:.04em}
+.page-hero h1 .dot{color:var(--gold)}
+.ph-en{margin-top:14px;font:italic 500 12px/1.7 var(--latin);letter-spacing:3px;color:var(--blue-soft)}
+.ph-sub{margin-top:22px;font-size:14.5px;font-weight:300;color:rgba(255,255,255,.85);line-height:2;max-width:52em}
+.ph-sub b{color:var(--gold-light);font-weight:500}
+
+.znav{max-width:1240px;margin:0 auto;padding:26px 32px 0;display:flex;gap:10px;flex-wrap:wrap}
+.znav a{text-decoration:none;font-size:13px;font-weight:500;padding:9px 18px;border-radius:var(--r-pill);
+border:1.5px solid var(--zc);color:var(--zc);transition:all var(--t-fast) var(--ease);background:transparent}
+.znav a:hover{background:var(--zc);color:#fff}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.zone{margin-top:72px;scroll-margin-top:76px}
+.zone-banner{position:relative;overflow:hidden;border-radius:var(--r-lg);min-height:240px;color:#fff;
+box-shadow:var(--sh-2);margin-bottom:14px;background:var(--night-1)}
+.zone-banner .zbg{position:absolute;inset:0;background-size:cover;background-position:center}
+.zone-banner::after{content:"";position:absolute;inset:0;
+background:linear-gradient(100deg,rgba(5,11,34,.92) 22%,rgba(5,11,34,.55) 58%,rgba(5,11,34,.15) 100%)}
+.zb-in{position:relative;z-index:1;display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+min-height:240px;padding:34px 40px}
+.z-eyebrow{font:400 10.5px/1 var(--mono);letter-spacing:2.5px;color:var(--gold-light);margin-bottom:12px}
+.z-eyebrow::before{content:"";display:inline-block;width:24px;height:1px;background:var(--gold);vertical-align:middle;margin-right:9px}
+.z-name{font:600 clamp(30px,3.6vw,42px)/1.2 var(--serif);letter-spacing:.07em;text-shadow:0 2px 18px rgba(5,11,34,.5)}
+.z-slogan{font-size:13px;color:var(--gold-light);letter-spacing:.16em;margin-top:8px}
+.z-right{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.z-theme{display:grid;place-items:center;width:52px;height:52px;border-radius:var(--r-md);background:var(--zc);color:#fff;
+font:700 22px/1 var(--serif);box-shadow:var(--sh-2)}
+.z-thumbs{display:flex;align-items:center}
+.z-thumbs img{width:56px;height:56px;object-fit:cover;border-radius:var(--r-md);border:2px solid rgba(255,255,255,.85);
+box-shadow:var(--sh-2);margin-left:-15px}
+.z-thumbs img:first-child{margin-left:0}
+.z-stat{font:400 11px/1 var(--mono);letter-spacing:1px;color:rgba(255,255,255,.8)}
+.z-domains-line{font:400 11px/1.7 var(--mono);color:var(--ink-mute);letter-spacing:1px;padding:12px 4px 0}
+
+.booth{margin-bottom:34px}
+.booth-h{font:600 18px/1 var(--serif);letter-spacing:.08em;margin:26px 0 16px;display:flex;align-items:center;gap:10px}
+.booth-h::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--zc)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden;background:#fff;
+display:flex;flex-direction:column;transition:all var(--t-base) var(--ease)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-2);border-color:var(--line)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--paper-2)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--t-slow) var(--ease)}
+.card:hover .thumb img{transform:scale(1.04)}
+.thumb-empty{display:grid;place-items:center;height:100%;color:var(--ink-mute);font:400 11px/1 var(--mono);letter-spacing:2px}
+.cbody{padding:18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.crow{display:flex;gap:8px;align-items:center}
+.lv{font:400 10.5px/1 var(--mono);padding:4px 10px;border-radius:var(--r-pill);background:rgba(61,96,189,.10);color:var(--accent)}
+.lv-金{background:rgba(212,168,88,.18);color:var(--gold-deep)}
+.tag{font:400 10px/1 var(--mono);color:var(--ink-mute)}
+.card h3{font:600 16.5px/1.55 var(--serif);letter-spacing:.02em}
+.unit{font-size:11.5px;color:var(--ink-mute)}
+.cnote{font-size:11px;color:var(--gold-deep)}
+.clinks{margin-top:auto;padding-top:10px;display:flex;gap:16px;border-top:1px solid var(--line-soft)}
+.clinks a{font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:500}
+.clinks a:hover{text-decoration:underline}
+.card.todo{border-style:dashed;background:var(--paper-2)}
+.card.todo:hover{transform:none;box-shadow:none}
+.todo-in{padding:30px 20px;color:var(--ink-mute);font-size:13.5px;font-weight:600}
+.todo-n{font-size:11.5px;font-weight:400;margin-top:8px;line-height:1.7}
+
+footer{margin-top:80px;border-top:1px solid var(--line-soft)}
+footer .inner{max-width:1240px;margin:0 auto;padding:30px 32px;display:flex;justify-content:space-between;
+flex-wrap:wrap;gap:12px;font:400 11px/1.9 var(--mono);letter-spacing:1px;color:var(--ink-mute)}
+@media(max-width:860px){
+nav .links a{padding:7px 9px;font-size:12px}
+.page-hero .inner{padding:64px 24px 52px}
+.wrap,.znav{padding-left:20px;padding-right:20px}
+.z-right{display:none}
+.zb-in{padding:26px 22px;min-height:200px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html"><img class="mark-img" src="assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><br><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="index.html" class="act">好设计馆</a>
+    <a href="award.html">奖项</a>
+    <a href="laureates.html">数据库</a>
+    <a href="connect.html">产业</a>
+    <a href="learn.html">教育</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="inner">
+    <span class="ph-kicker">展区分类框架 V1</span>
+    <h1>三大展区<span class="dot">。</span></h1>
+    <div class="ph-en">Three Galleries of Good Design Museum</div>
+    <p class="ph-sub">展区按<b>设计价值</b>分类，不按专业领域：设计与产业（物）、设计与生活（人）、设计与社会（环境）。每展区下设展位，展品挂获奖项目档案。当前为种子框架：9 个展位、21 件展品已定调，后续按规则扩展至 300 项金、银奖。</p>
+  </div>
+</header>
+
+<div class="znav"><a href="#industry" style="--zc:#C81623">设计与产业</a><a href="#life" style="--zc:#F5C400">设计与生活</a><a href="#society" style="--zc:#1F9D55">设计与社会</a></div>
+
+<main class="wrap">
+<section class="zone" id="industry" style="--zc:#C81623"><div class="zone-banner"><div class="zbg" style="background-image:url(cases/case-2021-00.jpg)"></div><div class="zb-in"><div class="z-left"><div class="z-eyebrow">GALLERY 01</div><div class="z-name">设计与产业</div><div class="z-slogan">好设计助力制造强国</div></div><div class="z-right"><span class="z-theme">物</span><span class="z-thumbs"><img src="cases/case-2021-00.jpg" alt="星球车复合式移动系统设计及运动性能验证" loading="lazy"><img src="cases/case-2025-00.jpg" alt="嫦娥五/六号月球钻取采样方法及系统设计" loading="lazy"><img src="cases/case-2017-04.jpg" alt="ARJ21新支线客机" loading="lazy"><img src="cases/case-2017-01.jpg" alt="“复兴号”中国标准动车组" loading="lazy"></span><span class="z-stat">4 展位 · 11 件展品</span></div></div></div><div class="z-domains-line">智能装备、工业机器人、航天航空、船舶海工、高端装备</div><div class="booth"><div class="booth-h">航空航天</div><div class="cards"><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2021-00.jpg" alt="星球车复合式移动系统设计及运动性能验证"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2021/22金1</span></div><h3>星球车复合式移动系统设计及运动性能验证</h3><div class="unit">哈尔滨工业大学北京空间飞行器总体设计部,北京卫星环境工程研究所</div><div class="clinks"><a href="project/2021-00.html">项目页 →</a><a href="atom/2021-00.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2025-00.jpg" alt="嫦娥五/六号月球钻取采样方法及系统设计"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2025金1</span></div><h3>嫦娥五/六号月球钻取采样方法及系统设计</h3><div class="unit">哈尔滨工业大学,北京圣视环宇科技有限公司</div><div class="clinks"><a href="project/2025-00.html">项目页 →</a><a href="atom/2025-00.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2017-04.jpg" alt="ARJ21新支线客机"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2017金5</span></div><h3>ARJ21新支线客机</h3><div class="unit">中国商飞上海飞机设计研究院</div><div class="clinks"><a href="project/2017-04.html">项目页 →</a><a href="atom/2017-04.html">原子页 →</a></div></div></div></div></div><div class="booth"><div class="booth-h">轨道交通</div><div class="cards"><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2017-01.jpg" alt="“复兴号”中国标准动车组"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2017金2</span></div><h3>“复兴号”中国标准动车组</h3><div class="unit">中国铁路</div><div class="clinks"><a href="project/2017-01.html">项目页 →</a><a href="atom/2017-01.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2015-00.jpg" alt="CRH380A型高速动车组"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2015金1</span></div><h3>CRH380A型高速动车组</h3><div class="unit">中车青岛四方机车车辆股份有限公司</div><div class="clinks"><a href="project/2015-00.html">项目页 →</a><a href="atom/2015-00.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2017-02.jpg" alt="储能式轨道交通绿色设计"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2017金3</span></div><h3>储能式轨道交通绿色设计</h3><div class="unit">中车株洲电力机车有限公司</div><div class="clinks"><a href="project/2017-02.html">项目页 →</a><a href="atom/2017-02.html">原子页 →</a></div></div></div></div></div><div class="booth"><div class="booth-h">船舶海工</div><div class="cards"><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2015-02.jpg" alt="蛟龙号载人潜水器"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2015金3</span></div><h3>蛟龙号载人潜水器</h3><div class="unit">中船重工 702 研究所</div><div class="clinks"><a href="project/2015-02.html">项目页 →</a><a href="atom/2015-02.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2017-05.jpg" alt="天鲸号绞吸式挖泥船"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2017金6</span></div><h3>天鲸号绞吸式挖泥船</h3><div class="unit">中交天津航道局有限公司、上海交通大学、德国VOSTA LMG公司</div><div class="clinks"><a href="project/2017-05.html">项目页 →</a><a href="atom/2017-05.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2015-01.jpg" alt="“海洋石油981”3000米水深半潜式钻井平台"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2015金2</span></div><h3>“海洋石油981”3000米水深半潜式钻井平台</h3><div class="unit">中国海洋石油总公司、中船集团第 708 研究所、上海外高桥造船有限公司</div><div class="clinks"><a href="project/2015-01.html">项目页 →</a><a href="atom/2015-01.html">原子页 →</a></div></div></div></div></div><div class="booth"><div class="booth-h">工程装备</div><div class="cards"><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2016-00.jpg" alt="超大断面矩形顶管机"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2016金1</span></div><h3>超大断面矩形顶管机</h3><div class="unit">中铁工程装备集团有限公司</div><div class="clinks"><a href="project/2016-00.html">项目页 →</a><a href="atom/2016-00.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2020-00.jpg" alt="大直径全断面硬岩隧道掘进机"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2020金1</span></div><h3>大直径全断面硬岩隧道掘进机</h3><div class="unit">中铁工程装备集团有限公司</div><div class="clinks"><a href="project/2020-00.html">项目页 →</a><a href="atom/2020-00.html">原子页 →</a></div></div></div></div></div></section><section class="zone" id="life" style="--zc:#F5C400"><div class="zone-banner"><div class="zbg" style="background-image:url(cases/case-2025-03.jpg)"></div><div class="zb-in"><div class="z-left"><div class="z-eyebrow">GALLERY 02</div><div class="z-name">设计与生活</div><div class="z-slogan">好设计创造美好生活</div></div><div class="z-right"><span class="z-theme">人</span><span class="z-thumbs"><img src="cases/case-2025-03.jpg" alt="消化道早癌诊疗柔性手术机器人系统设计及应用" loading="lazy"><img src="cases/case-2015-05.jpg" alt="移动互联时代的智能出行新模式" loading="lazy"></span><span class="z-stat">3 展位 · 6 件展品</span></div></div></div><div class="z-domains-line">交通出行、轻工家电、公共设施、医疗保健大健康产品</div><div class="booth"><div class="booth-h">高端医疗</div><div class="cards"><div class="card"><div class="thumb thumb-empty"><span>影像待补</span></div><div class="cbody"><div class="crow"><span class="lv lv-银">银奖</span><span class="tag">2018银7</span></div><h3>微创外科手术机器人</h3><div class="unit">天津大学</div><div class="cnote">档案中名为「微创外科手术机器人」2018-s13，图注序号待人工核对</div><div class="clinks"><a href="project/2018-s13.html">项目页 →</a><a href="atom/2018-s13.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2025-03.jpg" alt="消化道早癌诊疗柔性手术机器人系统设计及应用"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2025金7</span></div><h3>消化道早癌诊疗柔性手术机器人系统设计及应用</h3><div class="unit">天津大学,北京柏惠维康科技股份有限公司,北京乐普智影科技股份有限公司</div><div class="clinks"><a href="project/2025-03.html">项目页 →</a><a href="atom/2025-03.html">原子页 →</a></div></div></div></div></div><div class="booth"><div class="booth-h">家用电器</div><div class="cards"><div class="card"><div class="thumb thumb-empty"><span>影像待补</span></div><div class="cbody"><div class="crow"><span class="lv lv-银">银奖</span><span class="tag">2015银</span></div><h3>海尔天樽与天铂空调</h3><div class="unit">深圳创新设计研究院、海尔集团</div><div class="clinks"><a href="project/2015-s19.html">项目页 →</a><a href="atom/2015-s19.html">原子页 →</a></div></div></div><div class="card"><div class="thumb thumb-empty"><span>影像待补</span></div><div class="cbody"><div class="crow"><span class="lv lv-银">银奖</span><span class="tag">2021银</span></div><h3>格力GMV6人工智能多联机</h3><div class="unit">珠海格力电器股份有限公司</div><div class="clinks"><a href="project/2021-s14.html">项目页 →</a><a href="atom/2021-s14.html">原子页 →</a></div></div></div><div class="card todo"><div class="todo-in">待补<div class="todo-n">美菱（待补） — 档案中未检索到美菱项目，待确认具体获奖项</div></div></div></div></div><div class="booth"><div class="booth-h">出行革命</div><div class="cards"><div class="card"><div class="thumb thumb-empty"><span>影像待补</span></div><div class="cbody"><div class="crow"><span class="lv lv-银">银奖</span><span class="tag">2015银</span></div><h3>公共自行车系统服务设计</h3><div class="unit">杭州市公共自行车交通服务发展有限公司</div><div class="clinks"><a href="project/2015-s02.html">项目页 →</a><a href="atom/2015-s02.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2015-05.jpg" alt="移动互联时代的智能出行新模式"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2015金6</span></div><h3>移动互联时代的智能出行新模式</h3><div class="unit">北京小桔科技有限公司、杭州快迪科技有限公司</div><div class="cnote">按档案名称对应，待人工核对</div><div class="clinks"><a href="project/2015-05.html">项目页 →</a><a href="atom/2015-05.html">原子页 →</a></div></div></div></div></div><div class="booth"><div class="booth-h">待补展位</div><div class="cards"><div class="card todo"><div class="todo-in">待补展位<div class="todo-n">原图留有空白行，展位待增补</div></div></div></div></div></section><section class="zone" id="society" style="--zc:#1F9D55"><div class="zone-banner"><div class="zbg" style="background-image:url(cases/case-2021-01.jpg)"></div><div class="zb-in"><div class="z-left"><div class="z-eyebrow">GALLERY 03</div><div class="z-name">设计与社会</div><div class="z-slogan">好设计实现可持续发展</div></div><div class="z-right"><span class="z-theme">环境</span><span class="z-thumbs"><img src="cases/case-2021-01.jpg" alt="白鹤滩1000MW水轮发电机组" loading="lazy"><img src="cases/case-2018-07.jpg" alt="核能汽轮发电机“华龙一号”" loading="lazy"><img src="cases/case-2020-04.jpg" alt="10MW海上风力发电机组" loading="lazy"><img src="cases/case-2021-03.jpg" alt="“翼型风帆助推”超大型原油船" loading="lazy"></span><span class="z-stat">2 展位 · 4 件展品</span></div></div></div><div class="z-domains-line">绿色能源、环保产品与材料、节能产品、低碳场景</div><div class="booth"><div class="booth-h">绿色能源</div><div class="cards"><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2021-01.jpg" alt="白鹤滩1000MW水轮发电机组"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2021/22金2</span></div><h3>白鹤滩1000MW水轮发电机组</h3><div class="unit">哈尔滨电机厂有限责任公司东方电气集团东方电机有限公司</div><div class="clinks"><a href="project/2021-01.html">项目页 →</a><a href="atom/2021-01.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2018-07.jpg" alt="核能汽轮发电机“华龙一号”"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2018金3</span></div><h3>核能汽轮发电机“华龙一号”</h3><div class="unit">东方电机集团东方电机有限公司</div><div class="clinks"><a href="project/2018-07.html">项目页 →</a><a href="atom/2018-07.html">原子页 →</a></div></div></div><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2020-04.jpg" alt="10MW海上风力发电机组"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2020金5</span></div><h3>10MW海上风力发电机组</h3><div class="unit">东方电气风电有限公司</div><div class="clinks"><a href="project/2020-04.html">项目页 →</a><a href="atom/2020-04.html">原子页 →</a></div></div></div></div></div><div class="booth"><div class="booth-h">节能环保</div><div class="cards"><div class="card"><div class="thumb"><img loading="lazy" src="cases/case-2021-03.jpg" alt="“翼型风帆助推”超大型原油船"></div><div class="cbody"><div class="crow"><span class="lv lv-金">金奖</span><span class="tag">2021金</span></div><h3>“翼型风帆助推”超大型原油船</h3><div class="unit">大连船舶重工集团有限公司中国船舶重工集团公司第七○二研究所</div><div class="clinks"><a href="project/2021-03.html">项目页 →</a><a href="atom/2021-03.html">原子页 →</a></div></div></div></div></div><div class="booth"><div class="booth-h">待补展位</div><div class="cards"><div class="card todo"><div class="todo-in">待补展位<div class="todo-n">原图留有空白行，展位待增补</div></div></div></div></div></section>
+</main>
+
+<footer>
+  <div class="inner">
+    <div>好设计馆 · 三大展区（依据 2026-08-19 分类框架 V1，数据 classify.json）</div>
+    <div>标注「待补/待核对」项见 docs/好设计馆分类框架-v1.md 待核对清单</div>
+  </div>
+</footer>
+
+<script src="copilot.js" defer></script>
+</body>
+</html>

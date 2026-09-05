@@ -1,0 +1,86 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "sha256": "0135716ca6943a7dbd12464f09a352eef568765532d9effaebc21d04536fea7f"
+  },
+  {
+    "path": "/laureates.html",
+    "status": 200,
+    "sha256": "3d6f1e804994285af942e255e1613fe54e801b7dea466b21d59b1e6171f33b28"
+  },
+  {
+    "path": "/project/2021-00.html",
+    "status": 200,
+    "sha256": "dd27a5a9862884d525e89600728da9a0f554a6abcf37a1b41486b1da9adfa45d"
+  },
+  {
+    "path": "/atom/2021-00.html",
+    "status": 200,
+    "sha256": "f010bdc3dc5094a492fde7848788b03ba6f4ce04bc79179cacaa3f42273ad578"
+  },
+  {
+    "path": "/learn.html",
+    "status": 200,
+    "sha256": "54d62d920216bcd552ddd27a9d89c20eae1baeda47e33f0071a0e70bac1f998a"
+  },
+  {
+    "path": "/teacher-workbench/",
+    "status": 200,
+    "sha256": "2ab6983ae4b0e0eacefbc7b458e85cb76b4bc6dfd3902bab6f0054434d6bb6f7"
+  },
+  {
+    "path": "/education-tools/",
+    "status": 200,
+    "sha256": "c7dab98f7f800cd47f7b7744d0324af7f6d32aa7820ca0be58f367ee28ddef26"
+  },
+  {
+    "path": "/education-tools/courseware/",
+    "status": 200,
+    "sha256": "0d69ab6c2c91aca61456022c1957b5cbd8c57835476cce0b80ae335ec85a9cf6"
+  },
+  {
+    "path": "/copilot.js",
+    "status": 200,
+    "sha256": "ba3123d9e7f8f5e685bf2882d0bd74d3888d26e65dddc4ca45cd0fe2954d8ab1"
+  },
+  {
+    "path": "/api/health",
+    "status": 200,
+    "sha256": "2474446c1d61bd364e73ce444e1b6c158163396f070ee4adbca9d3ae1f81eacc",
+    "body": {
+      "ok": true,
+      "llm": true,
+      "model": "mimo-v2.5",
+      "modelPro": "mimo-v2.5-pro",
+      "personas": [
+        "public",
+        "student",
+        "designer",
+        "enterprise"
+      ]
+    }
+  },
+  {
+    "path": "/.env",
+    "status": 404
+  },
+  {
+    "path": "/backstage/meeting-2026-08-04.html",
+    "status": 404
+  },
+  {
+    "path": "/server.js",
+    "status": 404
+  },
+  {
+    "path": "/api/chat",
+    "status": 200,
+    "body": "data: {\"text\":\"好\"}\n\ndata: {\"text\":\"设计不是单纯\"}\n\ndata: {\"text\":\"让\"}\n\ndata: {\"text\":\"产品更好看\"}\n\ndata: {\"text\":\"，而是通过\"}\n\ndata: {\"text\":\"创新设计将\"}\n\ndata: {\"text\":\"科技、工程\"}\n\ndata: {\"text\":\"、制造、\"}\n\ndata: {\"text\":\"用户需求、\"}\n\ndata: {\"text\":\"产业应用和社会\"}\n\ndata: {\"text\":\"价值整合为\"}\n\ndata: {\"text\":\"可落地的\"}\n\ndata: {\"text\":\"解决方案\"}\n\ndata: {\"text\":\"。\"}\n\ndata: {\"done\":true,\"refs\":[],\"source\":\"llm\",\"model\":\"mimo-v2.5\"}\n\n"
+  },
+  {
+    "path": "/api/inquiry",
+    "status": 400,
+    "body": "{\"error\":\"企业名称与问题描述为必填项\"}"
+  }
+]

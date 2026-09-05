@@ -1,0 +1,1098 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>好设计 K12 备课工作台</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F7F2E8;
+      --surface: #ffffff;
+      --surface-soft: #EFE7D5;
+      --surface-tint: rgba(255, 255, 255, 0.58);
+      --ink: #0E1218;
+      --muted: #5C6577;
+      --line: rgba(14, 18, 24, 0.16);
+      --line-soft: rgba(14, 18, 24, 0.10);
+      --deep: #0E1218;
+      --sea: #3D60BD;
+      --mint: #3E7A5A;
+      --coral: #C8472C;
+      --gold: #D4A858;
+      --blue: #2D4FAF;
+      --night-1: #0E1F4D;
+      --night-2: #1A3A7A;
+      --night-3: #2E1F4D;
+      --ok-bg: rgba(62, 122, 90, 0.12);
+      --ok-ink: #3E7A5A;
+      --warn-bg: rgba(212, 168, 88, 0.12);
+      --warn-ink: #7E5F18;
+      --serif: "Noto Serif SC", "Source Han Serif SC", serif;
+      --sans: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      --latin: "Cormorant Garamond", "Georgia", serif;
+      --mono: "JetBrains Mono", "SFMono-Regular", monospace;
+      --radius-card: 12px;
+      --radius-control: 8px;
+      --radius-pill: 99px;
+      --shadow-card: 0 8px 24px -10px rgba(14, 18, 24, 0.18);
+      --shadow-strong: 0 18px 50px -25px rgba(14, 18, 24, 0.25);
+      --ease: cubic-bezier(.4, 1, .6, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.75;
+      letter-spacing: .005em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button,
+    select,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    select:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid rgba(61, 96, 189, 0.24);
+      outline-offset: 2px;
+    }
+
+    .app {
+      min-height: 100vh;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 0 32px;
+      min-height: 60px;
+      background: rgba(247, 242, 232, 0.86);
+      border-bottom: 1px solid var(--line-soft);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      color: var(--ink);
+      font: 700 16px/1 var(--serif);
+      letter-spacing: .08em;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-control);
+      display: grid;
+      place-items: center;
+      background: var(--coral);
+      color: white;
+      flex: 0 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a,
+    .btn {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-pill);
+      padding: 0 13px;
+      background: rgba(255, 255, 255, 0.55);
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .btn.primary {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: white;
+    }
+
+    .hero .btn.primary {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .hero .btn:not(.primary) {
+      border-color: rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      backdrop-filter: blur(14px);
+    }
+
+    .btn.ghost {
+      background: transparent;
+    }
+
+    .nav a:hover,
+    .btn:hover {
+      border-color: var(--sea);
+      color: var(--ink);
+    }
+
+    .hero {
+      min-height: 58vh;
+      display: grid;
+      align-items: end;
+      padding: 8vh 6vw;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--night-1), var(--night-2) 46%, var(--blue) 100%);
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.46) saturate(0.92);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5, 11, 34, 0.88), rgba(14, 31, 77, 0.55) 58%, rgba(46, 31, 77, 0.12));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(1040px, 100%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      color: #E8C97C;
+      font: 600 14px/1 var(--sans);
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      color: white;
+      font: 500 clamp(42px, 6.4vw, 84px)/1.08 var(--serif);
+      letter-spacing: .03em;
+      text-wrap: balance;
+    }
+
+    h2 {
+      color: var(--ink);
+      font: 600 clamp(30px, 4vw, 54px)/1.16 var(--serif);
+      letter-spacing: .04em;
+      text-wrap: balance;
+    }
+
+    h3 {
+      color: var(--ink);
+      font: 600 22px/1.25 var(--serif);
+    }
+
+    .lead {
+      margin-top: 20px;
+      max-width: 880px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(17px, 1.7vw, 22px);
+      font-weight: 300;
+      line-height: 1.9;
+    }
+
+    .hero-actions,
+    .chips,
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .chip {
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: var(--radius-control);
+      padding: 5px 10px;
+      color: white;
+      background: rgba(255, 255, 255, 0.12);
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 64px 6vw;
+    }
+
+    .section.alt {
+      background: var(--surface-soft);
+    }
+
+    .section-inner {
+      width: min(1240px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--sea);
+      font: 600 13px/1 var(--sans);
+      letter-spacing: .08em;
+    }
+
+    .plain-lead {
+      margin-top: 16px;
+      max-width: 920px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.9;
+    }
+
+    .workbench-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.88fr) minmax(0, 1.12fr);
+      gap: 22px;
+      align-items: start;
+      margin-top: 30px;
+    }
+
+    .panel,
+    .card,
+    .output,
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+    }
+
+    .panel {
+      padding: 22px;
+      position: sticky;
+      top: 76px;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      color: var(--deep);
+      font-weight: 600;
+    }
+
+    select,
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-control);
+      background: var(--surface-tint);
+      color: var(--ink);
+      padding: 11px 12px;
+      line-height: 1.45;
+    }
+
+    textarea {
+      min-height: 92px;
+      resize: vertical;
+    }
+
+    .helper {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .case-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .case-card {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+      text-align: left;
+      border-top: 4px solid var(--sea);
+      transition: transform 160ms var(--ease), border-color 160ms var(--ease), box-shadow 160ms var(--ease);
+    }
+
+    .case-card:hover,
+    .case-card:focus-visible,
+    .case-card.selected {
+      border-color: var(--sea);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .case-card.selected {
+      background: var(--accent-soft);
+    }
+
+    .case-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .case-title {
+      color: var(--ink);
+      font: 600 21px/1.35 var(--serif);
+      letter-spacing: .03em;
+    }
+
+    .match {
+      flex: 0 0 auto;
+      border-radius: var(--radius-pill);
+      padding: 5px 9px;
+      background: var(--ok-bg);
+      color: var(--ok-ink);
+      font-size: 13px;
+      font-family: var(--mono);
+      font-weight: 500;
+    }
+
+    .case-desc {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-pill);
+      padding: 4px 9px;
+      background: var(--surface-tint);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .output {
+      overflow: hidden;
+    }
+
+    .output-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-tint);
+    }
+
+    .output-body {
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .lesson-title {
+      color: var(--ink);
+      font: 600 clamp(24px, 3vw, 38px)/1.2 var(--serif);
+      letter-spacing: .04em;
+    }
+
+    .output-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      padding: 18px;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--ink);
+      font: 600 18px/1.4 var(--serif);
+      letter-spacing: .03em;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.58;
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      background: var(--surface-tint);
+    }
+
+    .minute {
+      min-height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-control);
+      background: var(--ink);
+      color: white;
+      font-weight: 800;
+    }
+
+    .student-task {
+      border-left: 6px solid var(--gold);
+      background: var(--warn-bg);
+    }
+
+    .rubric-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      overflow: hidden;
+      border-radius: var(--radius-card);
+    }
+
+    .rubric-table th,
+    .rubric-table td {
+      border: 1px solid var(--line);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .rubric-table th {
+      color: white;
+      background: var(--ink);
+    }
+
+    .toast {
+      min-height: 36px;
+      margin-top: 12px;
+      color: var(--deep);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .source-note {
+      padding: 12px 6vw 30px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .workbench-grid,
+      .output-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        position: static;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .topbar,
+      .section {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .hero {
+        padding: 8vh 22px;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+
+      .case-head,
+      .output-head {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .hero,
+      .panel,
+      .case-list,
+      .action-row,
+      .source-note {
+        display: none;
+      }
+
+      .section {
+        padding: 0;
+      }
+
+      .workbench-grid {
+        display: block;
+      }
+
+      .output {
+        border: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">备</div>
+        <span>好设计 K12 备课工作台</span>
+      </div>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#builder">开始备课</a>
+        <a href="#cases">案例推荐</a>
+        <a href="#output">备课包</a>
+        <a href="../education-tools/courseware/">学生课件</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <img src="./assets/jiaolong-xinhua-2024.png" alt="蛟龙号载人潜水器">
+      <div class="hero-content">
+        <span class="eyebrow">教师工具 · 从好设计案例到课堂方案</span>
+        <h1>把好设计库变成可上课的备课包</h1>
+        <p class="lead">选择年级、学科、目标和课时，工作台会推荐适合的案例，并生成教案结构、课堂活动、学生任务单与评价量规。</p>
+        <div class="chips">
+          <span class="chip">年级适配</span>
+          <span class="chip">案例匹配</span>
+          <span class="chip">课堂流程</span>
+          <span class="chip">任务单</span>
+          <span class="chip">评价量规</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#builder">开始生成备课包</a>
+          <a class="btn" href="../education-tools/courseware/">查看学生端课件</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="builder">
+      <div class="section-inner">
+        <span class="section-kicker">备课生成器</span>
+        <h2>先从课堂需求出发</h2>
+        <p class="plain-lead">老师不用先翻案例库。先说明“我要给谁上、讲什么、要学生产出什么”，系统再反向匹配好设计案例。</p>
+
+        <div class="workbench-grid">
+          <aside class="panel">
+            <div class="form-grid">
+              <div class="field">
+                <label for="grade">年级</label>
+                <select id="grade">
+                  <option value="小学高段">小学高段</option>
+                  <option value="初一" selected>初一</option>
+                  <option value="初二">初二</option>
+                  <option value="初三">初三</option>
+                  <option value="高中">高中</option>
+                </select>
+                <div class="helper">不同年级会调整知识深度、提问方式和学生任务。</div>
+              </div>
+
+              <div class="field">
+                <label for="subject">学科 / 场景</label>
+                <select id="subject">
+                  <option value="科学" selected>科学</option>
+                  <option value="物理">物理</option>
+                  <option value="综合实践">综合实践</option>
+                  <option value="信息科技">信息科技</option>
+                  <option value="劳动教育">劳动教育</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="goal">本课目标</label>
+                <select id="goal">
+                  <option value="科学原理">理解科学原理</option>
+                  <option value="工程设计" selected>学习工程设计取舍</option>
+                  <option value="证据表达">训练证据表达</option>
+                  <option value="项目化学习">开展项目化学习</option>
+                  <option value="创新评价">学习五大构成评价</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="duration">课时长度</label>
+                <select id="duration">
+                  <option value="20">20分钟微课</option>
+                  <option value="45" selected>45分钟常规课</option>
+                  <option value="90">90分钟项目课</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="knowledge">重点知识点</label>
+                <select id="knowledge">
+                  <option value="压强与材料" selected>压强与材料</option>
+                  <option value="空气阻力与结构">空气阻力与结构</option>
+                  <option value="声波与通信">声波与通信</option>
+                  <option value="能源与低碳">能源与低碳</option>
+                  <option value="系统与控制">系统与控制</option>
+                  <option value="用户体验">用户体验</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="customNeed">补充需求</label>
+                <textarea id="customNeed" placeholder="例如：希望课堂更活跃；想让学生最后画草图；需要适合公开课展示。"></textarea>
+              </div>
+
+              <div class="action-row">
+                <button class="btn primary" type="button" id="generateBtn">生成备课包</button>
+                <button class="btn" type="button" id="copyBtn">复制教案</button>
+                <button class="btn" type="button" id="printBtn">打印</button>
+              </div>
+              <div class="toast" id="toast">选择条件后，右侧会实时生成备课方案。</div>
+            </div>
+          </aside>
+
+          <div id="cases">
+            <div class="case-list" id="caseList" aria-label="案例推荐"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="output">
+      <div class="section-inner">
+        <span class="section-kicker">自动生成结果</span>
+        <h2>课堂四件套</h2>
+        <p class="plain-lead">这里生成的是可继续编辑的第一版。教师可以直接复制到教案，也可以据此制作课件和学习单。</p>
+        <article class="output">
+          <div class="output-head">
+            <div>
+              <div class="lesson-title" id="lessonTitle">好设计里的科学：以蛟龙号为例</div>
+              <p class="helper" id="lessonMeta">初一 · 科学 · 45分钟</p>
+            </div>
+            <div class="action-row" style="margin-top:0;">
+              <button class="btn primary" type="button" id="saveBtn">保存配置</button>
+              <button class="btn" type="button" id="studentBtn">打开学生课件</button>
+            </div>
+          </div>
+          <div class="output-body" id="lessonOutput"></div>
+        </article>
+      </div>
+    </section>
+
+    <div class="source-note">
+      本工作台当前使用本项目已整理的好设计案例资料生成备课草案。涉及获奖届数、具体参数、完成单位等事实，应以已有档案或官方资料为准；课堂活动和教学建议属于教学设计方案。
+    </div>
+  </div>
+
+  <script>
+    const cases = [
+      {
+        id: "jiaolong",
+        name: "蛟龙号载人潜水器",
+        topic: "深海探测",
+        tags: ["压强与材料", "声波与通信", "系统与控制", "科学", "物理", "综合实践"],
+        grades: ["小学高段", "初一", "初二", "初三", "高中"],
+        summary: "把人安全送到7000米深海，适合讲深海压力、耐压结构、钛合金材料、水声通信和悬停控制。",
+        question: "如果要把3个人安全送到7000米深海，最先要解决什么问题？",
+        concepts: ["液体压强随深度增大", "材料强度与耐腐蚀", "声波在水中传递信息", "系统协同控制"],
+        task: "设计“蛟龙号2.0”：只改进一个系统，并说明科学依据。",
+        product: "深海装备设计说明 + 科学证据卡"
+      },
+      {
+        id: "crh380a",
+        name: "CRH380A 高速动车组",
+        topic: "轨道交通",
+        tags: ["空气阻力与结构", "系统与控制", "用户体验", "科学", "物理", "综合实践"],
+        grades: ["小学高段", "初一", "初二", "初三", "高中"],
+        summary: "从高铁头型和噪声控制切入，适合讲空气阻力、流线型、稳定性和乘坐体验。",
+        question: "高铁为什么要做成流线型头部？方头列车行不行？",
+        concepts: ["空气阻力", "流线型结构", "噪声控制", "速度与安全"],
+        task: "设计一种未来高速列车外形，说明它如何减少阻力或提高舒适性。",
+        product: "未来高铁草图 + 气动设计说明"
+      },
+      {
+        id: "fast",
+        name: "中国天眼 FAST",
+        topic: "天文装备",
+        tags: ["系统与控制", "声波与通信", "科学", "物理", "信息科技"],
+        grades: ["小学高段", "初二", "初三", "高中"],
+        summary: "从“一口大锅怎样接收宇宙信号”切入，适合讲信号、结构、精密控制和科学观测。",
+        question: "一口多大的“锅”，才能接收到遥远宇宙里的微弱信号？",
+        concepts: ["信号接收", "反射面结构", "精密定位", "科学观测"],
+        task: "设计校园里的“信号接收装置”，说明如何提高接收效果。",
+        product: "观测装置模型方案"
+      },
+      {
+        id: "ag600",
+        name: "AG600 鲲龙水陆两栖飞机",
+        topic: "应急救援",
+        tags: ["空气阻力与结构", "系统与控制", "用户体验", "科学", "综合实践", "劳动教育"],
+        grades: ["小学高段", "初一", "初二", "初三", "高中"],
+        summary: "从森林灭火和海上救援切入，适合讲浮力、飞行、水上起降、救援场景中的人本设计。",
+        question: "一架飞机怎样同时适合在空中飞、在水面起降，还能执行救援？",
+        concepts: ["浮力", "结构稳定", "应急救援", "场景适应"],
+        task: "设计一套校园或社区应急救援工具，说明使用场景。",
+        product: "救援工具方案 + 使用流程"
+      },
+      {
+        id: "baihetan",
+        name: "白鹤滩水轮发电机组",
+        topic: "能源装备",
+        tags: ["能源与低碳", "系统与控制", "科学", "物理", "综合实践"],
+        grades: ["初二", "初三", "高中"],
+        summary: "从水能转化为电能切入，适合讲能量转化、绿色低碳、大型工程系统和区域资源调配。",
+        question: "流动的水怎样变成稳定输送的电？",
+        concepts: ["能量转化", "水轮机", "清洁能源", "系统运行"],
+        task: "设计校园节能方案，说明能量如何被节约或转化。",
+        product: "校园能源改进提案"
+      },
+      {
+        id: "wechat",
+        name: "微信 APP",
+        topic: "数字生活",
+        tags: ["用户体验", "系统与控制", "信息科技", "综合实践"],
+        grades: ["初一", "初二", "初三", "高中"],
+        summary: "从不同年龄用户都能使用切入，适合讲信息系统、交互设计、用户需求和社会连接。",
+        question: "为什么一个应用能让不同年龄的人都愿意用、会使用？",
+        concepts: ["信息系统", "用户体验", "交互流程", "需求差异"],
+        task: "重新设计一个校园服务小程序，让同学和老师都容易使用。",
+        product: "校园应用流程图 + 界面草图"
+      }
+    ];
+
+    const gradeProfiles = {
+      "小学高段": {
+        depth: "故事感和观察优先，少讲公式，多用生活类比。",
+        output: "画图、口头表达、简单说明",
+        questionStyle: "你看到了什么？它为什么要这样做？"
+      },
+      "初一": {
+        depth: "建立科学概念，强调现象、证据和初步解释。",
+        output: "学习单、证据句、设计草图",
+        questionStyle: "你判断的依据是什么？这个设计解决了什么真实问题？"
+      },
+      "初二": {
+        depth: "增加变量关系、系统组成和简单因果分析。",
+        output: "实验记录、结构分析、改进说明",
+        questionStyle: "改变一个条件，会影响哪些结果？"
+      },
+      "初三": {
+        depth: "强调综合应用、工程取舍和方案论证。",
+        output: "方案报告、辩论陈述、评价表",
+        questionStyle: "这个方案的优势和代价分别是什么？"
+      },
+      "高中": {
+        depth: "进入系统工程、技术路线、五维张力和社会价值分析。",
+        output: "案例分析报告、项目方案、展示汇报",
+        questionStyle: "这个设计在哪些维度之间做了关键取舍？"
+      }
+    };
+
+    const form = {
+      grade: document.querySelector("#grade"),
+      subject: document.querySelector("#subject"),
+      goal: document.querySelector("#goal"),
+      duration: document.querySelector("#duration"),
+      knowledge: document.querySelector("#knowledge"),
+      customNeed: document.querySelector("#customNeed")
+    };
+    const caseList = document.querySelector("#caseList");
+    const lessonTitle = document.querySelector("#lessonTitle");
+    const lessonMeta = document.querySelector("#lessonMeta");
+    const lessonOutput = document.querySelector("#lessonOutput");
+    const toast = document.querySelector("#toast");
+    let selectedCaseId = "jiaolong";
+
+    function getConfig() {
+      return {
+        grade: form.grade.value,
+        subject: form.subject.value,
+        goal: form.goal.value,
+        duration: Number(form.duration.value),
+        knowledge: form.knowledge.value,
+        customNeed: form.customNeed.value.trim()
+      };
+    }
+
+    function scoreCase(item, config) {
+      let score = 0;
+      if (item.grades.includes(config.grade)) score += 35;
+      if (item.tags.includes(config.subject)) score += 25;
+      if (item.tags.includes(config.knowledge)) score += 35;
+      if (config.goal === "用户体验" && item.tags.includes("用户体验")) score += 12;
+      if (config.goal === "科学原理" && item.tags.includes(config.knowledge)) score += 10;
+      if (config.goal === "创新评价") score += 6;
+      return score;
+    }
+
+    function getRankedCases(config) {
+      return cases
+        .map(item => ({ ...item, score: scoreCase(item, config) }))
+        .sort((a, b) => b.score - a.score);
+    }
+
+    function renderCases() {
+      const config = getConfig();
+      const ranked = getRankedCases(config);
+      if (!ranked.some(item => item.id === selectedCaseId)) {
+        selectedCaseId = ranked[0].id;
+      }
+      caseList.innerHTML = "";
+      ranked.forEach(item => {
+        const button = document.createElement("button");
+        button.className = `case-card${item.id === selectedCaseId ? " selected" : ""}`;
+        button.type = "button";
+        button.innerHTML = `
+          <div class="case-head">
+            <div>
+              <div class="case-title">${item.name}</div>
+              <div class="helper">${item.topic}</div>
+            </div>
+            <span class="match">匹配 ${Math.min(99, item.score)}%</span>
+          </div>
+          <p class="case-desc">${item.summary}</p>
+          <div class="tag-row">${item.tags.slice(0, 5).map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+        `;
+        button.addEventListener("click", () => {
+          selectedCaseId = item.id;
+          renderAll("已切换推荐案例。");
+        });
+        caseList.appendChild(button);
+      });
+    }
+
+    function makeTimeline(duration) {
+      if (duration === 20) {
+        return [
+          ["3分", "情境导入：提出真实问题，学生快速猜想。"],
+          ["6分", "案例精讲：只讲一个核心科学原理。"],
+          ["5分", "证据判断：找出事实、解释和评价。"],
+          ["4分", "学生任务：写出一个改进想法。"],
+          ["2分", "总结：回到“真实问题 + 科学证据”。"]
+        ];
+      }
+      if (duration === 90) {
+        return [
+          ["10分", "情境导入：提出工程挑战，学生分组列出约束条件。"],
+          ["18分", "案例拆解：从科学原理、使用者、安全和系统协同展开。"],
+          ["15分", "实验或模拟：用可视化/活动单验证一个关键规律。"],
+          ["18分", "小组设计：形成改进方案，写出科学依据。"],
+          ["18分", "展示互评：用五大构成评价各组方案。"],
+          ["11分", "成果卡整理：形成可提交的设计说明。"]
+        ];
+      }
+      return [
+        ["5分", "情境导入：用一个真实工程问题激发学生猜想。"],
+        ["8分", "案例认识：区分档案事实、科学解释和价值评价。"],
+        ["12分", "科学拆解：讲清核心知识点与设计选择。"],
+        ["10分", "小组活动：用证据分析案例为什么这样设计。"],
+        ["7分", "展示交流：追问“依据是什么、有没有代价”。"],
+        ["3分", "总结迁移：生成一个自己的改进想法。"]
+      ];
+    }
+
+    function renderOutput() {
+      const config = getConfig();
+      const profile = gradeProfiles[config.grade];
+      const item = cases.find(candidate => candidate.id === selectedCaseId) || getRankedCases(config)[0];
+      const title = `${config.grade}${config.subject}：${item.name}中的${config.knowledge}`;
+      lessonTitle.textContent = title;
+      lessonMeta.textContent = `${config.grade} · ${config.subject} · ${config.duration}分钟 · 目标：${config.goal}`;
+      const timeline = makeTimeline(config.duration);
+      const concepts = item.concepts.map(text => `<li>${text}</li>`).join("");
+      const timelineHtml = timeline.map(([time, text]) => `<div class="step"><div class="minute">${time}</div><p>${text}</p></div>`).join("");
+      const custom = config.customNeed ? `<p>补充要求：${config.customNeed}</p>` : "<p>补充要求：暂无。建议根据班级基础调整提问难度。</p>";
+
+      lessonOutput.innerHTML = `
+        <div class="output-grid">
+          <section class="card">
+            <strong>一、案例精华</strong>
+            <p>${item.summary}</p>
+            <p style="margin-top:8px;">课堂主问题：${item.question}</p>
+          </section>
+          <section class="card">
+            <strong>二、年级适配</strong>
+            <p>${profile.depth}</p>
+            <p style="margin-top:8px;">推荐产出：${profile.output}</p>
+          </section>
+          <section class="card">
+            <strong>三、核心知识点</strong>
+            <ul>${concepts}</ul>
+          </section>
+          <section class="card">
+            <strong>四、课堂提问方式</strong>
+            <p>${profile.questionStyle}</p>
+            ${custom}
+          </section>
+        </div>
+
+        <section class="card">
+          <strong>五、课堂流程</strong>
+          <div class="timeline">${timelineHtml}</div>
+        </section>
+
+        <section class="card student-task">
+          <strong>六、学生任务单</strong>
+          <p>任务：${item.task}</p>
+          <p style="margin-top:8px;">填写句式：我发现的问题是____；我的改进方案是____；我的科学依据是因为____，所以____。</p>
+          <p style="margin-top:8px;">学生产出：${item.product}</p>
+        </section>
+
+        <section class="card">
+          <strong>七、评价量规</strong>
+          <table class="rubric-table">
+            <thead><tr><th>维度</th><th>达标表现</th><th>追问</th></tr></thead>
+            <tbody>
+              <tr><td>科学证据</td><td>能说出至少一条与${config.knowledge}相关的依据。</td><td>你的依据是事实、实验观察，还是个人感觉？</td></tr>
+              <tr><td>真实问题</td><td>能说明设计解决了谁的什么困难。</td><td>如果没有这个设计，会发生什么？</td></tr>
+              <tr><td>工程取舍</td><td>能指出方案的优点和可能代价。</td><td>这个改进会不会带来重量、成本或安全问题？</td></tr>
+              <tr><td>表达呈现</td><td>能用草图、表格或短文清楚说明方案。</td><td>别人看完能不能照着复述你的想法？</td></tr>
+            </tbody>
+          </table>
+        </section>
+      `;
+    }
+
+    function renderAll(message) {
+      renderCases();
+      renderOutput();
+      toast.textContent = message || "已根据当前条件生成备课包。";
+    }
+
+    function saveConfig() {
+      localStorage.setItem("goodDesignTeacherWorkbench", JSON.stringify(getConfig()));
+      toast.textContent = "已保存当前备课配置到本机浏览器。";
+    }
+
+    function loadConfig() {
+      const raw = localStorage.getItem("goodDesignTeacherWorkbench");
+      if (!raw) return;
+      try {
+        const data = JSON.parse(raw);
+        Object.keys(form).forEach(key => {
+          if (data[key] !== undefined) form[key].value = data[key];
+        });
+        toast.textContent = "已读取上次保存的备课配置。";
+      } catch {
+        toast.textContent = "上次配置读取失败，可以重新选择。";
+      }
+    }
+
+    function getPlainText() {
+      return lessonOutput.innerText.replace(/\n{3,}/g, "\n\n");
+    }
+
+    document.querySelector("#generateBtn").addEventListener("click", () => renderAll("已重新生成备课包。"));
+    document.querySelector("#saveBtn").addEventListener("click", saveConfig);
+    document.querySelector("#printBtn").addEventListener("click", () => window.print());
+    document.querySelector("#studentBtn").addEventListener("click", () => {
+      window.location.href = "../education-tools/courseware/";
+    });
+    document.querySelector("#copyBtn").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(`${lessonTitle.textContent}\n${lessonMeta.textContent}\n\n${getPlainText()}`);
+        toast.textContent = "已复制教案内容。";
+      } catch {
+        toast.textContent = "浏览器不允许自动复制，请选中备课包内容手动复制。";
+      }
+    });
+    Object.values(form).forEach(input => {
+      input.addEventListener("input", () => renderAll("已根据新条件更新备课包。"));
+      input.addEventListener("change", () => renderAll("已根据新条件更新备课包。"));
+    });
+
+    loadConfig();
+    renderAll("工作台已就绪。");
+  </script>
+</body>
+</html>

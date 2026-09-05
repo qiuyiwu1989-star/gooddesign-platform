@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>多平台柔性自动焊接系统 · 2020银奖 · 好设计</title>
+<meta name="description" content="随着汽车工业及汽车装备制造业的深入发展，智能、柔性、高效、高精、自动化已成为汽车装备业发展的主流方向，对多车型柔性生产的需求日益提高。但车身焊装的核心技术一直掌握在国外公司手里，车身主焊线特别是合资公司的柔性总拼一直被外国公司垄断，研发具有">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2020">← 返回 2020 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2020 · 第六届</span></div>
+  <h1>多平台柔性自动焊接系统</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">东风设计研究院有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">吴正华,王林朋,周斌,周宇</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202001146</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>随着汽车工业及汽车装备制造业的深入发展，智能、柔性、高效、高精、自动化已成为汽车装备业发展的主流方向，对多车型柔性生产的需求日益提高。但车身焊装的核心技术一直掌握在国外公司手里，车身主焊线特别是合资公司的柔性总拼一直被外国公司垄断，研发具有自主知识产权的柔性总拼系统既迫切又必要。多平台柔性焊装生产线在中国当前这个大环境下必然会大力发展。</p><p>该项目是由东风设计研究院自主研发并具有完整的自主知识产权，能够随机切换两个平台6种以上车型的智能柔性焊装系统。可满足B/C两个级别的中高端车型生产，根据客户不同需求可满足年产10~20万辆智能混流生产能力，自动化率可达100%。</p><p>该系统采用新型地板定位单元自动切换装置实现双平台下车体总成定位，机器人自动抓取对应抓手式柔性夹具同时完成上件和工件定位夹紧，通过发明的型面定位锁紧装置对合拼后的抓手夹具定位锁紧，完成车身合拼。工位间输送采用自主研发的往复高速滚床。另外，在设计阶段采用仿真模拟、虚拟制造技术和离线编程技术，保证工艺装备先进和装备性能可靠。在整个系统的自主研发过程中，我们共获得授权发明专利1项和实用性专利5项，另外4项实用新型专利和3项发明专利已受理。</p><p>目前该项目已经在江铃福特和南京依维柯合资公司成功得到应用。其中江铃福特项目于2016年3月份完成终验收，从2014年8月到2017年底生产线总计已经完成福特撼路者、江铃驭胜、江铃域虎等合格白车身共计176000台的生产任务，实现利润总额4.9亿元。南京依维柯项目于2017年12月份完成终验收，从2017年3月到2018年2月生产线共计销售14565辆汽车，实现销售收入13.8854亿元，新增利润3558万元，累计上交国家税收1.5531亿元。</p><p>作为全国范围内先进的柔性车身总拼生产线，这条线是第一条国内设计院自主设计总包的合资乘用车生产线，此项目的建成带动了同行业兄弟厂家的发展，使之在生产、管理水平得到同步提高，通过采用国内自主开发设计的设备和利用先进的抓手合拼技术，使国内焊装生产线技术走上了一个新台阶，取得了良好的社会效益。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>新型车身成型结构</div></div></div><p>国外的抓手式总拼工位是通过快速插接模块来实现侧围抓手和下车体夹具间的定位锁紧。缺点是：1）由于对快速插接接头的精度要求太高，要保证XYZ三个方向定位精度难度很大。在设计，加工、检测和调试三个环节不能出现任何问题，否则整个抓手需要重新制作；2）合拼后框架整体锁紧力较单一，针对较大车身尺寸稳定性不好；3）快速插接接头经过反复工作，容易磨损，夹具使用寿命短；4）调试工期长和后期维护困难。</p><p>针对这些缺点，我们基于车身定位理论和力学结构原理，发明了型面定位锁紧装置，定位采用型面定位，快速插接接头仅需起到连接作用（如图4）。相比国外同类技术，型面定位具有以下有优点：1）重复精度高；2）型面定位，更便于调试；3）合拼后框架整体锁紧力均衡，能很好的适应车身较大的应用场景；4）相对于快速插接接头，型面定位装置更耐磨，提高了抓手的寿命和降低了维修成本；5）新车型导入的周期短。该技术已获得国家发明专利：ZL201410483284.4（用于柔性车身焊装线抓手夹具总成的快速定位夹紧系统）。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>总拼夹具模块化</div></div></div><p>由于不同级别车型对精度及生产标准要求不同，传统汽车总拼线只能生产同级别车型。如要更新换代一种高级别的新品种车型，需要重新投资新的焊装线，造成了一定浪费。针对这一问题，我们将一体化抓手夹具进行模块化设计，实现了不同车身冲压件精度的B级车和C级车的混流生产。同时可以将总拼工位拆分成2个工位，以满足不同生产纲领的需求。该技术已申报国家发明专利并通过初审：ZL201810194172.5（车身总拼焊接夹具模块化结构）。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>抓手和夹具的一体化设计创新</div></div></div><p>为了解决无预装结构车身总拼难点和减轻工人的劳动强度、提高工位自动化率，依据结构强度基础理论，运用数字化设计和虚拟仿真技术，克服了夹具重量和强度问题，以及焊钳可达性问题，将上件和定位夹紧进行一体化设计，实现机器人自动取件和工件定位夹紧同时完成。该技术已申报国家发明专利并通过初审：ZL201810194488.4（一种多车型混流生产方法即一体化抓手夹具装置），并获得了2项实用新型专利：ZL201721268819.1（一体化抓手夹具装置）、ZL201721351704.9（一种带有模块化传输系统车身焊装生产线）。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>新型地板定位单元自动切换装置</div></div></div><p>新型地板定位单元自动切换装置，利用气缸驱动翻转机构来对车身地板定位销进行切换实现双平台地板定位。相较于风车定位或NC定位机构来说，结构简单、定位稳定、造价低。该技术已获得实用新型专利：ZL 201721270277.1（）</p><div class="p-list"><div class="p-li"><span class="p-mk">5</span><div>传送系统的模块化创新</div></div></div><p>根据通用往复杆的工作原理和高速滚床特点，自主研发了工位间往复高速滚床（如图6）。其输送的动作顺序为上升—前进—下降—返回，相较于传统的滚床输送设备，实现滑撬只用在主焊线内循环，不用布置更多的滚床设备来实现滑撬循环，每个滑撬只用匹配本工位和下一工位的下车体定位夹具，降低了一次性投资资金和调试难度。通过变频电机驱动滚床的上升下降和水平输送，其输送速度最高可达1米/秒；高速滚床升降部分采用链条传动，传动力矩大。输送部分采用同步齿形带传动，传动位置准确；滑撬到位后由齿轮夹紧机构到位夹紧，其对随行夹具的重复定位精度可达±1mm，到位精度高；通过不同的组合可满足年产10~30万辆的焊装线。该技术已获得5项实用新型专利，分别为：ZL201420479864.1（滑撬输送自动返回式设备）、ZL 201420479865.6（滑撬定位装置）、ZL 201320589497.6（同步举升机构）、ZL 201521032896.8（一种滚床维修用安全顶升装置）、ZL 201721351704.9（一种带有模块化传输系统车身焊装生产线）。</p><p>国外各大焊装线集成商经过多年不断努力，均已经形成各自典型的总拼形式。通过与国外主流总拼结构形式进行比较，该系统主要技术参数与国外同类产品相当，部分性能领先于国外产品，价格为他们的60~70%，具有很强的竞争力。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2020%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%A4%9A%E5%B9%B3%E5%8F%B0%E6%9F%94%E6%80%A7%E8%87%AA%E5%8A%A8%E7%84%8A%E6%8E%A5%E7%B3%BB%E7%BB%9F%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%A4%9A%E5%B9%B3%E5%8F%B0%E6%9F%94%E6%80%A7%E8%87%AA%E5%8A%A8%E7%84%8A%E6%8E%A5%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「多平台柔性自动焊接系统」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%A4%9A%E5%B9%B3%E5%8F%B0%E6%9F%94%E6%80%A7%E8%87%AA%E5%8A%A8%E7%84%8A%E6%8E%A5%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「多平台柔性自动焊接系统」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2020-s11.html"><span class="d">← 上一项</span>大型露天矿自移式排岩成套装备</a>
+    <a class="next" href="2020-s13.html"><span class="d">下一项 →</span>21万吨纽卡斯尔最大型散货船研发建造</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

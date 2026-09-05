@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>产业 · 带着问题来，带着方案走 · 好设计馆</title>
+<meta name="description" content="好设计馆产业频道：十年 560 项获奖成果是可迁移的技术与方法库。技术迁移分析、设计诊断、区域产业赋能——带问题来，带方案走。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--night-0:#050B22;--night-1:#0E1F4D;--night-2:#1A3A7A;
+--blue:#2D4FAF;--blue-2:#5984D6;--blue-soft:#8FAAD5;
+--paper:#F7F2E8;--paper-2:#EFE7D5;--paper-3:#E4DBC1;
+--ink:#0E1218;--ink-soft:#2A3142;--ink-mute:#5C6577;
+--line-soft:rgba(14,18,24,.10);--line:rgba(14,18,24,.16);
+--accent:#3D60BD;--accent-deep:#1E3A7A;
+--gold:#D4A858;--gold-light:#E8C97C;--gold-deep:#7E5F18;
+--serif:'Noto Serif SC','Source Han Serif SC',serif;
+--sans:'Noto Sans SC','Source Han Sans SC','PingFang SC','Inter',sans-serif;
+--latin:'Cormorant Garamond','Georgia',serif;
+--mono:'JetBrains Mono','SFMono-Regular',monospace;
+--r-md:8px;--r-lg:12px;--r-pill:99px;
+--sh-1:0 4px 12px -4px rgba(14,18,24,.12);--sh-2:0 8px 24px -10px rgba(14,18,24,.18);
+--sh-3:0 18px 50px -25px rgba(14,18,24,.25);
+--t-fast:150ms;--t-base:250ms;--ease:cubic-bezier(.4,1,.6,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:var(--gold);color:var(--ink)}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.75;letter-spacing:.005em;-webkit-font-smoothing:antialiased}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:0 32px;height:60px;
+background:rgba(247,242,232,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);line-height:1}
+.brand .mark-img{width:30px;height:30px;display:block;border-radius:8px;box-shadow:var(--sh-1)}
+.brand .bt{display:block;font:700 16px/1.15 var(--serif);letter-spacing:.1em}
+.brand .en{display:block;font:italic 500 9px/1.2 var(--latin);letter-spacing:1.4px;color:var(--ink-mute);margin-top:2px;white-space:nowrap}
+nav .links{margin-left:auto;display:flex;gap:4px}
+nav .links a{text-decoration:none;font-size:13px;color:var(--ink-mute);padding:7px 14px;border-radius:var(--r-pill);transition:all var(--t-fast) var(--ease)}
+nav .links a:hover{color:var(--ink);background:var(--paper-2)}
+nav .links a.act{color:#fff;background:var(--ink)}
+
+.page-hero{position:relative;overflow:hidden;color:#fff;
+background:linear-gradient(180deg,var(--night-1) 0%,var(--night-2) 34%,var(--blue) 68%,var(--blue-2) 100%)}
+.page-hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+background:radial-gradient(ellipse 46% 40% at 82% 14%,rgba(212,168,88,.20),transparent 70%)}
+.page-hero .inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:96px 32px 64px}
+.ph-kicker{display:inline-flex;align-items:center;gap:10px;font:400 11px/1 var(--mono);letter-spacing:3px;color:var(--gold-light);margin-bottom:22px}
+.ph-kicker::before{content:"";width:34px;height:1px;background:var(--gold)}
+.page-hero h1{font:500 clamp(38px,5.2vw,64px)/1.2 var(--serif);letter-spacing:.04em}
+.page-hero h1 .dot{color:var(--gold)}
+.ph-en{margin-top:14px;font:italic 500 12px/1.7 var(--latin);letter-spacing:3px;color:var(--blue-soft)}
+.ph-sub{margin-top:22px;font-size:14.5px;font-weight:300;color:rgba(255,255,255,.85);line-height:2;max-width:52em}
+.ph-sub b{color:var(--gold-light);font-weight:500}
+.ph-stats{margin-top:34px;display:flex;gap:36px;flex-wrap:wrap}
+.ph-stats .st .num{font:500 30px/1 var(--latin);color:#fff}
+.ph-stats .st .num i{font-style:normal;color:var(--gold)}
+.ph-stats .st .lab{margin-top:6px;font:400 10.5px/1 var(--mono);letter-spacing:2px;color:var(--blue-soft)}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.sec{margin-top:80px}
+.sec-h{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line-soft);padding-bottom:14px;margin-bottom:8px}
+.sec-h .no{font:400 12px/1 var(--mono);letter-spacing:2px;color:var(--gold-deep)}
+.sec-h h2{font:600 clamp(24px,3vw,32px)/1.3 var(--serif);letter-spacing:.05em}
+.sec-h .hint{margin-left:auto;font:400 11px/1.7 var(--mono);color:var(--ink-mute);letter-spacing:1px}
+.sec-desc{font-size:14px;color:var(--ink-mute);max-width:56em;padding:12px 0 6px}
+.sec-desc b{color:var(--ink-soft);font-weight:500}
+
+/* 01 迁移样板链 */
+.chain{display:grid;grid-template-columns:1fr 56px 1fr 56px 1fr;gap:0;align-items:stretch;margin-top:26px}
+.chain .node{border:1px solid var(--line-soft);border-radius:var(--r-lg);background:#fff;padding:22px 24px;box-shadow:var(--sh-1)}
+.chain .node .role{font:400 10.5px/1 var(--mono);letter-spacing:2px;color:var(--ink-mute);margin-bottom:10px}
+.chain .node.hot{border-color:rgba(212,168,88,.55);background:linear-gradient(180deg,rgba(212,168,88,.10),transparent 70%)}
+.chain .node.hot .role{color:var(--gold-deep)}
+.chain .node h3{font:600 17px/1.5 var(--serif);letter-spacing:.02em}
+.chain .node p{font-size:12.5px;color:var(--ink-mute);margin-top:8px;line-height:1.8}
+.chain .arr{display:grid;place-items:center;color:var(--gold-deep);font-size:20px;position:relative}
+.chain .arr span{position:absolute;bottom:calc(50% + 12px);left:50%;transform:translateX(-50%);
+font:400 9.5px/1 var(--mono);letter-spacing:1px;color:var(--gold-deep);white-space:nowrap}
+.chain-note{margin-top:16px;font:400 11px/1.8 var(--mono);color:var(--ink-mute);letter-spacing:1px}
+
+/* 02 服务菜单 */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:26px}
+.mcard{border:1px solid var(--line-soft);border-radius:var(--r-lg);background:#fff;padding:24px 26px;
+display:flex;flex-direction:column;transition:all var(--t-base) var(--ease)}
+.mcard:hover{transform:translateY(-3px);box-shadow:var(--sh-2);border-color:var(--line)}
+.mcard .st{align-self:flex-start;font:400 10px/1 var(--mono);letter-spacing:1.5px;padding:5px 11px;border-radius:var(--r-pill);
+background:rgba(61,96,189,.10);color:var(--accent);margin-bottom:14px}
+.mcard .st.build{background:rgba(212,168,88,.16);color:var(--gold-deep)}
+.mcard .st.mech{background:var(--paper-2);color:var(--ink-mute)}
+.mcard h3{font:600 16.5px/1.5 var(--serif);letter-spacing:.02em}
+.mcard p{font-size:12.5px;color:var(--ink-mute);margin-top:8px;line-height:1.8;flex:1}
+.mcard .who{margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);font:400 10.5px/1.7 var(--mono);color:var(--ink-mute);letter-spacing:.5px}
+.mcard .who b{color:var(--accent);font-weight:500}
+
+/* 03 机制 */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:26px}
+.step{border:1px solid var(--line-soft);border-radius:var(--r-lg);background:#fff;padding:20px 22px;position:relative}
+.step .n{font:italic 500 26px/1 var(--latin);color:var(--gold)}
+.step b{display:block;font:600 15.5px/1.4 var(--serif);margin:10px 0 6px;letter-spacing:.03em}
+.step span{font-size:12px;color:var(--ink-mute);line-height:1.8}
+.trust{margin-top:22px;border-left:3px solid var(--gold);background:var(--paper-2);border-radius:0 var(--r-md) var(--r-md) 0;
+padding:14px 20px;font-size:12.5px;color:var(--ink-soft);line-height:1.9}
+.trust b{color:var(--gold-deep)}
+
+/* 04 技术库 */
+.lib{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:26px}
+.xcard{border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden;background:#fff;
+display:flex;flex-direction:column;transition:all var(--t-base) var(--ease)}
+.xcard:hover{transform:translateY(-3px);box-shadow:var(--sh-2);border-color:var(--line)}
+.xcard .thumb{aspect-ratio:16/9;overflow:hidden;background:var(--paper-2)}
+.xcard .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms var(--ease)}
+.xcard:hover .thumb img{transform:scale(1.04)}
+.xbody{padding:18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.xbody .lv{align-self:flex-start;font:400 10.5px/1 var(--mono);padding:4px 10px;border-radius:var(--r-pill);background:rgba(212,168,88,.18);color:var(--gold-deep)}
+.xbody h3{font:600 15.5px/1.55 var(--serif);letter-spacing:.02em}
+.xbody .unit{font-size:11.5px;color:var(--ink-mute)}
+.xbody .ask{margin-top:auto;padding-top:12px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.xbody .ask a{font-size:12.5px;color:var(--accent);text-decoration:none;font-weight:500}
+.xbody .ask a:hover{text-decoration:underline}
+.lib-more{margin-top:20px;text-align:center}
+.lib-more a{display:inline-block;text-decoration:none;font-size:13px;font-weight:500;color:var(--accent);
+border:1.5px solid var(--accent);border-radius:var(--r-pill);padding:10px 26px;transition:all var(--t-fast) var(--ease)}
+.lib-more a:hover{background:var(--accent);color:#fff}
+
+/* 05 提交问题 */
+.inq{margin-top:26px;border:1px solid var(--line-soft);border-radius:var(--r-lg);background:#fff;padding:28px 30px;box-shadow:var(--sh-1)}
+.inq .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.inq label{display:block;font:400 11px/1 var(--mono);letter-spacing:1.5px;color:var(--ink-mute);margin:18px 0 8px}
+.inq input,.inq textarea{width:100%;border:1px solid var(--line-soft);border-radius:var(--r-md);background:var(--paper);
+padding:11px 14px;font:400 14px/1.6 var(--sans);color:var(--ink);outline:none;transition:border-color 150ms var(--ease)}
+.inq input:focus,.inq textarea:focus{border-color:var(--accent)}
+.inq textarea{min-height:110px;resize:vertical}
+.inq .chips{display:flex;flex-wrap:wrap;gap:8px}
+.inq .chips button{border:1px solid var(--line-soft);background:transparent;color:var(--ink-soft);border-radius:var(--r-pill);
+padding:7px 15px;font:400 12.5px/1 var(--sans);cursor:pointer;transition:all 150ms var(--ease)}
+.inq .chips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.inq .foot{margin-top:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.inq .privacy{font:400 10.5px/1.8 var(--mono);color:var(--ink-mute);letter-spacing:.5px}
+.inq .err{font:400 11.5px/1.8 var(--mono);color:#a6472f}
+.ibtn{display:inline-flex;align-items:center;text-decoration:none;cursor:pointer;border:0;
+font:500 13px/1 var(--sans);padding:12px 24px;border-radius:var(--r-pill);transition:all 150ms var(--ease)}
+.ibtn-gold{background:var(--gold);color:var(--ink)}
+.ibtn-gold:hover{background:#c29a4a}
+.ibtn-ghost{border:1.5px solid var(--accent);color:var(--accent);background:transparent}
+.ibtn-ghost:hover{background:var(--accent);color:#fff}
+.ibtn[disabled]{opacity:.5;cursor:default}
+.inq-ok{border:1px solid rgba(212,168,88,.55);background:linear-gradient(180deg,rgba(212,168,88,.10),transparent 75%);
+border-radius:var(--r-lg);padding:26px 30px;margin-top:26px}
+.inq-ok .t{font:600 17px/1.5 var(--serif)}
+.inq-ok .rid{font:400 11.5px/1 var(--mono);color:var(--gold-deep);letter-spacing:1px;margin-top:8px}
+.inq-ok p{font-size:13px;color:var(--ink-mute);margin-top:10px;line-height:1.8}
+.inq-ok .acts{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* 05 CTA */
+.cta{margin-top:80px;position:relative;overflow:hidden;border-radius:var(--r-lg);color:#fff;
+background:linear-gradient(120deg,var(--night-1) 0%,var(--night-2) 55%,var(--accent-deep) 100%);box-shadow:var(--sh-3)}
+.cta::after{content:"";position:absolute;inset:0;pointer-events:none;
+background:radial-gradient(ellipse 40% 55% at 88% 30%,rgba(212,168,88,.22),transparent 70%)}
+.cta-in{position:relative;z-index:1;display:flex;gap:40px;align-items:center;padding:48px 56px}
+.cta-mascot{flex:none;width:150px;filter:drop-shadow(0 12px 24px rgba(5,11,34,.5))}
+.cta .t{font:600 clamp(22px,2.6vw,30px)/1.4 var(--serif);letter-spacing:.04em}
+.cta .t .dot{color:var(--gold)}
+.cta p{margin-top:10px;font-size:13.5px;font-weight:300;color:rgba(255,255,255,.82);line-height:1.9;max-width:44em}
+.cta .qs{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+.cta .qs a{font-size:12.5px;color:var(--gold-light);text-decoration:none;border:1px solid rgba(212,168,88,.45);
+border-radius:var(--r-pill);padding:8px 16px;transition:all var(--t-fast) var(--ease)}
+.cta .qs a:hover{background:rgba(212,168,88,.15);border-color:var(--gold)}
+.cta .note2{margin-top:18px;font:400 10.5px/1.8 var(--mono);letter-spacing:1px;color:var(--blue-soft)}
+
+footer{margin-top:80px;border-top:1px solid var(--line-soft)}
+footer .inner{max-width:1240px;margin:0 auto;padding:30px 32px;display:flex;justify-content:space-between;
+flex-wrap:wrap;gap:12px;font:400 11px/1.9 var(--mono);letter-spacing:1px;color:var(--ink-mute)}
+
+@media(max-width:960px){
+.menu,.lib{grid-template-columns:repeat(2,1fr)}
+.flow{grid-template-columns:repeat(2,1fr)}
+.chain{grid-template-columns:1fr}
+.chain .arr{height:44px}
+.chain .arr span{bottom:auto;left:calc(50% + 18px);transform:none}
+}
+@media(max-width:640px){
+nav .links a{padding:7px 9px;font-size:12px}
+.page-hero .inner{padding:64px 24px 48px}
+.wrap{padding:0 20px}
+.menu,.lib,.flow{grid-template-columns:1fr}
+.inq .frow{grid-template-columns:1fr}
+.cta-in{flex-direction:column;text-align:center;padding:40px 24px}
+.cta .qs{justify-content:center}
+.ph-stats{gap:22px}
+}
+</style>
+<link rel="stylesheet" href="gd-ds.css">
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html"><img class="mark-img" src="assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="index.html">好设计馆</a>
+    <a href="award.html">奖项</a>
+    <a href="laureates.html">数据库</a>
+    <a href="connect.html" class="act">产业</a>
+    <a href="learn.html">教育</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="inner">
+    <span class="ph-kicker">CONNECT · 好设计与产业</span>
+    <h1>带着问题来，带着方案走<span class="dot">。</span></h1>
+    <div class="ph-en">From Award-Winning Design to Industry Innovation</div>
+    <p class="ph-sub">十年 560 项获奖成果不是展墙，是<b>可迁移的技术与方法库</b>。企业带着真实问题来——产品升级、技术瓶颈、品牌表达——平台用「好设计助手」做技术迁移分析，从获奖案例中匹配解决路径，再组织获奖团队与评审专家协同落地。</p>
+    <div class="ph-stats">
+      <div class="st"><div class="num">560</div><div class="lab">获奖项目档案</div></div>
+      <div class="st"><div class="num">98</div><div class="lab">金奖项目</div></div>
+      <div class="st"><div class="num">4<i>+</i></div><div class="lab">重大装备领域</div></div>
+      <div class="st"><div class="num">2<i>级</i></div><div class="lab">已验证 / AI 推断标注</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 01 迁移样板 -->
+  <section class="sec">
+    <div class="sec-h"><span class="no">01</span><h2>一个样板，看懂「技术迁移」</h2><span class="hint">平台演示样板</span></div>
+    <p class="sec-desc">获奖案例不是只能被展示，也可以成为新产品的创新起点。迁移的关键一步是<b>抽象</b>——把具体场景里的技术，还原成可携带的原理，再应用到新问题里：</p>
+    <div class="chain">
+      <div class="node">
+        <div class="role">企业问题 · 小家电</div>
+        <h3>破壁机内壁难清洗、噪音大</h3>
+        <p>企业提出升级目标：让食物残渣不粘附、易冲洗，同时降低工作噪音。</p>
+      </div>
+      <div class="arr"><span>案例匹配</span>→</div>
+      <div class="node">
+        <div class="role">获奖技术 · 航空航天</div>
+        <h3>仿生微纳结构防冰减阻蒙皮</h3>
+        <p>获奖项目中的表面工程技术：用仿生微纳结构控制冰、水、气流在界面上的行为。</p>
+      </div>
+      <div class="arr"><span>原理抽象</span>→</div>
+      <div class="node hot">
+        <div class="role">迁移输出 · 新产品方案</div>
+        <h3>仿生易洁低噪破壁机</h3>
+        <p>「防冰」抽象为「界面控制」——同一原理控制食物残渣与噪音振动，形成可向企业汇报的产品方案。</p>
+      </div>
+    </div>
+    <p class="chain-note">※ 本链路为平台演示样板：展示「行业输入 → 案例匹配 → 原理迁移 → 方案输出」的工作方式。具体项目的技术细节与可迁移性，以获奖团队与专家校准为准。</p>
+  </section>
+
+  <!-- 02 服务菜单 -->
+  <section class="sec">
+    <div class="sec-h"><span class="no">02</span><h2>产业服务菜单</h2><span class="hint">按成熟度分级标注</span></div>
+    <div class="menu">
+      <div class="mcard">
+        <span class="st">已上线 · AI</span>
+        <h3>技术迁移分析</h3>
+        <p>描述你的技术难题，「好设计助手」（企业身份 + 深度推理模式）从 560 项获奖项目中匹配可迁移的技术路径，给出初步对接建议。</p>
+        <div class="who">适合：<b>制造企业研发 / 设计团队</b></div>
+      </div>
+      <div class="mcard">
+        <span class="st">已上线 · AI</span>
+        <h3>迁移分析报告卡</h3>
+        <p>结构化迁移报告：问题定义、匹配的获奖技术、迁移路径、约束与风险、对接建议——可打印、可留档，作为双方深入对接的共同底稿。</p>
+        <div class="who">入口：<b>下方「提交你的技术问题」</b></div>
+      </div>
+      <div class="mcard">
+        <span class="st mech">机制服务</span>
+        <h3>设计诊断与协同设计</h3>
+        <p>企业提出需求 → 平台组织诊断 → 获奖团队与评审专家协同设计 → 成果转化落地。覆盖产品诊断、概念设计、工业设计、品牌设计。</p>
+        <div class="who">适合：<b>寻求专家协同的企业</b></div>
+      </div>
+      <div class="mcard">
+        <span class="st mech">机制服务</span>
+        <h3>培训与供需对接</h3>
+        <p>设计专题培训、供需对接会、成果路演——让好设计的理念与方法进入企业研发、生产和市场全过程。</p>
+        <div class="who">适合：<b>企业与产业组织</b></div>
+      </div>
+      <div class="mcard">
+        <span class="st mech">机制服务</span>
+        <h3>区域产业赋能</h3>
+        <p>面向地方政府与园区：把获奖案例与区域产业集群需求匹配，找到本地企业可对接的技术方向，组织对接与落地跟踪。</p>
+        <div class="who">适合：<b>地方政府 / 产业园区</b></div>
+      </div>
+      <div class="mcard">
+        <span class="st mech">机制服务</span>
+        <h3>「好设计展区」嵌入</h3>
+        <p>把好设计馆的展陈体系（展区框架 + 智慧展品 + 助手导览）嵌入企业展厅、园区展馆，让获奖成果在产业现场持续发声。</p>
+        <div class="who">适合：<b>企业展厅 / 园区展馆</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 对接机制 -->
+  <section class="sec">
+    <div class="sec-h"><span class="no">03</span><h2>对接机制</h2></div>
+    <div class="flow">
+      <div class="step"><span class="n">1</span><b>提出需求</b><span>描述技术瓶颈或升级目标，越具体越好</span></div>
+      <div class="step"><span class="n">2</span><b>平台诊断</b><span>助手初判 + 获奖案例匹配，形成迁移假设</span></div>
+      <div class="step"><span class="n">3</span><b>专家协同</b><span>获奖团队 / 评审专家介入，校准迁移路径</span></div>
+      <div class="step"><span class="n">4</span><b>转化落地</b><span>方案实施与成果跟踪，需求反哺知识库</span></div>
+    </div>
+    <div class="trust"><b>可信原则：</b>平台对所有迁移建议做两级标注——「已验证应用」（有真实落地依据）与「AI 推断」（有原理依据、待专家校准）。我们绝不把推断说成事实；进入具体转化时，由获奖团队与工程师补充深层技术细节并校对把关。</div>
+  </section>
+
+  <!-- 04 可迁移技术库 -->
+  <section class="sec">
+    <div class="sec-h"><span class="no">04</span><h2>可迁移技术库 · 节选</h2><span class="hint">全部见「设计与产业」展区</span></div>
+    <p class="sec-desc">这些金奖成果背后的方法——极端环境机构、密封耐压、低阻外形、系统集成——正是许多企业技术升级的同源问题。点任意一件，直接问助手它能迁移到什么。</p>
+    <div class="lib">
+      <div class="xcard">
+        <div class="thumb"><img loading="lazy" src="cases/case-2025-00.jpg" alt="嫦娥五/六号月球钻取采样方法及系统设计"></div>
+        <div class="xbody">
+          <span class="lv">金奖 · 2025</span>
+          <h3>嫦娥五/六号月球钻取采样方法及系统设计</h3>
+          <div class="unit">哈尔滨工业大学 · 北京圣视环宇科技有限公司</div>
+          <div class="ask"><a href="project/2025-00.html">项目档案 →</a><a href="assistant.html" data-copilot data-ask="嫦娥月球采样的钻取机构设计思路，对地面精密机械与极端环境作业装备有什么可借鉴的？">问助手：能迁移到什么 →</a></div>
+        </div>
+      </div>
+      <div class="xcard">
+        <div class="thumb"><img loading="lazy" src="cases/case-2015-02.jpg" alt="蛟龙号载人潜水器"></div>
+        <div class="xbody">
+          <span class="lv">金奖 · 2015</span>
+          <h3>蛟龙号载人潜水器</h3>
+          <div class="unit">中船重工 702 研究所</div>
+          <div class="ask"><a href="project/2015-02.html">项目档案 →</a><a href="assistant.html" data-copilot data-ask="我们做深海装备，密封和耐压遇到瓶颈——蛟龙号的密封与耐压设计能迁移到哪些产品场景？">问助手：能迁移到什么 →</a></div>
+        </div>
+      </div>
+      <div class="xcard">
+        <div class="thumb"><img loading="lazy" src="cases/case-2017-01.jpg" alt="“复兴号”中国标准动车组"></div>
+        <div class="xbody">
+          <span class="lv">金奖 · 2017</span>
+          <h3>“复兴号”中国标准动车组</h3>
+          <div class="unit">中国铁路</div>
+          <div class="ask"><a href="project/2017-01.html">项目档案 →</a><a href="assistant.html" data-copilot data-ask="复兴号的低阻力流线型与标准化设计思路，对其他交通工具或家电风道设计有启发吗？">问助手：能迁移到什么 →</a></div>
+        </div>
+      </div>
+      <div class="xcard">
+        <div class="thumb"><img loading="lazy" src="cases/case-2015-01.jpg" alt="“海洋石油981”3000米水深半潜式钻井平台"></div>
+        <div class="xbody">
+          <span class="lv">金奖 · 2015</span>
+          <h3>“海洋石油981”3000米水深半潜式钻井平台</h3>
+          <div class="unit">中国海洋石油总公司 · 中船集团第 708 研究所 · 上海外高桥造船</div>
+          <div class="ask"><a href="project/2015-01.html">项目档案 →</a><a href="assistant.html" data-copilot data-ask="海洋石油981 这样的超大型系统工程，其系统集成设计方法对大型装备项目有什么借鉴？">问助手：能迁移到什么 →</a></div>
+        </div>
+      </div>
+      <div class="xcard">
+        <div class="thumb"><img loading="lazy" src="cases/case-2016-00.jpg" alt="超大断面矩形顶管机"></div>
+        <div class="xbody">
+          <span class="lv">金奖 · 2016</span>
+          <h3>超大断面矩形顶管机</h3>
+          <div class="unit">中铁工程装备集团有限公司</div>
+          <div class="ask"><a href="project/2016-00.html">项目档案 →</a><a href="assistant.html" data-copilot data-ask="超大断面矩形顶管机解决了什么工程难题？这种装备创新思路对地下空间开发有什么启发？">问助手：能迁移到什么 →</a></div>
+        </div>
+      </div>
+      <div class="xcard">
+        <div class="thumb"><img loading="lazy" src="cases/case-2017-05.jpg" alt="天鲸号绞吸式挖泥船"></div>
+        <div class="xbody">
+          <span class="lv">金奖 · 2017</span>
+          <h3>天鲸号绞吸式挖泥船</h3>
+          <div class="unit">中交天津航道局 · 上海交通大学 · 德国 VOSTA LMG</div>
+          <div class="ask"><a href="project/2017-05.html">项目档案 →</a><a href="assistant.html" data-copilot data-ask="天鲸号的绞吸系统设计体现了哪些极端工况下的装备设计方法？对疏浚以外的行业有启发吗？">问助手：能迁移到什么 →</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="lib-more"><a href="categories.html#industry">进入「设计与产业」展区，看全部展位 →</a></div>
+  </section>
+
+  <!-- 05 提交问题 -->
+  <section class="sec" id="inquiry">
+    <div class="sec-h"><span class="no">05</span><h2>提交你的技术问题</h2><span class="hint">合作意向入口 · 已上线</span></div>
+    <p class="sec-desc">留下真实问题，平台出具迁移分析后与你联系；也可以<b>先自助生成一份迁移分析报告</b>看看思路，再决定是否深入对接。带 * 为必填。</p>
+    <form class="inq" id="inqForm">
+      <div class="frow">
+        <div>
+          <label for="inqCo">企业名称 *</label>
+          <input id="inqCo" maxlength="100" required placeholder="如：玉环 ×× 阀门有限公司">
+        </div>
+        <div>
+          <label for="inqContact">联系方式（选填）</label>
+          <input id="inqContact" maxlength="100" placeholder="电话 / 邮箱 / 微信，仅用于对接回复">
+        </div>
+      </div>
+      <label>所属行业</label>
+      <div class="chips" id="inqInd">
+        <button type="button" data-v="汽摩配">汽摩配</button>
+        <button type="button" data-v="水暖阀门">水暖阀门</button>
+        <button type="button" data-v="家具家居">家具家居</button>
+        <button type="button" data-v="医疗器械">医疗器械</button>
+        <button type="button" data-v="智能制造装备">智能制造装备</button>
+        <button type="button" data-v="绿色低碳">绿色低碳</button>
+        <button type="button" data-v="其他/综合" class="on">其他 / 综合</button>
+      </div>
+      <label for="inqQ">问题描述 *</label>
+      <textarea id="inqQ" maxlength="2000" required placeholder="请尽量具体：产品是什么、遇到什么瓶颈、想达到什么目标。例：我们的阀门在海水环境两年内出现密封失效，想找更可靠的密封与防腐思路。"></textarea>
+      <div class="foot">
+        <button class="ibtn ibtn-gold" type="submit" id="inqSubmit">提交问题</button>
+        <button class="ibtn ibtn-ghost" type="button" id="inqReport">先自助生成迁移分析报告 →</button>
+        <span class="privacy">信息仅用于平台与你对接，不对外公开。</span>
+        <span class="err" id="inqErr" hidden></span>
+      </div>
+    </form>
+    <div class="inq-ok" id="inqOk" hidden>
+      <div class="t">已收到你的问题。</div>
+      <div class="rid">受理编号 <span id="inqId"></span></div>
+      <p>平台将出具迁移分析后与你联系（未留联系方式的，可直接用下方入口自助生成报告）。接下来你可以：</p>
+      <div class="acts">
+        <a class="ibtn ibtn-gold" id="inqOkReport" href="#">生成迁移分析报告 →</a>
+        <a class="ibtn ibtn-ghost" href="assistant.html" data-copilot id="inqOkAsk">继续追问好设计助手 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 CTA -->
+  <section class="cta">
+    <div class="cta-in">
+      <img class="cta-mascot" src="assets/brand/mascot.webp" alt="好设计助手">
+      <div>
+        <div class="t">带着你的问题，问「好设计助手」<span class="dot">。</span></div>
+        <p>打开助手后切换到「企业」身份，需要深度分析时点亮「深度」开关。三个真实问题，现在就可以试：</p>
+        <div class="qs">
+          <a href="assistant.html" data-copilot data-ask="我们是水暖阀门企业，产品想做高端化升级，有哪些获奖设计可以借鉴？">水暖阀门企业：产品高端化升级，有哪些获奖设计可借鉴？</a>
+          <a href="assistant.html" data-copilot data-ask="我们做深海装备，密封和耐压遇到瓶颈，获奖项目里有没有可迁移的技术？">深海装备：密封耐压瓶颈，有没有可迁移的技术？</a>
+          <a href="assistant.html" data-copilot data-ask="我是小家电行业，可以借鉴哪些好设计获奖技术？">小家电行业：可以借鉴哪些获奖技术？</a>
+        </div>
+        <div class="note2">线下空间：好设计馆 · 嘉善（2026 年底开放）｜ 合作洽谈请联系平台运营方</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <div>好设计馆 · 产业频道（迁移分析 / 报告卡 / 留资入口已上线；专家协同机制建设中）</div>
+    <div>获奖案例数据：十年 560 项 · 官网全量比对 0 缺失</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('inqForm');
+  if (!form) return;
+  var coEl = document.getElementById('inqCo');
+  var contactEl = document.getElementById('inqContact');
+  var qEl = document.getElementById('inqQ');
+  var submitBtn = document.getElementById('inqSubmit');
+  var reportBtn = document.getElementById('inqReport');
+  var errEl = document.getElementById('inqErr');
+  var okEl = document.getElementById('inqOk');
+  var ind = '其他/综合';
+
+  document.getElementById('inqInd').addEventListener('click', function(e){
+    if (e.target.tagName !== 'BUTTON') return;
+    this.querySelectorAll('button').forEach(function(b){ b.classList.remove('on'); });
+    e.target.classList.add('on');
+    ind = e.target.getAttribute('data-v');
+  });
+
+  function reportUrl(){
+    return 'migration-report.html?q=' + encodeURIComponent(qEl.value.trim()) +
+      '&co=' + encodeURIComponent(coEl.value.trim()) +
+      '&ind=' + encodeURIComponent(ind);
+  }
+
+  reportBtn.addEventListener('click', function(){
+    if (!qEl.value.trim()) { qEl.focus(); qEl.placeholder = '请先填写问题描述，再生成报告'; return; }
+    location.href = reportUrl();
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errEl.hidden = true;
+    submitBtn.disabled = true;
+    fetch('api/inquiry', {
+      method: 'POST',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify({
+        company: coEl.value.trim(),
+        industry: ind,
+        contact: contactEl.value.trim(),
+        question: qEl.value.trim(),
+        page: 'connect'
+      })
+    }).then(function(r){ return r.json(); }).then(function(d){
+      if (!d.ok) throw new Error(d.error || '提交失败');
+      document.getElementById('inqId').textContent = d.id;
+      document.getElementById('inqOkReport').href = reportUrl();
+      document.getElementById('inqOkAsk').setAttribute('data-ask',
+        '我们是' + (coEl.value.trim() || '一家制造企业') + '（' + ind + '），问题是：' + qEl.value.trim() + '。请做技术迁移分析。');
+      okEl.hidden = false;
+      okEl.scrollIntoView({behavior:'smooth', block:'center'});
+    }).catch(function(ex){
+      errEl.textContent = ex.message || '网络异常，请稍后重试。';
+      errEl.hidden = false;
+    }).finally(function(){
+      submitBtn.disabled = false;
+    });
+  });
+})();
+</script>
+<script src="copilot.js" defer></script>
+</body>
+</html>

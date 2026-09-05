@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>AJS 1800 A工业级铸造砂型3D打印系统 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2020-s19.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2020-s19</div>
+  <h1>AJS 1800 A工业级铸造砂型3D打印系统</h1>
+  <div class="meta-line"><b>2020 年度银奖</b><span>共享智能装备有限公司,共享装备股份有限公司,共享智能铸造产业创新中心有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2020 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">共享智能装备有限公司,共享装备股份有限公司,共享智能铸造产业创新中心有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">彭凡,刘轶,杜银学,蒙南华</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 制造装备（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>一、铸造作为“工业强基”的重要组成部分，铸件是提升高端装备水平的重要影响因素。但是，在当前铸造产业中，总量的60%左右的铸件是多品种、小批量、以手工劳动为主的传统模式生产，存在生产环境差、劳动强度大、效率低、铸件质量不高、环境污染等问题，亟待转型，实现绿色智能发展。</p><p>二、 AJS 1800 A 工业级铸造砂型3D打印系统是共享集团研发的具有自主知识产权的工业级铸造砂型3D打印设备及相关控制系统，该打印系统采用铸造用砂作为构建材料，与粘结剂配合使用打印出结构复杂、高精度的砂模。AJS 1800 A 工业级铸造砂型3D打印系统设计先进独特，在突出体现其效率高、精度高、成本低、绿色环保等优点的同时，该打印系统还嵌入知识库、专家库系统等智能模块，可轻松实现一键打印、快捷清砂、远程运维、无人值守、安全识别等功能。该3D打印系统的成功研发填补了国内高效率、高精度工业级铸造砂型3D打印系统的空白，对传统铸造带来颠覆性的变革，使铸件制造弃繁从简，提质增效，制造过程以人为本，绿色制造，为铸造行业的转型升级提供示范作用。目前国际上同尺寸机型最高打印效率为120L/h，打印精度≤±0.35mm，AJS 1800 A 工业级铸造砂型3D打印系统最大打印尺寸为1800mm（L）x1100mm（W）x700mm（H），最高打印效率可达170L/h，打印砂型精度≤±0.3mm，售价仅为进口设备的1/3-1/2，且该3D打印系统在喷墨控制、结构创新设计、高精度算法控制、软件开发应用等各方面已经取得授权专利及软件著作权，各方面先进性明显。此外，AJS 1800 A 工业级铸造砂型3D打印系统打印砂型所需原辅材料（砂子、液料）均实现国产化（本地化），打印成本大幅下降。</p><p>三、截至目前，该项目已通过欧盟CE认证以及ISO9001国际认证，该项目已经获得授权发明专利12篇，授权实用新型专利4篇，授权PCT专利1篇，该3D打印系统在2018年荣获自治区科技成果鉴定奖1项，2019年荣获自治区科技成果鉴定奖2项、2019年全国铸造装备创新奖以及自治区新产品鉴定奖，近两年该3D打印系统已生产20余台，累计实现销售收入9000万元。 AJS 1800 A工业级铸造砂型3D打印系统的研发适应时代的需要，大大提高铸造行业的数字化、自动化、智能化、绿色化程度。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>一、目前我国的铸造行业装备升级缓慢，大部分的小批量、复杂铸件仍以手工制作为主，导致铸造车间环境“脏、乱、差”，有害气体及粉尘的的排放不仅对环境造成很大污染，而且对生产工人的健康造成很大危害。目前新兴的3DP打印技术可以为铸造业加速转型升级提供便捷道路。3DP打印技术具备了解决铸造业转型升级的优势，因其打印效率高的特点，适于工业领域的应用，也更适于实现产业化应用。3D打印技术的产业化应用给传统铸造带来颠覆性的变革，铸件制造弃繁从简，提质增效，制造过程以人为本，绿色制造，为铸造行业的转型升级提供示范作用，具体为：</p><p>（1）缩短铸造生产流程。铸件工艺直接从三维图形数据制造出复杂的砂型，变革了传统使用模具、制型、造型、合箱的铸造方法。</p><p>（2）提高铸件质量，提升生产效率。此工艺生产的产品精度高，砂型和砂型快速一体成形，大幅缩短了产品的研发和生产周期。</p><p>（3）设计灵活，节约成本，降低制造难度。此工艺具有灵活的修改模型设计等优势，对提高产品精度，降低砂铁比效果突出，特别适用于内部结构复杂铸件的生产。</p><p>（4）以人为本，绿色铸造，智能铸造。大幅改善铸造现场环境，降低工人劳动强度；机器换人，人力成本大幅下降；典型数字化制造，大幅提高铸造生产的智能化水平。</p><p>（5）铸造增材制造技术的产业化应用对铸造行业的转型升级、铸造智能制造及未来铸造智能工厂的建设将产生变革性的意义，影响深远。</p><p>二、AJS 1800 A工业级铸造砂型3D打印系统基于铸造行业砂型的传统生产经验，以智能打印、绿色铸造为研究重点，结合铸造砂型工艺要求，针对不同形状的铸件以及不同类型的材料，集成了相关的铸造数据库、专家库，主要采用铸造用砂作为构建材料，与粘结剂配合使用打印出结构复杂、高精度的砂模，实现铸造砂型快速制造，精度提升，少人作业，其有害气体排放符合国家安全标准，彻底改善了工人作业环境。相较于国内外同类产品，本项目的智能化程度更高、精度更高、效率更高、成本更低、更加环保。该3D打印系统主结构采用上、下框架合体设计，保证打印头的2PASS印刷动作以及铺砂器双向铺砂动作相互独立，达到打印效率倍增的效果；各辅助机构安装合理，便于维护；外观设计整体以白色为主，辅以黑色窗口等装饰，简约时尚，辨识度高；并且实现了远程运维、在线升级、专家库等功能，智能先进。</p><p>三、AJS 1800 A 工业级铸造砂型3D打印系统集数据处理、一键打印、快捷清砂、远程运维、无人值守、安全识别等多项功能于一体，该项目涵盖了机械结构与传动技术、气压传动与控制技术、电气检测与自动控制技术等，并突破了一系列创新性技术。其主要创新点有：</p><p>（1）针对喷头可以调整喷墨参数以及高精度喷墨要求，该项目突破了高精度喷头控制技术。基于以往对打印头及其控制系统的研究经验，本项目所用的控制板卡不再依赖进口，而是和国内厂商合作，共同开发打印头国产控制板卡-RY系列。设备打印头使用9组SG1024喷头，每组喷头有1024个喷孔，共计9216个喷孔。该喷头自带液料循环系统，分辨率高达400dpi，喷墨清晰，精度更高，可实现2PASS喷墨，且方便拆卸，维护性好，安装难度低，成本低。和国内供应商合作开发的RY板卡可以独立控制每一个喷孔的工作状态以及工作参数，其集成了数据板卡和激励板卡，结构紧凑，单一供电，线路简单，抗干扰能力更强，采用USB3.0光纤通讯，通信速率高，同时将打印服务器集成安装在打印头内部，随打印头一起运动，用光纤传输数据，省去了大量的网线，使得整个打印系统及其的简单，极大地降低了打印头的板卡成本，提升了使用稳定性。</p><p>（2）针对3D打印机自身构造复杂，传动结构多且行程长，需要各轴同步配合工作，且加工与装配引起的尺寸误差较大等问题，该项目突破了高精度运动系统控制技术。设备整个传动系统采用高精度的伺服电机、行星齿轮减速机、滚珠丝杆、直线导轨、磁栅尺及读数头等组成，所有系统均采用全闭环控制。使其定位精度达到微米级，重复定位精度≤±0.01mm。</p><p>（3）针对混砂系统中砂子、固化剂加入过程中计量不准的问题，该项目突破了混砂系统精确计量技术。在混砂系统中，针对固化剂加入量少，因此固化剂计量采用全新的设计思路，将注射泵成功应用到固化剂的计量方案中，注射泵由针筒、高压换向阀、步进电机、丝杆机构等部分组成，通过程序算法驱动步进电机运动，控制丝杆的进给量，推动活塞，精确控制固化剂的加入量，降低固化剂加入误差≤1%。由于砂子流动性比较好，因此采用了全闭环的砂子、液料加入控制系统，可以根据砂子实时加入量自动匹配固化剂加入量，解决混砂不均匀的难题，提升混砂均匀性≥97%，该结构混砂系统精确计量技术已经申报国家发明专利。</p><p>（4）针对后期维护、升级便捷性，该项目突破了远程运维技术。通过接入英特网，可以实时监控打印机的运行状态、故障处理、故障统计分析、产量统计、在线升级等功能，并且可以接入远程运维系统，辅助管理人员第一时间掌握设备动态以及横向比较多台设备。</p><p>（5）针对打印材料多样化，打印过程出现的下砂不均匀问题，该项目突破了均匀双向铺砂技术。AJS 1800 A工业级铸造砂型3D打印系统可以实现40-200目数的陶粒砂、硅砂、热法再生砂等多种砂材料，效率倍增，且铺砂器针对性的具有防漏砂结构、振动均匀性调节、多种类刮砂板、无极调速等功能，来满足不同材料的铺设，使全面积铺砂平整度≤0.025mm。该结构的铺砂器已经申报国家发明专利。</p><p>（6）针对不同材料以及不同类型的砂型打印，该项目自带了专家库以及知识库。在进行打印准备工作时，可以根据不同的材料以及不同的模型数据，系统专家库会自动匹配最优的参数进行打印。在打印出现报警故障时，系统知识库会提醒操作人员故障出现的原因，并提供解决故障的方案，降低设备的操作难度。</p><p>（7）针对打印过程造成的树脂及砂子浪费，该项目突破了液料系统的树脂及砂处理系统的砂子回收技术。打印机打印过程中大部分的树脂通过正压压墨清洗喷头的方式浪费，造成回收成本增加，材料浪费等问题。AJS 1800 A工业级铸造砂型3D打印系统增加废液回收功能，将正压压墨清洗喷头的树脂通过三级高精度过滤器，之后又重新回收到墨盒中用于打印，树脂回收功能的树脂回收再利用率≥80%，并且将打印旧砂回收在利用，回收率达到100%，降低成本，绿色环保，该结构的树脂回收系统已经申报国家发明专利。</p><p>（8）针对打印设备对框架的稳定性以及精度要求比较高，防止使用中出现框架变形引起的精度不合，该项目突破了支撑框架上凸曲线加工技术。设备的核心部件打印头悬挂在上部框架,打印头在打印过程通过直线电机快速拖动，必须严格保证加工精度，且直线电机启动时惯性扭矩非常大，因此对上部支架的精度以及刚性提出了很高的设计及加工要求。对整体结构进行有限元仿真分析后，结合加工精度以及自身变形等因素，通过计算分析，需要对上部支架横梁的安装面进行上凸曲线加工，当直线电机、滑枕和打印头装配到横梁上，正好均衡横梁的下凹弯曲变形，从而提高打印头运动过程中的精度。根据后期装配以及检验，发现支撑框架上凸曲线加工效果良好，整体精度达到≤0.02mm/米，对设备打印的精度提升明显。</p><p>（9）该项目突破了打印机智能化操作系统自主开发，包括从工艺模型处理、输出、砂型打印、工控安全的控制软件。工业级铸造砂型3D打印系统所使用的一系列软件包括AJSlices布图切片软件、Build Pre-data软件、打印控制软件、工控安全软件及具备对外数据接口，以上软件可以实现简易布图、自动切片、智能打印、安全防护等功能，使用简单，操作人性化，全部由自主研发，拥有完全的自主知识产权，并且已经申报软件著作权。</p><p>四、为了完成相关指标，本项目将研究任务进一步分解，第一步进行设备使用材料、关键零部件、辅助软件的研究和开发；第二步进行机械部件的部装、总装、检验和精度调整；第三步进行电装和软件系统开发；第四步进行设备联调；第五步进行材料试验、装备试生产及关键指标验证；第六步待样机验证稳定后，开始批量化的生产以及推广。在制造过程中，产生了诸多经验以及教训，并且根据以往以及本项目的经验，完成审核了企业标准一篇，为以后设备的制造打下坚实基础。 共享集团是中国铸造行业综合百强和行业领军企业，其子公司共享智能铸造产业创新中心有限公司从2012年开始提出了“数字化（智能化）引领、创新驱动、绿色制造、效率倍增”的转型升级方针，主要通过3D打印等技术“点”上创新、形成铸造智能单元“线”的集成、进而构建铸造智能工厂“面”的新型模式，最终形成引领铸造行业转型升级及相关产业“体”上的带动，国家总理李克强以及政协主席俞正声先后来公司视察，对公司的创新理念给与充分肯定，并对其将来发展报以很大的期望。以AJS 1800 A工业级铸造砂型3D打印系统为主的3D打印产业化应用是国内首创，公司提出的“铸造3D打印+智能工厂”的创新模式将为中国多品种、小批量的离散型铸造企业提供转型升级途径，目前已经有两个建成的铸造3D打印智能工厂正在投入运行，多个正在建设中。 共享智能铸造产业创新中心以“引领行业进步，推动产业转型升级”为使命，秉承专业、协同、共享、共赢的发展理念，集众智、汇众力，依托国家双创示范基地，通过共享装备、中国铸造协会、行业骨干企业等政产学研用金协同，搭建开放、共享、线上线下相结合的行业平台，构筑 “互联网+双创+绿色智能铸造”的产业生态。以绿色智能铸造为主攻方向，建立关键共性技术研发、成果转移转化、产业化应用示范的运行机制，持续为铸造行业提供创新发展活力，促进产业转型升级，引领中国铸造由“铸造大国”迈向“铸造强国”。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

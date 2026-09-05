@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>南方电网网级电能量数据平台建设及创新应用 · 2020银奖 · 好设计</title>
+<meta name="description" content="南方电网网级电能量数据平台（下称“网级平台”）是支撑南方电网公司开展全网电能量数据宏观分析的重要平台。公司从2009年开始建设网级平台，经过多年的建设与升级改造，建成了目前全世界规模最大的电能量数据采集管理系统，全面接入南方五省区（广东、广">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2020">← 返回 2020 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2020 · 第六届</span></div>
+  <h1>南方电网网级电能量数据平台建设及创新应用</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">南方电网数字电网研究院有限公司,浙江大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">郑楷洪,孙凌云,张文瀚,王鑫</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202001042</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>南方电网网级电能量数据平台（下称“网级平台”）是支撑南方电网公司开展全网电能量数据宏观分析的重要平台。公司从2009年开始建设网级平台，经过多年的建设与升级改造，建成了目前全世界规模最大的电能量数据采集管理系统，全面接入南方五省区（广东、广西、云南、贵州、海南）9.8万座厂站、70.1万台专变、84.4万台公变以及9404.6万户低压用户的用电数据，数据涵盖指标、电量、负荷、线损、停电等信息，日新增数据量2TB。建设过程中，形成以下创新成果：</p><p>（1）提出了分布式文件系统(OLTP)与大规模并行处理(MPP)数据库的电能量大数据资源分配、数据同步备份及高性能计算分析解决方案，设计了基于CDH分布式存储与Storm流式计算的用电大数据集群信息物理架构，解决了PB级海量电能量数据的实时存储计算和业务并发访问瓶颈问题。</p><p>（2）设计了一种基于大数据全栈全分布式架构的电能量数据集约化管理架构，对电能量数据进行集约化采集、处理以及存储，实现全网9000多万用户电能量数据的统一采集、处理、存储和应用。</p><p>（3）提出了基于大数据与人工智能的电能量数据全生命周期质量管理方法，运用大数据技术开展电能量数据全链路监控，实现对数据产生-采集-传输-存储-计算-应用各环节数据质量监测和问题发现，开展数据异常实时诊断与智能修复，实现海量电能量数据的质量提升。</p><p>（4）建立了基于数据挖掘的电能量数据创新应用体系，全面推广电能量数据“十大创新应用”。一是促进电量抄核收转型升级。二是支撑线损同期管理和日线损统计分析。三是提升客户优质服务水平。四是有效防控窃电漏电。五是支撑电力现货市场建设。六是辅助开展用电市场分析。七是实现计量装置智能在线监测。八是支撑供电可靠性管理。九是支撑电压质量监测。十是支撑配变负载监测。</p><p>项目累计授权专利23项，登记软件著作权10项，发表SCI论文2篇、EI论文3篇、核心论文6篇。成果已在广东、广西、云南、贵州、海南等省公司推广应用，充分发挥了电能量数据的应用价值。2020年疫情期间，本项目成果实现的多维度行业电量统计分析功能，在公司对接数字政府助力疫情期间复工复产监测工作中发挥了至关重要的作用，先后向国办、发改委、工信部、国资委报送南方区域企业复工复产相关报告1000余份，获得国务院办公厅、国家发改委的感谢信，取得了显著的社会效益。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>创新点1：首次实现全南方电网区域内的电能量数据集约化管理，建成全世界规模最大的电能量数据采集与管理系统。提出一种基于大数据全栈全分布式架构的电能量数据集约化管理方法，基于分布式采集、分布式技术、分布式存储技术，实现对广东、广西、云南、贵州、海南五省区9.8万座厂站、70.1万台专变、84.4万台公变以及9404.6万户低压用户数据的集约化采集、处理、存储及应用。</p><p>创新点2：提出一种面向异地多频数据的高效采集与高性能实时计算方法。攻克了海量客户多态数据的实时采集和并发处理关键技术，通过引用EPOLL技术提高了前置机的采集能力，构建从不同数据源向网级电能量数据中心汇聚的稳定的数据传输通道，实现异地海量数据的高效稳定获取，并针对不同类型、不同量级、不同产生频率的数据，匹配相应的采集技术，配置不同的采集频率，基于Spark分布式高性能实时计算技术，建立了高效的数据批量计算能力和实时计算能力，全面支撑全网计量、计费、发行等数据的采集和处理时效从“日级”大幅缩短至“分钟级”。</p><p>创新点3：提出一种基于大数据技术的电能量数据全链路可视化监控方法。基于累计和控制图计算和休哈特图计算技术，对电能量数据产生-采集-传输-存储-计算-应用各个环节开展数据质量实时可视化监测，研发上线电能量数据质量看板，对数据上传情况、集群情况以及作业运行情况进行可视化监控，实现数据全链路监测和质量问题发现。</p><p>创新点4：提出基于机器学习技术的电能量数据异常诊断方法和数据智能修复方法。（1）提出基于三次指数平滑模型与DBSCAN聚类的数据异常诊断方法，实现异常数据的识别。（2）提出基于残差连接LSTM模型的数据修复方法，辅助开展异常数据的修复。通过上述两种方法，有效解决海量数据的运维难题，大大降低人工数据运维成本，数据运维效率提升了30%。</p><p>创新点5：构建了基于数据挖掘技术的电能量数据深化应用体系，创新提出电能量数据“十大应用”。（1）推行“抄表自动准确、核算智能高效、电费快捷透明”的抄核收新模式，促进抄核收转型升级，全网累计转岗抄表员19034名，电费发行时间缩短10天，分散复核率降幅超过80%，截至2019年12月，全网电子化结算率99.3%。（2）基于电能量数据构建线损全维度分析模型，通过日线损监控实现对计量准确性、环网柜开关状态、变压器开关状态进行实时监控，支撑线损同期管理和日线损统计分析，截至2019年12月，计量同期线损值与理论值偏差小于1%，波动小于0.5%，馈线、台区日线损计算率96%。（3）开展精细化用电分析服务技术研究，研发非侵入式负荷监测终端，为客户提供精细化用电分析服务。（4）综合线损、电压、电流等多维度用电大数据，建立窃漏电模型专家库，有效防控窃电漏电。广东电网公司2019年应用电能量数据加大反窃电力度，共查处窃电7036宗，追补电量3900万千瓦时，挽回经济损失1.13亿元。（5）建立“主站-终端-表计”三级自动对时机制，完成2万个现货用户“双终端”、采集冻结负荷曲线等现场计量装置升级改造，开发计量自动化系统交易用户电能数据采集、智能监控及数据发布等功能，截至2019年12月，现货用户自动抄表率达99.6%，有力支撑了电力现货市场建设。（6）建立规范、高效的电量发布机制，常态化开展购、供、售电量以及开工率情况、行业电量等数据按日监测、统计和发布，辅助开展用电市场分析，利用电能量数据，构建复工复产电力指数，按照国务院办公厅、国家工信部、国家发改委、国资委以及地方政府相关部门要求，按日统计报送企业复工复产情况、行业电量增长情况，得到政府相关部门高度肯定，获得国务院办公厅、国家发改委感谢信。（7）构建“计量自动化系统故障智能诊断，营销系统工单分派流转，计量运维APP作业现场支撑”的计量运维新模式，全面加强计量运维闭环管控，2019年累计闭环处理故障工单7.97万单。全网自动抄表率99.3%，同比提升1.6个百分点。（8）利用负荷管理终端和配变监测计量终端停复电告警功能，结合采集的计量点15分钟运行数据，开展用户停电主动告警和实时监测，实现10kV用户停电事件1分钟内准实时监测、5分钟送到停电池，支撑供电可靠性管理。（9）充分挖掘低压集抄本地通信潜力和终端处理能力，全面推广台区末端用户电压数据采集，有效辅助低电压治理，截至2019年12月，完成59万个台区、700万低压用户电压数据接入，台区电压数据采集覆盖率达到65%。（10）计量自动化系统采集的计量点15分钟负荷数据和三相不平衡率监测数据，结合配变容量信息，统计配变负载率，实现配变负载实时监测，为配变运行人员提供了在线监测技术手段，同时通过计量自动化系统台区三相负载和三相不平衡率监测数据，支撑生产部门开展台区三相不平衡治理。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2020%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%8D%97%E6%96%B9%E7%94%B5%E7%BD%91%E7%BD%91%E7%BA%A7%E7%94%B5%E8%83%BD%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E5%8F%8A%E5%88%9B%E6%96%B0%E5%BA%94%E7%94%A8%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%8D%97%E6%96%B9%E7%94%B5%E7%BD%91%E7%BD%91%E7%BA%A7%E7%94%B5%E8%83%BD%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E5%8F%8A%E5%88%9B%E6%96%B0%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「南方电网网级电能量数据平台建设及创新应用」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%8D%97%E6%96%B9%E7%94%B5%E7%BD%91%E7%BD%91%E7%BA%A7%E7%94%B5%E8%83%BD%E9%87%8F%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E5%8F%8A%E5%88%9B%E6%96%B0%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「南方电网网级电能量数据平台建设及创新应用」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2020-s05.html"><span class="d">← 上一项</span>安全环保高效铁路道床吸煤车</a>
+    <a class="next" href="2020-s07.html"><span class="d">下一项 →</span>300MN多缸薄板成型液压机组</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

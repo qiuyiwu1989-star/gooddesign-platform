@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>中国标准化动车组高铁电磁干扰滤波器设计与应用 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2025-s12.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2025-s12</div>
+  <h1>中国标准化动车组高铁电磁干扰滤波器设计与应用</h1>
+  <div class="meta-line"><b>2025 年度银奖</b><span>西安理工大学,陕西磁容创电子电气有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2025 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">西安理工大学,陕西磁容创电子电气有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">姬军鹏,尹忠刚,路景杰,杨惠,成凤娇,李晓强</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 轨道交通（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>当今电气化交通迅猛发展，电磁干扰（EMI）问题成为大功率电驱系统发展的关键瓶颈。本项目依托国家级、省部级重点项目，聚焦功率电驱系统EMI抑制难题，创新设计出具备动态跟踪滤波功能的大功率电驱系统EMI滤波器，打破了传统设计方法和思路局限。设计方法实现了三大核心技术突破，构建了“建模-预测-抑制-优化”的高新技术体系，为轨道交通、新能源汽车等领域电磁兼容设计提供了革新方案。本设计成果填补行业空白，保障了电气化交通装备安全可靠运行，具有重大工程应用价值与社会经济效益。</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>三大创新设计突破行业技术瓶颈</div></div></div><p>1）中国标准化动车组高铁电驱系统及整车EMI建模与精准预测方法设计。针对高速动车组结构复杂、寄生参数多变导致的EMI预测难题，项目团队首创了整车共/差模电磁干扰建模预测方法，并基于米勒平台效应、振铃效应与器件反冲效应的多物理场耦合分析，构建了系统级5频段预测模型，将大功率电驱系统电磁干扰预测误差控制在2.53%内，远超行业平均水平，为车辆及电驱系统的电磁兼容正向设计提供了方法。</p><p>2）多频段窄带干扰的非接触式多谐振可控高效抑制方法设计。高压环境下多频窄带干扰高插损抑制一直是行业技术瓶颈。为此，项目团队设计的非接触式多频谐振EMI滤波器，其具有三大优势：磁环二次侧能量耗散技术，可同时抑制5个以上窄带干扰；体积较传统产品缩减20%，更适应现代装备小型化需求；创新性实现了抑制频带在8.5kHz-10MHz范围可调，滤波输出等效阻抗≤50mΩ。</p><p>3）数字有源EMI动态跟踪滤波的错周期时频混合自适应参数控制方法设计。创新设计大功率电驱系统专用数字有源EMI滤波器，首次实现了动态跟踪滤波功能。通过错周期多时间尺度分频变增益延迟补偿技术与在线阻抗解耦技术的结合，成功解决了数字EMI滤波系统因延迟和噪声源阻抗时变引起的性能降级问题。系统响应时间压缩至5ns（缩短7倍），高频段插入损耗达60dB（增加3倍），填补了宽频域动态滤波的技术空白，技术指标达到国际领先。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>从理念创新设计，设计成果获得行业认可</div></div></div><p>项目打破传统单域控制思想，提出时域频域混合协调控制设计理念，并形成完整的技术设计体系，获得发明专利35项、实用新型专利4项、软件著作权3项，发表学术论文31篇（其中SCI 10篇），联合制定地方标准1项。这些创新成果获得了陕西高等学校科学技术研究优秀成果一等奖、中国节能协会节能减排科技成就奖等7项重要奖励，设计团队也被陕西省科技厅认定为“科学家+工程师”队伍。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>设计成果实现产业化应用，成效显著</div></div></div><p>自2017年起，创新设计成果在中车永济电机、西安智德汽车电子等企业成功应用，取得重大突破：1）支撑时速 250km、350km 中国标准化动车组通过国标认证，实现量产及出口，提升我国高铁核心技术竞争力；2）解决纯电重卡电驱系统多频段窄带干扰超标难题，推动纯电重卡产业化落地；3）支撑全国产化变频装置（A310）满足欧洲标准，成功打入欧洲市场（国内仅4家企业实现该领域出口）；4）保障某电气化作战装备电驱产品通过国军标认证，显著提升其可靠性与特种作战能力。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>设计成果促进行业高质量发展</div></div></div><p>设计成果为陕西省、西安市重点产业链（重卡、轨道交通）发展提供了有力支撑，推动了重点产业链发展与交通电气化进程，提升了中国制造的国际竞争力。这一系列创新设计成果不仅解决了行业“卡脖子”难题，更树立了交通电气化领域的技术标杆，为中国制造向中国创造转变提供了有力支撑。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>项目立项背景</div></div></div><p>在“双碳”目标和《“十四五”节能减排综合工作方案》的引领下，推广电气化交通车辆是实现能源转型、减少交通领域碳排放的重要途径。然而，随着车辆电气化程度提升，其核心动力单元—大功率电驱系统引发的电磁干扰（EMI）问题日益严峻，威胁着车辆的稳定运行，可能导致车辆控制系统误判或失效，甚至可能引发车辆安全事故。对于安全可靠性要求极高的轨道交通车辆（如高速动车组），国家EMI限值标准日趋严格，使得其EMI滤波技术面临严峻挑战：其一，由于高铁动车组整车及大功率电驱系统结构复杂、寄生参数多变，EMI机理和特性研究不足，导致其EMI发射预测不准确，电磁兼容正向设计方法关键抓手不明晰；其二，车辆多工况运行电控模式多变引起多频段窄带干扰超标，现有的接触式单谐振设计方法，难以实现高压环境下的多频段窄带干扰有效抑制。其三，高铁行驶地域广，地阻抗等参数复杂多变，致使呈现动态变化，没有针对动变电磁干扰超快跟踪滤波的设计方法与技术。因此，深入研究整车及电驱系统电磁干扰特性精确预测模型、多频窄带电磁干扰抑制等关键技术，设计具有动态跟踪滤波能力的大功率电驱系统电磁干扰滤波器，对于推动交通和军工领域移动装备的电气化转型、确保车辆安全高效运行具有重要意义。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>创新设计成果及特点</div></div></div><p>本项目围绕电气化车辆电驱系统电磁干扰抑制技术瓶颈开展科研攻关，创新设计了具有动态跟踪滤波能力的大功率电驱系统电磁干扰滤波器，包括数字有源EMI滤波器（图1）、非接触式有源EMI滤波器（图2）等。</p><p>图1 数字有源EMI滤波器 图2 非接触式有源EMI滤波器</p><p>本设计成果的行业贡献如下：</p><p>（1）针对高速动车组结构复杂、寄生参数多变导致EMI精准预测难的问题，本设计成果突破了电驱系统EMI建模的技术瓶颈，将电磁干扰预测误差控制在2.53%以内。</p><p>（2）针对高压环境下电驱系统多频窄带干扰抑制难且滤波频带固定的行业难题，本设计成果突破了多频段窄带干扰高效可靠抑制的技术瓶颈，可同时抑制5个以上窄带干扰频段，可实现滤波频带在8.5kHz-10MHz频段可调，保证滤波输出等效阻抗≤50mΩ。</p><p>（3）针对传统EMI滤波系统难以实现超快动态跟踪滤波的问题，针对传统EMI滤波系统难以实现超快动态跟踪滤波的问题，突破了单控制域实现电磁干扰动态跟踪滤波技术瓶颈，设计错周期时频混合的自适应参数控制方法，将系统响应时间压缩至5ns（缩短7倍），高频段插入损耗37dB（增加1.85倍）。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>主要设计创新点</div></div></div><p>本设计成果的总体研究及技术应用方案如图3所示。</p><p>图3 总体研究及技术应用方案</p><p>本设计成果针对大功率电驱系统电磁干扰滤波的技术瓶颈，以动态干扰抑制为设计核心和重点，结合轨道交通、重卡、军工等复杂应用场景，突破传统EMI滤波设计理念局限，提出创新技术，实现产品革新升级。相较于国内外同类产品，本设计成果的动态响应速度、空间利用率和场景适应性显著领先。主要创新点有：</p><p>【设计创新点一】中国标准化动车组高铁电驱系统及整车EMI建模与精准预测方法。针对中国标准化动车组高铁整车电磁干扰分布不明晰引起抑制难的问题，首创了整车共/差模电磁干扰模型设计方法。另外，基于米勒平台效应、振铃效应与器件反冲效应的多物理场耦合分析，构建了系统级5频段预测模型，将大功率电驱系统电磁干扰预测误差控制在2.5%以内，设计成果应用在时速350km、时速250km中国标准化动车组牵引变流器、地铁牵引变流器及纯电重卡电驱系统等多个产品上，为电气化车辆电磁兼容正向设计奠定了理论基础。【附件材料：1）主要知识产权（发明专利）3项；2）其它知识产权（发明专利）5项；3）在国内外学术刊物上发表论文9篇；4）制定地方标准1项】</p><p>车辆的大功率电驱系统正向更小型化、高频化趋势发展，这发展趋势不可避免地加剧了电磁干扰（EMI）问题，对高铁、重卡等安全标准严苛的车辆构成了巨大的安全隐患。因此，探究高铁整车及电驱系统的EMI发射机理与寄生参数分布规律，成为确保这些车辆实现安全、可靠运行的首要条件与关键任务。</p><p>本项创新设计针对高速动车组及大功率电驱系统结构复杂、寄生参数多变导致EMI预测困难的行业痛点，设计了四层级建模预测技术体系，设计了高铁电驱系统及整车EMI建模与精准预测方法（图4），具体设计创新如下：</p><p>图4 高铁电驱系统及整车EMI建模与精准预测方法及应用</p><p>（1）多效应场融合的器件及系统EMI预测方法：基于米勒平台效应、器件反冲效应与振铃效应的耦合分析方法，考虑到大功率电机驱动系统中高频开关暂态与多干扰源耦合效应，首次提出了能够覆盖9kHz-1GHz的系统级5频段预测模型（图5），磁场发射预测误差 &amp;lt; 2.53%，较国际同类技术提升1倍以上。</p><p>图5 系统级5频段预测模型</p><p>（2）多物理场耦合的动车组整车EMI预测方法：基于电磁场传输线理论与多导体耦合模型，明晰了无意识天线的辐射EMI生成-传播机理，首次建立了能够准确描述高速动车组电磁干扰暂态和稳态特性的整车共/差模EMI模型（图6、图7），揭示了基于车辆电驱系统的整车EMI发射机理与寄生参数分布规律，对整车EMI电场发射预测误&amp;lt;1.42%（30MHz-1GHz），远超行业平均水平的2.8%。</p><p>图6 整车共模EMI模型及耦合路径示意图 图7 整车差模EMI模型及耦合路径示意图</p><p>（3）四层级定量协调的电磁兼容的正向设计：本项目针对“器件-模块-结构-系统”四层级的关键要素，围绕传导、辐射、串扰三着力点展开，建立了“器件-模块-结构-系统”四层级定量协调的电磁兼容正向设计体系（图8），将传统“试制-整改”模式转变为“仿真-优化”模式，缩短产品研发周期30%，降低测试成本40%，攻克了电气化交通车辆大功率电驱系统及整车电磁兼容正向设计无抓手的行业难题。</p><p>图8 四层级定量协调的电磁兼容正向设计体系</p><p>上述创新设计成果系统性解决了电气化交通车辆大功率电驱系统及整车EMI机理不明晰、电磁兼容正向设计无抓手的行业难题，应用在时速350km、时速250km中国标准化动车组牵引变流器、地铁牵引变流器及纯电重卡电驱系统的设计与研制阶段，并实现产业化应用。</p><p>【设计创新点二】多频段窄带干扰的非接触式多谐振可控高效抑制方法。针对高压环境下多频窄带干扰抑制难的问题，设计了虑及绝缘安全和漏电流限制的非接触式多频谐振EMI滤波器，首创磁环二次侧能量耗散技术，可同时抑制5个以上窄带干扰频段，体积较传统产品缩减20%。针对传统EMI滤波器抑制频带和抑制能力不可调的行业难题，设计了抑制频带可控与抑制能力可调的EMI滤波器，实现了滤波频带在8.5kHz-10MHz频段可调，保证滤波输出等效阻抗≤50mΩ，显著提升了滤波器的滤波性能。【附件材料：1）主要知识产权（发明专利）4项；2）其它知识产权（发明专利）13项；3）在国内外学术刊物上发表论文12篇】</p><p>本项创新设计突破了传统滤波器在高压环境下漏电流大、抑制频段与能力固定的局限，首次设计了多频段窄带干扰的非接触式多谐振可控高效抑制方法（图9），主要设计创新如下：</p><p>图9 多频段窄带干扰的非接触式多谐振可控高效抑制方法及应用</p><p>（1）非接触式多频谐振EMI滤波技术：首创磁环二次侧能量耗散技术（图10），对多个特定频率的窄带电磁干扰频谱可进行有选择性、有针对性的抑制，可同时抑制5个以上窄带干扰频段，体积较传统产品缩减20%，插入损耗≥37dB，更适应现代装备的小型化需求。</p><p>图10 非接触式多频谐振EMI滤波技术原理图</p><p>（2）滤波频带可调有源输出低阻抗控制的EMI滤波技术：发明了抑制频带可控与抑制能力可调的EMI滤波器，其技术原理图如图11，通过实时阻抗匹配使滤波频段在8.5kHz-10MHz 内连续可调，实现滤波频带调整，使输出等效阻抗阻抗在滤波频段内≤50mΩ，较传统产品降低50%，提高了电气化车辆电磁干扰抑制的针对性与灵活性。</p><p>图11 滤波频带可调有源输出低阻抗控制的EMI滤波技术原理图</p><p>（3）滤波能力可调的有源EMI滤波技术（图12）：本产品采用并入式结构设计，利用电容进行干扰信号的检测与抵消信号的注入，同时可根据EMI干扰信号调整注入电流能力，突破了传统滤波器在高压环境下漏电流大、抑制能力固定的局限。</p><p>图12 滤波能力可调的有源EMI滤波技术原理图</p><p>上述创新设计成果系统性解决了车辆大功率电驱系统多频窄带干扰滤波性能不佳等行业技术瓶颈，设计成果已应用于陕汽集团控股公司西安智德汽车的纯电重卡电驱系统、上市公司伟创电气的AC310系列变频系统、西安光谷防务等3家军工企业的军用作战装备电驱系统中。</p><p>【设计创新点三】数字有源EMI动态跟踪滤波的错周期时频混合自适应参数控制方法。创新设计了大功率电驱系统专用数字有源EMI滤波器，首次实现了动态跟踪滤波功能，通过错周期多时间尺度分频变增益延迟补偿技术与在线阻抗解耦技术的结合，解决了数字EMI滤波系统因延迟和噪声源阻抗时变引起的滤波性能降级问题，将系统响应时间压缩至5ns（缩短7倍），高频段插入损耗60dB（增加3倍）。【附件材料：1）主要知识产权（发明专利）4项；2）其它知识产权（发明专利）7项；3）在国内外学术刊物上发表论文10篇】</p><p>车辆电气化程度提升与广泛行驶地域引起的阻抗参数变化，使得车辆大功率电驱系统的电磁干扰呈现了快速变化的特性，可能会造成车辆控制系统误动，安全隐患大。因此，亟需研究新方法与新技术，实现对上述电磁干扰的超快动态抑制。</p><p>本项创新设计针对传统EMI滤波技术难以实现对EMI的超快跟踪抑制，首次设计了数字有源EMI动态跟踪滤波的错周期时频混合自适应参数控制方法（图13），具体设计创新如下：</p><p>图13 错周期时频混合自适应参数控制方法及应用</p><p>（1）具有动态跟踪抑制能力的数字有源EMI滤波技术：针对传统滤波器体积大，高铁设备舱安装困难等问题，首次提出了数字有源EMI滤波技术（图14），该技术采用并入式结构，不会改变滤波对象的原有结构，通过数字化控制与智能化预测，可实现动态跟踪抑制电磁干扰。</p><p>图14 数字有源EMI滤波技术原理图</p><p>（2）错周期时频域混合的自适应参数控制的滤波技术：针对数字控制系统难以避免的多时间尺度延迟导致EMI滤波能力降级的技术难题，首次提出了数字有源EMI系统的多时间尺度延迟模型，基于多时间尺度系统延迟模型，发明了错周期时频域混合的自适应参数控制的滤波算法（图15），实测数据，经过算法补偿后的系统响应时间约为5ns（缩短7倍），使高频段插入损耗37dB（增加1.85倍）。</p><p>图15 错周期时频域混合的自适应参数控制的滤波技术原理图</p><p>（3）基于在线阻抗解耦的有源EMI滤波技术：针对数字有源EMI滤波系统因系统阻抗耦合导致EMI滤波能力降级的技术难题，发明了基于在线阻抗解耦的有源EMI滤波技术（图16），可实现对系统阻抗的在线测量与解耦，使系统全频段插入损耗≥40dB（提升14.3%），性能指标达到国际领先水平。</p><p>图16 基于在线阻抗解耦的有源EMI滤波技术原理图</p><p>上述创新设计成果系统性解决了车辆大功率电驱系统动变电磁干扰难以超快动态抑制的行业难题，已应用于时速350km/时速250km的中国标准化动车组、货运纯电重卡与纯电矿卡、某军用电气化作战装备中。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>与当前国内外相关技术比较</div></div></div><p>本项目的创新设计成果与国内外同类研究与技术相比在EMI预测精度等方面均有提升，具体对比如表1。</p><p>表1 本创新设计成果与国内外相关技术对比表</p><p>比较项目</p><p>同类研究和技术</p><p>本创新设计成果</p><p>整车及大功率电驱系统EMI电磁场模型预测误差EMI磁场发射预测误差≥5.3%（9kHz-30MHz）</p><p>EMI电场发射预测误≥2.8%（30MHz-1GHz）</p><p>EMI磁场发射预测误差&amp;lt;2.53%（9kHz-30MHz）</p><p>EMI电场发射预测误&amp;lt;1.42%（30MHz-1GHz）多频段窄带干扰高效抑制的非接触式多谐振可控技术窄带抑制数量</p><p>≤3个窄带</p><p>体积大</p><p>≥5个窄带</p><p>减小体积20%以上滤波能力调节</p><p>滤波频带调节</p><p>滤波输出等效阻抗≥100mΩ</p><p>滤波频带不可调</p><p>滤波输出等效阻抗≤50mΩ</p><p>滤波频带可调（8.5kHz-10MHz）数字有源EMI动态跟踪滤波的错周期时频混合自适应参数控制技术延迟补偿</p><p>补偿后约为35ns</p><p>高频段插入损耗20dB</p><p>补偿后约为5ns（缩短7倍）</p><p>高频段插入损耗60dB（增加3倍）阻抗解耦</p><p>插入损耗35dB插入损耗≥40dB（提升14.3%）动态滤波能力</p><p>插入损耗固定不可调可快速动态跟踪滤波</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

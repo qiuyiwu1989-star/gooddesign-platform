@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>合成气/蒸汽联产气化炉 · 2021银奖 · 好设计</title>
+<meta name="description" content="1、设计目的
+我国是一个多煤、缺油、少气的国家，煤炭资源丰富，但是煤炭资源禀赋差，仅山西省的“三高”煤（高硫、高灰分、高灰熔点）储量就达到1000亿吨，占煤炭资源总量的35%以上。近二十年来，我国花费数百亿美元引进德国鲁奇、美国德士古、荷兰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2021">← 返回 2021 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>合成气/蒸汽联产气化炉</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">山西阳煤化工机械（集团）有限公司清华大学山西清洁能源研究院</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">张建胜,任金锁,仙运昌,贾雷</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101428</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>设计目的</div></div></div><p>我国是一个多煤、缺油、少气的国家，煤炭资源丰富，但是煤炭资源禀赋差，仅山西省的“三高”煤（高硫、高灰分、高灰熔点）储量就达到1000亿吨，占煤炭资源总量的35%以上。近二十年来，我国花费数百亿美元引进德国鲁奇、美国德士古、荷兰壳牌等煤气化技术和装备，但引进技术和装备普遍存在投资偏高的缺点。更重要的是引进的技术和装备并不能很好的解决高硫、高灰、高灰熔点“三高” 劣质煤的气化问题。长期以来，由于缺乏以“三高”煤为原料的大型煤气化技术和装备，造成资源的极大浪费与环境污染。本设计首要目的就是解决我国“三高”煤的气化难题。</p><p>根据我国总体战略布局要求，国家能源局2015年5月5日对外发布《煤炭清洁高效利用行动计划(2015～2020年)》，同时，工信部与财政部联合发布《工业领域煤炭清洁高效利用行动计划》。本设计的第二个目的是实现煤炭的清洁高效利用。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>设计创新</div></div></div><p>（1）首创了世界第一个水煤浆水冷壁煤气化工艺。将燃烧领域垂直悬挂自然循环膜式水冷壁及其凝渣保护的概念引进到水煤浆气化技术中，气化温度不受耐火材料限制，可达1700℃或更高，气化反应速度快，碳转化率高，煤种适应性好，能够消化高灰分、高灰熔点、高硫煤，实现了原料煤本地化。</p><p>（2）为了解决水煤浆气化炉能耗高的问题，本设计首次研发出水煤浆气化炉新型辐射式蒸汽发生器系统，将气化反应后的显热进行回收，有效提高了煤炭的能源转换效率。</p><p>（3）研发出世界首套水煤浆水冷壁直连辐射废锅气化工业装置，解决了系统集成工业化难度大，安全可靠性差的问题。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>设计价值</div></div></div><p>（1）解决了“三高”煤气化难题，实现原料煤本地化，降低了原料煤的成本，同时保护了当地的生态环境。</p><p>（2）本设计通过对气化显热的回收，可间接减少单位产品的煤炭消耗，以500吨/天投煤量的气化炉为例，每年可间接减少CO2排放量5.65万吨，在我国承诺2030年前实现碳中和的背景下，为煤化工企业带来新的发展机遇。</p><p>（3）每台气化炉每年可为用户增加4000万左右的收益，经济效益明显。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>（1）首创了世界第一个水煤浆水冷壁煤气化工艺。将燃烧领域垂直悬挂自然循环膜式水冷壁及其凝渣保护的概念引进到水煤浆气化技术中，气化温度不受耐火材料限制，可达1700℃或更高，气化反应速度快，碳转化率高，煤种适应性好，能够消化高灰分、高灰熔点、高硫煤，实现了原料煤本地化。采用本质安全的自然循环膜式壁结构进行设计，按强制循环运行，可以保证非正常工况时膜式壁内水循环正常，保证高温高压工况的气化炉安全稳定运行。突破水冷壁大量吸热的传统认识，开发高热阻熔渣层保护的水冷壁浇注料结构，正常运行时灰渣会在燃烧室形成一层高热阻熔渣层保护水冷壁浇注料结构，实现“以渣抗渣”，提高水冷壁的使用寿命。点火升温和运行采用组合工艺烧嘴，将气化炉点火时间由传统的36小时缩短至2~3小时，节省90%的燃料气消耗。</p><p>（2）为了解决水煤浆气化炉能耗高的问题，本设计首次研发出水煤浆气化炉新型辐射式蒸汽发生器系统，将气化反应后的显热进行回收，有效提高了煤炭的能源转换效率。通过建立适用于辐射废锅内的多相流动与复杂传热计算的三维模型，设计出一种独特环形单筒体和径向双面水冷壁结构，能够减小辐射废锅体积、提高热效率，同时减低双面水冷壁的布置比例和维护工作量增加通道面积。蒸汽发生器借鉴了液态排渣旋风锅炉的设计理念，能够有效避免国外同类技术的堵渣和积灰问题。通过回收高温合成气的热量，解决“三高”煤气化能耗高的问题。</p><p>（3）研发出世界首套水煤浆水冷壁直连辐射废锅气化工业装置，解决了系统集成工业化难度大，安全可靠性差的问题。首次将“水煤浆+水冷壁+辐射式蒸汽发生器”进行了组合，并成功实现工业化；首次将原气化炉（水煤浆+耐火砖+激冷流程）通过改造直接升级为更高效、可靠的联产炉（水煤浆+水冷壁+辐射式蒸汽发生器＋激冷流程“），开创了新型煤气化技术改造先河，创新了气化炉改造升级模式，实现了辐射废锅长周期稳定运行，解决了堵渣积灰、热效率降低等问题。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%90%88%E6%88%90%E6%B0%94/%E8%92%B8%E6%B1%BD%E8%81%94%E4%BA%A7%E6%B0%94%E5%8C%96%E7%82%89%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%90%88%E6%88%90%E6%B0%94/%E8%92%B8%E6%B1%BD%E8%81%94%E4%BA%A7%E6%B0%94%E5%8C%96%E7%82%89" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「合成气/蒸汽联产气化炉」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%90%88%E6%88%90%E6%B0%94/%E8%92%B8%E6%B1%BD%E8%81%94%E4%BA%A7%E6%B0%94%E5%8C%96%E7%82%89" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「合成气/蒸汽联产气化炉」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <span></span>
+    <a class="next" href="2021-s01.html"><span class="d">下一项 →</span>高效节能磁悬浮离心鼓风机</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

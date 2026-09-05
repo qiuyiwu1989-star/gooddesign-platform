@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>多平台柔性自动焊接系统 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2020-s12.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2020-s12</div>
+  <h1>多平台柔性自动焊接系统</h1>
+  <div class="meta-line"><b>2020 年度银奖</b><span>东风设计研究院有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2020 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">东风设计研究院有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">吴正华,王林朋,周斌,周宇</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 制造装备（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>随着汽车工业及汽车装备制造业的深入发展，智能、柔性、高效、高精、自动化已成为汽车装备业发展的主流方向，对多车型柔性生产的需求日益提高。但车身焊装的核心技术一直掌握在国外公司手里，车身主焊线特别是合资公司的柔性总拼一直被外国公司垄断，研发具有自主知识产权的柔性总拼系统既迫切又必要。多平台柔性焊装生产线在中国当前这个大环境下必然会大力发展。</p><p>该项目是由东风设计研究院自主研发并具有完整的自主知识产权，能够随机切换两个平台6种以上车型的智能柔性焊装系统。可满足B/C两个级别的中高端车型生产，根据客户不同需求可满足年产10~20万辆智能混流生产能力，自动化率可达100%。</p><p>该系统采用新型地板定位单元自动切换装置实现双平台下车体总成定位，机器人自动抓取对应抓手式柔性夹具同时完成上件和工件定位夹紧，通过发明的型面定位锁紧装置对合拼后的抓手夹具定位锁紧，完成车身合拼。工位间输送采用自主研发的往复高速滚床。另外，在设计阶段采用仿真模拟、虚拟制造技术和离线编程技术，保证工艺装备先进和装备性能可靠。在整个系统的自主研发过程中，我们共获得授权发明专利1项和实用性专利5项，另外4项实用新型专利和3项发明专利已受理。</p><p>目前该项目已经在江铃福特和南京依维柯合资公司成功得到应用。其中江铃福特项目于2016年3月份完成终验收，从2014年8月到2017年底生产线总计已经完成福特撼路者、江铃驭胜、江铃域虎等合格白车身共计176000台的生产任务，实现利润总额4.9亿元。南京依维柯项目于2017年12月份完成终验收，从2017年3月到2018年2月生产线共计销售14565辆汽车，实现销售收入13.8854亿元，新增利润3558万元，累计上交国家税收1.5531亿元。</p><p>作为全国范围内先进的柔性车身总拼生产线，这条线是第一条国内设计院自主设计总包的合资乘用车生产线，此项目的建成带动了同行业兄弟厂家的发展，使之在生产、管理水平得到同步提高，通过采用国内自主开发设计的设备和利用先进的抓手合拼技术，使国内焊装生产线技术走上了一个新台阶，取得了良好的社会效益。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>新型车身成型结构</div></div></div><p>国外的抓手式总拼工位是通过快速插接模块来实现侧围抓手和下车体夹具间的定位锁紧。缺点是：1）由于对快速插接接头的精度要求太高，要保证XYZ三个方向定位精度难度很大。在设计，加工、检测和调试三个环节不能出现任何问题，否则整个抓手需要重新制作；2）合拼后框架整体锁紧力较单一，针对较大车身尺寸稳定性不好；3）快速插接接头经过反复工作，容易磨损，夹具使用寿命短；4）调试工期长和后期维护困难。</p><p>针对这些缺点，我们基于车身定位理论和力学结构原理，发明了型面定位锁紧装置，定位采用型面定位，快速插接接头仅需起到连接作用（如图4）。相比国外同类技术，型面定位具有以下有优点：1）重复精度高；2）型面定位，更便于调试；3）合拼后框架整体锁紧力均衡，能很好的适应车身较大的应用场景；4）相对于快速插接接头，型面定位装置更耐磨，提高了抓手的寿命和降低了维修成本；5）新车型导入的周期短。该技术已获得国家发明专利：ZL201410483284.4（用于柔性车身焊装线抓手夹具总成的快速定位夹紧系统）。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>总拼夹具模块化</div></div></div><p>由于不同级别车型对精度及生产标准要求不同，传统汽车总拼线只能生产同级别车型。如要更新换代一种高级别的新品种车型，需要重新投资新的焊装线，造成了一定浪费。针对这一问题，我们将一体化抓手夹具进行模块化设计，实现了不同车身冲压件精度的B级车和C级车的混流生产。同时可以将总拼工位拆分成2个工位，以满足不同生产纲领的需求。该技术已申报国家发明专利并通过初审：ZL201810194172.5（车身总拼焊接夹具模块化结构）。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>抓手和夹具的一体化设计创新</div></div></div><p>为了解决无预装结构车身总拼难点和减轻工人的劳动强度、提高工位自动化率，依据结构强度基础理论，运用数字化设计和虚拟仿真技术，克服了夹具重量和强度问题，以及焊钳可达性问题，将上件和定位夹紧进行一体化设计，实现机器人自动取件和工件定位夹紧同时完成。该技术已申报国家发明专利并通过初审：ZL201810194488.4（一种多车型混流生产方法即一体化抓手夹具装置），并获得了2项实用新型专利：ZL201721268819.1（一体化抓手夹具装置）、ZL201721351704.9（一种带有模块化传输系统车身焊装生产线）。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>新型地板定位单元自动切换装置</div></div></div><p>新型地板定位单元自动切换装置，利用气缸驱动翻转机构来对车身地板定位销进行切换实现双平台地板定位。相较于风车定位或NC定位机构来说，结构简单、定位稳定、造价低。该技术已获得实用新型专利：ZL 201721270277.1（）</p><div class="p-list"><div class="p-li"><span class="p-mk">5</span><div>传送系统的模块化创新</div></div></div><p>根据通用往复杆的工作原理和高速滚床特点，自主研发了工位间往复高速滚床（如图6）。其输送的动作顺序为上升—前进—下降—返回，相较于传统的滚床输送设备，实现滑撬只用在主焊线内循环，不用布置更多的滚床设备来实现滑撬循环，每个滑撬只用匹配本工位和下一工位的下车体定位夹具，降低了一次性投资资金和调试难度。通过变频电机驱动滚床的上升下降和水平输送，其输送速度最高可达1米/秒；高速滚床升降部分采用链条传动，传动力矩大。输送部分采用同步齿形带传动，传动位置准确；滑撬到位后由齿轮夹紧机构到位夹紧，其对随行夹具的重复定位精度可达±1mm，到位精度高；通过不同的组合可满足年产10~30万辆的焊装线。该技术已获得5项实用新型专利，分别为：ZL201420479864.1（滑撬输送自动返回式设备）、ZL 201420479865.6（滑撬定位装置）、ZL 201320589497.6（同步举升机构）、ZL 201521032896.8（一种滚床维修用安全顶升装置）、ZL 201721351704.9（一种带有模块化传输系统车身焊装生产线）。</p><p>国外各大焊装线集成商经过多年不断努力，均已经形成各自典型的总拼形式。通过与国外主流总拼结构形式进行比较，该系统主要技术参数与国外同类产品相当，部分性能领先于国外产品，价格为他们的60~70%，具有很强的竞争力。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

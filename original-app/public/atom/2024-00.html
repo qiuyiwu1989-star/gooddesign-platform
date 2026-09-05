@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>仿生微纳结构防冰减阻蒙皮 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2024-00.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2024-00</div>
+  <h1>仿生微纳结构防冰减阻蒙皮</h1>
+  <div class="meta-line"><b>2024 年度金奖</b><span>西北工业大学</span>
+  <span class="grade grade-B">B</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2024 年度 · 金奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">西北工业大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">苑伟政,何洋,邓进军,吕湘连,张坤,周文源,欧召阳,唐亚林,周子丹,李昕然</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 航空航天（金奖领域标签映射，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>我国飞机、高铁等现代航行器发展迅猛，防冰避难、减阻增效需求迫切。飞机结冰导致空难占比高达35%，恶劣环境的飞机防冰技术是国际难题，也是我国新机研制的瓶颈；大型航行器摩阻占总阻力的40%-80%，一架客机减阻1%每年可节省燃油40万升，一列高铁减阻1%每年可节省用电28万度，经济潜力巨大。仿生微纳结构是微纳设计领域前沿，为创新蒙皮技术，满足防冰减阻迫切需求提供了崭新途径。但其面临仿生与表面工程多学科交叉、跨尺度微纳功能结构设计等技术挑战。项目历经10余年，取得多项原创性成果，形成以下主要创新点：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>设计出仿秦岭箭竹叶疏冰微纳结构。发现了秦岭箭竹叶独特的疏冰特征，建立起多尺度过冷水滴冲击的“疏冰-防冰”模型，突破了以往仿荷叶超疏水表面的“疏水-防冰”模式；设计的微纳结构冰粘附强度较之光滑表面降低了80%，实现“从形似到神似”的突破；提出微纳结构分层组装制造方法，攻克多层异构结构的制造难题；中国空气动力研究与发展中心冰风洞测试报告表明，能耗降低51%，超过国际先进水平；在国际上首次完成无人机防冰功能飞行试验。</div></div><div class="p-li"><span class="p-mk">2</span><div>设计出仿库姆塔格沙漠气动减阻微纳结构。揭示了库姆塔格沙漠独特的舌形分形气动减阻特征，建立了微纳结构多尺度减阻解耦模型，突破了传统小肋结构风向鲁棒性差的局限；提出了混合掩膜三重光刻工艺，解决了多层复合微纳结构精确制造难题；研发出国际上首台套流体壁面剪应力测试仪及微纳结构减阻测试风洞，壁面剪应力分辨力达0.1Pa，风洞剪切力分辨力达1e-6N，优于国际报道最高水平；设计的微纳结构实现了高达16.7%的气动减阻率，并具有60°的风向摄动偏角，将国际报道的小肋气动减阻极限提升了52%。</div></div></div><p>自主研制的疏冰蒙皮列装我国察打一体化大型无人机“彩虹4”等104架，满足了西藏边防高寒环境安全飞行的急需；减阻蒙皮大幅提升了高速列车CR450、翼身融合民机BWB300的减阻率，为飞机、高铁等提供了全新减阻手段。此外，相应的剪应力传感器还广泛用于“大飞机”、舰载机、航空发动机等摩阻测量。</p><p>项目已获授权国家技术发明专利51项，在国际权威专业期刊发表高水平论文80余篇，获省部级技术发明一等奖3项。项目近3年创产值超20亿元，社会和经济效益潜力巨大。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>我国飞机、高铁等现代航行器发展迅猛，对长航程、高安全和复杂环境适应性的需求迫切，传统蒙皮技术已经难以满足其对防冰、减阻等发展要求，表面结构与功能一体化的仿生蒙皮为此提供了发展途径。师法自然，仿生微纳结构为表面功能的发展提供了创新源泉。项目组发挥西部地区独特的地理资源优势，受秦岭山箭竹叶防冰雪现象和库姆塔格沙漠气动构型启发，提出疏冰、减阻仿生微纳功能结构，为创新蒙皮技术，提升现代航行器性能提供了崭新途径。</p><p>图1 现代航行器防冰减阻需求迫切图2 仿生蒙皮技术为提升现代航行器性能提供了崭新途径创新点一：仿秦岭箭竹叶疏冰微纳结构设计。（该创新点授权国家发明专利28项，发表论文39篇；附件1，4，5，9，31-33）</p><p>（1）揭示秦岭箭竹叶疏冰特征，突破仿荷叶超疏水表面“疏水-防冰”机理局限</p><p>仿生表面微纳功能结构为防冰研究提供了新的发展方向。以哈佛大学、麻省理工学院等为代表研究的仿荷叶超疏水(superhydrophobic)表面对常温大水滴具有很好的疏水性，利用减少水滴（毫米级）与表面的接触来降低冰成核的原理，进而也能产生一定的“疏水-防冰”效果。然而，“夏草不言冬”，这种超疏水表面难以适应飞行条件下高速过冷微小水滴（微米级）从“冰水”冲击表面迅速相变为“冰”的过程，仅靠超疏水表面良好的疏水性，难以取得理想的防冰效果。</p><p>图3 仿荷叶超疏水表面防冰效果不佳项目组深入考察雪莲、冰凌花等过冬草木，比对研究箭竹属、刚竹属、箬竹属等20余耐寒竹种，首次发现在海拔3000米左右的秦岭高山草甸区生长的直接与冰雪相互作用的我国独有植物——秦岭箭竹叶(学名：Fargesia qinlingensis)具有优异的疏冰性能。通过润湿接触角、液滴弹跳行为、冰粘附力等测试，验证了秦岭箭竹叶表面独特的多层不等高微纳结构具有优异的疏冰特征，通过调控冰与表面的粘附力改变冰与表面的“亲疏”实现疏冰(ice-phobic)，进而达到“疏冰-防冰”效果，较之荷叶超疏水表面冰粘附强度降低了45%。</p><p>图4 (a)冰雪环境下的秦岭箭竹叶 (b)秦岭箭竹叶表面疏冰微纳结构（2）设计仿秦岭箭竹叶多层不等高微纳结构，建立多尺度过冷水滴疏冰模型</p><p>提取秦岭箭竹叶表面微观结构关键特征，综合考虑设计与制造约束条件，设计出仿秦岭箭竹叶多层不等高疏冰微纳结构。这种不同高度且阵列排布的柱状、梭形、乳突状、片状微纳米结构有利于过冷微小水滴弹跳，增强了抗浸润性，并对所形成冰粒的粘附接触面形成应力集中，更易产生微裂纹和扩展，有效降低冰粒与表面间的粘附强度，具有优异的疏冰效果。</p><p>图5 仿秦岭箭竹叶多层不等高微纳结构多尺度过冷水滴疏冰模型（3）提出微纳结构分层组装制造方法，攻克多层异构结构制造难题</p><p>针对多尺度微纳结构形貌复杂、不等高微纳结构难以加工、柔性材料大幅面制造困难等挑战，基于分层组装思想，开发出跨尺度柔性微纳结构制造工艺，攻克多层不等高复杂形貌微纳结构制造难题，实现仿秦岭箭竹叶疏冰微纳结构制造。</p><p>图6 仿秦岭箭竹叶多层不等高微纳结构分层组装制造工艺（4）提出基于压力变化规律的冰况探测控制方法，实现实飞结冰测控</p><p>实际飞行环境恶劣多变，疏冰蒙皮需要结合飞行高度、风速等参数进行反馈调节，必须具备结冰实时检测能力，并根据冰况调整控制策略，达到高原环境实战指标要求。项目提出了基于总压静压相对变化规律的多冰况探测方法，有效解决飞行过程中结冰实时探测及防冰控制难题。</p><p>图7 (a)基于总压静压相对变化规律的多冰况探测 (b)不同冰况机翼周围压力分布云图（5）批量研制大幅面疏冰蒙皮，国际上首次开展无人机防冰功能飞行试验</p><p>批量研制出大幅面疏冰蒙皮3000余幅。实验测得多层不等高微纳结构表面冰粘附强度相对于光滑表面冰粘附强度下降80%，实现“从形似到神似”的突破。冰风洞实验证明了其优异的疏冰性能，能耗降低51%，超过国际先进水平。在国际上首次成功开展高寒条件下无人机防冰功能飞行试验。</p><p>图8 大幅面仿生疏冰蒙皮及冰粘附强度测试结果图9 疏冰蒙皮冰风洞实验及无人机防冰功能飞行试验创新点二：仿库姆塔格沙漠减阻微纳结构设计。（该创新点授权国家发明专利23项，登记软件著作权1项，发表论文42篇；附件2-3，6-8，10-11，34-36）</p><p>（1）揭示新疆库姆塔格沙漠独特气动减阻特征，突破仿鲨鱼小肋结构风向鲁棒性局限</p><p>通过表面微纳结构改变边界层实现气动减阻成为学科前沿热点。以往以美国NASA、德国宇航中心为代表的仿鲨鱼皮减阻研究，借鉴水中减阻提出的小肋气动减阻结构虽取得了可观的效果，但存在风向鲁棒性差等突出问题。</p><p>图10 仿鲨鱼皮小肋微结构风向鲁棒性不佳项目组经过大量调研筛选后，发现新疆库姆塔格沙漠和大飞机的雷诺数均为1e8到1e9量级，满足不可压缩黏性流动的相似性分析条件；且具有两个主风向，存在风向摄动，这对于改善小肋结构的风向鲁棒性研究有较大启发，因此可以将其作为大飞机气动减阻研究的模仿对象。</p><p>图11 库姆塔格沙漠沙垄构型（2）设计仿库姆塔格沙漠减阻微纳结构，诠释微纳结构近壁涡演变过程</p><p>提取库姆塔格沙漠独特舌形和分形特征，设计出仿沙漠减阻微纳结构。建立了微纳结构的多尺度“分层破涡”、双支峰“抬涡稳流”、舌形垄“顺风适流”等减阻解耦模型，诠释了仿库姆塔格沙漠微纳结构的近壁涡演变过程。</p><p>图12 仿沙漠减阻微纳结构模型图13 (a)多尺度“分层破涡” (b)双支峰“抬涡稳流” (c)舌形垄“顺风适流”（3）提出掩膜三重光刻工艺，解决多层复合微纳结构精确制造难题</p><p>仿库姆塔格沙漠减阻微纳结构是三维的多层复合结构阵列，且结构尺度范围从微米到百微米，传统微纳制造工艺难以实现。项目提出基于异质掩膜的三重光刻工艺，解决了多层复合微纳结构精确制造难题。</p><p>图14 基于混合掩膜的三重光刻工艺（4）研发国际首台套流体壁面剪应力测试仪，解决剪应力精确测量难题</p><p>流体壁面剪应力是减阻、防冰以及边界层流动状态判定的重要依据。然而，精确测量剪应力一直是国际难题。项目构建出流固界面粘性剪应力的热敏单元本构方程，为蒙皮表面流动状态提供了判定依据。</p><p>图15 (a)微纳结构影响边界层流动状态 (b)速度边界层与温度边界层耦合设计柔性热膜剪应力微传感器阵列，提出张紧薄膜光刻和非平坦表面精确成形等制造方法，研制出厚度仅为30μm的曲面保形剪应力传感器，分辨力达0.1Pa，已交付用户1000余套。</p><p>图16 张紧薄膜光刻和非平坦表面精确成形制造方法图17 柔性剪应力传感器及其标定曲线建立起空气和水介质的流体壁面剪应力校准装置，研发出国际首台套流体壁面剪应力测试仪，为曲面剪应力分布式测量和边界层状态表征提供崭新手段。</p><p>图18 (a)剪应力标定系统及实物图 (b)流体壁面剪应力测试仪（5）构建微纳结构减阻测试风洞，分辨力国际报道最高水平</p><p>在国际上率先构建出微纳结构减阻测试风洞及高分辨力剪切力测试系统，风洞剪切力分辨力可达1e-6N，为国际报道最高水平。剪应力测试能谱表征出近壁湍流状态，实验证明了仿沙漠减阻微纳结构的抑涡减阻效能。</p><p>图19 微纳结构减阻测量风洞及高分辨力剪切力测试装置图20 (a)光滑表面能量谱 (b)微结构表面能量谱（6）研制大幅面减阻蒙皮，减阻率较国际报道最好水平极大提升</p><p>研制出大幅面高风向鲁棒性减阻蒙皮，成功开展风洞试验。实现了高达16.7%的气动减阻率，将以往的减阻风向摄动角度从35°提高到了60°，减阻率较之国际报道的最好水平提高了52%。</p><p>图21 大幅面减阻蒙皮图22 减阻效果测试图推广应用情况</p><p>项目已推广到30多个国家重点企事业单位，成功应用于多项国家重大专项和重点（型号）工程。</p><p>自主研制的仿秦岭箭竹叶微纳结构疏冰蒙皮已成功列装“彩虹4”高原型无人机104架，“成为国际上首款具有防除冰功能的中空长航时无人机”，满足了西藏边防高寒环境无人机安全飞行的急需。</p><p>图23 列装高原型无人机气动减阻蒙皮为“新一代”民机、高速列车等提供了全新减阻手段。其中，在高速列车CR450整车风洞实验中，中段车减阻率最高可达11.3%，有望每年能节省100亿度电，显现出巨大的减阻节能潜力。</p><p>图24 (a)CR450高铁整车减阻风洞实验 (b) 翼身融合民机BWB300样机减阻飞行试验为奥运自行车赛车提供的轮毂回转式运动减阻蒙皮，解决了变速运动减阻的难题，使赛车轮毂减阻3%，为我国奥运健儿提供了夺标利器。</p><p>图25 奥运赛车减阻剪应力传感器已在“大飞机”以及舰载机的气动测量方面得到广泛应用，实现了摩阻分布测量以及分离、转捩等流动状态的实时判定，助力我国系列“大飞机”研制和商业化运营。</p><p>图26 C919大型客机、运20大型运输机、J15舰载机摩阻分布测量图27 超临界翼型飞机风洞实验及大迎角分离状态实飞测量中国空气动力与研究发展中心等权威单位测试报告表明，项目相关成果与国际上报道的同类研究相比，超过国际先进水平。项目被列为国家基金委“纳米制造的基础研究”重大研究计划亮点成果。还被人民日报、科技日报等主流媒体报道，产生了广泛的社会影响。项目成果不仅保障了多项国家重点型号工程的完成，并在风力发电、电动汽车、石化管道等领域具有广阔的应用前景，社会和经济效益潜力巨大。项目成果获省部级技术发明一等奖3项。</p><p>技术先进性</p><p>经与国际上公开发表的数据比较，项目的主要技术指标均优于国内外报道水平，在仿秦岭箭竹叶疏冰微纳结构设计、仿库姆塔格沙漠减阻微纳结构设计等方面研究属于国际首创，如表1所示。</p><p>表1 国内外同类技术对比</p><p>对比项</p><p>国内外</p><p>本项目</p><p>先进性</p><p>仿秦岭箭竹叶</p><p>疏冰微纳结构</p><p>哈佛大学、麻省理工学院：</p><p>仿荷叶防冰微纳结构</p><p>首次设计出仿秦岭箭竹叶疏冰微纳结构，较之仿荷叶防冰微纳结构冰粘附强度降低45%</p><p>首创</p><p>仿库姆塔格沙漠</p><p>减阻微纳结构</p><p>美国NASA、德国宇航中心：</p><p>仿鲨鱼皮减阻微纳结构</p><p>首次设计出仿库姆塔格沙漠减阻微纳结构，较之仿鲨鱼皮减阻微纳结构减阻率提高52%</p><p>首创</p><p>高分辨力微纳减阻风洞测量系统</p><p>现有风洞应变式天平测量系统的剪切力分辨力最高为1e-3N</p><p>风洞剪切力分辨力达1e-6N，具备多维微气动力测量能力</p><p>优于</p><p>壁面剪应力传感器</p><p>美国Taosystems公司电阻温度系数2850ppm/℃，厚度80μm</p><p>电阻温度系数3610ppm/℃，厚度仅为50μm，响应时间1ms，分辨力达0.1Pa</p><p>优于</p></div>
+  <div class="sec-h"><span class="no">03</span><h2>图集</h2><span class="st st-ok">官方档案</span></div><div class="gal"><img loading="lazy" src="../cases/gal/2024-00-0.jpg" alt="仿生微纳结构防冰减阻蒙皮"><img loading="lazy" src="../cases/gal/2024-00-1.jpg" alt="仿生微纳结构防冰减阻蒙皮"><img loading="lazy" src="../cases/gal/2024-00-2.jpg" alt="仿生微纳结构防冰减阻蒙皮"></div>
+  <div class="sec-h"><span class="no">04</span><h2>设计五维</h2><span class="st st-draft">内容团队人工编目 · 解读非官方评价</span></div><div class="dims"><div class="dim"><div class="dim-h"><span class="dim-n">科技</span><span class="dim-s">5/5</span></div><div class="dim-bar"><i style="width:100%"></i></div><p>仿生微纳防冰减阻蒙皮,飞机结冰致空难占 35% 的国际难题</p></div><div class="dim"><div class="dim-h"><span class="dim-n">艺术</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>仿生表面本身具有微纳结构之美</p></div><div class="dim"><div class="dim-h"><span class="dim-n">人本</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>飞行安全直接关乎生命,减阻节省燃油</p></div><div class="dim"><div class="dim-h"><span class="dim-n">商业</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>客机减阻 1% 年省燃油 40 万升,经济潜力巨大</p></div><div class="dim"><div class="dim-h"><span class="dim-n">文化</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>「向自然学习」的设计哲学代表</p></div></div>
+  
+  
+  
+  
+  <div class="sec-h"><span class="no">07</span><h2>权威溯源</h2><span class="st st-ok">人工核选 · 检索于 2026-08-09</span></div><div class="srcs"><a class="srclink" href="http://www.jyb.cn/rmtzcg/xwy/wzxw/202411/t20241126_2111274812.html" target="_blank" rel="noopener">西北工业大学仿生设计项目获2024年中国“好设计”金奖第一名-中国教育新闻网</a><a class="srclink" href="https://kjt.shaanxi.gov.cn/kjzx/mtjj/325469.html" target="_blank" rel="noopener">陕西科技报：西工大仿生设计项目荣获2024年中国“好设计”金奖第一名-陕西省科学技术厅</a><a class="srclink" href="https://esb.sxdaily.com.cn/pc/content/202411/26/content_889615.html" target="_blank" rel="noopener">西工大科研团队项目获中国“好设计”金奖第一名_陕西日报数字报</a></div>
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 B（7 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

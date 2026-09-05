@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>便携式ECMO医疗急救器械 · 2020提名奖 · 好设计</title>
+<meta name="description" content="1. 项目背景
+（1）ECMO技术原理：体外膜肺氧合（extracorporeal membrane oxygenation，ECMO），其将体内的静脉血引出体外，经过特殊材质人工心肺旁路实现血液氧合后注入病人动脉或静脉系统，起到心肺替代作">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E6%8F%90%E5%90%8D%E5%A5%96&amp;year=2020">← 返回 2020 年提名奖名录</a>
+  <div class="kicker"><span class="lv other">提名奖</span><span class="yr">· 2020 · 第六届</span></div>
+  <h1>便携式ECMO医疗急救器械</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">中国人民解放军南部战区总医院,广东顺德工业设计研究院（广东顺德创新设计研究院）,广东丁沃生医疗器械有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">冯鹰扬,梁铭炬,霍枫</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202001321</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>项目背景</div></div></div><p>（1）ECMO技术原理：体外膜肺氧合（extracorporeal membrane oxygenation，ECMO），其将体内的静脉血引出体外，经过特殊材质人工心肺旁路实现血液氧合后注入病人动脉或静脉系统，起到心肺替代作用，维持人体组织的氧合血供。ECMO已成为现今严重心肺疾患或心肺功能衰竭病人治疗的重要手段。</p><p>（2）便携式ECMO：传统的ECMO设备由于体积较大、功能部件分散、移动不便等不足。便携式ECMO由于其便携容易、操作简单，对于急性心肺功能衰竭等危重症患者的治疗可以走出医院，到救护车上、病人家中，甚至在马路边进行。</p><p>（3）新冠疫情危重症救治：新型冠状病毒疫情治疗中，ECMO是危重症病人救治的最后武器。在今年年初，据统计全国400台设备，有一半运往武汉进行救治。武汉中南医院等多个医院采用ECMO设备，对新型冠状病毒危重症患者成功救治。</p><p>（4）项目意义：ECMO产品目前均为国外厂家垄断，没有国内自主知识产权的产品上市，因而使用费用极高，极大地限制了临床推广应用。便携式ECMO自主开发国产化，降低患者使用费用，有利于我国危重症ECMO临床应用和急救水平提高。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>产品先进性：广东丁沃生医疗器械有限公司联合广东顺德工业设计研究院及临床专家，开发出我国首台自主知识产权的便携式ECMO设备以及配套核心耗材。</div></div></div><p>（1）国内首台自主研发自主知识产权ECMO系统，高度集成及智能化。</p><p>（2）国内首创的离心血泵技术，采用先进的叶片式结构，具有高速低血液损伤特点。</p><p>（3）国内首创抗血栓涂层技术。具有血液相容性及抗血栓抗吸附的效果。</p><p>（4）集成化便携式设备。重量为10kg，相比传统ECMO设备，重量减轻50%以上。</p><p>（5）领先的电池管理技术。首创不停机换电池技术，实现长时间户外续航。</p><p>（6）独创的安全双屏设计。防止屏幕故障时无法操控设备。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>产品成果及效益：</div></div></div><p>（1）专利情况：授权发明专利2项，授权使用新型专利9项，授权外观专利1项。</p><p>（2）学术研究：完成了大型动物实验验证，发表国内核心期刊文章1篇。</p><p>（3）项目申报：联合多家单位进行国家重点研发计划“ECMO系统研发”项目申报及答辩（结果待公布）。</p><p>（4）社会意义：是本次新冠疫情中受到高度关注的急需国产化产品。本项目的实施，能有利于降低患者治疗费用，提高我提高我国危重患者的救治水平。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>设计思想：（1）行业痛点分析：ECMO技术被多家国外千亿级医疗巨头垄断，使用成本极高。传统产品不便转运，体积大，线路、管路凌乱，集成程度低。传统产品安全设计少，传统产品安全设计少，单屏显示，缺乏故障处理措施。</div></div></div><p>（2）设计起源：本团队的ECMO产品技术，深感高端医疗器械需要自主创新，特别是危重症急救产品的国外垄断。自2016年开始启动研发，根据临床专家的需求进行开发。已进行了四代设备迭代。目前这款设备，主要从便携、集成化、安全性的角度进行开发及优化。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>产品系统组成及特点：产品系统包括ECMO设备（离心泵、控制系统、监测系统、控制软件），以及一次性耗材（管路、泵头等）。</div></div></div><p>（1）国内首台自主研发自主知识产权ECMO系统，高度集成及智能化。</p><p>（2）国内首创的离心血泵技术。采用先进的叶片式结构，具有高速低血液损伤特点。</p><p>（3）国内首创抗血栓涂层技术。具有血液相容性及抗血栓抗吸附的效果。</p><p>（4）集成化便携式设备。重量为10kg，相比传统ECMO设备，重量减轻50%以上。</p><p>（5）领先的电池管理技术。首创不停机换电池技术，实现长时间户外续航。</p><p>（6）独创的安全双屏设计。防止屏幕故障时无法操控设备。</p><p>（7）全面监控系统。业内最全面的监测能力，包括压力、流量、温度、气泡、血氧血气等监测。</p><p>（8）智能化算法。返流、进气保护、故障自动处理，独创情景式智能提醒功能。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>前期成果及优势：</div></div></div><p>（1）前期成果：通过企业、科研单位、医院的强强联合，项目组不仅在ECMO的临床应用方面有着丰富的经验，而且在ECMO整机、泵头、抗血栓涂层、循环管路、插管、动物实验等研究上也取得了较大进展。其中关键性技术（在线监测、耗材表面涂层等），核心基础零部件（离心血泵、泵头、膜式氧合器等）、核心基础材料（氧合膜丝）以及ECMO整机技术等研究，处于国内领先地位。已完成第三代ECMO工程原型机开发，系统优化了结构和电路设计，实现了临床便携需求，形成整合水箱、在线监测、续航电池、离心血泵、人机界面的便携式原型机。该样机已进行了无心跳大动物模型静脉-动脉（VA）模式支持以及急性呼吸窘迫综合征（ARDS）大动物模型静脉-静脉（VV）模式支持的实验验证，可快速推进至临床验证阶段。</p><p>（2）团队优势：项目运营管理团队成员有丰富的医药企业市场营销经验以及团队管理经验。集研发、市场、销售人才在内的跨领域、跨行业的优势交叉团队及高效的运营管理团队。研发团队主要为高学历技术团队，团队人员超过20人，硕博士占比在80%以上。项目拥有一支经验丰富、技术一流的器官移植与机械灌注技术专家团队，分别由来自西班牙巴塞罗那大学、西班牙器官移植研究院、中国人民解放军南部战区总医院的专家组成。西班牙巴塞罗那大学临床医院肝脏移植中心主任Constantino Fondevila教授首创ECMO用于心脏骤停供体器官抢救。</p><p>（3）项目支撑：A. 广东丁沃生医疗器械有限公司（Guangdong Devocean Medical Instrument Co., Ltd. 以下简称“丁沃生医疗”）是一家从事高端医疗器械研发、生产及销售的企业，提供器官移植与生命支持等临床医学领域的专用医疗器械、耗材和应用产品及解决方案。丁沃生医疗依托广东顺德创新设计研究院和中国人民解放军南部战区总医院联合设立的体外脏器修复和生命支持系统（国际）联合研发中心的研究成果而建立。</p><p>B. 广东顺德工业设计研究院（广东顺德创新合计研究院）是广东省新型研发机构，是顺德区直属事业单位。具有医疗器械开发及测试的高标准实验室。目前建成实验室总面积达4000平方米，十万级无尘车间200平方米，仪器设备投入超1100万元。研发实验包括电子实验室、光学工程实验室、系统集成实验室、细胞工程实验室、生物应用实验室、分子生物学实验室、免疫分析实验；测试实验室包括安规测试实验室等。智能制造及加工实验室，包括精密机械加工实验室、光学组件调试实验室；中试车间包括生物医用涂层涂覆车间。研究院开展先进医疗设备、智能制造装备、新能源等高科技产品研发与工程化项目十余项。研究院聚焦生物医学领域，搭建高起点、国际化的科研协同创新平台。成功研发出国内首款自主知识产权的微滴式数字PCR设备并联合永诺生物进行成果转化；与西班牙的国际器官捐献与移植研究院、中国人民解放军南部战区总医院合作共建“器官研究与发展国际基地”（国际合作协同创新中心），引进国际顶尖资源，开展具有国际影响力的离体肝脏机械灌注设备、供体器官在体机械灌注设备等研发项目。</p><p>C. 中国人民解放军南部战区总医院始建于1933年，是一所集医疗、教学、科研、预防、保健、康复为一体的现代化大型综合性医院。医院专家团队成立了我国第一家器官获取组织（OPO），在国内率先将ECMO用于供体器官保护，率先建立ECMO保护供体器官的流程，在ECMO保护供体器官的推广应用方面做了大量工作。主持多项军用便携式ECMO项目。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2020%E5%B9%B4%E6%8F%90%E5%90%8D%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E4%BE%BF%E6%90%BA%E5%BC%8FECMO%E5%8C%BB%E7%96%97%E6%80%A5%E6%95%91%E5%99%A8%E6%A2%B0%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E4%BE%BF%E6%90%BA%E5%BC%8FECMO%E5%8C%BB%E7%96%97%E6%80%A5%E6%95%91%E5%99%A8%E6%A2%B0" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「便携式ECMO医疗急救器械」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E4%BE%BF%E6%90%BA%E5%BC%8FECMO%E5%8C%BB%E7%96%97%E6%80%A5%E6%95%91%E5%99%A8%E6%A2%B0" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「便携式ECMO医疗急救器械」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2020-n01.html"><span class="d">← 上一项</span>模块化智能协作机器人</a>
+    <a class="next" href="2020-n03.html"><span class="d">下一项 →</span>无针皮肤缝合器</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>隧道桥梁清筛机 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-s07.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-s07</div>
+  <h1>隧道桥梁清筛机</h1>
+  <div class="meta-line"><b>2023 年度银奖</b><span>中国铁建高新装备股份有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中国铁建高新装备股份有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">姜雷,罗建利,倪忠伟,豆玉龙,谢寅山</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 工程装备（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>铁路是国民经济的大动脉，具有运行速度快、运输能力大、运行平稳及安全可靠等特点，在运输领域占有重要地位。铁路大型养路机械是铁路养护的重大技术装备，主要用于新线建设和既有线路大修和维修，包括线路清筛、捣固、配砟、稳定等装备，其集成性强，技术难度大，对保障列车安全运行、延长铁路使用寿命具有至关重要作用。</p><p>清筛机是铁路养护的主力机型，可将脏污道砟从轨枕下挖出，经筛分后的标准、清洁道砟回填至道床，污土抛至物料运输车或线路两侧，恢复线路的透水性和弹性。我国拥有13万余公里铁路有砟线路，其中11万公里普通线路采用既有清筛机可进行机械化养护作业，剩余2万余公里的隧道和桥梁线路，因其狭小空间限制，既有清筛机无法施工作业，主要以人工清筛为主，存在作业效率低、作业质量差和人工成本高、安全隐患大等痛点。</p><p>针对我国铁路线路隧道和桥梁养护难题，通过对挖掘、智能控制和道砟管理系统等核心技术的攻关，研制了一种具有自主知识产权的铁路隧道桥梁清筛机。</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>创新设计了五边形门式垂直挖掘装置，实现国内外械化清筛最小挖掘宽度3100mm和最小挖掘深度200mm，解决隧道和桥梁等窄小空间的机械化清筛的行业难题。</div></div><div class="p-li"><span class="p-mk">2</span><div>采用双起拔道装置+测量装置协同作业模式，在国内首次实现作业后线路几何参数量化、精准控制，解决了清筛作业后线路几何参数控制的难题。</div></div><div class="p-li"><span class="p-mk">3</span><div>创新设计了道砟管理系统，避免了作业时意外停机造成线路堆砟，及改变了垅口道砟回填依赖人工的施工模式，减少配合人工6人，大幅节省了辅助作业时间，提升作业安全及效率。</div></div><div class="p-li"><span class="p-mk">4</span><div>创新设计了补新砟装置，实现作业中适时补砟，可取消机车和卸砟车配合作业，创新了铁路道床补新砟施工工法。</div></div></div><p>2020年11月完成了样机试制并发往成都局进行运用考核，2022年1月通过国铁集团组织的技术评审，同年9月获得国家铁路局颁发的产品型号许可和制造许可。该项目获得授权专利15项，其中发明专利3项。截至目前，该产品已累计生产11台，实现销售收入1.62亿元，销往成都、太原、北京等铁路局，较人工清筛每公里可节约成本23万元。</p><p>具有自主知识产权的隧道桥梁清筛机整机技术性能达到国际先进水平，实现了国内外最小挖掘宽度和最小挖掘深度的机械化清筛作业，替代人工，填补了国内外该领域空白，解决了长期困扰铁路隧道和桥梁等窄小空间与特殊作业环境中无机械化施工手段的行业难题，促进了国内铁路大型养路机械行业技术进步，有力支撑了中国铁路持续高速发展，以及“一带一路”等国家战略的实施。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>铁路大型养路机械是集机械、电气、液压、气动、计算机和自动控制等专业先进技术于一体的高新技术产品。作为先进轨道交通装备的重要组成部分，属于《中国制造2025》十大重点领域之一，已列入国家《“十四五”国家战略性新兴产业发展规划》和《战略性新兴产业重点产品和服务指导目录》。</p><p>隧道桥梁清筛机由自主创新的垂直挖掘装置、双起拨道装置、道砟存储装置、补新砟装置、线路几何参数智能控制系统、喷淋降尘系统等多学科、多领域系统集成，具有远程维护与诊断功能。经专业机构检测，车体静强度、动力学性能、作业性能等各项指标满足设计要求。经国铁集团科信部组织的专家技术评价，该机总体技术水平达到国际先进。该机主要创新点如下：</p><p>主要创新点一：首创了垂直挖掘装置</p><p>既有清筛机主要采用倾斜式挖掘装置，最小挖掘宽度4030mm，最小挖掘深度300mm，而铁路隧道桥梁可机械化作业宽度小于3500mm，道床道砟深度不足250mm，无法采用现有清筛机施工作业，研究一种满足窄小空间施工作业的新型挖掘装置，解决既有铁路隧道和桥梁线路机械化施工作业的行业难题。</p><p>颠覆传统的倾斜式挖掘装置结构，首创垂直于地面的挖掘装置，其挖掘宽度3100mm是国内外清筛作业的最小宽度，挖掘深度200mm是国内外在不进行线路起道作业时最小深度，具有安装空间紧凑，挖掘宽度窄、通过性强的特点，可覆盖国内既有铁路线路隧道、桥梁区间的清筛作业。“一种适应铁路隧道狭窄作业面作业的挖掘装置”获发明专利授权，获2018年中国铁建股份有限公司优秀发明专利奖。</p><p>（1）首创垂直于地面的门式挖掘装置，采用扒板方向与连接销轴平行的特殊扒链结构，减小了扒板高度，增加扒板长度，在保障作业效率的前提下，实现了国内外清筛作业的最小挖掘宽度3100mm和最小挖掘深度200mm，有效保护隧道、桥梁及站台等线路的铁路设施。</p><p>（2）挖掘链垂直运转过程中，为了解决驱动旋转面与扒链重心不在同一平面，扒链前倾与机体干涉的问题，设计了带锥度的角滚轮和限位装置，有效控制挖掘扒链运转轨迹，确保了垂直挖掘作业的可靠性、稳定性。</p><p>（3）设计了下降导槽伸缩调整机构，伸缩行程±100mm，在曲线超高线路上作业时，通过调整下降导槽的伸缩及导槽支架的升降，确保挖掘底梁与轨枕平行，改善挖掘装置的通过性，提高作业效率和质量。</p><p>（4）在挖掘装置上部落料区设计了压轮，压轮使挖掘链运转轨迹呈V型（先向下再向上），大幅提升落砟效率。</p><p>主要创新点二：发明了双起拨道及线路几何参数智能控制技术</p><p>线路横平值、纵平值、正矢等几何参数是衡量铁路线路质量的主要指标，几何参数优劣直接影响行车安全。线路几何参数控制技术是清筛机长期研发的重点，每一轮线路几何参数控制技术的优化，都能提升整机的作业效率、质量和安全性。对线路几何参数智能控制技术的研究，有助于解决清筛机挖掘作业后线路几何参数无法量化控制的难题。</p><p>研发了双起拨道装置及线路几何参数智能控制系统，作业后线路横平值可控制在±20mm范围内，达到国内最优技术参数，解决了线路几何参数无法量化控制及作业后线路质量不可控的难题。在国内首次实现作业后线路几何参数量化、精准控制，实现作业后线路水平和轨向良好，提升了配套车辆作业安全及效率。</p><p>（1）首次采用主辅双起拨道装置作业模式，主起拔道装置安装于挖掘装置前部，对道床进行起拔道作业，提升挖掘装置通过性及减小挖掘阻力，解决了作业边界及道砟深度不足的问题；辅助起拨道装置安装于挖掘装置后部，对挖掘后道床进行起拔道作业，恢复线路状态。</p><p>（2）设计了线路几何参数智能控制系统，通过在测量小车和辅助起道装置上安装传感器，采集挖掘作业前、后线路的横平值和里程值，对线路几何参数进行计算分析得到线路的超高差，通过控制系统实现挖掘作业后线路横平值自动调整，横平值可控制在±20mm范围内，提高车辆通过安全性。</p><p>主要创新点三：发明了道砟管理和补新砟技术</p><p>既有清筛机作业时，线路堆砟、垅口回填依赖人工辅助作业，作业效率低；传统线路清筛作业前采用卸砟车组提前预卸石砟的施工模式，增加了施工成本和时间。研究一种道砟管理及补新砟技术，增加、提升清筛机的功能和性能。</p><p>（1）设计了由储砟斗、洁砟带、分砟装置和控制系统组成的道砟管理系统，避免了作业时意外停机造成线路堆砟，及改变了垅口道砟回填依赖人工的施工模式，减少配合人工6人，大幅节省了辅助作业时间，提升作业安全及效率。</p><p>（2）设计了补新砟装置，通过补新砟装置与回填系统配合，实现作业适时补砟，可取消卸砟车组作业工序，“天窗”（列车运行间隔时间）作业效率提升约30%，创新了施工工法。</p><p>主要创新点四：突破了清筛作业安全环保技术</p><p>既有清筛机挖掘作业时粉尘污染大，作业环境恶劣，人机性差。隧道桥梁清筛机在相对封闭、有限空间作业，需解决粉尘、噪音、有害气体污染等难题，改善作业环境，保证作业人员健康。</p><p>集成创新了水雾喷淋、增压除尘、尾气净化、有害气体及氧气监测报警装置等，提升了清筛机安全环保性能，改善了现场作业环境。</p><p>（1）整车设置高压喷雾降尘系统，减少粉尘危害及污染，极大改善隧道恶劣作业环境。</p><p>（2）司机室设计了增压装置，作业时可保持司机室内微正压状态，避免外部作业粉尘进入，保证作业司机室具有良好的操作环境。</p><p>（3）针对隧道有限空间施工作业，设计了尾气净化装置，减少有害气体排放，改善作业环境。</p><p>（4）车体两侧及司机室内配置有害气体及氧气监测报警装置，可实时监测一氧化碳和氧气浓度，一氧化碳浓度超标或氧气浓度不达标时发出声光报警，保障作业人员生命健康。</p><p>（5）配置移动式降噪通讯设备，方便作业时各号位操作人员顺畅沟通，人机性更优。</p><p>世界首创具有完全自主知识产权的隧道桥梁清筛机，在铁路狭小空间等特殊区间实现机械化作业，替代人工，为铁路养护提供一种新的施工解决方案和技术装备。该机申请专利16项，已获授权专利15项，其中发明专利3项。该机突破的新技术可复制、推广应用到既有清筛系列产品，引领中国铁路机械化清筛作业施工工法的变革，推进清筛系列产品的升级换代。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

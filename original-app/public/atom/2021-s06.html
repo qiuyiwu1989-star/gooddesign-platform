@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>“以微带宏”刚柔耦合超精密运动平台 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-s06.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-s06</div>
+  <h1>“以微带宏”刚柔耦合超精密运动平台</h1>
+  <div class="meta-line"><b>2021 年度银奖</b><span>广东工业大学佛山市华道超精科技有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">广东工业大学佛山市华道超精科技有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">白有盾,陈新,黄建彬</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 制造装备（逐条初审，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>高速精密运动平台是高端装备的核心部件。电子制造、精密检测技术的发展对运动平台的精度需求进入了亚微米级甚至纳米级。然而，现有机械导轨式运动平台受摩擦和弹性变形的影响，精度难于突破亚微米级。宏微复合平台虽然能解决运动平台长行程与高精度需求之间的矛盾，但是存在宏微切换控制效率低，两套驱动成本高的弊端。</p><p>本项目颠覆传统“以宏带微”的双驱切换控制模式，首创“以微带宏”的单驱模式，宏微自适应切换控制，效率高，成本低。因势利导，利用柔性铰链大变形非线性行为，实现刚柔运动自适应切换；化弊为利，以弹性变形补偿摩擦死区，精度更高；变形集中在柔性铰链，位移更加均匀；化难为易，将摩擦力转化为弹性力来补偿，为摩擦力的补偿提供新的途径。受高铁技术启发，首创运动平台悬挂减振新原理，使用柔性铰链为平台装上悬挂系统，并发明了无缝导轨，满足了悬挂减振条件，使平台运行更加平稳。项目申请了52件发明专利，已经授权26件，14件核心专利进入美英德日韩等发达国家，已获授权10件，形成了完善的专利保护池，获广东省专利金奖3项和粤港澳大湾区高价值专利培育布局大赛初创组第二名。</p><p>专利技术孵化了佛山市华道超精科技有限公司，获得2020年佛山市南海区“蓝海人才计划”创新创业团队A类资助，设计并注册了“华道超精”图形商标，正在制定刚柔耦合超精密运动平台技术规范行业标准。项目开发了基于直线电机、伺服滚珠丝杠、旋转直驱电机等驱动形式的三大系列刚柔耦合超精密运动平台，精度均突破导轨平台的精度极限，打破Aerotech、PI等国外品牌对超精密运动平台的垄断，支撑国产装备升级换代。开发的光电雷达双轴旋转平台，解决了低速爬行和折返误差大的问题，跟踪精度提高了五倍，有力提升了激光武器的探测和打击距离，为国防安全提供保障。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>本项目融合长行程机械导轨与高精度柔性铰链纳米平台，开发了宏微一体化刚柔耦合运动平台，解决了运动平台长行程与高精度的矛盾。在结构上，采用柔性铰链弹性变形来补偿摩擦死区，实现更高精度。在控制上，将非线性摩擦扰动转换为弹性变形扰动，并采用基于指南车的自抗扰控制算法，提前对扰动进行估计补偿，使之等效为无摩擦运动平台，并具有机械导轨的高加速性能。创新点体现在：</p><p>1)工作模式创新</p><p>颠覆传统“以宏带微”的双驱切换控制模式，利用柔性铰链非线性变形特性，首创“以微带宏”的单驱模式，宏微自适应切换控制，效率高。</p><p>2)结构设计创新</p><p>化弊为利，采用柔性铰链的弹性变形补偿摩擦死区，实现更高精度。主动优化变形分布，从而使平台整体位移更均匀，克服PI等高精度平台被动依变形分布设置输出点的局限。紧凑型连接结构设计，提高了平台刚度、降低了平台重心，有利于多轴宏微一体化刚柔耦合平台的高速精密运动。</p><p>3)控制方法创新</p><p>摩擦扰动和多轴同步控制是运动控制中的量大难点，本项目采用刚柔耦合设计，将非线性摩擦扰动转换为可测量的弹性变形扰动。采用自抗扰控制算法，将弹性扰动、负载变化、多轴运动引起的惯性变化逐项等效考虑为统一的复杂总扰动，实现高精度同步控制。另外，还将测量、执行机构导致的时延问题进行补偿，实现纳米级运动。</p><p>4)驱动器创新</p><p>现有驱动器主要采用PID控制，当出现偏差时才会补偿，本项目根据自抗扰控制算法需要，开发双通道同步反馈的高响应驱动器，将平台的扰动在驱动器中进行补偿，实现环境自适应的智能驱动，并将控制方法与工艺程序进行隔离，方便宏微一体化刚柔耦合平台的推广应用。</p><p>运动平台是制造装备和检测仪器的核心部件。长期以来，受导轨摩擦和弹性变形的影响，运动平台在结构和控制上都存在局限：结构上，驱动力导致运动平台产生非均匀弹性变形，使得工作点与测量点之间的位移不一致。控制上，由于导轨制造和装配误差，使得导轨摩擦力呈非均匀随机分布，无法用模型进行准确描述。另外，定位阶段速度过零点时存在摩擦死区和黏滑现象，无法实现连续位移输出。</p><p>本项目研究团队经过十余年的积累，从高速、精准、平稳等角度对运动平台的结构、控制方法和导轨进行了重新发明。申请专利近百件，已获授权50件，其中美英德日韩等发达国家专利14件（已获授权10件，附件8.2），涵盖电子制造和超精密加工的主要国际市场。专利池估价4721万元，获得了2020年大湾区高价值专利培育布局大赛初创组银奖（第二名，金奖只有1名），三大关键技术的核心专利均获得广东省专利金奖，并作为主要创新点获得了2016年广东省科学技术奖励一等奖和2019年国家技术发明二等奖，支撑了精密电子制造技术与装备教育部重点实验室成为国家重点实验室。在产业化方面，获得了2019年广东省高校成果转化大赛路演初创组二等奖（第二名，一等奖仅1名）。2020年获得第十一届佛山市南海区“蓝海人才计划”创新创业团队A类资助。已经申请发明专利11件，其中用于解决运动平台平稳性的无缝导轨系列专利4件，此外还开发了包括Mini/Micro LED巨量转移、用于国防领域的刚柔耦合双轴超精密旋转平台和用于下一代光刻机的气浮导轨式接触切换双工件台及其控制方法。开发的Aerotech对标平台，仅通过结构的创新，重复定位精度比国外顶尖平台高3-5倍，售价仅为对标平台的50%~70%，性价比高；开发了双轴旋转平台，实现了低速跟随精度和正弦扫描折返跟踪精度五倍提升，支撑了探测和打击距离的成倍提升；开发了纤维显微结构快速图像采集系统，扫描采样速度从30分钟降低至5分钟，支撑了服装行业衣料成分的快速检测。</p><p>为了实现品牌建设，以太极阴阳代表刚柔双极，指南针代表自抗扰控制，设计了刚柔耦合结构与自抗扰控制的图形商标，获得了美术作品著作权，并中华智慧、道法自然之意，取华道超精为商标，用科学理论指导，设计符合自然规律的产品，引领超精密运动平台的技术创新，并让华道超精成为刚柔耦合超精密运动平台的代名词。 项目已经开发了系列产品，通过技术发开、专利转让、专利实施许可、创新创业项目等方式，累计获得874.5万元（见附件一）。核心专利许可直线电机龙头企业（附件4.2），三年销售额1.6亿元（见附件七），高端运动平台基础部件打破国外垄断，并带动了国产装备挺进国际高端（附件4.1）。刚柔耦合双轴旋转平台提高激光武器的探测和打击距离，实现先敌制胜，对国防现代化建设意义重大。</p><p>项目开发了基于直线电机、伺服滚珠丝杠、旋转直驱电机等驱动形式的三大系列刚柔耦合超精密运动平台，精度均突破导轨平台的精度极限，打破Aerotech、PI等国外品牌对超精密运动平台的垄断，支撑国产装备升级换代。显著提升了我国电子后封装设备的国际竞争力，对我国半导体器件封装装备制造业的跨越式发展起到了重要推动和引领作用，为行业的技术进步做出了突出贡献。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

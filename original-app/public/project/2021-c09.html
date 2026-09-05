@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>辅助上下床的多功能助老椅 · 2021创意奖 · 好设计</title>
+<meta name="description" content="（1）设计目的：随着年龄的增加，人体的各个器官、关节等功能都会随之减弱，肢体的协调性也会下降，尤其是腰腿关节最容易出现问题，针对人口老龄化的健康养老问题轮椅面临着日渐强烈的需求。此作品旨在设计一种辅助独居老人在轮椅和床之间便捷转移的多功能助">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E5%88%9B%E6%84%8F%E5%A5%96&amp;year=2021">← 返回 2021 年创意奖名录</a>
+  <div class="kicker"><span class="lv other">创意奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>辅助上下床的多功能助老椅</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">中国人民解放军空军工程大学防空反导学院</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">吴蓬飞,王彧,王崴,瞿珏</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202104345</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>（1）设计目的：随着年龄的增加，人体的各个器官、关节等功能都会随之减弱，肢体的协调性也会下降，尤其是腰腿关节最容易出现问题，针对人口老龄化的健康养老问题轮椅面临着日渐强烈的需求。此作品旨在设计一种辅助独居老人在轮椅和床之间便捷转移的多功能助老椅为独居老人提供便利。此作品包括轮椅车体、基座、脚托架、整体升降机构、腿部抬升机构、座椅旋转机构和整体平移机构，基于模块化设计思想，将智能轮椅控制系统分为轮椅驱动模块、系统控制模块、无线通讯模块及传感检测模块4 个模块，以嵌入式微控制器为核心选择传感器搭建了整个控制硬件系统，设计了基于安卓系统的人机交互窗口。由于安卓平台具有较强的可拓展性，可以对助老椅人机交互端进行智能家居和远程医疗等网络接口的研究，提高助老椅系统的实用性和人机交互性能，使其高效安全、易于控制。</p><p>（2）设计创新：①通过整体升降机构、平移机构、旋转机构及腿部抬升机构实现辅助独居老人独自在助老椅和床之间转移的功能。②驱动系统采用麦克纳姆轮，在狭窄空间，如走廊、电梯、室内实现全向移动，安全高效。③在现有的轮椅上增装其他装置，如储物盒、置物板，方便独居老人存取药物，有助于改善用户体验。④采用红外识距传感器提供避障功能，增强安全性;安装蜂鸣器提供服药报时功能;安装摄像头、开发微信小程序，利于监护人对老人的远程监护。⑤将传统的轮椅与计算机技术相结合, 采用基于安卓系统的移动终端作为助老椅的人机交互终端，设计搭建人机接口形成机电一体化产品。</p><p>（3）设计价值：智慧城市、智慧生活是目前社会发展的主旋律，而针对人口老龄化的健康养老问题，也已经成为当前我国必须面对和解决的社会问题。因此，独居老人对助老机械的需求成为了一块具有潜力的消费市场。目前市场上轮椅种类丰富，却没有一款可以很好实现轮椅和床之间的自由切换。且一般的电动轮椅造型、功能单一，仅仅满足有限的代步需求。老年人腰腿关节功能较弱，独立上下床存在困难，需要护理人员协助。此作品旨在解决这一需求，从而减轻家属的负担，提高独居老人的生活质量。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>功能创新：①助老椅通过整体升降机构、整体平移机构、座椅旋转机构及腿部抬升机构创新性实现辅助用户独自上下床的功能。②在现有的轮椅上设计加装其他装置，储物盒、置物板，方便独居老人存取药物，有助于改善用户体验。</p><p>技术集成创新：①将传统的轮椅与计算机控制技术相结合，采用基于安卓系统的移动终端作为智能轮椅人机交互终端，设计搭建助老椅人机接口形成机电一体化产品。②采用麦克纳姆轮设计全向驱动机构，在狭窄空间，如走廊、电梯、室内实现全向移动，安全高效。③采用红外传感器提供避障功能，增强安全性；安装蜂鸣器和指示灯提供远程提醒服药功能；安装所示摄像头、开发微信小程序，利于家属对独居老人的远程监护；加装紧急情况一键报警按钮，以保证家属可以第一时间了解老人突发情况，对独居老人的突发病症可以第一时间做出处理。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E5%88%9B%E6%84%8F%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E8%BE%85%E5%8A%A9%E4%B8%8A%E4%B8%8B%E5%BA%8A%E7%9A%84%E5%A4%9A%E5%8A%9F%E8%83%BD%E5%8A%A9%E8%80%81%E6%A4%85%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E8%BE%85%E5%8A%A9%E4%B8%8A%E4%B8%8B%E5%BA%8A%E7%9A%84%E5%A4%9A%E5%8A%9F%E8%83%BD%E5%8A%A9%E8%80%81%E6%A4%85" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「辅助上下床的多功能助老椅」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E8%BE%85%E5%8A%A9%E4%B8%8A%E4%B8%8B%E5%BA%8A%E7%9A%84%E5%A4%9A%E5%8A%9F%E8%83%BD%E5%8A%A9%E8%80%81%E6%A4%85" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「辅助上下床的多功能助老椅」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-c08.html"><span class="d">← 上一项</span>基于不占道路情况下的修补自动化设备设计</a>
+    <a class="next" href="2021-c10.html"><span class="d">下一项 →</span>重力自驱动座便器坐/起助力与助便装置</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

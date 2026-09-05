@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>高性能复杂管类构件三维矢量柔性弯曲成形技术及装备 · 2025银奖 · 好设计</title>
+<meta name="description" content="航空航天装备与核能装备作为国之重器，是支撑国家战略安全与科技强国的基石，其高安全性和高可靠性运行和服役，意义重大。复杂管类构件是空天和核能装备管路系统或结构组件中的重要组成部分，承担着介质输运、热控、结构承载等重大关键任务。但是，空间复杂管">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2025">← 返回 2025 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2025 · 第十届</span></div>
+  <h1>高性能复杂管类构件三维矢量柔性弯曲成形技术及装备</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">南京航空航天大学,江苏银环精密钢管有限公司,南京航空航天大学无锡研究院</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">郭训忠,程诚,刘春梅,沈一洲,王炜,刘瑜,杨秋成,王辉,朱思彤,丁潼</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">12025060023</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>航空航天装备与核能装备作为国之重器，是支撑国家战略安全与科技强国的基石，其高安全性和高可靠性运行和服役，意义重大。复杂管类构件是空天和核能装备管路系统或结构组件中的重要组成部分，承担着介质输运、热控、结构承载等重大关键任务。但是，空间复杂管类构件通常具有多曲率、连续变曲率甚至异形截面弯扭等几何特征，传统制造技术整体成形难度极大。三维矢量柔性弯曲成形技术及装备是实现此类构件整体成形制造的关键所在。我国在该领域面临着基础理论严重欠缺、关键技术受制于人、高端装备近乎空白的“三大困境”，严重制约着空天及核能装备等所需复杂空间管类构件的高性能柔性制造。</p><p>本项目围绕复杂空间管类构件三维矢量柔性弯曲成形技术及装备自主研发的重大需求，在国家自然科学基金联合基金重点项目（经费：225万）、JW装备发展部领域基金重点项目（经费：200万）、JKW某基础加强重点项目（经费：1700万）、JW装备发展部某重大转化项目（经费：1637万）、江苏省产业技术研究院重点孵化项目（经费：1260万）及国防军工单位型号攻关等20余项重要项目的支持下，前后历时约10年，在三维矢量柔性弯曲成形理论、关键技术、系列化装备以及重大工程应用等方面开展了全链条、系统性研究工作，取得以下设计创新特点：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>首创复杂空间管类构件整体轴线形成机制及成形极限调控理论：揭示了模具空间连续变化位姿对构件轴线成形的核心影响机制，建立了连续弯曲不均匀变形理论模型，并创新性地提出薄壁构件多物理场耦合下的柔性支撑调控方法，突破性地实现了弯曲半径≥2.5D的复杂空间管类构件连续可变柔性整体成形。</div></div><div class="p-li"><span class="p-mk">2</span><div>发明模具位姿解析与回弹主动补偿相融合的三维矢量柔性弯曲成套技术：创新提出异形截面型材多场辅助柔性弯曲成形方法，发明了轴线弯曲主动动态补偿技术，解决了轴线精度精确控制的世界性难题，将轴线尺寸误差显著降低&amp;lt;1.0mm）。</div></div><div class="p-li"><span class="p-mk">3</span><div>设计复杂空间管类构件三维矢量柔性弯曲成形系列装备设计与研制：独创性设计了主动式偏心和金属/陶瓷复合模具、多点分布压紧装置；开发了工艺快速解析及多轴联动控制系统；最终研制出系列化、标准化的三轴/五轴/六轴数字化三维矢量柔性弯曲成形装备系统，实现了管径1-120mm、长度达12m的钛/钢/铝等复杂空间管类构件的高精度、自由弯扭一体化成形能力。</div></div></div><p>本项目研究成果获授权发明专利37件，国际专利1件，制定规范标准3项，发表学术论文70篇，出版中、英文著作各1部。成果鉴定专家认为：该成果技术难度大，创新性强，总体技术处于国际先进水平，其中复杂空间管路连续变曲率轴线整体控制技术、多场辅助复合弯扭主动补偿技术达到国际领先水平。</p><p>项目实施以来，该成果已经在我国歼击机、航空发动机、空间站等15种国防重大装备型号中得到应用，并推广应用于核电、石化、城市供水等领域，打破了国外技术封锁和装备垄断。其中，典型产品核电690U形管国内市场占有率已超过75%，全球占有率第一，。累计销售额达43.21亿元，提升了我国重大装备制造业技术水平，确定了我国在国际市场上的竞争优势，保障了国家重大工程的战略安全。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>立项背景</div></div></div><p>航空航天装备与核能装备作为国之重器，是支撑国家战略安全的基石。《十四五规划和2035年远景目标纲要》明确提出要加强航空航天高端装备研发应用，推动航空航天工程装备创新突破；《中国制造2025》将核能装备列为重点发展方向，要进一步实现核岛主设备、燃料元件及传热组件等关键技术的自主化和国产化。</p><p>管类构件是航空航天装备和核能装备管路系统或结构组件中的重要组成部分，承担着介质输运、热控、结构承载等重大关键任务，且量大面广。在国防领域，飞机管路系统中弯曲导管占总数70-80%，单架飞机超3000根；空间站等航天系统热控管路曲率跨度大、截面形状复杂，弯曲半径规格超200种，截面形状约50余类；单辆装甲车平均包含400多种规格异形截面弯曲构件，涵盖车框、底盘和炮塔等关键部位。而在民用领域，核电站冷却系统单机组管路轴线种类超600组；石化装置单套反应设备里弯曲构件超8000根；不同规模的城市供水系统通常需数十万根到数百万根管类构件保障供水系统的正常运转。随着上述诸多装备向着轻量化、紧凑化、小型化等方向发展，管类构件也由原来的简单形状逐步演变为复杂形状，通常具有轴线多曲率、连续变曲率、异形截面弯扭(如图1所示)等多种几何特征。</p><p>图1 复杂空间管类构件的应用场景现有弯曲技术在“直段+弯段”的简单形状管类构件制造中发挥了重要的作用，但是针对复杂形状的构件存在一定的局限性。一是现有技术对于变曲率轴线的构件制造，一般需要分段成形后拼焊，焊缝位置应力集中，战机在大压力及交变载荷的共同作用下，导管易发生“跑冒滴漏”现象（导致约30%的事故）。二是现有技术很难实现异形截面型材构件的弯扭复合成形，常需要弯曲后扭转矫形，导致轴线难以控制及预测，容易引起异形截面管类构件力-形失配/失效。如航天器Ω形截面换热管路弯扭矫形损伤累计降低疲劳寿命23%；装甲车炮塔下围筋C形截面型材辊弯成形后需要反复扭转矫形，严重制约了生产效率和成形质量。因此，亟需发展整体成形能力更强、材料适应性更好、响应速度更快的圆形及异形截面管类构件三维矢量柔性成形技术，以满足航空、航天、兵器、核电、石化及供水等国防及民用装备所需复杂空间形状管类构件高安全性、高可靠性及高效制造等苛刻要求。</p><p>三维矢量柔性弯曲成形技术，通过主动设计和控制成形机构空间运动轨迹，对管材施加矢量力系，基于精确的动态补偿算法，实现材料流动的精准控制，以突破传统管类构件制造技术存在的“焊缝多、柔性差、响应慢”等瓶颈难题。美国、日本和德国已将该技术列入先进制造国家战略计划，并应用于新一代飞机、运载火箭、空间卫星、航空发动机等军用尖端装备及民用重点工程关键构件的研制，提升了多种重大关键装备的性能。</p><p>但是，三维矢量柔性弯曲成形过程变形约束少，影响因素多，材料流变规律复杂，整体技术难度高、挑战性极大。我国自主研发面临复杂轴线整体成形控制理论严重欠缺、多场辅助弯扭成形精确控制技术受制于人、数字化成形装备近乎空白的“三大困境”。为此，在国家自然科学基金联合基金重点项目、JW装备发展部领域基金重点项目、JKW某基础加强重点项目、JW装备发展部某重大转化项目、江苏省产业技术研究院重点孵化项目以及国防军工单位型号攻关等20余项国家级/省部级项目的支持下，项目组前后历时约10年，在三维矢量柔性弯曲成形理论、关键技术、系列化装备以及重大工程应用等方面开展了全链条、系统性的研究工作，相关成果在6大类国防和民用工程领域中获得应用，取得了重要的经济效益和社会效益。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>主要设计创新点</div></div></div><p>设计创新1：复杂空间管类构件整体柔性成形机理及成形极限调控理论：揭示了成形模具空间连续变化位姿对圆形及异形截面构件整体轴线形成的影响机制，明确了异形截面/双金属管类构件柔性弯曲成形应变中性层偏移演化规律；建立了复杂应力状态下连续弯曲不均匀变形理论模型；提出了薄壁构件多物理场耦合作用下柔性支撑调控方法和最小弯曲半径形成及调控理论模型，为空间复杂管类构件连续柔性弯曲整体成形奠定了理论基础，如图2所示。</p><p>【所属专业分类学科：金属材料、塑性加工。支撑材料：共获授权发明专利12件，其中核心专利见主要知识产权和标准规范目录1-1~12】</p><p>理论难点：三维矢量柔性弯曲成形技术可实现复杂管类构件整体成形，但受到成形系统运动轨迹、摩擦接触条件及轴向推进速度等多因素的综合影响，少约束条件下的圆弧轴线形成机理和塑性失稳机制尚不明确；对于双金属管类构件而言，因其材料界面特性和基管/敷管性能差异，构件更易产生轴向压缩、起皱开裂以及层间分离等典型缺陷，成形极限较低。</p><p>图2 复杂空间管类构件整体轴线形成机制及成形极限调控理论创新本成果的先进性体现在：建立了空间连续变化轨迹与构件轴线几何参数的映射关联模型，揭示了三维矢量柔性弯曲轴线的整体形成机制；明确了“拉-压-剪切”等复杂应力状态下的材料宏微观塑性变形机制；开发了热力耦合仿真模型，明确了柔性热弯曲过程中加热、成形、空冷阶段的微观组织演变规律；构建了几何微缺陷的临界失稳判据模型，揭示了异形截面构件、双金属管类构件塑性失稳机理及应变中性层偏移机制，提出了起皱/破裂抑制方法，使构件截面畸变率由 15%减小到8.5%，最大壁厚减薄率由 12%减小到 7.5%；建立了最小半径调控理论模型，掌握了磁力耦合作用下柔性介质支撑调控方法，提高了柔性弯曲成形极限，最小弯曲半径突破至 2.5 D，优于国际同行德国 J.NEU公司公开报道的 3.0 D，相关研究工作发表在制造领域 Top 期刊 Int. J. Mach. Tool. Manu.(影响因子：14.0）上。</p><p>设计创新点2：模具位姿解析与回弹主动补偿相融合的三维矢量柔性弯曲成套技术：发明了异形截面管类构件多场辅助的弯扭复合柔性成形方法，提出了柔性弯曲成形模具运动位姿逆向精确解析算法，建立了轴线弯曲与截面扭转主动动态补偿模型，突破了复杂空间管类构件轴线精度与截面扭转角度协同精确控制的难题，为多种型号复杂管类构件的精确成形提供了技术支撑，如图3所示。</p><p>【所属专业分类学科：塑性加工。支撑材料：共获授权发明专利15件，其中核心专利见主要知识产权和标准规范目录1-13~27】</p><p>技术难点：异形截面构件在成形过程中截面方向发生扭转时，成形机构位置的连续变化会引起轴线方向的实时动态偏转，进一步增大了成形构件的几何误差。后续多次整形难以精确协调轴线弯曲与截面扭转的精度，导致构件截面畸变加剧、局部减薄严重，最终影响异形截面构件的整体性能，严重威胁航空航天及核能装备的服役可靠性和安全性。</p><p>图3 模具位姿解析与回弹主动补偿相融合的三维矢量柔性弯曲成套技术本成果的先进性体现在：构建了连续变曲率条件下半径与偏心距间的关联模型，自主开发了机头运动位姿逆向精确解析算法，实现了复杂管类构件三维矢量柔性弯曲工艺的快速优选，轴线尺寸误差由2.0 mm减小到1.0 mm以内；发明了弹塑性临界偏距修正的关键点动态优化方法，提出了连续变曲率轴线回弹动态补偿算法，弯曲角度精度由1.5°提升至0.7°以内，比已有文献最高值提升约20%；建立了截面扭转角和弯曲轴线的映射关系，提出了基于NURBS曲线的弯扭构件棱边/中心线同步处理新方法及扭转主动补偿方法，实现了轴线精度与截面扭转角度协同控制，最大截面扭转率提高至 100°/m 以上，解决了现有算法中轴线偏转与截面扭转难以协同精确控制的难题；在国际上率先提出了多场辅助的弯扭复合主动补偿技术，实现了难变形钛合金管类构件的形性精确控制，且最大单位长度R数量突破至9.5/m以上。研究成果在国际上出版了柔性成形领域的首部英文专著（Flexible Metal Forming Technologies, Springer Nature, 2022），同时作为标志性成果被选入JKW《国防科技创新成果推荐目录（2023版）》。</p><p>设计创新3：复杂空间管类构件三维矢量柔性弯曲成形系列装备设计与研制：开发了工艺快速解析及多轴联动控制系统，建立了回弹误差补偿数据库及成形干涉仿真平台；发明了长寿命金属/陶瓷复合模具和复合式多点分布压紧装置，设计了多场辅助成形工装，研制了我国首台六轴大型三维矢量柔性弯曲成形装备及小型化/轻量化装备，并逐步形成了系列化、标准化，为工厂级/基地级/野战外场级的快速制造提供了多维度装备保障，如图4所示。</p><p>【所属专业分类学科：塑性加工。支撑材料：共获授权发明专利10件、标准3项，其中核心专利和标准见主要知识产权和标准规范目录1-28~40】</p><p>图4 复杂空间管类构件三维矢量柔性弯曲成形系列装备设计与研制装备难点：面对高自由度多轴联动机头的整体设计、机头空间位姿精确规划与控制、长寿命模具结构与材料、多应用场景与装备构型匹配等重要装备研制目标，我国自主研发需重点突破工艺参数全流程解析与在线修正软件研发、复杂轨迹实时避障算法开发、模具结构拓扑和材料选型优化、成形缺陷抑制工装设计及成形装备功能集成等核心难点。</p><p>本成果的先进性体现在：开发了工艺快速解析软件及多轴联动控制系统，建立了适用于多种材料、多种截面的弯扭回弹补偿数据库；搭建了具有成形轨迹自动识别和规避预测的仿真平台，有效避免了构件与装备干涉的问题，显著缩短了工艺开发周期；发明了多辊结构主动式偏心模以及陶瓷/金属复合模，显著降低了成形力并提升了表面质量；提出了复合式多点分布压紧装置及磁流变内压主动调控方法，实现了对管材局部受力的精准调控，抑制了轴向失稳和周向异常偏转；研制了我国首台数字化六轴柔性弯扭装备，X/Y/Z/A/B/C轴重复定位精度≤0.05mm，扭转轴旋转角度±180°，可成形管径范围1 mm-120 mm、轴线长度可达12 m，最小弯曲半径、成形能力和重复精度等指标处于国际领先，获得了 2022年日内瓦国际发明展特别金奖和中国先进技术转化应用大赛金奖。此外，着眼于战场抢修、战地现场制造等重大需求，研制出了国际首台小型化七轴并联装备和折叠式装备。截止目前，已累计研发9种型号成形装备（卧式六轴、12米级、卧式并联、卧式三轴、卧式五轴、多场辅助、折叠式、卧式微型、立式七轴），为我国重大工程应用所需复杂管类构件提供了工厂级/基地级/野战外场级的多维度装备保障，如图5所示。研究成果入选了军科委国防科技基础研究简报：“与国外同类技术相比模具寿命提高3倍（30万件成形无缺陷）、工艺解析速度提高70%（100 s/件提高到30 s/件）”。</p><p>图5 系列化三维矢量柔性弯曲成形装备3.实施效果</p><p>成果在国内航空、航天、陆战兵器、核电、石化、市政供水等工程领域获得了全面应用，实现了系列关键复杂圆形及异形截面管类构件的高性能制造以及国产化，取得了突出的经济和显著的社会效益。</p><p>（1）在航空复杂管路系统成形方面：成果突破了三维矢量柔性弯曲成形模具运动轨迹逆向精确解析等关键技术，研制了数字化三维矢量柔性弯曲成形装备并交付成飞、沈飞，已应用于歼-XX、歼-XX舰载机等型号战机高性能燃油、液压及环控系统等所需3大类材料体系、23种规格导管构件的整体制造，研制周期显著缩短，焊缝数量大幅减少，大幅降低焊接应力，提高了导管服役寿命；自主开发的导管轴线误差检测与快速补偿软件系统和小型化/轻量化三维矢量柔性弯曲成形装备，应用于苏-XX、歼-XXB等型号非标导管的快速制造与外场抢修，导管合格率显著提升，装机上万余根；研制的航空发动机导管三维矢量柔性弯曲成形专用装备及难变形电磁感应加热关键工装，应用于三代、四代机航空发动机燃油总管的制造，大幅提高了我国航空发动机导管的整体制造工艺及水平，提升了服役性能和使用寿命。</p><p>（2）在航天异形截面管类构件成形方面：突破了复杂异形截面弯曲构件轴线主动扭转机制、成形机构运动位姿逆向解析等关键技术，实现了某型空间站某核心舱热管用Ω形翅片管的一次成形，使原舱壁加热管的 23条焊缝降低至7条（原材料长度限制）；应用于长X改运载火箭不锈钢非圆截面冯卡门曲线构件的整体连续自动成形，代替了原有手工逐段敲击成形的方式，改善产品质量与精度；采用三维矢量柔性弯曲成形技术和六轴数字化柔性弯曲成形装备，成功实现了航天发动机燃烧室高性能花瓣转圆组件的整体制造，满足了设计指标，为后续发动机的装备服役和迭代升级提供了重要的技术支撑。</p><p>（3）在核电复杂空间换热管路成形方面：研制了系列化的三维矢量柔性弯管成形装备，实现了核电冷凝小弯曲半径管路整体成形制造，生产效率提升了2倍，产品报废率由原先20%降低至5%，增强了产品市场竞争力；基于所开发的柔性成形模具运动轨迹规划模型，提高了所制造传热管的复杂程度，产品已在CX项目高温气冷堆、浙江三门核电项目、海南昌江核电项目、秦山二期工程红沿河、田湾二期、防城港等核电工程上得到重要应用，累计供货10余种规格体系、总长超100万米，摆脱了核电工程用复杂弯曲构件依赖国外技术及装备的限制。典型产品核电690U形管国内市场占有率已超过75%，全球占有率第一，成功应用于国家战略“一带一路”华龙一号海外首堆-巴基斯坦卡拉奇2号机。技术助力于江苏银环精密钢管有限公司成为全球首家具备第四代核电高温气冷堆蒸汽发生器用螺旋盘管及组件高端制造能力的领军企业。</p><p>（4）在石化、市政供水管类构件成形方面：开发了回弹误差补偿数据库及成形干涉仿真平台，使空间立体多弯、连续变曲率管材弯曲角度精度由1.5°提升至0.7°以内，系列合金钢、双相钢空间变曲率管在中石化古雷项目、中石化滨化项目、阿美道达尔SATORP石化联合体项目，镇海炼化等重大项目工程中获得了重要应用；研制了带有内支撑的柔性芯棒和全包覆型模具，实现了系列工业用复杂形状不锈钢和碳钢弯曲构件的高质量制造，满足了天然气管路、市政供水管路的工作要求，产品合格率由原先70%提高至90%，提高了产品市场竞争力，为后续产品迭代升级提供了重要技术支撑。</p><p>本研究成果在民用工程领域，包括核电、石化以及供水等领域累计新增销售额43.21亿元，新增就业人数超350人。</p><p>该技术成果指标与国内外对比情况，如表1和表2所示。</p><p>表1 总体技术对比</p><p>表2 本成果及构件与国外同类产品对比</p><p>采用该技术成形的系列金属复杂关键管类构件及应用如图6所示。</p><p>图6 该技术成形的系列复杂管类构件该技术主要知识产权，如表3所示。</p><p>表3 主要知识产权</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2025%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E9%AB%98%E6%80%A7%E8%83%BD%E5%A4%8D%E6%9D%82%E7%AE%A1%E7%B1%BB%E6%9E%84%E4%BB%B6%E4%B8%89%E7%BB%B4%E7%9F%A2%E9%87%8F%E6%9F%94%E6%80%A7%E5%BC%AF%E6%9B%B2%E6%88%90%E5%BD%A2%E6%8A%80%E6%9C%AF%E5%8F%8A%E8%A3%85%E5%A4%87%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E9%AB%98%E6%80%A7%E8%83%BD%E5%A4%8D%E6%9D%82%E7%AE%A1%E7%B1%BB%E6%9E%84%E4%BB%B6%E4%B8%89%E7%BB%B4%E7%9F%A2%E9%87%8F%E6%9F%94%E6%80%A7%E5%BC%AF%E6%9B%B2%E6%88%90%E5%BD%A2%E6%8A%80%E6%9C%AF%E5%8F%8A%E8%A3%85%E5%A4%87" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「高性能复杂管类构件三维矢量柔性弯曲成形技术及装备」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E9%AB%98%E6%80%A7%E8%83%BD%E5%A4%8D%E6%9D%82%E7%AE%A1%E7%B1%BB%E6%9E%84%E4%BB%B6%E4%B8%89%E7%BB%B4%E7%9F%A2%E9%87%8F%E6%9F%94%E6%80%A7%E5%BC%AF%E6%9B%B2%E6%88%90%E5%BD%A2%E6%8A%80%E6%9C%AF%E5%8F%8A%E8%A3%85%E5%A4%87" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「高性能复杂管类构件三维矢量柔性弯曲成形技术及装备」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2025-s03.html"><span class="d">← 上一项</span>绿色动力-船用发动机高效低碳燃料喷射系统设计</a>
+    <a class="next" href="2025-s05.html"><span class="d">下一项 →</span>远程微创医疗手术机器人的研制</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

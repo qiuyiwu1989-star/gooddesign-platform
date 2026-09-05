@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>骨折复位与康复一体化机器人 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-c05.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-c05</div>
+  <h1>骨折复位与康复一体化机器人</h1>
+  <div class="meta-line"><b>2021 年度创意奖</b><span>天津大学</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 创意奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">天津大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">刘传耙,刘思达,李锦龙,孙涛</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与生活 · 高端医疗（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>面向下肢骨折复位与康复临床出现的复位精度差、力/位反馈缺失、复位/康复脱节、康复盲目化和康复周期长等系列问题，提出利用机器人技术贯穿骨折复位手术和康复全过程的一体化理念，基于全周期信息监测与评价，形成从骨折精准复位、可靠固定到量化康复的一体化方法，突破机械、图像、信息、控制等交叉层面的关键技术，研制成功机器人平台、轨迹规划、信息监测、量化康复等核心单元，形成下肢骨折精准复位手术与量化康复一体化的机器人系统，解决传统骨折治疗痛点，降低骨科医疗机器人技术门槛。</p><p>主要设计创新点为：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>提出了可穿戴式骨折复位与康复一体化机器人的解决方案，突破了一体化机器人构型综合、性能贯通设计和力/位混合控制等关键技术，解决了一体化机器人便携性能、系统刚度和运动精度相互矛盾的问题。</div></div><div class="p-li"><span class="p-mk">2</span><div>研发出融合肌肉力评估、碰撞检测和路径搜索等功能的骨折复位轨迹交互式和自动式规划软件，实现了骨折手术的微创、精准和高效操作，解决了传统骨折手术缺乏复位轨迹规划的问题。</div></div><div class="p-li"><span class="p-mk">3</span><div>提出了基于骨愈合机理的主被动融合康复策略，构建了骨折术后的个性化康复方案，实现了机器人辅助骨折康复的精准量化治疗，解决了骨折复位与骨折康复严重脱节和康复盲目化的问题。</div></div><div class="p-li"><span class="p-mk">4</span><div>提出了系统建模和多阶段多层次量化评价方法，开发出骨折复位手术与康复锻炼全周期力/位信息采集软硬件系统，解决了传统骨折康复缺乏量化指导的问题。</div></div></div><p>项目申请/授权中国发明专利9项（其中授权5项），国际PCT检索4项，美国发明专利公开2项，获得软件著作权5项；项目研制出具有完全自主知识产权的2代可穿戴式骨折复位与康复一体化机器人系统软硬件产品，其中一体化机器人整机重量首次低于2kg，具备电动和手动两种模式，并通过模型实验完成了机器人系统功能验证。依托天津市天津医院，复位轨迹规划软件辅助医师进行复位手术规划15例，骨折康复评价方法完成临床验证20例。</p><p>本项目的目标市场为综合性医院和骨折专科医院，下肢创伤性骨折和矫形患者为潜在受益人群，市场前景巨大；推动了精准、微创骨科手术发展和普及，预期社会和经济效益显著。项目成果对促进我国骨科医疗机器人的自主创新和临床应用具有重要意义。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>创新点1：下肢骨折复位手术和康复的一体化理念、方法和技术</p><p>针对下肢骨折复位手术和康复过程脱节的临床问题，提出利用机器人技术贯穿骨折复位手术和康复全过程的一体化理念，形成从骨折精准复位、可靠固定到量化康复的一体化方法，促进骨折的顺利愈合与功能康复，这是本项目的整体创新。</p><p>针对上述理念和方法对一体化机器人技术的迫切需求，提出一体化机器人机构拓扑构型综合的有限旋量方法，实现机构的发明与设计。突破机器人机构拓扑模型、运动学模型、静刚度模型的统一建模方法，实现拓扑参数和性能参数的数学关联，提出既能反映拓扑信息又能反映性能信息的评价指标，实现一体化机器人多目标多约束多参数的运动学与刚度性能贯通优化设计，这是一体化机器人本体设计方法的创新。</p><p>针对复位手术和量化康复对位置精确控制和接触力安全控制的需求，提出受约束方向力控制和非约束方向位置控制的力/位混合控制策略，研究基于力/位映射模型的阻抗控制策略，设计模糊神经网络算法实现阻抗模型参数的自适应调整，这是一体化机器人控制策略的创新。</p><p>创新点2：骨折复位轨迹的交互式和自动式设计</p><p>针对传统图像匹配技术利用灰度等层次信息的局限性，建立基于医学影像深度学习技术的影像数据特征智能提取模型，提出医学影像数据深层次特征的快速高效提取方法，这是骨折图像特征提取技术的创新。</p><p>针对传统复位手术缺乏复位轨迹规划的问题，基于骨折分型理论，以逆创伤方向为基本路径，计及肌肉牵拉力等影响，提出多约束条件下骨折复位的轨迹生成与规划方法，利用医师经验和专家知识库系统完成骨折复位轨迹的优选，这是复位轨迹交互式和自动式设计与优选方法的创新。</p><p>创新点3：基于骨愈合机理的主被动融合量化康复策略</p><p>针对骨折康复过程中对骨愈合本质缺乏量化认识的问题，研究骨折复位固定后骨量、骨强度和骨结构与静态/动态应力刺激、肌力和关节活动训练之间的非线性动态耦合响应模型，探索促进骨折愈合的生物力学机理，这是骨折愈合机理量化上的创新。</p><p>针对骨愈合过程难于控制的问题，一是研究面向动态和静态应力/应变刺激的骨折顺利愈合的生物力学环境规划方法，二是研究面向肌肉和关节功能锻炼的行为规划和反应式重规划方法，实现基于柔顺自适应交互设计的生物力学环境规划，这是生物力学环境规划方法的创新。</p><p>针对骨折愈合的动态性和个性化特点，研究基于骨折愈合机理和生物力学环境规划的被动、主动以及主被动融合的康复策略，考虑不同患者、不同时期、不同运动障碍等因素，实现个性化主被动量化康复方案的制定与机器人实施，这是个性化骨折量化康复方案的创新。</p><p>创新点4：全周期信息采集监测与多阶段多层次量化评价</p><p>针对下肢骨折复位手术与康复过程中生物力学信息反馈缺失的问题，基于多传感器检测融合技术，确定优化目标函数，对传感器布局进行设计和优化，实现下肢骨折复位手术与康复全周期的生物力学信息采集与监测，这是生物力学信息采集与监测技术的创新。</p><p>针对传统骨折康复过程缺乏量化评价的问题，考虑肌肉牵拉力的影响，建立骨骼与机器人的多体位载荷分担模型，提出针对长骨的完备多层次多阶段量化评价指标，为下肢骨折一体化治疗技术提供量化指导与评价，这是康复量化评价方法的创新。</p><p>针对个性化骨折复位手术与康复的问题，通过对患者样本的全周期数据采集，构建方案、策略以及效果样本库，运用机器学习技术构建的神经网络，对数据集进行深度挖掘，构建决策树模型，利用大数据技术建立的样本模型指导优化个性化的骨折复位手术与康复一体化治疗方案，这是骨折复位手术与康复一体化治疗方案优化技术的创新。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

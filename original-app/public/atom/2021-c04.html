@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>多环境履足变形式巡检机器人 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-c04.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-c04</div>
+  <h1>多环境履足变形式巡检机器人</h1>
+  <div class="meta-line"><b>2021 年度创意奖</b><span>太原理工大学</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 创意奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">太原理工大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">田利强,吕磊,申心雨,杨俊</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 智能装备与机器人（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>本设计研发的无人控制、无轨道、线缆、GPS辅助的仿生履足变形式多环境巡检机器人致力于解决传统人工巡检的缺陷,克服各种恶劣的环境条件,为智能化无人化巡检提供新的思路。</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>设计目的</div></div></div><p>传统人工巡检使用看、触、听、嗅等方式,主要通过人的感官对设备进行简单定性判断。巡检情况完全取决于巡检工人的状态,主观性较大，无法预测即将发生的故障，容易造成误检和漏检，将给设备和安全生产带来各种各样的安全隐患。此外，超长的输电线路；恶劣的井下环境；有毒物质弥漫的化工场所；缺氧、极寒的高原环境等无时无刻挑战着巡检工人们的生命安全。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>设计创新</div></div></div><p>本设计应上述问题而生，具有超前的设计理念，仿照生物爬行和人体腿部结构设计了“履-足”行走机械结构，根据地形情况、实际使用要求，在履带式与足式行走方式之间自由切换。同时机器人还可根据不同的巡检环境搭载不同的智能传感检测设备，上传反馈超长输电线路故障；实时监测井下的瓦斯、粉尘浓度以及特种设备温度等。此外，机器人还能克服野外或井下GPS信号弱的问题，运用激光雷达通过SLAM算法建立巡检环境的二维栅格地图，然后在栅格地图中通过路径规划算法得到一条经过所有巡检设备的路径，最后通过路径跟踪算法控制机器人进行跟踪，到达每一个待巡检设备，以高效、创新性的算法保证了巡检的准确。</p><p>在商业创新方面，国内外有各个领域的多种恶劣生产环境需要智能巡检机器人填补空缺、代替人工，保障生产，因此智能巡检机器人有着很大的市场前景与社会引领作用。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>设计价值</div></div></div><p>将巡检机器人应用在多环境之一的煤矿中，根据国家煤炭工业协会发布的《2020煤炭行业发展年度报告》，在“十四五”末全国煤矿数量控制在4000处左右。根据《太原市煤矿安全生产管理机构设置人员配备暂行规定》每处煤矿（以单掘进工作面、三班制为例）至少需要安全监测监控工2人/班；瓦斯检查工1人/班；安全检查工1人/班，安全巡查至少由3人组成，即每一处煤矿至少需要安全巡检人员15人，假设每位工人一年工资为6万元，则全国所有煤矿一年用于巡检的费用为360000万。若使用巡检机器人代替巡检工人，则可产生大量节支。</p><p>本设计依托太原理工大学寇子明团队申请国家专利1项，软件著作权1项，获得全国研究生机器人创新设计大赛二等奖1项。本发明成员皆来自寇子明团队，拥有以上成果的使用权与解释权。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>需求创新</div></div></div><p>安全生产一直是创造良好的经济效益与社会效益的前提与基础，而任何一个生产过程都不是绝对安全的，无论在管理还是设备运行中都隐藏着安全隐患，尤其是煤矿、电力设施、化工企业等一些本就有着较为恶劣、复杂生产环境等的领域。因此，在这些生产领域，必须投入大量巡检工人进行不间断的巡检，以保证生产的安全进行。然而，粉尘、极寒、缺氧、污染、毒物侵蚀着供人们的健康，工人误检、漏检又严重威胁着生产的顺利进行。因此面向安全生产的需要，设计了一款履足变形式巡检机器人以代替工人对多个环境的设备进行巡检，节约大量成本的同时也保证了生产的安全进行。 使用巡检机器人代替工人，响应了国家“机械化换人，自动化减人”的号召，符合科技发展的需要，顺应智能化工业的发展潮流。有利于跟进全社会安全生产的步调，满足经济效益需求的同时又能起到很好的示范和引领作用。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>功能工艺创新</div></div></div><p>本发明的履足变形巡检机器人基于仿生原理由履足变形机构、摄像头云台、激光测距平台、车架、蓄电池、底层驱动板、多种传感器和树莓派等部分组成。能够在多种生产环境中进行巡检，及时发现安全隐患，提升巡检质量，有效代替人工巡检。机器人本体结构及监测方案创新：</p><p>(1)机器人行走功能创新设计：本次设计的机器人有履带式和足式两种运动形式。履带式适合爬坡、和碎石等崎岖地面的行走；四足行走则可跨越障碍，机器人可以根实际工况来变换运动形式。此设计创新的采用了仿人腿结构和仿生物爬行机制，具有首创性。通过髋关节、膝关节和踝关节的相对转动实现了由履带式到足式的变换，四足交替前进实现了爬行。因此机器人可以像爬行动物一样倾诉跨越崎岖地形。</p><p>（3）多样化的检测功能：机器人搭载了智能传感检测设备，主要功能有危险检测报警、全局定位和导航、红外线感应、井下工况视觉成像等，在巡检环境下作业时，随时监测生产环境中的瓦斯、粉尘、有毒有害气体的浓度以及设备温度等，避免发生瓦斯爆炸、粉尘爆炸、失火、毒气泄漏等危险事故。</p><p>（4）实现了多环境下巡检机器人在无人控制，无轨道、线缆和GPS辅助的情况下对多环境设备进行巡检，即使在野外、井下，机器人也能够工作。</p><p>（5）体控技术：二自由度云台由两个舵机进行控制，分别控制x方向与y轴方向，可以实现全方位视角的捕捉。通过VR眼镜上的四轴陀螺仪，将头部的角度转动信息传输mcu上，经由mcu的实时计算，将处理所得实时地传输到履带足式机器人arduinonano控制板上，从而控制舵机的转动。</p><p>（6）数据超远距离传输：传统WiFi通信功耗大、可靠性不强、性能低以及WiFi设备的睡眠唤醒时间一般需要3～5秒的时间。采用433mHZ频段数据传输，数据传输距离达到1000m以上，而且具有灵敏度较高、衰减小、绕射性较强以及抗干扰能力强的特性，</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>算法集成创新：</div></div></div><p>(1)激光SLAM建图算法 。本机器人使用激光雷达与SLAM算法结合能够对井下环境实现较为精确的地图构建的同时也实现对巡检机器人位姿的估计与准确定位。</p><p>(2)PRM路径规划算法 PRM路径规划算法可以在建立环境的地图后，自动生成一条经过所有待巡检设备的最短路径，同时，生成路径的同时，还能兼顾路面危险，进行有效的规避。</p><p>(3)Pure Persuit路径跟踪算法 在已经建立好巡检环境地图中规划出一条能够抵达所有待巡检设备的最短路线之后，使用Pure Persuit算法来让巡检机器人自动跟踪规划好的路径，并能够在所规划的路径突遇障碍物时能够及时避障。</p><p>(4)地形感知 使用二维激光雷达与Kinect 深度相机相结合，对环境进行建图的同时对地面的崎岖度进行划分，结合崎岖度信息使用算法对路径进行深度规划，使机器人选择崎岖度最低的路径行进。</p><p>机器人将上述算法相集成，能够真正实现在无人自主的情况下对设备进行巡检。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>模块化设计创新</div></div></div><p>本设计的履足变形式巡检机器人具有很强的商业扩展性与灵活性，机器人可以搭配各种需要的传感器和采集器，应对各种生产巡检环境。因此，可以面向生产场景和生产环境，衍生一系列的机器人族。既填补了市场各个领域的空白，又保证了各行各业安全生产的需求。 此设计基于仿生原理，设计理念超前，还方便与各高校、企业开展产、学、研合作。在实际应用场景中发现问题，并进行优化；在与高校交流研发过程中进行机器人功能的不断升级。实现以科技增收，以收入反哺科技进步。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

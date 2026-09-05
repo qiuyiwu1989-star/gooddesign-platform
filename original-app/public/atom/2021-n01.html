@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>GMC-20地铁钢轨打磨车 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-n01.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-n01</div>
+  <h1>GMC-20地铁钢轨打磨车</h1>
+  <div class="meta-line"><b>2021 年度提名奖</b><span>中国铁建高新装备股份有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 提名奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中国铁建高新装备股份有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">张宝明,代杰,徐贵善,沙靖</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 轨道交通（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>背景与意义</div></div></div><p>钢轨作为铁路车辆运行基本载体，长期承受轮轨间交变作用力，易发生压溃、裂纹、剥落、肥边等缺陷，严重情况下影响车辆运行安全。目前轨道线路主要采用打磨形式进行钢轨日常维护，以消除钢轨病害及缺陷，延长钢轨更换周期。 国内现有钢轨主要采用异步电机或液压马达驱动砂轮进行打磨，异步电机作业角度覆盖范围小，液压马达驱动易产生液压油渗漏的火灾风险。针对现有打磨车的作业缺陷，以及城轨市场限界范围空间小、隧道作业环境恶劣等特殊工况，铁建装备研制了具有自主知识产权的GMC-20地铁钢轨打磨车，该车设计了永磁电机驱动的普通打磨单元与特殊打磨单元组合的打磨装置及控制系统，打磨角度可覆盖钢轨内侧75°～外侧45°范围，达到国内外电机驱动最大角度覆盖范围，有效地提高了作业效率，整机技术性能达到国际先进水平。该机具有智能、高效、安全等特性，满足国内城轨快速发展对智能运维、智慧打磨等信息化城轨系统的更高需求。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>设计的原创性、独特性、引领性、颠覆性</div></div></div><p>⑴ 研制了具有自主知识产权的作业装置，设计了高刚性的一体式打磨构架，构架上组合布局了普通打磨单元（作业角度范围钢轨内侧75°～外侧15°）与特殊打磨单元（作业角度范围钢轨内侧35°～外侧45°），实现钢轨打磨作业角度内侧75°～外侧45°范围覆盖，达到国内外电机驱动最大角度覆盖范围。</p><p>⑵ 整机设计了兼容性高的电气系统，设有高速走行和打磨作业系统智能控制、智慧化集成接口，通过作业数据、运维信息收集，实现车辆远程故障诊断及维护指导。通过预留接口，可满足用户电气系统个性化定制服务。</p><p>⑶ 整机司机室采用全封闭设计，作业工况下司机室内稳态噪声≤78dB；打磨小车设置大风量磨粉收集系统，有效收集打磨作业粉尘；整车设置喷雾系统，有效抑制扬尘；司机室创新设计了增压装置，作业时可保持司机室内微正压状态，避免外部作业粉尘进入，保证作业间具有良好的操作环境。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>市场应用情况、经济效益、社会效益。</div></div></div><p>GMC-20地铁钢轨打磨车于2019年9月启动研制，2020年6月投产，2021年1月运用于广州地铁线路，打磨作业里程近200公里。 截止2021年6月，已签订4台销售订单，销售金额约1.23亿元。其中，广州地铁公司1台、郑州地铁公司2台、长沙地铁公司1台。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>GMC-20地铁钢轨打磨车基于轻量化、集成化、智慧化设计，由两节车组成，每节车配置10磨头的打磨小车，可通过多种组合打磨模式，快速、高效实现打磨角度内侧75°～外侧45°范围覆盖。整机具有较高限界兼容性，可同时满足国内地铁市场多种限界要求，项目主要创新设计特点如下。</p><p>⑴ 设计了具有完全自主知识产权的打磨装置</p><p>打磨装置采用永磁电机驱动砂轮，有效避免了液压马达驱动产生的液压油渗漏火灾风险，提高作业安全性。 设计了高刚性的一体式打磨构架，构架上组合布局了普通打磨单元（作业角度范围钢轨内侧75°～外侧15°）与特殊打磨单元（作业角度范围钢轨内侧35°～外侧45°），实现钢轨打磨作业角度内侧75°～外侧45°范围覆盖，达到国内外电机驱动最大角度覆盖范围。 打磨小车采用φ260mm大直径砂轮国产砂轮，提高短波打磨精度，减小每公里打磨消耗，延长砂轮作业里程和更换周期。同时代替进口，有效降低作业成本和采购周期。 打磨单元横移和偏转采用电动推杆控制，提高横移和偏转精度。打磨单元采用电机驱动砂轮+电动推杆控制打磨单元动作的结构型式，极大减少打磨小车内部液压油管数量，降低液压油泄漏风险，提高整车防火性能。</p><p>⑵ 控制系统</p><p>整机设计了集成性强、兼容性高的电气控制系统，采用网络和硬线互保的电气技术，高速走行和作业走行控制稳定可靠；设有作业系统智能控制、智慧化集成接口，通过作业数据、运维信息收集，由网络发送至数据中心进行分析，可实现车辆远程故障诊断及维护指导。整机配置智慧化平台接口，能直接输入打磨控制参数实施打磨作业，并可通过预留接口，实现用户电气系统个性化定制服务。</p><p>⑶ 低恒速走行技术</p><p>整车长度约40m，总重约112吨，根据走行和牵引需求，整机设计了4轴驱动系统。采用电比例控制闭式液压系统技术，配备马达及车轴速度传感器，实现作业速度精确控制，速度误差≤0.5km/h，保证打磨作业精度。同时，闭环控制系统可采集两节车的走行压力进行对比，通过压力耦合器的算法，实现两车的动力均衡控制，保证走行液压系统多轴驱动的同步性、稳定性及行车安全。</p><p>⑷ 整机环保技术</p><p>为了适应隧道作业环境，整机司机室采用全封闭设计，作业工况下司机室内稳态噪声≤78dB。整车设置喷雾系统，有效抑制扬尘；司机室创新设计了增压装置，作业时可保持司机室内微正压状态，避免外部作业粉尘进入，保证作业间具有良好的操作环境。 打磨小车设置了大风量、高效阻燃滤芯磨粉收集系统，可有效收集作业扬尘，能过滤99.9%粒径大于0.5μm的粉尘，排风口粉尘浓度≤5mg/m³。系统进风管设置火花冷却器和温度传感器，可实现粉尘中火花降温冷却及高温报警，降低火灾风险。</p><p>⑸ 整车高效散热技术</p><p>地铁隧道环境温度高，打磨作业散热量大，夏季可达50℃，整机设计高效散热系统。发动机、液压散热系统采用顶置布置方式，散热器热量通过风扇由车顶向外排出；机器间两侧开设有大面积的进风窗口，与散热器排风形成了完整的冷热风循环布局，有效提高发动机和液压系统的散热效率；发动机及液压散热器散热片配置有喷雾系统，进一步提高整机隧道作业散热性能，保障车辆作业稳定性。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

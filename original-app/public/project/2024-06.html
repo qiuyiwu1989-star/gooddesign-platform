@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>柔性重载机器人搅拌摩擦焊接与检测系统 · 2024金奖 · 好设计</title>
+<meta name="description" content="航空、航天轻质合金结构等战略性新兴产业已成为带动我国科技飞跃发展的标志性载体。针对轻质合金结构尺寸大型化、形状复杂化等重大需求，搅拌摩擦焊接已成为核心的焊接工艺。团队历时十五年攻关，发明并设计制造了适用新材料及异种材料和特异结构的搅拌摩擦焊">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%87%91%E5%A5%96&amp;year=2024">← 返回 2024 年金奖名录</a>
+  <div class="kicker"><span class="lv">金奖</span><span class="yr">· 2024 · 第九届</span></div>
+  <h1>柔性重载机器人搅拌摩擦焊接与检测系统</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨工业大学,安徽万宇机械设备科技有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">黄永宪,孟祥晨,谢聿铭,万龙,吕宗亮,马潇天,王乃婕</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">2024060076</div></div>
+  </div>
+  <div class="hero"><img src="../cases/gal/2024-06-0.jpg" alt="柔性重载机器人搅拌摩擦焊接与检测系统"></div>
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>航空、航天轻质合金结构等战略性新兴产业已成为带动我国科技飞跃发展的标志性载体。针对轻质合金结构尺寸大型化、形状复杂化等重大需求，搅拌摩擦焊接已成为核心的焊接工艺。团队历时十五年攻关，发明并设计制造了适用新材料及异种材料和特异结构的搅拌摩擦焊接新技术与装备系统，实现了装备研发、基础理论、技术革新、工程应用的全链条突破和创新。主要创新设计如下：(1) 柔性重载搅拌摩擦焊接与检测装备：发明了重载机器人高刚度多轴联动自适应高精度控制技术，突破了大/长/厚/曲面复杂构件焊接控形控性难题，最大焊接速度达10m/min，机器人搅拌摩擦焊接装备国内市占率超过80%；开发了“局部湿法”超声相控阵无损检测系统，实现全过程随查、随焊、随检可控制造，体缺陷检测精度达99%；(2) 全过程搅拌摩擦焊数字化设计：揭示了搅拌摩擦焊接热机耦合相互作用机制，实现了“材料-工艺-成形-组织-性能”全流程快速迭代，预测精度达96%，助力火箭贮箱等复杂结构焊接周期缩短50%以上；(3) 全结构搅拌摩擦焊接技术：发明了随焊碾压、微减薄、大深宽比、自持式、填充式搅拌摩擦焊接等全结构固相焊接技术体系，接头强度系数达92.0%、准等强修复强度系数达优质接头的90.7%；(4) 特异质材料搅拌摩擦铆焊技术：兼顾铆接机械连接与焊接反应连接双重效应，开发了特异质材料强形变驱动搅拌摩擦扩散焊接、搅拌摩擦自铆焊接技术体系，铝/钢接头线载荷达442N/mm、铝/铜接头强度系数达86.0%。</p><p>创新成果：授权国家发明专利59项，登记软著6项，应用转化15项；出版著作2部，入选“十三五”国家重点出版物规划项目和“十四五”规划专著等；发表论文107篇，中科院1区56篇，他引5000余次，6篇ESI高被引，6篇获美国焊接学会Charles H. Jennings奖（年度唯一）和中国科协/机械工程学会/焊接学报高影响力论文，3篇封面文章。本成果取得了装备研发/基础理论/技术革新/工程应用一体化的研究成果，突破了美、欧、日等国外技术封锁，实现了关键核心技术自主可控，项目整体技术居于国际先进水平，其中全过程搅拌摩擦焊数值仿真技术和随焊碾压搅拌摩擦焊接控形控性技术达到国际领先水平。该成果有效地推动了航空航天、轨道交通型号产品研制技术与装备升级，近三年新增直接利润1053.4万元，间接利润11480万元，军事、经济和社会效益显著。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>柔性重载机器人搅拌摩擦焊接与检测系统是针对火箭、飞机、高铁等国之重器和国民经济发展需求，集多年装备系统和技术攻关形成的创新成果。关键核心技术自主可控，项目整体技术居于国际先进水平，其中全过程搅拌摩擦焊数值仿真技术和随焊碾压搅拌摩擦焊接控形控性技术达到国际领先水平。</p><p>本项目受国家部委、国家自然科学基金、企业合作攻关等30余个项目联合资助，致力于搅拌摩擦焊接装备研发、基础理论、技术革新与工程应用的研究，发明并设计制造了适用新材料及异种材料和特异结构的搅拌摩擦焊接新技术与装备系统，攻克了大型轻质合金构件研制周期长、承载系数低的难题，建立了自主知识产权体系，授权国家发明专利59项，登记软著6项，应用转化15项；在材料与焊接领域顶级期刊Progress in Materials Science (IF: 48.165)、Advanced Science (IF:17.521)等发表学术论文107篇，中科院1区56篇，他引5000余次，6篇ESI高被引，获美国焊接学会Charles H. Jennings奖（年度唯一），1篇中国科协优秀论文，2篇机械工程学会优秀论文，2篇《焊接学报》高影响力论文，3篇封面文章；出版著作2部，入选双一流建设精品出版工程和“十四五”规划专著。</p><p>项目成果已在航空哈飞、东安、航天一院、二院、八院、长客等单位直升机、火箭贮箱、导弹整流罩、标动350高铁等关键型号、轨道交通、大飞机等生产中应用并取得良好效果。坚持以高技术导向为方针，持续创新且实现应用，经济社会效益显著，近三年相关产品新增直接利润1053.4万元，间接利润11480万元。</p><p>本项目主要设计创新点如下：</p><p>（1）柔性重载机器人搅拌摩擦焊接与检测系统：授权发明专利25项（ZL201210551957.6、ZL201511023180.6、ZL201511023567.1、ZL201511029233.5、ZL201511023211.8、ZL201910221957.1、ZL202010067171.1、ZL202110905475.5、ZL202110905746.7、ZL201010127857.1、ZL202210628020.8、ZL202211235937.8、ZL202211062031.0、ZL202311308000.3、ZL202011474347.1、ZL202011475550.0、ZL202010734592.5、ZL202010307718.0、ZL202010733261.X、ZL202010053656.5、ZL202010055113.7、ZL202010734587.4、ZL202110284601.X、ZL202110266665.7、ZL202110266672.7），发表学术论文17篇。该技术发明了高刚度多轴联动自适应高精度控制技术，突破了大/长/厚/曲面复杂构件焊接控形控性难题，开发了“局部湿法”随焊相控阵无损检测系统，检测精度达99%。</p><p>① 柔性重载搅拌摩擦焊接装备：面向三维复杂轻质结构的焊接需求，开发国内首套500kg智能重载机器人搅拌摩擦焊接装备，构建了搅拌摩擦焊自学习知识图谱，结合力-位耦合控制智能重载机器人搅拌摩擦焊接系统，实现了三维曲面复杂结构的稳定焊接，开发了全新焊接轨迹视觉引导系统，填补了国内在机器人搅拌摩擦焊技术与装备方面的空白。</p><p>② “局部湿法”随焊超声相控阵无损检测装备：提出了“局部湿法”机器人超声相控阵随焊无损检测方法，实现了具备全自动图像识别判断功能的大尺寸构件无损检测，基于小样本增强深度学习算法，实时分析相控阵超声检测结果，全面自动检测材料内部和外部缺陷，体缺陷检测精度达99%，可在线为相关搅拌摩擦焊产品提供品质把控。</p><p>图1 柔性重载搅拌摩擦焊接装备</p><p>（2）全过程搅拌摩擦焊数字化设计：授权发明专利与软件著作权7项（ZL201910238706.4、2023SR1728642、2023SR1735196、2023SR1674269、2023SR1666600、2022SR0262537、2022SR0262536），发表学术论文27篇。该技术揭示了搅拌摩擦焊接热机耦合相互作用机制，首创了全过程焊接数字化设计与渐进优化方法，建立了数值模拟与深度学习相融合的焊缝成形预测模型，实现了“方法-工艺-成形-组织-性能”快速迭代，助力火箭贮箱焊接周期缩短50%。</p><p>图2 全过程搅拌摩擦焊数字化设计</p><p>① 搅拌摩擦焊接热机形变驱动快扩散机理：构筑了搅拌摩擦焊接热机耦合过程多模态切变流动、粘着/滑动摩擦产热、形变耗散产热模型，计算了理想条件下的近壁面热机耦合行为，阐明了千量级高应变速率驱动下相界面元素由体扩散为主转变为沿位错的管扩散为主的快扩散机理，形成了热塑化金属大塑性变形过程的数字化设计控制方程组。</p><p>② 搅拌摩擦焊多尺度热-流耦合数值仿真模型：建立了铝合金搅拌摩擦焊接多尺度热-流耦合数值仿真模型，构建了粘塑性理论控制的焊具表面拓扑构形与热塑性金属准固相流体迁移行为间响应关系，形成了流域-边界网格小低畸变的自适应网格重划分算法，解决了轻质合金高性能构件搅拌摩擦焊接过程中组织、应力应变和宏观变形关联预测难题。</p><p>③ 搅拌摩擦焊接多尺度“组织-性能”映射模型：提出了适用于高应变速率条件下的JMAK沉淀相形核与生长模型、几何动态再结晶计算模型和界面元素快扩散模型，实现了搅拌摩擦焊接过程微观组织演变过程解析计算，建立了以四大基本强化模型为基础的力学性能预测方程组，完成了从微观尺度组织演变到宏观力学性能的多尺度精准预测。</p><p>④ 搅拌摩擦焊接全过程仿真与深度学习技术：搭建了搅拌摩擦焊接全过程仿真与深度学习系统，从焊具断裂失效模型、焊缝缺陷预测模型两个角度对焊具拓扑结构进行高通量筛选优化，结合试验与仿真数据实现了高精准度嵌套神经网络的监督训练，实现了“焊具可靠性-接头宏观成形-微观组织演变-综合性能评价”的全过程高可靠、高可用预测。</p><p>（3）全结构搅拌摩擦焊接技术：授权发明专利19项（ZL200910071859.0、ZL200910072037.4、ZL200910072036.X、ZL200910308559.X、ZL201010136835.1、ZL201010531877.5、ZL201010531947.7、ZL201210078214.1、ZL202010065219.5、ZL201210296779.7、ZL201010298529.8、ZL201010296480.2、ZL201010155104.1、ZL201310444358.9、ZL202010307703.4、ZL202010734588.9、ZL202011332098.2、ZL202011450440.9、ZL202011630315.6），发表学术论文31篇，编撰专著1部，入选“十三五”国家重点出版物规划和双一流建设精品出版工程。该技术发明了随焊碾压、微减薄、大深宽比、自持式、填充式搅拌摩擦焊接技术，突破了搅拌摩擦焊“薄板大变形、焊缝微减薄、厚度难焊透、刚性自持式、准等强修复”固有模式，解决了轻质合金复杂结构全搅拌摩擦焊接难题。</p><p>图3 全结构搅拌摩擦焊接技术</p><p>① 随焊碾压搅拌摩擦焊接技术：发明了随焊碾压搅拌摩擦焊接技术与装置，设计了焊接同步旋转碾压的分布式高刚性碾压球，将表面残余拉应力转变为残余压应力，实现了焊缝表面的“削峰填谷”抑制减薄，降低了接头表面粗糙度，大塑性变形诱导表层沉淀相与晶粒尺寸细化，实现了搅拌摩擦焊板材变形量控制和耐蚀性增强。</p><p>② 微减薄搅拌摩擦焊接技术：针对焊缝厚度减薄和热影响区软化严重问题，发明了微减薄搅拌摩擦焊接方法及装置，研制了外部大轴肩、内置小轴肩和动-静双流动模式搅拌针的组合式焊接装置，内外轴肩协同抑制热塑性材料外溢，双流动搅拌针保证材料低温焊接，降低热影响区软化，实现高强韧铝合金“一次焊接，二次成形”微减薄与高承载焊接。</p><p>③ 大深宽比搅拌摩擦焊接技术：针对厚板铝合金焊接存在的组织非均匀性和根部弱连接等难题，提出了大深宽比低阻抗搅拌摩擦焊新方法，通过搅拌针热均衡与低阻抗理念设计，消除了焊缝根部弱连接、降低了顶部热损伤、促进了焊缝组织均匀性，实现了厚板高强铝合金组织性能均质性制造。</p><p>④ 自持式搅拌摩擦焊接技术：原创性地提出了自持式搅拌摩擦焊接技术，突破了复杂中空结构传统搅拌摩擦焊接需背部刚性支撑的固有模式，设计了倾角可调且轴肩呈上凹下凸式的焊接装置，避免了双轴肩搅拌摩擦焊需预制孔和热损伤严重的问题，实现了焊前倾斜角度可调控和对板厚变化的自适应，解决了复杂工况下无法背部刚性支撑的问题。</p><p>⑤ 填充式搅拌摩擦焊接技术：针对焊接匙孔及缺陷准等强修复难题，发明了填充式搅拌摩擦焊技术，突破了非消耗焊具结构的固有模式，设计了等组配或高组配强化可消耗铝合金搅拌针的拓扑结构，实现界面冶金与固态焊接，表面搅拌摩擦处理改善表面成形与界面结合质量，实现了固相准等强修复，修复接头强度系数达优质接头90%以上。</p><p>（4）特异质材料搅拌摩擦铆焊技术：授权发明专利14项（ZL201210087902.4、ZL201210087905.8、ZL201410102594.7、ZL201410102419.8、ZL201410102666.8、ZL201510822900.9、ZL201510822897.0、ZL201910225037.7、ZL201910212149.9、ZL202010307719.5、ZL202011629613.3、ZL202011329054.4、ZL202110496371.3、ZL202011629026.4），发表学术论文34篇，编撰专著1部。该技术兼顾铆接机械连接与焊接冶金连接双重技术优势，原创提出了特异质材料搅拌摩擦铆焊技术，形成了热机耦合驱动快扩散界面冶金理论，构建了宏微观机械互锁与界面反应结合按需分配设计准则，实现了铝/钢、铝/镁、铝/钛、铝/铜等冶金剧烈反应型与金属/聚合物等冶金不反应型特异质材料铆焊复合高质量连接。</p><p>① 强形变诱导搅拌摩擦扩散焊技术：围绕铝/钢焊接性差、易生成脆硬Fe-Al金属间化合物及焊具易磨损等问题，发明了铝/钢强形变诱导搅拌摩擦扩散焊技术，揭示了铝/钢异种金属搅拌摩擦搭接过程中界面快扩散行为和非平衡组织演变规律，实现了铝/钢低温大承载结合面积和超薄金属间化合物相耦合焊接，为铝/钢异种材料结构的可靠制造提供新思路。</p><p>② 内外双循环水冷搅拌摩擦焊接技术：针对铝/镁异质金属搅拌摩擦焊存在的焊具易粘着、金属间化合物难控制等问题，发明了铝/镁内外双循环水冷搅拌摩擦焊接技术，设计了焊具内冷温度可控且焊具外循环水浸的复合系统，同时实现了焊具内外冷和工件水浸冷却，降低了铝/镁焊接峰值温度，避免了焊具粘着现象，提高了焊缝成形，显著减小了界面金属间化合物厚度，促使界面兼顾微观机械互锁与焊接冶金的多重组织特征，提高了接头承载性能。</p><p>③ 轴肩约束式摩擦沉积辅助搅拌摩擦铆焊技术：围绕铝/钛搅拌摩擦焊焊具易磨损、界面连接宽度窄及界面组织难控制等问题，发明了摩擦沉积辅助搅拌摩擦铆焊技术，钛合金表面沉积铝合金过渡层控制铝/钛界面化合物形成，端部膨大搅拌针增大界面结合宽度，明晰了轴肩约束抑制材料转移并增强界面强形变诱导快扩散的作用机制，实现了异种铝/钛金属轴肩约束式摩擦沉积-搅拌摩擦铆焊复合接头的可靠性评价。</p><p>④ 搅拌摩擦偏置焊接技术：针对软硬异质材料长距离热分布不均、焊接稳定性差、接头承载不足等问题，发明了搅拌摩擦偏置焊接控形控性技术，设计了“一次焊接，二次成形”组合式焊具，实现了热源的按需分配并避免了焊具磨损，对硬度低且导热良好的材料施以更多热量，有效减缓了搅拌头粘着对接头成形的影响，降低焊缝整体峰值温度，控制了界面区金属间化合物层厚度，实现了米级铝/铜焊缝的连续稳定焊接。</p><p>⑤ 搅拌摩擦自铆焊技术：发明了一种适用于金属与非金属聚合物复合材料搅拌摩擦自铆焊复合连接新技术，建立了界面多尺度宏微观结构设计准则，铝合金侧引入宏观预制孔，促进了聚合物填充增强宏/微观机械咬合；微弧氧化在铝合金表面制备多孔氧化膜，多孔结构与塑性聚合物材料之间实现了微结构多孔镶嵌，强化了微观机械咬合；表面氧化膜促进聚合物与铝合金之间界面反应连接，综合有利于提升接头承载能力。</p><p>图4 特异质材料搅拌摩擦铆焊技术</p><p>本项目达到的关键技术指标包括：全过程搅拌摩擦焊数字化设计、全结构搅拌摩擦焊接技术、特异质搅拌摩擦铆焊技术，具体分别参见表1至表3；</p><p>表1 全过程搅拌摩擦焊数字化设计</p><p>指标内容</p><p>合同规定指标</p><p>实际测试结果</p><p>综合数值仿真力学性能预测模型与试验结果的拟合度（R2）</p><p>≥90%</p><p>95%</p><p>神经网络力学性能预测模型与试验结果的拟合度（1-MSE）</p><p>≥90%</p><p>96%</p><p>表2 全结构搅拌摩擦焊接技术</p><p>指标内容</p><p>合同规定指标</p><p>实际测试结果</p><p>随焊碾压搅拌摩擦焊接：焊缝横向挠度</p><p>下降≥80.0%</p><div class="p-h">80.6 %</div><p>随焊碾压搅拌摩擦焊接：焊缝纵向挠度</p><p>下降≥80.0%</p><div class="p-h">85.0 %</div><p>随焊碾压搅拌摩擦焊接：焊缝腐蚀等级</p><p>提升一个等级</p><p>由PB级提升至PA级，提升一个等级</p><p>微减薄搅拌摩擦焊接：焊缝减薄量</p><p>≤0.05mm</p><div class="p-h">0.00 mm</div><p>微减薄搅拌摩擦焊接：抗拉强度系数</p><p>≥75.0%</p><div class="p-h">92.0 %</div><p>大深宽比搅拌摩擦焊接：抗拉强度系数</p><p>≥75.0%</p><div class="p-h">77.7 %</div><p>自持式搅拌摩擦焊接：抗拉强度系数</p><p>≥70.0%</p><div class="p-h">75.0 %</div><p>填充式搅拌摩擦焊接：修复接头强度与优质搅拌摩擦焊接接头强度比值</p><p>≥90.0%</p><div class="p-h">90.7 %</div><p>表3 特异质搅拌摩擦焊接技术</p><p>指标内容</p><p>合同规定指标</p><p>实际测试结果</p><p>强形变诱导搅拌摩擦扩散焊：铝/钢接头线载荷</p><p>≥400N/mm</p><p>442N/mm</p><p>内外双循环水冷搅拌摩擦焊接：铝/镁接头强度系数</p><p>≥65.0%</p><div class="p-h">70.9 %</div><p>摩擦沉积辅助搅拌摩擦焊接：铝/钛接头线承载载荷</p><p>≥680N/mm</p><p>707N/mm</p><p>搅拌摩擦偏置焊：铝/铜接头强度系数</p><p>≥80.0%</p><div class="p-h">86.0 %</div><p>搅拌摩擦偏置焊：铝/铜弯曲无裂纹最大角度</p><p>正弯≥90°</p><p>背弯≥90°</p><p>正弯180°</p><p>背弯180°</p><p>搅拌摩擦自铆焊：铝/聚合物接头抗剪强度</p><p>≥30MPa</p><p>33MPa</p></div>
+  <div class="sec">图集 / GALLERY</div><div class="gal"><img loading="lazy" src="../cases/gal/2024-06-1.jpg" alt=""><img loading="lazy" src="../cases/gal/2024-06-2.jpg" alt=""></div>
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2024%E5%B9%B4%E9%87%91%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%9F%94%E6%80%A7%E9%87%8D%E8%BD%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%85%E6%8B%8C%E6%91%A9%E6%93%A6%E7%84%8A%E6%8E%A5%E4%B8%8E%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">延伸阅读 / CURATED（人工核选 · 检索于 2026-08-09）</div><a href="https://cgd.cmes.org/exhibit/detail/4f8a98ab8c6749758c513a2fb58ad6f3" target="_blank" rel="noopener"><span class="arr">↗</span><span>柔性重载机器人搅拌摩擦焊接与检测系统 - 好设计奖</span><span class="src">cgd.cmes.org</span></a><a href="http://www.fsw.net.cn/fsw/post/233.html" target="_blank" rel="noopener"><span class="arr">↗</span><span>哈工大黄永宪教授团队获第九届好设计金奖 - 搅拌摩擦焊网</span><span class="src">fsw.net.cn</span></a><a href="https://news.eol.cn/dongtai/202007/t20200717_1738944.shtml" target="_blank" rel="noopener"><span class="arr">↗</span><span>获重要突破！哈尔滨工业大学研究团队在搅拌摩擦焊接领域持续发力</span><span class="src">news.eol.cn</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2024-05.html"><span class="d">← 上一项</span>多模式隧道掘进机</a>
+    <a class="next" href="2024-07.html"><span class="d">下一项 →</span>城市轨道交通列车走行部智能检测成套装备</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

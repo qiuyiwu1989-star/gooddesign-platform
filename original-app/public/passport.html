@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>好设计馆 · 参观任务护照 — 打印版</title>
+<style>
+  :root{--ink:#16181D;--muted:#8A8F98;--accent:#5E6AD2;--gold:#A87E2A;--line:rgba(15,23,42,.12)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:#E9EBF2;color:var(--ink)}
+  .toolbar{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:14px 24px;display:flex;gap:12px;align-items:center;z-index:10}
+  .toolbar .t{font-size:15px;font-weight:600}
+  .toolbar button{margin-left:auto;border:none;background:var(--accent);color:#fff;font-size:14px;font-weight:600;padding:10px 26px;border-radius:8px;cursor:pointer;font-family:inherit}
+  .toolbar button:hover{background:#4F58C0}
+  .toolbar .hint{font-size:12px;color:var(--muted)}
+
+  /* A4 护照页 */
+  .sheet{width:210mm;min-height:297mm;margin:20px auto;background:#fff;padding:16mm 14mm;box-shadow:0 10px 40px rgba(15,23,42,.15)}
+  .cover{text-align:center;padding:26mm 0 14mm;border-bottom:3px solid var(--gold)}
+  .cover .brand{display:inline-flex;align-items:center;gap:10px;font-size:15px;letter-spacing:1px;color:var(--muted)}
+  .cover .brand .mk{width:26px;height:26px;border-radius:7px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700}
+  .cover h1{font-size:34px;letter-spacing:6px;margin:18px 0 8px}
+  .cover .en{font-family:monospace;font-size:11px;letter-spacing:3px;color:var(--muted)}
+  .cover .fields{display:flex;gap:18px;justify-content:center;margin-top:22px;font-size:14px}
+  .cover .fields div{border-bottom:1px solid var(--ink);padding:2px 30px;min-width:120px;color:var(--muted)}
+  .cover .fields b{color:var(--ink);font-weight:600}
+  .cover .tip{margin-top:16px;font-size:12px;color:var(--muted)}
+
+  .sec-title{font-size:16px;font-weight:700;margin:14mm 0 6mm;letter-spacing:2px;display:flex;align-items:center;gap:10px}
+  .sec-title::after{content:"";flex:1;border-bottom:1px solid var(--line)}
+
+  /* 盖章格 */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+  .cell{border:1px solid var(--line);border-radius:8px;padding:5mm 5mm 4mm;display:grid;grid-template-columns:44px 1fr;gap:12px;page-break-inside:avoid}
+  .cell .ico{width:44px;height:44px;border-radius:10px;background:#F3F4F8;display:grid;place-items:center;font-size:22px}
+  .cell .nm{font-size:14px;font-weight:700}
+  .cell .q{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.6}
+  .cell .stamp{grid-column:1/-1;margin-top:6px;height:52px;border:2px dashed rgba(168,126,42,.5);border-radius:8px;
+    display:grid;place-items:center;color:rgba(168,126,42,.6);font-size:12px;letter-spacing:2px}
+  .cell.done .stamp{border-style:solid;border-color:var(--gold);background:rgba(168,126,42,.07);color:var(--gold)}
+
+  .back{font-size:11.5px;color:var(--muted);line-height:1.9;margin-top:12mm}
+  .back b{color:var(--ink)}
+  @media print{
+    body{background:#fff}
+    .toolbar{display:none}
+    .sheet{margin:0;box-shadow:none;width:auto;min-height:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="t">📖 好设计馆 · 参观任务护照</span>
+  <span class="hint">A4 打印 · 双面或单面均可</span>
+  <button onclick="window.print()">🖨️ 打印护照</button>
+</div>
+
+<div class="sheet">
+  <!-- 封面 -->
+  <div class="cover">
+    <div class="brand"><span class="mk">好</span>好设计馆 GOOD DESIGN MUSEUM</div>
+    <h1>参观任务护照</h1>
+    <div class="en">EXPLORE · UNDERSTAND · CREATE</div>
+    <div class="fields">
+      <div><b>姓名:</b></div>
+      <div><b>日期:</b></div>
+    </div>
+    <div class="tip">完成 8 个任务,集齐 8 枚印章,即可到服务台领取「馆藏鉴赏家」证书</div>
+  </div>
+
+  <!-- 任务 -->
+  <div class="sec-title">任务一栏 · 8 件国之重器</div>
+  <div class="grid" id="grid"></div>
+
+  <!-- 背面提示 -->
+  <div class="back">
+    <b>怎么玩?</b>① 每件馆藏的任务答案,藏在对应展品旁的「拆解实验室」互动屏里(点部件编号看弹窗)与官方图纸中。<br>
+    ② 回答出答案,向讲解员展示,即可在对应格子盖章。<br>
+    <b>回家继续:</b>扫描展厅二维码,在「好设计馆」线上平台完成全部互动(模拟器/闯关/设计挑战),可兑换电子徽章。<br>
+    <b>数据来源:</b>任务内容基于好设计奖 2015—2025 十届官方获奖档案与设计阐述。
+  </div>
+</div>
+
+<script>
+var CELLS = [
+  { ico: '🚀', nm: '嫦娥五/六号 钻取采样系统', q: '月面温差达 310℃,钻取系统靠什么扛住?' },
+  { ico: '🔥', nm: 'F级50MW 重型燃气轮机', q: '透平叶片直面上千度燃气,靠什么降温?' },
+  { ico: '⚛️', nm: '国和一号 屏蔽电机主泵', q: '核电站断电后,主泵靠什么继续转?' },
+  { ico: '💧', nm: '白鹤滩 1000MW 水轮机组', q: '这台发电机组的电压等级有多高?' },
+  { ico: '🔨', nm: '800MN 大型模锻压机', q: '800MN 的力量大约相当于多少吨?' },
+  { ico: '🌊', nm: '蛟龙号 载人潜水器', q: '载人舱为什么做成球形?' },
+  { ico: '🛢️', nm: '海洋石油981 钻井平台', q: '平台靠什么抵抗 200 年一遇台风?' },
+  { ico: '🚄', nm: 'CRH380A 高速动车组', q: '车头的设计灵感来自什么?' }
+];
+document.getElementById('grid').innerHTML = CELLS.map(function(c){
+  return '<div class="cell"><div class="ico">' + c.ico + '</div>' +
+    '<div><div class="nm">' + c.nm + '</div><div class="q">任务:' + c.q + '</div></div>' +
+    '<div class="stamp">盖 章 处</div></div>';
+}).join('');
+</script>
+</body>
+</html>

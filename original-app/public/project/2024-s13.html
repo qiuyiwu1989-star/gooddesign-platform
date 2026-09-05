@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>三代核电锻造主管道研制关键技术及应用 · 2024银奖 · 好设计</title>
+<meta name="description" content="核电主管道是核蒸汽供应系统输出堆芯热能的“主动脉”，是核岛一回路重要的压力边界，也是保证核安全的关键设备。AP1000、国和一号、华龙一号主管道均采用直管与弯头、管嘴与管道整体锻造结构，均为国内外首次制造，其中国和一号主管道是目前世界范围尺">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2024">← 返回 2024 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2024 · 第九届</span></div>
+  <h1>三代核电锻造主管道研制关键技术及应用</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">二重（德阳）重型装备有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">郑建能,陈红宇,沈国劬,孙嫘,李连龙,王凯,朱永有,陈小波,司晨亮,郑洪宏</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">2024060059</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>核电主管道是核蒸汽供应系统输出堆芯热能的“主动脉”，是核岛一回路重要的压力边界，也是保证核安全的关键设备。AP1000、国和一号、华龙一号主管道均采用直管与弯头、管嘴与管道整体锻造结构，均为国内外首次制造，其中国和一号主管道是目前世界范围尺寸最大、重量最大、技术要求最高、制造难度最大的核岛一回路锻造主管道，其研制涉及冶炼、锻造、弯曲成形、热处理等多个学科，代表了机械设备热加工制造技术的最高水平。</p><p>为解决自主依托项目和示范工程主管道“卡脖子”难题，大型先进压水堆核电站国家科技重大专项、工信部绿色制造系统集成项目及四川省先后立项支持。项目历经10年持续不断攻关，突破一系列关键核心技术，主要创新包括：</p><p>（1）依托国内最大的125吨单相单电极电渣重熔炉，发明了120吨级超大型电渣重熔钢锭重熔专用的五元渣系，开发了凝固组织控制技术和补缩工艺，实现了C、N含量精确控制、化学成分和组织均匀、钢锭超纯净。</p><p>（2）国内外首创大型异形复杂不锈钢锻坯成形和晶粒度控制技术，包括多梯度控温与变形耦合锻造方法、带非对称管嘴的单边成形方法等，实现了锻造裂纹和晶粒度稳定控制、锻坯尺寸精确。</p><p>（3）国内外首次建立大型厚壁承压管道冷弯成形计算模型，实现了冷弯成形模具由经验设计到计算设计的突破，填补了国内外大型厚壁承压管道冷弯成形理论研究成果的空白。</p><p>项目有力支撑了AP1000自主依托项目、国和一号示范工程、华龙一号示范工程的建设，创造了中国人在核岛关键设备领域原始创新制造、稳定供货的先例，带动我国电渣重熔技术、不锈钢锻造技术、管道成形技术达到国际先进水平，成功推广应用于国防专项产品的制造。</p><p>项目先后签订AP1000自主依托项目海阳1号机组、国和一号示范工程1号机组、华龙一号国内示范工程福清6号机组、华龙一号国外示范工程巴基斯坦K3项目等25台机组供货合同，新增订货243419万元，价格由国外企业的600万元/吨降低到100万元/吨，国内市场占有率稳定在60%。</p><p>项目获授权发明专利10项，制订国家、核能行业标准4项，发表论文24篇，上榜中国科协2021“科创中国”突破短板关键技术榜-装备制造领域十大关键技术榜单、荣获“全国质量奖卓越项目奖”、中国机械工业集团公司科技进步一等奖，经鉴定“该项目技术难度大、创新性强、具有完全自主知识产权，总体技术居国际领先水平”。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>主要科技创新</div></div></div><p>主管道是压水堆核岛一回路的“主动脉”，在主循环泵的驱动下输送反应堆冷却剂介质，形成反应堆和蒸汽发生器之间的强迫循环，为二回路提供热量，核电站运行时处于高温、高压、高速冲刷和放射性的工况，是保证核安全的重要压力边界。三代核电（AP1000、国和一号、华龙一号）主管道结构均采用直管与弯头、管嘴与管道整体锻造结构，材料采用超低碳控氮奥氏体不锈钢，国和一号主管道是目前世界范围尺寸最大（最大外径Φ1100mm，最大长度8870mm）、重量最大（固溶热处理最大重量24吨、交货重量最大17吨）、技术要求最高（椭圆度≤4%、一体化管嘴位置尺寸±1.5mm、晶粒度≥2.0级）、制造难度最大的核岛一回路锻造主管道，代表了机械设备热加工制造技术的最高水平。原有的冶炼、锻造、弯曲成形、固溶热处理技术无法支撑产品顺利研制，需要多学科领域的协同突破和原始创新。</p><p>三代核电锻造主管道研制难点包括对于120吨级超大型超低碳控氮奥氏体不锈钢电渣重熔钢锭的内外部质量控制、超大型异形奥氏体不锈钢管坯锻造裂纹和晶粒度控制、大型异形不锈钢管道弯曲成形方法及成形模具设计、固溶热处理过程变形控制、固溶热处理后的性能保证等，研制技术难点和总体攻关思路如下：</p><p>项目经过10年持续不断攻关，完成AP1000、国和一号、华龙一号主管道研制并实现AP1000自主依托项目、国和一号示范工程、华龙一号示范工程供货，形成系统完整的大型核电锻造主管道制造技术，总体制造技术达到国际领先水平。</p><p>创新点1：开发了120吨级超大型超低碳控氮奥氏体不锈钢钢锭电渣重熔技术，实现C、N含量精确控制、化学成分和组织均匀、钢锭超纯净</p><p>（1）主要技术难点</p><p>1）三代核电锻造主管道的制造需要120吨级的超低碳控氮奥氏体不锈钢电渣重熔钢锭，电渣锭直径达到Φ2000mm，长度达到5000mm，是目前国内采用单相单电极工艺制造的重量最大的超低碳控氮奥氏体不锈钢电渣重熔钢锭。</p><p>2）华龙一号主管道用X2CrNiMo18.12（控氮）奥氏体不锈钢C含量要求≤0.035%，N含量要求≤0.080%，内控要求C含量0.025-0.030%，N含量0.072-0.080%，合金含量范围要求很窄，冶炼过程控制难度大。</p><p>3）120吨级电渣重熔钢锭因直径大，熔池深，电渣重熔特有的强水冷凝固优势随钢锭直径增大而减弱，凝固时成分偏析倾向大，且电渣重熔时间长（不间断重熔70小时），长时间重熔会导致熔渣物性变化，难以保证120吨级超大型重熔钢锭的成分、组织均匀性及钢锭纯净度。</p><p>（2）技术创新与突破</p><p>1）发明了阻断空气环境下、适用于120吨级超低碳控氮奥氏体不锈钢的CaO-CaF2-Al2O3-MgO-SiO2五元渣系。该渣系是在CaF2-Al2O3基础上添加15%的CaO，使渣具有较高的碱度，去硫、去夹杂能力强；加入3.5%的SiO2，使重熔过程形成的渣皮具有一定的塑性，渣皮不易破损；添加4%的MgO，降低渣系的渗透性，减小氮的传质系数，实现了大型电渣重熔钢锭重熔过程C、N含量稳定精准控制（C含量0.025-0.030%、N含量±30PPm），获得了化学成分均匀、超纯净的超大型优质电渣锭。</p><p>2）提出从电极坯特殊形状设计到供电参数的曲线控制、渣阻控制等方法，控制渣池深度逐步减小，严格控制冷却水水温，成功发明了120吨级超大型不锈钢电渣锭补缩技术，实现了补缩过程中温度场精确控制，获得了冒口补缩平整的120吨级不锈钢电渣锭。</p><p>创新点 2：开发了超大型异形不锈钢锻坯锻造裂纹控制及晶粒均匀性控制新技术，实现锻造过程裂纹和晶粒度稳定控制、锻坯尺寸精确</p><p>（1）主要技术难点</p><p>1）三代核电锻造主管道用电渣锭镦粗后的最大截面尺寸达到Φ3000mm，开坯过程难以保证坯料温度场的均匀性、表面与芯部金属变形的协调性，导致锻坯表面及两端易产生裂纹。</p><p>2）由于锻坯截面尺寸大（直管达到Φ1180mm，长度达到8870mm，管嘴高度达到1800mm）、形状复杂（带有多个不同角度非对称一体化管嘴），部分产品需要20多个火次才能锻造完成，锻造过程中难以避免少无锻比加热，不同部位晶粒均匀性很难保证，管坯形状复杂，管坯外形尺寸难以保证。</p><p>（2）技术创新与突破</p><p>1）开发了多梯度控温与变形耦合的锻造方法。将大型复杂异形管坯的锻造全流程分为4个阶段，第一阶段为开坯，采用较高的温度1200-1240℃变形，单次压下量约10%、总变形量不超过40%；第二阶段为主变形阶段的材料改性，采用较高的温度1200-1240℃变形，单次压下量20%-30%、总变形量约60%；第三阶段为主变形阶段的组织改善，采用温度1130-1180℃锻造，单次压下量20%-30%、总变形量约60%；第四阶段为最终成形，采用温度在固溶温度附近的1020-1080℃，变形量约10%。通过控温与变形耦合的工艺方法实现了大型异形奥氏体不锈钢锻坯锻造过程的裂纹和晶粒度稳定控制。</p><p>2）大型复杂异形奥氏体不锈钢锻坯成形方法创新：发明了带非对称管嘴的管坯成形方法，利用凹档部分与多边形截面相邻两边相切的几何关系，采用上下专用砧实现单边非对称成形，保证管嘴底面与两端相切，实现了异形复杂锻坯的尺寸精确控制。</p><p>3）大型复杂异形奥氏体不锈钢锻坯差温锻造方法创新：在锻造过程中，通过喷涂专用不锈钢保温涂料或陶纤包裹进行差温控制，确保了大尺寸复杂异形主管道各部位锻造参数的精准控制，实现了多火次锻造成形的大尺寸异形锻坯各部位晶粒均匀，晶粒度稳定达到2.0级以上，级差控制在1.0级以内。</p><p>创新点 3：首次建立大型厚壁承压弯管冷弯成形计算模型，发明一体化管嘴位置尺寸精确调整方法，实现三代核电锻造主管道尺寸精准控制</p><p>（1）主要技术难点</p><p>1）在三代核电工程建设之前，核电主管道采用直管与弯头、管嘴与管道铸件分段焊接结构或锻件分段焊接结构，由于没有工程上的需要，国内外均没有系统开展大型厚壁承压弯管弯曲成形理论相关的研究工作。</p><p>2）三代核电由于安全性要求高、寿命长（60年），主管道R（弯曲半径）=1.5D（管道外径），弯曲半径公差±10mm，一体化管嘴位置尺寸±1.5mm，厚径比0.08，椭圆度要求≤4%。弯曲成形过程变形量大，增厚、减薄量大，弯曲半径公差小；由于管道外径和壁厚大，冷弯成形过程成形力大，回弹量大，冷弯成形过程需要的下压力最大达到10000吨，需要对模具结构、管坯增厚减薄规律、冷弯回弹规律等进行深入研究。</p><p>（2）技术创新与突破</p><p>先后推导出锻造主管道冷弯成形多个理论计算公式，通过反复实物验证和修正，形成较为系统、完整的大型厚壁承压弯管冷弯成形计算模型，填补了国内外大型厚壁承压弯管冷弯成形理论研究成果的空白，主要包括大型厚壁承压弯管冷弯回弹量的理论计算、冷弯成形过程管坯滑动规律的理论计算、开式成形模具支点间距的理论计算、冷弯成形过程弯曲段外腹最小壁厚的理论计算、冷弯成形过程成形力的变化规律等，研究成果达到了指导工程应用的精度，实现了三代核电锻造主管道冷弯成形模具由经验设计到计算设计的突破。</p><p>针对三代核电锻造主管道一体化接管嘴位置尺寸难以精确控制的行业难题，发明了用于调整一体化管嘴位置尺寸的偏心月牙板。采用偏心月牙板调整弯曲成形下模支点高度，利用支点高度的不对称补偿一体化管嘴不对称造成的中心偏移，将主管道弯曲成形中心调整到工艺需要的位置，满足了一体化接管嘴位置尺寸的苛刻要求。</p><p>创新点 4：发明了大型异形奥氏体不锈钢管道热处理变形控制方法和保证性能稳定的固溶热处理方法，实现了热处理变形可控、性能稳定</p><p>（1）主要技术难点</p><p>1）三代核电锻造主管道弯曲成形后要进行固溶热处理，固溶热处理过程既可能产生弯曲角度和椭圆度的变化，还可能产生扭转变形和弯曲变形，若变形超出调整范围，将导致产品无法安装。</p><p>2）华龙一号主管道采用X2CrNiMo18.12（控氮）奥氏体不锈钢，固溶强化能力强的间隙固溶强化元素C、N含量较低，固溶强化能力有限，350℃高温强度指标要求高（屈服强度≥130MPa），容易出现高温屈服强度不合格的问题，提高X2CrNiMo18.12（控氮）奥氏体不锈钢高温强度、实现性能稳定控制是华龙一号主管道研制的关键。</p><p>（2）技术创新与突破</p><p>1）创建了保证锻造主管道尺寸精度的三次热处理方法。第一次为预备热处理，保温温度为900-950℃，在弯曲成形前为冷弯成形提供足够的塑性储备，使冷弯回弹后弯曲半径均匀；第二次热处理在冷弯成形后，保温温度为350-400℃，消除大塑性变形后的残余应力，降低后续热处理加热过程中产生的变形；第三次为固溶热处理，保温温度为1060℃，提高抗腐蚀能力，该方法是二重装备的独创，也是保证主管道尺寸精度的关键技术之一。</p><p>2）提出华龙一号主管道急冷提高高温屈服强度的固溶热处理工艺方法，该方法基于大型奥氏体不锈钢锻件由1060℃急冷到室温时，表面和心部的存在不同冷速，急冷过程产生拘束，从而提高材料的位错密度。在工艺方法上，利用Φ9m×8m冷却水槽侧喷形成顺时针环形旋转水流，工件采用逆向旋转，使管道内表面强制循环冷却，保证了工件内外表面强冷效果，结合电渣重熔过程C、N含量的精确控制，实现了华龙一号主管道性能稳定控制。</p><p>3）针对国和一号主管道超大（最大外径Φ1100mm）、超重（最大热处理重量24吨）、超长（最大长度8870mm）、结构不对称的特点，固溶热处理时将工件平放，利用配重块将工件重心调整到料盘中心，采用专用弧形工装进行随形固定，保证了固溶热处理后尺寸变化在可控范围内。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>国内外水平对比分析</div></div></div><p>根据我国核电发展规划，三代核电AP1000、国和一号、中核华龙一号、中广核华龙一号是我国今后核电建设的主力机型。目前具有三代核电锻造主管道制造业绩的制造企业包括二重装备、中国一重、融发核电、渤船重工联队和吉林中意，二重装备是国内唯一一家同时具有AP1000、国和一号、中核华龙一号、中广核华龙一号四种机型锻造主管道制造业绩的企业，其他企业只有其中一种或两种业绩。</p><p>在产品质量方面，二重装备主要合金元素控制精准、残杂元素控制严格，力学性能指标和尺寸指标优良，目前占据国内三代核电锻造主管道60%的市场份额，产品质量和业绩明显优于其他各家。</p><p>a）国内其他企业三相电渣锭 b）二重装备单相电渣锭 c）国外企业电渣锭</p><p>图1.国内外电渣锭表面质量对比</p><p>表1.华龙一号主管道X2CrNiMo18.12（控氮）奥氏体不锈钢主要化学成分实测值与设计要求值对比</p><p>化学元素</p><p>C</p><p>N</p><p>P</p><p>S</p><p>要求值</p><p>≤0.035</p><p>≤0.080</p><p>≤0.035</p><p>≤0.015</p><p>实测值</p><div class="p-h">0.025 -0.030</div><div class="p-h">0.071 -0.077</div><p>≤0.020</p><p>≤0.002</p><p>表2.华龙一号主管道用X2CrNiMo18.12（控氮）奥氏体不锈钢力学性能实测值与设计要求值对比</p><p>力学性能</p><p>350℃高温拉伸</p><p>室温KV冲击</p><p>规定强度Rp0.2(MPa)</p><p>抗拉强度Rm(MPa)</p><p>断后伸长率A％</p><p>面缩率％</p><p>最小平均值</p><p>要求值</p><p>≥130</p><p>≥407</p><p>提供数据</p><p>提供数据</p><p>≥100J</p><p>实测值</p><p>148</p><p>446</p><div class="p-list"><div class="p-li"><span class="p-mk">48</span><div>0</div></div></div><p>80</p><p>431，429，432</p><p>实测值</p><p>152</p><p>451</p><div class="p-list"><div class="p-li"><span class="p-mk">47</span><div>5</div></div></div><p>81</p><p>408，406，412</p><p>表3.国和一号CAP[1400主管道主要尺寸实测值与设计要求值对比</p><p>尺寸要求</p><p>弯曲角度</p><p>椭圆度</p><p>一体化管嘴位置尺寸</p><p>要求值公差</p><p>±1º</p><p>≤4%</p><p>±1.5mm</p><p>实测值</p><p>±0.25º</p><p>≤2%</p><p>±0.5mm</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>实施效果</div></div></div><p>本项目依托三代核电锻造主管道研制，在完全自主创新的基础上形成系统、稳定的大型核电锻造主管道制造技术，包括120吨级超大型奥氏体不锈钢电渣锭制造技术、大型奥氏体不锈钢锻坯锻造及晶粒度控制技术、大直径异形管道冷弯成形技术、大直径异形不锈钢管道固溶热处理技术，使我国三代核电锻造主管道制造技术提高到国际领先水平，保证了我国AP1000自主化依托项目、国和一号示范工程、华龙一号国内外示范工程及后续核电项目的顺利建设。</p><p>三代核电锻造主管道研制形成的一系列关键核心技术，带动我国电渣重熔技术、大型不锈钢锻造技术、高端管道成形技术达到国际先进水平，创造了中国人在核岛关键设备领域原始创新制造、稳定供货的先例，在重大技术装备核心关键技术“卡脖子”、强调技术和装备自主可控的今天尤其珍贵。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2024%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E4%B8%89%E4%BB%A3%E6%A0%B8%E7%94%B5%E9%94%BB%E9%80%A0%E4%B8%BB%E7%AE%A1%E9%81%93%E7%A0%94%E5%88%B6%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E4%B8%89%E4%BB%A3%E6%A0%B8%E7%94%B5%E9%94%BB%E9%80%A0%E4%B8%BB%E7%AE%A1%E9%81%93%E7%A0%94%E5%88%B6%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「三代核电锻造主管道研制关键技术及应用」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E4%B8%89%E4%BB%A3%E6%A0%B8%E7%94%B5%E9%94%BB%E9%80%A0%E4%B8%BB%E7%AE%A1%E9%81%93%E7%A0%94%E5%88%B6%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「三代核电锻造主管道研制关键技术及应用」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2024-s12.html"><span class="d">← 上一项</span>新一代智能悬挂式单轨列车</a>
+    <a class="next" href="2024-s14.html"><span class="d">下一项 →</span>XGT15000-600S超大型塔机及关键技术</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

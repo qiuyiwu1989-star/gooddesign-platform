@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>超大轴类锻件氧化皮清除刚柔耦合机器人设计 · 2021创意奖 · 好设计</title>
+<meta name="description" content="一、设计目的 
+ 超大轴类锻件主要应用于高端装备的核心部位，体现着国家的极端制造能力与制造水平，是国民经济的重要保证。在超大轴类锻件的生产过程中，锻件会与空气中的氧气、水蒸汽作用产生氧化皮。氧化皮会影响锻件的质量、增加变形能量的消耗、加速锻">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E5%88%9B%E6%84%8F%E5%A5%96&amp;year=2021">← 返回 2021 年创意奖名录</a>
+  <div class="kicker"><span class="lv other">创意奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>超大轴类锻件氧化皮清除刚柔耦合机器人设计</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">太原理工大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">张金柱,李亚冠,王涛,李方琳</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202104506</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><div class="p-h">一、设计目的</div><p>超大轴类锻件主要应用于高端装备的核心部位，体现着国家的极端制造能力与制造水平，是国民经济的重要保证。在超大轴类锻件的生产过程中，锻件会与空气中的氧气、水蒸汽作用产生氧化皮。氧化皮会影响锻件的质量、增加变形能量的消耗、加速锻模以及模具的磨损，降低使用寿命。锻造过程中如果不能将氧化皮及时清除而被压入锻件内，会影响产品的质量，严重的甚至报废。针对超大轴类锻件氧化皮清除方式存在劳动强度高、环境恶劣、自动化程度低的弊端以及产品下游用户高品质的需求，设计一种超大轴类锻件氧化皮清除刚柔耦合机器人，从而实现超大轴类锻件氧化皮信息流的精确跟踪和在线快速清除，保证锻件全截面均匀的晶粒分布，提高超大轴类锻件的品质。</p><div class="p-h">二、设计创新</div><p>超大轴类锻件氧化皮清除刚柔耦合机器人以重载操作机为本体，采用刚柔耦合驱动技术与机构自适应设计方法对操作机夹钳架进行构型升级，保证了氧化皮清除机器人的操作中心与超大轴类锻件中心始终保持一致；通过刚柔耦合驱动解决了长行程剪式伸缩架大悬臂和高温工况服役的两大难题。本设计有以下创新点：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>提出了一种基于刚柔耦合驱动的超大轴类锻件氧化皮在线清除机器人，通过采用刚柔耦合驱动技术与机构自适应设计方法，实现了氧化皮的在线快速清除、提高了超大轴类锻件的品质。（已授权中国发明专利，并提交了PCT申请）</div></div><div class="p-li"><span class="p-mk">2</span><div>构建了氧化皮清除机器人传动系统力传递模型，揭示氧化皮清除机器人构型、尺度以及载荷等因素对其动态力传递特性的影响规律。</div></div><div class="p-li"><span class="p-mk">3</span><div>开发了大跨度无碰撞运动区域求解算法，采用柔性驱动机器人系统的高效快速低功耗运动规划技术，实现氧化皮清除机器人在线多轴电液协同精准控制。</div></div><div class="p-li"><span class="p-mk">4</span><div>基于刚柔耦合机构的力/运动传递机理与动态特性，对刚柔耦合驱动的超大轴类锻件氧化皮在线清除机器人进行多自由度、复杂约束下的运动轨迹规划。</div></div></div><div class="p-h">三、设计价值</div><p>氧化皮清除刚柔耦合机器人的在线服役，可以有效减少劳动强度及危险性、提高生产自动化程度以及锻件的品质，具有广阔的应用前景，为企业带来更高的经济效益和社会效益，对传统锻造行业的转型升级具有重要的指导意义，推动了超大轴类锻件氧化皮在线快速高效清除技术的发展，提高我国在超大轴类锻件成形领域的国际竞争力。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-h">2.1 设计方案</div><p>超大轴类锻件氧化皮清除刚柔耦合机器人以重载操作机为本体，采用刚柔耦合驱动技术与机构自适应设计方法对操作机夹钳架进行构型升级，保证了氧化皮去除机器人的操作中心与超大轴类锻件中心始终保持一致；通过刚柔耦合驱动解决了长行程剪式伸缩架大悬臂和高温工况服役的两大难题。</p><p>本项目的设计方案如下：</p><p>（1）设计了一种刚柔耦合驱动氧化皮清除机构。</p><p>基于刚柔耦合驱动技术与机构自适应设计方法，氧化皮清除机构采用长行程剪式伸缩架（剪刀叉结构）+两自由度末端清除机构形式。两个液压缸助推长行程剪式伸缩架伸展来完成氧化皮清除机构的向前运动；通过伺服电机驱动齿轮齿条结构来实现长行程剪式伸缩架伸缩位置的精确控制。通过柔性绳牵引来实现锻造过程中两自由度氧化皮清除末端执行机构的位姿在线自适应调整；通过伺服电机直驱钢丝刷来实现超大轴类锻件氧化皮的在线快速清除。长行程剪式伸缩架既可以单侧伸出，实现超大轴类锻件氧化皮的靶向快速清除；也可以两侧同时伸出，实现超大轴类锻件氧化皮的长行程整体快速清除。</p><p>（2）构建了一种刚柔耦合驱动视觉识别装置。</p><p>视觉识别装置采用长行程剪式伸缩架+柔性驱动曲柄滑块机构。通过两个液压缸助推剪式伸缩架实现视觉识别系统的伸出和缩回，伸缩架的末端安装有曲柄滑块机构。两个耐高温摄像头安装在曲柄滑块机构上，通过伺服电机驱动柔性绳牵引来实现锻造过程中视觉识别装置位姿在线自适应调整，从而适用于不同直径的超大轴类锻件的在线无损检测。采用基于多模特征深度学习的机器人末端视觉伺服引导定位技术，通过视觉识别装置来实现超大轴类锻件氧化皮的高效精准定位和在线靶向快速清除。</p><p>（3） 提出了一种位置压力主从自适应控制方法。</p><p>刚柔耦合驱动机器人液压系统是一个高速、大惯量、高频响、多自由度的电液伺服系统，单纯的位置闭环控制已经不能满足现代锻造工艺的需求。该机器人以位置反馈为主，通过提取液压缸的压力信号，重构多缸的载荷分布，建立液压缸压力与界面载荷的映射模型，在线解算多缸的偏载压力动态变化并将其转换为位置信号，再将位置信号转换成伺服阀的控制信号叠加到整个机器人电液伺服系统的位置闭环内，巧妙地实现机器人电液伺服系统位置和压力的主从自适应控制。</p><div class="p-h">2.2 功能性能</div><p>超大轴类锻件氧化皮清除刚柔耦合机器人可以实现超大轴类锻件锻造过程中氧化皮的在线快速清除，降低了工人的劳动强度，提高了锻件的品质和设备的自动化程度，主要包括以下几个功能：</p><p>（1）氧化皮高效精准识别</p><p>基于多模特征深度学习的机器人末端视觉伺服引导定位技术和大跨度无碰撞运动区域求解算法，通过视觉识别装置来实现超大轴类锻件氧化皮的在线高效精准识别与定位。</p><p>（2）氧化皮的靶向快速清除</p><p>通过视觉识别装置对氧化皮进行精准定位，然后重载操作机单侧大行程剪式伸缩架快速伸出、夹钳夹持超大轴类锻件360°旋转、伺服电机直驱钢丝刷360°高速旋转，通过多轴、多自由度、复杂约束下的运动轨迹规划实现超大轴类锻件锻造过程中的氧化皮靶向快速清除。</p><p>（3）氧化皮的整体快速清除</p><p>氧化皮位置精准识别定位以后，操作机两侧的大行程剪式伸缩架同时快速伸出、夹钳夹持超大轴类锻件360°旋转、两个钢丝刷同时与锻件接触，通过多轴、多自由度、复杂约束下的运动轨迹规划实现超大轴类锻件锻造过程中的氧化皮整体快速清除。</p><p>（4）多缸高精度协调运动</p><p>通过高速、重载、多自由度电液伺服系统位置压力主从自适应控制理论，解决了重载工况下多缸耦合的问题，实现刚柔耦合驱动的超大轴类锻件氧化皮在线清除机器人的多缸高精度协调运动控制。</p><div class="p-h">2.3 技术指标</div><p>锻件尺寸：直径500 mm-1000mm, 长度3000mm-8000mm</p><p>剪式伸缩架行程：3000mm-8000mm</p><p>氧化皮数量去除率≥95%</p><p>氧化皮位置识别精度≤0.5mm</p><p>氧化皮去除时间≤5s</p><p>锻件品质提高≥20%</p><p>机器人行走四轴位置精度≤1mm</p><p>动臂提升缸四轴位置精度≤1mm</p><p>夹钳旋转角度控制精度≤3°</p><p>夹钳夹持力：100T</p><p>钢丝刷旋转线速度：50mm/s-100mm/s</p><div class="p-h">2.4 创新点</div><p>（1）设计了一种超大轴类锻件氧化皮清除刚柔耦合机器人，通过采用刚柔耦合驱动技术与机构自适应设计方法，实现了氧化皮的在线快速清除、提高了超大轴类锻件的品质。（已授权中国发明专利，并提交了PCT申请）</p><p>（2）构建了氧化皮清除机器人传动系统力传递模型，揭示氧化皮清除机器人构型、尺度以及载荷等因素对其动态力传递特性的影响规律。</p><p>（3）开发了大跨度无碰撞运动区域求解算法，采用柔性驱动机器人系统的高效快速低功耗运动规划技术，实现氧化皮清除机器人在线多轴电液协同精准控制。</p><p>（4）基于刚柔耦合机构的力/运动传递机理与动态特性，对刚柔耦合驱动的超大轴类锻件氧化皮在线清除机器人进行多自由度、复杂约束下的运动轨迹规划。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E5%88%9B%E6%84%8F%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E8%B6%85%E5%A4%A7%E8%BD%B4%E7%B1%BB%E9%94%BB%E4%BB%B6%E6%B0%A7%E5%8C%96%E7%9A%AE%E6%B8%85%E9%99%A4%E5%88%9A%E6%9F%94%E8%80%A6%E5%90%88%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%AE%BE%E8%AE%A1%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E8%B6%85%E5%A4%A7%E8%BD%B4%E7%B1%BB%E9%94%BB%E4%BB%B6%E6%B0%A7%E5%8C%96%E7%9A%AE%E6%B8%85%E9%99%A4%E5%88%9A%E6%9F%94%E8%80%A6%E5%90%88%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「超大轴类锻件氧化皮清除刚柔耦合机器人设计」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E8%B6%85%E5%A4%A7%E8%BD%B4%E7%B1%BB%E9%94%BB%E4%BB%B6%E6%B0%A7%E5%8C%96%E7%9A%AE%E6%B8%85%E9%99%A4%E5%88%9A%E6%9F%94%E8%80%A6%E5%90%88%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「超大轴类锻件氧化皮清除刚柔耦合机器人设计」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-c14.html"><span class="d">← 上一项</span>六足全地形移动平台</a>
+    <a class="next" href="2021-c16.html"><span class="d">下一项 →</span>高机动智慧救援系统</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

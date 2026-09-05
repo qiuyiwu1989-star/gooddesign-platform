@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>光伏组件智能运维机器人 · 2021创意奖 · 好设计</title>
+<meta name="description" content="随着绿色能源的推进，光伏产业发展迅速。但光伏电站多建于光照条件较好的山丘、戈壁滩等地，易受风沙污染影响发电量；同时，鸟粪等难清除物成为光伏组件重大杀手锏之一，如不及时清理，极易产生热斑；此外，随着运行年限增长，急需增加巡检频次，确保发电效率">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E5%88%9B%E6%84%8F%E5%A5%96&amp;year=2021">← 返回 2021 年创意奖名录</a>
+  <div class="kicker"><span class="lv other">创意奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>光伏组件智能运维机器人</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">内蒙古工业大学内蒙古硕博自动化科技有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">刘日,周朋飞,赵国庆</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202104621</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>随着绿色能源的推进，光伏产业发展迅速。但光伏电站多建于光照条件较好的山丘、戈壁滩等地，易受风沙污染影响发电量；同时，鸟粪等难清除物成为光伏组件重大杀手锏之一，如不及时清理，极易产生热斑；此外，随着运行年限增长，急需增加巡检频次，确保发电效率。近年，随着机器人技术的进步，适于光伏清扫的微小型移动机器人、地面履带式机器人和轨道机器人应运而生。而微小移动机器人清扫效率低、续航时间短，不适于大面积光伏清扫；履带式机器人对光伏阵列间作业空间、地形有更高要求，适应性差；利用光伏组件自身外沿为轨道的机器人，因清扫效率高，对地形无要求而具有更大的应用前景。目前，轨道式光伏清扫机器人均为一体化结构，体积大；对光伏组件的平整性要求高，越障性能差；每个光伏阵列就固定一台机器人，投资大。综上，大部分光伏电站仍采用人工清洗，清洗频次、质量都难以保障。基于此，本设计引入模块化、可重构概念，创新的设计出一种模块化光伏组件智能运维机器人。</p><p>本设计创新性的将模块化概念引入光伏组件智能运维机器人的设计，在继承轨道式机器人优点的基础上，能够利用标准模块自由组合适应光伏组件的阵列布局，快速高效；模块化概念的引入，便于机器人标准化、批量化生产制造，提高机器人通用性，降低生产成本；模块化概念的引入，极大的缩减了机器人在运输、组装和维护过程中的尺寸，降低了运输成本、操作难度，为多个光伏组件共用一台机器人提供可能。该设计创新的提出并设计一种具有越障能力的缓冲机构，能够更大范围的适应光伏组件的不平整、不连续性。同时为该光伏组件智能运维机器人选配红外热斑检测模块，标准化接口，拆装方便，即插即用；可以多台机器人共用一个模块，对光伏组件热斑、破损等缺陷进行检测。另外，该光伏组件智能运维机器人配有光伏板与蓄电池组成的智能供电系统，无需外接电源，节能环保；配有无线通讯单元，可以通过集控实现全站组网，远程监测控制。该机器人具有多种运行模式：固定周期运行、事件触发运行、人工干预。整个机器人的设计达到IP55防护等级，能够很好的适应风沙、雨雪等户外天气变化。</p><p>通过光伏组件智能运维机器人的设计，可有效的提高光伏发电效率，及时发现光伏板故障，为供电可靠性与智能运维提供技术支撑。该机器人的引入，能够有效的提高光伏电站智能化运行水平，以机器代人，降低劳动强度和作业风险，提升运维人员作业环境，推进光伏组件由“故障检修”模式到“状态检修”的转</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>本设计从光伏组件的清扫、热斑检测等运维需求出发，基于市面光伏清扫机器人存在的不足，创新性的提出并设计一种光伏组件智能运维机器人。其主要创新点体如下：</p><p>（1）设计理念创新</p><p>创新性的将模块化设计思想引入光伏组件智能运维机器人设计，可根据光伏电站内组件的实际组合情况进行进入的重构，极大的扩大了机器人的应用范围；并配置有通用的热斑检测模块，实现了多个机器人共享，降低电站运维投入。同时，模块化设计思想的引入，为实现光伏组件智能运维机器人的标准化、系列化提供了更大可能，有利于缩减研发、制造周期，降低制造成本。</p><p>（2）适应性结构创新</p><p>①针对光伏组件安装不一致、不平整以及不连续等现象，提出了一种具有越障能力的缓冲机构，以更大的提升机器人的越障性能和运行平稳性；②针对市面光伏清扫机器人存在清扫盲区现象，提出一种光伏清扫盲区补偿模块，并基于此提出了一种被动式光伏清扫机器人和模块化被动式光伏清扫机器人，以消除清扫盲区；③针对机器人续航问题，发明一种具有自适应功能的通电结构，以降低充电时对接精度要求；④针对光伏组件智能运维机器人自身供电光伏板的积灰和污染问题，发明了一种具有自清扫功能的光伏板发电装置，确保发电板的运行效率；⑤为确保机器人工作安全性，发明了一种熔断器座，具有较好的导电接通性能和散热性。</p><p>（3）光伏组件智能运维机器人的应用模式创新</p><p>模块化设计思想的引入，极大的降低了机器人的运输、安装和维护方便性，为多个阵列共用、共享一台机器人提供可能，降低电站运维投入；同时标准模块化的引入，有利于实现机器人的部件快速替换，集中维修。</p><p>（4）光伏组件智能运维机器人的运行模式创新</p><p>每台光伏组件智能运维机器人都配有无线通讯模块，整站机器人集中控制并接入通讯网；作业人员可以就地或远程控制机器人，监测机器人作业状态。每台机器人都具有周期运行、基于事件触发运行、人工干预运行等多种模式；作业人员还可根据实际电站情况，定制运行模式。</p><p>（5）接口丰富，便于拓展</p><p>本设计的光伏组件智能运维机器人预留有丰富的机械、电气、通信接口，便于后续功能拓展、系统升级。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E5%88%9B%E6%84%8F%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%85%89%E4%BC%8F%E7%BB%84%E4%BB%B6%E6%99%BA%E8%83%BD%E8%BF%90%E7%BB%B4%E6%9C%BA%E5%99%A8%E4%BA%BA%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%85%89%E4%BC%8F%E7%BB%84%E4%BB%B6%E6%99%BA%E8%83%BD%E8%BF%90%E7%BB%B4%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「光伏组件智能运维机器人」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%85%89%E4%BC%8F%E7%BB%84%E4%BB%B6%E6%99%BA%E8%83%BD%E8%BF%90%E7%BB%B4%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「光伏组件智能运维机器人」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-c29.html"><span class="d">← 上一项</span>逸动YIDO亚运动态图标创作应用</a>
+    <a class="next" href="2021-c31.html"><span class="d">下一项 →</span>3D打印患者定制化可变刚度胫骨骨折外固定</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

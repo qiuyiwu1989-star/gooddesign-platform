@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>水面高速无人艇复杂水域自适应敏捷自主控制技术 · 2024银奖 · 好设计</title>
+<meta name="description" content="水面无人艇是支撑海洋强国战略的重要智能装备，在海洋科考与生产、海上安全防卫等领域发挥着越来越重要的作用。特别是水面高速无人艇，在任务能力、作业效率等方面具有显著优势，成为各国争相研究的热点，已在俄乌冲突中显示出极其特殊的作战效能，在我国海洋">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2024">← 返回 2024 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2024 · 第九届</span></div>
+  <h1>水面高速无人艇复杂水域自适应敏捷自主控制技术</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨工程大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">张磊,庄佳园,王博,黄兵,廖煜雷,沈海龙,刘涛,苏玉民</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">2024060074</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>水面无人艇是支撑海洋强国战略的重要智能装备，在海洋科考与生产、海上安全防卫等领域发挥着越来越重要的作用。特别是水面高速无人艇，在任务能力、作业效率等方面具有显著优势，成为各国争相研究的热点，已在俄乌冲突中显示出极其特殊的作战效能，在我国海洋战略中具有迫切需求和应用前景。而自主控制作为决定水面无人艇任务能力的核心技术，是解决恶劣环境条件下高速自主航行难题的关键，一直是大力发展的重点。</p><p>在国家973计划、国家863计划等项目的持续支持下，首创了“感知—决策—控制”一体化自主控制技术体系，使高速无人艇在复杂水域环境中达到了“看得准、避得快、跟得紧”，取得如下创新点：</p><p>（1）发明了水面目标多源异构传感器信息融合感知方法。可实现异构感知信息在线时空校准及分层特征级融合。在高海况、雨雾等恶劣环境条件下，水面目标图像信噪比36.33，对比度增强32.9%。</p><p>（2）发明了快速反应自主决策与路径规划方法。可安全完成多动态目标环境中高航速自主危险规避，将无人艇避碰极限航速提高至40节。</p><p>（3）发明了复杂海况下高速无人艇自适应抗扰运动控制方法。可同时实现复杂环境干扰下路径和动态目标的高精度跟踪控制。在二级海况及32节高航速条件下，路径跟踪精度2.79米；在四级高海况及10节航速条件下，路径跟踪精度1.3米。</p><p>由哈工大冷劲松院士担任主任委员的科技成果评价委员会认为：“建立了‘感知—决策—控制’一体化的自主控制技术体系”，“该项目整体技术达到国际先进水平，其中，水面目标多源异构传感器信息融合感知方法和水面无人艇快速反应自主决策与路径规划方法，达到国际领先”。</p><p>项目获授权发明专利33项、软件著作权23项，获国家出版基金资助出版专著2部，发表论文48篇（其中SCI检索31篇）。</p><p>项目成果开拓了水面高速无人艇自主控制技术方向，大幅提升了其自主任务能力，并在我国首艘全自主双工型无人艇“翔龙号”、我国首艘高速油电复合动力无人艇“天行一号”、我国首艘寒地绿色智能无人船“领航之星”号等无人艇样机上进行了成功应用，使我国成为国际首个突破水面高速无人艇自主控制技术的国家。该成果得到了中船集团七〇八所、系统院、717所，中石油、92941部队、哈电集团等单位的推广应用和好评。在海军大、中、小型无人艇全国竞优中全部胜出，并获得自主控制竞优第一名，有力支撑了我国水面无人装备的体系化建设。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>项目背景</div></div></div><p>当前国内外海洋开发与海军装备的重要发展趋势是海洋装备的无人化和智能化，高速水面无人艇在任务能力、作业效率等方面具有显著优势，成为各国争相研究的热点，已在俄乌冲突中显示出极其特殊的作战效能，在我国海洋战略中具有迫切需求和应用前景。同时，我国境内河流众多，流域面积超过1000平方千米的河流有1500多条。水面高速无人艇敏捷自主控制技术的发展对我国水田农业、渔业、文化旅游以及界河边防的无人化、智能化进程具有重大意义，成为我国数字经济背景下战略性新兴产业蓬勃发展的重要抓手。</p><p>水面无人艇自主航行控制技术是支撑无人艇安全航行、自主作业的核心关键技术，但是在复杂水域、恶劣天气等环境条件下高速自主航行时，面临感知能力显著下降、在线决策规划约束增多、平台运动控制能力恶化等特殊问题及更严峻的挑战。从“十一五”开始，在国家973计划、国家863计划、海军“十二五”预研、装发共用技术等项目的持续支持下，相继突破了水面目标多源异构传感器特征融合方法、水面无人艇快速反应自主决策与路径规划方法、复杂海况下高速水面无人艇自适应抗扰运动控制方法等核心技术，首创了水面高速无人艇复杂水域自适应敏捷自主控制技术，形成“感知—决策—控制”一体化自主控制体系。成果先后应用于“翔龙号”、“天行一号”等无人艇样机，其中，支撑了海军大、中、小型无人艇全国竞优，并夺得自主控制竞优第一名。同时支撑我省研制国内首艘寒地绿色智能无人船“领航之星”号，取得了显著的社会效益可观的经济效益。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>总体思路</div></div></div><p>本项目针对复杂水域环境中高速高机动水面无人艇自主控制存在的环境恶劣、约束增多、平台非线性等技术难点，基于多模态特征融合、多约束自主规避、区域缓冲引导等技术途径，突破多源异构传感器融合感知、快速反应自主决策与路径规划、自适应抗扰控制等关键技术，形成“感知—决策—控制”的一体化自主控制体系，实现高速无人艇在复杂水域环境中“看得准、避得快、跟得紧”。总体思路如图1所示。</p><p>图1 总体思路</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>技术创新点</div></div></div><p>水面无人艇在复杂水域环境中高速自主航行时，恶劣天气和剧烈颠簸条件下多源异构传感器探测难度剧增、平台性能约束与高速机动约束下操纵受限、存在水气双重介质复杂干扰下滑行艇平台强非线性运动响应等难题。自主控制技术需要支撑无人艇具备以下能力：（1）“看得准”，介质衰减信息重建增强方法、多源异构感知语义多层级融合。平台在复杂环境中高速航行时，带来感知信息衰减、目标识别性能差；将物理成像模型引入信息重建增强网络设计，提出基于语义分析的多源异构特征多层级融合框架，可快速实现信息重建、干扰抑制和模糊去除，保证了复杂环境目标感知的快速性、稳定性、准确性。（2）“避得快”，离线与在线路径规划统一架构、多运动障碍高速规避。平台高速高机动航行，容易造成规划滞后、避碰失败；基于锁定扫描法构建导航势场，建立考虑海上避碰规则的多运动障碍规避模型，可安全完成多动态目标环境中高航速自主危险规避。（3）“跟得紧”，水动力建模与性能预设控制、虚拟点引导方法及自适应牵引速度引导方法。高速滑行航态造成的强烈抨击、机动操纵易产生侧滑和横移；风浪流的干扰带来艏摇、横摇、纵摇、垂荡等多自由度非线性耦合运动使控制器发散。利用水动力建模方法，结合性能预设控制理论，基于区域缓冲的虚拟点引导方法及自适应牵引速度引导方法，实现复杂环境干扰下期望路径和动态目标的高精度自适应跟踪控制。</p><p>创新点1：水面目标多源异构传感器信息融合感知方法</p><p>水面无人艇在复杂水域、恶劣天气条件下高速自主航行时，艇体会出现抖震和颠簸现象，感知信息伴随着空间跃变、抖动模糊；水面雾霾、降水等天气条件为各传感器带来不同程度和规律复杂的信息衰减；光照条件会引起海面场景和目标形态的复杂变化，各要素耦合作用造成水面目标感知性能稳定性差、精度下降显著。需要利用异构传感器的互补性、冗余性，提出引入介质衰减物理模型的感知信息重建增强方法；考虑多传感器模型参数漂移，设计基于语义区域分析的感知信息匹配与分层融合方法，实现了复杂环境综合作用下快速、稳定、精确的水面目标感知。</p><p>（1）引入介质衰减物理模型的感知信息重建增强方法。海况、天气、光照等多种要素耦合作用下的感知信息重建增强效果，决定了多源异构传感器信息匹配校正精度和水面目标感知性能。设计了稠密连接卷积网络并优化其特征提取结构，将大气散射模型引入稠密连接金字塔去雾网络，采用保边多级金字塔池化模型来细化密集连接所学习到的特征，能够快速有效重建信息、抑制干扰。通过定义代价函数将光流估计集成在神经网络训练过程，实现稠密运动向量场的精确优化估计，显著去除水面目标跃变和模糊现象，提升数据对比度与清晰度。</p><p>（2）基于语义区域分析的感知信息匹配与分层融合方法。异构多传感器信息物理意义和数据形式不一致，产生误差和不确定性累积，使目标感知模型趋于发散。基于语义区域时序变化规律，提出了多源异构感知信息匹配校正方法，在线实时优化多源异构空间约束模型；基于模糊卡尔曼滤波框架建立空间约束条件，提出了融合目标方位、运动速度、深层特征的密集连接多层级特征融合网络，充分利用语义特征和空间结构保证融合特征稳定性，有效提高了水面目标的特征可分性，保证了复杂环境条件下水面目标感知的快速性、稳定性、准确性。</p><p>图2 基于语义区域的在线匹配</p><p>图3 特征分层级融合机制</p><p>该创新点应用于高速水面无人艇安全自主航行、危险规避、特定目标识别跟踪等实艇验证与竞优测试。在夜间、雾霾、降水等恶劣条件下对水面目标对比度平均提升32.5%，发现距离提高2.21倍，高清视频平均处理速度为32帧/s（国内外同类研究降水天气下的图像增强方法提升对比度23.9%），达到了国际领先水平。</p><p>创新点2：水面无人艇快速反应自主决策与路径规划方法</p><p>水面无人艇在复杂水域高速自主航行时，存在交通局面复杂、感知能力降低、平台操纵约束、执行机构时滞等多约束条件，使离线路径规划耦合要素增多、在线路径规划速度要求增高、自主危险规避不确定因素增加，需要建立满足高效、实时与可靠兼顾的自主决策与路径规划技术体系。提出了基于锁定扫描法的导航势场构建方法和基于相对速度理论的多运动障碍物规避模型，实现了离线最优路径规划与在线重规划方法的统一，可安全完成多动态目标环境中高航速自主危险规避。</p><p>（1）离线与在线路径规划统一架构。水面无人艇跟踪离线规划路径高速自主航行时，需要根据雷达等传感器探测到的局部静态障碍物对离线路径进行快速在线重规划。针对在线规划实时性要求高、交通局面复杂的问题，提出了基于锁定扫描法的导航势场构建方法，结合电子海图与实艇操纵性建模得到的运动学模型，快速计算航行区域内任意位置与航行目标点之间最优航行路径，其原理如图4所示。解决了现在业内普遍采用的分层路径规划结构带来的实时性瓶颈问题，实现离线最优路径规划与在线重规划方法的统一。</p><p>（2）高速自主危险规避决策模型。为实现高速无人艇的安全自主危险规避，提出了基于相对速度理论的多运动障碍物规避模型，使得危险规避算法在该模型下计算速度倍增，实现了动态环境下无人艇艏向可行区间的快速计算；以平台性能、感知传感器特性与运动控制系统能力约束为边界条件，结合国际海上避碰规则，基于反应式避碰算法迅速解算出最优安全航行指令。实艇规避结果如图5所示。</p><p>图4 快速反应自主决策与路径规划方法原理</p><p>图5 多运动目标自主危险规避海上测试</p><p>该创新点应用于高速水面无人艇自主航行与危险规避实艇测试与竞优验证，实现高航速下高效路径规划与高可靠自主危险规避。世界上首次实现了无人艇40节、危险规避反应时间1毫秒自主危险规避。（国内外同类研究的高速无人艇自主危险规避系统反应时间4毫秒；自主避碰航速24节）。</p><p>创新点3：复杂海况下高速水面无人艇自适应抗扰运动控制方法</p><p>水面无人艇高速航行时处于滑行状态，艇体同时受水动力和气动力影响，在航向保持、回转操纵等机动过程中，伴随着严重的侧滑和横倾，航行姿态对环境极其敏感；在风浪流的作用下，无人艇的航行状态会遇到大升沉、大纵横摇等耦合影响，造成航向、航速、路径跟踪及目标跟踪等控制误差急剧增大甚至系统发散。利用水动力建模方法，结合性能预设控制理论，基于区域缓冲的虚拟点引导方法及自适应牵引速度引导方法，实现复杂环境干扰下静态路径和动态目标的高精度自适应跟踪控制。</p><p>（1）基于水动力建模与神经网络的性能预设控制方法。无人艇高速航行时的精确运动控制一直是高速无人艇发展的瓶颈技术。针对高速机动的强非线性影响带来的无人艇控制难题，本项目发明了高速无人艇预设性能鲁棒跟踪控制方法，将高速滑行艇的水动力建模方法与长短时神经网络相结合，在高速运动时基于神经网络参数化模型在线估计其关键运动状态，并设计性能约束和边界函数，通过引入对等映射函数将约束空间同胚映射到无约束空间，结合无人艇高速航行的操纵性响应进行控制器的响应特征设计，如图6。同时，针对影响控制精度的转向大侧滑和横倾，设计基于动力学反馈预测的安全阀，通过抑制指令的突变和峰值，减小侧滑和横倾。针对高速航行时容易出现的执行器饱和约束，提出反向渐消抗饱和控制方法，当控制器达到指定的饱和限制并进入非线性操作时，反向渐消抗饱和方法使用反馈回路来释放控制器的内部渐增压力，解决饱和约束下快速机动控制器延迟问题。</p><p>图6 高速预设性能路径跟踪控制</p><p>图7 自适应导引跟踪控制</p><p>（2）基于虚拟点引导及自适应牵引速度引导的跟踪控制方法。水面无人艇航行时受到风、浪、流等强非线性耦合干扰，造成艇体姿态剧烈响应，使艇体受到更强、更频繁的抨击，导致出现纵摇、艏摇、升沉的耦合运动，严重影响航向、航速、路径跟踪及目标跟踪等控制精度。针对高海况环境中的艇体运动状态突变，发明了结合自适应边界层导引方法的控制器，使无人艇对风浪流等强干扰具有显著的适应性。提出了基于区域缓冲的虚拟点引导方法，能够有效补偿多自由度耦合扰动下的突变跟踪误差。结合自适应牵引速度引导方法，将动态目标的跟踪误差映射为静态跟踪环路的输入，如图7，可同时实现复杂环境干扰下期望路径和动态目标的高精度自适应跟踪控制。</p><p>该创新点应用于复杂海况下高速水面无人艇实艇的跟踪控制。在二级海况及32节高航速条件下，路径跟踪精度2.79米；在四级高海况及10节航速条件下，路径跟踪精度达1.3米（国外同类研究的无人艇二级海况及20节航速条件下路径跟踪精度3.0米；在三级海况及10节航速条件下，路径跟踪精度2.2米）。显著提升了水面无人艇高速稳定航行能力，达到了国际先进水平。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>国内外同类技术对比</div></div></div><p>（1）环境感知性能指标对比</p><p>本项目发明的创新方法在高海况、雨雾等恶劣环境条件下，使“水面目标图像信噪比36.33，对比度增强32.9%”，与国内外最高水平相比（据公开报道，数据见下表），提高1.36倍，达到国际领先水平。</p><p>表1 环境感知性能指标对比</p><p>（2）自主决策与路径规划性能指标对比</p><p>本项目发明的方法“将无人艇避碰极限航速提高至40节”，与国内外最高水平相比（据公开报道，数据见下表），提高1.6倍，达到国际领先水平。</p><p>表2 自主决策与路径规划性能指标对比</p><p>（3）运动控制性能指标对比</p><p>本项目发明的运动控制方法“在二级海况及32节高航速条件下，路径跟踪精度2.79米；在四级高海况及10节航速条件下，路径跟踪精度达1.3米”，与国内外最高水平相比（据公开报道，数据见下表），达到国际先进水平。</p><p>表3 运动控制性能指标对比</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2024%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%B0%B4%E9%9D%A2%E9%AB%98%E9%80%9F%E6%97%A0%E4%BA%BA%E8%89%87%E5%A4%8D%E6%9D%82%E6%B0%B4%E5%9F%9F%E8%87%AA%E9%80%82%E5%BA%94%E6%95%8F%E6%8D%B7%E8%87%AA%E4%B8%BB%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E6%B0%B4%E9%9D%A2%E9%AB%98%E9%80%9F%E6%97%A0%E4%BA%BA%E8%89%87%E5%A4%8D%E6%9D%82%E6%B0%B4%E5%9F%9F%E8%87%AA%E9%80%82%E5%BA%94%E6%95%8F%E6%8D%B7%E8%87%AA%E4%B8%BB%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「水面高速无人艇复杂水域自适应敏捷自主控制技术」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E6%B0%B4%E9%9D%A2%E9%AB%98%E9%80%9F%E6%97%A0%E4%BA%BA%E8%89%87%E5%A4%8D%E6%9D%82%E6%B0%B4%E5%9F%9F%E8%87%AA%E9%80%82%E5%BA%94%E6%95%8F%E6%8D%B7%E8%87%AA%E4%B8%BB%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「水面高速无人艇复杂水域自适应敏捷自主控制技术」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <span></span>
+    <a class="next" href="2024-s01.html"><span class="d">下一项 →</span>新一代5系列高端平地机研发及产业化</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

@@ -1,23 +1,19 @@
 # State
 
-## 环境
-- 生产：https://gooddesign.qiuyiwu.com/
-- 主机：yongle-nanjing / 146.56.239.22；nginx静态站；80跳转443。
-- 当前目录：/var/www/gooddesign.qiuyiwu.com/current
-- release：20260905T130532Z
-- 发布方式：scripts/deploy.sh，独立release目录，current原子切换；前版路径保存在backups/。
-- 证书：Let's Encrypt，已配置自动续期。
+## 当前线上
+- https://gooddesign.qiuyiwu.com/ 已恢复压缩包原版馆首页与交互。
+- 主机yongle-nanjing；nginx静态+Node原API（loopback 3187）；systemd gooddesign。
+- release：20260905T141804Z；current指向该release，公开根目录current/public。
+- 发布脚本scripts/deploy.sh；构建scripts/build_original.py；构建结果original-app/。
+- 旧site/及001简化门户已被替代，不再用于生产构建。
+- 私有配置/etc/gooddesign.env；企业需求/var/lib/gooddesign/inquiries.jsonl，独立于release。
+- 证书沿用Let's Encrypt自动续期；release与nginx配置备份位于服务器backups/。
 
-- 首发代码提交：6973691（spec 001）
+## 实测
+原首页哈希一致；560项目与560知识页保留；教师工具补齐。线上基础模型SSE真实回答通过，企业表单校验通过，独立测试验证需求持久化。详见原版线上验收.json、原版浏览器验收.md。
 
-## 当前能力
-560个项目档案和对应知识页；统一导航、搜索筛选；数字馆、教育与拆解原型。生成式问答与企业在线提交未启用。
+## 边界
+深度模型未单独调用测试；学习看板仍主要为本机原型；企业需求无自动通知后台；原知识引用为启发式匹配，尚未升级为完整检索体系。未全量复核内容事实或全交互回归。
 
-## 验证
-站内本地资源链接通过；手机关键页面通过；HTTPS入口、资源与样本详情通过，敏感和不存在路径返回404。见00-项目管理/线上验收.json与浏览器验收.md。
-
-## 已知边界
-未对560项内容重新官方核验；2份独立原子数据仍待校准。历史交互未全量逐个操作。内部原件和管理材料不发布。
-
-## 变更记录
-2026-09-05：本任务首次部署独立站，整理信息结构与应用入口。
+## 下一步
+围绕03-平台规划/信息架构与平台定位-v2.md讨论项目主数据与10个知识包样本。

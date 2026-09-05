@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>深孔加工直线度控制技术及装备 · 2021金奖 · 好设计</title>
+<meta name="description" content="（1）设计目的
+本设计内容涵盖机械学、光学、物理学、力学、控制学等学科，属于机械制造技术领域，设计针对BTA（Boring and Trepanning Association）深孔加工直线度超差现象，通过分析深孔加工过程中钻头磨损、钻杆振">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%87%91%E5%A5%96&amp;year=2021">← 返回 2021 年金奖名录</a>
+  <div class="kicker"><span class="lv">金奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>深孔加工直线度控制技术及装备</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">中北大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">武涛,张志兵,陈嘉伟,于大国</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101364</div></div>
+  </div>
+  <div class="hero"><img src="../cases/gal/2021-06-0.jpg" alt="深孔加工直线度控制技术及装备"></div>
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>（1）设计目的</p><p>本设计内容涵盖机械学、光学、物理学、力学、控制学等学科，属于机械制造技术领域，设计针对BTA（Boring and Trepanning Association）深孔加工直线度超差现象，通过分析深孔加工过程中钻头磨损、钻杆振动、切屑排出、直线度精密检测及直线度主动纠偏等关键问题，设计研发了ZWKA-2108精密高效深孔加工机床，解决多因素影响下深孔加工直线度控制难题。</p><p>（2）设计创新</p><p>本设计主要亮点：(1) 建立一种机制——分析影响深孔直线度的主要因素，探求各主要因素与直线度之间的映射关系，建立多因素作用下直线度误差的抵消机制。(2)解决五大问题——深孔刀具的精确导向问题、深孔钻杆颤振问题、深孔加工高效排屑及冷却问题、深孔直线度精密检测问题和深孔直线度偏斜问题。(3)发明五项技术——刀具自导向技术、钻杆振动抑制技术、高效排屑及冷却技术、直线度精密检测技术以及直线度主动纠偏技术等。(4) 研发系列装备——融合五项技术，创新研制精密高效BTA深孔加工机床及装备，通过理论计算、试验分析及结构优化，寻求最优解决方案。</p><p>（3）设计价值</p><p>本设计研发的ZWKA-2108精密高效深孔加工机床技术指标优于国内外现有技术。质量检测结果显示：加工孔径为Φ40mm，长度为1m至3m的深孔，深孔直线度达0.05mm/m、孔径尺寸精度达IT7级、深孔表面粗糙度为0.73μm。经济指标方面：通过使用该技术装备，相关企业新增产值4.87亿元，新增利税3082万元，增收节支总额6243万元。</p><p>本设计促进行业科技进步情况：本设计研发的ZWKA-2108精密高效深孔加工机床有效控制了BTA深孔加工直线度误差，提高了深孔加工的精度和效率，推动了国内深孔加工直线度控制及装备技术的发展，使国内深孔加工装备行业水平达到甚至超过了发达国家技术水准。</p><p>应用推广情况：目前该技术已成功应用于北京卫星制造厂、晋西车轴股份有限公司以及太原重工轨道交通设备有限公司等9家企业，为国防现代化建设和山西经济转型发展做出了贡献。</p><p>本设计共获得美国发明专利2项，中国发明专利24项，实用新型专利2项，出版学术专著1部，发表学术论文139篇。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>（1）技术创新点1：流体动压作用下的BTA深孔刀具自导向技术</p><p>1）总体描述</p><p>利用切削液动压润滑理论，结合BTA深孔加工原理，通过改变刀具系统结构参数、控制切削液流体力、调节刀具运动状态、实现钻头的自导向，是控制深孔直线度的一种行之有效的方法。新型动压结构包括上、下两平板且两平板有楔角和相对运动，两平板间有充足的油液供给，供给方向从截面大端流入，小端流出。四个楔形油膜均匀分布，它们作用于楔形凸起，犹如四爪卡盘夹紧一个工件。均匀分布的油膜作用力使楔形体连同与之固定连接的钻头体、钻杆被定位于深孔中心，增加楔形体数量还可以提高系统稳定性。</p><p>2）创新之处</p><p>①借鉴滑动轴承的动压工作原理，构建楔形空间，形成动压油膜。通过周向布置楔形体，获得多个方向的动压支撑，防止刀具出现的偏斜，提高深孔加工的精度。</p><p>②楔形体有沿其圆周方向均匀分布的楔形槽，楔形槽与工件孔内壁间有动压油膜，动压油膜的压力高于非楔形部分液体的压力，利用切削液的动压特性实现刀具系统的自定心、自导向。</p><p>③钻杆为顺锥结构，对钻杆的锥度给出了最佳的选择取值，利用顺锥结构实现深孔钻杆的主动纠偏，可以提高深孔直线度及其它形位公差的精度。</p><p>3）专利成果</p><p>[1]发明专利：自纠偏深孔加工刀具系统（ZL201510087691.8）</p><p>[2]美国发明专利：Rear-mounted deep hole machining on-line detection and deviating correction device（US9630260B1）</p><p>[3]发明专利：一种纠偏钻杆（ZL201410367951.2）</p><p>[4]实用新型专利：一种斜面结构后置的孔加工刀具（ZL201520116318.6）</p><p>（2）技术创新点2：BTA深孔钻杆振动磁流变液抑制技术</p><p>1）总体描述</p><p>BTA深孔加工的直线度误差和深孔钻杆振动密切相关，为了防止钻杆在深孔加工过程中非线性扰动力作用下产生破坏性失稳，可向BTA钻杆系统引入附加阻尼。磁流变液减振器在封闭的极板中填充磁流变液，当外部的振动通过导杆传到挤压板时，挤压板会与上下外壳进行相对挤压运动，磁流变液在挤压运动下向运动的反方向运动，经过通电线圈产生的磁场时，发生磁流变效应，产生屈服应力来抵抗液体流动进而阻止挤压板运动，从而减少外部振动。</p><p>2）创新之处</p><p>①减振器采用挤压模式的工作方式，在较小的位移下，可以产生较大的磁流变液阻尼力，达到较好的减振效果。</p><p>②将输油器、辅助支撑、磁流变液阻尼器等结构组合成一体，从多个方面对钻杆进行减振。</p><p>③减振装置从机械减振系统、磁流变液阻尼器、优选辅助支撑位置、智能控制等多方面，提高了深孔钻杆辅助支撑的减振功效。</p><p>3）专利成果</p><p>[1]发明专利：一种带有减振功能的深孔加工输油器（ZL201610385570.6）</p><p>[2]发明专利：一种带辅助支撑的圆柱深孔镗削装置（ZL201210210090.8）</p><p>[3]发明专利：一种适用于锥形深孔镗削的深孔机床（ZL201210210091.2）</p><p>[4]发明专利：复合式智能深孔加工减振器及优选辅助支撑位置自移动控制方法（ZL201610398101.8）</p><p>（3）技术发明创新点3：多级负压作用下的BTA深孔加工高效排屑及冷却技术</p><p>1）总体描述</p><p>在深孔加工过程中，切削液入口压力对深孔直线度有重大的影响，随着切削液入口压力的减小，深孔钻杆受到的切削液流体作用力不断减小，进而削弱了切削液流体力对深孔钻杆的涡动作用和挤压效应，对减小深孔直线度误差有积极的意义。</p><p>多级负压结构利用压力的负压流和切屑流相互碰撞，进入混合腔中，进行速度和压力均衡；流体从混合腔进一步流入扩散腔，伴随着速度减小、压力升高，并于分流腔内分出两股流体，一股流出，另一股与二级喷射流再次碰撞混合，重复上述能量交换的过程，来明显降低入口压力。</p><p>2）创新之处</p><p>①抽屑装置分为多级负压，同时每一级负压间隙均可以手动调节，以提高实际喷射效率。</p><p>②多级负压抽屑装置，带有自冷式负压抽屑箱，外壁的循环水系统可实现对切削液的冷却。</p><p>③多级负压抽屑装置，切削液抽取口与排放口间隔设置，最后一级负压抽屑采用高效喷雾器对切削液再次冷却。</p><p>3）取得成果</p><p>3）专利成果</p><p>[1]发明专利：一种设有负压抽屑装置的高速深孔加工钻机（ZL201410102160.7）</p><p>[2]发明专利：深孔机床风动式负压抽屑双冷却系统（ZL201310607386.8）</p><p>[3]实用新型专利：一种带有凸起的切削工具（ZL201520116320.6）</p><p>（5）技术创新点4：基于压电原理的BTA深孔加工直线度主动纠偏技术</p><p>1）总体描述</p><p>深孔加工直线度主动控制系统包括角度可调节的径向可倾瓦块、执行组件、检测系统、控制系统及BTA刀具系统。角度可调节的径向可倾瓦块共四组，每组可倾瓦块通过三个执行组件与钻杆形成连接；执行组件由空心螺杆套筒，形状记忆合金、压电陶瓷及支撑关节组成，与压力传感器、控制计算机、记忆合金控制系统、压电陶瓷驱动电源、开关选择电路相连，形成闭环控制回路，实现楔形瓦块角度的实时调整。可倾瓦块与已加工孔壁有相对旋转运动，两表面间形成动压油楔，多个油楔的合力使BTA刀具系统趋于稳定。通过实时调节可倾瓦块与钻杆之间的倾斜角度，调整切削液进出口间的楔形间隙，调节油膜压力，类似机床的四爪卡盘，控制钻杆的稳定性，使其一直处于理想位置。</p><p>2）创新之处</p><p>①带有径向可倾瓦块的深孔加工主动纠偏系统，在靠近深孔刀具端的钻杆与已加工工件孔壁之间设有供切削液流动的连续变间隙，连续变间隙内的流动切削液形成用于夹紧钻杆的动压油膜。</p><p>③通过控制系统包括压电陶瓷、形状记忆合金、开关选择电路组件、控制计算机、压电陶瓷控制电源及压力传感器形成控制回路，实时调整径向可倾瓦块的受力状态，实现深孔直线度的主动控制。</p><p>3）专利成果</p><p>[1]美国发明专利：Deep hole machining on-line deviation correction device based on laser detection（US9561547B1）</p><p>[2]发明专利：深孔钻削在线检测与纠偏系统（ZL201210111345.5）</p><p>[3]发明专利：激光制导深孔钻削在线检测与纠偏系统（ZL201210111370.3）</p><p>[4]发明专利：小直径深孔钻削激光制导在线检测与纠偏系统（ZL201210111367.1）</p><p>[5]发明专利：基于激光探测原理的深孔加工在线纠偏装置（ZL201510774720.8）</p><p>[6]发明专利：深孔加工在线检测与纠偏装置（ZL201310097776.5）</p></div>
+  <div class="sec">图集 / GALLERY</div><div class="gal"><img loading="lazy" src="../cases/gal/2021-06-1.jpg" alt=""><img loading="lazy" src="../cases/gal/2021-06-2.jpg" alt=""></div>
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E9%87%91%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%B7%B1%E5%AD%94%E5%8A%A0%E5%B7%A5%E7%9B%B4%E7%BA%BF%E5%BA%A6%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF%E5%8F%8A%E8%A3%85%E5%A4%87%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">延伸阅读 / CURATED（人工核选 · 检索于 2026-08-09）</div><a href="http://www.stdaily.com/index/kejixinwen/202211/3c10166aad564238b650e227ba293acc.shtml" target="_blank" rel="noopener"><span class="arr">↗</span><span>中北大学首获“好设计”奖项</span><span class="src">stdaily.com</span></a><a href="https://www.peopleapp.com/rmharticle/30008259320" target="_blank" rel="noopener"><span class="arr">↗</span><span>中北大学首获“好设计”金奖和创意奖 - 人民日报</span><span class="src">peopleapp.com</span></a><a href="http://www.shanxi.gov.cn/zjsx/rwsj/bydll/202212/t20221212_7600744.shtml" target="_blank" rel="noopener"><span class="arr">↗</span><span>中北大学首获“好设计”金奖和创意奖 - 山西省人民政府</span><span class="src">shanxi.gov.cn</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-05.html"><span class="d">← 上一项</span>高性能锻件智能化成形生产线</a>
+    <a class="next" href="2021-07.html"><span class="d">下一项 →</span>海洋钢桩水下检测机器人</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

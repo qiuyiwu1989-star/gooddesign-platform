@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>新型民用客机平移式登机门设计技术 · 2021提名奖 · 好设计</title>
+<meta name="description" content="民用飞机结构复杂，涉及学科众多，安全性要求高, 被誉为现代工业“皇冠上的明珠”和“工业之花”，登机门是其中重要的运动结构部件，不仅用于旅客正常进出客舱的通道而频繁开启/关闭，也是紧急情况下的安全出口，必须具备高度的可靠性，因而同时满足刚度、">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E6%8F%90%E5%90%8D%E5%A5%96&amp;year=2021">← 返回 2021 年提名奖名录</a>
+  <div class="kicker"><span class="lv other">提名奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>新型民用客机平移式登机门设计技术</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">中航沈飞民用飞机有限责任公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">丛家勇,马岩,刘杰,毛磊凯</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101372</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>民用飞机结构复杂，涉及学科众多，安全性要求高, 被誉为现代工业“皇冠上的明珠”和“工业之花”，登机门是其中重要的运动结构部件，不仅用于旅客正常进出客舱的通道而频繁开启/关闭，也是紧急情况下的安全出口，必须具备高度的可靠性，因而同时满足刚度、强度、疲劳、密封、安全性等多项设计指标是民机型号研制成功的关键因素之一。本项目采用先进的材料，结合了耐腐蚀和抗疲劳的钛合金和铝锂合金等材料使得飞机更轻，且经济效益更优。本项目基于FAA、EASA最新适航条款及咨询通告要求先后开展登机门结构/机构一体化设计、登机门与门周结构及登机门结构与机构强度/刚度协同分析、复杂机构柔性化分析等技术研究，形成了特色鲜明的大型民用飞机平移式登机门设计方案，不仅涵盖舱门结构设计，还包括舱门机构分析技术、可靠性分析技术等，保证产品具有高度的安全性、可靠性、维修性和工艺性，填补了国内航空领域的设计空白，显著提高了国内大型民用飞机舱门产品的设计水平，具体达到技术指标如下：</p><p>（1）以最新适航条例为技术准则，建立了一套完整的登机门设计技术体系；</p><p>（2）舱门机构具有高度安全的逻辑控制关系，提供各种危险工况下的预防措施；</p><p>（3）紧急情况下，登机门的应急出口功能确保全体乘客在90秒内全部安全撤离；</p><p>（4）多套机构协同作用，使舱门灾难性和危害性功能失效状态的发生概率降低10%以上；</p><p>（5）采用铝锂合金新材料，实现同等机型舱门减重15%以上；</p><p>（6）登机门具有良好的维护性通用性，日常维护成本降低13%；</p><p>（7）客舱内部噪音比同类机型低12%以上，为客户提供无与伦比的性能和卓越的客户舒适度。</p><p>本项目打破了国外航空巨头在舱门设计领域的垄断地位，以最新的适航条例为准则攻克了复杂机构协同设计的难题，掌握了民用飞机登机门的核心设计技术，本项目的相关机型已经成功取得欧洲航空安全局（EASA）和美国联邦航空管理局（FAA）的适航证。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>主要创新点</div></div></div><p>1）遵从新适航条例提高安全性</p><p>当前民用航空主流飞机如A320、B737都是对标FAR-25-R3及更早的适航标准，航空管理机构会根据历史空难的调查结果、早期产品的设计缺陷不断总结经验教训并修正相关的适航标准要求。本项目依据美国航空管理局最新发布的针对大型运输类飞机舱门的25.783条款、25-114修正案及其条款详细解读文件AC25.783-1A进行设计，满足了中国航空管理局、美国航空管理局及欧洲航空安全局关于舱门的所有最新条款技术要求，将舱门的初始开门运动设计成与客舱压力方向相反的向内向上运动轨迹，极大的改进了国外旧款机型（向内、向下开启）舱门容易意外打开的缺点，具备优异的安全性和可靠性，确保全体乘客的生命财产安全；</p><p>2）引入新材料改善产品寿命</p><p>在民用航空领域不断追求安全性和经济性的潮流下，本项目引入性能优异的铝锂合金作为登机门各种金属类零件的原材料，确保产品具备优异的疲劳强度和使用寿命，与竞争机型相比，产品重量方面的优异指标实现了综合成本降低13%以上。此外，得益于优化的维护项目、先进的系统整合使得产品的维护间隔更长：A检由每250小时延长到每850小时进行，C检由每4000小时延长到每8500小时进行，显著提升了产品的维护性，节约了维护成本；不同材料之间设计了严密的异电位防腐蚀措施，确保舱门结构的正常使用寿命达到20年，扩展寿命30年；</p><p>3）应用新工艺加强环境保护</p><p>随着绿色环保理念越来越深入人心，本项目也着重引入新的热表处理工艺用以改进传统制造方案对人身安全和自然环境带来的健康危害，对于登机门正常工况下受到的环境腐蚀破坏，专门设计了水基型防腐蚀抑制剂代替传统的油基型；对于传统的镀铬、镀镉处理全部由最新型的离子镀铝工艺代替，实现材料结构的电位防腐蚀保护；对于紧固件的表面防护涂层全部采用涂覆铝膜层技术，以高分子树脂类材料代替传统重金属镉层，进一步从供应商的角度加强环保控制，不仅避免了甲醛类耗材对生产一线操作人员和产品用户的健康威胁，也减少重金属对自然环境的破坏；</p><p>4）设计新功能降低误操作率</p><p>本项目设计有机械式增压预防机构及闩锁逻辑控制机构，能够自动防止舱门在非锁定状态下将飞机增压到不安全水平（如果舱门未锁好，增压的后果可能是舱门突然打开导致客舱瞬间失压而机毁人亡），舱门相对机身的运动轨迹为先向内向上提升、再向外平移打开，结合机械系统的固有特性和提升运动轨实现自动预防飞机在非正常压力下的误操作，而且提供实时状态的物理视觉指示，明确指示舱门与机身口框的锁定状态（红色为解锁状态，绿色为安全锁定状态），良好的人机工程属性大大降低了误操作率；</p><p>5）创建新方法提高应急逃生能力</p><p>本项目在设计研发过程中建立了民用客机登机门结构/机构一体化设计方法，实现了登机门在有限的空间内布置完成闩锁联动、增压预防、提升打开、手柄锁定、滑梯预位、应急作动、状态指示等17套机构联动一体化设计，舱门机构运动连贯，不仅保证飞机正常状态下的旅客进出，还能在紧急情况下应急打开舱门，确保全体乘客90秒内安全撤离飞机，显著提升了应急逃生能力；</p><p>6）搭建新设计体系树立行业标杆</p><p>本项目提出了复杂载荷工况下的登机门强度/刚度协同分析技术，实现了舱门结构/机构的刚度匹配及舱门与机身口框变形协调，实现了舱门结构外侧目视检查，提高了结构的检查周期，提出了复杂机构柔性化分析技术，解决了传统刚性体假设局限导致的复杂机构内载荷评估不准确的设计难题，建立了完整的登机门设计体系，编制了《平移式登机门设计手册》，在公司内部形成了标准的设计规范，在同行业内取得了标志性的科技成果。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>主要知识产权</div></div></div><p>本项目在设计和研发过程中不断总结创新，申报多项发明专利，目前已经取得授权的专利如下所列：</p><p>发明专利： 一种舱门手柄锁机构 ZL201811531905.6</p><p>发明专利： 一种舱门外手柄的传动机构 ZL201810804293.7</p><p>发明专利： 客机舱门压力锁定机构 ZL201410638880.5</p><p>发明专利：上下打开式应急出口外手柄机构 ZL201611242134.X</p><p>发明专利：一种非危险舱门闩提升机构 ZL201911250217.7</p><p>发明专利：由手柄直接驱动的舱门通风口机构及其驱动方法 ZL201811531893.7</p><p>实用新型：一套舱门垂直轴传动机构 ZL201320509675.X</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E6%8F%90%E5%90%8D%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E6%96%B0%E5%9E%8B%E6%B0%91%E7%94%A8%E5%AE%A2%E6%9C%BA%E5%B9%B3%E7%A7%BB%E5%BC%8F%E7%99%BB%E6%9C%BA%E9%97%A8%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E6%96%B0%E5%9E%8B%E6%B0%91%E7%94%A8%E5%AE%A2%E6%9C%BA%E5%B9%B3%E7%A7%BB%E5%BC%8F%E7%99%BB%E6%9C%BA%E9%97%A8%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「新型民用客机平移式登机门设计技术」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E6%96%B0%E5%9E%8B%E6%B0%91%E7%94%A8%E5%AE%A2%E6%9C%BA%E5%B9%B3%E7%A7%BB%E5%BC%8F%E7%99%BB%E6%9C%BA%E9%97%A8%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「新型民用客机平移式登机门设计技术」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-n03.html"><span class="d">← 上一项</span>PSA(变压吸附)高纯制氧一体机</a>
+    <a class="next" href="2021-n05.html"><span class="d">下一项 →</span>加压循环流化床煤气化成套技术及装备</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

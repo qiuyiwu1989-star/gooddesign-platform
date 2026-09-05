@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>长距离复杂工况皮带输送机实时巡检机器人 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-c18.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-c18</div>
+  <h1>长距离复杂工况皮带输送机实时巡检机器人</h1>
+  <div class="meta-line"><b>2021 年度创意奖</b><span>太原理工大学</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 创意奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">太原理工大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">郭辰昊,丰崟楠,李鑫,郑力奎</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 智能装备与机器人（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>本设计研发的长距离复杂工况皮带输送机实时巡检机器人系统致力于解决井工煤矿带式输送机采用传统人工巡检的缺陷,在恶劣的环境条件下检测或预测带式输送机及其运行环境的故障,为智能化少人化巡检提供新的思路。</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>设计目的</div></div></div><p>带式输送机作为煤矿的重要运输设备，因其运输环境恶劣、线路长、运输量不均匀、设备负荷变化大等特点，常出现胶带跑偏、撕裂、打滑、托辊卡死、堆煤自燃等故障。根据煤矿安全网、各煤矿安全监察分局网等公开报道，2020年上半年，全国煤矿企业共发生事故48起，死亡74人，其中运输事故所占比例达到20%以上。</p><p>传统人工巡检方式工作强度高，可靠性低，人力劳动成本大，难以适应现代化矿山的生产需要。针对上述情况，设计一种针对长距离复杂工况下的带式输送机巡检机器人代替人工进行巡检。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>设计创新</div></div></div><p>本设计以实用价值为导向，针对当前带式输送机巡检机器人的痛点问题如实时性差、无事故预防能力等，设计了基于边缘计算的数据过滤系统，大幅度减少了海量无效数据，对数据的快速传输、存储、分析与诊断发挥了巨大作用；设计了基于声音谐波特征及矢量量化的设备声音识别算法，建立异响样本库，利用LBG算法对模型进行训练，通过设备异响对故障进行预测以及辅助识别；设计了独特的行走机构，实现了大坡度稳定行走，适用于复杂的井下工况。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>设计价值</div></div></div><p>巡检机器人可应用于多种复杂、恶劣环境，随着自身数据库的不断丰富，能够识别的故障种类更多。“十四五”末全国煤矿数量控制在4000处，平均每座煤矿主运系统每日需巡检人员3名，工人每年工资六万元。则代替工人进行巡检每年的节资预算为7.2亿元，减少巡检人员1.2万人。保证巡检质量的前提下巡检效率大幅提高，既保障了安全生产，也带来了经济效益，具有广阔的应用前景。</p><p>本设计依托太原理工大学寇子明团队获得国家专利 1项，申请国际发明专利1项， 获得山西省第十七届“兴晋挑战杯”大学生课外学术科技作品竞赛特等奖1 项。 本发明成员皆来自寇子明团队，拥有以上成果的使用权与解释权</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>（1）设计了基于边缘计算的数据过滤系统，大幅度减少了海量无效数据，对数据的快速传输、存储、分析与诊断发挥了巨大作用。</p><p>针对采集到的海量数据对数据处理效率的影响问题，提高了数据传输效率，缩短了数据处理时间，可以实现快速响应。</p><p>FPGA上的数据过滤包括两大部分： 映射模块：FPGA对磁盘中的原数据进行处理之前，上层逻辑会传递给它一些列过滤操作所需要的参数,其中就包括查询条件中包含的列信息。映射模块会标记查询条件中出现的列，即对每一个需要被映射的列生成一个标志信息，FPGA的映射模块只会将被标记的列进行输出。 选择模块：这个模块的功能是对原数据中的每一行数据进行过滤，每当一行数据满足查询条件时，此模块就发出逻辑高信号，否则发出逻辑低信号。如果查询条件中没有对行进行过滤，则此模块会持续发出逻辑高信号。</p><p>(2)设计了基于声音谐波特征及矢量量化的设备声音识别算法，建立异响样本库，利用LBG算法对模型进行训练，针对设备异响、故障进行识别。</p><p>巡检机器人所带的拾音器采集巡检过程中的设备声音,利用声音信号处理及识别技术对设备声音进行分析与识别，提出了基于声音谐波特征及矢量量化的输送带声音识别算法,提取了特定范围内的多个谐波作为特征，建立数量庞大的样本库，在此基础上利用LBG算法训练得到带式输送机设备码本，最后实现了带式输送机设备运行状态的准确识别，达到99%的识别率。实现了设备运行状态的自动化判决,有助于更快地煤矿无人值守的进程。</p><p>（3）设计了独特的行走机构，实现了大坡度行走，适用于复杂的井下工况。</p><p>针对大倾角带式输送机及巷道等不同坡度、复杂环境的巡检要求，巡检机器人采用多轮紧箍结构设计，可实现40°斜坡悬停和紧急制动。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>660MW超超临界高位布置汽轮机关键技术研究及应用 · 2023银奖 · 好设计</title>
+<meta name="description" content="电力行业是装备型行业，电力行业技术水平的提升必须与电站装备制造行业的技术进步携手共进。超超临界火电技术属于高新技术，随着科学技术的进步和材料技术的发展，超超临界汽轮机的主蒸汽温度达到700℃即将成为现实，研发高效率、高可靠性超超临界火电机组">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2023">← 返回 2023 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2023 · 第八届</span></div>
+  <h1>660MW超超临界高位布置汽轮机关键技术研究及应用</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨汽轮机厂有限责任公司,国能锦界能源有限责任公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">张雪,张宏涛,张志伟,徐洪峰,焦林生</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202301278</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>电力行业是装备型行业，电力行业技术水平的提升必须与电站装备制造行业的技术进步携手共进。超超临界火电技术属于高新技术，随着科学技术的进步和材料技术的发展，超超临界汽轮机的主蒸汽温度达到700℃即将成为现实，研发高效率、高可靠性超超临界火电机组现已成为国际上先进火电技术的发展趋势。</p><p>燃煤电厂机组的常规布置方案多采用锅炉房、煤仓间和汽机房顺序排列的布置方式；汽机房运转层标高一般为12.6-17m；汽轮机排汽若采用直接空冷方式，排汽管道还需要从地面连接到50m左右高的空冷凝汽器管道上。锦界三期工程汽轮机采用了哈尔滨汽轮机厂有限责任公司最新研制的2×660MW高效超超临界、直接空冷汽轮机；本工程中汽轮发电机组高位布置是将汽轮机组布置于煤仓间和除氧间上部，相对于常规布置，高温蒸汽管道显著缩短，减少了高温管道的投资；同时高温蒸汽管道和排汽管道的阻力随之减小，提高了机组的发电效率。该项技术为世界首例工程应用，该方案的成功采用将在煤电的发展中起到引领和示范作用，也将为下一步火电行业700℃金属材料的使用奠定基础。</p><p>依托高位布置汽轮机的研究，哈汽公司自主建立了高位布置汽轮机完整的设计体系，完成了低压缸稳定性分析技术的研究、地震加速度对汽轮机的影响研究、新型排汽管道研究、弹性基础下汽轮机轴系研究等内容，该项技术的成功应用，还将为后续650℃汽轮机以及700℃汽轮机的开发打下基础。</p><p>本项目依托工程国华锦界电厂三期两台汽轮发电机组目前已成功投运，机组轴系振动情况优良，汽缸稳定性良好。其中轴承振动最大为55.88μm（ #5号机）和59.12μm（#6号机），均处于国内领先水平；汽轮机平台噪声低于77dB（A），低于国家标准5~7dB，均处于国内领先水平。2021年10月，由西安热工研究院有限公司对两台汽轮机进行了性能验收试验，其中1号机组试验热耗率为7528.6kJ/(kW·h)， 2号机组试验热耗率值为7531.2kJ/(kW·h)，两台机组各项性能指标均达到设计要求。</p><p>截至2021年末，项目技术成果已在锦界三期工程得到了应用，同时部分关键技术在其他15台机组中也得到了应用，创造了约12亿产值的经济效益，机组实际运行安全可靠性高，考核工况效率均优于保证值。本项目拥有完全自主知识产权，获发明专利授权2件，实用新型专利授权7件；发表论文9篇。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>创新点一：首次开发适用于高位布置、直接空冷特点的汽轮机组，首次将空冷排汽管道的曲管压力平衡补偿器与汽轮机排汽装置整合为新型排汽装置，实现了汽轮机组高位布置低压排汽端关键技术研究新突破，为整机高位布置汽轮机设计奠定基础。（学科分类：机械设计）</p><p>哈汽公司自主研制了具有更高经济性能和运行安全稳定性能的高位布置直接空冷汽轮机组。本项目为保证整体系统的稳定性，采用了高位布置+弹性基础的设计，此设计相对与常规基础设计具有以下难点：</p><p>1）常规设计为排汽管道与低压外缸采用补偿器连接，但此结构用于弹性基础存在冷热态在真空力的作用下轴承标高变化大、轴系不稳定性的情况；</p><p>2）汽轮机组排汽管道出厂房后直接接入空冷岛，由于空间限制水平排汽管道部分自身膨胀难以设计膨胀补偿装置，同时高位布置基础在不同高度上受到外界载荷影响产生的位移量存在水平位移差，汽轮机在运行时汽轮机即要吸收此位移差，又要保证自身强度，对于直径超过8000mm的低压排汽管道来说非常棘手。</p><p>为了消除以上难题，本项目团队对低压外缸和排汽管道进行了创新优化，结构设计主要采用了以下三大创新点：</p><p>1）低压缸与排汽管道直接采用刚性连接，排汽装置下方设置恒力弹簧。此结构设计借鉴核电机组低压缸及排汽管道结构，在其基础上进行针对性改造并首次应用于高位布置汽轮机组。此结构在排汽装置下方恒力弹簧可以有效吸收低压排汽结构天地方向膨胀量，消除排汽管道膨胀上顶低压缸，弹簧承担一部分排汽装置载荷，确保排汽装置本身在各种排汽温度下，均对低压缸施加向下的作用力，消除真空吸力的同时保证低压缸稳定性，有效解决了弹性基础带来的设计难点。</p><p>图1 低压缸及排汽管道对比示意图2）首次在汽轮机排汽管道底部设置“间隙限位”，保证低压缸运行安全稳定性。高为解决这一问题，本机组在低压缸和排汽管道正下方合理设置间隙限位，在低压缸强度允许的前提下，通过间隙用来吸收一定的层间位移差；当位移差值超出设计要求范围时，超出间隙的位移由限位结构承担，有效保证了低压缸安全性。在国内汽轮机组设计首创间隙限位的结构和概念，为后续高位布置汽轮机解决层间位移差问题提供了设计基础。</p><p>3）本项目提出一种新型的排汽装置，新型的排汽装置和汽轮机低压缸刚性连接，底部采取弹性支承，并整合了原来位于排汽管道中的曲管压力平衡补偿器。</p><p>新型排汽装置参考了大量相关的方案，对传统设计进行了优化，包括：</p><p>在汽轮机组低压缸排汽口下方布置曲管压力平衡补偿器，吸收水平排汽管道的膨胀量并补偿由汽机房和空冷岛在风载偏摆中发生的位移。</p><p>新型排汽装置在过渡段中布置末级低压加热器，并采用新的结构设计满足加热器的抽汽管道和排汽装置的排汽管道之间的膨胀差值问题。</p><p>新型排汽管道过渡段采取分块设计，满足现场管道和加热器布置安装需要。</p><p>创新点二：针对高位布置机组，首次开发了“全工况汽缸稳定性分析方法”，为解决火电机组汽缸失稳问题提供新思路。（学科分类：工程力学）</p><p>国内外各大汽轮机厂在设计阶段均对汽缸稳定性进行分析，但仍有部分机组发生了汽缸失稳事故，造成了严重的安全问题和经济损失。目前国内外各大汽轮机公司基于汽轮机常规运行工况如安装、启动、稳态运行、停机等工况进行汽缸稳定性分析，但总结实际工程中汽缸失稳事故发现，失稳多数是非常规运行工况下产生，如进排汽超温、机组试验等工况。尤其对于高位布置机组，由于基础的摆动和汽轮机本身结构特点，较常规机组增加了多个工况，包括：水平方向偏摆工况、地震偏摆工况、膨胀卡涩工况及其各工况的组合工况，工况数量之多，条件之恶劣当属历来之最。为实现高效、准确完成汽缸稳定性核算工作，本项目团队根据汽缸结构特点、支撑方式、旋转方向等因素，总结开发了稳定性危险工况判别准则，提出了通过有限元软件对低压缸进行整体模拟计算、引入弹塑性分析、根据低压缸变形情况和台板接触压力大小对汽缸稳定性评估的算法。</p><p>本项目稳定性核算中以低压缸最为典型，由于常规机组低压缸大多承受向下的真空吸力，因此其稳定性核算国内少有研究，也是在稳定性核算最为容易忽视的一环。对于高位布置机组，由于机组运行中工况众多在受到极端特殊工况作用力时可能发生局部变形甚至失稳。其为薄壁件、裙板支撑的超静定结构，传统计算方法将其按照刚性件计算明显不再适用，因此引入弹塑性进行分析，得出以下较传统分析更为真实的结果：</p><p>1）低压缸稳定性危险工况为“地震+偏摆+排汽超温”组合工况（此工况在常规核算中从未进行考虑），各裙板接触压力最小为7.5t，满足稳定性设计准则要求。</p><p>2）针对实际运行中最为危险的滑动卡涩工况，分析结果显示低压缸通过局部变形可以吸收导向键卡涩后的汽缸位移量，低压缸稳定性合格。</p><p>图2低压缸台板接触压力分布图3卡涩工况低压缸局部应力 本项目团队在完成全工况低压缸稳定性分析的同时，提出了基于弹塑性分析模拟危险工况下低压缸形变和台板接触压力以确定汽缸稳定性低压缸稳定性的仿真算法。相对于传统的将汽缸作为刚性件进行分析的方法，该算法更加真实的反应汽缸在机组运行中的状态。国华锦界项目自运行以来，风载荷偏摆时机组启停机的情况多次出现，高、中、低缸稳定性良好，初步验证了此分析方法的合理性，此算法的开发也大幅提升了现有低压缸的适用范围。</p><p>创新点三：整机抗震性能研究与结构改进，保证各类型极端工况的运行安全性。（学科分类：工程力学）</p><p>对于常规燃煤电厂，抗震分析主要集中在基础空间多自由度动力分析、模型振动试验以及工程实测等方面，对汽轮机本体结构的抗震分析较少。考虑到高位布置机组的特殊性，汽轮机本身的抗震能力也尤为重要。常规火电机组抗震能力通常为0.25g-0.3g，足以满足我国绝大部分地区电站建设要求，但远远无法满足高位布置机组的抗震等级要求，因此，提升机组抗震能力势在必行。国内外大量的资料显示，汽轮机机组的抗震薄弱点往往在大部套之间的连接件和定位件，而这些部件的作用除了定位以外，还可能起到吸收膨胀或者振动的作用，以往的增加厚度或刚度的优化方法反而可能造成其他问题。</p><p>本项目团队针对本机组特点，考虑各部件刚柔性，结合安全停机准则(SSE)和可再启动准则（OBE）为基本准则，对机组所有风险部件逐一进行了评估并进行优化，系统性梳理了汽轮机抗震薄弱部件，形成整机抗震性能分析指导。根据此方法对薄弱结构优化改进，使其整机抗震性能大幅提高。如这一研究为汽轮机整机抗震性能奠定基础，截止到2021年底，哈汽公司生产国内外机组设计中广泛应用，对于偶尔发生地震的海外机组均能够在地震后再次启动，验证了分析方法的可靠性，为汽轮机抗震性能提升奠定理论基础。</p><p>创新点四：提出“动刚度耦合分析法”，进一步提升弹性基础汽轮机轴系稳定性分析的准确性。（学科分类：转子动力学）</p><p>本项目汽轮机为弹性基础支撑，其支撑刚度较刚性基础有所下降，轴系设计应充分考虑基础支撑刚度。由于高位布置的原因，本机组轴系较常规弹性基础机组轴系会受到更多的外部扰动，基础自身的振动会引起汽轮机轴振或者瓦振的波动，在轴系稳定性方面提出了更高的要求，在轴系稳定性核算中准确考虑基础刚度的耦合作用是必要的，为此本项目团队在轴系设计时提出了“动刚度耦合分析法”。本分析方法是将不同频率下的基础刚度和对应的轴承支撑刚度与油膜刚度进行耦合，形成整个支撑系统的动刚度，再将其带入转子系统中求得轴系稳定性结果。相对于传统的基础刚度采用固定数值与转子耦合计算，本算法考虑了基础现在不同频率下的动刚度。通过图4础动刚度可以看出使用“动刚度耦合分析法”的必要性：</p><p>1) 在基础固有频率附近，基础动刚度远低于静刚度，而频率远高于固有频率后，基础动刚度大幅超过静刚度，因此，在机组启停过程中低转速、基础刚度较低时，机组轴系应避免与基础发生共振；</p><p>2)在低转速和工作转速时，应对各轴承瓦振/轴承箱振动进行充分评估。</p><p>此计算方法在锦界机组上得到成功验证，机组实测临界转速与设计值基本相同，机组升速至3000r/min稳定运行中，1号～6号轴承振动均小于76μm（见图4），机组轴系运行指标优秀，轴系采用“动刚度耦合分析法”计算结果精确。</p><p>图4 锦界机组实际运行中各轴承伯德图</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2023%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C660MW%E8%B6%85%E8%B6%85%E4%B8%B4%E7%95%8C%E9%AB%98%E4%BD%8D%E5%B8%83%E7%BD%AE%E6%B1%BD%E8%BD%AE%E6%9C%BA%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E5%8F%8A%E5%BA%94%E7%94%A8%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=660MW%E8%B6%85%E8%B6%85%E4%B8%B4%E7%95%8C%E9%AB%98%E4%BD%8D%E5%B8%83%E7%BD%AE%E6%B1%BD%E8%BD%AE%E6%9C%BA%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E5%8F%8A%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「660MW超超临界高位布置汽轮机关键技术研究及应用」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=660MW%E8%B6%85%E8%B6%85%E4%B8%B4%E7%95%8C%E9%AB%98%E4%BD%8D%E5%B8%83%E7%BD%AE%E6%B1%BD%E8%BD%AE%E6%9C%BA%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6%E5%8F%8A%E5%BA%94%E7%94%A8" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「660MW超超临界高位布置汽轮机关键技术研究及应用」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2023-s15.html"><span class="d">← 上一项</span>双交流电力机车</a>
+    <a class="next" href="2023-s17.html"><span class="d">下一项 →</span>自主重型燃气轮机热端部件高效长寿命防护涂层设计</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

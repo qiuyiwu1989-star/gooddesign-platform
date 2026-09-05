@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>好设计馆 · GOOD DESIGN MUSEUM — 中国创新设计能力档案馆</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --bg-soft:rgba(15,23,42,0.045); --bg-quiet:rgba(15,23,42,0.02);
+    --ink:#16181D; --ink-soft:#3E4454; --muted:#8A8F98; --muted-soft:#62666D;
+    --line:rgba(15,23,42,0.09);
+    --accent:#5E6AD2; --accent-bright:#4F58C0; --accent-soft:rgba(94,106,210,.10); --gold:#A87E2A;
+    --sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --mono:"JetBrains Mono","SF Mono","Consolas",monospace;
+    --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+    --r-md:6px; --r-lg:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+  ::selection{background:rgba(94,106,210,.25)}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:0 32px;height:60px;background:rgba(255,255,255,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:600;color:var(--ink)}
+  nav .brand .mark{width:24px;height:24px;border-radius:var(--r-md);background:var(--accent);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+  nav .links{display:flex;gap:4px;align-items:center}
+  nav .links a{color:var(--muted-soft);text-decoration:none;font-size:13.5px;padding:6px 12px;border-radius:var(--r-md);transition:all .16s var(--ease)}
+  nav .links a:hover{color:var(--ink);background:var(--bg-soft)}
+  nav .links a.here{color:var(--accent-bright)}
+  @media(max-width:900px){nav .links{display:none}}
+
+  /* 门厅 */
+  .foyer{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:140px 32px 80px;
+    position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .foyer::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse 50% 42% at 20% 30%,rgba(94,106,210,.10),transparent 70%),
+               radial-gradient(ellipse 36% 30% at 84% 80%,rgba(168,126,42,.07),transparent 70%)}
+  .foyer .inner{position:relative;max-width:1280px;width:100%;margin:0 auto}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:1.5px;
+    color:var(--muted-soft);border:1px solid var(--line);border-radius:9999px;padding:6px 14px;background:var(--bg-quiet)}
+  .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .foyer h1{font-size:clamp(48px,7.5vw,100px);font-weight:500;letter-spacing:-.03em;line-height:1.05;margin:26px 0 0}
+  .foyer h1 .thin{color:var(--muted)}
+  .foyer .en{margin-top:16px;font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--muted-soft)}
+  .foyer .lead{margin-top:26px;max-width:660px;color:var(--ink-soft);font-size:clamp(15px,1.5vw,18px);line-height:1.8}
+  .foyer .cta{margin-top:38px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:var(--r-md);text-decoration:none;
+    font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer;font-family:var(--sans);transition:all .16s var(--ease)}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-bright)}
+  .btn-ghost{border-color:var(--line);color:var(--ink-soft)}
+  .btn-ghost:hover{border-color:rgba(15,23,42,.22);color:var(--ink)}
+
+  /* 馆藏统计 */
+  .stats{border-bottom:1px solid var(--line)}
+  .stats .row{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+  .stats .cell{padding:30px 32px;border-left:1px solid var(--line)}
+  .stats .cell:first-child{border-left:0}
+  .stats .num{font-family:var(--mono);font-size:32px;font-weight:500;letter-spacing:-.5px}
+  .stats .num em{font-style:normal;color:var(--gold)}
+  .stats .lbl{color:var(--muted);font-size:12.5px;margin-top:6px}
+
+  .relation{border-bottom:1px solid var(--line);background:#fff}
+  .relation .inner{max-width:1280px;margin:0 auto;padding:72px 32px}
+  .relation .head{max-width:820px;margin-bottom:28px}
+  .relation .head .tag{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px}
+  .relation h2{font-size:clamp(30px,4vw,48px);font-weight:500;line-height:1.18;letter-spacing:-.02em;margin-top:12px}
+  .relation .lead{color:var(--muted-soft);font-size:15.5px;line-height:1.85;margin-top:14px}
+  .relation-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .relation-card{border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;background:var(--bg-quiet)}
+  .relation-card h3{font-size:22px;line-height:1.35;font-weight:600;margin:0 0 12px}
+  .relation-card p{color:var(--muted-soft);font-size:14.5px;line-height:1.8;margin:0}
+  .relation-card ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:9px}
+  .relation-card li{display:flex;gap:9px;color:var(--ink-soft);font-size:13.5px;line-height:1.7}
+  .relation-card li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:9px;flex:0 0 auto}
+  .relation-flow{margin-top:14px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:grid;grid-template-columns:1fr 1fr 1fr;background:#fff}
+  .relation-flow div{padding:18px;border-right:1px solid var(--line)}
+  .relation-flow div:last-child{border-right:0}
+  .relation-flow b{display:block;font-size:13px;color:var(--ink);margin-bottom:6px}
+  .relation-flow span{display:block;color:var(--muted-soft);font-size:12.5px;line-height:1.65}
+  @media(max-width:840px){.relation-grid,.relation-flow{grid-template-columns:1fr}.relation-flow div{border-right:0;border-bottom:1px solid var(--line)}.relation-flow div:last-child{border-bottom:0}}
+
+  .principle{border-bottom:1px solid var(--line);background:var(--bg-quiet)}
+  .principle .inner{max-width:1280px;margin:0 auto;padding:58px 32px;display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:start}
+  .principle h2{font-size:clamp(28px,3.6vw,46px);font-weight:500;line-height:1.18;letter-spacing:-.02em;margin:0}
+  .principle p{color:var(--ink-soft);font-size:15.5px;line-height:1.85;margin-top:14px;max-width:660px}
+  .principle .moves{display:grid;gap:12px}
+  .principle .move{border:1px solid var(--line);background:#fff;border-radius:var(--r-lg);padding:18px}
+  .principle .move b{display:block;font-size:14px;color:var(--ink);margin-bottom:6px}
+  .principle .move span{display:block;font-size:13px;color:var(--muted-soft);line-height:1.7}
+  @media(max-width:860px){.principle .inner{grid-template-columns:1fr}}
+
+  .interact{border-bottom:1px solid var(--line);background:#fff}
+  .interact .inner{max-width:1280px;margin:0 auto;padding:82px 32px 92px}
+  .interact .head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:26px}
+  .interact .head h2{font-size:clamp(30px,4vw,46px);font-weight:500;letter-spacing:-.02em;line-height:1.18;margin:0}
+  .interact .head p{max-width:560px;color:var(--muted-soft);font-size:15.5px;line-height:1.8;margin:0}
+  .exhibit-state{margin-bottom:18px;border:1px solid var(--line);border-radius:var(--r-lg);padding:18px;background:var(--bg-quiet);display:grid;grid-template-columns:240px 1fr;gap:18px;align-items:start}
+  .exhibit-state .label{font-family:var(--mono);font-size:11px;letter-spacing:1.2px;color:var(--muted);margin-bottom:8px}
+  .exhibit-state h3{font-size:20px;line-height:1.35;font-weight:600;margin:0 0 6px}
+  .exhibit-state p{color:var(--muted-soft);font-size:13.5px;line-height:1.7;margin:0}
+  .exhibit-picker{display:flex;flex-wrap:wrap;gap:7px}
+  .exhibit-picker button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft);cursor:pointer}
+  .exhibit-picker button:hover{border-color:rgba(94,106,210,.42);color:var(--ink)}
+  .exhibit-picker button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .experience-map{margin-bottom:22px;border:1px solid var(--line);border-radius:var(--r-lg);background:linear-gradient(180deg,#fff,#F8F9FC);overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr}
+  .map-canvas{position:relative;min-height:430px;padding:28px;background:
+    linear-gradient(90deg,rgba(15,23,42,.045) 1px,transparent 1px),
+    linear-gradient(180deg,rgba(15,23,42,.045) 1px,transparent 1px);
+    background-size:42px 42px}
+  .map-canvas::before,.map-canvas::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid rgba(94,106,210,.16);border-radius:999px;pointer-events:none}
+  .map-canvas::before{width:300px;height:300px}
+  .map-canvas::after{width:450px;height:450px}
+  .map-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:150px;height:150px;border-radius:50%;background:var(--accent);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 18px 44px rgba(94,106,210,.24);z-index:2}
+  .map-core b{font-size:18px;line-height:1.25}
+  .map-core span{font-family:var(--mono);font-size:10px;letter-spacing:1.4px;margin-top:8px;color:rgba(255,255,255,.72)}
+  .map-node{position:absolute;width:118px;min-height:86px;border:1px solid var(--line);background:rgba(255,255,255,.94);border-radius:var(--r-lg);padding:13px 12px;text-align:left;cursor:pointer;z-index:3;box-shadow:0 10px 26px rgba(15,23,42,.06);transition:transform .16s var(--ease),border-color .16s var(--ease),background .16s var(--ease)}
+  .map-node:hover{transform:translateY(-2px);border-color:rgba(94,106,210,.45)}
+  .map-node.on{border-color:var(--accent);background:#fff;box-shadow:0 16px 34px rgba(94,106,210,.16)}
+  .map-node .glyph{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);color:var(--accent-bright);font-weight:700;margin-bottom:8px}
+  .map-node.on .glyph{background:var(--accent);color:#fff}
+  .map-node b{display:block;font-size:15px;line-height:1.25;color:var(--ink)}
+  .map-node span{display:block;margin-top:4px;font-size:11.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.7px}
+  .map-node[data-exp="ask"]{left:12%;top:12%}
+  .map-node[data-exp="xray"]{right:12%;top:12%}
+  .map-node[data-exp="play"]{left:5%;top:48%}
+  .map-node[data-exp="learn"]{right:5%;top:48%}
+  .map-node[data-exp="case"]{left:18%;bottom:10%}
+  .map-node[data-exp="transfer"]{right:18%;bottom:10%}
+  .map-focus{border-left:1px solid var(--line);padding:28px;display:flex;flex-direction:column;justify-content:center;background:#fff}
+  .map-focus .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;color:var(--accent-bright);margin-bottom:10px}
+  .map-focus h3{font-size:clamp(24px,3vw,34px);line-height:1.18;font-weight:500;margin:0 0 12px}
+  .map-focus p{color:var(--muted-soft);font-size:14.5px;line-height:1.8;margin:0}
+  .map-focus .path{margin-top:18px;display:grid;gap:8px}
+  .map-focus .path div{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:var(--r-md);padding:10px 12px;background:var(--bg-quiet)}
+  .map-focus .path b{font-family:var(--mono);font-size:11px;color:var(--gold);min-width:52px}
+  .map-focus .path span{font-size:12.5px;color:var(--muted-soft);line-height:1.6}
+  .map-focus .action{display:inline-flex;align-self:flex-start;margin-top:18px;padding:10px 16px;border-radius:var(--r-md);text-decoration:none;background:var(--accent);color:#fff;font-size:13px;font-weight:500}
+  .map-focus .action:hover{background:var(--accent-bright)}
+  .experience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .experience{display:flex;flex-direction:column;min-height:236px;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;background:var(--bg-quiet);text-decoration:none;color:var(--ink);transition:border-color .16s var(--ease),background .16s var(--ease),transform .16s var(--ease)}
+  .experience:hover{border-color:rgba(94,106,210,.42);background:#fff;transform:translateY(-2px)}
+  .experience .type{font-family:var(--mono);font-size:11px;letter-spacing:1.2px;color:var(--accent-bright);margin-bottom:18px}
+  .experience h3{font-size:20px;line-height:1.35;font-weight:600;margin:0 0 10px}
+  .experience p{color:var(--muted-soft);font-size:14px;line-height:1.75;margin:0}
+  .experience .go{margin-top:auto;padding-top:20px;font-size:13px;color:var(--accent-bright);font-weight:500}
+  .experience.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .experience.primary .type,.experience.primary .go{color:rgba(255,255,255,.82)}
+  .experience.primary p{color:rgba(255,255,255,.78)}
+  .routes{margin-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+  .route{padding:18px;border-right:1px solid var(--line)}
+  .route:last-child{border-right:0}
+  .route b{display:block;font-size:14px;margin-bottom:8px;color:var(--ink)}
+  .route span{display:block;color:var(--muted-soft);font-size:13px;line-height:1.7}
+  .route a{display:inline-flex;margin-top:12px;color:var(--accent-bright);font-size:13px;font-weight:500;text-decoration:none}
+  .guide{margin-bottom:22px;border:1px solid var(--line);border-radius:var(--r-lg);background:linear-gradient(180deg,#fff,var(--bg-quiet));overflow:hidden}
+  .guide-top{display:grid;grid-template-columns:280px 1fr;border-bottom:1px solid var(--line)}
+  .guide-panel{padding:22px;border-right:1px solid var(--line)}
+  .guide-panel .label{font-family:var(--mono);font-size:11px;letter-spacing:1.2px;color:var(--muted);margin-bottom:12px}
+  .guide-roles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .guide-role{border:1px solid var(--line);background:#fff;border-radius:var(--r-md);padding:10px 12px;text-align:left;font-family:var(--sans);font-size:13px;color:var(--ink-soft);cursor:pointer;transition:all .16s var(--ease)}
+  .guide-role:hover{border-color:rgba(94,106,210,.42);color:var(--ink)}
+  .guide-role.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .guide-result{padding:24px}
+  .guide-result .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;color:var(--accent-bright);margin-bottom:8px}
+  .guide-result h3{font-size:clamp(22px,2.6vw,32px);line-height:1.22;font-weight:500;margin:0 0 10px}
+  .guide-result p{max-width:780px;color:var(--muted-soft);font-size:14.5px;line-height:1.75;margin:0}
+  .guide-bottom{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+  .guide-step{padding:16px 18px;border-right:1px solid var(--line)}
+  .guide-step:last-child{border-right:0}
+  .guide-step b{display:block;font-size:12.5px;color:var(--ink);margin-bottom:6px}
+  .guide-step span{display:block;font-size:12.5px;color:var(--muted-soft);line-height:1.65}
+  .guide-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .guide-actions a{display:inline-flex;align-items:center;padding:9px 15px;border-radius:var(--r-md);font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--line);color:var(--ink-soft)}
+  .guide-actions a.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .guide-actions a:hover{border-color:rgba(94,106,210,.42);color:var(--ink)}
+  .guide-actions a.primary:hover{background:var(--accent-bright);color:#fff}
+  @media(max-width:980px){.experience-map{grid-template-columns:1fr}.map-focus{border-left:0;border-top:1px solid var(--line)}}
+  @media(max-width:860px){.exhibit-state{grid-template-columns:1fr}}
+  @media(max-width:760px){.map-canvas{min-height:560px}.map-canvas::before,.map-canvas::after{display:none}.map-core{position:relative;left:auto;top:auto;transform:none;width:auto;height:auto;border-radius:var(--r-lg);padding:20px;margin-bottom:14px}.map-node{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;width:100%;min-height:0;margin-bottom:10px;display:grid;grid-template-columns:38px 1fr;column-gap:10px;align-items:center}.map-node .glyph{margin-bottom:0}.map-node span{margin-top:2px}}
+  @media(max-width:940px){.experience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.interact .head{flex-direction:column;align-items:flex-start}}
+  @media(max-width:860px){.guide-top{grid-template-columns:1fr}.guide-panel{border-right:0;border-bottom:1px solid var(--line)}.guide-bottom{grid-template-columns:1fr 1fr}.guide-step:nth-child(2n){border-right:0}.guide-step{border-bottom:1px solid var(--line)}.guide-step:nth-last-child(-n+2){border-bottom:0}}
+  @media(max-width:760px){.routes{grid-template-columns:1fr}.route{border-right:0;border-bottom:1px solid var(--line)}.route:last-child{border-bottom:0}}
+  @media(max-width:640px){.experience-grid{grid-template-columns:1fr}.guide-roles,.guide-bottom{grid-template-columns:1fr}.guide-step,.guide-step:nth-last-child(-n+2){border-right:0;border-bottom:1px solid var(--line)}.guide-step:last-child{border-bottom:0}}
+
+  /* 展厅节标题 */
+  .hall-head{max-width:1280px;margin:0 auto;padding:96px 32px 40px}
+  .hall-head .tag{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px}
+  .hall-head h2{font-size:clamp(30px,4vw,44px);font-weight:500;letter-spacing:-.02em;margin-top:12px}
+  .hall-head p{color:var(--muted-soft);max-width:680px;margin-top:14px;font-size:15.5px;line-height:1.8}
+  .curation{max-width:1280px;margin:0 auto 54px;padding:0 32px}
+  .curation .thesis{border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;background:linear-gradient(180deg,#fff,var(--bg-quiet));display:grid;grid-template-columns:1fr 1.45fr;gap:28px}
+  .curation .thesis b{font-size:22px;line-height:1.35;font-weight:600;color:var(--ink)}
+  .curation .thesis span{display:block;color:var(--muted-soft);font-size:14.5px;line-height:1.8}
+  .chapters{margin-top:14px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+  .chapter{border:1px solid var(--line);border-radius:var(--r-md);padding:15px;background:#fff}
+  .chapter .no{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;color:var(--gold);margin-bottom:8px}
+  .chapter b{display:block;font-size:14px;line-height:1.45;color:var(--ink);margin-bottom:5px}
+  .chapter span{display:block;color:var(--muted-soft);font-size:12.5px;line-height:1.65}
+  @media(max-width:980px){.chapters{grid-template-columns:repeat(2,minmax(0,1fr))}.curation .thesis{grid-template-columns:1fr}}
+  @media(max-width:620px){.chapters{grid-template-columns:1fr}}
+
+  /* 国之重器：沉浸式条目（照片区保留深色渐变罩，文字固定用亮色，与浅色页面形成展厅对比） */
+  .feature{position:relative;border-top:1px solid var(--line)}
+  .feature .media{position:relative;height:74vh;min-height:520px;overflow:hidden}
+  .feature .media img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.72) saturate(.92);
+    transform:scale(1.02);transition:transform 1.2s var(--ease),filter .6s var(--ease)}
+  .feature.on .media img{transform:scale(1)}
+  .feature .media::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(10,13,22,.25),rgba(10,13,22,.05) 40%,rgba(10,13,22,.88))}
+  .feature .cap{position:absolute;left:0;right:0;bottom:0;z-index:2}
+  .feature .cap .inner{max-width:1280px;margin:0 auto;padding:0 32px 34px}
+  .feature .idx{font-family:var(--mono);font-size:12px;letter-spacing:2px;color:#D8B36A}
+  .feature .chapterline{margin-top:8px;color:rgba(247,248,248,.72);font-size:13px;letter-spacing:.4px}
+  .feature h3{font-size:clamp(25px,3.2vw,40px);font-weight:600;letter-spacing:-.02em;line-height:1.22;margin:8px 0 10px;max-width:860px;color:#F7F8F8}
+  .feature .source-title{font-size:13px;color:rgba(247,248,248,.76);margin-top:-2px;margin-bottom:8px}
+  .feature .trust-row{margin:10px 0 0;display:flex;gap:7px;flex-wrap:wrap}
+  .feature .trust{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:4px 10px;font-size:11.5px;color:rgba(247,248,248,.82);background:rgba(255,255,255,.08)}
+  .feature .trust.official{color:#F7F8F8;border-color:rgba(216,179,106,.55)}
+  .feature .trust.verify{color:#FFE6A8}
+  .feature .unit{font-size:12.5px;color:rgba(247,248,248,.62)}
+  .feature .curator-note{margin-top:12px;max-width:780px;color:rgba(247,248,248,.9);font-size:14px;line-height:1.65;border-left:2px solid #D8B36A;padding-left:12px}
+  .feature .mission{margin-top:14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;max-width:920px}
+  .feature .mission-card{border:1px solid rgba(255,255,255,.18);background:rgba(10,13,22,.3);border-radius:var(--r-md);padding:9px 11px}
+  .feature .mission-card b{display:block;color:#D8B36A;font-family:var(--mono);font-size:10.5px;letter-spacing:1px;margin-bottom:5px}
+  .feature .mission-card span{display:block;color:rgba(247,248,248,.8);font-size:12.5px;line-height:1.48}
+  .feature .maturity{display:block;margin-top:5px;color:#FFE6A8;font-size:11.5px;line-height:1.45}
+  @media(max-width:960px){.feature .mission{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:760px){.feature .mission{grid-template-columns:1fr}}
+  .feature .acts{margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .feature .acts a,.feature .acts button{font-size:13px;padding:8px 18px}
+  .feature .acts .btn-ghost{border-color:rgba(255,255,255,.45);color:#F7F8F8;background:transparent}
+  .feature .acts .btn-ghost:hover{border-color:rgba(255,255,255,.8);color:#fff}
+  .feature .acts .minor-link{border:0;background:transparent;color:rgba(247,248,248,.74);padding:6px 4px;text-decoration:none}
+  .feature .acts .minor-link:hover{color:#fff}
+
+  /* 十年编年 */
+  .chron{max-width:1280px;margin:0 auto;padding:0 32px 110px}
+  .chron-row{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:30px 0;border-top:1px solid var(--line);transition:background .16s var(--ease)}
+  .chron-row:hover{background:var(--bg-quiet)}
+  .chron-row .yr{font-family:var(--mono);font-size:22px;font-weight:500;color:var(--ink)}
+  .chron-row .yr .ed{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;letter-spacing:1px}
+  .chron-row .gold{display:flex;flex-wrap:wrap;gap:8px}
+  .chron-row .chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:9999px;padding:5px 8px 5px 14px;font-size:12.5px;color:var(--ink-soft);
+    transition:all .16s var(--ease);background:transparent}
+  .chron-row .chip:hover{border-color:var(--accent);color:var(--accent-bright)}
+  .chron-row .chip .chip-link{color:inherit;text-decoration:none}
+  .chron-row .chip .ask-mini{border:0;border-left:1px solid var(--line);background:transparent;color:var(--accent-bright);font:inherit;font-size:11.5px;padding:0 6px 0 9px;cursor:pointer}
+  .chron-row .chip .ask-mini:hover{color:var(--ink)}
+  .chron-row .meta{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.5px}
+  .chron-row .meta b{color:var(--gold);font-weight:500}
+  @media(max-width:640px){.chron-row{grid-template-columns:1fr;gap:10px}}
+
+  footer{border-top:1px solid var(--line);color:var(--muted);padding:40px 32px;font-size:12.5px}
+  footer .row{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--muted-soft);text-decoration:none}
+  footer a:hover{color:var(--ink)}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html"><span class="mark">好</span>好设计馆<span style="font-family:var(--mono);font-size:11px;color:var(--muted-soft);font-weight:400;letter-spacing:1px;margin-left:2px">GOOD DESIGN MUSEUM</span></a>
+  <div class="links">
+    <a href="index.html">返回平台首页</a>
+    <a href="categories.html">展区分类</a>
+    <a href="x-ray.html">拆解实验室</a>
+    <a href="playground.html">互动乐园</a>
+    <a href="#hall-relation">作品与展品</a>
+    <a href="#hall-interact">互动体验</a>
+    <a href="#hall-heavy">国之重器</a>
+    <a href="#hall-chron">十年编年</a>
+  </div>
+</nav>
+
+<div class="foyer">
+  <div class="inner">
+    <span class="kicker"><span class="dot"></span>中国创新设计能力档案馆 · 2015—2025 全馆藏</span>
+    <h1>好设计馆<span class="thin">。</span></h1>
+    <div class="en">A NATIONAL ARCHIVE OF CHINESE INNOVATION DESIGN</div>
+    <p class="lead">这里收藏的不是“好看的东西”，而是中国制造业十年间从跟踪模仿走向原创设计的证据。好设计馆要做的，是把这些获奖成果转化为可学习、可交互、可迁移、可再创造的设计知识系统。</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#hall-heavy">进入特展厅 →</a>
+      <a class="btn btn-ghost" href="#hall-chron">浏览十年编年</a>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="row">
+    <div class="cell"><div class="num">10</div><div class="lbl">届完整馆藏</div></div>
+    <div class="cell"><div class="num"><em>98</em></div><div class="lbl">金奖项目</div></div>
+    <div class="cell"><div class="num">199</div><div class="lbl">银奖项目</div></div>
+    <div class="cell"><div class="num">263</div><div class="lbl">菁英 · 创意 · 提名</div></div>
+    <div class="cell"><div class="num">560</div><div class="lbl">馆藏成果总数</div></div>
+  </div>
+</div>
+
+<section class="relation" id="hall-relation">
+  <div class="inner">
+    <div class="head">
+      <div class="tag">AWARD PROJECTS × MUSEUM EXHIBITS</div>
+      <h2>获奖作品是权威源头，设计馆展品是策展化表达。</h2>
+      <p class="lead">好设计馆不把获奖作品简单搬上墙。它先尊重好设计奖形成的权威档案，再把其中适合展示、教学和转化的项目，重新策划成可理解、可提问、可拆解、可迁移的展品。</p>
+    </div>
+    <div class="relation-grid">
+      <article class="relation-card">
+        <h3>获奖作品库</h3>
+        <p>用于保存事实、来源和奖项信息，是好设计馆的基础数据层。</p>
+        <ul>
+          <li>回答“谁在什么时候获得了什么奖”。</li>
+          <li>保留官方名称、年份、奖项、单位、简介和图片来源。</li>
+          <li>强调事实准确、来源清楚、核验状态明确。</li>
+        </ul>
+      </article>
+      <article class="relation-card">
+        <h3>设计馆展品</h3>
+        <p>用于讲述、互动和再创造，是基于获奖作品形成的策展体验层。</p>
+        <ul>
+          <li>回答“为什么选它、怎么看它、还能怎么用”。</li>
+          <li>补充策展命题、章节位置、设计问题和可迁移方向。</li>
+          <li>连接 AI 导览、拆解实验室、课程任务和产业迁移方案。</li>
+        </ul>
+      </article>
+    </div>
+    <div class="relation-flow">
+      <div><b>01 权威档案</b><span>历届获奖作品进入案例库，先把事实、来源和核验状态整理清楚。</span></div>
+      <div><b>02 策展选择</b><span>从作品库中选择代表性案例，进入主题展厅、智慧展品或学习路径。</span></div>
+      <div><b>03 再创造出口</b><span>同一获奖作品可以被转化为展品、课程、互动任务或产业迁移样板。</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="principle">
+  <div class="inner">
+    <div>
+      <span class="kicker"><span class="dot"></span>从展览到知识生产力</span>
+      <h2>好设计馆不是陈列获奖作品，而是讲透它们为什么好、还能怎么用。</h2>
+      <p>每一件馆藏都可以被拆成设计问题、技术路径、用户价值和产业迁移方向。参观者不只是在观看成果，也是在进入一个能够提问、学习和再创造的创新设计现场。</p>
+    </div>
+    <div class="moves">
+      <div class="move"><b>从“看作品”到“懂逻辑”</b><span>解释作品面对的真实问题、约束条件、系统方案和设计取舍。</span></div>
+      <div class="move"><b>从“听讲解”到“可对话”</b><span>通过好设计智能体，把展品变成可以持续追问和深入学习的知识对象。</span></div>
+      <div class="move"><b>从“被启发”到“能迁移”</b><span>把重大装备、先进材料和优秀体验设计转译到企业产品、教育课程和地方产业场景。</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="interact" id="hall-interact">
+  <div class="inner">
+    <div class="head">
+      <div>
+        <div class="tag">INTERACTIVE EXPERIENCES</div>
+        <h2>互动体验区</h2>
+      </div>
+      <p>好设计馆里的互动内容已经分成六类：可以问、可以拆、可以玩、可以学、可以逛案例，也可以把好设计技术迁移成新产品方案。</p>
+    </div>
+    <div class="exhibit-state">
+      <div>
+        <div class="label">CURRENT EXHIBIT</div>
+        <h3 id="currentExhibitName">嫦娥五/六号月球钻取采样系统</h3>
+        <p id="currentExhibitDesc">后续“问、拆、玩、学、逛、创”都会优先围绕当前展品展开。</p>
+      </div>
+      <div>
+        <div class="label">SELECT EXHIBIT</div>
+        <div class="exhibit-picker" id="exhibitPicker"></div>
+      </div>
+    </div>
+    <div class="experience-map" id="experienceMap">
+      <div class="map-canvas" aria-label="互动体验地图">
+        <div class="map-core"><b>好设计<br>AI 引擎</b><span>ASK · X-RAY · MAKE</span></div>
+        <button class="map-node on" type="button" data-exp="ask"><span class="glyph">问</span><b>AI 导览</b><span>ASK</span></button>
+        <button class="map-node" type="button" data-exp="xray"><span class="glyph">拆</span><b>拆解实验室</b><span>X-RAY</span></button>
+        <button class="map-node" type="button" data-exp="play"><span class="glyph">玩</span><b>互动闯关</b><span>PLAY</span></button>
+        <button class="map-node" type="button" data-exp="learn"><span class="glyph">学</span><b>课程路径</b><span>LEARN</span></button>
+        <button class="map-node" type="button" data-exp="case"><span class="glyph">逛</span><b>案例墙</b><span>ARCHIVE</span></button>
+        <button class="map-node" type="button" data-exp="transfer"><span class="glyph">创</span><b>产业迁移</b><span>CREATE</span></button>
+      </div>
+      <div class="map-focus">
+        <div class="eyebrow" id="mapEyebrow">AI DOCENT</div>
+        <h3 id="mapTitle">让展品先开口。</h3>
+        <p id="mapDesc">从一个问题开始，让好设计助手把获奖作品讲成公众能理解、学生能学习、企业能迁移的设计知识。</p>
+        <div class="path" id="mapPath"></div>
+        <a class="action" id="mapAction" href="index.html?ask=%E8%AF%B7%E5%B8%A6%E6%88%91%E5%8F%82%E8%A7%82%E5%A5%BD%E8%AE%BE%E8%AE%A1%E9%A6%86%E7%9A%84%E5%9B%BD%E4%B9%8B%E9%87%8D%E5%99%A8%E7%89%B9%E5%B1%95%E3%80%82">进入体验 →</a>
+      </div>
+    </div>
+    <div class="guide" id="visitGuide">
+      <div class="guide-top">
+        <div class="guide-panel">
+          <div class="label">CHOOSE YOUR ROLE</div>
+          <div class="guide-roles" id="guideRoles">
+            <button class="guide-role on" type="button" data-role="public">公众参观</button>
+            <button class="guide-role" type="button" data-role="student">研学课堂</button>
+            <button class="guide-role" type="button" data-role="enterprise">企业共创</button>
+            <button class="guide-role" type="button" data-role="curator">策展规划</button>
+          </div>
+        </div>
+        <div class="guide-result">
+          <div class="eyebrow" id="guideEyebrow">15 MIN VISIT</div>
+          <h3 id="guideTitle">先看一件国之重器，再向好设计助手追问。</h3>
+          <p id="guideDesc">适合首次进入好设计馆的参观者。页面会引导你先理解一个代表性成果，再通过 AI 导览员把“为什么好”讲清楚。</p>
+          <div class="guide-actions" id="guideActions"></div>
+        </div>
+      </div>
+      <div class="guide-bottom" id="guideSteps"></div>
+    </div>
+    <div class="experience-grid">
+      <a class="experience primary" id="expAsk" href="index.html?ask=%E8%AF%B7%E5%B8%A6%E6%88%91%E5%8F%82%E8%A7%82%E5%A5%BD%E8%AE%BE%E8%AE%A1%E9%A6%86%EF%BC%8C%E5%B9%B6%E6%8E%A8%E8%8D%90%E5%87%A0%E4%B8%AA%E6%9C%80%E5%80%BC%E5%BE%97%E7%9C%8B%E7%9A%84%E5%9B%BD%E4%B9%8B%E9%87%8D%E5%99%A8%E6%A1%88%E4%BE%8B%E3%80%82">
+        <span class="type">AI DOCENT</span>
+        <h3>好设计助手</h3>
+        <p>直接向导览员提问：某个获奖项目为什么好、背后有什么技术、能迁移到哪些产业。</p>
+        <span class="go">打开助手 →</span>
+      </a>
+      <a class="experience" id="expXray" href="x-ray.html">
+        <span class="type">X-RAY LAB</span>
+        <h3>拆解实验室</h3>
+        <p>把“国之重器”拆成部件、结构、设计图和原理说明，支持热点标注和 3D 部件查看。</p>
+        <span class="go">进入拆解 →</span>
+      </a>
+      <a class="experience" id="expPlay" href="playground.html">
+        <span class="type">PLAYGROUND</span>
+        <h3>互动乐园</h3>
+        <p>用闯关、任务和徽章把参观变成可参与的学习过程，适合研学和课堂活动。</p>
+        <span class="go">开始体验 →</span>
+      </a>
+      <a class="experience" id="expCase" href="index.html?goto=cases">
+        <span class="type">CASE WALL</span>
+        <h3>获奖案例墙</h3>
+        <p>按年份、奖项和领域浏览 2015-2025 馆藏案例，并可对任意案例继续追问。</p>
+        <span class="go">浏览案例 →</span>
+      </a>
+      <a class="experience" id="expLearn" href="learn.html">
+        <span class="type">LEARNING PATH</span>
+        <h3>学习路径</h3>
+        <p>把获奖项目转成“看懂、玩懂、教懂”的学习路径，衔接课程和科学课件。</p>
+        <span class="go">查看课程 →</span>
+      </a>
+      <a class="experience" id="expTransfer" href="backstage/biomimetic-blender-report.html">
+        <span class="type">TRANSFER DEMO</span>
+        <h3>产业迁移样板</h3>
+        <p>示范如何把好设计获奖技术迁移到小家电产品，形成仿生易洁低噪破壁机方案。</p>
+        <span class="go">查看方案 →</span>
+      </a>
+    </div>
+    <div class="routes">
+      <div class="route">
+        <b>15 分钟公众参观</b>
+        <span>先看“国之重器”特展，再点开好设计助手，让 AI 导览员讲一个作品为什么好。</span>
+        <a href="#hall-heavy">开始参观 →</a>
+      </div>
+      <div class="route">
+        <b>45 分钟研学课堂</b>
+        <span>从拆解实验室进入，选择一个部件看原理，再到互动乐园完成任务与闯关。</span>
+        <a href="x-ray.html">进入课堂路线 →</a>
+      </div>
+      <div class="route">
+        <b>90 分钟企业共创</b>
+        <span>先浏览案例墙找到相关技术，再用产业迁移样板把获奖成果转成新产品方向。</span>
+        <a href="backstage/biomimetic-blender-report.html">查看共创样板 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hall-head" id="hall-heavy">
+  <div class="tag">特展厅 · EXHIBITION HALL 01</div>
+  <h2>国之重器</h2>
+  <p>这不是一组“最大、最快、最深、最远”的装备陈列，而是一条中国原创设计能力的极限训练路线。我们用八件馆藏回答一个问题：当任务进入深海、高速、巨型制造、能源安全和深空探测这些高约束场景时，设计如何把科学目标、工程系统、人的安全和产业能力组织成可靠结果。</p>
+</div>
+<div class="curation">
+  <div class="thesis">
+    <b>策展命题：在极限中设计国家能力。</b>
+    <span>国之重器的“好设计”不只在造型，也不只在单项技术突破，而在于它能把复杂任务拆成可验证、可制造、可运行、可维护的系统方案。观众在这里看的不是装备本身，而是设计如何让一个国家具备进入深海、穿越大地、塑造材料、供给能源和抵达深空的能力。</span>
+  </div>
+  <div class="chapters">
+    <div class="chapter"><div class="no">CHAPTER 01</div><b>进入不可达之地</b><span>深海装备如何把未知环境转化为可作业空间。</span></div>
+    <div class="chapter"><div class="no">CHAPTER 02</div><b>组织高速与巨力</b><span>交通与重型装备如何在速度、尺度和精度之间取得平衡。</span></div>
+    <div class="chapter"><div class="no">CHAPTER 03</div><b>设计能源心脏</b><span>清洁能源与动力装备如何把效率、安全和长期运行统一起来。</span></div>
+    <div class="chapter"><div class="no">CHAPTER 04</div><b>抵达深空任务</b><span>航天采样系统如何在极端约束下完成高可靠自主作业。</span></div>
+  </div>
+</div>
+<div id="featureList"></div>
+
+<div class="hall-head" id="hall-chron">
+  <div class="tag">获奖作品库 · AWARD ARCHIVE</div>
+  <h2>十年编年</h2>
+  <p>这里保留的是好设计奖历届获奖作品档案，重点是年份、奖项和项目事实；进入主题展厅后，它们会被进一步策展成可互动、可学习、可迁移的设计馆展品。点击任意项目名，可向“好设计助手”直接提问该项目。</p>
+</div>
+<div class="chron" id="chronList"></div>
+
+<footer>
+  <div class="row">
+    <div>好设计馆 GOOD DESIGN MUSEUM — 馆藏数据源自好设计官网展览中心公开数据</div>
+    <div><a href="index.html">返回平台首页</a> · <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var FEATURED = [];
+  var INSIGHTS = {};
+  var COUNTS = {};
+  var EDITION = {};
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function clip(t,n){
+    t=(t||'').replace(/\s+/g,' ').trim();
+    return t.length<=n ? t : t.slice(0,n).replace(/[，。；、\s]+[^，。；、\s]*$/,'')+'…';
+  }
+  function renderInsights(slug){
+    var it = INSIGHTS[slug];
+    if (!it) return '';
+    return '<div class="insights">' +
+      '<div class="insight"><b>设计问题</b>' + esc(it[0]) + '</div>' +
+      '<div class="insight"><b>技术关键词</b>' + esc(it[1]) + '</div>' +
+      '<div class="insight"><b>可迁移方向</b>' + esc(it[2]) + '</div>' +
+      '</div>';
+  }
+  function renderMission(f){
+    return '<div class="mission">' +
+      '<div class="mission-card"><b>看什么</b><span>' + esc(clip(f.look, 34)) + '</span></div>' +
+      '<div class="mission-card"><b>做什么</b><span>' + esc(clip(f.make, 30)) + '</span></div>' +
+      '<div class="mission-card"><b>迁移什么</b><span>' + esc(clip(f.transfer, 36)) + '<span class="maturity">' + esc(f.maturity || 'L1 方法启发 · 待专家验证') + '</span></span></div>' +
+      '</div>';
+  }
+
+  var currentExhibitSlug = '2025-00';
+  var currentExperience = 'ask';
+  var currentRole = 'public';
+
+  function getCurrentExhibit(){
+    return FEATURED.filter(function(f){ return f.slug === currentExhibitSlug; })[0] || FEATURED[0];
+  }
+  function exhibitQuestion(f){
+    return '请围绕好设计馆当前展品「' + f.title + '」展开讲解。源获奖作品编号是 ' + f.slug + '。请说明它为什么是好设计、适合怎么互动、能迁移到哪些方向，并标注哪些内容属于策展解读或待专家验证。';
+  }
+  function syncExperienceLinks(){
+    var f = getCurrentExhibit();
+    var links = {
+      expAsk: 'index.html?ask=' + encodeURIComponent(exhibitQuestion(f)),
+      expXray: 'x-ray.html?slug=' + encodeURIComponent(f.slug),
+      expPlay: 'playground.html?slug=' + encodeURIComponent(f.slug),
+      expCase: 'project/' + f.slug + '.html',
+      expLearn: 'learn.html?slug=' + encodeURIComponent(f.slug),
+      expTransfer: 'backstage/biomimetic-blender-report.html?slug=' + encodeURIComponent(f.slug)
+    };
+    Object.keys(links).forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.href = links[id];
+    });
+  }
+  function renderExhibitPicker(){
+    var box = document.getElementById('exhibitPicker');
+    if (!box) return;
+    box.innerHTML = FEATURED.map(function(f, i){
+      return '<button type="button" data-slug="' + esc(f.slug) + '">' + String(i + 1).padStart(2, '0') + ' · ' + esc(f.title) + '</button>';
+    }).join('');
+    box.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){ setCurrentExhibit(this.getAttribute('data-slug')); });
+    });
+  }
+  function setCurrentExhibit(slug){
+    currentExhibitSlug = slug || currentExhibitSlug;
+    var f = getCurrentExhibit();
+    document.getElementById('currentExhibitName').textContent = f.title;
+    document.getElementById('currentExhibitDesc').textContent = f.chapter + ' · ' + f.maturity;
+    document.querySelectorAll('#exhibitPicker button').forEach(function(btn){
+      btn.classList.toggle('on', btn.getAttribute('data-slug') === currentExhibitSlug);
+    });
+    syncExperienceLinks();
+    renderExperience(currentExperience);
+    renderGuide(currentRole);
+  }
+
+  var EXPERIENCE = {
+    ask: {
+      eyebrow: 'AI DOCENT',
+      title: '让展品先开口。',
+      desc: '从一个问题开始，让好设计助手把当前展品讲成公众能理解、学生能学习、企业能迁移的设计知识。',
+      path: ['选择一个展品', '提出你的问题', '获得分层讲解'],
+      action: function(f){ return ['打开 AI 导览', 'index.html?ask=' + encodeURIComponent(exhibitQuestion(f))]; }
+    },
+    xray: {
+      eyebrow: 'X-RAY LAB',
+      title: '把国之重器拆开看。',
+      desc: '进入拆解实验室，查看部件、热点、结构图和 3D 模型，从“它很厉害”走向“它为什么这样设计”。',
+      path: ['选择馆藏', '点击部件热点', '追问设计原理'],
+      action: function(f){ return ['进入拆解实验室', 'x-ray.html?slug=' + encodeURIComponent(f.slug)]; }
+    },
+    play: {
+      eyebrow: 'PLAYGROUND',
+      title: '把参观变成任务。',
+      desc: '通过闯关、徽章和任务单，把展览变成可参与、可评估、可带走的研学体验。',
+      path: ['领取观展任务', '完成互动挑战', '生成课堂记录'],
+      action: function(f){ return ['进入互动乐园', 'playground.html?slug=' + encodeURIComponent(f.slug)]; }
+    },
+    learn: {
+      eyebrow: 'LEARNING PATH',
+      title: '把展品变成一节课。',
+      desc: '将获奖项目转成“看懂、玩懂、教懂”的学习路径，帮助教师和学生围绕真实设计问题开展项目制学习。',
+      path: ['选择学习主题', '拆成课堂问题', '生成活动任务'],
+      action: function(f){ return ['查看学习路径', 'learn.html?slug=' + encodeURIComponent(f.slug)]; }
+    },
+    case: {
+      eyebrow: 'AWARD ARCHIVE',
+      title: '从 560 项作品里找线索。',
+      desc: '按年份、奖项和领域浏览获奖作品库，再把有价值的案例转化为展品、课程或产业迁移样板。',
+      path: ['进入作品库', '筛选相关案例', '向助手继续追问'],
+      action: function(f){ return ['查看当前档案', 'project/' + f.slug + '.html']; }
+    },
+    transfer: {
+      eyebrow: 'TRANSFER DEMO',
+      title: '把好设计迁移成新产品。',
+      desc: '以小家电方案为样板，展示如何把获奖技术从原始场景中抽取出来，转译成新的产品创新方向。',
+      path: ['识别行业痛点', '匹配获奖技术', '生成产品概念'],
+      action: function(f){ return ['查看迁移样板', 'backstage/biomimetic-blender-report.html?slug=' + encodeURIComponent(f.slug)]; }
+    }
+  };
+
+  function renderExperience(key){
+    currentExperience = key || currentExperience;
+    var data = EXPERIENCE[key] || EXPERIENCE.ask;
+    var f = getCurrentExhibit();
+    var action = (typeof data.action === 'function') ? data.action(f) : data.action;
+    document.getElementById('mapEyebrow').textContent = data.eyebrow;
+    document.getElementById('mapTitle').textContent = data.title;
+    document.getElementById('mapDesc').textContent = data.desc + ' 当前展品：' + f.title + '。';
+    document.getElementById('mapPath').innerHTML = data.path.map(function(p, i){
+      return '<div><b>0' + (i + 1) + '</b><span>' + esc(p) + '</span></div>';
+    }).join('');
+    document.getElementById('mapAction').textContent = action[0] + ' →';
+    document.getElementById('mapAction').href = action[1];
+    document.querySelectorAll('.map-node').forEach(function(btn){
+      btn.classList.toggle('on', btn.getAttribute('data-exp') === key);
+    });
+  }
+
+  var GUIDE = {
+    public: {
+      eyebrow: '15 MIN VISIT',
+      title: '先看一件国之重器，再向好设计助手追问。',
+      desc: '适合首次进入好设计馆的参观者。页面会引导你先理解一个代表性成果，再通过 AI 导览员把“为什么好”讲清楚。',
+      steps: ['选择国之重器特展', '阅读设计问题与技术关键词', '点击助手追问设计亮点', '把感兴趣案例加入后续参观'],
+      actions: [
+        ['开始看特展', '#hall-heavy', true],
+        ['问 AI 导览员', 'index.html?ask=' + encodeURIComponent('请用公众能听懂的方式，带我参观好设计馆的国之重器特展。'), false]
+      ]
+    },
+    student: {
+      eyebrow: '45 MIN CLASS',
+      title: '从拆解实验室进入，把一个获奖项目变成课堂任务。',
+      desc: '适合研学、科学课和创新设计课。先拆结构、看部件，再用互动乐园把参观变成任务、闯关和作品输出。',
+      steps: ['进入拆解实验室', '选择一个部件看原理', '到互动乐园完成任务', '生成课堂讨论问题'],
+      actions: [
+        ['进入拆解实验室', 'x-ray.html?slug=2025-00', true],
+        ['打开互动乐园', 'playground.html', false]
+      ]
+    },
+    enterprise: {
+      eyebrow: '90 MIN CO-CREATION',
+      title: '用好设计案例反推行业产品创新方向。',
+      desc: '适合企业、园区和产业团队。先从案例墙寻找可迁移技术，再查看小家电样板，理解如何把获奖技术转成产品概念。',
+      steps: ['浏览相关获奖案例', '识别可迁移技术标签', '查看产业迁移样板', '向助手生成产品方案'],
+      actions: [
+        ['查看迁移样板', 'backstage/biomimetic-blender-report.html', true],
+        ['生成行业方案', 'index.html?ask=' + encodeURIComponent('我是小家电企业，请从好设计获奖案例里推荐可迁移技术，并给我一个新产品方向。'), false]
+      ]
+    },
+    curator: {
+      eyebrow: 'CURATOR MODE',
+      title: '把好设计馆拆成可复制的展陈、课程和产业服务模块。',
+      desc: '适合项目汇报、空间规划和合作沟通。重点看项目规划页、互动模块和轻量化样板馆的交付结构。',
+      steps: ['理解好设计馆定位', '查看互动体验模块', '梳理首批交付成果', '形成空间和运营方案'],
+      actions: [
+        ['查看规划汇报', 'backstage/good-design-museum-plan.html', true],
+        ['打开方案中心', 'backstage/planning.html', false]
+      ]
+    }
+  };
+
+  function renderGuide(role){
+    currentRole = role || currentRole;
+    var data = GUIDE[role] || GUIDE.public;
+    var f = getCurrentExhibit();
+    document.getElementById('guideEyebrow').textContent = data.eyebrow;
+    document.getElementById('guideTitle').textContent = data.title;
+    document.getElementById('guideDesc').textContent = data.desc + ' 当前展品：' + f.title + '。';
+    document.getElementById('guideSteps').innerHTML = data.steps.map(function(s, i){
+      return '<div class="guide-step"><b>STEP ' + String(i + 1).padStart(2, '0') + '</b><span>' + esc(s) + '</span></div>';
+    }).join('');
+    var actions = buildGuideActions(role, f);
+    document.getElementById('guideActions').innerHTML = actions.map(function(a){
+      return '<a' + (a[2] ? ' class="primary"' : '') + ' href="' + esc(a[1]) + '">' + esc(a[0]) + ' →</a>';
+    }).join('');
+    document.querySelectorAll('.guide-role').forEach(function(btn){
+      btn.classList.toggle('on', btn.getAttribute('data-role') === role);
+    });
+  }
+  function buildGuideActions(role, f){
+    if (role === 'student') {
+      return [['进入当前展品拆解', 'x-ray.html?slug=' + encodeURIComponent(f.slug), true], ['打开互动乐园', 'playground.html?slug=' + encodeURIComponent(f.slug), false]];
+    }
+    if (role === 'enterprise') {
+      return [['查看迁移样板', 'backstage/biomimetic-blender-report.html?slug=' + encodeURIComponent(f.slug), true], ['生成行业方案', 'index.html?ask=' + encodeURIComponent('请基于当前好设计馆展品「' + f.title + '」分析它对小家电或本地产业的可迁移方向，并区分概念启发与待专家验证内容。'), false]];
+    }
+    if (role === 'curator') {
+      return [['查看规划汇报', 'backstage/good-design-museum-plan.html', true], ['查看当前项目档案', 'project/' + f.slug + '.html', false]];
+    }
+    return [['开始看当前特展', '#hall-heavy', true], ['问 AI 导览员', 'index.html?ask=' + encodeURIComponent(exhibitQuestion(f)), false]];
+  }
+
+  function bindHallControls(){
+    document.querySelectorAll('.guide-role').forEach(function(btn){
+      btn.addEventListener('click', function(){ renderGuide(this.getAttribute('data-role')); });
+    });
+    document.querySelectorAll('.map-node').forEach(function(btn){
+      btn.addEventListener('click', function(){ renderExperience(this.getAttribute('data-exp')); });
+    });
+  }
+
+  function renderFeatureList(){
+    var list = document.getElementById('featureList');
+    list.innerHTML = '';
+    FEATURED.forEach(function(f){
+    fetch('cases/detail/' + f.slug + '.json').then(function(r){ return r.json(); }).then(function(d){
+      var sec = document.createElement('section');
+      sec.className = 'feature reveal';
+      var img = (d.images && d.images.length) ? d.images[0] : '';
+      sec.innerHTML =
+        '<div class="media">' + (img ? '<img src="' + esc(img) + '" alt="' + esc(d.name) + '">' : '') +
+        '<div class="cap"><div class="inner">' +
+        '<div class="idx">' + esc(f.tag) + ' · GOLD AWARD</div>' +
+        '<div class="chapterline">' + esc(f.chapter) + '</div>' +
+        '<h3>' + esc(f.title || d.name) + '</h3>' +
+        '<div class="source-title">源自获奖作品：' + esc(d.name) + (d.unit ? ' · ' + esc(d.unit) : '') + '</div>' +
+        '<div class="trust-row"><span class="trust official">官方档案 + 策展解读</span><span class="trust verify">迁移建议待专家验证</span></div>' +
+        '<div class="curator-note">' + esc(clip(f.note, 82)) + '</div>' +
+        renderMission(f) +
+        '<div class="acts"><a class="btn btn-primary" href="x-ray.html?slug=' + esc(f.slug) + '">进入拆解</a>' +
+        '<button class="btn btn-ghost" data-q="' + esc('请围绕「' + d.name + '」回答这个展品问题：' + f.ask) + '">问助手</button>' +
+        '<a class="minor-link" href="project/' + esc(f.slug) + '.html">' + esc(f.deepLabel || '看档案') + '</a>' +
+        '<button class="minor-link" data-set-exhibit="' + esc(f.slug) + '">加入当前参观</button></div>' +
+        '</div></div></div>';
+      sec.querySelector('[data-q]').addEventListener('click', function(){
+        window.location.href = 'index.html?ask=' + encodeURIComponent(this.getAttribute('data-q'));
+      });
+      sec.querySelector('[data-set-exhibit]').addEventListener('click', function(){
+        setCurrentExhibit(this.getAttribute('data-set-exhibit'));
+        document.getElementById('hall-interact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      list.appendChild(sec);
+      observe(sec);
+    }).catch(function(){});
+    });
+  }
+
+  function renderChronicle(){
+    fetch('cases.json').then(function(r){ return r.json(); }).then(function(cases){
+    var byYear = {};
+    cases.forEach(function(c, i){
+      (byYear[c.year] = byYear[c.year] || []).push(c);
+    });
+    var years = Object.keys(byYear).sort(function(a,b){ return a - b; });
+    var box = document.getElementById('chronList');
+    years.forEach(function(y){
+      var c = COUNTS[y] || {};
+      var parts = ['金奖 <b>' + (c.gold||0) + '</b>'];
+      if (c.silver) parts.push('银奖 <b>' + c.silver + '</b>');
+      if (c.elite) parts.push('菁英奖 <b>' + c.elite + '</b>');
+      if (c.creative) parts.push('创意奖 <b>' + c.creative + '</b>');
+      if (c.nominee) parts.push('提名奖 <b>' + c.nominee + '</b>');
+      var row = document.createElement('div');
+      row.className = 'chron-row reveal';
+      row.innerHTML =
+        '<div class="yr">' + y + '<span class="ed">' + (EDITION[y]||'') + '</span></div>' +
+        '<div><div class="gold">' +
+        byYear[y].map(function(it, idx){
+          var slug = y + '-' + String(idx).padStart(2, '0');
+          var q = '请介绍一下' + y + '年金奖项目「' + it.name + '」。';
+          return '<span class="chip"><a class="chip-link" href="project/' + slug + '.html">' + esc(it.name) +
+            '</a><button class="ask-mini" type="button" data-q="' + esc(q) + '" aria-label="向好设计助手提问 ' + esc(it.name) + '">问</button></span>';
+        }).join('') +
+        '</div><div class="meta">' + parts.join(' · ') + '</div></div>';
+      row.querySelectorAll('.ask-mini').forEach(function(ch){
+        ch.addEventListener('click', function(ev){
+          ev.preventDefault();
+          ev.stopPropagation();
+          window.location.href = 'index.html?ask=' + encodeURIComponent(this.getAttribute('data-q'));
+        });
+      });
+      box.appendChild(row);
+      observe(row);
+    });
+    });
+  }
+
+  function initHall(){
+    bindHallControls();
+    renderExhibitPicker();
+    setCurrentExhibit(currentExhibitSlug);
+    renderFeatureList();
+    renderChronicle();
+  }
+
+  function showDataError(){
+    var list = document.getElementById('featureList');
+    if (list) {
+      list.innerHTML = '<section style="padding:48px 32px;color:#62666D">馆藏数据暂时无法加载，请稍后刷新。</section>';
+    }
+  }
+
+  Promise.all([
+    fetch('exhibits-heavy.json').then(function(r){ if (!r.ok) throw new Error('exhibits-heavy.json'); return r.json(); }),
+    fetch('archive-counts.json').then(function(r){ if (!r.ok) throw new Error('archive-counts.json'); return r.json(); })
+  ]).then(function(data){
+    FEATURED = data[0].featured || [];
+    INSIGHTS = data[0].insights || {};
+    COUNTS = data[1].counts || {};
+    EDITION = data[1].edition || {};
+    initHall();
+  }).catch(function(err){
+    console.error('hall data load failed', err);
+    showDataError();
+  });
+
+  /* ---------- 渐现 ---------- */
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+    es.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); } });
+  }, {threshold:.06}) : null;
+  function observe(el){ if (io) io.observe(el); else el.classList.add('on'); }
+})();
+</script>
+</body>
+</html>

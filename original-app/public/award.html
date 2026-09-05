@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奖项 · 好设计 GOOD DESIGN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* 设计系统：Linear tokens 的浅色映射（白底 + 靛蓝强调 + 金奖暖金），适配中文内容 */
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:rgba(15,23,42,0.045);
+    --bg-quiet:rgba(15,23,42,0.02);
+    --ink:#16181D;
+    --ink-soft:#3E4454;
+    --muted:#8A8F98;
+    --muted-soft:#62666D;
+    --line:rgba(15,23,42,0.09);
+    --accent:#5E6AD2;
+    --accent-bright:#4F58C0;
+    --accent-soft:rgba(94,106,210,.10);
+    --gold:#A87E2A;
+    --panel-w:max(33.33vw,380px);
+    --sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    --mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;
+    --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+    --r-sm:4px; --r-md:6px; --r-lg:12px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;
+    -webkit-font-smoothing:antialiased;transition:margin-right .4s var(--ease)}
+  body.panel-open{margin-right:var(--panel-w)}
+  ::selection{background:rgba(94,106,210,.25)}
+  a{color:inherit}
+
+  /* ---------- 导航 ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:0 32px;height:60px;background:rgba(255,255,255,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+    transition:right .4s var(--ease)}
+  body.panel-open nav{right:var(--panel-w)}
+  nav .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.2px}
+  nav .brand .mark{width:24px;height:24px;border-radius:var(--r-md);background:var(--accent);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+  nav .brand .en{font-family:var(--mono);font-size:11px;color:var(--muted-soft);font-weight:400;letter-spacing:1px;margin-left:2px}
+  nav .links{display:flex;gap:4px}
+  nav .links a{color:var(--muted-soft);text-decoration:none;font-size:13.5px;padding:6px 12px;border-radius:var(--r-md);transition:color .16s var(--ease),background .16s var(--ease)}
+  nav .links a:hover{color:var(--ink);background:var(--bg-soft)}
+  @media(max-width:900px){nav .links{display:none}}
+  .burger{display:none;background:none;border:1px solid var(--line);border-radius:var(--r-md);width:38px;height:34px;
+    cursor:pointer;color:var(--ink-soft);font-size:16px;align-items:center;justify-content:center;font-family:var(--sans)}
+  .drop{position:fixed;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);display:none;
+    flex-direction:column;padding:6px 20px 14px;z-index:98;box-shadow:0 16px 40px rgba(15,23,42,.12)}
+  .drop.open{display:flex}
+  .drop a{padding:12px 4px;font-size:14.5px;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line)}
+  .drop a:last-child{border-bottom:0}
+  .drop a:hover{color:var(--accent-bright)}
+  @media(max-width:900px){.burger{display:flex}}
+  @media(min-width:901px){.drop{display:none!important}}
+
+  /* ---------- 首屏：左对齐浅色画布 ---------- */
+  header{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+    padding:140px 32px 96px;overflow:hidden;border-bottom:1px solid var(--line)}
+  header::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 55% 45% at 16% 28%,rgba(94,106,210,.10),transparent 70%),
+      radial-gradient(ellipse 42% 36% at 86% 78%,rgba(94,106,210,.06),transparent 70%),
+      radial-gradient(ellipse 30% 26% at 60% 10%,rgba(168,126,42,.06),transparent 70%)}
+  header .grid-lines{position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:80px 80px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 30% 40%,black 20%,transparent 75%);
+            mask-image:radial-gradient(ellipse 70% 60% at 30% 40%,black 20%,transparent 75%)}
+  header .inner{position:relative;max-width:1280px;width:100%;margin:0 auto}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:1.5px;
+    color:var(--muted-soft);border:1px solid var(--line);border-radius:9999px;padding:6px 14px;background:var(--bg-quiet)}
+  .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-bright)}
+  header h1{font-size:clamp(52px,8.5vw,112px);font-weight:500;letter-spacing:-.03em;line-height:1.04;margin:28px 0 0}
+  header h1 .thin{color:var(--muted)}
+  header .en{margin-top:18px;font-family:var(--mono);font-size:13px;letter-spacing:3px;color:var(--muted-soft)}
+  header .lead{margin-top:28px;max-width:680px;color:var(--ink-soft);font-size:clamp(15px,1.5vw,18px);line-height:1.75}
+  header .cta{margin-top:40px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:var(--r-md);text-decoration:none;
+    font-size:14px;font-weight:500;border:1px solid transparent;cursor:pointer;font-family:var(--sans);
+    transition:background .16s var(--ease),border-color .16s var(--ease),color .16s var(--ease),transform .1s var(--ease)}
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-bright)}
+  .btn-ghost{border-color:var(--line);color:var(--ink-soft);background:transparent}
+  .btn-ghost:hover{border-color:rgba(15,23,42,.22);color:var(--ink);background:var(--bg-quiet)}
+  .hero-foot{position:absolute;bottom:0;left:0;right:0;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted)}
+  .hero-foot .row{max-width:1280px;margin:0 auto;padding:14px 32px;display:flex;gap:32px;flex-wrap:wrap}
+  .hero-foot b{color:var(--muted-soft);font-weight:400}
+
+  /* ---------- 数据条 ---------- */
+  .stats{border-bottom:1px solid var(--line)}
+  .stats .row{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .stats .cell{padding:32px;border-left:1px solid var(--line)}
+  .stats .cell:first-child{border-left:0}
+  .stats .num{font-family:var(--mono);font-size:34px;font-weight:500;letter-spacing:-.5px}
+  .stats .lbl{color:var(--muted);font-size:12.5px;margin-top:6px;letter-spacing:.5px}
+
+  /* ---------- 通用区块 ---------- */
+  section{padding:112px 32px;max-width:1280px;margin:0 auto}
+  section + section{border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:20px;margin-bottom:14px;flex-wrap:wrap}
+  .sec-idx{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:1px}
+  .sec-title{font-size:clamp(28px,3.6vw,40px);font-weight:500;letter-spacing:-.02em}
+  .sec-desc{color:var(--muted-soft);max-width:680px;margin:16px 0 56px;font-size:15.5px;line-height:1.8}
+
+  /* ---------- 时间轴（hairline 行式） ---------- */
+  .timeline{border-top:1px solid var(--line)}
+  .tl-item{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);transition:background .16s var(--ease)}
+  .tl-item:hover{background:var(--bg-quiet)}
+  .tl-item .year{font-family:var(--mono);font-size:15px;color:var(--accent-bright);padding-top:2px}
+  .tl-item h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+  .tl-item p{color:var(--muted-soft);font-size:14.5px;max-width:680px;line-height:1.75}
+  @media(max-width:640px){.tl-item{grid-template-columns:1fr;gap:6px}}
+
+  /* ---------- 卡片面板 ---------- */
+  .grid{display:grid;gap:16px}
+  .grid-3{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+  .grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .card{background:var(--bg-quiet);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;
+    transition:border-color .16s var(--ease),background .16s var(--ease)}
+  .card:hover{border-color:rgba(15,23,42,.18);background:var(--bg-soft)}
+  .card .no{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:1px;display:block;margin-bottom:14px}
+  .card h3{font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+  .card p{color:var(--muted-soft);font-size:14px;line-height:1.75}
+
+  /* ---------- 院士 ---------- */
+  .person{display:flex;gap:20px;background:var(--bg-quiet);border:1px solid var(--line);border-radius:var(--r-lg);
+    padding:28px;align-items:flex-start;transition:border-color .16s var(--ease)}
+  .person:hover{border-color:rgba(15,23,42,.18)}
+  .person .avatar{flex:0 0 48px;width:48px;height:48px;border-radius:var(--r-md);background:var(--accent-soft);
+    border:1px solid rgba(94,106,210,.35);color:var(--accent-bright);
+    display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700}
+  .person h3{font-size:17px;font-weight:600}
+  .person .role{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:1px;margin:4px 0 12px}
+  .person p{color:var(--muted-soft);font-size:14px;line-height:1.8}
+  @media(max-width:640px){.person{flex-direction:column}}
+
+  /* ---------- 对比表 ---------- */
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:16px 20px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+  tr:last-child td{border-bottom:0}
+  th{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:1px;color:var(--muted-soft);
+    background:var(--bg-quiet);border-bottom:1px solid var(--line)}
+  td{color:var(--muted-soft);line-height:1.7}
+  td:first-child{color:var(--ink);font-weight:500;white-space:nowrap}
+  td + td, th + th{border-left:1px solid var(--line)}
+
+  /* ---------- 引文 ---------- */
+  blockquote{border-left:2px solid var(--accent);padding:6px 0 6px 24px;margin:0 0 48px;max-width:760px;
+    font-size:clamp(17px,2vw,21px);line-height:1.8;color:var(--ink);letter-spacing:-.01em}
+
+  /* ---------- 案例墙 ---------- */
+  .case-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+  .case-tabs button{border:1px solid var(--line);background:transparent;color:var(--muted-soft);padding:7px 18px;
+    border-radius:9999px;font-family:var(--mono);font-size:12.5px;letter-spacing:1px;cursor:pointer;
+    transition:all .16s var(--ease)}
+  .case-tabs button:hover{border-color:rgba(15,23,42,.22);color:var(--ink)}
+  .case-tabs button.act{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  .case-card{background:var(--bg-quiet);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;
+    display:flex;flex-direction:column;cursor:pointer;transition:border-color .16s var(--ease),transform .16s var(--ease)}
+  .case-card:hover{border-color:rgba(15,23,42,.22);transform:translateY(-2px)}
+  .case-card .thumb{aspect-ratio:16/10;overflow:hidden;background:#EDEFF3;position:relative}
+  .case-card .thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.55) brightness(.92);
+    transition:filter .4s var(--ease),transform .4s var(--ease)}
+  .case-card:hover .thumb img{filter:grayscale(0) brightness(1);transform:scale(1.03)}
+  .case-card .badge{position:absolute;top:12px;left:12px;background:rgba(10,13,22,.82);backdrop-filter:blur(6px);
+    border:1px solid rgba(216,179,106,.4);color:var(--gold);font-family:var(--mono);font-size:11px;letter-spacing:1px;
+    padding:4px 10px;border-radius:9999px}
+  .case-card .body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .case-card h3{font-size:15.5px;font-weight:600;letter-spacing:-.01em;line-height:1.55}
+  .case-card .unit{color:var(--muted);font-size:12.5px}
+  .case-card .sum{color:var(--muted-soft);font-size:13px;line-height:1.75;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .case-card .ask{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);background:none;border-left:0;
+    border-right:0;border-bottom:0;color:var(--muted-soft);font-family:var(--mono);font-size:12px;letter-spacing:.5px;
+    cursor:pointer;text-align:left;transition:color .16s var(--ease)}
+  .case-card .ask:hover{color:var(--accent-bright)}
+  .case-note{margin-top:28px;color:var(--muted);font-size:12.5px;font-family:var(--mono)}
+  .case-note a{color:var(--muted-soft);text-decoration:underline;text-underline-offset:3px}
+  .case-note a:hover{color:var(--accent-bright)}
+
+  /* ---------- 奖种切换 + 名录行 ---------- */
+  .level-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .level-tabs button{border:1px solid var(--line);background:var(--bg-quiet);color:var(--ink-soft);padding:8px 16px;
+    border-radius:9999px;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:8px;
+    transition:all .16s var(--ease)}
+  .level-tabs button .cnt{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .level-tabs button:hover{border-color:rgba(15,23,42,.22);color:var(--ink)}
+  .level-tabs button.act{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .level-tabs button.act .cnt{color:rgba(255,255,255,.75)}
+  .case-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+  .case-tools input[type=search]{flex:1;min-width:220px;max-width:380px;border:1px solid var(--line);border-radius:var(--r-md);
+    padding:9px 14px;font-size:13px;font-family:var(--sans);color:var(--ink);background:var(--bg-quiet);outline:none;transition:border .16s var(--ease)}
+  .case-tools input[type=search]:focus{border-color:var(--accent);background:#fff}
+  .case-tools input[type=search]::placeholder{color:var(--muted)}
+  .domain-tabs{display:none;flex-wrap:wrap;gap:7px;width:100%}
+  .domain-tabs.on{display:flex}
+  .domain-tabs button{border:1px solid var(--line);background:var(--bg-quiet);color:var(--ink-soft);padding:6px 13px;
+    border-radius:9999px;font-size:12px;cursor:pointer;font-family:var(--sans);transition:all .14s var(--ease)}
+  .domain-tabs button:hover{border-color:var(--gold);color:var(--gold)}
+  .domain-tabs button.act{background:var(--gold);color:#fff;border-color:var(--gold)}
+  .case-empty{padding:60px 20px;text-align:center;color:var(--muted);font-size:14px}
+  .award-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+  .award-row{display:grid;grid-template-columns:44px minmax(0,1.3fr) minmax(0,1fr) auto;gap:18px;align-items:center;
+    padding:15px 10px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .16s var(--ease)}
+  .award-row:hover{background:rgba(15,23,42,.03)}
+  .award-row .no{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .award-row h3{font-size:14.5px;font-weight:600;line-height:1.5;letter-spacing:-.01em}
+  .award-row .unit{font-size:12.5px;color:var(--muted-soft);margin-top:3px;line-height:1.5}
+  .award-row .who{font-size:12px;color:var(--muted);line-height:1.6}
+  .award-row .go{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--accent-bright);white-space:nowrap}
+  @media(max-width:760px){
+    .award-row{grid-template-columns:34px minmax(0,1fr);gap:4px 12px}
+    .award-row .who{display:none}
+    .award-row .go{display:none}
+  }
+
+  /* ---------- 参考来源 ---------- */
+  .refs{border-top:1px solid var(--line)}
+  .refs a{display:flex;align-items:baseline;gap:16px;padding:16px 8px;border-bottom:1px solid var(--line);
+    text-decoration:none;transition:background .16s var(--ease),padding .16s var(--ease)}
+  .refs a:hover{background:var(--bg-quiet);padding-left:16px}
+  .refs .idx{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+  .refs .t{font-size:14.5px;color:var(--ink-soft)}
+  .refs a:hover .t{color:var(--ink)}
+  .refs span.domain{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+
+  /* ---------- 问答入口区 ---------- */
+  .qa{max-width:none;border-top:1px solid var(--line);text-align:center;padding:120px 32px}
+  .qa .inner{max-width:680px;margin:0 auto}
+  .qa .sec-desc{margin-left:auto;margin-right:auto;margin-bottom:36px}
+
+  /* ---------- Copilot 右侧面板（推开式，不遮挡内容） ---------- */
+  #fab{position:fixed;right:24px;bottom:24px;z-index:400;width:52px;height:52px;border-radius:50%;border:0;
+    cursor:pointer;background:var(--accent);color:#fff;font-family:var(--sans);font-size:20px;font-weight:700;
+    box-shadow:0 8px 24px rgba(94,106,210,.45);transition:transform .16s var(--ease),right .4s var(--ease),background .16s var(--ease)}
+  #fab:hover{transform:scale(1.06);background:var(--accent-bright)}
+  body.panel-open #fab{right:calc(var(--panel-w) + 24px)}
+  #fab .tip{position:absolute;right:62px;top:50%;transform:translateY(-50%);white-space:nowrap;background:#FFFFFF;
+    border:1px solid var(--line);color:var(--ink-soft);font-size:12px;font-weight:400;padding:7px 12px;border-radius:var(--r-md);
+    box-shadow:0 8px 24px rgba(15,23,42,.10);opacity:0;pointer-events:none;transition:opacity .16s var(--ease)}
+  #fab:hover .tip{opacity:1}
+  #copilot{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:var(--panel-w);z-index:390;
+    background:#FFFFFF;border-left:1px solid var(--line);display:flex;flex-direction:column;
+    transform:translateX(102%);transition:transform .4s var(--ease);box-shadow:-24px 0 70px rgba(15,23,42,.14)}
+  #copilot.open{transform:none}
+  #copilot-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:380;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+  #copilot-mask.open{opacity:1;pointer-events:auto}
+  @media(max-width:760px){
+    :root{--panel-w:100vw}
+    body.panel-open{margin-right:0}
+    body.panel-open nav{right:0}
+    body.panel-open #fab{right:16px}
+    #fab{right:16px;bottom:16px}
+  }
+
+  /* ---------- 聊天 ---------- */
+  .chat-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .chat-head .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-bright)}
+  .chat-head .name{font-size:14px;font-weight:600}
+  .chat-head .sub{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .chat-head .close-btn{background:none;border:1px solid var(--line);color:var(--muted-soft);width:26px;height:26px;
+    border-radius:var(--r-sm);cursor:pointer;font-size:14px;line-height:1;transition:all .16s var(--ease)}
+  .chat-head .close-btn:hover{border-color:rgba(15,23,42,.25);color:var(--ink)}
+  .chat-log{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+  .msg{max-width:88%;padding:11px 14px;border-radius:var(--r-lg);font-size:13.5px;line-height:1.7;
+    white-space:pre-wrap;word-break:break-word}
+  .msg.bot{background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft);align-self:flex-start;border-top-left-radius:var(--r-sm)}
+  .msg.user{background:var(--accent);color:#fff;align-self:flex-end;border-top-right-radius:var(--r-sm)}
+  .msg .src{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:8px}
+  .msg .refs-line{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .msg .refs-line span{font-family:var(--mono);font-size:10.5px;color:var(--accent-bright);
+    border:1px solid rgba(94,106,210,.35);border-radius:9999px;padding:2px 9px;background:var(--accent-soft)}
+  .suggests{display:flex;flex-wrap:wrap;gap:8px;padding:12px 18px;border-top:1px solid var(--line)}
+  .suggests button{border:1px solid var(--line);background:transparent;color:var(--muted-soft);border-radius:9999px;
+    padding:6px 13px;font-size:12px;cursor:pointer;font-family:var(--sans);transition:all .16s var(--ease)}
+  .suggests button:hover{border-color:rgba(94,106,210,.55);color:var(--accent-bright)}
+  .chat-input{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--line)}
+  .chat-input input{flex:1;background:var(--bg-quiet);border:1px solid var(--line);border-radius:var(--r-md);
+    padding:11px 14px;font-size:13.5px;color:var(--ink);outline:none;font-family:var(--sans);transition:border-color .16s var(--ease)}
+  .chat-input input:focus{border-color:rgba(94,106,210,.6)}
+  .chat-input input::placeholder{color:var(--muted)}
+  .chat-input button{border:0;background:var(--accent);color:#fff;font-weight:600;padding:0 20px;border-radius:var(--r-md);
+    font-size:13.5px;cursor:pointer;transition:background .16s var(--ease),transform .1s var(--ease)}
+  .chat-input button:hover{background:var(--accent-bright)}
+  .chat-input button:active{transform:scale(.97)}
+  .chat-input button:disabled{opacity:.4;cursor:default}
+  .typing{align-self:flex-start;color:var(--muted);font-size:12px;padding:2px 14px;font-family:var(--mono)}
+
+  /* ---------- 页脚 ---------- */
+  footer{border-top:1px solid var(--line);color:var(--muted);padding:40px 32px;font-size:12.5px}
+  footer .row{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--muted-soft);text-decoration:none}
+  footer a:hover{color:var(--ink)}
+
+  /* ---------- 滚动渐现 ---------- */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+  .reveal.on{opacity:1;transform:none}
+</style>
+<style>
+  nav .links a.act{color:var(--ink);background:var(--bg-soft)}
+  .page-pad{padding-top:60px}
+
+</style>
+<link rel="stylesheet" href="gd-ds.css">
+</head>
+<body class="page-pad">
+<nav>
+  <a class="brand" href="index.html"><img class="mark-img" src="assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="index.html">好设计馆</a>
+    <a href="award.html" class="act">奖项</a>
+    <a href="laureates.html">数据库</a>
+    <a href="connect.html">产业</a>
+    <a href="learn.html">教育</a>
+  </div>
+  <button class="burger" id="burger" type="button" aria-label="菜单">☰</button>
+  <div class="drop" id="drop">
+    <a href="index.html">好设计馆</a>
+    <a href="award.html" class="act">奖项</a>
+    <a href="laureates.html">数据库</a>
+    <a href="connect.html">产业</a>
+    <a href="learn.html">教育</a>
+  </div>
+</nav>
+
+<section id="story">
+  <div class="sec-head"><span class="sec-idx">01 / ORIGIN</span><h2 class="sec-title">从战略咨询到国家奖项</h2></div>
+  <p class="sec-desc">“好设计奖”不是一场孤立的评比，而是中国工程院重大咨询研究成果的社会化、产业化延伸——从战略研究，到政策建议，再到面向产业界与社会公众的实践平台。</p>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="year">2013</div>
+      <div>
+        <h3>中国工程院启动《创新设计发展战略研究》</h3>
+        <p>路甬祥院士任项目组长、潘云鹤院士任副组长，近 20 位院士、100 多位专家分 10 个课题组，历时两年开展地方、行业、企业调研，系统研究中国创新设计能力建设。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="year">2015</div>
+      <div>
+        <h3>建议报送国务院，奖项应运而生</h3>
+        <p>项目组形成《关于大力发展创新设计的建议》并报送国务院，“提高创新设计能力”进入《中国制造2025》政策语境。同年，中国机械工程学会联合路甬祥、潘云鹤院士共同发起设立“好设计奖”。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="year">2025</div>
+      <div>
+        <h3>好设计奖十周年座谈会在杭州召开</h3>
+        <p>回顾奖项源头、发展与未来方向。十年间，累计数千个创新项目参与评选，数百项成果获奖，逐步形成奖项评审、成果展示、创新设计活动周、青年论坛、区域提名网络在内的创新设计生态。</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="year">2026</div>
+      <div>
+        <h3>第十一届好设计奖启动提名</h3>
+        <p>主题聚焦“设计赋能产业变革”，持续关注产品设计、系统设计、工艺流程设计与产业化应用。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="what">
+  <div class="sec-head"><span class="sec-idx">02 / CONCEPT</span><h2 class="sec-title">什么是“好设计”</h2></div>
+  <p class="sec-desc">这里的“设计”不是狭义的造型设计，而是“创新设计”——设计作为创新链的起点。</p>
+  <blockquote>“好设计”不是把产品做得更好看，而是用创新设计把科技、工程、制造、用户需求、产业应用和社会价值，组织成可落地的解决方案。</blockquote>
+  <div class="grid grid-3">
+    <div class="card"><span class="no">01</span><h3>产品设计</h3><p>面向用户价值与工程实现的产品原创设计，强调自主知识产权与技术经济指标领先。</p></div>
+    <div class="card"><span class="no">02</span><h3>系统设计</h3><p>从产品到装备、从单机到产线的系统级设计，包括智能制造系统设计与整体解决方案。</p></div>
+    <div class="card"><span class="no">03</span><h3>工艺流程设计</h3><p>工艺创新与流程再造，让技术发明真正转化为可制造、可量产、可竞争的产业能力。</p></div>
+    <div class="card"><span class="no">04</span><h3>绿色低碳设计</h3><p>面向可持续发展的设计实践，服务制造业绿色转型与高质量发展。</p></div>
+    <div class="card"><span class="no">05</span><h3>新技术驱动设计</h3><p>人工智能、大数据、机器人等新技术驱动的创新设计，面向未来产业形态。</p></div>
+    <div class="card"><span class="no">06</span><h3>产业化闭环</h3><p>从技术发明到产业应用的完整链条——设计是制造和创造的先导与蓝图。</p></div>
+  </div>
+</section>
+
+<section id="founders">
+  <div class="sec-head"><span class="sec-idx">03 / FOUNDERS</span><h2 class="sec-title">两位院士的推动</h2></div>
+  <p class="sec-desc">在中国工程院《创新设计发展战略研究》重大咨询项目基础上，路甬祥院士、潘云鹤院士推动将“创新设计”从战略研究、政策建议，进一步转化为面向产业界、工程界和社会公众的实践平台。</p>
+  <div class="grid grid-2">
+    <div class="person">
+      <div class="avatar">路</div>
+      <div>
+        <h3>路甬祥 院士</h3>
+        <div class="role">咨询项目组长 · 奖项共同发起人</div>
+        <p>关注创新设计对制造强国、工程科技和产业升级的牵引作用。他强调：设计是制造和创造的先导与蓝图，设计能力关系到一个国家从跟踪模仿走向自主创新、开放引领的能力。</p>
+      </div>
+    </div>
+    <div class="person">
+      <div class="avatar">潘</div>
+      <div>
+        <h3>潘云鹤 院士</h3>
+        <div class="role">咨询项目副组长 · 奖项共同发起人</div>
+        <p>强调创新设计研究成果不能只停留在咨询报告层面，还应向设计界、产业界和社会公众传播。“好设计奖”由此承担起传播创新设计理念、发现优秀案例、推动产业实践的功能。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="award">
+  <div class="sec-head"><span class="sec-idx">04 / AWARD</span><h2 class="sec-title">评什么，导向什么</h2></div>
+  <p class="sec-desc">好设计奖偏向“重大科技成果 + 产业应用 + 创新设计”，而非纯视觉表达。设立奖项的目的不是单纯办比赛，而是构建创新设计的传播与示范机制。</p>
+  <div class="grid grid-3" style="margin-bottom:16px">
+    <div class="card"><span class="no">GOLD / SILVER</span><h3>金奖 · 银奖</h3><p>表彰在制造业创新设计中作出突出贡献、具有重大工程价值与示范意义的组织和个人。</p></div>
+    <div class="card"><span class="no">ELITE</span><h3>菁英奖</h3><p>面向青年创新人才，体现奖项对青年设计与工程力量的培养导向。</p></div>
+    <div class="card"><span class="no">MODEL</span><h3>示范机制</h3><p>通过典型案例告诉企业和社会“什么是好设计”，推动设计从外观层面进入研发、制造、系统工程与产业升级层面。</p></div>
+  </div>
+  <div class="grid grid-2">
+    <div class="card"><span class="no">FOCUS</span><h3>评奖关注</h3><p>产品设计、系统设计、工艺流程设计；原始创新、集成创新、颠覆式创新；自主知识产权；技术水平和主要技术经济指标领先。</p></div>
+    <div class="card"><span class="no">VALUE</span><h3>价值导向</h3><p>经济效益和社会效益、市场竞争力，以及对产业升级和制造业高质量发展的示范价值。</p></div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="sec-head"><span class="sec-idx">05 / CONTEXT</span><h2 class="sec-title">与国际设计奖有何不同</h2></div>
+  <p class="sec-desc">好设计奖不是国际设计奖的简单中国版本，而是具有中国制造强国战略背景的创新设计科技奖项。</p>
+  <div class="table-wrap">
+    <table>
+      <tr><th style="width:160px">维度</th><th>红点 / iF / G-Mark 等国际奖</th><th>好设计奖</th></tr>
+      <tr><td>核心侧重</td><td>产品体验、商业化、品牌、造型、用户价值与设计表达</td><td>重大科技成果、工程科技含量、系统设计与工艺创新</td></tr>
+      <tr><td>战略背景</td><td>设计与消费市场</td><td>《中国制造2025》与制造强国战略</td></tr>
+      <tr><td>创新导向</td><td>设计表达与体验创新</td><td>中国自主创新、自主知识产权、产业链升级</td></tr>
+      <tr><td>链条覆盖</td><td>偏重产品端</td><td>从设计到制造、应用、产业化的完整闭环</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="refs">
+  <div class="sec-head"><span class="sec-idx">06 / SOURCES</span><h2 class="sec-title">主要公开资料</h2></div>
+  <p class="sec-desc">本站内容均基于以下公开来源整理。</p>
+  <div class="refs">
+    <a href="https://cgd.cmes.org/about/aboutView" target="_blank" rel="noopener"><span class="idx">01</span><span class="t">好设计官网：关于大赛</span><span class="domain">cgd.cmes.org ↗</span></a>
+    <a href="https://www.cmes.org/notice/ad8fa1659ad84a36b49ee6bf2a02328d.html" target="_blank" rel="noopener"><span class="idx">02</span><span class="t">中国机械工程学会：关于开展 2026 年度第十一届好设计奖提名工作的通知</span><span class="domain">cmes.org ↗</span></a>
+    <a href="https://www.cmes.org/dynamic/17822366521442c8838d2b4172a6d553.html" target="_blank" rel="noopener"><span class="idx">03</span><span class="t">中国机械工程学会：好设计十周年座谈会在杭州召开</span><span class="domain">cmes.org ↗</span></a>
+    <a href="https://www.cmes.org/dynamic/760c7bace23a4847a97c61a6d39246ea.html" target="_blank" rel="noopener"><span class="idx">04</span><span class="t">中国机械工程学会：路甬祥《设计：制造和创造的先导和蓝图》</span><span class="domain">cmes.org ↗</span></a>
+    <a href="https://www.gov.cn/zhengce/zhengceku/2015-05/19/content_9784.htm" target="_blank" rel="noopener"><span class="idx">05</span><span class="t">国务院：《中国制造2025》</span><span class="domain">gov.cn ↗</span></a>
+    <a href="https://news.sciencenet.cn/htmlnews/2016/5/347398.shtm" target="_blank" rel="noopener"><span class="idx">06</span><span class="t">科学网 / 中国科学报：中国好设计背后的科学家推手</span><span class="domain">sciencenet.cn ↗</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="row">
+    <div>好设计 GOOD DESIGN — 获奖档案采集于 2026-08 · 来源:<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网展览中心</a>;内容基于公开资料整理</div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger = document.getElementById('burger');
+  var drop = document.getElementById('drop');
+  if (burger) burger.addEventListener('click', function(){ drop.classList.toggle('open'); });
+  var urlParams = new URLSearchParams(location.search);
+
+  /* ---------- 滚动渐现 ---------- */
+  var revealEls = document.querySelectorAll('.card, .tl-item, .person, blockquote, .table-wrap, .refs a');
+  revealEls.forEach(function(el){ el.classList.add('reveal'); });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); }
+      });
+    }, {threshold: .08});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('on'); });
+  }
+
+
+})();
+</script>
+<script src="copilot.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>基于苏州轨道交通五号线工程的智能车辆研制 · 2021提名奖 · 好设计</title>
+<meta name="description" content="（1）设计目的：苏州轨道交通五号线工程是苏州轨道交通“十三五”期间规划建设的一条重要轨道交通线路，是当下全自动驾驶技术蓬勃发展大趋势下的领头项目，也是江苏省内第一条全自动驾驶项目，按照全自动驾驶标准最高自动化等级GOA4进行设计研制，通过成">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E6%8F%90%E5%90%8D%E5%A5%96&amp;year=2021">← 返回 2021 年提名奖名录</a>
+  <div class="kicker"><span class="lv other">提名奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>基于苏州轨道交通五号线工程的智能车辆研制</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">中车南京浦镇车辆有限公司苏州市轨道交通集团有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">钱曙杰,王俊伟,陈志,时蒙</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202101314</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>（1）设计目的：苏州轨道交通五号线工程是苏州轨道交通“十三五”期间规划建设的一条重要轨道交通线路，是当下全自动驾驶技术蓬勃发展大趋势下的领头项目，也是江苏省内第一条全自动驾驶项目，按照全自动驾驶标准最高自动化等级GOA4进行设计研制，通过成功执行，实现完全自主掌握GOA4等级自主化全自动驾驶车辆技术，具有重要的行业技术引领作用。（2）设计创新：除满足无人值守的全自动驾驶运用需求，车辆在列车自动化、安全性、可靠性、智能化等多方面进行了创新性设计与提升，主要体现如下：1.列车自动化水平更高，可实现所有电气子系统自检和自检状态反馈，可按照远程指令实现自动唤醒和休眠，相比以往列车，自动化程度更高且更节能；2.列车安全冗余设计更全面，采用MVB控制主网+以太维护网双网设计，网络系统由浦镇公司自主设计。车辆设置“司机眼”系统，具备列车运行前方障碍物探测、列车车门和屏蔽门之间的障碍物探测（简称二门防夹）功能；3.列车可靠性更高，采用网络化、智能化、高可靠性、长寿命的逻辑控制单元（LCU）代替传统的继电器有触点硬接线控制系统；4.列车智能化程度更高。配置有公网监测系统、被动障碍物探测系统、主动障碍物检测系统等，全方位监控车辆状态；5.司机室空间设计更灵活。本车辆创新使用了司机室隔间移门；6.车辆内外饰工业设计柔美灵动，外观造型流畅自然，视觉效果简约现代且具有江南水乡的柔美灵动之感。（3）设计价值：通过苏州轨道交通五号线工程的智能车辆研制，深入研究了全自动驾驶车辆技术，研发了全自动车辆控制技术，进一步增强了城市轨道交通系统装备的功能和性能，该项目的成功研制，填补了全自动驾驶地铁列车在江苏省内的应用空白，树立了良好的标杆，为省内甚至国内全自动驾驶地铁列车的快速发展奠定了基础，具有积极的示范作用和重要的战略意义。据不完全统计，“十三五”期间通过全自动驾驶项目的建设，可以带来相关产业链供应商产值近8000亿元，同时全自动驾驶项目的建设，可拉动相关工程基建及数字化产业提升。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>基于苏州轨道交通五号线工程的智能车辆研制，是按照全自动驾驶标准最高自动化等级GOA4进行自主化设计，能够实现无人值守的全自动驾驶运营需求，车辆设计亮点主要体现在以下方面：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>列车自动化水平更高。列车可实现可以实现自动唤醒、自动自检、自动发车、自动洗车、自动正线运行、自动停站、自动开关车门、自动折返、自动休眠、故障情况下自动恢复等功能。牵引辅助系统故障可远程复位、车门对位隔离、跳跃停车、实用的远程控制、微断复位等功能。可实现所有电气子系统自检和自检状态反馈，可按照远程指令实现自动唤醒和休眠，相比以往列车的做法是每天运营结束后处于热备状态（即不休眠）才便于次日的运营，本车辆自动化程度更高且更节能。</div></div><div class="p-li"><span class="p-mk">2</span><div>列车安全冗余设计更全面。列车采用MVB控制主网+以太维护网双网设计，网络系统由浦镇公司自主设计，通信网络由独立冗余的MVB总线构成，维护网络采用以太网，用于设备维护、车载数据的下载以及故障信息传输。列车有完善的智能监测体系，主动预警、保护车辆安全。网络系统安全功能安全完整性等级达到SIL2级。车辆设置“司机眼”系统，具有列车运行前方障碍物探测、列车车门和屏蔽门之间的障碍物探测（简称二门防夹）功能，同时在底架障碍物检测装置旁设置摄像机。该系统实时监控障碍物信息，当探测到障碍物，将提示信息发给TCMS，同时通过WIFI将相关信息实时传送给OCC。列车停站时，车门和屏蔽门之间缝隙探测到人或物品时，会让列车保持静止不发车，以保证旅客和列车的安全。</div></div><div class="p-li"><span class="p-mk">3</span><div>列车可靠性更高。列车采用网络化、智能化、高可靠性、长寿命的逻辑控制单元（LCU）代替传统的继电器有触点硬接线控制系统，更好的保障地铁列车的安全运行、免维护和高效检修。</div></div><div class="p-li"><span class="p-mk">4</span><div>列车智能化程度更高。列车还配置弓网检测系统、被动障碍物探测系统、主动障碍物检测系统、独立的脱轨检测系统、烟火报警系统、轴温监测、走行部监测系统等，全方位监控车辆的状态。</div></div><div class="p-li"><span class="p-mk">5</span><div>司机室空间设计更灵活。本车辆创新灵活设计的司机室隔间移门：司机室隔间首次采用移门的型式，在全自动行驶时，移门处于常开状态，净开度为1500mm。在需要有人驾驶时，可随时将隔间移门关闭，并在司机室内部锁闭，将客室区域和司机室区域隔离开。</div></div><div class="p-li"><span class="p-mk">6</span><div>车辆内外饰工业设计柔美灵动。外观造型流畅自然，车身点缀优雅高贵的桃红色带体现苏州5号线的线路色，搭配富有现代感的深灰色，整体色彩丰富，视觉效果简约现代且具有水乡的柔美灵动之感。客室内部整体色彩与外观呼应，内饰侧顶板的内凹造型增加了车厢的空间感，座椅采用分色形式，通过流畅的线条体现苏州水乡的柔美特征，凸显了车辆的现代感和江南水乡的灵动感。</div></div></div></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E6%8F%90%E5%90%8D%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%9F%BA%E4%BA%8E%E8%8B%8F%E5%B7%9E%E8%BD%A8%E9%81%93%E4%BA%A4%E9%80%9A%E4%BA%94%E5%8F%B7%E7%BA%BF%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%99%BA%E8%83%BD%E8%BD%A6%E8%BE%86%E7%A0%94%E5%88%B6%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%9F%BA%E4%BA%8E%E8%8B%8F%E5%B7%9E%E8%BD%A8%E9%81%93%E4%BA%A4%E9%80%9A%E4%BA%94%E5%8F%B7%E7%BA%BF%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%99%BA%E8%83%BD%E8%BD%A6%E8%BE%86%E7%A0%94%E5%88%B6" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「基于苏州轨道交通五号线工程的智能车辆研制」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%9F%BA%E4%BA%8E%E8%8B%8F%E5%B7%9E%E8%BD%A8%E9%81%93%E4%BA%A4%E9%80%9A%E4%BA%94%E5%8F%B7%E7%BA%BF%E5%B7%A5%E7%A8%8B%E7%9A%84%E6%99%BA%E8%83%BD%E8%BD%A6%E8%BE%86%E7%A0%94%E5%88%B6" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「基于苏州轨道交通五号线工程的智能车辆研制」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-n05.html"><span class="d">← 上一项</span>加压循环流化床煤气化成套技术及装备</a>
+    <a class="next" href="2021-n07.html"><span class="d">下一项 →</span>“破岩专家”薄煤层智能采煤机</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

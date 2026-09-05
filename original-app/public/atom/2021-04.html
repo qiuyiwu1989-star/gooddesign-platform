@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>隧道联络通道掘进机 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-04.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-04</div>
+  <h1>隧道联络通道掘进机</h1>
+  <div class="meta-line"><b>2021 年度金奖</b><span>中铁工程装备集团有限公司</span>
+  <span class="grade grade-B">B</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 金奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中铁工程装备集团有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">陈昆鹏,王小涛,孙磊,张树祺</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 工程装备（金奖领域标签映射，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>随着城市地下空间开发日益精细化、网络化，需要在既有隧道中建设联络通道，依据《地铁设计规范》：“两条单线区间隧道之间应设联络通道，相邻联络通道的距离不大于600m”，仅轨道交通领域联络通道的建设体量就十分庞大。传统隧道联络通道采用矿山法开挖，存在造价高、风险大、工期长等问题，而采用机械法施工，设备需要解决弧形管片切削、始发接收端主隧道支撑、狭窄空间整机系统集成三大难题。</p><p>项目组围绕上述难题，历经数年“产学研用”协同攻关，突破了隧道联络通道掘进机关键技术，自主研发了系列联络通道掘进机并实现产业化。核心创新如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>发明了空间曲面隧道管片开挖技术</div></div></div><p>基于不同类型刀盘切削弧形管片时的受力分析，发明了锥形仿形刀盘结构；根据不同材料及掘进参数对管片切削效率影响规律，探索出切削刀具最优布置方式及控制参数；同时发明了具备载荷顺应性的紧凑型驱动及其控制技术，最终解决了主隧道凹凸弧形管片切削难题，实现强度70MPa的玻璃纤维筋混凝土管片的切削，平均用时6h，较传统破除方法效率提升5倍。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>突破了移动式管片预应力支撑及监控技术</div></div></div><p>构建了主隧道受力计算模型，揭示出耦合作用下主隧道变形规律，发明了移动式管片预应力支撑系统，实现了始发接收端主隧道管片预应力支撑，开发了管片预应力监测与控制系统，实现支撑系统实时响应与应力控制，保证主隧道在施工过程中结构的安全与稳定，主隧道变形≤10mm，满足设计规范要求。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>发明了集约空间下的整机系统集成技术</div></div></div><p>研制了集开挖、出渣、主隧道支护等系统于机动平台的集约化整机，基于推力、扭矩的变化特性，研制出曲面连接的始发接收密封套筒，首创了主梁回转式拼装机及其控制系统，实现狭小空间下管片高效拼装，最终解决了狭窄隧道内的掘进机始发、掘进及接收难题，单条隧道平均掘进时间30天，与传统工法相比，效率提升4倍。</p><p>基于上述创新，研制出隧道联络通道掘进机，形成了系统化设计制造方法与技术，授权专利14项，软件著作权2项，其中整机专利获得第二十一届国家专利奖金奖，经中国中铁专家组鉴定整机技术达到世界领先水平。</p><p>成果转化联络通道掘进机10余台套，应用于国内外8个城市50余条联络通道掘进施工，为联络通道施工提供了新的解决方案，促进了地下空间开发新工法与新设备的协同创新，推动了隧道和地下空间开发领域的巨大进步。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>主要创新点一：发明了空间曲面隧道管片开挖技术</p><p>【技术难点】刀盘切削主隧道既有弧形管片，切削轨迹形状复杂，且管片强度高。刀盘切削管片过程中，刀具与管片不能保证全接触，刀盘容易偏载，对刀盘结构强度安全性造成影响。同时刀盘冲击载荷大，对驱动设计具有特殊要求。</p><p>【研究成果】基于不同类型刀盘切削弧形管片时的受力分析，发明了锥形仿形刀盘结构；根据不同材料及掘进参数对管片切削效率影响规律，探索出切削刀具最优布置方式及控制参数；同时发明了具备载荷顺应性的紧凑型驱动及其控制技术，最终解决了主隧道凹凸弧形管片切削难题。</p><p>（1）基于不同类型刀盘切削弧形管片时的受力分析，发明了锥形仿形刀盘结构。刀盘结构形式不同可分为以下几种类型：垂直平面型、穹顶型、收缩型、倾斜型。本项目设计需考虑空间的限制与不同刀盘受力情况。平面和收缩型的刀盘周边空间占用较大，结构受力方面，根据有限元分析平面型和收缩型的刀盘结构受力能力差。因此平面和收缩型的刀盘不适用于本项目联络通道空间曲面管片开挖。穹顶型的刀盘结构形式理论上适用于弧形混凝土管片的切削，在此基础上，依据联络通道施工工况及受力分析，发明出适用于弧形管片的锥形仿形刀盘结构。</p><p>（2）探索了切削刀具最优布置方式及控制参数，依托掘进模态综合实验台开展联络通道用盾构机刀盘模拟切削实验，验证刀盘结构及刀具配置方案是否合理及切削过程中姿态及振动情况。分别以垂直和水平状态针对各样岩样以不同材质的刀具、刀间距布置和不一样的破岩切削速度、进给量进行实验，进一步统计分析出不同刀具参数导致的破岩效率和刀具寿命，为相应的工程配置不同材质的刀具及布置，满足实际施工的需要。经过试验分析，锥形刀盘刀具布置对玻璃纤维筋具有足够的切断能力，与以往经验相比，切削效果优于平面刀盘。锥形刀盘切割玻璃纤维筋时，纤维筋的切断尺寸主要受纤维筋布置方式的影响。通过分析切割弧形板后刀具的磨损情况，评估该刀盘的刀具的破岩能力。</p><p>（3）发明了具备载荷顺应性的紧凑型驱动及其控制技术，联络通道用掘进机驱动分布形式不同于常规盾构，由于主机长度受始发、接收空间的限制，主机内布置高度集成。另外，联络通道施工在进出洞时需切削混凝土管片，为适应高强度管片切削，主驱动需要具有较高扭矩和较强稳定性。为适应联络通道掘进机高功率密度、大扭矩、高稳定性的特点，主驱动设计采用中心轴驱动，能够满足集约化设计要求，同时采用电比例闭式液压系统驱动方式，通过对比刀盘扭矩曲线和液压系统压力曲线，验证了该驱动对交变载荷的适应能力强，响应时间短、超调量小。</p><p>基于以上技术成功研制出能够适应空间曲面管片开挖系统，最终解决了主隧道凹凸弧形管片切削难题，实现强度70MPa的玻璃纤维筋混凝土管片的切削，平均用时6h，较传统破除方法效率提升5倍。</p><p>主要创新点二：突破了移动式管片预应力支撑及监控技术</p><p>【技术难点】在联络通道施工的过程中，主隧道管片破损之后，管片会受到土体压力作用，而且当联络通道盾构机在开挖联络通道时，其推进缸所产生的推力会施加在主隧道管片内壁上，为了保证主隧道结构稳定，需要在管片内壁面上设置一用于防止其变形的管片稳定支撑装置。</p><p>【研究成果】构建了主隧道受力计算模型，揭示出耦合作用下主隧道变形规律，发明了移动式管片预应力支撑系统，实现了始发接收端主隧道管片预应力支撑，开发了管片预应力监测与控制系统，实现支撑系统实时响应与应力控制，保证主隧道在施工过程中结构的安全与稳定。</p><p>（1）揭示出耦合作用下主隧道变形规律，发明了移动式管片预应力支撑系统。通过构建主隧道受力计算模型，根据主隧道不同加载情况进行分析，揭示出耦合作用下主隧道变形规律。基于主隧道变形规律，发明了移动式管片预应力支撑系统。该系统包括外部支撑撑靴体系、内支撑台车体系和用于控制外部支撑撑靴伸缩的液压系统以及电气控制系统，外部支撑撑靴体系主要包括上、下、左、右四部分支撑撑靴，对各个支撑撑靴的结构稳定性需要进行有限元分析，以确保整个联络通道施工过程的安全性。当管片稳定支撑结构在主隧道内部移动时，外部支撑撑靴通过油缸呈现回缩状态以方便内支撑台车体系的运输，当放置于内支撑台车体系上的主机系统运输至始发洞门时，外支架可通过安装于内支撑台车体系上的油缸将其撑紧于主隧道管片的内壁面上。</p><p>（2）开发了管片预应力监测与控制系统，实现支撑系统实时响应与应力控制。当管片结构破坏系统受力状态发生变化时，液压系统压力升高，内支撑环支撑力变化可通过液压系统压力传感器输入到控制系统。控制系统通过继电器、接触器控制高压支撑泵、辅助泵，同时通过传感器采集支撑系统各个油缸位移、压力，并将数据传输给上位机和地面监控系统。上位机界面显示顶撑系统各个油缸的压力、位移，同时可以通过控制台、设置各个油缸的压力比，来实现对各个油缸的单独控制。</p><p>通过移动式管片预应力支撑系统保证主隧道在施工过程中结构的安全与稳定，经现场工程应用监测主隧道变形≤10mm，满足规范要求。</p><p>主要创新点三：发明了集约空间下的整机系统集成技术</p><p>【技术难点】联络通道掘进机需要在既有的主隧道中进行施工，空间有限，同时设备采用T型始发，整机需要针对开挖、出渣、以及物料转运进行针对性设计，满足狭窄空间始发与掘进。</p><p>【研究成果】研制了集开挖、出渣、主隧道支护等系统于机动平台的集约化整机，基于推力、扭矩的变化特性，研制出曲面连接的始发接收密封套筒，首创了主梁回转式拼装机及其控制系统，实现狭小空间下管片高效拼装，最终解决了狭窄隧道内的掘进机始发、掘进及接收难题。</p><p>（1）研制了集开挖、出渣、主隧道支护等系统于机动平台的集约化整机，基于主隧道空间结构，采用集约化、模块化设计，实现开挖、出渣、支护、拼装、推进、密封、物料转运等系统集成。创新性的将盾构法和顶管法进行融合，采用模块化设计，施工单位可根据联络通道的线型和左右线间距，通过模块组合实现不同工法的灵活选择。</p><p>（2）研制出曲面连接的始发接收密封套筒，基于套筒直径和壁厚随推力、扭矩的变化特性，研制了曲面连接的始发接收密封套筒。始发钢套筒采用半封闭式设计，掘进过程中尾刷压缩在管片上，形成3道密封腔保证套筒内密封性。接收套筒为全封闭式结构，钢套筒后在钢套筒内回填砂土，预加一定压力，实现套筒内外压力平衡，主机出洞时不会出现压力突变而造成隧道结构失稳。由于联络通道在既有隧道内始发，联络通道用始发和接收钢套筒需与既有隧道进行连接，连接面为相贯曲面，套筒针对性的设计为曲面相贯法兰。</p><p>（3）首创了主梁回转式拼装机及其控制系统。创新性采用主梁回转式拼装机结构，解决狭小空间设备布置及管片拼装机难题。开发半自动拼装系统，采用无线蓝牙控制，提高了拼装自动化水平。</p><p>基于上述创新，研制出集约化隧道联络通道掘进机，解决了狭窄隧道内的掘进机始发、掘进及接收难题，单条隧道平均掘进时间30天，与传统工法相比，效率提升4倍。</p><p>【综上所述】该项目突破了联络通道掘进机整机关键技术，具备完全自主知识产权，具备工法安全、成洞质量好、施工效率高、环境友好、资源节约等五个方面优势。为联络通道施工提供了新的技术选型，促进了地下空间开发新工法与新设备的协同创新。</p></div>
+  <div class="sec-h"><span class="no">03</span><h2>图集</h2><span class="st st-ok">官方档案</span></div><div class="gal"><img loading="lazy" src="../cases/gal/2021-04-0.jpg" alt="隧道联络通道掘进机"><img loading="lazy" src="../cases/gal/2021-04-1.jpg" alt="隧道联络通道掘进机"><img loading="lazy" src="../cases/gal/2021-04-2.jpg" alt="隧道联络通道掘进机"></div>
+  <div class="sec-h"><span class="no">04</span><h2>设计五维</h2><span class="st st-draft">内容团队人工编目 · 解读非官方评价</span></div><div class="dims"><div class="dim"><div class="dim-h"><span class="dim-n">科技</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>隧道联络通道掘进机,机械法替代矿山法</p></div><div class="dim"><div class="dim-h"><span class="dim-n">艺术</span><span class="dim-s">2/5</span></div><div class="dim-bar"><i style="width:40%"></i></div><p>掘进装备</p></div><div class="dim"><div class="dim-h"><span class="dim-n">人本</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>城市地下联络通道建设更安全更省时</p></div><div class="dim"><div class="dim-h"><span class="dim-n">商业</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>地铁联络通道建设体量庞大</p></div><div class="dim"><div class="dim-h"><span class="dim-n">文化</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>城市地下工程装备创新代表</p></div></div>
+  
+  
+  
+  
+  <div class="sec-h"><span class="no">07</span><h2>权威溯源</h2><span class="st st-ok">人工核选 · 检索于 2026-08-09</span></div><div class="srcs"><a class="srclink" href="http://www.sasac.gov.cn/n4470048/n22624391/n26705666/n26705673/n26705740/c26791889/content.html" target="_blank" rel="noopener">隧道联络通道掘进机 - 国务院国有资产监督管理委员会</a></div>
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 B（7 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

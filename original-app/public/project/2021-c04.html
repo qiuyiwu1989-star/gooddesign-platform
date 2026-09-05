@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>多环境履足变形式巡检机器人 · 2021创意奖 · 好设计</title>
+<meta name="description" content="本设计研发的无人控制、无轨道、线缆、GPS辅助的仿生履足变形式多环境巡检机器人致力于解决传统人工巡检的缺陷,克服各种恶劣的环境条件,为智能化无人化巡检提供新的思路。
+1.设计目的
+传统人工巡检使用看、触、听、嗅等方式,主要通过人的感官对设备">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E5%88%9B%E6%84%8F%E5%A5%96&amp;year=2021">← 返回 2021 年创意奖名录</a>
+  <div class="kicker"><span class="lv other">创意奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>多环境履足变形式巡检机器人</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">太原理工大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">田利强,吕磊,申心雨,杨俊</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202104460</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>本设计研发的无人控制、无轨道、线缆、GPS辅助的仿生履足变形式多环境巡检机器人致力于解决传统人工巡检的缺陷,克服各种恶劣的环境条件,为智能化无人化巡检提供新的思路。</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>设计目的</div></div></div><p>传统人工巡检使用看、触、听、嗅等方式,主要通过人的感官对设备进行简单定性判断。巡检情况完全取决于巡检工人的状态,主观性较大，无法预测即将发生的故障，容易造成误检和漏检，将给设备和安全生产带来各种各样的安全隐患。此外，超长的输电线路；恶劣的井下环境；有毒物质弥漫的化工场所；缺氧、极寒的高原环境等无时无刻挑战着巡检工人们的生命安全。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>设计创新</div></div></div><p>本设计应上述问题而生，具有超前的设计理念，仿照生物爬行和人体腿部结构设计了“履-足”行走机械结构，根据地形情况、实际使用要求，在履带式与足式行走方式之间自由切换。同时机器人还可根据不同的巡检环境搭载不同的智能传感检测设备，上传反馈超长输电线路故障；实时监测井下的瓦斯、粉尘浓度以及特种设备温度等。此外，机器人还能克服野外或井下GPS信号弱的问题，运用激光雷达通过SLAM算法建立巡检环境的二维栅格地图，然后在栅格地图中通过路径规划算法得到一条经过所有巡检设备的路径，最后通过路径跟踪算法控制机器人进行跟踪，到达每一个待巡检设备，以高效、创新性的算法保证了巡检的准确。</p><p>在商业创新方面，国内外有各个领域的多种恶劣生产环境需要智能巡检机器人填补空缺、代替人工，保障生产，因此智能巡检机器人有着很大的市场前景与社会引领作用。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>设计价值</div></div></div><p>将巡检机器人应用在多环境之一的煤矿中，根据国家煤炭工业协会发布的《2020煤炭行业发展年度报告》，在“十四五”末全国煤矿数量控制在4000处左右。根据《太原市煤矿安全生产管理机构设置人员配备暂行规定》每处煤矿（以单掘进工作面、三班制为例）至少需要安全监测监控工2人/班；瓦斯检查工1人/班；安全检查工1人/班，安全巡查至少由3人组成，即每一处煤矿至少需要安全巡检人员15人，假设每位工人一年工资为6万元，则全国所有煤矿一年用于巡检的费用为360000万。若使用巡检机器人代替巡检工人，则可产生大量节支。</p><p>本设计依托太原理工大学寇子明团队申请国家专利1项，软件著作权1项，获得全国研究生机器人创新设计大赛二等奖1项。本发明成员皆来自寇子明团队，拥有以上成果的使用权与解释权。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>需求创新</div></div></div><p>安全生产一直是创造良好的经济效益与社会效益的前提与基础，而任何一个生产过程都不是绝对安全的，无论在管理还是设备运行中都隐藏着安全隐患，尤其是煤矿、电力设施、化工企业等一些本就有着较为恶劣、复杂生产环境等的领域。因此，在这些生产领域，必须投入大量巡检工人进行不间断的巡检，以保证生产的安全进行。然而，粉尘、极寒、缺氧、污染、毒物侵蚀着供人们的健康，工人误检、漏检又严重威胁着生产的顺利进行。因此面向安全生产的需要，设计了一款履足变形式巡检机器人以代替工人对多个环境的设备进行巡检，节约大量成本的同时也保证了生产的安全进行。 使用巡检机器人代替工人，响应了国家“机械化换人，自动化减人”的号召，符合科技发展的需要，顺应智能化工业的发展潮流。有利于跟进全社会安全生产的步调，满足经济效益需求的同时又能起到很好的示范和引领作用。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>功能工艺创新</div></div></div><p>本发明的履足变形巡检机器人基于仿生原理由履足变形机构、摄像头云台、激光测距平台、车架、蓄电池、底层驱动板、多种传感器和树莓派等部分组成。能够在多种生产环境中进行巡检，及时发现安全隐患，提升巡检质量，有效代替人工巡检。机器人本体结构及监测方案创新：</p><p>(1)机器人行走功能创新设计：本次设计的机器人有履带式和足式两种运动形式。履带式适合爬坡、和碎石等崎岖地面的行走；四足行走则可跨越障碍，机器人可以根实际工况来变换运动形式。此设计创新的采用了仿人腿结构和仿生物爬行机制，具有首创性。通过髋关节、膝关节和踝关节的相对转动实现了由履带式到足式的变换，四足交替前进实现了爬行。因此机器人可以像爬行动物一样倾诉跨越崎岖地形。</p><p>（3）多样化的检测功能：机器人搭载了智能传感检测设备，主要功能有危险检测报警、全局定位和导航、红外线感应、井下工况视觉成像等，在巡检环境下作业时，随时监测生产环境中的瓦斯、粉尘、有毒有害气体的浓度以及设备温度等，避免发生瓦斯爆炸、粉尘爆炸、失火、毒气泄漏等危险事故。</p><p>（4）实现了多环境下巡检机器人在无人控制，无轨道、线缆和GPS辅助的情况下对多环境设备进行巡检，即使在野外、井下，机器人也能够工作。</p><p>（5）体控技术：二自由度云台由两个舵机进行控制，分别控制x方向与y轴方向，可以实现全方位视角的捕捉。通过VR眼镜上的四轴陀螺仪，将头部的角度转动信息传输mcu上，经由mcu的实时计算，将处理所得实时地传输到履带足式机器人arduinonano控制板上，从而控制舵机的转动。</p><p>（6）数据超远距离传输：传统WiFi通信功耗大、可靠性不强、性能低以及WiFi设备的睡眠唤醒时间一般需要3～5秒的时间。采用433mHZ频段数据传输，数据传输距离达到1000m以上，而且具有灵敏度较高、衰减小、绕射性较强以及抗干扰能力强的特性，</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>算法集成创新：</div></div></div><p>(1)激光SLAM建图算法 。本机器人使用激光雷达与SLAM算法结合能够对井下环境实现较为精确的地图构建的同时也实现对巡检机器人位姿的估计与准确定位。</p><p>(2)PRM路径规划算法 PRM路径规划算法可以在建立环境的地图后，自动生成一条经过所有待巡检设备的最短路径，同时，生成路径的同时，还能兼顾路面危险，进行有效的规避。</p><p>(3)Pure Persuit路径跟踪算法 在已经建立好巡检环境地图中规划出一条能够抵达所有待巡检设备的最短路线之后，使用Pure Persuit算法来让巡检机器人自动跟踪规划好的路径，并能够在所规划的路径突遇障碍物时能够及时避障。</p><p>(4)地形感知 使用二维激光雷达与Kinect 深度相机相结合，对环境进行建图的同时对地面的崎岖度进行划分，结合崎岖度信息使用算法对路径进行深度规划，使机器人选择崎岖度最低的路径行进。</p><p>机器人将上述算法相集成，能够真正实现在无人自主的情况下对设备进行巡检。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>模块化设计创新</div></div></div><p>本设计的履足变形式巡检机器人具有很强的商业扩展性与灵活性，机器人可以搭配各种需要的传感器和采集器，应对各种生产巡检环境。因此，可以面向生产场景和生产环境，衍生一系列的机器人族。既填补了市场各个领域的空白，又保证了各行各业安全生产的需求。 此设计基于仿生原理，设计理念超前，还方便与各高校、企业开展产、学、研合作。在实际应用场景中发现问题，并进行优化；在与高校交流研发过程中进行机器人功能的不断升级。实现以科技增收，以收入反哺科技进步。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E5%88%9B%E6%84%8F%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%B1%A5%E8%B6%B3%E5%8F%98%E5%BD%A2%E5%BC%8F%E5%B7%A1%E6%A3%80%E6%9C%BA%E5%99%A8%E4%BA%BA%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%B1%A5%E8%B6%B3%E5%8F%98%E5%BD%A2%E5%BC%8F%E5%B7%A1%E6%A3%80%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「多环境履足变形式巡检机器人」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%B1%A5%E8%B6%B3%E5%8F%98%E5%BD%A2%E5%BC%8F%E5%B7%A1%E6%A3%80%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「多环境履足变形式巡检机器人」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-c03.html"><span class="d">← 上一项</span>高速公路中央绿化带智能绿篱机</a>
+    <a class="next" href="2021-c05.html"><span class="d">下一项 →</span>骨折复位与康复一体化机器人</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

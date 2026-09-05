@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>远海原油转驳核心装备关键设计制造技术 · 2023金奖 · 好设计</title>
+<meta name="description" content="石油被誉为“工业血液”，远海深水区蕴藏着全球44%和我国南海80%的油气资源。深远海油气资源开发是国家战略，浮式生产储卸油船（FPSO）和原油转驳装备（CTV）是海油开发核心装备，如何将原油从FPSO直接转驳到超大型油轮（VLCC），而无需">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%87%91%E5%A5%96&amp;year=2023">← 返回 2023 年金奖名录</a>
+  <div class="kicker"><span class="lv">金奖</span><span class="yr">· 2023 · 第八届</span></div>
+  <h1>远海原油转驳核心装备关键设计制造技术</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">广东工业大学,南通中远海运船务工程有限公司,广东中远海运重工有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">张永康,万家平,蔡灵,吴承恩,李娟</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202301107</div></div>
+  </div>
+  <div class="hero"><img src="../cases/gal/2023-05-0.jpg" alt="远海原油转驳核心装备关键设计制造技术"></div>
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>石油被誉为“工业血液”，远海深水区蕴藏着全球44%和我国南海80%的油气资源。深远海油气资源开发是国家战略，浮式生产储卸油船（FPSO）和原油转驳装备（CTV）是海油开发核心装备，如何将原油从FPSO直接转驳到超大型油轮（VLCC），而无需陆地储油库中转，一直是亟待解决的世界性难题。在国家工信部重点研发专项和国家自然科学基金等资助下，通过产学研用十多年的联合攻关，设计制造了全球首艘原油转驳装备/船（CTV）、首座圆筒形FPSO和首套“FPSO+CTV+VLCC”多浮体原油转驳系统。首次实现了将原油直接从FPSO转驳到VLCC，突破了离岸距离的限制，填补了国际空白，主要创新如下：</p><p>创新点1：提出一种无需船坞的在水上“分层制造，逐层叠加”直接制造巨型FPSO的浮态制造新方法，建立了水下旋转角度数学模型，发明了旋转角度可变的水下旋转工艺装置，形成了平台底层分段划分、扇形分段对接精度控制、逐层吊装重心控制等成套浮态制造工艺与技术，解决了船坞建造接触应力大易变形的技术难题。设计制造了世界首座圆筒型浮式生产储卸油船（FPSO），船平台主甲板直径78米，高60米，重2.8万吨，储油量40万桶。</p><p>创新点2：针对CTV整体空间狭小、管线密集、敞口式结构复杂、焊接容易变形等难点，建立了CTV复杂结构焊接变形力学模型，形成了肋板横舱壁等横向复杂构件的分段焊接变形补偿、船台合拢缝焊接变形补偿等成套工艺，解决了敞口式CTV焊接变形量大的技术难题。设计制造了世界首艘深远海原油转驳装备（CTV）：尺寸规格：长宽深89m× 20m×10m；排水量7000t。</p><p>创新点3：建立了风-浪-流耦合作用的柔性链接多浮体水动力运动数学模型，研发了基于实时监测风浪流及VLCC牵引力调整CTV主推进力及侧推力的多浮体动态定位系统。设计制造了世界首个“FPSO+CTV+VLCC”多浮体系统成套装备：7级风、流速≤1m/s、浪高≤4m，突破了远海复杂海况下将原油从FPSO直接转驳到VLCC的技术难题，原油转驳速度8000/h@10bar，比常规设备提升 50%。</p><p>授权发明专利36件，其中国际专利6件。获得中国专利奖金奖和中国发明协会创新成果奖一等奖1项。被列入国家工信部首台（套）重大装备推广应用目录。近三年新增高端装备销售额75.6亿元、新增利税7.1亿元、创汇9.9亿美元。世界首制2艘CTV已在我国权益区示范应用，在“一带一路”建设和国际能源合作国巴西水深2200 米的深海油田商业化应用，三年转驳的原油价值超1200亿美元。中央电视台、人民网、Ocean Engineering等国内外重要媒体和专业刊物纷纷报道。中央电视台报道：“中国国之重器，填补了国际空白”。国务院国资委评价：革命性简化了现有外输模式，带动了深海石油开发领域装备制造技术的发展。用户评价：历史上首次将原油直接从FPSO 转驳到VLCC。经院士专家技术鉴定委员会鉴定：“该项目成果具有自主知识产权，技术创新性强，项目成果总体技术达到国际先进水平，其中多浮体原油转驳装备技术处于国际领先水平”。成果已形成了显著的经济社会效益和国际影响力。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>（一）背景与意义</p><p>石油不仅是国家能源安全的重要保障，更被誉为“工业血液”，是现代化的工业、农业、国防军事的重要战略物资。据欧佩克估计，全球海洋石油总储量达1400-2000亿吨，其中44%在远海深水区。我国南海油气资源极为丰富，已探明石油储量达300多亿吨，是国家未来石油安全的重要保障。但是，其中80%蕴藏于远离我国陆地的远海。例如，曾母暗沙盆地石油储量达150亿吨，能保障我国使用20多年，离我国陆地达1800km，至今尚未能开发。</p><p>浮式生产储油装置(FPSO，俗称海上采油平台) 对来自海底井筒的油/气/水等混合液加工成原油。通过小型穿梭油轮（ST）或者海底管道，将原油转驳到岸上储油库，然后再将储油库中的原油转驳超大型油轮（VLCC），并运往世界各地，这称为近海原油转驳技术，离岸作业距离约300km，不能满足远海油气田开发的需求。某些国家采用近海原油转驳技术，在我国曾母暗沙盆地等南海海域大肆盗采原油，根据报道：每年盗产原油超过5000万吨。</p><p>全球行业一直在寻求将FPSO上的原油直接转驳到VLCC的新技术，但尚无成功先例。如何将原油从FPSO直接转驳到VLCC，而无需陆地储油库中转，一直是亟待解决的世界性难题，更是制约我国南海油气资源开发的主要技术瓶颈之一。</p><p>在国家工信部重点研发专项、国家自然基金等资助下，产学研用深度融合，本项目设计并开发出“FPSO+原油转驳装备（CTV）”的远海原油转驳成套装备新技术，设计制造了全球首艘原油转驳装备/船（CTV）、首座圆筒形FPSO和首套“FPSO+CTV+VLCC”多浮体原油转驳系统。首次实现了将原油直接从FPSO转驳到VLCC，突破了离岸距离的限制，填补了国际空白。授权发明专利36件，其中国际专利6件。主要创新如下：</p><p>（二）主要设计创新</p><p>创新点1：提出一种无需船坞的在水上“分层制造，逐层叠加”直接制造巨型FPSO的浮态制造新方法，建立了水下旋转角度数学模型，发明了旋转角度可变的水下旋转工艺装置，形成了平台底层分段划分、扇形分段对接精度控制、逐层吊装重心控制等成套浮态制造工艺与技术，解决了船坞建造接触应力大易变形的技术难题。研制了世界首座圆筒型浮式海上油气生产储卸平台（FPSO），平台主甲板直径78 米，高60米，重2.8万吨，储油量40万桶。</p><p>所属学科：机械制造及自动化。旁证材料：授权发明专利 18件 、实用新型专利1件，其中核心发明专利：ZL201610680577.0（附件4.4）、ZL201610806143.0（附件4.5）、ZL201610808323.2（附件4.6）、ZL201610807932.6（附件4.7）。</p><p>FPSO属于小批量个性化产品，采用船坞或者船台建造时，由于FPSO平台重量重且底部面积小，导致船坞底部坞墩的接触应力大易变形，在服役中变形释放容易产生疲劳裂纹。其次，FPSO平台建造周期一般是4～6年，一个船坞仅仅容纳一个平台建造，利用率太低，成本高。针对上述难题，本项目提出了FPSO浮态模块化制造新方法，即：以水的浮力作为支撑，直接在水上“分层制造，逐层叠加”制造巨型FPSO的新方法。具体如下：</p><p>（1）首先利用小尺寸半潜驳甲板作为底层合拢平台，将圆形FPSO底层总段分为若干层，每层分为若干个扇形分段，对在半潜驳长度方向和宽度尺寸限度内的每个分段逐一吊装，然后进行焊接合拢，见图1（a）。（2）根据建立的水下旋转角度数学模型，半潜驳下沉，使层底漂浮在水面上，利用研发的旋转角度可变的水下旋转工艺装置将半潜驳原地旋转一定的角度，使层底宽度部分转为长度方向，见图1（b）；上浮，然后继续吊装合拢其余分段和底层总段。（3）半潜驳下沉，与底层分段脱离，以底层分段作为合拢平台，以水的浮力作为支撑，逐层分段吊装，直至建造完成整个FPSO平台，见图1（c）。形成了平台底层分段划分、扇形分段对接精度控制、逐层吊装重心控制等成套浮态制造工艺与技术，解决了船坞建造接触应力大易变形的技术难题。研制了世界首座圆筒型浮式海上油气生产储卸平台，总高近60 米（18 层楼高），见图1（d）。平台主甲板直径78 米，总重2.8 万吨；最大原油处理能力44000桶/天，最大天然气处理能力1130000m3/天，最大原油存储量40 万桶，极端恶劣海况下服役寿命20年。</p><p>(a)小半潜驳甲板上建造底层 (b)下潜旋转一定的角度 (c)浮在水面上逐层建造 （d）FPSO服役照片 图1：FPSO浮态建造新方法和世界首座圆筒形FPSO创新点2：针对CTV整体空间狭小、管线密集、结构形式复杂、焊接容易变形等难点，建立了CTV复杂结构焊接变形力学模型，提出了肋板横舱壁等横向复杂构件的分段焊接变形补偿、船台合拢缝焊接变形补偿。研制了世界首艘深远海原油转驳装备（CTV）：尺寸规格：长宽深89m×20m×10m；排水量7000t；功能：原油转驳、动力定位、油轮系泊牵引。</p><p>所属学科：机械制造及自动化。旁证材料：授权发明专利 17件、实用新型专利2件，其中核心发明专利：ZL201610586893.1（附件4.1）、ZL201610685324.2（附件4.2）、ZL 202111575067.4（附件4.3）。</p><p>图2:基于固有应变法和人工智能优化算法预测焊后复杂结构的变形量和残余应力创新点3：建立了风-浪-流耦合作用的柔性链接多浮体水动力运动数学模型，研发了基于实时监测风浪流及VLCC牵引力变化来调整CTV主推进力及侧推力的多浮体动态定位系统。研制了世界首个“FPSO+CTV+VLCC”多浮体系统成套装备：7级风、流速≤1m/s、浪高≤4m，突破了远海复杂海况下将原油从FPSO直接转驳到VLCC的技术难题，原油转驳速度 8000m3 /h@10bar，比常规设备提升 50%。</p><p>所属学科：机械工程。旁证材料：授权发明专利 11件、实用新型专利1件、软件著作权3项（附件4.11），其中核心发明专利：ZL202110182612.7（附件4.8）、ZL 20210182843.8（附件4.9）、ZL20211077094.9（附件4.10）。</p><p>由于CTV结构紧小，在恶劣海况下受到强烈摇晃。建立了风-浪-流耦合作用的柔性链接多浮体水动力运动数学模型（图3），研发了基于实时监测风浪流及VLCC牵引力变化来调整主推进力及侧推力的动态定位系统，并使其能够适应全球海域中不同的水文环境和工况。研制了世界首个“FPSO+CTV+VLCC”多浮体系统成套装备（图3）：在7级风、流速≤1m/s和浪高≤4m的海况下，稳定控制住了VLCC与FPSO之间作业距离为350-400m的恒定值，从而确保了转驳的安全性。原油转驳速度达 8000m3 /h@10bar，比常规设备提升 50%。</p><p>图3：多浮体建模和世界套“FPSO+CTV+VLCC”多浮体原油转驳系统</p></div>
+  <div class="sec">图集 / GALLERY</div><div class="gal"><img loading="lazy" src="../cases/gal/2023-05-1.jpg" alt=""><img loading="lazy" src="../cases/gal/2023-05-2.jpg" alt=""></div>
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2023%E5%B9%B4%E9%87%91%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E8%BF%9C%E6%B5%B7%E5%8E%9F%E6%B2%B9%E8%BD%AC%E9%A9%B3%E6%A0%B8%E5%BF%83%E8%A3%85%E5%A4%87%E5%85%B3%E9%94%AE%E8%AE%BE%E8%AE%A1%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">延伸阅读 / CURATED（人工核选 · 检索于 2026-08-09）</div><a href="https://lnida.com/nd.jsp?id=504" target="_blank" rel="noopener"><span class="arr">↗</span><span>第八届“好设计奖”金奖获奖作品——远海原油转驳核心装备关键设计制造技术</span><span class="src">lnida.com</span></a><a href="https://cgd.cmes.org/exhibit/detail/9cb71056520f428190394f3841fbcc87" target="_blank" rel="noopener"><span class="arr">↗</span><span>远海原油转驳核心装备关键设计制造技术 - 好设计奖</span><span class="src">cgd.cmes.org</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2023-04.html"><span class="d">← 上一项</span>高耐压低摩擦新型磁性液体动密封技术</a>
+    <a class="next" href="2023-06.html"><span class="d">下一项 →</span>三维地球磁层空间等离子体环境地面模拟装置</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>纤灵——多机协同的细纱接头智能机器人系统 · 2023银奖 · 好设计</title>
+<meta name="description" content="我国的纺织规模占全球50%，环锭纺纱占全国纱线产量的80%以上，环锭纺过程中因纤维强力与张力不平衡易出现断纱，需要将断纱牵引接头以恢复正常生产。接头中纱线易断裂、扭结，自动接头成为行业难点。自上世纪60年代以来，全球纺织装备公司致力于突破自">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%93%B6%E5%A5%96&amp;year=2023">← 返回 2023 年银奖名录</a>
+  <div class="kicker"><span class="lv other">银奖</span><span class="yr">· 2023 · 第八届</span></div>
+  <h1>纤灵——多机协同的细纱接头智能机器人系统</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">东华大学</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">汪俊亮,张洁,杨钟亮,盛裕洁,何晶</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202301263</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>我国的纺织规模占全球50%，环锭纺纱占全国纱线产量的80%以上，环锭纺过程中因纤维强力与张力不平衡易出现断纱，需要将断纱牵引接头以恢复正常生产。接头中纱线易断裂、扭结，自动接头成为行业难点。自上世纪60年代以来，全球纺织装备公司致力于突破自动接头技术，但是全球仅有瑞士立达公司于2019年推出了工程样机，且形成了技术垄断。</p><p>为突破这一瓶颈问题，项目提出了多机协同的细纱接头智能机器人系统：研发了视觉检测AGV，实现了断纱的高速巡游准确识别；设计了自动接头AGV的多合一末端执行机构和柔顺控制算法，解决了纱线接头过程中易退捻、易断裂难题；搭建了“云-边-端”一体化多机协同远程调度系统，提升了多机系统综合效率。项目实现从断纱检测定位到断纱自动接头的工作，接头速度可以达到30s，看台率5000锭，对比国外机器人提高了5倍以上，提高生产效率，减轻工人劳动强度，增加产量，节约用棉和用电。并且本设备解决了夜间无人接头的的问题，日产量提升约10%，每台设备节省人工2.5人，十万锭工厂日增收1万元，具有显著的经济效益和实用价值。项目打破了国外技术垄断，建立了柔性体灵巧作业机器人的新标杆，作为核心技术之一入选2021年中国智能制造十大科技进展。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>（一）结构技术创新点：</p><p>（1）多特征融合的断纱视觉自学习检测技术。创新性提出了考虑背景颜色、空间梯度、纱线条干等多特征融合视觉检测算法，设计了断纱检测在线自学习机制，研发了环锭纺细纱长车巡游式断纱检测边缘端系统。实现了弱特征、高噪声、强动态环境下的高精度断纱检测，断纱检测准确率高达99%。</p><p>（2）多合一末端柔性执行机构。提出了基于单机械臂的绕纱、穿纱、引纱、喂纱、断纱一体化作业方法，设计了环形气流磁吸式钢丝圈定位机构、环形条柱涡旋稳流绕纱机构，实现了狭小空间环境下的单臂断纱自动接头。</p><p>（3）基于力反馈的高可靠断纱接头技术。设计了接头机器人力跟踪导纳控制模型，建立了动态环境下导纳控制器参数自适应调整策略，提出了基于状态反馈的交互力估计算法。实现了纱线易退捻、易断裂、易飘动、多涡流场情况下的高质量断纱接头，断纱接头成功率95%，接头速度30s。</p><p>（4）多机协同的高看台率机器人调度技术。提出了考虑环境状态、通道路径约束与多机共线约束下的路径生成算法，设计了“云-边-端”一体化通信架构，搭建了环锭纺工厂巡检AGV与接头AGV多机协同的云端调度系统。实现了多设备约束下的高效率云端调度，环锭纺工厂的实时监控管理。</p><p>（二）产品设计创新点:</p><p>（1）近原位预生头新接头工艺：近原锭位断纱纱管抓取，辅助纱纱头固定，环形气流装置穿钢丝圈，牵引运动张力协同控制，多功能气动剪。本工艺解决了现有引纱接头方法步骤繁琐的问题，能在断纱锭位狭小空间内完成整个接头动作，接头效率高。</p><p>（2）数字孪生技术驱动的设计方法：虚拟化物理场景，三维化装备设计，流场分析辅助参数设计，牵伸形变机理分析模型，张力控制动力学机理模型。本方法在设计建模阶段验证了产品适应性，在运行阶段保证了产品的稳定性。</p><p>（3）基于以人为本与绿色发展理念的产品外观设计：①设有五处指示灯，上部分用来提示较远用户，下部分用来不同方位的提示；②机器人中部设有减震缓冲带，可以减少运动过程中的颠簸；③伸缩门设计，可以讲机械臂完美隐藏起来，工作室自动伸出，使机体具有整体性；④机体设置了两部分的散热装置，利用热驱动形状记忆聚合物达到自动张开散热的效果。</p><p>（三）获得的主要知识产权：</p><p>8项发明专利授权，2项计算机软件著作权登记：</p><p>（1）发明专利：一种环锭纺细纱机自动接头装置及方法（授权号CN113174668B）</p><p>（2）发明专利：一种面向环锭纺细纱在线检测的视觉系统校准方法（授权号CN113802227B）</p><p>（3）发明专利：一种基于张力反馈的自动接头机器人柔顺装置（授权号CN113755978B）</p><p>（4）发明专利：一种用于环锭纺细纱自动接头的机器人末端执行机构（授权号CN113174669B）</p><p>（5）发明专利：一种用于环锭纺细纱自动接头的备用纱绕纱装置（授权号CN113604919B）</p><p>（6）发明专利：一种基于机器视觉的断纱找头装置（授权号CN11519293B）</p><p>（7）计算机软件著作权登记：棉纤维柔性作业机器调度云系统（登记号2021SR1280046）</p><p>（8）计算机软件著作权登记：面向纺织生产过程的机器人自动化生产线大数据应用平台（登记号2021SRO953602）</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2023%E5%B9%B4%E9%93%B6%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E7%BA%A4%E7%81%B5%E2%80%94%E2%80%94%E5%A4%9A%E6%9C%BA%E5%8D%8F%E5%90%8C%E7%9A%84%E7%BB%86%E7%BA%B1%E6%8E%A5%E5%A4%B4%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E7%BA%A4%E7%81%B5%E2%80%94%E2%80%94%E5%A4%9A%E6%9C%BA%E5%8D%8F%E5%90%8C%E7%9A%84%E7%BB%86%E7%BA%B1%E6%8E%A5%E5%A4%B4%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「纤灵——多机协同的细纱接头智能机器人系统」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E7%BA%A4%E7%81%B5%E2%80%94%E2%80%94%E5%A4%9A%E6%9C%BA%E5%8D%8F%E5%90%8C%E7%9A%84%E7%BB%86%E7%BA%B1%E6%8E%A5%E5%A4%B4%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「纤灵——多机协同的细纱接头智能机器人系统」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2023-s08.html"><span class="d">← 上一项</span>全自动乳腺超声机器人</a>
+    <a class="next" href="2023-s10.html"><span class="d">下一项 →</span>300MN超塑性等温锻造智能成型工艺技术与成套装备</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

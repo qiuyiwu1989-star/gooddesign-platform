@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>新舟60高性能人工增雨飞机研制 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-s14.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-s14</div>
+  <h1>新舟60高性能人工增雨飞机研制</h1>
+  <div class="meta-line"><b>2023 年度银奖</b><span>中航西飞民用飞机有限责任公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中航西飞民用飞机有限责任公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">王允,丁亚修,李鹤,余哲,杨松岩</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 航空航天（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>2012 年5 月21 日，国家发展改革委正式批复了中国气象局《新增千亿斤粮食工程东北区域人工影响天气能力建设可行性研究报告》，高性能人影作业飞机是该项目建设的核心内容，2012年11月，航空工业西安飞机工业(集团)有限责任公司与中国气象科学研究院签订了2架新舟60高性能人工增雨飞机研制合同。</p><p>新舟60高性能人工增雨飞机是国内自行研制、具有完全自主知识产权、国际上首次以人工增雨专业型号研制的具备大气科学探测、大规模联合人工影响天气作业能力的高性能多功能任务型飞机，是集云宏/微观探测与信息获取、通信指挥、催化作业及信息综合显示功能于一体的具备高、精、准大规模联合人工增雨作业和科学探测等业务能力的国家级高性能人工增雨作业平台。</p><p>主要技术创新点如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>在国内外，首次研制了集大气探测、云宏观成像、催化作业、空地信息传输、任务集成管理等五大系统与基础飞机平台为一体的高性能人工增雨飞机。首次制定了《MA60飞机加装人工增雨系统专用条件》 (SC-25-001)适航标准，并经适航当局颁布，填补了国内外空白，为后续同类飞机的研发及适航取证提供了依据。</div></div><div class="p-li"><span class="p-mk">2</span><div>针对焰条、焰弹播撒器及大气探测设备飞机外部挂载需求，开展了飞机气动布局、减阻、流场分析等气动外形优化设计及试验；通过重量平衡、局部承载优化，保障了复杂气象条件下多种挂载飞机的安全运行，保持了基础飞机平台的飞行性能。</div></div><div class="p-li"><span class="p-mk">3</span><div>首次实现了大气探测、催化作业、空地通信等多任务、多功能系统的集中控制与管理、空地信息共享与协同指挥功能；采用全机天线布局仿真分析和试验验证，解决了飞机平台与任务系统的电磁兼容、闪电防护等技术难题。</div></div><div class="p-li"><span class="p-mk">4</span><div>发明了一种面向图像处理的可重构架构平台设计方法和一种垂直滤波器的图像垂直尺寸缩小方法，实现了云宏观图像的实时处理和自动识别，增强了增雨作业条件决策和作业效果监测的智能化，提升了增雨飞机人工影响天气能力。</div></div></div><p>新舟60高性能人工增雨飞机的成功研制为我国人工增雨作业飞机的设计提供了有益的借鉴，为后续增雨飞机的发展奠定了基础，不但拓展了新舟飞机的系列化、家族化发展能力，而且填补了国内民用多任务、多功能、多用途飞机研制的空白，拥有自主知识产权，整体上达到了国际先进水平，对于提高新舟系列飞机的国内外支线航空市场份额具有显著的经济社会效益。同时对于科学开发利用空中水资源，推动“一带一路”倡议，加强生态环境建设，促进人与自然的和谐发展和社会经济的可持续发展，都具有十分重要的现实意义和深远的战略意义。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>（1） 确定了民用特种飞机的适航取证方法和新的适航标准</p><p>按照最新版适航标准CCAR-25部的要求进行了新舟60高性能人工增雨飞机的适航取证方法研究，根据任务系统设备使用情况及其对飞机安全的影响程度，对飞机平台和任务系统采取了不同的适航取证方法，创造性的提出了新舟60高性能人工增雨飞机的适航取证原则，并形成了MA60飞机加装人工增雨系统专用条件，为后续同类飞机的研发及适航取证提供了便利条件。新舟60高性能人工增雨飞机适航取证方法和专用条件的确定，对后续多用途飞机的研制具有极大的借鉴意义。</p><p>（2） 民用飞机多外挂综合优化设计技术的应用</p><p>采用总体气动及结构强度综合优化设计技术，对新舟60高性能人工增雨飞机机身上所挂载的焰条、焰弹播撒器进行了气动外形优化设计，在充分考虑气动外形、结构强度及多种大气云粒子系统安装要求的情况下，创造性的采用穿插组合式过渡梁结构，实现民用飞机机翼挂载多种外挂的功能。应用CFD技术与风洞试验相结合的方法进行了气动特性优化设计，有效的解决了飞机挂载多种外挂后不能在结冰气象条件下运行的难题，提高了飞机的气动性能和运行特性。</p><p>(3) 民用特种飞机任务系统集成技术的应用</p><p>在国内民用特种飞机上采用任务系统集成设计技术，实现了多任务、多功能的系统集中控制与管理，利用局域网及总线控制和接口设计技术，将飞机上加装的作业播撒系统、云物理探测系统、空地通信子系统的显示与控制集成到任务管理系统， 实现了任务集成显示、处理、监控，并通过通信子系统实现了机载信息与地面气象信息的交互共享和空地信息的实时互传互通。任务系统集成技术的成功应用，有效提高了飞机运行的安全性及任务系统可靠性，降低了系统维护使用难度，达到了国际同类特种飞机的先进水平。</p><p>(4) 空地一体化协同指挥提高作业效果</p><p>在增雨飞机上采用海事卫星通信技术，实现了空地信息共享、空地联合指挥，具有高、精、准大规模联合人工增雨作业和科学探测等业务能力的国家级高性能人工增雨作业平台，总体技术达到了国际先进水平，其成功研制显著提升了我国飞机人影作业能力和科技水平，为重大政治军事活动、国家粮食安全、森林防火、防灾减灾、生态建设和保护等提供了天气干预保障。</p><p>(5) 多种催化模式联合应用提高作业效果</p><p>采用碘化银焰条（适用于冷、暖云系）、碘化银焰弹（适用于较厚云体)、液氮致冷剂(适用于温度在0℃以下云体)以及吸湿性暖云催化剂(适用于温度在0℃以上云体)，四种类型的催化剂进行作业，具备冷/暖云催化作业(作业播撒系统)、增雨/消雨双向作业。不仅能使催化功效果尽量发挥到最大，又能全面覆盖不同气象条件。首次将自增压式液氮罐和真空绝热管路技术成功应用到飞机上，在国内首次成功实现了实时飞行高度下的自增压控制、播撒速率的准确控制和实时显示等功能。并通过强度、气密、安全性等设计，满足了适航要求，为液氮播撒设备在运输类飞机气密舱环境下的应用奠定了基础。自主设计的粉剂播撒设备，首次实现了自动式粉剂剂播撒技术在作业飞机上的应用，可以实现播撒速率十档调节和自动扫料。激光料位传感器的首次应用，能够实时准确监测催化剂料位余量信息。根据飞机结构特点自主研发的料箱结构，解决了粉剂的挂壁现象，根据暖云催化剂播撒轨迹设计的飞机播撒口及配套角度可调的播撒球阀，保证飞机气密性的同时，也避免对飞机舱内造成的粉尘污染。</p><p>（6） 多探侧设备综合化数据采集和处理技术的应用</p><p>自研探测信息处理机、气象数据接入设备和集成软件，取代了国外多种探测设备和处理软件，通过集成软件对多种探测设备进行统一控制，首次实现了多探侧设备综合化数据采集和处理，能够完成云微观特征精确探测、云宏观和雷达气象监测及信息综合显示，同时采集飞机平台的GPS、航姿、大气数据计算机等数据，可以将大气探测数据、云宏观数据、气象雷达数据和飞机平台数据进行综合显示和对比，数据源之间可随时切换并带入计算，得出最贴近飞机真实情况的探测数据，实现基本的数据质控计算。使用设计统一化、操作设计简洁化，最大程度的优化了探测作业人员的工作效能。</p><p>(7) 多探测设备数据分析精准催化作业技术的应用</p><p>首次在增雨作业飞机上引入多元催化潜力指数技术，根据不同大气探测设备输出的云内温度、云滴数浓度、冰晶数浓度、云凝结核数浓度、液水含量等，通过综合催化潜力模型计算出目标云的催化潜力指数，判别作业条件，自动生成催化作业方案，包括适用的催化剂种类、催化剂用量等，极大的提高了作业效率，实现智能化精准增雨催化作业。</p><p>（8) 任务系统独立智能配电技术的应用</p><p>首次在特种飞机上采用智能配电技术，将任务系统的40路直流和6路交流供电通道集成在1台智能配电箱中，各通道负载容量可根据需要，由软件进行灵活配置，提高了系统的扩展和重构能力。具备控制各任务系统设备加电、供电通道保护以及电压、电流及状态监视功能，加电过程能够根据不同的使用需求，可一键启动全部任务系统，可一键启动各子系统，也可单独启动各设备，充分考虑了用户的使用场景需求，操作灵活便捷。采用液晶屏小型化的组合面板进行供电监控与操作，替代了大气探测设备、催化作业、空地通信、任务集成等系统的大量的机械式电源开关、按钮和断路器板，节省了操作空间，极大降低了任务系统操作的复杂度。在液晶屏、触发式按钮或电源显控器主板故障情况下，仅用4个自锁式按钮，仍然能够保证任务系统的正常加电和断电，提高了系统可靠性。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>面向复杂山地地形的新型As列车及其互联互通创新设计 · 2025金奖 · 好设计</title>
+<meta name="description" content="国家《“十三五”现代综合交通运输体系发展规划》提出，“应用基于无线通信的列车控制系统，促进不同线路和设备之间相互联通”。重庆作为典型的山地城市，城市界面地形复杂，坡地、峡谷众多，是典型的“多中心组团式”形态，其特殊形态使得城市轨道交通线网中">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E9%87%91%E5%A5%96&amp;year=2025">← 返回 2025 年金奖名录</a>
+  <div class="kicker"><span class="lv">金奖</span><span class="yr">· 2025 · 第十届</span></div>
+  <h1>面向复杂山地地形的新型As列车及其互联互通创新设计</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">重庆市轨道交通（集团）有限公司,交控科技股份有限公司,北京交通大学,重庆中车长客轨道车辆有限公司,通号城市轨道交通技术有限公司</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">乐梅,王伟,张军,薛胜超,文成祥,代守双,黄友能,张洋,李凯,冯晓刚</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">12025070040</div></div>
+  </div>
+  <div class="hero"><img src="../cases/gal/2025-09-0.jpg" alt="面向复杂山地地形的新型As列车及其互联互通创新设计"></div>
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>国家《“十三五”现代综合交通运输体系发展规划》提出，“应用基于无线通信的列车控制系统，促进不同线路和设备之间相互联通”。重庆作为典型的山地城市，城市界面地形复杂，坡地、峡谷众多，是典型的“多中心组团式”形态，其特殊形态使得城市轨道交通线网中换乘车站众多，日均换乘客流量达到百万人次，乘客单次换乘时间约5min，严重影响影响了轨道交通对乘客的吸引力，对城市轨道交通互联互通运行提出了明确需求。城轨互联互通是行业公认的世界性难题，之前国内外诸多城市如巴黎、纽约、北京、上海等进行了多轮尝试但均未成功，关键原因为缺乏互联互通的顶层设计，各线列车未进行车型、限界等的统型设计，列车资源无法在线间共享；由于国外厂商技术保密，保障行车安全的列车控制系统与调度指挥系统无互联互通设计，仅能在单线内发挥作用，无法实现跨线协同调度和控制。此外,既有列车车型难以适应诸如重庆山地城市“坡度大、转弯半径小”的地形特点，对实现城市轨道交通互联互通提出了更高的要求。</p><p>项目组依托国家发改委“产业转型升级（增强制造业核心竞争力）”项目，完成了面向复杂山地地形的新型As列车设计、互联互通列控系统和协同调度指挥系统设计并制造装备，打通了从自主设计到工程应用的全链条，世界上首次实现了城市轨道交通线网互联互通运营，完成了从“人换乘”到“车换线”的历史性转变，实现跨线出行模式创新变革。项目取得如下创新设计成果：（1）设计了面向山地复杂地形的新型As列车，包括5动1拖动力配置模型、小轴距无摇枕新型转向架、双受电弓受电等关键设计工作，解决了车辆兼顾最小转弯半径250m与爬坡能力50‰的技术难题，并制定了适应多线路集群运行的As车统型标准；（2）设计了面向城轨互联互通的信号系统，首次编制了涵盖需求、产品、接口、测试、验收全生命周期的城轨互联互通信号系列标准，完成了不同运营环境（高架、跨江桥梁、深埋隧道等）和最不利失效模式下的列车安全制动防护，以及列车跨线运行安全保障等创新设计技术方案，搭建了中国标准的CBTC互联互通产业链，提升了我国高端装备设计制造领域的自主创新能力；（3）设计了互联互通跨线列车运行图追踪协同方法，研制了匹配互联互通高效灵活运行的智能调度指挥系统，解决了城轨线网内跨线运行的协同调度指挥难题，实现了重庆“4-环-5”跨线出行模式创新，乘客最长在途时间从92min缩短至59min，可为乘客节约出行时间33min，出行效率提升36%。</p><p>施仲衡、谭建荣、丁荣军等院士评价本项目“技术国际先进水平”，发改委评价本项目“整体技术处于国际领先水平，具有广泛的推广应用价值”。本项目累积获发明专利32项，其他知识产权59项(软著5项，论文13篇、国/地/团准41项)， 推动自主化信号设备市场占有率从13%增至80%，推广应用于北京、越南河内等国内外100余条城轨线路。近3年累积直接经济效益102亿元，其中重庆互联互通线路实现票务收入18亿元，系统推广应用经济效益84亿元。项目荣获交通部重大科技创新成果奖、行业科技进步特等奖、重庆创新争先奖及国际工程行业“诺贝尔奖”—菲迪克全球年度杰出项目奖。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>创新设计思路：城市轨道交通一般采用单线建设、单线运营的模式，在线路成网后仍需通过乘客的走行来实现换乘。但随着城轨线网规模的扩大，乘客花费在换乘中的时间越来越多，严重影响了城轨对乘客的吸引力。为了解决这一问题，项目团队设想通过列车、控制系统、调度指挥系统的互联互通设计，实现“人换乘”到“车换线”，实现跨线出行模式变革。</p><p>总体设计：针对山地城市“坡度大、转弯半径小”的地形特点，设计强爬坡易转弯的新型As列车，包括5动1拖动力配置模型、小轴距无摇枕新型转向架、双受电弓受电等关键部件的设计；针对互联互通的跨线协同控制安全难题，提出不同运营环境（高架、跨江桥梁、深埋隧道等）和最不利失效模式下的列车安全制动防护、列车跨线运行安全保障等设计方案；针对互联互通的跨线协同调度指挥难题，设计互联互通跨线列车运行图追踪协同方法和列车跨线网下的节能运行方法，研制了匹配互联互通高效灵活运行的智能调度指挥系统。从而打通了从自主设计到工程应用的全链条，实现“人换乘”到“车换线”跨线出行模式变革。</p><p>该项目详细设计创新如下：</p><p>创新点（一）:面向山地复杂地形的“强爬坡易转弯”As列车设计</p><p>针对既有车型无法满足线路竖曲线大、转弯半径小、深埋车站等重庆山地地形特征的问题，设计并研制了强爬坡易转弯的新型As列车成套装备，完成了5动1拖动力配置模型、小轴距无摇枕新型转向架、双受电弓受电等关键设计模块，突破了牵引动力性能增强及轴重控制技术和小轴距无摇枕新型转向架技术，列车爬坡能力提升至50‰，提升了43%；设计的2200mm轴距无摇枕转向架大幅提高了列车曲线通过能力，车辆通过正线最小曲线半径由300m（A型车）提升至250m，且相较轴距2300mm的转向架磨耗功减少约5%。制定了适应多线路集群运行的As车统型标准，实现了轨道交通多线路集群运行下零部件级别的装备共享、车辆共享、跨线运营、救援及连挂，重庆二轮线路车辆购置成本减少1.94亿元。</p><p>（1）车体轻量化及结构强化设计</p><p>为适应山地城市环境， As列车设计车体宽度3000mm（与现有A型地铁车辆保持一致），车体基本长度19300（介于A、B型地铁车辆之间），以满足小定距、小轴距曲线通过能力需求。</p><p>图1 As列车车体断面设计图</p><p>车体结构采用6系铝合金挤压型材，型材采用矩形框结构设计，在满足车体强度的同时对车体型材尺寸进行优化，车体前端采用铝合金蒙皮+铝合金骨架的方式实现车体的轻量化设计。在满足各系统强度的前提下，As车辆轴重降低到15t较标准A型车（16到17t）减重5%。</p><p>图2 As列车车体结构</p><p>（2）5动1拖动力设计</p><p>针对重庆山地城市的线路特点，通过5动1拖动力设计突破牵引性能，将车辆的动力配置由4M2T提升为5M1T，满足6辆编组列车在超员（AW3）状态下，损失1/5动力或者1/2动力时，仍然可以在50‰的上坡道上起动，并行驶到最近车站，清客后返回车辆基地。一列6辆编组处于空载（AW0）状态的列车与另一列完全丧失动力的处于超员载荷（AW3）列车连挂后，仍能在50‰的坡道上由静止状态下起动，并使列车运行线路中最困难的4个站间。</p><p>图3 动力配置设计图</p><p>图 4 损失1/5动力坡道仿真</p><p>（3）无摇枕焊接结构转向架设计</p><p>As型地铁转向架通过无摇枕焊接结构转向架设计，设有一系悬挂的圆钢弹簧组+橡胶弹簧，采用转臂式定位。相较于A型地铁转向架，As型地铁转向架轴距由2500mm缩小至2200mm，降低轮缘与轨道侧面的接触压力，减少轮缘磨耗，满足正线最小曲线半径250m运行需求。</p><p>图 5 As列车无摇枕新型转向架设计</p><p>（4）双受电弓受电设计</p><p>采用“双受电弓受电”设计，通过单元内双弓并网供电技术，全列车设置4架受电弓，每个单元两架受电弓，互为冗余，解决了车辆在刚性接触网供电条件下大坡道运行牵引和再生制动受流难题, 有效降低滑板磨耗，受电弓滑块磨耗平均寿命超过75万公里，是普通单弓受流地铁车辆寿命的10倍。</p><p>图 6 双受电弓设计</p><p>【技术创新支撑：支撑以上创新设计的关键技术有：无摇枕空气弹簧转向架技术、双受电弓受电技术等，详细参见ZL 2021 1 0431120.7，ZL 2021 1 0432664.5等发明专利，重庆市标准（《山地城市A型地铁车辆通用技术标准》DBJ50/T-259-2017、《As型地铁车辆日常维修技术规范》CQJTY/T N04-2021）等】。</p><p>创新点（二）: 面向城轨互联互通的高安全、高可靠信号系统设计</p><p>针对信号系统的跨线协同控制安全难题，完成了信号系统互联互通的安全设计模型、不同运营环境（高架、跨江桥梁、深埋隧道等）和最不利失效模式下的列车安全制动防护、列车跨线运行安全保障等设计；针对传统车地无线通信技术易受干扰、组网复杂、移动性差的问题，首次提出基于LTE的城市轨道交通车地综合通信系统（LTE-M），设计了基于虚拟资源分配的无线通信跨层切换模型，保障车地无线通信的高可靠性；完成了支撑互联互通系统准入的交叉测试和交叉认证平台的设计与搭建，解决了测试验证需要覆盖所有系统和场景的难题。编制了涵盖需求、产品、接口、测试、验收全生命周期的城轨互联互通信号系统标准，搭建了中国标准的CBTC互联互通产业链，提升了我国高端装备设计制造领域的自主创新能力。</p><p>（1）互联互通的信号系统安全设计</p><p>提出了异构CBTC信号系统下的系统安全功能保障方法，基于可容忍危险概率（THR）建立了异构CBTC系统下的系统安全设计模型，采用FEMA故障模式分析方法构建互联互通安全防护边界，解决了在线路集群不同运营环境和最不利失效模式下的列车安全制动防护、列车线网内跨线运行安全保障、高离散车辆控制参数与多线路复杂条件协同控制等难题，研发了自主化互联互通CBTC成套列车控制系统装备。编制了涵盖需求、产品、接口、测试、验收全生命周期的城轨互联互通信号系统系列标准，</p><p>图 7 信号系统互联互通系统安全设计模型</p><p>图 8 列车安全制动模型</p><p>表1 轨道交通信号系统互联互通安全边界</p><p>（2）基于LTE的城市轨道交通车地综合通信系统设计</p><p>创新地提出基于LTE的城市轨道交通车地综合通信系统（LTE-M），设计了基于虚拟资源分配的无线通信跨层切换模型，提出保证不同QoS的跨越应用层到物理层的切换方案，解决了传统WLAN和TETRA技术易受干扰、组网复杂、移动性差的问题，实现了跨线路切换时延从大于20s到小于2s的突破。</p><p>图 9 跨核心网互通网络模型</p><p>图 10 LTE核心网通信架构</p><p>（3）支撑互联互通系统准入的交叉测试和交叉认证平台的设计</p><p>针对互联互通列车运行环境复杂多变，安全测试和安全认证涉及各种动态场景、需覆盖所有系统的兼容性和协同性难题，设计并搭建了城轨多线路下基于结果互信的互联互通交叉测试和交叉认证平台，首创线路集群不同厂家的多方安全认证，并完成示范应用。</p><p>图 11 交叉测试平台架构设计</p><p>设计了基于PXI（面向仪器系统的PCI扩展）技术的通用车载适配方案，针对不同信号系统厂家车载设备采用的线缆接口形式、驾驶台IO量驱采逻辑、模拟量输出方式、应答器接口实现方式以及速传测速接口形式等存在较大差异的情况，适配不同厂家车载设备，保障了不同设备厂家车载设备进行不同地面线路的共线、跨线交叉行车调试与测试。</p><p>图 12 车载设备适配系统架构设计</p><p>【技术创新支撑：支撑以上创新设计的关键技术有：跨线重叠区的进路解锁、列车跨线进路搜索、互联互通 CBTC系统的公有电子地图设计等关键技术，详细参见ZL202010994649.5、ZL201611180074.3等发明专利，国家标准1项（《城市轨道交通信号系统通用技术条件》GB12758-2023），中国城市轨道交通协会团体标准36项（《城市轨道交通基于通信的列车运行控制系统（CBTC）互联互通系统规范第1部分：系统总体要求》T/CAMET 040010.1-2018）等，重庆市标准（《重庆轨道交通列车控制系统（CQTCS）标准》DBJ50/T-432-2022），论文《面向互联互通 CBTC系统的公有电子地图设计方法》等】</p><p>创新点（三）: 面向互联互通的协同调度指挥设计</p><p>针对互联互通线路集群下调度指挥算法不一致，调度指令滞后或错误易导致列车运行拥堵、乘客滞留、列车能耗大的运营组织重大难题，设计了互联互通跨线列车运行图追踪协同设计方法、基于时变客流需求的非线性列车运行调整模型、面向线网列车跨线运行下的列车节能优化方法，应用互联互通运营条件下以客流需求为导向的列车全局实时调度技术，研发了国内首套城市轨道交通线路集群智能调度系统，实现了从“人换乘”到“车换线”的历史性转变，换乘客流中40%选择一车直达，乘客出行最长在途时间从92分钟缩短至59分钟，出行效率提升36%。</p><p>（1）互联互通跨线列车运行图追踪协同设计方法</p><p>创新了互联互通跨线运行的运行图设计方法，探明了行车间隔、跨线车运行计划、上线列车数量、线路线型及联络线设置对线路集群互联互通跨线运行效率的影响规律，开发了与客流分布规律相匹配的交路集合技术、普通列车到达避让与追踪间隔匹配技术，实现了从“人换乘”到“车换线”的历史性转变。</p><p>设计维持本线车起点站发车行车间隔不变，跨线车插入原有本线车方案中运行的互联互通列车运行图编制方法。跨线车插入本线车中运行，可最大程度减少跨线运行对现开行方案运输能力、行车间隔、发车时刻等的影响。跨线车插入运行，须满足线路折返能力、通过能力及避让站越行等基本条件，单线普通车极限行车间隔与线路最小追踪间隔之差，即可压缩时间。使原有开行方案的运输能力不受影响，跨线交路覆盖的车站运输能力有所提升。</p><p>（2）匹配互联互通高效灵活运行的智能调度指挥系统</p><p>研制了国内首套智能调度系统，解决了线网内跨线运营的协同调度指挥难题，实现了“4-环-5”跨线出行模式创新，换乘客流中40%选择一车直达，乘客出行最长在途时间从92分钟缩短至59分钟，出行效率提升36%。</p><p>图 13 智能调度系统架构</p><p>（3）列车跨线网下的节能运行设计</p><p>设计了面向线网列车跨线运行下的列车节能优化方法，建立本线列车与跨线列车在不同牵引、惰性、制动过程下的驾驶策略节能优化模型，研究本线列车和跨线列车的运行时间与运行能耗之间的关系，提高了再生制动能量的利用率，实现了降低线网电能10%。</p><p>【技术创新支撑：支撑以上创新设计的关键技术有：网络化行车组织、跨线运行图调整、跨线运行下的节能优化等关键技术，详细参见ZL202110737713.6、ZL202110859556.6等发明专利，重庆市标准（互联互通线网行车调度系统技术标准DBJ50T-494-2024 ），论文《城市轨道交通互联互通网络化行车组织方案初探》等】</p></div>
+  <div class="sec">图集 / GALLERY</div><div class="gal"><img loading="lazy" src="../cases/gal/2025-09-1.jpg" alt=""><img loading="lazy" src="../cases/gal/2025-09-2.jpg" alt=""></div>
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2025%E5%B9%B4%E9%87%91%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E9%9D%A2%E5%90%91%E5%A4%8D%E6%9D%82%E5%B1%B1%E5%9C%B0%E5%9C%B0%E5%BD%A2%E7%9A%84%E6%96%B0%E5%9E%8BAs%E5%88%97%E8%BD%A6%E5%8F%8A%E5%85%B6%E4%BA%92%E8%81%94%E4%BA%92%E9%80%9A%E5%88%9B%E6%96%B0%E8%AE%BE%E8%AE%A1%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">延伸阅读 / CURATED（人工核选 · 检索于 2026-08-09）</div><a href="http://www.xinhuanet.com/politics/2017-05/27/c_1121049826.htm" target="_blank" rel="noopener"><span class="arr">↗</span><span>我国首款山地型地铁列车在中车四方下线-新华网</span><span class="src">xinhuanet.com</span></a><a href="https://epaper.cqrb.cn/html/kjb/2020-11/05/04/content_kj_271592.htm" target="_blank" rel="noopener"><span class="arr">↗</span><span>重庆轨道交通互联互通CBTC示范项目列入世界标准</span><span class="src">epaper.cqrb.cn</span></a><a href="https://baike.baidu.com/item/As%E5%9E%8B%E5%88%97%E8%BD%A6/20827394" target="_blank" rel="noopener"><span class="arr">↗</span><span>As型列车_百度百科</span><span class="src">baike.baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2025-08.html"><span class="d">← 上一项</span>半导体金刚石散热材料制备关键工艺与核心装备设计</a>
+    
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

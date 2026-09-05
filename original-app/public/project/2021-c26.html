@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>脑卒中手部训练辅具及智慧康复系统设计 · 2021创意奖 · 好设计</title>
+<meta name="description" content="脑卒中俗称中风，是一种脑组织受损的急性脑血管疾病。脑卒中是神经系统的常见疾病之一，具有高复发率、高致残率、高死亡率的特点，严重影响患者及其家属的生活质量。目前针对脑卒中领域的康复训练通常是有限的，特别是居家康复训练，表现为过度依靠医师和专业">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-soft:rgba(15,23,42,0.045);--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;
+--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;--line:rgba(15,23,42,0.09);--accent:#5E6AD2;
+--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);--gold:#A87E2A;
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:"JetBrains Mono","SF Mono","Consolas","Noto Sans SC",monospace;--ease:cubic-bezier(0.25,0.46,0.45,0.94);
+--r-sm:4px;--r-md:6px;--r-lg:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(94,106,210,.25)}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:24px;padding:14px 32px;
+background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.brand .mark{width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+nav .links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:13px;color:var(--muted-soft);transition:color .16s var(--ease)}
+nav .links a:hover{color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:48px 32px 72px}
+.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--mono);font-size:12px;
+letter-spacing:1px;color:var(--muted);margin-bottom:36px;transition:color .16s var(--ease)}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker .lv{color:var(--gold);font-weight:500}
+.kicker .lv.other{color:var(--accent-bright)}
+.kicker .yr{color:var(--muted)}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin-bottom:28px}
+.meta{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:36px}
+.meta .row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.meta .row2:last-child{border-bottom:0}
+.meta .k{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding:13px 16px;letter-spacing:1px;border-right:1px solid var(--line)}
+.meta .v{font-size:14px;color:var(--ink-soft);padding:13px 16px;line-height:1.7}
+.hero{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);margin-bottom:36px}
+.hero img{width:100%;display:block}
+.sec{font-family:var(--mono);font-size:12px;color:var(--accent-bright);letter-spacing:2px;margin:44px 0 16px}
+.body{color:var(--ink-soft);font-size:15.5px;line-height:1.95;white-space:pre-line}
+/* 正文排版增强 */
+.rich{color:var(--ink-soft);font-size:15.5px;line-height:1.95;text-align:justify;text-justify:inter-ideograph}
+.rich p{margin:0 0 16px}
+.rich .p-h{color:var(--ink);font-weight:600;font-size:16.5px;letter-spacing:-.01em;margin:30px 0 12px;
+padding-left:12px;border-left:3px solid var(--accent)}
+.rich .p-list{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}
+.rich .p-li{display:flex;gap:12px;align-items:flex-start}
+.rich .p-mk{flex:0 0 auto;min-width:22px;height:22px;padding:0 5px;border-radius:5px;background:var(--accent-soft);
+color:var(--accent-bright);font-family:var(--mono);font-size:12px;display:inline-flex;align-items:center;justify-content:center;margin-top:4px}
+.rich .p-li > div{flex:1}
+.links-ext{margin-top:6px;display:flex;flex-direction:column;gap:9px}
+.links-ext a{display:flex;align-items:baseline;gap:10px;text-decoration:none;font-size:14px;color:var(--ink-soft);
+padding:11px 14px;border:1px solid var(--line);border-radius:var(--r-md);transition:border-color .16s var(--ease),background .16s var(--ease)}
+.links-ext a:hover{border-color:rgba(94,106,210,.45);background:var(--bg-quiet);color:var(--ink)}
+.links-ext a .arr{flex:0 0 auto;font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.links-ext a .src{flex:0 0 auto;margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.src-note{font-size:12.5px;color:var(--muted);line-height:1.8;margin-top:14px;font-family:var(--mono);letter-spacing:.2px}
+.links-ext .lbl{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);margin:16px 0 2px}
+.links-ext .lbl:first-child{margin-top:0}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.gal img{width:100%;border-radius:var(--r-md);border:1px solid var(--line);display:block}
+.ask{display:inline-flex;align-items:center;gap:8px;margin-top:44px;background:var(--accent);color:#fff;text-decoration:none;
+font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--r-md);transition:background .16s var(--ease),transform .1s var(--ease)}
+.ask:hover{background:var(--accent-bright)}
+.ask.ghost{background:transparent;color:var(--accent-bright);border:1px solid rgba(94,106,210,.4)}
+.ask.ghost:hover{background:var(--accent-soft)}
+.ask:active{transform:scale(.97)}
+.pn{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{text-decoration:none;font-size:13px;color:var(--muted-soft);max-width:46%;transition:color .16s var(--ease)}
+.pn a:hover{color:var(--ink)}
+.pn a .d{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px}
+.pn a.next{margin-left:auto;text-align:right}
+.pn a.next .d{color:var(--accent-bright)}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:32px;font-size:12.5px}
+footer .row{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--muted-soft);text-decoration:none}
+footer a:hover{color:var(--ink)}
+@media(max-width:640px){.wrap{padding:36px 20px 56px}nav{padding:12px 18px}nav .links{gap:14px}}
+</style>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html"><img class="mark-img" src="../assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
+  <div class="links">
+    <a href="../index.html">好设计馆</a>
+    <a href="../award.html">奖项</a>
+    <a href="../laureates.html">数据库</a>
+    <a href="../connect.html">产业</a>
+    <a href="../learn.html">教育</a>
+    <a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">官方展览中心 ↗</a>
+  </div>
+</nav>
+<div class="wrap">
+  <a class="back" href="../laureates.html?level=%E5%88%9B%E6%84%8F%E5%A5%96&amp;year=2021">← 返回 2021 年创意奖名录</a>
+  <div class="kicker"><span class="lv other">创意奖</span><span class="yr">· 2021 · 第七届</span></div>
+  <h1>脑卒中手部训练辅具及智慧康复系统设计</h1>
+  <div class="meta">
+    <div class="row2"><div class="k">完成单位</div><div class="v">山东大学工业设计研究院</div></div>
+    <div class="row2"><div class="k">主要完成人</div><div class="v">郭佳,刘和山</div></div>
+    <div class="row2"><div class="k">项目编号</div><div class="v">202104441</div></div>
+  </div>
+  
+  <div class="sec">项目简介 / OVERVIEW</div><div class="rich"><p>脑卒中俗称中风，是一种脑组织受损的急性脑血管疾病。脑卒中是神经系统的常见疾病之一，具有高复发率、高致残率、高死亡率的特点，严重影响患者及其家属的生活质量。目前针对脑卒中领域的康复训练通常是有限的，特别是居家康复训练，表现为过度依靠医师和专业康复设备，有着成本高、操作不易、动力不足、低便携性等缺点。随着脑卒中患病数量的增加和居家康复形式的兴起，新型的脑卒中康复管理模式的开发需求尤为迫切。同时，脑卒中康复治疗不仅需对肢体进行训练，最重要的是促进大脑神经的重塑，进而恢复患者的运动功能。研究发现，包含多种感官刺激的丰富环境能够使用户同时参与生理、感知和社交活动，可以调节多种生物机制，能更有效地促进运动、认知和神经的恢复。随着大数据、通信技术和云计算技术的发展，脑卒中康复服务也逐渐朝着数字化，智能化和个性化发展。脑卒中康复行业不仅提倡新型康复辅具产品的开发和功能迭代设计，更重视对康复服务的流程和资源的管理，并以智能技术重塑传统脑卒中康复服务模式。</p><p>本设计以多感官通道刺激在脑卒中手部康复产品中的应用为中心，提出基于多感官刺激下的脑卒中手部康复训练手套设计及脑卒中康复管理系统，组成了脑卒中智慧康复平台。。此多感官刺激训练手套的四个手指上分别设有7个带灯按键开关，分别代表7个音符。训练时通过按键的灯光指引患者完成对指动作，并带有音乐反馈。当按键灯亮时，用户按下亮灯按键后则发出对应的音符，最终音符将串成一首歌曲。同时手套大拇指带有薄膜压力传感器，训练时可记录患者的对指压力大小、训练次数、反应时间、正确率等行为参数。脑卒中康复管理系统综合控制康复辅具的运行与训练数据的传输和存储。医生可通过系统查看患者康复训练情况，并提供临床意见，与患者进行沟通，进而定制个性化康复方案，从而实现脑卒中患者的康复训练、评估、训练的闭环管理系统。康复管理系统数据用于指导辅具的进一步优化开发设计。同时应用功能性近红外光谱技术，针对产品对于中枢神经活动的激活效果展开评估，完成概念可行性测试，调整优化产品设计需求。此款脑卒中康复训练辅具设计针对手功能障碍的脑卒中患者，将多感官刺激理论应用于手部康复产品中，从而实现规范训练动作、记录训练数据、提高大脑皮层激活程度、提高用户主动参与度。</p></div>
+  <div class="sec">设计阐述 / DESIGN FEATURES</div><div class="rich"><p>多感官刺激能更有效的促进大脑神经系统的活动和连接，增强神经可塑性。而脑卒中正是因为大脑神经通路的受损而导致的肢体障碍，最重要的一点就是重塑大脑受损神经，恢复其认知运动功能。脑科学研究表明，对来自不同感官系统的信息进行整合的能力是大脑的基本特征，外界刺激的不同信息由不同的感官通道所接收，通过整合每个感官通道的信息会显著地提高对外界刺激的检测和识别。丰富环境提供的多重感官刺激可以调节人体多种生物机制，与标准单一的环境相比，能更有效地促进运动、认知和神经的恢复，学习效果显著提高。与此同时，在人体行为层面上也存在多感官刺激的益处。通过简单的控制操作，使环境发生相应的变化，提供实时感官交互反馈，不仅增加专注力和对刺激的反应，还提供了新颖的交互方式，诱发强烈的意愿去主动探索环境。</p><p>因此，本设计将多感官刺激与音乐疗法相结合，通过有目的性地完成训练任务来完成音乐播放或演奏音乐，主要涉及用户的视觉、听觉和触觉通道，锻炼患者的手眼协调能力，让患者更有动机的去完成训练。同时音乐治疗能够诱发大脑皮层的神经活动，改善脑卒中患者的运动功能和日常生活能力。</p><p>手指内侧设有7个传感器开关，分别代表do、re、mi、fa、sol、la、ti七个音符，每个开关控制每个音符的“高中低”音，7个开关可控制21个音符,所以多数歌曲都可供用户选择。每个传感器开关都集灯光、按键于一体，并在指纹侧设有震动模块和压力传感器来提供触觉反馈和手指力度检测功能。在训练过程中，7个开关中的其中一个开关会亮起灯光，用户只需将拇指与亮灯的传感器开关进行对指即完成一次训练，每完成一次训练动作，灯光熄灭并在开关处对手指施加一次震动反馈，扬声器也会发出相对应的音符，然后歌曲的下一个音符所对应的开关灯光亮起，依次循环。随着训练次数的增多，演奏的音符连成歌曲。同时，传感器开关会将康复训练的用户数据进行记录和监测，包括训练的次数、时间、单次动作时间和力度等数据，并定时通过语音提示功能提醒用户训练的时长，让患者清楚训练进程。控制盒主要包括控制板、控制开关以及电池等模块，承担用户数据的储存上传、康复模式的更换和电池供电等功能。</p><p>本脑卒中康复训练手套整体采用黑色、灰色为主体色以及富有活力的橙色辅助色，造型简洁大方，具有很好的亲和力以及优雅的形态美感。产品分为手部主体和控制盒两大部分，手部主体又分为指肚外壳、阻力限位环、阻力调节腔、阻力带、绑带和控制调节面板等几部分。手部主体和控制盒的外壳部分都选用了ABS 塑料，质地轻、易着色、强度韧度都比较适中且成本较低，同时白色外壳和灰色外壳经过不同程度的哑光磨砂处理工艺，为产品带来丰富的层次感。为了增加产品的舒适感，产品与皮肤接触的“近肤层”都附加一层弹性、耐磨性较好且透气的超纤布料，其中手背处还增设一层柔性橡胶材料。阻力带是柔性且有弹力的橡胶材料，提供阻力的同时不对手指关节部位造成疼痛感。手掌和手腕部分则选用了带有魔术贴粘扣的弹力松紧带材料承担可调节固定手掌和腕部的作用。</p><p>最后，运用服务设计的工具和方法，对脑卒中康复系统流程和特性等进行针对性的分析，并将问题和需求归纳总结，提出解决问题的具体设计策略，提高脑卒中患者用户体验和康复效果,构建了通讯与信息管理相结合的新型脑卒中康复管理系统模型，将医生、患者、家属三个利益相关者进行整合，建立形成病人的康复训练、评估、训练的闭环管理系统。利用康复辅具进行数据和信息的采集与传输，并通过实体产品传递虚拟数据信息。通过虚拟数据信息来控制实体产品的运动，形成了人-产品-康复信息之间的联系，实现了交互的有形化，同时，将数据与信息整合形成康复大数据，为后续医疗体系信息整合提供基础。康复评定是康复治疗中的重要组成部分，及时、有效的评定对于指导脑卒中患者的肢体功能康复治疗、评价治疗疗效、预测功能恢复均有重要的作用。本康复管理平台收集生理层面、行为运动学、用户层面、医师临床经验在内的四维脑卒中康复评定数据，并完成每个维度的数据分析，从而为患者定向提供个性化康复方案，实现智慧康复系统。</p></div>
+  
+  <a class="ask" href="../index.html?ask=%E8%AF%B7%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B2021%E5%B9%B4%E5%88%9B%E6%84%8F%E5%A5%96%E9%A1%B9%E7%9B%AE%E3%80%8C%E8%84%91%E5%8D%92%E4%B8%AD%E6%89%8B%E9%83%A8%E8%AE%AD%E7%BB%83%E8%BE%85%E5%85%B7%E5%8F%8A%E6%99%BA%E6%85%A7%E5%BA%B7%E5%A4%8D%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E3%80%8D%E3%80%82">就这个项目，问问好设计助手 →</a>
+  <div class="sec">材料索引与延伸阅读 / SOURCES & FURTHER READING</div><div class="links-ext"><div class="lbl">官方档案来源 / OFFICIAL</div><a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener"><span class="arr">↗</span><span>好设计官网 · 展览中心（本项目数据的官方出处）</span><span class="src">cgd.cmes.org</span></a><div class="lbl">检索入口 / SEARCH（按项目名实时检索，非本站内容）</div><a href="https://cn.bing.com/search?q=%E8%84%91%E5%8D%92%E4%B8%AD%E6%89%8B%E9%83%A8%E8%AE%AD%E7%BB%83%E8%BE%85%E5%85%B7%E5%8F%8A%E6%99%BA%E6%85%A7%E5%BA%B7%E5%A4%8D%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>必应检索「脑卒中手部训练辅具及智慧康复系统设计」</span><span class="src">bing.com</span></a><a href="https://www.baidu.com/s?wd=%E8%84%91%E5%8D%92%E4%B8%AD%E6%89%8B%E9%83%A8%E8%AE%AD%E7%BB%83%E8%BE%85%E5%85%B7%E5%8F%8A%E6%99%BA%E6%85%A7%E5%BA%B7%E5%A4%8D%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener"><span class="arr">↗</span><span>百度检索「脑卒中手部训练辅具及智慧康复系统设计」</span><span class="src">baidu.com</span></a></div><div class="src-note">数据核验：本页作品信息采自好设计官网展览中心公开数据，2026-08-05 与官网全量比对（十届五奖种 560 项，0 缺失）；延伸阅读链接经人工核选，点击跳转至第三方网站，内容以其发布方为准。</div>
+  <div class="pn">
+    <a href="2021-c25.html"><span class="d">← 上一项</span>365电气设备柜内智慧灭火系统</a>
+    <a class="next" href="2021-c27.html"><span class="d">下一项 →</span>基于高铁客货共运的快递物流系统设计</a>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div>数据来源：<a href="https://cgd.cmes.org/exhibit/home" target="_blank" rel="noopener">好设计官网 · 展览中心</a></div>
+    <div>官方信息以 <a href="https://cgd.cmes.org" target="_blank" rel="noopener">好设计官网</a> · <a href="https://www.cmes.org" target="_blank" rel="noopener">中国机械工程学会</a> 发布为准</div>
+  </div>
+</footer>
+<script src="../copilot.js" defer></script>
+</body>
+</html>

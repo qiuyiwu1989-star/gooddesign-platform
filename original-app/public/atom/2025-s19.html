@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>船舶波浪载荷与水弹性响应预报软件设计研发 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2025-s19.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2025-s19</div>
+  <h1>船舶波浪载荷与水弹性响应预报软件设计研发</h1>
+  <div class="meta-line"><b>2025 年度银奖</b><span>哈尔滨工程大学</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2025 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">哈尔滨工程大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">孙士丽,张维鹏,田径,任慧龙,缪威龙,张景琳,丁奕博,郭乔</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 船舶海工（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>波浪载荷是海洋结构物承受的核心环境力，包括波浪压力、弯矩、剪力及扭矩，具有显著的随机性和非线性特征。当前船舶工业正经历大型化、高速化和轻量化的技术变革，水弹性分析通过耦合流体动力场与结构弹性场，量化结构变形与水动力的相互作用，避免低估疲劳损伤或极端载荷风险，成为波浪载荷预报技术的发展方向。面对行业需求，本项目成功研制了具有完全自主知识产权的船舶波浪载荷与水弹性响应预报软件系统，系统整合了线性频域势流理论、非线性时域水弹性方法和Wagner及其改进模型，开展工程实用化创新研究，实现了实尺度船舶的波浪载荷、波激振动和砰击颤振的高精度评估预报，完成了国外载荷软件的功能替代，取得了如下设计创新点：</p><p>（1）设计研发了全海况船舶波浪载荷分析模块。搭建了基于频域格林函数法的船舶波浪载荷预报模型，结合谱分析技术开发了覆盖全海况条件的设计载荷预报功能，实现了对挪威WADAM软件的功能替代，认证为中国船级社法定审图软件。</p><p>（2）设计研发了船舶波激振动非线性时域解析模块。构建了基于迁移矩阵法的船体模态分析策略，研发了计及非线性广义波浪激励力的直接时域非线性水弹性数值预报技术，波激振动响应捕捉能力达到基频的8倍以上，成功替代了韩国ISTAS软件的波激振动分析功能。</p><p>（3）设计研发了船舶砰击颤振全耦合水弹性分析模块。建立了基于实时入水剖面的Wagner砰击荷载预报体系，研制了船舶砰击颤振水弹性分析技术，实现了砰击压力场和颤振弯矩响应的时空精细化重构，评估精度与实测值不超过15%，实现了对法国Homer软件砰击颤振分析功能的替代。</p><p>（4）集成研发了船舶结构载荷一体化分析软件系统。内置“网格生成-静水平衡-波中响应-统计分析”引导式分析链，三维可视化实时渲染，形成了设计载荷、波激振动载荷、砰击颤振载荷的体系化预报软件平台，提升了我国船舶结构设计和安全评估的自主化水平。</p><p>本项目所设计的船舶波浪载荷与水弹性响应预报软件，填补了国内现有波浪载荷工业软件的空白，系统解决了波激振动倍频效应预报能力不足、高海况下砰击颤振响应评估精度不高等行业难题，为国内各船舶总体设计单位和一线造船企业提供了切实有效的载荷评估高精度实用工具，为我国高端海洋装备研发提供关键技术支撑。项目成果授权发明专利26件，登记软件著作权16项，发表学术论文61篇，应用于11家行业重点单位，直接经济效益1.85亿元，间接经济效益4.19亿元。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>（一）研究背景与意义</p><p>船舶工业是国家战略性装备制造业的核心领域，其研发设计类工业软件长期处于&quot;空心化&quot;状态。根据中国船舶工业协会统计数据显示，在三维建模、流体仿真等关键环节，90%以上的国内企业依赖西门子NX、达索CATIA、ANSYS Fluent等国外商业软件。这种技术依赖带来双重困境：一方面，单套CAE软件年授权费用高达百万人民币，软件采购支出成为研发经费的大头成本；另一方面，美国商务部工业与安全局（BIS）2020年将部分船舶仿真软件列入出口管制清单，直接威胁我国船舶研发安全。在上述背景下，我国实施了系列攻关计划，2021年，工业和信息化部启动了高技术船舶重大专项“船舶工业CAE软件关键技术研究”；2022年，科技部国家重点研发计划列入“揭榜挂帅”榜单任务的“工业软件”重点专项启动；2023年，工业和信息化部立项了“船舶工业CAE软件集成及应用专题”。</p><p>图1 项目技术路线图在船舶与海洋工程领域，载荷预报技术始终是工业界关注的核心课题。船舶在服役过程中长期承受风、浪、流等多重环境载荷的持续作用，引发显著的结构响应，不仅诱发结构疲劳损伤，还可能对正常作业活动造成严重影响。当前船舶工业正经历大型化、高速化和轻量化的技术变革，在远洋航行条件下，海况的极端复杂性使得船舶结构出现剧烈的非线性耦合效应，导致载荷幅值和循环次数激增，对船舶结构安全造成严重威胁。为实现船体结构波浪载荷、波激振动和砰击颤振的有效评估，项目设计开发了全海况船舶波浪载荷分析模块、波激振动非线性时域解析模块和砰击颤振全耦合水弹性分析模块，集成研发了船舶结构载荷一体化分析软件系统，形成了设计载荷、波激振动载荷、砰击颤振载荷的体系化预报软件平台，为船舶结构安全设计提供了自主可控、精准可靠的先进分析工具。研究成果将为改进大型船舶设计标准、完善评估分析方法和提升结构设计水平提供有力技术支撑。</p><p>（二）设计创新点</p><p>面对行业需求，本项目成功研制了具有完全自主知识产权的船舶波浪载荷与水弹性响应预报软件系统，系统整合了线性频域势流理论、非线性时域水弹性方法和Wagner及其改进模型，开展工程实用化创新，实现了实尺度船舶的波浪载荷、波激振动和砰击颤振的高精度评估预报，完成了对国外载荷软件的功能替代，取得的设计创新点如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>全海况船舶波浪载荷分析模块</div></div></div><p>波浪载荷是船舶航行中承受的主要动态外力，直接驱动垂荡、纵摇等运动，并诱导船体剖面弯矩、剪力和扭矩。这些载荷长期作用会导致结构疲劳损伤，极端海况下甚至引发船体断裂事故，国际海事组织（IMO）及各国船级社均将其纳入强制规范。世界造船强国先后设计开发了专用软件，用于船舶载荷评估与结构设计，如美国WAMIT软件，挪威WADAM软件，英国Waveload-FD软件和法国HydroSTAR软件。项目组研发了具备完全自主知识产权的全海况船舶波浪载荷分析模块，形成从随机环境建模到确定性验证的完整技术链，为船舶结构设计与安全评估提供有效解决方案。通过中国船级社技术审查，列为法定审图软件。</p><p>关键技术：（1）基于线性频域势流理论的波浪载荷三维预报技术。以自由面格林函数为基本解，通过边界元法离散湿表面，构建线性化自由面条件、物面条件及辐射条件构成的频域边界积分方程；通过压力积分获取一阶波浪力，耦合结构动力学方程，建立波浪力与结构响应的数学模型，量化船体在不同频率波浪激励下的运动与载荷响应，实现大规模随机波浪的响应预报。（2）结合谱分析技术的全海况设计载荷评估方案。采用谱分析方法建立波浪能谱密度函数模型，量化海况随机性特征；结合频响函数计算结构动态响应谱，运用谱矩法提取响应统计参数；基于极值理论推演长期载荷概率分布，确定设计基准值；通过逆向求解与相位优化生成等效设计波序列，确保目标载荷参量的统计一致性。</p><p>图2 全海况船舶波浪载荷分析模块2.船舶波激振动非线性时域解析模块</p><p>波激振动是由于船舶的低阶主振动通过海浪谱高频范围内的能量激发而产生的二节点振动现象。波激振动引起的结构响应甚至可达到波浪响应的二分之一以上，由此引起严重的结构疲劳问题。当结构物弯曲刚度小、航速高和非线性激励严重时，波激振动现象将进一步严重。2021年，ISSC-ITTC联合工作组发起首个波激振动不确定分析衡准研究的国际攻关工作，通过国际联合研究明晰波激振动特性，建立船舶波激振动衡准。项目组自主研发了船舶波激振动非线性时域解析模块，波激振动响应捕捉能力达到基频的8倍以上，成功替代了韩国ISTAS软件的波激振动分析功能，为高端海洋装备的自主创新发展提供了坚实的技术保障。</p><p>关键技术：（1）基于Rankine源的时域非线性水动力模型。在计算域边界布置源汇分布求解时域速度势，结合人工数值海岸方法处理自由面截断的辐射条件，确保波浪能量耗散模拟的物理合理性；开发波面重构技术修正入射波压力场，通过瞬时物面几何更新机制，动态捕捉非线性入射波载荷激励，实现船体高阶波浪载荷成分的时域捕捉。（2）耦合迁移矩阵模态分析的船体非线性波激振动预报技术。采用迁移矩阵法求解船体结构弯扭耦合振动的薄壁梁动力学模型，获取各阶振动的固有频率、位移振形以及弯矩模态；将模态分析结果映射至三维湿表面面元，通过波浪激励力与结构特性力的正交解耦，构建船体波激振动模态分析方程，求解船体结构的强迫振动主坐标，实现从波浪载荷激励到结构动力响应的全流程时域耦合预报。</p><p>图3 船舶波激振动非线性时域解析模块3.船舶砰击颤振全耦合水弹性分析模块</p><p>砰击颤振为船舶在恶劣海浪中航行时由于受到波浪砰击作用产生的瞬时振动现象，衰减较快，但幅值大、振动频率高，对船舶结构强度和疲劳寿命构成严重威胁。国际海事组织IMO与各国船级社近几年均在发展与自身规范体系相匹配的船舶砰击颤振载荷指南。船舶承受的砰击载荷与船体姿态和波面高程密切相关，砰击预报技术需计及局部出入水时波物相对运动的影响，添加固体运动边界和波浪因素到砰击荷载预报模型中，但现有的砰击载荷计算模型多借助简化几何构型的砰击解析解，预报精度与实船测量值相差甚远。船舶砰击颤振全耦合水弹性分析模块实现了砰击压力场和颤振弯矩响应的时空精细化重构，评估精度与实测值不超过15%，为船舶与海洋结构物的非线性水动力性能分析提供了完整可靠的数值仿真框架。</p><p>关键技术：（1）基于Wagner及其改进模型的砰击精细化数值模型。‌建立‌经典Wagner模型，采用平板冲击假设描述物体入水瞬态过程，通过解析求解瞬时速度势获取砰击压力分布；‌改进‌传统模型引入非线性自由面边界条件，发展浸深因子量化自由液面抬升高度，结合网格截断重构技术提升水下湿面积计算精度。（2）计及实时船波相互作用的砰击颤振全耦合预报技术。以船体型值为输入，提出考虑航速效应的船体剖面提取技术，开发计入实际船型与入水姿态的Wagner砰击载荷时空分布预报方法，并引入修正系数以补偿理论假设与真实物理过程的偏差；构建砰击压力场与船体动力学响应的双向异步耦合策略，建立直接时域非线性水弹性数值模型，实现瞬态高幅值砰击载荷和船体梁剖面载荷动响应的高精度预报。</p><p>图4 船舶砰击颤振全耦合水弹性分析模块4.船舶结构载荷一体化分析软件系统</p><p>作为装备制造业的核心领域，船舶工业长期面临研发设计类工业软件的&quot;卡脖子&quot;困境。一方面，对Star-CCM+、Abaqus等国外商业软件的依赖导致技术受制于人和高昂的授权成本；另一方面，通用软件难以适配船舶这一特殊产品的定制化分析需求。国家《“十四五”软件和信息技术服务业发展规划》明确要求提升工业软件供给能力，船舶领域被列为重点突破方向。船舶结构载荷一体化分析软件系统，兼具技术深度与工程化能力，集成波浪载荷、波激振动和砰击颤振分析功能，满足了常规船舶与高端装备的环境载荷评估需求，打破了国外工业软件的技术垄断，使我国船舶结构安全评估的自主化水平提升至新的高度。</p><p>图5 船舶结构载荷一体化分析软件系统关键技术：（1）船舶结构载荷分析工作流平台。通过&quot;四象限交互框架+动态可视化引擎&quot;的创新设计，构建了符合船舶工程师思维模式的工作分析环境；开发&quot;网格生成→静水平衡→波中响应→统计分析&quot;的闭环工作流，实现船舶载荷分析的流程化引导与动态参数联动；支持12类响应数据（含六自由度运动、剖面弯矩等）的多视图协同展示，湿表面压力场动态着色精度达0.1MPa分辨率，操作响应时间控制在200ms以内。（2）多层级载荷求解器一体化系统。集成自由面格林函数频域法、直接时域水弹性理论和Wagner砰击颤振模型三大核心求解引擎，形成覆盖线性/非线性载荷分析的完整技术链；系统具备万级网格处理能力，计算误差控制在15%以内，整体计算效率与现有公开发布软件相当，满足从常规船舶到高新装备的结构载荷分析需求。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

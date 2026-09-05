@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>基于位姿变换的轮式智能助老机械装置 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-c19.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-c19</div>
+  <h1>基于位姿变换的轮式智能助老机械装置</h1>
+  <div class="meta-line"><b>2021 年度创意奖</b><span>西安交通大学</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 创意奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">西安交通大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">苑康龙,李青,王通荃,李纪康</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与生活 · 健康与康复（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>本设计由任佳信，苑康龙，李青，王通荃，李纪康完成，指导老师为金悦，桂亮。</p><p>老年人群普遍存在腰部及下肢力量不足的问题，由卧躺到坐起、由坐姿到站立，这两种位姿变换越来越成为老人在独居生活中的痛点，独居老人对辅助站立与卧躺以及在家中狭小空间的自如移动的需求日益强烈，适用于腿脚不便人群的助站、助行装置越来越多。但现有的产品普遍存在功能单一或操作复杂等问题，近年来随着老龄化不断加剧，针对独居老人这一群体的需求存在很大的市场空缺。</p><p>基于以上情况，本设计研制了一款基于位姿变换的轮式智能助老机械装置。首先，本设计实现了辅助站立、辅助平躺的实用功能，根据人体坐-卧-立三种位姿的形态变化，创新性地设计了一种九杆机构，巧妙利用电推杆伸缩长度可控性、端点可旋转性、断电自锁性三个性质将机构中不同的构件分别作为机架，在低自由度的情况下实现躺-坐-立三种姿态的连续变化；其次，本设计实现了市场上助老产品全向移动功能“零的突破”，整个装置搭载在麦克纳姆轮平台上，配合远程操控，能够轻松实现居家狭小环境中的自如移动及灵活转向；同时，本设计在保证老人使用的安全性前提下，增加了辅助取物等附加功能，支撑机械臂在姿态变换时防止老人前倾来提升使用安全性，其末端柔性机械手具有自适应抓取、柔性抓取的特点，可以辅助老人抓取远处尺寸、形状各异的物品；最后，障碍物预警以及智能语音交互的功能，大大提升了用户的使用体验，真正的方便了老人的生活。</p><p>在养老助老越来越成为社会焦点问题的今天，本设计面对独居老人这一逐渐庞大的群体，针对性的功能设计很好的解决了他们起居自理的迫切需求，弥补了市场的空缺，具有很高的实用和推广价值。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>基于位姿变换的轮式智能助老机械装置是专门为独居老人设计的、解决日常生活起居困难的一种创新性的助老机械装置，具有位姿变换、平面任意方向移动、机械臂辅助抓取等多种功能，可满足独居老人日常生活基本需求。</p><p>（1）技术创新点1：坐-立-躺三态位姿变换机构</p><p>我们针对平行四边形机构进行改进设计，适当伸长两边对称位置构件长度，并取不同构件分别作为机架，再与电推杆伸缩长度可控性、端点可旋转性、断电自锁性三个性质结合成为一种新型九杆机构，实际运动时变化为两个独立的平行四边形机构。可以在低自由度的情况下实现躺-坐-立三种姿态的连续变化，为独居老人提供了辅助站立、辅助平躺等实用功能：</p><p>辅助老人站立时，固定在腿部的推杆电机断电自锁，靠自锁力维持腿部结构固定；固定在座位上的推杆电机工作，致使电动推杆伸长，由于推杆两端均为可活动的铰链，推杆实际做垂直地面平面内的平面运动，进而使上方座位平行四边形机构逆时针运动，实现人体的抬升；同时靠背由于腿部的固定能一直保持竖直状态；</p><p>辅助老人平躺时，固定在座位的推杆电机断电自锁，靠自锁力维持座位结构固定；固定在腿部上的推杆电机工作，致使电动推杆伸长，进而使靠背-腿部平行四边形机构顺时针运动，实现人体的躺下；腿部的抬升和背部的躺下同时运动。</p><p>（2）技术创新点2:全向移动的麦克纳姆轮平台</p><p>平面任意方向移动功能的实现基于麦克纳姆轮底盘平台。麦克纳姆轮由轮毂和与轮毂轴线成斜向45°夹角的辊子组成，是一种可全方位移动的全向轮。根据倾斜方向可分为互为镜像关系的A轮和B轮，例如将A轮速度正向分解可以获得轴向向左和向前的力。该机械装置的平面任意方向移动功能的实现就基于这种特殊轮技术，四轮运动方向有机组合后可以实现前行、后退、横移、斜行、旋转及其组合运动方式。</p><p>搭载的麦克纳姆轮底盘平台，通过简单的方向控制即可实现任意方向移动，同时还能以蓝牙通信的方式实现对该机械装置的远程遥控。</p><p>（3）技术创新点3：辅助机械臂</p><p>机械臂辅助抓取机构分为活动关节机械臂和前端柔性机械手两部分。柔性机械手爪具有自适应抓取和柔性抓取的特点，老人可以通过旋转活动关节来使得前端机械手移动到空间理想位置，从而辅助抓取远处形状、尺寸各异的物品。</p><p>活动关节机械臂位于座位前侧，防止老人在机械移动过程中发生跌落；在位姿变换过程中，该活动关节机械臂对老人也能起到很好的保护作用，防止老人起立过程前倾摔倒。</p><p>（4）技术创新点4：保障安全的智能交互系统</p><p>该机械装置搭载有语音交互、人体姿态识别、电量提醒等智能交互系统。通过语音识别，老人可以控制直流电机、直线推杆电机从而实现移动、位姿变换功能。语音播报模块可以在遇到危险时输出声音，提醒老人注意避障；也可以播放一些歌曲、戏剧来缓解独居老人的孤独感。</p><p>老人在家中容易摔倒，而独居老人在摔倒后无人救助会产生更为严重的后果。所以我们采用基于Alphapose的人体姿态识别，识别过程为针对输入图片或视频, 根据人体头部、躯干、四肢等关节点位置的变化来识别人体动作的过程。可以针对独居老年人摔倒情况实时动态的识别,当出现紧急情况时及时做出响应。</p><p>针对老人的视野盲区，在该机械装置的侧部、后部装有一些超声波测距传感器用于检测机械装置与周围障碍物的距离。当与障碍物距离过近容易发生危险时，启动语音播报来提醒老人注意避障。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

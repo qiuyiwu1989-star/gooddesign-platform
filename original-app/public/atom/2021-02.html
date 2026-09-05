@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>高性能混联加工机器人 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2021-02.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2021-02</div>
+  <h1>高性能混联加工机器人</h1>
+  <div class="meta-line"><b>2021 年度金奖</b><span>天津大学</span>
+  <span class="grade grade-B">B</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2021 年度 · 金奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">天津大学</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">刘海涛,肖聚亮,董成林,李皓</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 智能装备与机器人（金奖领域标签映射，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>在众多工业机器人中，有一类由一平动两转动并联机构+A/C摆角头构成的混联机器人。这类高端机器人同时具有数控机床和关节型机器人特征，特别适合大型构件现场原位加工。Tricept和Exechon机器人是世界上唯一两款商业化的混联机器人产品，通过专利壁垒长期独霸国际市场。在本项目实施前，我国尚未建立起系统完整的此类混联机器人研发体系，既无被装备制造商或终端用户接受的成熟产品，更无在高端领域的实际应用，这种局面亟待突破。</p><p>本项目在国家重点研发计划、国家自然科学基金等资助下，历时近十年，解决了高性能混联机器人机构创新、设计理论、关键技术中的难题，打通了从自主设计到工程应用的全链条，取得了如下创新成果：</p><p>（1）提出了一平动两转动过约束并联机构的运动组元综合法，创建了考虑工程约束的构型选型准则，发明了具有工程实用价值的混联机器人新机构，打破国外专利壁垒，实现了这类机器人的源头创新。</p><p>（2）提出了基于对偶空间理论的规格化建模方法和性能评价体系，发明了综合性能驱动的尺度-结构-驱动器集成设计新方法，全面支持了高性能混联机器人系列产品的数字化设计。</p><p>（3）发明了虑及惯量耦合效应的运动控制、“零点标定+参数辨识+网格补偿”的递进式误差补偿等关键技术，研制出三种规格的混联机器人，形成系列新产品，经第三方权威机构检测，主要技术指标达到了国际同类产品的先进水平。</p><p>本项目授权国家发明专利33件、美国和欧洲专利各1件、实用新型专利1件，注册软件著作权9件，发表学术论文59篇。项目研制出以上述混联机器人为核心的全向移动铣削/螺旋铣孔加工、光学元件超精密抛光、空间曲线搅拌摩擦焊接、汽车模具抛磨等全新工艺装备，率先实现了在航空航天、新能源、汽车制造等领域的工程应用，解决了一批我国重大工程中的制造难题，实现产值4.22亿元，新增销售额2.74亿元，新增利税1.03亿元；项目成果向广州数控等机器人骨干企业实施专利许可2项，同时获得CE认证并出口英国，取得了显著的社会效益和良好的经济效益。</p><p>项目成果于2021年8月通过了中国机械工程学会组织的，以郭东明院士为主任的鉴定委员会鉴定，结论为：项目成果总体技术达到国际先进水平，其中一平动两转动的混联机器人技术达到国际领先水平。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><p>项目以发明具有工程实用价值的混联机器人新机构为突破口，以掌握综合性能驱动的设计理论，突破静动态精度调控技术为主攻方向，形成了系列专利技术、设计方法和软件工具，研制出综合性能达到国际先进水平的混联机器人系列新产品，并率先在航空航天、新能源、汽车制造等领域成功应用。主要设计创新如下：</p><p>创新点一：混联机器人机构创新</p><p>提出了一平动两转动过约束并联机构的运动组元综合法，创建了考虑工程约束的构型选型准则，发明了具有工程实用价值的混联机器人新机构，打破国外专利壁垒，实现了这类机器人的源头创新。</p><p>（1）构型综合方法与选型准则。针对现有构型综合方法须借助求交/求并运算判断公共约束的问题，首次提出以平面机构和空间支链为对象的一平两转过约束并联机构运动组元综合法，避免了构造约束力系或位移子群/子流型的复杂过程，大幅降低了机构创新难度；针对构型优选难题，提出位姿能力匹配的恰当性、支链结构的力学合理性、机器人模块的可重构性、位置正逆解解析的简易性四条考虑工程约束的选型准则，为混联机器人中平转耦合并联机构的构型优选提供了科学依据。</p><p>（2）含平面并联运动链的混联机器人新机构。采用上述构型综合方法与选型准则，以平面机构和空间支链为运动组元，发明了一系列平转耦合并联机构，并优选出由2自由度平面机构与集成铰链和6自由度支链构成的并联闭环结构，据此发明了含平面并联运动链的混联机器人新机构——TriMule机构，为国际首创，具有刚度/重量比大、部件模块化程度高、具有位置正/逆解解析解等优点。</p><p>创新点二：设计理论与方法</p><p>提出了基于对偶空间理论的规格化建模方法和性能评价体系，发明了综合性能驱动的尺度-结构-驱动器集成设计新方法，全面支持了高性能混联机器人系列产品的数字化设计。</p><p>（1）同维列式规格化参数建模方法。针对真实机构的性能分析与设计须同时考虑其驱动与约束特性的问题，通过引入“受限”变分，将末端刚体的6维真实瞬时运动分解为许动和受限微小位移旋量，在国际上首次提出二者幅值与末端微小位移旋量Plücker坐标之间的映射矩阵——广义雅可比矩阵，据此建立了基于对偶空间理论的一、二阶微分运动学、精度、静力学/刚度、刚体动力学同维列式规格化模型，为机构的性能分析、误差补偿、数字化设计提供了列式统一的数学模型。</p><p>（2）综合性能驱动的参数集成设计方法。针对目前尚无混联机器人普适性设计方法的问题，发明了以运动/力传递特性为约束，以工作空间/机构体积比、加减速特性和低阶模态频率等最大为目标同步优化尺度和结构参数，继而通过运行典型轨迹确定驱动器参数，最后采用CAD-CAE信息交互技术预估与校核整机静动态性能的参数集成设计方法，形成了系统完整的设计理论、方法与流程，大幅提升设计质量和效率，全面支持了系列混联机器人的设计开发。</p><p>创新点三：精度调控技术</p><p>发明了虑及惯量耦合效应的运动控制、“零点标定+参数辨识+网格补偿”的递进式误差补偿等关键技术，研制出三种规格的混联机器人，形成系列新产品，经第三方权威机构检测，主要技术指标达到国际同类产品的先进水平。</p><p>（1）虑及惯量耦合效应的运动控制技术。针对驱动关节间存在耦合作用且负载惯量随位形变化的问题，提出将解耦反馈与考虑轴间耦合作用的前馈相结合的复合控制结构，发明了数据驱动的控制器参数迭代整定和考虑惯量变化的控制器参数自适应整定方法，保证了机器人在高速及负载惯量梯度变化较大区域内运行时的动态精度和稳定性，将关节跟随误差抑制在±0.015 mm以内，满足了机器人的高精度运动控制要求。</p><p>（2）递进式末端位姿误差补偿技术。针对混联机器人的位姿精度受制造及装配误差、重力场作用等影响而难以保证的问题，发明了基于少量测量位形误差信息迭代补偿驱动关节初始误差的零点标定方法，避免辨识矩阵病态问题的正则化误差参数辨识方法，以及基于反距离权重法的非线性误差源空间网格补偿方法，形成了“零点标定+参数辨识+网格补偿”的递进式误差补偿技术，保证了TriMule-600（800）混联机器人的定位/重复定位精度优于±0.015/±0.0045 mm（±0.025/±0.01 mm），与国外同规格产品技术水平相当。</p><p>典型工程应用及成效</p><p>研制出以高性能混联机器人为核心的自主可控系列新装备，服务航空航天、重大光学工程、汽车制造等领域，满足了相关领域对机器人化高端制造装备的迫切需求。密切结合国家重大需求，攻克了测量定位、工艺优化、系统集成等关键技术，开发出以高性能混联机器人为核心的自主可控工艺装备，主要包括：</p><p>（1）移动式混联机器人柔性制造系统。针对制约我国航天工业发展的大型航天器高效高精度制造技术难题，在国际上首次提出“高性能混联机器人+全向智能移动平台”的大型构件原位制造解决方案，发明了基于视觉测量技术的现场“定位-找正-加工”工艺流程，研制出移动式混联机器人柔性制造系统，已用于通讯卫星、货运飞船生产，加工精度/加工面的平面度/加工孔的垂直度分别优于±0.1/0.1/0.05 mm，表面粗糙度优于Ra3.2，满足产品质量要求，为我国航天型号产品的研制提供了全新的技术平台和手段。</p><p>（2）大口径光学元件精密抛光工艺装备。针对我国实施重大光学工程对数控精密抛光装备的迫切需求，发明了非球面元件全频段误差控制的复合抛光工艺，研制出大口径光学元件精密抛光工艺装备，已在中物院激光聚变研究中心投入生产，430 mm×430 mm非球面元件透射波前精度优于1/3λ（PV），表面粗糙度优于0.6 nm，熔石英材料去除率优于3 mm/min，较传统小磨头数控抛光机床提高2倍，满足了国家重大光学工程对元件生产质量和效率的要求，为强激光光学元件超精密制造提供了自主可控的核心装备。</p><p>（3）航空叠层构件螺旋铣孔工艺装备。针对我国大型民用飞机批产中大部件装配及对接关键技术亟需，采用卧式布局形式研制出航空叠层构件混联机器人螺旋铣孔工艺装备，开发出配套的铣孔工艺、专用刀具和状态监测系统。该装备Al/CFRP叠层构件Φ19.05 mm制孔的孔径精度达到IT8级、孔法向偏差小于0.019°、表面粗糙度优于Ra1.6，加工出口无毛刺、碳纤维复合材料无分层，解决了影响飞机复材部装装配质量和效率的瓶颈问题，显著增强了国产大飞机自动化装配装备的自主可控能力。</p><p>（4）重载搅拌摩擦焊接工艺装备。针对航天运载火箭及新型武器装备中高强度整体式铝合金构件焊接成型制造需求，研制出重载搅拌摩擦焊接工艺装备，开发出机器人末端变形预测及在线补偿算法和专用数控系统。该装备末端最大承载能力大于30 kN，最大可焊构件尺寸大于1m×2m×0.4m，高强度铝合金的焊接厚度可达12 mm，已用于运载火箭、空间飞行器等型号产品关键结构件的研制生产，显著提高相关领域重件的制造能力。</p><p>（5）汽车覆盖件模具抛磨工艺装备。针对汽车覆盖件模具人工抛磨效率低、成本高、产品质量一致性难以保证等问题，研制出以高性能混联机器人为核心的自动化抛磨工艺装备，开发出柔性抛磨执行器，以及基于通用软件命令成组应用技术的抛磨轨迹快速生成算法及软件。该装备可实现多种模式的打磨和抛光作业，表面粗糙度达Ra0.157，日产量提升4倍，人时生产性提高60%，显著提升了抛光质量和效率，实现了由手工向自动化抛磨的跨越，彻底解决了制约企业产能和产品质量的瓶颈问题。</p></div>
+  <div class="sec-h"><span class="no">03</span><h2>图集</h2><span class="st st-ok">官方档案</span></div><div class="gal"><img loading="lazy" src="../cases/gal/2021-02-0.jpg" alt="高性能混联加工机器人"><img loading="lazy" src="../cases/gal/2021-02-1.jpg" alt="高性能混联加工机器人"><img loading="lazy" src="../cases/gal/2021-02-2.jpg" alt="高性能混联加工机器人"></div>
+  <div class="sec-h"><span class="no">04</span><h2>设计五维</h2><span class="st st-draft">内容团队人工编目 · 解读非官方评价</span></div><div class="dims"><div class="dim"><div class="dim-h"><span class="dim-n">科技</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>高性能混联加工机器人,打破 Tricept/Exechon 国际垄断</p></div><div class="dim"><div class="dim-h"><span class="dim-n">艺术</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>机器人本体设计语言</p></div><div class="dim"><div class="dim-h"><span class="dim-n">人本</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>大型构件现场加工,减轻工人依赖</p></div><div class="dim"><div class="dim-h"><span class="dim-n">商业</span><span class="dim-s">4/5</span></div><div class="dim-bar"><i style="width:80%"></i></div><p>高端混联机器人国产替代市场</p></div><div class="dim"><div class="dim-h"><span class="dim-n">文化</span><span class="dim-s">3/5</span></div><div class="dim-bar"><i style="width:60%"></i></div><p>高端装备自主化的行业样本</p></div></div>
+  
+  
+  
+  
+  <div class="sec-h"><span class="no">07</span><h2>权威溯源</h2><span class="st st-ok">人工核选 · 检索于 2026-08-09</span></div><div class="srcs"><a class="srclink" href="https://kj.tju.edu.cn/info/1073/12047.htm" target="_blank" rel="noopener">成果推介|天津大学黄田、刘海涛团队——高性能混联加工机器人技术</a><a class="srclink" href="http://news.tju.edu.cn/info/1005/290489.htm" target="_blank" rel="noopener">科技日报：机床加工大尺寸工件“力不从心”？ 灵巧的混联机器人来了</a><a class="srclink" href="https://2024.wicongress.org.cn/2024/zh/article/4833" target="_blank" rel="noopener">【WIC优秀案例】天津大学：高性能混联加工机器人 - 世界智能产业博览会</a></div>
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 B（7 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

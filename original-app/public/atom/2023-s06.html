@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>铁路桥梁多功能弹性约束装置 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2023-s06.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2023-s06</div>
+  <h1>铁路桥梁多功能弹性约束装置</h1>
+  <div class="meta-line"><b>2023 年度银奖</b><span>中铁第四勘察设计院集团有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2023 年度 · 银奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中铁第四勘察设计院集团有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">严爱国,王德志,杨得旺,史娣,王明亮</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与产业 · 工程装备（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><p>高速铁路技术标准高、平面曲线半径大，线路与既有道路、铁路、河流小角度交叉频繁，需要建设大量跨度120～200m的大跨梁桥，且多采用刚度大、经济性好的混凝土桥。当混凝土桥温度联长超过200m时，需设置钢轨伸缩调节器，以消除钢轨内过高的温度应力。而伸缩调节器造价昂贵，后期养护工作量大，还存在行车不平顺，且曲线、大纵坡路段不能设置，直接影响线路局部走向和车站设置条件。</p><p>聚焦高铁建设重大需求，项目组从新装置、新体系、设计方法、智能运维等方面开展技术攻关，研发了铁路桥梁多功能弹性约束装置，改变了传统的桥梁结构体系和变形模式，突破了大跨桥上需设置伸缩调节器的技术限制。</p><p>主要设计创新如下：</p><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>发明了铁路桥梁弹性约束新装置，实现了桥梁温度变形零点主动调控。发明了“U型挡臂+双向压缩碟簧”结构，力学性能稳定、可靠、耐久，实现结构温度变形的自动复位，同时兼顾减隔震作用。研发了精准调位装置，实现了装置弹性变形零点及容许位移的主动调控。发明了“转动球冠+内置导轨”球型支承结构，实现装置转动与平动分离、互不干扰，有效保证了装置形态不受桥梁转动影响。</div></div><div class="p-li"><span class="p-mk">2</span><div>构建了铁路梁桥弹性约束新体系，解决了大跨梁桥无需设钢轨伸缩调节器的技术难题。创新提出在大跨梁桥两主墩设置弹性约束新装置，构建大跨梁桥弹性约束新体系，使温度变形零点由固定墩处调整至中跨跨中，梁端温度变形减小约30%，钢轨温度伸缩力减小约35%。提出了装置弹性刚度、容许弹性位移计算公式，实现了多目标一体化设计。</div></div><div class="p-li"><span class="p-mk">3</span><div>创新提出了弹性约束体系桥梁-轨道设计方法，为大规模应用提供了科学依据。建立了新装置力学模型，提出了新体系桥梁在组合刚度、限幅变形条件下，多墩水平力分配与抗震计算方法，为新体系应用提供了理论支撑。研发了新体系动态条件下桥梁-轨道分析软件，实现了多工况批量计算，为新体系应用提供了高效的分析手段。</div></div><div class="p-li"><span class="p-mk">4</span><div>研发了新装置位移智能监测系统，监测装置服役性能及桥梁变形规律，建立了位移智能预报警模型和诊断体系，为运营养护提供实时可靠的依据。</div></div></div><p>项目获专利19项、软著2项，制定通用图1部，发表学术论文12篇。项目成果颠覆了铁路大跨梁桥设钢轨伸缩调节器的传统建设模式，已应用于杭温高铁、珠肇高铁、武荆高铁等项目数十座大跨桥梁中，累计创经济效益3.92亿元，显著提升了我国高铁建设水平，降低了工程建设及运维成本。</p><p>由陈政清院士、聂建国院士、卢春房院士等7位业内专家组成的专家组一致认为项目成果“整体达到国际领先水平”。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>创新设计总体思路</div></div></div><p>大跨连续梁桥设置钢轨伸缩调节器的技术方案面临以下挑战：①钢轨伸缩调节器造价昂贵，后期养护工作量大，存在固有行车不平顺，《高速铁路设计规范》要求减少钢轨伸缩调解器设置；②当大跨桥梁位于曲线上，而不具备设置钢轨伸缩调解器时，则需要局部改线，增加工程投资。</p><p>项目组以突破大跨梁桥设钢轨伸缩调节器的技术限制为核心开展技术攻关，研发了桥梁多功能弹性约束新装置，构建了铁路大跨梁桥弹性约束新体系，主动调控桥梁的温度变形零点，实现了结构联长400m以内的高铁桥梁不设钢轨伸缩调节器。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>主要设计创新</div></div></div><p>主要创新点一：发明了桥梁弹性约束新装置，具备弹性约束、主动调位和支承功能，实现了桥梁温度变形零点主动调控，获桥梁的下限位活动球型支座（ZL202020244425.8）、环向弹性减隔震支座（ZL202210329822.9）等专利4项。</p><p>关键技术1：发明了“U型挡臂+双向压缩碟簧”结构，采用体积小、刚度可调、缓冲减振能力强的碟簧结构，力学性能稳定、可靠、耐久，实现结构温度变形的自动复位，同时兼顾减隔震作用。</p><p>双向压缩碟簧结构位于U型挡臂之间，通过带U型挡臂传递弹性力。止挡块、传力环将碟簧组固定于活塞杆中部，通过L型挡臂、传力环将荷载传递至碟簧组，两侧止挡块形成了碟簧组单向限位结构，实现同一组碟簧左右移动均承压。两端连接装置设有调位螺栓，精准定位弹性约束装置。</p><p>图1 “U型挡臂+双向压缩碟簧”结构 关键技术2：研发了精准调位装置，实现了装置弹性变形零点及容许位移的主动调控。</p><p>1）研发了弹性变形零点调位装置。通过在弹性约束装置两端连接装置中设置弹性调位螺栓，可实现对装置实现弹性变形零点精准调控，解决了施工误差、桥梁徐变变形、安装温度等因素引起的不均衡位移。</p><p>2）研发了容许位移调位装置。通过在装置纵桥向两侧设计“限位板+承压板+分级调位垫片”结构，通过增减垫片数量，调整装置容许位移，实现了容许位移锁定，同时兼顾纵向防落梁挡块作用。调位垫片的数量和厚度级配根据调位量大小、调位精度确定，有效提升了装置的适用性。</p><p>图2 精准调位装置构造 关键技术3：发明了高性能支承装置，实现了高承载力，装置转动与平动分离、互不干扰。</p><p>1）研发了“转动球冠+内置导轨”结构，具有高承载、多向转动、耐久性好等特点。在中、上座板间设置转动球冠，实现支承装置转动功能；在中、下座板间设置导轨，实现了导向、水平承剪作用。转动球冠采用凸球面外包覆不锈钢滑板结构，避免了球冠锈蚀影响转动摩擦性能，保证装置使用寿命。</p><p>2）研发了带U型挡臂的中座板，结构呈盆环状，转动球冠置于中座板中部，中座板底部水平滑动面不受装置转动影响，使弹性约束装置传力路径始终处于水平状态。</p><p>图3 高性能支承装置 主要创新点二：构建了铁路梁桥弹性约束新体系，解决了大跨梁桥无需设钢轨伸缩调节器的技术难题，实现了结构联长400m以内的铁路大跨连续桥不设轨伸缩调节器。</p><p>关键技术1：创新提出在大跨梁桥两主墩设置弹性约束新装置，构建大跨梁桥弹性约束新体系，使温度变形零点由固定墩处调整至中跨跨中，梁端温度变形减小约30%，钢轨温度伸缩力减小约35%。</p><p>图4 铁路梁桥弹性约束新体系示意 关键技术2：基于桥梁跨度、桥址温差变化幅度、结构受力与变形、行车舒适性等，提出了装置弹性刚度、容许弹性位移计算公式，实现了多目标一体化设计。</p><p>基于“下部结构-弹性约束装置-主梁”协调约束体系的荷载传递途径及变形特征，综合考虑下部结构强度、梁轨作用纵向水平线刚度、梁端伸缩位移、三水准抗震设防等静、动力设计目标，以综合减震率及技术经济性为优化目标，提出了弹性约束体系弹性刚度、容许弹性位移的合理取值理论公式。</p><p>图5 弹性约束体系多目标一体化设计方法 主要创新点三：创新提出了弹性约束体系桥梁-轨道设计方法，为大规模应用提供了科学依据，获软件著作权《桥上无缝线路附加力计算软件》（软著登字第5601639号）。</p><p>关键技术1：建立了新装置力学模型，提出了新体系桥梁在组合刚度、限幅变形条件下，多墩水平力分配与抗震计算方法，为新体系应用提供了理论支撑。</p><p>铁路大跨梁桥弹性约束体系为国内外首创，具有变量因素多、分阶段受力等特点，体系中存在摩擦力、装置弹性约束刚度、桥墩弹性刚度、纵向限位等变量。首先基于多功能弹性约束装置工作原理，深入分析摩擦力、弹性力、限幅位移等约束条件，构建了三阶段力学模型，形成了弹性约束体系桥梁的通用设计方法。</p><p>图6 多功能弹性约束装置力学模型 基于多墩协同受力原理，提出了弹性约束体系桥梁组合刚度、容许位移条件下的多墩水平力分配及抗震设计方法，为大规模工程应用提供科学依据。</p><p>关键技术2：研发了新体系动态条件下桥梁-轨道分析软件，实现了多工况批量计算，为新体系应用提供了高效的分析手段。</p><p>提出了新体系桥上无缝线路伸缩力及制动力计算理论，建立了考虑弹性位移及弹性刚度的无缝线路精细化分析模型，揭示了温度及列车荷载作用下轨道-桥梁体系的受力变形机理。根据桥梁参数、约束体系参数、轨道参数等，动态生成桥梁-轨道模型布置示意图，研发新体系动态条件下桥梁-轨道分析软件，对提升桥-轨设计智能化具有重要意义。</p><p>图7 新体系动态条件下桥梁-轨道分析软件 主要创新点四：研发了新装置位移智能监测系统，建立了位移智能预报警模型和诊断体系，为运营养护提供实时可靠的依据，获软件著作权《智能桥梁监测数据管理系统》（软著登字第5804177号）。</p><p>通过对弹性约束装置位移变化量、环境温度的长期监测数据的统计分析，研究梁体及弹性约束装置长期服役下的位移情况，智能反馈装置运营养护方案，为铁路安全运营提供了技术保障。同时，该智能监测系统具备很强的可移植性，可适用于各种桥型。相较于传统的人工巡检方式，本系统可降低巡检成本约40%。</p><p>图8 新装置位移智能监测系统</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>

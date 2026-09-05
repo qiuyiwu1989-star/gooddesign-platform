@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>便携式ECMO医疗急救器械 · 数据详情 · 好设计馆</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+:root{--bg:#FFFFFF;--bg-quiet:rgba(15,23,42,0.02);--ink:#16181D;--ink-soft:#3E4454;--muted:#8A8F98;--muted-soft:#62666D;
+--line:rgba(15,23,42,0.09);--accent:#5E6AD2;--accent-bright:#4F58C0;--accent-soft:rgba(94,106,210,.10);
+--gold:#A87E2A;--gold-soft:rgba(168,126,42,.10);--ok:#2E7D4F;--ok-soft:rgba(46,125,79,.07);
+--sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","Noto Sans SC",monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:40px 28px 64px}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted-soft);text-decoration:none;margin-right:14px}
+.back:hover{color:var(--accent-bright)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--accent-bright);margin:20px 0 10px}
+h1{font-size:clamp(21px,3vw,29px);font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:10px}
+.meta-line{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13px;color:var(--muted-soft)}
+.meta-line b{color:var(--ink)}
+.banner{margin-top:16px;border-radius:8px;padding:11px 15px;font-size:13px;line-height:1.6}
+.banner-ok{border:1px solid rgba(46,125,79,.35);background:var(--ok-soft);color:var(--ok)}
+.banner-draft{border:1px solid rgba(168,126,42,.4);background:var(--gold-soft);color:var(--gold)}
+.banner-none{border:1px solid var(--line);background:var(--bg-quiet);color:var(--muted-soft)}
+.meta-grid{border:1px solid var(--line);border-radius:8px;margin-top:16px}
+.row2{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--line)}
+.row2:last-child{border-bottom:0}
+.row2 .k{font-family:var(--mono);font-size:11px;color:var(--muted);padding:11px 14px;letter-spacing:1px;border-right:1px solid var(--line)}
+.row2 .v{font-size:13.5px;color:var(--ink-soft);padding:11px 14px;line-height:1.7}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px;border-bottom:1px solid var(--line);padding-bottom:9px}
+.sec-h .no{font-family:var(--mono);font-size:12px;color:var(--accent-bright)}
+.sec-h h2{font-size:18px;font-weight:700}
+.st{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+.st-ok{background:var(--ok-soft);color:var(--ok)}
+.st-draft{background:var(--gold-soft);color:var(--gold)}
+.st-infer{background:var(--accent-soft);color:var(--accent-bright)}
+.st-none{background:var(--bg-quiet);color:var(--muted)}
+.grade{font-family:var(--mono);font-weight:700;font-size:12px;width:24px;height:24px;display:inline-grid;place-items:center;border-radius:6px}
+.grade-A{background:var(--ok-soft);color:var(--ok)}
+.grade-B{background:var(--accent-soft);color:var(--accent-bright)}
+.grade-C{background:var(--gold-soft);color:var(--gold)}
+.grade-D{background:var(--bg-quiet);color:var(--muted)}
+.rich{color:var(--ink-soft);font-size:15px;line-height:1.9;text-align:justify}
+.rich p{margin:0 0 14px}
+.p-h{font-weight:700;color:var(--ink);margin:20px 0 10px;font-size:15px}
+.p-list{margin:0 0 14px}
+.p-li{display:flex;gap:10px;margin-bottom:8px}
+.p-mk{font-family:var(--mono);font-size:12px;color:var(--accent-bright);flex-shrink:0;padding-top:2px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.gal img{width:100%;border-radius:8px;border:1px solid var(--line);display:block}
+.atoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.atom{border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.atom-h{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.atom-k{font-weight:700;font-size:14px}
+.atom p{font-size:13px;color:var(--ink-soft);line-height:1.75}
+.atom-src{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.ptbl{width:100%;border-collapse:collapse;font-size:13px}
+.ptbl th{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:left;padding:8px 12px;border-bottom:2px solid var(--line)}
+.ptbl td{padding:9px 12px;border-bottom:1px solid var(--line);color:var(--ink-soft);vertical-align:top;line-height:1.6}
+.ptbl td.cn{color:var(--ok);font-weight:500}
+.ip-sum{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:500}
+.ip-list{display:flex;flex-direction:column;gap:7px}
+.ip-li{display:flex;gap:10px;font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.ip-mk{color:var(--accent-bright);font-size:9px;padding-top:4px;flex-shrink:0}
+.dims{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.dim{border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.dim-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.dim-n{font-weight:700;font-size:13.5px}
+.dim-s{font-family:var(--mono);font-size:11px;color:var(--accent-bright)}
+.dim-bar{height:4px;border-radius:2px;background:var(--bg-quiet);overflow:hidden;margin-bottom:7px}
+.dim-bar i{display:block;height:100%;background:var(--accent)}
+.dim p{font-size:12px;color:var(--muted-soft);line-height:1.6}
+.dim-note{color:var(--muted);font-size:13.5px}
+.migs{display:flex;flex-direction:column;gap:10px}
+.mig{display:flex;gap:12px;border:1px solid var(--line);border-radius:10px;padding:11px 15px;align-items:flex-start}
+.mig b{display:block;font-size:13.5px;margin-bottom:2px}
+.mig span:not(.mig-tag){font-size:12.5px;color:var(--muted-soft)}
+.mig-tag{flex-shrink:0;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:99px;margin-top:2px}
+.mig-ok{background:var(--ok-soft);color:var(--ok)}
+.mig-ai{background:var(--accent-soft);color:var(--accent-bright)}
+.srcs{display:flex;flex-direction:column;gap:6px}
+.srclink{font-size:13px;color:var(--accent-bright);text-decoration:none}
+.srclink:hover{text-decoration:underline}
+.mats{display:flex;flex-direction:column;gap:8px}
+.mat{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 15px}
+.mat-type{flex-shrink:0;font-family:var(--mono);font-size:10.5px;padding:2px 9px;border-radius:99px;background:var(--accent-soft);color:var(--accent-bright);margin-top:2px;white-space:nowrap}
+.mat b{display:block;font-size:13.5px;font-weight:600}
+.mat span:not(.mat-type):not(.mat-src):not(.st){font-size:12.5px;color:var(--muted-soft);display:block;margin-top:2px}
+.mat-src{flex-shrink:0;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mat .st{margin-left:auto}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media print{.back{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../gd-ds.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← 数据管理台</a> <a class="back" href="../project/2020-n02.html">项目展示页 →</a>
+  <div class="kicker">PROJECT ATOM · 项目数据详情页 · 2020-n02</div>
+  <h1>便携式ECMO医疗急救器械</h1>
+  <div class="meta-line"><b>2020 年度提名奖</b><span>中国人民解放军南部战区总医院,广东顺德工业设计研究院（广东顺德创新设计研究院）,广东丁沃生医疗器械有限公司</span>
+  <span class="grade grade-C">C</span><span class="st st-none">未原子化</span></div>
+  <div class="banner banner-none">本页档案信息来自官方记录（已核验）；<b>知识原子化未开始</b>——设计顿悟、弯路试错、可迁移方向等深层字段待 AI 起草与设计师校准。</div>
+  <div class="meta-grid"><div class="row2"><div class="k">年度 / 奖级</div><div class="v">2020 年度 · 提名奖</div></div><div class="row2"><div class="k">完成单位</div><div class="v">中国人民解放军南部战区总医院,广东顺德工业设计研究院（广东顺德创新设计研究院）,广东丁沃生医疗器械有限公司</div></div><div class="row2"><div class="k">主要完成人</div><div class="v">冯鹰扬,梁铭炬,霍枫</div></div><div class="row2"><div class="k">展区归位</div><div class="v">设计与生活 · 高端医疗（规则初分，待专家确认）</div></div></div>
+  <div class="sec-h"><span class="no">01</span><h2>项目档案</h2><span class="st st-ok">官方档案 · 已核验</span></div>
+  <div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>项目背景</div></div></div><p>（1）ECMO技术原理：体外膜肺氧合（extracorporeal membrane oxygenation，ECMO），其将体内的静脉血引出体外，经过特殊材质人工心肺旁路实现血液氧合后注入病人动脉或静脉系统，起到心肺替代作用，维持人体组织的氧合血供。ECMO已成为现今严重心肺疾患或心肺功能衰竭病人治疗的重要手段。</p><p>（2）便携式ECMO：传统的ECMO设备由于体积较大、功能部件分散、移动不便等不足。便携式ECMO由于其便携容易、操作简单，对于急性心肺功能衰竭等危重症患者的治疗可以走出医院，到救护车上、病人家中，甚至在马路边进行。</p><p>（3）新冠疫情危重症救治：新型冠状病毒疫情治疗中，ECMO是危重症病人救治的最后武器。在今年年初，据统计全国400台设备，有一半运往武汉进行救治。武汉中南医院等多个医院采用ECMO设备，对新型冠状病毒危重症患者成功救治。</p><p>（4）项目意义：ECMO产品目前均为国外厂家垄断，没有国内自主知识产权的产品上市，因而使用费用极高，极大地限制了临床推广应用。便携式ECMO自主开发国产化，降低患者使用费用，有利于我国危重症ECMO临床应用和急救水平提高。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>产品先进性：广东丁沃生医疗器械有限公司联合广东顺德工业设计研究院及临床专家，开发出我国首台自主知识产权的便携式ECMO设备以及配套核心耗材。</div></div></div><p>（1）国内首台自主研发自主知识产权ECMO系统，高度集成及智能化。</p><p>（2）国内首创的离心血泵技术，采用先进的叶片式结构，具有高速低血液损伤特点。</p><p>（3）国内首创抗血栓涂层技术。具有血液相容性及抗血栓抗吸附的效果。</p><p>（4）集成化便携式设备。重量为10kg，相比传统ECMO设备，重量减轻50%以上。</p><p>（5）领先的电池管理技术。首创不停机换电池技术，实现长时间户外续航。</p><p>（6）独创的安全双屏设计。防止屏幕故障时无法操控设备。</p><div class="p-list"><div class="p-li"><span class="p-mk">3</span><div>产品成果及效益：</div></div></div><p>（1）专利情况：授权发明专利2项，授权使用新型专利9项，授权外观专利1项。</p><p>（2）学术研究：完成了大型动物实验验证，发表国内核心期刊文章1篇。</p><p>（3）项目申报：联合多家单位进行国家重点研发计划“ECMO系统研发”项目申报及答辩（结果待公布）。</p><p>（4）社会意义：是本次新冠疫情中受到高度关注的急需国产化产品。本项目的实施，能有利于降低患者治疗费用，提高我提高我国危重患者的救治水平。</p></div>
+  <div class="sec-h"><span class="no">02</span><h2>设计阐述</h2><span class="st st-ok">官方档案 · 已核验</span></div><div class="rich"><div class="p-list"><div class="p-li"><span class="p-mk">1</span><div>设计思想：（1）行业痛点分析：ECMO技术被多家国外千亿级医疗巨头垄断，使用成本极高。传统产品不便转运，体积大，线路、管路凌乱，集成程度低。传统产品安全设计少，传统产品安全设计少，单屏显示，缺乏故障处理措施。</div></div></div><p>（2）设计起源：本团队的ECMO产品技术，深感高端医疗器械需要自主创新，特别是危重症急救产品的国外垄断。自2016年开始启动研发，根据临床专家的需求进行开发。已进行了四代设备迭代。目前这款设备，主要从便携、集成化、安全性的角度进行开发及优化。</p><div class="p-list"><div class="p-li"><span class="p-mk">2</span><div>产品系统组成及特点：产品系统包括ECMO设备（离心泵、控制系统、监测系统、控制软件），以及一次性耗材（管路、泵头等）。</div></div></div><p>（1）国内首台自主研发自主知识产权ECMO系统，高度集成及智能化。</p><p>（2）国内首创的离心血泵技术。采用先进的叶片式结构，具有高速低血液损伤特点。</p><p>（3）国内首创抗血栓涂层技术。具有血液相容性及抗血栓抗吸附的效果。</p><p>（4）集成化便携式设备。重量为10kg，相比传统ECMO设备，重量减轻50%以上。</p><p>（5）领先的电池管理技术。首创不停机换电池技术，实现长时间户外续航。</p><p>（6）独创的安全双屏设计。防止屏幕故障时无法操控设备。</p><p>（7）全面监控系统。业内最全面的监测能力，包括压力、流量、温度、气泡、血氧血气等监测。</p><p>（8）智能化算法。返流、进气保护、故障自动处理，独创情景式智能提醒功能。</p><div class="p-list"><div class="p-li"><span class="p-mk">4</span><div>前期成果及优势：</div></div></div><p>（1）前期成果：通过企业、科研单位、医院的强强联合，项目组不仅在ECMO的临床应用方面有着丰富的经验，而且在ECMO整机、泵头、抗血栓涂层、循环管路、插管、动物实验等研究上也取得了较大进展。其中关键性技术（在线监测、耗材表面涂层等），核心基础零部件（离心血泵、泵头、膜式氧合器等）、核心基础材料（氧合膜丝）以及ECMO整机技术等研究，处于国内领先地位。已完成第三代ECMO工程原型机开发，系统优化了结构和电路设计，实现了临床便携需求，形成整合水箱、在线监测、续航电池、离心血泵、人机界面的便携式原型机。该样机已进行了无心跳大动物模型静脉-动脉（VA）模式支持以及急性呼吸窘迫综合征（ARDS）大动物模型静脉-静脉（VV）模式支持的实验验证，可快速推进至临床验证阶段。</p><p>（2）团队优势：项目运营管理团队成员有丰富的医药企业市场营销经验以及团队管理经验。集研发、市场、销售人才在内的跨领域、跨行业的优势交叉团队及高效的运营管理团队。研发团队主要为高学历技术团队，团队人员超过20人，硕博士占比在80%以上。项目拥有一支经验丰富、技术一流的器官移植与机械灌注技术专家团队，分别由来自西班牙巴塞罗那大学、西班牙器官移植研究院、中国人民解放军南部战区总医院的专家组成。西班牙巴塞罗那大学临床医院肝脏移植中心主任Constantino Fondevila教授首创ECMO用于心脏骤停供体器官抢救。</p><p>（3）项目支撑：A. 广东丁沃生医疗器械有限公司（Guangdong Devocean Medical Instrument Co., Ltd. 以下简称“丁沃生医疗”）是一家从事高端医疗器械研发、生产及销售的企业，提供器官移植与生命支持等临床医学领域的专用医疗器械、耗材和应用产品及解决方案。丁沃生医疗依托广东顺德创新设计研究院和中国人民解放军南部战区总医院联合设立的体外脏器修复和生命支持系统（国际）联合研发中心的研究成果而建立。</p><p>B. 广东顺德工业设计研究院（广东顺德创新合计研究院）是广东省新型研发机构，是顺德区直属事业单位。具有医疗器械开发及测试的高标准实验室。目前建成实验室总面积达4000平方米，十万级无尘车间200平方米，仪器设备投入超1100万元。研发实验包括电子实验室、光学工程实验室、系统集成实验室、细胞工程实验室、生物应用实验室、分子生物学实验室、免疫分析实验；测试实验室包括安规测试实验室等。智能制造及加工实验室，包括精密机械加工实验室、光学组件调试实验室；中试车间包括生物医用涂层涂覆车间。研究院开展先进医疗设备、智能制造装备、新能源等高科技产品研发与工程化项目十余项。研究院聚焦生物医学领域，搭建高起点、国际化的科研协同创新平台。成功研发出国内首款自主知识产权的微滴式数字PCR设备并联合永诺生物进行成果转化；与西班牙的国际器官捐献与移植研究院、中国人民解放军南部战区总医院合作共建“器官研究与发展国际基地”（国际合作协同创新中心），引进国际顶尖资源，开展具有国际影响力的离体肝脏机械灌注设备、供体器官在体机械灌注设备等研发项目。</p><p>C. 中国人民解放军南部战区总医院始建于1933年，是一所集医疗、教学、科研、预防、保健、康复为一体的现代化大型综合性医院。医院专家团队成立了我国第一家器官获取组织（OPO），在国内率先将ECMO用于供体器官保护，率先建立ECMO保护供体器官的流程，在ECMO保护供体器官的推广应用方面做了大量工作。主持多项军用便携式ECMO项目。</p></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <footer><div>好设计馆 · 项目数据详情页 · 数据核验：2026-08-05 与官网全量比对（十届 560 项，0 缺失）</div>
+  <div>质量评级 C（3 分）· 评级规则见管理台</div></footer>
+</div>
+</body>
+</html>
