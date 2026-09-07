@@ -23,3 +23,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 
 ## 当前跨对话协作
 企业创新接续前读取00-项目管理/企业创新协作要求.md。双环研究由另一对话推进；006负责extensions/public/explore/与scripts/build_explore.py，不修改企业目录。本轮006仅本地预览，避免并发发布。
+
+008沿用馆/奖项职责：scripts/exhibit_content.py记录策展解读与原文摘录，构建校验引用位置；extensions/public/explore/deep-exhibits.js负责阅读活动。继续企业工作无需修改这些文件。
