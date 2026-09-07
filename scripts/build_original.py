@@ -43,6 +43,9 @@ s=connect.read_text().replace('<main class="wrap">','<main class="wrap"><p style
 connect.write_text(s)
 build_knowledge_index(pub/'knowledge-data')
 build_explore(pub)
+# Standalone platform definition; kept in the build without changing the homepage.
+(pub/'model').mkdir(exist_ok=True)
+shutil.copy2(ROOT/'03-平台规划/创新设计大模型-定义.html',pub/'model/index.html')
 changes=[]
 for f in (app/'public').rglob('*'):
     if f.is_file():
