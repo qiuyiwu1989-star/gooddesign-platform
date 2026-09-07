@@ -1,0 +1,1 @@
+(()=>{const select=document.getElementById('resource-type');select.onchange=()=>{let n=0;document.querySelectorAll('[data-resource]').forEach(el=>{el.hidden=select.value!=='all'&&select.value!==el.dataset.resource;if(!el.hidden)n++});document.getElementById('resource-count').textContent=n+' 份资源'}})();

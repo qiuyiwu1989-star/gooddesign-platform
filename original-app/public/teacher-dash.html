@@ -33,12 +33,9 @@
   .empty{padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
   footer{border-top:1px solid var(--line);color:var(--muted);padding:28px;font-size:12px;text-align:center}
 </style>
-</head>
-<body>
-<nav>
-  <a class="brand" href="index.html"><span class="mark">师</span>教师看板<span style="font-family:var(--mono);font-size:11px;color:var(--muted-soft);font-weight:400;margin-left:2px">TEACHER DASHBOARD</span></a>
-  <div class="links"><a href="playground.html?tab=quest">观展闯关</a><a href="lesson/index.html">教案目录</a></div>
-</nav>
+<link rel="stylesheet" href="/design/system.css"></head>
+<body class="gd-site"><a class="gd-skip" href="#gd-content">跳到内容</a><div id="gd-shell" class="gd-header"><a class="gd-brand" href="/"><img src="/assets/brand/logo-seal.svg" alt="">好设计</a><button id="gd-menu" class="gd-menu" aria-expanded="false" aria-controls="gd-nav">菜单</button><div class="gd-nav" id="gd-nav" role="navigation" aria-label="全站导航"><a href="/projects.html">项目库</a><a href="/museum.html">好设计馆</a><a href="/education.html" aria-current="page">科技教育</a><a href="/assist.html">智能助手</a><a href="/industry.html">企业创新</a></div></div><div class="gd-crumb" id="gd-content" tabindex="-1"><a href="/">好设计平台</a> / <a href="/education.html">科技教育</a></div>
+
 <div class="wrap">
   <h1>📊 教师看板</h1>
   <div class="sub">闯关数据汇总(基于本机浏览器记录;如需班级数据,让学生在同一设备上作答或提供数据文件)</div>
@@ -89,5 +86,5 @@
   document.getElementById('body').innerHTML = answered ? html : '<div class="empty">还没有闯关记录——让学生在「互动乐园 → 观展闯关」作答后,这里会显示每题掌握情况。</div>';
 })();
 </script>
-</body>
+<div class="gd-footer"><span>好设计 · 创新设计知识与应用平台<br>档案、解读与应用内容分层呈现。</span><span><a href="/design-system.html">设计系统</a> · <a href="/award.html">奖项背景</a> · <a href="https://cgd.cmes.org" target="_blank" rel="noopener">官方信息</a></span></div><script src="/design/shell.js" defer></script></body>
 </html>

@@ -1,13 +1,16 @@
 # 好设计平台
 
-原版网站已上线：[好设计馆](https://gooddesign.qiuyiwu.com/)。以用户提供压缩包为基线，保留既有视觉、页面与交互，后续在此基础上迭代。
+[平台首页](https://gooddesign.qiuyiwu.com/) · [设计系统](https://gooddesign.qiuyiwu.com/design-system.html)
 
-- 当前信息结构与定位：[信息架构与平台定位-v2](03-平台规划/信息架构与平台定位-v2.md)
-- 运行状态：[STATE.md](STATE.md)；待办：[TASKS.md](TASKS.md)
-- 原版迁移：[spec 002](specs/002-original-migration.md)
-- 原快照：99-历史项目快照/（本地保留，不含入公开网站）
-- 发布构建：original-app/；旧site/是已替代的简化版本。
-- 构建：`python3 scripts/build_original.py`；部署：`scripts/deploy.sh`
-- 后端配置保存在服务器私有文件，企业需求独立持久化。原始资料、会议、内部方案不发布。
+五入口：项目库、好设计馆、科技教育、智能助手、企业创新。原馆页面迁至museum.html，原有项目和工具地址保留。
 
-网站包含560个项目档案、知识页、数字馆、互动展项、教育课例、教师工作台、助手与企业入口。现有知识与教学内容成熟度不一，后续以来源、审核和复用验证推进。
+当前建设：[设计系统v1](03-平台规划/好设计设计系统-v1.md)、[五板块结构](03-平台规划/五大板块结构定义-v1.md)。
+
+- 来源快照：99-历史项目快照/，本地只读保留。
+- 新功能源码：extensions/public/；平台模板：scripts/platform_design.py。
+- 构建：python3 scripts/build_original.py；验收：python3 scripts/check_design.py。
+- 发布：scripts/deploy.sh，自动检查、版本切换与回滚；运行细节见STATE.md。
+- original-app/是发布构建，site/是已替代的早期简化版。
+- 密钥与企业数据不入公开目录，线上模型沿用原服务。
+
+设计系统覆盖公共外框和新组件，原课件/展项内部逐步迁移。资料覆盖与事实核验分开，所有新分析仍需证据和审核。
