@@ -27,3 +27,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 008沿用馆/奖项职责：scripts/exhibit_content.py记录策展解读与原文摘录，构建校验引用位置；extensions/public/explore/deep-exhibits.js负责阅读活动。继续企业工作无需修改这些文件。
 
 009新增scripts/exhibit_content_more.py（其余四站）和explore/notebook.js（本机学习笔记）。不得将笔记记录解释为用户能力评估或云端同步。
+
+010研学资料：exhibit_sources.py保存公开来源及核读边界；teacher.*为活动单，build_teacher_sheets.py生成离线文本。读取摘要不得标为全文核验；不得捏造试教反馈。

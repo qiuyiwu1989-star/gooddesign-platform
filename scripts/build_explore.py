@@ -2,6 +2,8 @@
 from pathlib import Path
 import json, hashlib, shutil
 from exhibit_content import EXHIBITS
+from exhibit_sources import SOURCES
+from build_teacher_sheets import write_sheets
 ROOT=Path(__file__).resolve().parents[1]
 SRC=ROOT/'99-历史项目快照/good-design/public'
 ROUTES=[
@@ -29,10 +31,12 @@ def build(pub):
    f=SRC/f"cases/detail/{stop['id']}.json";d=json.loads(f.read_bytes());excerpt=next(p for p in d['desc'].split('\n') if p.strip());stop['evidence']={'field':'desc','start':d['desc'].index(excerpt),'end':d['desc'].index(excerpt)+len(excerpt),'excerpt':excerpt,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()}
  exhibits=json.loads(json.dumps(EXHIBITS,ensure_ascii=False))
  for pid,exhibit in exhibits.items():
+  exhibit['external_source']=SOURCES[pid]
   raw=(SRC/f'cases/detail/{pid}.json').read_bytes();desc=json.loads(raw)['desc']
   for field in exhibit['fields']:
    start=desc.index(field['quote'])
    field['source']={'url':f'/cases/detail/{pid}.json','field':'desc','start':start,'end':start+len(field['quote']),'sha256':hashlib.sha256(raw).hexdigest()}
+ write_sheets(out,routes,rows,exhibits)
  (out/'deep.json').write_text(json.dumps(exhibits,ensure_ascii=False,indent=2))
  (out/'data.json').write_text(json.dumps({'version':'0.1','projects':rows,'routes':routes},ensure_ascii=False,indent=2))
  # Add small discovery links to original subpages; root homepage remains untouched.

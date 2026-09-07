@@ -1,0 +1,10 @@
+"""Human-reviewed external corroboration; no blanket verification claims."""
+SOURCES={
+'2025-00':{'publisher':'国家航天局','title':'嫦娥六号带回1935.3克月球样品 交接至地面应用系统','url':'https://www.cnsa.gov.cn/n6758823/n6758844/n10518102/n10518147/c10567320/content.html','published':'2024-06-28','kind':'主管机构报道','access':'已读正文','supports':'支持嫦娥六号任务完成样品交接、任务总样品量为1935.3克。','boundary':'任务总样品量不能替代档案中的钻取子系统样品量；该报道不单独验证取芯机构、层序保持或各项工程指标。'},
+'2015-02':{'publisher':'中国科学院沈阳自动化研究所','title':'沈阳自动化所参加“蛟龙”号7000米级海试人员胜利凯旋','url':'https://sia.cas.cn/xwzx/tpxw/201207/t20120718_3617261.html','published':'2012-07-18','kind':'研制参与方报道','access':'已读正文','supports':'记录该轮海试六次下潜、最大深度7062米及采样等作业，可补充项目海试背景。','boundary':'报道不是完整海试原始数据，不能单独证明每种应急装置的可靠性或所有工况安全性。'},
+'2015-00':{'publisher':'中国中车青岛四方','title':'CRH380A型和谐号高速动车组','url':'https://www.crrcgc.cc/sfgf/2013-12/05/article_6DE3945F7E2B4887A2D46B0618286261.html','published':'2013-12-05','kind':'制造方产品资料','access':'已读正文','supports':'记录CRH380A投入运营及16辆编组CRH380AL试验速度等背景，可核对车型和事件范围。','boundary':'CRH380A与CRH380AL、运营速度与试验速度必须区分；不能用峰值试验速度代表日常运行或整车综合表现。'},
+'2021-01':{'publisher':'东方电机有限公司','title':'创新成果','url':'https://dfem.dongfang.com/info/1434/2825.htm','published':None,'kind':'制造方成果介绍','access':'仅检索摘要；正文未提取到对应段落','supports':'检索摘要将白鹤滩1000MW机组列为其自主研制成果；待补读对应正文。','boundary':'页面覆盖多类装备、含企业自述，不足以复核档案中11个模型试验的全部结果或当前世界排名。'},
+'2023-00':{'publisher':'中国机械工业集团','title':'“800MN大型模锻压机设计制造及应用关键技术研究与开发”课题通过技术终验收','url':'https://www.sinomach.com.cn/xwzx/zgsdt/2015_zgsdt/201510/t20151028_66209.html','published':'2015-10-28','kind':'研制企业集团报道','access':'仅检索摘要；正文访问失败','supports':'检索摘要提供技术终验收与现场考察线索，待补读正文。','boundary':'暂不作为完成核验的依据；2015年技术终验收与2019年最终验收报道涉及阶段区别，不能合并为同一事件。'},
+'2024-02':{'publisher':'上海核工程研究设计院','title':'两大课题顺利通过验收','url':'https://www.snerdi.com.cn/newsdetail?id=10317','published':'2023-08-10','kind':'总体设计参与方报道','access':'已读正文','supports':'记录CAP1400屏蔽电机主泵研制课题综合绩效评价及研发、试验工作，可补充研发验证过程。','boundary':'2023年课题评价不同于档案所述2022年产品出厂验收；不将湿绕组主泵资料混用为屏蔽电机主泵的证据。'}
+}
+for entry in SOURCES.values():entry['checked_at']='2026-09-07'
