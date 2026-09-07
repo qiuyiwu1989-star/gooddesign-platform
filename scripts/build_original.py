@@ -35,19 +35,17 @@ learn.write_text(text)
 server=(OUT/'server.js').read_text().replace("const dir = path.join(ROOT, '.build');", "const dir = process.env.DATA_DIR || path.join(ROOT, '.build');")
 (OUT/'server.js').write_text(server)
 # Maintained extensions survive rebuilds; original archive remains untouched.
-shutil.copytree(ROOT/'extensions/public',pub,dirs_exist_ok=True)
+shutil.copytree(ROOT/'extensions/public/industry-demo',pub/'industry-demo',dirs_exist_ok=True)
 connect=pub/'connect.html'
 s=connect.read_text().replace('<main class="wrap">','<main class="wrap"><p style="padding:18px;border:1px solid #b9c4d0"><a href="industry-demo/">好设计 × 双环：进入产业创新研究 Demo →</a></p>',1)
 connect.write_text(s)
-from platform_design import apply
-page_count = apply(pub)
 changes=[]
 for f in (app/'public').rglob('*'):
     if f.is_file():
         rel=f.relative_to(app/'public'); dst=pub/rel
         if not dst.exists(): changes.append({'path':str(rel),'status':'private-excluded'})
-        elif f.read_bytes()!=dst.read_bytes(): changes.append({'path':str(rel),'status':'design-system-migration'})
-assert (SRC/'good-design/public/index.html').exists()
-report={'homepage_sha256':hashlib.sha256((pub/'index.html').read_bytes()).hexdigest(),'unified_html_pages':page_count,'project_pages':len(list((pub/'project').glob('*.html'))),'atom_pages':len(list((pub/'atom').glob('*.html')))-1,'public_differences':changes,'added':['teacher-workbench/','education-tools/','education-tools/courseware/ (root edition preserved separately)'],'server_change':'DATA_DIR for persistent inquiry storage'}
+        elif f.read_bytes()!=dst.read_bytes(): changes.append({'path':str(rel),'status':'education-discovery-link'})
+assert (app/'public/index.html').read_bytes()==(pub/'index.html').read_bytes()
+report={'homepage_original_sha256':hashlib.sha256((pub/'index.html').read_bytes()).hexdigest(),'project_pages':len(list((pub/'project').glob('*.html'))),'atom_pages':len(list((pub/'atom').glob('*.html')))-1,'public_differences':changes,'added':['teacher-workbench/','education-tools/','education-tools/courseware/ (root edition preserved separately)'],'server_change':'DATA_DIR for persistent inquiry storage'}
 (ROOT/'00-项目管理/原版迁移检查.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
 print(json.dumps({k:v for k,v in report.items() if k!='public_differences'},ensure_ascii=False))

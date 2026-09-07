@@ -5,7 +5,6 @@ HOST=yongle-nanjing
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
 REMOTE=/var/www/gooddesign.qiuyiwu.com
 python3 "$ROOT/scripts/build_original.py"
-python3 "$ROOT/scripts/check_design.py"
 test -s "$ROOT/original-app/public/index.html"
 test -s "$ROOT/original-app/server.js"
 COPYFILE_DISABLE=1 tar --no-xattrs -C "$ROOT/original-app" -czf /tmp/gooddesign-original.tgz .

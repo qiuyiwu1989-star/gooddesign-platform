@@ -1,9 +1,9 @@
 # State
 
 ## 当前线上
-- https://gooddesign.qiuyiwu.com/ 已升级平台首页；原版馆首页在 /museum.html。
+- https://gooddesign.qiuyiwu.com/ 已恢复压缩包原版馆首页与交互。
 - 主机yongle-nanjing；nginx静态+Node原API（loopback 3187）；systemd gooddesign。
-- release：20260907T081757Z；current指向该release，公开根目录current/public。
+- release：20260907T075506Z；current指向该release，公开根目录current/public。
 - 发布脚本scripts/deploy.sh；构建scripts/build_original.py；构建结果original-app/。
 - 旧site/及001简化门户已被替代，不再用于生产构建。
 - 私有配置/etc/gooddesign.env；企业需求/var/lib/gooddesign/inquiries.jsonl，独立于release。
@@ -21,5 +21,5 @@
 ## 2026-09-07 产业Demo
 /industry-demo/ 已发布；connect有入口。五步交互、三方向预置研究、文本下载；并非实时自动联网调研。源码extensions/public/industry-demo，构建叠加保留。
 
-## 设计系统v1（004）
-公共导航和品牌外框覆盖1163页，新五板块入口与规范页已上线。项目检索/比较、教育资源分类、助手任务预填、企业问题卡可用。源码scripts/platform_design.py与extensions/public/design；部署先运行check_design.py。原内容画布逐步迁移，模型后端保持原服务。
+## 2026-09-07 用户反馈后的恢复
+用户认为原版更好。已恢复设计系统改版前的原站，保留双环Demo。004设计系统及平台新外框退出生产，只保留本地草案；构建与部署亦恢复原版路径，防止再次覆盖。后续以原版视觉和节奏为准做局部改进。
