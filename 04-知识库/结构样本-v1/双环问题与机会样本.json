@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "id": "shuanghuan-module-01",
+  "problem_card": {
+    "company": "浙江双环传动机械股份有限公司",
+    "scope": "机器人关节平台化",
+    "question": "如何围绕不同机器人任务，组织可复用的关节产品与接口？",
+    "status": "演示问题，未获企业确认",
+    "target_task": null,
+    "baseline": null,
+    "constraints": null,
+    "owner": null
+  },
+  "opportunity_card": {
+    "hypothesis": "把减速器选型与机械、电气、软件接口约束放在同一张配置表中，研究关节模块的平台化。",
+    "reasoning": "双环的精密传动能力 × 可重构机器人的接口方法 × 加工机器人的系统工况视角",
+    "project_refs": [
+      "2021-s03",
+      "2021-02"
+    ],
+    "status": "平台研究假设",
+    "limit": "不能由模块化案例推定双环缺乏一体化能力；本次建议是研究切入点。"
+  },
+  "verification_plan": {
+    "required_information": "目标机器人构型、负载谱、安装空间、接口定义、客户集成流程。",
+    "proposed_action": "选一个明确机器人任务，建立两种候选关节配置；逐项核对接口兼容性、装配步骤及动态响应要求。",
+    "observations": "接口变更数量、集成工时、重复定位误差、温升与质量；基线及通过门槛由企业确定。",
+    "acceptance_threshold": null,
+    "enterprise_confirmation": null,
+    "actual_results": null,
+    "status": "待企业确认后制定具体试验"
+  },
+  "source": "original-app/public/industry-demo/data.json / tracks[id=module]"
+}

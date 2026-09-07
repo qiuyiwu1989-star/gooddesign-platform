@@ -1,0 +1,121 @@
+{
+  "schema_version": "0.1",
+  "status": "结构打样，非已审核知识包",
+  "project": {
+    "id": "2025-00",
+    "name": "嫦娥五/六号月球钻取采样方法及系统设计",
+    "year": 2025,
+    "award_level": "金奖",
+    "unit": "哈尔滨工业大学,北京圣视环宇科技有限公司",
+    "source_fields": "awards.json 对应slug；保持原文",
+    "missing": [
+      "团队设计过程访谈",
+      "完整证据核验",
+      "应用教学反馈"
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-local-2025-00",
+      "path": "original-app/public/cases/detail/2025-00.json",
+      "sha256": "c249f11de5b7c8a4c1a46ec34f10004dfc0626fa9f271e924761afde58ca722f",
+      "kind": "历史采集档案",
+      "review_status": "本轮未重新官方核验",
+      "recorded_at": "2026-09-07"
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "2025-00-knowledge-01",
+      "project_id": "2025-00",
+      "type": "problem",
+      "title": "非确知环境与工程约束",
+      "source_id": "source-local-2025-00",
+      "locator": {
+        "json_field": "desc",
+        "paragraph_1_based": 1
+      },
+      "source_excerpt": "探月工程三期嫦娥五/六号任务的核心使命是月球无人自主采样返回。带有地质层序信息的深层月壤样品，能为月球成因和演化历史、资源赋存和可用性研究提供直接证据。钻取采样是获取深层保层序月壤样品的最有效手段。探月工程三期是我国首次地外天体采样返回任务，面临月壤及剖面特性非确知、月面环境极端、探测器重量/功耗/包络尺度约束苛刻、地月通信时延大等挑战。",
+      "content_nature": "来源陈述",
+      "review_status": "待核验",
+      "use_limit": "不得由档案陈述推定对其他工程场景同样成立"
+    },
+    {
+      "id": "2025-00-knowledge-02",
+      "project_id": "2025-00",
+      "type": "method",
+      "title": "设计理念与准则",
+      "source_id": "source-local-2025-00",
+      "locator": {
+        "json_field": "desc",
+        "paragraph_1_based": 3
+      },
+      "source_excerpt": "1、首次提出颗粒适应性钻具设计、大尺度连续保层序取样、相似性/等效性/覆盖性等设计理念，制定了动力裕度设计、可靠性优先、有限目标保证等设计准则，解决了我国首次月球采样任务系统设计无依据的难题。",
+      "content_nature": "来源陈述",
+      "review_status": "待核验",
+      "use_limit": "不得由档案陈述推定对其他工程场景同样成立"
+    },
+    {
+      "id": "2025-00-knowledge-03",
+      "project_id": "2025-00",
+      "type": "validation",
+      "title": "相似性、等效性、覆盖性验证",
+      "source_id": "source-local-2025-00",
+      "locator": {
+        "json_field": "desc",
+        "paragraph_1_based": 8
+      },
+      "source_excerpt": "6、提出了月球钻取采样效能相似性/等效性/覆盖性验证方法，构建国内首套覆盖真空、极温、低重力与复杂月壤剖面的钻取采样效能试验系统，实现了从原理突破到型号研制过程的全流程闭环验证。",
+      "content_nature": "来源陈述",
+      "review_status": "待核验",
+      "use_limit": "不得由档案陈述推定对其他工程场景同样成立"
+    }
+  ],
+  "applications": [
+    {
+      "id": "exhibit-2025-00",
+      "type": "exhibit_package",
+      "status": "关联原型，非新展项已完成",
+      "project_id": "2025-00",
+      "knowledge_ids": [
+        "2025-00-knowledge-01",
+        "2025-00-knowledge-02",
+        "2025-00-knowledge-03"
+      ],
+      "existing_resources": [
+        "dismantle/2025-00.json",
+        "project/2025-00.html"
+      ],
+      "proposed_question": "如何在未知月壤和重量、功耗等限制下安排采样？",
+      "question_nature": "平台策展建议",
+      "missing": [
+        "观众任务设计审查",
+        "体验与工程事实的边界说明"
+      ]
+    },
+    {
+      "id": "lesson-2025-00",
+      "type": "lesson_package",
+      "status": "已有课例，关联待审核",
+      "project_id": "2025-00",
+      "knowledge_ids": [
+        "2025-00-knowledge-01",
+        "2025-00-knowledge-02",
+        "2025-00-knowledge-03"
+      ],
+      "existing_resources": [
+        "lesson/2025-00.html"
+      ],
+      "missing": [
+        "教师核对知识引用与课堂目标",
+        "试教记录"
+      ]
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-09-07",
+      "change": "保留原文摘录与文件哈希，建立项目/知识/应用关联；未改动原始档案"
+    }
+  ]
+}
