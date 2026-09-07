@@ -20,3 +20,6 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 
 ## 企业创新迭代
 005采用原站局部扩展：extensions/public/industry-demo/workspace.*；项目来源索引由scripts/build_knowledge_index.py生成。本机课题不得表述为云端企业空间；TRIZ映射及方案验证未接入时必须明确。
+
+## 当前跨对话协作
+企业创新接续前读取00-项目管理/企业创新协作要求.md。双环研究由另一对话推进；006负责extensions/public/explore/与scripts/build_explore.py，不修改企业目录。本轮006仅本地预览，避免并发发布。

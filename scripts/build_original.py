@@ -1,6 +1,7 @@
 from pathlib import Path
 import shutil, hashlib, json
 from build_knowledge_index import build as build_knowledge_index
+from build_explore import build as build_explore
 ROOT=Path(__file__).resolve().parents[1]
 SRC=ROOT/'99-历史项目快照'
 OUT=ROOT/'original-app'
@@ -41,6 +42,7 @@ connect=pub/'connect.html'
 s=connect.read_text().replace('<main class="wrap">','<main class="wrap"><p style="padding:18px;border:1px solid #b9c4d0"><a href="industry-demo/">好设计 × 双环：进入产业创新研究 Demo →</a></p>',1)
 connect.write_text(s)
 build_knowledge_index(pub/'knowledge-data')
+build_explore(pub)
 changes=[]
 for f in (app/'public').rglob('*'):
     if f.is_file():
