@@ -6,7 +6,7 @@ class ExhibitTests(unittest.TestCase):
  def test_all_fields_have_exact_sources(self):
   with tempfile.TemporaryDirectory() as t:
    build(Path(t));data=json.loads((Path(t)/'explore/deep.json').read_text())
-   self.assertEqual(set(data),{'2025-00','2015-02'})
+   self.assertTrue({'2025-00','2015-02'}.issubset(data))
    for pid,ex in data.items():
     self.assertEqual({f['key'] for f in ex['fields']},{'problem','constraints','method','evidence'})
     for f in ex['fields']:

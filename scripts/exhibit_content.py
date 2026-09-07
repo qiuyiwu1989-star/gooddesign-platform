@@ -25,3 +25,6 @@ EXHIBITS={
  {'label':'只看科考采样能力','feedback':'采样能力说明任务的一部分。载人作业还需要查看监测、应急装置和它们的验证条件。','kind':'还缺关键资料'},
  {'label':'故障监测、应急装置及其验证资料','feedback':'这一组信息覆盖发现异常、采取措施和验证效果。档案提供了预警与抛载设计线索，但完整验证资料仍需补充。','kind':'找到核查方向'}], 'evidence_key':'method','followup':'原文写了某种应急装置，不等于我们已知道它在所有工况下的效果。你会向项目团队追问哪项试验条件？'}}
 }
+
+from exhibit_content_more import MORE
+EXHIBITS.update(MORE)
