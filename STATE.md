@@ -3,7 +3,7 @@
 ## 当前线上
 - https://gooddesign.qiuyiwu.com/ 已恢复压缩包原版馆首页与交互。
 - 主机yongle-nanjing；nginx静态+Node原API（loopback 3187）；systemd gooddesign。
-- release：20260907T075506Z；current指向该release，公开根目录current/public。
+- release：20260907T102228Z；current指向该release，公开根目录current/public。
 - 发布脚本scripts/deploy.sh；构建scripts/build_original.py；构建结果original-app/。
 - 旧site/及001简化门户已被替代，不再用于生产构建。
 - 私有配置/etc/gooddesign.env；企业需求/var/lib/gooddesign/inquiries.jsonl，独立于release。
@@ -23,3 +23,9 @@
 
 ## 2026-09-07 用户反馈后的恢复
 用户认为原版更好。已恢复设计系统改版前的原站，保留双环Demo。004设计系统及平台新外框退出生产，只保留本地草案；构建与部署亦恢复原版路径，防止再次覆盖。后续以原版视觉和节奏为准做局部改进。
+
+## 2026-09-07 005 企业课题工作台
+- release 20260907T102228Z；新增 /industry-demo/workspace.html 和 /knowledge-data/project-index.json。
+- 560条项目索引、96条描述缺失、3条未审核机制样本；不是完整知识库。
+- 工作台支持本机多课题、问题修改、案例选择、方向编辑、验证记录和JSON导出。无云端账户或自动TRIZ。
+- 本地浏览器保存/重载/切换/导出通过；线上HTTP与健康接口200、原首页哈希一致。线上浏览器工具两次超时，未完成线上视觉复验。

@@ -17,3 +17,6 @@ G3：模型配置不入库，企业数据独立持久化；验证真实API与发
 
 ## 部署与并行
 DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.com；改生产前读 STATE.md。只提交明确修改文件。
+
+## 企业创新迭代
+005采用原站局部扩展：extensions/public/industry-demo/workspace.*；项目来源索引由scripts/build_knowledge_index.py生成。本机课题不得表述为云端企业空间；TRIZ映射及方案验证未接入时必须明确。
