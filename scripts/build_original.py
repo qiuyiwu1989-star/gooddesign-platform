@@ -34,6 +34,11 @@ text=text[:pos]+'<a href="teacher-workbench/" style="padding:10px 18px;border:1p
 learn.write_text(text)
 server=(OUT/'server.js').read_text().replace("const dir = path.join(ROOT, '.build');", "const dir = process.env.DATA_DIR || path.join(ROOT, '.build');")
 (OUT/'server.js').write_text(server)
+# Maintained extensions survive rebuilds; original archive remains untouched.
+shutil.copytree(ROOT/'extensions/public',pub,dirs_exist_ok=True)
+connect=pub/'connect.html'
+s=connect.read_text().replace('<main class="wrap">','<main class="wrap"><p style="padding:18px;border:1px solid #b9c4d0"><a href="industry-demo/">好设计 × 双环：进入产业创新研究 Demo →</a></p>',1)
+connect.write_text(s)
 changes=[]
 for f in (app/'public').rglob('*'):
     if f.is_file():

@@ -3,7 +3,7 @@
 ## 当前线上
 - https://gooddesign.qiuyiwu.com/ 已恢复压缩包原版馆首页与交互。
 - 主机yongle-nanjing；nginx静态+Node原API（loopback 3187）；systemd gooddesign。
-- release：20260905T141804Z；current指向该release，公开根目录current/public。
+- release：20260907T075506Z；current指向该release，公开根目录current/public。
 - 发布脚本scripts/deploy.sh；构建scripts/build_original.py；构建结果original-app/。
 - 旧site/及001简化门户已被替代，不再用于生产构建。
 - 私有配置/etc/gooddesign.env；企业需求/var/lib/gooddesign/inquiries.jsonl，独立于release。
@@ -17,3 +17,6 @@
 
 ## 下一步
 围绕03-平台规划/信息架构与平台定位-v2.md讨论项目主数据与10个知识包样本。
+
+## 2026-09-07 产业Demo
+/industry-demo/ 已发布；connect有入口。五步交互、三方向预置研究、文本下载；并非实时自动联网调研。源码extensions/public/industry-demo，构建叠加保留。
