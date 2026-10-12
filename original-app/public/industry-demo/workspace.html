@@ -1,5 +1,105 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>企业课题工作台｜好设计</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="workspace.css">
-<header><a href="/">好设计馆</a><a href="./">双环研究演示</a><span>企业创新 / 课题工作台</span></header>
-<main><p class="eyebrow">GOOD DESIGN / INNOVATION WORKSPACE</p><h1>把一个问题，推进一步。</h1><p>围绕企业问题整理案例、研究方向与验证记录。</p><p class="notice">当前为本机工作样例。点击保存后存于此浏览器，可导出备份；不会上传或跨设备同步。预置内容未经双环确认，TRIZ规则查询及自动分析尚未接入。</p>
-<div class="toolbar"><label>我的课题 <select id="projects" aria-label="我的课题"></select></label><button id="create">新建空白课题</button><button id="sample">新建双环样例</button><button id="save">保存到本机</button><button id="export">导出课题 JSON</button></div><p id="feedback" role="status"></p>
-<div id="workspace" hidden><nav id="sections" aria-label="课题工作区"></nav><p id="revision" class="notice"></p><section id="content"></section></div><noscript>请启用JavaScript以使用课题编辑和本机保存。</noscript></main><script src="workspace.js"></script></html>
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>创新工作台｜人机协作产品创新系统</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="workspace.css?v=20260911-scroll-fix">
+<body class="workspace-fullscreen theme-light">
+  <div class="workbench-app">
+    <header class="app-topbar">
+      <a class="app-brand" href="./">
+        <span class="brand-mark">GD</span>
+        <span><b>创新工作台</b><small>Human × AI Product Innovation</small></span>
+      </a>
+      <nav class="app-nav" aria-label="演示页面">
+        <a href="./">产业演示</a>
+        <a href="research.html">证据看台</a>
+        <a href="live.html">现场 Agent</a>
+        <a aria-current="page" href="workspace.html">创新工作台</a>
+      </nav>
+      <div class="app-status">
+        <span id="feedback" role="status">正在加载工作台。</span>
+      </div>
+    </header>
+
+    <div class="workspace-toolbar app-commandbar">
+      <label>课题 <select id="projects" aria-label="我的课题"></select></label>
+      <label>证据对象 <select id="research-choice" aria-label="研究方向"></select></label>
+      <button id="start-research">生成节点</button>
+      <button id="sample">双环样例</button>
+      <button id="create">空白项目</button>
+      <button id="save">保存</button>
+      <button id="export">导出</button>
+      <button id="zoom-out">缩小</button>
+      <button id="zoom-in">放大</button>
+      <button id="reset-view">复位视图</button>
+      <button id="remove-node">移除节点</button>
+      <button id="restore-nodes">复原画布</button>
+      <button id="focus-flow">聚焦流程</button>
+      <button id="play-flow">演示模式</button>
+      <button id="theme-toggle">深色模式</button>
+    </div>
+
+    <div id="workspace" hidden class="node-workspace">
+      <aside class="node-library" aria-label="节点库">
+        <div class="panel-head">
+          <p>NODE LIBRARY</p>
+          <h1>节点库</h1>
+        </div>
+        <p class="panel-note">画布节点可以添加、移除、复原。当前画布只保留双环演示主线和已触发方法，其他节点在模板库中按需添加。</p>
+        <div id="node-library"></div>
+        <div class="library-callout">
+          <b>演示逻辑</b>
+          <span>像 ComfyUI 一样把方法、证据、Agent 当成可编排节点：少量节点讲故事，必要时再添加分支。</span>
+        </div>
+      </aside>
+
+      <main class="node-canvas" aria-label="创新画布">
+        <section class="canvas-toolbar">
+          <div>
+            <p>INNOVATION FLOW</p>
+            <h2>产品创新故事画布</h2>
+          </div>
+          <nav id="sections" aria-label="课题阶段"></nav>
+        </section>
+        <div class="canvas-hint">演示模式会逐步添加节点；编辑模式下可添加、移除、拖动和复原画布，备选方法默认收在左侧模板库。</div>
+        <div class="demo-case-card">
+          <b>双环演示案例</b>
+          <span>机器人关节平台化 / 精密传动件光整加工</span>
+          <p>从企业识别进入，先收窄问题，再选择方法，最后用好设计证据生成方案和报告。</p>
+        </div>
+        <div class="co-create-dock" aria-label="现场人机共创输入">
+          <div class="co-create-copy">
+            <b>现场共创</b>
+            <span>把人的约束、想法、反驳接入当前节点，形成新的推理分支。</span>
+          </div>
+          <textarea id="co-create-input" maxlength="240" placeholder="例如：客户希望同一关节平台覆盖 20kg 和 50kg 两类负载，但不能显著增加装配复杂度。"></textarea>
+          <div class="co-create-actions">
+            <button data-co-create="constraint">加入约束</button>
+            <button data-co-create="idea">生成想法</button>
+            <button data-co-create="challenge">提出反驳</button>
+          </div>
+        </div>
+        <div id="canvas-viewport">
+          <div id="canvas"></div>
+        </div>
+      </main>
+
+      <aside class="node-inspector" aria-label="协作面板">
+        <div class="inspector-head">
+          <p>CO-WORK PANEL</p>
+          <h2>协作面板</h2>
+        </div>
+        <p id="revision" class="notice"></p>
+        <div id="content"></div>
+      </aside>
+    </div>
+  </div>
+  <noscript>请启用 JavaScript 以使用创新工作台。</noscript>
+  <script src="workspace.js?v=20260911-scroll-fix"></script>
+</body>
+</html>

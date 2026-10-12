@@ -6,3 +6,15 @@
 !.env.example
 .DS_Store
 original-app/.build/
+
+# Local temporary files and runtime data
+tmp/
+.deploy-work/
+__pycache__/
+*.pyc
+*.pem
+*.key
+*.log
+inquiries.jsonl
+
+.deploy-work.*/

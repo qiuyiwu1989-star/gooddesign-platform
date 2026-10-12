@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>证据看台｜好设计 × 双环</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<header>
+  <a class="brand" href="/"><img src="/assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><b>好设计馆</b><small>Good Design Museum</small></span></a>
+  <nav><a href="./">产业演示</a><a href="research.html">证据看台</a><a href="live.html">现场 Agent</a><a href="workspace.html">创新工作台</a></nav>
+  <span>Evidence Stand / Shuanghuan</span>
+</header>
+<main>
+  <section class="intro relation-hero">
+    <p class="eyebrow">EVIDENCE STAND</p>
+    <h1>证据库不是附录，是整条流程的底座。</h1>
+    <p>这里把好设计项目档案、双环公开资料和平台迁移分析分层展示。主演示调用它形成匹配，现场 Agent 调用它生成分析，创新工作台把它沉淀为课题节点。</p>
+  </section>
+  <section class="relation-strip" aria-label="页面关系">
+    <a href="./"><span>01</span><b>产业演示</b><p>面向现场观众的自动流水线。</p></a>
+    <a aria-current="page" href="research.html"><span>02</span><b>证据看台</b><p>解释案例为什么被选中。</p></a>
+    <a href="live.html"><span>03</span><b>现场 Agent</b><p>根据问题和约束生成分析。</p></a>
+    <a href="workspace.html"><span>04</span><b>创新工作台</b><p>把分析变成可推进课题。</p></a>
+  </section>
+  <section class="evidence-summary">
+    <div>
+      <p class="label">数据关系</p>
+      <h2>一个证据对象进入三种界面。</h2>
+      <p>每条证据都包含项目档案、原文摘录、来源位置、平台分析、适用边界、最小验证和需补资料。这样页面之间传递的是同一个结构化对象，而不是复制粘贴的文字。</p>
+    </div>
+    <div class="data-pipeline">
+      <p>好设计项目档案</p><span></span><p>企业问题匹配</p><span></span><p>Agent 研究</p><span></span><p>课题节点</p>
+    </div>
+  </section>
+  <div class="filters" aria-label="按研究方向筛选">
+    <button data-filter="全部" aria-pressed="true">全部</button>
+    <button data-filter="工艺升级" aria-pressed="false">工艺升级</button>
+    <button data-filter="产品平台" aria-pressed="false">产品平台</button>
+    <button data-filter="应用拓展" aria-pressed="false">应用拓展</button>
+    <button data-filter="制造闭环" aria-pressed="false">制造闭环</button>
+    <a class="link-button" href="shuanghuan-research.json" download>下载研究数据</a>
+  </div>
+  <p id="count" class="notice" aria-live="polite">正在加载证据。</p>
+  <section id="cards" class="evidence-stand" aria-live="polite"></section>
+  <section class="evidence-summary">
+    <div>
+      <h2>暂缓进入匹配的线索</h2>
+      <p id="excluded">正在加载。</p>
+    </div>
+    <div>
+      <h2>进入工作台前需要企业补充</h2>
+      <p>具体零件或客户任务、图纸或接口、材料工艺、载荷工况、当前指标、不可变约束。没有这些资料，证据只能停留在研究假设层。</p>
+    </div>
+  </section>
+</main>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let cards=[];
+function render(filter='全部'){
+  let shown=0;
+  document.getElementById('cards').innerHTML=cards.map((c,i)=>{
+    const hidden=filter!=='全部'&&c.group!==filter;
+    if(!hidden)shown++;
+    return `<article class="evidence-card" data-group="${esc(c.group)}" ${hidden?'hidden':''} style="--i:${i}">
+      <div class="evidence-head"><small>${esc(c.priority)} · ${esc(c.group)}</small><span>${esc(c.status)}</span></div>
+      <h2>${esc(c.title)}</h2>
+      <p><a href="/project/${esc(c.id)}.html" target="_blank" rel="noopener">${esc(c.name)} ↗</a> · ${esc(c.year)} ${esc(c.award)}</p>
+      <p class="meta">${esc(c.unit)}</p>
+      <div class="evidence-grid">
+        <section><h3>为什么匹配</h3><p>${esc(c.fit)}</p></section>
+        <section><h3>可迁移机制</h3><p>${esc(c.mechanism)}</p></section>
+        <section><h3>研究问题</h3><p>${esc(c.question)}</p></section>
+        <section><h3>最小验证</h3><p>${esc(c.experiment)}</p></section>
+      </div>
+      <details>
+        <summary>查看档案摘录、来源和适用边界</summary>
+        <blockquote>${esc(c.excerpt)}</blockquote>
+        <p><a href="${esc(c.source.url)}" target="_blank" rel="noopener">原始档案 JSON</a> · ${esc(c.source.field)} · 字符 ${c.source.start} 到 ${c.source.end}</p>
+        <p><b>评价指标：</b>${esc(c.metrics)}</p>
+        <p><b>需补资料：</b>${esc(c.missing)}</p>
+        <p><b>边界：</b>${esc(c.limit)}</p>
+      </details>
+      <div class="card-actions"><a class="link-button" href="live.html?evidence=${esc(c.id)}">带入现场 Agent</a><a class="link-button" href="workspace.html?research=${esc(c.id)}">生成课题节点</a></div>
+    </article>`;
+  }).join('');
+  document.getElementById('count').textContent='显示 '+shown+' 个证据对象。';
+}
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  render(b.dataset.filter);
+});
+fetch('shuanghuan-research.json').then(r=>r.json()).then(d=>{
+  cards=d.cards;
+  document.getElementById('excluded').textContent=d.excluded.map(x=>x.name+'：'+x.reason).join('；');
+  render();
+}).catch(()=>document.getElementById('count').textContent='证据资料加载失败，请刷新。');
+</script>
+</html>

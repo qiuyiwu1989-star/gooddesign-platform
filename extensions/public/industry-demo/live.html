@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>现场研究 Agent｜好设计 × 双环</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="live.css?v=20260911-scroll-fix">
+<header>
+  <a class="brand" href="/"><img src="/assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><b>好设计馆</b><small>Good Design Museum</small></span></a>
+  <nav><a href="./">产业演示</a><a href="research.html">证据看台</a><a href="live.html">现场 Agent</a><a href="workspace.html">创新工作台</a></nav>
+  <span>Live Research Agent</span>
+</header>
+<main>
+  <section class="intro">
+    <p class="eyebrow">LIVE AGENT</p>
+    <h1>现场 Agent 是一台研究转译器。</h1>
+    <p>它不替代专家做结论，而是把现场问题、企业约束和好设计证据转译成一轮可审查的研究判断，再保存到创新工作台。</p>
+    <p class="notice">已加载资料：2026.09.07。可请求在线模型，也可切换预置演示。未执行实时联网检索。</p>
+  </section>
+  <section class="agent-definition">
+    <div><span>INPUT</span><b>听懂企业问题</b><p>用户说出目标、约束、不能改变的条件。</p></div>
+    <div><span>EVIDENCE</span><b>选择可追溯证据</b><p>从证据看台选好设计项目，保留来源和边界。</p></div>
+    <div><span>JUDGEMENT</span><b>生成研究判断</b><p>给出保留、调整、暂缓和最小验证路径。</p></div>
+    <div><span>HANDOFF</span><b>保存为课题节点</b><p>把本轮分析交给创新工作台继续推进。</p></div>
+  </section>
+  <section class="relation-strip" aria-label="页面关系">
+    <a href="./"><span>01</span><b>产业演示</b><p>说明流程如何发生。</p></a>
+    <a href="research.html"><span>02</span><b>证据看台</b><p>提供可追溯案例证据。</p></a>
+    <a aria-current="page" href="live.html"><span>03</span><b>现场 Agent</b><p>生成本轮研究分析。</p></a>
+    <a href="workspace.html"><span>04</span><b>创新工作台</b><p>沉淀为课题节点。</p></a>
+  </section>
+  <div class="live-layout">
+    <aside class="live-side">
+      <h2>本页负责什么</h2>
+      <p>一句话：把企业现场补充的信息，转成可以继续讨论的研究轮次。</p>
+      <div id="profile">正在加载企业画像与证据。</div>
+      <h3>输入会影响什么</h3>
+      <ol>
+        <li>保留哪些证据</li>
+        <li>排除哪些不适用方向</li>
+        <li>改变哪些验证路径</li>
+        <li>保存到哪个课题节点</li>
+      </ol>
+      <p class="muted">展示资料、结论与决策依据，不展示模型内部思考记录。</p>
+    </aside>
+    <section class="live-desk">
+      <div class="agent-board" aria-label="现场 Agent 工作图">
+        <div><small>01</small><b>现场问题</b><p id="board-question">精密传动件光整加工</p></div>
+        <span></span>
+        <div><small>02</small><b>证据选择</b><p id="board-evidence">6 条好设计证据</p></div>
+        <span></span>
+        <div><small>03</small><b>研究输出</b><p id="board-output">等待生成</p></div>
+      </div>
+      <label for="question">企业现场问题</label>
+      <textarea id="question" maxlength="900">我们是双环，希望探索精密传动件光整加工的新方法。请结合好设计案例，比较可行的研究路径，并说明需要补充哪些企业数据。</textarea>
+      <div id="presets" class="buttons"></div>
+      <label for="constraints">现场补充约束 / 追问</label>
+      <textarea id="constraints" maxlength="600" placeholder="例如：不能改变现有热处理工艺；先评估小批量试验的投入。"></textarea>
+      <p class="muted">点击在线研究会将上述输入及预加载资料发送给现有模型服务。请只输入可公开演示的信息。</p>
+      <div class="buttons">
+        <button id="run" disabled>开始在线研究</button>
+        <button id="stop" disabled>停止</button>
+        <button id="sample" disabled>播放预置研究</button>
+        <button id="handoff" disabled>保存为课题节点</button>
+        <button id="download" disabled>下载本轮简报</button>
+      </div>
+      <p id="status" role="status">资料加载中</p>
+      <ol id="progress" aria-label="实际执行记录"></ol>
+      <div id="evidence"></div>
+      <details>
+        <summary>查看前后结论与研究历史</summary>
+        <div id="comparison"></div>
+        <div id="rounds"></div>
+        <button id="export-rounds">导出研究轮次 JSON</button>
+      </details>
+      <article id="result"><p class="muted">从一个问题开始。可以现场修改条件，再次研究。</p></article>
+    </section>
+  </div>
+</main>
+<script src="live.js?v=20260911-scroll-fix"></script>
+</html>
