@@ -237,5 +237,5 @@ assert len({f['key'] for f in fields})==len(fields)
 D=dict(version='3.0-draft',definition='项目研究原子字段字典；P0为必须调查项，不要求无证据填满；领域扩展不强加于其他项目。',entities=ENTITIES,shared_fields=shared,domain_extensions=extensions,fields=fields,blocks=[dict(id=k,title=l) for k,l in [('overview','身份、获奖与团队'),('technical','需求与技术系统'),('innovation','创新机制与方法'),('validation','指标与验证'),('ip','专利、论文与成果'),('history','历程与设计故事'),('applications','应用与迁移'),('governance','证据与持续维护')]])
 (OUT/'原子字段字典-v3.json').write_text(json.dumps(D,ensure_ascii=False,indent=2)+'\n')
 with (OUT/'原子字段字典-v3.csv').open('w',encoding='utf-8-sig',newline='') as f:
- w=csv.DictWriter(f,fieldnames=['key','label','type','priority','scope','research_question','evidence_requirement','missing_rule'],extrasaction='ignore');w.writeheader();w.writerows(fields)
+ w=csv.DictWriter(f,fieldnames=['key','label','type','priority','scope','research_question','evidence_requirement','missing_rule'],extrasaction='ignore',lineterminator='\n');w.writeheader();w.writerows(fields)
 print(len(ENTITIES),'entities',len(fields),'atomic fields',sum(f['priority']=='P0' for f in fields),'P0')
