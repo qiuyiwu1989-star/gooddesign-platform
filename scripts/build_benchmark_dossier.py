@@ -70,7 +70,7 @@ query.addEventListener('input',filter);kind.addEventListener('change',filter);do
 '''
 nav=''.join(f'<a href="#{i}">{n}</a>' for i,n in [('overview','01 档案结构'),('facts','02 事实与结果'),('innovation','03 创新与故事'),('patents','04 专利与论文'),('timeline','05 发展历程'),('sources','06 证据来源'),('maintenance','07 持续维护')])
 page=f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>嫦娥钻取采样｜好设计标杆档案</title><link rel="icon" href="data:,"><style>{css}</style></head><body><header><b>好设计<span style="color:#a78145">。</span></b><span>项目档案 · BENCHMARK 001 · 2026.10.19</span></header><div class="layout"><aside><nav aria-label="档案导航"><b>项目全貌 / 研究首版</b>{nav}</nav></aside><main><div class="hero"><div class="eyebrow">从真实项目，到可迁移的创新知识</div><h1>{esc(d['title'])}</h1><span class="badge">2025 第十届 · 金奖</span><span class="badge">项目 2025-00</span><span class="badge">公开资料深研 · 待专业审核</span><p>核心问题：如何在未知月壤与严苛工程约束下，取到有科学价值的分层样品，并完成可靠收纳与交接？</p><p>哈尔滨工业大学 · 北京圣视环宇科技有限公司。获奖身份依据官方名单核读；本页将事实、平台分析和待验证线索分别标记。</p><div class="stats"><div><b>{len(sources)}</b><span>来源卡 · 含摘要及选例线索</span></div><div><b>{len(claims)}</b><span>有出处的关键陈述</span></div><div><b>{len(d['patents'])}</b><span>专利技术候选 · 未确证清单</span></div><div><b>{len(d['knowledge'])}</b><span>创新机制分析</span></div></div></div><div class="controls"><label for="query">档案检索</label><input id="query" type="search" placeholder="输入：软袋、1935.3、CN107503698、邓宗全…"><label for="kind">范围</label><select id="kind"><option value="all">全部记录</option><option value="fact">事实</option><option value="knowledge">机制与故事</option><option value="patent">专利与论文</option><option value="event">发展事件</option><option value="source">来源</option><option value="task">任务</option></select><button id="reset">重置</button><button id="print">打印 / 保存 PDF</button><p id="search-status" role="status" aria-live="polite"></p></div><p id="empty" hidden>没有匹配记录，请更换关键词或重置筛选。</p>{sections}<footer>档案版本 benchmark-v1｜截至 2026-10-19｜依据公开资料研究，无项目方或领域专家审核背书。<br>研究与维护任务尚待指定负责人；图片与第三方全文未在本页再发布。</footer></main></div><script>{js}</script></body></html>'''
-(OUT/'档案.html').write_text(page)
+(OUT/'研究台账.html').write_text(page)
 # Readable text export shares the authoritative data, not a separate manually edited report.
 md=[f"# {d['title']}｜标杆档案\n",f"截至 {d['as_of']}；{d['status']}。\n",'## 1. 身份与边界\n',f"项目ID：{d['project_id']}；2025年第十届金奖，官方编号12025070107。完成单位：哈尔滨工业大学、北京圣视环宇科技有限公司。[S01]。\n",'研究范围：'+ '、'.join(d['scope']['included'])+'。\n','排除：'+'、'.join(d['scope']['excluded'])+'。\n','## 2. 十二模块覆盖\n','| 模块 | 状态 | 边界 |\n|---|---|---|']
 md += [f'| {a} | {b} | {c} |' for a,b,c in module_rows]
@@ -89,8 +89,13 @@ md += [f"- **{t['id']} {t['title']}**：{t['acceptance']} {t['owner']}，尚未�
 md+=['\n## 10. 来源索引\n']
 for s in sources.values():md += [f"- [{s['id']} {s['title']}]({s['url']})；读取：{s['read_scope']}；定位：{s['locator']}；访问：{s['accessed_at']}。"]
 md+=['\n## 11. 本轮版本\n','benchmark-v1：公开资料研究与结构自检。专业审核、真实协作、持续更新和全量成果关联尚未完成。完整检索范围见研究日志.json。']
-(OUT/'档案.md').write_text('\n'.join(md)+'\n')
+(OUT/'研究台账.md').write_text('\n'.join(md)+'\n')
 report={'spec':'011','date':'2026-10-19','result':'pass_structural_self_check','counts':{key:len(d[key]) for key in ['sources','claims','patents','knowledge','events','papers','stories','gaps','tasks']},'checks':['unique_record_ids','source_claim_knowledge_references','search_log_source_references','gap_task_links','claim_source_and_locator','no_fake_expert_review','patent_status_not_inferred','source_cards_exist'],'data_sha256':hashlib.sha256(DATA.read_bytes()).hexdigest(),'limits':['不是事实独立核验或专家审核','浏览器验收另行记录','原始工程材料及专利登记未取得']}
 (OUT/'验收报告.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(report['counts'],ensure_ascii=False))
 print(OUT/'档案.html')
+
+# The authored master document remains the primary reading entry.
+import runpy
+if (OUT/'主档案结构.json').exists():
+ runpy.run_path(str(ROOT/'scripts/render_master_dossier.py'))

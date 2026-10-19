@@ -1,0 +1,630 @@
+{
+  "schema_version": "master-fields-2.0-draft",
+  "note": "通用字段与领域扩展分列，样本字段并非要求每个项目必须填满。",
+  "fields": [
+    {
+      "field_key": "identity.canonical_name",
+      "label": "项目名称与身份",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F001",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "identity.award",
+      "label": "获奖记录",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F002",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "identity.organizations",
+      "label": "完成单位",
+      "data_type": "list",
+      "applicability": "common",
+      "example_record": "2025-00:F003",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "identity.boundary",
+      "label": "研究边界",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F004",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "need.scientific_goal",
+      "label": "样品为什么需要保留层序",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F005",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "need.environment",
+      "label": "面对怎样的环境",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F006",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "need.engineering_constraints",
+      "label": "必须满足的工程约束",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F007",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "need.baseline",
+      "label": "原方案与对照基线",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F008",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "system.working_principle",
+      "label": "双管与软袋怎样共同取芯",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F009",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "system.functional_chain",
+      "label": "采样链如何组织",
+      "data_type": "list",
+      "applicability": "common",
+      "example_record": "2025-00:F010",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "system.key_materials",
+      "label": "柔性材料承担什么作用",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F011",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "system.interfaces",
+      "label": "入口保护、封口和转送",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F012",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "system.operations_support",
+      "label": "遥测、反演与地面支持",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F013",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "system.engineering_parameters",
+      "label": "还缺哪些系统指标",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F014",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "innovation.k01",
+      "label": "把“取到样品”转成“保留样品信息”",
+      "data_type": "object",
+      "applicability": "domain_extension",
+      "example_record": "2025-00:F015",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "innovation.k02",
+      "label": "围绕完整采样链设计薄弱环节",
+      "data_type": "object",
+      "applicability": "domain_extension",
+      "example_record": "2025-00:F016",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "innovation.k03",
+      "label": "用分层证据逼近难以完全复现的环境",
+      "data_type": "object",
+      "applicability": "domain_extension",
+      "example_record": "2025-00:F017",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "innovation.k04",
+      "label": "把远程监控推进为人机协同判断",
+      "data_type": "object",
+      "applicability": "domain_extension",
+      "example_record": "2025-00:F018",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "innovation.five_constructs",
+      "label": "五大构成的分析位置",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F019",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "validation.subsystem_results",
+      "label": "两次钻取采样的分项结果",
+      "data_type": "measurements",
+      "applicability": "common",
+      "example_record": "2025-00:F020",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "validation.system_context_results",
+      "label": "任务总量单独作为背景",
+      "data_type": "measurements",
+      "applicability": "common",
+      "example_record": "2025-00:F021",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "validation.ground_test",
+      "label": "地面验证的可用证据",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F022",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "validation.test_conditions",
+      "label": "试验工况与数据适用边界",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F023",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "validation.measurement_records",
+      "label": "分项结果的进一步核验",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F024",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "outputs.declared_totals",
+      "label": "项目披露了哪些成果",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F025",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "outputs.patent_candidates",
+      "label": "本轮专利候选目录",
+      "data_type": "record_list",
+      "applicability": "common",
+      "example_record": "2025-00:F026",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "outputs.paper_records",
+      "label": "论文与技术参照",
+      "data_type": "record_list",
+      "applicability": "common",
+      "example_record": "2025-00:F027",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "outputs.holder_records",
+      "label": "专利权利人怎样登记",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F028",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "outputs.official_register",
+      "label": "尚待完成的专利核验",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F029",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "people.reported_lead",
+      "label": "公开报道中的牵头角色",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F030",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "people.multidisciplinary_work",
+      "label": "跨学科协作的具体接口",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F031",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "people.contribution_map",
+      "label": "完成单位与个人贡献表",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F032",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "history.research_vs_contract",
+      "label": "2009年与2011年为何不同",
+      "data_type": "object",
+      "applicability": "domain_extension",
+      "example_record": "2025-00:F033",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "history.milestones",
+      "label": "关键发展事件",
+      "data_type": "timeline",
+      "applicability": "common",
+      "example_record": "2025-00:F034",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "history.later_applications",
+      "label": "后续任务研究的线索",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F035",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "stories.h01",
+      "label": "任务之前的长期准备",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F036",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "stories.h02",
+      "label": "柔性材料成为采样链的一环",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F037",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "stories.decision_interviews",
+      "label": "下一次访谈应该补什么",
+      "data_type": "list",
+      "applicability": "common",
+      "example_record": "2025-00:F038",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "reuse.industrial_transfer",
+      "label": "企业创新可以带走什么",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F039",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "reuse.museum",
+      "label": "展馆讲解主线",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F040",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "reuse.education",
+      "label": "科技教育活动建议",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F041",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "reuse.remote_diagnosis",
+      "label": "远程设备研究的类比",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F042",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "reuse.commercial_evidence",
+      "label": "商业与合作事实的缺口",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F043",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "evidence.source_catalog",
+      "label": "来源范围与读取程度",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F044",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "evidence.fact_analysis",
+      "label": "事实与分析怎样分开",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F045",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "evidence.asset_rights",
+      "label": "图片、视频与全文材料",
+      "data_type": "text",
+      "applicability": "common",
+      "example_record": "2025-00:F046",
+      "missing_allowed": true,
+      "evidence_required": true,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "maintenance.three_states",
+      "label": "三个状态独立显示",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F047",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "maintenance.gap_tasks",
+      "label": "待补资料与维护任务",
+      "data_type": "tasks",
+      "applicability": "common",
+      "example_record": "2025-00:F048",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    },
+    {
+      "field_key": "maintenance.version",
+      "label": "本次版本记录",
+      "data_type": "object",
+      "applicability": "common",
+      "example_record": "2025-00:F049",
+      "missing_allowed": true,
+      "evidence_required": false,
+      "description": "首例试行字段；其他项目按适用性填写，缺少数据时说明状态与任务。"
+    }
+  ],
+  "tags": [
+    {
+      "id": "T01",
+      "axis": "对象",
+      "label": "获奖项目",
+      "definition": "与获奖条目身份及范围相关的内容"
+    },
+    {
+      "id": "T02",
+      "axis": "对象",
+      "label": "任务与子系统",
+      "definition": "区分整系统任务和子系统对象"
+    },
+    {
+      "id": "T03",
+      "axis": "对象",
+      "label": "团队与合作",
+      "definition": "涉及组织、角色、协作和贡献"
+    },
+    {
+      "id": "T04",
+      "axis": "问题",
+      "label": "未知环境",
+      "definition": "对象或外部条件难以预先确知"
+    },
+    {
+      "id": "T05",
+      "axis": "问题",
+      "label": "工程约束",
+      "definition": "质量、功率、空间或通信等限制"
+    },
+    {
+      "id": "T06",
+      "axis": "机制",
+      "label": "保层序取样",
+      "definition": "样品层序信息的保护及相关机制"
+    },
+    {
+      "id": "T07",
+      "axis": "机制",
+      "label": "柔性材料",
+      "definition": "柔性材料及其界面、工艺作用"
+    },
+    {
+      "id": "T08",
+      "axis": "机制",
+      "label": "接口协同",
+      "definition": "动作、机构或工序之间的接口配合"
+    },
+    {
+      "id": "T09",
+      "axis": "机制",
+      "label": "遥测与决策",
+      "definition": "遥测观测、状态解释和人机判断"
+    },
+    {
+      "id": "T10",
+      "axis": "验证",
+      "label": "模拟试验",
+      "definition": "以模拟物和地面装置开展的研究试验"
+    },
+    {
+      "id": "T11",
+      "axis": "验证",
+      "label": "任务应用",
+      "definition": "来源记录的历史任务应用或结果"
+    },
+    {
+      "id": "T12",
+      "axis": "成果",
+      "label": "知识产权",
+      "definition": "专利等知识产权条目及关系"
+    },
+    {
+      "id": "T13",
+      "axis": "成果",
+      "label": "论文与方法",
+      "definition": "论文、模型与公开研究方法"
+    },
+    {
+      "id": "T14",
+      "axis": "历程",
+      "label": "研究与承研",
+      "definition": "前期研究、承研及其后续演进"
+    },
+    {
+      "id": "T15",
+      "axis": "历程",
+      "label": "设计决策",
+      "definition": "选择、取舍、失败与访谈问题"
+    },
+    {
+      "id": "T16",
+      "axis": "价值",
+      "label": "科学研究",
+      "definition": "科学数据需求与研究价值"
+    },
+    {
+      "id": "T17",
+      "axis": "价值",
+      "label": "产业迁移",
+      "definition": "跨场景迁移机会及验证边界"
+    },
+    {
+      "id": "T18",
+      "axis": "应用",
+      "label": "展馆讲解",
+      "definition": "展馆叙事与展示内容建议"
+    },
+    {
+      "id": "T19",
+      "axis": "应用",
+      "label": "科技教育",
+      "definition": "学习活动与教师使用建议"
+    },
+    {
+      "id": "T20",
+      "axis": "治理",
+      "label": "证据口径",
+      "definition": "来源、数据口径和可追溯规则"
+    },
+    {
+      "id": "T21",
+      "axis": "治理",
+      "label": "待补与审核",
+      "definition": "缺失资料、争议与未完成审核"
+    },
+    {
+      "id": "T22",
+      "axis": "治理",
+      "label": "持续更新",
+      "definition": "版本变动、责任与维护流程"
+    }
+  ]
+}
