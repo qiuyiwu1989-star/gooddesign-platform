@@ -1,0 +1,100 @@
+[
+  {
+    "after": {
+      "content_nature": "platform_reading_interpretation",
+      "modules": {
+        "applications": {
+          "status": "资料有限",
+          "summary": "已记录两次任务应用，商业收益和许可条件留空。",
+          "title": "应用与价值"
+        },
+        "governance": {
+          "status": "待专业审核",
+          "summary": "已有分项自评和更新记录，项目方及专业审核尚未完成。",
+          "title": "档案评估"
+        },
+        "history": {
+          "status": "部分补齐",
+          "summary": "发展节点与公开故事已整理，尚未开展设计者访谈。",
+          "title": "历程与故事"
+        },
+        "innovation": {
+          "status": "部分补齐",
+          "summary": "已有六条机制解读，实际工程决策记录仍需补充。",
+          "title": "设计思路"
+        },
+        "ip": {
+          "status": "待核对",
+          "summary": "六项专利线索、四篇文献已收录，完整成果清单及归属待核对。",
+          "title": "专利与论文"
+        },
+        "overview": {
+          "status": "资料较齐",
+          "summary": "项目名称、奖项和完成单位已有依据，个人贡献名单仍缺。",
+          "title": "项目概况"
+        },
+        "technical": {
+          "status": "部分补齐",
+          "summary": "已整理任务需求与系统原理，整机工程指标仍不齐全。",
+          "title": "需求与系统"
+        },
+        "validation": {
+          "status": "部分补齐",
+          "summary": "已有部件参数、试验对照和任务结果，原始工程验证仍缺。",
+          "title": "指标与验证"
+        }
+      },
+      "papers": [
+        {
+          "boundary": "属于论文设置的地面研究；模型对剧烈振动冲击的适用性有限。",
+          "finding": "表1报告模型预测与试验的平均误差率为4.31%。",
+          "interpretation": "取样量需要结合钻进规程、材料特性和钻具构型判断，不能只看单一转速。",
+          "method": "建立土体与钻具相互作用模型，并用HIT-LS1#模拟月壤和HIT-2钻具试验对照。",
+          "paper_id": "A01",
+          "question": "钻进时，哪些因素会影响软袋中的取样量？",
+          "source_ids": [
+            "S07"
+          ]
+        },
+        {
+          "boundary": "仅核读摘要；不能据此认定为本获奖项目成果。",
+          "finding": null,
+          "interpretation": "可作为理解自动采样机构的外部技术参照，暂不足以支持具体性能对比。",
+          "method": "摘要涉及机构设计与分析；完整论证过程尚未核读。",
+          "paper_id": "A02",
+          "question": "怎样组织月面钻取式自动采样机构？",
+          "source_ids": [
+            "S08"
+          ]
+        },
+        {
+          "boundary": "仅核读摘要；年份及卷期页码另由后续论文参考文献补证。",
+          "finding": "作者摘要报告驱动方案满足模拟月壤和月岩条件下的控制需求。",
+          "interpretation": "这篇研究补充了采样系统的驱动与可靠性视角。",
+          "method": "摘要介绍冗余双绕组电机、驱动电路拓扑、仿真与样机实验。",
+          "paper_id": "A03",
+          "question": "怎样兼顾钻具低速大扭矩启动与高速排土的驱动需求？",
+          "source_ids": [
+            "S09",
+            "S23"
+          ]
+        },
+        {
+          "boundary": "原文50 r/min保留为加载侧设定，不换算成线速度；地面结果不外推为飞行收益。",
+          "finding": "论文报告恒力载组的平均样品质量和长度更高；冲击试验中闭环缩短稳定过程，峰值超调仍存在。",
+          "interpretation": "可借此理解“根据接触载荷调整运动”的设计思路；迁移到其他设备仍需重新验证。",
+          "method": "开展三类载荷工况试验，并比较恒速与恒力载两组各5次的地面取芯数据。",
+          "paper_id": "A04",
+          "question": "面对介质变化，控制进给速度还是控制钻进力载？",
+          "source_ids": [
+            "S23"
+          ]
+        }
+      ],
+      "version": "reader-content-1.0"
+    },
+    "before": null,
+    "operation": "add",
+    "path": "/reader_content"
+  }
+]
