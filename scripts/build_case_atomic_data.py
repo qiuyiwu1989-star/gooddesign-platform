@@ -22,15 +22,14 @@ record('award','AWD-2025-10','2025年第十届好设计奖金奖',dict(award_nam
 records[-1]['cells']['organizer']['locator']='名单发布网站为中国机械工程学会；主办背景见S17';records[-1]['cells']['organizer']['source_ids']=['S17'];records[-1]['cells']['organizer']['claim_ids']=[]
 for i,name in enumerate(d['award']['organizations'],1):
  record('organization',f'ORG-{i:02d}',name,dict(name_original=name,name_canonical=name,project_role='获奖完成单位',role_evidence='2025年第十届金奖官方名单'),['S01'],['C02'],narrative=['F003','F031'])
-record('person','PER-01','报道涉及：邓宗全',dict(name='邓宗全',project_role='校方报道中的月背采样多学科团队牵头人',role_source_ids=['S03']),['S03'],['C19'],narrative=['F029'])
+record('person','PER-01','报道涉及：邓宗全',dict(name='邓宗全',project_role='校方报道中的月背采样多学科团队牵头人',role_source_ids=['S03']),['S03'],['C19'],narrative=['F030'])
 record('problem','NEED-01','未知环境中的可靠采样',dict(title='未知月壤与工程约束下的钻取采样',scenario='月球深层月壤取样',goal='获取并保护有层序信息的样品',constraints=['月壤特性不确定','极端环境','重量/功耗/空间限制','地月通信条件']),['S02','S03'],['C04','C05'],narrative=['F005','F006','F007'],nature='platform_analysis')
 record('technology','TECH-01','双管与软袋取芯',dict(name='双管与内翻软袋取芯技术路线',function='钻进及样心收集',principle='以软袋内翻包裹样心，减少相对滑移',materials=['取芯软袋相关柔性材料'],interfaces='钻具、芯管、软袋及提芯/封口之间的配合'),['S07','S12'],['C05'],narrative=['F009','F011'],nature='platform_analysis')
 for i,m in enumerate(d['metrics'],1):
  c=next(c for c in d['claims'] if c['id']==m['claim_id'])
- record('metric',f'MET-{i:02d}',m['scope']+' / '+m['metric'],dict(name=m['metric'],subject='整任务' if 'mission_context' in m['scope'] else '钻取子系统',version_id=m['scope'],value=m['value'],unit='g',qualifier='约' if m['claim_id']=='C08' else '原文未另列范围',value_kind='公告披露' if 'mission_context' in m['scope'] else '项目官网披露',original_statement=c['value']),c['source_ids'],[c['id']],narrative=['F021' if 'mission_context' in m['scope'] else 'F020'])
-record('metric','MET-05','地面模型验证误差',dict(name='取心率模型预测与试验平均误差率',subject='地面模拟试验',value=5,unit='%',qualifier='小于',value_kind='论文试验结果',conditions='HIT-LS1#模拟月壤及HIT-2钻具',original_statement=next(c['value'] for c in d['claims'] if c['id']=='C10')),['S07'],['C10'],narrative=['F022'])
+ record('metric',m.get('id',f'MET-{i:02d}'),m['scope']+' / '+m['metric'],dict(name=m['metric'],subject=m.get('subject','整任务' if 'mission_context' in m['scope'] else '钻取子系统'),version_id=m['scope'],value=m['value'],unit=m['unit'].split('，')[0],qualifier=m.get('qualifier','约' if m['claim_id']=='C08' else '原文未另列范围'),value_kind=m.get('value_kind','公告披露' if 'mission_context' in m['scope'] else '项目官网披露'),conditions=m.get('conditions'),original_statement=c['value']),c['source_ids'],[c['id']],locator=m.get('locator',c['locator']),narrative=['F021' if 'mission_context' in m['scope'] else 'F022' if '论文' in m.get('value_kind','') else 'F020'])
 for k in d['knowledge']:
- record('innovation',k['id'],k['title'],dict(title=k['title'],measure=k['measure'],mechanism=k['mechanism'],tradeoffs=k['tradeoffs'],applicable_conditions=[k['boundary']],failure_boundary=k['boundary']),k['source_ids'],k['claim_ids'],narrative=[{'K01':'F015','K02':'F016','K03':'F017','K04':'F018'}[k['id']]],nature='platform_analysis')
+ record('innovation',k['id'],k['title'],dict(title=k['title'],baseline=k.get('baseline'),measure=k['measure'],mechanism=k['mechanism'],tradeoffs=k['tradeoffs'],applicable_conditions=[k['boundary']],failure_boundary=k['boundary']),k['source_ids'],k['claim_ids'],narrative=[{'K01':'F015','K02':'F016','K03':'F017','K04':'F018','K05':'F008','K06':'F018'}[k['id']]],nature='platform_analysis')
 a_publications={'P01':'CN102720501A','P02':'CN102721572A','P03':'CN104062141A','P04':'CN107503698A','P05':'CN109323884A','P06':'CN102745364A'}
 public_dates={'P01':'2012-10-10','P02':'2012-10-10','P03':'2014-09-24','P04':'2017-12-22','P05':'2019-02-12','P06':'2012-10-24'}
 for p in d['patents']:
@@ -42,21 +41,29 @@ for p in d['patents']:
  for key in ['publication_number','publication_date']:
   r['cells'][key]['locator']='已核读文献的Other versions/Publications；S10、S11原始文本首页(65)/(43)'
 for p in d['papers']:
- vals=dict(title=p['title'],authors=p['authors'],year=p['year'],doi=p['doi'],url=sources[p['source_ids'][0]]['url'],reading_scope='全文文字' if p['read_scope']=='full_article_text' else '摘要',project_relation={'direct_technical_relation_not_award_list_confirmed':'技术相关，未确认获奖清单归属','external_technical_reference':'外部技术参照','task_related_not_award_list_confirmed':'任务相关，获奖清单归属待确认'}[p['relation']])
+ vals=dict(title=p['title'],authors=p['authors'],year=p['year'],doi=p['doi'],url=sources[p['source_ids'][0]]['url'],reading_scope='全文文字及关键表格' if p['read_scope']=='full_pdf_text_and_tables' else '全文文字' if p['read_scope']=='full_article_text' else '摘要',project_relation={'direct_technical_relation_not_award_list_confirmed':'技术相关，未确认获奖清单归属','external_technical_reference':'外部技术参照','task_related_not_award_list_confirmed':'任务相关，获奖清单归属待确认'}[p['relation']])
  if p['id']=='A01':vals.update(venue='北京航空航天大学学报',volume='41',issue='11',pages='2052—2060',online_date='2015-02-25',method='模拟月壤钻进试验及取心率模型',findings='平均误差率小于5%，仅限文中工况')
  if p['id']=='A02':vals.update(venue='中国空间科学技术',volume='32',issue='6',pages='16—22',online_date='2012-12-25')
- record('paper',p['id'],p['title'],vals,p['source_ids'],locator='发布页题录、DOI与摘要；A01原文第3.2节与文末书目信息',narrative=['F027'])
+ for key in ['venue','volume','issue','pages','affiliations','research_question','method','findings']:
+  if key in p:vals[key]=p[key]
+ r=record('paper',p['id'],p['title'],vals,p['source_ids'],locator='1024页题录、正文第3—5节及表4' if p['id']=='A04' else '发布页题录、DOI与摘要；A01原文第3.2节与文末书目信息',narrative=['F027'])
+ r['cells']['project_relation']['content_nature']='platform_analysis';r['cells']['project_relation']['verification_state']='analysis_pending_review'
+ if p.get('bibliography_source_id'):
+  for key in ['year','venue','volume','issue','pages']:
+   r['cells'][key]['source_ids']=[p['bibliography_source_id']];r['cells'][key]['locator']=p['bibliography_locator']
+
 for i,(kind,count,unit) in enumerate([('发明专利',50,'件'),('论文',60,'篇'),('软件著作权',1,'项'),('专著',2,'部')],1):
  record('achievement',f'OUT-{i:02d}','官网披露：'+kind,dict(kind=kind,title='项目官网披露的'+kind+'总量',count=count,count_unit=unit,count_basis='项目官网累计披露，未取得逐项清单及统计截止时间',item_list_obtained=False,review_status='已核读来源陈述，未逐项核对'),['S02'],['C15'],narrative=['F025'])
 for ev in d['events']:
- record('event',ev['id'],ev['title'],dict(title=ev['title'],date=ev['date'],date_precision=ev['date_precision'],entity_scope=ev['scope'],occurrence='已发生（按来源记录）',result=ev['detail']),ev['source_ids'],narrative=['F033'])
-record('validation','TEST-01','2015年模拟取心率模型验证',dict(title='2015年模拟取心率模型验证',objective='研究模型预测与模拟试验的差异',version_id='HIT-2试验钻具',material_apparatus='HIT-LS1#模拟月壤；HIT-2钻具',method='不同钻进工况下试验与模型预测比较',control='模型取心率与试验取心率',metric_ids=['MET-05'],result='来源报告平均误差率小于5%',limitations='不代表完整月面环境或飞行系统精度'),['S07'],['C10','C20'],narrative=['F022','F023'])
+ record('event',ev['id'],ev['title'],dict(title=ev['title'],date=ev['date'],date_precision=ev['date_precision'],entity_scope=ev['scope'],occurrence='已发生（按来源记录）',result=ev['detail']),ev['source_ids'],narrative=['F034'])
+for v in d['validations']:
+ record('validation',v.get('atomic_id','TEST-01'),v.get('title','2015年模拟取心率模型验证'),dict(title=v.get('title','2015年模拟取心率模型验证'),objective='对比模型或控制方式在来源工况中的表现',version_id='2015 HIT-2' if v['id']=='V01' else '2025论文样机试验',material_apparatus=v['material']+'；'+v['apparatus'],method=v['method'],control=v['baseline'],metric_ids=v['metric_ids'],result=v['result'],limitations=v['limitations']),v['source_ids'],v['claim_ids'],narrative=['F022','F023'])
 for i,(version,cids,sid) in enumerate([('嫦娥五号',['C06','C08'],'S04'),('嫦娥六号',['C07','C09'],'S05')],1):
  record('application',f'APP-{i:02d}',version+'任务应用',dict(scenario='月球采样任务背景',version_id=version,status='历史任务应用有公开来源',limitations='整任务结果与钻取系统贡献分别记录，不能据此推定商业化收益'),[sid,'S02'],cids,narrative=['F020','F021'])
 for st in d['stories']:
- record('story',st['id'],st['title'],dict(title=st['title'],narrative=st['narrative'],interview_status='公开报道梳理；本轮未访谈'),st['source_ids'],st['claim_ids'],narrative=['F035','F036'],nature='platform_analysis')
+ record('story',st['id'],st['title'],dict(title=st['title'],narrative=st['narrative'],interview_status='公开报道梳理；本轮未访谈'),st['source_ids'],st['claim_ids'],narrative=['F037' if st['id']=='H02' else 'F036'],nature='source_statement' if st['nature']=='source_summary' else 'platform_analysis')
 for s in d['sources']:
- record('source',s['id'],s['title'],dict(title=s['title'],source_type=s['type'],url=s['url'],published_at=s['published_at'],accessed_at=s['accessed_at'],reading_scope=s['read_scope'],locator=s['locator'],rights=s['rights'],visibility='公开资料元信息与研究摘要'),[s['id']],locator=s['locator'],narrative=['F044'],nature='platform_metadata')
+ record('source',s['id'],s['title'],dict(title=s['title'],publisher=s.get('publisher'),sha256=s.get('sha256'),local_path=s.get('internal_path'),source_type=s['type'],url=s['url'],published_at=s['published_at'],accessed_at=s['accessed_at'],reading_scope=s['read_scope'],locator=s['locator'],rights=s['rights'],visibility='公开资料元信息与研究摘要'),[s['id']],locator=s['locator'],narrative=['F044'],nature='platform_metadata')
 for t in d['tasks']:
  record('task',t['id'],t['title'],dict(title=t['title'],task_type='补证或核验',priority=t['priority'],status='尚未派发',acceptance=t['acceptance']),narrative=['F048'],nature='platform_metadata')
 # Auto-computed facts have their derivation saved, not an invented original source.
@@ -68,6 +75,6 @@ for r in records:
   if c['value'] is not None:assert c['source_ids'] or c.get('derivation')
   assert set(c['source_ids'])<=sources.keys()
 assert len({r['id'] for r in records})==len(records)
-D=dict(version='atomic-case-3.0',project_id='2025-00',research_as_of=d['as_of'],schema_file='../../项目档案标准-v1/原子字段字典-v3.json',records=records,counts={'patent_reported':50,'patent_records_found':6,'patent_project_confirmed':None,'papers_reported':60,'paper_records_found':3,'paper_full_text_read':1,'paper_abstract_read':2},count_rules={'reported':'S02/C15项目披露，未逐项清单核实','found':'本轮实际记录去重数','confirmed':'未完成项目方归属确认，保留未知，不填0'},professional_reviewed=False)
+D=dict(version='atomic-case-3.0',project_id='2025-00',research_as_of=d['as_of'],schema_file='../../项目档案标准-v1/原子字段字典-v3.json',records=records,counts={'patent_reported':50,'patent_records_found':6,'patent_project_confirmed':None,'papers_reported':60,'paper_records_found':len(d['papers']),'paper_full_text_read':sum(p['read_scope'].startswith('full_') for p in d['papers']),'paper_abstract_read':sum(p['read_scope']=='abstract_only' for p in d['papers'])},count_rules={'reported':'S02/C15项目披露，未逐项清单核实','found':'本轮实际记录去重数','confirmed':'未完成项目方归属确认，保留未知，不填0'},professional_reviewed=False)
 (P/'原子字段档案.json').write_text(json.dumps(D,ensure_ascii=False,indent=2)+'\n')
 print(len(records),'records;',sum(len(r['cells']) for r in records),'typed cells')

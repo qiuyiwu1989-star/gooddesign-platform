@@ -220,5 +220,59 @@
     "time_window": "历史起点至2026-10-19",
     "scope": "定向补证；未穷尽研发档案",
     "blocked": "2025力载控制论文发布页打开失败，仅为候选线索，未据搜索摘要入库"
+  },
+  {
+    "id": "Q12",
+    "lane": "设计过程与失败",
+    "query": "site.hit.edu.cn 嫦娥 软袋 失败；中国空间技术研究院 钻采 预案 模拟月壤",
+    "source_ids": [
+      "S22"
+    ],
+    "outcome": "核读研制机构报道，保留未公开工艺与原文姓名异文。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open；原公开PDF下载及本地核读",
+    "language": [
+      "zh"
+    ],
+    "geography": "中文原始机构与期刊来源",
+    "time_window": "截至2026-10-19",
+    "scope": "本轮定向深研，未穷尽工程档案",
+    "blocked": null
+  },
+  {
+    "id": "Q13",
+    "lane": "试验边界复核",
+    "query": "模拟月壤钻进取样量影响因素分析及试验研究 转速",
+    "source_ids": [
+      "S07"
+    ],
+    "outcome": "重读全文，定位表1、4.3节和模型边界。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open；原公开PDF下载及本地核读",
+    "language": [
+      "zh"
+    ],
+    "geography": "中文原始机构与期刊来源",
+    "time_window": "截至2026-10-19",
+    "scope": "本轮定向深研，未穷尽工程档案",
+    "blocked": null
+  },
+  {
+    "id": "Q14",
+    "lane": "2025论文全文",
+    "query": "深层月壤钻取系统钻进力载控制方法与实验研究",
+    "source_ids": [
+      "S23"
+    ],
+    "outcome": "网页/PDF浏览工具失败后，经原公开URL分段续传取得完整11页PDF，核读正文并视觉核对关键表格。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open；原公开PDF下载及本地核读",
+    "language": [
+      "zh"
+    ],
+    "geography": "中文原始机构与期刊来源",
+    "time_window": "截至2026-10-19",
+    "scope": "本轮定向深研，未穷尽工程档案",
+    "blocked": "首轮超时；续传成功。A03原网页此次仍只返回摘要，不标全文。"
   }
 ]

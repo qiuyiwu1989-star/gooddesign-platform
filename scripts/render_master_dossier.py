@@ -21,7 +21,7 @@ for f in fields:
  assert set(f['record_refs'])<=R.keys()
  assert all(ev['source_id'] in S and ev['locator'] for ev in f['evidence'])
  if f['gap_id']:
-  assert f['value'] is None or f['value_state']=='not_found'
+  assert f['value'] is None or f['value_state'] in ['not_found','partial']
   assert f['task_ids'] and f['review_state']=='needs_information'
  elif f['content_nature']=='source_statement':assert f['evidence'], f['id']
 assert not d['expert_reviewed']
@@ -35,7 +35,7 @@ for dim in m['dimensions']:
 (P/'来源反向索引.json').write_text(json.dumps(reverse,ensure_ascii=False,indent=2)+'\n')
 labels={'source_statement':'来源陈述','platform_analysis':'平台解读'}
 type_labels={'text':'文字','object':'结构化对象','list':'列表','measurements':'指标表','record_list':'关联条目','timeline':'时间线','tasks':'任务集'}
-read={'pdf_text':'PDF名单文字','full_web_text':'网页正文','full_article_text':'论文全文文字','abstract_only':'论文摘要','pdf_partial':'专利部分页面','patent_text':'专利文献网页','snippet_only':'仅检索摘要','partial_web_text':'部分网页','search_result_text':'搜索返回片段'}
+read={'pdf_text':'PDF名单文字','full_web_text':'网页正文','full_article_text':'论文全文文字','full_pdf_text_and_tables':'全文文字及关键表格核读','abstract_only':'论文摘要','pdf_partial':'专利部分页面','patent_text':'专利文献网页','snippet_only':'仅检索摘要','partial_web_text':'部分网页','search_result_text':'搜索返回片段'}
 
 def button_field(fid,label=None):return f'<button class="text-link" data-field="{e(fid)}">{e(label or fid)}</button>'
 def source_link(si):return f'<a class="ref" data-source="{e(si)}" href="#source-{e(si)}">{e(si)}</a>'

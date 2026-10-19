@@ -34,6 +34,9 @@ class GovernanceTests(unittest.TestCase):
  def test_rejects_duplicate_ids(self):
   d=read(self.p/'原子字段档案.json');d['records'].append(copy.deepcopy(d['records'][0]));save(self.p/'原子字段档案.json',d)
   with self.assertRaises(AssertionError):self.freeze('1.0.0')
+ def test_rejects_missing_id_in_existing_record_list(self):
+  d=read(self.p/'档案数据.json');d['revisions'].append({'date':'test','change':'missing ID'});save(self.p/'档案数据.json',d)
+  with self.assertRaisesRegex(AssertionError,'missing record id'):self.freeze('1.0.0')
  def test_detects_corrupt_snapshot_and_manifest(self):
   self.freeze('1.0.0');f=self.p/'版本/1.0.0/snapshot.json';d=read(f);d['atomic']['project_id']='tampered';save(f,d)
   with self.assertRaises(AssertionError):verify(self.p)

@@ -37,3 +37,6 @@
 `版本/版本索引.json`索引不可覆写的snapshot.json、changes.json、manifest.json；增删改含取值与元数据变更。完整性检查：`python3 scripts/dossier_governance.py verify`；回归：`python3 -m unittest discover -s tests -p 'test_dossier_governance.py' -v`。快照在明确变更理由后手动冻结，生成页面不会自动伪造新修订。
 
 构建会读取质量评估依据；修改后先重建、核对评分，再冻结新版本，最后重建页面显示版本索引。当前工具只服务本地样本，不是线上维护或MCP服务；详情见[深研治理规范](../../项目档案标准-v1/深研作业质量与版本规范-v4.md)。
+
+## 016 当前内容0.2.0
+新增S22/S23与A04、设计取舍/失败记录及10行试验子表；现23来源/30陈述/92原子记录/1202槽位。原始PDF内部留存，代码仓仅保存题录、哈希、研究摘要与必要事实数据。正文49复合字段和233原子字段规范保持不变。详见[本轮研究说明](研究轮次-016.md)和016-研究验收.json。回归命令：python3 -m unittest discover -s tests -p 'test_dossier*.py' -v。

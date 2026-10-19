@@ -8,7 +8,7 @@ OUT=ROOT/'04-知识库/标杆案例/2025-00-嫦娥钻取采样'
 DATA=OUT/'档案数据.json'
 d=json.loads(DATA.read_text())
 esc=lambda x:html.escape(str(x or '待补充'))
-read_labels={'pdf_text':'PDF名单文字','full_web_text':'网页正文','full_article_text':'论文全文文字','abstract_only':'论文摘要','pdf_partial':'专利部分页面','patent_text':'专利文献网页','snippet_only':'仅检索摘要','partial_web_text':'部分网页','search_result_text':'搜索返回片段'}
+read_labels={'pdf_text':'PDF名单文字','full_web_text':'网页正文','full_article_text':'论文全文文字','full_pdf_text_and_tables':'全文文字及关键表格核读','abstract_only':'论文摘要','pdf_partial':'专利部分页面','patent_text':'专利文献网页','snippet_only':'仅检索摘要','partial_web_text':'部分网页','search_result_text':'搜索返回片段'}
 scope_labels={'project':'获奖项目','technical_lineage':'技术路线研究','CE5_drilling':'嫦娥五号钻取子系统','CE6_drilling':'嫦娥六号钻取子系统','CE5_mission_context':'嫦娥五号整任务背景','CE6_mission_context':'嫦娥六号整任务背景','ground_research':'地面研究试验','CE6_ground_support':'嫦娥六号地面支持','CE6_softbag':'嫦娥六号取芯软袋','team_history':'团队前期研究','patent_publication':'专利公开文本当时记录','reported_team':'报道涉及团队','award_project':'获奖项目','mission_context':'整任务背景','research':'研究论文'}
 relation_labels={'direct_technical_relation_not_award_list_confirmed':'技术直接相关，未由获奖成果清单确认','external_technical_reference':'外部技术参照，不计为项目论文成果','task_related_not_award_list_confirmed':'任务相关，获奖项目归属待确认'}
 sources={s['id']:s for s in d['sources']}
@@ -21,6 +21,13 @@ for rec in all_records:
  for s in rec.get('source_ids',[]):assert s in sources,(rec['id'],s)
  for c in rec.get('claim_ids',[]):assert c in claims,(rec['id'],c)
  for k in rec.get('mechanism_ids',[]):assert k in knowledge,(rec['id'],k)
+for study in d['validations']:
+ assert set(study['source_ids'])<=sources.keys()
+ assert len({r['id'] for r in study.get('trials',[])})==len(study.get('trials',[]))
+ for row in study.get('trials',[]):
+  assert isinstance(row['sample_mass_g'],(int,float)) and row['sample_mass_g']>0
+  assert isinstance(row['sample_length_mm'],(int,float)) and row['sample_length_mm']>0
+  assert row['locator'] and set(row['source_ids'])<=sources.keys()
 for t in d['tasks']:assert t['gap_id'] in {g['id'] for g in d['gaps']}
 for c in d['claims']:assert c['source_ids'] and c['locator'] and c['expert_reviewed'] is False
 for p in d['patents']:

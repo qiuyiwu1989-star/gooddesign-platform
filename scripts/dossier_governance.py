@@ -37,6 +37,7 @@ def capture(p):
  for key in ['evidence','atomic']:
   sequences=[result[key]['records']] if key=='atomic' else [v for v in result[key].values() if isinstance(v,list) and v and isinstance(v[0],dict) and 'id' in v[0]]
   for rows in sequences:
+   assert all('id' in r for r in rows),f'missing record id: {key}'
    ids=[r['id'] for r in rows];assert len(ids)==len(set(ids)),f'duplicate ids: {key}'
  return result
 

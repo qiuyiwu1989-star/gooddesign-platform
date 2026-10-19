@@ -341,12 +341,12 @@
           "display_code": "02.04",
           "title": "原方案与对照基线",
           "data_type": "text",
-          "value": null,
+          "value": "论文层面的备选比较已找到；真实工程决策记录待补。",
           "unit": null,
           "scope": null,
-          "body": "目前有取样原理和模型对照研究，但没有取得获奖项目完整的候选方案比较表。不能由一般技术对比推定项目团队当时放弃了哪些方案。",
+          "body": "已补论文对两类钻头的构型比较；仍不是任务历史选型纪要，实际备选与放弃依据待取得。",
           "content_nature": "source_statement",
-          "value_state": "not_found",
+          "value_state": "partial",
           "review_state": "needs_information",
           "tags": [
             "T15",
@@ -354,7 +354,8 @@
           ],
           "claim_ids": [
             "C05",
-            "C10"
+            "C10",
+            "C24"
           ],
           "record_refs": [],
           "evidence": [
@@ -374,6 +375,12 @@
               "source_id": "S07",
               "claim_id": "C10",
               "locator": "摘要、第3.2节及表1",
+              "role": "supports_source_statement"
+            },
+            {
+              "source_id": "S07",
+              "claim_id": "C24",
+              "locator": "第4.3节",
               "role": "supports_source_statement"
             }
           ],
@@ -611,21 +618,47 @@
             "power": null,
             "envelope": null,
             "sampling_depth": null,
-            "stratigraphy_metric": null
+            "stratigraphy_metric": null,
+            "paper_component_parameters": {
+              "loading_max_force_N": 850,
+              "rotation_max_torque_Nm": 40,
+              "head_envelope_mm": 38,
+              "rod_length_mm": 2289
+            },
+            "reported_drilling_depth_mm": {
+              "CE5": 1009,
+              "CE6": 1035
+            }
           },
           "unit": null,
           "scope": null,
-          "body": "已掌握公开原理描述，尚未取得可公开的质量、功耗、包络、取样深度及层序保持评价指标表。参数需带型号、要求值或实测值、工况、单位与时间后才能纳入正式对比。",
+          "body": "新增论文所述部件参数及任务钻进有效深度。整机质量、功耗、包络与完整工况仍缺；钻头38 mm包络不能当成整机包络。",
           "content_nature": "source_statement",
-          "value_state": "not_found",
+          "value_state": "partial",
           "review_state": "needs_information",
           "tags": [
             "T05",
             "T21"
           ],
-          "claim_ids": [],
+          "claim_ids": [
+            "C26",
+            "C28"
+          ],
           "record_refs": [],
-          "evidence": [],
+          "evidence": [
+            {
+              "source_id": "S23",
+              "claim_id": "C26",
+              "locator": "1026—1027页表1—3",
+              "role": "supports_source_statement"
+            },
+            {
+              "source_id": "S23",
+              "claim_id": "C28",
+              "locator": "1033页结论2",
+              "role": "supports_source_statement"
+            }
+          ],
           "gap_id": "G04",
           "task_ids": [
             "T04"
@@ -658,7 +691,7 @@
           },
           "unit": null,
           "scope": null,
-          "body": "将材料搬运问题改写成信息保真问题，以运动关系和界面控制降低相对滑移。 软袋摩擦、柔性件可靠性和封口性能成为新的关键约束。 粒径、黏聚性、污染控制和温度不同，必须重新试验；不直接声称适用于生物样本。",
+          "body": "将材料搬运问题改写成信息保真问题，以运动关系和界面控制降低相对滑移。 软袋摩擦、柔性件可靠性和封口性能成为新的关键约束。 粒径、黏聚性、污染控制和温度不同，必须重新试验；不直接声称适用于生物样本。 本轮补充两类钻头的取舍分析，详见K05；不认定为历史飞行选型。",
           "content_nature": "platform_analysis",
           "value_state": "known",
           "review_state": "analysis_pending_review",
@@ -668,10 +701,12 @@
           ],
           "claim_ids": [
             "C05",
-            "C10"
+            "C10",
+            "C24"
           ],
           "record_refs": [
-            "K01"
+            "K01",
+            "K05"
           ],
           "evidence": [
             {
@@ -690,6 +725,12 @@
               "source_id": "S07",
               "claim_id": "C10",
               "locator": "摘要、第3.2节及表1",
+              "role": "basis_for_analysis"
+            },
+            {
+              "source_id": "S07",
+              "claim_id": "C24",
+              "locator": "第4.3节",
               "role": "basis_for_analysis"
             }
           ],
@@ -824,7 +865,7 @@
           },
           "unit": null,
           "scope": null,
-          "body": "围绕不确定性组织观测、解释、建议和人的决策接口。 依赖传感信息、模型校准及操作者判断。 只迁移信息闭环思想，控制算法、响应时延与安全约束需重新定义。",
+          "body": "围绕不确定性组织观测、解释、建议和人的决策接口。 依赖传感信息、模型校准及操作者判断。 只迁移信息闭环思想，控制算法、响应时延与安全约束需重新定义。 另以K06记录载荷反馈的控制思路，和地面人为策略判断分开。",
           "content_nature": "platform_analysis",
           "value_state": "known",
           "review_state": "analysis_pending_review",
@@ -834,10 +875,12 @@
           "claim_ids": [
             "C04",
             "C11",
-            "C13"
+            "C13",
+            "C27"
           ],
           "record_refs": [
-            "K04"
+            "K04",
+            "K06"
           ],
           "evidence": [
             {
@@ -862,6 +905,12 @@
               "source_id": "S03",
               "claim_id": "C13",
               "locator": "航天学院地面验证支持平台段",
+              "role": "basis_for_analysis"
+            },
+            {
+              "source_id": "S23",
+              "claim_id": "C27",
+              "locator": "1032页表4",
               "role": "basis_for_analysis"
             }
           ],
@@ -1063,12 +1112,16 @@
             "material": "HIT-LS1#",
             "apparatus": "HIT-2",
             "metric": "取心率预测与试验平均误差率",
-            "result": "<5%",
-            "flight_metric": false
+            "result": "4.31%（表1；摘要为<5%）",
+            "flight_metric": false,
+            "additional_studies": [
+              "2025两组取芯对照",
+              "2025冲击PID对照"
+            ]
           },
           "unit": null,
           "scope": null,
-          "body": "2015年论文以HIT-LS1#模拟月壤和HIT-2钻具研究取心率。文中报告模型预测与试验的平均误差率小于5%；该结果适用于论文设置，不能外推为月面整机精度。",
+          "body": "2015模型表1平均误差率4.31%；另补2025论文两类地面对照。不同试验的指标不混用，也不外推整机精度。",
           "content_nature": "source_statement",
           "value_state": "known",
           "review_state": "sources_read_pending_professional_review",
@@ -1077,7 +1130,10 @@
             "T20"
           ],
           "claim_ids": [
-            "C10"
+            "C10",
+            "C25",
+            "C27",
+            "C29"
           ],
           "record_refs": [],
           "evidence": [
@@ -1085,6 +1141,24 @@
               "source_id": "S07",
               "claim_id": "C10",
               "locator": "摘要、第3.2节及表1",
+              "role": "supports_source_statement"
+            },
+            {
+              "source_id": "S07",
+              "claim_id": "C25",
+              "locator": "表1",
+              "role": "supports_source_statement"
+            },
+            {
+              "source_id": "S23",
+              "claim_id": "C27",
+              "locator": "1032页表4",
+              "role": "supports_source_statement"
+            },
+            {
+              "source_id": "S23",
+              "claim_id": "C29",
+              "locator": "1031页3.3节",
               "role": "supports_source_statement"
             }
           ],
@@ -1116,11 +1190,18 @@
               170,
               210
             ],
-            "feed_unit": "mm/min"
+            "feed_unit": "mm/min",
+            "2025_ground_test": {
+              "drill_rotation_rpm": 120,
+              "constant_force_N": 300,
+              "loading_speed_original": "50 r/min",
+              "trials_per_group": 5,
+              "drilling_depth_mm": 2000
+            }
           },
           "unit": null,
           "scope": "2015年论文试验",
-          "body": "该论文试验研究包含五档回转转速和五档进尺速度。它们属于地面研究工况，不是已确认的五号或六号飞行参数。",
+          "body": "该论文试验研究包含五档回转转速和五档进尺速度。它们属于地面研究工况，不是已确认的五号或六号飞行参数。 2025论文的10次地面试验与实际任务深度分列，加载侧转速不改写成线速度。",
           "content_nature": "source_statement",
           "value_state": "known",
           "review_state": "sources_read_pending_professional_review",
@@ -1129,7 +1210,8 @@
             "T20"
           ],
           "claim_ids": [
-            "C20"
+            "C20",
+            "C27"
           ],
           "record_refs": [],
           "evidence": [
@@ -1137,6 +1219,12 @@
               "source_id": "S07",
               "claim_id": "C20",
               "locator": "第3.2节试验规程",
+              "role": "supports_source_statement"
+            },
+            {
+              "source_id": "S23",
+              "claim_id": "C27",
+              "locator": "1032页第4节",
               "role": "supports_source_statement"
             }
           ],
@@ -1152,20 +1240,29 @@
           "display_code": "05.05",
           "title": "分项结果的进一步核验",
           "data_type": "text",
-          "value": null,
+          "value": "有论文陈述补证，原始计量与工况仍缺。",
           "unit": null,
           "scope": null,
-          "body": "260克和320克已在公开项目页找到，但正式档案还需要分项计量材料，确认样品边界、计量流程、版本与工况。",
+          "body": "新论文结论为260/320 g分项提供另一文献线索，但仍不是原始计量记录；两任务工况及测量不确定性待补。",
           "content_nature": "source_statement",
-          "value_state": "not_found",
+          "value_state": "partial",
           "review_state": "needs_information",
           "tags": [
             "T11",
             "T21"
           ],
-          "claim_ids": [],
+          "claim_ids": [
+            "C28"
+          ],
           "record_refs": [],
-          "evidence": [],
+          "evidence": [
+            {
+              "source_id": "S23",
+              "claim_id": "C28",
+              "locator": "1033页结论2",
+              "role": "supports_source_statement"
+            }
+          ],
           "gap_id": "G03",
           "task_ids": [
             "T03"
@@ -1310,11 +1407,12 @@
           "value": [
             "A01",
             "A02",
-            "A03"
+            "A03",
+            "A04"
           ],
           "unit": null,
           "scope": null,
-          "body": "已登记三篇论文：一篇核读可见全文文字，两篇核读发布页摘要。技术相关、任务支持与获奖成果清单归属分别保存，不因主题相近就计入60篇项目成果。",
+          "body": "登记4篇技术文献：2篇核读全文文字，其中2025论文核对关键表格；2篇仍仅摘要。A03年份题录由新论文参考文献补证，阅读程度不升级。",
           "content_nature": "source_statement",
           "value_state": "known",
           "review_state": "sources_read_pending_professional_review",
@@ -1326,7 +1424,8 @@
           "record_refs": [
             "A01",
             "A02",
-            "A03"
+            "A03",
+            "A04"
           ],
           "evidence": [
             {
@@ -1346,6 +1445,12 @@
               "claim_id": null,
               "locator": "题名、作者及摘要",
               "role": "record_reference"
+            },
+            {
+              "source_id": "S23",
+              "claim_id": null,
+              "locator": "1024页题录、1033页参考文献[3]",
+              "role": "supports_source_statement"
             }
           ],
           "gap_id": null,
@@ -1766,7 +1871,7 @@
           "value": "校方报道呈现团队在正式任务前后的持续设计与试验积累。平台解读：关键能力来自多轮问题澄清和验证，奖项记录只是长周期创新中的一个节点。 未进行独立采访，不补写人物对话或心理。",
           "unit": null,
           "scope": null,
-          "body": "校方报道呈现团队在正式任务前后的持续设计与试验积累。平台解读：关键能力来自多轮问题澄清和验证，奖项记录只是长周期创新中的一个节点。 未进行独立采访，不补写人物对话或心理。",
+          "body": "校方报道呈现团队在正式任务前后的持续设计与试验积累。平台解读：关键能力来自多轮问题澄清和验证，奖项记录只是长周期创新中的一个节点。 未进行独立采访，不补写人物对话或心理。 新增H03：制备模拟月壤时有公开的失败尝试记录，改进工艺仍未公开。",
           "content_nature": "platform_analysis",
           "value_state": "known",
           "review_state": "analysis_pending_review",
@@ -1774,15 +1879,24 @@
             "T03",
             "T15"
           ],
-          "claim_ids": [],
+          "claim_ids": [
+            "C23"
+          ],
           "record_refs": [
-            "H01"
+            "H01",
+            "H03"
           ],
           "evidence": [
             {
               "source_id": "S06",
               "claim_id": null,
               "locator": "2009年至2020年采样攻关段；郭宏伟谈任务前期储备段",
+              "role": "basis_for_analysis"
+            },
+            {
+              "source_id": "S22",
+              "claim_id": "C23",
+              "locator": "填压筑实段",
               "role": "basis_for_analysis"
             }
           ],
@@ -2101,33 +2215,13 @@
           "title": "来源范围与读取程度",
           "data_type": "object",
           "value": {
-            "count": 20,
-            "source_ids": [
-              "S01",
-              "S02",
-              "S03",
-              "S04",
-              "S05",
-              "S06",
-              "S07",
-              "S08",
-              "S09",
-              "S10",
-              "S11",
-              "S12",
-              "S13",
-              "S14",
-              "S15",
-              "S16",
-              "S17",
-              "S18",
-              "S19",
-              "S20"
-            ]
+            "source_cards": 23,
+            "papers_full_text": 2,
+            "papers_abstract_only": 2
           },
           "unit": null,
           "scope": null,
-          "body": "本轮登记20张来源卡，包含项目证据、摘要线索、背景和选例参照。论文摘要、检索片段、部分专利页面与正文分别标识，因此20张卡不等于20份完整核验材料。",
+          "body": "现有23来源：包括网页、原始论文、专利公开文本与检索线索。全文、摘要和转载链分别标注，23不代表23个独立已核验依据。",
           "content_nature": "platform_analysis",
           "value_state": "known",
           "review_state": "analysis_pending_review",
@@ -2136,7 +2230,14 @@
           ],
           "claim_ids": [],
           "record_refs": [],
-          "evidence": [],
+          "evidence": [
+            {
+              "source_id": "S23",
+              "claim_id": null,
+              "locator": "全文读取范围及关键表格核读",
+              "role": "supports_source_statement"
+            }
+          ],
           "gap_id": null,
           "task_ids": [],
           "valid_as_of": "2026-10-19",
@@ -2288,13 +2389,13 @@
           "title": "本次版本记录",
           "data_type": "object",
           "value": {
-            "document_revision": "2.0",
-            "research_cutoff": "2026-10-19",
-            "new_expert_review": false
+            "content_revision": "0.2.0",
+            "professional_reviewed": false,
+            "complete_research": false
           },
           "unit": null,
           "scope": null,
-          "body": "v2.0新增的是主档案正文、字段层级和双向索引；公开资料研究截止日仍为2026-10-19，没有将本次整理冒充新增研究或专业复核。",
+          "body": "研究内容拟冻结为0.2.0：补设计取舍、失败报道、论文与试验子表。内容版本与网页、字段合同版本分开。",
           "content_nature": "platform_analysis",
           "value_state": "known",
           "review_state": "analysis_pending_review",

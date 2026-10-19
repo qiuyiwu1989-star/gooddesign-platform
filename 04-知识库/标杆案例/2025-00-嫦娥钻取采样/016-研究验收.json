@@ -1,0 +1,41 @@
+{
+  "spec": "016",
+  "date": "2026-10-19",
+  "status": "pass_local_research_and_browser",
+  "revision": "0.2.0",
+  "counts": {
+    "sources": 23,
+    "claims": 30,
+    "patents": 6,
+    "papers": 4,
+    "full_text_papers": 2,
+    "abstract_papers": 2,
+    "knowledge": 6,
+    "stories": 3,
+    "atomic_records": 92,
+    "slots": 1202,
+    "known_slots": 706,
+    "experimental_rows": 10
+  },
+  "tests_passed": 16,
+  "browser_checks": [
+    "trial_rows_10",
+    "source_S23_roundtrip",
+    "paper_counts_4_and_2_2",
+    "enterprise_F039_target",
+    "no_duplicate_ids_or_broken_anchors",
+    "390px_no_page_overflow",
+    "revision_and_quality_downloads_200",
+    "console_0_errors"
+  ],
+  "score": 50,
+  "score_type": "platform_self_assessment_not_expert_review",
+  "checksums": {
+    "档案数据.json": "4b57cf89a904ed0f49b3ef2d6f2f378b48d8501950cee69fb2a81cba45da41a5",
+    "原子字段档案.json": "c3b3c8534263d3a76bd49b7446897e6ba5f15288e0a5298d3e5eb83068e7b3f4",
+    "质量评估.json": "3bddae1d71dea6e93c6d27473f94a6860011bb0e61586e467c9935613bd53455",
+    "档案.html": "0f45caba94927cf030f0f35a71a01d83d1f5bcd7a6de03d788b3161f523839f7"
+  },
+  "production_deployed": false,
+  "expert_reviewed": false
+}

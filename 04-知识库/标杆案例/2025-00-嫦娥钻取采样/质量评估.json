@@ -31,7 +31,7 @@
         "核读关键全文"
       ],
       "points": 12.5,
-      "rationale": "有来源与定位，仍含摘要和检索线索；缺全面来源链及独立事实复核。",
+      "rationale": "新增期刊原始PDF与机构报道，关键表格已核对；独立事实复核和完整来源链审核仍缺，维持2级。",
       "weight": 25
     },
     {
@@ -47,7 +47,7 @@
         "建立工况-指标-试验关系"
       ],
       "points": 10.0,
-      "rationale": "有原理与试验线索；工程参数、工况和完整验证资料未取得。",
+      "rationale": "新增部件参数、10条地面对照数据及任务深度文献；仍缺完整工程指标和原始验证档案，维持2级。",
       "weight": 20
     },
     {
@@ -56,13 +56,13 @@
       ],
       "key": "decision",
       "label": "设计过程深度",
-      "level": 1,
+      "level": 2,
       "next_actions": [
-        "取得关键决策材料",
-        "访谈研发成员"
+        "取得失败试验与工艺的直接记录",
+        "核对任务真实选型及取舍"
       ],
-      "points": 3.75,
-      "rationale": "有公开故事及平台分析；缺备选方案、取舍原始记录和本轮访谈。",
+      "points": 7.5,
+      "rationale": "新增研制机构直接报道的备选失败记录及论文的构型比较；原始工程决策、改进工艺和访谈仍缺。",
       "weight": 15
     },
     {
@@ -112,8 +112,8 @@
   ],
   "max_score": 100,
   "metrics": {
-    "known_slots": 547,
-    "known_with_source_or_derivation": 547,
+    "known_slots": 706,
+    "known_with_source_or_derivation": 706,
     "per_entity": [
       {
         "coverage": 26.7,
@@ -176,24 +176,24 @@
         "slots": 14
       },
       {
-        "coverage": 57.1,
+        "coverage": 62.2,
         "entity": "metric",
-        "known": 40,
+        "known": 122,
         "label": "指标与测量",
-        "p0_known": 35,
-        "p0_slots": 40,
-        "records": 5,
-        "slots": 70
+        "p0_known": 108,
+        "p0_slots": 112,
+        "records": 14,
+        "slots": 196
       },
       {
-        "coverage": 54.5,
+        "coverage": 57.6,
         "entity": "innovation",
-        "known": 24,
+        "known": 38,
         "label": "创新机制",
-        "p0_known": 20,
-        "p0_slots": 24,
-        "records": 4,
-        "slots": 44
+        "p0_known": 30,
+        "p0_slots": 36,
+        "records": 6,
+        "slots": 66
       },
       {
         "coverage": 49.3,
@@ -206,14 +206,14 @@
         "slots": 144
       },
       {
-        "coverage": 59.3,
+        "coverage": 72.2,
         "entity": "paper",
-        "known": 32,
+        "known": 52,
         "label": "论文条目",
-        "p0_known": 20,
-        "p0_slots": 21,
-        "records": 3,
-        "slots": 54
+        "p0_known": 28,
+        "p0_slots": 28,
+        "records": 4,
+        "slots": 72
       },
       {
         "coverage": 77.8,
@@ -238,12 +238,12 @@
       {
         "coverage": 69.2,
         "entity": "validation",
-        "known": 9,
+        "known": 27,
         "label": "试验与验证",
-        "p0_known": 6,
-        "p0_slots": 7,
-        "records": 1,
-        "slots": 13
+        "p0_known": 18,
+        "p0_slots": 21,
+        "records": 3,
+        "slots": 39
       },
       {
         "coverage": 33.3,
@@ -258,22 +258,22 @@
       {
         "coverage": 30.0,
         "entity": "story",
-        "known": 6,
+        "known": 9,
         "label": "故事与设计决策",
-        "p0_known": 4,
-        "p0_slots": 8,
-        "records": 2,
-        "slots": 20
+        "p0_known": 6,
+        "p0_slots": 12,
+        "records": 3,
+        "slots": 30
       },
       {
-        "coverage": 67.8,
+        "coverage": 69.2,
         "entity": "source",
-        "known": 185,
+        "known": 207,
         "label": "证据资料",
-        "p0_known": 147,
-        "p0_slots": 147,
-        "records": 21,
-        "slots": 273
+        "p0_known": 161,
+        "p0_slots": 161,
+        "records": 23,
+        "slots": 299
       },
       {
         "coverage": 50.0,
@@ -286,15 +286,15 @@
         "slots": 80
       }
     ],
-    "record_count": 75,
-    "registered_slots": 974,
-    "registration_coverage": 56.2,
+    "record_count": 92,
+    "registered_slots": 1202,
+    "registration_coverage": 58.7,
     "value_states": {
-      "known": 547,
+      "known": 706,
       "not_obtained": 18,
-      "not_researched": 409
+      "not_researched": 478
     }
   },
   "policy_version": "quality-rubric-0.1",
-  "score": 46.25
+  "score": 50.0
 }
