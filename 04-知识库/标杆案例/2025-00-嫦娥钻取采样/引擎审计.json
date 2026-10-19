@@ -1,0 +1,117 @@
+{
+  "version": "engine-audit-0.1.0",
+  "date": "2026-10-20",
+  "assessment": "platform_self_audit_not_expert_review",
+  "summary": "结构能支持有限的设计经验检索与条件试读；真实需求、目标工况、专业审核、成果转化及服务能力尚未齐备。",
+  "score_review": "沿用quality-rubric-0.1：技术与验证由2级升3级，依据核心参数/工况/验证已关联及原始PDF复核；不是工程验证已完成。总分50→55，其余维度不变。",
+  "dimensions": [
+    {
+      "id": "EA01",
+      "dimension": "需求定义",
+      "finding": "现有问题键过粗，只能识别问题方向。",
+      "this_round": "保留目标/约束、缺信息先追问。",
+      "remaining": "真实企业目标阈值、基线、业务价值与优先级。",
+      "priority": "P1",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA02",
+      "dimension": "功能与接口",
+      "finding": "有机制，但系统间输入输出关系仍粗。",
+      "this_round": "三卡关联原理、工况、验证和来源。",
+      "remaining": "部件接口、依赖、输入输出及耦合关系。",
+      "priority": "P1",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA03",
+      "dimension": "条件与量纲",
+      "finding": "布尔条件无法识别同单位的不同物理量及离散档位。",
+      "this_round": "补4个来源工况画像与单位/物理量/离散点检查。",
+      "remaining": "目标材料/环境范围、温度、时延、污染等条件。",
+      "priority": "P0",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA04",
+      "dimension": "效果与对照",
+      "finding": "原始10行数据尚无可复算统计；不同试验易混算。",
+      "this_round": "分开响应跟踪与取芯对照，保存均值/样本离散度及算法。",
+      "remaining": "逐次响应曲线、方差、随机化和稳定判据。",
+      "priority": "P0",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA05",
+      "dimension": "取舍与失败",
+      "finding": "论文构型比较不能代替任务真实选型。",
+      "this_round": "保留软袋/外伸管/载荷反馈的代价及文献局限。",
+      "remaining": "真实备选淘汰、工程故障、设计者原始决策记录。",
+      "priority": "P1",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA06",
+      "dimension": "证据与冲突",
+      "finding": "有来源链接，但来源相关性与局限需要随结果读取。",
+      "this_round": "工况/陈述/来源连接，上下文保留限制并去重。",
+      "remaining": "原始/转载链全库审核、歧义原作者确认、跨来源复核。",
+      "priority": "P1",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA07",
+      "dimension": "方法调度",
+      "finding": "尚未形成TRIZ等方法所需的正式输入输出约定。",
+      "this_round": "将矛盾、目标、约束、对照和验证作为调度输入线索。",
+      "remaining": "方法路由契约、方法映射审核及效果对照。",
+      "priority": "P2",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA08",
+      "dimension": "验证闭环",
+      "finding": "合成样例通过不能证明企业建议有效。",
+      "this_round": "来源工况比较只返回启发/追问/待验证。",
+      "remaining": "真实需求、试验设计、验收阈值与结果回流。",
+      "priority": "P0",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA09",
+      "dimension": "成果与转化",
+      "finding": "50专利/60论文仍无完整清单，合作与收益缺证。",
+      "this_round": "不提升成果归属等级，目标行业数据留空。",
+      "remaining": "正式清单、权属状态、许可及资源/成本约束。",
+      "priority": "P1",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA10",
+      "dimension": "生命周期",
+      "finding": "本地内容版本可追溯，但不等于项目全生命周期。",
+      "this_round": "新增研究快照并保留旧规则调用。",
+      "remaining": "实际负责人、审核签署、纠错时效及下游影响通知。",
+      "priority": "P1",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA11",
+      "dimension": "调用与复现",
+      "finding": "旧内容卡可能被新规则解释，存在版本漂移。",
+      "this_round": "按冻结版本分派规则，返回来源工况与派生分析。",
+      "remaining": "在线MCP、权限/脱敏、分页/预算与客户端验收。",
+      "priority": "P0",
+      "status": "partial_not_closed"
+    },
+    {
+      "id": "EA12",
+      "dimension": "评分与校准",
+      "finding": "资料质量与匹配有效性必须分开。",
+      "this_round": "按原量规仅技术维度2→3；其他维度不因新增数据升分。",
+      "remaining": "专业审核、跨案例评分一致性与真实匹配评测。",
+      "priority": "P1",
+      "status": "partial_not_closed"
+    }
+  ]
+}

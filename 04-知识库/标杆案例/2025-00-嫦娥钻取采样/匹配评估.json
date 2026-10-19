@@ -1,10 +1,10 @@
 {
-  "policy_version": "matching-policy-0.1.0",
+  "policy_version": "matching-policy-0.2.0",
   "benchmark_standard": "benchmark-0.1.0-trial",
   "status": "trial_not_certified",
-  "archive_quality_score": 50.0,
+  "archive_quality_score": 55.0,
   "experience_cards": 3,
-  "synthetic_fixtures": 7,
+  "synthetic_fixtures": 13,
   "fixture_results": [
     {
       "id": "MC01-positive",
@@ -28,7 +28,13 @@
         "conflicts": [],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       }
     },
     {
@@ -55,7 +61,13 @@
         ],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       }
     },
     {
@@ -80,7 +92,13 @@
         "conflicts": [],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       }
     },
     {
@@ -107,7 +125,13 @@
         ],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       }
     },
     {
@@ -132,7 +156,13 @@
         "conflicts": [],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       }
     },
     {
@@ -159,7 +189,13 @@
         ],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       }
     },
     {
@@ -186,7 +222,358 @@
           "是否能测量载荷，或允许改造传感与反馈链？"
         ],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
+      }
+    },
+    {
+      "id": "RQ01",
+      "label": "400 N与0.4 kN等值，只对照来源工况",
+      "card_id": "MC02",
+      "request": {
+        "id": "RQ01",
+        "card_id": "MC02",
+        "label": "400 N与0.4 kN等值，只对照来源工况",
+        "kind": "synthetic_source_condition_check",
+        "task": "inspiration",
+        "problem_key": "contact_load",
+        "conditions": {
+          "load_feedback_allowed": true,
+          "motion_adjustable": true
+        },
+        "expected": "analogy_candidate",
+        "reference_check": {
+          "profile_id": "EP02",
+          "material_key": "nominal_soil_simulant",
+          "measurements": {
+            "target_force": {
+              "value": 0.4,
+              "unit": "kN"
+            }
+          }
+        }
+      },
+      "result": {
+        "status": "analogy_candidate",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "reported_settings_match",
+          "profile_id": "EP02",
+          "questions": [],
+          "outside": [],
+          "normalized": {
+            "target_force": {
+              "value": 400.0,
+              "unit": "N"
+            }
+          },
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      }
+    },
+    {
+      "id": "RQ02",
+      "label": "500 N超出该报告设定，需重新验证",
+      "card_id": "MC02",
+      "request": {
+        "id": "RQ02",
+        "card_id": "MC02",
+        "label": "500 N超出该报告设定，需重新验证",
+        "kind": "synthetic_source_condition_check",
+        "task": "inspiration",
+        "problem_key": "contact_load",
+        "conditions": {
+          "load_feedback_allowed": true,
+          "motion_adjustable": true
+        },
+        "expected": "needs_validation",
+        "reference_check": {
+          "profile_id": "EP02",
+          "material_key": "nominal_soil_simulant",
+          "measurements": {
+            "target_force": {
+              "value": 500,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "result": {
+        "status": "needs_validation",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "outside_source_conditions",
+          "profile_id": "EP02",
+          "questions": [],
+          "outside": [
+            "目标钻进力载不在该来源明确报告的设定点/档位中；不据此判定工程不可行。"
+          ],
+          "normalized": {
+            "target_force": {
+              "value": 500.0,
+              "unit": "N"
+            }
+          },
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      }
+    },
+    {
+      "id": "RQ03",
+      "label": "同为400 N但材料不同，不能沿用结果",
+      "card_id": "MC02",
+      "request": {
+        "id": "RQ03",
+        "card_id": "MC02",
+        "label": "同为400 N但材料不同，不能沿用结果",
+        "kind": "synthetic_source_condition_check",
+        "task": "inspiration",
+        "problem_key": "contact_load",
+        "conditions": {
+          "load_feedback_allowed": true,
+          "motion_adjustable": true
+        },
+        "expected": "needs_validation",
+        "reference_check": {
+          "profile_id": "EP02",
+          "material_key": "artificial_marble",
+          "measurements": {
+            "target_force": {
+              "value": 400,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "result": {
+        "status": "needs_validation",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "outside_source_conditions",
+          "profile_id": "EP02",
+          "questions": [],
+          "outside": [
+            "材料与该来源工况不同，不能直接沿用结果。"
+          ],
+          "normalized": {
+            "target_force": {
+              "value": 400.0,
+              "unit": "N"
+            }
+          },
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      }
+    },
+    {
+      "id": "RQ04",
+      "label": "100 r/min位于档位之间，不能视为已验证",
+      "card_id": "MC01",
+      "request": {
+        "id": "RQ04",
+        "card_id": "MC01",
+        "label": "100 r/min位于档位之间，不能视为已验证",
+        "kind": "synthetic_source_condition_check",
+        "task": "inspiration",
+        "problem_key": "sample_information",
+        "conditions": {
+          "preserve_structure": true,
+          "flexible_container_allowed": true
+        },
+        "expected": "needs_validation",
+        "reference_check": {
+          "profile_id": "EP01",
+          "material_key": "HIT-LS1",
+          "measurements": {
+            "drill_rot_speed": {
+              "value": 100,
+              "unit": "r/min"
+            },
+            "feed_speed": {
+              "value": 130,
+              "unit": "mm/min"
+            }
+          }
+        }
+      },
+      "result": {
+        "status": "needs_validation",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "outside_source_conditions",
+          "profile_id": "EP01",
+          "questions": [],
+          "outside": [
+            "钻具回转转速不在该来源明确报告的设定点/档位中；不据此判定工程不可行。"
+          ],
+          "normalized": {
+            "drill_rot_speed": {
+              "value": 100.0,
+              "unit": "r/min"
+            },
+            "feed_speed": {
+              "value": 130.0,
+              "unit": "mm/min"
+            }
+          },
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "第3.2节、表1、第4.3节",
+          "limits": [
+            "两组档位不能推断每一种组合都有独立重复验证",
+            "档位之间的连续区间没有据此得到验证",
+            "强振动冲击不在模型可靠解释范围"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      }
+    },
+    {
+      "id": "RQ05",
+      "label": "缺目标载荷时先追问",
+      "card_id": "MC02",
+      "request": {
+        "id": "RQ05",
+        "card_id": "MC02",
+        "label": "缺目标载荷时先追问",
+        "kind": "synthetic_source_condition_check",
+        "task": "inspiration",
+        "problem_key": "contact_load",
+        "conditions": {
+          "load_feedback_allowed": true,
+          "motion_adjustable": true
+        },
+        "expected": "needs_clarification",
+        "reference_check": {
+          "profile_id": "EP02",
+          "material_key": "nominal_soil_simulant",
+          "measurements": {}
+        }
+      },
+      "result": {
+        "status": "needs_clarification",
+        "conflicts": [],
+        "questions": [
+          "请补充目标钻进力载及单位。"
+        ],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "needs_information",
+          "profile_id": "EP02",
+          "questions": [
+            "请补充目标钻进力载及单位。"
+          ],
+          "outside": [],
+          "normalized": {},
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      }
+    },
+    {
+      "id": "RQ06",
+      "label": "来源条件相近，也不直接批准实施",
+      "card_id": "MC02",
+      "request": {
+        "id": "RQ06",
+        "card_id": "MC02",
+        "label": "来源条件相近，也不直接批准实施",
+        "kind": "synthetic_source_condition_check",
+        "task": "implementation",
+        "problem_key": "contact_load",
+        "conditions": {
+          "load_feedback_allowed": true,
+          "motion_adjustable": true
+        },
+        "expected": "needs_validation",
+        "reference_check": {
+          "profile_id": "EP02",
+          "material_key": "nominal_soil_simulant",
+          "measurements": {
+            "target_force": {
+              "value": 400,
+              "unit": "N"
+            }
+          }
+        }
+      },
+      "result": {
+        "status": "needs_validation",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "reported_settings_match",
+          "profile_id": "EP02",
+          "questions": [],
+          "outside": [],
+          "normalized": {
+            "target_force": {
+              "value": 400.0,
+              "unit": "N"
+            }
+          },
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
       }
     }
   ],
@@ -201,7 +588,7 @@
       "id": "rules",
       "label": "正反例与追问规则",
       "status": "pass",
-      "basis": "七个人工样例通过；只验证规则行为。"
+      "basis": "13个人工样例通过；只验证规则行为。"
     },
     {
       "id": "parameters",

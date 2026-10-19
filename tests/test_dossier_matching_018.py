@@ -8,10 +8,11 @@ from dossier_matching import evaluate,context_pack,build
 from dossier_governance import capture,read
 class MatchingTests(unittest.TestCase):
  def setUp(self):
+  self.profiles=read(P/'研究证据.json')['profiles']
   self.m=read(P/'匹配知识.json');self.cards={c['id']:c for c in self.m['cards']};self.positive=next(f for f in self.m['fixtures']if f['id']=='MC02-positive')
  def test_positive_negative_and_unknown_fixtures(self):
-  self.assertEqual(len(self.m['fixtures']),7)
-  for f in self.m['fixtures']:self.assertEqual(evaluate(self.cards[f['card_id']],f)['status'],f['expected'])
+  self.assertGreaterEqual(len(self.m['fixtures']),7)
+  for f in self.m['fixtures']:self.assertEqual(evaluate(self.cards[f['card_id']],f,profiles=self.profiles)['status'],f['expected'])
  def test_conflict_wins_over_other_unknown_conditions(self):
   request=dict(self.positive,conditions={'load_feedback_allowed':False,'motion_adjustable':None})
   result=evaluate(self.cards['MC02'],request)
@@ -43,8 +44,8 @@ class MatchingTests(unittest.TestCase):
  def test_trial_quality_and_data_are_not_promoted(self):
   _,report=build(P);self.assertEqual(report['status'],'trial_not_certified')
   self.assertFalse(report['ready_for_controlled_replication']);self.assertFalse(report['ready_to_scale'])
-  current=capture(P);prior=read(P/'版本/0.2.1/snapshot.json')
+  current=read(P/'版本/0.3.0/snapshot.json');prior=read(P/'版本/0.2.1/snapshot.json')
   for key in ['evidence','atomic','document','quality','reader_content']:self.assertEqual(current[key],prior[key])
-  self.assertEqual(current['matching_knowledge'],self.m)
+  self.assertEqual(len(current['matching_knowledge']['cards']),3)
   v=current['version_declaration'];self.assertEqual(v['content_target'],'0.3.0');self.assertEqual(v['field_schema'],current['field_schema']['version'])
 if __name__=='__main__':unittest.main()

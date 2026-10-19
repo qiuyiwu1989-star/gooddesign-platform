@@ -107,6 +107,8 @@ import runpy
 if (OUT/'主档案结构.json').exists():
  runpy.run_path(str(ROOT/'scripts/build_case_field_standard.py'))
  runpy.run_path(str(ROOT/'scripts/build_case_atomic_data.py'))
+ from dossier_research import build as build_research
+ build_research(OUT)
  from dossier_governance import quality
  quality(OUT)
  runpy.run_path(str(ROOT/'scripts/render_master_dossier.py'))

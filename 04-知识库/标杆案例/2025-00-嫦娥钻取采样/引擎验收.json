@@ -1,0 +1,38 @@
+{
+  "spec": "019",
+  "status": "pass_local_checks_not_expert_review",
+  "date": "2026-10-20",
+  "tests": 39,
+  "synthetic_fixtures": 13,
+  "content_version": "0.4.0",
+  "page_version": "4.2.0",
+  "quality_policy": "quality-rubric-0.1",
+  "score_before": 50,
+  "score_after": 55,
+  "changed_dimension": "technical:2->3",
+  "counts": {
+    "sources": 23,
+    "claims": 34,
+    "atomic_records": 102,
+    "slots": 1338,
+    "known": 796
+  },
+  "browser": [
+    "12_dimension_audit",
+    "reported_vs_derived",
+    "source_condition_fixtures",
+    "keyboard",
+    "390px",
+    "versions",
+    "legacy_source",
+    "score55",
+    "print"
+  ],
+  "page_errors": 0,
+  "limits": [
+    "A03原始PDF未完整取得，保留摘要",
+    "13人工需求只是规则验证，无真实企业迁移试验",
+    "原始工程档案与专业审核未完成",
+    "未部署生产"
+  ]
+}

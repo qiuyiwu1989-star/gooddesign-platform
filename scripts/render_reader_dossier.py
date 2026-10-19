@@ -7,6 +7,8 @@ def build(root,p):
  read=lambda n:json.loads((p/n).read_text())
  from dossier_matching import render as render_matching
  matching=render_matching(p)
+ from dossier_research import render as render_research
+ research=render_research(p)
  d,a,s,q,c=map(read,['档案数据.json','原子字段档案.json','字段规范.json','质量评估.json','阅读内容.json'])
  e=lambda v:html.escape(str(v if v is not None else ''))
  records={r['id']:r for r in a['records']};sources={x['id']:x for x in d['sources']};entity_blocks={x['key']:x['block'] for x in s['entities']}
@@ -43,7 +45,7 @@ def build(root,p):
  metric_table=table(['对象','指标','数值','单位','数据性质'],[[r['cells'][k]['value']for k in ['subject','name','value','unit','value_kind']]for r in allmetrics])
  trial=next(x for x in d['validations']if x['id']=='V02')
  trial_html=table(['试验编号','控制方式（原文设定）','样品质量 / g','样品长度 / mm'],[[r['id'],r['setting_original'],r['sample_mass_g'],r['sample_length_mm']]for r in trial['trials']])
- section('validation','<h3>任务结果</h3>'+flight+'<p class="reader-note">样品量按项目披露，深度按论文报告；任务返回总量与钻取分项分别记录。</p><div class="reader-two"><article><h3>模型与试验对照</h3><p>2015年地面研究的取心率模型平均误差率为4.31%。</p><p class="reader-note">适用于论文设置，不代表月面整机精度。</p>'+paperlink('A01','阅读论文解读')+'</article><article><h3>两种控制方式对照</h3><p>2025年论文比较恒速与恒力载控制，各5次地面取芯试验。</p><p class="reader-note">地面结果不直接外推为飞行性能。</p>'+paperlink('A04','阅读论文解读')+'</article></div><details class="reader-expand"><summary>查看部件参数 · '+str(len(component))+' 项</summary>'+params+'<p class="reader-note">钻头包络不是整机包络；以上为论文所述部件参数。</p></details><details class="reader-expand" id="reader-trials"><summary>查看原始试验数据 · 10 次</summary>'+trial_html+'<p class="reader-note">保留原文50 r/min设定，不改写为线性进尺速度。每组5次，尚无平台复现实验。</p></details><details class="reader-expand"><summary>完整指标目录 · '+str(len(allmetrics))+' 项</summary>'+metric_table+'</details>')
+ section('validation','<h3>任务结果</h3>'+flight+'<p class="reader-note">样品量按项目披露，深度按论文报告；任务返回总量与钻取分项分别记录。</p><div class="reader-two"><article><h3>模型与试验对照</h3><p>2015年地面研究的取心率模型平均误差率为4.31%。</p><p class="reader-note">适用于论文设置，不代表月面整机精度。</p>'+paperlink('A01','阅读论文解读')+'</article><article><h3>两种控制方式对照</h3><p>2025年论文比较恒速与恒力载控制，各5次地面取芯试验。</p><p class="reader-note">地面结果不直接外推为飞行性能。</p>'+paperlink('A04','阅读论文解读')+'</article></div><details class="reader-expand"><summary>查看部件参数 · '+str(len(component))+' 项</summary>'+params+'<p class="reader-note">钻头包络不是整机包络；以上为论文所述部件参数。</p></details><details class="reader-expand" id="reader-trials"><summary>查看原始试验数据 · 10 次</summary>'+trial_html+'<p class="reader-note">保留原文50 r/min设定，不改写为线性进尺速度。每组5次，尚无平台复现实验。</p></details><details class="reader-expand"><summary>完整指标目录 · '+str(len(allmetrics))+' 项</summary>'+metric_table+'</details>'+research['body'])
  patentrows=[[x['title'],x['publication']]for x in d['patents']]
  papers=''.join(f'<li><div><b>{e(x["title"])}</b><span>{e(x.get("year"))} · {"全文已读"if x["read_scope"].startswith("full_")else "仅摘要"}</span></div>{paperlink(x["id"],"查看解读")}</li>'for x in d['papers'])
  section('ip',f'<div class="collection-counts"><span><b>{len(d["patents"])}</b>专利线索</span><span><b>{len(d["papers"])}</b>技术文献</span><span><b>{a["counts"]["paper_full_text_read"]}</b>已读全文</span></div><p class="reader-note">项目披露50项专利、60篇论文；完整清单尚未取得，以下条目不等于已确认项目成果。</p><details class="reader-expand"><summary>查看专利目录</summary>'+table(['专利名称','公开 / 授权文献号'],patentrows)+'</details><ul class="reader-paper-list">'+papers+'</ul>')
@@ -66,10 +68,10 @@ def build(root,p):
  library='<div id="library-view" hidden><div class="reader-view-heading"><h2>资料与解读</h2><p>从论文看研究方法与结论，完整参考资料列在后面。解读为平台整理，保留实际阅读范围。</p></div>'+''.join(paper_cards)+'<section class="reader-section" id="reader-sources"><h2>参考资料</h2>'+source_index+'</section></div>'
  module_rows=[[x['title'],x['records'],f'{x["known"]} / {x["total"]}',str(x['percent'])+'%',x['assessment']]for x in stats]
  needs=''.join(f'<li><b>{e(c["modules"][x["id"]]["title"])}</b><p>{e(c["modules"][x["id"]]["summary"])}</p></li>'for x in stats)
- assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details>'+matching['assessment']+'</div>'
+ assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details>'+matching['assessment']+research['assessment']+'</div>'
  nav=''.join(f'<a data-reader-section="{x["id"]}" href="#reader-{x["id"]}"><span>{i:02d}</span>{e(x["title"])}</a>'for i,x in enumerate(stats,1))
  hero='<div class="eyebrow">好设计 · 项目档案</div><h1>嫦娥月球钻取采样系统</h1><p class="summary">从月球深层取回样品，也保存样品所承载的信息。<br>整理五号与六号任务相关的系统设计、研究成果和发展过程。</p><div class="reader-hero-meta"><span>2025年第十届好设计奖金奖</span><span>资料整理截至 '+e(d['as_of'])+'</span></div>'
- return dict(board=board,library=library,assessment=assessment,nav=nav,hero=hero,css=CSS+matching['css'],js=JS+matching['js'])
+ return dict(board=board,library=library,assessment=assessment,nav=nav,hero=hero,css=CSS+matching['css']+'.reader-expand{scroll-margin-top:85px}.engine-audit-table{min-width:680px}.engine-audit-table td:first-child{min-width:95px}',js=JS+matching['js'])
 
 def quality_panel(q,e):
  labels={'identity':'身份与范围','evidence':'资料可信度','technical':'技术与验证','decision':'设计过程','ip':'成果与项目关系','governance':'档案维护'}

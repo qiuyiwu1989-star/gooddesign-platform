@@ -3,14 +3,20 @@
   "contexts": [
     {
       "project_id": "2025-00",
-      "revision": "0.3.0",
-      "policy_version": "matching-policy-0.1.0",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
       "decision": {
         "status": "analogy_candidate",
         "conflicts": [],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       },
       "ordered_context": [
         {
@@ -20,8 +26,8 @@
             "task": "inspiration",
             "problem_key": "sample_information",
             "conditions": {
-              "preserve_structure": true,
-              "flexible_container_allowed": true
+              "flexible_container_allowed": true,
+              "preserve_structure": true
             }
           }
         },
@@ -89,6 +95,67 @@
                 "reading_scope": "patent_text",
                 "limits": "仅按文献登记；平台状态不作为官方现时状态，英文机构名不直接规范化。"
               }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC01",
+                  "MC03"
+                ],
+                "claim_ids": [
+                  "C20",
+                  "C25"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      50,
+                      90,
+                      150,
+                      210,
+                      250
+                    ]
+                  },
+                  {
+                    "dimension": "linear_speed",
+                    "key": "feed_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "进尺速度",
+                    "unit": "mm/min",
+                    "values": [
+                      50,
+                      90,
+                      130,
+                      170,
+                      210
+                    ]
+                  }
+                ],
+                "id": "EP01",
+                "knowledge_ids": [
+                  "K01",
+                  "K05"
+                ],
+                "limits": [
+                  "两组档位不能推断每一种组合都有独立重复验证",
+                  "档位之间的连续区间没有据此得到验证",
+                  "强振动冲击不在模型可靠解释范围"
+                ],
+                "locator": "第3.2节、表1、第4.3节",
+                "material_key": "HIT-LS1",
+                "material_label": "HIT-LS1#压缩模拟月壤",
+                "result": "模型平均误差率4.31%，不代表月面误差或层序零扰动。",
+                "source_ids": [
+                  "S07"
+                ],
+                "title": "软袋取芯模型试验",
+                "validation_id": "V01"
+              }
             ]
           }
         },
@@ -106,8 +173,8 @@
     },
     {
       "project_id": "2025-00",
-      "revision": "0.3.0",
-      "policy_version": "matching-policy-0.1.0",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
       "decision": {
         "status": "excluded",
         "conflicts": [
@@ -115,7 +182,13 @@
         ],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       },
       "ordered_context": [
         {
@@ -125,8 +198,8 @@
             "task": "inspiration",
             "problem_key": "sample_information",
             "conditions": {
-              "preserve_structure": false,
-              "flexible_container_allowed": true
+              "flexible_container_allowed": true,
+              "preserve_structure": false
             }
           }
         },
@@ -194,6 +267,67 @@
                 "reading_scope": "patent_text",
                 "limits": "仅按文献登记；平台状态不作为官方现时状态，英文机构名不直接规范化。"
               }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC01",
+                  "MC03"
+                ],
+                "claim_ids": [
+                  "C20",
+                  "C25"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      50,
+                      90,
+                      150,
+                      210,
+                      250
+                    ]
+                  },
+                  {
+                    "dimension": "linear_speed",
+                    "key": "feed_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "进尺速度",
+                    "unit": "mm/min",
+                    "values": [
+                      50,
+                      90,
+                      130,
+                      170,
+                      210
+                    ]
+                  }
+                ],
+                "id": "EP01",
+                "knowledge_ids": [
+                  "K01",
+                  "K05"
+                ],
+                "limits": [
+                  "两组档位不能推断每一种组合都有独立重复验证",
+                  "档位之间的连续区间没有据此得到验证",
+                  "强振动冲击不在模型可靠解释范围"
+                ],
+                "locator": "第3.2节、表1、第4.3节",
+                "material_key": "HIT-LS1",
+                "material_label": "HIT-LS1#压缩模拟月壤",
+                "result": "模型平均误差率4.31%，不代表月面误差或层序零扰动。",
+                "source_ids": [
+                  "S07"
+                ],
+                "title": "软袋取芯模型试验",
+                "validation_id": "V01"
+              }
             ]
           }
         },
@@ -211,14 +345,20 @@
     },
     {
       "project_id": "2025-00",
-      "revision": "0.3.0",
-      "policy_version": "matching-policy-0.1.0",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
       "decision": {
         "status": "analogy_candidate",
         "conflicts": [],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       },
       "ordered_context": [
         {
@@ -241,7 +381,7 @@
             "measure": "比较恒速和恒力载控制。",
             "mechanism": "通过载荷反馈调节加载运动。",
             "tradeoffs": "增加测量、控制和调参依赖。",
-            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
             "target_unknowns": [
               "目标设备的采样和响应要求",
               "目标工况的允许峰值与稳定时间",
@@ -290,17 +430,273 @@
                   "S23"
                 ],
                 "review_status": "source_read"
+              },
+              {
+                "id": "C31",
+                "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_constant",
+                "locator": "1029页3.1节、图11(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C32",
+                "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_ramp",
+                "locator": "1029—1030页3.1节、图11(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C33",
+                "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_constant",
+                "locator": "1030页3.2节、图14(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C34",
+                "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_ramp",
+                "locator": "1030页3.2节、图14(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
               }
             ],
             "citations": [
               {
                 "source_id": "S23",
                 "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
-                "locator": "1024—1034页；表1—4、3.3节、4节、5节及参考文献[3]",
+                "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
                 "reading_scope": "full_pdf_text_and_tables",
                 "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
               }
-            ]
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C31"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP02",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "5组取均值，逐次曲线与方差未取得",
+                  "未报道稳定判据，不据此给其他设备作保证"
+                ],
+                "locator": "1029页3.1节、图11(a)",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤恒定载荷跟踪",
+                "validation_id": "V04"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C33"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP03",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "人造大理岩不等于任意岩石或金属",
+                  "不能将模拟月壤的4.6 s移用到本工况"
+                ],
+                "locator": "1030页3.2节、图14(a)",
+                "material_key": "artificial_marble",
+                "material_label": "人造大理岩",
+                "result": "稳定约8.2 s；最大超调约92.1 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "人造大理岩恒定载荷跟踪",
+                "validation_id": "V06"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C27"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "reported_setpoint",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      120
+                    ]
+                  },
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "恒力载组目标力载",
+                    "unit": "N",
+                    "values": [
+                      300
+                    ]
+                  }
+                ],
+                "id": "EP04",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+                  "仅用于对应地面试验的比较，非飞行增益"
+                ],
+                "locator": "1032页第4节、表4",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "两组各5次，保留原始10行记录，派生统计另算。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤取芯方式对照",
+                "validation_id": "V02"
+              }
+            ],
+            "derived_analysis": {
+              "comparisons": [
+                {
+                  "absolute_difference": 102.6,
+                  "metric": "sample_mass_g",
+                  "relative_difference_percent": 31.5887,
+                  "unit": "g"
+                },
+                {
+                  "absolute_difference": 307.4,
+                  "metric": "sample_length_mm",
+                  "relative_difference_percent": 28.3422,
+                  "unit": "mm"
+                }
+              ],
+              "formula": {
+                "mean": "sum(values)/n",
+                "relative_difference": "(mean_SY02-mean_SY01)/mean_SY01*100",
+                "sample_sd": "sqrt(sum((x-mean)^2)/(n-1))"
+              },
+              "groups": [
+                {
+                  "group": "SY01",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1480,
+                      "mean": 1084.6,
+                      "minimum": 813,
+                      "sample_sd": 282.8795,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 448,
+                      "mean": 324.8,
+                      "minimum": 234,
+                      "sample_sd": 89.2172,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY01-1",
+                    "SY01-2",
+                    "SY01-3",
+                    "SY01-4",
+                    "SY01-5"
+                  ]
+                },
+                {
+                  "group": "SY02",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1510,
+                      "mean": 1392,
+                      "minimum": 1210,
+                      "sample_sd": 123.774,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 512,
+                      "mean": 427.4,
+                      "minimum": 345,
+                      "sample_sd": 59.3742,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY02-1",
+                    "SY02-2",
+                    "SY02-3",
+                    "SY02-4",
+                    "SY02-5"
+                  ]
+                }
+              ],
+              "input_validation": "V02",
+              "limits": [
+                "每组仅5次，随机化和样本独立性未明确",
+                "不作显著性、因果效应、飞行收益或商业收益判断",
+                "质量与长度分别统计；不作为层序保持程度指标"
+              ],
+              "locator": "1032页表4",
+              "nature": "platform_derived_not_original_measurement",
+              "source_ids": [
+                "S23"
+              ],
+              "version": "descriptive-analysis-0.1.0"
+            }
           }
         },
         {
@@ -317,8 +713,8 @@
     },
     {
       "project_id": "2025-00",
-      "revision": "0.3.0",
-      "policy_version": "matching-policy-0.1.0",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
       "decision": {
         "status": "excluded",
         "conflicts": [
@@ -326,7 +722,13 @@
         ],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       },
       "ordered_context": [
         {
@@ -349,7 +751,7 @@
             "measure": "比较恒速和恒力载控制。",
             "mechanism": "通过载荷反馈调节加载运动。",
             "tradeoffs": "增加测量、控制和调参依赖。",
-            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
             "target_unknowns": [
               "目标设备的采样和响应要求",
               "目标工况的允许峰值与稳定时间",
@@ -398,17 +800,273 @@
                   "S23"
                 ],
                 "review_status": "source_read"
+              },
+              {
+                "id": "C31",
+                "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_constant",
+                "locator": "1029页3.1节、图11(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C32",
+                "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_ramp",
+                "locator": "1029—1030页3.1节、图11(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C33",
+                "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_constant",
+                "locator": "1030页3.2节、图14(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C34",
+                "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_ramp",
+                "locator": "1030页3.2节、图14(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
               }
             ],
             "citations": [
               {
                 "source_id": "S23",
                 "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
-                "locator": "1024—1034页；表1—4、3.3节、4节、5节及参考文献[3]",
+                "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
                 "reading_scope": "full_pdf_text_and_tables",
                 "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
               }
-            ]
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C31"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP02",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "5组取均值，逐次曲线与方差未取得",
+                  "未报道稳定判据，不据此给其他设备作保证"
+                ],
+                "locator": "1029页3.1节、图11(a)",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤恒定载荷跟踪",
+                "validation_id": "V04"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C33"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP03",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "人造大理岩不等于任意岩石或金属",
+                  "不能将模拟月壤的4.6 s移用到本工况"
+                ],
+                "locator": "1030页3.2节、图14(a)",
+                "material_key": "artificial_marble",
+                "material_label": "人造大理岩",
+                "result": "稳定约8.2 s；最大超调约92.1 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "人造大理岩恒定载荷跟踪",
+                "validation_id": "V06"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C27"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "reported_setpoint",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      120
+                    ]
+                  },
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "恒力载组目标力载",
+                    "unit": "N",
+                    "values": [
+                      300
+                    ]
+                  }
+                ],
+                "id": "EP04",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+                  "仅用于对应地面试验的比较，非飞行增益"
+                ],
+                "locator": "1032页第4节、表4",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "两组各5次，保留原始10行记录，派生统计另算。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤取芯方式对照",
+                "validation_id": "V02"
+              }
+            ],
+            "derived_analysis": {
+              "comparisons": [
+                {
+                  "absolute_difference": 102.6,
+                  "metric": "sample_mass_g",
+                  "relative_difference_percent": 31.5887,
+                  "unit": "g"
+                },
+                {
+                  "absolute_difference": 307.4,
+                  "metric": "sample_length_mm",
+                  "relative_difference_percent": 28.3422,
+                  "unit": "mm"
+                }
+              ],
+              "formula": {
+                "mean": "sum(values)/n",
+                "relative_difference": "(mean_SY02-mean_SY01)/mean_SY01*100",
+                "sample_sd": "sqrt(sum((x-mean)^2)/(n-1))"
+              },
+              "groups": [
+                {
+                  "group": "SY01",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1480,
+                      "mean": 1084.6,
+                      "minimum": 813,
+                      "sample_sd": 282.8795,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 448,
+                      "mean": 324.8,
+                      "minimum": 234,
+                      "sample_sd": 89.2172,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY01-1",
+                    "SY01-2",
+                    "SY01-3",
+                    "SY01-4",
+                    "SY01-5"
+                  ]
+                },
+                {
+                  "group": "SY02",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1510,
+                      "mean": 1392,
+                      "minimum": 1210,
+                      "sample_sd": 123.774,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 512,
+                      "mean": 427.4,
+                      "minimum": 345,
+                      "sample_sd": 59.3742,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY02-1",
+                    "SY02-2",
+                    "SY02-3",
+                    "SY02-4",
+                    "SY02-5"
+                  ]
+                }
+              ],
+              "input_validation": "V02",
+              "limits": [
+                "每组仅5次，随机化和样本独立性未明确",
+                "不作显著性、因果效应、飞行收益或商业收益判断",
+                "质量与长度分别统计；不作为层序保持程度指标"
+              ],
+              "locator": "1032页表4",
+              "nature": "platform_derived_not_original_measurement",
+              "source_ids": [
+                "S23"
+              ],
+              "version": "descriptive-analysis-0.1.0"
+            }
           }
         },
         {
@@ -425,14 +1083,20 @@
     },
     {
       "project_id": "2025-00",
-      "revision": "0.3.0",
-      "policy_version": "matching-policy-0.1.0",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
       "decision": {
         "status": "analogy_candidate",
         "conflicts": [],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       },
       "ordered_context": [
         {
@@ -442,8 +1106,8 @@
             "task": "inspiration",
             "problem_key": "multi_condition_tradeoff",
             "conditions": {
-              "competing_goals": true,
-              "alternatives_testable": true
+              "alternatives_testable": true,
+              "competing_goals": true
             }
           }
         },
@@ -492,6 +1156,67 @@
                 "reading_scope": "full_article_text",
                 "limits": "模拟物和特定钻具下的研究结论，不是月面整体系统误差或飞行指标。 核读可见全文文字，公式图像未逐式重算。"
               }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC01",
+                  "MC03"
+                ],
+                "claim_ids": [
+                  "C20",
+                  "C25"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      50,
+                      90,
+                      150,
+                      210,
+                      250
+                    ]
+                  },
+                  {
+                    "dimension": "linear_speed",
+                    "key": "feed_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "进尺速度",
+                    "unit": "mm/min",
+                    "values": [
+                      50,
+                      90,
+                      130,
+                      170,
+                      210
+                    ]
+                  }
+                ],
+                "id": "EP01",
+                "knowledge_ids": [
+                  "K01",
+                  "K05"
+                ],
+                "limits": [
+                  "两组档位不能推断每一种组合都有独立重复验证",
+                  "档位之间的连续区间没有据此得到验证",
+                  "强振动冲击不在模型可靠解释范围"
+                ],
+                "locator": "第3.2节、表1、第4.3节",
+                "material_key": "HIT-LS1",
+                "material_label": "HIT-LS1#压缩模拟月壤",
+                "result": "模型平均误差率4.31%，不代表月面误差或层序零扰动。",
+                "source_ids": [
+                  "S07"
+                ],
+                "title": "软袋取芯模型试验",
+                "validation_id": "V01"
+              }
             ]
           }
         },
@@ -509,8 +1234,8 @@
     },
     {
       "project_id": "2025-00",
-      "revision": "0.3.0",
-      "policy_version": "matching-policy-0.1.0",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
       "decision": {
         "status": "excluded",
         "conflicts": [
@@ -518,7 +1243,13 @@
         ],
         "questions": [],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       },
       "ordered_context": [
         {
@@ -528,8 +1259,8 @@
             "task": "inspiration",
             "problem_key": "multi_condition_tradeoff",
             "conditions": {
-              "competing_goals": false,
-              "alternatives_testable": true
+              "alternatives_testable": true,
+              "competing_goals": false
             }
           }
         },
@@ -578,6 +1309,67 @@
                 "reading_scope": "full_article_text",
                 "limits": "模拟物和特定钻具下的研究结论，不是月面整体系统误差或飞行指标。 核读可见全文文字，公式图像未逐式重算。"
               }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC01",
+                  "MC03"
+                ],
+                "claim_ids": [
+                  "C20",
+                  "C25"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      50,
+                      90,
+                      150,
+                      210,
+                      250
+                    ]
+                  },
+                  {
+                    "dimension": "linear_speed",
+                    "key": "feed_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "进尺速度",
+                    "unit": "mm/min",
+                    "values": [
+                      50,
+                      90,
+                      130,
+                      170,
+                      210
+                    ]
+                  }
+                ],
+                "id": "EP01",
+                "knowledge_ids": [
+                  "K01",
+                  "K05"
+                ],
+                "limits": [
+                  "两组档位不能推断每一种组合都有独立重复验证",
+                  "档位之间的连续区间没有据此得到验证",
+                  "强振动冲击不在模型可靠解释范围"
+                ],
+                "locator": "第3.2节、表1、第4.3节",
+                "material_key": "HIT-LS1",
+                "material_label": "HIT-LS1#压缩模拟月壤",
+                "result": "模型平均误差率4.31%，不代表月面误差或层序零扰动。",
+                "source_ids": [
+                  "S07"
+                ],
+                "title": "软袋取芯模型试验",
+                "validation_id": "V01"
+              }
             ]
           }
         },
@@ -595,8 +1387,8 @@
     },
     {
       "project_id": "2025-00",
-      "revision": "0.3.0",
-      "policy_version": "matching-policy-0.1.0",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
       "decision": {
         "status": "needs_clarification",
         "conflicts": [],
@@ -604,7 +1396,13 @@
           "是否能测量载荷，或允许改造传感与反馈链？"
         ],
         "verification_required": true,
-        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "not_requested",
+          "questions": [],
+          "outside": [],
+          "note": "未请求来源工况比较，不代表目标条件已验证。"
+        }
       },
       "ordered_context": [
         {
@@ -627,7 +1425,7 @@
             "measure": "比较恒速和恒力载控制。",
             "mechanism": "通过载荷反馈调节加载运动。",
             "tradeoffs": "增加测量、控制和调参依赖。",
-            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
             "target_unknowns": [
               "目标设备的采样和响应要求",
               "目标工况的允许峰值与稳定时间",
@@ -676,17 +1474,2442 @@
                   "S23"
                 ],
                 "review_status": "source_read"
+              },
+              {
+                "id": "C31",
+                "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_constant",
+                "locator": "1029页3.1节、图11(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C32",
+                "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_ramp",
+                "locator": "1029—1030页3.1节、图11(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C33",
+                "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_constant",
+                "locator": "1030页3.2节、图14(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C34",
+                "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_ramp",
+                "locator": "1030页3.2节、图14(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
               }
             ],
             "citations": [
               {
                 "source_id": "S23",
                 "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
-                "locator": "1024—1034页；表1—4、3.3节、4节、5节及参考文献[3]",
+                "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
                 "reading_scope": "full_pdf_text_and_tables",
                 "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
               }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C31"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP02",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "5组取均值，逐次曲线与方差未取得",
+                  "未报道稳定判据，不据此给其他设备作保证"
+                ],
+                "locator": "1029页3.1节、图11(a)",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤恒定载荷跟踪",
+                "validation_id": "V04"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C33"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP03",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "人造大理岩不等于任意岩石或金属",
+                  "不能将模拟月壤的4.6 s移用到本工况"
+                ],
+                "locator": "1030页3.2节、图14(a)",
+                "material_key": "artificial_marble",
+                "material_label": "人造大理岩",
+                "result": "稳定约8.2 s；最大超调约92.1 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "人造大理岩恒定载荷跟踪",
+                "validation_id": "V06"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C27"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "reported_setpoint",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      120
+                    ]
+                  },
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "恒力载组目标力载",
+                    "unit": "N",
+                    "values": [
+                      300
+                    ]
+                  }
+                ],
+                "id": "EP04",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+                  "仅用于对应地面试验的比较，非飞行增益"
+                ],
+                "locator": "1032页第4节、表4",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "两组各5次，保留原始10行记录，派生统计另算。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤取芯方式对照",
+                "validation_id": "V02"
+              }
+            ],
+            "derived_analysis": {
+              "comparisons": [
+                {
+                  "absolute_difference": 102.6,
+                  "metric": "sample_mass_g",
+                  "relative_difference_percent": 31.5887,
+                  "unit": "g"
+                },
+                {
+                  "absolute_difference": 307.4,
+                  "metric": "sample_length_mm",
+                  "relative_difference_percent": 28.3422,
+                  "unit": "mm"
+                }
+              ],
+              "formula": {
+                "mean": "sum(values)/n",
+                "relative_difference": "(mean_SY02-mean_SY01)/mean_SY01*100",
+                "sample_sd": "sqrt(sum((x-mean)^2)/(n-1))"
+              },
+              "groups": [
+                {
+                  "group": "SY01",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1480,
+                      "mean": 1084.6,
+                      "minimum": 813,
+                      "sample_sd": 282.8795,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 448,
+                      "mean": 324.8,
+                      "minimum": 234,
+                      "sample_sd": 89.2172,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY01-1",
+                    "SY01-2",
+                    "SY01-3",
+                    "SY01-4",
+                    "SY01-5"
+                  ]
+                },
+                {
+                  "group": "SY02",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1510,
+                      "mean": 1392,
+                      "minimum": 1210,
+                      "sample_sd": 123.774,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 512,
+                      "mean": 427.4,
+                      "minimum": 345,
+                      "sample_sd": 59.3742,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY02-1",
+                    "SY02-2",
+                    "SY02-3",
+                    "SY02-4",
+                    "SY02-5"
+                  ]
+                }
+              ],
+              "input_validation": "V02",
+              "limits": [
+                "每组仅5次，随机化和样本独立性未明确",
+                "不作显著性、因果效应、飞行收益或商业收益判断",
+                "质量与长度分别统计；不作为层序保持程度指标"
+              ],
+              "locator": "1032页表4",
+              "nature": "platform_derived_not_original_measurement",
+              "source_ids": [
+                "S23"
+              ],
+              "version": "descriptive-analysis-0.1.0"
+            }
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
+      "decision": {
+        "status": "analogy_candidate",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "reported_settings_match",
+          "profile_id": "EP02",
+          "questions": [],
+          "outside": [],
+          "normalized": {
+            "target_force": {
+              "value": 400.0,
+              "unit": "N"
+            }
+          },
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "contact_load",
+            "conditions": {
+              "load_feedback_allowed": true,
+              "motion_adjustable": true
+            },
+            "reference_check": {
+              "material_key": "nominal_soil_simulant",
+              "measurements": {
+                "target_force": {
+                  "unit": "kN",
+                  "value": 0.4
+                }
+              },
+              "profile_id": "EP02"
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "介质变化使固定运动输入下的载荷波动。",
+            "measure": "比较恒速和恒力载控制。",
+            "mechanism": "通过载荷反馈调节加载运动。",
+            "tradeoffs": "增加测量、控制和调参依赖。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
+            "target_unknowns": [
+              "目标设备的采样和响应要求",
+              "目标工况的允许峰值与稳定时间",
+              "适用于目标设备的控制参数与成本"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+            "claim_records": [
+              {
+                "id": "C27",
+                "value": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。",
+                "nature": "source_statement",
+                "scope": "paper_ground_comparison",
+                "locator": "1032页第4节及表4",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C29",
+                "value": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。",
+                "nature": "source_statement",
+                "scope": "paper_impact_test",
+                "locator": "1031页3.3节和图17",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C30",
+                "value": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。",
+                "nature": "source_statement",
+                "scope": "paper_reported_application",
+                "locator": "1024页摘要、1033页结论2",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C31",
+                "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_constant",
+                "locator": "1029页3.1节、图11(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C32",
+                "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_ramp",
+                "locator": "1029—1030页3.1节、图11(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C33",
+                "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_constant",
+                "locator": "1030页3.2节、图14(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C34",
+                "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_ramp",
+                "locator": "1030页3.2节、图14(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S23",
+                "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
+                "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
+                "reading_scope": "full_pdf_text_and_tables",
+                "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
+              }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C31"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP02",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "5组取均值，逐次曲线与方差未取得",
+                  "未报道稳定判据，不据此给其他设备作保证"
+                ],
+                "locator": "1029页3.1节、图11(a)",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤恒定载荷跟踪",
+                "validation_id": "V04"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C33"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP03",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "人造大理岩不等于任意岩石或金属",
+                  "不能将模拟月壤的4.6 s移用到本工况"
+                ],
+                "locator": "1030页3.2节、图14(a)",
+                "material_key": "artificial_marble",
+                "material_label": "人造大理岩",
+                "result": "稳定约8.2 s；最大超调约92.1 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "人造大理岩恒定载荷跟踪",
+                "validation_id": "V06"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C27"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "reported_setpoint",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      120
+                    ]
+                  },
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "恒力载组目标力载",
+                    "unit": "N",
+                    "values": [
+                      300
+                    ]
+                  }
+                ],
+                "id": "EP04",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+                  "仅用于对应地面试验的比较，非飞行增益"
+                ],
+                "locator": "1032页第4节、表4",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "两组各5次，保留原始10行记录，派生统计另算。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤取芯方式对照",
+                "validation_id": "V02"
+              }
+            ],
+            "derived_analysis": {
+              "comparisons": [
+                {
+                  "absolute_difference": 102.6,
+                  "metric": "sample_mass_g",
+                  "relative_difference_percent": 31.5887,
+                  "unit": "g"
+                },
+                {
+                  "absolute_difference": 307.4,
+                  "metric": "sample_length_mm",
+                  "relative_difference_percent": 28.3422,
+                  "unit": "mm"
+                }
+              ],
+              "formula": {
+                "mean": "sum(values)/n",
+                "relative_difference": "(mean_SY02-mean_SY01)/mean_SY01*100",
+                "sample_sd": "sqrt(sum((x-mean)^2)/(n-1))"
+              },
+              "groups": [
+                {
+                  "group": "SY01",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1480,
+                      "mean": 1084.6,
+                      "minimum": 813,
+                      "sample_sd": 282.8795,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 448,
+                      "mean": 324.8,
+                      "minimum": 234,
+                      "sample_sd": 89.2172,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY01-1",
+                    "SY01-2",
+                    "SY01-3",
+                    "SY01-4",
+                    "SY01-5"
+                  ]
+                },
+                {
+                  "group": "SY02",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1510,
+                      "mean": 1392,
+                      "minimum": 1210,
+                      "sample_sd": 123.774,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 512,
+                      "mean": 427.4,
+                      "minimum": 345,
+                      "sample_sd": 59.3742,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY02-1",
+                    "SY02-2",
+                    "SY02-3",
+                    "SY02-4",
+                    "SY02-5"
+                  ]
+                }
+              ],
+              "input_validation": "V02",
+              "limits": [
+                "每组仅5次，随机化和样本独立性未明确",
+                "不作显著性、因果效应、飞行收益或商业收益判断",
+                "质量与长度分别统计；不作为层序保持程度指标"
+              ],
+              "locator": "1032页表4",
+              "nature": "platform_derived_not_original_measurement",
+              "source_ids": [
+                "S23"
+              ],
+              "version": "descriptive-analysis-0.1.0"
+            }
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
+      "decision": {
+        "status": "needs_validation",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "outside_source_conditions",
+          "profile_id": "EP02",
+          "questions": [],
+          "outside": [
+            "目标钻进力载不在该来源明确报告的设定点/档位中；不据此判定工程不可行。"
+          ],
+          "normalized": {
+            "target_force": {
+              "value": 500.0,
+              "unit": "N"
+            }
+          },
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "contact_load",
+            "conditions": {
+              "load_feedback_allowed": true,
+              "motion_adjustable": true
+            },
+            "reference_check": {
+              "material_key": "nominal_soil_simulant",
+              "measurements": {
+                "target_force": {
+                  "unit": "N",
+                  "value": 500
+                }
+              },
+              "profile_id": "EP02"
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "介质变化使固定运动输入下的载荷波动。",
+            "measure": "比较恒速和恒力载控制。",
+            "mechanism": "通过载荷反馈调节加载运动。",
+            "tradeoffs": "增加测量、控制和调参依赖。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
+            "target_unknowns": [
+              "目标设备的采样和响应要求",
+              "目标工况的允许峰值与稳定时间",
+              "适用于目标设备的控制参数与成本"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+            "claim_records": [
+              {
+                "id": "C27",
+                "value": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。",
+                "nature": "source_statement",
+                "scope": "paper_ground_comparison",
+                "locator": "1032页第4节及表4",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C29",
+                "value": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。",
+                "nature": "source_statement",
+                "scope": "paper_impact_test",
+                "locator": "1031页3.3节和图17",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C30",
+                "value": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。",
+                "nature": "source_statement",
+                "scope": "paper_reported_application",
+                "locator": "1024页摘要、1033页结论2",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C31",
+                "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_constant",
+                "locator": "1029页3.1节、图11(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C32",
+                "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_ramp",
+                "locator": "1029—1030页3.1节、图11(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C33",
+                "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_constant",
+                "locator": "1030页3.2节、图14(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C34",
+                "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_ramp",
+                "locator": "1030页3.2节、图14(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S23",
+                "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
+                "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
+                "reading_scope": "full_pdf_text_and_tables",
+                "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
+              }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C31"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP02",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "5组取均值，逐次曲线与方差未取得",
+                  "未报道稳定判据，不据此给其他设备作保证"
+                ],
+                "locator": "1029页3.1节、图11(a)",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤恒定载荷跟踪",
+                "validation_id": "V04"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C33"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP03",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "人造大理岩不等于任意岩石或金属",
+                  "不能将模拟月壤的4.6 s移用到本工况"
+                ],
+                "locator": "1030页3.2节、图14(a)",
+                "material_key": "artificial_marble",
+                "material_label": "人造大理岩",
+                "result": "稳定约8.2 s；最大超调约92.1 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "人造大理岩恒定载荷跟踪",
+                "validation_id": "V06"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C27"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "reported_setpoint",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      120
+                    ]
+                  },
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "恒力载组目标力载",
+                    "unit": "N",
+                    "values": [
+                      300
+                    ]
+                  }
+                ],
+                "id": "EP04",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+                  "仅用于对应地面试验的比较，非飞行增益"
+                ],
+                "locator": "1032页第4节、表4",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "两组各5次，保留原始10行记录，派生统计另算。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤取芯方式对照",
+                "validation_id": "V02"
+              }
+            ],
+            "derived_analysis": {
+              "comparisons": [
+                {
+                  "absolute_difference": 102.6,
+                  "metric": "sample_mass_g",
+                  "relative_difference_percent": 31.5887,
+                  "unit": "g"
+                },
+                {
+                  "absolute_difference": 307.4,
+                  "metric": "sample_length_mm",
+                  "relative_difference_percent": 28.3422,
+                  "unit": "mm"
+                }
+              ],
+              "formula": {
+                "mean": "sum(values)/n",
+                "relative_difference": "(mean_SY02-mean_SY01)/mean_SY01*100",
+                "sample_sd": "sqrt(sum((x-mean)^2)/(n-1))"
+              },
+              "groups": [
+                {
+                  "group": "SY01",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1480,
+                      "mean": 1084.6,
+                      "minimum": 813,
+                      "sample_sd": 282.8795,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 448,
+                      "mean": 324.8,
+                      "minimum": 234,
+                      "sample_sd": 89.2172,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY01-1",
+                    "SY01-2",
+                    "SY01-3",
+                    "SY01-4",
+                    "SY01-5"
+                  ]
+                },
+                {
+                  "group": "SY02",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1510,
+                      "mean": 1392,
+                      "minimum": 1210,
+                      "sample_sd": 123.774,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 512,
+                      "mean": 427.4,
+                      "minimum": 345,
+                      "sample_sd": 59.3742,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY02-1",
+                    "SY02-2",
+                    "SY02-3",
+                    "SY02-4",
+                    "SY02-5"
+                  ]
+                }
+              ],
+              "input_validation": "V02",
+              "limits": [
+                "每组仅5次，随机化和样本独立性未明确",
+                "不作显著性、因果效应、飞行收益或商业收益判断",
+                "质量与长度分别统计；不作为层序保持程度指标"
+              ],
+              "locator": "1032页表4",
+              "nature": "platform_derived_not_original_measurement",
+              "source_ids": [
+                "S23"
+              ],
+              "version": "descriptive-analysis-0.1.0"
+            }
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
+      "decision": {
+        "status": "needs_validation",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "outside_source_conditions",
+          "profile_id": "EP02",
+          "questions": [],
+          "outside": [
+            "材料与该来源工况不同，不能直接沿用结果。"
+          ],
+          "normalized": {
+            "target_force": {
+              "value": 400.0,
+              "unit": "N"
+            }
+          },
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "contact_load",
+            "conditions": {
+              "load_feedback_allowed": true,
+              "motion_adjustable": true
+            },
+            "reference_check": {
+              "material_key": "artificial_marble",
+              "measurements": {
+                "target_force": {
+                  "unit": "N",
+                  "value": 400
+                }
+              },
+              "profile_id": "EP02"
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "介质变化使固定运动输入下的载荷波动。",
+            "measure": "比较恒速和恒力载控制。",
+            "mechanism": "通过载荷反馈调节加载运动。",
+            "tradeoffs": "增加测量、控制和调参依赖。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
+            "target_unknowns": [
+              "目标设备的采样和响应要求",
+              "目标工况的允许峰值与稳定时间",
+              "适用于目标设备的控制参数与成本"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+            "claim_records": [
+              {
+                "id": "C27",
+                "value": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。",
+                "nature": "source_statement",
+                "scope": "paper_ground_comparison",
+                "locator": "1032页第4节及表4",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C29",
+                "value": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。",
+                "nature": "source_statement",
+                "scope": "paper_impact_test",
+                "locator": "1031页3.3节和图17",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C30",
+                "value": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。",
+                "nature": "source_statement",
+                "scope": "paper_reported_application",
+                "locator": "1024页摘要、1033页结论2",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C31",
+                "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_constant",
+                "locator": "1029页3.1节、图11(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C32",
+                "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_ramp",
+                "locator": "1029—1030页3.1节、图11(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C33",
+                "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_constant",
+                "locator": "1030页3.2节、图14(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C34",
+                "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_ramp",
+                "locator": "1030页3.2节、图14(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S23",
+                "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
+                "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
+                "reading_scope": "full_pdf_text_and_tables",
+                "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
+              }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C31"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP02",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "5组取均值，逐次曲线与方差未取得",
+                  "未报道稳定判据，不据此给其他设备作保证"
+                ],
+                "locator": "1029页3.1节、图11(a)",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤恒定载荷跟踪",
+                "validation_id": "V04"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C33"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP03",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "人造大理岩不等于任意岩石或金属",
+                  "不能将模拟月壤的4.6 s移用到本工况"
+                ],
+                "locator": "1030页3.2节、图14(a)",
+                "material_key": "artificial_marble",
+                "material_label": "人造大理岩",
+                "result": "稳定约8.2 s；最大超调约92.1 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "人造大理岩恒定载荷跟踪",
+                "validation_id": "V06"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C27"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "reported_setpoint",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      120
+                    ]
+                  },
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "恒力载组目标力载",
+                    "unit": "N",
+                    "values": [
+                      300
+                    ]
+                  }
+                ],
+                "id": "EP04",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+                  "仅用于对应地面试验的比较，非飞行增益"
+                ],
+                "locator": "1032页第4节、表4",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "两组各5次，保留原始10行记录，派生统计另算。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤取芯方式对照",
+                "validation_id": "V02"
+              }
+            ],
+            "derived_analysis": {
+              "comparisons": [
+                {
+                  "absolute_difference": 102.6,
+                  "metric": "sample_mass_g",
+                  "relative_difference_percent": 31.5887,
+                  "unit": "g"
+                },
+                {
+                  "absolute_difference": 307.4,
+                  "metric": "sample_length_mm",
+                  "relative_difference_percent": 28.3422,
+                  "unit": "mm"
+                }
+              ],
+              "formula": {
+                "mean": "sum(values)/n",
+                "relative_difference": "(mean_SY02-mean_SY01)/mean_SY01*100",
+                "sample_sd": "sqrt(sum((x-mean)^2)/(n-1))"
+              },
+              "groups": [
+                {
+                  "group": "SY01",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1480,
+                      "mean": 1084.6,
+                      "minimum": 813,
+                      "sample_sd": 282.8795,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 448,
+                      "mean": 324.8,
+                      "minimum": 234,
+                      "sample_sd": 89.2172,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY01-1",
+                    "SY01-2",
+                    "SY01-3",
+                    "SY01-4",
+                    "SY01-5"
+                  ]
+                },
+                {
+                  "group": "SY02",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1510,
+                      "mean": 1392,
+                      "minimum": 1210,
+                      "sample_sd": 123.774,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 512,
+                      "mean": 427.4,
+                      "minimum": 345,
+                      "sample_sd": 59.3742,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY02-1",
+                    "SY02-2",
+                    "SY02-3",
+                    "SY02-4",
+                    "SY02-5"
+                  ]
+                }
+              ],
+              "input_validation": "V02",
+              "limits": [
+                "每组仅5次，随机化和样本独立性未明确",
+                "不作显著性、因果效应、飞行收益或商业收益判断",
+                "质量与长度分别统计；不作为层序保持程度指标"
+              ],
+              "locator": "1032页表4",
+              "nature": "platform_derived_not_original_measurement",
+              "source_ids": [
+                "S23"
+              ],
+              "version": "descriptive-analysis-0.1.0"
+            }
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
+      "decision": {
+        "status": "needs_validation",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "outside_source_conditions",
+          "profile_id": "EP01",
+          "questions": [],
+          "outside": [
+            "钻具回转转速不在该来源明确报告的设定点/档位中；不据此判定工程不可行。"
+          ],
+          "normalized": {
+            "drill_rot_speed": {
+              "value": 100.0,
+              "unit": "r/min"
+            },
+            "feed_speed": {
+              "value": 130.0,
+              "unit": "mm/min"
+            }
+          },
+          "source_ids": [
+            "S07"
+          ],
+          "locator": "第3.2节、表1、第4.3节",
+          "limits": [
+            "两组档位不能推断每一种组合都有独立重复验证",
+            "档位之间的连续区间没有据此得到验证",
+            "强振动冲击不在模型可靠解释范围"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "sample_information",
+            "conditions": {
+              "flexible_container_allowed": true,
+              "preserve_structure": true
+            },
+            "reference_check": {
+              "material_key": "HIT-LS1",
+              "measurements": {
+                "drill_rot_speed": {
+                  "unit": "r/min",
+                  "value": 100
+                },
+                "feed_speed": {
+                  "unit": "mm/min",
+                  "value": 130
+                }
+              },
+              "profile_id": "EP01"
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "取样过程可能扰动颗粒排列，取到重量不能独自证明保留了地质信息。",
+            "measure": "钻具负责破土，软袋内翻收集样心，围绕样心与容器相对运动设计。",
+            "mechanism": "将材料搬运问题改写成信息保真问题，以运动关系和界面控制降低相对滑移。",
+            "tradeoffs": "软袋摩擦、柔性件可靠性和封口性能成为新的关键约束。",
+            "source_boundary": "粒径、黏聚性、污染控制和温度不同，必须重新试验；不直接声称适用于生物样本。",
+            "target_unknowns": [
+              "目标介质的粒径、黏聚性与温度范围",
+              "层序保持的定量验收阈值",
+              "柔性容器材料及污染兼容性"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "2015年论文给出取心率模型与模拟物试验对照，不能据此认定层序完全无扰动。",
+            "claim_records": [
+              {
+                "id": "C05",
+                "value": "采用双管与内翻软袋组织取芯，以减少样心相对滑移并保留层序。",
+                "nature": "source_statement",
+                "scope": "technical_lineage",
+                "locator": "S07第1节；S12说明书和权利要求1",
+                "source_ids": [
+                  "S07",
+                  "S12"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C10",
+                "value": "2015年研究在HIT-LS1#模拟物与HIT-2钻具条件下，取心率模型预测与试验的平均误差率小于5%。",
+                "nature": "source_statement",
+                "scope": "ground_research",
+                "locator": "摘要、第3.2节及表1",
+                "source_ids": [
+                  "S07"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S07",
+                "url": "https://html.rhhz.net/BJHKHTDXXBZRB/20151111.htm",
+                "locator": "摘要、第1节原理、第2节模型；文末书目信息",
+                "reading_scope": "full_article_text",
+                "limits": "模拟物和特定钻具下的研究结论，不是月面整体系统误差或飞行指标。 核读可见全文文字，公式图像未逐式重算。"
+              },
+              {
+                "source_id": "S12",
+                "url": "https://patents.google.com/patent/CN102720501A/zh",
+                "locator": "Info、Description、Claims 1、Publications",
+                "reading_scope": "patent_text",
+                "limits": "仅按文献登记；平台状态不作为官方现时状态，英文机构名不直接规范化。"
+              }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC01",
+                  "MC03"
+                ],
+                "claim_ids": [
+                  "C20",
+                  "C25"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      50,
+                      90,
+                      150,
+                      210,
+                      250
+                    ]
+                  },
+                  {
+                    "dimension": "linear_speed",
+                    "key": "feed_speed",
+                    "kind": "discrete_test_levels",
+                    "label": "进尺速度",
+                    "unit": "mm/min",
+                    "values": [
+                      50,
+                      90,
+                      130,
+                      170,
+                      210
+                    ]
+                  }
+                ],
+                "id": "EP01",
+                "knowledge_ids": [
+                  "K01",
+                  "K05"
+                ],
+                "limits": [
+                  "两组档位不能推断每一种组合都有独立重复验证",
+                  "档位之间的连续区间没有据此得到验证",
+                  "强振动冲击不在模型可靠解释范围"
+                ],
+                "locator": "第3.2节、表1、第4.3节",
+                "material_key": "HIT-LS1",
+                "material_label": "HIT-LS1#压缩模拟月壤",
+                "result": "模型平均误差率4.31%，不代表月面误差或层序零扰动。",
+                "source_ids": [
+                  "S07"
+                ],
+                "title": "软袋取芯模型试验",
+                "validation_id": "V01"
+              }
             ]
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标介质上对照两种收集方式，测量层序偏差、回收率、卡滞与污染。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
+      "decision": {
+        "status": "needs_clarification",
+        "conflicts": [],
+        "questions": [
+          "请补充目标钻进力载及单位。"
+        ],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "needs_information",
+          "profile_id": "EP02",
+          "questions": [
+            "请补充目标钻进力载及单位。"
+          ],
+          "outside": [],
+          "normalized": {},
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "contact_load",
+            "conditions": {
+              "load_feedback_allowed": true,
+              "motion_adjustable": true
+            },
+            "reference_check": {
+              "material_key": "nominal_soil_simulant",
+              "measurements": {},
+              "profile_id": "EP02"
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "介质变化使固定运动输入下的载荷波动。",
+            "measure": "比较恒速和恒力载控制。",
+            "mechanism": "通过载荷反馈调节加载运动。",
+            "tradeoffs": "增加测量、控制和调参依赖。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
+            "target_unknowns": [
+              "目标设备的采样和响应要求",
+              "目标工况的允许峰值与稳定时间",
+              "适用于目标设备的控制参数与成本"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+            "claim_records": [
+              {
+                "id": "C27",
+                "value": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。",
+                "nature": "source_statement",
+                "scope": "paper_ground_comparison",
+                "locator": "1032页第4节及表4",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C29",
+                "value": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。",
+                "nature": "source_statement",
+                "scope": "paper_impact_test",
+                "locator": "1031页3.3节和图17",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C30",
+                "value": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。",
+                "nature": "source_statement",
+                "scope": "paper_reported_application",
+                "locator": "1024页摘要、1033页结论2",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C31",
+                "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_constant",
+                "locator": "1029页3.1节、图11(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C32",
+                "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_ramp",
+                "locator": "1029—1030页3.1节、图11(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C33",
+                "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_constant",
+                "locator": "1030页3.2节、图14(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C34",
+                "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_ramp",
+                "locator": "1030页3.2节、图14(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S23",
+                "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
+                "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
+                "reading_scope": "full_pdf_text_and_tables",
+                "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
+              }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C31"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP02",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "5组取均值，逐次曲线与方差未取得",
+                  "未报道稳定判据，不据此给其他设备作保证"
+                ],
+                "locator": "1029页3.1节、图11(a)",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤恒定载荷跟踪",
+                "validation_id": "V04"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C33"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP03",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "人造大理岩不等于任意岩石或金属",
+                  "不能将模拟月壤的4.6 s移用到本工况"
+                ],
+                "locator": "1030页3.2节、图14(a)",
+                "material_key": "artificial_marble",
+                "material_label": "人造大理岩",
+                "result": "稳定约8.2 s；最大超调约92.1 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "人造大理岩恒定载荷跟踪",
+                "validation_id": "V06"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C27"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "reported_setpoint",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      120
+                    ]
+                  },
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "恒力载组目标力载",
+                    "unit": "N",
+                    "values": [
+                      300
+                    ]
+                  }
+                ],
+                "id": "EP04",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+                  "仅用于对应地面试验的比较，非飞行增益"
+                ],
+                "locator": "1032页第4节、表4",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "两组各5次，保留原始10行记录，派生统计另算。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤取芯方式对照",
+                "validation_id": "V02"
+              }
+            ],
+            "derived_analysis": {
+              "comparisons": [
+                {
+                  "absolute_difference": 102.6,
+                  "metric": "sample_mass_g",
+                  "relative_difference_percent": 31.5887,
+                  "unit": "g"
+                },
+                {
+                  "absolute_difference": 307.4,
+                  "metric": "sample_length_mm",
+                  "relative_difference_percent": 28.3422,
+                  "unit": "mm"
+                }
+              ],
+              "formula": {
+                "mean": "sum(values)/n",
+                "relative_difference": "(mean_SY02-mean_SY01)/mean_SY01*100",
+                "sample_sd": "sqrt(sum((x-mean)^2)/(n-1))"
+              },
+              "groups": [
+                {
+                  "group": "SY01",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1480,
+                      "mean": 1084.6,
+                      "minimum": 813,
+                      "sample_sd": 282.8795,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 448,
+                      "mean": 324.8,
+                      "minimum": 234,
+                      "sample_sd": 89.2172,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY01-1",
+                    "SY01-2",
+                    "SY01-3",
+                    "SY01-4",
+                    "SY01-5"
+                  ]
+                },
+                {
+                  "group": "SY02",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1510,
+                      "mean": 1392,
+                      "minimum": 1210,
+                      "sample_sd": 123.774,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 512,
+                      "mean": 427.4,
+                      "minimum": 345,
+                      "sample_sd": 59.3742,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY02-1",
+                    "SY02-2",
+                    "SY02-3",
+                    "SY02-4",
+                    "SY02-5"
+                  ]
+                }
+              ],
+              "input_validation": "V02",
+              "limits": [
+                "每组仅5次，随机化和样本独立性未明确",
+                "不作显著性、因果效应、飞行收益或商业收益判断",
+                "质量与长度分别统计；不作为层序保持程度指标"
+              ],
+              "locator": "1032页表4",
+              "nature": "platform_derived_not_original_measurement",
+              "source_ids": [
+                "S23"
+              ],
+              "version": "descriptive-analysis-0.1.0"
+            }
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.4.0",
+      "policy_version": "matching-policy-0.2.0",
+      "decision": {
+        "status": "needs_validation",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论",
+        "reference_check": {
+          "status": "reported_settings_match",
+          "profile_id": "EP02",
+          "questions": [],
+          "outside": [],
+          "normalized": {
+            "target_force": {
+              "value": 400.0,
+              "unit": "N"
+            }
+          },
+          "source_ids": [
+            "S23"
+          ],
+          "locator": "1029页3.1节、图11(a)",
+          "limits": [
+            "5组取均值，逐次曲线与方差未取得",
+            "未报道稳定判据，不据此给其他设备作保证"
+          ],
+          "note": "只比较已报告的设定，不证明各组合、连续区间或目标行业已验证。"
+        }
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "implementation",
+            "problem_key": "contact_load",
+            "conditions": {
+              "load_feedback_allowed": true,
+              "motion_adjustable": true
+            },
+            "reference_check": {
+              "material_key": "nominal_soil_simulant",
+              "measurements": {
+                "target_force": {
+                  "unit": "N",
+                  "value": 400
+                }
+              },
+              "profile_id": "EP02"
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "介质变化使固定运动输入下的载荷波动。",
+            "measure": "比较恒速和恒力载控制。",
+            "mechanism": "通过载荷反馈调节加载运动。",
+            "tradeoffs": "增加测量、控制和调参依赖。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
+            "target_unknowns": [
+              "目标设备的采样和响应要求",
+              "目标工况的允许峰值与稳定时间",
+              "适用于目标设备的控制参数与成本"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+            "claim_records": [
+              {
+                "id": "C27",
+                "value": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。",
+                "nature": "source_statement",
+                "scope": "paper_ground_comparison",
+                "locator": "1032页第4节及表4",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C29",
+                "value": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。",
+                "nature": "source_statement",
+                "scope": "paper_impact_test",
+                "locator": "1031页3.3节和图17",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C30",
+                "value": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。",
+                "nature": "source_statement",
+                "scope": "paper_reported_application",
+                "locator": "1024页摘要、1033页结论2",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C31",
+                "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_constant",
+                "locator": "1029页3.1节、图11(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C32",
+                "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_soil_ramp",
+                "locator": "1029—1030页3.1节、图11(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C33",
+                "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_constant",
+                "locator": "1030页3.2节、图14(a)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C34",
+                "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+                "nature": "source_statement",
+                "scope": "paper_ground_rock_ramp",
+                "locator": "1030页3.2节、图14(b)",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S23",
+                "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
+                "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
+                "reading_scope": "full_pdf_text_and_tables",
+                "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
+              }
+            ],
+            "evidence_profiles": [
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C31"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP02",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "5组取均值，逐次曲线与方差未取得",
+                  "未报道稳定判据，不据此给其他设备作保证"
+                ],
+                "locator": "1029页3.1节、图11(a)",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤恒定载荷跟踪",
+                "validation_id": "V04"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C33"
+                ],
+                "controls": [
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "目标钻进力载",
+                    "unit": "N",
+                    "values": [
+                      400
+                    ]
+                  }
+                ],
+                "id": "EP03",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "人造大理岩不等于任意岩石或金属",
+                  "不能将模拟月壤的4.6 s移用到本工况"
+                ],
+                "locator": "1030页3.2节、图14(a)",
+                "material_key": "artificial_marble",
+                "material_label": "人造大理岩",
+                "result": "稳定约8.2 s；最大超调约92.1 N。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "人造大理岩恒定载荷跟踪",
+                "validation_id": "V06"
+              },
+              {
+                "card_ids": [
+                  "MC02"
+                ],
+                "claim_ids": [
+                  "C27"
+                ],
+                "controls": [
+                  {
+                    "dimension": "rotation",
+                    "key": "drill_rot_speed",
+                    "kind": "reported_setpoint",
+                    "label": "钻具回转转速",
+                    "unit": "r/min",
+                    "values": [
+                      120
+                    ]
+                  },
+                  {
+                    "dimension": "force",
+                    "key": "target_force",
+                    "kind": "reported_setpoint",
+                    "label": "恒力载组目标力载",
+                    "unit": "N",
+                    "values": [
+                      300
+                    ]
+                  }
+                ],
+                "id": "EP04",
+                "knowledge_ids": [
+                  "K06"
+                ],
+                "limits": [
+                  "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+                  "仅用于对应地面试验的比较，非飞行增益"
+                ],
+                "locator": "1032页第4节、表4",
+                "material_key": "nominal_soil_simulant",
+                "material_label": "地面标称工况模拟月壤",
+                "result": "两组各5次，保留原始10行记录，派生统计另算。",
+                "source_ids": [
+                  "S23"
+                ],
+                "title": "模拟月壤取芯方式对照",
+                "validation_id": "V02"
+              }
+            ],
+            "derived_analysis": {
+              "comparisons": [
+                {
+                  "absolute_difference": 102.6,
+                  "metric": "sample_mass_g",
+                  "relative_difference_percent": 31.5887,
+                  "unit": "g"
+                },
+                {
+                  "absolute_difference": 307.4,
+                  "metric": "sample_length_mm",
+                  "relative_difference_percent": 28.3422,
+                  "unit": "mm"
+                }
+              ],
+              "formula": {
+                "mean": "sum(values)/n",
+                "relative_difference": "(mean_SY02-mean_SY01)/mean_SY01*100",
+                "sample_sd": "sqrt(sum((x-mean)^2)/(n-1))"
+              },
+              "groups": [
+                {
+                  "group": "SY01",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1480,
+                      "mean": 1084.6,
+                      "minimum": 813,
+                      "sample_sd": 282.8795,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 448,
+                      "mean": 324.8,
+                      "minimum": 234,
+                      "sample_sd": 89.2172,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY01-1",
+                    "SY01-2",
+                    "SY01-3",
+                    "SY01-4",
+                    "SY01-5"
+                  ]
+                },
+                {
+                  "group": "SY02",
+                  "metrics": {
+                    "sample_length_mm": {
+                      "maximum": 1510,
+                      "mean": 1392,
+                      "minimum": 1210,
+                      "sample_sd": 123.774,
+                      "unit": "mm"
+                    },
+                    "sample_mass_g": {
+                      "maximum": 512,
+                      "mean": 427.4,
+                      "minimum": 345,
+                      "sample_sd": 59.3742,
+                      "unit": "g"
+                    }
+                  },
+                  "n": 5,
+                  "row_ids": [
+                    "SY02-1",
+                    "SY02-2",
+                    "SY02-3",
+                    "SY02-4",
+                    "SY02-5"
+                  ]
+                }
+              ],
+              "input_validation": "V02",
+              "limits": [
+                "每组仅5次，随机化和样本独立性未明确",
+                "不作显著性、因果效应、飞行收益或商业收益判断",
+                "质量与长度分别统计；不作为层序保持程度指标"
+              ],
+              "locator": "1032页表4",
+              "nature": "platform_derived_not_original_measurement",
+              "source_ids": [
+                "S23"
+              ],
+              "version": "descriptive-analysis-0.1.0"
+            }
           }
         },
         {

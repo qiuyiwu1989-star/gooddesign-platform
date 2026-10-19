@@ -1287,12 +1287,14 @@
       "flight_metric": false,
       "additional_studies": [
         "2025两组取芯对照",
-        "2025冲击PID对照"
+        "2025冲击PID对照",
+        "2025模拟月壤恒定/斜坡跟踪",
+        "2025人造大理岩恒定/斜坡跟踪"
       ]
     },
     "unit": null,
     "scope": null,
-    "body": "2015模型表1平均误差率4.31%；另补2025论文两类地面对照。不同试验的指标不混用，也不外推整机精度。",
+    "body": "2015模型表1平均误差率4.31%；另补2025论文两类地面对照。不同试验的指标不混用，也不外推整机精度。 本轮补四个工况的跟踪验证，明确模拟岩石与模拟月壤不能混用响应指标。",
     "content_nature": "source_statement",
     "value_state": "known",
     "review_state": "sources_read_pending_professional_review",
@@ -1304,7 +1306,11 @@
       "C10",
       "C25",
       "C27",
-      "C29"
+      "C29",
+      "C31",
+      "C32",
+      "C33",
+      "C34"
     ],
     "record_refs": [],
     "evidence": [
@@ -1330,6 +1336,30 @@
         "source_id": "S23",
         "claim_id": "C29",
         "locator": "1031页3.3节",
+        "role": "supports_source_statement"
+      },
+      {
+        "source_id": "S23",
+        "claim_id": "C31",
+        "locator": "1029页3.1节、图11(a)",
+        "role": "supports_source_statement"
+      },
+      {
+        "source_id": "S23",
+        "claim_id": "C32",
+        "locator": "1029—1030页3.1节、图11(b)",
+        "role": "supports_source_statement"
+      },
+      {
+        "source_id": "S23",
+        "claim_id": "C33",
+        "locator": "1030页3.2节、图14(a)",
+        "role": "supports_source_statement"
+      },
+      {
+        "source_id": "S23",
+        "claim_id": "C34",
+        "locator": "1030页3.2节、图14(b)",
         "role": "supports_source_statement"
       }
     ],
@@ -1382,8 +1412,8 @@
       }
     },
     "unit": null,
-    "scope": "2015年论文试验",
-    "body": "该论文试验研究包含五档回转转速和五档进尺速度。它们属于地面研究工况，不是已确认的五号或六号飞行参数。 2025论文的10次地面试验与实际任务深度分列，加载侧转速不改写成线速度。",
+    "scope": "2015及2025论文中的各类地面工况，逐条分开",
+    "body": "该论文试验研究包含五档回转转速和五档进尺速度。它们属于地面研究工况，不是已确认的五号或六号飞行参数。 2025论文的10次地面试验与实际任务深度分列，加载侧转速不改写成线速度。 400 N为跟踪试验设定，不能与300 N取芯对照设定混算。",
     "content_nature": "source_statement",
     "value_state": "known",
     "review_state": "sources_read_pending_professional_review",

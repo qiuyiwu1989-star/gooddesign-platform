@@ -1,0 +1,199 @@
+{
+  "version": "research-evidence-0.1.0",
+  "profiles": [
+    {
+      "id": "EP01",
+      "title": "软袋取芯模型试验",
+      "knowledge_ids": [
+        "K01",
+        "K05"
+      ],
+      "card_ids": [
+        "MC01",
+        "MC03"
+      ],
+      "validation_id": "V01",
+      "source_ids": [
+        "S07"
+      ],
+      "claim_ids": [
+        "C20",
+        "C25"
+      ],
+      "locator": "第3.2节、表1、第4.3节",
+      "material_key": "HIT-LS1",
+      "material_label": "HIT-LS1#压缩模拟月壤",
+      "controls": [
+        {
+          "key": "drill_rot_speed",
+          "label": "钻具回转转速",
+          "dimension": "rotation",
+          "unit": "r/min",
+          "values": [
+            50,
+            90,
+            150,
+            210,
+            250
+          ],
+          "kind": "discrete_test_levels"
+        },
+        {
+          "key": "feed_speed",
+          "label": "进尺速度",
+          "dimension": "linear_speed",
+          "unit": "mm/min",
+          "values": [
+            50,
+            90,
+            130,
+            170,
+            210
+          ],
+          "kind": "discrete_test_levels"
+        }
+      ],
+      "result": "模型平均误差率4.31%，不代表月面误差或层序零扰动。",
+      "limits": [
+        "两组档位不能推断每一种组合都有独立重复验证",
+        "档位之间的连续区间没有据此得到验证",
+        "强振动冲击不在模型可靠解释范围"
+      ]
+    },
+    {
+      "id": "EP02",
+      "title": "模拟月壤恒定载荷跟踪",
+      "knowledge_ids": [
+        "K06"
+      ],
+      "card_ids": [
+        "MC02"
+      ],
+      "validation_id": "V04",
+      "source_ids": [
+        "S23"
+      ],
+      "claim_ids": [
+        "C31"
+      ],
+      "locator": "1029页3.1节、图11(a)",
+      "material_key": "nominal_soil_simulant",
+      "material_label": "地面标称工况模拟月壤",
+      "controls": [
+        {
+          "key": "target_force",
+          "label": "目标钻进力载",
+          "dimension": "force",
+          "unit": "N",
+          "values": [
+            400
+          ],
+          "kind": "reported_setpoint"
+        }
+      ],
+      "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+      "limits": [
+        "5组取均值，逐次曲线与方差未取得",
+        "未报道稳定判据，不据此给其他设备作保证"
+      ]
+    },
+    {
+      "id": "EP03",
+      "title": "人造大理岩恒定载荷跟踪",
+      "knowledge_ids": [
+        "K06"
+      ],
+      "card_ids": [
+        "MC02"
+      ],
+      "validation_id": "V06",
+      "source_ids": [
+        "S23"
+      ],
+      "claim_ids": [
+        "C33"
+      ],
+      "locator": "1030页3.2节、图14(a)",
+      "material_key": "artificial_marble",
+      "material_label": "人造大理岩",
+      "controls": [
+        {
+          "key": "target_force",
+          "label": "目标钻进力载",
+          "dimension": "force",
+          "unit": "N",
+          "values": [
+            400
+          ],
+          "kind": "reported_setpoint"
+        }
+      ],
+      "result": "稳定约8.2 s；最大超调约92.1 N。",
+      "limits": [
+        "人造大理岩不等于任意岩石或金属",
+        "不能将模拟月壤的4.6 s移用到本工况"
+      ]
+    },
+    {
+      "id": "EP04",
+      "title": "模拟月壤取芯方式对照",
+      "knowledge_ids": [
+        "K06"
+      ],
+      "card_ids": [
+        "MC02"
+      ],
+      "validation_id": "V02",
+      "source_ids": [
+        "S23"
+      ],
+      "claim_ids": [
+        "C27"
+      ],
+      "locator": "1032页第4节、表4",
+      "material_key": "nominal_soil_simulant",
+      "material_label": "地面标称工况模拟月壤",
+      "controls": [
+        {
+          "key": "drill_rot_speed",
+          "label": "钻具回转转速",
+          "dimension": "rotation",
+          "unit": "r/min",
+          "values": [
+            120
+          ],
+          "kind": "reported_setpoint"
+        },
+        {
+          "key": "target_force",
+          "label": "恒力载组目标力载",
+          "dimension": "force",
+          "unit": "N",
+          "values": [
+            300
+          ],
+          "kind": "reported_setpoint"
+        }
+      ],
+      "result": "两组各5次，保留原始10行记录，派生统计另算。",
+      "limits": [
+        "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+        "仅用于对应地面试验的比较，非飞行增益"
+      ]
+    }
+  ],
+  "study_ids": [
+    "V01",
+    "V02",
+    "V03",
+    "V04",
+    "V05",
+    "V06",
+    "V07"
+  ],
+  "limits": [
+    "来源工况不是目标行业适用范围",
+    "数字是作者报告或明确标注的派生统计",
+    "同行评议论文不等于项目档案专业审核"
+  ]
+}

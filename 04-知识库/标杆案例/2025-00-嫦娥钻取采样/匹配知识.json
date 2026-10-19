@@ -1,5 +1,5 @@
 {
-  "schema_version": "matching-cards-0.1.0",
+  "schema_version": "matching-cards-0.2.0",
   "status": "trial",
   "nature": "现有公开资料的平台整理与匹配假设，不是已验证转化方案",
   "cards": [
@@ -35,7 +35,10 @@
       "content_nature": "platform_analysis",
       "review_state": "needs_expert_review",
       "quantitative_target_range": null,
-      "migration_validation": null
+      "migration_validation": null,
+      "evidence_profile_ids": [
+        "EP01"
+      ]
     },
     {
       "id": "MC02",
@@ -69,7 +72,12 @@
       "content_nature": "platform_analysis",
       "review_state": "needs_expert_review",
       "quantitative_target_range": null,
-      "migration_validation": null
+      "migration_validation": null,
+      "evidence_profile_ids": [
+        "EP02",
+        "EP03",
+        "EP04"
+      ]
     },
     {
       "id": "MC03",
@@ -103,7 +111,10 @@
       "content_nature": "platform_analysis",
       "review_state": "needs_expert_review",
       "quantitative_target_range": null,
-      "migration_validation": null
+      "migration_validation": null,
+      "evidence_profile_ids": [
+        "EP01"
+      ]
     }
   ],
   "fixtures": [
@@ -197,6 +208,143 @@
         "motion_adjustable": true
       },
       "expected": "needs_clarification"
+    },
+    {
+      "id": "RQ01",
+      "card_id": "MC02",
+      "label": "400 N与0.4 kN等值，只对照来源工况",
+      "kind": "synthetic_source_condition_check",
+      "task": "inspiration",
+      "problem_key": "contact_load",
+      "conditions": {
+        "load_feedback_allowed": true,
+        "motion_adjustable": true
+      },
+      "expected": "analogy_candidate",
+      "reference_check": {
+        "profile_id": "EP02",
+        "material_key": "nominal_soil_simulant",
+        "measurements": {
+          "target_force": {
+            "value": 0.4,
+            "unit": "kN"
+          }
+        }
+      }
+    },
+    {
+      "id": "RQ02",
+      "card_id": "MC02",
+      "label": "500 N超出该报告设定，需重新验证",
+      "kind": "synthetic_source_condition_check",
+      "task": "inspiration",
+      "problem_key": "contact_load",
+      "conditions": {
+        "load_feedback_allowed": true,
+        "motion_adjustable": true
+      },
+      "expected": "needs_validation",
+      "reference_check": {
+        "profile_id": "EP02",
+        "material_key": "nominal_soil_simulant",
+        "measurements": {
+          "target_force": {
+            "value": 500,
+            "unit": "N"
+          }
+        }
+      }
+    },
+    {
+      "id": "RQ03",
+      "card_id": "MC02",
+      "label": "同为400 N但材料不同，不能沿用结果",
+      "kind": "synthetic_source_condition_check",
+      "task": "inspiration",
+      "problem_key": "contact_load",
+      "conditions": {
+        "load_feedback_allowed": true,
+        "motion_adjustable": true
+      },
+      "expected": "needs_validation",
+      "reference_check": {
+        "profile_id": "EP02",
+        "material_key": "artificial_marble",
+        "measurements": {
+          "target_force": {
+            "value": 400,
+            "unit": "N"
+          }
+        }
+      }
+    },
+    {
+      "id": "RQ04",
+      "card_id": "MC01",
+      "label": "100 r/min位于档位之间，不能视为已验证",
+      "kind": "synthetic_source_condition_check",
+      "task": "inspiration",
+      "problem_key": "sample_information",
+      "conditions": {
+        "preserve_structure": true,
+        "flexible_container_allowed": true
+      },
+      "expected": "needs_validation",
+      "reference_check": {
+        "profile_id": "EP01",
+        "material_key": "HIT-LS1",
+        "measurements": {
+          "drill_rot_speed": {
+            "value": 100,
+            "unit": "r/min"
+          },
+          "feed_speed": {
+            "value": 130,
+            "unit": "mm/min"
+          }
+        }
+      }
+    },
+    {
+      "id": "RQ05",
+      "card_id": "MC02",
+      "label": "缺目标载荷时先追问",
+      "kind": "synthetic_source_condition_check",
+      "task": "inspiration",
+      "problem_key": "contact_load",
+      "conditions": {
+        "load_feedback_allowed": true,
+        "motion_adjustable": true
+      },
+      "expected": "needs_clarification",
+      "reference_check": {
+        "profile_id": "EP02",
+        "material_key": "nominal_soil_simulant",
+        "measurements": {}
+      }
+    },
+    {
+      "id": "RQ06",
+      "card_id": "MC02",
+      "label": "来源条件相近，也不直接批准实施",
+      "kind": "synthetic_source_condition_check",
+      "task": "implementation",
+      "problem_key": "contact_load",
+      "conditions": {
+        "load_feedback_allowed": true,
+        "motion_adjustable": true
+      },
+      "expected": "needs_validation",
+      "reference_check": {
+        "profile_id": "EP02",
+        "material_key": "nominal_soil_simulant",
+        "measurements": {
+          "target_force": {
+            "value": 400,
+            "unit": "N"
+          }
+        }
+      }
     }
   ]
 }

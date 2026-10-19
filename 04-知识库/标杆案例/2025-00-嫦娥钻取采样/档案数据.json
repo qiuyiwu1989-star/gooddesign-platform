@@ -2,7 +2,7 @@
   "schema_version": "1.1-research-draft",
   "project_id": "2025-00",
   "title": "嫦娥五/六号月球钻取采样方法及系统设计",
-  "as_of": "2026-10-19",
+  "as_of": "2026-10-20",
   "revision": "research-0.2.0",
   "status": "深研首版·待项目方与专业审核",
   "depth": "D2_candidate",
@@ -351,12 +351,12 @@
       "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
       "type": "原始期刊论文",
       "read_scope": "full_pdf_text_and_tables",
-      "locator": "1024—1034页；表1—4、3.3节、4节、5节及参考文献[3]",
+      "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
       "published_at": "2025-05",
-      "accessed_at": "2026-10-19",
-      "summary": "核读控制对照试验、部件参数与任务应用陈述。",
+      "accessed_at": "2026-10-20",
+      "summary": "核读原文的部件参数、四组跟踪工况、冲击对照、取芯对照与任务应用陈述。",
       "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。",
-      "storage": "PDF内部留存并核读11页文字；首页、表4与参数表视觉核对，原件不入公开站点",
+      "storage": "PDF内部留存并核读11页文字；首页、表4与参数表视觉核对，原件不入公开站点；本轮重读3.1/3.2节并视觉核对1029/1030页",
       "rights": "限研究引用；全文及图片再发布权未取得",
       "sha256": "62270319aa992c7087520d4f118d9881395d82d0ef129871aeeb4467fddcd2a7",
       "internal_path": "01-原始资料/论文/嫦娥钻取采样/2025-力载控制方法与实验研究.pdf",
@@ -845,6 +845,70 @@
       "expert_reviewed": false,
       "note": "按来源陈述登记；未作独立工程核验。",
       "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C31",
+      "project_id": "2025-00",
+      "field": "research_deepening",
+      "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+      "source_ids": [
+        "S23"
+      ],
+      "locator": "1029页3.1节、图11(a)",
+      "scope": "paper_ground_soil_constant",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+      "recorded_at": "2026-10-20"
+    },
+    {
+      "id": "C32",
+      "project_id": "2025-00",
+      "field": "research_deepening",
+      "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+      "source_ids": [
+        "S23"
+      ],
+      "locator": "1029—1030页3.1节、图11(b)",
+      "scope": "paper_ground_soil_ramp",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+      "recorded_at": "2026-10-20"
+    },
+    {
+      "id": "C33",
+      "project_id": "2025-00",
+      "field": "research_deepening",
+      "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+      "source_ids": [
+        "S23"
+      ],
+      "locator": "1030页3.2节、图14(a)",
+      "scope": "paper_ground_rock_constant",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+      "recorded_at": "2026-10-20"
+    },
+    {
+      "id": "C34",
+      "project_id": "2025-00",
+      "field": "research_deepening",
+      "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+      "source_ids": [
+        "S23"
+      ],
+      "locator": "1030页3.2节、图14(b)",
+      "scope": "paper_ground_rock_ramp",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+      "recorded_at": "2026-10-20"
     }
   ],
   "patents": [
@@ -1123,7 +1187,11 @@
       "claim_ids": [
         "C27",
         "C29",
-        "C30"
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
       ],
       "source_ids": [
         "S23"
@@ -1131,7 +1199,7 @@
       "nature": "platform_analysis",
       "tradeoffs": "增加测量、控制和调参依赖。",
       "transfer": "可启发接触式加工或操作的控制研究，尚未验证迁移。",
-      "boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。",
+      "boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
       "validation": "在目标介质与约束下重新验证稳定时间和取样效果。"
     }
   ],
@@ -1367,7 +1435,7 @@
       ],
       "research_question": "复杂工况下的钻进力载控制",
       "method": "模型、三类工况控制试验与两组取芯对照",
-      "findings": "按论文工况记录控制与取芯结果，未外推统计显著性。"
+      "findings": "原文分别报告模拟月壤、人造大理岩的恒定/斜坡跟踪工况，以及冲击与取芯对照；不同结果分开建档。"
     }
   ],
   "stories": [
@@ -1744,6 +1812,84 @@
       "locator": "1031页3.3节",
       "evidence": "论文核读",
       "conditions": "仅限来源所述对象和条件，不外推为通用飞行性能。"
+    },
+    {
+      "id": "MET-15",
+      "scope": "paper_ground_soil_constant",
+      "metric": "模拟月壤恒定目标稳定时间",
+      "value": 4.6,
+      "unit": "s",
+      "claim_id": "C31",
+      "subject": "论文地面试验：模拟月壤恒定",
+      "value_kind": "论文试验报告",
+      "conditions": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+      "locator": "1029页3.1节、图11(a)",
+      "qualifier": "约；5组均值曲线报告值"
+    },
+    {
+      "id": "MET-16",
+      "scope": "paper_ground_soil_ramp",
+      "metric": "模拟月壤斜坡目标稳定时间",
+      "value": 3.1,
+      "unit": "s",
+      "claim_id": "C32",
+      "subject": "论文地面试验：模拟月壤斜坡",
+      "value_kind": "论文试验报告",
+      "conditions": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+      "locator": "1029—1030页3.1节、图11(b)",
+      "qualifier": "约；5组均值曲线报告值"
+    },
+    {
+      "id": "MET-17",
+      "scope": "paper_ground_rock_constant",
+      "metric": "模拟岩石恒定目标稳定时间",
+      "value": 8.2,
+      "unit": "s",
+      "claim_id": "C33",
+      "subject": "论文地面试验：模拟岩石恒定",
+      "value_kind": "论文试验报告",
+      "conditions": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+      "locator": "1030页3.2节、图14(a)",
+      "qualifier": "约；5组均值曲线报告值"
+    },
+    {
+      "id": "MET-18",
+      "scope": "paper_ground_rock_ramp",
+      "metric": "模拟岩石斜坡目标稳定时间",
+      "value": 7.4,
+      "unit": "s",
+      "claim_id": "C34",
+      "subject": "论文地面试验：模拟岩石斜坡",
+      "value_kind": "论文试验报告",
+      "conditions": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+      "locator": "1030页3.2节、图14(b)",
+      "qualifier": "约；5组均值曲线报告值"
+    },
+    {
+      "id": "MET-19",
+      "scope": "paper_ground_rock_constant",
+      "metric": "模拟岩石恒定目标最大超调量",
+      "value": 92.1,
+      "unit": "N",
+      "claim_id": "C33",
+      "subject": "论文地面试验：模拟岩石恒定",
+      "value_kind": "论文试验报告",
+      "conditions": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+      "locator": "1030页3.2节、图14(a)",
+      "qualifier": "约；5组均值曲线报告值"
+    },
+    {
+      "id": "MET-20",
+      "scope": "paper_ground_rock_ramp",
+      "metric": "模拟岩石斜坡目标最大超调量",
+      "value": 74.3,
+      "unit": "N",
+      "claim_id": "C34",
+      "subject": "论文地面试验：模拟岩石斜坡",
+      "value_kind": "论文试验报告",
+      "conditions": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+      "locator": "1030页3.2节、图14(b)",
+      "qualifier": "约；5组均值曲线报告值"
     }
   ],
   "validations": [
@@ -1922,6 +2068,120 @@
         "MET-14"
       ],
       "limitations": "控制缩短稳定过程，不等于消除冲击峰值；非月面实测。"
+    },
+    {
+      "id": "V04",
+      "atomic_id": "TEST-04",
+      "title": "模拟月壤恒定载荷跟踪",
+      "kind": "已发表地面研究",
+      "claim_ids": [
+        "C31"
+      ],
+      "source_ids": [
+        "S23"
+      ],
+      "apparatus": "论文钻进加载样机及PID闭环",
+      "material": "标称工况模拟月壤",
+      "baseline": "恒定400 N",
+      "method": "每工况5组，作者对曲线取均值；不与表4的取芯样本混算。",
+      "result": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+      "metric_ids": [
+        "MET-15"
+      ],
+      "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+      "reported_setpoint_N": 400,
+      "reported_settling_time_s": 4.6,
+      "reported_error_interval_N": [
+        -22.8,
+        15.6
+      ],
+      "locator": "1029页3.1节、图11(a)"
+    },
+    {
+      "id": "V05",
+      "atomic_id": "TEST-05",
+      "title": "模拟月壤斜坡载荷跟踪",
+      "kind": "已发表地面研究",
+      "claim_ids": [
+        "C32"
+      ],
+      "source_ids": [
+        "S23"
+      ],
+      "apparatus": "论文钻进加载样机及PID闭环",
+      "material": "标称工况模拟月壤",
+      "baseline": "斜坡函数",
+      "method": "每工况5组，作者对曲线取均值；不与表4的取芯样本混算。",
+      "result": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+      "metric_ids": [
+        "MET-16"
+      ],
+      "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+      "reported_setpoint_N": null,
+      "reported_settling_time_s": 3.1,
+      "reported_error_interval_N": [
+        -14.8,
+        23.6
+      ],
+      "locator": "1029—1030页3.1节、图11(b)"
+    },
+    {
+      "id": "V06",
+      "atomic_id": "TEST-06",
+      "title": "人造大理岩恒定载荷跟踪",
+      "kind": "已发表地面研究",
+      "claim_ids": [
+        "C33"
+      ],
+      "source_ids": [
+        "S23"
+      ],
+      "apparatus": "论文钻进加载样机及PID闭环",
+      "material": "人造大理岩",
+      "baseline": "恒定400 N",
+      "method": "每工况5组，作者对曲线取均值；不与表4的取芯样本混算。",
+      "result": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+      "metric_ids": [
+        "MET-17",
+        "MET-19"
+      ],
+      "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+      "reported_setpoint_N": 400,
+      "reported_settling_time_s": 8.2,
+      "reported_error_interval_N": [
+        -29.6,
+        6.4
+      ],
+      "locator": "1030页3.2节、图14(a)"
+    },
+    {
+      "id": "V07",
+      "atomic_id": "TEST-07",
+      "title": "人造大理岩斜坡载荷跟踪",
+      "kind": "已发表地面研究",
+      "claim_ids": [
+        "C34"
+      ],
+      "source_ids": [
+        "S23"
+      ],
+      "apparatus": "论文钻进加载样机及PID闭环",
+      "material": "人造大理岩",
+      "baseline": "斜坡函数",
+      "method": "每工况5组，作者对曲线取均值；不与表4的取芯样本混算。",
+      "result": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+      "metric_ids": [
+        "MET-18",
+        "MET-20"
+      ],
+      "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+      "reported_setpoint_N": null,
+      "reported_settling_time_s": 7.4,
+      "reported_error_interval_N": [
+        -18.3,
+        31.7
+      ],
+      "locator": "1030页3.2节、图14(b)"
     }
   ]
 }

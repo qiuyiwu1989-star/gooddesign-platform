@@ -11,6 +11,9 @@ class GovernanceTests(unittest.TestCase):
   self.tmp=tempfile.TemporaryDirectory(prefix='015-test-',dir=str(ROOT/'tmp'));self.p=Path(self.tmp.name)
   for name in ['档案数据.json','主档案结构.json','原子字段档案.json','研究日志.json','字段规范.json','质量评估依据.json','质量评估.json']:shutil.copy2(DEFAULT/name,self.p/name)
   shutil.copytree(DEFAULT/'来源卡',self.p/'来源卡')
+  for dimension in read(DEFAULT/'质量评估依据.json')['dimensions']:
+   for name in dimension['evidence_files']:
+    if not (self.p/name).exists():shutil.copy2(DEFAULT/name,self.p/name)
  def tearDown(self):self.tmp.cleanup()
  def freeze(self,v):return snapshot(self.p,v,'isolated test fixture','unit test')
  def mutate(self):

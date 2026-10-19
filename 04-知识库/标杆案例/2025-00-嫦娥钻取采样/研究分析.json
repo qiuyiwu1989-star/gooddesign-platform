@@ -1,0 +1,89 @@
+{
+  "version": "descriptive-analysis-0.1.0",
+  "nature": "platform_derived_not_original_measurement",
+  "source_ids": [
+    "S23"
+  ],
+  "locator": "1032页表4",
+  "input_validation": "V02",
+  "groups": [
+    {
+      "group": "SY01",
+      "n": 5,
+      "row_ids": [
+        "SY01-1",
+        "SY01-2",
+        "SY01-3",
+        "SY01-4",
+        "SY01-5"
+      ],
+      "metrics": {
+        "sample_mass_g": {
+          "mean": 324.8,
+          "sample_sd": 89.2172,
+          "minimum": 234,
+          "maximum": 448,
+          "unit": "g"
+        },
+        "sample_length_mm": {
+          "mean": 1084.6,
+          "sample_sd": 282.8795,
+          "minimum": 813,
+          "maximum": 1480,
+          "unit": "mm"
+        }
+      }
+    },
+    {
+      "group": "SY02",
+      "n": 5,
+      "row_ids": [
+        "SY02-1",
+        "SY02-2",
+        "SY02-3",
+        "SY02-4",
+        "SY02-5"
+      ],
+      "metrics": {
+        "sample_mass_g": {
+          "mean": 427.4,
+          "sample_sd": 59.3742,
+          "minimum": 345,
+          "maximum": 512,
+          "unit": "g"
+        },
+        "sample_length_mm": {
+          "mean": 1392,
+          "sample_sd": 123.774,
+          "minimum": 1210,
+          "maximum": 1510,
+          "unit": "mm"
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "metric": "sample_mass_g",
+      "absolute_difference": 102.6,
+      "relative_difference_percent": 31.5887,
+      "unit": "g"
+    },
+    {
+      "metric": "sample_length_mm",
+      "absolute_difference": 307.4,
+      "relative_difference_percent": 28.3422,
+      "unit": "mm"
+    }
+  ],
+  "formula": {
+    "mean": "sum(values)/n",
+    "sample_sd": "sqrt(sum((x-mean)^2)/(n-1))",
+    "relative_difference": "(mean_SY02-mean_SY01)/mean_SY01*100"
+  },
+  "limits": [
+    "每组仅5次，随机化和样本独立性未明确",
+    "不作显著性、因果效应、飞行收益或商业收益判断",
+    "质量与长度分别统计；不作为层序保持程度指标"
+  ]
+}

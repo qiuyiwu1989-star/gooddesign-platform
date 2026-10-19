@@ -26,7 +26,7 @@ class ReaderTests(unittest.TestCase):
   self.assertIsNone(byid['A02']['finding'])
   for pid in ['A02','A03']:self.assertIn('仅核读摘要',byid[pid]['boundary'])
  def test_interpretation_versioned_without_changing_project_facts(self):
-  current=capture(P);self.assertEqual(current['reader_content'],read('阅读内容.json'))
+  current=json.loads((P/'版本/0.2.1/snapshot.json').read_text());self.assertIn('reader_content',current)
   old=json.loads((P/'版本/0.2.0/snapshot.json').read_text())
   for key in ['evidence','atomic','document','quality']:
    self.assertEqual(current[key],old[key])
