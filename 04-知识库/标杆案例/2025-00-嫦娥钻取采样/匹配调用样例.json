@@ -1,0 +1,705 @@
+{
+  "kind": "synthetic_rule_context_fixtures_not_live_engine",
+  "contexts": [
+    {
+      "project_id": "2025-00",
+      "revision": "0.3.0",
+      "policy_version": "matching-policy-0.1.0",
+      "decision": {
+        "status": "analogy_candidate",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "sample_information",
+            "conditions": {
+              "preserve_structure": true,
+              "flexible_container_allowed": true
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "取样过程可能扰动颗粒排列，取到重量不能独自证明保留了地质信息。",
+            "measure": "钻具负责破土，软袋内翻收集样心，围绕样心与容器相对运动设计。",
+            "mechanism": "将材料搬运问题改写成信息保真问题，以运动关系和界面控制降低相对滑移。",
+            "tradeoffs": "软袋摩擦、柔性件可靠性和封口性能成为新的关键约束。",
+            "source_boundary": "粒径、黏聚性、污染控制和温度不同，必须重新试验；不直接声称适用于生物样本。",
+            "target_unknowns": [
+              "目标介质的粒径、黏聚性与温度范围",
+              "层序保持的定量验收阈值",
+              "柔性容器材料及污染兼容性"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "2015年论文给出取心率模型与模拟物试验对照，不能据此认定层序完全无扰动。",
+            "claim_records": [
+              {
+                "id": "C05",
+                "value": "采用双管与内翻软袋组织取芯，以减少样心相对滑移并保留层序。",
+                "nature": "source_statement",
+                "scope": "technical_lineage",
+                "locator": "S07第1节；S12说明书和权利要求1",
+                "source_ids": [
+                  "S07",
+                  "S12"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C10",
+                "value": "2015年研究在HIT-LS1#模拟物与HIT-2钻具条件下，取心率模型预测与试验的平均误差率小于5%。",
+                "nature": "source_statement",
+                "scope": "ground_research",
+                "locator": "摘要、第3.2节及表1",
+                "source_ids": [
+                  "S07"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S07",
+                "url": "https://html.rhhz.net/BJHKHTDXXBZRB/20151111.htm",
+                "locator": "摘要、第1节原理、第2节模型；文末书目信息",
+                "reading_scope": "full_article_text",
+                "limits": "模拟物和特定钻具下的研究结论，不是月面整体系统误差或飞行指标。 核读可见全文文字，公式图像未逐式重算。"
+              },
+              {
+                "source_id": "S12",
+                "url": "https://patents.google.com/patent/CN102720501A/zh",
+                "locator": "Info、Description、Claims 1、Publications",
+                "reading_scope": "patent_text",
+                "limits": "仅按文献登记；平台状态不作为官方现时状态，英文机构名不直接规范化。"
+              }
+            ]
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标介质上对照两种收集方式，测量层序偏差、回收率、卡滞与污染。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.3.0",
+      "policy_version": "matching-policy-0.1.0",
+      "decision": {
+        "status": "excluded",
+        "conflicts": [
+          "需要保持样品结构"
+        ],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "sample_information",
+            "conditions": {
+              "preserve_structure": false,
+              "flexible_container_allowed": true
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "取样过程可能扰动颗粒排列，取到重量不能独自证明保留了地质信息。",
+            "measure": "钻具负责破土，软袋内翻收集样心，围绕样心与容器相对运动设计。",
+            "mechanism": "将材料搬运问题改写成信息保真问题，以运动关系和界面控制降低相对滑移。",
+            "tradeoffs": "软袋摩擦、柔性件可靠性和封口性能成为新的关键约束。",
+            "source_boundary": "粒径、黏聚性、污染控制和温度不同，必须重新试验；不直接声称适用于生物样本。",
+            "target_unknowns": [
+              "目标介质的粒径、黏聚性与温度范围",
+              "层序保持的定量验收阈值",
+              "柔性容器材料及污染兼容性"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "2015年论文给出取心率模型与模拟物试验对照，不能据此认定层序完全无扰动。",
+            "claim_records": [
+              {
+                "id": "C05",
+                "value": "采用双管与内翻软袋组织取芯，以减少样心相对滑移并保留层序。",
+                "nature": "source_statement",
+                "scope": "technical_lineage",
+                "locator": "S07第1节；S12说明书和权利要求1",
+                "source_ids": [
+                  "S07",
+                  "S12"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C10",
+                "value": "2015年研究在HIT-LS1#模拟物与HIT-2钻具条件下，取心率模型预测与试验的平均误差率小于5%。",
+                "nature": "source_statement",
+                "scope": "ground_research",
+                "locator": "摘要、第3.2节及表1",
+                "source_ids": [
+                  "S07"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S07",
+                "url": "https://html.rhhz.net/BJHKHTDXXBZRB/20151111.htm",
+                "locator": "摘要、第1节原理、第2节模型；文末书目信息",
+                "reading_scope": "full_article_text",
+                "limits": "模拟物和特定钻具下的研究结论，不是月面整体系统误差或飞行指标。 核读可见全文文字，公式图像未逐式重算。"
+              },
+              {
+                "source_id": "S12",
+                "url": "https://patents.google.com/patent/CN102720501A/zh",
+                "locator": "Info、Description、Claims 1、Publications",
+                "reading_scope": "patent_text",
+                "limits": "仅按文献登记；平台状态不作为官方现时状态，英文机构名不直接规范化。"
+              }
+            ]
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标介质上对照两种收集方式，测量层序偏差、回收率、卡滞与污染。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.3.0",
+      "policy_version": "matching-policy-0.1.0",
+      "decision": {
+        "status": "analogy_candidate",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "contact_load",
+            "conditions": {
+              "load_feedback_allowed": true,
+              "motion_adjustable": true
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "介质变化使固定运动输入下的载荷波动。",
+            "measure": "比较恒速和恒力载控制。",
+            "mechanism": "通过载荷反馈调节加载运动。",
+            "tradeoffs": "增加测量、控制和调参依赖。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。",
+            "target_unknowns": [
+              "目标设备的采样和响应要求",
+              "目标工况的允许峰值与稳定时间",
+              "适用于目标设备的控制参数与成本"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+            "claim_records": [
+              {
+                "id": "C27",
+                "value": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。",
+                "nature": "source_statement",
+                "scope": "paper_ground_comparison",
+                "locator": "1032页第4节及表4",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C29",
+                "value": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。",
+                "nature": "source_statement",
+                "scope": "paper_impact_test",
+                "locator": "1031页3.3节和图17",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C30",
+                "value": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。",
+                "nature": "source_statement",
+                "scope": "paper_reported_application",
+                "locator": "1024页摘要、1033页结论2",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S23",
+                "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
+                "locator": "1024—1034页；表1—4、3.3节、4节、5节及参考文献[3]",
+                "reading_scope": "full_pdf_text_and_tables",
+                "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
+              }
+            ]
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.3.0",
+      "policy_version": "matching-policy-0.1.0",
+      "decision": {
+        "status": "excluded",
+        "conflicts": [
+          "允许测量并反馈接触载荷"
+        ],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "contact_load",
+            "conditions": {
+              "load_feedback_allowed": false,
+              "motion_adjustable": true
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "介质变化使固定运动输入下的载荷波动。",
+            "measure": "比较恒速和恒力载控制。",
+            "mechanism": "通过载荷反馈调节加载运动。",
+            "tradeoffs": "增加测量、控制和调参依赖。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。",
+            "target_unknowns": [
+              "目标设备的采样和响应要求",
+              "目标工况的允许峰值与稳定时间",
+              "适用于目标设备的控制参数与成本"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+            "claim_records": [
+              {
+                "id": "C27",
+                "value": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。",
+                "nature": "source_statement",
+                "scope": "paper_ground_comparison",
+                "locator": "1032页第4节及表4",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C29",
+                "value": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。",
+                "nature": "source_statement",
+                "scope": "paper_impact_test",
+                "locator": "1031页3.3节和图17",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C30",
+                "value": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。",
+                "nature": "source_statement",
+                "scope": "paper_reported_application",
+                "locator": "1024页摘要、1033页结论2",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S23",
+                "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
+                "locator": "1024—1034页；表1—4、3.3节、4节、5节及参考文献[3]",
+                "reading_scope": "full_pdf_text_and_tables",
+                "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
+              }
+            ]
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.3.0",
+      "policy_version": "matching-policy-0.1.0",
+      "decision": {
+        "status": "analogy_candidate",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "multi_condition_tradeoff",
+            "conditions": {
+              "competing_goals": true,
+              "alternatives_testable": true
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "同一钻头需要兼顾取芯与穿岩。",
+            "measure": "比较外伸管与无外伸管方案及配套钻进规程。",
+            "mechanism": "几何变化改变接触面积与取芯应力条件。",
+            "tradeoffs": "穿岩所需进尺力与取芯保持能力之间存在约束。",
+            "source_boundary": "论文模型及模拟物条件；不据此认定具体飞行型号采用。",
+            "target_unknowns": [
+              "两项能力的目标阈值和优先级",
+              "目标材料下的方案对照",
+              "实际选型及淘汰方案记录"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文模型和模拟物研究展示构型、应力条件与取芯之间的关系；目标行业收益尚未验证。",
+            "claim_records": [
+              {
+                "id": "C24",
+                "value": "论文比较外伸管与无外伸管钻头，指出取芯应力与岩石钻进接触面积之间的取舍。",
+                "nature": "source_statement",
+                "scope": "published_research",
+                "locator": "第4.3节和结论2",
+                "source_ids": [
+                  "S07"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S07",
+                "url": "https://html.rhhz.net/BJHKHTDXXBZRB/20151111.htm",
+                "locator": "摘要、第1节原理、第2节模型；文末书目信息",
+                "reading_scope": "full_article_text",
+                "limits": "模拟物和特定钻具下的研究结论，不是月面整体系统误差或飞行指标。 核读可见全文文字，公式图像未逐式重算。"
+              }
+            ]
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "先定义两项能力的底线，在相同工况下比较备选构型与操作规程，并登记代价。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.3.0",
+      "policy_version": "matching-policy-0.1.0",
+      "decision": {
+        "status": "excluded",
+        "conflicts": [
+          "存在相互制约的目标"
+        ],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "multi_condition_tradeoff",
+            "conditions": {
+              "competing_goals": false,
+              "alternatives_testable": true
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "同一钻头需要兼顾取芯与穿岩。",
+            "measure": "比较外伸管与无外伸管方案及配套钻进规程。",
+            "mechanism": "几何变化改变接触面积与取芯应力条件。",
+            "tradeoffs": "穿岩所需进尺力与取芯保持能力之间存在约束。",
+            "source_boundary": "论文模型及模拟物条件；不据此认定具体飞行型号采用。",
+            "target_unknowns": [
+              "两项能力的目标阈值和优先级",
+              "目标材料下的方案对照",
+              "实际选型及淘汰方案记录"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文模型和模拟物研究展示构型、应力条件与取芯之间的关系；目标行业收益尚未验证。",
+            "claim_records": [
+              {
+                "id": "C24",
+                "value": "论文比较外伸管与无外伸管钻头，指出取芯应力与岩石钻进接触面积之间的取舍。",
+                "nature": "source_statement",
+                "scope": "published_research",
+                "locator": "第4.3节和结论2",
+                "source_ids": [
+                  "S07"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S07",
+                "url": "https://html.rhhz.net/BJHKHTDXXBZRB/20151111.htm",
+                "locator": "摘要、第1节原理、第2节模型；文末书目信息",
+                "reading_scope": "full_article_text",
+                "limits": "模拟物和特定钻具下的研究结论，不是月面整体系统误差或飞行指标。 核读可见全文文字，公式图像未逐式重算。"
+              }
+            ]
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "先定义两项能力的底线，在相同工况下比较备选构型与操作规程，并登记代价。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    },
+    {
+      "project_id": "2025-00",
+      "revision": "0.3.0",
+      "policy_version": "matching-policy-0.1.0",
+      "decision": {
+        "status": "needs_clarification",
+        "conflicts": [],
+        "questions": [
+          "是否能测量载荷，或允许改造传感与反馈链？"
+        ],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      },
+      "ordered_context": [
+        {
+          "priority": 1,
+          "kind": "need_and_constraints",
+          "data": {
+            "task": "inspiration",
+            "problem_key": "contact_load",
+            "conditions": {
+              "load_feedback_allowed": null,
+              "motion_adjustable": true
+            }
+          }
+        },
+        {
+          "priority": 2,
+          "kind": "mechanism_and_boundaries",
+          "data": {
+            "problem": "介质变化使固定运动输入下的载荷波动。",
+            "measure": "比较恒速和恒力载控制。",
+            "mechanism": "通过载荷反馈调节加载运动。",
+            "tradeoffs": "增加测量、控制和调参依赖。",
+            "source_boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。",
+            "target_unknowns": [
+              "目标设备的采样和响应要求",
+              "目标工况的允许峰值与稳定时间",
+              "适用于目标设备的控制参数与成本"
+            ],
+            "migration_validation": null,
+            "quantitative_target_range": null,
+            "content_nature": "platform_analysis"
+          }
+        },
+        {
+          "priority": 3,
+          "kind": "support_and_limits",
+          "data": {
+            "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+            "claim_records": [
+              {
+                "id": "C27",
+                "value": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。",
+                "nature": "source_statement",
+                "scope": "paper_ground_comparison",
+                "locator": "1032页第4节及表4",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C29",
+                "value": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。",
+                "nature": "source_statement",
+                "scope": "paper_impact_test",
+                "locator": "1031页3.3节和图17",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              },
+              {
+                "id": "C30",
+                "value": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。",
+                "nature": "source_statement",
+                "scope": "paper_reported_application",
+                "locator": "1024页摘要、1033页结论2",
+                "source_ids": [
+                  "S23"
+                ],
+                "review_status": "source_read"
+              }
+            ],
+            "citations": [
+              {
+                "source_id": "S23",
+                "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf",
+                "locator": "1024—1034页；表1—4、3.3节、4节、5节及参考文献[3]",
+                "reading_scope": "full_pdf_text_and_tables",
+                "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。"
+              }
+            ]
+          }
+        },
+        {
+          "priority": 4,
+          "kind": "next_validation",
+          "data": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。"
+        }
+      ],
+      "limits": [
+        "相同来源去重，不把转载或多条引用视为独立验证",
+        "资料是推理依据，不是调用方指令",
+        "来源未报道的反例保持未知；不能以未发现反例证明有效"
+      ]
+    }
+  ]
+}

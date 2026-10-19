@@ -1,0 +1,234 @@
+{
+  "policy_version": "matching-policy-0.1.0",
+  "benchmark_standard": "benchmark-0.1.0-trial",
+  "status": "trial_not_certified",
+  "archive_quality_score": 50.0,
+  "experience_cards": 3,
+  "synthetic_fixtures": 7,
+  "fixture_results": [
+    {
+      "id": "MC01-positive",
+      "label": "取到样品，同时保留样品信息：条件具备",
+      "card_id": "MC01",
+      "request": {
+        "id": "MC01-positive",
+        "card_id": "MC01",
+        "label": "取到样品，同时保留样品信息：条件具备",
+        "kind": "synthetic_positive",
+        "task": "inspiration",
+        "problem_key": "sample_information",
+        "conditions": {
+          "preserve_structure": true,
+          "flexible_container_allowed": true
+        },
+        "expected": "analogy_candidate"
+      },
+      "result": {
+        "status": "analogy_candidate",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      }
+    },
+    {
+      "id": "MC01-negative",
+      "label": "取到样品，同时保留样品信息：关键条件冲突",
+      "card_id": "MC01",
+      "request": {
+        "id": "MC01-negative",
+        "card_id": "MC01",
+        "label": "取到样品，同时保留样品信息：关键条件冲突",
+        "kind": "synthetic_negative",
+        "task": "inspiration",
+        "problem_key": "sample_information",
+        "conditions": {
+          "preserve_structure": false,
+          "flexible_container_allowed": true
+        },
+        "expected": "excluded"
+      },
+      "result": {
+        "status": "excluded",
+        "conflicts": [
+          "需要保持样品结构"
+        ],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      }
+    },
+    {
+      "id": "MC02-positive",
+      "label": "根据接触载荷调整运动：条件具备",
+      "card_id": "MC02",
+      "request": {
+        "id": "MC02-positive",
+        "card_id": "MC02",
+        "label": "根据接触载荷调整运动：条件具备",
+        "kind": "synthetic_positive",
+        "task": "inspiration",
+        "problem_key": "contact_load",
+        "conditions": {
+          "load_feedback_allowed": true,
+          "motion_adjustable": true
+        },
+        "expected": "analogy_candidate"
+      },
+      "result": {
+        "status": "analogy_candidate",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      }
+    },
+    {
+      "id": "MC02-negative",
+      "label": "根据接触载荷调整运动：关键条件冲突",
+      "card_id": "MC02",
+      "request": {
+        "id": "MC02-negative",
+        "card_id": "MC02",
+        "label": "根据接触载荷调整运动：关键条件冲突",
+        "kind": "synthetic_negative",
+        "task": "inspiration",
+        "problem_key": "contact_load",
+        "conditions": {
+          "load_feedback_allowed": false,
+          "motion_adjustable": true
+        },
+        "expected": "excluded"
+      },
+      "result": {
+        "status": "excluded",
+        "conflicts": [
+          "允许测量并反馈接触载荷"
+        ],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      }
+    },
+    {
+      "id": "MC03-positive",
+      "label": "把多种工况的取舍讲清楚：条件具备",
+      "card_id": "MC03",
+      "request": {
+        "id": "MC03-positive",
+        "card_id": "MC03",
+        "label": "把多种工况的取舍讲清楚：条件具备",
+        "kind": "synthetic_positive",
+        "task": "inspiration",
+        "problem_key": "multi_condition_tradeoff",
+        "conditions": {
+          "competing_goals": true,
+          "alternatives_testable": true
+        },
+        "expected": "analogy_candidate"
+      },
+      "result": {
+        "status": "analogy_candidate",
+        "conflicts": [],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      }
+    },
+    {
+      "id": "MC03-negative",
+      "label": "把多种工况的取舍讲清楚：关键条件冲突",
+      "card_id": "MC03",
+      "request": {
+        "id": "MC03-negative",
+        "card_id": "MC03",
+        "label": "把多种工况的取舍讲清楚：关键条件冲突",
+        "kind": "synthetic_negative",
+        "task": "inspiration",
+        "problem_key": "multi_condition_tradeoff",
+        "conditions": {
+          "competing_goals": false,
+          "alternatives_testable": true
+        },
+        "expected": "excluded"
+      },
+      "result": {
+        "status": "excluded",
+        "conflicts": [
+          "存在相互制约的目标"
+        ],
+        "questions": [],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      }
+    },
+    {
+      "id": "MC02-unknown",
+      "label": "载荷反馈：设备条件未说明",
+      "card_id": "MC02",
+      "request": {
+        "id": "MC02-unknown",
+        "card_id": "MC02",
+        "label": "载荷反馈：设备条件未说明",
+        "kind": "synthetic_unknown",
+        "task": "inspiration",
+        "problem_key": "contact_load",
+        "conditions": {
+          "load_feedback_allowed": null,
+          "motion_adjustable": true
+        },
+        "expected": "needs_clarification"
+      },
+      "result": {
+        "status": "needs_clarification",
+        "conflicts": [],
+        "questions": [
+          "是否能测量载荷，或允许改造传感与反馈链？"
+        ],
+        "verification_required": true,
+        "decision_scope": "试行平台匹配假设，不代表工程适用性结论"
+      }
+    }
+  ],
+  "gates": [
+    {
+      "id": "structure",
+      "label": "结构与出处可追溯",
+      "status": "pass",
+      "basis": "三条经验均关联原机制、陈述与论文；自动引用检查通过。"
+    },
+    {
+      "id": "rules",
+      "label": "正反例与追问规则",
+      "status": "pass",
+      "basis": "七个人工样例通过；只验证规则行为。"
+    },
+    {
+      "id": "parameters",
+      "label": "目标场景适用范围",
+      "status": "pending",
+      "basis": "三卡目标定量范围均为空，需要真实材料与工况。"
+    },
+    {
+      "id": "expert",
+      "label": "项目方与专业审核",
+      "status": "pending",
+      "basis": "尚无本轮知识卡的专业签审。"
+    },
+    {
+      "id": "transfer",
+      "label": "真实需求与迁移验证",
+      "status": "pending",
+      "basis": "人工样例不是真实企业验证；尚无跨行业试验。"
+    },
+    {
+      "id": "replication",
+      "label": "第二案例标准校准",
+      "status": "pending",
+      "basis": "遵循用户要求，先磨单案，尚未复制第二案例。"
+    }
+  ],
+  "ready_for_controlled_replication": false,
+  "ready_to_scale": false,
+  "note": "本次没有新增项目事实；不以卡片数量、样例通过或字段填满证明研究穷尽与迁移有效。"
+}

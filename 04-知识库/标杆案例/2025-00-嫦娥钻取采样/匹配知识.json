@@ -1,0 +1,202 @@
+{
+  "schema_version": "matching-cards-0.1.0",
+  "status": "trial",
+  "nature": "现有公开资料的平台整理与匹配假设，不是已验证转化方案",
+  "cards": [
+    {
+      "id": "MC01",
+      "knowledge_id": "K01",
+      "paper_ids": [
+        "A01"
+      ],
+      "problem_key": "sample_information",
+      "title": "取到样品，同时保留样品信息",
+      "trigger": "取样、搬运或转移过程中，需要尽量保持原有层序。",
+      "requirements": [
+        {
+          "key": "preserve_structure",
+          "label": "需要保持样品结构",
+          "question": "需要保留层序、颗粒分布，还是只需要收集质量？"
+        },
+        {
+          "key": "flexible_container_allowed",
+          "label": "允许柔性容器接触样品",
+          "question": "容器接触、污染控制和清洁要求是什么？"
+        }
+      ],
+      "baseline": "现有资料讨论传统钻取与软袋取芯；尚无目标行业的直接对照。",
+      "observed_result": "2015年论文给出取心率模型与模拟物试验对照，不能据此认定层序完全无扰动。",
+      "missing": [
+        "目标介质的粒径、黏聚性与温度范围",
+        "层序保持的定量验收阈值",
+        "柔性容器材料及污染兼容性"
+      ],
+      "experiment": "在目标介质上对照两种收集方式，测量层序偏差、回收率、卡滞与污染。",
+      "content_nature": "platform_analysis",
+      "review_state": "needs_expert_review",
+      "quantitative_target_range": null,
+      "migration_validation": null
+    },
+    {
+      "id": "MC02",
+      "knowledge_id": "K06",
+      "paper_ids": [
+        "A04"
+      ],
+      "problem_key": "contact_load",
+      "title": "根据接触载荷调整运动",
+      "trigger": "介质变化导致接触载荷波动，希望改善运动与接触过程。",
+      "requirements": [
+        {
+          "key": "load_feedback_allowed",
+          "label": "允许测量并反馈接触载荷",
+          "question": "是否能测量载荷，或允许改造传感与反馈链？"
+        },
+        {
+          "key": "motion_adjustable",
+          "label": "运动输入允许调节",
+          "question": "能否实时调整运动，还是必须固定输入？"
+        }
+      ],
+      "baseline": "2025年论文中的恒速组与恒力载组，各5次地面取芯试验。",
+      "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+      "missing": [
+        "目标设备的采样和响应要求",
+        "目标工况的允许峰值与稳定时间",
+        "适用于目标设备的控制参数与成本"
+      ],
+      "experiment": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。",
+      "content_nature": "platform_analysis",
+      "review_state": "needs_expert_review",
+      "quantitative_target_range": null,
+      "migration_validation": null
+    },
+    {
+      "id": "MC03",
+      "knowledge_id": "K05",
+      "paper_ids": [
+        "A01"
+      ],
+      "problem_key": "multi_condition_tradeoff",
+      "title": "把多种工况的取舍讲清楚",
+      "trigger": "同一工具要兼顾不同工况，单一性能提升可能损害另一项能力。",
+      "requirements": [
+        {
+          "key": "competing_goals",
+          "label": "存在相互制约的目标",
+          "question": "哪两项能力相互制约，各自的最低要求是什么？"
+        },
+        {
+          "key": "alternatives_testable",
+          "label": "允许比较备选方案",
+          "question": "是否有可比较的构型或操作规程，允许做对照吗？"
+        }
+      ],
+      "baseline": "论文比较外伸管与无外伸管钻头及钻进规程，不是飞行选型会议记录。",
+      "observed_result": "论文模型和模拟物研究展示构型、应力条件与取芯之间的关系；目标行业收益尚未验证。",
+      "missing": [
+        "两项能力的目标阈值和优先级",
+        "目标材料下的方案对照",
+        "实际选型及淘汰方案记录"
+      ],
+      "experiment": "先定义两项能力的底线，在相同工况下比较备选构型与操作规程，并登记代价。",
+      "content_nature": "platform_analysis",
+      "review_state": "needs_expert_review",
+      "quantitative_target_range": null,
+      "migration_validation": null
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "MC01-positive",
+      "card_id": "MC01",
+      "label": "取到样品，同时保留样品信息：条件具备",
+      "kind": "synthetic_positive",
+      "task": "inspiration",
+      "problem_key": "sample_information",
+      "conditions": {
+        "preserve_structure": true,
+        "flexible_container_allowed": true
+      },
+      "expected": "analogy_candidate"
+    },
+    {
+      "id": "MC01-negative",
+      "card_id": "MC01",
+      "label": "取到样品，同时保留样品信息：关键条件冲突",
+      "kind": "synthetic_negative",
+      "task": "inspiration",
+      "problem_key": "sample_information",
+      "conditions": {
+        "preserve_structure": false,
+        "flexible_container_allowed": true
+      },
+      "expected": "excluded"
+    },
+    {
+      "id": "MC02-positive",
+      "card_id": "MC02",
+      "label": "根据接触载荷调整运动：条件具备",
+      "kind": "synthetic_positive",
+      "task": "inspiration",
+      "problem_key": "contact_load",
+      "conditions": {
+        "load_feedback_allowed": true,
+        "motion_adjustable": true
+      },
+      "expected": "analogy_candidate"
+    },
+    {
+      "id": "MC02-negative",
+      "card_id": "MC02",
+      "label": "根据接触载荷调整运动：关键条件冲突",
+      "kind": "synthetic_negative",
+      "task": "inspiration",
+      "problem_key": "contact_load",
+      "conditions": {
+        "load_feedback_allowed": false,
+        "motion_adjustable": true
+      },
+      "expected": "excluded"
+    },
+    {
+      "id": "MC03-positive",
+      "card_id": "MC03",
+      "label": "把多种工况的取舍讲清楚：条件具备",
+      "kind": "synthetic_positive",
+      "task": "inspiration",
+      "problem_key": "multi_condition_tradeoff",
+      "conditions": {
+        "competing_goals": true,
+        "alternatives_testable": true
+      },
+      "expected": "analogy_candidate"
+    },
+    {
+      "id": "MC03-negative",
+      "card_id": "MC03",
+      "label": "把多种工况的取舍讲清楚：关键条件冲突",
+      "kind": "synthetic_negative",
+      "task": "inspiration",
+      "problem_key": "multi_condition_tradeoff",
+      "conditions": {
+        "competing_goals": false,
+        "alternatives_testable": true
+      },
+      "expected": "excluded"
+    },
+    {
+      "id": "MC02-unknown",
+      "card_id": "MC02",
+      "label": "载荷反馈：设备条件未说明",
+      "kind": "synthetic_unknown",
+      "task": "inspiration",
+      "problem_key": "contact_load",
+      "conditions": {
+        "load_feedback_allowed": null,
+        "motion_adjustable": true
+      },
+      "expected": "needs_clarification"
+    }
+  ]
+}

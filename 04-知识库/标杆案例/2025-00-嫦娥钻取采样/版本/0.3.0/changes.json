@@ -1,0 +1,223 @@
+[
+  {
+    "after": {
+      "cards": {
+        "MC01": {
+          "baseline": "现有资料讨论传统钻取与软袋取芯；尚无目标行业的直接对照。",
+          "content_nature": "platform_analysis",
+          "experiment": "在目标介质上对照两种收集方式，测量层序偏差、回收率、卡滞与污染。",
+          "id": "MC01",
+          "knowledge_id": "K01",
+          "migration_validation": null,
+          "missing": [
+            "目标介质的粒径、黏聚性与温度范围",
+            "层序保持的定量验收阈值",
+            "柔性容器材料及污染兼容性"
+          ],
+          "observed_result": "2015年论文给出取心率模型与模拟物试验对照，不能据此认定层序完全无扰动。",
+          "paper_ids": [
+            "A01"
+          ],
+          "problem_key": "sample_information",
+          "quantitative_target_range": null,
+          "requirements": {
+            "flexible_container_allowed": {
+              "key": "flexible_container_allowed",
+              "label": "允许柔性容器接触样品",
+              "question": "容器接触、污染控制和清洁要求是什么？"
+            },
+            "preserve_structure": {
+              "key": "preserve_structure",
+              "label": "需要保持样品结构",
+              "question": "需要保留层序、颗粒分布，还是只需要收集质量？"
+            }
+          },
+          "review_state": "needs_expert_review",
+          "title": "取到样品，同时保留样品信息",
+          "trigger": "取样、搬运或转移过程中，需要尽量保持原有层序。"
+        },
+        "MC02": {
+          "baseline": "2025年论文中的恒速组与恒力载组，各5次地面取芯试验。",
+          "content_nature": "platform_analysis",
+          "experiment": "在目标材料、设备和安全边界内做小范围对照，观察载荷峰值、稳定时间和实际作业效果。",
+          "id": "MC02",
+          "knowledge_id": "K06",
+          "migration_validation": null,
+          "missing": [
+            "目标设备的采样和响应要求",
+            "目标工况的允许峰值与稳定时间",
+            "适用于目标设备的控制参数与成本"
+          ],
+          "observed_result": "论文报告恒力载组平均取芯质量和长度更高；冲击试验稳定过程缩短，但峰值超调仍存在。",
+          "paper_ids": [
+            "A04"
+          ],
+          "problem_key": "contact_load",
+          "quantitative_target_range": null,
+          "requirements": {
+            "load_feedback_allowed": {
+              "key": "load_feedback_allowed",
+              "label": "允许测量并反馈接触载荷",
+              "question": "是否能测量载荷，或允许改造传感与反馈链？"
+            },
+            "motion_adjustable": {
+              "key": "motion_adjustable",
+              "label": "运动输入允许调节",
+              "question": "能否实时调整运动，还是必须固定输入？"
+            }
+          },
+          "review_state": "needs_expert_review",
+          "title": "根据接触载荷调整运动",
+          "trigger": "介质变化导致接触载荷波动，希望改善运动与接触过程。"
+        },
+        "MC03": {
+          "baseline": "论文比较外伸管与无外伸管钻头及钻进规程，不是飞行选型会议记录。",
+          "content_nature": "platform_analysis",
+          "experiment": "先定义两项能力的底线，在相同工况下比较备选构型与操作规程，并登记代价。",
+          "id": "MC03",
+          "knowledge_id": "K05",
+          "migration_validation": null,
+          "missing": [
+            "两项能力的目标阈值和优先级",
+            "目标材料下的方案对照",
+            "实际选型及淘汰方案记录"
+          ],
+          "observed_result": "论文模型和模拟物研究展示构型、应力条件与取芯之间的关系；目标行业收益尚未验证。",
+          "paper_ids": [
+            "A01"
+          ],
+          "problem_key": "multi_condition_tradeoff",
+          "quantitative_target_range": null,
+          "requirements": {
+            "alternatives_testable": {
+              "key": "alternatives_testable",
+              "label": "允许比较备选方案",
+              "question": "是否有可比较的构型或操作规程，允许做对照吗？"
+            },
+            "competing_goals": {
+              "key": "competing_goals",
+              "label": "存在相互制约的目标",
+              "question": "哪两项能力相互制约，各自的最低要求是什么？"
+            }
+          },
+          "review_state": "needs_expert_review",
+          "title": "把多种工况的取舍讲清楚",
+          "trigger": "同一工具要兼顾不同工况，单一性能提升可能损害另一项能力。"
+        }
+      },
+      "fixtures": {
+        "MC01-negative": {
+          "card_id": "MC01",
+          "conditions": {
+            "flexible_container_allowed": true,
+            "preserve_structure": false
+          },
+          "expected": "excluded",
+          "id": "MC01-negative",
+          "kind": "synthetic_negative",
+          "label": "取到样品，同时保留样品信息：关键条件冲突",
+          "problem_key": "sample_information",
+          "task": "inspiration"
+        },
+        "MC01-positive": {
+          "card_id": "MC01",
+          "conditions": {
+            "flexible_container_allowed": true,
+            "preserve_structure": true
+          },
+          "expected": "analogy_candidate",
+          "id": "MC01-positive",
+          "kind": "synthetic_positive",
+          "label": "取到样品，同时保留样品信息：条件具备",
+          "problem_key": "sample_information",
+          "task": "inspiration"
+        },
+        "MC02-negative": {
+          "card_id": "MC02",
+          "conditions": {
+            "load_feedback_allowed": false,
+            "motion_adjustable": true
+          },
+          "expected": "excluded",
+          "id": "MC02-negative",
+          "kind": "synthetic_negative",
+          "label": "根据接触载荷调整运动：关键条件冲突",
+          "problem_key": "contact_load",
+          "task": "inspiration"
+        },
+        "MC02-positive": {
+          "card_id": "MC02",
+          "conditions": {
+            "load_feedback_allowed": true,
+            "motion_adjustable": true
+          },
+          "expected": "analogy_candidate",
+          "id": "MC02-positive",
+          "kind": "synthetic_positive",
+          "label": "根据接触载荷调整运动：条件具备",
+          "problem_key": "contact_load",
+          "task": "inspiration"
+        },
+        "MC02-unknown": {
+          "card_id": "MC02",
+          "conditions": {
+            "load_feedback_allowed": null,
+            "motion_adjustable": true
+          },
+          "expected": "needs_clarification",
+          "id": "MC02-unknown",
+          "kind": "synthetic_unknown",
+          "label": "载荷反馈：设备条件未说明",
+          "problem_key": "contact_load",
+          "task": "inspiration"
+        },
+        "MC03-negative": {
+          "card_id": "MC03",
+          "conditions": {
+            "alternatives_testable": true,
+            "competing_goals": false
+          },
+          "expected": "excluded",
+          "id": "MC03-negative",
+          "kind": "synthetic_negative",
+          "label": "把多种工况的取舍讲清楚：关键条件冲突",
+          "problem_key": "multi_condition_tradeoff",
+          "task": "inspiration"
+        },
+        "MC03-positive": {
+          "card_id": "MC03",
+          "conditions": {
+            "alternatives_testable": true,
+            "competing_goals": true
+          },
+          "expected": "analogy_candidate",
+          "id": "MC03-positive",
+          "kind": "synthetic_positive",
+          "label": "把多种工况的取舍讲清楚：条件具备",
+          "problem_key": "multi_condition_tradeoff",
+          "task": "inspiration"
+        }
+      },
+      "nature": "现有公开资料的平台整理与匹配假设，不是已验证转化方案",
+      "schema_version": "matching-cards-0.1.0",
+      "status": "trial"
+    },
+    "before": null,
+    "operation": "add",
+    "path": "/matching_knowledge"
+  },
+  {
+    "after": {
+      "archive_quality_policy": "quality-rubric-0.1",
+      "benchmark_standard": "benchmark-0.1.0-trial",
+      "content_target": "0.3.0",
+      "field_schema": "3.0-draft",
+      "matching_policy": "matching-policy-0.1.0",
+      "note": "各编号独立递增；当前内容版本以不可覆写版本索引为准；规则样例通过不等于真实匹配有效。",
+      "page": "4.1.0"
+    },
+    "before": null,
+    "operation": "add",
+    "path": "/version_declaration"
+  }
+]

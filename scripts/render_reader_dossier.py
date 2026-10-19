@@ -5,6 +5,8 @@ from pathlib import Path
 
 def build(root,p):
  read=lambda n:json.loads((p/n).read_text())
+ from dossier_matching import render as render_matching
+ matching=render_matching(p)
  d,a,s,q,c=map(read,['档案数据.json','原子字段档案.json','字段规范.json','质量评估.json','阅读内容.json'])
  e=lambda v:html.escape(str(v if v is not None else ''))
  records={r['id']:r for r in a['records']};sources={x['id']:x for x in d['sources']};entity_blocks={x['key']:x['block'] for x in s['entities']}
@@ -33,7 +35,7 @@ def build(root,p):
  insights=[]
  for k in d['knowledge']:
   insights.append(f'<article class="reader-insight"><h3>{e(k["title"])}</h3><p>{e(k["measure"])}</p><details><summary>设计解读</summary>{properties([("为什么这样做",k["mechanism"]),("需要付出的代价",k["tradeoffs"]),("适用边界",k["boundary"])])}</details></article>')
- section('innovation','<div class="reader-insights">'+''.join(insights)+'</div>','以下为基于公开资料的设计解读，尚待专业复核。')
+ section('innovation','<div class="reader-insights">'+''.join(insights)+'</div>'+matching['body'],'以下为基于公开资料的设计解读，尚待专业复核。')
  flight=table(['任务','钻取样品量','钻进有效深度','任务返回总量'],[['嫦娥五号','260 g','约1009 mm','约1731 g'],['嫦娥六号','320 g','约1035 mm','1935.3 g']])
  component=[r for r in a['records'] if r['entity']=='metric' and r['cells']['value_kind']['value']in ['论文设计参数','论文结构参数']]
  params=table(['对象','参数','数值','单位'],[[r['cells']['subject']['value'],r['cells']['name']['value'],r['cells']['value']['value'],r['cells']['unit']['value']]for r in component])
@@ -64,10 +66,10 @@ def build(root,p):
  library='<div id="library-view" hidden><div class="reader-view-heading"><h2>资料与解读</h2><p>从论文看研究方法与结论，完整参考资料列在后面。解读为平台整理，保留实际阅读范围。</p></div>'+''.join(paper_cards)+'<section class="reader-section" id="reader-sources"><h2>参考资料</h2>'+source_index+'</section></div>'
  module_rows=[[x['title'],x['records'],f'{x["known"]} / {x["total"]}',str(x['percent'])+'%',x['assessment']]for x in stats]
  needs=''.join(f'<li><b>{e(c["modules"][x["id"]]["title"])}</b><p>{e(c["modules"][x["id"]]["summary"])}</p></li>'for x in stats)
- assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details></div>'
+ assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details>'+matching['assessment']+'</div>'
  nav=''.join(f'<a data-reader-section="{x["id"]}" href="#reader-{x["id"]}"><span>{i:02d}</span>{e(x["title"])}</a>'for i,x in enumerate(stats,1))
  hero='<div class="eyebrow">好设计 · 项目档案</div><h1>嫦娥月球钻取采样系统</h1><p class="summary">从月球深层取回样品，也保存样品所承载的信息。<br>整理五号与六号任务相关的系统设计、研究成果和发展过程。</p><div class="reader-hero-meta"><span>2025年第十届好设计奖金奖</span><span>资料整理截至 '+e(d['as_of'])+'</span></div>'
- return dict(board=board,library=library,assessment=assessment,nav=nav,hero=hero,css=CSS,js=JS)
+ return dict(board=board,library=library,assessment=assessment,nav=nav,hero=hero,css=CSS+matching['css'],js=JS+matching['js'])
 
 def quality_panel(q,e):
  labels={'identity':'身份与范围','evidence':'资料可信度','technical':'技术与验证','decision':'设计过程','ip':'成果与项目关系','governance':'档案维护'}
