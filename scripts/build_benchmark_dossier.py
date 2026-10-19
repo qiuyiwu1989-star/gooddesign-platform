@@ -98,4 +98,6 @@ print(OUT/'档案.html')
 # The authored master document remains the primary reading entry.
 import runpy
 if (OUT/'主档案结构.json').exists():
+ runpy.run_path(str(ROOT/'scripts/build_case_field_standard.py'))
+ runpy.run_path(str(ROOT/'scripts/build_case_atomic_data.py'))
  runpy.run_path(str(ROOT/'scripts/render_master_dossier.py'))

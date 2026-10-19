@@ -24,3 +24,6 @@
 稳定引用示例：`2025-00:F020` → `validation.subsystem_results` → C06/C07 → S02及原文定位。章节显示序号05.01不是永久ID。
 
 规范：`../../项目档案标准-v1/主档案层级与索引规范-v1.2.md`。本轮未追加全网研究或专业审核，未替换生产站点。
+
+## 013 分板块与原子字段 v3.0
+默认档案.html为八板块视图，仍可切换完整正文、研究字段规范、正文索引和证据附录。原子字段档案.json是本例72条记录/939个单元值；字段规范.json/CSV是字典的预览副本。233项是可复用研究要求，不等于本例有233项已验证事实。原子映射入口为scripts/build_case_atomic_data.py，字段规范入口为scripts/build_case_field_standard.py；统一构建命令不变。检查命令：python3 scripts/check_structured_case.py。与49个正文复合字段互补。未追加研究或生产部署。
