@@ -1,0 +1,94 @@
+{
+  "policy_version": "quality-rubric-0.1",
+  "as_of": "2026-10-19",
+  "assessed_by": "平台AI内容自评，非专家审核",
+  "dimensions": [
+    {
+      "key": "identity",
+      "label": "身份与边界",
+      "weight": 15,
+      "level": 3,
+      "rationale": "官方名单支持项目、奖项和完成单位；个人贡献与多型号边界仍需项目方确认。 本轮仅补校方历史线索，评分不变。",
+      "evidence_files": [
+        "档案数据.json"
+      ],
+      "next_actions": [
+        "补完整完成人及贡献依据",
+        "核对项目与型号范围"
+      ]
+    },
+    {
+      "key": "evidence",
+      "label": "证据质量",
+      "weight": 25,
+      "level": 2,
+      "rationale": "有来源与定位，仍含摘要和检索线索；缺全面来源链及独立事实复核。",
+      "evidence_files": [
+        "档案数据.json",
+        "研究日志.json"
+      ],
+      "next_actions": [
+        "标明原文和转载链",
+        "核读关键全文"
+      ]
+    },
+    {
+      "key": "technical",
+      "label": "技术与验证深度",
+      "weight": 20,
+      "level": 2,
+      "rationale": "有原理与试验线索；工程参数、工况和完整验证资料未取得。",
+      "evidence_files": [
+        "档案数据.json",
+        "主档案结构.json"
+      ],
+      "next_actions": [
+        "补原始试验材料",
+        "建立工况-指标-试验关系"
+      ]
+    },
+    {
+      "key": "decision",
+      "label": "设计过程深度",
+      "weight": 15,
+      "level": 1,
+      "rationale": "有公开故事及平台分析；缺备选方案、取舍原始记录和本轮访谈。",
+      "evidence_files": [
+        "档案数据.json"
+      ],
+      "next_actions": [
+        "取得关键决策材料",
+        "访谈研发成员"
+      ]
+    },
+    {
+      "key": "ip",
+      "label": "成果关联完整性",
+      "weight": 15,
+      "level": 1,
+      "rationale": "披露总量未取得完整清单；候选条目不能视为项目全量成果。",
+      "evidence_files": [
+        "档案数据.json"
+      ],
+      "next_actions": [
+        "取得成果清单",
+        "核实权属状态与关系"
+      ]
+    },
+    {
+      "key": "governance",
+      "label": "维护与可复用治理",
+      "weight": 10,
+      "level": 2,
+      "rationale": "有字段、来源和任务；开始冻结快照，仍缺实际负责人、审核签署和在线服务。",
+      "evidence_files": [
+        "原子字段档案.json",
+        "字段规范.json"
+      ],
+      "next_actions": [
+        "落实审核责任",
+        "以实际补证检验版本差异"
+      ]
+    }
+  ]
+}

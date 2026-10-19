@@ -1,0 +1,984 @@
+{
+  "contract_version": "0.1-draft",
+  "implementation_status": "design_only_no_running_mcp_service",
+  "architecture": [
+    "project_archive_database",
+    "design_innovation_engine",
+    "application_capabilities"
+  ],
+  "tools": [
+    {
+      "name": "gd_search_projects",
+      "description": "按身份、行业、功能或问题查找授权范围内的项目候选。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20,
+            "default": 10
+          },
+          "cursor": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "partial",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "object"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "reading_scope": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "locator",
+                "reading_scope"
+              ]
+            }
+          },
+          "next_cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "NOT_FOUND",
+                      "REVISION_NOT_FOUND",
+                      "FORBIDDEN",
+                      "INVALID_ARGUMENT",
+                      "CURSOR_INVALID",
+                      "INTEGRITY_ERROR"
+                    ]
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "project_id",
+          "revision",
+          "schema_version",
+          "status",
+          "data",
+          "citations",
+          "next_cursor",
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "gd_get_project",
+      "description": "按板块读取指定版本项目档案，返回缺口与审核状态。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "description": "具体研究版本；初次查询可用latest，响应必须解析为具体版本。",
+            "default": "latest"
+          },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "overview",
+                "technical",
+                "innovation",
+                "validation",
+                "ip",
+                "history",
+                "applications",
+                "governance"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 8
+          }
+        },
+        "required": [
+          "project_id",
+          "blocks"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "partial",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "object"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "reading_scope": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "locator",
+                "reading_scope"
+              ]
+            }
+          },
+          "next_cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "NOT_FOUND",
+                      "REVISION_NOT_FOUND",
+                      "FORBIDDEN",
+                      "INVALID_ARGUMENT",
+                      "CURSOR_INVALID",
+                      "INTEGRITY_ERROR"
+                    ]
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "project_id",
+          "revision",
+          "schema_version",
+          "status",
+          "data",
+          "citations",
+          "next_cursor",
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "gd_get_record",
+      "description": "读取某条记录及逐值依据。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "description": "具体研究版本；初次查询可用latest，响应必须解析为具体版本。",
+            "default": "latest"
+          },
+          "record_id": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 30
+          }
+        },
+        "required": [
+          "project_id",
+          "record_id"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "partial",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "object"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "reading_scope": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "locator",
+                "reading_scope"
+              ]
+            }
+          },
+          "next_cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "NOT_FOUND",
+                      "REVISION_NOT_FOUND",
+                      "FORBIDDEN",
+                      "INVALID_ARGUMENT",
+                      "CURSOR_INVALID",
+                      "INTEGRITY_ERROR"
+                    ]
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "project_id",
+          "revision",
+          "schema_version",
+          "status",
+          "data",
+          "citations",
+          "next_cursor",
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "gd_get_evidence",
+      "description": "读取授权证据片段和上下文，不默认返回全文。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "description": "具体研究版本；初次查询可用latest，响应必须解析为具体版本。",
+            "default": "latest"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "project_id",
+          "source_id"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "partial",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "object"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "reading_scope": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "locator",
+                "reading_scope"
+              ]
+            }
+          },
+          "next_cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "NOT_FOUND",
+                      "REVISION_NOT_FOUND",
+                      "FORBIDDEN",
+                      "INVALID_ARGUMENT",
+                      "CURSOR_INVALID",
+                      "INTEGRITY_ERROR"
+                    ]
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "project_id",
+          "revision",
+          "schema_version",
+          "status",
+          "data",
+          "citations",
+          "next_cursor",
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "gd_get_quality",
+      "description": "返回评分政策、分项依据、覆盖统计和未满足门槛。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "description": "具体研究版本；初次查询可用latest，响应必须解析为具体版本。",
+            "default": "latest"
+          }
+        },
+        "required": [
+          "project_id"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "partial",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "object"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "reading_scope": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "locator",
+                "reading_scope"
+              ]
+            }
+          },
+          "next_cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "NOT_FOUND",
+                      "REVISION_NOT_FOUND",
+                      "FORBIDDEN",
+                      "INVALID_ARGUMENT",
+                      "CURSOR_INVALID",
+                      "INTEGRITY_ERROR"
+                    ]
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "project_id",
+          "revision",
+          "schema_version",
+          "status",
+          "data",
+          "citations",
+          "next_cursor",
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "gd_list_revisions",
+      "description": "列出可访问的研究版本、日期、理由与审核状态。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "description": "具体研究版本；初次查询可用latest，响应必须解析为具体版本。",
+            "default": "latest"
+          },
+          "cursor": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20,
+            "default": 10
+          }
+        },
+        "required": [
+          "project_id"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "partial",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "object"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "reading_scope": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "locator",
+                "reading_scope"
+              ]
+            }
+          },
+          "next_cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "NOT_FOUND",
+                      "REVISION_NOT_FOUND",
+                      "FORBIDDEN",
+                      "INVALID_ARGUMENT",
+                      "CURSOR_INVALID",
+                      "INTEGRITY_ERROR"
+                    ]
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "project_id",
+          "revision",
+          "schema_version",
+          "status",
+          "data",
+          "citations",
+          "next_cursor",
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "gd_diff_revisions",
+      "description": "比较两版授权内容的增删改，默认返回摘要并分页。",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "description": "具体研究版本；初次查询可用latest，响应必须解析为具体版本。",
+            "default": "latest"
+          },
+          "from_revision": {
+            "type": "string"
+          },
+          "to_revision": {
+            "type": "string"
+          },
+          "cursor": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "default": 20
+          }
+        },
+        "required": [
+          "project_id",
+          "from_revision",
+          "to_revision"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "revision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "schema_version": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "partial",
+              "error"
+            ]
+          },
+          "data": {
+            "type": "object"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "reading_scope": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "locator",
+                "reading_scope"
+              ]
+            }
+          },
+          "next_cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "enum": [
+                      "NOT_FOUND",
+                      "REVISION_NOT_FOUND",
+                      "FORBIDDEN",
+                      "INVALID_ARGUMENT",
+                      "CURSOR_INVALID",
+                      "INTEGRITY_ERROR"
+                    ]
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "code",
+                  "message"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "project_id",
+          "revision",
+          "schema_version",
+          "status",
+          "data",
+          "citations",
+          "next_cursor",
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ],
+  "resource_templates": [
+    {
+      "uriTemplate": "gooddesign://projects/{project_id}/revisions/{revision}/archive",
+      "name": "versioned_project_archive",
+      "mimeType": "application/json"
+    },
+    {
+      "uriTemplate": "gooddesign://projects/{project_id}/revisions/{revision}/quality",
+      "name": "versioned_quality_assessment",
+      "mimeType": "application/json"
+    }
+  ],
+  "notes": [
+    "候选URI，当前不可通过MCP读取。",
+    "所有读取和版本比较按服务器身份授权；不接受调用方自报角色。",
+    "revision表示内容修订，schema_version表示字段合同；搜索结果为每项返回具体版本。",
+    "data随工具采用受约束的项目摘要/记录/片段/质量/修订/差异对象；每工具详细data Schema仍待实现阶段冻结。",
+    "事实、来源陈述、平台分析与审核状态都需返回；第三方不能据候选结果推断正式归属。",
+    "首次只读，写入另经提议-审核-发布；本文件不是可直接运行的MCP配置。"
+  ],
+  "references": [
+    "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+    "https://modelcontextprotocol.io/specification/2025-11-25/server/resources",
+    "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization"
+  ]
+}

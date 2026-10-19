@@ -1558,7 +1558,7 @@
           "record_id": "2025-00:F033",
           "field_key": "history.research_vs_contract",
           "display_code": "08.01",
-          "title": "2009年与2011年为何不同",
+          "title": "前期论证与承研阶段如何区分",
           "data_type": "object",
           "value": {
             "team_research_start": 2009,
@@ -1566,7 +1566,7 @@
           },
           "unit": null,
           "scope": null,
-          "body": "校方人物报道回顾2009—2020年的采样设计试验积累；项目官网将承研国家任务起点记为2011年。两者研究对象不同，保留为前期积累与正式承研两类记录。",
+          "body": "新补校方实验室报道明确了2009年论证线索；与项目官网2011年承研口径并存，按不同阶段记录，不合并为同一立项日期。",
           "content_nature": "source_statement",
           "value_state": "known",
           "review_state": "sources_read_pending_professional_review",
@@ -1576,7 +1576,8 @@
           ],
           "claim_ids": [
             "C14",
-            "C03"
+            "C03",
+            "C21"
           ],
           "record_refs": [],
           "evidence": [
@@ -1590,6 +1591,12 @@
               "source_id": "S02",
               "claim_id": "C03",
               "locator": "项目简介第2段",
+              "role": "supports_source_statement"
+            },
+            {
+              "source_id": "S21",
+              "claim_id": "C21",
+              "locator": "正文第2段（网页发布时间后第2个正文段）",
               "role": "supports_source_statement"
             }
           ],
@@ -1608,7 +1615,9 @@
           "value": [
             "E01",
             "E02",
+            "E11",
             "E03",
+            "E12",
             "E04",
             "E05",
             "E06",
@@ -1619,7 +1628,7 @@
           ],
           "unit": null,
           "scope": null,
-          "body": "本轮按证据整理十个节点，包括早期研究、承研、技术文献、五号和六号任务结果、2025年获奖。原文仅有年份的事件不补写月日。",
+          "body": "现整理12个事件；本轮补充研制阶段并修订早期论证口径，原文只有年份或区间时不补写具体月日。",
           "content_nature": "source_statement",
           "value_state": "known",
           "review_state": "sources_read_pending_professional_review",
@@ -1631,7 +1640,9 @@
           "record_refs": [
             "E01",
             "E02",
+            "E11",
             "E03",
+            "E12",
             "E04",
             "E05",
             "E06",
@@ -1687,6 +1698,12 @@
               "source_id": "S01",
               "claim_id": null,
               "locator": "第1页金奖首行；第2页奖金项目表",
+              "role": "record_reference"
+            },
+            {
+              "source_id": "S21",
+              "claim_id": null,
+              "locator": "正文第2段（网页发布时间后第2个正文段）",
               "role": "record_reference"
             }
           ],

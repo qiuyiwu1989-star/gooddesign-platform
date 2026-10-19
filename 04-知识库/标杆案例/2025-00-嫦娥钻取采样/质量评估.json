@@ -1,0 +1,300 @@
+{
+  "as_of": "2026-10-19",
+  "assessed_by": "平台AI内容自评，非专家审核",
+  "assessment_type": "platform_document_self_assessment_not_expert_review",
+  "dimensions": [
+    {
+      "evidence_files": [
+        "档案数据.json"
+      ],
+      "key": "identity",
+      "label": "身份与边界",
+      "level": 3,
+      "next_actions": [
+        "补完整完成人及贡献依据",
+        "核对项目与型号范围"
+      ],
+      "points": 11.25,
+      "rationale": "官方名单支持项目、奖项和完成单位；个人贡献与多型号边界仍需项目方确认。 本轮仅补校方历史线索，评分不变。",
+      "weight": 15
+    },
+    {
+      "evidence_files": [
+        "档案数据.json",
+        "研究日志.json"
+      ],
+      "key": "evidence",
+      "label": "证据质量",
+      "level": 2,
+      "next_actions": [
+        "标明原文和转载链",
+        "核读关键全文"
+      ],
+      "points": 12.5,
+      "rationale": "有来源与定位，仍含摘要和检索线索；缺全面来源链及独立事实复核。",
+      "weight": 25
+    },
+    {
+      "evidence_files": [
+        "档案数据.json",
+        "主档案结构.json"
+      ],
+      "key": "technical",
+      "label": "技术与验证深度",
+      "level": 2,
+      "next_actions": [
+        "补原始试验材料",
+        "建立工况-指标-试验关系"
+      ],
+      "points": 10.0,
+      "rationale": "有原理与试验线索；工程参数、工况和完整验证资料未取得。",
+      "weight": 20
+    },
+    {
+      "evidence_files": [
+        "档案数据.json"
+      ],
+      "key": "decision",
+      "label": "设计过程深度",
+      "level": 1,
+      "next_actions": [
+        "取得关键决策材料",
+        "访谈研发成员"
+      ],
+      "points": 3.75,
+      "rationale": "有公开故事及平台分析；缺备选方案、取舍原始记录和本轮访谈。",
+      "weight": 15
+    },
+    {
+      "evidence_files": [
+        "档案数据.json"
+      ],
+      "key": "ip",
+      "label": "成果关联完整性",
+      "level": 1,
+      "next_actions": [
+        "取得成果清单",
+        "核实权属状态与关系"
+      ],
+      "points": 3.75,
+      "rationale": "披露总量未取得完整清单；候选条目不能视为项目全量成果。",
+      "weight": 15
+    },
+    {
+      "evidence_files": [
+        "原子字段档案.json",
+        "字段规范.json"
+      ],
+      "key": "governance",
+      "label": "维护与可复用治理",
+      "level": 2,
+      "next_actions": [
+        "落实审核责任",
+        "以实际补证检验版本差异"
+      ],
+      "points": 5.0,
+      "rationale": "有字段、来源和任务；开始冻结快照，仍缺实际负责人、审核签署和在线服务。",
+      "weight": 10
+    }
+  ],
+  "gates": {
+    "expert_review_complete": false,
+    "full_research_complete": false,
+    "project_asset_list_confirmed": false
+  },
+  "grade": null,
+  "grade_reason": "试行量规未校准，不自动授予S/A/B等级",
+  "limits": [
+    "得分是有依据的平台自评，权重尚待跨案例校准；不是技术或获奖水平评分",
+    "登记覆盖率只评价现有记录槽位，不代表所有应有资料或质量",
+    "更多资料不保证升分；冲突、删除与纠错必须重新评估",
+    "数据谱系和来源字段存在不代表事实已独立核实"
+  ],
+  "max_score": 100,
+  "metrics": {
+    "known_slots": 547,
+    "known_with_source_or_derivation": 547,
+    "per_entity": [
+      {
+        "coverage": 26.7,
+        "entity": "project",
+        "known": 4,
+        "label": "项目身份",
+        "p0_known": 4,
+        "p0_slots": 5,
+        "records": 1,
+        "slots": 15
+      },
+      {
+        "coverage": 57.1,
+        "entity": "award",
+        "known": 8,
+        "label": "获奖记录",
+        "p0_known": 7,
+        "p0_slots": 7,
+        "records": 1,
+        "slots": 14
+      },
+      {
+        "coverage": 36.4,
+        "entity": "organization",
+        "known": 8,
+        "label": "机构档案",
+        "p0_known": 8,
+        "p0_slots": 8,
+        "records": 2,
+        "slots": 22
+      },
+      {
+        "coverage": 37.5,
+        "entity": "person",
+        "known": 3,
+        "label": "人员档案",
+        "p0_known": 3,
+        "p0_slots": 3,
+        "records": 1,
+        "slots": 8
+      },
+      {
+        "coverage": 36.4,
+        "entity": "problem",
+        "known": 4,
+        "label": "需求与问题",
+        "p0_known": 4,
+        "p0_slots": 5,
+        "records": 1,
+        "slots": 11
+      },
+      {
+        "coverage": 35.7,
+        "entity": "technology",
+        "known": 5,
+        "label": "技术与设计",
+        "p0_known": 4,
+        "p0_slots": 6,
+        "records": 1,
+        "slots": 14
+      },
+      {
+        "coverage": 57.1,
+        "entity": "metric",
+        "known": 40,
+        "label": "指标与测量",
+        "p0_known": 35,
+        "p0_slots": 40,
+        "records": 5,
+        "slots": 70
+      },
+      {
+        "coverage": 54.5,
+        "entity": "innovation",
+        "known": 24,
+        "label": "创新机制",
+        "p0_known": 20,
+        "p0_slots": 24,
+        "records": 4,
+        "slots": 44
+      },
+      {
+        "coverage": 49.3,
+        "entity": "patent",
+        "known": 71,
+        "label": "专利条目",
+        "p0_known": 32,
+        "p0_slots": 36,
+        "records": 6,
+        "slots": 144
+      },
+      {
+        "coverage": 59.3,
+        "entity": "paper",
+        "known": 32,
+        "label": "论文条目",
+        "p0_known": 20,
+        "p0_slots": 21,
+        "records": 3,
+        "slots": 54
+      },
+      {
+        "coverage": 77.8,
+        "entity": "achievement",
+        "known": 28,
+        "label": "成果统计与其他产出",
+        "p0_known": 20,
+        "p0_slots": 24,
+        "records": 4,
+        "slots": 36
+      },
+      {
+        "coverage": 54.5,
+        "entity": "event",
+        "known": 72,
+        "label": "发展事件",
+        "p0_known": 60,
+        "p0_slots": 60,
+        "records": 12,
+        "slots": 132
+      },
+      {
+        "coverage": 69.2,
+        "entity": "validation",
+        "known": 9,
+        "label": "试验与验证",
+        "p0_known": 6,
+        "p0_slots": 7,
+        "records": 1,
+        "slots": 13
+      },
+      {
+        "coverage": 33.3,
+        "entity": "application",
+        "known": 8,
+        "label": "应用与价值",
+        "p0_known": 8,
+        "p0_slots": 10,
+        "records": 2,
+        "slots": 24
+      },
+      {
+        "coverage": 30.0,
+        "entity": "story",
+        "known": 6,
+        "label": "故事与设计决策",
+        "p0_known": 4,
+        "p0_slots": 8,
+        "records": 2,
+        "slots": 20
+      },
+      {
+        "coverage": 67.8,
+        "entity": "source",
+        "known": 185,
+        "label": "证据资料",
+        "p0_known": 147,
+        "p0_slots": 147,
+        "records": 21,
+        "slots": 273
+      },
+      {
+        "coverage": 50.0,
+        "entity": "task",
+        "known": 40,
+        "label": "维护与审核任务",
+        "p0_known": 40,
+        "p0_slots": 56,
+        "records": 8,
+        "slots": 80
+      }
+    ],
+    "record_count": 75,
+    "registered_slots": 974,
+    "registration_coverage": 56.2,
+    "value_states": {
+      "known": 547,
+      "not_obtained": 18,
+      "not_researched": 409
+    }
+  },
+  "policy_version": "quality-rubric-0.1",
+  "score": 46.25
+}

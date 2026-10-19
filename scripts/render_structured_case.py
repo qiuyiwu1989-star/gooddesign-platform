@@ -1,6 +1,7 @@
 # coding: utf-8
 """Structured sections and field research dictionary for the dossier renderer."""
 import json,html,shutil
+from dossier_governance import render as render_governance
 from pathlib import Path
 
 def build(root,p):
@@ -56,7 +57,7 @@ def build(root,p):
  block('ip',5,'专利、论文与成果','披露总量、已找到条目、项目关联和法律状态分别登记，数量口径可以追溯。',ip_summary+'<h3 class="subhead">专利文献目录</h3>'+table('patent',['title','application_number','publication_number','grant_number','project_relation'])+record_library('patent',['application_number','publication_number','grant_number','filing_date','publication_holder','project_relation'])+'<h3 class="subhead">论文目录</h3>'+table('paper',['title','year','venue','doi','reading_scope','project_relation'])+record_library('paper',['authors','year','venue','doi','reading_scope','project_relation'])+record_library('achievement',['kind','count','count_unit','count_basis','statistics_as_of','item_list_obtained']))
  block('history',6,'发展历程与设计故事','研究、承研、任务应用与获奖是不同类型的事件；故事和正式完成人名单也各自保留证据边界。',table('event',['date','title','entity_scope','occurrence'])+record_library('event',['date','date_precision','entity_scope','result'])+cards('story',['narrative','interview_status']))
  block('applications',7,'应用、价值与迁移','先登记已经有来源的历史应用。收益、规模和许可条件分别补证；迁移建议可回到完整正文继续阅读。',cards('application',['scenario','version_id','status','benefit_value','benefit_unit','benefit_basis'])+'<div class="application-links">'+''.join(f'<button data-field="{f}">{label} ↗</button>' for f,label in [('F038','企业迁移机制'),('F039','展馆讲解'),('F040','科技教育'),('F041','远程设备类比')])+'</div>')
- block('governance',8,'证据与持续维护','每个值保留信息状态和出处。未知不是零；资料、审核与项目实际进展分开管理。','<div class="governance-note">20 张来源卡 · 8 项维护任务 · 项目方及专业审核待安排。可从任意来源反查正文。</div>'+record_library('source',['title','publisher','url','reading_scope'])+table('task',['title','priority','status','acceptance'])+record_library('task',['task_type','owner','due_at','reviewer'])+'<div class="download-row"><a href="原子字段档案.json" download>下载本例结构化档案 JSON</a><a href="字段规范.csv" download>下载研究字段 CSV</a></div>')
+ block('governance',8,'证据与持续维护','每个值保留信息状态和出处。未知不是零；资料、审核与项目实际进展分开管理。',render_governance(p)+f'<div class="governance-note">{len(group("source"))} 张来源卡 · {len(group("task"))} 项维护任务 · 项目方及专业审核待安排。可从任意来源反查正文。</div>'+record_library('source',['title','publisher','url','reading_scope'])+table('task',['title','priority','status','acceptance'])+record_library('task',['task_type','owner','due_at','reviewer'])+'<div class="download-row"><a href="原子字段档案.json" download>下载本例结构化档案 JSON</a><a href="字段规范.csv" download>下载研究字段 CSV</a></div>')
  # Machine dictionary + actual value examples share the same semantic key.
  uses={f['key']:[] for f in schema['fields']}
  for r in data['records']:

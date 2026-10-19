@@ -1,0 +1,34 @@
+{
+  "spec": "015",
+  "status": "pass_local_governance",
+  "content_revision": "0.1.1",
+  "tests_passed": 10,
+  "counts": {
+    "sources": 21,
+    "claims": 22,
+    "records": 75,
+    "slots": 974
+  },
+  "checks": [
+    "source_claim_entity_refs",
+    "real_incremental_research_update",
+    "snapshot_manifest_change_checksums",
+    "no_empty_revision",
+    "baseline_not_retroactive_history",
+    "add_remove_replace_preserve_prior_values",
+    "nullable_quality_assessment",
+    "mobile_390px_no_page_overflow",
+    "quality_version_downloads_200",
+    "field_roundtrip_and_print_media",
+    "console_no_errors",
+    "current_inputs_equal_latest_frozen_snapshot"
+  ],
+  "expert_reviewed": false,
+  "production_deployed": false,
+  "mcp_service_running": false,
+  "files_sha256": {
+    "档案.html": "906b39664d98757f756a94cf2b8ab311a0ee28f6f9c4bcfbeb228d1f6634085c",
+    "质量评估.json": "7a844f2b23f9aa249d315ecb1118672baacc57d32f8df908a950faaae4b4ab80",
+    "原子字段档案.json": "bf3b666be4617a435a40bfc19986ebb731fca386f8209cea39f42c539bc8b8ba"
+  }
+}

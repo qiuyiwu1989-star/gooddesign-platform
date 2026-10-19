@@ -315,6 +315,20 @@
       "limits": "",
       "storage": "元信息、研究摘要与链接；未镜像全文或图片",
       "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S21",
+      "title": "实验室邓宗全院士科研团队鼎力支撑我国首次月球采样返回任务",
+      "url": "https://robot.hit.edu.cn/2020/1217/c287a250236/page.htm",
+      "type": "完成单位实验室新闻",
+      "read_scope": "full_web_text",
+      "locator": "正文第2段（网页发布时间后第2个正文段）",
+      "published_at": "2020-12-17",
+      "accessed_at": "2026-10-19",
+      "summary": "补充五号任务研制阶段与作业流程。",
+      "limits": "校方实验室转载校新闻链，非独立项目方确认；不等于2025获奖范围或正式立项批文。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "研究引用；全文及图片再发布权未取得"
     }
   ],
   "claims": [
@@ -639,6 +653,38 @@
       "expert_reviewed": false,
       "note": "这是该论文的地面试验范围，不能直接写成嫦娥五/六号飞行参数。",
       "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C21",
+      "project_id": "2025-00",
+      "field": "development",
+      "value": "校方报道2009年开展采样封装专项论证，2011—2013年完成原理与集成验证研究。",
+      "source_ids": [
+        "S21"
+      ],
+      "locator": "正文第2段（网页发布时间后第2个正文段）",
+      "scope": "change5_development_history",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "完成单位公开自述，未取得原始工程档案。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C22",
+      "project_id": "2025-00",
+      "field": "development",
+      "value": "校方报道2012—2020年联合研制钻取子系统，并介绍2020-12-02月面作业环节。",
+      "source_ids": [
+        "S21"
+      ],
+      "locator": "正文第2段（网页发布时间后第2个正文段）",
+      "scope": "change5_development_history",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "完成单位公开自述，未取得原始工程档案。",
+      "recorded_at": "2026-10-19"
     }
   ],
   "patents": [
@@ -894,12 +940,13 @@
       "id": "E01",
       "date": "2009",
       "date_precision": "year",
-      "title": "团队前期设计与试验积累",
-      "scope": "team_history",
+      "title": "校方报道的采样封装专项论证",
+      "scope": "change5_development_history",
       "source_ids": [
-        "S06"
+        "S06",
+        "S21"
       ],
-      "detail": "校方后续人物报道回溯的研究起点，非项目正式立项日期。",
+      "detail": "2009年论证线索；不是2025获奖项目正式立项批文。",
       "occurrence": "occurred"
     },
     {
@@ -915,6 +962,18 @@
       "occurrence": "occurred"
     },
     {
+      "id": "E11",
+      "date": "2011—2013",
+      "date_precision": "year_range",
+      "title": "原理样机与集成验证阶段",
+      "scope": "change5_development_history",
+      "source_ids": [
+        "S21"
+      ],
+      "detail": "校方报道的专项研究阶段，具体工程记录待补。",
+      "occurrence": "occurred"
+    },
+    {
       "id": "E03",
       "date": "2012-06-18",
       "date_precision": "day",
@@ -925,6 +984,18 @@
         "S13"
       ],
       "detail": "两项不同申请记录体现技术路线探索；不视为项目型号采用证明。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E12",
+      "date": "2012—2020",
+      "date_precision": "year_range",
+      "title": "钻取子系统联合研制阶段",
+      "scope": "change5_development_history",
+      "source_ids": [
+        "S21"
+      ],
+      "detail": "校方报道的产品研制阶段，不作为正式获奖完成人清单。",
       "occurrence": "occurred"
     },
     {
