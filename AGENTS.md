@@ -29,3 +29,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 009新增scripts/exhibit_content_more.py（其余四站）和explore/notebook.js（本机学习笔记）。不得将笔记记录解释为用户能力评估或云端同步。
 
 010研学资料：exhibit_sources.py保存公开来源及核读边界；teacher.*为活动单，build_teacher_sheets.py生成离线文本。读取摘要不得标为全文核验；不得捏造试教反馈。
+
+011档案标杆：数据真源为04-知识库/标杆案例/2025-00-嫦娥钻取采样/档案数据.json；scripts/build_benchmark_dossier.py生成离线HTML/Markdown并检查引用。20条关键陈述、6条专利候选均须保持来源与审核边界；不把D2候选改称专家已审核，不将候选专利标为型号采用。规范增补见项目档案标准-v1/背景适配与执行规范-v1.1.md。

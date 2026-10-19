@@ -129,3 +129,6 @@ release `20260911T015454Z-scroll-fix`。针对用户反馈“为什么还是不�
 
 ## 2026-10-12 GitHub 与部署位置统一
 私有仓库 qiuyiwu1989-star/gooddesign-platform；本地活跃仓库仍在移动硬盘好设计平台。服务器统一 /var/www/gooddesign.qiuyiwu.com，运行时数据 /var/lib/gooddesign，配置 /etc/gooddesign.env。发布脚本改为已推送 Git 提交打包与 REVISION 记录，本次未部署网站。详见 deploy/README.md。
+
+## 2026-10-19 档案规范与首个标杆（011）
+知识库新增规范v1.1及2025-00嫦娥钻取采样公开资料深研档案，HTML本地8773预览。20来源、20关键陈述、6专利候选；结构检查、检索与移动端浏览器通过。D2候选，未获专家或项目方确认；未改动original-app或生产发布。

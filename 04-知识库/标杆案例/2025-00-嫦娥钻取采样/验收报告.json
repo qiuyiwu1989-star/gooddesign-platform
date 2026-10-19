@@ -1,0 +1,32 @@
+{
+  "spec": "011",
+  "date": "2026-10-19",
+  "result": "pass_structural_self_check",
+  "counts": {
+    "sources": 20,
+    "claims": 20,
+    "patents": 6,
+    "knowledge": 4,
+    "events": 10,
+    "papers": 3,
+    "stories": 2,
+    "gaps": 8,
+    "tasks": 8
+  },
+  "checks": [
+    "unique_record_ids",
+    "source_claim_knowledge_references",
+    "search_log_source_references",
+    "gap_task_links",
+    "claim_source_and_locator",
+    "no_fake_expert_review",
+    "patent_status_not_inferred",
+    "source_cards_exist"
+  ],
+  "data_sha256": "1b38d81283d3dfbe2e7162ebbb36a279e217ffa689e58d3a7b68414736dbf459",
+  "limits": [
+    "不是事实独立核验或专家审核",
+    "浏览器验收另行记录",
+    "原始工程材料及专利登记未取得"
+  ]
+}

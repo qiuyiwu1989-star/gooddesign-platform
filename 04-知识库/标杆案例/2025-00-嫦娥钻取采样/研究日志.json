@@ -1,0 +1,206 @@
+[
+  {
+    "id": "Q01",
+    "lane": "身份奖项",
+    "query": "\"嫦娥五/六号月球钻取采样方法及系统设计\" \"金奖\"",
+    "source_ids": [
+      "S01",
+      "S20"
+    ],
+    "outcome": "核实名称、金奖与完成单位；正式个人贡献名单未找到。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": null
+  },
+  {
+    "id": "Q02",
+    "lane": "技术与单位",
+    "query": "site.hit.edu.cn \"嫦娥六号\" \"钻取\" \"2024\" \"软袋\"",
+    "source_ids": [
+      "S03"
+    ],
+    "outcome": "获取单位公开技术说明，并排除其他载荷内容。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": null
+  },
+  {
+    "id": "Q03",
+    "lane": "项目官网与合作单位",
+    "query": "\"嫦娥\" \"圣视环宇\" \"设计\"",
+    "source_ids": [
+      "S02"
+    ],
+    "outcome": "找到官网项目详情；未找到合作单位独立分工证据。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": "项目清单/团队确认/官方专利登记未取得"
+  },
+  {
+    "id": "Q04",
+    "lane": "专利线索",
+    "query": "\"月壤\" \"软袋\" \"全齐全\" 专利",
+    "source_ids": [
+      "S12",
+      "S13",
+      "S14",
+      "S15"
+    ],
+    "outcome": "通过专利文献及引用继续展开，保留候选而非项目确证。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": null
+  },
+  {
+    "id": "Q05",
+    "lane": "专利一手核读",
+    "query": "按已知公开号打开文献页及原始PDF：CN107503698B、CN109323884B等",
+    "source_ids": [
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15"
+    ],
+    "outcome": "两件可解析中文公开文本；另三件扫描文本未完整核读；官方登记及族谱未完成。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": "项目清单/团队确认/官方专利登记未取得"
+  },
+  {
+    "id": "Q06",
+    "lane": "论文",
+    "query": "\"月面钻取采样\" \"Double\" coring paper；\"月球钻取\" \"首创\" \"软袋\"",
+    "source_ids": [
+      "S07",
+      "S08",
+      "S09"
+    ],
+    "outcome": "一篇核读HTML全文，两篇核读发布页摘要；不将参照论文归入获奖清单。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": null
+  },
+  {
+    "id": "Q07",
+    "lane": "故事",
+    "query": "site.hit.edu.cn \"月球\" \"钻取\" \"专利\"",
+    "source_ids": [
+      "S06",
+      "S16"
+    ],
+    "outcome": "找到人物报道；教师主页正文读取不稳定，仅保留摘要线索。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": null
+  },
+  {
+    "id": "Q08",
+    "lane": "实际结果",
+    "query": "site.cnsa.gov.cn \"嫦娥六号\" \"1935.3\"；site.cnsa.gov.cn 嫦娥五号 1731 克 2020 12 19",
+    "source_ids": [
+      "S04",
+      "S05"
+    ],
+    "outcome": "核对任务总量与时间，不将总量替代钻取量。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": null
+  },
+  {
+    "id": "Q09",
+    "lane": "奖项背景",
+    "query": "site.cmes.org \"好设计\" \"2015\" \"设立\"",
+    "source_ids": [
+      "S17",
+      "S18"
+    ],
+    "outcome": "与平台内部定位分开；不认定平台已有官方授权。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": null
+  },
+  {
+    "id": "Q10",
+    "lane": "选例比较",
+    "query": "site.cas.cn \"蛟龙号\" \"专利\" \"7062\"；site.cmes.org \"蛟龙\" \"好设计\"",
+    "source_ids": [
+      "S19"
+    ],
+    "outcome": "比较材料可得性，未开展全部560案资料完整度排名。",
+    "searched_at": "2026-10-19",
+    "tool": "web search/open",
+    "language": [
+      "zh",
+      "en"
+    ],
+    "geography": "公开中文为主，含英文专利索引",
+    "time_window": "历史起点至2026-10-19",
+    "scope": "研究型结果筛读与命中文献展开，不是完整数据库导出",
+    "blocked": null
+  }
+]

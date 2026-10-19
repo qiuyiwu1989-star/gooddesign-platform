@@ -1,0 +1,1296 @@
+{
+  "schema_version": "1.1-research-draft",
+  "project_id": "2025-00",
+  "title": "嫦娥五/六号月球钻取采样方法及系统设计",
+  "as_of": "2026-10-19",
+  "revision": "benchmark-v1",
+  "status": "深研首版·待项目方与专业审核",
+  "depth": "D2_candidate",
+  "expert_reviewed": false,
+  "project_lifecycle": "已在历史任务应用；截至本轮最新产品状态待项目方确认",
+  "archive_lifecycle": "研究整理完成，专业审核待安排",
+  "scope": {
+    "included": [
+      "获奖钻取采样系统",
+      "软袋取芯及相关技术路线",
+      "地面支持与验证",
+      "两次任务的分项与总量口径"
+    ],
+    "excluded": [
+      "嫦娥五/六号整器全部技术",
+      "其他载荷和团队全部专利",
+      "未经确认的后续工程进度"
+    ]
+  },
+  "award": {
+    "year": 2025,
+    "edition": 10,
+    "level": "金奖",
+    "official_number": "12025070107",
+    "organizations": [
+      "哈尔滨工业大学",
+      "北京圣视环宇科技有限公司"
+    ],
+    "source_ids": [
+      "S01"
+    ]
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "title": "2025年第十届好设计奖获奖项目及颁发奖金项目名单",
+      "url": "https://www.cmes.org/cmes/upload/2025/10-28/10-30-450880-485380035.pdf",
+      "type": "奖项官方名单",
+      "read_scope": "pdf_text",
+      "locator": "第1页金奖首行；第2页奖金项目表",
+      "published_at": "2025-10-28",
+      "accessed_at": "2026-10-19",
+      "summary": "核实项目名称、编号12025070107、金奖及两个完成单位。名单不提供个人贡献分工。",
+      "limits": "",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S02",
+      "title": "奖项官网项目详情",
+      "url": "https://cgd.cmes.org/exhibit/detail/bc7ec9de3b3e44e49e3e10dea86c7f6d",
+      "type": "官方展览项目陈述",
+      "read_scope": "full_web_text",
+      "locator": "项目简介第1—2段、创新条目1—6、结尾成果段",
+      "published_at": null,
+      "accessed_at": "2026-10-19",
+      "summary": "记载项目2011年承研任务，阐述采样方案、软袋取芯、协同操控、地面验证及两次应用；列出钻样量和成果总数。",
+      "limits": "来源属于项目介绍；“首次”、成果总数等按来源陈述保存，未完成独立查新或逐项清单核验。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S03",
+      "title": "哈工大助力嫦娥六号带珍宝回家",
+      "url": "https://news.hit.edu.cn/2024/0625/c1510a236100/page.htm",
+      "type": "完成单位新闻",
+      "read_scope": "full_web_text",
+      "locator": "采集月球土特产样本部分：团队、智能支持与反演系统、取芯软袋及地面平台段",
+      "published_at": "2024-06-25",
+      "accessed_at": "2026-10-19",
+      "summary": "说明月背通信与地质约束，介绍邓宗全牵头团队、遥测支持、软袋研制和地面演练平台。",
+      "limits": "单位自述；全文还包含机械臂/GNC等其他成果，本档案不将其全部计入获奖系统。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S04",
+      "title": "嫦娥五号任务月球样品交接仪式",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758838/c6810938/content.html",
+      "type": "国家航天局任务公告",
+      "read_scope": "full_web_text",
+      "locator": "交接和初步测量段、任务时间回顾段",
+      "published_at": "2020-12-19",
+      "accessed_at": "2026-10-19",
+      "summary": "公告记录2020年发射、返回及样品交接，约1731克为任务样品总量。",
+      "limits": "总量包含不同采样方式，不能写成钻取子系统产量。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S05",
+      "title": "嫦娥六号样品交接",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758844/n10518102/n10518147/c10567320/content.html",
+      "type": "国家航天局任务公告",
+      "read_scope": "full_web_text",
+      "locator": "测量结果段、末段任务时间",
+      "published_at": "2024-06-28",
+      "accessed_at": "2026-10-19",
+      "summary": "公告记录任务带回1935.3克样品及2024年发射、返回和交接事件。",
+      "limits": "任务总量，不是单独钻取量。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S06",
+      "title": "哈工大邓宗全院士登上央视闪亮的名字",
+      "url": "https://news.hit.edu.cn/2025/1128/c11819a240171/page.htm",
+      "type": "完成单位人物报道",
+      "read_scope": "full_web_text",
+      "locator": "2009年至2020年采样攻关段；郭宏伟谈任务前期储备段",
+      "published_at": "2025-11-28",
+      "accessed_at": "2026-10-19",
+      "summary": "回顾长期设计、试验积累及在正式任务前开展技术储备的团队工作方式。",
+      "limits": "人物报道涉及整个团队多项工程，不能将全部荣誉和专利总数归入本项目。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S07",
+      "title": "模拟月壤钻进取样量影响因素分析及试验研究",
+      "url": "https://html.rhhz.net/BJHKHTDXXBZRB/20151111.htm",
+      "type": "研究论文原文",
+      "read_scope": "full_article_text",
+      "locator": "摘要、第1节原理、第2节模型；文末书目信息",
+      "published_at": "2015-02-25",
+      "accessed_at": "2026-10-19",
+      "summary": "2015年论文基于极限平衡分析软袋取心，并用HIT-LS1#和HIT-2钻具试验；摘要报告模型预测与试验平均误差小于5%。",
+      "limits": "模拟物和特定钻具下的研究结论，不是月面整体系统误差或飞行指标。 核读可见全文文字，公式图像未逐式重算。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S08",
+      "title": "月面钻取式自动采样机构的设计与分析",
+      "url": "https://journal26.magtechjournal.com/kjkxjs/CN/Y2012/V32/I6/16",
+      "type": "研究论文发布页",
+      "read_scope": "abstract_only",
+      "locator": "题名、作者、DOI及摘要",
+      "published_at": "2012-12-25",
+      "accessed_at": "2026-10-19",
+      "summary": "2012年论文提出同轴双管与柔性袋采样方案，适合作为技术路径参照。",
+      "limits": "只核读摘要；作者单位为中国空间技术研究院，暂不计入获奖项目论文清单。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S09",
+      "title": "深层月壤钻取冗余绕组电机控制方法",
+      "url": "https://jdse.bit.edu.cn/sktcxb/article/doi/10.15982/j.issn.2096-9287.2021.20210014?viewType=citedby-info",
+      "type": "研究论文发布页",
+      "read_scope": "abstract_only",
+      "locator": "题名、作者及摘要",
+      "published_at": null,
+      "accessed_at": "2026-10-19",
+      "summary": "摘要介绍双备份绕组驱动、建模和样机试验，并明确提及对嫦娥五号任务的支持。",
+      "limits": "全文与出版卷期未核读；与获奖对象的正式成果归属仍待项目方确认。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S10",
+      "title": "CN107503698B原始专利公开文本",
+      "url": "https://patentimages.storage.googleapis.com/8b/85/cf/752dd5960f0f45/CN107503698B.pdf",
+      "type": "专利公开文本镜像",
+      "read_scope": "pdf_partial",
+      "locator": "PDF第1页著录摘要、第2页权利要求1；说明书技术背景",
+      "published_at": "2020-06-23",
+      "accessed_at": "2026-10-19",
+      "summary": "中文首页列权利人为哈尔滨工业大学；技术涉及导流环、取芯软袋与入口防护。",
+      "limits": "公开文本证明文献内容及当时著录，不证明现时权属/有效性或已在飞行产品采用。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S11",
+      "title": "CN109323884B原始专利公开文本",
+      "url": "https://patentimages.storage.googleapis.com/54/0d/a0/806f063bfb77b7/CN109323884B.pdf",
+      "type": "专利公开文本镜像",
+      "read_scope": "pdf_partial",
+      "locator": "PDF第1页著录摘要、第2页起权利要求1",
+      "published_at": "2021-02-19",
+      "accessed_at": "2026-10-19",
+      "summary": "中文首页列权利人为哈尔滨工业大学，发明内容涉及降低软袋封口行程的拉索系扣结构。",
+      "limits": "与获奖成果的具体关联及当前法律状态均待专门核验。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S12",
+      "title": "CN102720501A文献与著录页",
+      "url": "https://patents.google.com/patent/CN102720501A/zh",
+      "type": "专利文献聚合页",
+      "read_scope": "patent_text",
+      "locator": "Info、Description、Claims 1、Publications",
+      "published_at": "2012-10-10",
+      "accessed_at": "2026-10-19",
+      "summary": "2012年申请的取心机构采用折叠软袋内翻收集，页面可读说明书与权利要求。",
+      "limits": "仅按文献登记；平台状态不作为官方现时状态，英文机构名不直接规范化。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S13",
+      "title": "CN102721572B文献与著录页",
+      "url": "https://patents.google.com/patent/CN102721572B/zh",
+      "type": "专利文献聚合页",
+      "read_scope": "patent_text",
+      "locator": "Info、摘要、著录时间",
+      "published_at": "2013-12-04",
+      "accessed_at": "2026-10-19",
+      "summary": "记录双层软袋取心采样方案，2012年申请、2013年授权公告。",
+      "limits": "尚未核读扫描版中文首页；法定申请人名称和当前状态待官方登记核对。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S14",
+      "title": "CN104062141B文献与著录页",
+      "url": "https://patents.google.com/patent/CN104062141B/zh",
+      "type": "专利文献聚合页",
+      "read_scope": "patent_text",
+      "locator": "Info、摘要、著录时间",
+      "published_at": "2016-08-17",
+      "accessed_at": "2026-10-19",
+      "summary": "涉及月壤钻探取心机构性能测试平台，2014年申请、2016年授权公告。",
+      "limits": "聚合页出现现权利人与原申请人不同的线索，须经官方登记复核，暂不作为权属变更事实。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S15",
+      "title": "CN102745364B文献与著录页",
+      "url": "https://patents.google.com/patent/CN102745364B/zh",
+      "type": "专利文献聚合页",
+      "read_scope": "patent_text",
+      "locator": "Info、摘要、著录时间",
+      "published_at": "2013-12-04",
+      "accessed_at": "2026-10-19",
+      "summary": "涉及装有月壤样品软袋的缠绕、整型与转送，2012年申请、2013年授权公告。",
+      "limits": "机构关系与当前权属待核验，技术相似不代表型号采用。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S16",
+      "title": "星球采样技术教师主页检索线索",
+      "url": "https://homepage.hit.edu.cn/qiquan",
+      "type": "教师个人主页",
+      "read_scope": "snippet_only",
+      "locator": "搜索结果显示的月面钻取采样条目",
+      "published_at": null,
+      "accessed_at": "2026-10-19",
+      "summary": "检索摘要出现软袋、试验平台和采样量信息；打开页正文未稳定返回。",
+      "limits": "只作为线索，不独立支撑本档案事实。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S17",
+      "title": "好设计奖与双环传动专题研讨",
+      "url": "https://www.cmes.org/dynamic/ff254150b3e44e5394377c1bc41ed8be.html",
+      "type": "学会官方新闻",
+      "read_scope": "full_web_text",
+      "locator": "关于2015年设立与产业联动的段落",
+      "published_at": "2026-02-04",
+      "accessed_at": "2026-10-19",
+      "summary": "用于核对奖项与产业创新连接的背景；不作为平台已获正式授权或合作合同依据。",
+      "limits": "",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S18",
+      "title": "官方关于好设计页面",
+      "url": "https://cgd.cmes.org/about/aboutView",
+      "type": "奖项官方网页",
+      "read_scope": "partial_web_text",
+      "locator": "检索摘要与可见页面",
+      "published_at": null,
+      "accessed_at": "2026-10-19",
+      "summary": "检索能获取奖项设立与理念简介，但打开页主要返回联盟内容。",
+      "limits": "完整背景引用改用学会公告；记录页面读取差异。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S19",
+      "title": "蛟龙号水声通信团队研制纪实（选例对照）",
+      "url": "https://ioa.cas.cn/webold/xwzx/mtbd/201301/t20130121_3754181.html",
+      "type": "中科院研究所人物技术报道",
+      "read_scope": "search_result_text",
+      "locator": "通信试验与双系统方案段",
+      "published_at": "2013-01-21",
+      "accessed_at": "2026-10-19",
+      "summary": "蛟龙号存在技术故事材料，但本轮未核对其完整奖项档案与项目专利清单。",
+      "limits": "只供选例比较，不作为嫦娥系统的证据。",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    },
+    {
+      "id": "S20",
+      "title": "2025获奖项目奖金发放",
+      "url": "https://www.cmes.org/dynamic/92f39da1291742cc87e815bb34278324.html",
+      "type": "学会官方新闻",
+      "read_scope": "search_result_text",
+      "locator": "获奖项目及奖励段",
+      "published_at": "2025-11-12",
+      "accessed_at": "2026-10-19",
+      "summary": "提供2025年项目奖励后续线索，未单独判定本项目具体奖金。",
+      "limits": "",
+      "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+      "rights": "仅研究引用；图片及全文再发布权限未取得"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "project_id": "2025-00",
+      "field": "identity",
+      "value": "项目为嫦娥五/六号月球钻取采样方法及系统设计；2025年第十届金奖，官方编号12025070107。",
+      "source_ids": [
+        "S01"
+      ],
+      "locator": "第1页金奖首行",
+      "scope": "project",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C02",
+      "project_id": "2025-00",
+      "field": "organizations",
+      "value": "获奖完成单位：哈尔滨工业大学、北京圣视环宇科技有限公司。",
+      "source_ids": [
+        "S01"
+      ],
+      "locator": "第1页金奖首行",
+      "scope": "project",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C03",
+      "project_id": "2025-00",
+      "field": "start",
+      "value": "奖项项目介绍将承研国家任务起点记为2011年。",
+      "source_ids": [
+        "S02"
+      ],
+      "locator": "项目简介第2段",
+      "scope": "project",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "区别于团队前期研究起点。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C04",
+      "project_id": "2025-00",
+      "field": "constraints",
+      "value": "未知月壤、极端环境、重量/功耗/空间与通信限制共同约束设计。",
+      "source_ids": [
+        "S02",
+        "S03"
+      ],
+      "locator": "S02项目简介第1段；S03月背约束段",
+      "scope": "project",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C05",
+      "project_id": "2025-00",
+      "field": "sampling_principle",
+      "value": "采用双管与内翻软袋组织取芯，以减少样心相对滑移并保留层序。",
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "locator": "S07第1节；S12说明书和权利要求1",
+      "scope": "technical_lineage",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "解释技术路径，不据此确认某件专利在型号上的实施。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C06",
+      "project_id": "2025-00",
+      "field": "sample_mass",
+      "value": "嫦娥五号钻取样品260克。",
+      "source_ids": [
+        "S02"
+      ],
+      "locator": "结尾成果段",
+      "scope": "CE5_drilling",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "项目官网陈述，待独立任务分项计量材料复核。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C07",
+      "project_id": "2025-00",
+      "field": "sample_mass",
+      "value": "嫦娥六号钻取样品320克。",
+      "source_ids": [
+        "S02"
+      ],
+      "locator": "结尾成果段",
+      "scope": "CE6_drilling",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "项目官网陈述，待独立任务分项计量材料复核。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C08",
+      "project_id": "2025-00",
+      "field": "sample_mass",
+      "value": "嫦娥五号任务样品总量约1731克。",
+      "source_ids": [
+        "S04"
+      ],
+      "locator": "初步测量段",
+      "scope": "CE5_mission_context",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "含任务多种采样方式，不能与C06互换。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C09",
+      "project_id": "2025-00",
+      "field": "sample_mass",
+      "value": "嫦娥六号任务样品总量1935.3克。",
+      "source_ids": [
+        "S05"
+      ],
+      "locator": "测量结果段",
+      "scope": "CE6_mission_context",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "不能作为钻取子系统产量或与C07认定矛盾。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C10",
+      "project_id": "2025-00",
+      "field": "validation",
+      "value": "2015年研究在HIT-LS1#模拟物与HIT-2钻具条件下，取心率模型预测与试验的平均误差率小于5%。",
+      "source_ids": [
+        "S07"
+      ],
+      "locator": "摘要、第3.2节及表1",
+      "scope": "ground_research",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "不外推为飞行系统精度。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C11",
+      "project_id": "2025-00",
+      "field": "operations",
+      "value": "哈工大介绍其遥测驱动的智能支持与反演系统服务于嫦娥六号钻取作业决策。",
+      "source_ids": [
+        "S03"
+      ],
+      "locator": "月面采样智能支持与反演系统段",
+      "scope": "CE6_ground_support",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C12",
+      "project_id": "2025-00",
+      "field": "materials",
+      "value": "哈工大介绍高分子团队研制绳与袋一体化取芯软袋，支持样品封装。",
+      "source_ids": [
+        "S03"
+      ],
+      "locator": "化工与化学学院取芯软袋段",
+      "scope": "CE6_softbag",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C13",
+      "project_id": "2025-00",
+      "field": "testing",
+      "value": "哈工大介绍钻取地面支持平台用于在线监视、决策支持及全流程演练。",
+      "source_ids": [
+        "S03"
+      ],
+      "locator": "航天学院地面验证支持平台段",
+      "scope": "CE6_ground_support",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C14",
+      "project_id": "2025-00",
+      "field": "team_history",
+      "value": "校方人物报道回顾2009—2020年的月表采样设计与试验积累。",
+      "source_ids": [
+        "S06"
+      ],
+      "locator": "2009年至2020年段",
+      "scope": "team_history",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "前期研究阶段，不覆盖C03承研节点。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C15",
+      "project_id": "2025-00",
+      "field": "ip_totals",
+      "value": "项目官网自述授权发明专利50件、登记软著1项、专著2部、SCI/EI论文60篇。",
+      "source_ids": [
+        "S02"
+      ],
+      "locator": "结尾成果段",
+      "scope": "project",
+      "nature": "source_statement",
+      "review_status": "source_statement_not_enumerated",
+      "expert_reviewed": false,
+      "note": "累计清单、统计时点和与本案的逐项关联尚未取得；本轮候选数不能补足此总数。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C16",
+      "project_id": "2025-00",
+      "field": "future_reuse",
+      "value": "项目官网陈述相关方法已用于后续月球和火星采样任务的研究。",
+      "source_ids": [
+        "S02"
+      ],
+      "locator": "结尾成果段",
+      "scope": "project",
+      "nature": "source_statement",
+      "review_status": "source_statement_not_independently_verified",
+      "expert_reviewed": false,
+      "note": "不表示未来任务已完成或转化收益已实现。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C17",
+      "project_id": "2025-00",
+      "field": "patent_record",
+      "value": "CN107503698B中文授权文本首页记载权利人为哈尔滨工业大学，授权公告日2020-06-23。",
+      "source_ids": [
+        "S10"
+      ],
+      "locator": "PDF第1页(73)、页脚日期",
+      "scope": "patent_publication",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C18",
+      "project_id": "2025-00",
+      "field": "patent_record",
+      "value": "CN109323884B中文授权文本首页记载权利人为哈尔滨工业大学，授权公告日2021-02-19。",
+      "source_ids": [
+        "S11"
+      ],
+      "locator": "PDF第1页(73)、页脚日期",
+      "scope": "patent_publication",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C19",
+      "project_id": "2025-00",
+      "field": "team",
+      "value": "哈工大2024年新闻将月背采样多学科团队牵头人记为邓宗全。",
+      "source_ids": [
+        "S03"
+      ],
+      "locator": "邓宗全牵头团队段",
+      "scope": "reported_team",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "不是获奖全体完成人名单。",
+      "recorded_at": "2026-10-19"
+    },
+    {
+      "id": "C20",
+      "project_id": "2025-00",
+      "field": "test_conditions",
+      "value": "2015年模拟试验研究的工况包含50、90、150、210、250 r/min回转转速，以及50、90、130、170、210 mm/min进尺速度。",
+      "source_ids": [
+        "S07"
+      ],
+      "locator": "第3.2节试验规程",
+      "scope": "ground_research",
+      "nature": "source_statement",
+      "review_status": "source_read",
+      "expert_reviewed": false,
+      "note": "这是该论文的地面试验范围，不能直接写成嫦娥五/六号飞行参数。",
+      "recorded_at": "2026-10-19"
+    }
+  ],
+  "patents": [
+    {
+      "id": "P01",
+      "publication": "CN102720501A",
+      "application_number": "201210200209.3",
+      "title": "能保持原始地质层理信息的取心机构",
+      "filing_date": "2012-06-18",
+      "grant_publication_date": null,
+      "source_ids": [
+        "S12"
+      ],
+      "mechanism_ids": [
+        "K01"
+      ],
+      "relationship": "technical_candidate",
+      "relationship_evidence": "内翻软袋与层序保持原理相关，团队发明人重叠；未找到项目清单逐项确认。",
+      "association_review": "pending_project_team_confirmation",
+      "adopted_in_flight_hardware": "unknown",
+      "reading_level": "说明书/权利要求网页文本",
+      "official_publication_url": "https://patentimages.storage.googleapis.com/50/b6/ce/bd200e8bfdd292/CN102720501A.pdf",
+      "publication_holder_zh": null,
+      "current_holder": null,
+      "current_legal_status": "not_officially_verified",
+      "legal_status_as_of": null,
+      "family_id": null,
+      "family_status": "not_verified",
+      "statistics_scope": "六条独立申请候选；非同族总数；非项目已确认专利总量"
+    },
+    {
+      "id": "P02",
+      "publication": "CN102721572B",
+      "application_number": "201210200212.5",
+      "title": "双层软袋钻探取心采样机构",
+      "filing_date": "2012-06-18",
+      "grant_publication_date": "2013-12-04",
+      "source_ids": [
+        "S13"
+      ],
+      "mechanism_ids": [
+        "K01"
+      ],
+      "relationship": "technical_candidate",
+      "relationship_evidence": "对比软袋构型的技术候选；不能等同实际采用的双管单袋型号方案。",
+      "association_review": "pending_project_team_confirmation",
+      "adopted_in_flight_hardware": "unknown",
+      "reading_level": "聚合页文献文本",
+      "official_publication_url": null,
+      "publication_holder_zh": null,
+      "current_holder": null,
+      "current_legal_status": "not_officially_verified",
+      "legal_status_as_of": null,
+      "family_id": null,
+      "family_status": "not_verified",
+      "statistics_scope": "六条独立申请候选；非同族总数；非项目已确认专利总量"
+    },
+    {
+      "id": "P03",
+      "publication": "CN104062141B",
+      "application_number": "201410312045.2",
+      "title": "月壤钻探取心机构性能测试系统",
+      "filing_date": "2014-07-03",
+      "grant_publication_date": "2016-08-17",
+      "source_ids": [
+        "S14"
+      ],
+      "mechanism_ids": [
+        "K03"
+      ],
+      "relationship": "technical_candidate",
+      "relationship_evidence": "性能试验链技术相关；现权利人线索与原申请人不同，需官方登记核对。",
+      "association_review": "pending_project_team_confirmation",
+      "adopted_in_flight_hardware": "unknown",
+      "reading_level": "聚合页文献文本",
+      "official_publication_url": null,
+      "publication_holder_zh": null,
+      "current_holder": null,
+      "current_legal_status": "not_officially_verified",
+      "legal_status_as_of": null,
+      "family_id": null,
+      "family_status": "not_verified",
+      "statistics_scope": "六条独立申请候选；非同族总数；非项目已确认专利总量"
+    },
+    {
+      "id": "P04",
+      "publication": "CN107503698B",
+      "application_number": "201710847535.6",
+      "title": "一种带有导流环的月壤钻进取芯机构",
+      "filing_date": "2017-09-19",
+      "grant_publication_date": "2020-06-23",
+      "source_ids": [
+        "S10"
+      ],
+      "mechanism_ids": [
+        "K02"
+      ],
+      "relationship": "technical_candidate",
+      "relationship_evidence": "入口保护和同轴保持机制与钻取相关，具体飞行型号映射待确认。",
+      "association_review": "pending_project_team_confirmation",
+      "adopted_in_flight_hardware": "unknown",
+      "reading_level": "原始公开文本首页及权利要求1",
+      "official_publication_url": "https://patentimages.storage.googleapis.com/8b/85/cf/752dd5960f0f45/CN107503698B.pdf",
+      "publication_holder_zh": "哈尔滨工业大学",
+      "current_holder": null,
+      "current_legal_status": "not_officially_verified",
+      "legal_status_as_of": null,
+      "family_id": null,
+      "family_status": "not_verified",
+      "statistics_scope": "六条独立申请候选；非同族总数；非项目已确认专利总量"
+    },
+    {
+      "id": "P05",
+      "publication": "CN109323884B",
+      "application_number": "201811438038.1",
+      "title": "一种星壤取芯软袋用拉绳系扣快速封口组件",
+      "filing_date": "2018-11-27",
+      "grant_publication_date": "2021-02-19",
+      "source_ids": [
+        "S11"
+      ],
+      "mechanism_ids": [
+        "K02"
+      ],
+      "relationship": "technical_candidate",
+      "relationship_evidence": "针对封口行程与采集量的结构方案；不以授权晚于任务时间判断是否实际采用。",
+      "association_review": "pending_project_team_confirmation",
+      "adopted_in_flight_hardware": "unknown",
+      "reading_level": "原始公开文本首页及权利要求1",
+      "official_publication_url": "https://patentimages.storage.googleapis.com/54/0d/a0/806f063bfb77b7/CN109323884B.pdf",
+      "publication_holder_zh": "哈尔滨工业大学",
+      "current_holder": null,
+      "current_legal_status": "not_officially_verified",
+      "legal_status_as_of": null,
+      "family_id": null,
+      "family_status": "not_verified",
+      "statistics_scope": "六条独立申请候选；非同族总数；非项目已确认专利总量"
+    },
+    {
+      "id": "P06",
+      "publication": "CN102745364B",
+      "application_number": "201210250303.X",
+      "title": "动力内置式月壤样品软袋缠绕整型转送装置",
+      "filing_date": "2012-07-19",
+      "grant_publication_date": "2013-12-04",
+      "source_ids": [
+        "S15"
+      ],
+      "mechanism_ids": [
+        "K02"
+      ],
+      "relationship": "technical_candidate",
+      "relationship_evidence": "关联软袋收纳与转送环节，仍需项目团队提供成果对应表。",
+      "association_review": "pending_project_team_confirmation",
+      "adopted_in_flight_hardware": "unknown",
+      "reading_level": "聚合页文献文本",
+      "official_publication_url": null,
+      "publication_holder_zh": null,
+      "current_holder": null,
+      "current_legal_status": "not_officially_verified",
+      "legal_status_as_of": null,
+      "family_id": null,
+      "family_status": "not_verified",
+      "statistics_scope": "六条独立申请候选；非同族总数；非项目已确认专利总量"
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "K01",
+      "title": "把“取到样品”转成“保留样品信息”",
+      "problem": "取样过程可能扰动颗粒排列，取到重量不能独自证明保留了地质信息。",
+      "measure": "钻具负责破土，软袋内翻收集样心，围绕样心与容器相对运动设计。",
+      "mechanism": "将材料搬运问题改写成信息保真问题，以运动关系和界面控制降低相对滑移。",
+      "claim_ids": [
+        "C05",
+        "C10"
+      ],
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "nature": "platform_analysis",
+      "tradeoffs": "软袋摩擦、柔性件可靠性和封口性能成为新的关键约束。",
+      "transfer": "可探索环境分层采样、脆弱样本转移等场景。",
+      "boundary": "粒径、黏聚性、污染控制和温度不同，必须重新试验；不直接声称适用于生物样本。",
+      "validation": "比较传统收集与内翻收集的层序偏差、回收率和卡滞次数。"
+    },
+    {
+      "id": "K02",
+      "title": "围绕完整采样链设计薄弱环节",
+      "problem": "进样成功后仍可能在提芯、封口、整型或转送环节失效。",
+      "measure": "研究入口导流保护、低行程封口和软袋收纳转送的衔接。",
+      "mechanism": "把任务成功条件分解到多个接口，关注相邻动作的兼容而非单项性能。",
+      "claim_ids": [
+        "C17",
+        "C18"
+      ],
+      "source_ids": [
+        "S10",
+        "S11",
+        "S15"
+      ],
+      "nature": "platform_analysis",
+      "tradeoffs": "机制增加会影响质量、体积与系统复杂性。",
+      "transfer": "为机器人末端工具、连续工序的接口研究提供类比。",
+      "boundary": "专利证明公开了方案，未证明这些方案已共同集成在该获奖型号。",
+      "validation": "建立动作链故障表，测量封口行程、转送可靠性和接口失效。"
+    },
+    {
+      "id": "K03",
+      "title": "用分层证据逼近难以完全复现的环境",
+      "problem": "地面难以完整复现月面全部条件。",
+      "measure": "模拟物研究、机构性能试验、系统演练和任务反馈形成不同层级的证据。",
+      "mechanism": "将每项试验覆盖的条件明确化，再组合论证；保留尚未覆盖的风险。",
+      "claim_ids": [
+        "C10",
+        "C13"
+      ],
+      "source_ids": [
+        "S07",
+        "S03",
+        "S14"
+      ],
+      "nature": "platform_analysis",
+      "tradeoffs": "模型、模拟物与真实环境的差异仍需解释。",
+      "transfer": "适用于讨论高风险装备的验证架构。",
+      "boundary": "不能以单项模拟误差代替真实环境可靠性。",
+      "validation": "建立工况—试验—指标覆盖矩阵，登记未覆盖项。"
+    },
+    {
+      "id": "K04",
+      "title": "把远程监控推进为人机协同判断",
+      "problem": "月背通信窗口、未知地质和异常工况限制现场操作。",
+      "measure": "基于遥测监视、状态反演和地面演练支持作业决策。",
+      "mechanism": "围绕不确定性组织观测、解释、建议和人的决策接口。",
+      "claim_ids": [
+        "C04",
+        "C11",
+        "C13"
+      ],
+      "source_ids": [
+        "S03"
+      ],
+      "nature": "platform_analysis",
+      "tradeoffs": "依赖传感信息、模型校准及操作者判断。",
+      "transfer": "可类比远程工业设备维护和异常诊断。",
+      "boundary": "只迁移信息闭环思想，控制算法、响应时延与安全约束需重新定义。",
+      "validation": "以历史异常回放比较诊断准确率、误报和响应时间。"
+    }
+  ],
+  "events": [
+    {
+      "id": "E01",
+      "date": "2009",
+      "date_precision": "year",
+      "title": "团队前期设计与试验积累",
+      "scope": "team_history",
+      "source_ids": [
+        "S06"
+      ],
+      "detail": "校方后续人物报道回溯的研究起点，非项目正式立项日期。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E02",
+      "date": "2011",
+      "date_precision": "year",
+      "title": "项目承研采样任务",
+      "scope": "award_project",
+      "source_ids": [
+        "S02"
+      ],
+      "detail": "项目官网自述承研国家任务起点。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E03",
+      "date": "2012-06-18",
+      "date_precision": "day",
+      "title": "早期取芯专利申请线索",
+      "scope": "technical_lineage",
+      "source_ids": [
+        "S12",
+        "S13"
+      ],
+      "detail": "两项不同申请记录体现技术路线探索；不视为项目型号采用证明。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E04",
+      "date": "2015-02-25",
+      "date_precision": "day",
+      "title": "模拟月壤取样研究网络发表",
+      "scope": "research",
+      "source_ids": [
+        "S07"
+      ],
+      "detail": "原文记录网络出版时间；期刊卷期为2015年41卷11期。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E05",
+      "date": "2020-12-17",
+      "date_precision": "day",
+      "title": "嫦娥五号返回",
+      "scope": "mission_context",
+      "source_ids": [
+        "S04"
+      ],
+      "detail": "任务背景里程碑；钻样贡献单独记录。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E06",
+      "date": "2020-12-19",
+      "date_precision": "day",
+      "title": "嫦娥五号样品交接",
+      "scope": "mission_context",
+      "source_ids": [
+        "S04"
+      ],
+      "detail": "任务约1731克样品进入后续科学研究。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E07",
+      "date": "2024-05-03",
+      "date_precision": "day",
+      "title": "嫦娥六号发射",
+      "scope": "mission_context",
+      "source_ids": [
+        "S05"
+      ],
+      "detail": "任务背景里程碑。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E08",
+      "date": "2024-06-25",
+      "date_precision": "day",
+      "title": "嫦娥六号返回",
+      "scope": "mission_context",
+      "source_ids": [
+        "S05"
+      ],
+      "detail": "任务完成月背采样返回。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E09",
+      "date": "2024-06-28",
+      "date_precision": "day",
+      "title": "嫦娥六号样品交接",
+      "scope": "mission_context",
+      "source_ids": [
+        "S05"
+      ],
+      "detail": "1935.3克为任务总量。",
+      "occurrence": "occurred"
+    },
+    {
+      "id": "E10",
+      "date": "2025",
+      "date_precision": "year",
+      "title": "第十届好设计奖金奖",
+      "scope": "award_project",
+      "source_ids": [
+        "S01"
+      ],
+      "detail": "获奖年份已核实；不以PDF上传日期替代颁奖发生日期。",
+      "occurrence": "occurred"
+    }
+  ],
+  "papers": [
+    {
+      "id": "A01",
+      "title": "模拟月壤钻进取样量影响因素分析及试验研究",
+      "doi": "10.13700/j.bh.1001-5965.2014.0782",
+      "authors": [
+        "全齐全",
+        "史晓萌",
+        "唐德威",
+        "姜生元",
+        "邓宗全"
+      ],
+      "year": 2015,
+      "source_ids": [
+        "S07"
+      ],
+      "relation": "direct_technical_relation_not_award_list_confirmed",
+      "read_scope": "full_article_text"
+    },
+    {
+      "id": "A02",
+      "title": "月面钻取式自动采样机构的设计与分析",
+      "doi": "10.3780/j.issn.1000-758X.2012.06.003",
+      "authors": [
+        "庞彧",
+        "刘志全",
+        "李新立"
+      ],
+      "year": 2012,
+      "source_ids": [
+        "S08"
+      ],
+      "relation": "external_technical_reference",
+      "read_scope": "abstract_only"
+    },
+    {
+      "id": "A03",
+      "title": "深层月壤钻取冗余绕组电机控制方法",
+      "doi": "10.15982/j.issn.2096-9287.2021.20210014",
+      "authors": [
+        "王迎春",
+        "王国欣",
+        "赵帆",
+        "张鼐",
+        "王书超"
+      ],
+      "year": null,
+      "source_ids": [
+        "S09"
+      ],
+      "relation": "task_related_not_award_list_confirmed",
+      "read_scope": "abstract_only"
+    }
+  ],
+  "stories": [
+    {
+      "id": "H01",
+      "title": "任务之前的长期准备",
+      "narrative": "校方报道呈现团队在正式任务前后的持续设计与试验积累。平台解读：关键能力来自多轮问题澄清和验证，奖项记录只是长周期创新中的一个节点。",
+      "source_ids": [
+        "S06"
+      ],
+      "claim_ids": [
+        "C14"
+      ],
+      "nature": "source_summary_and_labeled_analysis",
+      "limit": "未进行独立采访，不补写人物对话或心理。"
+    },
+    {
+      "id": "H02",
+      "title": "柔性材料成为采样链的一环",
+      "narrative": "校方介绍高分子团队研制取芯软袋，说明系统任务需要机械设计与材料工艺共同推进。平台解读：跨学科协作可以围绕关键接口组织。",
+      "source_ids": [
+        "S03"
+      ],
+      "claim_ids": [
+        "C12"
+      ],
+      "nature": "source_summary_and_labeled_analysis",
+      "limit": "获奖两家单位内部具体分工仍待确认。"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G01",
+      "title": "50件专利的完整成果清单及项目—专利对应表",
+      "priority": "high",
+      "value_state": "not_found_in_declared_research",
+      "resolution": "取得编号、归属、具体创新点和官方现状态核验。"
+    },
+    {
+      "id": "G02",
+      "title": "完整获奖完成人名单与两个完成单位的具体分工",
+      "priority": "high",
+      "value_state": "not_found_in_declared_research",
+      "resolution": "用正式申报书或确认记录补证；不由新闻作者或发明人列表推断。"
+    },
+    {
+      "id": "G03",
+      "title": "两次钻取分项计量与工况原始记录",
+      "priority": "high",
+      "value_state": "not_found_in_declared_research",
+      "resolution": "复核260/320克数据的计量边界、采样工况和版本。"
+    },
+    {
+      "id": "G04",
+      "title": "质量、功耗、包络、深度和层序保持评价指标",
+      "priority": "high",
+      "value_state": "not_found_in_declared_research",
+      "resolution": "获取可公开的指标表与试验报告，区别要求值、实测值及仿真值。"
+    },
+    {
+      "id": "G05",
+      "title": "曾放弃的方案、关键失效与设计决策过程",
+      "priority": "medium",
+      "value_state": "not_found_in_declared_research",
+      "resolution": "围绕方案比较、失败修正和选型依据开展访谈。"
+    },
+    {
+      "id": "G06",
+      "title": "专利现时权属、同族和法律状态",
+      "priority": "high",
+      "value_state": "not_found_in_declared_research",
+      "resolution": "优先核对两件中文公开文本与机构译名冲突；以官方登记为准。"
+    },
+    {
+      "id": "G07",
+      "title": "图片、视频、完整论文及材料的再发布授权",
+      "priority": "medium",
+      "value_state": "not_found_in_declared_research",
+      "resolution": "当前仅保留链接；确认可展示素材及署名方式。"
+    },
+    {
+      "id": "G08",
+      "title": "商业转化、企业合作与教学效果的真实记录",
+      "priority": "medium",
+      "value_state": "not_found_in_declared_research",
+      "resolution": "没有公开证据的收益、许可条件与教学成效保持为空。"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T01",
+      "gap_id": "G01",
+      "title": "50件专利的完整成果清单及项目—专利对应表",
+      "priority": "high",
+      "owner": "项目方知识产权联络人待指定",
+      "status": "proposed_unassigned",
+      "acceptance": "取得编号、归属、具体创新点和官方现状态核验。",
+      "due_at": null
+    },
+    {
+      "id": "T02",
+      "gap_id": "G02",
+      "title": "完整获奖完成人名单与两个完成单位的具体分工",
+      "priority": "high",
+      "owner": "项目方联系人待指定",
+      "status": "proposed_unassigned",
+      "acceptance": "用正式申报书或确认记录补证；不由新闻作者或发明人列表推断。",
+      "due_at": null
+    },
+    {
+      "id": "T03",
+      "gap_id": "G03",
+      "title": "两次钻取分项计量与工况原始记录",
+      "priority": "high",
+      "owner": "工程审核人待指定",
+      "status": "proposed_unassigned",
+      "acceptance": "复核260/320克数据的计量边界、采样工况和版本。",
+      "due_at": null
+    },
+    {
+      "id": "T04",
+      "gap_id": "G04",
+      "title": "质量、功耗、包络、深度和层序保持评价指标",
+      "priority": "high",
+      "owner": "技术审核人待指定",
+      "status": "proposed_unassigned",
+      "acceptance": "获取可公开的指标表与试验报告，区别要求值、实测值及仿真值。",
+      "due_at": null
+    },
+    {
+      "id": "T05",
+      "gap_id": "G05",
+      "title": "曾放弃的方案、关键失效与设计决策过程",
+      "priority": "medium",
+      "owner": "访谈负责人待指定",
+      "status": "proposed_unassigned",
+      "acceptance": "围绕方案比较、失败修正和选型依据开展访谈。",
+      "due_at": null
+    },
+    {
+      "id": "T06",
+      "gap_id": "G06",
+      "title": "专利现时权属、同族和法律状态",
+      "priority": "high",
+      "owner": "知识产权审核人待指定",
+      "status": "proposed_unassigned",
+      "acceptance": "优先核对两件中文公开文本与机构译名冲突；以官方登记为准。",
+      "due_at": null
+    },
+    {
+      "id": "T07",
+      "gap_id": "G07",
+      "title": "图片、视频、完整论文及材料的再发布授权",
+      "priority": "medium",
+      "owner": "内容负责人待指定",
+      "status": "proposed_unassigned",
+      "acceptance": "当前仅保留链接；确认可展示素材及署名方式。",
+      "due_at": null
+    },
+    {
+      "id": "T08",
+      "gap_id": "G08",
+      "title": "商业转化、企业合作与教学效果的真实记录",
+      "priority": "medium",
+      "owner": "应用负责人待指定",
+      "status": "proposed_unassigned",
+      "acceptance": "没有公开证据的收益、许可条件与教学成效保持为空。",
+      "due_at": null
+    }
+  ],
+  "revisions": [
+    {
+      "id": "R01",
+      "date": "2026-10-19",
+      "change": "由本地样本扩展公开来源、证据、专利线索、机制与维护清单。未获得项目方/专家审核。",
+      "review_status": "self_check_only"
+    }
+  ],
+  "metrics": [
+    {
+      "claim_id": "C06",
+      "metric": "钻取样品量",
+      "value": 260,
+      "unit": "g",
+      "scope": "CE5_drilling",
+      "evidence": "项目官网陈述"
+    },
+    {
+      "claim_id": "C07",
+      "metric": "钻取样品量",
+      "value": 320,
+      "unit": "g",
+      "scope": "CE6_drilling",
+      "evidence": "项目官网陈述"
+    },
+    {
+      "claim_id": "C08",
+      "metric": "任务总样品量",
+      "value": 1731,
+      "unit": "g，约",
+      "scope": "CE5_mission_context",
+      "evidence": "国家航天局初步测量"
+    },
+    {
+      "claim_id": "C09",
+      "metric": "任务总样品量",
+      "value": 1935.3,
+      "unit": "g",
+      "scope": "CE6_mission_context",
+      "evidence": "国家航天局公告"
+    }
+  ],
+  "validations": [
+    {
+      "id": "V01",
+      "kind": "已发表地面研究",
+      "claim_ids": [
+        "C10",
+        "C20"
+      ],
+      "source_ids": [
+        "S07"
+      ],
+      "apparatus": "HIT-2型钻具",
+      "material": "HIT-LS1#模拟月壤",
+      "baseline": "模型预测的取心率与试验结果对照",
+      "limitations": "单一研究设置，不复现整个月面环境；本平台未重复试验。"
+    }
+  ]
+}
