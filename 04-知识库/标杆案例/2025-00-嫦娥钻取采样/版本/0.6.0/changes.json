@@ -1,0 +1,359 @@
+[
+  {
+    "after": {
+      "basis_archive": {
+        "content_version": "0.4.2",
+        "snapshot_sha256": "31c8d87faa82478a82c31e8fa4dd6c3d2589124eb5daec637f2df1a1a79736fd"
+      },
+      "items": {
+        "MI01": {
+          "alternatives": "比较直接容器收集与内翻收集，关注样心和容器的相对运动；此为分析性对照，不是团队真实选型过程。",
+          "authored_by": "Codex AI，本会话依据档案解读",
+          "boundary": "粒径、黏聚性、污染控制和温度不同，必须重新试验；不直接声称适用于生物样本。",
+          "claim_ids": [
+            "C05",
+            "C10"
+          ],
+          "conditions": [
+            "需要保留材料内部排列或空间信息，而不只追求回收重量。",
+            "目标介质与收集材料的相容性、粒径和温度必须明确。"
+          ],
+          "content_type": "ai_interpretation",
+          "created_at": "2026-10-20",
+          "functional_chain": [
+            "破土与排屑",
+            "样心进入软袋",
+            "提芯与信息保持"
+          ],
+          "id": "MI01",
+          "knowledge_id": "K01",
+          "matching_questions": [
+            "必须保留的“信息”究竟是什么？",
+            "用什么独立测量区分回收量与结构保持？"
+          ],
+          "principle": "将材料搬运问题改写成信息保真问题，以运动关系和界面控制降低相对滑移。",
+          "problem": "取样过程可能扰动颗粒排列，取到重量不能独自证明保留了地质信息。",
+          "review_status": "pending_review",
+          "revision": "1.0.0",
+          "risks": [
+            "软袋褶皱、摩擦与破损可能影响完整性；需要测试确认。",
+            "样品重量相近不代表层序保留相同。"
+          ],
+          "source_ids": [
+            "S07",
+            "S12"
+          ],
+          "supersedes": null,
+          "title": "把“取到样品”转成“保留样品信息”",
+          "tradeoff": "软袋摩擦、柔性件可靠性和封口性能成为新的关键约束。",
+          "validation_plan": [
+            "以可识别分层的模拟物作对照，记录层序偏移、混合程度、回收量和卡滞。",
+            "对不同粒径及柔性材料组合重复测试，登记离散性和失效。"
+          ],
+          "validation_status": "not_validated"
+        },
+        "MI02": {
+          "alternatives": "比较分别优化部件与联动优化接口的路线；前者便于单件改进，后者需承担更多系统协调。专利候选不等于整机配置。",
+          "authored_by": "Codex AI，本会话依据档案解读",
+          "boundary": "专利证明公开了方案，未证明这些方案已共同集成在该获奖型号。",
+          "claim_ids": [
+            "C17",
+            "C18"
+          ],
+          "conditions": [
+            "任务由连续动作完成，任一接口失败均可能使整体任务失败。",
+            "要能获取接口尺寸、动作时序、容许偏差及安全约束。"
+          ],
+          "content_type": "ai_interpretation",
+          "created_at": "2026-10-20",
+          "functional_chain": [
+            "入口保护与进样",
+            "提芯与收纳",
+            "封口与转送"
+          ],
+          "id": "MI02",
+          "knowledge_id": "K02",
+          "matching_questions": [
+            "哪一个动作的输出直接成为下一动作的输入？",
+            "成功标准是单件性能还是完整动作链成功率？"
+          ],
+          "principle": "把任务成功条件分解到多个接口，关注相邻动作的兼容而非单项性能。",
+          "problem": "进样成功后仍可能在提芯、封口、整型或转送环节失效。",
+          "review_status": "pending_review",
+          "revision": "1.0.0",
+          "risks": [
+            "前一动作的输出姿态可能不满足后一动作的输入要求。",
+            "增加保护或收纳机构可能扩大包络并增加故障点。"
+          ],
+          "source_ids": [
+            "S10",
+            "S11",
+            "S15"
+          ],
+          "supersedes": null,
+          "title": "围绕完整采样链设计薄弱环节",
+          "tradeoff": "机制增加会影响质量、体积与系统复杂性。",
+          "validation_plan": [
+            "先定义每个接口的输入输出及容许范围，再进行相邻动作联试。",
+            "记录全过程成功率、封口/转送失败与恢复情况，不能用单部件成功代替整链成功。"
+          ],
+          "validation_status": "not_validated"
+        },
+        "MI03": {
+          "alternatives": "比较单次高度逼真的综合试验与分层验证；分层路线可定位问题，但必须解释证据之间的差异，不能简单相加。",
+          "authored_by": "Codex AI，本会话依据档案解读",
+          "boundary": "不能以单项模拟误差代替真实环境可靠性。",
+          "claim_ids": [
+            "C10",
+            "C13"
+          ],
+          "conditions": [
+            "真实环境难以完全复现，并且能够把关键风险拆成可观察条件。",
+            "各层证据的对象、尺度、环境和测量口径可追溯。"
+          ],
+          "content_type": "ai_interpretation",
+          "created_at": "2026-10-20",
+          "functional_chain": [
+            "模拟物与模型研究",
+            "部件和系统试验",
+            "演练与任务反馈"
+          ],
+          "id": "MI03",
+          "knowledge_id": "K03",
+          "matching_questions": [
+            "哪些条件在现有试验中根本没有覆盖？",
+            "需要什么现场证据才能允许下一步应用？"
+          ],
+          "principle": "将每项试验覆盖的条件明确化，再组合论证；保留尚未覆盖的风险。",
+          "problem": "地面难以完整复现月面全部条件。",
+          "review_status": "pending_review",
+          "revision": "1.0.0",
+          "risks": [
+            "多个试验可能共享同一错误假设，数量多并不代表独立。",
+            "模拟物未覆盖的环境条件可能导致过度外推。"
+          ],
+          "source_ids": [
+            "S07",
+            "S03",
+            "S14"
+          ],
+          "supersedes": null,
+          "title": "用分层证据逼近难以完全复现的环境",
+          "tradeoff": "模型、模拟物与真实环境的差异仍需解释。",
+          "validation_plan": [
+            "建立条件—试验—指标覆盖表，每个结论标出支持范围。",
+            "对未覆盖风险安排补充试验或限制应用；预先写明通过和停止条件。"
+          ],
+          "validation_status": "not_validated"
+        },
+        "MI04": {
+          "alternatives": "比较仅显示参数与提供状态解释、决策支持的交互；后者可能减少理解负担，也会引入模型误判与过度信任。",
+          "authored_by": "Codex AI，本会话依据档案解读",
+          "boundary": "只迁移信息闭环思想，控制算法、响应时延与安全约束需重新定义。",
+          "claim_ids": [
+            "C04",
+            "C11",
+            "C13"
+          ],
+          "conditions": [
+            "操作者无法直接观察现场，且存在可获取的状态信号。",
+            "必须定义谁有权建议、批准、执行和中止操作。"
+          ],
+          "content_type": "ai_interpretation",
+          "created_at": "2026-10-20",
+          "functional_chain": [
+            "遥测观测",
+            "状态解释与演练",
+            "人的判断与作业支持"
+          ],
+          "id": "MI04",
+          "knowledge_id": "K04",
+          "matching_questions": [
+            "操作者判断所缺的关键证据是什么？",
+            "哪些异常必须由人确认，失联时如何处理？"
+          ],
+          "principle": "围绕不确定性组织观测、解释、建议和人的决策接口。",
+          "problem": "月背通信窗口、未知地质和异常工况限制现场操作。",
+          "review_status": "pending_review",
+          "revision": "1.0.0",
+          "risks": [
+            "模型解释错误或信号缺失可能误导操作判断。",
+            "时延、异常告警和人的权限不清可能形成新的风险。"
+          ],
+          "source_ids": [
+            "S03"
+          ],
+          "supersedes": null,
+          "title": "把远程监控推进为人机协同判断",
+          "tradeoff": "依赖传感信息、模型校准及操作者判断。",
+          "validation_plan": [
+            "以标注状态的历史回放或模拟故障比较判断正确率、漏报、误报和响应时间。",
+            "分别测试信号缺失、模型错误和通信延迟，观察人工接管是否有效。"
+          ],
+          "validation_status": "not_validated"
+        },
+        "MI05": {
+          "alternatives": "以论文中的外伸管/无外伸管构型为分析对照，同时评价取芯保持与穿岩能力；不据此重建飞行选型历史。",
+          "authored_by": "Codex AI，本会话依据档案解读",
+          "boundary": "论文模型及模拟物条件；不据此认定具体飞行型号采用。",
+          "claim_ids": [
+            "C24"
+          ],
+          "conditions": [
+            "同一工具需要跨越不同材料或承担相互制约的任务。",
+            "构型对照须保持介质、规程、尺度等比较条件一致。"
+          ],
+          "content_type": "ai_interpretation",
+          "created_at": "2026-10-20",
+          "functional_chain": [
+            "钻头几何",
+            "接触与受力变化",
+            "取芯保持和穿岩表现"
+          ],
+          "id": "MI05",
+          "knowledge_id": "K05",
+          "matching_questions": [
+            "哪个目标是必须满足的门槛，哪个是可以优化的指标？",
+            "材料或工况改变后，方案优劣是否仍成立？"
+          ],
+          "principle": "几何变化改变接触面积与取芯应力条件。",
+          "problem": "同一钻头需要兼顾取芯与穿岩。",
+          "review_status": "pending_review",
+          "revision": "1.0.0",
+          "risks": [
+            "只优化单一指标可能损害另一任务指标。",
+            "模拟物与实际介质差异可能改变构型比较结论。"
+          ],
+          "source_ids": [
+            "S07"
+          ],
+          "supersedes": null,
+          "title": "取芯保持与穿岩能力的设计取舍",
+          "tradeoff": "穿岩所需进尺力与取芯保持能力之间存在约束。",
+          "validation_plan": [
+            "在相同工况下并列记录取芯保持、进尺力及穿岩表现，不压成未经解释的单一分数。",
+            "对关键工况改变做敏感性试验，检验最优构型是否发生变化。"
+          ],
+          "validation_status": "not_validated"
+        },
+        "MI06": {
+          "alternatives": "比较固定运动输入与载荷反馈调节；反馈可响应介质变化，但依赖传感、稳定性和调参。恒力不等于恒定深度。",
+          "authored_by": "Codex AI，本会话依据档案解读",
+          "boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
+          "claim_ids": [
+            "C27",
+            "C29",
+            "C30",
+            "C31",
+            "C32",
+            "C33",
+            "C34"
+          ],
+          "conditions": [
+            "载荷能反映需要调节的状态，并且执行机构具备相应响应能力。",
+            "目标几何、材料变化及安全限值需要独立测量与定义。"
+          ],
+          "content_type": "ai_interpretation",
+          "created_at": "2026-10-20",
+          "functional_chain": [
+            "载荷感知",
+            "反馈调节加载运动",
+            "观察响应及取芯结果"
+          ],
+          "id": "MI06",
+          "knowledge_id": "K06",
+          "matching_questions": [
+            "目标是控制力、位置、深度，还是最终质量？",
+            "载荷是否足以观测目标，是否需要增加独立传感？"
+          ],
+          "principle": "通过载荷反馈调节加载运动。",
+          "problem": "介质变化使固定运动输入下的载荷波动。",
+          "review_status": "pending_review",
+          "revision": "1.0.0",
+          "risks": [
+            "传感噪声、超调和稳定时间可能影响实际操作。",
+            "地面小样本对照不能直接证明长期可靠性或飞行表现。"
+          ],
+          "source_ids": [
+            "S23"
+          ],
+          "supersedes": null,
+          "title": "围绕载荷反馈调整进给，而非固定运动输入",
+          "tradeoff": "增加测量、控制和调参依赖。",
+          "validation_plan": [
+            "先辨识目标介质与设备响应，再比较同条件下的固定输入与反馈控制。",
+            "同步记录超调、稳定时间、最终质量及安全越界；不得照搬论文参数。"
+          ],
+          "validation_status": "not_validated"
+        }
+      },
+      "note": "AI解读及建议验证方案，不是设计团队实际决策、已发生故障或已完成试验；不计入事实字段。",
+      "project_id": "2025-00",
+      "schema_version": "mechanism-interpretation-1.0"
+    },
+    "before": null,
+    "operation": "add",
+    "path": "/mechanism_interpretations"
+  },
+  {
+    "after": {
+      "items": {
+        "EX01": {
+          "id": "EX01",
+          "reasoning_id": "AI01",
+          "relationship": "proposed_transfer",
+          "review_status": "pending_review",
+          "status": "idea",
+          "target_project_id": null,
+          "validation_evidence": []
+        },
+        "EX02": {
+          "id": "EX02",
+          "reasoning_id": "AI02",
+          "relationship": "proposed_transfer",
+          "review_status": "pending_review",
+          "status": "idea",
+          "target_project_id": null,
+          "validation_evidence": []
+        },
+        "EX03": {
+          "id": "EX03",
+          "reasoning_id": "AI03",
+          "relationship": "proposed_transfer",
+          "review_status": "pending_review",
+          "status": "idea",
+          "target_project_id": null,
+          "validation_evidence": []
+        },
+        "EX04": {
+          "id": "EX04",
+          "reasoning_id": "AI04",
+          "relationship": "proposed_transfer",
+          "review_status": "pending_review",
+          "status": "idea",
+          "target_project_id": null,
+          "validation_evidence": []
+        }
+      },
+      "note": "索引独立AI设想；目标尚未建档，没有已验证迁移记录。割胶机器人仍是独立图谱试读，不能计作已应用项目。",
+      "project_id": "2025-00",
+      "revision": "1.0.0",
+      "schema_version": "related-explorations-1.0"
+    },
+    "before": null,
+    "operation": "add",
+    "path": "/related_explorations"
+  },
+  {
+    "after": "0.6.0",
+    "before": "0.5.0",
+    "operation": "replace",
+    "path": "/version_declaration/content_target"
+  },
+  {
+    "after": "5.2.0",
+    "before": "5.1.0",
+    "operation": "replace",
+    "path": "/version_declaration/page"
+  }
+]

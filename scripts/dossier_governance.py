@@ -34,7 +34,7 @@ def capture(p):
  names={'evidence':'档案数据.json','document':'主档案结构.json','atomic':'原子字段档案.json','search_log':'研究日志.json','field_schema':'字段规范.json','quality_basis':'质量评估依据.json','quality':'质量评估.json'}
  result={k:read(p/n) for k,n in names.items()}
  if (p/'阅读内容.json').exists():result['reader_content']=read(p/'阅读内容.json')
- for key,name in [('matching_knowledge','匹配知识.json'),('version_declaration','版本声明.json'),('research_evidence','研究证据.json'),('research_analysis','研究分析.json'),('engine_audit','引擎审计.json'),('ai_reasoning','AI推演.json')]:
+ for key,name in [('matching_knowledge','匹配知识.json'),('version_declaration','版本声明.json'),('research_evidence','研究证据.json'),('research_analysis','研究分析.json'),('engine_audit','引擎审计.json'),('ai_reasoning','AI推演.json'),('mechanism_interpretations','机制解读.json'),('related_explorations','关联探索.json')]:
   if (p/name).exists():result[key]=read(p/name)
  result['source_cards']={f.stem:f.read_text() for f in sorted((p/'来源卡').glob('*.md'))}
  for key in ['evidence','atomic']:

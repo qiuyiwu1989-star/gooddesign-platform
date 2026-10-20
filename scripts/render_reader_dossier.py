@@ -10,6 +10,8 @@ def build(root,p):
  matching=render_matching(p)
  from dossier_reasoning import render as render_reasoning
  reasoning=render_reasoning(p)
+ from dossier_mechanisms import render as render_mechanisms
+ mechanisms=render_mechanisms(p)
  from dossier_research import render as render_research
  research=render_research(p)
  d,a,s,q,c=map(read,['档案数据.json','原子字段档案.json','字段规范.json','质量评估.json','阅读内容.json'])
@@ -43,10 +45,7 @@ def build(root,p):
  # Eight concise sections, using the same canonical project data.
  section('overview',properties([('项目全称',d['title']),('获奖年份',d['award']['year']),('奖项','第十届好设计奖 · 金奖'),('完成单位',d['award']['organizations']),('公开报道团队牵头人','邓宗全'),('完整获奖完成人',None)]))
  section('technical','<div class="reader-two"><article><h3>任务目标</h3><p>获取月球深层样品，并尽可能保持样品的层序信息。</p></article><article><h3>关键约束</h3><p>介质状态不确定、资源受限，以及远程作业与判断。</p></article></div><div class="system-flow" aria-label="采样过程"><span>钻进与排屑</span><b>→</b><span>软袋取芯</span><b>→</b><span>封口与转送</span></div>'+properties([('核心取芯方式','双管与内翻软袋配合'),('材料与机构配合','软袋包裹样心，机构完成钻进、提芯、封口与转送'),('地面支持','遥测监视、状态辨识、演练与作业支持'),('整机质量',None),('整机功耗',None),('整机包络',None)]))
- insights=[]
- for k in d['knowledge']:
-  insights.append(f'<article class="reader-insight"><h3>{e(k["title"])}</h3><p>{e(k["measure"])}</p><details><summary>设计解读</summary>{properties([("为什么这样做",k["mechanism"]),("需要付出的代价",k["tradeoffs"]),("适用边界",k["boundary"])])}</details></article>')
- section('innovation','<div class="reader-insights">'+''.join(insights)+'</div>'+matching['body'],'以下为基于公开资料的设计解读，尚待专业复核。')
+ section('innovation',mechanisms['body'],'资料依据与AI解读分开呈现，具体迁移案例在关联探索中阅读。')
  flight=table(['任务','钻取样品量','钻进有效深度','任务返回总量'],[['嫦娥五号','260 g','约1009 mm','约1731 g'],['嫦娥六号','320 g','约1035 mm','1935.3 g']])
  component=[r for r in a['records'] if r['entity']=='metric' and r['cells']['value_kind']['value']in ['论文设计参数','论文结构参数']]
  params=table(['对象','参数','数值','单位'],[[r['cells']['subject']['value'],r['cells']['name']['value'],r['cells']['value']['value'],r['cells']['unit']['value']]for r in component])
@@ -62,7 +61,7 @@ def build(root,p):
  def timeline(events):return '<ol class="reader-timeline">'+''.join(f'<li><time>{e(x["date"])}</time><div><h3>{e(x["title"])}</h3><p>{e(x["detail"])}</p></div></li>'for x in events)+'</ol>'
  story=''.join(f'<details class="reader-expand"><summary>{e(x["title"])}</summary><p>{e(x["narrative"])}</p><p class="reader-note">{e(x["limit"])}</p></details>'for x in d['stories'])
  section('history',timeline(keyevents)+'<details class="reader-expand"><summary>完整发展历程 · '+str(len(d['events']))+' 个节点</summary>'+timeline(d['events'])+'</details><h3 class="reader-subhead">设计背后的故事</h3>'+story)
- section('applications','<h3 class="reasoning-fact-heading">已有资料记录的应用</h3>'+properties([('已记录的任务应用',['嫦娥五号','嫦娥六号']),('商业化项目',None),('合作企业',None),('技术许可条件',None),('商业收益',None)])+'<p class="reasoning-unknown-note">真实商业化、合作、许可与收益仍待资料补证；下方AI推演单独作为探索方向。</p>'+reasoning['body'])
+ section('applications','<h3 class="reasoning-fact-heading">已有资料记录的应用</h3>'+properties([('已记录的任务应用',['嫦娥五号','嫦娥六号']),('商业化项目',None),('合作企业',None),('技术许可条件',None),('商业收益',None)])+'<p class="reasoning-unknown-note">真实商业化、合作、许可与收益仍待资料补证；应用设想另放在关联探索中，不记为本项目的既有成果。</p>'+'<details class="exploration-library" id="related-explorations"><summary>关联探索 · 4 项设想 · 尚无验证记录</summary><p class="reader-note">这些是独立的应用方向，尚未证明迁移有效。未来目标项目的设计、调整与验证结果将以关联记录回流。</p>'+reasoning['body']+matching['body']+'<a class="reader-link" href="项目图谱.html">查看割胶机器人独立迁移试读 ↗</a></details>')
 
  quality_body=quality_panel(q,e)
  section('governance',quality_body+'<p class="reader-note">评分评价档案资料与研究质量；当前为平台自评，尚未完成项目方与专业审核。</p><button class="reader-link" data-reader-view="assessment">查看各模块统计与完善方向 ↗</button>')
@@ -79,12 +78,11 @@ def build(root,p):
  library='<div id="library-view" hidden><div class="reader-view-heading"><h2>资料与解读</h2><p>从论文看研究方法与结论，完整参考资料列在后面。解读为平台整理，保留实际阅读范围。</p></div>'+''.join(paper_cards)+'<details class="reader-section reader-expand source-directory" id="reader-sources" tabindex="-1"><summary>参考资料目录 · '+str(len(d['sources']))+' 份</summary>'+source_index+'</details></div>'
  module_rows=[[x['title'],x['records'],f'{x["known"]} / {x["total"]}',str(x['percent'])+'%',x['assessment']]for x in stats]
  needs=''.join(f'<li><b>{e(c["modules"][x["id"]]["title"])}</b><p>{e(c["modules"][x["id"]]["summary"])}</p></li>'for x in stats)
- assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details>'+matching['assessment']+research['assessment']+('<div class="reasoning-accounting">另有'+str(reasoning['count'])+'条AI应用推演，均待验证；与'+str(len(a['records']))+'条档案记录分开统计，不增加事实字段填充率或质量自评。</div>'if reasoning['body']else '')+'</div>'
+ assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details>'+matching['assessment']+research['assessment']+mechanisms['assessment']+('<div class="reasoning-accounting">另有'+str(reasoning['count'])+'条AI应用推演，均待验证；与'+str(len(a['records']))+'条档案记录分开统计，不增加事实字段填充率或质量自评。</div>'if reasoning['body']else '')+'</div>'
  nav='<a data-reader-section="top" href="#reader-top">'+icon('overview')+'档案概览</a>'+''.join(f'<a data-reader-section="{x["id"]}" href="#reader-{x["id"]}">{icon(x["id"])}{e(x["title"])}</a>'for x in stats)+'<div class="toc-reading-appendix"><a data-reader-view="library" href="#library-view">'+icon('ip')+'资料与解读</a><a data-reader-view="assessment" href="#assessment-view">'+icon('governance')+'档案评估</a></div><div class="toc-note"><b>档案研究版</b>空白保留，资料持续补充。<br>当前质量自评 '+str(q['score'])+' / 100</div>'
  hero='<div class="eyebrow">好设计 / 项目档案 / 航空航天</div><h1>嫦娥月球钻取采样系统</h1><p class="summary">从月球深层取回样品，也保存样品所承载的信息。<br>探索五号与六号任务相关的系统设计、研究成果和发展过程。</p><div class="reader-hero-meta"><span class="ui-badge">'+icon('award')+'2025年第十届好设计奖金奖</span><span class="ui-badge pending">'+icon('info')+'待专业审核</span><span>资料截至 '+e(d['as_of'])+'</span></div>'
- hero+='<a class="hero-graph" href="项目图谱.html">'+icon('applications')+'探索项目图谱'+icon('arrow')+'<small>割胶机器人 · 设计迁移试读</small></a>'
 
- return dict(board=board,library=library,assessment=assessment,nav=nav,hero=hero,css=CSS+matching['css']+'.reader-expand{scroll-margin-top:85px}.engine-audit-table{min-width:680px}.engine-audit-table td:first-child{min-width:95px}'+UI_CSS+reasoning['css'],js=JS+matching['js']+UI_JS+reasoning['js'])
+ return dict(board=board,library=library,assessment=assessment,nav=nav,hero=hero,css=CSS+matching['css']+'.reader-expand{scroll-margin-top:85px}.engine-audit-table{min-width:680px}.engine-audit-table td:first-child{min-width:95px}'+UI_CSS+reasoning['css']+mechanisms['css'],js=JS+matching['js']+UI_JS+reasoning['js'])
 
 def quality_panel(q,e):
  labels={'identity':'身份与范围','evidence':'资料可信度','technical':'技术与验证','decision':'设计过程','ip':'成果与项目关系','governance':'档案维护'}
