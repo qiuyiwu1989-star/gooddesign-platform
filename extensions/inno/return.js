@@ -1,0 +1,1 @@
+document.querySelectorAll('[data-back]').forEach(link=>{try{const url=new URL(sessionStorage.getItem('inno-project-list')||'/inno/projects/',location.origin);if(url.origin===location.origin&&url.pathname==='/inno/projects/')link.href=url.pathname+url.search}catch{}});
