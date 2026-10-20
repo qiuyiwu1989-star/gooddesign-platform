@@ -17,7 +17,7 @@ def build(root,p):
  for b in s['blocks']:
   rr=[r for r in a['records'] if entity_blocks[r['entity']]==b['id']]
   cells=[x for r in rr for x in r['cells'].values()];known=sum(x['value_state']=='known' for x in cells)
-  stats.append(dict(id=b['id'],title=c['modules'][b['id']]['title'],records=len(rr),known=known,total=len(cells),percent=round(100*known/len(cells),1) if cells else None,assessment=c['modules'][b['id']]['status']))
+  stats.append(dict(id=b['id'],title='质量与维护'if b['id']=='governance'else c['modules'][b['id']]['title'],records=len(rr),known=known,total=len(cells),percent=round(100*known/len(cells),1) if cells else None,assessment=c['modules'][b['id']]['status']))
  totals=dict(modules=len(stats),records=len(a['records']),sources=len(d['sources']),known=sum(x['known']for x in stats),total=sum(x['total']for x in stats),quality_score=q['score'])
  (p/'阅读统计.json').write_text(json.dumps(dict(totals=totals,modules=stats,note='填充率仅对当前已建记录计算，不等于研究完成度或事实准确率。'),ensure_ascii=False,indent=2)+'\n')
  def val(r,key):return records[r]['cells'][key]['value']
@@ -35,7 +35,7 @@ def build(root,p):
  def section(key,body,intro=None):
   i=[x['id']for x in s['blocks']].index(key)+1
   status=next(x for x in stats if x['id']==key)
-  sections.append(f'<details class="reader-section reader-module" id="reader-{key}" tabindex="-1"><summary><span class="module-icon">{icon(key)}</span><div class="module-title"><h2><span>{i:02d}</span>{e(c["modules"][key]["title"])}</h2><p>{e(status["assessment"])} · {status["records"]} 条记录</p></div><div class="module-meter"><span>字段填充 {status["percent"]}%</span><progress value="{status["known"]}" max="{status["total"]}" aria-label="{e(status["title"])}当前字段填充率"></progress></div><span class="module-chevron">{icon("chevron")}</span></summary><div class="module-content">'+('<p class="section-caption">'+e(intro)+'</p>'if intro else '')+body+'<div class="module-footer"><button class="reader-link" data-reader-section="top">回到档案总览 ↑</button></div></div></details>')
+  sections.append(f'<details class="reader-section reader-module" id="reader-{key}" tabindex="-1"><summary><span class="module-icon">{icon(key)}</span><div class="module-title"><h2><span>{i:02d}</span>{e(status["title"])}</h2><p>{e(status["assessment"])} · {status["records"]} 条记录</p></div><div class="module-meter"><span>字段填充 {status["percent"]}%</span><progress value="{status["known"]}" max="{status["total"]}" aria-label="{e(status["title"])}当前字段填充率"></progress></div><span class="module-chevron">{icon("chevron")}</span></summary><div class="module-content">'+('<p class="section-caption">'+e(intro)+'</p>'if intro else '')+body+'<div class="module-footer"><button class="reader-link" data-reader-section="top">回到档案总览 ↑</button></div></div></details>')
 
  # Eight concise sections, using the same canonical project data.
  section('overview',properties([('项目全称',d['title']),('获奖年份',d['award']['year']),('奖项','第十届好设计奖 · 金奖'),('完成单位',d['award']['organizations']),('公开报道团队牵头人','邓宗全'),('完整获奖完成人',None)]))
@@ -76,7 +76,7 @@ def build(root,p):
  module_rows=[[x['title'],x['records'],f'{x["known"]} / {x["total"]}',str(x['percent'])+'%',x['assessment']]for x in stats]
  needs=''.join(f'<li><b>{e(c["modules"][x["id"]]["title"])}</b><p>{e(c["modules"][x["id"]]["summary"])}</p></li>'for x in stats)
  assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details>'+matching['assessment']+research['assessment']+'</div>'
- nav='<a data-reader-section="top" href="#reader-top">'+icon('overview')+'档案概览</a>'+''.join(f'<a data-reader-section="{x["id"]}" href="#reader-{x["id"]}">{icon(x["id"])}{e(x["title"])}</a>'for x in stats)+'<div class="toc-note"><b>档案研究版</b>空白保留，资料持续补充。<br>当前质量自评 '+str(q['score'])+' / 100</div>'
+ nav='<a data-reader-section="top" href="#reader-top">'+icon('overview')+'档案概览</a>'+''.join(f'<a data-reader-section="{x["id"]}" href="#reader-{x["id"]}">{icon(x["id"])}{e(x["title"])}</a>'for x in stats)+'<div class="toc-reading-appendix"><a data-reader-view="library" href="#library-view">'+icon('ip')+'资料与解读</a><a data-reader-view="assessment" href="#assessment-view">'+icon('governance')+'档案评估</a></div><div class="toc-note"><b>档案研究版</b>空白保留，资料持续补充。<br>当前质量自评 '+str(q['score'])+' / 100</div>'
  hero='<div class="eyebrow">好设计 / 项目档案 / 航空航天</div><h1>嫦娥月球钻取采样系统</h1><p class="summary">从月球深层取回样品，也保存样品所承载的信息。<br>探索五号与六号任务相关的系统设计、研究成果和发展过程。</p><div class="reader-hero-meta"><span class="ui-badge">'+icon('award')+'2025年第十届好设计奖金奖</span><span class="ui-badge pending">'+icon('info')+'待专业审核</span><span>资料截至 '+e(d['as_of'])+'</span></div>'
  hero+='<a class="hero-graph" href="项目图谱.html">'+icon('applications')+'探索项目图谱'+icon('arrow')+'<small>割胶机器人 · 设计迁移试读</small></a>'
 

@@ -26,6 +26,8 @@ def overview_visual():
  return '''<div class="project-story"><div class="project-story-copy"><span class="ui-kicker">认识这个项目</span><h3>带回样品，也留下月壤的层序信息。</h3><p>从钻进、取芯到封口转送，这套系统需要在介质不确定、资源受限的条件下，完成远程采样。</p><button class="reader-link" data-reader-section="technical">了解系统如何工作 '''+icon('arrow')+'''</button></div><figure class="sampling-figure"><svg viewBox="0 0 420 190" role="img" aria-labelledby="sampling-title sampling-desc"><title id="sampling-title">钻进、取芯与转送过程示意</title><desc id="sampling-desc">三步示意：钻进排屑、软袋取芯、封口转送。仅说明流程，不代表实际结构尺寸。</desc><defs><pattern id="soil-dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="currentColor" opacity=".16"/></pattern></defs><path class="diagram-soil" d="M6 94h408v62H6z"/><path d="M6 94h408" class="diagram-line"/><path fill="url(#soil-dots)" d="M6 94h408v62H6z"/><g class="diagram-machine"><path d="M62 37h28v82H62zM68 29h16v8M76 119v18M57 61h38M57 77h38M57 93h38"/><path d="m66 127 10 12 10-12"/><path d="M198 37h28v105h-28zM205 31h14v6"/><path d="M205 65v69h14V65" class="diagram-core"/><path d="M338 58h30v75h-30zM334 54h38M340 43h26M346 39v-9h14v9"/><path d="M345 68h16v53h-16z" class="diagram-core"/></g><g class="diagram-line"><path d="M112 75h57m-6-5 6 5-6 5M248 75h57m-6-5 6 5-6 5"/></g><g class="diagram-label"><text x="76" y="178">01 钻进排屑</text><text x="212" y="178">02 软袋取芯</text><text x="353" y="178">03 封口转送</text></g></svg><figcaption>采样过程示意 · 非工程结构图</figcaption></figure></div>'''
 
 CSS = '''
+.toc-reading-appendix{border-top:1px solid var(--line);margin-top:16px;padding-top:12px}
+
 /* Archive UI 1.0. Adapted from Zaowuyun light theme; scoped presentation tokens. */
 :root{--paper:#F4F5F8;--ink:#16181F;--muted:#5E6474;--line:#DDE0E9;--accent:#5A4FE6;--accent-deep:#4438C4;--pale:#EEEDFC;--gold:#5A4FE6;--ui-surface:#FFF;--ui-soft:#F8F9FC;--ui-ok:#246448;--ui-warn:#83550E;--ui-warn-bg:#FBF3E4;--ui-radius:18px;--ui-radius-lg:22px;--ui-gap:24px;--ui-shadow:0 2px 3px rgb(22 24 31 / 2%),0 10px 32px -20px rgb(22 24 31 / 14%);--ui-font:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;--ui-number:'Space Grotesk',var(--ui-font);--ui-fast:150ms;--ui-motion:250ms}
 body{font:15px/1.7 var(--ui-font);font-variant-numeric:tabular-nums}html{scroll-behavior:auto}h1,h2,h3,.paper-reading h3{font-family:var(--ui-font);font-weight:600}h1{font-size:clamp(26px,3vw,38px);line-height:1.4;margin:16px 0}h2{font-size:24px;line-height:1.45}h3{line-height:1.6}button,a,summary{touch-action:manipulation}button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visible,#reader-view :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -48,6 +50,7 @@ progress,progress::-webkit-progress-bar{background:var(--line)}progress::-webkit
 JS = '''
 function selectReaderModule(module){
  document.querySelectorAll('.reader-module').forEach(el=>el.open=el===module);
+ document.querySelectorAll('#toc-reader [data-reader-view]').forEach(el=>el.removeAttribute('aria-current'));
  document.querySelectorAll('#toc-reader [data-reader-section]').forEach(el=>{
   const active=module ? el.dataset.readerSection===module.id.slice(7) : el.dataset.readerSection==='top';
   if(active)el.setAttribute('aria-current','location');else el.removeAttribute('aria-current');

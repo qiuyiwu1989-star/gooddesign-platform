@@ -51,3 +51,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 020项目图谱试读：build_project_graph_demo.py读取冻结0.4.0，割胶机器人-迁移试读.json独立保存目标假设/外部研究/方法/迁移路径，不写回嫦娥事实。生成项目图谱.html/json及图谱调用样例.json；主档案增加入口（页面4.3.0，内容0.4.1仅版本元数据）。三候选一排除，非自动AI或校准相似度，恒力不能代替深度/余皮校准。
 
 021阅读体验：dossier_reader_ui.py集中管理浅色令牌、单色线性图标、过程示意与模块开合；render_reader_dossier.py保留数据统计和正文。八模块默认收起，一次展开一个；locate先打开父模块，打印全部展开并恢复状态。页面5.0.0/内容0.4.2仅版本元数据，事实与55自评不变；不改图谱冻结0.4.0。
+
+022布局修正：reader/library/assessment共用toc-reader与同一正文网格；侧栏资料/评估入口同步aria-current。研究工具的宽屏布局保留。
