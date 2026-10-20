@@ -1,0 +1,294 @@
+{
+  "version": "transfer-demo-0.1.0",
+  "date": "2026-10-20",
+  "kind": "authored_graph_reading_not_live_ai",
+  "source_archive": {
+    "project_id": "2025-00",
+    "revision": "0.4.0"
+  },
+  "target": {
+    "id": "TARGET-RUBBER-DEMO",
+    "name": "割胶机器人",
+    "nature": "user_hypothetical_task",
+    "scope": "先讨论割胶末端与验证路径；固定式或移动式、树况、预算与阈值未确定",
+    "objective": "稳定完成有效切割，同时约束耗皮、损伤及作业成本",
+    "acceptance_thresholds": null
+  },
+  "summary": "行业距离较大，接触反馈、设计取舍与验证方法存在可研究关联；具体机构与参数不能直接迁移。",
+  "relation_dimensions": [
+    {
+      "dimension": "行业与材料",
+      "judgement": "弱",
+      "reason": "月壤/岩石与活体树皮不同"
+    },
+    {
+      "dimension": "接触反馈",
+      "judgement": "较强",
+      "reason": "都要应对接触状态变化，但被控目标不同"
+    },
+    {
+      "dimension": "设计取舍",
+      "judgement": "中",
+      "reason": "可迁移决策框架，不能替换评价指标"
+    },
+    {
+      "dimension": "验证方法",
+      "judgement": "较强",
+      "reason": "可借鉴分层验证与明确未覆盖风险"
+    },
+    {
+      "dimension": "具体机构与参数",
+      "judgement": "不直接迁移",
+      "reason": "需要割胶领域的实测与校准"
+    }
+  ],
+  "sources": [
+    {
+      "id": "RS01",
+      "title": "天然橡胶割胶机器人视觉伺服控制方法与割胶试验",
+      "url": "https://www.smartag.net.cn/article/2020/2096-8094/2096-8094-2020-2-4-56.shtml",
+      "doi": "10.12133/j.smartag.2020.2.4.202010-SA001",
+      "publication": "智慧农业（中英文）2020, 2(4):56–64；网络出版2021-02-05",
+      "read_scope": "selected_full_text_sections",
+      "locator": "第3.1—3.2.2、4.1—5.2节",
+      "accessed_at": "2026-10-20",
+      "summary": "原研究已有视觉与测距辅助的割线定位、补偿及田间样机试验；区分切割深度、耗皮量与割口到形成层距离。",
+      "limits": "只核读相关正文，不视为本任务已确定的农艺标准、设计参数或安全验证。"
+    },
+    {
+      "id": "RS02",
+      "title": "Force-Controlled Movement on Irregular Curved Surfaces for Constant-Pressure Contour-Following in Rubber Tapping Applications",
+      "url": "https://portal.fis.tum.de/en/publications/force-controlled-movement-on-irregular-curved-surfaces-for-consta/",
+      "doi": "10.1109/CASE59546.2024.10711634",
+      "publication": "IEEE CASE 2024, pp.4181–4186",
+      "read_scope": "abstract_only",
+      "locator": "TUM机构库摘要",
+      "accessed_at": "2026-10-20",
+      "summary": "摘要已有机器人割胶力控研究，并报告机械臂姿态/可操作性对力控稳定与力估计的影响。",
+      "limits": "未核读全文；不采用摘要中的设定力作为本方案参数，也不据此认定方法新颖。"
+    }
+  ],
+  "external_claims": [
+    {
+      "id": "RC01",
+      "value": "原文分别定义切割深度、耗皮量及割口到形成层距离，并采用切割深度作为替代指标进行控制与评价。",
+      "source_id": "RS01",
+      "locator": "第4.1节",
+      "nature": "source_summary"
+    },
+    {
+      "id": "RC02",
+      "value": "已有割胶研究融合视觉和测距进行定位与轨迹补偿。",
+      "source_id": "RS01",
+      "locator": "第3.1—3.2.2节",
+      "nature": "source_summary"
+    },
+    {
+      "id": "RC03",
+      "value": "已有割胶力控研究报告姿态对力控稳定和估计精度的影响。",
+      "source_id": "RS02",
+      "locator": "机构库摘要",
+      "nature": "source_summary"
+    },
+    {
+      "id": "RC04",
+      "value": "外表面几何测量不能自动证明内部余皮厚度；目标对象需要另行测量或校准。",
+      "source_id": "RS01",
+      "locator": "平台基于第4.1节测量对象差异作出的推论",
+      "nature": "platform_inference"
+    }
+  ],
+  "methods": [
+    {
+      "id": "M01",
+      "title": "设计思维 + 质量功能展开",
+      "role": "先把“我要割胶机器人”变成可测任务",
+      "input": "目标用户、现有工序、工作结果、树体损伤与维护约束",
+      "output": "切割几何、耗皮、损伤、产胶及成本分别定义；阈值待农艺和用户确认",
+      "nature": "platform_method_proposal"
+    },
+    {
+      "id": "M02",
+      "title": "TRIZ：反馈与动态化",
+      "role": "处理效率、接触适应与伤树风险之间的矛盾",
+      "input": "希望稳定作业，但树形、刀具与材料状态会变化",
+      "output": "按状态调整操作，分开几何约束与接触反馈；不是固定力值照搬",
+      "nature": "platform_method_proposal",
+      "limits": "本轮是原理启发，未自动查矛盾矩阵，也未证明专利新颖性。"
+    },
+    {
+      "id": "M03",
+      "title": "功能分解与方案分离",
+      "role": "把找位置、保持姿态、控制切除量、处理异常分开",
+      "input": "哪项功能在造成误差或损伤",
+      "output": "各功能有对应观测量、执行动作和验证记录",
+      "nature": "platform_method_proposal"
+    },
+    {
+      "id": "M04",
+      "title": "分层验证 + 最小原型",
+      "role": "先验证末端是否有效，再扩到整机",
+      "input": "当前最不确定的是切割效果与树体约束",
+      "output": "几何台架→材料对照→农艺方确认后的实树试验→长期跟踪；不先承诺自主导航或收益",
+      "nature": "platform_method_proposal"
+    }
+  ],
+  "paths": [
+    {
+      "id": "P01",
+      "title": "接触变化与割深控制",
+      "short": "载荷反馈",
+      "priority": "优先研究",
+      "relation": "控制思路关联较强；工程适配未验证",
+      "knowledge_id": "K06",
+      "claim_ids": [
+        "C27",
+        "C29",
+        "C31",
+        "C33"
+      ],
+      "external_claim_ids": [
+        "RC01",
+        "RC02",
+        "RC03",
+        "RC04"
+      ],
+      "method_ids": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "target_short": "切割量与伤树约束",
+      "target_problem": "树形、刀具姿态和材料变化时，怎样控制切除量并约束伤树风险？",
+      "why": "两者都要在接触条件变化时调整动作。嫦娥档案提供“观察接触反馈、调整运动、对比结果”的经验，而不是割胶配方。",
+      "difference": "月壤钻进与活体树皮切削的材料、几何及损伤目标不同；恒力不等于恒割深，更不等于内部余皮厚度已被测得。",
+      "proposal": "候选方向：以经校准的几何/切除量估计约束轨迹，辅以接触反馈和异常识别；内部余皮厚度需单独建立测量或校准依据。",
+      "questions": [
+        "你做固定单树设备，还是移动跨树设备？",
+        "是否允许加装传感，控制器能否调整动作？",
+        "树种、树龄、割面和农艺验收标准是什么？",
+        "损伤、耗皮、产胶和节拍分别如何测量？"
+      ],
+      "experiment": "先固定工件和末端，比较固定轨迹、接触反馈辅助、几何与接触信息融合三种研究方案。记录切除量误差、耗皮、损伤和异常恢复；验收阈值先确认。",
+      "cannot_copy": [
+        "300/400 N月壤试验设定",
+        "钻具转速和PID系数",
+        "论文的稳定时间与收益结论"
+      ],
+      "status": "transfer_hypothesis"
+    },
+    {
+      "id": "P02",
+      "title": "效率与损伤的设计取舍",
+      "short": "多目标取舍",
+      "priority": "值得借鉴",
+      "relation": "设计决策结构相关；具体机构关联有限",
+      "knowledge_id": "K05",
+      "claim_ids": [
+        "C24",
+        "C25"
+      ],
+      "external_claim_ids": [
+        "RC01"
+      ],
+      "method_ids": [
+        "M01",
+        "M02",
+        "M03"
+      ],
+      "target_short": "有效切割与避免过切",
+      "target_problem": "如何兼顾作业效率、有效切割与长期树体状态？",
+      "why": "嫦娥案例比较同一工具在取芯与穿岩要求间的取舍；可借鉴先定义多目标底线，再比较构型与规程的思路。",
+      "difference": "不能把岩石穿透和取芯指标，换个名称就当成产胶与树体损伤指标。",
+      "proposal": "把刀具几何、姿态、进给和限位方式作为候选变量；在农艺底线内比较作业时间、耗皮、损伤和产胶，不以单次产胶量判最好。",
+      "questions": [
+        "哪些指标是不可突破的底线？",
+        "效率与维护成本的优先级如何？",
+        "是否有人工或现有设备的同条件基线？"
+      ],
+      "experiment": "比较几种候选刀具/限位与控制组合，按预先定义的多目标判据淘汰方案；保留失败及代价。",
+      "cannot_copy": [
+        "外伸管钻头构型",
+        "月壤取芯率作为割胶效果指标"
+      ],
+      "status": "transfer_hypothesis"
+    },
+    {
+      "id": "P03",
+      "title": "从末端试验走到整机",
+      "short": "分层验证",
+      "priority": "优先研究",
+      "relation": "验证方法关联较强；不能替代割胶领域验证",
+      "knowledge_id": "K03",
+      "claim_ids": [
+        "C10",
+        "C13"
+      ],
+      "external_claim_ids": [
+        "RC01",
+        "RC02"
+      ],
+      "method_ids": [
+        "M01",
+        "M04"
+      ],
+      "target_short": "先证明末端有效",
+      "target_problem": "怎样知道机器真的割得好，而不只是轨迹跟得好？",
+      "why": "嫦娥经验强调每层试验覆盖什么、遗漏什么；割胶同样需要从局部效果走到真实作业。",
+      "difference": "月面任务成功不为割胶方案背书，台架几何精度不证明长期树体健康。",
+      "proposal": "先做末端最小原型，验证测量与切割效果；再加入定位、跨树移动、环境及维护因素。每一步通过后再扩大范围。",
+      "questions": [
+        "第一轮要证明哪一个核心假设？",
+        "每层材料与真实树体的差异是什么？",
+        "谁来确认损伤判据并跟踪后续树体状态？"
+      ],
+      "experiment": "为各层定义对象、对照、测量、阈值和未覆盖风险。末端台架、合适材料、农艺确认后的实树、长期作业分别留记录。",
+      "cannot_copy": [
+        "把地面模型误差当割胶精度",
+        "以一次成功代替长期有效"
+      ],
+      "status": "transfer_hypothesis"
+    },
+    {
+      "id": "P04",
+      "title": "排除“同是采集就能照搬”",
+      "short": "软袋取芯",
+      "priority": "本次不采用",
+      "relation": "仅表面词义相关，直接方案匹配不足",
+      "knowledge_id": "K01",
+      "claim_ids": [
+        "C05",
+        "C10"
+      ],
+      "external_claim_ids": [
+        "RC01"
+      ],
+      "method_ids": [
+        "M01",
+        "M03"
+      ],
+      "target_short": "采胶不等于取芯",
+      "target_problem": "都叫“采集”，是否可以直接用软袋取芯？",
+      "why": "词语相似不能证明目标、动作和对象相同。软袋案例旨在保留被取出的样品层序；割胶需对活体树皮进行受约束切削。",
+      "difference": "本任务没有“连续深层样心”这一目标，直接移植整套软袋钻取系统缺乏依据。",
+      "proposal": "本次不采用直接机构迁移。若另有胶乳收集与污染控制需求，应作为独立问题研究，重新寻找证据。",
+      "questions": [
+        "当前难点到底是切割、定位、胶乳收集还是运输？"
+      ],
+      "experiment": "重新确认目标；没有目标与机制对应关系时，不进入该机构路线试制。",
+      "cannot_copy": [
+        "软袋取芯机构作为割胶末端",
+        "以同属采集认定高相关"
+      ],
+      "status": "excluded_direct_transfer"
+    }
+  ],
+  "novelty": "割胶领域已有视觉/测距和力控研究。本演示提供可追溯的迁移推理组织，不声称发明了这些技术。",
+  "limits": [
+    "关联强弱是平台定性判断，无校准相关度百分比",
+    "三条候选路径和一条排除路径均非真实企业验证",
+    "外部割胶资料不写回嫦娥历史事实或提升档案评分",
+    "不生成可直接上机的控制参数"
+  ]
+}

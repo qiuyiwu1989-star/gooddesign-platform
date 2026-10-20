@@ -71,6 +71,7 @@ def build(root,p):
  assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details>'+matching['assessment']+research['assessment']+'</div>'
  nav=''.join(f'<a data-reader-section="{x["id"]}" href="#reader-{x["id"]}"><span>{i:02d}</span>{e(x["title"])}</a>'for i,x in enumerate(stats,1))
  hero='<div class="eyebrow">好设计 · 项目档案</div><h1>嫦娥月球钻取采样系统</h1><p class="summary">从月球深层取回样品，也保存样品所承载的信息。<br>整理五号与六号任务相关的系统设计、研究成果和发展过程。</p><div class="reader-hero-meta"><span>2025年第十届好设计奖金奖</span><span>资料整理截至 '+e(d['as_of'])+'</span></div>'
+ hero+='<p><a class="reader-link" href="项目图谱.html">项目图谱：用割胶机器人试读设计迁移 →</a></p>'
  return dict(board=board,library=library,assessment=assessment,nav=nav,hero=hero,css=CSS+matching['css']+'.reader-expand{scroll-margin-top:85px}.engine-audit-table{min-width:680px}.engine-audit-table td:first-child{min-width:95px}',js=JS+matching['js'])
 
 def quality_panel(q,e):

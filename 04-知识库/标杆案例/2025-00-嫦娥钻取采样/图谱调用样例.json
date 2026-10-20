@@ -1,0 +1,1115 @@
+{
+  "version": "transfer-demo-0.1.0",
+  "kind": "authored_transfer_context_not_ai_result",
+  "archive_revision": "0.4.0",
+  "archive_sha256": "310b6f4e67884856d7eab95eff02be5358d1f05e1f58b47de9301e176abdf083",
+  "ordered_context": [
+    {
+      "priority": 1,
+      "kind": "target_assumptions_and_unknowns",
+      "data": {
+        "id": "TARGET-RUBBER-DEMO",
+        "name": "割胶机器人",
+        "nature": "user_hypothetical_task",
+        "scope": "先讨论割胶末端与验证路径；固定式或移动式、树况、预算与阈值未确定",
+        "objective": "稳定完成有效切割，同时约束耗皮、损伤及作业成本",
+        "acceptance_thresholds": null
+      }
+    },
+    {
+      "priority": 2,
+      "kind": "analogy_hypotheses_and_exclusion",
+      "data": [
+        {
+          "id": "P01",
+          "title": "接触变化与割深控制",
+          "short": "载荷反馈",
+          "priority": "优先研究",
+          "relation": "控制思路关联较强；工程适配未验证",
+          "knowledge_id": "K06",
+          "claim_ids": [
+            "C27",
+            "C29",
+            "C31",
+            "C33"
+          ],
+          "external_claim_ids": [
+            "RC01",
+            "RC02",
+            "RC03",
+            "RC04"
+          ],
+          "method_ids": [
+            "M01",
+            "M02",
+            "M03",
+            "M04"
+          ],
+          "target_short": "切割量与伤树约束",
+          "target_problem": "树形、刀具姿态和材料变化时，怎样控制切除量并约束伤树风险？",
+          "why": "两者都要在接触条件变化时调整动作。嫦娥档案提供“观察接触反馈、调整运动、对比结果”的经验，而不是割胶配方。",
+          "difference": "月壤钻进与活体树皮切削的材料、几何及损伤目标不同；恒力不等于恒割深，更不等于内部余皮厚度已被测得。",
+          "proposal": "候选方向：以经校准的几何/切除量估计约束轨迹，辅以接触反馈和异常识别；内部余皮厚度需单独建立测量或校准依据。",
+          "questions": [
+            "你做固定单树设备，还是移动跨树设备？",
+            "是否允许加装传感，控制器能否调整动作？",
+            "树种、树龄、割面和农艺验收标准是什么？",
+            "损伤、耗皮、产胶和节拍分别如何测量？"
+          ],
+          "experiment": "先固定工件和末端，比较固定轨迹、接触反馈辅助、几何与接触信息融合三种研究方案。记录切除量误差、耗皮、损伤和异常恢复；验收阈值先确认。",
+          "cannot_copy": [
+            "300/400 N月壤试验设定",
+            "钻具转速和PID系数",
+            "论文的稳定时间与收益结论"
+          ],
+          "status": "transfer_hypothesis"
+        },
+        {
+          "id": "P02",
+          "title": "效率与损伤的设计取舍",
+          "short": "多目标取舍",
+          "priority": "值得借鉴",
+          "relation": "设计决策结构相关；具体机构关联有限",
+          "knowledge_id": "K05",
+          "claim_ids": [
+            "C24",
+            "C25"
+          ],
+          "external_claim_ids": [
+            "RC01"
+          ],
+          "method_ids": [
+            "M01",
+            "M02",
+            "M03"
+          ],
+          "target_short": "有效切割与避免过切",
+          "target_problem": "如何兼顾作业效率、有效切割与长期树体状态？",
+          "why": "嫦娥案例比较同一工具在取芯与穿岩要求间的取舍；可借鉴先定义多目标底线，再比较构型与规程的思路。",
+          "difference": "不能把岩石穿透和取芯指标，换个名称就当成产胶与树体损伤指标。",
+          "proposal": "把刀具几何、姿态、进给和限位方式作为候选变量；在农艺底线内比较作业时间、耗皮、损伤和产胶，不以单次产胶量判最好。",
+          "questions": [
+            "哪些指标是不可突破的底线？",
+            "效率与维护成本的优先级如何？",
+            "是否有人工或现有设备的同条件基线？"
+          ],
+          "experiment": "比较几种候选刀具/限位与控制组合，按预先定义的多目标判据淘汰方案；保留失败及代价。",
+          "cannot_copy": [
+            "外伸管钻头构型",
+            "月壤取芯率作为割胶效果指标"
+          ],
+          "status": "transfer_hypothesis"
+        },
+        {
+          "id": "P03",
+          "title": "从末端试验走到整机",
+          "short": "分层验证",
+          "priority": "优先研究",
+          "relation": "验证方法关联较强；不能替代割胶领域验证",
+          "knowledge_id": "K03",
+          "claim_ids": [
+            "C10",
+            "C13"
+          ],
+          "external_claim_ids": [
+            "RC01",
+            "RC02"
+          ],
+          "method_ids": [
+            "M01",
+            "M04"
+          ],
+          "target_short": "先证明末端有效",
+          "target_problem": "怎样知道机器真的割得好，而不只是轨迹跟得好？",
+          "why": "嫦娥经验强调每层试验覆盖什么、遗漏什么；割胶同样需要从局部效果走到真实作业。",
+          "difference": "月面任务成功不为割胶方案背书，台架几何精度不证明长期树体健康。",
+          "proposal": "先做末端最小原型，验证测量与切割效果；再加入定位、跨树移动、环境及维护因素。每一步通过后再扩大范围。",
+          "questions": [
+            "第一轮要证明哪一个核心假设？",
+            "每层材料与真实树体的差异是什么？",
+            "谁来确认损伤判据并跟踪后续树体状态？"
+          ],
+          "experiment": "为各层定义对象、对照、测量、阈值和未覆盖风险。末端台架、合适材料、农艺确认后的实树、长期作业分别留记录。",
+          "cannot_copy": [
+            "把地面模型误差当割胶精度",
+            "以一次成功代替长期有效"
+          ],
+          "status": "transfer_hypothesis"
+        },
+        {
+          "id": "P04",
+          "title": "排除“同是采集就能照搬”",
+          "short": "软袋取芯",
+          "priority": "本次不采用",
+          "relation": "仅表面词义相关，直接方案匹配不足",
+          "knowledge_id": "K01",
+          "claim_ids": [
+            "C05",
+            "C10"
+          ],
+          "external_claim_ids": [
+            "RC01"
+          ],
+          "method_ids": [
+            "M01",
+            "M03"
+          ],
+          "target_short": "采胶不等于取芯",
+          "target_problem": "都叫“采集”，是否可以直接用软袋取芯？",
+          "why": "词语相似不能证明目标、动作和对象相同。软袋案例旨在保留被取出的样品层序；割胶需对活体树皮进行受约束切削。",
+          "difference": "本任务没有“连续深层样心”这一目标，直接移植整套软袋钻取系统缺乏依据。",
+          "proposal": "本次不采用直接机构迁移。若另有胶乳收集与污染控制需求，应作为独立问题研究，重新寻找证据。",
+          "questions": [
+            "当前难点到底是切割、定位、胶乳收集还是运输？"
+          ],
+          "experiment": "重新确认目标；没有目标与机制对应关系时，不进入该机构路线试制。",
+          "cannot_copy": [
+            "软袋取芯机构作为割胶末端",
+            "以同属采集认定高相关"
+          ],
+          "status": "excluded_direct_transfer"
+        }
+      ]
+    },
+    {
+      "priority": 3,
+      "kind": "archived_mechanisms_claims_and_boundaries",
+      "data": {
+        "knowledge": [
+          {
+            "baseline": "表4中的恒速组，对照恒力载组。",
+            "boundary": "地面取芯每组5次；冲击试验峰值并未因此消失。 相同控制方法在模拟月壤和人造大理岩中有不同的超调与稳定时间，参数不能直接迁移。",
+            "claim_ids": [
+              "C27",
+              "C29",
+              "C30",
+              "C31",
+              "C32",
+              "C33",
+              "C34"
+            ],
+            "id": "K06",
+            "measure": "比较恒速和恒力载控制。",
+            "mechanism": "通过载荷反馈调节加载运动。",
+            "nature": "platform_analysis",
+            "problem": "介质变化使固定运动输入下的载荷波动。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "围绕载荷反馈调整进给，而非固定运动输入",
+            "tradeoffs": "增加测量、控制和调参依赖。",
+            "transfer": "可启发接触式加工或操作的控制研究，尚未验证迁移。",
+            "validation": "在目标介质与约束下重新验证稳定时间和取样效果。"
+          },
+          {
+            "baseline": "论文中的两类钻头构型比较；不是历史飞行选型纪要。",
+            "boundary": "论文模型及模拟物条件；不据此认定具体飞行型号采用。",
+            "claim_ids": [
+              "C24"
+            ],
+            "id": "K05",
+            "measure": "比较外伸管与无外伸管方案及配套钻进规程。",
+            "mechanism": "几何变化改变接触面积与取芯应力条件。",
+            "nature": "platform_analysis",
+            "problem": "同一钻头需要兼顾取芯与穿岩。",
+            "source_ids": [
+              "S07"
+            ],
+            "title": "取芯保持与穿岩能力的设计取舍",
+            "tradeoffs": "穿岩所需进尺力与取芯保持能力之间存在约束。",
+            "transfer": "可作为多工况工具的取舍分析示例。",
+            "validation": "比较相同工况下的取芯与穿岩指标。"
+          },
+          {
+            "boundary": "不能以单项模拟误差代替真实环境可靠性。",
+            "claim_ids": [
+              "C10",
+              "C13"
+            ],
+            "id": "K03",
+            "measure": "模拟物研究、机构性能试验、系统演练和任务反馈形成不同层级的证据。",
+            "mechanism": "将每项试验覆盖的条件明确化，再组合论证；保留尚未覆盖的风险。",
+            "nature": "platform_analysis",
+            "problem": "地面难以完整复现月面全部条件。",
+            "source_ids": [
+              "S07",
+              "S03",
+              "S14"
+            ],
+            "title": "用分层证据逼近难以完全复现的环境",
+            "tradeoffs": "模型、模拟物与真实环境的差异仍需解释。",
+            "transfer": "适用于讨论高风险装备的验证架构。",
+            "validation": "建立工况—试验—指标覆盖矩阵，登记未覆盖项。"
+          },
+          {
+            "boundary": "粒径、黏聚性、污染控制和温度不同，必须重新试验；不直接声称适用于生物样本。",
+            "claim_ids": [
+              "C05",
+              "C10"
+            ],
+            "id": "K01",
+            "measure": "钻具负责破土，软袋内翻收集样心，围绕样心与容器相对运动设计。",
+            "mechanism": "将材料搬运问题改写成信息保真问题，以运动关系和界面控制降低相对滑移。",
+            "nature": "platform_analysis",
+            "problem": "取样过程可能扰动颗粒排列，取到重量不能独自证明保留了地质信息。",
+            "source_ids": [
+              "S07",
+              "S12"
+            ],
+            "title": "把“取到样品”转成“保留样品信息”",
+            "tradeoffs": "软袋摩擦、柔性件可靠性和封口性能成为新的关键约束。",
+            "transfer": "可探索环境分层采样、脆弱样本转移等场景。",
+            "validation": "比较传统收集与内翻收集的层序偏差、回收率和卡滞次数。"
+          }
+        ],
+        "claims": [
+          {
+            "expert_reviewed": false,
+            "field": "research_deepening",
+            "id": "C27",
+            "locator": "1032页第4节及表4",
+            "nature": "source_statement",
+            "note": "按来源陈述登记；未作独立工程核验。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-19",
+            "review_status": "source_read",
+            "scope": "paper_ground_comparison",
+            "source_ids": [
+              "S23"
+            ],
+            "value": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "research_deepening",
+            "id": "C29",
+            "locator": "1031页3.3节和图17",
+            "nature": "source_statement",
+            "note": "按来源陈述登记；未作独立工程核验。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-19",
+            "review_status": "source_read",
+            "scope": "paper_impact_test",
+            "source_ids": [
+              "S23"
+            ],
+            "value": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "research_deepening",
+            "id": "C30",
+            "locator": "1024页摘要、1033页结论2",
+            "nature": "source_statement",
+            "note": "按来源陈述登记；未作独立工程核验。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-19",
+            "review_status": "source_read",
+            "scope": "paper_reported_application",
+            "source_ids": [
+              "S23"
+            ],
+            "value": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "research_deepening",
+            "id": "C31",
+            "locator": "1029页3.1节、图11(a)",
+            "nature": "source_statement",
+            "note": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-20",
+            "review_status": "source_read",
+            "scope": "paper_ground_soil_constant",
+            "source_ids": [
+              "S23"
+            ],
+            "value": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "research_deepening",
+            "id": "C32",
+            "locator": "1029—1030页3.1节、图11(b)",
+            "nature": "source_statement",
+            "note": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-20",
+            "review_status": "source_read",
+            "scope": "paper_ground_soil_ramp",
+            "source_ids": [
+              "S23"
+            ],
+            "value": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "research_deepening",
+            "id": "C33",
+            "locator": "1030页3.2节、图14(a)",
+            "nature": "source_statement",
+            "note": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-20",
+            "review_status": "source_read",
+            "scope": "paper_ground_rock_constant",
+            "source_ids": [
+              "S23"
+            ],
+            "value": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "research_deepening",
+            "id": "C34",
+            "locator": "1030页3.2节、图14(b)",
+            "nature": "source_statement",
+            "note": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-20",
+            "review_status": "source_read",
+            "scope": "paper_ground_rock_ramp",
+            "source_ids": [
+              "S23"
+            ],
+            "value": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "research_deepening",
+            "id": "C24",
+            "locator": "第4.3节和结论2",
+            "nature": "source_statement",
+            "note": "按来源陈述登记；未作独立工程核验。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-19",
+            "review_status": "source_read",
+            "scope": "published_research",
+            "source_ids": [
+              "S07"
+            ],
+            "value": "论文比较外伸管与无外伸管钻头，指出取芯应力与岩石钻进接触面积之间的取舍。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "validation",
+            "id": "C10",
+            "locator": "摘要、第3.2节及表1",
+            "nature": "source_statement",
+            "note": "不外推为飞行系统精度。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-19",
+            "review_status": "source_read",
+            "scope": "ground_research",
+            "source_ids": [
+              "S07"
+            ],
+            "value": "2015年研究在HIT-LS1#模拟物与HIT-2钻具条件下，取心率模型预测与试验的平均误差率小于5%。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "testing",
+            "id": "C13",
+            "locator": "航天学院地面验证支持平台段",
+            "nature": "source_statement",
+            "note": "",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-19",
+            "review_status": "source_read",
+            "scope": "CE6_ground_support",
+            "source_ids": [
+              "S03"
+            ],
+            "value": "哈工大介绍钻取地面支持平台用于在线监视、决策支持及全流程演练。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "sampling_principle",
+            "id": "C05",
+            "locator": "S07第1节；S12说明书和权利要求1",
+            "nature": "source_statement",
+            "note": "解释技术路径，不据此确认某件专利在型号上的实施。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-19",
+            "review_status": "source_read",
+            "scope": "technical_lineage",
+            "source_ids": [
+              "S07",
+              "S12"
+            ],
+            "value": "采用双管与内翻软袋组织取芯，以减少样心相对滑移并保留层序。"
+          },
+          {
+            "expert_reviewed": false,
+            "field": "research_deepening",
+            "id": "C25",
+            "locator": "第2节末段；表1",
+            "nature": "source_statement",
+            "note": "按来源陈述登记；未作独立工程核验。",
+            "project_id": "2025-00",
+            "recorded_at": "2026-10-19",
+            "review_status": "source_read",
+            "scope": "published_research",
+            "source_ids": [
+              "S07"
+            ],
+            "value": "论文表1的平均误差率为4.31%；模型对剧烈振动冲击工况的适用性有限。"
+          }
+        ],
+        "citations": [
+          {
+            "accessed_at": "2026-10-20",
+            "id": "S23",
+            "internal_path": "01-原始资料/论文/嫦娥钻取采样/2025-力载控制方法与实验研究.pdf",
+            "limits": "作者报告，非平台复现实验或获奖成果清单。第4节恒速设定单位为r/min，不能改写为mm/min；图19(b)图注与正文口径有歧义。",
+            "locator": "1024—1034页；表1—4、3.1—3.3节、4节、5节及参考文献[3]",
+            "published_at": "2025-05",
+            "publisher": "《宇航学报》",
+            "read_scope": "full_pdf_text_and_tables",
+            "rights": "限研究引用；全文及图片再发布权未取得",
+            "sha256": "62270319aa992c7087520d4f118d9881395d82d0ef129871aeeb4467fddcd2a7",
+            "storage": "PDF内部留存并核读11页文字；首页、表4与参数表视觉核对，原件不入公开站点；本轮重读3.1/3.2节并视觉核对1029/1030页",
+            "summary": "核读原文的部件参数、四组跟踪工况、冲击对照、取芯对照与任务应用陈述。",
+            "title": "深层月壤钻取系统钻进力载控制方法与实验研究",
+            "type": "原始期刊论文",
+            "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf"
+          },
+          {
+            "accessed_at": "2026-10-19",
+            "id": "S07",
+            "limits": "模拟物和特定钻具下的研究结论，不是月面整体系统误差或飞行指标。 核读可见全文文字，公式图像未逐式重算。",
+            "locator": "摘要、第1节原理、第2节模型；文末书目信息",
+            "published_at": "2015-02-25",
+            "read_scope": "full_article_text",
+            "rights": "仅研究引用；图片及全文再发布权限未取得",
+            "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+            "summary": "2015年论文基于极限平衡分析软袋取心，并用HIT-LS1#和HIT-2钻具试验；摘要报告模型预测与试验平均误差小于5%。",
+            "title": "模拟月壤钻进取样量影响因素分析及试验研究",
+            "type": "研究论文原文",
+            "url": "https://html.rhhz.net/BJHKHTDXXBZRB/20151111.htm"
+          },
+          {
+            "accessed_at": "2026-10-19",
+            "id": "S03",
+            "limits": "单位自述；全文还包含机械臂/GNC等其他成果，本档案不将其全部计入获奖系统。",
+            "locator": "采集月球土特产样本部分：团队、智能支持与反演系统、取芯软袋及地面平台段",
+            "published_at": "2024-06-25",
+            "read_scope": "full_web_text",
+            "rights": "仅研究引用；图片及全文再发布权限未取得",
+            "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+            "summary": "说明月背通信与地质约束，介绍邓宗全牵头团队、遥测支持、软袋研制和地面演练平台。",
+            "title": "哈工大助力嫦娥六号带珍宝回家",
+            "type": "完成单位新闻",
+            "url": "https://news.hit.edu.cn/2024/0625/c1510a236100/page.htm"
+          },
+          {
+            "accessed_at": "2026-10-19",
+            "id": "S14",
+            "limits": "聚合页出现现权利人与原申请人不同的线索，须经官方登记复核，暂不作为权属变更事实。",
+            "locator": "Info、摘要、著录时间",
+            "published_at": "2016-08-17",
+            "read_scope": "patent_text",
+            "rights": "仅研究引用；图片及全文再发布权限未取得",
+            "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+            "summary": "涉及月壤钻探取心机构性能测试平台，2014年申请、2016年授权公告。",
+            "title": "CN104062141B文献与著录页",
+            "type": "专利文献聚合页",
+            "url": "https://patents.google.com/patent/CN104062141B/zh"
+          },
+          {
+            "accessed_at": "2026-10-19",
+            "id": "S12",
+            "limits": "仅按文献登记；平台状态不作为官方现时状态，英文机构名不直接规范化。",
+            "locator": "Info、Description、Claims 1、Publications",
+            "published_at": "2012-10-10",
+            "read_scope": "patent_text",
+            "rights": "仅研究引用；图片及全文再发布权限未取得",
+            "storage": "元信息、研究摘要与链接；未镜像全文或图片",
+            "summary": "2012年申请的取心机构采用折叠软袋内翻收集，页面可读说明书与权利要求。",
+            "title": "CN102720501A文献与著录页",
+            "type": "专利文献聚合页",
+            "url": "https://patents.google.com/patent/CN102720501A/zh"
+          }
+        ],
+        "test_contexts": [
+          {
+            "card_ids": [
+              "MC01",
+              "MC03"
+            ],
+            "claim_ids": [
+              "C20",
+              "C25"
+            ],
+            "controls": [
+              {
+                "dimension": "rotation",
+                "key": "drill_rot_speed",
+                "kind": "discrete_test_levels",
+                "label": "钻具回转转速",
+                "unit": "r/min",
+                "values": [
+                  50,
+                  90,
+                  150,
+                  210,
+                  250
+                ]
+              },
+              {
+                "dimension": "linear_speed",
+                "key": "feed_speed",
+                "kind": "discrete_test_levels",
+                "label": "进尺速度",
+                "unit": "mm/min",
+                "values": [
+                  50,
+                  90,
+                  130,
+                  170,
+                  210
+                ]
+              }
+            ],
+            "id": "EP01",
+            "knowledge_ids": [
+              "K01",
+              "K05"
+            ],
+            "limits": [
+              "两组档位不能推断每一种组合都有独立重复验证",
+              "档位之间的连续区间没有据此得到验证",
+              "强振动冲击不在模型可靠解释范围"
+            ],
+            "locator": "第3.2节、表1、第4.3节",
+            "material_key": "HIT-LS1",
+            "material_label": "HIT-LS1#压缩模拟月壤",
+            "result": "模型平均误差率4.31%，不代表月面误差或层序零扰动。",
+            "source_ids": [
+              "S07"
+            ],
+            "title": "软袋取芯模型试验",
+            "validation_id": "V01"
+          },
+          {
+            "card_ids": [
+              "MC02"
+            ],
+            "claim_ids": [
+              "C31"
+            ],
+            "controls": [
+              {
+                "dimension": "force",
+                "key": "target_force",
+                "kind": "reported_setpoint",
+                "label": "目标钻进力载",
+                "unit": "N",
+                "values": [
+                  400
+                ]
+              }
+            ],
+            "id": "EP02",
+            "knowledge_ids": [
+              "K06"
+            ],
+            "limits": [
+              "5组取均值，逐次曲线与方差未取得",
+              "未报道稳定判据，不据此给其他设备作保证"
+            ],
+            "locator": "1029页3.1节、图11(a)",
+            "material_key": "nominal_soil_simulant",
+            "material_label": "地面标称工况模拟月壤",
+            "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "模拟月壤恒定载荷跟踪",
+            "validation_id": "V04"
+          },
+          {
+            "card_ids": [
+              "MC02"
+            ],
+            "claim_ids": [
+              "C33"
+            ],
+            "controls": [
+              {
+                "dimension": "force",
+                "key": "target_force",
+                "kind": "reported_setpoint",
+                "label": "目标钻进力载",
+                "unit": "N",
+                "values": [
+                  400
+                ]
+              }
+            ],
+            "id": "EP03",
+            "knowledge_ids": [
+              "K06"
+            ],
+            "limits": [
+              "人造大理岩不等于任意岩石或金属",
+              "不能将模拟月壤的4.6 s移用到本工况"
+            ],
+            "locator": "1030页3.2节、图14(a)",
+            "material_key": "artificial_marble",
+            "material_label": "人造大理岩",
+            "result": "稳定约8.2 s；最大超调约92.1 N。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "人造大理岩恒定载荷跟踪",
+            "validation_id": "V06"
+          },
+          {
+            "card_ids": [
+              "MC02"
+            ],
+            "claim_ids": [
+              "C27"
+            ],
+            "controls": [
+              {
+                "dimension": "rotation",
+                "key": "drill_rot_speed",
+                "kind": "reported_setpoint",
+                "label": "钻具回转转速",
+                "unit": "r/min",
+                "values": [
+                  120
+                ]
+              },
+              {
+                "dimension": "force",
+                "key": "target_force",
+                "kind": "reported_setpoint",
+                "label": "恒力载组目标力载",
+                "unit": "N",
+                "values": [
+                  300
+                ]
+              }
+            ],
+            "id": "EP04",
+            "knowledge_ids": [
+              "K06"
+            ],
+            "limits": [
+              "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+              "仅用于对应地面试验的比较，非飞行增益"
+            ],
+            "locator": "1032页第4节、表4",
+            "material_key": "nominal_soil_simulant",
+            "material_label": "地面标称工况模拟月壤",
+            "result": "两组各5次，保留原始10行记录，派生统计另算。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "模拟月壤取芯方式对照",
+            "validation_id": "V02"
+          }
+        ],
+        "validations": [
+          {
+            "apparatus": "HIT-2型钻具",
+            "atomic_id": "TEST-01",
+            "baseline": "模型预测的取心率与试验结果对照",
+            "claim_ids": [
+              "C10",
+              "C20",
+              "C25"
+            ],
+            "id": "V01",
+            "kind": "已发表地面研究",
+            "limitations": "模型忽略土体内部相对运动；不将剧烈振动冲击或月面系统精度包含在结论中。",
+            "material": "HIT-LS1#模拟月壤",
+            "method": "模型预测与模拟月壤试验对照；n=50/90/150/210/250 r/min，进尺50/90/130/170/210 mm/min。",
+            "metric_ids": [
+              "MET-05"
+            ],
+            "result": "表1平均误差率4.31%；摘要概括为小于5%。",
+            "source_ids": [
+              "S07"
+            ],
+            "title": "2015年取心率模型验证"
+          },
+          {
+            "apparatus": "论文样机；螺旋钻具回转转速固定120 r/min",
+            "atomic_id": "TEST-02",
+            "baseline": "恒速与恒力载，各5次",
+            "claim_ids": [
+              "C27"
+            ],
+            "id": "V02",
+            "kind": "已发表地面研究",
+            "limitations": "50 r/min为原文加载侧设定，不改写为线性进尺速度；未报告随机化、独立性或显著性检验。",
+            "material": "标称工况模拟月壤",
+            "method": "10次对照，分别记录样品质量与样品长度。",
+            "metric_ids": [],
+            "result": "保存表4原始10行观测，不推导飞行收益。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "2025年两种控制方式地面取芯对照",
+            "trials": [
+              {
+                "group": "SY01",
+                "id": "SY01-1",
+                "locator": "1032页表4，SY01-1",
+                "sample_length_mm": 1260,
+                "sample_mass_g": 383,
+                "setting_original": "恒钻进速度；原文50 r/min",
+                "source_ids": [
+                  "S23"
+                ]
+              },
+              {
+                "group": "SY01",
+                "id": "SY01-2",
+                "locator": "1032页表4，SY01-2",
+                "sample_length_mm": 813,
+                "sample_mass_g": 234,
+                "setting_original": "恒钻进速度；原文50 r/min",
+                "source_ids": [
+                  "S23"
+                ]
+              },
+              {
+                "group": "SY01",
+                "id": "SY01-3",
+                "locator": "1032页表4，SY01-3",
+                "sample_length_mm": 850,
+                "sample_mass_g": 258,
+                "setting_original": "恒钻进速度；原文50 r/min",
+                "source_ids": [
+                  "S23"
+                ]
+              },
+              {
+                "group": "SY01",
+                "id": "SY01-4",
+                "locator": "1032页表4，SY01-4",
+                "sample_length_mm": 1480,
+                "sample_mass_g": 448,
+                "setting_original": "恒钻进速度；原文50 r/min",
+                "source_ids": [
+                  "S23"
+                ]
+              },
+              {
+                "group": "SY01",
+                "id": "SY01-5",
+                "locator": "1032页表4，SY01-5",
+                "sample_length_mm": 1020,
+                "sample_mass_g": 301,
+                "setting_original": "恒钻进速度；原文50 r/min",
+                "source_ids": [
+                  "S23"
+                ]
+              },
+              {
+                "group": "SY02",
+                "id": "SY02-1",
+                "locator": "1032页表4，SY02-1",
+                "sample_length_mm": 1420,
+                "sample_mass_g": 434,
+                "setting_original": "恒钻进力载300 N",
+                "source_ids": [
+                  "S23"
+                ]
+              },
+              {
+                "group": "SY02",
+                "id": "SY02-2",
+                "locator": "1032页表4，SY02-2",
+                "sample_length_mm": 1330,
+                "sample_mass_g": 417,
+                "setting_original": "恒钻进力载300 N",
+                "source_ids": [
+                  "S23"
+                ]
+              },
+              {
+                "group": "SY02",
+                "id": "SY02-3",
+                "locator": "1032页表4，SY02-3",
+                "sample_length_mm": 1210,
+                "sample_mass_g": 345,
+                "setting_original": "恒钻进力载300 N",
+                "source_ids": [
+                  "S23"
+                ]
+              },
+              {
+                "group": "SY02",
+                "id": "SY02-4",
+                "locator": "1032页表4，SY02-4",
+                "sample_length_mm": 1490,
+                "sample_mass_g": 429,
+                "setting_original": "恒钻进力载300 N",
+                "source_ids": [
+                  "S23"
+                ]
+              },
+              {
+                "group": "SY02",
+                "id": "SY02-5",
+                "locator": "1032页表4，SY02-5",
+                "sample_length_mm": 1510,
+                "sample_mass_g": 512,
+                "setting_original": "恒钻进力载300 N",
+                "source_ids": [
+                  "S23"
+                ]
+              }
+            ]
+          },
+          {
+            "apparatus": "配重冲击与加载机构",
+            "atomic_id": "TEST-03",
+            "baseline": "取消PID闭环与加入PID闭环",
+            "claim_ids": [
+              "C29"
+            ],
+            "id": "V03",
+            "kind": "已发表地面研究",
+            "limitations": "控制缩短稳定过程，不等于消除冲击峰值；非月面实测。",
+            "material": "机械冲击载荷",
+            "method": "记录冲击响应及稳定时间",
+            "metric_ids": [
+              "MET-13",
+              "MET-14"
+            ],
+            "result": "原文两组峰值超调均约400 N；稳定时间约30 s/17.8 s。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "2025年冲击载荷闭环对照"
+          },
+          {
+            "apparatus": "论文钻进加载样机及PID闭环",
+            "atomic_id": "TEST-04",
+            "baseline": "恒定400 N",
+            "claim_ids": [
+              "C31"
+            ],
+            "id": "V04",
+            "kind": "已发表地面研究",
+            "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+            "locator": "1029页3.1节、图11(a)",
+            "material": "标称工况模拟月壤",
+            "method": "每工况5组，作者对曲线取均值；不与表4的取芯样本混算。",
+            "metric_ids": [
+              "MET-15"
+            ],
+            "reported_error_interval_N": [
+              -22.8,
+              15.6
+            ],
+            "reported_setpoint_N": 400,
+            "reported_settling_time_s": 4.6,
+            "result": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "模拟月壤恒定载荷跟踪"
+          },
+          {
+            "apparatus": "论文钻进加载样机及PID闭环",
+            "atomic_id": "TEST-05",
+            "baseline": "斜坡函数",
+            "claim_ids": [
+              "C32"
+            ],
+            "id": "V05",
+            "kind": "已发表地面研究",
+            "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+            "locator": "1029—1030页3.1节、图11(b)",
+            "material": "标称工况模拟月壤",
+            "method": "每工况5组，作者对曲线取均值；不与表4的取芯样本混算。",
+            "metric_ids": [
+              "MET-16"
+            ],
+            "reported_error_interval_N": [
+              -14.8,
+              23.6
+            ],
+            "reported_setpoint_N": null,
+            "reported_settling_time_s": 3.1,
+            "result": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "模拟月壤斜坡载荷跟踪"
+          },
+          {
+            "apparatus": "论文钻进加载样机及PID闭环",
+            "atomic_id": "TEST-06",
+            "baseline": "恒定400 N",
+            "claim_ids": [
+              "C33"
+            ],
+            "id": "V06",
+            "kind": "已发表地面研究",
+            "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+            "locator": "1030页3.2节、图14(a)",
+            "material": "人造大理岩",
+            "method": "每工况5组，作者对曲线取均值；不与表4的取芯样本混算。",
+            "metric_ids": [
+              "MET-17",
+              "MET-19"
+            ],
+            "reported_error_interval_N": [
+              -29.6,
+              6.4
+            ],
+            "reported_setpoint_N": 400,
+            "reported_settling_time_s": 8.2,
+            "result": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "人造大理岩恒定载荷跟踪"
+          },
+          {
+            "apparatus": "论文钻进加载样机及PID闭环",
+            "atomic_id": "TEST-07",
+            "baseline": "斜坡函数",
+            "claim_ids": [
+              "C34"
+            ],
+            "id": "V07",
+            "kind": "已发表地面研究",
+            "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。",
+            "locator": "1030页3.2节、图14(b)",
+            "material": "人造大理岩",
+            "method": "每工况5组，作者对曲线取均值；不与表4的取芯样本混算。",
+            "metric_ids": [
+              "MET-18",
+              "MET-20"
+            ],
+            "reported_error_interval_N": [
+              -18.3,
+              31.7
+            ],
+            "reported_setpoint_N": null,
+            "reported_settling_time_s": 7.4,
+            "result": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。",
+            "source_ids": [
+              "S23"
+            ],
+            "title": "人造大理岩斜坡载荷跟踪"
+          }
+        ]
+      }
+    },
+    {
+      "priority": 4,
+      "kind": "target_domain_facts_and_method_proposals",
+      "data": {
+        "claims": [
+          {
+            "id": "RC01",
+            "value": "原文分别定义切割深度、耗皮量及割口到形成层距离，并采用切割深度作为替代指标进行控制与评价。",
+            "source_id": "RS01",
+            "locator": "第4.1节",
+            "nature": "source_summary"
+          },
+          {
+            "id": "RC02",
+            "value": "已有割胶研究融合视觉和测距进行定位与轨迹补偿。",
+            "source_id": "RS01",
+            "locator": "第3.1—3.2.2节",
+            "nature": "source_summary"
+          },
+          {
+            "id": "RC03",
+            "value": "已有割胶力控研究报告姿态对力控稳定和估计精度的影响。",
+            "source_id": "RS02",
+            "locator": "机构库摘要",
+            "nature": "source_summary"
+          },
+          {
+            "id": "RC04",
+            "value": "外表面几何测量不能自动证明内部余皮厚度；目标对象需要另行测量或校准。",
+            "source_id": "RS01",
+            "locator": "平台基于第4.1节测量对象差异作出的推论",
+            "nature": "platform_inference"
+          }
+        ],
+        "sources": [
+          {
+            "id": "RS01",
+            "title": "天然橡胶割胶机器人视觉伺服控制方法与割胶试验",
+            "url": "https://www.smartag.net.cn/article/2020/2096-8094/2096-8094-2020-2-4-56.shtml",
+            "doi": "10.12133/j.smartag.2020.2.4.202010-SA001",
+            "publication": "智慧农业（中英文）2020, 2(4):56–64；网络出版2021-02-05",
+            "read_scope": "selected_full_text_sections",
+            "locator": "第3.1—3.2.2、4.1—5.2节",
+            "accessed_at": "2026-10-20",
+            "summary": "原研究已有视觉与测距辅助的割线定位、补偿及田间样机试验；区分切割深度、耗皮量与割口到形成层距离。",
+            "limits": "只核读相关正文，不视为本任务已确定的农艺标准、设计参数或安全验证。"
+          },
+          {
+            "id": "RS02",
+            "title": "Force-Controlled Movement on Irregular Curved Surfaces for Constant-Pressure Contour-Following in Rubber Tapping Applications",
+            "url": "https://portal.fis.tum.de/en/publications/force-controlled-movement-on-irregular-curved-surfaces-for-consta/",
+            "doi": "10.1109/CASE59546.2024.10711634",
+            "publication": "IEEE CASE 2024, pp.4181–4186",
+            "read_scope": "abstract_only",
+            "locator": "TUM机构库摘要",
+            "accessed_at": "2026-10-20",
+            "summary": "摘要已有机器人割胶力控研究，并报告机械臂姿态/可操作性对力控稳定与力估计的影响。",
+            "limits": "未核读全文；不采用摘要中的设定力作为本方案参数，也不据此认定方法新颖。"
+          }
+        ],
+        "methods": [
+          {
+            "id": "M01",
+            "title": "设计思维 + 质量功能展开",
+            "role": "先把“我要割胶机器人”变成可测任务",
+            "input": "目标用户、现有工序、工作结果、树体损伤与维护约束",
+            "output": "切割几何、耗皮、损伤、产胶及成本分别定义；阈值待农艺和用户确认",
+            "nature": "platform_method_proposal"
+          },
+          {
+            "id": "M02",
+            "title": "TRIZ：反馈与动态化",
+            "role": "处理效率、接触适应与伤树风险之间的矛盾",
+            "input": "希望稳定作业，但树形、刀具与材料状态会变化",
+            "output": "按状态调整操作，分开几何约束与接触反馈；不是固定力值照搬",
+            "nature": "platform_method_proposal",
+            "limits": "本轮是原理启发，未自动查矛盾矩阵，也未证明专利新颖性。"
+          },
+          {
+            "id": "M03",
+            "title": "功能分解与方案分离",
+            "role": "把找位置、保持姿态、控制切除量、处理异常分开",
+            "input": "哪项功能在造成误差或损伤",
+            "output": "各功能有对应观测量、执行动作和验证记录",
+            "nature": "platform_method_proposal"
+          },
+          {
+            "id": "M04",
+            "title": "分层验证 + 最小原型",
+            "role": "先验证末端是否有效，再扩到整机",
+            "input": "当前最不确定的是切割效果与树体约束",
+            "output": "几何台架→材料对照→农艺方确认后的实树试验→长期跟踪；不先承诺自主导航或收益",
+            "nature": "platform_method_proposal"
+          }
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "关联强弱是平台定性判断，无校准相关度百分比",
+    "三条候选路径和一条排除路径均非真实企业验证",
+    "外部割胶资料不写回嫦娥历史事实或提升档案评分",
+    "不生成可直接上机的控制参数"
+  ]
+}

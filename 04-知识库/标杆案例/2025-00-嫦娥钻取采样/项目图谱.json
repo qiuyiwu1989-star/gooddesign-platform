@@ -1,0 +1,1729 @@
+{
+  "version": "transfer-demo-0.1.0",
+  "nature": "authored_graph_reading_not_live_ai",
+  "archive_revision": "0.4.0",
+  "archive_sha256": "310b6f4e67884856d7eab95eff02be5358d1f05e1f58b47de9301e176abdf083",
+  "target": {
+    "id": "TARGET-RUBBER-DEMO",
+    "name": "割胶机器人",
+    "nature": "user_hypothetical_task",
+    "scope": "先讨论割胶末端与验证路径；固定式或移动式、树况、预算与阈值未确定",
+    "objective": "稳定完成有效切割，同时约束耗皮、损伤及作业成本",
+    "acceptance_thresholds": null
+  },
+  "nodes": [
+    {
+      "id": "SOURCE",
+      "type": "archived_project",
+      "label": "嫦娥五/六号月球钻取采样方法及系统设计",
+      "revision": "0.4.0"
+    },
+    {
+      "id": "TARGET",
+      "type": "hypothetical_target",
+      "label": "割胶机器人"
+    },
+    {
+      "id": "K01",
+      "type": "platform_mechanism",
+      "label": "把“取到样品”转成“保留样品信息”",
+      "source_ids": [
+        "S07",
+        "S12"
+      ]
+    },
+    {
+      "id": "K02",
+      "type": "platform_mechanism",
+      "label": "围绕完整采样链设计薄弱环节",
+      "source_ids": [
+        "S10",
+        "S11",
+        "S15"
+      ]
+    },
+    {
+      "id": "K03",
+      "type": "platform_mechanism",
+      "label": "用分层证据逼近难以完全复现的环境",
+      "source_ids": [
+        "S07",
+        "S03",
+        "S14"
+      ]
+    },
+    {
+      "id": "K04",
+      "type": "platform_mechanism",
+      "label": "把远程监控推进为人机协同判断",
+      "source_ids": [
+        "S03"
+      ]
+    },
+    {
+      "id": "K05",
+      "type": "platform_mechanism",
+      "label": "取芯保持与穿岩能力的设计取舍",
+      "source_ids": [
+        "S07"
+      ]
+    },
+    {
+      "id": "K06",
+      "type": "platform_mechanism",
+      "label": "围绕载荷反馈调整进给，而非固定运动输入",
+      "source_ids": [
+        "S23"
+      ]
+    },
+    {
+      "id": "C01",
+      "type": "source_statement",
+      "label": "项目为嫦娥五/六号月球钻取采样方法及系统设计；2025年第十届金奖，官方编号12025070107。"
+    },
+    {
+      "id": "C02",
+      "type": "source_statement",
+      "label": "获奖完成单位：哈尔滨工业大学、北京圣视环宇科技有限公司。"
+    },
+    {
+      "id": "C03",
+      "type": "source_statement",
+      "label": "奖项项目介绍将承研国家任务起点记为2011年。"
+    },
+    {
+      "id": "C04",
+      "type": "source_statement",
+      "label": "未知月壤、极端环境、重量/功耗/空间与通信限制共同约束设计。"
+    },
+    {
+      "id": "C05",
+      "type": "source_statement",
+      "label": "采用双管与内翻软袋组织取芯，以减少样心相对滑移并保留层序。"
+    },
+    {
+      "id": "C06",
+      "type": "source_statement",
+      "label": "嫦娥五号钻取样品260克。"
+    },
+    {
+      "id": "C07",
+      "type": "source_statement",
+      "label": "嫦娥六号钻取样品320克。"
+    },
+    {
+      "id": "C08",
+      "type": "source_statement",
+      "label": "嫦娥五号任务样品总量约1731克。"
+    },
+    {
+      "id": "C09",
+      "type": "source_statement",
+      "label": "嫦娥六号任务样品总量1935.3克。"
+    },
+    {
+      "id": "C10",
+      "type": "source_statement",
+      "label": "2015年研究在HIT-LS1#模拟物与HIT-2钻具条件下，取心率模型预测与试验的平均误差率小于5%。"
+    },
+    {
+      "id": "C11",
+      "type": "source_statement",
+      "label": "哈工大介绍其遥测驱动的智能支持与反演系统服务于嫦娥六号钻取作业决策。"
+    },
+    {
+      "id": "C12",
+      "type": "source_statement",
+      "label": "哈工大介绍高分子团队研制绳与袋一体化取芯软袋，支持样品封装。"
+    },
+    {
+      "id": "C13",
+      "type": "source_statement",
+      "label": "哈工大介绍钻取地面支持平台用于在线监视、决策支持及全流程演练。"
+    },
+    {
+      "id": "C14",
+      "type": "source_statement",
+      "label": "校方人物报道回顾2009—2020年的月表采样设计与试验积累。"
+    },
+    {
+      "id": "C15",
+      "type": "source_statement",
+      "label": "项目官网自述授权发明专利50件、登记软著1项、专著2部、SCI/EI论文60篇。"
+    },
+    {
+      "id": "C16",
+      "type": "source_statement",
+      "label": "项目官网陈述相关方法已用于后续月球和火星采样任务的研究。"
+    },
+    {
+      "id": "C17",
+      "type": "source_statement",
+      "label": "CN107503698B中文授权文本首页记载权利人为哈尔滨工业大学，授权公告日2020-06-23。"
+    },
+    {
+      "id": "C18",
+      "type": "source_statement",
+      "label": "CN109323884B中文授权文本首页记载权利人为哈尔滨工业大学，授权公告日2021-02-19。"
+    },
+    {
+      "id": "C19",
+      "type": "source_statement",
+      "label": "哈工大2024年新闻将月背采样多学科团队牵头人记为邓宗全。"
+    },
+    {
+      "id": "C20",
+      "type": "source_statement",
+      "label": "2015年模拟试验研究的工况包含50、90、150、210、250 r/min回转转速，以及50、90、130、170、210 mm/min进尺速度。"
+    },
+    {
+      "id": "C21",
+      "type": "source_statement",
+      "label": "校方报道2009年开展采样封装专项论证，2011—2013年完成原理与集成验证研究。"
+    },
+    {
+      "id": "C22",
+      "type": "source_statement",
+      "label": "校方报道2012—2020年联合研制钻取子系统，并介绍2020-12-02月面作业环节。"
+    },
+    {
+      "id": "C23",
+      "type": "source_statement",
+      "label": "公开报道记载人工夯实和压力机加压未达制备目标，改进工艺细节未公开。"
+    },
+    {
+      "id": "C24",
+      "type": "source_statement",
+      "label": "论文比较外伸管与无外伸管钻头，指出取芯应力与岩石钻进接触面积之间的取舍。"
+    },
+    {
+      "id": "C25",
+      "type": "source_statement",
+      "label": "论文表1的平均误差率为4.31%；模型对剧烈振动冲击工况的适用性有限。"
+    },
+    {
+      "id": "C26",
+      "type": "source_statement",
+      "label": "论文表1—3列示加载机构、钻进机构和钻具的部件参数。"
+    },
+    {
+      "id": "C27",
+      "type": "source_statement",
+      "label": "论文表4列出两种控制方式各5次的地面取芯数据；保留原始质量和长度，不外推飞行收益。"
+    },
+    {
+      "id": "C28",
+      "type": "source_statement",
+      "label": "论文结论报告五号和六号钻进有效深度分别约1009 mm与1035 mm。"
+    },
+    {
+      "id": "C29",
+      "type": "source_statement",
+      "label": "冲击试验报告未闭环与PID闭环条件下稳定时间约30 s与17.8 s，峰值超调均约400 N。"
+    },
+    {
+      "id": "C30",
+      "type": "source_statement",
+      "label": "论文作者称恒力载控制已用于五号和六号月面采样；与获奖成果清单归属分开。"
+    },
+    {
+      "id": "C31",
+      "type": "source_statement",
+      "label": "模拟月壤恒定400 N工况：5组均值曲线的超调区间−22.8至+15.6 N，启动至稳定约4.6 s。"
+    },
+    {
+      "id": "C32",
+      "type": "source_statement",
+      "label": "模拟月壤斜坡目标工况：5组均值曲线的超调区间−14.8至+23.6 N，启动至稳定约3.1 s。"
+    },
+    {
+      "id": "C33",
+      "type": "source_statement",
+      "label": "人造大理岩恒定400 N工况：5组均值曲线最大超调约92.1 N，稳定后−29.6至+6.4 N，启动至稳定约8.2 s。"
+    },
+    {
+      "id": "C34",
+      "type": "source_statement",
+      "label": "人造大理岩斜坡目标工况：5组均值曲线最大超调约74.3 N，稳定后−18.3至+31.7 N，启动至稳定约7.4 s。"
+    },
+    {
+      "id": "S01",
+      "type": "archive_source",
+      "label": "2025年第十届好设计奖获奖项目及颁发奖金项目名单",
+      "url": "https://www.cmes.org/cmes/upload/2025/10-28/10-30-450880-485380035.pdf"
+    },
+    {
+      "id": "S02",
+      "type": "archive_source",
+      "label": "奖项官网项目详情",
+      "url": "https://cgd.cmes.org/exhibit/detail/bc7ec9de3b3e44e49e3e10dea86c7f6d"
+    },
+    {
+      "id": "S03",
+      "type": "archive_source",
+      "label": "哈工大助力嫦娥六号带珍宝回家",
+      "url": "https://news.hit.edu.cn/2024/0625/c1510a236100/page.htm"
+    },
+    {
+      "id": "S04",
+      "type": "archive_source",
+      "label": "嫦娥五号任务月球样品交接仪式",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758838/c6810938/content.html"
+    },
+    {
+      "id": "S05",
+      "type": "archive_source",
+      "label": "嫦娥六号样品交接",
+      "url": "https://www.cnsa.gov.cn/n6758823/n6758844/n10518102/n10518147/c10567320/content.html"
+    },
+    {
+      "id": "S06",
+      "type": "archive_source",
+      "label": "哈工大邓宗全院士登上央视闪亮的名字",
+      "url": "https://news.hit.edu.cn/2025/1128/c11819a240171/page.htm"
+    },
+    {
+      "id": "S07",
+      "type": "archive_source",
+      "label": "模拟月壤钻进取样量影响因素分析及试验研究",
+      "url": "https://html.rhhz.net/BJHKHTDXXBZRB/20151111.htm"
+    },
+    {
+      "id": "S08",
+      "type": "archive_source",
+      "label": "月面钻取式自动采样机构的设计与分析",
+      "url": "https://journal26.magtechjournal.com/kjkxjs/CN/Y2012/V32/I6/16"
+    },
+    {
+      "id": "S09",
+      "type": "archive_source",
+      "label": "深层月壤钻取冗余绕组电机控制方法",
+      "url": "https://jdse.bit.edu.cn/sktcxb/article/doi/10.15982/j.issn.2096-9287.2021.20210014?viewType=citedby-info"
+    },
+    {
+      "id": "S10",
+      "type": "archive_source",
+      "label": "CN107503698B原始专利公开文本",
+      "url": "https://patentimages.storage.googleapis.com/8b/85/cf/752dd5960f0f45/CN107503698B.pdf"
+    },
+    {
+      "id": "S11",
+      "type": "archive_source",
+      "label": "CN109323884B原始专利公开文本",
+      "url": "https://patentimages.storage.googleapis.com/54/0d/a0/806f063bfb77b7/CN109323884B.pdf"
+    },
+    {
+      "id": "S12",
+      "type": "archive_source",
+      "label": "CN102720501A文献与著录页",
+      "url": "https://patents.google.com/patent/CN102720501A/zh"
+    },
+    {
+      "id": "S13",
+      "type": "archive_source",
+      "label": "CN102721572B文献与著录页",
+      "url": "https://patents.google.com/patent/CN102721572B/zh"
+    },
+    {
+      "id": "S14",
+      "type": "archive_source",
+      "label": "CN104062141B文献与著录页",
+      "url": "https://patents.google.com/patent/CN104062141B/zh"
+    },
+    {
+      "id": "S15",
+      "type": "archive_source",
+      "label": "CN102745364B文献与著录页",
+      "url": "https://patents.google.com/patent/CN102745364B/zh"
+    },
+    {
+      "id": "S16",
+      "type": "archive_source",
+      "label": "星球采样技术教师主页检索线索",
+      "url": "https://homepage.hit.edu.cn/qiquan"
+    },
+    {
+      "id": "S17",
+      "type": "archive_source",
+      "label": "好设计奖与双环传动专题研讨",
+      "url": "https://www.cmes.org/dynamic/ff254150b3e44e5394377c1bc41ed8be.html"
+    },
+    {
+      "id": "S18",
+      "type": "archive_source",
+      "label": "官方关于好设计页面",
+      "url": "https://cgd.cmes.org/about/aboutView"
+    },
+    {
+      "id": "S19",
+      "type": "archive_source",
+      "label": "蛟龙号水声通信团队研制纪实（选例对照）",
+      "url": "https://ioa.cas.cn/webold/xwzx/mtbd/201301/t20130121_3754181.html"
+    },
+    {
+      "id": "S20",
+      "type": "archive_source",
+      "label": "2025获奖项目奖金发放",
+      "url": "https://www.cmes.org/dynamic/92f39da1291742cc87e815bb34278324.html"
+    },
+    {
+      "id": "S21",
+      "type": "archive_source",
+      "label": "实验室邓宗全院士科研团队鼎力支撑我国首次月球采样返回任务",
+      "url": "https://robot.hit.edu.cn/2020/1217/c287a250236/page.htm"
+    },
+    {
+      "id": "S22",
+      "type": "archive_source",
+      "label": "清澈的爱为五院｜用充足的准备，在不确定中找寻最大的确定性",
+      "url": "https://www.cast.cn/3g/news/8210"
+    },
+    {
+      "id": "S23",
+      "type": "archive_source",
+      "label": "深层月壤钻取系统钻进力载控制方法与实验研究",
+      "url": "https://www.spacejournal.cn/yhxb/cn/article/pdf/preview/10.3873/j.issn.1000-1328.2025.05.017.pdf"
+    },
+    {
+      "id": "M01",
+      "type": "suggested_method",
+      "label": "设计思维 + 质量功能展开"
+    },
+    {
+      "id": "M02",
+      "type": "suggested_method",
+      "label": "TRIZ：反馈与动态化"
+    },
+    {
+      "id": "M03",
+      "type": "suggested_method",
+      "label": "功能分解与方案分离"
+    },
+    {
+      "id": "M04",
+      "type": "suggested_method",
+      "label": "分层验证 + 最小原型"
+    },
+    {
+      "id": "RC01",
+      "type": "source_summary",
+      "label": "原文分别定义切割深度、耗皮量及割口到形成层距离，并采用切割深度作为替代指标进行控制与评价。"
+    },
+    {
+      "id": "RC02",
+      "type": "source_summary",
+      "label": "已有割胶研究融合视觉和测距进行定位与轨迹补偿。"
+    },
+    {
+      "id": "RC03",
+      "type": "source_summary",
+      "label": "已有割胶力控研究报告姿态对力控稳定和估计精度的影响。"
+    },
+    {
+      "id": "RC04",
+      "type": "platform_inference",
+      "label": "外表面几何测量不能自动证明内部余皮厚度；目标对象需要另行测量或校准。"
+    },
+    {
+      "id": "RS01",
+      "type": "target_domain_source",
+      "label": "天然橡胶割胶机器人视觉伺服控制方法与割胶试验",
+      "url": "https://www.smartag.net.cn/article/2020/2096-8094/2096-8094-2020-2-4-56.shtml",
+      "reading_scope": "selected_full_text_sections"
+    },
+    {
+      "id": "RS02",
+      "type": "target_domain_source",
+      "label": "Force-Controlled Movement on Irregular Curved Surfaces for Constant-Pressure Contour-Following in Rubber Tapping Applications",
+      "url": "https://portal.fis.tum.de/en/publications/force-controlled-movement-on-irregular-curved-surfaces-for-consta/",
+      "reading_scope": "abstract_only"
+    },
+    {
+      "id": "V01",
+      "type": "reported_validation",
+      "label": "2015年取心率模型验证",
+      "material": "HIT-LS1#模拟月壤",
+      "limitations": "模型忽略土体内部相对运动；不将剧烈振动冲击或月面系统精度包含在结论中。"
+    },
+    {
+      "id": "V02",
+      "type": "reported_validation",
+      "label": "2025年两种控制方式地面取芯对照",
+      "material": "标称工况模拟月壤",
+      "limitations": "50 r/min为原文加载侧设定，不改写为线性进尺速度；未报告随机化、独立性或显著性检验。"
+    },
+    {
+      "id": "V03",
+      "type": "reported_validation",
+      "label": "2025年冲击载荷闭环对照",
+      "material": "机械冲击载荷",
+      "limitations": "控制缩短稳定过程，不等于消除冲击峰值；非月面实测。"
+    },
+    {
+      "id": "V04",
+      "type": "reported_validation",
+      "label": "模拟月壤恒定载荷跟踪",
+      "material": "标称工况模拟月壤",
+      "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。"
+    },
+    {
+      "id": "V05",
+      "type": "reported_validation",
+      "label": "模拟月壤斜坡载荷跟踪",
+      "material": "标称工况模拟月壤",
+      "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。"
+    },
+    {
+      "id": "V06",
+      "type": "reported_validation",
+      "label": "人造大理岩恒定载荷跟踪",
+      "material": "人造大理岩",
+      "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。"
+    },
+    {
+      "id": "V07",
+      "type": "reported_validation",
+      "label": "人造大理岩斜坡载荷跟踪",
+      "material": "人造大理岩",
+      "limitations": "论文报告值，基于每工况5组取均值；未取得逐次曲线、方差、稳定判据或独立工程复验。"
+    },
+    {
+      "card_ids": [
+        "MC01",
+        "MC03"
+      ],
+      "claim_ids": [
+        "C20",
+        "C25"
+      ],
+      "controls": [
+        {
+          "dimension": "rotation",
+          "key": "drill_rot_speed",
+          "kind": "discrete_test_levels",
+          "label": "钻具回转转速",
+          "unit": "r/min",
+          "values": [
+            50,
+            90,
+            150,
+            210,
+            250
+          ]
+        },
+        {
+          "dimension": "linear_speed",
+          "key": "feed_speed",
+          "kind": "discrete_test_levels",
+          "label": "进尺速度",
+          "unit": "mm/min",
+          "values": [
+            50,
+            90,
+            130,
+            170,
+            210
+          ]
+        }
+      ],
+      "id": "EP01",
+      "knowledge_ids": [
+        "K01",
+        "K05"
+      ],
+      "limits": [
+        "两组档位不能推断每一种组合都有独立重复验证",
+        "档位之间的连续区间没有据此得到验证",
+        "强振动冲击不在模型可靠解释范围"
+      ],
+      "locator": "第3.2节、表1、第4.3节",
+      "material_key": "HIT-LS1",
+      "material_label": "HIT-LS1#压缩模拟月壤",
+      "result": "模型平均误差率4.31%，不代表月面误差或层序零扰动。",
+      "source_ids": [
+        "S07"
+      ],
+      "title": "软袋取芯模型试验",
+      "validation_id": "V01",
+      "type": "published_test_context",
+      "label": "软袋取芯模型试验"
+    },
+    {
+      "card_ids": [
+        "MC02"
+      ],
+      "claim_ids": [
+        "C31"
+      ],
+      "controls": [
+        {
+          "dimension": "force",
+          "key": "target_force",
+          "kind": "reported_setpoint",
+          "label": "目标钻进力载",
+          "unit": "N",
+          "values": [
+            400
+          ]
+        }
+      ],
+      "id": "EP02",
+      "knowledge_ids": [
+        "K06"
+      ],
+      "limits": [
+        "5组取均值，逐次曲线与方差未取得",
+        "未报道稳定判据，不据此给其他设备作保证"
+      ],
+      "locator": "1029页3.1节、图11(a)",
+      "material_key": "nominal_soil_simulant",
+      "material_label": "地面标称工况模拟月壤",
+      "result": "稳定约4.6 s；超调−22.8至+15.6 N。",
+      "source_ids": [
+        "S23"
+      ],
+      "title": "模拟月壤恒定载荷跟踪",
+      "validation_id": "V04",
+      "type": "published_test_context",
+      "label": "模拟月壤恒定载荷跟踪"
+    },
+    {
+      "card_ids": [
+        "MC02"
+      ],
+      "claim_ids": [
+        "C33"
+      ],
+      "controls": [
+        {
+          "dimension": "force",
+          "key": "target_force",
+          "kind": "reported_setpoint",
+          "label": "目标钻进力载",
+          "unit": "N",
+          "values": [
+            400
+          ]
+        }
+      ],
+      "id": "EP03",
+      "knowledge_ids": [
+        "K06"
+      ],
+      "limits": [
+        "人造大理岩不等于任意岩石或金属",
+        "不能将模拟月壤的4.6 s移用到本工况"
+      ],
+      "locator": "1030页3.2节、图14(a)",
+      "material_key": "artificial_marble",
+      "material_label": "人造大理岩",
+      "result": "稳定约8.2 s；最大超调约92.1 N。",
+      "source_ids": [
+        "S23"
+      ],
+      "title": "人造大理岩恒定载荷跟踪",
+      "validation_id": "V06",
+      "type": "published_test_context",
+      "label": "人造大理岩恒定载荷跟踪"
+    },
+    {
+      "card_ids": [
+        "MC02"
+      ],
+      "claim_ids": [
+        "C27"
+      ],
+      "controls": [
+        {
+          "dimension": "rotation",
+          "key": "drill_rot_speed",
+          "kind": "reported_setpoint",
+          "label": "钻具回转转速",
+          "unit": "r/min",
+          "values": [
+            120
+          ]
+        },
+        {
+          "dimension": "force",
+          "key": "target_force",
+          "kind": "reported_setpoint",
+          "label": "恒力载组目标力载",
+          "unit": "N",
+          "values": [
+            300
+          ]
+        }
+      ],
+      "id": "EP04",
+      "knowledge_ids": [
+        "K06"
+      ],
+      "limits": [
+        "恒速组原文50 r/min是加载侧设定，不是线性进尺速度",
+        "仅用于对应地面试验的比较，非飞行增益"
+      ],
+      "locator": "1032页第4节、表4",
+      "material_key": "nominal_soil_simulant",
+      "material_label": "地面标称工况模拟月壤",
+      "result": "两组各5次，保留原始10行记录，派生统计另算。",
+      "source_ids": [
+        "S23"
+      ],
+      "title": "模拟月壤取芯方式对照",
+      "validation_id": "V02",
+      "type": "published_test_context",
+      "label": "模拟月壤取芯方式对照"
+    },
+    {
+      "id": "P01-need",
+      "type": "hypothetical_need",
+      "label": "树形、刀具姿态和材料变化时，怎样控制切除量并约束伤树风险？"
+    },
+    {
+      "id": "P01-proposal",
+      "type": "proposed_solution",
+      "label": "候选方向：以经校准的几何/切除量估计约束轨迹，辅以接触反馈和异常识别；内部余皮厚度需单独建立测量或校准依据。"
+    },
+    {
+      "id": "P01-test",
+      "type": "proposed_validation",
+      "label": "先固定工件和末端，比较固定轨迹、接触反馈辅助、几何与接触信息融合三种研究方案。记录切除量误差、耗皮、损伤和异常恢复；验收阈值先确认。"
+    },
+    {
+      "id": "P02-need",
+      "type": "hypothetical_need",
+      "label": "如何兼顾作业效率、有效切割与长期树体状态？"
+    },
+    {
+      "id": "P02-proposal",
+      "type": "proposed_solution",
+      "label": "把刀具几何、姿态、进给和限位方式作为候选变量；在农艺底线内比较作业时间、耗皮、损伤和产胶，不以单次产胶量判最好。"
+    },
+    {
+      "id": "P02-test",
+      "type": "proposed_validation",
+      "label": "比较几种候选刀具/限位与控制组合，按预先定义的多目标判据淘汰方案；保留失败及代价。"
+    },
+    {
+      "id": "P03-need",
+      "type": "hypothetical_need",
+      "label": "怎样知道机器真的割得好，而不只是轨迹跟得好？"
+    },
+    {
+      "id": "P03-proposal",
+      "type": "proposed_solution",
+      "label": "先做末端最小原型，验证测量与切割效果；再加入定位、跨树移动、环境及维护因素。每一步通过后再扩大范围。"
+    },
+    {
+      "id": "P03-test",
+      "type": "proposed_validation",
+      "label": "为各层定义对象、对照、测量、阈值和未覆盖风险。末端台架、合适材料、农艺确认后的实树、长期作业分别留记录。"
+    },
+    {
+      "id": "P04-need",
+      "type": "hypothetical_need",
+      "label": "都叫“采集”，是否可以直接用软袋取芯？"
+    },
+    {
+      "id": "P04-proposal",
+      "type": "proposed_solution",
+      "label": "本次不采用直接机构迁移。若另有胶乳收集与污染控制需求，应作为独立问题研究，重新寻找证据。"
+    },
+    {
+      "id": "P04-test",
+      "type": "proposed_validation",
+      "label": "重新确认目标；没有目标与机制对应关系时，不进入该机构路线试制。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "RC01",
+      "target": "RS01",
+      "relation": "reported_in"
+    },
+    {
+      "source": "RC02",
+      "target": "RS01",
+      "relation": "reported_in"
+    },
+    {
+      "source": "RC03",
+      "target": "RS02",
+      "relation": "reported_in"
+    },
+    {
+      "source": "RC04",
+      "target": "RS01",
+      "relation": "inferred_from"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C01",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C01",
+      "target": "S01",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C02",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C02",
+      "target": "S01",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C03",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C03",
+      "target": "S02",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C04",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C04",
+      "target": "S02",
+      "relation": "reported_in"
+    },
+    {
+      "source": "C04",
+      "target": "S03",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C05",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C05",
+      "target": "S07",
+      "relation": "reported_in"
+    },
+    {
+      "source": "C05",
+      "target": "S12",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C06",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C06",
+      "target": "S02",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C07",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C07",
+      "target": "S02",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C08",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C08",
+      "target": "S04",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C09",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C09",
+      "target": "S05",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C10",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C10",
+      "target": "S07",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C11",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C11",
+      "target": "S03",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C12",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C12",
+      "target": "S03",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C13",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C13",
+      "target": "S03",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C14",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C14",
+      "target": "S06",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C15",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C15",
+      "target": "S02",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C16",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C16",
+      "target": "S02",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C17",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C17",
+      "target": "S10",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C18",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C18",
+      "target": "S11",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C19",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C19",
+      "target": "S03",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C20",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C20",
+      "target": "S07",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C21",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C21",
+      "target": "S21",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C22",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C22",
+      "target": "S21",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C23",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C23",
+      "target": "S22",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C24",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C24",
+      "target": "S07",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C25",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C25",
+      "target": "S07",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C26",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C26",
+      "target": "S23",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C27",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C27",
+      "target": "S23",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C28",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C28",
+      "target": "S23",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C29",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C29",
+      "target": "S23",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C30",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C30",
+      "target": "S23",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C31",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C31",
+      "target": "S23",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C32",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C32",
+      "target": "S23",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C33",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C33",
+      "target": "S23",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "C34",
+      "relation": "has_archived_statement"
+    },
+    {
+      "source": "C34",
+      "target": "S23",
+      "relation": "reported_in"
+    },
+    {
+      "source": "SOURCE",
+      "target": "K01",
+      "relation": "has_archived_interpretation"
+    },
+    {
+      "source": "K01",
+      "target": "C05",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K01",
+      "target": "C10",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "SOURCE",
+      "target": "K02",
+      "relation": "has_archived_interpretation"
+    },
+    {
+      "source": "K02",
+      "target": "C17",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K02",
+      "target": "C18",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "SOURCE",
+      "target": "K03",
+      "relation": "has_archived_interpretation"
+    },
+    {
+      "source": "K03",
+      "target": "C10",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K03",
+      "target": "C13",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "SOURCE",
+      "target": "K04",
+      "relation": "has_archived_interpretation"
+    },
+    {
+      "source": "K04",
+      "target": "C04",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K04",
+      "target": "C11",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K04",
+      "target": "C13",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "SOURCE",
+      "target": "K05",
+      "relation": "has_archived_interpretation"
+    },
+    {
+      "source": "K05",
+      "target": "C24",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "SOURCE",
+      "target": "K06",
+      "relation": "has_archived_interpretation"
+    },
+    {
+      "source": "K06",
+      "target": "C27",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K06",
+      "target": "C29",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K06",
+      "target": "C30",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K06",
+      "target": "C31",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K06",
+      "target": "C32",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K06",
+      "target": "C33",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "K06",
+      "target": "C34",
+      "relation": "interpreted_from"
+    },
+    {
+      "source": "V01",
+      "target": "C10",
+      "relation": "has_reported_result"
+    },
+    {
+      "source": "V01",
+      "target": "C20",
+      "relation": "has_reported_result"
+    },
+    {
+      "source": "V01",
+      "target": "C25",
+      "relation": "has_reported_result"
+    },
+    {
+      "source": "V02",
+      "target": "C27",
+      "relation": "has_reported_result"
+    },
+    {
+      "source": "V03",
+      "target": "C29",
+      "relation": "has_reported_result"
+    },
+    {
+      "source": "V04",
+      "target": "C31",
+      "relation": "has_reported_result"
+    },
+    {
+      "source": "V05",
+      "target": "C32",
+      "relation": "has_reported_result"
+    },
+    {
+      "source": "V06",
+      "target": "C33",
+      "relation": "has_reported_result"
+    },
+    {
+      "source": "V07",
+      "target": "C34",
+      "relation": "has_reported_result"
+    },
+    {
+      "source": "K01",
+      "target": "EP01",
+      "relation": "has_research_context"
+    },
+    {
+      "source": "K05",
+      "target": "EP01",
+      "relation": "has_research_context"
+    },
+    {
+      "source": "EP01",
+      "target": "V01",
+      "relation": "describes_test_conditions"
+    },
+    {
+      "source": "K06",
+      "target": "EP02",
+      "relation": "has_research_context"
+    },
+    {
+      "source": "EP02",
+      "target": "V04",
+      "relation": "describes_test_conditions"
+    },
+    {
+      "source": "K06",
+      "target": "EP03",
+      "relation": "has_research_context"
+    },
+    {
+      "source": "EP03",
+      "target": "V06",
+      "relation": "describes_test_conditions"
+    },
+    {
+      "source": "K06",
+      "target": "EP04",
+      "relation": "has_research_context"
+    },
+    {
+      "source": "EP04",
+      "target": "V02",
+      "relation": "describes_test_conditions"
+    },
+    {
+      "source": "TARGET",
+      "target": "P01-need",
+      "relation": "has_hypothetical_need"
+    },
+    {
+      "source": "K06",
+      "target": "P01-need",
+      "relation": "analogy_hypothesis",
+      "verified_transfer": false
+    },
+    {
+      "source": "P01-need",
+      "target": "P01-proposal",
+      "relation": "suggested_response"
+    },
+    {
+      "source": "P01-proposal",
+      "target": "P01-test",
+      "relation": "requires_validation"
+    },
+    {
+      "source": "C27",
+      "target": "P01-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "C29",
+      "target": "P01-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "C31",
+      "target": "P01-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "C33",
+      "target": "P01-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "M01",
+      "target": "P01-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "M02",
+      "target": "P01-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "M03",
+      "target": "P01-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "M04",
+      "target": "P01-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "RC01",
+      "target": "P01-proposal",
+      "relation": "informs_or_limits_proposal"
+    },
+    {
+      "source": "RC02",
+      "target": "P01-proposal",
+      "relation": "informs_or_limits_proposal"
+    },
+    {
+      "source": "RC03",
+      "target": "P01-proposal",
+      "relation": "informs_or_limits_proposal"
+    },
+    {
+      "source": "RC04",
+      "target": "P01-proposal",
+      "relation": "informs_or_limits_proposal"
+    },
+    {
+      "source": "TARGET",
+      "target": "P02-need",
+      "relation": "has_hypothetical_need"
+    },
+    {
+      "source": "K05",
+      "target": "P02-need",
+      "relation": "analogy_hypothesis",
+      "verified_transfer": false
+    },
+    {
+      "source": "P02-need",
+      "target": "P02-proposal",
+      "relation": "suggested_response"
+    },
+    {
+      "source": "P02-proposal",
+      "target": "P02-test",
+      "relation": "requires_validation"
+    },
+    {
+      "source": "C24",
+      "target": "P02-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "C25",
+      "target": "P02-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "M01",
+      "target": "P02-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "M02",
+      "target": "P02-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "M03",
+      "target": "P02-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "RC01",
+      "target": "P02-proposal",
+      "relation": "informs_or_limits_proposal"
+    },
+    {
+      "source": "TARGET",
+      "target": "P03-need",
+      "relation": "has_hypothetical_need"
+    },
+    {
+      "source": "K03",
+      "target": "P03-need",
+      "relation": "analogy_hypothesis",
+      "verified_transfer": false
+    },
+    {
+      "source": "P03-need",
+      "target": "P03-proposal",
+      "relation": "suggested_response"
+    },
+    {
+      "source": "P03-proposal",
+      "target": "P03-test",
+      "relation": "requires_validation"
+    },
+    {
+      "source": "C10",
+      "target": "P03-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "C13",
+      "target": "P03-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "M01",
+      "target": "P03-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "M04",
+      "target": "P03-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "RC01",
+      "target": "P03-proposal",
+      "relation": "informs_or_limits_proposal"
+    },
+    {
+      "source": "RC02",
+      "target": "P03-proposal",
+      "relation": "informs_or_limits_proposal"
+    },
+    {
+      "source": "TARGET",
+      "target": "P04-need",
+      "relation": "has_hypothetical_need"
+    },
+    {
+      "source": "K01",
+      "target": "P04-need",
+      "relation": "excluded_direct_transfer",
+      "verified_transfer": false
+    },
+    {
+      "source": "P04-need",
+      "target": "P04-proposal",
+      "relation": "suggested_response"
+    },
+    {
+      "source": "P04-proposal",
+      "target": "P04-test",
+      "relation": "requires_validation"
+    },
+    {
+      "source": "C05",
+      "target": "P04-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "C10",
+      "target": "P04-proposal",
+      "relation": "context_for_proposal"
+    },
+    {
+      "source": "M01",
+      "target": "P04-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "M03",
+      "target": "P04-proposal",
+      "relation": "guides_proposal"
+    },
+    {
+      "source": "RC01",
+      "target": "P04-proposal",
+      "relation": "informs_or_limits_proposal"
+    }
+  ],
+  "paths": [
+    {
+      "id": "P01",
+      "title": "接触变化与割深控制",
+      "short": "载荷反馈",
+      "priority": "优先研究",
+      "relation": "控制思路关联较强；工程适配未验证",
+      "knowledge_id": "K06",
+      "claim_ids": [
+        "C27",
+        "C29",
+        "C31",
+        "C33"
+      ],
+      "external_claim_ids": [
+        "RC01",
+        "RC02",
+        "RC03",
+        "RC04"
+      ],
+      "method_ids": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "target_short": "切割量与伤树约束",
+      "target_problem": "树形、刀具姿态和材料变化时，怎样控制切除量并约束伤树风险？",
+      "why": "两者都要在接触条件变化时调整动作。嫦娥档案提供“观察接触反馈、调整运动、对比结果”的经验，而不是割胶配方。",
+      "difference": "月壤钻进与活体树皮切削的材料、几何及损伤目标不同；恒力不等于恒割深，更不等于内部余皮厚度已被测得。",
+      "proposal": "候选方向：以经校准的几何/切除量估计约束轨迹，辅以接触反馈和异常识别；内部余皮厚度需单独建立测量或校准依据。",
+      "questions": [
+        "你做固定单树设备，还是移动跨树设备？",
+        "是否允许加装传感，控制器能否调整动作？",
+        "树种、树龄、割面和农艺验收标准是什么？",
+        "损伤、耗皮、产胶和节拍分别如何测量？"
+      ],
+      "experiment": "先固定工件和末端，比较固定轨迹、接触反馈辅助、几何与接触信息融合三种研究方案。记录切除量误差、耗皮、损伤和异常恢复；验收阈值先确认。",
+      "cannot_copy": [
+        "300/400 N月壤试验设定",
+        "钻具转速和PID系数",
+        "论文的稳定时间与收益结论"
+      ],
+      "status": "transfer_hypothesis"
+    },
+    {
+      "id": "P02",
+      "title": "效率与损伤的设计取舍",
+      "short": "多目标取舍",
+      "priority": "值得借鉴",
+      "relation": "设计决策结构相关；具体机构关联有限",
+      "knowledge_id": "K05",
+      "claim_ids": [
+        "C24",
+        "C25"
+      ],
+      "external_claim_ids": [
+        "RC01"
+      ],
+      "method_ids": [
+        "M01",
+        "M02",
+        "M03"
+      ],
+      "target_short": "有效切割与避免过切",
+      "target_problem": "如何兼顾作业效率、有效切割与长期树体状态？",
+      "why": "嫦娥案例比较同一工具在取芯与穿岩要求间的取舍；可借鉴先定义多目标底线，再比较构型与规程的思路。",
+      "difference": "不能把岩石穿透和取芯指标，换个名称就当成产胶与树体损伤指标。",
+      "proposal": "把刀具几何、姿态、进给和限位方式作为候选变量；在农艺底线内比较作业时间、耗皮、损伤和产胶，不以单次产胶量判最好。",
+      "questions": [
+        "哪些指标是不可突破的底线？",
+        "效率与维护成本的优先级如何？",
+        "是否有人工或现有设备的同条件基线？"
+      ],
+      "experiment": "比较几种候选刀具/限位与控制组合，按预先定义的多目标判据淘汰方案；保留失败及代价。",
+      "cannot_copy": [
+        "外伸管钻头构型",
+        "月壤取芯率作为割胶效果指标"
+      ],
+      "status": "transfer_hypothesis"
+    },
+    {
+      "id": "P03",
+      "title": "从末端试验走到整机",
+      "short": "分层验证",
+      "priority": "优先研究",
+      "relation": "验证方法关联较强；不能替代割胶领域验证",
+      "knowledge_id": "K03",
+      "claim_ids": [
+        "C10",
+        "C13"
+      ],
+      "external_claim_ids": [
+        "RC01",
+        "RC02"
+      ],
+      "method_ids": [
+        "M01",
+        "M04"
+      ],
+      "target_short": "先证明末端有效",
+      "target_problem": "怎样知道机器真的割得好，而不只是轨迹跟得好？",
+      "why": "嫦娥经验强调每层试验覆盖什么、遗漏什么；割胶同样需要从局部效果走到真实作业。",
+      "difference": "月面任务成功不为割胶方案背书，台架几何精度不证明长期树体健康。",
+      "proposal": "先做末端最小原型，验证测量与切割效果；再加入定位、跨树移动、环境及维护因素。每一步通过后再扩大范围。",
+      "questions": [
+        "第一轮要证明哪一个核心假设？",
+        "每层材料与真实树体的差异是什么？",
+        "谁来确认损伤判据并跟踪后续树体状态？"
+      ],
+      "experiment": "为各层定义对象、对照、测量、阈值和未覆盖风险。末端台架、合适材料、农艺确认后的实树、长期作业分别留记录。",
+      "cannot_copy": [
+        "把地面模型误差当割胶精度",
+        "以一次成功代替长期有效"
+      ],
+      "status": "transfer_hypothesis"
+    },
+    {
+      "id": "P04",
+      "title": "排除“同是采集就能照搬”",
+      "short": "软袋取芯",
+      "priority": "本次不采用",
+      "relation": "仅表面词义相关，直接方案匹配不足",
+      "knowledge_id": "K01",
+      "claim_ids": [
+        "C05",
+        "C10"
+      ],
+      "external_claim_ids": [
+        "RC01"
+      ],
+      "method_ids": [
+        "M01",
+        "M03"
+      ],
+      "target_short": "采胶不等于取芯",
+      "target_problem": "都叫“采集”，是否可以直接用软袋取芯？",
+      "why": "词语相似不能证明目标、动作和对象相同。软袋案例旨在保留被取出的样品层序；割胶需对活体树皮进行受约束切削。",
+      "difference": "本任务没有“连续深层样心”这一目标，直接移植整套软袋钻取系统缺乏依据。",
+      "proposal": "本次不采用直接机构迁移。若另有胶乳收集与污染控制需求，应作为独立问题研究，重新寻找证据。",
+      "questions": [
+        "当前难点到底是切割、定位、胶乳收集还是运输？"
+      ],
+      "experiment": "重新确认目标；没有目标与机制对应关系时，不进入该机构路线试制。",
+      "cannot_copy": [
+        "软袋取芯机构作为割胶末端",
+        "以同属采集认定高相关"
+      ],
+      "status": "excluded_direct_transfer"
+    }
+  ],
+  "relation_dimensions": [
+    {
+      "dimension": "行业与材料",
+      "judgement": "弱",
+      "reason": "月壤/岩石与活体树皮不同"
+    },
+    {
+      "dimension": "接触反馈",
+      "judgement": "较强",
+      "reason": "都要应对接触状态变化，但被控目标不同"
+    },
+    {
+      "dimension": "设计取舍",
+      "judgement": "中",
+      "reason": "可迁移决策框架，不能替换评价指标"
+    },
+    {
+      "dimension": "验证方法",
+      "judgement": "较强",
+      "reason": "可借鉴分层验证与明确未覆盖风险"
+    },
+    {
+      "dimension": "具体机构与参数",
+      "judgement": "不直接迁移",
+      "reason": "需要割胶领域的实测与校准"
+    }
+  ],
+  "limits": [
+    "关联强弱是平台定性判断，无校准相关度百分比",
+    "三条候选路径和一条排除路径均非真实企业验证",
+    "外部割胶资料不写回嫦娥历史事实或提升档案评分",
+    "不生成可直接上机的控制参数"
+  ]
+}

@@ -112,3 +112,6 @@ if (OUT/'主档案结构.json').exists():
  from dossier_governance import quality
  quality(OUT)
  runpy.run_path(str(ROOT/'scripts/render_master_dossier.py'))
+
+ from build_project_graph_demo import build as build_graph_demo
+ build_graph_demo(OUT)

@@ -45,3 +45,5 @@ HOST=127.0.0.1 PORT=3187 node server.js
 018本地阅读更新为`档案.html?v=4.1.0`。可从`#reader-experience`看设计经验，从`#reader-versions`看版本分类。标准见`04-知识库/项目档案标准-v1/标杆与匹配规范-v0.1.md`；`匹配调用样例.json`为人工需求的固定版本上下文示例，不是在线引擎。
 
 019本地预览：`档案.html?v=4.2.0#reader-engine-audit`查看12维审计；`#reader-research-depth`查看来源工况与派生统计。补证、规则与局限见`创新引擎审计与工况匹配-v0.2.md`。本轮未部署生产。
+
+020：`项目图谱.html`演示嫦娥经验如何关联割胶任务，`档案.html?v=4.3.0`顶端可进入。`python3 scripts/build_benchmark_dossier.py`会一并重建；`build_project_graph_demo.py`可单独生成。应用数据是`割胶机器人-迁移试读.json`，与源项目事实隔离；源内容固定0.4.0。
