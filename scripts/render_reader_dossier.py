@@ -8,6 +8,8 @@ def build(root,p):
  read=lambda n:json.loads((p/n).read_text())
  from dossier_matching import render as render_matching
  matching=render_matching(p)
+ from dossier_reasoning import render as render_reasoning
+ reasoning=render_reasoning(p)
  from dossier_research import render as render_research
  research=render_research(p)
  d,a,s,q,c=map(read,['档案数据.json','原子字段档案.json','字段规范.json','质量评估.json','阅读内容.json'])
@@ -35,7 +37,8 @@ def build(root,p):
  def section(key,body,intro=None):
   i=[x['id']for x in s['blocks']].index(key)+1
   status=next(x for x in stats if x['id']==key)
-  sections.append(f'<details class="reader-section reader-module" id="reader-{key}" tabindex="-1"><summary><span class="module-icon">{icon(key)}</span><div class="module-title"><h2><span>{i:02d}</span>{e(status["title"])}</h2><p>{e(status["assessment"])} · {status["records"]} 条记录</p></div><div class="module-meter"><span>字段填充 {status["percent"]}%</span><progress value="{status["known"]}" max="{status["total"]}" aria-label="{e(status["title"])}当前字段填充率"></progress></div><span class="module-chevron">{icon("chevron")}</span></summary><div class="module-content">'+('<p class="section-caption">'+e(intro)+'</p>'if intro else '')+body+'<div class="module-footer"><button class="reader-link" data-reader-section="top">回到档案总览 ↑</button></div></div></details>')
+  ai_note=(' · '+str(reasoning['count'])+' 条AI推演')if key=='applications'and reasoning['count']else ''
+  sections.append(f'<details class="reader-section reader-module" id="reader-{key}" tabindex="-1"><summary><span class="module-icon">{icon(key)}</span><div class="module-title"><h2><span>{i:02d}</span>{e(status["title"])}</h2><p>{e(status["assessment"])} · {status["records"]} 条资料记录{ai_note}</p></div><div class="module-meter"><span>字段填充 {status["percent"]}%</span><progress value="{status["known"]}" max="{status["total"]}" aria-label="{e(status["title"])}当前字段填充率"></progress></div><span class="module-chevron">{icon("chevron")}</span></summary><div class="module-content">'+('<p class="section-caption">'+e(intro)+'</p>'if intro else '')+body+'<div class="module-footer"><button class="reader-link" data-reader-section="top">回到档案总览 ↑</button></div></div></details>')
 
  # Eight concise sections, using the same canonical project data.
  section('overview',properties([('项目全称',d['title']),('获奖年份',d['award']['year']),('奖项','第十届好设计奖 · 金奖'),('完成单位',d['award']['organizations']),('公开报道团队牵头人','邓宗全'),('完整获奖完成人',None)]))
@@ -59,7 +62,8 @@ def build(root,p):
  def timeline(events):return '<ol class="reader-timeline">'+''.join(f'<li><time>{e(x["date"])}</time><div><h3>{e(x["title"])}</h3><p>{e(x["detail"])}</p></div></li>'for x in events)+'</ol>'
  story=''.join(f'<details class="reader-expand"><summary>{e(x["title"])}</summary><p>{e(x["narrative"])}</p><p class="reader-note">{e(x["limit"])}</p></details>'for x in d['stories'])
  section('history',timeline(keyevents)+'<details class="reader-expand"><summary>完整发展历程 · '+str(len(d['events']))+' 个节点</summary>'+timeline(d['events'])+'</details><h3 class="reader-subhead">设计背后的故事</h3>'+story)
- section('applications',properties([('已记录的任务应用',['嫦娥五号','嫦娥六号']),('商业化项目',None),('合作企业',None),('技术许可条件',None),('商业收益',None)])+'<details class="reader-expand"><summary>可借鉴的思路</summary><p>样品信息保持、多工况设计取舍、分层验证与载荷反馈，可作为其他设备研究的启发。</p><p class="reader-note">这些是应用设想，尚无跨行业验证结果。</p></details>')
+ section('applications','<h3 class="reasoning-fact-heading">已有资料记录的应用</h3>'+properties([('已记录的任务应用',['嫦娥五号','嫦娥六号']),('商业化项目',None),('合作企业',None),('技术许可条件',None),('商业收益',None)])+'<p class="reasoning-unknown-note">真实商业化、合作、许可与收益仍待资料补证；下方AI推演单独作为探索方向。</p>'+reasoning['body'])
+
  quality_body=quality_panel(q,e)
  section('governance',quality_body+'<p class="reader-note">评分评价档案资料与研究质量；当前为平台自评，尚未完成项目方与专业审核。</p><button class="reader-link" data-reader-view="assessment">查看各模块统计与完善方向 ↗</button>')
  metrics=f'<div class="reader-metrics"><div><b>8</b><span>内容模块</span></div><div><b>{totals["records"]}</b><span>信息记录</span></div><div><b>{totals["sources"]}</b><span>参考资料</span></div><div><b>{q["score"]:g}<em>/100</em></b><span>档案质量自评</span></div></div>'
@@ -75,12 +79,12 @@ def build(root,p):
  library='<div id="library-view" hidden><div class="reader-view-heading"><h2>资料与解读</h2><p>从论文看研究方法与结论，完整参考资料列在后面。解读为平台整理，保留实际阅读范围。</p></div>'+''.join(paper_cards)+'<details class="reader-section reader-expand source-directory" id="reader-sources" tabindex="-1"><summary>参考资料目录 · '+str(len(d['sources']))+' 份</summary>'+source_index+'</details></div>'
  module_rows=[[x['title'],x['records'],f'{x["known"]} / {x["total"]}',str(x['percent'])+'%',x['assessment']]for x in stats]
  needs=''.join(f'<li><b>{e(c["modules"][x["id"]]["title"])}</b><p>{e(c["modules"][x["id"]]["summary"])}</p></li>'for x in stats)
- assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details>'+matching['assessment']+research['assessment']+'</div>'
+ assessment='<div id="assessment-view" hidden><div class="reader-view-heading"><h2>档案评估与完善</h2><p>把已整理内容、质量判断和仍需补充的资料分开查看。</p></div>'+quality_body+'<p class="reader-note">六维试行自评，尚待专业校准；不评价项目的技术先进程度。</p><h3 class="reader-subhead">各模块整理情况</h3>'+table(['模块','记录','已填 / 总字段','填充率','整理状态'],module_rows)+'<p class="reader-note">统计只覆盖已建记录；没有建档的资料不会自动进入分母。状态是内容整理判断，不等于专业审核结论。</p><h3 class="reader-subhead">下一步补充什么</h3><ul class="reader-needs">'+needs+'</ul><details class="reader-expand"><summary>评分依据</summary>'+properties([(x['label'],x['rationale'])for x in q['dimensions']])+'</details>'+matching['assessment']+research['assessment']+('<div class="reasoning-accounting">另有'+str(reasoning['count'])+'条AI应用推演，均待验证；与'+str(len(a['records']))+'条档案记录分开统计，不增加事实字段填充率或质量自评。</div>'if reasoning['body']else '')+'</div>'
  nav='<a data-reader-section="top" href="#reader-top">'+icon('overview')+'档案概览</a>'+''.join(f'<a data-reader-section="{x["id"]}" href="#reader-{x["id"]}">{icon(x["id"])}{e(x["title"])}</a>'for x in stats)+'<div class="toc-reading-appendix"><a data-reader-view="library" href="#library-view">'+icon('ip')+'资料与解读</a><a data-reader-view="assessment" href="#assessment-view">'+icon('governance')+'档案评估</a></div><div class="toc-note"><b>档案研究版</b>空白保留，资料持续补充。<br>当前质量自评 '+str(q['score'])+' / 100</div>'
  hero='<div class="eyebrow">好设计 / 项目档案 / 航空航天</div><h1>嫦娥月球钻取采样系统</h1><p class="summary">从月球深层取回样品，也保存样品所承载的信息。<br>探索五号与六号任务相关的系统设计、研究成果和发展过程。</p><div class="reader-hero-meta"><span class="ui-badge">'+icon('award')+'2025年第十届好设计奖金奖</span><span class="ui-badge pending">'+icon('info')+'待专业审核</span><span>资料截至 '+e(d['as_of'])+'</span></div>'
  hero+='<a class="hero-graph" href="项目图谱.html">'+icon('applications')+'探索项目图谱'+icon('arrow')+'<small>割胶机器人 · 设计迁移试读</small></a>'
 
- return dict(board=board,library=library,assessment=assessment,nav=nav,hero=hero,css=CSS+matching['css']+'.reader-expand{scroll-margin-top:85px}.engine-audit-table{min-width:680px}.engine-audit-table td:first-child{min-width:95px}'+UI_CSS,js=JS+matching['js']+UI_JS)
+ return dict(board=board,library=library,assessment=assessment,nav=nav,hero=hero,css=CSS+matching['css']+'.reader-expand{scroll-margin-top:85px}.engine-audit-table{min-width:680px}.engine-audit-table td:first-child{min-width:95px}'+UI_CSS+reasoning['css'],js=JS+matching['js']+UI_JS+reasoning['js'])
 
 def quality_panel(q,e):
  labels={'identity':'身份与范围','evidence':'资料可信度','technical':'技术与验证','decision':'设计过程','ip':'成果与项目关系','governance':'档案维护'}

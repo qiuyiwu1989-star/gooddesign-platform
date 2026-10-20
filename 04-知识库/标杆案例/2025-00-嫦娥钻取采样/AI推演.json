@@ -1,0 +1,234 @@
+{
+  "schema_version": "ai-reasoning-1.0",
+  "project_id": "2025-00",
+  "version": "0.1.0",
+  "nature": "AI推理补充，不写入事实字段",
+  "policy": "reasoning-policy-1.0",
+  "generated_by": "Codex AI",
+  "review_status": "pending_review",
+  "items": [
+    {
+      "id": "AI01",
+      "module": "applications",
+      "content_type": "ai_hypothesis",
+      "title": "让取样设备保留更多样品信息",
+      "scenario": "可研究面向地质分层研究的取样工具，而不只评价取回了多少样品。",
+      "knowledge_ids": [
+        "K01",
+        "K05"
+      ],
+      "claim_ids": [
+        "C05",
+        "C24",
+        "C25"
+      ],
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "reasoning_chain": [
+        {
+          "type": "source_basis",
+          "text": "档案记录双管与内翻软袋的取芯思路；相关论文同时讨论取芯保持和钻进接触之间的取舍。"
+        },
+        {
+          "type": "analogy",
+          "text": "若另一个取样任务同样重视样品原有空间关系，可将“信息保持”作为设计目标重新比较收集与转移方式。"
+        },
+        {
+          "type": "hypothesis",
+          "text": "因此，柔性包覆或低相对滑移的收集思路值得在目标介质上试验，但机构和材料需要重新设计。"
+        }
+      ],
+      "value_hypothesis": "可能减少样品取得后对原始结构的二次解释损失；属于待检验的科学使用价值，不能折算为收益。",
+      "conditions": [
+        "需求方确实需要层序/空间信息，而不只是质量或成分。",
+        "目标介质、含水/温度条件和污染要求允许所选包覆材料。"
+      ],
+      "boundaries": [
+        "不推断适用于所有土壤或岩石；月壤模拟物结果不证明目标地质条件有效。",
+        "没有资料证明嫦娥系统已用于该商业设备；不直接照搬钻头或原论文参数。"
+      ],
+      "validation_plan": [
+        "选定一种目标介质和实际信息保持指标。",
+        "对照既有收集方法与候选方法，核对回收率、层序偏移、污染和卡滞。",
+        "记录无效/损伤工况，再判断是否继续研发。"
+      ],
+      "review_status": "pending_review",
+      "validation_status": "not_validated",
+      "confidence": null,
+      "authored_by": "Codex AI（本会话基于现有档案推演，非在线自动生成）",
+      "created_at": "2026-10-20",
+      "revision": "1.0.0",
+      "supersedes": null
+    },
+    {
+      "id": "AI02",
+      "module": "applications",
+      "content_type": "ai_hypothesis",
+      "title": "为接触作业机器人研究自适应进给",
+      "scenario": "以割胶机器人为例，研究接触反馈与切入深度约束如何共同参与动作调整。",
+      "knowledge_ids": [
+        "K06",
+        "K05"
+      ],
+      "claim_ids": [
+        "C27",
+        "C29",
+        "C31",
+        "C33"
+      ],
+      "source_ids": [
+        "S23",
+        "S07"
+      ],
+      "reasoning_chain": [
+        {
+          "type": "source_basis",
+          "text": "取芯论文比较不同控制方式，并报告不同介质下的响应差异。"
+        },
+        {
+          "type": "analogy",
+          "text": "若目标设备同样存在介质/接触状态变化，反馈调整运动输入可成为方案比较的一个维度。"
+        },
+        {
+          "type": "hypothesis",
+          "text": "可研究把接触反馈与目标几何、切入深度和安全边界联合使用，而不是将月球取芯控制器直接移植。"
+        }
+      ],
+      "value_hypothesis": "可能改善不确定接触条件下的作业一致性；对损伤、效率或成本的改善均尚未证明。",
+      "conditions": [
+        "目标机构允许反馈测量与动作调整。",
+        "有切除量/深度及目标保护要求的校准依据。",
+        "已明确树况、环境、维护和成本约束。"
+      ],
+      "boundaries": [
+        "恒力不等于恒定切入深度，更不能单独保证不损伤目标。",
+        "不移用原论文的载荷、速度、超调量或性能提升比例。"
+      ],
+      "validation_plan": [
+        "先定义目标任务的损伤判据与几何测量办法。",
+        "在受控试样上比较固定输入、单反馈和多约束方案。",
+        "记录不同材料条件下的失败、维护成本和重复性，再考虑现场试验。"
+      ],
+      "review_status": "pending_review",
+      "validation_status": "not_validated",
+      "confidence": null,
+      "authored_by": "Codex AI（本会话基于现有档案推演，非在线自动生成）",
+      "created_at": "2026-10-20",
+      "revision": "1.0.0",
+      "supersedes": null
+    },
+    {
+      "id": "AI03",
+      "module": "applications",
+      "content_type": "ai_hypothesis",
+      "title": "把远程支持经验转成运维流程研究",
+      "scenario": "可为难以抵达的设备维护或远程试验，设计“观察—解释—建议—人工确认”的支持流程。",
+      "knowledge_ids": [
+        "K04",
+        "K03"
+      ],
+      "claim_ids": [
+        "C11",
+        "C13"
+      ],
+      "source_ids": [
+        "S03"
+      ],
+      "reasoning_chain": [
+        {
+          "type": "source_basis",
+          "text": "校方资料介绍遥测驱动的状态反演、作业决策支持和全流程演练。"
+        },
+        {
+          "type": "analogy",
+          "text": "远程运维若同样面临直接观察不足和现场操作代价，可借鉴信息组织与协同判断的流程。"
+        },
+        {
+          "type": "hypothesis",
+          "text": "先做只读的状态解释和操作建议原型，保留现场权限与人工确认，再决定是否加入自动动作。"
+        }
+      ],
+      "value_hypothesis": "可能让远程沟通与决策依据更清楚；是否减少停机或人工投入需要实际对照。",
+      "conditions": [
+        "设备有可用且可解释的监测数据。",
+        "具备历史异常记录、人工判断依据与操作权限边界。"
+      ],
+      "boundaries": [
+        "不证明能识别目标设备全部故障，也不替代既有安全控制。",
+        "月球任务的支持平台不是目标企业可直接部署的软件产品。"
+      ],
+      "validation_plan": [
+        "选择一个具体设备与一种异常情景。",
+        "用历史记录回放，比较原流程与候选流程的信息缺失、误判和响应过程。",
+        "验证建议可追溯及人工确认后，再讨论现场接入。"
+      ],
+      "review_status": "pending_review",
+      "validation_status": "not_validated",
+      "confidence": null,
+      "authored_by": "Codex AI（本会话基于现有档案推演，非在线自动生成）",
+      "created_at": "2026-10-20",
+      "revision": "1.0.0",
+      "supersedes": null
+    },
+    {
+      "id": "AI04",
+      "module": "applications",
+      "content_type": "ai_hypothesis",
+      "title": "把保层序采样做成可观察的学习活动",
+      "scenario": "为设计馆或科技课堂构思一个分层颗粒材料取样活动，比较“取到样品”和“保留信息”。",
+      "knowledge_ids": [
+        "K01",
+        "K03"
+      ],
+      "claim_ids": [
+        "C05",
+        "C10"
+      ],
+      "source_ids": [
+        "S07",
+        "S12"
+      ],
+      "reasoning_chain": [
+        {
+          "type": "source_basis",
+          "text": "原项目重视样品信息保持，并有模拟物与模型对照研究。"
+        },
+        {
+          "type": "analogy",
+          "text": "可把这一设计目标转换为可观察、可比较的问题，而不要求学习者复现真实月球设备。"
+        },
+        {
+          "type": "hypothesis",
+          "text": "以安全材料构造分层样本，记录不同取样方式造成的层序变化，形成关于约束与验证的讨论。"
+        }
+      ],
+      "value_hypothesis": "可能帮助学习者理解工程目标、设计取舍和证据；学习效果须经活动观察与反馈验证。",
+      "conditions": [
+        "材料、工具与操作经过教师或策展团队的年龄适用及安全检查。",
+        "明确展示模型与真实采样系统的差异。"
+      ],
+      "boundaries": [
+        "这是AI提出的活动方案，尚未试教或证明学习成效。",
+        "不把活动操作表现用作科学能力评分。"
+      ],
+      "validation_plan": [
+        "先制作低成本静态原型并核对材料安全。",
+        "让少量参与者比较结果，观察是否能解释层序与信息保持。",
+        "根据理解偏差修改说明，再形成正式教案或展项。"
+      ],
+      "review_status": "pending_review",
+      "validation_status": "not_validated",
+      "confidence": null,
+      "authored_by": "Codex AI（本会话基于现有档案推演，非在线自动生成）",
+      "created_at": "2026-10-20",
+      "revision": "1.0.0",
+      "supersedes": null
+    }
+  ],
+  "basis_archive": {
+    "content_version": "0.4.2",
+    "snapshot_sha256": "31c8d87faa82478a82c31e8fa4dd6c3d2589124eb5daec637f2df1a1a79736fd"
+  }
+}

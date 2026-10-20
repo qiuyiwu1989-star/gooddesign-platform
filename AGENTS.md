@@ -63,3 +63,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 026入口已由用户确认为opendesign.cc/inno/（取代025暂定/innovation/，未曾部署）；网站结构见网站信息架构-v1.md。主导航首页/好设计奖/项目库/好设计馆/科技教育/企业创新，三阅读视图共享项目ID；底层引擎与MCP不占用OpenDesign已有接口。
 
 027预览：extensions/inno/与build_inno_preview.py构建output/inno-preview/inno（忽略入Git），独立8775预览。只导出原站公开字段/封面及嫦娥读者HTML，普通案例未评分，嫦娥不改事实；不可复制私有原件/快照。馆/教育/企业为入口页并标明原站外链，无新增API；生产发布仍未执行。
+
+028AI推演：用户明确允许标记的推理补充。AI推演.json独立存储、绑定0.4.2证据并纳入capture；dossier_reasoning.py校验/展示4条应用假设，类型/前提/边界/验证明确。页面5.1.0/内容0.5.0，事实/原子/55自评不变。真实合作、许可、专利/参数/收益等不由AI猜填；规范见AI解读与推演规范-v1.md。
