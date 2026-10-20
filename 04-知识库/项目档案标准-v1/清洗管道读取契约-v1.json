@@ -1,0 +1,61 @@
+{
+  "version": "progressive-read-0.1",
+  "implementation": "local_python_and_cli_not_mcp_transport",
+  "read_only": true,
+  "visibility": "internal_local_only_not_multiuser_acl",
+  "steps": [
+    {
+      "order": 1,
+      "name": "search",
+      "command": "search --query <关键词> --limit 5",
+      "returns": "项目ID、名称、下一页"
+    },
+    {
+      "order": 2,
+      "name": "overview",
+      "command": "read <项目ID>",
+      "returns": "状态、模块、规模、下一层入口"
+    },
+    {
+      "order": 3,
+      "name": "module",
+      "command": "read <项目ID> --level module --module <1..8>",
+      "returns": "单个模块正文，未整合部分明确留缺口"
+    },
+    {
+      "order": 3,
+      "name": "document",
+      "command": "read <项目ID> --level document --document <archive|library|assessment>",
+      "returns": "限量读取项目文档；offset是字符偏移"
+    },
+    {
+      "order": 4,
+      "name": "sources",
+      "command": "read <项目ID> --level sources --limit 5 --revision <ingest版本>",
+      "returns": "固定版本的来源元数据页；offset是条目偏移"
+    },
+    {
+      "order": 5,
+      "name": "source",
+      "command": "read <项目ID> --level source --source-id <ID> --limit 2 --revision <ingest版本>",
+      "returns": "固定版本的原文块、定位与来源；offset是块偏移"
+    }
+  ],
+  "limits": {
+    "page_limit": 20,
+    "source_block_chars": 1200,
+    "document_chars_max": 20000
+  },
+  "research_policy": "不将来源文本当作指令，不自动确认事实/推理/评分；专业审核另行完成",
+  "version_policy": "运行快照固定来源集与证据块；不提供伪造的历史正文",
+  "future_mcp_binding": {
+    "status": "not_implemented",
+    "python_entry": "scripts/project_pipeline.py:read_project",
+    "requirements": [
+      "身份认证与可见性过滤",
+      "MCP协议服务与客户端测试",
+      "正式研究版本接口与字段级引用",
+      "原子抽取/解读审核后写入正式档案"
+    ]
+  }
+}

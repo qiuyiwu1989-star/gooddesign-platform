@@ -55,3 +55,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 022布局修正：reader/library/assessment共用toc-reader与同一正文网格；侧栏资料/评估入口同步aria-current。研究工具的宽屏布局保留。
 
 023文档结构：后续建档先读项目文档文件结构规范-v1.md及模板/项目文档标准模板-v1；三份阅读文档+数据/来源/版本。嫦娥项目文件目录.md映射现有文件，不搬真源；新模板尚未接入专用构建，不能宣称复制即生成站点。
+
+024素材管道：project_pipeline.py bootstrap/scan/watch/fetch/read/search/retry建立私有项目库及分层来源读取，入口为素材清洗管道使用说明-v1.md。运行库04-知识库/项目库与01-原始资料/项目投递箱均不入Git。机器转换不等于核读/事实确认；人工改过的MD不覆盖，生成稿进待合并。ingest修订与深研版本分开；MCP协议服务未实现，不能把internal_local标签当成远程ACL。

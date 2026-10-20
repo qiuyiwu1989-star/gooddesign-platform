@@ -1,0 +1,44 @@
+{
+  "spec": "024",
+  "checked_at": "2026-10-20T04:24:34.497828+00:00",
+  "projects": 560,
+  "source_records": 562,
+  "ingestion_snapshots": 1682,
+  "formats_exercised": [
+    "真实历史JSON",
+    "真实PDF投递并由watch自动处理",
+    "真实公开网页抓取"
+  ],
+  "checks": [
+    "560项目三文档齐全",
+    "原件SHA256一致",
+    "来源块计数与新增块哈希",
+    "全部运行快照哈希",
+    "重复扫描不新增修订",
+    "分层分页与固定来源版本",
+    "嫦娥0.4.2快照不变",
+    "旧库介绍/设计特点精确原字段映射，保持待核验"
+  ],
+  "unit_tests": 14,
+  "existing_dossier_tests": 44,
+  "watcher": {
+    "pid": 83556,
+    "heartbeat": "2026-10-20T04:24:33.260241+00:00",
+    "inbox": "/Volumes/邱懿武/邱懿武认知大脑/好设计平台/01-原始资料/项目投递箱"
+  },
+  "bounds": {
+    "excerpt_chars": 1200,
+    "source_page_size": 1
+  },
+  "implementation_limits": [
+    "骨架与来源转换，不是560项目深研完成",
+    "无LLM解读审计或专业审核",
+    "无MCP协议服务或远程权限体系",
+    "早期导入基线只有来源清单和快照哈希，后续修订另附changes.json"
+  ],
+  "publication": "local_only",
+  "legacy_excerpt_coverage": {
+    "desc": 464,
+    "features": 208
+  }
+}
