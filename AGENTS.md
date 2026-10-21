@@ -107,3 +107,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 044e：research_reader_notes.py冻结八模块AI导读，路径研究工作区/阅读导读/research-N/语义版本，校验档案哈希和本模块记录引用，JSON/MD/manifest原子落盘；新研究版不自动继承旧稿。steward_dossier_ui默认短导读+折叠事实/缺口，仍三视图同目录。MCP概览可固定revision并附导读，来源数量声明当前规模；不是新事实/评分或专家结论。当前两例research000004+导读0.1.1，8776会话6754。后续打包应包含配套导读，不把它混成事实字段。
 
 044f：steward_scope.py以scope_holds+controls可逆保留非项目未完成任务，后台15秒巡检、处理前核对，不抢运行中任务、不重放完成项。同篇文献显示关联但不互相提升核读。复兴research000005为42记录/85有值事实/14AI，新增P02 CN102611346B 28页原件仅封面+摘要/部分权利要求选读，当前法律状态未知；配导读0.1.0（按研究版独立序列）。当前8776会话86117。规则仍有7旧pending编号，下一步不能把引用的对比专利当当前文献编号，需按已索引身份收紧并保留重复处理审计。
+
+044g：RULE_METHOD为conservative_rules_v2_identity，indexed_document识别主/关联格式；indexed_identifier只允许声明或已发布的本件编号。Steward0.5.0严格关闭已发布同值旧DOC占位，reviewer_kind=rule和resolution保存证明版本，不删除/升分，真实差异/人工决定不动。已关闭7项、仍6项其他编号待核。单项目维护失败写settings并提示，不挡其他队列。当前8776会话79836，管家恢复；两例事实版本/导读未变。后续优先核对原始好设计奖范围并构建通用交付包。

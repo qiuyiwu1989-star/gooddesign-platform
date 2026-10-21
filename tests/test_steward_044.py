@@ -7,7 +7,9 @@ import test_research_pipeline_038 as base
 import project_pipeline as pp,research_workflow as rw
 from archive_steward import Steward,AGENT_METHOD
 class StewardTests(unittest.TestCase):
- setUp=base.ResearchTests.setUp
+ def setUp(self):
+  base.ResearchTests.setUp(self)
+  path=self.p/'论文原文管理/论文原件清单.json';listing=pp.load(path);listing['items'][0]['doi']='10.1234/test.2026';pp.save(path,listing)
  tearDown=base.ResearchTests.tearDown
  candidate=base.ResearchTests.candidate
  approve=base.ResearchTests.approve
@@ -16,6 +18,7 @@ class StewardTests(unittest.TestCase):
  def test_incremental_rule_auto_publication(self):
   s=self.steward();task=s.enqueue_source('sample',self.sid);self.assertEqual(s.enqueue_source('sample',self.sid)['id'],task['id']);self.assertTrue(s.tick());self.assertFalse(s.tick())
   data=rw.dataset(self.p);c=rw.cell(data,'A01','doi');self.assertEqual(c['value'],'10.1234/test.2026');self.assertEqual(c['verification_state'],'automated_evidence_checked_not_expert');self.assertFalse(data['expert_reviewed']);self.assertEqual(rw.current(self.p)['revision'],1)
+  self.assertEqual(rw.current(self.p)['candidates'][0]['reviewer_kind'],'rule')
  def test_agent_batch_no_manual_clicks(self):
   c=self.agent();s=self.steward();s.enqueue_candidates('sample',[c['id']]);s.tick();self.assertEqual(rw.current(self.p)['revision'],1);self.assertEqual(rw.current(self.p)['candidates'][0]['reviewer_kind'],'agent')
  def test_human_approved_not_piggybacked(self):

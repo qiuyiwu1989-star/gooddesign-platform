@@ -9,7 +9,7 @@ import project_pipeline as pp
 import project_ownership as own
 import research_workflow as rw
 import steward_scope
-VERSION='steward-0.4.0'
+VERSION='steward-0.5.0'
 AGENT_METHOD='agent_evidence_extract_v1'
 PROTECTED=rw.RESTRICTED|{'completion_org_ids','completion_person_ids','award_list_confirmed','review_status'}
 class Steward:
@@ -102,6 +102,7 @@ class Steward:
    controls=[dict(x)for x in db.execute('SELECT id,at,actor,action,project,task_id FROM controls WHERE project=? OR project IS NULL ORDER BY id DESC LIMIT 10',(pid,))]
    counts=dict(Counter(x['status']for x in db.execute('SELECT status FROM tasks WHERE project=?',(pid,))))
    paused=db.execute('SELECT value FROM settings WHERE key=?',('paused',)).fetchone()
+   maintenance_issue=db.execute('SELECT value FROM settings WHERE key=?',('maintenance_error:'+pid,)).fetchone()
   for r in rows:
    r['result']=json.loads(r['result'])if r['result']else None
    payload=json.loads(r.pop('payload'));r['kind']=payload['kind'];r['subject']=payload.get('title')or payload.get('url')or payload.get('source_id')or'研究内容增量'
@@ -110,7 +111,7 @@ class Steward:
    elif sid in image_titles:r['subject']=image_titles[sid]
    elif sid in sources:
     origin=sources[sid].get('origin',{});r['subject']=mapping.get(origin.get('url'))or origin.get('filename')or sources[sid]['title']
-  return dict(processor=VERSION,paused=bool(paused and paused['value']=='1'),counts=counts,recent=rows,controls=controls,semantic_mode='external_agent_submission',embedded_model_connected=False)
+  return dict(processor=VERSION,paused=bool(paused and paused['value']=='1'),maintenance_attention=bool(maintenance_issue),counts=counts,recent=rows,controls=controls,semantic_mode='external_agent_submission',embedded_model_connected=False)
  def claim(self):
   with self.connect()as db:
    db.execute('BEGIN IMMEDIATE')
@@ -130,7 +131,7 @@ class Steward:
   eligible=[];exceptions=[];groups={}
   for c in chosen:groups.setdefault((c['record_id'],c['field']),[]).append(c)
   for c in chosen:
-   why=None;machine=c.get('extraction_method')=='conservative_rules_v1';agent=c.get('extraction_method')==AGENT_METHOD
+   why=None;machine=c.get('extraction_method')in ('conservative_rules_v1',rw.RULE_METHOD);agent=c.get('extraction_method')==AGENT_METHOD
    if c.get('reviewer_kind','human')=='human'and c['status']=='approved':why='人工已确认内容留给人工入档，不夹带发布'
    elif not(machine or agent):why='未登记的提炼方式，保留人工判断'
    elif c.get('operation','set')!='set':why='撤回或清空已有事实需人工判断'
@@ -144,11 +145,10 @@ class Steward:
      # Rules can only auto-admit identifiers for already indexed literature, never guessed DOC records.
      if c['field']not in ('doi','publication_number','grant_number')or c['record_id'].startswith('DOC-'):why='规则提取仅自动登记已关联文献的编号'
      else:
-      index='论文原文管理/论文原件清单.json'if c['entity']=='paper'else'专利原文管理/专利原件清单.json'
-      listing=pp.load(p/index)['items']if(p/index).exists()else[]
-      item=next((x for x in listing if x.get('library_source_id')==c['source_id']and x.get('paper_id',x.get('patent_id'))==c['record_id']),None)
-      if not item:why='无法核对文献关联身份'
-      elif c['entity']=='patent'and item.get('publication')!=c['value']:why='公开号与关联清单不一致'
+      try:target=rw.indexed_document(p,c['source_id'])
+      except ValueError as exc:target=None;why=str(exc)
+      if not why and(not target or target[:2]!=(c['record_id'],c['entity'])):why='无法核对文献关联身份'
+      elif not why and rw.indexed_identifier(target,c['field'],data)!=c['value']:why='编号未与清单或已入档本件编号一致，保留核对'
    if not why:
     try:
      rw.evidence(p,c)
@@ -159,7 +159,7 @@ class Steward:
    eligible.append(c)
   approved=[]
   for c in eligible:
-   kind='rule'if c['extraction_method']=='conservative_rules_v1'else'agent'
+   kind='rule'if c['extraction_method']in ('conservative_rules_v1',rw.RULE_METHOD)else'agent'
    rw.review(self.lib,pid,c['id'],'approved','资料管家/'+kind,'证据与类型检查通过；无已知字段冲突；仅研究入档，非专家确认',reviewer_kind=kind,expected_status=c['status']);approved.append(c['id'])
   published=rw.publish(self.lib,pid,'资料管家','自动整理合格增量；原件与旧版保留',expected_candidate_ids=approved,selected_candidate_ids=approved)if approved else dict(status='no_changes',revision='research-%06d'%rw.current(p)['revision'])
   return dict(publication=published,accepted=approved,exceptions=exceptions,processor=VERSION,expert_reviewed=False)
@@ -202,6 +202,21 @@ class Steward:
   except Exception as exc:
    self.finish(t,'failed'if t['attempts']>=3 else'retry',error=str(exc)[:1000])
   return True
+ def reconcile_identifiers(self,pid):
+  closed=rw.close_duplicate_identifiers(self.lib,pid);w=rw.current(pp.project(self.lib,pid))
+  resolved={c['id']:c['resolution']for c in w['candidates']if c['status']=='rejected'and c.get('reviewer_kind')=='rule'and c.get('resolution',{}).get('kind')=='duplicate_identifier'}
+  researched={c['source_id']for c in w['candidates']if c['status']=='published'and c.get('extraction_method')==AGENT_METHOD}
+  with self.connect()as db:
+   rows=[dict(r)for r in db.execute("SELECT * FROM tasks WHERE project=? AND status='needs_attention'",(pid,))]
+   for row in rows:
+    payload=json.loads(row['payload']);result=json.loads(row['result'])if row['result']else{};ids={x['candidate_id']for x in result.get('exceptions',[])}
+    if payload['kind']!='source'or not ids or not ids<=resolved.keys():continue
+    result['previous_exceptions']=result['exceptions'];result['exceptions']=[];result['identifier_resolution']={cid:resolved[cid]for cid in sorted(ids)}
+    result['note']='重复编号线索已归入标准文献记录；原候选和证据保留，文件核读范围不变'
+    status='completed'if payload['source_id']in researched else'awaiting_agent'
+    changed=db.execute("UPDATE tasks SET status=?,result=?,finished=? WHERE id=? AND status='needs_attention'",(status,json.dumps(result,ensure_ascii=False),pp.now(),row['id'])).rowcount
+    if changed:db.execute('INSERT INTO controls(at,actor,action,project,task_id,previous)VALUES(?,?,?,?,?,?)',(pp.now(),'资料管家/编号去重','identifier_resolution',pid,row['id'],json.dumps(row,ensure_ascii=False)))
+  return closed
  def start(self):
   def run():
    last_scope_scan=0
@@ -209,7 +224,12 @@ class Steward:
     try:
      if time.monotonic()-last_scope_scan>15:
       with self.connect()as db:projects=[r['project']for r in db.execute('SELECT DISTINCT project FROM tasks')]
-      for pid in projects:steward_scope.reconcile(self,pid)
+      for pid in projects:
+       try:
+        steward_scope.reconcile(self,pid);self.reconcile_identifiers(pid)
+        with self.connect()as db:db.execute('DELETE FROM settings WHERE key=?',('maintenance_error:'+pid,))
+       except Exception as exc:
+        with self.connect()as db:db.execute('INSERT OR REPLACE INTO settings VALUES(?,?)',('maintenance_error:'+pid,json.dumps(dict(at=pp.now(),error=str(exc)[:500]),ensure_ascii=False)))
       last_scope_scan=time.monotonic()
      busy=self.tick()
     except Exception:busy=False

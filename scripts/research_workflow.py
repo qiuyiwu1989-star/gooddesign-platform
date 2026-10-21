@@ -11,6 +11,7 @@ ROOT=pp.ROOT
 SCHEMA=ROOT/'04-知识库/项目档案标准-v1/原子字段字典-v3.json'
 BENCH=ROOT/'04-知识库/标杆案例/2025-00-嫦娥钻取采样/原子字段档案.json'
 POLICY='evidence-workflow-1.0'
+RULE_METHOD='conservative_rules_v2_identity'
 RESTRICTED={'current_holder','legal_status','project_relation','reading_scope','status_checked_at','license_conditions'}
 
 def digest(v):return pp.sha(json.dumps(v,ensure_ascii=False,sort_keys=True,allow_nan=False).encode())
@@ -122,28 +123,46 @@ def propose(lib,pid,args,actor):
  with pp.lock(lib):
   p=pp.project(lib,pid);w=current(p);c=add_candidate(p,w,args,actor);save(p,w);return c
 
+def indexed_document(p,sid):
+ matches=[]
+ for path,key,entity in [('论文原文管理/论文原件清单.json','paper_id','paper'),('专利原文管理/专利原件清单.json','patent_id','patent')]:
+  if (p/path).exists():
+   for item in pp.load(p/path)['items']:
+    if sid in [item.get('library_source_id'),item.get('pdf_source_id')]+item.get('related_source_ids',[]):matches.append((item[key],entity,item))
+ if len({(r,e)for r,e,_ in matches})>1:raise ValueError('同一来源关联多个文献身份，需先核对清单')
+ return matches[0]if matches else None
+def indexed_identifier(target,field,data):
+ if not target:return None
+ rid,entity,item=target
+ if entity=='paper'and field=='doi':
+  c=cell(data,rid,field);return item.get('doi')or(c.get('value')if c and c.get('value_state')=='known'else None)
+ if entity=='patent'and field in ('publication_number','grant_number'):
+  number=item.get('publication','')
+  if not number:
+   c=cell(data,rid,field);return c.get('value')if c and c.get('value_state')=='known'else None
+  expected_field='grant_number'if number.endswith(('B','U','S'))else'publication_number'
+  return number if field==expected_field else None
+ return None
 def extract(lib,pid,sid,actor):
  """Conservative rules: bibliographic identifiers and verbatim abstract sections only."""
  with pp.lock(lib):
   p=pp.project(lib,pid);x=source(p,sid);blocks=pp.load(pp.safe(p,x['chunks']));w=current(p);made=[]
-  target=None
-  for path,key,entity in [('论文原文管理/论文原件清单.json','paper_id','paper'),('专利原文管理/专利原件清单.json','patent_id','patent')]:
-   if (p/path).exists():
-    item=next((i for i in pp.load(p/path)['items']if i['library_source_id']==sid),None)
-    if item:target=(item[key],entity,item);break
+  target=indexed_document(p,sid);data=dataset(p,w)
   # Unindexed sources still yield DOI/CN identifiers, but are not automatically linked to an existing project outcome.
-  guessed='patent'if re.search(r'CN\s*\d{8,10}\s*[AB]',' '.join(b['text']for b in blocks[:2]))else'paper'
+  guessed='patent'if re.search(r'CN\s*\d{8,10}\s*[ABUS]',' '.join(b['text']for b in blocks[:2]))else'paper'
   rid,entity,item=target if target else ('DOC-'+sid,guessed,{})
   found=set()
   def add(field,value,b,quote):
    key=(field,digest(value))
    if key in found:return
    found.add(key)
-   made.append(add_candidate(p,w,dict(entity=entity,record_id=rid,title=item.get('title',x['title']),field=field,value=value,source_id=sid,chunk_id=b['id'],quote=quote,extraction_method='conservative_rules_v1'),actor))
+   made.append(add_candidate(p,w,dict(entity=entity,record_id=rid,title=item.get('title',x['title']),field=field,value=value,source_id=sid,chunk_id=b['id'],quote=quote,extraction_method=RULE_METHOD),actor))
   for b in blocks[:4]:
    text=b['text']
    if entity=='paper':
-    for m in re.finditer(r'(?:DOI|doi)\s*[:：]\s*(10\.\d{4,9}/[A-Za-z0-9._;/()\-]+)',text):add('doi',m.group(1).rstrip('.'),b,m.group(0))
+    for m in re.finditer(r'(?:DOI|doi)\s*[:：]\s*(10\.\d{4,9}/[A-Za-z0-9._;/()\-]+)',text):
+     value=m.group(1).rstrip('.');expected=indexed_identifier(target,'doi',data)
+     if not expected or value==expected:add('doi',value,b,m.group(0))
     if target or 'DOI' in text or 'doi' in text:
      m=re.search(r'摘\s*要\s*[:：]([\s\S]+?)(?:关键词|关\s*键\s*词)',text)
      if m:
@@ -155,8 +174,9 @@ def extract(lib,pid,sid,actor):
        if start>=0:add('method',method[start:],b,method[start:])
        add('findings',abstract[end:].strip(),b,abstract[end:].strip())
    if entity=='patent':
-    for m in re.finditer(r'CN\s*\d{8,10}\s*[AB]',text):
-     value=re.sub(r'\s+','',m.group());add('grant_number'if value.endswith('B')else 'publication_number',value,b,m.group())
+    for m in re.finditer(r'CN\s*\d{8,10}\s*[ABUS]',text):
+     value=re.sub(r'\s+','',m.group());field='grant_number'if value.endswith(('B','U','S'))else'publication_number'
+     if not target or value==indexed_identifier(target,field,data):add(field,value,b,m.group())
     m=re.search(r'\(73\)\s*专利权人\s*([^\n]+)',text)
     if m:add('publication_holder',m.group(1).strip(),b,m.group())
     m=re.search(r'\(72\)\s*发明人\s*([\s\S]+?)(?=\(74\)|\(51\))',text)
@@ -166,6 +186,27 @@ def extract(lib,pid,sid,actor):
 
   save(p,w)
   return dict(status='completed',source_id=sid,candidates=[c['id']for c in made],coverage='DOI/CN标识与完整摘要内的问题、方法、结果；其余字段由人工/Agent提交证据候选',pending_review=True)
+
+def close_duplicate_identifiers(lib,pid):
+ """Close only evidenced DOC placeholders already present under their indexed identity."""
+ with pp.lock(lib):
+  p=pp.project(lib,pid);w=current(p);data=dataset(p,w);closed=[]
+  if not w['revision']:return closed
+  for c in w['candidates']:
+   if c['status']!='pending'or c.get('content_nature')!='source_statement'or c.get('extraction_method')not in ('conservative_rules_v1',RULE_METHOD)or not c['record_id'].startswith('DOC-')or c['field']not in ('doi','publication_number','grant_number'):continue
+   try:
+    target=indexed_document(p,c['source_id'])
+    if not target or target[1]!=c['entity']:continue
+    stored=cell(data,target[0],c['field'])
+    if not stored or stored.get('value_state')!='known'or stored.get('value')!=c['value']or indexed_identifier(target,c['field'],data)!=c['value']:continue
+    evidence(p,c)
+   except (ValueError,KeyError,OSError):continue
+   proof=dict(kind='duplicate_identifier',revision='research-%06d'%w['revision'],record_id=target[0],field=c['field'],value_sha256=digest(c['value']))
+   reason='重复编号占位关闭：'+proof['revision']+'的'+target[0]+'.'+c['field']+'已收录同值；保留原候选与证据，不表示否定原文或全文已核读'
+   c.update(status='rejected',reviewer='资料管家/编号去重',reviewer_kind='rule',review_reason=reason,reviewed_at=pp.now(),resolution=proof)
+   event(w,'review','资料管家/编号去重',candidate_id=c['id'],decision='rejected',reason=reason,reviewer_kind='rule',resolution=proof);closed.append(c['id'])
+  if closed:save(p,w)
+  return closed
 
 def review(lib,pid,cid,decision,actor,reason,reviewer_kind='human',expected_status=None):
  if reviewer_kind not in ('human','rule','agent'):raise ValueError('审核身份无效')
