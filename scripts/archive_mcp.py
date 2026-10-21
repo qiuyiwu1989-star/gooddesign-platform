@@ -21,10 +21,12 @@ def gd_search_projects(query:str='',offset:int=0,limit:int=10)->dict:
  rows=pp.load(LIB/'项目索引.json')['projects'];q=query.lower();rows=[x for x in rows if q in json.dumps(x,ensure_ascii=False).lower()]
  return page(rows,offset,limit)
 @MCP.tool(annotations=ANNOTATIONS)
-def gd_project_overview(project_id:str)->dict:
- """读取项目范围、当前研究发布版本和资料规模；没有发布版时返回人工基线，不能据此认定专家已核验。"""
- p=pp.project(LIB,project_id);w=rw.current(p);d=rw.dataset(p,w);sources=own.select(p,pp.state(p)['sources'])
- return dict(project=pp.state(p)['project'],publication_revision='research-%06d'%w['revision'],record_count=len(d['records']),source_count=len(sources),baseline_only=w['revision']==0,expert_reviewed=False,next=['gd_read_records','gd_list_sources','gd_read_evidence','gd_read_version'],quality='继承人工档案；本管线不自动升分')
+def gd_project_overview(project_id:str,revision:str|None=None)->dict:
+ """读项目范围、指定/当前研究版本及AI阅读导读。资料数为当前归属规模；无发布版返回人工基线，不代表专家核验。"""
+ p=pp.project(LIB,project_id);w=rw.current(p);d=rw.dataset(p,w,revision=revision);sources=own.select(p,pp.state(p)['sources']);selected=revision or'research-%06d'%w['revision']
+ from research_reader_notes import safe_read
+ guide=safe_read(p,selected)if revision or w['revision']else dict(status='not_available',notes=None)
+ return dict(reading_guide=guide,project=pp.state(p)['project'],publication_revision=selected,record_count=len(d['records']),source_count=len(sources),source_count_scope='current_project_sources',baseline_only=not revision and w['revision']==0,expert_reviewed=False,next=['gd_read_records','gd_list_sources','gd_read_evidence','gd_read_version'],quality='继承人工档案；本管线不自动升分'if project_id=='2025-00'else'未评；导读与自动整理不等于专家审核')
 @MCP.tool(annotations=ANNOTATIONS)
 def gd_read_records(project_id:str,entity:str='',record_id:str='',fields:list[str]|None=None,revision:str|None=None,offset:int=0,limit:int=3)->dict:
  """按实体/记录/字段读已发布档案；AI解读独立，不当事实。fields为cells中的字段名列表；revision如research-000001。"""

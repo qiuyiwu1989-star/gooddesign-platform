@@ -203,6 +203,11 @@ class Handler(BaseHTTPRequestHandler):
    if u.path=='/api/research-document':
     p=pipe.project(store.lib,one('project','2025-00'));w=research.current(p)
     if not w['revision']:raise ValueError('还没有已发布的研究版本')
+    if one('document')=='guide':
+     import research_reader_notes as notes
+     revision=one('revision')or'research-%06d'%w['revision'];guide=notes.read(p,revision,one('guide_version')or None)
+     if not guide['notes']:raise ValueError('本研究版本尚未整理阅读导读')
+     path=notes.folder(p,revision)/guide['notes']['version']/'导读.md';self.send(200,path.read_bytes(),'text/plain; charset=utf-8');return
     folder,_=research.check_version(p,one('revision')or'research-%06d'%w['revision'])
     names={'archive':'01-项目档案.md','library':'02-资料与解读.md','assessment':'03-档案评估.md','data':'档案.json','changes':'changes.json'}
     if one('document','archive')not in names:raise ValueError('文档名称无效')

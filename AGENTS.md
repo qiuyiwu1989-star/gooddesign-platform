@@ -103,3 +103,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 044c：资料管家0.3.0的pause/resume为全库设置，已运行任务先结束；retry仅failed且项目相符，旧失败状态保存在SQLite controls表，不对冲突/待Agent强行重试。POST /api/steward-control沿用防跨站检查。复兴两篇2020论文进入research-000004，论文索引与私有批次见044执行文档；日期/统计差异不强行统一，质量未评。当前8776服务会话53565；重启前先暂停并确认持久/旧任务均空闲。
 
 044d：Store.submit(fetch)及页面/api/fetch共用Steward持久下载，任务列表合并jobs.json历史与steward-N编号，只允许failed重试；相同项目URL跨标题/处理器复用旧任务。新下载不写旧jobs.json。archive_case_images.run可限制source_ids并支持关联PDF；复兴23工程图+2shared装饰原件，22网页下载失败留痕。当前8776会话78183。深度Agent/评分边界不变；下步八模块阅读综述、具体缺口及任务范围治理。
+
+044e：research_reader_notes.py冻结八模块AI导读，路径研究工作区/阅读导读/research-N/语义版本，校验档案哈希和本模块记录引用，JSON/MD/manifest原子落盘；新研究版不自动继承旧稿。steward_dossier_ui默认短导读+折叠事实/缺口，仍三视图同目录。MCP概览可固定revision并附导读，来源数量声明当前规模；不是新事实/评分或专家结论。当前两例research000004+导读0.1.1，8776会话6754。后续打包应包含配套导读，不把它混成事实字段。
