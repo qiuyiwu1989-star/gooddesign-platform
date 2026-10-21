@@ -25,19 +25,22 @@
    document.querySelector('#automation-state').textContent=labels[d.state]||'自动处理状态未知';
    const st=d.steward,counts=st.counts;
    document.querySelector('#automation-queue').textContent=`本项目：${counts.running||0} 项整理中 · ${(counts.queued||0)+(counts.retry||0)} 项排队 · ${counts.needs_attention||0} 项需判断 · ${counts.awaiting_agent||0} 项待深度阅读`;
+   if(counts.scope_hold)document.querySelector('#automation-queue').textContent+=` · ${counts.scope_hold} 项已按归属暂停`;
    if(st.paused)document.querySelector('#automation-state').textContent='资料管家已暂停 · 原件接收继续';
    const toggle=document.querySelector('#steward-toggle');toggle.disabled=false;toggle.textContent=st.paused?'恢复全库自动整理':'暂停全库自动整理';
    toggle.onclick=async()=>{toggle.disabled=true;try{await api('/api/steward-control?project='+encodeURIComponent(pid),{method:'POST',body:JSON.stringify({action:st.paused?'resume':'pause'})});await refreshAutomation()}catch(e){notice(e.message);toggle.disabled=false}};
    const controls=document.querySelector('#steward-controls');controls.replaceChildren();
    if(!st.controls?.length)controls.append(el('p','暂无操作记录。'));
-   for(const c of st.controls||[])controls.append(el('p',`${date(c.at)} · ${{pause:'暂停全库整理',resume:'恢复全库整理',retry:'重试任务'}[c.action]||c.action}${c.task_id?' #'+c.task_id:''} · ${c.actor}`));
+   for(const c of st.controls||[])controls.append(el('p',`${date(c.at)} · ${{pause:'暂停全库整理',resume:'恢复全库整理',retry:'重试任务',scope_hold:'按资料归属暂停任务',scope_restore:'按资料归属恢复任务'}[c.action]||c.action}${c.task_id?' #'+c.task_id:''} · ${c.actor}`));
    const results=document.querySelector('#steward-results');results.replaceChildren();
-   const jobLabels={completed:'已整理',awaiting_agent:'等待 Agent 深度阅读',needs_attention:'有内容需判断',queued:'排队中',running:'整理中',retry:'等待重试',failed:'处理失败'};
+   const jobLabels={completed:'已整理',awaiting_agent:'等待 Agent 深度阅读',needs_attention:'有内容需判断',queued:'排队中',running:'整理中',retry:'等待重试',failed:'处理失败',scope_hold:'按归属暂停 · 原件与历史保留'};
    if(!st.recent.length)results.append(el('p','暂无新的整理任务。已有资料不会在启动时自动重跑。'));
    for(const t of st.recent.slice(0,5)){
     const row=el('div');row.append(el('strong',t.kind==='fetch'&&t.status==='completed'?'原件已保存':jobLabels[t.status]||t.status));row.append(el('p',t.subject||'研究增量'));
     if(t.result?.publication?.revision)row.append(el('span',' · '+t.result.publication.revision));
-    if(t.result&&t.kind!=='fetch')row.append(el('p',`采用 ${t.result.accepted?.length||0} 项；需判断 ${t.result.exceptions?.length||0} 项`));
+    if(t.document_context)row.append(el('p',`${t.document_context.document_kind} ${t.document_context.document_id} · 关联 ${t.document_context.related_source_ids.length} 份原件；${t.document_context.reading_note}`));
+    if(t.status==='scope_hold'&&t.result)row.append(el('p',t.result.reason||t.result.note));
+    if(t.result&&t.kind!=='fetch'&&t.status!=='scope_hold')row.append(el('p',`采用 ${t.result.accepted?.length||0} 项；需判断 ${t.result.exceptions?.length||0} 项`));
     for(const issue of t.result?.exceptions||[])row.append(el('p',issue.record_id+' · '+issue.field+'：'+issue.reason));
     if(t.error)row.append(el('p',t.error));
     if(t.status==='failed'){

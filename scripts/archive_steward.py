@@ -8,7 +8,8 @@ from pathlib import Path
 import project_pipeline as pp
 import project_ownership as own
 import research_workflow as rw
-VERSION='steward-0.3.0'
+import steward_scope
+VERSION='steward-0.4.0'
 AGENT_METHOD='agent_evidence_extract_v1'
 PROTECTED=rw.RESTRICTED|{'completion_org_ids','completion_person_ids','award_list_confirmed','review_status'}
 class Steward:
@@ -22,6 +23,7 @@ class Steward:
     due REAL DEFAULT 0, lease REAL DEFAULT 0, created TEXT NOT NULL, finished TEXT, result TEXT, error TEXT);
     CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY,value TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS controls(id INTEGER PRIMARY KEY,at TEXT NOT NULL,actor TEXT NOT NULL,action TEXT NOT NULL,project TEXT,task_id INTEGER,previous TEXT);
+    CREATE TABLE IF NOT EXISTS scope_holds(task_id INTEGER PRIMARY KEY,previous TEXT NOT NULL);
     CREATE INDEX IF NOT EXISTS task_due ON tasks(status,due);
    ''')
  @contextlib.contextmanager
@@ -92,7 +94,9 @@ class Steward:
    db.execute("UPDATE tasks SET status='queued',attempts=0,due=0,lease=0,finished=NULL,error=NULL,result=NULL WHERE id=?",(task_id,))
   return dict(task_id=task_id,status='queued')
  def summary(self,pid):
-  pp.project(self.lib,pid)
+  p=pp.project(self.lib,pid);contexts=steward_scope.contexts(p);sources=pp.state(p)['sources'];imagefile=p/'图片素材/图片清单.json'
+  image_titles={x['library_source_id']:x['title']for x in pp.load(imagefile)['items']}if imagefile.exists()else{}
+  mapping=pp.load(p/'资料关联.json').get('source_titles',{})if(p/'资料关联.json').exists()else{}
   with self.connect()as db:
    rows=[dict(x)for x in db.execute('SELECT id,status,attempts,created,finished,payload,result,error FROM tasks WHERE project=? ORDER BY id DESC LIMIT 10',(pid,))]
    controls=[dict(x)for x in db.execute('SELECT id,at,actor,action,project,task_id FROM controls WHERE project=? OR project IS NULL ORDER BY id DESC LIMIT 10',(pid,))]
@@ -101,6 +105,11 @@ class Steward:
   for r in rows:
    r['result']=json.loads(r['result'])if r['result']else None
    payload=json.loads(r.pop('payload'));r['kind']=payload['kind'];r['subject']=payload.get('title')or payload.get('url')or payload.get('source_id')or'研究内容增量'
+   sid=payload.get('source_id');context=contexts.get(sid)
+   if context:r.update(document_context=context,subject=context['title']+' · '+context['format'].upper())
+   elif sid in image_titles:r['subject']=image_titles[sid]
+   elif sid in sources:
+    origin=sources[sid].get('origin',{});r['subject']=mapping.get(origin.get('url'))or origin.get('filename')or sources[sid]['title']
   return dict(processor=VERSION,paused=bool(paused and paused['value']=='1'),counts=counts,recent=rows,controls=controls,semantic_mode='external_agent_submission',embedded_model_connected=False)
  def claim(self):
   with self.connect()as db:
@@ -159,14 +168,17 @@ class Steward:
   if not t:return False
   try:
    payload=t['payload'];pid=t['project'];p=pp.project(self.lib,pid)
+   entry=steward_scope.scope(p,payload)
+   if entry['scope']!='project':
+    steward_scope.hold(self,t,entry,own.registry(p).get('version',0),allow_running=True);return True
    if payload['kind']=='fetch':
     with pp.lock(self.lib):
      fetched=pp.fetch(self.lib,self.inbox,pid,payload['url'])
      if payload.get('title'):
       path=p/'资料关联.json';mapping=pp.load(path)if path.exists()else{}
       mapping.setdefault('source_titles',{})[payload['url']]=payload['title'];pp.save(path,mapping)
-    child=self.enqueue_source(pid,fetched['source_id'])
-    self.finish(t,'completed',dict(download=fetched,source_task_id=child['id'],processor=VERSION))
+    entry=own.assignment(p,fetched['source_id'],pp.state(p)['sources']);child=self.enqueue_source(pid,fetched['source_id'])if entry['scope']=='project'else None
+    self.finish(t,'completed',dict(download=fetched,source_task_id=child['id']if child else None,scope=entry['scope'],processor=VERSION))
     return True
    if payload['kind']=='source':
     x=rw.source(p,payload['source_id'])
@@ -192,8 +204,14 @@ class Steward:
   return True
  def start(self):
   def run():
+   last_scope_scan=0
    while not self.stop.is_set():
-    try:busy=self.tick()
+    try:
+     if time.monotonic()-last_scope_scan>15:
+      with self.connect()as db:projects=[r['project']for r in db.execute('SELECT DISTINCT project FROM tasks')]
+      for pid in projects:steward_scope.reconcile(self,pid)
+      last_scope_scan=time.monotonic()
+     busy=self.tick()
     except Exception:busy=False
     if not busy:self.stop.wait(2)
   self.thread=threading.Thread(target=run,daemon=True);self.thread.start()
