@@ -121,3 +121,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 044l：Steward0.5.3新增record_asset_review，仅可信本地Agent可用，核当前project归属/原件SHA/清单视觉状态后持久登记asset_reviews，保留旧任务结果，仅关闭本图awaiting_agent任务；非事实/全文/工程/权利审核，不关冲突或运行任务。3张044k已视觉整理图片闭环。第三例2019-s10 FAST馈源舱已核2019银奖，research000001为25记录/40有值事实/6AI，导读/六维评估各0.1.0；不得混2017索驱动或整台FAST。2018综述/2020测量论文/2025设备介绍的对象与时间分开，2020精度试验非恶劣天气验证；A02均值/Rms统计口径待澄清，DOI原印刷连接号与canonical_doi检索形式分开。8776会话5259，暂停已恢复；MDPI403三次失败不绕过，尚无FAST专利清单。
 
 044m：Steward0.5.4；research_workflow.doi_tokens按完整印刷token读取，保留EN DASH、不把未知Unicode截成前缀。reconcile_identifiers兼容有理由/时间的human或agent明确驳回，检查原件/归属与任务原件身份，全部异常解决才移出需判断；有已发布Agent研究才completed，否则仍awaiting_agent。FAST现research000003为32记录/55有值事实/10AI，导读0.1.0/评估0.1.1；P01 CN206110736U为地面建造/停靠/维护相关配套，非已确认获奖成果。000002曾将公告专利权人误映原申请人，000003明确撤回、旧版保留；纠错前阶段包隔离勿交付。服务81363已恢复，专利现权属/法律/采用与同日发明案未确认。
+
+044n：check_pipeline_e2e.py用外置盘隔离虚构样本库走真实HTTP/监听/持久暂停重启/固定外部Agent证据/自动发布/冲突/MCP/离线包，19项实测；不是通用LLM或真实项目研究。file_admin.py支持显式--library/--inbox，默认库不变、始终loopback。自动状态合并旧任务与持久任务，计任务而非资料；failed_records/needs_judgment明确失败/判断，awaiting_agent/scope_hold另列，GET只读。README旧下载桥接描述已纠正。运行说明在00-项目管理/044-管线运行与验收说明.md；实际8776会话82576恢复，无内置语义模型。

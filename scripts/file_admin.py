@@ -62,10 +62,13 @@ class Store:
   thread=getattr(self,'watch_thread',None);alive=bool(thread and thread.is_alive())
   last=getattr(self,'watch_last_success',0)
   state='stopped'if not alive else 'error'if getattr(self,'watch_error',None) else 'starting'if not last else 'running'if time.time()-last<30 else 'delayed'
+  steward=self.steward.summary(pid);counts=steward['counts']
   return dict(project_id=pid,state=state,last_scan=getattr(self,'watch_last_scan',None),scan_interval_seconds=4,
-   queued=sum(j['status']=='queued'for j in jobs),running=sum(j['status']=='running'for j in jobs),
-   attention_records=sum(j['status']in ('failed','needs_attention','interrupted')for j in jobs),
-   semantic_agent_connected=False,automatic_publication=True,steward=self.steward.summary(pid))
+   queued=sum(j['status']=='queued'for j in jobs)+counts.get('queued',0)+counts.get('retry',0),running=sum(j['status']=='running'for j in jobs)+counts.get('running',0),
+   attention_records=sum(j['status']in ('failed','needs_attention','interrupted')for j in jobs)+counts.get('failed',0)+counts.get('needs_attention',0),
+   failed_records=sum(j['status']=='failed'for j in jobs)+counts.get('failed',0),needs_judgment=sum(j['status']in ('needs_attention','interrupted')for j in jobs)+counts.get('needs_attention',0),
+   awaiting_agent=counts.get('awaiting_agent',0),scope_hold=counts.get('scope_hold',0),count_scope='processing_tasks_not_unique_sources',
+   semantic_agent_connected=False,automatic_publication=True,steward=steward)
  def start_watch(self):
   cursor_file=self.folder/'research-watch.json'
   cursor=pipe.load(cursor_file)if cursor_file.exists()else {}
@@ -296,7 +299,7 @@ class Handler(BaseHTTPRequestHandler):
 def server(lib=pipe.LIB,inbox=pipe.INBOX,port=8776):
  srv=ThreadingHTTPServer(('127.0.0.1',port),Handler);srv.store=Store(lib,inbox);return srv
 if __name__=='__main__':
- ap=argparse.ArgumentParser();ap.add_argument('--port',type=int,default=8776);a=ap.parse_args();srv=server(port=a.port);print('私有文件管理：http://127.0.0.1:%d/'%srv.server_port,flush=True)
+ ap=argparse.ArgumentParser();ap.add_argument('--port',type=int,default=8776);ap.add_argument('--library',type=Path,default=pipe.LIB);ap.add_argument('--inbox',type=Path,default=pipe.INBOX);a=ap.parse_args();srv=server(a.library,a.inbox,port=a.port);print('私有文件管理：http://127.0.0.1:%d/'%srv.server_port,flush=True)
  srv.store.start_watch()
  try:srv.serve_forever()
  finally:

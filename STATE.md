@@ -240,3 +240,9 @@ release `20260911T015454Z-scroll-fix`。针对用户反馈“为什么还是不�
 - 任务150发布20增量→research000002；随后字段语义复核发现把授权公告时专利权人映到最初申请人过强，明确Agent撤回并发布research000003，旧版/证据/纠错记录保留。当前32记录/55有值事实/10AI、导读0.1.0、评估0.1.1，55/55及10/10可追溯；质量未评、专家未审。公告列名只在专利题录中标公告时角色，不推当前/初始申请人。
 - 4DOI+4审核闭环+9编号+13核心+33管家通过；三例实际SDK通过。最新阶段包44文件/8本项目来源/32记录/66引用，ZIP2,869,577字节，离线check/read通过；output/research-batches/044m/FAST-handoff.json。纠错前000002包移到历史测试包/044m-字段角色纠错前，非当前交付。移动P01已实际展开、390px无横溢，截图044m-fast-patent-mobile.png已看。最初fragment导航未重载旧页，改带v参数完整加载后核到000003；无服务器缓存故障。
 - 早期国家天文台方案/中科院停靠平台两页分别证书过期/自签TLS失败，三次后failed保留；未绕TLS，不当原文已读。MDPI403、完整名单、独立试验、统计定义和当前官方权利登记仍缺。未部署/推送私有库，最终09:45验收待后续收口。
+
+## 2026-10-22 06:58 044n 真实端到端验收与状态统计
+- 新增scripts/check_pipeline_e2e.py：在外置盘output/pipeline-acceptance建立专用虚构库，使用file_admin新增CLI --library/--inbox真实启动隔离HTTP/worker；上传/原件与预览/CSRF及项目隔离/投递监听/暂停任务/真实重启保留同ID/模拟外部Agent固定证据/自动发布/冲突保留/不可覆写/去重/真实MCP/离线包共19项通过。各次报告与服务日志保留，最终报告20261022-065427-5fe759/验收结果.json。不是全网研究或后台内置通用语义Agent的验收。
+- 发现顶层状态只统计旧jobs而漏持久任务，修复合并统计并标processing_tasks_not_unique_sources；queued含retry，attention_records含失败及需判断，另给failed_records/needs_judgment、awaiting_agent、scope_hold。UI显示失败，操作历史不再将明确驳回一律说成编号已确认。当前FAST实际3下载失败显示正确；无运行/排队，事实未变化，不能把没有待Agent当资料完整。
+- 新增2统计语义测试，5自动状态/9后台回归、JS语法通过；完整E2E在统计改动后19项通过，随后明细字段经2统计测试核对。390px状态卡无横溢，截图044n-steward-status-mobile.png已查看。服务受控空闲重启最终会话82576，Steward0.5.4恢复，实际API attention3/failed3/needs_judgment0。
+- 日常说明00-项目管理/044-管线运行与验收说明.md，解释入库/转换与外部Agent语义提炼、暂停/睡眠/离盘、候选发布、MCP逐层读取和一键验收。后台README中旧下载未迁移描述已改现行SQLite逻辑。未写真实项目测试数据、未部署/推送私有库；最终09:45包仍待。
