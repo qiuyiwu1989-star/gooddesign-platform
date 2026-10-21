@@ -1,0 +1,12 @@
+<evaluation version="research-000001">
+  <qa_pair><question>检索嫦娥采样获奖项目，返回其稳定项目ID。</question><answer>2025-00</answer></qa_pair>
+  <qa_pair><question>读取2025-00的research-000001，论文A03的DOI是什么？</question><answer>10.15982/j.issn.2096-9287.2021.20210014</answer></qa_pair>
+  <qa_pair><question>读取该冻结版A03的method字段，追溯支持该方法的文件SID。</question><answer>S69cca68f7b87a8d4</answer></qa_pair>
+  <qa_pair><question>读取冻结版A03的method证据定位到哪个块？</question><answer>B0001</answer></qa_pair>
+  <qa_pair><question>读取冻结版P04的publication_holder，注意不是当前法律权利人，文献记载的单位是什么？</question><answer>哈尔滨工业大学</answer></qa_pair>
+  <qa_pair><question>读取冻结版P04的inventors字段，列表有几人？</question><answer>6</answer></qa_pair>
+  <qa_pair><question>读取冻结版A03的authors字段，列表有几人？</question><answer>5</answer></qa_pair>
+  <qa_pair><question>分页检索冻结版entity=patent的项目条目，合计多少条技术关联候选？</question><answer>6</answer></qa_pair>
+  <qa_pair><question>解析历史引用S19，其原件是否在嫦娥当前项目读取范围？返回范围标签。</question><answer>external_reference_metadata_only</answer></qa_pair>
+  <qa_pair><question>读取research-000001的版本差异，合计有几项字段更新（包括补值和证据更新）？</question><answer>5</answer></qa_pair>
+</evaluation>

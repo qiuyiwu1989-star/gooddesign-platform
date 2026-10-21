@@ -1,0 +1,204 @@
+{
+  "task": "038",
+  "service": {
+    "service": "gooddesign-archive-pipeline",
+    "version": "1.0.0",
+    "research_policy": "evidence-workflow-1.0",
+    "ocr_available": true,
+    "watcher_running": true
+  },
+  "project": {
+    "project_id": "2025-00",
+    "ingest_revision": 206,
+    "publication_revision": "research-000001",
+    "sources": 172,
+    "ocr_completed": 5,
+    "remaining_pdf_ocr": 0,
+    "ocr_pages": 34,
+    "record_count": 102,
+    "cells": 1338,
+    "known_cells": 799,
+    "candidate_statuses": {
+      "rejected": 3,
+      "published": 5
+    },
+    "original_sha256_check": "172/172 passed",
+    "authored_baseline": "0.6.1 unchanged",
+    "quality": "55 unchanged; no expert review claimed"
+  },
+  "tests": {
+    "research_unit": 13,
+    "admin_with_regression": 20,
+    "legacy_pipeline": 14,
+    "ownership": 8,
+    "mcp": {
+      "protocol": "2025-11-25",
+      "tools": 8,
+      "checks": [
+        {
+          "tool": "gd_search_projects",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_project_overview",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_list_sources",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_resolve_citation",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_evidence",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_interpretations",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_version",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_evidence",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_resolve_citation",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_version",
+          "status": "ok"
+        },
+        {
+          "evaluation": "archive038.xml",
+          "verified_answers": 10,
+          "note": "确定性SDK检索验证；未声称LLM自主回答通过"
+        },
+        {
+          "tool": "gd_list_sources",
+          "status": "invalid_input_rejected"
+        },
+        {
+          "tool": "gd_read_evidence",
+          "status": "invalid_input_rejected"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "invalid_input_rejected"
+        }
+      ],
+      "scope": "真实SDK握手/工具调用；非LLM自主检索效果评估"
+    },
+    "browser": [
+      "隔离库UI上传→候选→审核→发布→JSON读取",
+      "真实库只读显示5个已发布更新、5份OCR与当前版本",
+      "console无错误；隔离截图output/playwright/workflow038-isolated.png"
+    ],
+    "handoff": {
+      "folder": "/Volumes/邱懿武/邱懿武认知大脑/好设计平台/output/handoff/嫦娥钻取采样-应用测试包-20261021-135006",
+      "zip": "/Volumes/邱懿武/邱懿武认知大脑/好设计平台/output/handoff/嫦娥钻取采样-应用测试包-20261021-135006.zip",
+      "bytes": 87925468,
+      "files": 828,
+      "stats": {
+        "project_id": "2025-00",
+        "title": "嫦娥五/六号月球钻取采样方法及系统设计",
+        "package_version": "1.0.0",
+        "created_at": "2026-10-21T04:50:08.018729+00:00",
+        "versions": {
+          "page": "5.2.1",
+          "content_target": "0.6.1",
+          "field_schema": "3.0-draft",
+          "archive_quality_policy": "quality-rubric-0.1",
+          "matching_policy": "matching-policy-0.2.0",
+          "benchmark_standard": "benchmark-0.1.0-trial",
+          "note": "各编号独立递增；当前内容版本以不可覆写版本索引为准；规则样例通过不等于真实匹配有效。"
+        },
+        "pipeline_publication": "research-000001",
+        "ingest_revision": 206,
+        "ownership_revision": 2,
+        "source_files": 172,
+        "papers": 4,
+        "patent_candidates": 6,
+        "images": 130,
+        "records": 102,
+        "entities": {
+          "project": 1,
+          "award": 1,
+          "organization": 2,
+          "person": 1,
+          "problem": 1,
+          "technology": 1,
+          "metric": 20,
+          "innovation": 6,
+          "patent": 6,
+          "paper": 4,
+          "achievement": 4,
+          "event": 12,
+          "validation": 7,
+          "application": 2,
+          "story": 3,
+          "source": 23,
+          "task": 8
+        },
+        "cells": 1338,
+        "cell_states": {
+          "known": 799,
+          "not_researched": 521,
+          "not_obtained": 18
+        },
+        "claims": 34,
+        "canonical_citation_metadata": 23,
+        "excluded_assets_by_scope": {
+          "shared": 9,
+          "reassigned": 9,
+          "pending": 6
+        },
+        "quality_note": "55/100为平台试行档案自评，非专家评审或技术水平评分；本次打包不升分。",
+        "implementation": "静态数据快照与只读示例；不是在线MCP或自动创新引擎。"
+      }
+    },
+    "handoff_integrity": {
+      "status": "passed",
+      "assertions": 740,
+      "project_sources": 172,
+      "records": 102,
+      "notes": [
+        "校验不等于资料语义审核",
+        "未运行真实LLM、在线MCP或第三方应用demo"
+      ]
+    }
+  },
+  "limits": [
+    "本地Mac/Vision与移动硬盘在线",
+    "规则提炼覆盖题录标识/摘要/部分专利首页；其他字段由人工或Agent提交证据候选",
+    "OCR公式/表格/单位需核对，AI内容不混作事实",
+    "stdio MCP本机只读；未做公网云服务、全库深研或LLM效果认证",
+    "原人工底稿变化时阻止继续覆盖，须人工核对基线，未提供自动三方合并"
+  ]
+}

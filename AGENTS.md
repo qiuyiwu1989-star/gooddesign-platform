@@ -83,3 +83,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 036归属治理：project_ownership.py过滤实时管线/文件API/下载范围；project_pipeline新快照冻结归属，旧未登记版本标historical_unfiltered。私有2025-00/资料归属.json当前v2：172项目资料、9公共参考、9移交2015-02、6配图待确认。curate_change_ownership.py为单次人工规则纠错，不能当全库自动分类；不覆盖已有归属。项目检索按原题录补关键词/年份/奖项，筛选不自动切项目。六阶段规范见项目归属与清洗提炼管线-v0.1.md，自动字段提炼/审核尚未接通，先完善嫦娥不开展下一项目深研。
 
 037私有交接：build_case_handoff.py按当前归属导出output/handoff/（忽略Git）；check_case_handoff.py验证完整性/引用/读取。交付包标准只读示例非MCP服务；割胶图谱另列应用试验，公共/移交/待确认原件不入包；保留必要外部参考题录。完整历史snapshot未交付，不据随包manifest宣称历史链可验。
+
+038管线v1：先读项目档案标准-v1/可运行档案管线-v1.md。research_workflow.py负责OCR/证据候选/审核/不可覆盖发布，file_admin统一投递监听；archive_mcp.py为已实现本机stdio只读八工具，v0.1草案保留。原人工底稿0.6.1不覆盖；管线research-000001为独立序列，复杂字段可人工/Agent提交，规则覆盖有限，OCR不升格核读，发布不升55分。依赖固定在requirements-research-pipeline.txt和外置盘.runtime；旧启动入口转统一脚本。

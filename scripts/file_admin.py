@@ -1,10 +1,11 @@
 # coding: utf-8
 """033: loopback-only private source file manager. No public deployment."""
-import argparse,concurrent.futures,json,mimetypes,os,secrets,threading,urllib.parse
+import argparse,concurrent.futures,json,mimetypes,os,secrets,threading,time,urllib.parse
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 import project_pipeline as pipe
 import project_ownership as ownership
+import research_workflow as research
 ROOT=Path(__file__).resolve().parents[1]
 class Store:
  def __init__(self,lib,inbox):
@@ -23,16 +24,45 @@ class Store:
   with self.mutex:
    j=next(j for j in self.jobs if j['id']==jid);j.update(status='running',started_at=pipe.now());self.persist()
   try:
-   with pipe.lock(self.lib):
-    if j['kind']=='fetch':result=pipe.fetch(self.lib,self.inbox,j['project_id'],j['args']['url'])
-    elif j['kind']=='ingest':result=pipe.ingest(pipe.project(self.lib,j['project_id']),Path(j['args']['path']),j['args'].get('origin'),retry=j['args'].get('retry',False))
-    else:raise ValueError('未知任务类型')
+   if j['kind']in ('ocr','extract','process'):
+    result=getattr(research,j['kind'])(self.lib,j['project_id'],j['args']['source_id'],j['args'].get('actor','后台操作员'))
+   elif j['kind']=='publish':result=research.publish(self.lib,j['project_id'],j['args']['actor'],j['args']['reason'])
+   else:
+    with pipe.lock(self.lib):
+     if j['kind']=='fetch':result=pipe.fetch(self.lib,self.inbox,j['project_id'],j['args']['url'])
+     elif j['kind']=='ingest':result=pipe.ingest(pipe.project(self.lib,j['project_id']),Path(j['args']['path']),j['args'].get('origin'),retry=j['args'].get('retry',False))
+     else:raise ValueError('未知任务类型')
+   if j['kind']in ('ingest','fetch')and result.get('source_id'):
+    try:result['research']=research.process(self.lib,j['project_id'],result['source_id'],'后台自动处理（未审核）')
+    except Exception as exc:result['research_error']=str(exc)
    status='failed'if result['status']in ('conversion_failed','empty_needs_review','unsupported_needs_review','partial_text_needs_review')else 'completed'
    # Conversion states are also visible per file; completed means the requested operation finished.
-   if result['status']not in ('text_extracted','duplicate'):status='needs_attention'
+   if result['status']not in ('text_extracted','duplicate','completed','published','no_changes'):status='needs_attention'
+   if result.get('research_error'):status='needs_attention'
    with self.mutex:j.update(status=status,result=result,finished_at=pipe.now());self.persist()
   except Exception as exc:
    with self.mutex:j.update(status='failed',error=str(exc)[:1000],finished_at=pipe.now());self.persist()
+ def start_watch(self):
+  cursor_file=self.folder/'research-watch.json'
+  cursor=pipe.load(cursor_file)if cursor_file.exists()else {}
+  # First launch establishes a cursor, rather than silently researching the entire old library.
+  for row in pipe.load(self.lib/'项目索引.json')['projects']:
+   if row['id']not in cursor:cursor[row['id']]=list(pipe.state(pipe.project(self.lib,row['id']))['sources'])
+  pipe.save(cursor_file,cursor);self.watch_stop=threading.Event()
+  def watch():
+   while not self.watch_stop.is_set():
+    try:
+     with pipe.lock(self.lib):pipe.scan(self.lib,self.inbox)
+     for row in pipe.load(self.lib/'项目索引.json')['projects']:
+      pid=row['id'];p=pipe.project(self.lib,pid);active=ownership.select(p,pipe.state(p)['sources']);seen=set(cursor.get(pid,[]))
+      for sid,x in active.items():
+       if sid not in seen:
+        self.submit(pid,'process',source_id=sid,actor='投递箱自动处理（未审核）');seen.add(sid)
+      cursor[pid]=sorted(seen)
+     pipe.save(cursor_file,cursor);pipe.save(self.lib/'监听状态.json',dict(pid=os.getpid(),heartbeat=pipe.now(),inbox=str(self.inbox),service='file_admin_with_research_pipeline'))
+    except Exception as exc:pipe.save(self.folder/'watch-error.json',dict(time=pipe.now(),error=str(exc)))
+    self.watch_stop.wait(4)
+  self.watch_thread=threading.Thread(target=watch,daemon=True);self.watch_thread.start()
  def upload(self,pid,name,data):
   current_p=pipe.project(self.lib,pid)
   existing=pipe.state(current_p)['sources'];sid='S'+pipe.sha(data)[:16]
@@ -97,10 +127,19 @@ class Handler(BaseHTTPRequestHandler):
  def do_GET(self):
   try:
    self.guard();u=urllib.parse.urlsplit(self.path);q=urllib.parse.parse_qs(u.query);one=lambda k,d='':q.get(k,[d])[0];store=self.server.store
+   if u.path=='/api/health':self.send(200,dict(service='gooddesign-archive-pipeline',version='1.0.0',research_policy=research.POLICY,ocr_available=(ROOT/'.runtime/vision-ocr').exists(),watcher_running=bool(getattr(store,'watch_thread',None)and store.watch_thread.is_alive())));return
    if u.path=='/favicon.ico':self.send(204,b'','image/x-icon');return
-   if u.path in ('/','/app.js','/style.css'):
-    name={'/':'index.html','/app.js':'app.js','/style.css':'style.css'}[u.path];p=ROOT/'extensions/file-admin'/name;self.send(200,p.read_bytes(),mimetypes.guess_type(name)[0]+'; charset=utf-8');return
+   if u.path in ('/','/app.js','/style.css','/workflow.js','/workflow.css'):
+    name={'/':'index.html','/app.js':'app.js','/style.css':'style.css','/workflow.js':'workflow.js','/workflow.css':'workflow.css'}[u.path];p=ROOT/'extensions/file-admin'/name;self.send(200,p.read_bytes(),mimetypes.guess_type(name)[0]+'; charset=utf-8');return
    if u.path=='/api/projects':self.send(200,dict(projects=pipe.load(store.lib/'项目索引.json')['projects'],token=store.token));return
+   if u.path=='/api/research':self.send(200,research.status(store.lib,one('project','2025-00')));return
+   if u.path=='/api/research-document':
+    p=pipe.project(store.lib,one('project','2025-00'));w=research.current(p)
+    if not w['revision']:raise ValueError('还没有已发布的研究版本')
+    folder,_=research.check_version(p,one('revision')or'research-%06d'%w['revision'])
+    names={'archive':'01-项目档案.md','library':'02-资料与解读.md','assessment':'03-档案评估.md','data':'档案.json','changes':'changes.json'}
+    if one('document','archive')not in names:raise ValueError('文档名称无效')
+    f=folder/names[one('document','archive')];self.send(200,f.read_bytes(),'text/plain; charset=utf-8');return
    if u.path=='/api/files':self.send(200,store.files(one('project','2025-00'),one('scope','project')));return
    if u.path=='/api/jobs':
     with store.mutex:rows=[dict(j)for j in store.jobs if j['project_id']==one('project','2025-00')][-100:][::-1]
@@ -149,6 +188,11 @@ class Handler(BaseHTTPRequestHandler):
    args=json.loads(data)
    if u.path=='/api/fetch':
     url=args.get('url','');pipe.public_url(url);self.send(202,store.submit(pid,'fetch',url=url));return
+   if u.path in ('/api/ocr','/api/extract','/api/process'):
+    research.source(pipe.project(store.lib,pid),args['source_id']);self.send(202,store.submit(pid,u.path.rsplit('/',1)[1],source_id=args['source_id'],actor=args.get('actor','后台操作员')));return
+   if u.path=='/api/candidate':self.send(201,research.propose(store.lib,pid,args['candidate'],args['actor']));return
+   if u.path=='/api/review':self.send(200,research.review(store.lib,pid,args['candidate_id'],args['decision'],args['actor'],args['reason']));return
+   if u.path=='/api/publish':self.send(202,store.submit(pid,'publish',actor=args['actor'],reason=args['reason']));return
    if u.path=='/api/retry':
     with store.mutex:old=next((j for j in store.jobs if j['id']==args.get('job_id')and j['project_id']==pid),None)
     if not old or old['status']in ('queued','running'):raise ValueError('任务不可重试')
@@ -163,5 +207,7 @@ def server(lib=pipe.LIB,inbox=pipe.INBOX,port=8776):
  srv=ThreadingHTTPServer(('127.0.0.1',port),Handler);srv.store=Store(lib,inbox);return srv
 if __name__=='__main__':
  ap=argparse.ArgumentParser();ap.add_argument('--port',type=int,default=8776);a=ap.parse_args();srv=server(port=a.port);print('私有文件管理：http://127.0.0.1:%d/'%srv.server_port,flush=True)
+ srv.store.start_watch()
  try:srv.serve_forever()
- finally:srv.server_close();srv.store.pool.shutdown(wait=True)
+ finally:
+  srv.store.watch_stop.set();srv.store.watch_thread.join(timeout=10);srv.server_close();srv.store.pool.shutdown(wait=True)

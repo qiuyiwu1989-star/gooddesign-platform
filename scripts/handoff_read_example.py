@@ -14,7 +14,7 @@ def run(args):
   return {'verified_files':len(files),'status':'ok'}
  if args.command=='overview':return read('交付概览.json')
  if args.command=='records':
-  rows=read('项目文档/原子字段档案.json')['records']
+  rows=read('管线发布/档案.json'if(ROOT/'管线发布/档案.json').exists()else'项目文档/原子字段档案.json')['records']
   if args.entity:rows=[x for x in rows if x['entity']==args.entity]
   if args.id:rows=[x for x in rows if x['id']==args.id]
  elif args.command=='sources':rows=read('资料库/来源目录.json')['items']

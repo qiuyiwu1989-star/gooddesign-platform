@@ -46,9 +46,12 @@ def build():
  for sid,x in sorted(active.items()):
   row=clean(x);row['ownership']=assignment(P,sid,s['sources'],reg)
   for key in ['original','document','chunks']:
-   rel=x[key];src=(P/rel).resolve();src.relative_to((P/'来源').resolve())
+   rel=x[key];src=(P/rel).resolve();src.relative_to(P.resolve())
+   if Path(rel).parts[0]not in ['来源','衍生']:raise ValueError('导出路径须在来源或衍生目录')
    target=dest/'资料库'/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(src,target)
    assert sha(src)==sha(target)
+  if x.get('ocr'):
+   rel=x['ocr']['path'];src=(P/rel).resolve();src.relative_to((P/'衍生').resolve());target=dest/'资料库'/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(src,target)
   write(dest/'资料库/来源'/sid/'metadata.json',row);rows.append(row)
  write(dest/'资料库/来源目录.json',{'project_id':'2025-00','revision':s['revision'],'ownership_revision':reg['version'],'items':rows})
  for name in ['论文原文管理/论文原件清单.json','专利原文管理/专利原件清单.json','图片素材/图片清单.json']:
@@ -57,6 +60,12 @@ def build():
   data.pop('failed',None);data.pop('skipped',None)
   write(dest/'资料库'/name,data)
  facts=load(B/'档案数据.json');atomic=load(B/'原子字段档案.json')
+ publication=None
+ if (P/'研究工作区/工作状态.json').exists():
+  import research_workflow as rw
+  w=rw.current(P)
+  if w['revision']:
+   publication='research-%06d'%w['revision'];folder,_=rw.check_version(P,publication);shutil.copytree(folder,dest/'管线发布');atomic=load(folder/'档案.json')
  source_refs=[]
  for ref in facts['sources']:
   matches=[x['id']for x in rows if x.get('origin',{}).get('canonical_source_id')==ref['id']or x.get('origin',{}).get('url')==ref['url']or x.get('origin',{}).get('requested_url')==ref['url']]
@@ -67,7 +76,7 @@ def build():
   source_refs.append(refs)
  write(dest/'资料库/研究来源对照.json',source_refs)
  records=atomic['records'];cells=[c for r in records for c in r['cells'].values()]
- stats={'project_id':'2025-00','title':facts['title'],'package_version':'1.0.0','created_at':datetime.now(timezone.utc).isoformat(),'versions':load(B/'版本声明.json'),'ingest_revision':s['revision'],'ownership_revision':reg['version'],'source_files':len(rows),'papers':len(load(dest/'资料库/论文原文管理/论文原件清单.json')['items']),'patent_candidates':len(load(dest/'资料库/专利原文管理/专利原件清单.json')['items']),'images':len(load(dest/'资料库/图片素材/图片清单.json')['items']),'records':len(records),'entities':dict(Counter(r['entity']for r in records)),'cells':len(cells),'cell_states':dict(Counter(c['value_state']for c in cells)),'claims':len(facts['claims']),'canonical_citation_metadata':len(source_refs),'excluded_assets_by_scope':{scope:len(select(P,s['sources'],scope,reg))for scope in ['shared','reassigned','pending']},'quality_note':'55/100为平台试行档案自评，非专家评审或技术水平评分；本次打包不升分。','implementation':'静态数据快照与只读示例；不是在线MCP或自动创新引擎。'}
+ stats={'project_id':'2025-00','title':facts['title'],'package_version':'1.0.0','created_at':datetime.now(timezone.utc).isoformat(),'versions':load(B/'版本声明.json'),'pipeline_publication':publication,'ingest_revision':s['revision'],'ownership_revision':reg['version'],'source_files':len(rows),'papers':len(load(dest/'资料库/论文原文管理/论文原件清单.json')['items']),'patent_candidates':len(load(dest/'资料库/专利原文管理/专利原件清单.json')['items']),'images':len(load(dest/'资料库/图片素材/图片清单.json')['items']),'records':len(records),'entities':dict(Counter(r['entity']for r in records)),'cells':len(cells),'cell_states':dict(Counter(c['value_state']for c in cells)),'claims':len(facts['claims']),'canonical_citation_metadata':len(source_refs),'excluded_assets_by_scope':{scope:len(select(P,s['sources'],scope,reg))for scope in ['shared','reassigned','pending']},'quality_note':'55/100为平台试行档案自评，非专家评审或技术水平评分；本次打包不升分。','implementation':'静态数据快照与只读示例；不是在线MCP或自动创新引擎。'}
  write(dest/'交付概览.json',stats)
  # Historical index only; immutable historical snapshots are intentionally not merged into current asset scope.
  version_index=B/'版本/版本索引.json'
@@ -111,7 +120,7 @@ README='''# 嫦娥月球钻取采样系统｜应用测试交接包
 
 ## 关键字段与读取顺序
 
-主入口“项目文档/原子字段档案.json”：records → entity → id → cells → field_key → value/value_state/source_ids/claim_ids/locator/content_nature/verification_state。字典见“标准/原子字段字典-v3.json”。一个复合正文字段不等于一个原子字段。未知值保留null及value_state，不能转为0或默认已实现。
+如存在“管线发布/档案.json”，它是最新审核发布的数据快照，并附三份阅读文档、差异与指纹；“项目文档”保留原人工研究底稿。示例和检索页优先读取管线发布版。原底稿主入口“项目文档/原子字段档案.json”：records → entity → id → cells → field_key → value/value_state/source_ids/claim_ids/locator/content_nature/verification_state。字典见“标准/原子字段字典-v3.json”。一个复合正文字段不等于一个原子字段。未知值保留null及value_state，不能转为0或默认已实现。
 
 阅读顺序建议：项目身份与范围 → 需求/约束 → 创新机制及适用边界 → 指标/试验条件 → 来源定位文本 → 原件。先按需求和约束筛选，再取方法，最后考虑领域表面相似性。需求缺失时应追问，不输出虚假的适配分。
 
@@ -125,7 +134,7 @@ README='''# 嫦娥月球钻取采样系统｜应用测试交接包
 
 已排除公共参考原件、移交蛟龙号的文件及待确认配图，但保留必要外部参考题录以维持引用链。旧主档案中的来源存储描述可能早于此次原件下载：获取状态以交付资料清单为准，核读结论仍以研究记录为准。保留版本变更与指纹清单作为追溯记录，其引用的旧snapshot并未随包复制，因此不能在本包独立校验旧版本完整快照链。本地后台配置未打包。
 
-本包用于同学内部交互demo测试，原论文/图片等权利归原权利人；未取得公开再发布授权。勿将原件目录整体发布到公网。MCP契约是设计草案，read_example.py只是本地只读调用示例，不是已上线的MCP服务或推理引擎。
+本包用于同学内部交互demo测试，原论文/图片等权利归原权利人；未取得公开再发布授权。勿将原件目录整体发布到公网。旧v0.1契约保留为历史草案；平台已实现的本机只读MCP见v1契约与管线说明。read_example.py只是包内独立读取示例，本包不会自行启动MCP服务器或推理引擎。
 '''
 TESTS='''# 应用测试与反馈
 
