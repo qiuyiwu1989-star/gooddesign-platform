@@ -8,7 +8,7 @@ CSS='''
 '''
 def nav(active,project='2025-00'):
  q=urllib.parse.urlencode({'project':project});h=html.escape
- links=[('dossier','/dossier/?'+q,'项目档案'),('files','/?'+q,'资料管理'),('research','/methods/?'+q,'创新研究')]
+ links=[('dossier','/dossier/?'+q,'项目档案'),('files','/?'+q,'资料管理'),('research','/methods/?'+q,'应用案例')]
  return '<a class="workspace-skip" href="#workspace-content">跳到内容</a><header class="workspace-header"><a class="workspace-brand" href="/dossier/?'+h(q)+'">创新设计<small>项目工作区</small></a><nav class="workspace-nav" aria-label="工作区">'+''.join('<a data-workspace="'+key+'" href="'+h(url)+'"'+(' aria-current="page"'if key==active else'')+'>'+title+'</a>'for key,url,title in links)+'</nav><span class="workspace-private">● 本地私有</span></header>'
 def admin(text,project):
  return re.sub(r'<header>.*?</header>',lambda m:nav('files',project),text,count=1,flags=re.S).replace('</head>','<style>'+CSS+'</style></head>').replace('<main>','<main id="workspace-content">',1)
@@ -19,7 +19,7 @@ def dossier(project):
  p=ROOT/'04-知识库/标杆案例/2025-00-嫦娥钻取采样';text=(p/'档案.html').read_text(encoding='utf-8')
  text=re.sub(r'<header>.*?</header>',lambda m:nav('dossier',project),text,count=1,flags=re.S)
  text=text.replace('</head>','<style>'+CSS+'.reader-shell{--muted:#687083}.reader-tools{display:none}.reader-shell .hero{padding-top:26px}.workspace-context{font:13px/1.7 system-ui;color:#687083;margin:0 0 22px}.workspace-context a{color:#5947d9}.reader-shell .toc{top:26px;max-height:calc(100vh - 48px)}#view-bar{top:0}.reader-shell [id]{scroll-margin-top:90px}</style></head>')
- text=text.replace('<div class="hero">','<div class="hero" id="workspace-content"><p class="workspace-context">人工整合档案 · 8 个阅读模块　<a href="/?project=2025-00#research-panel">查看管线研究版本 →</a></p>',1)
+ text=text.replace('<div class="hero">','<div class="hero" id="workspace-content"><p class="workspace-context">人工整合档案 · 8 个阅读模块　<a href="/?project=2025-00#research-panel">整理与查看研究版本 →</a></p>',1)
  text=text.replace('style="color:#a78145"','class="archive-caution"')
  text=text.replace('</head>','<style>.archive-caution{color:#8b6634}</style></head>')
  text=text.replace('href="项目图谱.html"','href="/dossier/graph/"')

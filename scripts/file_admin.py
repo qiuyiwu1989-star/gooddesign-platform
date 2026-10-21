@@ -31,7 +31,7 @@ class Store:
     execution=subprocess.run([str(ROOT/'.runtime/pipeline/bin/python'),str(ROOT/'scripts/run_method_case_demo.py')],cwd=str(ROOT),capture_output=True,text=True,timeout=180)
     if execution.returncode:raise ValueError('双库示例运行失败，请检查版本/证据或查看脚本日志：'+execution.stderr[-900:])
     result=json.loads(execution.stdout)
-   elif j['kind']=='publish':result=research.publish(self.lib,j['project_id'],j['args']['actor'],j['args']['reason'])
+   elif j['kind']=='publish':result=research.publish(self.lib,j['project_id'],j['args']['actor'],j['args']['reason'],j['args'].get('expected_candidate_ids'))
    else:
     with pipe.lock(self.lib):
      if j['kind']=='fetch':result=pipe.fetch(self.lib,self.inbox,j['project_id'],j['args']['url'])
@@ -159,7 +159,7 @@ class Handler(BaseHTTPRequestHandler):
     if u.path=='/methods/' and one('project','2025-00')!='2025-00':
      import workspace_ui
      pid=one('project');pipe.project(store.lib,pid)
-     self.send(200,workspace_ui.empty(pid,'research','这个项目还没有应用研究','当前固定示例基于嫦娥采样资料。先完成本项目档案，再建立独立的应用研究。'),'text/html; charset=utf-8');return
+     self.send(200,workspace_ui.empty(pid,'research','这个项目还没有应用案例','当前固定示例基于嫦娥采样资料。先完成本项目档案，再建立独立的应用研究。'),'text/html; charset=utf-8');return
     if u.path=='/methods/' and one('run','latest')=='latest' and not (methods.RUNS/'latest.json').is_file():
      import workspace_ui
      self.send(200,workspace_ui.empty('2025-00','research','还没有生成应用研究记录','先整理案例资料，再运行示例。已有项目档案和资料文件可以继续阅读。'),'text/html; charset=utf-8');return
@@ -240,7 +240,7 @@ class Handler(BaseHTTPRequestHandler):
     research.source(pipe.project(store.lib,pid),args['source_id']);self.send(202,store.submit(pid,u.path.rsplit('/',1)[1],source_id=args['source_id'],actor=args.get('actor','后台操作员')));return
    if u.path=='/api/candidate':self.send(201,research.propose(store.lib,pid,args['candidate'],args['actor']));return
    if u.path=='/api/review':self.send(200,research.review(store.lib,pid,args['candidate_id'],args['decision'],args['actor'],args['reason']));return
-   if u.path=='/api/publish':self.send(202,store.submit(pid,'publish',actor=args['actor'],reason=args['reason']));return
+   if u.path=='/api/publish':self.send(202,store.submit(pid,'publish',actor=args['actor'],reason=args['reason'],expected_candidate_ids=args.get('expected_candidate_ids')));return
    if u.path=='/api/retry':
     with store.mutex:old=next((j for j in store.jobs if j['id']==args.get('job_id')and j['project_id']==pid),None)
     if not old or old['status']in ('queued','running'):raise ValueError('任务不可重试')

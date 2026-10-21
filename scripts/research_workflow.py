@@ -193,11 +193,13 @@ def render_docs(data,changes,revision):
  assessment=['# 档案评估 · '+revision,'',f'记录：{len(data["records"])}；数据单元：{total}；有值字段（含原档案标注的分析）：{known}（{known/total:.1%}）。'if total else '暂无字段。','','该比例仅为数据填充，不是研究完整度、技术水平或专家审核结论。','',f'本次审核更新：{len(changes)}；AI解读/假设另列，不计事实填充。','','评分：沿用原研究量规，自动发布不升分。专业审核仍待安排。']
  return {'01-项目档案.md':'\n'.join(fact),'02-资料与解读.md':'\n'.join(analysis),'03-档案评估.md':'\n'.join(assessment)}
 
-def publish(lib,pid,actor,reason):
+def publish(lib,pid,actor,reason,expected_candidate_ids=None):
  if not reason or not reason.strip():raise ValueError('请填写发布理由')
  if not isinstance(actor,str)or not actor.strip():raise ValueError('请填写发布操作者')
  with pp.lock(lib):
   p=pp.project(lib,pid);w=current(p);data=dataset(p,w);prior_revision=w['revision'];applied=set(data.get('applied_candidate_ids',[]));batch=[c for c in w['candidates']if c['status']=='approved'and c['id']not in applied]
+  if expected_candidate_ids is not None:
+   if not isinstance(expected_candidate_ids,list)or any(not isinstance(x,str)for x in expected_candidate_ids)or sorted(expected_candidate_ids)!=sorted(c['id']for c in batch):raise ValueError('待入档内容已变化，请刷新并重新预览')
   if not batch:return dict(status='no_changes',revision='research-%06d'%prior_revision)
   if p.name=='2025-00'and w['base_sha256']!=pp.sha(BENCH.read_bytes()):raise ValueError('人工深研底稿已更新，请先核对基线，不覆盖新研究')
   seen=set();changes=[]
