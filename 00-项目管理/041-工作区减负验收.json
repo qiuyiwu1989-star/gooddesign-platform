@@ -1,0 +1,209 @@
+{
+  "task": "041",
+  "view_version": "6.0.0",
+  "scope": "private_local_workspace",
+  "run_id": "RUN-20261021T072332-5d4b13",
+  "urls": [
+    "http://127.0.0.1:8776/dossier/?project=2025-00",
+    "http://127.0.0.1:8776/?project=2025-00",
+    "http://127.0.0.1:8776/methods/"
+  ],
+  "browser": {
+    "reading": {
+      "checks": [
+        "仅文件视图默认可见",
+        "文件最多20行",
+        "分页显示另一批资料",
+        "页码进入链接",
+        "刷新保留页码",
+        "搜索重新回第一页",
+        "搜索有结果",
+        "刷新保留文件检索",
+        "文件预览对话框打开",
+        "审核与文件分开",
+        "审核候选默认收起且字段为可读标签",
+        "候选内容不是默认JSON",
+        "记录与审核分开",
+        "后退恢复审核任务",
+        "刷新保留审核任务",
+        "档案位于同一端口",
+        "八模块默认收起",
+        "资料解读共享左侧目录",
+        "档案评估共享左侧目录",
+        "默认建议无展开的技术记录",
+        "三方向默认收起",
+        "原位查看专利原文",
+        "关闭返回原建议",
+        "建议可追到矛盾分析",
+        "刷新保留分析阶段",
+        "六节点功能模型可见",
+        "方法5步骤仍完整",
+        "五项追问展开",
+        "旧方法深链接可用",
+        "项目上下文隔离 /?project=2025-01",
+        "项目上下文隔离 /dossier/?project=2025-01",
+        "项目上下文隔离 /methods/?project=2025-01",
+        "390px无页面溢出 /dossier/?project=2025-00",
+        "390px无页面溢出 /?project=2025-00",
+        "390px无页面溢出 /methods/",
+        "手机原文弹窗无页面溢出"
+      ],
+      "errors": []
+    },
+    "pipeline": {
+      "checks": [
+        "上传原件进入隔离库",
+        "自动提炼DOI可读字段",
+        "原文依据可逐项核对",
+        "通过后进入待发布队列",
+        "审核后发布独立版本",
+        "发布后状态保留",
+        "切换项目立即清除旧审核项",
+        "新项目状态独立",
+        "品牌链接也保留当前项目",
+        "真实SDK重放产生独立记录",
+        "键盘切换阅读视图",
+        "历史图谱返回同一档案"
+      ],
+      "errors": [],
+      "finalRun": "RUN-20261021T071800-57bc07"
+    },
+    "offline": {
+      "checks": [
+        "离线版隐藏后台导航",
+        "离线版隐藏重放写入",
+        "离线版可看原文",
+        "离线原件链接无效时有说明",
+        "打印后恢复收起状态",
+        "关闭JS仍可阅读建议",
+        "关闭JS仍可阅读功能模型",
+        "关闭JS仍可看资料",
+        "组合筛选刷新保持",
+        "全部文件优先展示论文原件"
+      ],
+      "latest": "RUN-20261021T071800-57bc07"
+    }
+  },
+  "browser_checks": 58,
+  "tests": {
+    "methods": 26,
+    "workspace_with_legacy": 15,
+    "research_with_legacy": 33,
+    "ownership": 8,
+    "all": "passed",
+    "note": "计数含继承回归测试，不代表互不重复的独立测试数"
+  },
+  "mcp": {
+    "protocol": "2025-11-25",
+    "tools": 11,
+    "checks": [
+      {
+        "tool": "gd_search_projects",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_project_overview",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_records",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_list_sources",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_resolve_citation",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_evidence",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_interpretations",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_version",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_records",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_evidence",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_records",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_records",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_records",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_resolve_citation",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_version",
+        "status": "ok"
+      },
+      {
+        "evaluation": "archive038.xml",
+        "verified_answers": 10,
+        "note": "确定性SDK检索验证；未声称LLM自主回答通过"
+      },
+      {
+        "tool": "gd_search_methods",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_method",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_read_innovation_run",
+        "status": "ok"
+      },
+      {
+        "tool": "gd_list_sources",
+        "status": "invalid_input_rejected"
+      },
+      {
+        "tool": "gd_read_evidence",
+        "status": "invalid_input_rejected"
+      },
+      {
+        "tool": "gd_read_records",
+        "status": "invalid_input_rejected"
+      }
+    ],
+    "scope": "真实SDK握手/工具调用；非LLM自主检索效果评估"
+  },
+  "source_data": {
+    "ingest": 206,
+    "publication": "research-000001",
+    "baseline": "0.6.1",
+    "score": 55,
+    "case_records_and_enterprise_output_equal_040": true,
+    "methods_unchanged": true,
+    "historical_runs_unchanged": true
+  },
+  "package": {
+    "zip": "/Volumes/邱懿武/邱懿武认知大脑/好设计平台/output/handoff/三方法-嫦娥双库联动-RUN-20261021T072332-5d4b13.zip",
+    "bytes": 132963,
+    "files": 17,
+    "run_id": "RUN-20261021T072332-5d4b13",
+    "integrity": "CRC/SHA256 passed"
+  },
+  "production_deployed": false
+}

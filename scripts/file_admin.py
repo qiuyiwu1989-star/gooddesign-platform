@@ -1,6 +1,6 @@
 # coding: utf-8
 """033: loopback-only private source file manager. No public deployment."""
-import argparse,concurrent.futures,json,mimetypes,os,secrets,threading,time,urllib.parse,subprocess
+import argparse,concurrent.futures,json,re,mimetypes,os,secrets,threading,time,urllib.parse,subprocess
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 import project_pipeline as pipe
@@ -121,8 +121,15 @@ class Handler(BaseHTTPRequestHandler):
   super().setup();self.connection.settimeout(35)
  def log_message(self,*args):pass
  def send(self,status,body,ctype='application/json; charset=utf-8',extra=None):
+  csp="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'"
+  if isinstance(body,str)and not ctype.startswith('application/json'):body=body.encode('utf-8')
   if not isinstance(body,bytes):body=json.dumps(body,ensure_ascii=False).encode()
-  self.send_response(status);self.send_header('Content-Type',ctype);self.send_header('Content-Length',str(len(body)));self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff');self.send_header('X-Frame-Options','DENY');self.send_header('Referrer-Policy','no-referrer');self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'")
+  if ctype.startswith('text/html'):
+   # Only trusted application templates are served as HTML. Raw uploads remain attachments.
+   nonce=secrets.token_urlsafe(24);text=body.decode('utf-8')
+   text=re.sub(r'<(style|script)(?=[\s>])',lambda m:'<'+m[1]+' nonce="'+nonce+'"',text)
+   body=text.encode('utf-8');csp="default-src 'self'; script-src 'self' 'nonce-"+nonce+"'; style-src 'self' 'nonce-"+nonce+"'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'"
+  self.send_response(status);self.send_header('Content-Type',ctype);self.send_header('Content-Length',str(len(body)));self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff');self.send_header('X-Frame-Options','DENY');self.send_header('Referrer-Policy','no-referrer');self.send_header('Content-Security-Policy',csp)
   for k,v in (extra or {}).items():self.send_header(k,v)
   self.end_headers();self.wfile.write(body)
  def guard(self,write=False):
@@ -134,10 +141,28 @@ class Handler(BaseHTTPRequestHandler):
    self.guard();u=urllib.parse.urlsplit(self.path);q=urllib.parse.parse_qs(u.query);one=lambda k,d='':q.get(k,[d])[0];store=self.server.store
    if u.path=='/api/health':self.send(200,dict(service='gooddesign-archive-pipeline',version='1.0.0',research_policy=research.POLICY,ocr_available=(ROOT/'.runtime/vision-ocr').exists(),watcher_running=bool(getattr(store,'watch_thread',None)and store.watch_thread.is_alive())));return
    if u.path=='/favicon.ico':self.send(204,b'','image/x-icon');return
-   if u.path in ('/','/app.js','/style.css','/workflow.js','/workflow.css'):
-    name={'/':'index.html','/app.js':'app.js','/style.css':'style.css','/workflow.js':'workflow.js','/workflow.css':'workflow.css'}[u.path];p=ROOT/'extensions/file-admin'/name;self.send(200,p.read_bytes(),mimetypes.guess_type(name)[0]+'; charset=utf-8');return
+   if u.path in ('/','/app.js','/style.css','/workflow.js','/workflow.css','/workspace.css','/workspace.js'):
+    name={'/':'index.html','/app.js':'app.js','/style.css':'style.css','/workflow.js':'workflow.js','/workflow.css':'workflow.css','/workspace.css':'workspace.css','/workspace.js':'workspace.js'}[u.path];p=ROOT/'extensions/file-admin'/name;
+    if u.path=='/':
+     import workspace_ui
+     self.send(200,workspace_ui.admin(p.read_text(encoding='utf-8'),one('project','2025-00')),'text/html; charset=utf-8');return
+    self.send(200,p.read_bytes(),mimetypes.guess_type(name)[0]+'; charset=utf-8');return
+   if u.path=='/dossier/graph/':
+    import workspace_ui
+    self.send(200,workspace_ui.graph(),'text/html; charset=utf-8');return
+   if u.path=='/dossier/':
+    import workspace_ui
+    pid=one('project','2025-00');pipe.project(store.lib,pid)
+    self.send(200,workspace_ui.dossier(pid),'text/html; charset=utf-8');return
    if u.path.startswith('/methods/'):
     import innovation_methods as methods
+    if u.path=='/methods/' and one('project','2025-00')!='2025-00':
+     import workspace_ui
+     pid=one('project');pipe.project(store.lib,pid)
+     self.send(200,workspace_ui.empty(pid,'research','这个项目还没有应用研究','当前固定示例基于嫦娥采样资料。先完成本项目档案，再建立独立的应用研究。'),'text/html; charset=utf-8');return
+    if u.path=='/methods/' and one('run','latest')=='latest' and not (methods.RUNS/'latest.json').is_file():
+     import workspace_ui
+     self.send(200,workspace_ui.empty('2025-00','research','还没有生成应用研究记录','先整理案例资料，再运行示例。已有项目档案和资料文件可以继续阅读。'),'text/html; charset=utf-8');return
     run_id=one('run','latest');data=methods.read_run(run_id,'full');folder=methods.RUNS/data['run_id']
     name={'/methods/':'联动报告.html','/methods/style.css':'style.css','/methods/app.js':'app.js'}.get(u.path)
     if not name:raise ValueError('方法页面不存在')
