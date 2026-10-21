@@ -8,7 +8,7 @@ from pathlib import Path
 import project_pipeline as pp
 import project_ownership as own
 import research_workflow as rw
-VERSION='steward-0.1.0'
+VERSION='steward-0.2.0'
 AGENT_METHOD='agent_evidence_extract_v1'
 PROTECTED=rw.RESTRICTED|{'completion_org_ids','completion_person_ids','award_list_confirmed','review_status'}
 class Steward:
@@ -37,7 +37,10 @@ class Steward:
    return dict(db.execute('SELECT * FROM tasks WHERE key=?',(key,)).fetchone())
  def enqueue_source(self,pid,sid):
   p=pp.project(self.lib,pid);s=rw.source(p,sid)
-  return self.enqueue(pid,dict(kind='source',source_id=sid,source_sha256=s['sha256'],processor=VERSION))
+  return self.enqueue(pid,dict(kind='source',source_id=sid,source_sha256=s['sha256'],chunks_sha256=pp.sha(pp.safe(p,s['chunks']).read_bytes()),parser_version=s.get('parser_version'),processor=VERSION))
+ def enqueue_fetch(self,pid,url,title=''):
+  pp.public_url(url)
+  return self.enqueue(pid,dict(kind='fetch',url=url,title=title,processor=VERSION))
  def enqueue_candidates(self,pid,ids):
   if not ids or len(set(ids))!=len(ids):raise ValueError('研究候选集合无效')
   known={c['id']for c in rw.current(pp.project(self.lib,pid))['candidates']}
@@ -120,6 +123,15 @@ class Steward:
   if not t:return False
   try:
    payload=t['payload'];pid=t['project'];p=pp.project(self.lib,pid)
+   if payload['kind']=='fetch':
+    with pp.lock(self.lib):
+     fetched=pp.fetch(self.lib,self.inbox,pid,payload['url'])
+     if payload.get('title'):
+      path=p/'资料关联.json';mapping=pp.load(path)if path.exists()else{}
+      mapping.setdefault('source_titles',{})[payload['url']]=payload['title'];pp.save(path,mapping)
+    child=self.enqueue_source(pid,fetched['source_id'])
+    self.finish(t,'completed',dict(download=fetched,source_task_id=child['id'],processor=VERSION))
+    return True
    if payload['kind']=='source':
     x=rw.source(p,payload['source_id'])
     if x['sha256']!=payload['source_sha256']:raise ValueError('来源已变化，请新建增量任务')
@@ -154,9 +166,10 @@ class Steward:
   if hasattr(self,'thread'):self.thread.join(timeout=15)
 
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('action',choices=['status','source','submit','tick','pause','resume']);ap.add_argument('project',nargs='?',default='2025-00');ap.add_argument('--source');ap.add_argument('--file',type=Path);ap.add_argument('--actor',default='Codex研究Agent');args=ap.parse_args();s=Steward(pp.LIB,pp.INBOX)
+ ap=argparse.ArgumentParser();ap.add_argument('action',choices=['status','source','fetch','submit','tick','pause','resume']);ap.add_argument('project',nargs='?',default='2025-00');ap.add_argument('--source');ap.add_argument('--url');ap.add_argument('--title',default='');ap.add_argument('--file',type=Path);ap.add_argument('--actor',default='Codex研究Agent');args=ap.parse_args();s=Steward(pp.LIB,pp.INBOX)
  if args.action=='status':out=s.summary(args.project)
  elif args.action=='source':out=s.enqueue_source(args.project,args.source)
+ elif args.action=='fetch':out=s.enqueue_fetch(args.project,args.url,args.title)
  elif args.action=='submit':
   out=s.submit_bundle(args.project,pp.load(args.file),args.actor)
  elif args.action in ('pause','resume'):s.pause(args.action=='pause');out=dict(paused=args.action=='pause')

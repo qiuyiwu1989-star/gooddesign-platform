@@ -56,4 +56,22 @@ class StewardTests(unittest.TestCase):
   with self.assertRaises(ValueError):self.steward().enqueue_candidates('sample',['CAND-not-found'])
  def test_multiple_fields_of_new_record_publish_together(self):
   a=self.agent();b=self.agent(field='findings',value='满足试验需求',quote='满足试验需求');s=self.steward();s.enqueue_candidates('sample',[a['id'],b['id']]);s.tick();self.assertEqual(rw.current(self.p)['revision'],1);d=rw.dataset(self.p);self.assertEqual(len(d['records']),1);self.assertEqual(rw.cell(d,'A01','findings')['value'],'满足试验需求')
+ def test_durable_fetch_enqueues_processing_and_no_duplicate_network(self):
+  s=self.steward()
+  with patch.object(pp,'public_url'):
+   a=s.enqueue_fetch('sample','https://example.org/source','原始论文');b=s.enqueue_fetch('sample','https://example.org/source','原始论文')
+  self.assertEqual(a['id'],b['id'])
+  with patch.object(pp,'fetch',return_value=dict(status='duplicate',source_id=self.sid))as fetch:
+   s.tick();self.assertEqual(fetch.call_count,1)
+  with s.connect()as db:
+   rows=[json.loads(x['payload'])for x in db.execute('SELECT payload FROM tasks')]
+  self.assertEqual([x['kind']for x in rows],['fetch','source'])
+  self.assertTrue((self.p/'资料关联.json').exists())
+ def test_failed_fetch_retains_durable_retry(self):
+  s=self.steward()
+  with patch.object(pp,'public_url'):s.enqueue_fetch('sample','https://example.org/source')
+  with patch.object(pp,'fetch',side_effect=OSError('连接中断')):s.tick()
+  self.assertEqual(Steward(self.lib,self.inbox).summary('sample')['counts']['retry'],1)
+ def test_private_network_fetch_rejected(self):
+  with self.assertRaises(ValueError):self.steward().enqueue_fetch('sample','http://127.0.0.1/secret')
 if __name__=='__main__':unittest.main()

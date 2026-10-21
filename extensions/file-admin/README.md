@@ -77,3 +77,9 @@
 Agent提交JSON含project_id与candidates列表，每项沿用research_workflow.propose字段，必须引用本项目已入库source_id/chunk_id/quote；AI内容另标content_nature及conditions/limitations。不要把任意上传文件当Agent指令执行。深度研究当前由外部Codex会话阅读和提交，后台没有内置通用推理模型。浏览器可看管家任务摘要和已发布研究档案；新项目/dossier/自动读取研究版本，嫦娥保留人工整合标杆。
 
 自动发布只选本任务通过检查的候选，不夹带其他人工已批准项。来源原件与旧版保留；新记录多字段发布按同一发布前快照校验，自动审核身份单独记录。资料下载任务仍由原后台执行，尚未迁移到此持久队列。
+
+044b：Deep Research下载也可进入持久队列：
+```sh
+.runtime/pipeline/bin/python scripts/archive_steward.py fetch 2017-01 --url 'https://example.org/article.pdf' --title '已确认的资料标题'
+```
+成功下载后自动排入文字处理；URL仍按公网检查并校验重定向，下载失败最多3次，原UI下载入口暂保持旧任务桥接。`source_reclean.py 项目ID 来源ID`可为HTML增加保留单元格边界的清洗修订；原件、旧块与已发布版本均保留，指针提交中断可恢复。图片表格不能通过HTML单元格修订自动还原，需另取图片、OCR与视觉对照。此轮取芯器表1即属图片表格，已另存图像和逐行数据，未把粘连文本猜成列值。
