@@ -35,6 +35,7 @@ class FileAdminTests(unittest.TestCase):
   for headers in [{'X-CSRF-Token':'wrong'},{'Origin':'https://bad.example'},{'Host':'bad.example'}]:self.assertEqual(self.request(path,b'x',headers=headers)[0],403)
   self.assertEqual(self.request('/api/upload?project=demo-01&name=../escape.txt',b'x')[0],400)
   self.assertEqual(self.request('/api/files?project=../demo-01')[0],400)
+  self.assertEqual(self.request('/api/upload?project=demo-01&scope=shared&name=x.txt',b'x')[0],400)
   self.assertEqual(self.request('/asset?project=demo-01&source=../../secret')[0],400)
   with patch.object(pp,'public_url',side_effect=ValueError('不允许内网地址')):self.assertEqual(self.request('/api/fetch?project=demo-01',json.dumps({'url':'http://local.invalid/x'}).encode())[0],400)
  def test_unsupported_original_retained_and_retry(self):

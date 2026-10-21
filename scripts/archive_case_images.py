@@ -6,6 +6,7 @@ from pathlib import Path
 from PIL import Image
 import fitz
 import project_pipeline as pp
+import project_ownership as ownership
 ROOT=Path(__file__).resolve().parents[1]
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 class Images(HTMLParser):
@@ -50,7 +51,7 @@ def download(pair):
  except Exception as exc:return dict(error=url,reason=str(exc)[:500],locations=locations)
 
 def run(pid='2025-00'):
- p=pp.project(pp.LIB,pid);folder=p/'图片素材';folder.mkdir(exist_ok=True);manifestfile=folder/'图片清单.json';old=pp.load(manifestfile)if manifestfile.exists()else dict(items=[]);assets={x['sha256']:x for x in old['items']};sources=list(pp.state(p)['sources'].values());failures=[];skipped=[]
+ p=pp.project(pp.LIB,pid);folder=p/'图片素材';folder.mkdir(exist_ok=True);manifestfile=folder/'图片清单.json';old=pp.load(manifestfile)if manifestfile.exists()else dict(items=[]);assets={x['sha256']:x for x in old['items']};sources=list(ownership.select(p,pp.state(p)['sources']).values());failures=[];skipped=[]
  def preserve(data,ext,width,height,kind,locations):
   digest=pp.sha(data)
   if digest in assets:
@@ -76,6 +77,7 @@ def run(pid='2025-00'):
   if file.exists():pdf_ids.update(x['library_source_id']for x in pp.load(file)['items']if x.get('original','').endswith('.pdf'))
  source_map={x['id']:x for x in sources}
  for sid in sorted(pdf_ids):
+  if sid not in source_map:continue
   x=source_map[sid]
   with fitz.open(str(p/x['original']))as doc:
    for number,page in enumerate(doc,1):

@@ -4,6 +4,7 @@ import argparse,concurrent.futures,json,mimetypes,os,secrets,threading,urllib.pa
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 import project_pipeline as pipe
+import project_ownership as ownership
 ROOT=Path(__file__).resolve().parents[1]
 class Store:
  def __init__(self,lib,inbox):
@@ -33,7 +34,9 @@ class Store:
   except Exception as exc:
    with self.mutex:j.update(status='failed',error=str(exc)[:1000],finished_at=pipe.now());self.persist()
  def upload(self,pid,name,data):
-  pipe.project(self.lib,pid)
+  current_p=pipe.project(self.lib,pid)
+  existing=pipe.state(current_p)['sources'];sid='S'+pipe.sha(data)[:16]
+  if sid in existing and ownership.assignment(current_p,sid,existing)['scope']!='project':raise ValueError('相同文件已登记在公共参考、其他项目或待确认范围，请先查看资料归属记录')
   if not name or '/'in name or '\\'in name or any(ord(c)<32 for c in name)or len(name)>200:raise ValueError('文件名无效')
   if len(data)>pipe.MAX_BYTES:raise ValueError('单个文件最多30MB')
   ext=Path(name).suffix.lower()
@@ -44,7 +47,7 @@ class Store:
   with pipe.lock(self.lib):
    pipe.save(dest.with_name(dest.name+'.origin.json'),origin);part=dest.with_name('.'+dest.name+'.part');part.write_bytes(data);os.replace(part,dest)
   return self.submit(pid,'ingest',path=str(dest),origin=origin)
- def files(self,pid):
+ def files(self,pid,scope='project'):
   p=pipe.project(self.lib,pid);s=pipe.state(p);rows=[]
   paperpath=p/'论文原文管理/论文原件清单.json';papers=pipe.load(paperpath)['items']if paperpath.exists()else [];paper_map={x.get('library_source_id'):x for x in papers if x.get('library_source_id')}
   patentpath=p/'专利原文管理/专利原件清单.json';patents=pipe.load(patentpath)['items']if patentpath.exists()else [];patent_map={sid:v for v in patents for sid in [v['library_source_id']]+v.get('related_source_ids',[])}
@@ -63,10 +66,16 @@ class Store:
      image=dict(title=name,kind='web_image'if origin.get('url')else 'uploaded_image',width=width,height=height,locations=[dict(source_id=x['id'],image_url=origin.get('url'),method='uploaded_or_downloaded_original')],preview_status='ready')
     except Exception:pass
    if image:rows[-1].update(kind='image',name=image['title'],status='image_archived'if image.get('preview_status','ready')=='ready'else 'image_needs_review',image_preview_status=image.get('preview_status','ready'),image_preview_error=image.get('preview_error'),conversion_status=x['status'],image_kind=image['kind'],image_width=image['width'],image_height=image['height'],image_locations=image['locations'])
-  return dict(project_id=pid,revision='ingest-%06d'%s['revision'],files=rows,papers=papers,patents=patents,merge_required=s.get('document_merge_required',[]))
- def asset(self,pid,sid,kind):
+  reg=ownership.registry(p);counts={key:0 for key in ownership.SCOPES}
+  for row in rows:
+   entry=ownership.assignment(p,row['id'],s['sources'],reg);row['ownership']=entry;counts[entry['scope']]+=1
+  if scope not in ownership.SCOPES:raise ValueError('资料范围无效')
+  rows=[x for x in rows if x['ownership']['scope']==scope]
+  return dict(scope=scope,ownership_counts=counts,ownership_version=reg.get('version',0),project_id=pid,revision='ingest-%06d'%s['revision'],files=rows,papers=papers,patents=patents,merge_required=s.get('document_merge_required',[]))
+ def asset(self,pid,sid,kind,scope='project'):
   p=pipe.project(self.lib,pid);x=pipe.state(p)['sources'].get(sid)
   if not x:raise ValueError('来源不存在')
+  if sid not in ownership.select(p,pipe.state(p)['sources'],scope):raise ValueError('该资料不属于当前资料范围，请从正确项目或归属记录查看')
   if kind not in ('original','document','chunks','metadata'):raise ValueError('文件类型无效')
   rel=str(Path(x['original']).parent/'metadata.json')if kind=='metadata'else x[kind]
   path=pipe.safe(p,rel)
@@ -92,22 +101,25 @@ class Handler(BaseHTTPRequestHandler):
    if u.path in ('/','/app.js','/style.css'):
     name={'/':'index.html','/app.js':'app.js','/style.css':'style.css'}[u.path];p=ROOT/'extensions/file-admin'/name;self.send(200,p.read_bytes(),mimetypes.guess_type(name)[0]+'; charset=utf-8');return
    if u.path=='/api/projects':self.send(200,dict(projects=pipe.load(store.lib/'项目索引.json')['projects'],token=store.token));return
-   if u.path=='/api/files':self.send(200,store.files(one('project','2025-00')));return
+   if u.path=='/api/files':self.send(200,store.files(one('project','2025-00'),one('scope','project')));return
    if u.path=='/api/jobs':
     with store.mutex:rows=[dict(j)for j in store.jobs if j['project_id']==one('project','2025-00')][-100:][::-1]
+    current_p=pipe.project(store.lib,one('project','2025-00'));current_s=pipe.state(current_p);reg=ownership.registry(current_p);requested_scope=one('scope','project')
+    if requested_scope not in ownership.SCOPES:raise ValueError('资料范围无效')
+    rows=[j for j in rows if ownership.assignment(current_p,j.get('result',{}).get('source_id','')if j.get('result')else '',current_s['sources']if j.get('result')else {'':{'origin':{'url':j['args'].get('url')}}},reg)['scope']==requested_scope]
     # Internal filesystem paths are not needed by the client.
     self.send(200,dict(jobs=[dict(j,args={k:v for k,v in j['args'].items()if k!='path'})for j in rows]));return
    if u.path=='/api/image':
     import io,warnings
     from PIL import Image,ImageOps
-    path,x=store.asset(one('project'),one('source'),'original')
+    path,x=store.asset(one('project'),one('source'),'original',one('scope','project'))
     with warnings.catch_warnings():
      warnings.simplefilter('error',Image.DecompressionBombWarning)
      with Image.open(path)as original:
       image=ImageOps.exif_transpose(original);image.thumbnail((120,120)if one('thumb')=='1'else (1600,1600));out=io.BytesIO();image.convert('RGB').save(out,format='PNG');self.send(200,out.getvalue(),'image/png');return
    if u.path in ('/api/pdf-info','/api/pdf-page'):
     import fitz
-    path,x=store.asset(one('project'),one('source'),'original')
+    path,x=store.asset(one('project'),one('source'),'original',one('scope','project'))
     if path.suffix.lower()!='.pdf':raise ValueError('此文件不是PDF')
     with fitz.open(str(path))as doc:
      if u.path=='/api/pdf-info':self.send(200,dict(pages=len(doc)));return
@@ -116,9 +128,9 @@ class Handler(BaseHTTPRequestHandler):
      page=doc[number];scale=min(1.5,1200/max(page.rect.width,1),1600/max(page.rect.height,1));pixels=page.get_pixmap(matrix=fitz.Matrix(scale,scale),alpha=False)
      self.send(200,pixels.tobytes('png'),'image/png');return
    if u.path=='/api/preview':
-    path,x=store.asset(one('project'),one('source'),'chunks');blocks=pipe.load(path);self.send(200,dict(blocks=blocks[:200],total=len(blocks),truncated=len(blocks)>200));return
+    path,x=store.asset(one('project'),one('source'),'chunks',one('scope','project'));blocks=pipe.load(path);self.send(200,dict(blocks=blocks[:200],total=len(blocks),truncated=len(blocks)>200));return
    if u.path=='/asset':
-    path,x=store.asset(one('project'),one('source'),one('kind','original'));name=x['origin'].get('filename',x['title'])if x.get('origin')else x['title'];name=next((f['name']for f in store.files(one('project'))['files']if f['id']==x['id']),name)if one('kind','original')=='original'else path.name
+    path,x=store.asset(one('project'),one('source'),one('kind','original'),one('scope','project'));name=x['origin'].get('filename',x['title'])if x.get('origin')else x['title'];name=next((f['name']for f in store.files(one('project'),one('scope','project'))['files']if f['id']==x['id']),name)if one('kind','original')=='original'else path.name
     self.send(200,path.read_bytes(),'application/octet-stream',{'Content-Disposition':"attachment; filename*=UTF-8''"+urllib.parse.quote(name,safe='')});return
    self.send(404,dict(error='页面不存在'))
   except PermissionError as exc:self.send(403,dict(error=str(exc)))
@@ -132,6 +144,7 @@ class Handler(BaseHTTPRequestHandler):
    data=self.rfile.read(length)
    if len(data)!=length:raise ValueError('上传未完成')
    pid=one('project','2025-00');pipe.project(store.lib,pid)
+   if one('scope','project')!='project':raise ValueError('请先切换到本项目资料再提交处理任务')
    if u.path=='/api/upload':self.send(202,store.upload(pid,one('name'),data));return
    args=json.loads(data)
    if u.path=='/api/fetch':

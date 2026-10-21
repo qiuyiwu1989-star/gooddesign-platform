@@ -1,0 +1,51 @@
+{
+  "task": "036",
+  "date": "2026-10-21",
+  "ownership_version": 2,
+  "scopes": {
+    "project": 172,
+    "shared": 9,
+    "reassigned": 9,
+    "pending": 6
+  },
+  "transferred_source_ids": [
+    "S38335cc4f960b20d",
+    "Sc7d8fd849e815933",
+    "Sb42333a99d91ea8b",
+    "Sc24dcdfcbc1f710e",
+    "S341de2d777524824",
+    "S633c47c7ad5d9791",
+    "S526e3ceef82b1a8f",
+    "S3a3c8f7708018102",
+    "Sdaa7bf299c57b71e"
+  ],
+  "target_project": "2015-02",
+  "target_sources": 10,
+  "current_ingest_version": "ingest-000201",
+  "frozen_scope": "frozen_project",
+  "tests": {
+    "ownership": 8,
+    "backend": 9,
+    "pipeline": 14,
+    "dossier": 53,
+    "browser_ownership": 19,
+    "browser_images_regression": 10
+  },
+  "checks": [
+    "transferred_original_hashes_equal",
+    "shared_original_hashes_equal",
+    "live_and_new_frozen_ownership_filtered",
+    "live_library_md_excludes_jiaolong",
+    "old_snapshots_not_rewritten",
+    "facts_and_quality_equal_0.6.1",
+    "project_keyword_year_award_filters",
+    "current_project_not_changed_by_filters",
+    "public_export_unchanged"
+  ],
+  "limits": [
+    "归属整理针对嫦娥样本；非全库自动归属审核",
+    "新上传属于所选项目的待核对提交，不能替代语义审核",
+    "自动字段提炼/OCR/专用审核队列仍待建设",
+    "蛟龙号接收属于纠错，不开展下一项目研究"
+  ]
+}
