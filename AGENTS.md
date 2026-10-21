@@ -113,3 +113,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 044h研究交付：build_research_handoff.py导出任意已有研究项目的固定版本+绑定导读，归属只允许project，冻结证据块原字节留存；research_handoff_check.py与read示例离线运行。只有单快照和前序manifest身份对照，不称历史全链；Hash防损坏非签名或事实认证。阶段包/原件全部私有output/handoff。新研究深挖继续后须重建包，不将旧包当最新版本。
 
 044i限定选录：source_excerpt.py创建共享原件的项目连续原文选录，保留父件/冻结块/选择范围；research_workflow.evidence沿父件复核，禁止标题/用途/编者说明成为事实引文，嵌套选录同样限制。交付保存selection_text及父件元数据；shared父原件不随包，不能声称离线包已完整核验父件。Steward0.5.1。两例当前蛟龙research000005、复兴000007，各导读0.1.0，源背景/算法/专利/正式获奖名单的边界以044执行文档末尾为准；质量仍未评。
+
+044j研究评估：research_assessment.py将六维AI判断与机器证据检查分开、绑定research版不可覆盖，质量总分/专家状态不提升。safe_read另做当前证据复检；MCP概览review_detail默认false仅摘要，true可深入，工具仍11个。评估/导读/研究事实版本独立；新数据不能沿用旧评估。当前报告0.1.0绑蛟龙000005/复兴000007。cgd公开目录已可用匿名网页会话+X-Requested-With检索，官方条目详情和整届shared响应在044j，未入结构化事实；优先按项目单行核对再发布，勿把createTime/participant当获奖年份/个人名单。

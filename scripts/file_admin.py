@@ -203,6 +203,11 @@ class Handler(BaseHTTPRequestHandler):
    if u.path=='/api/research-document':
     p=pipe.project(store.lib,one('project','2025-00'));w=research.current(p)
     if not w['revision']:raise ValueError('还没有已发布的研究版本')
+    if one('document')=='review':
+     import research_assessment as assessment
+     revision=one('revision')or'research-%06d'%w['revision'];review=assessment.read(p,revision,one('review_version')or None)
+     if not review['report']:raise ValueError('本研究版本尚无研究评估')
+     path=assessment.folder(p,revision)/review['report']['judgment']['version']/'评估.md';self.send(200,path.read_bytes(),'text/plain; charset=utf-8');return
     if one('document')=='guide':
      import research_reader_notes as notes
      revision=one('revision')or'research-%06d'%w['revision'];guide=notes.read(p,revision,one('guide_version')or None)

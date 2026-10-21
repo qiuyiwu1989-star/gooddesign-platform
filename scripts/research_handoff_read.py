@@ -17,5 +17,5 @@ if __name__=='__main__':
   if row is None:ap.error('没有这个来源ID')
   result=dict(source=row,chunks=load(safe(ROOT,'资料库/'+row['chunks'])))
  else:
-  guide=ROOT/'阅读导读/导读.json';result=dict(overview=load(ROOT/'交付概览.json'),reading_guide=load(guide)if guide.exists()else None,records=[dict(id=r['id'],entity=r['entity'],title=r['title'])for r in data['records']])
+  guide=ROOT/'阅读导读/导读.json';result=dict(overview=load(ROOT/'交付概览.json'),reading_guide=load(guide)if guide.exists()else None,research_review=load(ROOT/'研究评估/评估.json')if (ROOT/'研究评估/评估.json').exists()else None,records=[dict(id=r['id'],entity=r['entity'],title=r['title'])for r in data['records']])
  print(json.dumps(result,ensure_ascii=False,indent=2))

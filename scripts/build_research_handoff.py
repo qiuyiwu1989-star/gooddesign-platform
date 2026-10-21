@@ -46,9 +46,15 @@ def build(lib,pid,out,revision=None):
     guide_version=notes['notes']['version'];nf=rn.folder(p,revision)/guide_version
     for f in nf.iterdir():
      if f.is_file():copy(f,'阅读导读/'+f.name)
+   import research_assessment as assessment
+   reviewed=assessment.read(p,revision);review_version=None
+   if reviewed['status']=='available':
+    review_version=reviewed['report']['judgment']['version'];rf=assessment.folder(p,revision)/review_version
+    for f in rf.iterdir():
+     if f.is_file():copy(f,'研究评估/'+f.name)
    copy(rw.SCHEMA,'标准/原子字段字典.json');copy(ROOT/'scripts/research_handoff_check.py','check.py');copy(ROOT/'scripts/research_handoff_read.py','read.py')
    cells=[c for r in data['records']for c in r['cells'].values()]
-   info=dict(project_id=pid,research_revision=revision,guide_version=guide_version,created_at=datetime.now(timezone.utc).isoformat(),history_scope='single_snapshot_not_full_chain',records=len(data['records']),known_cells=sum(c.get('value_state')=='known'for c in cells),ai_interpretations=len(data.get('interpretations',[])),source_files=len(rows),quality_score_status=data.get('quality_score_status','not_assessed'),expert_reviewed=data.get('expert_reviewed',False),notes=['资料数量和有值字段数量不是完整度或质量评分。','原件为私有研究留存，不代表获得公开再发布授权。','上一版manifest仅供身份对照，未交付完整历史数据链。','这是固定数据包，非运行中的MCP服务或通用创新引擎。'])
+   info=dict(project_id=pid,research_revision=revision,guide_version=guide_version,review_version=review_version,created_at=datetime.now(timezone.utc).isoformat(),history_scope='single_snapshot_not_full_chain',records=len(data['records']),known_cells=sum(c.get('value_state')=='known'for c in cells),ai_interpretations=len(data.get('interpretations',[])),source_files=len(rows),quality_score_status=data.get('quality_score_status','not_assessed'),expert_reviewed=data.get('expert_reviewed',False),notes=['资料数量和有值字段数量不是完整度或质量评分。','原件为私有研究留存，不代表获得公开再发布授权。','上一版manifest仅供身份对照，未交付完整历史数据链。','这是固定数据包，非运行中的MCP服务或通用创新引擎。'])
    pp.save(stage/'交付概览.json',info)
    (stage/'README.md').write_text(README,encoding='utf-8')
    pp.save(stage/'manifest.json',dict(schema='research-handoff-1.0',project_id=pid,revision=revision,files={str(f.relative_to(stage)):sha(f)for f in sorted(stage.rglob('*'))if f.is_file()}))
@@ -65,7 +71,7 @@ def build(lib,pid,out,revision=None):
  return dict(folder=str(dest),zip=str(zip_path),check=result)
 README='''# 项目研究档案 · 应用测试包
 
-先读交付概览，再读阅读导读/导读.md（如有），按模块进入研究版本/01-项目档案.md。资料与AI解读、质量与缺口分别在研究版本/02-资料与解读.md和03-档案评估.md。结构化档案保留未知值、证据和审核身份。
+先读交付概览，再读阅读导读/导读.md（如有），按模块进入研究版本/01-项目档案.md。资料与AI解读、质量与缺口分别在研究版本/02-资料与解读.md和03-档案评估.md；研究评估/评估.md（如有）另提供六维研究判断和补证建议。结构化档案保留未知值、证据和审核身份。
 
 ## 逐层读取
 

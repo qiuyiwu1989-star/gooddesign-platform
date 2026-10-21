@@ -67,6 +67,11 @@ def check(root):
   if [x['module_id']for x in notes['modules']]!=list(range(1,9)):raise ValueError('导读模块不完整')
   ids={x['id']for x in data['records']}
   if any(set(x['record_ids'])-ids for x in notes['modules']):raise ValueError('导读引用缺失')
+ if info.get('review_version'):
+  report=load(root/'研究评估/评估.json');j=report['judgment'];m=load(root/'研究评估/manifest.json')
+  for name,h in m['files'].items():
+   if sha(safe(root,'研究评估/'+name))!=h:raise ValueError('研究评估指纹不符')
+  if j['project_id']!=pid or j['research_revision']!=revision or j['version']!=info['review_version']or j['dataset_sha256']!=sha(root/'研究版本/档案.json')or j['content_nature']!='ai_research_review'or report.get('quality_score')is not None or report.get('expert_reviewed')is not False:raise ValueError('研究评估绑定不符')
  return dict(project_id=pid,revision=revision,files=len(files),sources=len(sources),records=len(data['records']),evidence=count,history_scope='single_snapshot_not_full_chain',expert_reviewed=data.get('expert_reviewed',False))
 if __name__=='__main__':
  import argparse
