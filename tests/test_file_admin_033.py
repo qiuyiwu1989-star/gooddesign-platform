@@ -9,6 +9,8 @@ class FileAdminTests(unittest.TestCase):
   (ROOT/'tmp/admin-tests').mkdir(parents=True,exist_ok=True);self.tmp=tempfile.TemporaryDirectory(dir=str(ROOT/'tmp/admin-tests'));self.root=Path(self.tmp.name);self.lib=self.root/'lib';self.lib.mkdir();self.inbox=self.root/'inbox';cat=self.root/'catalog.json';pp.save(cat,dict(projects=[dict(id='demo-01',name='测试项目',year=2025,award='待核对',unit='测试单位')]))
   pp.bootstrap(self.lib,self.inbox,cat,self.root/'archive');self.srv=fa.server(self.lib,self.inbox,0);self.thread=threading.Thread(target=self.srv.serve_forever,daemon=True);self.thread.start();self.base='http://127.0.0.1:'+str(self.srv.server_port);self.token=self.request('/api/projects')[1]['token']
  def tearDown(self):
+  if hasattr(self.srv.store,'watch_stop'):self.srv.store.watch_stop.set();self.srv.store.watch_thread.join(timeout=10)
+  self.srv.store.steward.close()
   self.srv.shutdown();self.srv.server_close();self.srv.store.pool.shutdown(wait=True);self.thread.join();self.tmp.cleanup()
  def request(self,path,body=None,method=None,headers=None):
   h={'Origin':self.base,'X-CSRF-Token':self.srv.store.token};h.update(headers or {})

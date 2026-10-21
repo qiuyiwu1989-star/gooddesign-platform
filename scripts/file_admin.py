@@ -6,6 +6,7 @@ from pathlib import Path
 import project_pipeline as pipe
 import project_ownership as ownership
 import research_workflow as research
+from archive_steward import Steward
 ROOT=Path(__file__).resolve().parents[1]
 class Store:
  def __init__(self,lib,inbox):
@@ -13,7 +14,7 @@ class Store:
   self.jobs=pipe.load(self.file)if self.file.exists()else []
   for j in self.jobs:
    if j['status']in ('queued','running'):j.update(status='interrupted',error='服务上次停止，任务中断；请重试')
-  self.persist()
+  self.persist();self.steward=Steward(lib,inbox)
  def persist(self):pipe.save(self.file,self.jobs)
  def submit(self,pid,kind,**args):
   pipe.project(self.lib,pid)
@@ -38,7 +39,7 @@ class Store:
      elif j['kind']=='ingest':result=pipe.ingest(pipe.project(self.lib,j['project_id']),Path(j['args']['path']),j['args'].get('origin'),retry=j['args'].get('retry',False))
      else:raise ValueError('未知任务类型')
    if j['kind']in ('ingest','fetch')and result.get('source_id'):
-    try:result['research']=research.process(self.lib,j['project_id'],result['source_id'],'后台自动处理（未审核）')
+    try:result['steward_task_id']=self.steward.enqueue_source(j['project_id'],result['source_id'])['id']
     except Exception as exc:result['research_error']=str(exc)
    status='failed'if result['status']in ('conversion_failed','empty_needs_review','unsupported_needs_review','partial_text_needs_review')else 'completed'
    # Conversion states are also visible per file; completed means the requested operation finished.
@@ -57,14 +58,14 @@ class Store:
   return dict(project_id=pid,state=state,last_scan=getattr(self,'watch_last_scan',None),scan_interval_seconds=4,
    queued=sum(j['status']=='queued'for j in jobs),running=sum(j['status']=='running'for j in jobs),
    attention_records=sum(j['status']in ('failed','needs_attention','interrupted')for j in jobs),
-   semantic_agent_connected=False,automatic_publication=False)
+   semantic_agent_connected=False,automatic_publication=True,steward=self.steward.summary(pid))
  def start_watch(self):
   cursor_file=self.folder/'research-watch.json'
   cursor=pipe.load(cursor_file)if cursor_file.exists()else {}
   # First launch establishes a cursor, rather than silently researching the entire old library.
   for row in pipe.load(self.lib/'项目索引.json')['projects']:
    if row['id']not in cursor:cursor[row['id']]=list(pipe.state(pipe.project(self.lib,row['id']))['sources'])
-  pipe.save(cursor_file,cursor);self.watch_stop=threading.Event()
+  pipe.save(cursor_file,cursor);self.watch_stop=threading.Event();self.steward.start()
   def watch():
    while not self.watch_stop.is_set():
     try:
@@ -73,7 +74,7 @@ class Store:
       pid=row['id'];p=pipe.project(self.lib,pid);active=ownership.select(p,pipe.state(p)['sources']);seen=set(cursor.get(pid,[]))
       for sid,x in active.items():
        if sid not in seen:
-        self.submit(pid,'process',source_id=sid,actor='投递箱自动处理（未审核）');seen.add(sid)
+        self.steward.enqueue_source(pid,sid);seen.add(sid)
       cursor[pid]=sorted(seen)
      self.watch_last_success=time.time();self.watch_last_scan=pipe.now();self.watch_error=None
      pipe.save(cursor_file,cursor);pipe.save(self.lib/'监听状态.json',dict(pid=os.getpid(),heartbeat=pipe.now(),inbox=str(self.inbox),service='file_admin_with_research_pipeline'))
@@ -166,7 +167,7 @@ class Handler(BaseHTTPRequestHandler):
    if u.path=='/dossier/':
     import workspace_ui
     pid=one('project','2025-00');pipe.project(store.lib,pid)
-    self.send(200,workspace_ui.dossier(pid),'text/html; charset=utf-8');return
+    self.send(200,workspace_ui.dossier(pid,store.lib),'text/html; charset=utf-8');return
    if u.path.startswith('/methods/'):
     import innovation_methods as methods
     if u.path=='/methods/' and one('project','2025-00')!='2025-00':
@@ -272,4 +273,4 @@ if __name__=='__main__':
  srv.store.start_watch()
  try:srv.serve_forever()
  finally:
-  srv.store.watch_stop.set();srv.store.watch_thread.join(timeout=10);srv.server_close();srv.store.pool.shutdown(wait=True)
+  srv.store.watch_stop.set();srv.store.watch_thread.join(timeout=10);srv.store.steward.close();srv.server_close();srv.store.pool.shutdown(wait=True)

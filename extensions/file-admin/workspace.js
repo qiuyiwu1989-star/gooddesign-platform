@@ -23,7 +23,19 @@
    if(project!==pid||request!==requestNumber)return;
    const labels={running:'自动接收与提取 · 运行中',starting:'自动接收与提取 · 正在启动',stopped:'自动接收与提取 · 未启动',error:'自动巡检遇到问题，请查看任务进度',delayed:'自动巡检尚未完成，请稍后查看'};
    document.querySelector('#automation-state').textContent=labels[d.state]||'自动处理状态未知';
-   document.querySelector('#automation-queue').textContent=`本项目：${d.running} 项处理中 · ${d.queued} 项排队 · ${d.attention_records} 条异常或中断记录`;
+   const st=d.steward,counts=st.counts;
+   document.querySelector('#automation-queue').textContent=`本项目：${counts.running||0} 项整理中 · ${(counts.queued||0)+(counts.retry||0)} 项排队 · ${counts.needs_attention||0} 项需判断 · ${counts.awaiting_agent||0} 项待深度阅读`;
+   if(st.paused)document.querySelector('#automation-state').textContent='资料管家已暂停 · 原件接收继续';
+   const results=document.querySelector('#steward-results');results.replaceChildren();
+   const jobLabels={completed:'已整理',awaiting_agent:'等待 Agent 深度阅读',needs_attention:'有内容需判断',queued:'排队中',running:'整理中',retry:'等待重试',failed:'处理失败'};
+   if(!st.recent.length)results.append(el('p','暂无新的整理任务。已有资料不会在启动时自动重跑。'));
+   for(const t of st.recent.slice(0,5)){
+    const row=el('div');row.append(el('strong',jobLabels[t.status]||t.status));
+    if(t.result?.publication?.revision)row.append(el('span',' · '+t.result.publication.revision));
+    if(t.result)row.append(el('p',`采用 ${t.result.accepted?.length||0} 项；需判断 ${t.result.exceptions?.length||0} 项`));
+    for(const issue of t.result?.exceptions||[])row.append(el('p',issue.record_id+' · '+issue.field+'：'+issue.reason));
+    if(t.error)row.append(el('p',t.error));results.append(row);
+   }
   }catch(e){if(project===pid&&request===requestNumber){document.querySelector('#automation-state').textContent='暂时无法读取自动处理状态';document.querySelector('#automation-queue').textContent='请确认本地服务仍在运行';}}
  }
  setInterval(()=>{if(!document.hidden)refreshAutomation();},8000);

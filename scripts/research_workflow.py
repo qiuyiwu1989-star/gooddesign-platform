@@ -167,18 +167,20 @@ def extract(lib,pid,sid,actor):
   save(p,w)
   return dict(status='completed',source_id=sid,candidates=[c['id']for c in made],coverage='DOI/CN标识与完整摘要内的问题、方法、结果；其余字段由人工/Agent提交证据候选',pending_review=True)
 
-def review(lib,pid,cid,decision,actor,reason):
+def review(lib,pid,cid,decision,actor,reason,reviewer_kind='human',expected_status=None):
+ if reviewer_kind not in ('human','rule','agent'):raise ValueError('审核身份无效')
  if decision not in ['approved','rejected','needs_more']:raise ValueError('审核决定无效')
  if not isinstance(reason,str)or not reason.strip():raise ValueError('审核必须写明理由')
  with pp.lock(lib):
   p=pp.project(lib,pid);w=current(p);c=next((x for x in w['candidates']if x['id']==cid),None)
   if not c:raise ValueError('候选不存在')
+  if expected_status is not None and c['status']!=expected_status:raise ValueError('候选状态已变化，请重新检查')
   if c['status']=='published':raise ValueError('已发布内容不能回改，请建立新候选形成新版本')
   if decision=='approved':evidence(p,c)
-  c.update(status=decision,reviewer=actor,review_reason=reason,reviewed_at=pp.now());event(w,'review',actor,candidate_id=cid,decision=decision,reason=reason);save(p,w);return c
+  c.update(status=decision,reviewer=actor,reviewer_kind=reviewer_kind,review_reason=reason,reviewed_at=pp.now());event(w,'review',actor,candidate_id=cid,decision=decision,reason=reason);save(p,w);return c
 
 def render_docs(data,changes,revision):
- groups={e['key']:e for e in pp.load(SCHEMA)['entities']};fact=['# 项目档案 · '+revision,'','以下为研究整理版。原项目专家审核及平台55自评保持原状态。AI解读不计事实字段覆盖。',''];analysis=['# 资料与解读 · '+revision,''];known=total=0
+ groups={e['key']:e for e in pp.load(SCHEMA)['entities']};fact=['# 项目档案 · '+revision,'','以下为研究整理版；自动整理不代表项目方或专家审核。AI解读不计事实字段覆盖。',''];analysis=['# 资料与解读 · '+revision,''];known=total=0
  for record in data['records']:
   fact.extend(['## '+record['title']+' · '+record['id'],''])
   for k,c in record['cells'].items():
@@ -190,30 +192,39 @@ def render_docs(data,changes,revision):
  for c in data.get('interpretations',[]):analysis.extend(['## '+c['title']+' · '+c['id'],'','性质：'+c['content_nature'],'',json.dumps(c['value'],ensure_ascii=False),'','前提：'+c['conditions'],'','限制：'+c['limitations'],'','依据：'+c['source_id']+' / '+c['chunk_id']+' · '+c['locator'],'','> '+c['quote'].replace('\n','\n> '),''])
  analysis+=['## 本次字段更新的证据','']
  for x in changes:analysis.extend(['### '+x['record_id']+'.'+x['field'],'','来源：'+x['source_id']+' / '+x['chunk_id'],'','> '+x['quote'].replace('\n','\n> '),''])
- assessment=['# 档案评估 · '+revision,'',f'记录：{len(data["records"])}；数据单元：{total}；有值字段（含原档案标注的分析）：{known}（{known/total:.1%}）。'if total else '暂无字段。','','该比例仅为数据填充，不是研究完整度、技术水平或专家审核结论。','',f'本次审核更新：{len(changes)}；AI解读/假设另列，不计事实填充。','','评分：沿用原研究量规，自动发布不升分。专业审核仍待安排。']
+ assessment=['# 档案评估 · '+revision,'',f'记录：{len(data["records"])}；数据单元：{total}；有值字段（含原档案标注的分析）：{known}（{known/total:.1%}）。'if total else '暂无字段。','','该比例仅为数据填充，不是研究完整度、技术水平或专家审核结论。','',f'本次审核更新：{len(changes)}；AI解读/假设另列，不计事实填充。','','评分：有原研究评分则保留原状态；没有则为未评。自动发布不评分，专业审核仍待安排。']
  return {'01-项目档案.md':'\n'.join(fact),'02-资料与解读.md':'\n'.join(analysis),'03-档案评估.md':'\n'.join(assessment)}
 
-def publish(lib,pid,actor,reason,expected_candidate_ids=None):
+def publish(lib,pid,actor,reason,expected_candidate_ids=None,selected_candidate_ids=None):
  if not reason or not reason.strip():raise ValueError('请填写发布理由')
  if not isinstance(actor,str)or not actor.strip():raise ValueError('请填写发布操作者')
  with pp.lock(lib):
   p=pp.project(lib,pid);w=current(p);data=dataset(p,w);prior_revision=w['revision'];applied=set(data.get('applied_candidate_ids',[]));batch=[c for c in w['candidates']if c['status']=='approved'and c['id']not in applied]
+  if selected_candidate_ids is not None:
+   if not isinstance(selected_candidate_ids,list)or any(not isinstance(x,str)for x in selected_candidate_ids)or len(set(selected_candidate_ids))!=len(selected_candidate_ids):raise ValueError('指定入档集合无效')
+   selected=set(selected_candidate_ids)
+   if selected-set(c['id']for c in batch):raise ValueError('指定内容不再处于可入档状态，请重新检查')
+   batch=[c for c in batch if c['id']in selected]
   if expected_candidate_ids is not None:
    if not isinstance(expected_candidate_ids,list)or any(not isinstance(x,str)for x in expected_candidate_ids)or sorted(expected_candidate_ids)!=sorted(c['id']for c in batch):raise ValueError('待入档内容已变化，请刷新并重新预览')
   if not batch:return dict(status='no_changes',revision='research-%06d'%prior_revision)
   if p.name=='2025-00'and w['base_sha256']!=pp.sha(BENCH.read_bytes()):raise ValueError('人工深研底稿已更新，请先核对基线，不覆盖新研究')
-  seen=set();changes=[]
+  seen=set();changes=[];base_data=copy.deepcopy(data)
   for c in batch:
    evidence(p,c)
    if c['content_nature']=='source_statement':
     key=(c['record_id'],c['field'])
     if key in seen:raise ValueError('同一字段有多个待发布候选，请只保留一个审核通过值')
     seen.add(key)
-    if digest(cell(data,*key))!=c['base_cell_sha256']:raise ValueError('字段自提炼后已变化，请重新提炼审核:'+str(key))
+    if digest(cell(base_data,*key))!=c['base_cell_sha256']:raise ValueError('字段自提炼后已变化，请重新提炼审核:'+str(key))
     r=next((r for r in data['records']if r['id']==c['record_id']),None)
     if not r:
      r=dict(id=c['record_id'],project_id=pid,entity=c['entity'],title=c['title'],cells={key:dict(value=None,value_state='not_researched',content_nature='source_statement')for key in schema()[c['entity']]});data['records'].append(r)
-    before=copy.deepcopy(r['cells'].get(c['field']));r['cells'][c['field']]=dict(value=c['value'],value_state='not_obtained'if c.get('operation')=='clear'else'known',content_nature='source_statement',source_ids=[c['source_id']],claim_ids=[],locator=c['locator'],verification_state='research_editor_checked_not_expert',visibility='internal_research',valid_as_of=None,evidence={k:c[k]for k in ['source_id','source_sha256','chunk_id','chunks_path','chunks_sha256','quote','quote_sha256','source_read_scope','ingest_revision']},reviewer=c['reviewer'],review_reason=c['review_reason'],object=c['object'],unit=c['unit'],conditions=c['conditions'],limitations=c['limitations'])
+    before=copy.deepcopy(r['cells'].get(c['field']));r['cells'][c['field']]=dict(value=c['value'],value_state='not_obtained'if c.get('operation')=='clear'else'known',content_nature='source_statement',source_ids=[c['source_id']],claim_ids=[],locator=c['locator'],verification_state='automated_evidence_checked_not_expert'if c.get('reviewer_kind','human')!='human'else'research_editor_checked_not_expert',visibility='internal_research',valid_as_of=None,evidence={k:c[k]for k in ['source_id','source_sha256','chunk_id','chunks_path','chunks_sha256','quote','quote_sha256','source_read_scope','ingest_revision']},reviewer=c['reviewer'],review_reason=c['review_reason'],object=c['object'],unit=c['unit'],conditions=c['conditions'],limitations=c['limitations'])
+    if before and before.get('value')==c['value']and before.get('value_state')=='known':
+     newcell=r['cells'][c['field']];newcell['source_ids']=sorted(set(before.get('source_ids',[])+newcell['source_ids']))
+     supporting=before.get('supporting_evidence',[])+([before['evidence']]if before.get('evidence')else [])
+     newcell['supporting_evidence']=list({digest(e):e for e in supporting if e!=newcell['evidence']}.values())
    else:
     before=None;data.setdefault('interpretations',[]).append(copy.deepcopy(c))
    changes.append(dict(operation=c.get('operation','set'),candidate_id=c['id'],record_id=c['record_id'],field=c['field'],before=before,after=c['value'],source_id=c['source_id'],chunk_id=c['chunk_id'],quote=c['quote'],content_nature=c['content_nature'],reviewer=c['reviewer']))

@@ -14,7 +14,7 @@ class AutomationTests(unittest.TestCase):
   status,data,_=self.request('/api/automation?project=demo-01');self.assertEqual(status,200);return data
  def test_historical_heartbeat_does_not_mean_running(self):
   pp.save(self.lib/'监听状态.json',dict(heartbeat=pp.now()))
-  d=self.read();self.assertEqual(d['state'],'stopped');self.assertFalse(d['semantic_agent_connected']);self.assertFalse(d['automatic_publication'])
+  d=self.read();self.assertEqual(d['state'],'stopped');self.assertFalse(d['semantic_agent_connected']);self.assertTrue(d['automatic_publication']);self.assertFalse(d['steward']['embedded_model_connected'])
  def test_live_states(self):
   store=self.srv.store;store.watch_thread=SimpleNamespace(is_alive=lambda:True)
   self.assertEqual(self.read()['state'],'starting')
@@ -28,5 +28,5 @@ class AutomationTests(unittest.TestCase):
  def test_unknown_project_and_path_rejected(self):
   for pid in ['missing','../demo-01']:self.assertEqual(self.request('/api/automation?project='+pid)[0],400)
  def test_ui_explains_capability_boundary(self):
-  html=self.request('/')[1].decode();self.assertIn('自动整理状态',html);self.assertIn('深度整理 Agent 尚未接入',html);self.assertIn('id="wf-extract"',html)
+  html=self.request('/')[1].decode();self.assertIn('自动整理状态',html);self.assertIn('后台尚未接入独立推理模型',html);self.assertIn('id="wf-extract"',html)
 if __name__=='__main__':unittest.main()

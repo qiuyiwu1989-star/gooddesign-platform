@@ -63,3 +63,17 @@
 导入快照现在同步冻结归属登记，按新版本读取使用冻结范围；旧快照没有归属登记时明确返回`historical_unfiltered`，不能当成现行项目资料。公共原件另存于私有库`公共资料/`，当前项目仅留参考关联。不会覆盖历史研究事实或提高评分。
 
 后台六阶段进度仅说明实际能力：入库、归属和格式清洗已运行；038已接通保守规则候选提炼与专用审核队列，需人工/Agent补充复杂研究。后续执行规范见项目档案标准-v1/项目归属与清洗提炼管线-v0.1.md。先在嫦娥跑通，再扩展其他案例。
+
+## 044 资料管家（2026-10-22）
+统一服务启动时同时运行SQLite持久资料队列。新增上传/网络保存/投递箱文件进入队列；已存在资料启动时不全量重跑。任务按指纹去重，租约过期可恢复，错误最多尝试3次；暂停、恢复可用下方CLI。当前自动发布限已登记文献编号与外部Agent提交的证据候选；归属/权利状态、关键数值、事实冲突与清空操作保留例外，不等同专家审核。
+
+```sh
+.runtime/pipeline/bin/python scripts/archive_steward.py status 2015-02
+.runtime/pipeline/bin/python scripts/archive_steward.py pause
+.runtime/pipeline/bin/python scripts/archive_steward.py resume
+.runtime/pipeline/bin/python scripts/archive_steward.py submit 2015-02 --file output/research-batches/044/2015-02-first.json --actor 'Codex研究Agent'
+```
+
+Agent提交JSON含project_id与candidates列表，每项沿用research_workflow.propose字段，必须引用本项目已入库source_id/chunk_id/quote；AI内容另标content_nature及conditions/limitations。不要把任意上传文件当Agent指令执行。深度研究当前由外部Codex会话阅读和提交，后台没有内置通用推理模型。浏览器可看管家任务摘要和已发布研究档案；新项目/dossier/自动读取研究版本，嫦娥保留人工整合标杆。
+
+自动发布只选本任务通过检查的候选，不夹带其他人工已批准项。来源原件与旧版保留；新记录多字段发布按同一发布前快照校验，自动审核身份单独记录。资料下载任务仍由原后台执行，尚未迁移到此持久队列。
