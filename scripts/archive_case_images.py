@@ -50,8 +50,23 @@ def download(pair):
   return dict(data=data,ext={'JPEG':'.jpg','PNG':'.png','WEBP':'.webp','GIF':'.gif','TIFF':'.tif','BMP':'.bmp'}[fmt],width=w,height=h,kind='web_image',locations=[dict(v,final_image_url=final)for v in locations])
  except Exception as exc:return dict(error=url,reason=str(exc)[:500],locations=locations)
 
+def existing_assets(p,old):
+ sources=pp.state(p)['sources'];assets={}
+ for item in old['items']:
+  row=dict(item);meta=sources.get(row.get('library_source_id'),{});digest=row.get('sha256')or meta.get('sha256')
+  if not digest or(meta and digest!=meta.get('sha256')):raise ValueError('既有图片清单与来源身份不符')
+  row['sha256']=digest
+  for key in ('original','bytes'):
+   if key in meta:row.setdefault(key,meta[key])
+  row['locations']=[dict(loc)for loc in row.get('locations',[])]
+  if digest in assets:
+   for loc in row['locations']:
+    if loc not in assets[digest]['locations']:assets[digest]['locations'].append(loc)
+  else:assets[digest]=row
+ return assets
+
 def run(pid='2025-00',source_ids=None):
- p=pp.project(pp.LIB,pid);folder=p/'图片素材';folder.mkdir(exist_ok=True);manifestfile=folder/'图片清单.json';old=pp.load(manifestfile)if manifestfile.exists()else dict(items=[]);assets={x['sha256']:x for x in old['items']};sources=list(ownership.select(p,pp.state(p)['sources']).values());failures=[];skipped=[]
+ p=pp.project(pp.LIB,pid);folder=p/'图片素材';folder.mkdir(exist_ok=True);manifestfile=folder/'图片清单.json';old=pp.load(manifestfile)if manifestfile.exists()else dict(items=[]);assets=existing_assets(p,old);sources=list(ownership.select(p,pp.state(p)['sources']).values());failures=[];skipped=[]
  if source_ids is not None:sources=[x for x in sources if x['id']in source_ids]
  def preserve(data,ext,width,height,kind,locations):
   digest=pp.sha(data)

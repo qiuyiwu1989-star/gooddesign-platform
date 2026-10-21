@@ -61,6 +61,10 @@ class HandoffTests(unittest.TestCase):
   row=pp.load(p/'资料库/来源目录.json');self.assertEqual(len(row['items']),1);o=row['items'][0]['origin'];self.assertEqual(o['selection_text'],'满足试验需求');self.assertEqual(o['parent_source_id'],self.sid);self.assertEqual(o['parent_delivery'],'metadata_only_when_shared');self.assertFalse((p/'资料库/来源'/self.sid).exists())
   o['selection_text']='伪造原文';pp.save(p/'资料库/来源目录.json',row);self.reseal(p)
   with self.assertRaisesRegex(ValueError,'选录原文边界'):check(p)
+ def test_media_index_keeps_only_current_project_sources(self):
+  self.publish();pp.save(self.p/'图片素材/图片清单.json',dict(items=[dict(library_source_id=self.sid,title='本项目测试资料'),dict(library_source_id='outside',title='其他项目')]))
+  p=Path(self.build()['folder']);media=pp.load(p/'资料库/图片索引.json');self.assertEqual(len(media['items']),1);self.assertEqual(media['items'][0]['library_source_id'],self.sid);check(p);media['items'].append(dict(library_source_id='outside'));pp.save(p/'资料库/图片索引.json',media);self.reseal(p)
+  with self.assertRaisesRegex(ValueError,'图片索引'):check(p)
  def test_path_traversal_manifest_rejected(self):
   self.publish();p=Path(self.build()['folder']);m=pp.load(p/'manifest.json');m['files']['../outside']='bad';pp.save(p/'manifest.json',m)
   with self.assertRaises(ValueError):check(p)

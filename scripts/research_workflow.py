@@ -79,6 +79,9 @@ def evidence(p,c):
  blocks=pp.load(pp.safe(p,x['chunks']))
  b=next((b for b in blocks if b['id']==c['chunk_id']),None)
  if not b or not c['quote']or c['quote']not in b['text']:raise ValueError('原文摘录必须存在于指定证据块，不能改写原文')
+ if x.get('origin',{}).get('kind')=='project_json_row':
+  from source_json_row import validate as validate_json_row
+  validate_json_row(p,x)
  if x.get('origin',{}).get('kind')=='project_source_excerpt':
   from source_excerpt import selected_text
   if c['quote']not in selected_text(p,x):raise ValueError('不得把选录标题、用途或编者说明当作原文证据')

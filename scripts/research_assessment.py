@@ -22,6 +22,9 @@ def audit(p,data):
    if pp.sha(path.read_bytes())!=e['chunks_sha256']:raise ValueError('冻结证据块指纹不符')
    b=next((b for b in pp.load(path)if b['id']==e['chunk_id']),None)
    if not b or not e['quote']or e['quote']not in b['text']or pp.sha(e['quote'].encode())!=e['quote_sha256']:raise ValueError('引文位置或指纹不符')
+   if x.get('origin',{}).get('kind')=='project_json_row':
+    from source_json_row import validate as validate_json_row
+    validate_json_row(p,x)
    if x.get('origin',{}).get('kind')=='project_source_excerpt':
     from source_excerpt import selected_text
     if e['quote']not in selected_text(p,x):raise ValueError('选录引文超出父件范围')

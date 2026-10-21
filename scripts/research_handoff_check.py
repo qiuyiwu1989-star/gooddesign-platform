@@ -39,7 +39,17 @@ def check(root):
  for x in sources:
   if x['ownership']['scope']!='project':raise ValueError('混入非项目原件')
   if sha(safe(root,'资料库/'+x['original']))!=x['sha256']:raise ValueError('原件身份不符')
+  if x.get('origin',{}).get('kind')=='project_json_row':
+   o=x['origin'];row=load(safe(root,'资料库/'+x['original']));digest=hashlib.sha256(json.dumps(row,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+   if digest!=o.get('row_sha256')or row.get('id')!=o.get('row_id')or o.get('parent_pointer')!='data.rows':raise ValueError('单行目录身份不符')
   for key in ('document','chunks'):safe(root,'资料库/'+x[key]).read_bytes()
+ media=root/'资料库/图片索引.json'
+ if media.exists():
+  catalog=load(media)
+  if catalog['project_id']!=pid:raise ValueError('图片索引项目不符')
+  for item in catalog['items']:
+   x=byid.get(item.get('library_source_id'))
+   if not x or(item.get('sha256')and item['sha256']!=x['sha256'])or(item.get('original')and item['original']!=x['original']):raise ValueError('图片索引混入范围外或错误原件')
  count=0
  for e in evidence_nodes(data):
   x=byid.get(e['source_id'])

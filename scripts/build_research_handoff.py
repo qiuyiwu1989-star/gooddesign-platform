@@ -27,7 +27,10 @@ def build(lib,pid,out,revision=None):
    rows=[]
    for sid,x in sorted(active.items()):
     row={k:x[k]for k in ('id','title','sha256','bytes','original','document','chunks','status','read_scope','review_status','parser_version')if k in x};row['ownership']=assignment(p,sid,state['sources'],reg)
-    origin=x.get('origin',{});row['origin']={k:origin[k]for k in ('kind','url','requested_url','parent_source_id','page','canonical_source_id','parent_source_sha256','parent_chunks_path','parent_chunks_sha256','parent_chunk_id','parent_locator','selection_start','selection_end','selection_sha256','scope_reason','selected_by','parent_asset_scope')if k in origin}
+    origin=x.get('origin',{});row['origin']={k:origin[k]for k in ('kind','url','requested_url','parent_source_id','page','canonical_source_id','parent_source_sha256','parent_chunks_path','parent_chunks_sha256','parent_chunk_id','parent_locator','selection_start','selection_end','selection_sha256','scope_reason','selected_by','parent_asset_scope','parent_pointer','row_id','row_sha256')if k in origin}
+    if origin.get('kind')=='project_json_row':
+     from source_json_row import validate as validate_json_row
+     validate_json_row(p,x);row['origin']['parent_delivery']='metadata_only_when_shared'
     if origin.get('kind')=='project_source_excerpt':
      from source_excerpt import selected_text
      row['origin']['selection_text']=selected_text(p,x)
@@ -41,6 +44,10 @@ def build(lib,pid,out,revision=None):
     if pp.sha(src.read_bytes())!=e['chunks_sha256']:raise ValueError('冻结证据已变化: '+rel)
     copy(src,'资料库/'+rel)
    pp.save(stage/'资料库/来源目录.json',dict(project_id=pid,ownership_revision=reg['version'],scope='current_project_owned_assets',ingest_revision=state['revision'],items=rows))
+   media=p/'图片素材/图片清单.json'
+   if media.exists():
+    items=[x for x in pp.load(media)['items']if x.get('library_source_id')in active]
+    pp.save(stage/'资料库/图片索引.json',dict(project_id=pid,scope='current_project_owned_assets',items=items,limitations=['原件保存/视觉整理不等于工程核验或公开再发布授权；照片日期和具体版本可能待核。']))
    guide_version=None
    if notes['status']=='available':
     guide_version=notes['notes']['version'];nf=rn.folder(p,revision)/guide_version
