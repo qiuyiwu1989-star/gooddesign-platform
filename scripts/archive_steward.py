@@ -9,7 +9,7 @@ import project_pipeline as pp
 import project_ownership as own
 import research_workflow as rw
 import steward_scope
-VERSION='steward-0.5.3'
+VERSION='steward-0.5.4'
 AGENT_METHOD='agent_evidence_extract_v1'
 PROTECTED=rw.RESTRICTED|{'completion_org_ids','completion_person_ids','award_list_confirmed','review_status'}
 class Steward:
@@ -228,14 +228,24 @@ class Steward:
  def reconcile_identifiers(self,pid):
   closed=rw.close_duplicate_identifiers(self.lib,pid);w=rw.current(pp.project(self.lib,pid))
   resolved={c['id']:c['resolution']for c in w['candidates']if c['status']=='rejected'and c.get('reviewer_kind')=='rule'and c.get('resolution',{}).get('kind')=='duplicate_identifier'}
+  # Explicit reviewed rejections resolve extraction exceptions, never approve content.
+  p=pp.project(self.lib,pid)
+  for c in w['candidates']:
+   if c['status']!='rejected'or c.get('reviewer_kind')not in ('human','agent')or not c.get('review_reason')or not c.get('reviewed_at'):continue
+   try:
+    x,_=rw.evidence(p,c)
+    resolved[c['id']]=dict(kind='reviewed_extraction_rejection',candidate_id=c['id'],source_id=c['source_id'],source_sha256=x['sha256'],reviewer=c.get('reviewer'),reviewer_kind=c['reviewer_kind'],reason=c['review_reason'],reviewed_at=c['reviewed_at'])
+   except (ValueError,KeyError,OSError):continue
   researched={c['source_id']for c in w['candidates']if c['status']=='published'and c.get('extraction_method')==AGENT_METHOD}
   with self.connect()as db:
    rows=[dict(r)for r in db.execute("SELECT * FROM tasks WHERE project=? AND status='needs_attention'",(pid,))]
    for row in rows:
     payload=json.loads(row['payload']);result=json.loads(row['result'])if row['result']else{};ids={x['candidate_id']for x in result.get('exceptions',[])}
     if payload['kind']!='source'or not ids or not ids<=resolved.keys():continue
+    explicit=[resolved[cid]for cid in ids if resolved[cid]['kind']=='reviewed_extraction_rejection']
+    if any(proof['source_id']!=payload.get('source_id')or proof['source_sha256']!=payload.get('source_sha256')for proof in explicit):continue
     result['previous_exceptions']=result['exceptions'];result['exceptions']=[];result['identifier_resolution']={cid:resolved[cid]for cid in sorted(ids)}
-    result['note']='重复编号线索已归入标准文献记录；原候选和证据保留，文件核读范围不变'
+    result['note']='本轮提取异常已有明确处理记录；原候选、审核理由和证据保留，不代表全文全部提取或专家审核'
     status='completed'if payload['source_id']in researched else'awaiting_agent'
     changed=db.execute("UPDATE tasks SET status=?,result=?,finished=? WHERE id=? AND status='needs_attention'",(status,json.dumps(result,ensure_ascii=False),pp.now(),row['id'])).rowcount
     if changed:db.execute('INSERT INTO controls(at,actor,action,project,task_id,previous)VALUES(?,?,?,?,?,?)',(pp.now(),'资料管家/编号去重','identifier_resolution',pid,row['id'],json.dumps(row,ensure_ascii=False)))

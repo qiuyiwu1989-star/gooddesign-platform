@@ -149,6 +149,13 @@ def indexed_identifier(target,field,data):
   expected_field='grant_number'if number.endswith(('B','U','S'))else'publication_number'
   return number if field==expected_field else None
  return None
+def doi_tokens(text):
+ """Take a whole printed DOI token or none; never admit a valid-looking prefix."""
+ for m in re.finditer(r'(?:DOI|doi)\s*[:：]\s*(10\.\d{4,9}/[^\s<>"]+)',text):
+  value=m.group(1).rstrip('.,，。')
+  # Preserve printed en-dash for provenance; unfamiliar suffix characters need Agent review.
+  if re.fullmatch(r'10\.\d{4,9}/[A-Za-z0-9._;/()+:\-–]+',value):yield value,m.group(0)
+
 def extract(lib,pid,sid,actor):
  """Conservative rules: bibliographic identifiers and verbatim abstract sections only."""
  with pp.lock(lib):
@@ -166,9 +173,9 @@ def extract(lib,pid,sid,actor):
   for b in blocks[:4]:
    text=b['text']
    if entity=='paper':
-    for m in re.finditer(r'(?:DOI|doi)\s*[:：]\s*(10\.\d{4,9}/[A-Za-z0-9._;/()\-]+)',text):
-     value=m.group(1).rstrip('.');expected=indexed_identifier(target,'doi',data)
-     if not expected or value==expected:add('doi',value,b,m.group(0))
+    for value,quote in doi_tokens(text):
+     expected=indexed_identifier(target,'doi',data)
+     if not expected or value==expected:add('doi',value,b,quote)
     if target or 'DOI' in text or 'doi' in text:
      m=re.search(r'摘\s*要\s*[:：]([\s\S]+?)(?:关键词|关\s*键\s*词)',text)
      if m:
