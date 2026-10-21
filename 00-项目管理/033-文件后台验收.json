@@ -1,0 +1,68 @@
+{
+  "task": "033",
+  "version": "file-admin-0.1",
+  "date": "2026-10-21",
+  "local_url": "http://127.0.0.1:8776/?project=2025-00",
+  "files": 48,
+  "source_notes": 23,
+  "paper_assets": 4,
+  "full_text_pdf": 3,
+  "full_text_html": 1,
+  "needs_ocr": 1,
+  "canonical_sources_with_saved_response_or_paper": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23"
+  ],
+  "job_status_counts": {
+    "needs_attention": 1,
+    "completed": 19,
+    "failed": 2
+  },
+  "tests": {
+    "backend": 7,
+    "pipeline": 14,
+    "dossier": 53,
+    "browser": 21
+  },
+  "checks": [
+    "48_original_sha256",
+    "48_chunk_count_and_readable",
+    "47_pinned_chunk_sha256",
+    "23_source_coverage",
+    "private_asset_download",
+    "pdf_page_render",
+    "upload_drop_url_retry",
+    "csrf_origin_host_paths",
+    "public_export_unchanged"
+  ],
+  "limits": [
+    "本机单用户，需进程及硬盘在线",
+    "下载及机器转换不等于研究核读",
+    "A02七页扫描PDF尚未OCR",
+    "网页外链图像未全部镜像",
+    "早期历史JSON来源未记录分块指纹，检查分块数量及原件指纹，不追改旧元信息",
+    "浏览器网络表单在隔离库用固定模拟URL；真实网络归档另有任务日志"
+  ],
+  "production_deployed": false
+}

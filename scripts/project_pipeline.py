@@ -203,7 +203,12 @@ def fetch(lib,inbox,pid,url):
   if len(data)>MAX_BYTES:raise ValueError('响应超过30MB')
   content_type=response.headers.get_content_type();final=response.url
   ext={'text/html':'.html','application/pdf':'.pdf','application/json':'.json','text/plain':'.txt'}.get(content_type)
-  if not ext:raise ValueError('未支持的网络响应类型：'+content_type)
+  if not ext:
+   # Publishers often deliver PDF downloads as application/octet-stream. Preserve other formats too.
+   if data.startswith(b'%PDF-'):ext='.pdf'
+   else:
+    candidate=Path(urllib.parse.urlsplit(final).path).suffix.lower()
+    ext=candidate if candidate in ['.docx','.doc','.xlsx','.xls','.pptx','.ppt','.csv','.md','.txt','.png','.jpg','.jpeg','.webp','.xml','.zip']else '.bin'
   charset=response.headers.get_content_charset()
  target=inbox/pid/('web-'+sha(data)[:16]+ext);target.parent.mkdir(parents=True,exist_ok=True)
  target.write_bytes(data)
