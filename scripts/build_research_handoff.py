@@ -27,7 +27,11 @@ def build(lib,pid,out,revision=None):
    rows=[]
    for sid,x in sorted(active.items()):
     row={k:x[k]for k in ('id','title','sha256','bytes','original','document','chunks','status','read_scope','review_status','parser_version')if k in x};row['ownership']=assignment(p,sid,state['sources'],reg)
-    origin=x.get('origin',{});row['origin']={k:origin[k]for k in ('kind','url','requested_url','parent_source_id','page','canonical_source_id')if k in origin}
+    origin=x.get('origin',{});row['origin']={k:origin[k]for k in ('kind','url','requested_url','parent_source_id','page','canonical_source_id','parent_source_sha256','parent_chunks_path','parent_chunks_sha256','parent_chunk_id','parent_locator','selection_start','selection_end','selection_sha256','scope_reason','selected_by','parent_asset_scope')if k in origin}
+    if origin.get('kind')=='project_source_excerpt':
+     from source_excerpt import selected_text
+     row['origin']['selection_text']=selected_text(p,x)
+     row['origin']['parent_delivery']='metadata_only_when_shared'
     for key in ('original','document','chunks'):copy(pp.safe(p,x[key]),'资料库/'+x[key])
     if sha(safe(stage,'资料库/'+x['original']))!=x['sha256']:raise ValueError('来源原件指纹变化')
     if x.get('ocr'):copy(pp.safe(p,x['ocr']['path']),'资料库/'+x['ocr']['path'])
@@ -75,6 +79,8 @@ README='''# 项目研究档案 · 应用测试包
 read.py先校验包；默认返回概览和导读。按记录读取字段及证据，再按source读取来源目录和文本分块。原件路径在资料库/来源目录.json中，HTML原件须作为资料审阅，不能当应用脚本执行。AI解读不应回写成项目事实，目标应用适用性仍须验证。
 
 ## 版本与完整性
+
+项目限定选录在来源目录保留父件页码、指纹和选录原文。shared父件不随项目包交付；只能在后台公共参考中查看完整父件，包内无法独立重验其完整字节。选录的标题、用途与编者说明不作为事实证据。
 
 本包只含选定研究快照、该版导读、当前项目归属原件和冻结证据块。历史对照只含前序manifest，不能证明完整历史链。包内manifest检查意外损坏，不是数字签名，也不是可信来源认证；ZIP的SHA256在同名旁文件。不得把收集数、有值字段或自动证据检查等同于完整研究、专家审核、专利授权意见。
 

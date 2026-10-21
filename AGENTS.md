@@ -111,3 +111,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 044g：RULE_METHOD为conservative_rules_v2_identity，indexed_document识别主/关联格式；indexed_identifier只允许声明或已发布的本件编号。Steward0.5.0严格关闭已发布同值旧DOC占位，reviewer_kind=rule和resolution保存证明版本，不删除/升分，真实差异/人工决定不动。已关闭7项、仍6项其他编号待核。单项目维护失败写settings并提示，不挡其他队列。当前8776会话79836，管家恢复；两例事实版本/导读未变。后续优先核对原始好设计奖范围并构建通用交付包。
 
 044h研究交付：build_research_handoff.py导出任意已有研究项目的固定版本+绑定导读，归属只允许project，冻结证据块原字节留存；research_handoff_check.py与read示例离线运行。只有单快照和前序manifest身份对照，不称历史全链；Hash防损坏非签名或事实认证。阶段包/原件全部私有output/handoff。新研究深挖继续后须重建包，不将旧包当最新版本。
+
+044i限定选录：source_excerpt.py创建共享原件的项目连续原文选录，保留父件/冻结块/选择范围；research_workflow.evidence沿父件复核，禁止标题/用途/编者说明成为事实引文，嵌套选录同样限制。交付保存selection_text及父件元数据；shared父原件不随包，不能声称离线包已完整核验父件。Steward0.5.1。两例当前蛟龙research000005、复兴000007，各导读0.1.0，源背景/算法/专利/正式获奖名单的边界以044执行文档末尾为准；质量仍未评。

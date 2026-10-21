@@ -45,6 +45,10 @@ def check(root):
   x=byid.get(e['source_id'])
   if not x:raise ValueError('缺少引用来源: '+e['source_id'])
   if e['source_sha256']!=x['sha256']:raise ValueError('引用原件身份不符')
+  o=x.get('origin',{})
+  if o.get('kind')=='project_source_excerpt':
+   text=o.get('selection_text','')
+   if not text or hashlib.sha256(text.encode()).hexdigest()!=o.get('selection_sha256')or e['quote']not in text:raise ValueError('选录原文边界不符')
   chunks=safe(root,'资料库/'+e['chunks_path'])
   if sha(chunks)!=e['chunks_sha256']:raise ValueError('引用证据块指纹不符')
   block=next((b for b in load(chunks)if b['id']==e['chunk_id']),None)

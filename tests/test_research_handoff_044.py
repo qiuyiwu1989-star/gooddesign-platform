@@ -54,6 +54,13 @@ class HandoffTests(unittest.TestCase):
  def test_wrong_ai_nature_rejected_even_resealed(self):
   c=self.candidate(field='findings',value='应用设想',content_nature='ai_hypothesis',conditions='需要试验',limitations='未验证');self.approve(c);rw.publish(self.lib,'sample','tester','AI试验');p=Path(self.build()['folder']);d=pp.load(p/'研究版本/档案.json');d['interpretations'][0]['content_nature']='source_statement';pp.save(p/'研究版本/档案.json',d);pub=pp.load(p/'研究版本/manifest.json');pub['files']['档案.json']=sha(p/'研究版本/档案.json');pp.save(p/'研究版本/manifest.json',pub);self.reseal(p)
   with self.assertRaisesRegex(ValueError,'AI内容'):check(p)
+ def test_excerpt_boundary_and_parent_metadata_in_portable_package(self):
+  import source_excerpt as ex
+  pp.save(self.p/'资料归属.json',dict(version=1,assignments={self.sid:dict(scope='shared')},url_rules={}))
+  a=ex.create(self.lib,'sample',self.sid,'B0001','满足试验需求','测试选录','项目事实，不取其他项目内容','Agent');sid=a['source_id'];x=pp.state(self.p)['sources'][sid];b=pp.load(self.p/x['chunks'])[0];args=dict(entity='paper',record_id='A01',field='findings',value='满足试验需求',source_id=sid,chunk_id=b['id'],quote='满足试验需求');c=rw.propose(self.lib,'sample',args,'Agent');self.approve(c);rw.publish(self.lib,'sample','tester','选录');p=Path(self.build()['folder']);check(p)
+  row=pp.load(p/'资料库/来源目录.json');self.assertEqual(len(row['items']),1);o=row['items'][0]['origin'];self.assertEqual(o['selection_text'],'满足试验需求');self.assertEqual(o['parent_source_id'],self.sid);self.assertEqual(o['parent_delivery'],'metadata_only_when_shared');self.assertFalse((p/'资料库/来源'/self.sid).exists())
+  o['selection_text']='伪造原文';pp.save(p/'资料库/来源目录.json',row);self.reseal(p)
+  with self.assertRaisesRegex(ValueError,'选录原文边界'):check(p)
  def test_path_traversal_manifest_rejected(self):
   self.publish();p=Path(self.build()['folder']);m=pp.load(p/'manifest.json');m['files']['../outside']='bad';pp.save(p/'manifest.json',m)
   with self.assertRaises(ValueError):check(p)
