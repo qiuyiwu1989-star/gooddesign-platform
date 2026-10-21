@@ -85,3 +85,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 037私有交接：build_case_handoff.py按当前归属导出output/handoff/（忽略Git）；check_case_handoff.py验证完整性/引用/读取。交付包标准只读示例非MCP服务；割胶图谱另列应用试验，公共/移交/待确认原件不入包；保留必要外部参考题录。完整历史snapshot未交付，不据随包manifest宣称历史链可验。
 
 038管线v1：先读项目档案标准-v1/可运行档案管线-v1.md。research_workflow.py负责OCR/证据候选/审核/不可覆盖发布，file_admin统一投递监听；archive_mcp.py为已实现本机stdio只读八工具，v0.1草案保留。原人工底稿0.6.1不覆盖；管线research-000001为独立序列，复杂字段可人工/Agent提交，规则覆盖有限，OCR不升格核读，发布不升55分。依赖固定在requirements-research-pipeline.txt和外置盘.runtime；旧启动入口转统一脚本。
+
+039方法库：04-知识库/创新方法库为v0.1结构规范与空目录（0方法）；方法卡区分原典/改编/AI解释，输入、步骤、知识调用、产物、边界及评估逐项定义。属于引擎资源，保留三板块架构；未接方法MCP/自动调度，应用运行记录不混入源项目事实。
