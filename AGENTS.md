@@ -87,3 +87,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 038管线v1：先读项目档案标准-v1/可运行档案管线-v1.md。research_workflow.py负责OCR/证据候选/审核/不可覆盖发布，file_admin统一投递监听；archive_mcp.py为已实现本机stdio只读八工具，v0.1草案保留。原人工底稿0.6.1不覆盖；管线research-000001为独立序列，复杂字段可人工/Agent提交，规则覆盖有限，OCR不升格核读，发布不升55分。依赖固定在requirements-research-pipeline.txt和外置盘.runtime；旧启动入口转统一脚本。
 
 039方法库：04-知识库/创新方法库为v0.1结构规范与空目录（0方法）；方法卡区分原典/改编/AI解释，输入、步骤、知识调用、产物、边界及评估逐项定义。属于引擎资源，保留三板块架构；未接方法MCP/自动调度，应用运行记录不混入源项目事实。
+
+040三方法：创新方法库已登记IM-PD/FA/CA-001三张1.0.0平台改编卡、16步骤；innovation_methods.py分层读/校验，run_method_case_demo.py做固定模拟需求SDK检索与本轮编写分析的重放，不冒充通用LLM推理或研发团队实际方法史。/methods/四视图及固定重放，方法MCP新增三工具合计11；应用记录在忽略的output/innovation-runs。结构/证据/交接/查询指纹与硬约束可校验，企业目标效果仍未验证。

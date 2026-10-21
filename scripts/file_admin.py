@@ -1,6 +1,6 @@
 # coding: utf-8
 """033: loopback-only private source file manager. No public deployment."""
-import argparse,concurrent.futures,json,mimetypes,os,secrets,threading,time,urllib.parse
+import argparse,concurrent.futures,json,mimetypes,os,secrets,threading,time,urllib.parse,subprocess
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 import project_pipeline as pipe
@@ -26,6 +26,11 @@ class Store:
   try:
    if j['kind']in ('ocr','extract','process'):
     result=getattr(research,j['kind'])(self.lib,j['project_id'],j['args']['source_id'],j['args'].get('actor','后台操作员'))
+   elif j['kind']=='method_demo':
+    if j['project_id']!='2025-00':raise ValueError('当前固定示例仅使用嫦娥项目')
+    execution=subprocess.run([str(ROOT/'.runtime/pipeline/bin/python'),str(ROOT/'scripts/run_method_case_demo.py')],cwd=str(ROOT),capture_output=True,text=True,timeout=180)
+    if execution.returncode:raise ValueError('双库示例运行失败，请检查版本/证据或查看脚本日志：'+execution.stderr[-900:])
+    result=json.loads(execution.stdout)
    elif j['kind']=='publish':result=research.publish(self.lib,j['project_id'],j['args']['actor'],j['args']['reason'])
    else:
     with pipe.lock(self.lib):
@@ -131,6 +136,21 @@ class Handler(BaseHTTPRequestHandler):
    if u.path=='/favicon.ico':self.send(204,b'','image/x-icon');return
    if u.path in ('/','/app.js','/style.css','/workflow.js','/workflow.css'):
     name={'/':'index.html','/app.js':'app.js','/style.css':'style.css','/workflow.js':'workflow.js','/workflow.css':'workflow.css'}[u.path];p=ROOT/'extensions/file-admin'/name;self.send(200,p.read_bytes(),mimetypes.guess_type(name)[0]+'; charset=utf-8');return
+   if u.path.startswith('/methods/'):
+    import innovation_methods as methods
+    run_id=one('run','latest');data=methods.read_run(run_id,'full');folder=methods.RUNS/data['run_id']
+    name={'/methods/':'联动报告.html','/methods/style.css':'style.css','/methods/app.js':'app.js'}.get(u.path)
+    if not name:raise ValueError('方法页面不存在')
+    path=folder/name;self.send(200,path.read_bytes(),mimetypes.guess_type(name)[0]+'; charset=utf-8');return
+   if u.path=='/api/methods':
+    import innovation_methods as methods
+    self.send(200,methods.search_methods(one('query'),int(one('offset','0')),int(one('limit','10'))));return
+   if u.path=='/api/method':
+    import innovation_methods as methods
+    self.send(200,methods.read_method(one('method_id'),one('version')or None,one('level','overview')));return
+   if u.path=='/api/innovation-run':
+    import innovation_methods as methods
+    self.send(200,methods.read_run(one('run','latest'),one('section','overview')));return
    if u.path=='/api/projects':self.send(200,dict(projects=pipe.load(store.lib/'项目索引.json')['projects'],token=store.token));return
    if u.path=='/api/research':self.send(200,research.status(store.lib,one('project','2025-00')));return
    if u.path=='/api/research-document':
@@ -188,6 +208,9 @@ class Handler(BaseHTTPRequestHandler):
    args=json.loads(data)
    if u.path=='/api/fetch':
     url=args.get('url','');pipe.public_url(url);self.send(202,store.submit(pid,'fetch',url=url));return
+   if u.path=='/api/method-demo':
+    if pid!='2025-00':raise ValueError('当前示例固定为嫦娥知识迁移模拟任务')
+    self.send(202,store.submit(pid,'method_demo',actor=args.get('actor','本地用户重放固定示例')));return
    if u.path in ('/api/ocr','/api/extract','/api/process'):
     research.source(pipe.project(store.lib,pid),args['source_id']);self.send(202,store.submit(pid,u.path.rsplit('/',1)[1],source_id=args['source_id'],actor=args.get('actor','后台操作员')));return
    if u.path=='/api/candidate':self.send(201,research.propose(store.lib,pid,args['candidate'],args['actor']));return

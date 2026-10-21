@@ -1,0 +1,39 @@
+{
+  "task_id": "DEMO-GRANULAR-001",
+  "version": "1.0.0",
+  "scenario_type": "simulated",
+  "authored_by": "Codex 为双库联动编写的模拟任务，不是企业访谈或订单",
+  "actor": "工业颗粒材料分层取样设备研发团队（模拟）",
+  "object": "具有层次差异的颗粒材料（具体介质待确认）",
+  "desired_outcome": "采集足够的样品，尽量保持原有层序，并完成稳定的收集与封装流程",
+  "boundary": "取样头、样品收集、入口保护、封口及转送接口；不设计整厂生产线",
+  "existing_system": null,
+  "observed_failures": [],
+  "target_parameters": {
+    "particle_size_range": null,
+    "cohesion_and_moisture": null,
+    "temperature_and_chemical_compatibility": null,
+    "layer_disturbance_limit": null,
+    "minimum_sample_amount": null,
+    "sampling_depth": null,
+    "cycle_time_limit": null,
+    "power_space_and_budget": null,
+    "cleaning_and_cross_contamination_limit": null
+  },
+  "constraints": {
+    "flexible_contact_allowed": null,
+    "load_sensing_allowed": null,
+    "interface_redesign_allowed": null
+  },
+  "confirmed_customer_requirements": [],
+  "success_metrics": [
+    {"name": "层序偏移/混合程度", "threshold": null, "confirmation_owner": "待企业确认"},
+    {"name": "回收量或取芯率", "threshold": null, "confirmation_owner": "待企业确认"},
+    {"name": "完整作业链成功率与失效分类", "threshold": null, "confirmation_owner": "待企业确认"},
+    {"name": "堵塞、泄漏与样品偏倚", "threshold": null, "confirmation_owner": "待企业确认"}
+  ],
+  "source_project_id": "2025-00",
+  "source_publication_revision": "research-000001",
+  "allowed_output": "问题重构、功能模型、条件性方案方向、追问和对照验证计划",
+  "forbidden_claims": ["已解决企业问题", "已确定最优方案", "未测量的提升比例", "可直接使用月球采样参数", "专利可自由实施", "嫦娥团队实际使用这三种方法"]
+}

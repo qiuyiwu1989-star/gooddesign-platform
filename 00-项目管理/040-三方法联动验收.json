@@ -1,0 +1,208 @@
+{
+  "task": "040",
+  "run_id": "RUN-20261021T055356-678a7d",
+  "source_case": {
+    "project_id": "2025-00",
+    "publication_revision": "research-000001",
+    "publication_manifest_sha256": "dfb28444270a11d4516da0bc699d5b0a6d1bbd2e4ff3fb7cba7c3deb55138e77",
+    "ingest_revision": 206,
+    "scope": "current_project_only",
+    "record_ids": [
+      "NEED-01",
+      "TECH-01",
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "TEST-01",
+      "TEST-02",
+      "TEST-03",
+      "TEST-04",
+      "TEST-05",
+      "TEST-06",
+      "TEST-07",
+      "MET-01",
+      "MET-02",
+      "MET-03",
+      "MET-04",
+      "MET-05",
+      "MET-06",
+      "MET-07",
+      "MET-08",
+      "MET-09",
+      "MET-10",
+      "MET-11",
+      "MET-12",
+      "MET-13",
+      "MET-14",
+      "MET-15",
+      "MET-16",
+      "MET-17",
+      "MET-18",
+      "MET-19",
+      "MET-20"
+    ]
+  },
+  "method_versions": [
+    {
+      "method_id": "IM-PD-001",
+      "version": "1.0.0",
+      "sha256": "de0a2e7cae6b5aacc236b3f58ec8379e36d0c91a039000361563ccc0330671dc"
+    },
+    {
+      "method_id": "IM-FA-001",
+      "version": "1.0.0",
+      "sha256": "61d0aaf4eb09675f1b232d091b35f56c1e9dae109f5e2320debec77ecc9675cf"
+    },
+    {
+      "method_id": "IM-CA-001",
+      "version": "1.0.0",
+      "sha256": "c21829dd1ceaecc044ee009ba18e048182b094bd544d834f4d2b8185679f20e8"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "methods": 3,
+    "steps": 16,
+    "evidence_blocks": 6,
+    "decisions": "concept_hypotheses_only"
+  },
+  "mcp_calls": 27,
+  "outputs": {
+    "functions": 6,
+    "directions": 3,
+    "customer_questions": 5,
+    "validation_plans": 3,
+    "unknown_target_parameters": 9
+  },
+  "checks": {
+    "method_unit": 14,
+    "method_api_with_legacy": 12,
+    "old_research_pipeline": 13,
+    "old_ownership": 8,
+    "mcp_sdk": {
+      "protocol": "2025-11-25",
+      "tools": 11,
+      "checks": [
+        {
+          "tool": "gd_search_projects",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_project_overview",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_list_sources",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_resolve_citation",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_evidence",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_interpretations",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_version",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_evidence",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_resolve_citation",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_version",
+          "status": "ok"
+        },
+        {
+          "evaluation": "archive038.xml",
+          "verified_answers": 10,
+          "note": "确定性SDK检索验证；未声称LLM自主回答通过"
+        },
+        {
+          "tool": "gd_search_methods",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_method",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_read_innovation_run",
+          "status": "ok"
+        },
+        {
+          "tool": "gd_list_sources",
+          "status": "invalid_input_rejected"
+        },
+        {
+          "tool": "gd_read_evidence",
+          "status": "invalid_input_rejected"
+        },
+        {
+          "tool": "gd_read_records",
+          "status": "invalid_input_rejected"
+        }
+      ],
+      "scope": "真实SDK握手/工具调用；非LLM自主检索效果评估"
+    },
+    "browser": [
+      "三方法卡与步骤展开",
+      "六节点目标功能模型",
+      "建议→证据定位与原文查看",
+      "真实后台固定示例重放成功",
+      "390px移动端无横向溢出",
+      "浏览器console无错误"
+    ],
+    "package": {
+      "zip": "/Volumes/邱懿武/邱懿武认知大脑/好设计平台/output/handoff/三方法-嫦娥双库联动-RUN-20261021T055356-678a7d.zip",
+      "bytes": 129703,
+      "files": 17,
+      "run_id": "RUN-20261021T055356-678a7d",
+      "integrity": "CRC/SHA256 passed"
+    }
+  },
+  "boundaries": {
+    "mode": "sdk_retrieval_plus_authored_scenario_analysis",
+    "analysis_author": "Codex 本轮研究编写，脚本固定重放",
+    "general_llm_inference": false,
+    "retrieval_strategy": "指定案例/实体和证据分页读取，不声称语义推荐",
+    "protocol": "2025-11-25",
+    "source_case_method_history": "not_claimed"
+  },
+  "source_case_changed": false,
+  "quality_score_changed": false,
+  "source_case_expert_reviewed": false
+}

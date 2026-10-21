@@ -10,7 +10,7 @@ async def main():
  results=[]
  async with stdio_client(params)as(r,w):
   async with ClientSession(r,w)as session:
-   init=await session.initialize();listed=await session.list_tools();assert len(listed.tools)==8;assert all(t.annotations.readOnlyHint for t in listed.tools)
+   init=await session.initialize();listed=await session.list_tools();assert len(listed.tools)==11;assert all(t.annotations.readOnlyHint for t in listed.tools)
    async def call(name,args):
     value=await session.call_tool(name,args);assert not value.isError,(name,value);data=value.structuredContent
     if data is None:data=json.loads(value.content[0].text)
@@ -37,6 +37,9 @@ async def main():
     expected=[qa.findtext('answer')for qa in ET.parse(ROOT/'tests/evaluations/archive038.xml').getroot()]
     assert answers==expected,(answers,expected)
     results.append(dict(evaluation='archive038.xml',verified_answers=len(answers),note='确定性SDK检索验证；未声称LLM自主回答通过'))
+   method=await call('gd_search_methods',dict(query='TRIZ'));assert method['data'][0]['method_id']=='IM-CA-001'
+   steps=await call('gd_read_method',dict(method_id='IM-CA-001',level='steps',limit=2));assert len(steps['data'])==2 and steps['next_offset']==2
+   linked=await call('gd_read_innovation_run',dict(section='overview'));assert linked['data']['task']['scenario_type']=='simulated'
    for name,args in [('gd_list_sources',dict(project_id='2025-00',limit=99)),('gd_read_evidence',dict(project_id='2025-00',source_id='../../secret')),('gd_read_records',dict(project_id='../other'))]:
     value=await session.call_tool(name,args);assert value.isError;results.append(dict(tool=name,status='invalid_input_rejected'))
  print(json.dumps(dict(protocol=init.protocolVersion,tools=len(listed.tools),checks=results,scope='真实SDK握手/工具调用；非LLM自主检索效果评估'),ensure_ascii=False,indent=2))

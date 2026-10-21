@@ -1,14 +1,53 @@
 {
-  "schema_version": "method-catalog-0.1-draft",
-  "status": "structure_only_not_operational",
-  "registered_methods": 0,
-  "methods": [],
+  "schema_version": "method-catalog-1.0",
+  "status": "pilot_library",
+  "registered_methods": 3,
+  "methods": [
+    {
+      "method_id": "IM-PD-001",
+      "version": "1.0.0",
+      "name": "问题定义",
+      "purpose": "把企业愿望整理为对象、情境、目标、约束、成功口径与待确认的问题简报。",
+      "status": "pilot_ready",
+      "search_terms": [
+        "问题界定",
+        "需求澄清"
+      ],
+      "sha256": "de0a2e7cae6b5aacc236b3f58ec8379e36d0c91a039000361563ccc0330671dc",
+      "path": "方法/IM-PD-001/1.0.0/方法卡.json"
+    },
+    {
+      "method_id": "IM-FA-001",
+      "version": "1.0.0",
+      "name": "功能分析",
+      "purpose": "将任务拆成对对象产生作用的功能和接口，识别有用作用、有害作用及不足。",
+      "status": "pilot_ready",
+      "search_terms": [
+        "功能分解",
+        "功能建模"
+      ],
+      "sha256": "61d0aaf4eb09675f1b232d091b35f56c1e9dae109f5e2320debec77ecc9675cf",
+      "path": "方法/IM-FA-001/1.0.0/方法卡.json"
+    },
+    {
+      "method_id": "IM-CA-001",
+      "version": "1.0.0",
+      "name": "矛盾分析",
+      "purpose": "将功能问题转成可核对的改善/恶化关系，区分技术矛盾与物理矛盾候选，提出带验证条件的方向。",
+      "status": "pilot_ready",
+      "search_terms": [
+        "TRIZ",
+        "技术矛盾",
+        "物理矛盾"
+      ],
+      "sha256": "c21829dd1ceaecc044ee009ba18e048182b094bd544d834f4d2b8185679f20e8",
+      "path": "方法/IM-CA-001/1.0.0/方法卡.json"
+    }
+  ],
   "task_facets": [
-    "理解需求",
-    "定义问题",
-    "系统与功能分析",
-    "矛盾与原理探索",
-    "方案组合",
-    "评价验证"
-  ]
+    "问题定义",
+    "功能分析",
+    "矛盾分析"
+  ],
+  "evaluation_note": "结构、检索与固定示例可测试；非专家认证或工程有效性验证"
 }

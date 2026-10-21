@@ -1,0 +1,280 @@
+{
+  "schema_version": "method-card-1.0",
+  "method_id": "IM-FA-001",
+  "version": "1.0.0",
+  "status": "pilot_ready",
+  "name": "功能分析",
+  "aliases": [],
+  "provenance": {
+    "nature": "platform_adaptation",
+    "sources": [
+      {
+        "source_id": "SRC-NASA",
+        "publisher": "NASA",
+        "title": "Systems Engineering Handbook · 4.3 Logical Decomposition",
+        "url": "https://www.nasa.gov/reference/4-3-logical-decomposition/",
+        "locator": "4.3.1.2.1–4.3.1.2.2",
+        "basis": "将目标和要求分解为功能，并明确功能之间的接口。",
+        "rights": "链接引用；未复制原书或图",
+        "accessed_at": "2026-10-21",
+        "read_scope": "relevant_full_web_sections"
+      }
+    ],
+    "original_authors": [
+      "NASA"
+    ],
+    "adaptations": [
+      "字段、操作步骤、证据标准、提问与检查规则由平台设计，不作为原作者逐字方法或官方认证版本",
+      "用于案例回看时属于平台重构，不认定原研发团队采用本方法"
+    ],
+    "rights": "平台编写部分可用于本项目；外部原典依各自权利"
+  },
+  "purpose": "将任务拆成对对象产生作用的功能和接口，识别有用作用、有害作用及不足。",
+  "stages": [
+    "功能分析"
+  ],
+  "triggers": [
+    "系统边界是什么？",
+    "每个功能的输入输出是什么？",
+    "哪些作用必要，哪些作用有害或不足？",
+    "哪一个接口最需要验证？"
+  ],
+  "preconditions": [
+    "上一步问题简报",
+    "项目机制与证据"
+  ],
+  "exclusions": [
+    "企业现有设备不详时不宣称已找到真实故障根因",
+    "不能用部件罗列替代功能分析",
+    "危险工艺仍需专业安全评审"
+  ],
+  "missing_input_questions": [
+    "系统边界是什么？",
+    "每个功能的输入输出是什么？",
+    "哪些作用必要，哪些作用有害或不足？",
+    "哪一个接口最需要验证？"
+  ],
+  "inputs": [
+    {
+      "key": "problem_brief",
+      "label": "上一步问题简报",
+      "type": "object",
+      "required": true,
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "project_mechanisms",
+      "label": "项目机制与证据",
+      "type": "object",
+      "required": true,
+      "missing_action": "ask_or_stop"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "IM-FA-001-S01",
+      "title": "确定系统与超系统边界",
+      "purpose": "确定系统与超系统边界",
+      "operation": "区分待设计系统、对象、操作者与外部环境；现有企业系统未知时只建目标功能模型。",
+      "input_refs": [
+        "problem_brief"
+      ],
+      "depends_on": [],
+      "output_key": "system_boundary",
+      "knowledge_query_ids": [],
+      "checks": [
+        "目标功能模型不是现有设备实测"
+      ],
+      "stop_condition": "缺少必需信息则记录待补，不填造数据"
+    },
+    {
+      "step_id": "IM-FA-001-S02",
+      "title": "分解必要功能",
+      "purpose": "分解必要功能",
+      "operation": "使用动词+对象描述功能及输出，关联上一阶段成功指标；保持功能与物理部件的区别。",
+      "input_refs": [
+        "system_boundary",
+        "problem_brief"
+      ],
+      "depends_on": [
+        "IM-FA-001-S01"
+      ],
+      "output_key": "function_tree",
+      "knowledge_query_ids": [
+        "FA-Q1"
+      ],
+      "checks": [
+        "每个功能服务一个要求",
+        "保留替代实现空间"
+      ],
+      "stop_condition": "缺少必需信息则记录待补，不填造数据"
+    },
+    {
+      "step_id": "IM-FA-001-S03",
+      "title": "描述作用关系",
+      "purpose": "描述作用关系",
+      "operation": "记录作用主体、作用、受体、结果、阶段、类型及依据；有害作用的目标发生情况未知则标风险假设。",
+      "input_refs": [
+        "function_tree",
+        "project_mechanisms"
+      ],
+      "depends_on": [
+        "IM-FA-001-S02"
+      ],
+      "output_key": "interaction_model",
+      "knowledge_query_ids": [],
+      "checks": [
+        "有害/不足/缺失不混用",
+        "每条关系有事实或假设标记"
+      ],
+      "stop_condition": "缺少必需信息则记录待补，不填造数据"
+    },
+    {
+      "step_id": "IM-FA-001-S04",
+      "title": "核对接口与失效链",
+      "purpose": "核对接口与失效链",
+      "operation": "描述前一环节的输出怎样进入后一环节；标出颗粒、运动、封口、转送等接口的条件及可能失效。",
+      "input_refs": [
+        "interaction_model"
+      ],
+      "depends_on": [
+        "IM-FA-001-S03"
+      ],
+      "output_key": "interface_risks",
+      "knowledge_query_ids": [
+        "FA-Q2"
+      ],
+      "checks": [
+        "单件成功不等于整链成功",
+        "专利候选不等于整机采用"
+      ],
+      "stop_condition": "缺少必需信息则记录待补，不填造数据"
+    },
+    {
+      "step_id": "IM-FA-001-S05",
+      "title": "确定优先分析的功能问题",
+      "purpose": "确定优先分析的功能问题",
+      "operation": "按影响与未验证程度选择问题；把关系及接口作为下一步矛盾候选输入，不编造风险概率。",
+      "input_refs": [
+        "function_tree",
+        "interaction_model",
+        "interface_risks"
+      ],
+      "depends_on": [
+        "IM-FA-001-S04"
+      ],
+      "output_key": "function_model",
+      "knowledge_query_ids": [],
+      "checks": [
+        "给出焦点与理由",
+        "不将功能图视为工程验证"
+      ],
+      "stop_condition": "缺少必需信息则记录待补，不填造数据"
+    }
+  ],
+  "knowledge_queries": [
+    {
+      "query_id": "FA-Q1",
+      "purpose": "借鉴作用结构与机制",
+      "entity": "innovation",
+      "fields": [
+        "measure",
+        "mechanism",
+        "failure_boundary",
+        "tradeoffs"
+      ],
+      "evidence_requirement": "区分原文事实、平台分析和目标假设；结论需定位块和版本",
+      "exclude": [
+        "平台解释冒充研发团队原始决策"
+      ],
+      "context_priority": [
+        "硬约束",
+        "问题/功能",
+        "机制与边界",
+        "验证",
+        "原文"
+      ],
+      "limit": 3
+    },
+    {
+      "query_id": "FA-Q2",
+      "purpose": "核对部件关系与接口",
+      "entity": "technology",
+      "fields": [
+        "function",
+        "principle",
+        "interfaces"
+      ],
+      "evidence_requirement": "区分原文事实、平台分析和目标假设；结论需定位块和版本",
+      "exclude": [
+        "专利构型当型号实配"
+      ],
+      "context_priority": [
+        "硬约束",
+        "问题/功能",
+        "机制与边界",
+        "验证",
+        "原文"
+      ],
+      "limit": 3
+    }
+  ],
+  "outputs": [
+    {
+      "key": "function_model",
+      "label": "功能与接口模型",
+      "kind": "analysis"
+    },
+    {
+      "key": "interface_risks",
+      "label": "接口风险清单",
+      "kind": "hypotheses"
+    }
+  ],
+  "quality_checks": [
+    "作用有主体动作受体结果",
+    "接口指向明确",
+    "每条目标关系区分需求/假设/事实"
+  ],
+  "failure_cases": [
+    "只列钻头、电机、软袋没有动作或受体",
+    "未见企业数据却标已发生故障",
+    "以一个部件性能代替全流程质量"
+  ],
+  "composable_with": [
+    {
+      "next_method": "IM-CA-001",
+      "binding": {
+        "function_model": "function_model",
+        "problem_brief": "problem_brief"
+      },
+      "gate": "至少明确一个功能目标及其潜在不利影响"
+    }
+  ],
+  "evaluations": [
+    {
+      "id": "IM-FA-001-EVAL-01",
+      "scenario": "关键输入缺失",
+      "expected": "追问或停止，保留未知"
+    },
+    {
+      "id": "IM-FA-001-EVAL-02",
+      "scenario": "嫦娥→工业颗粒材料取样模拟任务",
+      "expected": "原文事实/平台解释/目标假设分层，输出可追溯"
+    },
+    {
+      "id": "IM-FA-001-EVAL-03",
+      "scenario": "目标硬约束冲突",
+      "expected": "相关方向排除或降为条件性，不用案例相似覆盖约束"
+    }
+  ],
+  "review_status": "platform_structure_reviewed_not_method_expert_certified",
+  "validation_status": "engineering_effect_not_validated",
+  "change_log": [
+    {
+      "version": "1.0.0",
+      "date": "2026-10-21",
+      "reason": "首批可执行方法卡，验证与项目库的证据联动"
+    }
+  ]
+}

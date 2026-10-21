@@ -66,7 +66,7 @@ def gd_read_evidence(project_id:str,source_id:str,revision:str|None=None,offset:
   if len(paths)!=1:raise ValueError('版本包含多个文本修订，请按候选证据路径核对')
   path=next(iter(paths));f=pp.safe(p,path)
   if any(e['chunks_sha256']!=pp.sha(f.read_bytes())for e in evidence):raise ValueError('冻结证据指纹不符')
- out=page(pp.load(pp.safe(p,path)),offset,limit);out.update(source_id=source_id,read_scope=x['read_scope'],revision=revision or'current_ingest');return out
+ out=page(pp.load(pp.safe(p,path)),offset,limit);out.update(source_id=source_id,source_sha256=x['sha256'],chunks_sha256=pp.sha(pp.safe(p,path).read_bytes()),read_scope=x['read_scope'],revision=revision or'current_ingest');return out
 @MCP.tool(annotations=ANNOTATIONS)
 def gd_read_interpretations(project_id:str,revision:str|None=None,offset:int=0,limit:int=3)->dict:
  """单独读取已审核入档的AI解读/假设及其前提、限制、证据；不是项目已实现成果。"""
@@ -77,4 +77,21 @@ def gd_read_version(project_id:str,revision:str|None=None,offset:int=0,limit:int
  p=pp.project(LIB,project_id);w=rw.current(p)
  if not revision and not w['revision']:return dict(status='baseline_only',revision=None)
  folder,manifest=rw.check_version(p,revision or'research-%06d'%w['revision']);changes=pp.load(folder/'changes.json');out=page(changes['changes'],offset,limit);out.update(manifest=manifest,actor=changes['actor'],reason=changes['reason']);return out
+@MCP.tool(annotations=ANNOTATIONS)
+def gd_search_methods(query:str='',offset:int=0,limit:int=10)->dict:
+ """检索已版本化的创新方法；返回作用与版本，再按需读取步骤，非语义自动调度。"""
+ import innovation_methods as methods
+ return methods.search_methods(query,offset,limit)
+@MCP.tool(annotations=ANNOTATIONS)
+def gd_read_method(method_id:str,version:str|None=None,level:str='overview',step_id:str|None=None,offset:int=0,limit:int=5)->dict:
+ """分层读取方法overview/steps/full；含原典来源、平台改编说明、输入、检查与停止条件。"""
+ import innovation_methods as methods
+ return methods.read_method(method_id,version,level,step_id,offset,limit)
+@MCP.tool(annotations=ANNOTATIONS)
+def gd_read_innovation_run(run_id:str='latest',section:str='overview',offset:int=0,limit:int=3)->dict:
+ """读独立的模拟应用研究记录：overview/enterprise_output/stages/evidence/retrievals。不是已验证企业成果。"""
+ import innovation_methods as methods
+ if section not in ['overview','enterprise_output','stages','evidence','retrievals']:raise ValueError('读取层级无效')
+ data=methods.read_run(run_id,section)
+ return page(data,offset,limit)if isinstance(data,list)else dict(data=data,trust='application_hypotheses_not_source_case_facts')
 if __name__=='__main__':MCP.run(transport='stdio')
