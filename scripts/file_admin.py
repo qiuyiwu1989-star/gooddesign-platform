@@ -98,7 +98,7 @@ class Store:
   return self.submit(pid,'ingest',path=str(dest),origin=origin)
  def files(self,pid,scope='project'):
   p=pipe.project(self.lib,pid);s=pipe.state(p);rows=[]
-  paperpath=p/'论文原文管理/论文原件清单.json';papers=pipe.load(paperpath)['items']if paperpath.exists()else [];paper_map={x.get('library_source_id'):x for x in papers if x.get('library_source_id')}
+  paperpath=p/'论文原文管理/论文原件清单.json';papers=pipe.load(paperpath)['items']if paperpath.exists()else [];paper_map={sid:x for x in papers for sid in [x.get('library_source_id')]+x.get('related_source_ids',[]) if sid}
   patentpath=p/'专利原文管理/专利原件清单.json';patents=pipe.load(patentpath)['items']if patentpath.exists()else [];patent_map={sid:v for v in patents for sid in [v['library_source_id']]+v.get('related_source_ids',[])}
   imagepath=p/'图片素材/图片清单.json';images=pipe.load(imagepath)['items']if imagepath.exists()else [];image_map={v['library_source_id']:v for v in images}
   mapping=pipe.load(p/'资料关联.json').get('source_titles',{})if (p/'资料关联.json').exists()else {}
@@ -246,6 +246,12 @@ class Handler(BaseHTTPRequestHandler):
    if one('scope','project')!='project':raise ValueError('请先切换到本项目资料再提交处理任务')
    if u.path=='/api/upload':self.send(202,store.upload(pid,one('name'),data));return
    args=json.loads(data)
+   if u.path=='/api/steward-control':
+    action=args.get('action')
+    if action in ('pause','resume'):
+     store.steward.pause(action=='pause','后台用户');self.send(200,dict(paused=action=='pause'));return
+    if action=='retry':self.send(202,store.steward.retry(pid,args.get('task_id'),'后台用户'));return
+    raise ValueError('管家操作不存在')
    if u.path=='/api/fetch':
     url=args.get('url','');pipe.public_url(url);self.send(202,store.submit(pid,'fetch',url=url));return
    if u.path=='/api/method-demo':

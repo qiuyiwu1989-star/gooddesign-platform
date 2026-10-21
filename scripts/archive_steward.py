@@ -8,7 +8,7 @@ from pathlib import Path
 import project_pipeline as pp
 import project_ownership as own
 import research_workflow as rw
-VERSION='steward-0.2.0'
+VERSION='steward-0.3.0'
 AGENT_METHOD='agent_evidence_extract_v1'
 PROTECTED=rw.RESTRICTED|{'completion_org_ids','completion_person_ids','award_list_confirmed','review_status'}
 class Steward:
@@ -21,6 +21,7 @@ class Steward:
     payload TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'queued', attempts INTEGER DEFAULT 0,
     due REAL DEFAULT 0, lease REAL DEFAULT 0, created TEXT NOT NULL, finished TEXT, result TEXT, error TEXT);
     CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS controls(id INTEGER PRIMARY KEY,at TEXT NOT NULL,actor TEXT NOT NULL,action TEXT NOT NULL,project TEXT,task_id INTEGER,previous TEXT);
     CREATE INDEX IF NOT EXISTS task_due ON tasks(status,due);
    ''')
  @contextlib.contextmanager
@@ -56,16 +57,32 @@ class Steward:
    if len(set(ids))!=len(ids):raise ValueError('研究提交有重复候选')
    rw.save(p,w)
   return self.enqueue_candidates(pid,ids)
- def pause(self,value):
-  with self.connect()as db:db.execute('INSERT OR REPLACE INTO settings VALUES(?,?)',('paused','1'if value else'0'))
+ def pause(self,value,actor='本地操作员'):
+  with self.connect()as db:
+   old=db.execute('SELECT value FROM settings WHERE key=?',('paused',)).fetchone()
+   db.execute('INSERT OR REPLACE INTO settings VALUES(?,?)',('paused','1'if value else'0'))
+   db.execute('INSERT INTO controls(at,actor,action,previous)VALUES(?,?,?,?)',(pp.now(),actor,'pause'if value else'resume',old['value']if old else'0'))
+ def retry(self,pid,task_id,actor='本地操作员'):
+  pp.project(self.lib,pid)
+  if type(task_id)is not int:raise ValueError('任务编号无效')
+  with self.connect()as db:
+   db.execute('BEGIN IMMEDIATE')
+   old=db.execute('SELECT * FROM tasks WHERE id=? AND project=?',(task_id,pid)).fetchone()
+   if not old or old['status']!='failed':raise ValueError('仅可重试本项目已失败的任务；冲突内容需核对，不自动放行')
+   db.execute('INSERT INTO controls(at,actor,action,project,task_id,previous)VALUES(?,?,?,?,?,?)',(pp.now(),actor,'retry',pid,task_id,json.dumps(dict(old),ensure_ascii=False)))
+   db.execute("UPDATE tasks SET status='queued',attempts=0,due=0,lease=0,finished=NULL,error=NULL,result=NULL WHERE id=?",(task_id,))
+  return dict(task_id=task_id,status='queued')
  def summary(self,pid):
   pp.project(self.lib,pid)
   with self.connect()as db:
-   rows=[dict(x)for x in db.execute('SELECT id,status,attempts,created,finished,result,error FROM tasks WHERE project=? ORDER BY id DESC LIMIT 10',(pid,))]
+   rows=[dict(x)for x in db.execute('SELECT id,status,attempts,created,finished,payload,result,error FROM tasks WHERE project=? ORDER BY id DESC LIMIT 10',(pid,))]
+   controls=[dict(x)for x in db.execute('SELECT id,at,actor,action,project,task_id FROM controls WHERE project=? OR project IS NULL ORDER BY id DESC LIMIT 10',(pid,))]
    counts=dict(Counter(x['status']for x in db.execute('SELECT status FROM tasks WHERE project=?',(pid,))))
    paused=db.execute('SELECT value FROM settings WHERE key=?',('paused',)).fetchone()
-  for r in rows:r['result']=json.loads(r['result'])if r['result']else None
-  return dict(processor=VERSION,paused=bool(paused and paused['value']=='1'),counts=counts,recent=rows,semantic_mode='external_agent_submission',embedded_model_connected=False)
+  for r in rows:
+   r['result']=json.loads(r['result'])if r['result']else None
+   payload=json.loads(r.pop('payload'));r['kind']=payload['kind'];r['subject']=payload.get('title')or payload.get('url')or payload.get('source_id')or'研究内容增量'
+  return dict(processor=VERSION,paused=bool(paused and paused['value']=='1'),counts=counts,recent=rows,controls=controls,semantic_mode='external_agent_submission',embedded_model_connected=False)
  def claim(self):
   with self.connect()as db:
    db.execute('BEGIN IMMEDIATE')
