@@ -47,6 +47,17 @@ class Store:
    with self.mutex:j.update(status=status,result=result,finished_at=pipe.now());self.persist()
   except Exception as exc:
    with self.mutex:j.update(status='failed',error=str(exc)[:1000],finished_at=pipe.now());self.persist()
+ def automation_status(self,pid):
+  pipe.project(self.lib,pid)
+  with self.mutex:
+   jobs=[dict(j)for j in self.jobs if j['project_id']==pid]
+  thread=getattr(self,'watch_thread',None);alive=bool(thread and thread.is_alive())
+  last=getattr(self,'watch_last_success',0)
+  state='stopped'if not alive else 'error'if getattr(self,'watch_error',None) else 'starting'if not last else 'running'if time.time()-last<30 else 'delayed'
+  return dict(project_id=pid,state=state,last_scan=getattr(self,'watch_last_scan',None),scan_interval_seconds=4,
+   queued=sum(j['status']=='queued'for j in jobs),running=sum(j['status']=='running'for j in jobs),
+   attention_records=sum(j['status']in ('failed','needs_attention','interrupted')for j in jobs),
+   semantic_agent_connected=False,automatic_publication=False)
  def start_watch(self):
   cursor_file=self.folder/'research-watch.json'
   cursor=pipe.load(cursor_file)if cursor_file.exists()else {}
@@ -64,8 +75,10 @@ class Store:
        if sid not in seen:
         self.submit(pid,'process',source_id=sid,actor='投递箱自动处理（未审核）');seen.add(sid)
       cursor[pid]=sorted(seen)
+     self.watch_last_success=time.time();self.watch_last_scan=pipe.now();self.watch_error=None
      pipe.save(cursor_file,cursor);pipe.save(self.lib/'监听状态.json',dict(pid=os.getpid(),heartbeat=pipe.now(),inbox=str(self.inbox),service='file_admin_with_research_pipeline'))
-    except Exception as exc:pipe.save(self.folder/'watch-error.json',dict(time=pipe.now(),error=str(exc)))
+    except Exception as exc:
+     self.watch_error=str(exc);pipe.save(self.folder/'watch-error.json',dict(time=pipe.now(),error=str(exc)))
     self.watch_stop.wait(4)
   self.watch_thread=threading.Thread(target=watch,daemon=True);self.watch_thread.start()
  def upload(self,pid,name,data):
@@ -177,6 +190,7 @@ class Handler(BaseHTTPRequestHandler):
     import innovation_methods as methods
     self.send(200,methods.read_run(one('run','latest'),one('section','overview')));return
    if u.path=='/api/projects':self.send(200,dict(projects=pipe.load(store.lib/'项目索引.json')['projects'],token=store.token));return
+   if u.path=='/api/automation':self.send(200,store.automation_status(one('project','2025-00')));return
    if u.path=='/api/research':self.send(200,research.status(store.lib,one('project','2025-00')));return
    if u.path=='/api/research-document':
     p=pipe.project(store.lib,one('project','2025-00'));w=research.current(p)
