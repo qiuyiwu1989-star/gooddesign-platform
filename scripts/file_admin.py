@@ -48,12 +48,21 @@ class Store:
   p=pipe.project(self.lib,pid);s=pipe.state(p);rows=[]
   paperpath=p/'论文原文管理/论文原件清单.json';papers=pipe.load(paperpath)['items']if paperpath.exists()else [];paper_map={x.get('library_source_id'):x for x in papers if x.get('library_source_id')}
   patentpath=p/'专利原文管理/专利原件清单.json';patents=pipe.load(patentpath)['items']if patentpath.exists()else [];patent_map={sid:v for v in patents for sid in [v['library_source_id']]+v.get('related_source_ids',[])}
+  imagepath=p/'图片素材/图片清单.json';images=pipe.load(imagepath)['items']if imagepath.exists()else [];image_map={v['library_source_id']:v for v in images}
   mapping=pipe.load(p/'资料关联.json').get('source_titles',{})if (p/'资料关联.json').exists()else {}
   for x in s['sources'].values():
    origin=x.get('origin',{});name=origin.get('filename')or x['title'];paper=paper_map.get(x['id']);ext=Path(x['original']).suffix.lower().lstrip('.')
    rows.append(dict(id=x['id'],name=paper['title']+'.'+ext if paper else (mapping[origin['url']]+'.'+ext if origin.get('kind')!='source_reference'and origin.get('url')in mapping else name),format=ext,bytes=x['bytes'],status=x['status'],error=x.get('error'),chunks=x['chunk_count'],imported_at=x['imported_at'],url=origin.get('url')or origin.get('requested_url'),kind='source_reference'if origin.get('kind')=='source_reference'else 'paper'if paper else 'file',sha256=x['sha256'],read_scope=x['read_scope'],review_status=x['review_status'],origin=origin,paper_id=paper['paper_id']if paper else None))
    patent=patent_map.get(x['id'])
    if patent and origin.get('kind')!='source_reference':rows[-1].update(kind='patent',name=patent['publication']+'-'+patent['title']+'.'+ext,patent_id=patent['patent_id'],publication=patent['publication'],project_relation='技术关联候选；获奖项目成果归属待确认，实际装机未知',document_role='专利文本PDF'if ext=='pdf'else '专利检索网页')
+   image=image_map.get(x['id'])
+   if not image and ext in ['png','jpg','jpeg','webp','gif','bmp','tif','tiff']:
+    try:
+     from PIL import Image
+     with Image.open(pipe.safe(p,x['original']))as im:im.load();width,height=im.size
+     image=dict(title=name,kind='web_image'if origin.get('url')else 'uploaded_image',width=width,height=height,locations=[dict(source_id=x['id'],image_url=origin.get('url'),method='uploaded_or_downloaded_original')],preview_status='ready')
+    except Exception:pass
+   if image:rows[-1].update(kind='image',name=image['title'],status='image_archived'if image.get('preview_status','ready')=='ready'else 'image_needs_review',image_preview_status=image.get('preview_status','ready'),image_preview_error=image.get('preview_error'),conversion_status=x['status'],image_kind=image['kind'],image_width=image['width'],image_height=image['height'],image_locations=image['locations'])
   return dict(project_id=pid,revision='ingest-%06d'%s['revision'],files=rows,papers=papers,patents=patents,merge_required=s.get('document_merge_required',[]))
  def asset(self,pid,sid,kind):
   p=pipe.project(self.lib,pid);x=pipe.state(p)['sources'].get(sid)
@@ -88,6 +97,14 @@ class Handler(BaseHTTPRequestHandler):
     with store.mutex:rows=[dict(j)for j in store.jobs if j['project_id']==one('project','2025-00')][-100:][::-1]
     # Internal filesystem paths are not needed by the client.
     self.send(200,dict(jobs=[dict(j,args={k:v for k,v in j['args'].items()if k!='path'})for j in rows]));return
+   if u.path=='/api/image':
+    import io,warnings
+    from PIL import Image,ImageOps
+    path,x=store.asset(one('project'),one('source'),'original')
+    with warnings.catch_warnings():
+     warnings.simplefilter('error',Image.DecompressionBombWarning)
+     with Image.open(path)as original:
+      image=ImageOps.exif_transpose(original);image.thumbnail((120,120)if one('thumb')=='1'else (1600,1600));out=io.BytesIO();image.convert('RGB').save(out,format='PNG');self.send(200,out.getvalue(),'image/png');return
    if u.path in ('/api/pdf-info','/api/pdf-page'):
     import fitz
     path,x=store.asset(one('project'),one('source'),'original')

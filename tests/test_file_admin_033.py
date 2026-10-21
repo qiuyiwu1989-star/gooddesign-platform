@@ -63,6 +63,15 @@ class FileAdminTests(unittest.TestCase):
   _,j,_=self.request('/api/upload?project=demo-01&name=patent.txt',b'public patent text');j=self.wait(j);sid=j['result']['source_id']
   pp.save(self.lib/'demo-01/专利原文管理/专利原件清单.json',dict(items=[dict(patent_id='P01',publication='CN_DEMO',title='示例专利',library_source_id=sid,related_source_ids=[])]))
   d=self.request('/api/files?project=demo-01')[1];x=d['files'][0];self.assertEqual(x['kind'],'patent');self.assertEqual(x['publication'],'CN_DEMO');self.assertIn('待确认',x['project_relation']);self.assertEqual(len(d['patents']),1)
+ def test_image_preview_is_safe_raster_and_provenance_is_retained(self):
+  import io
+  from PIL import Image
+  b=io.BytesIO();Image.new('RGB',(300,200),'red').save(b,format='PNG')
+  _,j,_=self.request('/api/upload?project=demo-01&name=photo.png',b.getvalue());j=self.wait(j);sid=j['result']['source_id']
+  automatic=self.request('/api/files?project=demo-01')[1]['files'][0];self.assertEqual(automatic['kind'],'image');self.assertEqual(automatic['image_kind'],'uploaded_image')
+  pp.save(self.lib/'demo-01/图片素材/图片清单.json',dict(items=[dict(library_source_id=sid,title='测试图.png',kind='web_image',width=300,height=200,locations=[dict(source_id='parent',image_url='https://public.example/photo.png')])]))
+  x=self.request('/api/files?project=demo-01')[1]['files'][0];self.assertEqual(x['kind'],'image');self.assertEqual(x['status'],'image_archived');self.assertEqual(x['image_locations'][0]['source_id'],'parent')
+  status,data,headers=self.request('/api/image?project=demo-01&source='+sid+'&thumb=1');self.assertEqual(status,200);self.assertEqual(headers['Content-Type'],'image/png');image=Image.open(io.BytesIO(data));self.assertLessEqual(max(image.size),120)
  def test_job_restart_marks_interrupted(self):
   pp.save(self.lib/'.file-admin/jobs.json',[dict(id='fake',status='running')]);store=fa.Store(self.lib,self.inbox)
   try:self.assertEqual(store.jobs[0]['status'],'interrupted')

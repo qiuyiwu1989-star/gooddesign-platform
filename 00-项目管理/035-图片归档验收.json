@@ -1,0 +1,35 @@
+{
+  "task": "035",
+  "date": "2026-10-21",
+  "saved_images": 144,
+  "ready_to_preview": 143,
+  "retained_but_preview_unavailable": 1,
+  "failed_links": 1,
+  "types": {
+    "web_image": 59,
+    "scan_page": 34,
+    "pdf_embedded": 45,
+    "patent_drawing_page": 6
+  },
+  "duplicate_images_with_multiple_locations": 2,
+  "checks": [
+    "original_hash",
+    "image_full_decode_and_dimensions_for_143",
+    "parent_source_exists",
+    "pdf_page_location",
+    "derivative_kind_explicit",
+    "facts_and_quality_unchanged"
+  ],
+  "tests": {
+    "backend": 9,
+    "pipeline": 14,
+    "browser": 10
+  },
+  "local_url": "http://127.0.0.1:8776/?project=2025-00&kind=image",
+  "limits": [
+    "网页候选图片语义待审核，部分可能是人物/背景或对照案例图",
+    "扫描页和附图页是原PDF的衍生图像，不称独立插图",
+    "未下载CSS背景/动态媒体，不宣称图片已穷尽",
+    "新增图像不代表原文OCR/专业核读或公开使用授权"
+  ]
+}
