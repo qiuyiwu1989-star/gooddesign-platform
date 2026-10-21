@@ -18,9 +18,16 @@ class Store:
  def persist(self):pipe.save(self.file,self.jobs)
  def submit(self,pid,kind,**args):
   pipe.project(self.lib,pid)
+  if kind=='fetch':
+   t=self.steward.enqueue_fetch(pid,args['url'],args.get('title',''))
+   return self.steward.fetch_jobs(pid,t['id'])[0]
   with self.mutex:
    j=dict(id=secrets.token_hex(8),project_id=pid,kind=kind,args=args,status='queued',created_at=pipe.now(),error=None,result=None);self.jobs.append(j);self.persist()
   self.pool.submit(self.run,j['id']);return dict(j)
+ def job_list(self,pid):
+  pipe.project(self.lib,pid)
+  with self.mutex:legacy=[dict(j)for j in self.jobs if j['project_id']==pid]
+  return sorted(legacy+self.steward.fetch_jobs(pid),key=lambda j:j['created_at'],reverse=True)[:100]
  def run(self,jid):
   with self.mutex:
    j=next(j for j in self.jobs if j['id']==jid);j.update(status='running',started_at=pipe.now());self.persist()
@@ -202,7 +209,7 @@ class Handler(BaseHTTPRequestHandler):
     f=folder/names[one('document','archive')];self.send(200,f.read_bytes(),'text/plain; charset=utf-8');return
    if u.path=='/api/files':self.send(200,store.files(one('project','2025-00'),one('scope','project')));return
    if u.path=='/api/jobs':
-    with store.mutex:rows=[dict(j)for j in store.jobs if j['project_id']==one('project','2025-00')][-100:][::-1]
+    rows=store.job_list(one('project','2025-00'))
     current_p=pipe.project(store.lib,one('project','2025-00'));current_s=pipe.state(current_p);reg=ownership.registry(current_p);requested_scope=one('scope','project')
     if requested_scope not in ownership.SCOPES:raise ValueError('资料范围无效')
     rows=[j for j in rows if ownership.assignment(current_p,j.get('result',{}).get('source_id','')if j.get('result')else '',current_s['sources']if j.get('result')else {'':{'origin':{'url':j['args'].get('url')}}},reg)['scope']==requested_scope]
@@ -263,6 +270,10 @@ class Handler(BaseHTTPRequestHandler):
    if u.path=='/api/review':self.send(200,research.review(store.lib,pid,args['candidate_id'],args['decision'],args['actor'],args['reason']));return
    if u.path=='/api/publish':self.send(202,store.submit(pid,'publish',actor=args['actor'],reason=args['reason'],expected_candidate_ids=args.get('expected_candidate_ids')));return
    if u.path=='/api/retry':
+    if isinstance(args.get('job_id'),str)and re.fullmatch(r'steward-\d+',args['job_id']):
+     tid=int(args['job_id'].split('-')[1])
+     if not store.steward.fetch_jobs(pid,tid):raise ValueError('本项目下载任务不存在')
+     store.steward.retry(pid,tid,'后台用户/下载重试');self.send(202,store.steward.fetch_jobs(pid,tid)[0]);return
     with store.mutex:old=next((j for j in store.jobs if j['id']==args.get('job_id')and j['project_id']==pid),None)
     if not old or old['status']in ('queued','running'):raise ValueError('任务不可重试')
     retry_args=dict(old['args'])

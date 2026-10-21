@@ -101,3 +101,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 044b续接：Steward0.2新增持久fetch与含清洗指纹任务键；source_reclean.py生成不可覆盖HTML边界修订并可从中断恢复，图片表格不假装HTML可还原。蛟龙表1原图/逐行验证数据已保存（CORE-LAB-TABLE-1/0.1.0），正文与表的72/82mm和8.4/10min差异未裁决。两例当前research-000004/000003，具体数量及复兴一手论文新任务66—69见044执行文档末尾。评分/专家状态未升级，后台无内置LLM。
 
 044c：资料管家0.3.0的pause/resume为全库设置，已运行任务先结束；retry仅failed且项目相符，旧失败状态保存在SQLite controls表，不对冲突/待Agent强行重试。POST /api/steward-control沿用防跨站检查。复兴两篇2020论文进入research-000004，论文索引与私有批次见044执行文档；日期/统计差异不强行统一，质量未评。当前8776服务会话53565；重启前先暂停并确认持久/旧任务均空闲。
+
+044d：Store.submit(fetch)及页面/api/fetch共用Steward持久下载，任务列表合并jobs.json历史与steward-N编号，只允许failed重试；相同项目URL跨标题/处理器复用旧任务。新下载不写旧jobs.json。archive_case_images.run可限制source_ids并支持关联PDF；复兴23工程图+2shared装饰原件，22网页下载失败留痕。当前8776会话78183。深度Agent/评分边界不变；下步八模块阅读综述、具体缺口及任务范围治理。

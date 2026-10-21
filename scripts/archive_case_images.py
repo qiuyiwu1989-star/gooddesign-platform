@@ -50,8 +50,9 @@ def download(pair):
   return dict(data=data,ext={'JPEG':'.jpg','PNG':'.png','WEBP':'.webp','GIF':'.gif','TIFF':'.tif','BMP':'.bmp'}[fmt],width=w,height=h,kind='web_image',locations=[dict(v,final_image_url=final)for v in locations])
  except Exception as exc:return dict(error=url,reason=str(exc)[:500],locations=locations)
 
-def run(pid='2025-00'):
+def run(pid='2025-00',source_ids=None):
  p=pp.project(pp.LIB,pid);folder=p/'图片素材';folder.mkdir(exist_ok=True);manifestfile=folder/'图片清单.json';old=pp.load(manifestfile)if manifestfile.exists()else dict(items=[]);assets={x['sha256']:x for x in old['items']};sources=list(ownership.select(p,pp.state(p)['sources']).values());failures=[];skipped=[]
+ if source_ids is not None:sources=[x for x in sources if x['id']in source_ids]
  def preserve(data,ext,width,height,kind,locations):
   digest=pp.sha(data)
   if digest in assets:
@@ -74,11 +75,13 @@ def run(pid='2025-00'):
  # Limit PDF extraction to the case's explicitly indexed paper and patent originals.
  pdf_ids=set()
  for file in [p/'论文原文管理/论文原件清单.json',p/'专利原文管理/专利原件清单.json']:
-  if file.exists():pdf_ids.update(x['library_source_id']for x in pp.load(file)['items']if x.get('original','').endswith('.pdf'))
+  if file.exists():
+   for x in pp.load(file)['items']:pdf_ids.update(s for s in [x.get('library_source_id'),x.get('pdf_source_id')]+x.get('related_source_ids',[])if s)
  source_map={x['id']:x for x in sources}
  for sid in sorted(pdf_ids):
   if sid not in source_map:continue
   x=source_map[sid]
+  if not x['original'].lower().endswith('.pdf'):continue
   with fitz.open(str(p/x['original']))as doc:
    for number,page in enumerate(doc,1):
     text=page.get_text();compact=''.join(text.split());location=dict(source_id=sid,page=number,source_file=x['original'],semantic_status='unreviewed')

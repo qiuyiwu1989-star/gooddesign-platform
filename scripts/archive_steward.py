@@ -41,7 +41,26 @@ class Steward:
   return self.enqueue(pid,dict(kind='source',source_id=sid,source_sha256=s['sha256'],chunks_sha256=pp.sha(pp.safe(p,s['chunks']).read_bytes()),parser_version=s.get('parser_version'),processor=VERSION))
  def enqueue_fetch(self,pid,url,title=''):
   pp.public_url(url)
-  return self.enqueue(pid,dict(kind='fetch',url=url,title=title,processor=VERSION))
+  pp.project(self.lib,pid)
+  # Keep the identity across processor upgrades and title edits, including pre-044d tasks.
+  with self.connect()as db:
+   old=db.execute("SELECT * FROM tasks WHERE project=? AND json_extract(payload,'$.kind')='fetch' AND json_extract(payload,'$.url')=? ORDER BY id LIMIT 1",(pid,url)).fetchone()
+  if old:return dict(old)
+  key=rw.digest(dict(kind='fetch',project=pid,url=url,identity_version=1))
+  return self.enqueue(pid,dict(kind='fetch',url=url,title=title,processor=VERSION),key=key)
+ def fetch_jobs(self,pid,task_id=None):
+  pp.project(self.lib,pid)
+  with self.connect()as db:
+   query="SELECT * FROM tasks WHERE project=? AND json_extract(payload,'$.kind')='fetch'";args=[pid]
+   if task_id is not None:query+=' AND id=?';args.append(task_id)
+   rows=[dict(x)for x in db.execute(query+' ORDER BY id DESC LIMIT 100',args)]
+  jobs=[]
+  for row in rows:
+   payload=json.loads(row['payload']);out=json.loads(row['result'])if row['result']else{}
+   result=out.get('download')
+   if result:result=dict(result,steward_task_id=out.get('source_task_id'))
+   jobs.append(dict(id='steward-'+str(row['id']),project_id=pid,kind='fetch',args=dict(url=payload['url']),status=row['status'],created_at=row['created'],finished_at=row['finished'],error=row['error'],result=result,durable=True,attempts=row['attempts']))
+  return jobs
  def enqueue_candidates(self,pid,ids):
   if not ids or len(set(ids))!=len(ids):raise ValueError('研究候选集合无效')
   known={c['id']for c in rw.current(pp.project(self.lib,pid))['candidates']}
