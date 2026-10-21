@@ -9,7 +9,7 @@ import project_pipeline as pp
 import project_ownership as own
 import research_workflow as rw
 import steward_scope
-VERSION='steward-0.5.4'
+VERSION='steward-0.5.5'
 AGENT_METHOD='agent_evidence_extract_v1'
 PROTECTED=rw.RESTRICTED|{'completion_org_ids','completion_person_ids','award_list_confirmed','review_status'}
 class Steward:

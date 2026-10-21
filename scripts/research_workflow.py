@@ -300,9 +300,34 @@ def publish(lib,pid,actor,reason,expected_candidate_ids=None,selected_candidate_
   event(w,'publish',actor,revision=rev,reason=reason,candidate_ids=[c['id']for c in batch]);save(p,w)
   return dict(status='published',revision=rev,changes=len(changes),expert_reviewed=False,quality_score_changed=False)
 
+def verify_ocr_files(p,x,target):
+ if pp.sha(pp.safe(p,x['original']).read_bytes())!=x['sha256']:raise ValueError('原件指纹不符，停止OCR检查')
+ manifest=pp.load(target/'manifest.json')
+ if manifest['original_sha256']!=x['sha256']or not {'pages.json','chunks.json','可读来源.md'}<=set(manifest['files']):raise ValueError('OCR衍生清单身份不符')
+ for name,h in manifest['files'].items():
+  if pp.sha(pp.safe(target,name).read_bytes())!=h:raise ValueError('OCR衍生文件指纹不符')
+ return manifest
+
+def repair_ocr_pointer(lib,pid,sid,actor):
+ """Explicit migration for the known pre-fix OCR pointer digest; never rewrite evidence."""
+ with pp.lock(lib):
+  p=pp.project(lib,pid);s=pp.state(p);x=source(p,sid)
+  if not x.get('ocr'):raise ValueError('没有已登记OCR，不能修复OCR指纹')
+  target=pp.safe(p,x['ocr']['path']).parent;manifest=verify_ocr_files(p,x,target);expected=manifest['files']['chunks.json']
+  if x['chunks']!=(target/'chunks.json').relative_to(p).as_posix()or x['document']!=(target/'可读来源.md').relative_to(p).as_posix():raise ValueError('当前已是其他文本修订，不从OCR自动回退')
+  if x.get('chunks_sha256')==expected:return dict(status='no_changes',source_id=sid)
+  native=pp.load(pp.safe(p,x['original']).parent/'metadata.json')
+  if native['sha256']!=x['sha256']or x.get('chunks_sha256')!=native.get('chunks_sha256')or pp.sha(pp.safe(p,native['chunks']).read_bytes())!=native.get('chunks_sha256'):raise ValueError('不属于已知OCR前指纹登记问题，保留人工检查')
+  if not isinstance(actor,str)or not actor.strip():raise ValueError('须记录修复操作者')
+  correction=dict(at=pp.now(),actor=actor,previous_chunks_sha256=x['chunks_sha256'],current_chunks_sha256=expected,ocr_manifest_sha256=pp.sha((target/'manifest.json').read_bytes()),native_chunks=native['chunks'],reason='修复OCR路径切换后遗留的原始文本指纹；原件/衍生文本/研究版本不变')
+  sx=s['sources'][sid];sx['chunks_sha256']=expected;sx.setdefault('ocr_metadata_repairs',[]).append(correction)
+  revision=pp.commit(p,s,'修复OCR当前块指纹登记；保留原件、旧块与研究版本：'+sid)
+  return dict(status='repaired',source_id=sid,revision=revision,correction=correction,research_version_changed=False)
+
 def register_ocr(p,sid,target,actor):
+ x=pp.state(p)['sources'][sid];manifest=verify_ocr_files(p,x,target)
  pages=pp.load(target/'pages.json');blocks=pp.load(target/'chunks.json')
- s=pp.state(p);sx=s['sources'][sid];sx.update(document=str((target/'可读来源.md').relative_to(p)),chunks=str((target/'chunks.json').relative_to(p)),chunk_count=len(blocks),status='ocr_text_extracted_pending_review',error=None,read_scope='machine_ocr_not_human_read',ocr=dict(engine='apple_vision_v1',path=str((target/'pages.json').relative_to(p)),page_count=len(pages),recognized_at=pp.now(),actor=actor,needs_manual_check=True))
+ s=pp.state(p);sx=s['sources'][sid];sx.update(document=str((target/'可读来源.md').relative_to(p)),chunks=str((target/'chunks.json').relative_to(p)),chunks_sha256=manifest['files']['chunks.json'],chunk_count=len(blocks),status='ocr_text_extracted_pending_review',error=None,read_scope='machine_ocr_not_human_read',ocr=dict(engine='apple_vision_v1',path=str((target/'pages.json').relative_to(p)),page_count=len(pages),recognized_at=pp.now(),actor=actor,needs_manual_check=True))
  revision=pp.commit(p,s,'OCR生成可追溯衍生文本，原件与旧清洗结果保留；非人工核读')
  for name in ['论文原文管理/论文原件清单.json','专利原文管理/专利原件清单.json']:
   index=p/name
@@ -316,16 +341,19 @@ def register_ocr(p,sid,target,actor):
 
  return dict(status='completed',source_id=sid,pages=len(pages),blocks=len(blocks),revision=revision,review_status='pending_human_check')
 
-def ocr(lib,pid,sid,actor):
+def ocr(lib,pid,sid,actor,rebuild=False):
  # Existing lock prevents source revisions changing between conversion and commit.
  with pp.lock(lib):
   p=pp.project(lib,pid);x=source(p,sid);binary=ROOT/'.runtime/vision-ocr'
   if not binary.exists():raise ValueError('OCR组件未安装，请运行scripts/安装档案管线.command')
-  if x.get('ocr')and pp.safe(p,x['ocr']['path']).exists():return dict(status='duplicate',source_id=sid,ocr=x['ocr'])
+  if x.get('ocr')and pp.safe(p,x['ocr']['path']).exists()and(not rebuild or pp.safe(p,x['ocr']['path']).parent.name==sid+'-vision-v2'):
+   target=pp.safe(p,x['ocr']['path']).parent;manifest=verify_ocr_files(p,x,target)
+   if x['chunks']!=(target/'chunks.json').relative_to(p).as_posix()or x['document']!=(target/'可读来源.md').relative_to(p).as_posix()or x.get('chunks_sha256')!=manifest['files']['chunks.json']:raise ValueError('当前OCR元信息不一致，请明确检查/修复，不静默回退')
+   return dict(status='duplicate',source_id=sid,ocr=x['ocr'])
   import fitz
   original=pp.safe(p,x['original'])
   if pp.sha(original.read_bytes())!=x['sha256']:raise ValueError('原件指纹不符，停止OCR')
-  renderdir=p/'衍生/OCR';renderdir.mkdir(parents=True,exist_ok=True);temp=Path(tempfile.mkdtemp(prefix='.ocr-',dir=str(renderdir)));target=renderdir/(sid+'-vision-v1')
+  renderdir=p/'衍生/OCR';renderdir.mkdir(parents=True,exist_ok=True);temp=Path(tempfile.mkdtemp(prefix='.ocr-',dir=str(renderdir)));target=renderdir/(sid+('-vision-v2'if rebuild else'-vision-v1'))
   pages=[];blocks=[]
   if target.exists():
    try:
