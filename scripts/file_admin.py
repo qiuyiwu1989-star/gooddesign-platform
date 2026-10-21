@@ -47,11 +47,14 @@ class Store:
  def files(self,pid):
   p=pipe.project(self.lib,pid);s=pipe.state(p);rows=[]
   paperpath=p/'论文原文管理/论文原件清单.json';papers=pipe.load(paperpath)['items']if paperpath.exists()else [];paper_map={x.get('library_source_id'):x for x in papers if x.get('library_source_id')}
+  patentpath=p/'专利原文管理/专利原件清单.json';patents=pipe.load(patentpath)['items']if patentpath.exists()else [];patent_map={sid:v for v in patents for sid in [v['library_source_id']]+v.get('related_source_ids',[])}
   mapping=pipe.load(p/'资料关联.json').get('source_titles',{})if (p/'资料关联.json').exists()else {}
   for x in s['sources'].values():
    origin=x.get('origin',{});name=origin.get('filename')or x['title'];paper=paper_map.get(x['id']);ext=Path(x['original']).suffix.lower().lstrip('.')
    rows.append(dict(id=x['id'],name=paper['title']+'.'+ext if paper else (mapping[origin['url']]+'.'+ext if origin.get('kind')!='source_reference'and origin.get('url')in mapping else name),format=ext,bytes=x['bytes'],status=x['status'],error=x.get('error'),chunks=x['chunk_count'],imported_at=x['imported_at'],url=origin.get('url')or origin.get('requested_url'),kind='source_reference'if origin.get('kind')=='source_reference'else 'paper'if paper else 'file',sha256=x['sha256'],read_scope=x['read_scope'],review_status=x['review_status'],origin=origin,paper_id=paper['paper_id']if paper else None))
-  return dict(project_id=pid,revision='ingest-%06d'%s['revision'],files=rows,papers=papers,merge_required=s.get('document_merge_required',[]))
+   patent=patent_map.get(x['id'])
+   if patent and origin.get('kind')!='source_reference':rows[-1].update(kind='patent',name=patent['publication']+'-'+patent['title']+'.'+ext,patent_id=patent['patent_id'],publication=patent['publication'],project_relation='技术关联候选；获奖项目成果归属待确认，实际装机未知',document_role='专利文本PDF'if ext=='pdf'else '专利检索网页')
+  return dict(project_id=pid,revision='ingest-%06d'%s['revision'],files=rows,papers=papers,patents=patents,merge_required=s.get('document_merge_required',[]))
  def asset(self,pid,sid,kind):
   p=pipe.project(self.lib,pid);x=pipe.state(p)['sources'].get(sid)
   if not x:raise ValueError('来源不存在')
@@ -98,7 +101,7 @@ class Handler(BaseHTTPRequestHandler):
    if u.path=='/api/preview':
     path,x=store.asset(one('project'),one('source'),'chunks');blocks=pipe.load(path);self.send(200,dict(blocks=blocks[:200],total=len(blocks),truncated=len(blocks)>200));return
    if u.path=='/asset':
-    path,x=store.asset(one('project'),one('source'),one('kind','original'));name=x['origin'].get('filename',x['title'])if x.get('origin')else x['title'];name=name if one('kind','original')=='original'else path.name
+    path,x=store.asset(one('project'),one('source'),one('kind','original'));name=x['origin'].get('filename',x['title'])if x.get('origin')else x['title'];name=next((f['name']for f in store.files(one('project'))['files']if f['id']==x['id']),name)if one('kind','original')=='original'else path.name
     self.send(200,path.read_bytes(),'application/octet-stream',{'Content-Disposition':"attachment; filename*=UTF-8''"+urllib.parse.quote(name,safe='')});return
    self.send(404,dict(error='页面不存在'))
   except PermissionError as exc:self.send(403,dict(error=str(exc)))

@@ -1,0 +1,74 @@
+{
+  "task": "034",
+  "date": "2026-10-21",
+  "patent_candidates": 6,
+  "pdf_count": 6,
+  "total_pages": 47,
+  "scanned_pdf_needs_ocr": 4,
+  "related_html": 4,
+  "file_records": 52,
+  "patents": [
+    {
+      "publication": "CN102720501A",
+      "title": "能保持原始地质层理信息的取心机构",
+      "pages": 5,
+      "source_id": "S28d2bbd59b1370e7",
+      "sha256": "28d2bbd59b1370e76683bbf431befb79332f9bda1fb2a3defcd6b1eb324c7e49"
+    },
+    {
+      "publication": "CN102721572B",
+      "title": "双层软袋钻探取心采样机构",
+      "pages": 8,
+      "source_id": "Sbca4f920e208b339",
+      "sha256": "bca4f920e208b339cdae85e288e5e9b5f7e2a6bc960181ab031f624120f5567e"
+    },
+    {
+      "publication": "CN104062141B",
+      "title": "月壤钻探取心机构性能测试系统",
+      "pages": 6,
+      "source_id": "Sff40915cb448bcd7",
+      "sha256": "ff40915cb448bcd7b3a829ac33c35617a9a043feff69fdde91bcf5a7a3b3d671"
+    },
+    {
+      "publication": "CN107503698B",
+      "title": "一种带有导流环的月壤钻进取芯机构",
+      "pages": 8,
+      "source_id": "S4659648546fa190a",
+      "sha256": "4659648546fa190ab1f83f764e9aa11b021aaa32f222d1dbbcc6ed7bebbce457"
+    },
+    {
+      "publication": "CN109323884B",
+      "title": "一种星壤取芯软袋用拉绳系扣快速封口组件",
+      "pages": 12,
+      "source_id": "S72e9d961e541dab9",
+      "sha256": "72e9d961e541dab9a7d0d3fde98efdb6e292f15253c82c11d2a93a5414403664"
+    },
+    {
+      "publication": "CN102745364B",
+      "title": "动力内置式月壤样品软袋缠绕整型转送装置",
+      "pages": 8,
+      "source_id": "S666209494b78dcc1",
+      "sha256": "666209494b78dcc1218b8d46caab4eb86173eff6f763822a8294ca00a6d95d81"
+    }
+  ],
+  "tests": {
+    "backend": 8,
+    "pipeline": 14,
+    "browser": 10
+  },
+  "checks": [
+    "raw_pdf_magic_and_hash",
+    "first_page_publication_title_visual_check",
+    "pdf_text_identity_for_two_text_pdfs",
+    "file_links_present",
+    "candidate_relation_preserved",
+    "facts_and_quality_equal_0.6.1",
+    "public_export_unchanged"
+  ],
+  "limits": [
+    "六条技术关联候选，非完整或获奖项目方确认清单",
+    "现法律状态/权属/实际装机仍未核验",
+    "扫描版可图像翻页，未OCR或新增全文研究核读"
+  ],
+  "local_url": "http://127.0.0.1:8776/?project=2025-00&kind=patent"
+}

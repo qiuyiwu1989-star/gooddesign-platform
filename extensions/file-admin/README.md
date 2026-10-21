@@ -29,3 +29,7 @@
 
 `python3 -m unittest discover -s tests -p 'test_file_admin_033.py'`；并运行旧管道测试。
 浏览器：真实8776只做阅读/原件下载；隔离库上传/拖放/网络表单模拟/失败与重试使用 `python3 tests/browser/file-admin-fixture.py` 的8777，不将测试文件放入真实项目库。浏览器脚本为tests/browser/file-admin-033.js。重复执行前停止隔离服务并清空其专用tmp/admin033-browser测试目录。
+
+## 专利资料（034）
+
+嫦娥专利资产索引在私有库 `2025-00/专利原文管理/专利原件清单.json`。后台“专利文档”按公开号关联6份PDF和4份检索网页；支持公开号搜索、PDF筛选、翻页与下载，显示技术关联候选及项目方待确认状态。6PDF共47页，其中4份扫描PDF需后续OCR；原文已可查看。新增资产不确认项目成果归属、现权属/法律状态或实际装机。

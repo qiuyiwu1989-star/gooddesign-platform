@@ -59,6 +59,10 @@ class FileAdminTests(unittest.TestCase):
   with patch.object(pp,'public_url',return_value='https://public.example/download'),patch.object(pp.urllib.request,'build_opener',return_value=Opener()):result=pp.fetch(self.lib,self.inbox,'demo-01','https://public.example/download')
   meta=pp.state(self.lib/'demo-01')['sources'][result['source_id']];self.assertTrue(meta['original'].endswith('.pdf'));self.assertEqual(meta['status'],'needs_ocr')
   url='?project=demo-01&source='+meta['id'];self.assertEqual(self.request('/api/pdf-info'+url)[1]['pages'],1);status,png,headers=self.request('/api/pdf-page'+url+'&page=0');self.assertEqual(status,200);self.assertTrue(png.startswith(b'\x89PNG'));self.assertEqual(self.request('/api/pdf-page'+url+'&page=9')[0],400)
+ def test_patent_assets_classified_without_confirming_project_or_law(self):
+  _,j,_=self.request('/api/upload?project=demo-01&name=patent.txt',b'public patent text');j=self.wait(j);sid=j['result']['source_id']
+  pp.save(self.lib/'demo-01/专利原文管理/专利原件清单.json',dict(items=[dict(patent_id='P01',publication='CN_DEMO',title='示例专利',library_source_id=sid,related_source_ids=[])]))
+  d=self.request('/api/files?project=demo-01')[1];x=d['files'][0];self.assertEqual(x['kind'],'patent');self.assertEqual(x['publication'],'CN_DEMO');self.assertIn('待确认',x['project_relation']);self.assertEqual(len(d['patents']),1)
  def test_job_restart_marks_interrupted(self):
   pp.save(self.lib/'.file-admin/jobs.json',[dict(id='fake',status='running')]);store=fa.Store(self.lib,self.inbox)
   try:self.assertEqual(store.jobs[0]['status'],'interrupted')
