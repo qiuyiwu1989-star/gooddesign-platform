@@ -9,7 +9,7 @@ import project_pipeline as pp
 import project_ownership as own
 import research_workflow as rw
 import steward_scope
-VERSION='steward-0.5.2'
+VERSION='steward-0.5.3'
 AGENT_METHOD='agent_evidence_extract_v1'
 PROTECTED=rw.RESTRICTED|{'completion_org_ids','completion_person_ids','award_list_confirmed','review_status'}
 class Steward:
@@ -23,6 +23,7 @@ class Steward:
     due REAL DEFAULT 0, lease REAL DEFAULT 0, created TEXT NOT NULL, finished TEXT, result TEXT, error TEXT);
     CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY,value TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS controls(id INTEGER PRIMARY KEY,at TEXT NOT NULL,actor TEXT NOT NULL,action TEXT NOT NULL,project TEXT,task_id INTEGER,previous TEXT);
+    CREATE TABLE IF NOT EXISTS asset_reviews(id INTEGER PRIMARY KEY,project TEXT NOT NULL,source_id TEXT NOT NULL,source_sha256 TEXT NOT NULL,key TEXT UNIQUE NOT NULL,review_json TEXT NOT NULL,actor TEXT NOT NULL,created TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS scope_holds(task_id INTEGER PRIMARY KEY,previous TEXT NOT NULL);
     CREATE INDEX IF NOT EXISTS task_due ON tasks(status,due);
    ''')
@@ -78,6 +79,28 @@ class Steward:
    if len(set(ids))!=len(ids):raise ValueError('研究提交有重复候选')
    rw.save(p,w)
   return self.enqueue_candidates(pid,ids)
+ def record_asset_review(self,pid,sid,expected_sha256,actor):
+  if not isinstance(actor,str)or not actor.strip():raise ValueError('须记录整理人')
+  with pp.lock(self.lib):
+   p=pp.project(self.lib,pid);x=rw.source(p,sid)
+   if x['sha256']!=expected_sha256 or pp.sha(pp.safe(p,x['original']).read_bytes())!=expected_sha256:raise ValueError('图片原件身份不符')
+   if Path(x['original']).suffix.lower()not in ('.jpg','.jpeg','.png','.webp','.gif','.tif','.tiff','.bmp'):raise ValueError('本操作仅登记图片资料整理')
+   file=p/'图片素材/图片清单.json';items=pp.load(file)['items']if file.exists()else[];rows=[r for r in items if r.get('library_source_id')==sid]
+   if len(rows)!=1:raise ValueError('图片清单关联缺失或不唯一')
+   row=rows[0]
+   if row.get('review_status')!='agent_visual_catalogued_not_engineering_review'or not row.get('visual_note')or row.get('sha256')!=expected_sha256:raise ValueError('尚无可核对的Agent视觉分类记录')
+   content={k:row.get(k)for k in ('title','visual_note','review_status','rights','locations')};key=rw.digest(dict(project=pid,source_id=sid,sha256=expected_sha256,review=content))
+   with self.connect()as db:
+    tasks=[dict(t)for t in db.execute("SELECT * FROM tasks WHERE project=? AND json_extract(payload,'$.kind')='source' AND json_extract(payload,'$.source_id')=? AND status IN ('running','awaiting_agent','needs_attention')",(pid,sid))]
+    if any(t['status']!='awaiting_agent'for t in tasks):raise ValueError('运行中或需判断的任务不能用图片分类关闭')
+    for t in tasks:
+     if json.loads(t['payload']).get('source_sha256')!=expected_sha256:raise ValueError('待办原件身份不符')
+    db.execute('INSERT OR IGNORE INTO asset_reviews(project,source_id,source_sha256,key,review_json,actor,created)VALUES(?,?,?,?,?,?,?)',(pid,sid,expected_sha256,key,json.dumps(content,ensure_ascii=False),actor,pp.now()));review_id=db.execute('SELECT id FROM asset_reviews WHERE key=?',(key,)).fetchone()['id']
+    for t in tasks:
+     previous=json.loads(t['result'])if t['result']else{};previous.update(asset_review_id=review_id,note='图片已做视觉分类与资料整理；不代表工程核验、文字全文核读或再发布授权',asset_review_processor=VERSION)
+     db.execute("UPDATE tasks SET status='completed',result=?,finished=?,lease=0 WHERE id=?",(json.dumps(previous,ensure_ascii=False),pp.now(),t['id']))
+     db.execute('INSERT INTO controls(at,actor,action,project,task_id,previous)VALUES(?,?,?,?,?,?)',(pp.now(),actor,'asset_review_recorded',pid,t['id'],json.dumps(t,ensure_ascii=False)))
+   return dict(asset_review_id=review_id,closed_tasks=[t['id']for t in tasks],source_id=sid,content_nature='asset_cataloguing_not_fact_review',expert_reviewed=False,research_version_changed=False)
  def pause(self,value,actor='本地操作员'):
   with self.connect()as db:
    old=db.execute('SELECT value FROM settings WHERE key=?',('paused',)).fetchone()

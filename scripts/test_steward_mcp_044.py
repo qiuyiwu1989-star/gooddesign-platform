@@ -1,5 +1,5 @@
 # coding: utf-8
-"""SDK acceptance for the first two published incremental research dossiers."""
+"""SDK acceptance for the published incremental research dossiers."""
 import asyncio,json
 from pathlib import Path
 from mcp import ClientSession,StdioServerParameters
@@ -13,7 +13,7 @@ async def main():
  async with stdio_client(StdioServerParameters(command=str(ROOT/'.runtime/pipeline/bin/python'),args=[str(ROOT/'scripts/archive_mcp.py')],cwd=str(ROOT)))as(read,write):
   async with ClientSession(read,write)as session:
    await session.initialize()
-   for pid in ['2015-02','2017-01']:
+   for pid in ['2015-02','2017-01','2019-s10']:
     overview=value(await session.call_tool('gd_project_overview',dict(project_id=pid)));assert not overview['baseline_only']
     guide=overview['reading_guide'];assert guide['status']=='available'
     assert guide['notes']['research_revision']==overview['publication_revision']and guide['notes']['project_id']==pid

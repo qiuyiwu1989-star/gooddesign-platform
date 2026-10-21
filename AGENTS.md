@@ -117,3 +117,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 044j研究评估：research_assessment.py将六维AI判断与机器证据检查分开、绑定research版不可覆盖，质量总分/专家状态不提升。safe_read另做当前证据复检；MCP概览review_detail默认false仅摘要，true可深入，工具仍11个。评估/导读/研究事实版本独立；新数据不能沿用旧评估。当前报告0.1.0绑蛟龙000005/复兴000007。cgd公开目录已可用匿名网页会话+X-Requested-With检索，官方条目详情和整届shared响应在044j，未入结构化事实；优先按项目单行核对再发布，勿把createTime/participant当获奖年份/个人名单。
 
 044k官方目录：source_json_row.py只投影data.rows中唯一id且名称/matchYear与项目一致的原行，保留父响应/行哈希；research_workflow和研究评估验证父件成员关系，交付不混整届其他条目。Steward0.5.2。MCP gd_read_evidence含supporting_evidence，可用chunks_sha256选择研究版已有修订，禁止任意路径/越权。当前蛟龙000006、复兴000008各导读评估0.1.0；图片索引按范围交付，旧清单缺sha从来源身份补齐不丢人工标签。第三例FAST须先核2019馈源舱对象，别混2017索驱动系统与整台FAST。
+
+044l：Steward0.5.3新增record_asset_review，仅可信本地Agent可用，核当前project归属/原件SHA/清单视觉状态后持久登记asset_reviews，保留旧任务结果，仅关闭本图awaiting_agent任务；非事实/全文/工程/权利审核，不关冲突或运行任务。3张044k已视觉整理图片闭环。第三例2019-s10 FAST馈源舱已核2019银奖，research000001为25记录/40有值事实/6AI，导读/六维评估各0.1.0；不得混2017索驱动或整台FAST。2018综述/2020测量论文/2025设备介绍的对象与时间分开，2020精度试验非恶劣天气验证；A02均值/Rms统计口径待澄清，DOI原印刷连接号与canonical_doi检索形式分开。8776会话5259，暂停已恢复；MDPI403三次失败不绕过，尚无FAST专利清单。
