@@ -313,3 +313,5 @@ release `20260911T015454Z-scroll-fix`。针对用户反馈“为什么还是不�
 051续接06:27：2023-06/07经冻结独立复核54项首版research1，49事实5AI追溯/当前阅读评估/真实MCP过；shared7项与错误event4项未发布。paper年份句号规范门禁拒后从同原块明确2024 Aug16取连续年份，不放宽规则。quality准备2023-01/2021-04共享来源安全选录计划，原始资料/评分/专家边界不变。旧模型进程已结束不重复启动，Agent13/14研究继续。
 
 051续接06:57：5连续shared选录已真实native执行，2023-01/2021-04 research1、18事实2AI可追溯+当前导读评估/真实MCP通过。父shared/子来源与字符定位指纹保留，排除同页他案；2021ID与2022获奖报道不混。quality审13/14，pilot current-guides-2四案精导读，triage新batch15。仍持续，不部署私有资料。
+
+051续接07:27：13/14四新案research1合110事实7AI/current基本导读评估/真实MCP通过，pilot current-guides-3精导读中。复用执行器的发布reason残留上一批措辞，执行文档已明确纠正，实际字段/证据对象未混；保留旧历史。current-guides-2四案精准0.1.2已freeze+MCP过。quality审batch15，triage续16待核名；全部仍私有，不按首版数称标杆完成。
