@@ -18,7 +18,9 @@ def _request(request):
  if request.get('scenario_type')!='simulated':raise ValueError('当前仅接受明确模拟需求，实际企业研究须另行确认输入')
  for k in ('needs','functions','constraints','unknowns'):ik._terms(request.get(k,[]))
  if not request.get('needs') and not request.get('functions'):raise ValueError('至少填写需求或功能')
- return copy_json(request)
+ normalized=copy_json(request)
+ for k in ('needs','functions','constraints','unknowns'):normalized.setdefault(k,[])
+ return normalized
 
 def copy_json(v):return json.loads(json.dumps(v,ensure_ascii=False,allow_nan=False))
 
@@ -94,3 +96,21 @@ def read_application(run_id,output_root=None,expected_request_sha256=None):
  if run['run_id']!=run_id or m['run_id']!=run_id or rw.digest(run['request'])!=run['request_sha256'] or run['request_sha256']!=m['request_sha256'] or run['source_versions']!=m['source_versions']:raise ValueError('运行身份/需求/版本不符')
  if expected_request_sha256 and expected_request_sha256!=run['request_sha256']:raise ValueError('需求身份不符')
  return run
+
+
+def validate_application(library,run,require_current=False):
+ """Recheck source/version/returned node identities, not validity of target design."""
+ if rw.digest(run['request'])!=run['request_sha256']:raise ValueError('需求指纹不符')
+ known={}
+ for binding in run['source_versions']:
+  i=ik.build_index(library,binding['project_id'],binding['revision'])
+  ik.validate_index(library,i,require_current=require_current)
+  if any(i[k]!=binding[k] for k in ['dataset_sha256','publication_manifest_sha256','index_sha256','source_bindings']):raise ValueError('应用绑定的源上下文已变动')
+  for n in i['nodes']:known[i['project_id']+'@'+i['revision']+':'+n['id']]=n
+ for n in run['selected_knowledge']:
+  original=known.get(n['key'])
+  if not original or any(original[k]!=n[k] for k in ['record_id','field','value','nature','evidence_state','evidence','conditions','limitations']):raise ValueError('应用知识引用不属于绑定的项目/版本/字段')
+ for m in run['method_versions']:
+  if methods.read_method(m['method_id'],m['version'],'full')['sha256']!=m['sha256']:raise ValueError('方法版本已变动')
+ _validate_analysis(run['analysis'],dict(selected_knowledge=run['selected_knowledge']))
+ return dict(status='passed',meaning='需求、来源、方法和引用可追溯；不是企业效果或方案正确性认证')

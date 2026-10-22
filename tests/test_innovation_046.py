@@ -37,7 +37,7 @@ class Knowledge046Tests(unittest.TestCase):
   i=ik.build_index(self.root,'P');(self.folder/'档案.json').write_text('{"new":true}');self.assertRaises(ValueError,ik.validate_index,self.root,i)
  def test_application_unknown_and_safe_read(self):
   r=dict(task_id='T1',title='模拟取样',scenario_type='simulated',needs=['保护样品'],functions=['取样'],constraints=[],unknowns=['材料'])
-  out=app.run_application(self.root,r,{'P':'research-000001'},output_root=self.root/'runs');run=app.read_application(out['run_id'],self.root/'runs',rw.digest(r));self.assertEqual(run['analysis']['contradiction_analysis']['status'],'unknown');self.assertEqual(len(run['method_versions']),3);self.assertFalse(run['execution_mode']['source_facts_modified']);self.assertRaises(ValueError,app.read_application,'../x',self.root/'runs');self.assertRaises(ValueError,app.read_application,out['run_id'],self.root/'runs','bad')
+  out=app.run_application(self.root,r,{'P':'research-000001'},output_root=self.root/'runs');run=app.read_application(out['run_id'],self.root/'runs',rw.digest(r));self.assertEqual(run['analysis']['contradiction_analysis']['status'],'unknown');self.assertEqual(len(run['method_versions']),3);self.assertEqual(app.validate_application(self.root,run)['status'],'passed');self.assertFalse(run['execution_mode']['source_facts_modified']);self.assertRaises(ValueError,app.read_application,'../x',self.root/'runs');self.assertRaises(ValueError,app.read_application,out['run_id'],self.root/'runs','bad')
  def test_reasoner_bad_reference_rejected(self):
   def bad(c):
    a=app._analysis(c);a['hypotheses'][0]['knowledge_refs']=['OTHER@bad'];return a
