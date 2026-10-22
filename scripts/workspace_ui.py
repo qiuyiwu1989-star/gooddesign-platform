@@ -2,6 +2,7 @@
 """041: shared private workspace navigation; no source data changes."""
 import html,re,urllib.parse
 import project_pipeline as pp
+from dossier_layout import CONTEXT_CSS
 ROOT=pp.ROOT
 CSS='''
 .workspace-header[hidden]{display:none!important}.workspace-header{min-height:72px!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;padding:14px 32px!important;background:#fff!important;border-bottom:1px solid #e4e5ef!important;font:14px/1.5 system-ui,-apple-system,"PingFang SC",sans-serif!important;position:relative;z-index:40;color:#25273c}.workspace-header a{text-decoration:none}.workspace-brand{color:#25273c;font-weight:700;font-size:18px;white-space:nowrap}.workspace-brand small{font-size:11px;color:#687083;font-weight:400;margin-left:10px}.workspace-nav{display:flex;gap:6px}.workspace-nav a{padding:10px 16px;border-radius:9px;color:#596074;white-space:nowrap}.workspace-nav a[aria-current=page]{color:#5947d9;background:#f0edff;font-weight:600}.workspace-private{font-size:11px;color:#687d6c;white-space:nowrap}.workspace-skip{position:absolute;left:16px;top:-80px;background:white;padding:12px;z-index:100}.workspace-skip:focus{top:8px}@media(max-width:700px){.workspace-header{padding:12px 16px!important;gap:10px!important;flex-wrap:wrap}.workspace-private,.workspace-brand small{display:none}.workspace-nav{width:100%;justify-content:space-between}.workspace-nav a{text-align:center;flex:1;padding:10px 12px;font-size:13px}.workspace-brand{font-size:17px}}@media print{.workspace-header,.workspace-skip{display:none!important}}
@@ -22,7 +23,7 @@ def dossier(project,lib=pp.LIB):
  if project!='2025-00':return empty(project,'dossier','这个项目的研究档案还有待整理','已保留本项目的资料入口。嫦娥是当前已整理的标杆案例；这里不会用其他项目内容代替。')
  p=ROOT/'04-知识库/标杆案例/2025-00-嫦娥钻取采样';text=(p/'档案.html').read_text(encoding='utf-8')
  text=re.sub(r'<header>.*?</header>',lambda m:nav('dossier',project),text,count=1,flags=re.S)
- text=text.replace('</head>','<style>'+CSS+'.reader-shell{--muted:#687083}.reader-tools{display:none}.reader-shell .hero{padding-top:26px}.workspace-context{font:13px/1.7 system-ui;color:#687083;margin:0 0 22px}.workspace-context a{color:#5947d9}.reader-shell .toc{top:26px;max-height:calc(100vh - 48px)}#view-bar{top:0}.reader-shell [id]{scroll-margin-top:90px}</style></head>')
+ text=text.replace('</head>','<style>'+CSS+CONTEXT_CSS+'.reader-tools{display:none}</style></head>')
  text=text.replace('<div class="hero">','<div class="hero" id="workspace-content"><p class="workspace-context">人工整合档案 · 8 个阅读模块　<a href="/?project=2025-00#research-panel">整理与查看研究版本 →</a></p>',1)
  text=text.replace('style="color:#a78145"','class="archive-caution"')
  text=text.replace('</head>','<style>.archive-caution{color:#8b6634}</style></head>')

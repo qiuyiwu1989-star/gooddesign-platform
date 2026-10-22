@@ -138,3 +138,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 
 
 044t：2026-10-22 10:50自动开发续接automation已PAUSED并复核，产品8776/资料管家继续运行。当前阶段已收口，研究/测试包保持冻结，未完成任务见044最终说明；不要因旧心跳提示自行重启开发，待用户新指令。
+
+045：所有/dossier/项目沿用嫦娥视觉规范，dossier_layout.py复用dossier_reader_ui和render_reader_dossier的阅读CSS；steward_dossier_ui映射动态数据，workspace_ui共享上下文。新档案不得再造research-reader独立主题；未评不画分数、AI/未知/机器核读边界保留。规范03-平台规划/项目档案统一阅读规范-v1.md；4项目真实样式/三视图/移动交互与相关Python测试通过。研究/评分/044包未变，自动续接仍暂停。

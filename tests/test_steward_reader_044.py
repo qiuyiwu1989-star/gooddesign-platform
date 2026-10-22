@@ -13,7 +13,7 @@ class ReaderTests(unittest.TestCase):
   self.assertIn('还有待整理',workspace_ui.dossier('sample',self.lib))
  def test_eight_modules_all_views_and_sources(self):
   c=self.candidate();self.approve(c);rw.publish(self.lib,'sample','测试员','首版');html=workspace_ui.dossier('sample',self.lib)
-  self.assertEqual(html.count('<details class="research-box" id="module-'),8)
+  self.assertEqual(html.count('<details class="reader-section reader-module" id="reader-'),8)
   for text in ['资料与解读','档案评估','research-000001','10.1234/test.2026','查看出处与原文','下载保存的原件','质量分：未评'] :self.assertIn(text,html)
   self.assertIn('project=sample',html);self.assertNotIn('project=2025-00',html)
  def test_values_are_escaped_and_ai_not_facts(self):
