@@ -61,6 +61,15 @@ def cell(data,rid,field):
  r=next((r for r in data['records']if r['id']==rid),None)
  return r.get('cells',{}).get(field)if r else None
 
+def interpretation_target(data,target_id,entity,record_id,field):
+ if not isinstance(target_id,str)or not target_id or len(target_id)>100:raise ValueError('须明确指定一个当前AI解释候选ID')
+ matches=[c for c in data.get('interpretations',[])if c.get('id')==target_id]
+ if len(matches)!=1:raise ValueError('待替换AI解释不在当前版本或身份不唯一')
+ target=matches[0]
+ if target.get('content_nature')not in ('ai_interpretation','ai_hypothesis')or not target.get('fingerprint'):raise ValueError('替换目标须为已登记的AI解释候选')
+ if (target.get('entity'),target.get('record_id'),target.get('field'))!=(entity,record_id,field):raise ValueError('AI替换须保持同一实体、记录与字段')
+ return target
+
 def validate_type(value,typ):
  if value is None:raise ValueError('候选值不能为空；未知值请保留待补而非猜填')
  ok=True
@@ -99,6 +108,7 @@ def add_candidate(p,w,args,actor):
  elif value is not None or not args.get('limitations'):raise ValueError('清空字段须传null并说明撤回原因')
  nature=args.get('content_nature','source_statement')
  if nature not in ['source_statement','ai_interpretation','ai_hypothesis']:raise ValueError('内容性质无效')
+ if 'replaces_interpretation_id'in args and nature=='source_statement':raise ValueError('事实候选不能替换AI解释')
  if operation=='clear'and nature!='source_statement':raise ValueError('当前撤回操作仅用于事实字段；AI层请提交新的有边界解读')
  if field in RESTRICTED and not args.get('conditions'):raise ValueError('归属/核读/权利状态等敏感判断必须填写适用条件与证据边界')
  x,b=evidence(p,args)
@@ -119,6 +129,9 @@ def add_candidate(p,w,args,actor):
  data=dataset(p,w);existing=next((r for r in data['records']if r['id']==rid),None)
  if existing and existing['entity']!=entity:raise ValueError('记录实体类型冲突')
  c=dict(operation=operation,entity=entity,field=field,record_id=rid,title=str(args.get('title')or(existing or {}).get('title')or rid),value=value,content_nature=nature,source_id=x['id'],source_sha256=x['sha256'],chunks_path=x['chunks'],chunks_sha256=pp.sha(pp.safe(p,x['chunks']).read_bytes()),chunk_id=b['id'],locator=b['locator'],quote=args['quote'],quote_sha256=pp.sha(args['quote'].encode()),source_read_scope=x['read_scope'],ingest_revision=pp.state(p)['revision'],ownership_revision=own.registry(p).get('version',0),object=str(args.get('object','')),unit=str(args.get('unit','')),conditions=str(args.get('conditions','')),limitations=str(args.get('limitations','')),extraction_method=str(args.get('extraction_method','manual_or_agent_submission')),base_cell_sha256=digest(cell(data,rid,field)))
+ if 'replaces_interpretation_id'in args:
+  target=interpretation_target(data,args['replaces_interpretation_id'],entity,rid,field)
+  c.update(replaces_interpretation_id=target['id'],replaces_interpretation_sha256=digest(target),replaces_interpretation_fingerprint=target['fingerprint'])
  identity=digest({k:v for k,v in c.items()if k not in ['ingest_revision','ownership_revision']})
  old=next((x for x in w['candidates']if x['fingerprint']==identity),None)
  if old:return old
@@ -263,8 +276,9 @@ def publish(lib,pid,actor,reason,expected_candidate_ids=None,selected_candidate_
    if not isinstance(expected_candidate_ids,list)or any(not isinstance(x,str)for x in expected_candidate_ids)or sorted(expected_candidate_ids)!=sorted(c['id']for c in batch):raise ValueError('待入档内容已变化，请刷新并重新预览')
   if not batch:return dict(status='no_changes',revision='research-%06d'%prior_revision)
   if p.name=='2025-00'and w['base_sha256']!=pp.sha(BENCH.read_bytes()):raise ValueError('人工深研底稿已更新，请先核对基线，不覆盖新研究')
-  seen=set();changes=[];base_data=copy.deepcopy(data)
+  seen=set();replaced=set();changes=[];base_data=copy.deepcopy(data)
   for c in batch:
+   if 'replaces_interpretation_id'in c and(c['content_nature']=='source_statement'or c.get('operation','set')!='set'):raise ValueError('仅AI解释的set候选可显式替换当前AI解释')
    evidence(p,c)
    if c['content_nature']=='source_statement':
     key=(c['record_id'],c['field'])
@@ -280,8 +294,17 @@ def publish(lib,pid,actor,reason,expected_candidate_ids=None,selected_candidate_
      supporting=before.get('supporting_evidence',[])+([before['evidence']]if before.get('evidence')else [])
      newcell['supporting_evidence']=list({digest(e):e for e in supporting if e!=newcell['evidence']}.values())
    else:
-    before=None;data.setdefault('interpretations',[]).append(copy.deepcopy(c))
-   changes.append(dict(operation=c.get('operation','set'),candidate_id=c['id'],record_id=c['record_id'],field=c['field'],before=before,after=c['value'],source_id=c['source_id'],chunk_id=c['chunk_id'],quote=c['quote'],content_nature=c['content_nature'],reviewer=c['reviewer']))
+    before=None
+    if 'replaces_interpretation_id'in c:
+     target_id=c['replaces_interpretation_id']
+     if target_id in replaced:raise ValueError('同一AI解释有多个待替换候选，请明确只采用一项')
+     target=interpretation_target(base_data,target_id,c['entity'],c['record_id'],c['field'])
+     if digest(target)!=c.get('replaces_interpretation_sha256')or target['fingerprint']!=c.get('replaces_interpretation_fingerprint'):raise ValueError('待替换AI解释自提炼后已改变，请重新审核')
+     before=copy.deepcopy(target);data['interpretations']=[item for item in data.get('interpretations',[])if item['id']!=target_id];replaced.add(target_id)
+    data.setdefault('interpretations',[]).append(copy.deepcopy(c))
+   change=dict(operation='replace_interpretation'if c.get('replaces_interpretation_id')else c.get('operation','set'),candidate_id=c['id'],record_id=c['record_id'],field=c['field'],before=before,after=c['value'],source_id=c['source_id'],chunk_id=c['chunk_id'],quote=c['quote'],content_nature=c['content_nature'],reviewer=c['reviewer'])
+   if c.get('replaces_interpretation_id'):change['replacement']=dict(before_id=c['replaces_interpretation_id'],after_id=c['id'],before_sha256=c['replaces_interpretation_sha256'],before_fingerprint=c['replaces_interpretation_fingerprint'])
+   changes.append(change)
   rev='research-%06d'%(prior_revision+1);data.update(publication_revision=rev,published_at=pp.now(),applied_candidate_ids=sorted(applied|{c['id']for c in batch}),quality_score_status='unchanged_from_authored_baseline',expert_reviewed=False)
   parent=None
   if prior_revision:
