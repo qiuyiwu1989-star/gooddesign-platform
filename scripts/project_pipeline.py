@@ -125,7 +125,8 @@ def commit(p,s,reason):
  with (p/'版本/更新日志.md').open('a',encoding='utf-8')as f:f.write('\n- %s · %s · %s；来源%d份。\n'%(s['updated_at'],revision,reason,len(s['sources'])))
  return revision
 
-def ingest(p,path,origin=None,retry=False):
+def ingest(p,path,origin=None,retry=False,initial_scope=None):
+ if initial_scope not in (None,'pending'):raise ValueError('首次入库范围只能为默认或待确认')
  if path.is_symlink():raise ValueError('不导入符号链接')
  before=path.stat()
  if before.st_size>MAX_BYTES:raise ValueError('文件超过30MB，需分批处理')
@@ -152,6 +153,12 @@ def ingest(p,path,origin=None,retry=False):
  if not blocks:text+='暂无可提取文字，已进入待OCR/转换/排错队列。\n'
  for block in blocks:text+='## '+block['id']+' · '+block['locator']+'\n\n'+block['text']+'\n\n'
  (dest/'可读来源.md').write_text(text,encoding='utf-8');s['sources'][sid]=metadata
+ if initial_scope=='pending':
+  # Freeze admission ownership in the FIRST ingestion snapshot, before rendering/commit.
+  from project_ownership import registry
+  reg=registry(p);reg['version']=int(reg.get('version',0))+1
+  reg['assignments'][sid]=dict(scope='pending',relation='network_collection_candidate_unverified',owner_project=p.name,reason='网络采集候选先待核，项目关联与资料内容尚未审核',actor='受控网络采集',updated_at=now())
+  save(p/'资料归属.json',reg)
  revision=commit(p,s,'导入来源 '+sid)
  return dict(status=status,source_id=sid,revision=revision)
 
@@ -200,7 +207,7 @@ def public_url(url):
 class Redirect(urllib.request.HTTPRedirectHandler):
  def redirect_request(self,req,fp,code,msg,headers,newurl):
   public_url(newurl);return super().redirect_request(req,fp,code,msg,headers,newurl)
-def fetch(lib,inbox,pid,url):
+def fetch(lib,inbox,pid,url,initial_scope=None):
  p=project(lib,pid);public_url(url);opener=urllib.request.build_opener(Redirect())
  with opener.open(urllib.request.Request(url,headers={'User-Agent':'GoodDesignSourceArchive/0.1'}),timeout=20)as response:
   data=response.read(MAX_BYTES+1)
@@ -217,7 +224,7 @@ def fetch(lib,inbox,pid,url):
  target=inbox/pid/('web-'+sha(data)[:16]+ext);target.parent.mkdir(parents=True,exist_ok=True)
  target.write_bytes(data)
  save(target.with_name(target.name+'.origin.json'),dict(kind='web',requested_url=url,url=final,fetched_at=now(),content_type=content_type,declared_charset=charset))
- result=ingest(p,target,load(target.with_name(target.name+'.origin.json')))
+ result=ingest(p,target,load(target.with_name(target.name+'.origin.json')),initial_scope=initial_scope)
  log(lib,'web_fetch',project_id=pid,url=url,final_url=final,**result)
  return result
 
