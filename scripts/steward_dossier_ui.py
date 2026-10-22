@@ -45,7 +45,11 @@ def render(lib,pid,header,shared_css):
   rows=''.join('<div class="research-row"><dt>'+h(dictionary.get(k,{}).get('label',k))+'</dt><dd>'+h(val(c['value']))+evidence(c)+'</dd></div>'for k,c in known_fields)
   missing=[k for k,c in r.get('cells',{}).items()if c.get('value_state')!='known'or c.get('value')is None]
   blanks='<details class="missing-fields reader-expand"><summary>待补信息 · '+str(len(missing))+' 项</summary><dl class="reader-properties">'+''.join('<div><dt>'+h(dictionary.get(k,{}).get('label',k))+'</dt><dd><span class="blank-value" aria-label="暂无资料"></span></dd></div>'for k in missing)+'</dl></details>'if missing else''
-  return '<details class="research-record reader-expand" id="record-'+h(r['id'])+'"><summary>'+h(r['title'])+'</summary><dl class="reader-properties">'+rows+'</dl>'+blanks+'</details>'
+  withdrawn=[c for c in r.get('cells',{}).values()if c.get('value_state')=='not_obtained'and c.get('evidence')]
+  retired=not known_fields and bool(withdrawn)
+  status=' · 已撤回旧记录'if retired else''
+  explanation=('<p class="reader-note">这条旧记录已撤回，保留位置用于版本追溯。'+h(withdrawn[0].get('limitations')or'更正依据见档案评估中的更新记录。')+'</p>')if retired else''
+  return '<details class="research-record reader-expand" id="record-'+h(r['id'])+'"><summary>'+h(r['title'])+status+'</summary>'+explanation+'<dl class="reader-properties">'+rows+'</dl>'+(''if retired else blanks)+'</details>'
  total=sum(len(r.get('cells',{}))for r in records);filled=sum(len(known(r))for r in records)
  module_html=[];assessment=[]
  for i,(name,entities,key)in enumerate(zip(pp.MODULES,MODULE_ENTITIES,KEYS),1):

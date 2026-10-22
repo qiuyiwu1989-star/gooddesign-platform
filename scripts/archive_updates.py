@@ -3,7 +3,7 @@
 import html,json,re,urllib.parse,sqlite3
 from collections import Counter
 import project_pipeline as pp,research_workflow as rw
-LABELS={'added':'新增事实','corrected':'修正事实','withdrawn':'撤回事实','evidence_added':'补充依据','ai_added':'新增AI解读'}
+LABELS={'added':'新增事实','corrected':'修正事实','withdrawn':'撤回事实','evidence_added':'补充依据','ai_added':'新增AI解读','ai_corrected':'修订AI解读'}
 def read(lib,pid,revision=None,offset=0,limit=20):
  if type(offset)is not int or type(limit)is not int or offset<0 or not 1<=limit<=50:raise ValueError('offset>=0，limit须1–50')
  p=pp.project(lib,pid);w=rw.current(p);latest='research-%06d'%w['revision']
@@ -13,13 +13,13 @@ def read(lib,pid,revision=None,offset=0,limit=20):
  revision=revision or latest;folder,manifest=rw.check_version(p,revision);delta=pp.load(folder/'changes.json');data=pp.load(folder/'档案.json');records={r['id']:r for r in data['records']};dictionary=rw.schema();rows=[]
  for c in delta['changes']:
   before=c.get('before')or{};old=before.get('value');nature=c.get('content_nature','source_statement')
-  if nature!='source_statement':kind='ai_added'
+  if nature!='source_statement':kind='ai_corrected'if c.get('replacement')or c.get('replaces_interpretation_id')else'ai_added'
   elif c.get('operation')=='clear':kind='withdrawn'
   elif old is None or before.get('value_state')!='known':kind='added'
   elif old==c['after']:kind='evidence_added'
   else:kind='corrected'
   record=records.get(c['record_id'],{});label=dictionary.get(record.get('entity'),{}).get(c['field'],{}).get('label',c['field'])
-  rows.append(dict(kind=kind,label=LABELS[kind],record_id=c['record_id'],record_title=record.get('title',c['record_id']),field=c['field'],field_label=label,before=old,after=c['after'],source_id=c['source_id'],chunk_id=c['chunk_id'],quote=c['quote'],content_nature=nature,candidate_id=c['candidate_id']))
+  rows.append(dict(kind=kind,label=LABELS[kind],record_id=c['record_id'],record_title=record.get('title',c['record_id']),field=c['field'],field_label=label,before=old,after=c['after'],source_id=c['source_id'],chunk_id=c['chunk_id'],quote=c['quote'],content_nature=nature,candidate_id=c['candidate_id'],replaces_interpretation_id=c.get('replaces_interpretation_id')or c.get('replacement',{}).get('before_id'),before_context={k:before.get(k)for k in ('conditions','limitations')}if kind=='ai_corrected'else None,after_context=next(({k:i.get(k)for k in ('conditions','limitations')}for i in data.get('interpretations',[])if i['id']==c['candidate_id']),None)if kind=='ai_corrected'else None))
  counts=dict(Counter(c['kind']for c in rows));pending=[]
  if revision==latest:
   for c in w['candidates']:
@@ -32,6 +32,8 @@ def render(lib,pid):
  rows=[]
  for c in d['changes']:
   q=urllib.parse.urlencode(dict(project=pid,source=c['source_id'],kind='original'));before=fmt(c['before']);after=fmt(c['after'])
+  if c['kind']=='ai_corrected':
+   before+='\n适用前提与限制：'+fmt(c['before_context']);after+='\n适用前提与限制：'+fmt(c['after_context'])
   rows.append('<details class="reader-expand"><summary>'+h(c['label'])+' · '+h(c['record_title'])+' / '+h(c['field_label'])+'</summary><dl class="reader-properties"><div><dt>更新前</dt><dd>'+h(before)+'</dd></div><div><dt>更新后</dt><dd>'+h(after)+'</dd></div></dl><details><summary>查看本次依据</summary><blockquote>'+h(c['quote'])+'</blockquote><a href="/asset?'+h(q)+'">查看来源原件</a></details></details>')
  download='/api/research-document?'+urllib.parse.urlencode(dict(project=pid,document='changes',revision=d['revision']))
  return '<details class="reader-expand archive-updates" id="archive-updates"><summary>本次档案更新 · '+h(d['revision'])+'</summary><p class="reader-note">'+h(d['previous_revision'])+' → '+h(d['revision'])+'。'+h(d['quality_note'])+'</p><p>'+h(' · '.join(LABELS[k]+str(v)+'项'for k,v in d['counts'].items()))+'</p>'+''.join(rows)+'<p class="reader-note">本次共'+str(d['total'])+'项更新，以上展示前8项；另有'+str(d['pending_count'])+'项候选待处理，未计入已发布内容。</p><a href="'+h(download)+'">下载完整更新记录</a></details>'
