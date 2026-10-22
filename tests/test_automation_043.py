@@ -28,5 +28,5 @@ class AutomationTests(unittest.TestCase):
  def test_unknown_project_and_path_rejected(self):
   for pid in ['missing','../demo-01']:self.assertEqual(self.request('/api/automation?project='+pid)[0],400)
  def test_ui_explains_capability_boundary(self):
-  html=self.request('/')[1].decode();self.assertIn('自动整理状态',html);self.assertIn('后台尚未接入独立推理模型',html);self.assertIn('id="wf-extract"',html)
+  html=self.request('/')[1].decode();self.assertIn('自动整理状态',html);self.assertIn('已接入受限的语义深读适配器',html);self.assertIn('id="wf-extract"',html)
 if __name__=='__main__':unittest.main()

@@ -4,7 +4,9 @@
 This queue never writes research facts: output is a validated Steward submission
 bundle, pending a separate publish decision. Documents are untrusted data.
 """
-import argparse, contextlib, copy, json, os, re, shutil, signal, socket, sqlite3, subprocess, sys, time, tomllib
+import argparse, contextlib, copy, json, os, re, shutil, signal, socket, sqlite3, subprocess, sys, time
+try:import tomllib
+except ModuleNotFoundError:tomllib=None
 from pathlib import Path
 import project_pipeline as pp
 import research_workflow as rw
@@ -83,7 +85,10 @@ class CodexReader:
   # Preserve only the user's selected model; do not load plugins/MCP/hooks or secrets.
   config=Path(os.environ.get('CODEX_HOME',str(Path.home()/'.codex')))/'config.toml'
   if config.exists():
-   selected=tomllib.loads(config.read_text()).get('model')
+   raw_config=config.read_text()
+   if tomllib:selected=tomllib.loads(raw_config).get('model')
+   else:
+    match=re.search(r'^model\s*=\s*"([A-Za-z0-9._-]+)"\s*$',raw_config.split('\n[')[0],re.M);selected=match[1]if match else None
    if isinstance(selected,str):cmd+=['-c','model='+json.dumps(selected)]
   cmd+=['-c','web_search="disabled"','-c','project_doc_max_bytes=0','-c','model_reasoning_effort="low"','-']
   env,network=model_environment();tmp=folder/'tmp';tmp.mkdir(exist_ok=True);env.update(TMPDIR=str(tmp),XDG_CACHE_HOME=str(tmp/'cache'))

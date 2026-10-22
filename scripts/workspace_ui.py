@@ -16,10 +16,15 @@ def admin(text,project):
 def empty(project,active,title,explanation):
  return '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+html.escape(title)+'</title><style>'+CSS+'body{margin:0;background:#f7f8fc;color:#25273c;font:15px/1.8 system-ui}main{max-width:700px;margin:60px auto;padding:30px}a{color:#5947d9}</style>'+nav(active,project)+'<main id="workspace-content"><h1>'+html.escape(title)+'</h1><p>'+html.escape(explanation)+'</p><a href="/?'+urllib.parse.urlencode({'project':project})+'">整理本项目资料 →</a><p><a href="/dossier/?project=2025-00">查看嫦娥标杆档案 →</a></p></main></html>'
 def dossier(project,lib=pp.LIB):
+ from archive_updates import inject as inject_updates
+ def decorate(text):
+  text=inject_updates(text,lib,project)
+  entry='<p class="reader-note"><a href="/innovation/?'+urllib.parse.urlencode(dict(project=project))+'">检索创新知识，开展独立应用试验 →</a></p>'
+  return text.replace('id="reader-applications"', 'id="reader-applications"',1).replace('<div class="module-list-heading">',entry+'<div class="module-list-heading">',1)
  if project!='2025-00':
   from steward_dossier_ui import render
   research=render(lib,project,nav('dossier',project),CSS)
-  if research:return research
+  if research:return decorate(research)
  if project!='2025-00':return empty(project,'dossier','这个项目的研究档案还有待整理','已保留本项目的资料入口。嫦娥是当前已整理的标杆案例；这里不会用其他项目内容代替。')
  p=ROOT/'04-知识库/标杆案例/2025-00-嫦娥钻取采样';text=(p/'档案.html').read_text(encoding='utf-8')
  text=re.sub(r'<header>.*?</header>',lambda m:nav('dossier',project),text,count=1,flags=re.S)
@@ -32,7 +37,7 @@ def dossier(project,lib=pp.LIB):
  text=re.sub(r'href="(?!https?:|#|/|mailto:)([^\"]+)"', 'aria-disabled="true" title="研究文件请在资料管理中查看"',text)
  text=text.replace('onclick="window.print()"','data-print="true"')
  text=text.replace('</body>','<script>document.querySelectorAll("[data-print]").forEach(b=>b.addEventListener("click",()=>window.print()));</script></body>')
- return text
+ return decorate(text)
 def graph():
  text=(ROOT/'04-知识库/标杆案例/2025-00-嫦娥钻取采样/项目图谱.html').read_text(encoding='utf-8')
  text=re.sub(r'<header>.*?</header>',lambda m:nav('research'),text,count=1,flags=re.S)

@@ -15,6 +15,8 @@ class Store:
   for j in self.jobs:
    if j['status']in ('queued','running'):j.update(status='interrupted',error='服务上次停止，任务中断；请重试')
   self.persist();self.steward=Steward(lib,inbox)
+  from semantic_service import Service
+  self.semantic=Service(self)
  def persist(self):pipe.save(self.file,self.jobs)
  def submit(self,pid,kind,**args):
   pipe.project(self.lib,pid)
@@ -39,6 +41,15 @@ class Store:
     execution=subprocess.run([str(ROOT/'.runtime/pipeline/bin/python'),str(ROOT/'scripts/run_method_case_demo.py')],cwd=str(ROOT),capture_output=True,text=True,timeout=180)
     if execution.returncode:raise ValueError('双库示例运行失败，请检查版本/证据或查看脚本日志：'+execution.stderr[-900:])
     result=json.loads(execution.stdout)
+   elif j['kind']=='innovation_application':
+    import innovation_application as application
+    versions={pid:'research-%06d'%research.current(pipe.project(self.lib,pid))['revision']for pid in j['args']['projects']}
+    reasoner=None
+    if j['args'].get('use_model'):
+     from application_reasoner import Reasoner
+     reasoner=Reasoner(self.folder/'application-model')
+    r=application.run_application(self.lib,j['args']['request'],versions,output_root=self.folder/'applications',reasoner=reasoner,reasoner_identity='真实Codex CLI · 只读/禁用工具/120秒上限'if reasoner else None)
+    result=dict(status='completed',run_id=r['run_id'],mode=r['run']['execution_mode'],source_facts_modified=False)
    elif j['kind']=='publish':result=research.publish(self.lib,j['project_id'],j['args']['actor'],j['args']['reason'],j['args'].get('expected_candidate_ids'))
    else:
     with pipe.lock(self.lib):
@@ -62,13 +73,13 @@ class Store:
   thread=getattr(self,'watch_thread',None);alive=bool(thread and thread.is_alive())
   last=getattr(self,'watch_last_success',0)
   state='stopped'if not alive else 'error'if getattr(self,'watch_error',None) else 'starting'if not last else 'running'if time.time()-last<30 else 'delayed'
-  steward=self.steward.summary(pid);counts=steward['counts']
+  steward=self.steward.summary(pid);counts=steward['counts'];semantic=self.semantic.status(pid);semcounts={k:sum(j['status']==k for j in semantic['jobs'])for k in ('queued','running','failed','needs_attention','needs_review')}
   return dict(project_id=pid,state=state,last_scan=getattr(self,'watch_last_scan',None),scan_interval_seconds=4,
-   queued=sum(j['status']=='queued'for j in jobs)+counts.get('queued',0)+counts.get('retry',0),running=sum(j['status']=='running'for j in jobs)+counts.get('running',0),
-   attention_records=sum(j['status']in ('failed','needs_attention','interrupted')for j in jobs)+counts.get('failed',0)+counts.get('needs_attention',0),
-   failed_records=sum(j['status']=='failed'for j in jobs)+counts.get('failed',0),needs_judgment=sum(j['status']in ('needs_attention','interrupted')for j in jobs)+counts.get('needs_attention',0),
+   queued=sum(j['status']=='queued'for j in jobs)+counts.get('queued',0)+counts.get('retry',0)+semcounts['queued'],running=sum(j['status']=='running'for j in jobs)+counts.get('running',0)+semcounts['running'],
+   attention_records=sum(j['status']in ('failed','needs_attention','interrupted')for j in jobs)+counts.get('failed',0)+counts.get('needs_attention',0)+semcounts['failed']+semcounts['needs_attention']+semcounts['needs_review'],
+   failed_records=sum(j['status']=='failed'for j in jobs)+counts.get('failed',0)+semcounts['failed'],needs_judgment=sum(j['status']in ('needs_attention','interrupted')for j in jobs)+counts.get('needs_attention',0)+semcounts['needs_attention']+semcounts['needs_review'],
    awaiting_agent=counts.get('awaiting_agent',0),scope_hold=counts.get('scope_hold',0),count_scope='processing_tasks_not_unique_sources',
-   semantic_agent_connected=False,automatic_publication=True,steward=steward)
+   semantic_agent_connected=any(j['status']in ('ready','needs_review','no_candidates')for j in semantic['jobs']),semantic_connection_basis='last_model_output_not_live_network_probe',semantic_counts=semcounts,automatic_publication=True,steward=steward)
  def start_watch(self):
   cursor_file=self.folder/'research-watch.json'
   cursor=pipe.load(cursor_file)if cursor_file.exists()else {}
@@ -86,6 +97,7 @@ class Store:
        if sid not in seen:
         self.steward.enqueue_source(pid,sid);seen.add(sid)
       cursor[pid]=sorted(seen)
+     self.semantic.pump()
      self.watch_last_success=time.time();self.watch_last_scan=pipe.now();self.watch_error=None
      pipe.save(cursor_file,cursor);pipe.save(self.lib/'监听状态.json',dict(pid=os.getpid(),heartbeat=pipe.now(),inbox=str(self.inbox),service='file_admin_with_research_pipeline'))
     except Exception as exc:
@@ -165,8 +177,8 @@ class Handler(BaseHTTPRequestHandler):
    self.guard();u=urllib.parse.urlsplit(self.path);q=urllib.parse.parse_qs(u.query);one=lambda k,d='':q.get(k,[d])[0];store=self.server.store
    if u.path=='/api/health':self.send(200,dict(service='gooddesign-archive-pipeline',version='1.0.0',research_policy=research.POLICY,ocr_available=(ROOT/'.runtime/vision-ocr').exists(),watcher_running=bool(getattr(store,'watch_thread',None)and store.watch_thread.is_alive())));return
    if u.path=='/favicon.ico':self.send(204,b'','image/x-icon');return
-   if u.path in ('/','/app.js','/style.css','/workflow.js','/workflow.css','/workspace.css','/workspace.js'):
-    name={'/':'index.html','/app.js':'app.js','/style.css':'style.css','/workflow.js':'workflow.js','/workflow.css':'workflow.css','/workspace.css':'workspace.css','/workspace.js':'workspace.js'}[u.path];p=ROOT/'extensions/file-admin'/name;
+   if u.path in ('/','/app.js','/style.css','/workflow.js','/workflow.css','/workspace.css','/workspace.js','/agent.js'):
+    name={'/':'index.html','/app.js':'app.js','/style.css':'style.css','/workflow.js':'workflow.js','/workflow.css':'workflow.css','/workspace.css':'workspace.css','/workspace.js':'workspace.js','/agent.js':'agent.js'}[u.path];p=ROOT/'extensions/file-admin'/name;
     if u.path=='/':
      import workspace_ui
      self.send(200,workspace_ui.admin(p.read_text(encoding='utf-8'),one('project','2025-00')),'text/html; charset=utf-8');return
@@ -203,6 +215,25 @@ class Handler(BaseHTTPRequestHandler):
    if u.path=='/api/projects':self.send(200,dict(projects=pipe.load(store.lib/'项目索引.json')['projects'],token=store.token));return
    if u.path=='/api/automation':self.send(200,store.automation_status(one('project','2025-00')));return
    if u.path=='/api/research':self.send(200,research.status(store.lib,one('project','2025-00')));return
+   if u.path=='/innovation/':
+    import innovation_workspace_ui,workspace_ui
+    pid=one('project','2025-00');pipe.project(store.lib,pid)
+    self.send(200,innovation_workspace_ui.render(pid,workspace_ui.nav('research',pid),workspace_ui.CSS),'text/html; charset=utf-8');return
+   if u.path=='/api/semantic':self.send(200,store.semantic.status(one('project','2025-00')));return
+   if u.path=='/api/semantic/result':self.send(200,store.semantic.result(one('project','2025-00'),int(one('job'))));return
+   if u.path=='/api/innovation/overview':
+    import innovation_knowledge as knowledge
+    index=knowledge.build_index(store.lib,one('project','2025-00'))
+    self.send(200,dict(project_id=index['project_id'],revision=index['revision'],nodes=len(index['nodes']),edges=len(index['edges']),gaps=len(index['gaps'])));return
+   if u.path=='/api/innovation/run':
+    import innovation_application as application
+    pid=one('project','2025-00');run_id=one('run');pipe.project(store.lib,pid)
+    if not any(j['project_id']==pid and j['kind']=='innovation_application'and j.get('result',{}).get('run_id')==run_id for j in store.jobs if j.get('result')):raise ValueError('应用试验不属于当前项目')
+    run=application.read_application(run_id,output_root=store.folder/'applications');application.validate_application(store.lib,run,require_current=False)
+    self.send(200,run);return
+   if u.path=='/api/research-updates':
+    from archive_updates import read as read_updates
+    self.send(200,read_updates(store.lib,one('project','2025-00'),one('revision')or None,int(one('offset','0')),int(one('limit','20'))));return
    if u.path=='/api/research-document':
     p=pipe.project(store.lib,one('project','2025-00'));w=research.current(p)
     if not w['revision']:raise ValueError('还没有已发布的研究版本')
@@ -225,7 +256,7 @@ class Handler(BaseHTTPRequestHandler):
     rows=store.job_list(one('project','2025-00'))
     current_p=pipe.project(store.lib,one('project','2025-00'));current_s=pipe.state(current_p);reg=ownership.registry(current_p);requested_scope=one('scope','project')
     if requested_scope not in ownership.SCOPES:raise ValueError('资料范围无效')
-    rows=[j for j in rows if ownership.assignment(current_p,j.get('result',{}).get('source_id','')if j.get('result')else '',current_s['sources']if j.get('result')else {'':{'origin':{'url':j['args'].get('url')}}},reg)['scope']==requested_scope]
+    rows=[j for j in rows if (j.get('kind')=='innovation_application'and requested_scope=='project')or ownership.assignment(current_p,j.get('result',{}).get('source_id','')if j.get('result')else '',current_s['sources']if j.get('result')else {'':{'origin':{'url':j['args'].get('url')}}},reg)['scope']==requested_scope]
     # Internal filesystem paths are not needed by the client.
     self.send(200,dict(jobs=[dict(j,args={k:v for k,v in j['args'].items()if k!='path'})for j in rows]));return
    if u.path=='/api/image':
@@ -266,6 +297,24 @@ class Handler(BaseHTTPRequestHandler):
    if one('scope','project')!='project':raise ValueError('请先切换到本项目资料再提交处理任务')
    if u.path=='/api/upload':self.send(202,store.upload(pid,one('name'),data));return
    args=json.loads(data)
+   if u.path=='/api/semantic/enqueue':self.send(202,store.semantic.enqueue(pid,args.get('source_ids')));return
+   if u.path=='/api/semantic/control':
+    if args.get('action')=='configure':self.send(200,store.semantic.configure(pid,args.get('enabled'),args.get('daily_limit',3)));return
+    if args.get('action')=='retry':
+     store.semantic.queue.retry(args.get('job_id'),pid,'后台用户显式增加一次深读调用');store.semantic.pump();self.send(202,store.semantic.status(pid));return
+    if args.get('action')in ('pause','resume'):
+     store.semantic.queue.pause(args['action']=='pause');self.send(200,store.semantic.status(pid));return
+    raise ValueError('语义管家操作不存在')
+   if u.path=='/api/innovation/search':
+    import innovation_knowledge as knowledge
+    index=knowledge.build_index(store.lib,pid);self.send(200,knowledge.search(index,args.get('needs',[]),args.get('functions',[]),args.get('constraints',[]),limit=8));return
+   if u.path=='/api/innovation/create':
+    projects=args.get('projects',[pid])
+    if not isinstance(projects,list)or not 1<=len(projects)<=3 or any(not isinstance(x,str)for x in projects)or len(set(projects))!=len(projects)or pid not in projects:raise ValueError('请选择含当前项目的1–3个项目')
+    for source_pid in projects:pipe.project(store.lib,source_pid)
+    import innovation_application as application
+    application._request(args.get('request'))
+    self.send(202,store.submit(pid,'innovation_application',request=args['request'],projects=projects,use_model=args.get('use_model')is True));return
    if u.path=='/api/steward-control':
     action=args.get('action')
     if action in ('pause','resume'):

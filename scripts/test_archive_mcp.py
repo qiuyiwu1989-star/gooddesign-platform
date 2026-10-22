@@ -10,7 +10,7 @@ async def main():
  results=[]
  async with stdio_client(params)as(r,w):
   async with ClientSession(r,w)as session:
-   init=await session.initialize();listed=await session.list_tools();assert len(listed.tools)==11;assert all(t.annotations.readOnlyHint for t in listed.tools)
+   init=await session.initialize();listed=await session.list_tools();assert len(listed.tools)==14;assert all(t.annotations.readOnlyHint for t in listed.tools)
    async def call(name,args):
     value=await session.call_tool(name,args);assert not value.isError,(name,value);data=value.structuredContent
     if data is None:data=json.loads(value.content[0].text)

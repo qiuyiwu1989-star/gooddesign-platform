@@ -106,4 +106,26 @@ def gd_read_innovation_run(run_id:str='latest',section:str='overview',offset:int
  if section not in ['overview','enterprise_output','stages','evidence','retrievals']:raise ValueError('读取层级无效')
  data=methods.read_run(run_id,section)
  return page(data,offset,limit)if isinstance(data,list)else dict(data=data,trust='application_hypotheses_not_source_case_facts')
+@MCP.tool(annotations=ANNOTATIONS)
+def gd_read_innovation_knowledge(project_id:str,revision:str|None=None,section:str='overview',offset:int=0,limit:int=5)->dict:
+ """读版本化创新知识概览、nodes/relations/gaps；解释关系有AI标记，不是工程因果证明。"""
+ import innovation_knowledge as knowledge
+ bounds(offset,limit);index=knowledge.build_index(LIB,project_id,revision)
+ base={k:index[k]for k in ('project_id','revision','index_sha256','source_bindings')}
+ if section=='overview':return dict(**base,nodes=len(index['nodes']),relations=len(index['edges']),gaps=len(index['gaps']),meaning=index['quality'])
+ keys={'nodes':'nodes','relations':'edges','gaps':'gaps'}
+ if section not in keys:raise ValueError('section须overview/nodes/relations/gaps')
+ return dict(**base,**page(index[keys[section]],offset,limit))
+@MCP.tool(annotations=ANNOTATIONS)
+def gd_search_innovation_knowledge(project_id:str,needs:list[str]|None=None,functions:list[str]|None=None,constraints:list[str]|None=None,revision:str|None=None,limit:int=5)->dict:
+ """按需求、功能、约束逐字召回并显示上下文优先级；命中不是校准相似度或迁移有效性。"""
+ import innovation_knowledge as knowledge
+ bounds(0,limit);index=knowledge.build_index(LIB,project_id,revision);result=knowledge.search(index,needs,functions,constraints,limit)
+ if len(json.dumps(result,ensure_ascii=False))>60000:raise ValueError('返回过大，请缩小limit')
+ return result
+@MCP.tool(annotations=ANNOTATIONS)
+def gd_read_archive_updates(project_id:str,revision:str|None=None,offset:int=0,limit:int=5)->dict:
+ """读新增、修正、撤回、补证与AI更新分类；当前待办不混入历史版本，评分不自动升高。"""
+ from archive_updates import read
+ bounds(offset,limit);return read(LIB,project_id,revision,offset,limit)
 if __name__=='__main__':MCP.run(transport='stdio')
