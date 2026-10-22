@@ -2,7 +2,7 @@
 """044 durable local archive steward. Semantic research comes from an external Agent.
 Raw documents never create instructions or approve their own claims.
 """
-import argparse,contextlib,json,sqlite3,time,threading
+import argparse,contextlib,copy,json,sqlite3,time,threading
 from collections import Counter
 from pathlib import Path
 import project_pipeline as pp
@@ -25,6 +25,7 @@ class Steward:
     CREATE TABLE IF NOT EXISTS controls(id INTEGER PRIMARY KEY,at TEXT NOT NULL,actor TEXT NOT NULL,action TEXT NOT NULL,project TEXT,task_id INTEGER,previous TEXT);
     CREATE TABLE IF NOT EXISTS asset_reviews(id INTEGER PRIMARY KEY,project TEXT NOT NULL,source_id TEXT NOT NULL,source_sha256 TEXT NOT NULL,key TEXT UNIQUE NOT NULL,review_json TEXT NOT NULL,actor TEXT NOT NULL,created TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS scope_holds(task_id INTEGER PRIMARY KEY,previous TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS submissions(key TEXT PRIMARY KEY,project TEXT NOT NULL,payload_sha256 TEXT NOT NULL,candidates TEXT NOT NULL,candidates_sha256 TEXT NOT NULL,actor TEXT NOT NULL,created TEXT NOT NULL,task_id INTEGER);
     CREATE INDEX IF NOT EXISTS task_due ON tasks(status,due);
    ''')
  @contextlib.contextmanager
@@ -69,15 +70,77 @@ class Steward:
   known={c['id']for c in rw.current(pp.project(self.lib,pid))['candidates']}
   if set(ids)-known:raise ValueError('研究候选不存在')
   return self.enqueue(pid,dict(kind='candidates',candidate_ids=sorted(ids),processor=VERSION))
- def submit_bundle(self,pid,payload,actor):
+ def submission_identity(self,pid,payload,submission_key):
+  pp.project(self.lib,pid)
+  if not isinstance(submission_key,str)or not 1<=len(submission_key)<=256 or submission_key!=submission_key.strip():raise ValueError('幂等提交身份无效')
+  if not isinstance(payload,dict)or payload.get('project_id')!=pid or not isinstance(payload.get('candidates'),list)or not payload['candidates']:raise ValueError('研究提交项目身份或内容无效')
+  return rw.digest(payload)
+ def existing_submission(self,pid,payload,submission_key):
+  """Read-only identity probe, before even in-memory candidate re-validation.
+  True also covers a prepared intent interrupted before its task was committed.
+  """
+  sha=self.submission_identity(pid,payload,submission_key)
+  with self.connect()as db:row=db.execute('SELECT project,payload_sha256 FROM submissions WHERE key=?',(submission_key,)).fetchone()
+  if row and(row['project']!=pid or row['payload_sha256']!=sha):raise ValueError('同一提交身份对应不同项目或内容，拒绝复用')
+  return row is not None
+ def _submission_task(self,row,pid):
+  with self.connect()as db:task=db.execute('SELECT * FROM tasks WHERE id=?',(row['task_id'],)).fetchone()
+  if not task or task['project']!=pid:raise ValueError('持久提交关联任务缺失或项目不符，请核对数据库')
+  frozen=json.loads(row['candidates'])
+  if rw.digest(frozen)!=row['candidates_sha256']:raise ValueError('持久提交候选指纹不符')
+  expected=sorted(c['id']for c in frozen)
+  task_payload=json.loads(task['payload'])
+  if task_payload.get('kind')!='candidates'or task_payload.get('candidate_ids')!=expected:raise ValueError('持久提交关联的候选集合不符')
+  return dict(task)
+ def _finish_submission(self,pid,submission_key,candidates):
+  ids=sorted(c['id']for c in candidates);payload=dict(kind='candidates',candidate_ids=ids,processor=VERSION)
+  key=self._submission_task_key(submission_key)
+  with self.connect()as db:
+   db.execute('BEGIN IMMEDIATE')
+   db.execute('INSERT OR IGNORE INTO tasks(project,key,payload,created)VALUES(?,?,?,?)',(pid,key,json.dumps(payload,ensure_ascii=False),pp.now()))
+   task=db.execute('SELECT * FROM tasks WHERE key=?',(key,)).fetchone()
+   if task['project']!=pid or json.loads(task['payload'])!=payload:raise ValueError('持久任务身份冲突')
+   db.execute('UPDATE submissions SET task_id=? WHERE key=?',(task['id'],submission_key))
+   return dict(task)
+ def _submission_task_key(self,key):return 'submission:'+rw.digest(dict(protocol='steward-submission-1',submission_key=key))
+ def submit_bundle(self,pid,payload,actor,submission_key=None):
+  payload=copy.deepcopy(payload)
+  if not isinstance(payload,dict):raise ValueError('研究提交内容须为对象')
   if payload.get('project_id')!=pid or not isinstance(payload.get('candidates'),list)or not payload['candidates']:raise ValueError('研究提交项目身份或内容无效')
+  if not isinstance(actor,str)or not actor.strip()or len(actor)>200:raise ValueError('须登记有效提交者')
   # Validate all entries before saving any of the batch. Caller is a trusted local Agent, not the source file.
   with pp.lock(self.lib):
-   p=pp.project(self.lib,pid);w=rw.current(p);ids=[]
+   p=pp.project(self.lib,pid)
+   if submission_key is not None:
+    sha=self.submission_identity(pid,payload,submission_key)
+    with self.connect()as db:prior=db.execute('SELECT * FROM submissions WHERE key=?',(submission_key,)).fetchone()
+    if prior:
+     if prior['project']!=pid or prior['payload_sha256']!=sha:raise ValueError('同一提交身份对应不同项目或内容，拒绝复用')
+     if prior['task_id']is not None:return self._submission_task(prior,pid)
+     # The validated candidate identities were made durable before rw.save.
+     # Recover them unchanged: never recompute base_cell after a publication.
+     candidates=json.loads(prior['candidates'])
+     if rw.digest(candidates)!=prior['candidates_sha256']:raise ValueError('持久预验证候选指纹不符')
+     w=rw.current(p);known={c['id']:c for c in w['candidates']};changed=False
+     for c in candidates:
+      if c['id']in known:
+       if known[c['id']]['fingerprint']!=c['fingerprint']:raise ValueError('恢复候选身份冲突')
+      else:w['candidates'].append(c);rw.event(w,'submission_candidate_recovered',actor,candidate_id=c['id'],submission_key=submission_key);changed=True
+     if changed:rw.save(p,w)
+     return self._finish_submission(pid,submission_key,candidates)
+    with self.connect()as db:orphan=db.execute('SELECT id FROM tasks WHERE key=?',(self._submission_task_key(submission_key),)).fetchone()
+    if orphan:raise ValueError('已有同身份持久任务但提交账缺失，需核对后恢复，不能重新生成候选')
+   w=rw.current(p);ids=[]
    for c in payload['candidates']:
     c=dict(c);c['extraction_method']=AGENT_METHOD;ids.append(rw.add_candidate(p,w,c,actor)['id'])
    if len(set(ids))!=len(ids):raise ValueError('研究提交有重复候选')
+   if submission_key is not None:
+    candidates=[c for c in w['candidates']if c['id']in ids]
+    with self.connect()as db:
+     db.execute('BEGIN IMMEDIATE')
+     db.execute('INSERT INTO submissions(key,project,payload_sha256,candidates,candidates_sha256,actor,created)VALUES(?,?,?,?,?,?,?)',(submission_key,pid,sha,json.dumps(candidates,ensure_ascii=False),rw.digest(candidates),actor,pp.now()))
    rw.save(p,w)
+   if submission_key is not None:return self._finish_submission(pid,submission_key,candidates)
   return self.enqueue_candidates(pid,ids)
  def record_asset_review(self,pid,sid,expected_sha256,actor):
   if not isinstance(actor,str)or not actor.strip():raise ValueError('须记录整理人')

@@ -39,11 +39,17 @@ class Service:
    if job['status']=='no_candidates':result=dict(status='no_candidates',note='本轮未提出可入档候选，不代表全文已研究完成')
    elif job['status']in ('needs_review','needs_attention','failed'):result=dict(status=job['status'],note='保留模型风险/冲突/失败，不自动提交')
    elif job['status']=='ready':
-    bundle=self.queue.bundle(job_id,pid)
+    submission_key='semantic:'+rw.digest(dict(protocol='semantic-receipt-1',project_id=pid,job_id=job_id,attempt=job['attempts'],result_sha256=token['result_sha256']))
+    # A prior successful submit may already be published even though the JSON
+    # receipt was never saved. Probe durable identity before bundle() invokes
+    # add_candidate for validation against a now-changed base cell.
+    raw_bundle=pp.load(Path(job['result_path']))
+    replay=self.store.steward.existing_submission(pid,raw_bundle,submission_key)
+    bundle=raw_bundle if replay else self.queue.bundle(job_id,pid)
     if bundle.get('semantic_agent',{}).get('requires_review'):return dict(status='needs_review')
     # Exact quotes are necessary, not proof of semantic correctness. Known risks never auto-publish.
-    task=self.store.steward.submit_bundle(pid,bundle,'046语义管家/证据门禁')
-    result=dict(status='submitted_to_evidence_gate',steward_task_id=task['id'],note='仅通过现有门禁的增量入档；敏感/冲突继续待判断')
+    task=self.store.steward.submit_bundle(pid,bundle,'046语义管家/证据门禁',submission_key=submission_key)
+    result=dict(status='submitted_to_evidence_gate',steward_task_id=task['id'],submission_key=submission_key,note='仅通过现有门禁的增量入档；敏感/冲突继续待判断')
    else:return dict(status=job['status'])
    result['queue_token']=token;state['receipts'][key]=result;pp.save(self.file,state);return result
  def result(self,pid,job_id):
