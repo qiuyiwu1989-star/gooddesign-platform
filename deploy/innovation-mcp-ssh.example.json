@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "innovation-project-library": {
+      "command": "ssh",
+      "args": ["-T", "-o", "BatchMode=yes", "yongle-nanjing", "/var/www/innovation-design/venv/bin/python", "/var/www/innovation-design/current/scripts/archive_mcp.py"]
+    }
+  }
+}

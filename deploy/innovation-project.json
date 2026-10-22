@@ -1,7 +1,7 @@
 {
   "platform_id": "innovation-design",
   "display_name_proposal": "创新设计平台",
-  "status": "planning_not_deployed",
+  "status": "protected_readonly_snapshot_deployed",
   "current_site": "https://gooddesign.qiuyiwu.com/",
   "candidate_domain": "chuangxinsheji.com",
   "candidate_domain_status": "ownership_and_launch_not_verified",
@@ -10,10 +10,17 @@
   "git_repository": "https://github.com/qiuyiwu1989-star/gooddesign-platform",
   "proposed_release_base": "/var/www/innovation-design",
   "proposed_private_base": "/var/lib/innovation-design",
-  "migration_status": "local_entry_created_production_unchanged",
+  "migration_status": "cloud_readonly_snapshot_local_processing_authority",
   "confirmed_entry": "https://opendesign.cc/inno/",
   "entry_decision": "user_confirmed_2026-10-20",
   "local_preview": "http://127.0.0.1:8775/inno/",
   "local_project_library": "http://127.0.0.1:8775/inno/projects/",
-  "preview_status": "local_static_prototype"
+  "preview_status": "local_static_prototype",
+  "cloud_entry": "https://opendesign.cc/inno/",
+  "cloud_dossier": "https://opendesign.cc/inno/dossier/?project=2025-00",
+  "cloud_release": "/var/www/innovation-design/releases/20261022-049",
+  "cloud_private_library": "/var/lib/innovation-design/library",
+  "cloud_access": "https_basic_auth_existing_qiuyiwu_account",
+  "cloud_mcp": "stdio_over_authorized_ssh_not_public_http",
+  "cloud_processing_enabled": false
 }

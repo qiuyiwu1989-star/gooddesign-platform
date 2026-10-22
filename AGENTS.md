@@ -142,3 +142,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 045：所有/dossier/项目沿用嫦娥视觉规范，dossier_layout.py复用dossier_reader_ui和render_reader_dossier的阅读CSS；steward_dossier_ui映射动态数据，workspace_ui共享上下文。新档案不得再造research-reader独立主题；未评不画分数、AI/未知/机器核读边界保留。规范03-平台规划/项目档案统一阅读规范-v1.md；4项目真实样式/三视图/移动交互与相关Python测试通过。研究/评分/044包未变，自动续接仍暂停。
 
 046：用户新授权3 Agent并行开发，semantic_agent/semantic_service接真实Codex模型（只读/工具禁用/结构输出/OS已启用本机代理）；风险/矛盾批次needs_review不自动入档，日限3新/变更文本，旧库不隐式重跑。控制/回执持久，按attempt/status/resultSHA幂等；启动恢复ready交接与expired running，不能用展示最近100判队列。innovation_knowledge保留旧引用和AI侧链边界，innovation_application支持真实reasoner与规则模式分别标注；MCP14只读。蛟龙000008仅2项独立复核新增，指南/评估重冻、质量不自动升分。入口/状态/未完项见046-Agent开发与验收.md；044历史包不重写，开发automation不自动恢复。
+
+049部署：用户授权OpenDesign /inno/受保护只读快照，独立innovation-readonly服务及私有/var/lib/innovation-design/library；当前源码scripts/opendesign_readonly.py包装既有Handler，不启动watcher，禁止写入。nginx专用Basic Auth凭据不入Git；MCP v1.30.0通过授权SSH stdio实测14工具/8案，不冒称HTTP MCP。云端单向快照、本地仍处理真源；发布更新先读049部署与验收，勿启用云端Agent或公开原件。

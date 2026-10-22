@@ -1,0 +1,18 @@
+[Unit]
+Description=OpenDesign innovation project library (authenticated read-only snapshot)
+After=network.target
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/innovation-design/current
+ExecStart=/var/www/innovation-design/venv/bin/python scripts/opendesign_readonly.py --port 18776
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/innovation-design
+UMask=0077
+[Install]
+WantedBy=multi-user.target
