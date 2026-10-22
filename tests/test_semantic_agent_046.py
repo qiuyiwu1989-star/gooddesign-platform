@@ -60,4 +60,19 @@ class SemanticTests(unittest.TestCase):
   folder=self.root/'timeout-test';folder.mkdir();fake=folder/'fake-codex';fake.write_text('#!/usr/bin/env python3\nimport subprocess,sys,time,json,pathlib\nc=subprocess.Popen([sys.executable,"-c","import time;time.sleep(30)"])\npathlib.Path("child.json").write_text(json.dumps({"pid":c.pid}))\ntime.sleep(30)\n');fake.chmod(0o700);reader=sa.CodexReader();reader.timeout=2
   with patch.object(sa.shutil,'which',return_value=str(fake)),self.assertRaises(subprocess.TimeoutExpired):reader('untrusted input',folder)
   termination=pp.load(folder/'termination.json');self.assertTrue(termination['local_process_exited']);child=pp.load(folder/'child.json')['pid'];result=subprocess.run(['ps','-o','stat=','-p',str(child)],capture_output=True,text=True);self.assertTrue(not result.stdout.strip()or result.stdout.strip().startswith('Z'))
+ def test_enabled_system_loopback_proxy_is_adopted_without_secrets(self):
+  out=' HTTPEnable : 1\n HTTPProxy : 127.0.0.1\n HTTPPort : 7897\n HTTPSEnable : 1\n HTTPSProxy : 127.0.0.1\n HTTPSPort : 7897\n'
+  with patch.object(sa.sys,'platform','darwin'),patch.object(sa.subprocess,'run',return_value=subprocess.CompletedProcess([],0,stdout=out)),patch.object(sa.socket,'create_connection')as connect:
+   env,note=sa.model_environment({'NO_PROXY':'internal.local'});self.assertEqual(env['HTTPS_PROXY'],'http://127.0.0.1:7897');self.assertIn('127.0.0.1',env['NO_PROXY']);self.assertEqual(note['system_proxy_adopted'],['http','https']);self.assertEqual(connect.call_count,2)
+ def test_remote_disabled_invalid_or_unreachable_system_proxy_is_not_adopted(self):
+  for host,enabled,port in [('proxy.example','1','7897'),('127.0.0.1','0','7897'),('127.0.0.1','1','70000')]:
+   out=' HTTPEnable : '+enabled+'\n HTTPProxy : '+host+'\n HTTPPort : '+port+'\n'
+   with patch.object(sa.sys,'platform','darwin'),patch.object(sa.subprocess,'run',return_value=subprocess.CompletedProcess([],0,stdout=out)),patch.object(sa.socket,'create_connection')as connect:
+    self.assertEqual(sa.model_environment({})[0],{});connect.assert_not_called()
+  with patch.object(sa.sys,'platform','darwin'),patch.object(sa.subprocess,'run',return_value=subprocess.CompletedProcess([],0,stdout=' HTTPEnable : 1\n HTTPProxy : localhost\n HTTPPort : 7897\n')),patch.object(sa.socket,'create_connection',side_effect=OSError('offline')):
+   self.assertEqual(sa.model_environment({})[0],{})
+ def test_existing_proxy_credentials_are_preserved_not_recorded(self):
+  old={'ALL_PROXY':'http://user:private@existing:9000'}
+  with patch.object(sa.subprocess,'run')as command:
+   env,note=sa.model_environment(old);self.assertEqual(env,old);self.assertNotIn('private',json.dumps(note));command.assert_not_called()
 if __name__=='__main__':unittest.main()
