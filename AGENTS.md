@@ -148,3 +148,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 050金奖任务：scripts/gold_research_task.py管理98金奖候选、10维检索和SQLite资料采集。实际检索记录与查询计划分开；新件通过project_pipeline.fetch/ingest(initial_scope="pending")在第一入库快照冻结待核范围，重复不得改已有归属。任务区04-知识库/历史素材登记/金奖全量采集任务，采集进程有时间/数量上限且无模型/事实发布；不能声称全网已穷尽或无人值守Deep Research已建成。接续先读050操作文档并核worker.json/PID，不重复开worker、不自动云同步。
 
 051全金奖深化：用户2026-10-23新授权10小时，截止11:23:41 Asia/Seoul，规范见specs/051-十小时全金奖标杆深化.md。gold_source_triage只读关联建议、gold_deep_research只生成实际模型待审草稿、gold_benchmark_audit只读验收；都不能关键词自动认定项目归属或专业审核。6新案真实研究版/导读/评估已发布，后续按原件独立复核和native propose/review/publish；仅明确自身文件提交，其他方法库会话并行不得收编覆盖。单项目正式名单选录保留parent/位置，相关论文/专利不推采用，下载/草稿/发布/标杆分开统计。
+
+051最新续授权（2026-10-23）：用户取消原十小时停止点，要求连续十小时以上，先98金奖逐项达到可验收标杆档案，再继续其他项目。原11:23:41停新增/暂停automation规则已被替代；现有heartbeat已更新持续续接。gold_deep_research移除默认旧截止，显式传入deadline仍受限，单批98上限/连续3故障停止保留。旧运行进程可能仍持旧截止，需实际检查后安全续开，不能凭代码更新说进程已热更新。
