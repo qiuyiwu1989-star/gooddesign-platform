@@ -146,3 +146,5 @@ DEPLOY-OWNER：当前用户授权的主任务。发布站点 gooddesign.qiuyiwu.
 049部署：用户授权OpenDesign /inno/受保护只读快照，独立innovation-readonly服务及私有/var/lib/innovation-design/library；当前源码scripts/opendesign_readonly.py包装既有Handler，不启动watcher，禁止写入。nginx专用Basic Auth凭据不入Git；MCP v1.30.0通过授权SSH stdio实测14工具/8案，不冒称HTTP MCP。云端单向快照、本地仍处理真源；发布更新先读049部署与验收，勿启用云端Agent或公开原件。
 
 050金奖任务：scripts/gold_research_task.py管理98金奖候选、10维检索和SQLite资料采集。实际检索记录与查询计划分开；新件通过project_pipeline.fetch/ingest(initial_scope="pending")在第一入库快照冻结待核范围，重复不得改已有归属。任务区04-知识库/历史素材登记/金奖全量采集任务，采集进程有时间/数量上限且无模型/事实发布；不能声称全网已穷尽或无人值守Deep Research已建成。接续先读050操作文档并核worker.json/PID，不重复开worker、不自动云同步。
+
+051全金奖深化：用户2026-10-23新授权10小时，截止11:23:41 Asia/Seoul，规范见specs/051-十小时全金奖标杆深化.md。gold_source_triage只读关联建议、gold_deep_research只生成实际模型待审草稿、gold_benchmark_audit只读验收；都不能关键词自动认定项目归属或专业审核。6新案真实研究版/导读/评估已发布，后续按原件独立复核和native propose/review/publish；仅明确自身文件提交，其他方法库会话并行不得收编覆盖。单项目正式名单选录保留parent/位置，相关论文/专利不推采用，下载/草稿/发布/标杆分开统计。

@@ -42,6 +42,9 @@ class TriageTests(unittest.TestCase):
   s=self.inspect(source_hints={'S1':[{'title':self.catalog['name'],'url':'https://example.org/search'}]});self.assertFalse(s['eligible_for_draft']);self.assertTrue(s['eligible_for_relation_review']);self.assertEqual(s['suggested_role'],'related_team_or_background_unverified');self.assertIn('search_title_not_confirmed_by_stored_content',s['risk_flags'])
  def test_access_challenge_blocks_draft(self):
   self.source(text='Please verify you are human. CAPTCHA required.',title='Access Denied');s=self.inspect();self.assertFalse(s['eligible_for_draft']);self.assertFalse(s['eligible_for_relation_review']);self.assertEqual(s['priority'],0)
+ def test_http200_cookie_gate_not_readable_article(self):
+  self.source(text='Cookies must be enabled. Enable cookies for pubmed.ncbi.nlm.nih.gov and reload the page. '*2,title='PubMed')
+  result=self.inspect();self.assertFalse(result['eligible_for_draft']);self.assertFalse(result['eligible_for_relation_review']);self.assertIn('possible_access_challenge_not_article',result['risk_flags'])
  def test_navigation_dominates(self):
   self.source(text='首页\n上一页\n下一页\n关于我们\n联系我们\n登录\n注册\n'+self.catalog['name'],title='页面导航');s=self.inspect();self.assertIn('navigation_dominates_sample',s['risk_flags']);self.assertFalse(s['eligible_for_draft'])
  def test_original_and_chunks_integrity_are_independent(self):
