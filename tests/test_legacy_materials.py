@@ -1,4 +1,5 @@
-import copy,json,stat,sys,unittest,warnings,zipfile
+import copy,io,json,stat,struct,sys,unittest,warnings,zipfile
+from unittest.mock import patch
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'scripts'),str(ROOT/'tests')]
 import test_research_pipeline_038 as base
@@ -51,4 +52,22 @@ class LegacyTests(unittest.TestCase):
  def test_byte_budget_is_explicit_and_file_count_failure_not_silent(self):
   self.fixture();out=self.scan(max_total_bytes=1);self.assertEqual(out['files'],0);self.assertEqual(out['skipped'],1);(self.source.parent/'second.txt').write_text('more')
   with self.assertRaises(ValueError):self.scan(max_files=1)
+ def test_zip64_locator_cannot_override_small_nonsentinel_eocd_budget(self):
+  raw,_=self.fixture();memory=io.BytesIO()
+  with zipfile.ZipFile(memory,'w')as z:z.writestr('a.txt','x')
+  data=memory.getvalue();pos=data.rfind(b'PK\x05\x06');eocd=list(struct.unpack('<4s4H2LH',data[pos:pos+22]));count,cd_size,cd_offset=eocd[4:7]
+  record=struct.pack('<4sQ2H2L4Q',b'PK\x06\x06',44,45,45,0,0,count,count,cd_size,cd_offset);locator=struct.pack('<4sLQL',b'PK\x06\x07',0,pos,1);eocd[5]=1
+  archive=raw/'zip64-bypass.zip';archive.write_bytes(data[:pos]+record+locator+struct.pack('<4s4H2LH',*eocd))
+  # Prove the adversarial archive is understood by Python, then ensure our
+  # guard never hands its dishonest ordinary count/size to that parser.
+  with zipfile.ZipFile(archive)as z:self.assertEqual(len(z.infolist()),1)
+  with patch.object(lm.zipfile,'ZipFile',side_effect=AssertionError('ZIP64 must be blocked before parsing')):out=lm.zip_inventory(archive,max_central_bytes=1)
+  self.assertEqual(out['status'],'manual_review');self.assertIn('ZIP64',out['reason']);self.assertEqual(out['entries'],[])
+  # The locator can fall outside the last 65557 bytes when the comment is maximal.
+  eocd[-1]=65535;archive.write_bytes(data[:pos]+record+locator+struct.pack('<4s4H2LH',*eocd)+b'x'*65535)
+  with patch.object(lm.zipfile,'ZipFile',side_effect=AssertionError('must not parse')):self.assertEqual(lm.zip_inventory(archive,max_central_bytes=1)['status'],'manual_review')
+ def test_zip64_extra_field_is_not_accepted_as_size_override(self):
+  raw,_=self.fixture();archive=raw/'zip64-extra.zip';info=zipfile.ZipInfo('a.txt');info.extra=struct.pack('<HHQ',1,8,2**40)
+  with zipfile.ZipFile(archive,'w')as z:z.writestr(info,'x')
+  out=lm.zip_inventory(archive);self.assertEqual(out['status'],'manual_review');self.assertIn('ZIP64扩展字段',out['reason']);self.assertEqual(out['entries'],[])
 if __name__=='__main__':unittest.main()

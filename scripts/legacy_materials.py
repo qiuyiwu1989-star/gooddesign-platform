@@ -37,6 +37,12 @@ def zip_inventory(path,max_entries=3000,max_central_bytes=8*1024*1024,max_unpack
  if index<0 or len(tail)-index<22:return dict(status='invalid',reason='未找到标准ZIP中央目录尾标记',entries=[])
  values=struct.unpack('<4s4H2LH',tail[index:index+22]);_,disk,cd_disk,count_disk,count,cd_size,cd_offset,comment=values
  if len(tail)-index!=22+comment:return dict(status='invalid',reason='ZIP尾标记长度不一致',entries=[])
+ # Python's ZIP reader honors a ZIP64 locator even if the ordinary EOCD has
+ # no sentinel values. Reject it *before* ZipFile can replace our bounded sizes.
+ eocd_offset=size-len(tail)+index
+ if eocd_offset>=20:
+  with path.open('rb')as stream:stream.seek(eocd_offset-20);locator=stream.read(20)
+  if locator.startswith(b'PK\x06\x07'):return dict(status='manual_review',reason='存在ZIP64定位器，不载入ZIP64中央目录',entries=[])
  if disk or cd_disk or count_disk!=count:return dict(status='manual_review',reason='多卷ZIP不自动处理',entries=[])
  if count==65535 or cd_size==0xffffffff or cd_offset==0xffffffff:return dict(status='manual_review',reason='ZIP64需单独审核，不自动载入中央目录',entries=[])
  if count>max_entries or cd_size>max_central_bytes or cd_offset+cd_size>size:return dict(status='blocked_limits',reason='中央目录数量、大小或边界超限',entry_count=count,entries=[])
@@ -46,6 +52,13 @@ def zip_inventory(path,max_entries=3000,max_central_bytes=8*1024*1024,max_unpack
    infos=archive.infolist()
    if len(infos)!=count:raise ValueError('ZIP实际中央目录条目数不一致')
    for info in infos:
+    extra=info.extra;offset=0
+    while offset+4<=len(extra):
+     field,length=struct.unpack('<HH',extra[offset:offset+4]);offset+=4
+     if offset+length>len(extra):raise ValueError('ZIP扩展字段长度无效')
+     if field==1:return dict(status='manual_review',reason='存在ZIP64扩展字段，不采用其替代大小或偏移',entries=[])
+     offset+=length
+    if offset!=len(extra):raise ValueError('ZIP扩展字段尾部残缺')
     name=info.filename;normalized=name.replace('\\','/');parts=PurePosixPath(normalized).parts;flags=[]
     if normalized.startswith('/')or re.match(r'^[A-Za-z]:',normalized)or '..'in parts or '\x00'in name:flags.append('unsafe_path')
     if stat.S_ISLNK(info.external_attr>>16):flags.append('symlink')
@@ -99,7 +112,7 @@ def scan(root=pp.ROOT,registry_dir=None,max_files=30000,max_file_bytes=MAX_FILE,
  groups=defaultdict(list)
  for item in entries:groups[item['sha256']].append(item['relative_path'])
  duplicates={sha:paths for sha,paths in groups.items()if len(paths)>1}
- body=dict(version=VERSION,roots=list(ROOTS),policy=dict(excluded_directories=sorted(EXCLUDE),max_files=max_files,max_file_bytes=max_file_bytes,max_total_bytes=max_total_bytes,zip_extraction=False,automatic_project_assignment=False),entries=entries,duplicates=duplicates,skipped=skipped,total_hashed_bytes=total)
+ body=dict(version=VERSION,roots=list(ROOTS),policy=dict(excluded_directories=sorted(EXCLUDE),max_files=max_files,max_file_bytes=max_file_bytes,max_total_bytes=max_total_bytes,zip_extraction=False,zip64='reject_locator_and_extra_fields',automatic_project_assignment=False),entries=entries,duplicates=duplicates,skipped=skipped,total_hashed_bytes=total)
  identity=stable_digest(body);body['registry_id']=identity;target=registry_dir/'snapshots'/('registry-'+identity+'.json')
  if target.exists():
   if pp.load(target)!=body:raise ValueError('登记快照身份冲突')
