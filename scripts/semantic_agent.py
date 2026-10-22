@@ -69,11 +69,14 @@ def validate_bundle(lib,frozen,response):
  return dict(project_id=p.name,candidates=out,semantic_agent=dict(version=VERSION,summary=response['summary'],limitations=response['limitations'],risks=response['risks'],unresolved_conflicts=response['unresolved_conflicts'],requires_review=bool(response['risks']or response['unresolved_conflicts']),coverage={k:v for k,v in frozen.items()if k not in ('blocks','chunks_path')}))
 
 class CodexReader:
- def __init__(self,timeout=180):self.timeout=max(10,min(int(timeout),300))
+ def __init__(self,timeout=180,response_schema=None):
+  if response_schema is not None and not isinstance(response_schema,dict)and not callable(response_schema):raise ValueError('模型输出规范须为字典或无参数可调用对象')
+  self.timeout=max(10,min(int(timeout),300));self.response_schema=response_schema
  def __call__(self,prompt,folder):
   executable=shutil.which('codex')
   if not executable:raise RuntimeError('找不到Codex CLI；未使用规则替代语义模型')
-  schema=folder/'response-schema.json';pp.save(schema,response_schema());answer=folder/'model-response.json'
+  selected=self.response_schema()if callable(self.response_schema)else self.response_schema
+  schema=folder/'response-schema.json';pp.save(schema,selected if selected is not None else response_schema());answer=folder/'model-response.json'
   cmd=[executable,'exec','--ignore-user-config','--ignore-rules','--ephemeral','--skip-git-repo-check','--sandbox','read-only','--color','never','--json','--output-schema',str(schema),'--output-last-message',str(answer),'-C',str(folder)]
   for feature in ['shell_tool','unified_exec','apps','plugins','hooks','skill_search','browser_use','computer_use','image_generation','view_image','multi_agent','goals']:
    cmd+=['--disable',feature]

@@ -75,4 +75,11 @@ class SemanticTests(unittest.TestCase):
   old={'ALL_PROXY':'http://user:private@existing:9000'}
   with patch.object(sa.subprocess,'run')as command:
    env,note=sa.model_environment(old);self.assertEqual(env,old);self.assertNotIn('private',json.dumps(note));command.assert_not_called()
+ def test_per_instance_output_schema_does_not_mutate_default_or_other_reader(self):
+  fake=self.root/'fake-schema-cli';fake.write_text('#!/usr/bin/env python3\nimport sys,pathlib\npathlib.Path(sys.argv[sys.argv.index("--output-last-message")+1]).write_text(\'{"analysis":"synthetic schema test"}\')\n');fake.chmod(0o700)
+  custom=dict(type='object',properties=dict(analysis=dict(type='string')),required=['analysis'],additionalProperties=False)
+  for i,reader in enumerate([sa.CodexReader(response_schema=custom),sa.CodexReader(response_schema=lambda:custom),sa.CodexReader()]):
+   folder=self.root/('schema-'+str(i));folder.mkdir()
+   with patch.object(sa.shutil,'which',return_value=str(fake)):self.assertEqual(reader('synthetic test only',folder)['analysis'],'synthetic schema test')
+   self.assertEqual(pp.load(folder/'response-schema.json'),custom if i<2 else sa.response_schema())
 if __name__=='__main__':unittest.main()
