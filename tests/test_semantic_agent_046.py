@@ -1,0 +1,63 @@
+import json,sys,time,unittest,subprocess
+from unittest.mock import patch
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];sys.path[:0]=[str(ROOT/'scripts'),str(ROOT/'tests')]
+import test_research_pipeline_038 as base
+import project_pipeline as pp,research_workflow as rw,semantic_agent as sa
+
+class SemanticTests(unittest.TestCase):
+ setUp=base.ResearchTests.setUp
+ tearDown=base.ResearchTests.tearDown
+ def response(self,**updates):
+  c=dict(entity='paper',record_id='A01',title='测试论文',field='doi',value_json=json.dumps('10.1234/test.2026'),source_id=self.sid,chunk_id='B0001',quote='DOI:10.1234/test.2026',content_nature='source_statement',object='',unit='',conditions='',limitations='')
+  r=dict(summary='仅给定片段',limitations='不代表全文审核',risks=[],unresolved_conflicts=[],candidates=[c]);r.update(updates);return r
+ def queue(self,reader=None):return sa.SemanticQueue(self.lib,self.root/'semantic',reader or(lambda p,f:self.response()))
+ def test_persistent_pause_idempotence_single_budget_and_read_only_result(self):
+  q=self.queue();job=q.enqueue('sample',[self.sid])['jobs'][0];self.assertEqual(q.enqueue('sample',[self.sid])['jobs'][0]['id'],job['id']);q.pause(True);self.assertEqual(q.step()['status'],'paused');q=self.queue();q.pause(False);self.assertEqual(q.step(job['id'])['status'],'ready');self.assertEqual(q.step()['status'],'idle');self.assertEqual(q.get(job['id'])['attempts'],1);self.assertEqual(rw.current(self.p)['candidates'],[]);self.assertEqual(rw.dataset(self.p)['records'],[]);self.assertEqual(q.bundle(job['id'],'sample')['candidates'][0]['value'],'10.1234/test.2026')
+ def test_budget_and_project_boundaries(self):
+  q=self.queue()
+  for opts in [dict(max_calls=0),dict(max_sources=4),dict(max_chars=25000)]:
+   with self.assertRaises(ValueError):q.enqueue('sample',[self.sid],**opts)
+  q.enqueue('sample',[self.sid]);q.step()
+  self.assertEqual(q.status('other')['jobs'],[])
+  with self.assertRaises(ValueError):q.bundle(1,'other')
+ def test_invalid_quote_foreign_source_and_ai_without_limits_rejected(self):
+  frozen=sa.snapshot(self.lib,'sample',self.sid,24000)
+  for patch in [dict(quote='虚构'),dict(source_id='other'),dict(chunk_id='B9999'),dict(content_nature='ai_interpretation',conditions='',limitations='')]:
+   response=self.response();response['candidates'][0].update(patch)
+   with self.subTest(patch=patch),self.assertRaises(ValueError):sa.validate_bundle(self.lib,frozen,response)
+  self.assertFalse(rw.current(self.p)['candidates'])
+ def test_stale_and_tampered_result_are_rejected(self):
+  q=self.queue();q.enqueue('sample',[self.sid]);q.step();bundle=Path(q.get(1)['result_path']);data=pp.load(bundle);data['candidates'][0]['value']='tampered';pp.save(bundle,data)
+  with self.assertRaises(ValueError):q.bundle(1,'sample')
+  frozen=sa.snapshot(self.lib,'sample',self.sid,24000);x=pp.state(self.p)['sources'][self.sid];blocks=pp.load(self.p/x['chunks']);blocks[0]['text']+='changed';pp.save(self.p/x['chunks'],blocks)
+  with self.assertRaises(ValueError):sa.validate_bundle(self.lib,frozen,self.response())
+ def test_model_failure_never_falls_back_to_rules(self):
+  def fail(p,f):raise RuntimeError('model offline')
+  q=self.queue(fail);q.enqueue('sample',[self.sid]);out=q.step();self.assertEqual(out['status'],'failed');self.assertIn('model offline',out['error']);self.assertIsNone(out['result_path']);self.assertEqual(q.step()['status'],'idle');self.assertFalse(rw.current(self.p)['candidates'])
+ def test_expired_lease_needs_attention_no_extra_calls(self):
+  q=self.queue();q.enqueue('sample',[self.sid])
+  with q.connect()as db:db.execute("UPDATE jobs SET status='running',attempts=1,lease=?",(time.time()-1,))
+  self.assertEqual(q.step()['status'],'idle');self.assertEqual(q.get(1)['status'],'needs_attention');self.assertEqual(q.get(1)['attempts'],1)
+ def test_risk_and_conflicts_hold_batch(self):
+  q=self.queue(lambda p,f:self.response(unresolved_conflicts=['正文前后绕组匝数描述不一致']));q.enqueue('sample',[self.sid]);self.assertEqual(q.step()['status'],'needs_review');self.assertTrue(q.bundle(1,'sample')['semantic_agent']['requires_review']);self.assertFalse(rw.current(self.p)['candidates'])
+ def test_empty_output_not_fake_completion(self):
+  q=self.queue(lambda p,f:self.response(candidates=[]));q.enqueue('sample',[self.sid]);out=q.step();self.assertEqual(out['status'],'no_candidates')
+ def test_risk_without_candidates_is_still_attention(self):
+  q=self.queue(lambda p,f:self.response(candidates=[],risks=['原文存在无法裁决的矛盾']));q.enqueue('sample',[self.sid]);self.assertEqual(q.step()['status'],'needs_review');self.assertTrue(q.bundle(1,'sample')['semantic_agent']['requires_review'])
+ def test_explicit_retry_preserves_attempt_logs_and_is_bounded(self):
+  def fail(p,f):
+   (f/'failure-proof.txt').write_text('private diagnostic');raise RuntimeError('offline')
+  q=self.queue(fail);q.enqueue('sample',[self.sid]);q.step()
+  with self.assertRaises(ValueError):q.retry(1,'other','actor')
+  for i in range(2):q.retry(1,'sample','显式授权测试重试');self.assertEqual(q.step()['status'],'failed')
+  with self.assertRaises(ValueError):q.retry(1,'sample','超过预算')
+  self.assertEqual(len(list((q.folder/'job-000001').glob('attempt-*/failure-proof.txt'))),3)
+ def test_missing_risk_contract_rejected(self):
+  response=self.response();response.pop('risks')
+  with self.assertRaises(ValueError):sa.validate_bundle(self.lib,sa.snapshot(self.lib,'sample',self.sid,24000),response)
+ def test_timeout_terminates_only_call_process_group(self):
+  folder=self.root/'timeout-test';folder.mkdir();fake=folder/'fake-codex';fake.write_text('#!/usr/bin/env python3\nimport subprocess,sys,time,json,pathlib\nc=subprocess.Popen([sys.executable,"-c","import time;time.sleep(30)"])\npathlib.Path("child.json").write_text(json.dumps({"pid":c.pid}))\ntime.sleep(30)\n');fake.chmod(0o700);reader=sa.CodexReader();reader.timeout=2
+  with patch.object(sa.shutil,'which',return_value=str(fake)),self.assertRaises(subprocess.TimeoutExpired):reader('untrusted input',folder)
+  termination=pp.load(folder/'termination.json');self.assertTrue(termination['local_process_exited']);child=pp.load(folder/'child.json')['pid'];result=subprocess.run(['ps','-o','stat=','-p',str(child)],capture_output=True,text=True);self.assertTrue(not result.stdout.strip()or result.stdout.strip().startswith('Z'))
+if __name__=='__main__':unittest.main()
