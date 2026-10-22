@@ -305,3 +305,5 @@ release `20260911T015454Z-scroll-fix`。针对用户反馈“为什么还是不�
 ## 2026-10-23 04:57持续补证
 核接续文档及实际模型PID76282运行至2017-07，未重复worker。batch8五原件保存（1重复），主泵PDFneeds_ocr不升可读；事实引用可回查HTML，独立Agent已目视封面。先逐字冻结review/approved到root/review8-frozen。12批准项经native门禁发布2024-02/03 research2，现42事实7AI追溯、当前导读评估和真实MCP通过；只证相关专利，不证整机采用/收益/现权利。
 审核治理缺口：quality Agent补ID检查重跑覆盖batch6旧review（hash已入归属/审批）；原文/研究版证据未变，旧审核字节尚待查找。禁止重造，要求明确history-gap并对24个实际发布cell做新时间的独立事后再验，不冒称恢复旧审核。batch8已冻，batch10未覆盖。triage/pilot继续准备batch4/5/9冻结整合包，shared先准确选录，候选/草稿不当完成。未部署新私有资料。
+
+051续接05:27：6新案首版2025-08/09、2023-00/02/03、2021-03经冻结ready单案独立审核整合，69事实7AI/current导读评估/真实MCP通过；其余需shared选录不冒建。0.1.1导读暂范围说明，pilot从当前dataset写深入导读，不能旧brief未发布性能/单位混入。batch6旧审核gap明记，事后24项新核验另冻，不称恢复旧字节。triage续batch12后续2023。保持私有，不部署。
