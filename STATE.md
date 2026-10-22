@@ -317,3 +317,5 @@ release `20260911T015454Z-scroll-fix`。针对用户反馈“为什么还是不�
 051续接07:27：13/14四新案research1合110事实7AI/current基本导读评估/真实MCP通过，pilot current-guides-3精导读中。复用执行器的发布reason残留上一批措辞，执行文档已明确纠正，实际字段/证据对象未混；保留旧历史。current-guides-2四案精准0.1.2已freeze+MCP过。quality审batch15，triage续16待核名；全部仍私有，不按首版数称标杆完成。
 
 051续接07:57：四案guides3精导读0.1.2 freeze+真实MCP通过。2024-04/05补19/6项→research2，63事实5AI追溯/当前阅读评估/MCP过，2026两容器实验与2024官方指标分开；机器误抽method已拒，ITA shared未发布。pilot guides4精准两案，quality审16敏感提名边界，triage新17待核名。模型首轮结束不重复跑，仍持续。
+
+051续接08:27：batch15两案3共享连续选录+28独立批准项→2024-08/09 research2，41事实2AI/current阅读评估/实际MCP过；22旧档未核未收，名单第七工程局确证，300kg与15t隔离。guides4已0.1.2 freeze+MCP；pilot guides5，quality审17，triage新18待核ID。16敏感提名需安全选录，不完整拷个人表。仍持续，不公网发布。
