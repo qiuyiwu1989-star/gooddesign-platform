@@ -327,3 +327,5 @@ release `20260911T015454Z-scroll-fix`。针对用户反馈“为什么还是不�
 051续接09:57：13event叙事+2U号错映按冻结语义审计native修正8案，原字段clear/迁action或grant，旧版与原证据保留；8案当前导读评估重绑/MCP过。research_workflow新增状态枚举及CN A/B/U窄门禁，3 focused+全442测试过。39金奖有研究版不等完成，18/19积压待安全选录；pilot事后核验，quality20，triage21，持续不部署。
 
 051续接10:27：18四shared子段+17独立批准项两案research2，28事实2AI/current阅读评估/真实MCP过；native拦ai_inference及B错映，明确规范解释性质/另提grant后续入，无降门禁。first成功后second失败只续后者，无重复事实。pilot guides8及事后核验、quality审21、triage22；19/20积压待继续，仍持续私有。
+
+051续接10:57：19四shared子段+24独立批准项→2020-01/02 research2，29事实2AI/current阅读评估/实际MCP过；guides8已0.1.2 freeze+MCP。原11:23截止取消继续，pilot guides9、quality22、triage23。20/21待安全整合；旧ai_inference明确按有界解释规范/U另提grant，不降门禁，私有不部署。
