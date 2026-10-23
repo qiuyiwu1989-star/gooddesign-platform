@@ -323,3 +323,5 @@ release `20260911T015454Z-scroll-fix`。针对用户反馈“为什么还是不�
 051续接08:57：batch16六安全子段+14独立补证→2021-05/06 research2，34事实2AI/current导读评估/真实MCP过；不同名提名个人表未拷，父件仅私有shared禁止public/copy全文，两PDF仍needs_ocr。guides5已0.1.2 freeze+MCP。pilot guides6、quality审18、triage19待核名；仍持续，17待安全身份选录，不以首版数充标杆。
 
 051续接09:27：17机器人research3已原页核纠正A申请公布/B授权公告，28事实1AI/current精准导读评估/MCP过；雷达仅3公开身份0AI明确不完整。guides6也已freeze+MCP。pilot新增semantic-audit只读高风险字段巡检，quality19、triage20。旧错误版本保留，不静默改历史；仍持续不公网发布。
+
+051续接09:57：13event叙事+2U号错映按冻结语义审计native修正8案，原字段clear/迁action或grant，旧版与原证据保留；8案当前导读评估重绑/MCP过。research_workflow新增状态枚举及CN A/B/U窄门禁，3 focused+全442测试过。39金奖有研究版不等完成，18/19积压待安全选录；pilot事后核验，quality20，triage21，持续不部署。

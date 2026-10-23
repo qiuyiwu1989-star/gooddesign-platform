@@ -104,7 +104,15 @@ def add_candidate(p,w,args,actor):
  if not re.fullmatch(r'[A-Za-z0-9_-]{1,90}',rid):raise ValueError('记录ID无效')
  value=args.get('value');operation=args.get('operation','set')
  if operation not in ['set','clear']:raise ValueError('候选操作无效')
- if operation=='set':validate_type(value,fields[entity][field]['type'])
+ if operation=='set':
+  validate_type(value,fields[entity][field]['type'])
+  if entity=='event' and field=='occurrence' and value not in ['已发生','计划','取消','未知']:
+   raise ValueError('发生状态只填已发生/计划/取消/未知；事件叙事请用action，不能从日期自动猜状态')
+  number=re.sub(r'\s+','',str(value)).upper()
+  if entity=='patent' and field=='publication_number' and re.fullmatch(r'CN\d+[BU]',number):
+   raise ValueError('B/U为授权公告号，请核原件后填grant_number；申请公布字段不得承载授权号')
+  if entity=='patent' and field=='grant_number' and re.fullmatch(r'CN\d+A',number):
+   raise ValueError('A为申请公布号，不能当授权公告号')
  elif value is not None or not args.get('limitations'):raise ValueError('清空字段须传null并说明撤回原因')
  nature=args.get('content_nature','source_statement')
  if nature not in ['source_statement','ai_interpretation','ai_hypothesis']:raise ValueError('内容性质无效')
