@@ -339,3 +339,5 @@ release `20260911T015454Z-scroll-fix`。针对用户反馈“为什么还是不�
 051续接12:57：21三安全子段+28批准项两案research2，38事实0AI/current阅读评估/真实MCP过；4原拒/另新提案仍未采。火眼限设计/历史标准身份，磨切后续试验非原版验证。pilot guides12，quality25，triage26；sup独立31检查过。持续私有不部署，研究版数不等标杆成。
 
 051续接13:27：22五安全子段+滚剪15批准项，2020-07 research1/08 research2，共29事实2AI/current阅读评估/MCP过；核酸仅历史注册身份/设计，滚剪官方单位差异留痕。guides12已freeze，pilot guides13、quality26、triage27；23-25积压继续编码/安全选录，仍私有。
+
+051续接13:57：23两案research1 13事实1AI/current阅读评估/MCP过，深度严重不足明记。MAC180 Big5严格read_bytes+真实字符/字节核的新UTF8源，不假用原生乱码块；棉机仅2018媒体配置。guides13已freeze；pilot guides14、quality27、triage28。24-26安全积压继续，仍私有不部署。
