@@ -1,13 +1,13 @@
 {
   "task": "ML-003",
   "status": "in_progress",
-  "phase": "technical_release_packaging",
+  "phase": "technical_complete_independent_validation_pending",
   "authorization": "2026-10-25 user until goal complete",
   "existing_sdk": "mcp1.30.0",
   "next": [
-    "package_restore_and_freeze",
     "independent_domain_review_and_customer_task",
-    "task_driven_coverage_expansion"
+    "source_and_professional_capability_gaps",
+    "expert_reference_and_held_out_validation"
   ],
   "expert_review": "not_obtained_user_resource_question_pending",
   "engineering_validation": "not_performed",
@@ -28,8 +28,31 @@
     "live_model_match": "completed",
     "live_model_step": "completed_as_draft",
     "expert_review_tasks": 12,
-    "expert_pass_rate": null
+    "expert_pass_rate": null,
+    "paired_tasks": 12,
+    "paired_model_calls": 24,
+    "six_node_review_export": 6
   },
   "live_chain": "six_real_model_drafts_recorded_then_reviewed",
-  "post_review": "R42_overlap_and_baseline_repaired_in_new_run"
+  "post_review": "R42_overlap_and_baseline_repaired_in_new_run",
+  "technical_release": {
+    "version": "0.2.0",
+    "status": "packaged_restore_passed",
+    "files": 588,
+    "commit": "f464f56",
+    "scope": "technical_pilot_not_expert_approved"
+  },
+  "comparison": {
+    "process_session": 86759,
+    "max_calls": 24,
+    "status": "12_pairs_completed_24_calls_pending_expert_review",
+    "path": "output/method-engine-ML003/paired-comparison/status.json",
+    "instruction": "Do not start duplicate model calls; inspect existing status and failures first."
+  },
+  "content_review_queue": {
+    "methods": 60,
+    "source_records": 149,
+    "declared_support_statements": 283,
+    "semantic_support_review": "pending"
+  }
 }

@@ -1,0 +1,1562 @@
+{
+  "status": "baseline_not_expert_scoring",
+  "note": "逐档提取已声明缺口；通用提升动作是拟议工作，未冒称逐项专家评定。",
+  "records": [
+    {
+      "research_id": "R01",
+      "name": "系统化工程设计",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "其核心是由抽象到具体逐步承诺，并在每一层保留替代方案。任务澄清形成要求；概念设计研究功能和工作原理；实体设计形成结构布局并协调性能、空间与制造；详细设计给出足以制造、检验和使用的定义。前一层限制后一层，但后续发现矛盾可以返回。阶段不是日历上的四块固定时间，若一个接口仍未知，就不能因进度表到期而把它写成确定事实。结构化搜索与评价分别对应发散和收敛。",
+      "source_scopes": [
+        {
+          "title": "VDI 2221 Blatt 1:2019-11",
+          "scope": "官方公开摘要与版本信息；未读付费全文"
+        },
+        {
+          "title": "Engineering Design: A Systematic Approach, 2nd edition",
+          "scope": "出版社介绍、目录与版次信息，非全书"
+        }
+      ],
+      "declared_gaps": "尚未取得VDI标准全部条文，也未核读教材全书；阶段细则暂按公开概念与工程解释适配。后续应补概念设计和实体设计的相关章节，建立一个有真实设计记录的案例，并验证裁剪规则是否适用于目标团队。当前不注册为通用自动研发流程。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R02",
+      "name": "双钻",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "每个钻石包含拓宽和聚焦。第一轮扩大观察范围，理解受影响的人、行为和环境，再以证据收敛为值得处理的挑战；第二轮在明确挑战下寻找不同答案，再通过小规模检验淘汰和改进。四活动不是必须按序一次完成：原型可能在发现阶段帮助理解问题，交付测试也可能推翻原问题定义。因此每轮收敛是暂定承诺，允许新证据触发返回。",
+      "source_scopes": [
+        {
+          "title": "Framework for Innovation",
+          "scope": "过程及原则相关网页段落已读"
+        }
+      ],
+      "declared_gaps": "已核官方网页的过程与原则，未审查所有行业应用案例。后续需在一个真实产品任务中保留原始委托、研究证据、问题重定义和试验反馈，验证当前接口能否记录真正的认知变化。没有原始资料的教学演示不得成为方法成功案例。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R03",
+      "name": "设计思维",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "同理模式关注人怎样做、想什么和受什么环境影响；定义模式将材料聚焦为可行动的挑战；构思模式扩大可选解；原型模式让假设以某种可体验形式呈现；测试模式从参与者行为和反馈继续学习。模式之间可以跳转。原型的价值在于回答问题，低保真并非低质量；一个纸面或角色演示可以检查流程，却不能证明结构强度。共情是研究立场，不等于研究者可以准确猜测他人内心。",
+      "source_scopes": [
+        {
+          "title": "Design Thinking Bootleg",
+          "scope": "官方介绍、五模式、作者与许可说明已读；未逐卡核读"
+        }
+      ],
+      "declared_gaps": "已读Bootleg介绍而非逐卡完整核读；具体访谈技巧、测试设计和同意流程仍需专项资料与领域审核。尚无本平台真实参与者研究和迭代记录，不能作为设计思维效果认证。后续应选一个非高风险产品，保存研究原件、原型版本、测试与变更链。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R04",
+      "name": "系统工程",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "系统级能力来自元素及其连接。系统边界不仅含产品本体，也包含人员、软件、设备、设施、过程和支撑资源。需求、运行概念和架构需要互相校核，逐层分配后再递归细化。接口使元素能分别开发但整体工作；集成不是最后装起来才开始想。验证回答规定要求是否满足，确认关注预期环境下的实际用途，两者目标不同。技术管理贯穿变更、风险、配置和决策。",
+      "source_scopes": [
+        {
+          "title": "ISO/IEC/IEEE 15288:2023",
+          "scope": "官方范围与版本；未读付费全文"
+        },
+        {
+          "title": "Systems Engineering Handbook §2 Fundamentals / §4 System Design Processes",
+          "scope": "网页相关实质段落及§2.0定义/V&V区分已读；非全手册"
+        }
+      ],
+      "declared_gaps": "ISO仅核公开范围，未读全部过程要求；NASA已读相关实质段落，未审其全部附件与行业标准。后续需加入目标行业接口控制、风险管理和配置管理的直接指南，并以真实集成失败/修正记录验证档案结构。当前卡不提供系统安全认证或最终责任签署。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R05",
+      "name": "机电系统V模型",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "左侧逐步澄清系统目标、功能和专业设计；实现活动把定义转成部件、软件及装置；右侧按层次集成并检查是否符合相应设计依据。对应关系比字母V的图形更重要。机械、电气和信息处理之间需要持续交换模型和接口假设，而不是三组人顺序交接。模型分析、原型和试验可以在多个层次提前出现；流程可递归迭代，不是要求先把所有需求写死再开始制造。",
+      "source_scopes": [
+        {
+          "title": "VDI/VDE 2206:2021-11 介绍",
+          "scope": "官方介绍实读；未读付费标准正文，未复制图"
+        },
+        {
+          "title": "Systems Engineering Handbook §2.0",
+          "scope": "相关定义段落已读"
+        }
+      ],
+      "declared_gaps": "后续需取得VDI/VDE 2206授权正文，核对具体活动和检查点；补充目标行业的安全控制、软件和电气标准，建立一个真实机电项目的跨层验证链。本轮没有实际模型、控制算法或调节台测试。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R06",
+      "name": "阶段门",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "阶段用于开展跨职能活动并减少关键不确定性，关口检查交付物、评价依据和下一阶段行动。关口不只是审文档，也要决定谁有资源继续。评价可关注战略契合、产品优势、市场、技术、能力和财务风险，但不同项目应裁剪口径。决策不只有通过与失败，还可以保留或返回补证。商业潜力高不意味着安全或技术约束可以忽略。",
+      "source_scopes": [
+        {
+          "title": "Discovery-To-Launch Process",
+          "scope": "官方公开阶段、关口交付物/准则/决策段落实读；未读专有教材"
+        }
+      ],
+      "declared_gaps": "本轮未取得完整商业教材、组织实证或独立效果比较；未核所有新一代变体。后续应保存真实项目的关口依据、决策、投入及后续结果，检查决策能否从证据解释，不以企业宣传效果作本平台验证。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R07",
+      "name": "六西格玛设计",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "定义确定任务与顾客；测量澄清质量特性及可信测量；分析寻找功能、概念与影响关系；设计将方案细化并考虑参数、接口、稳健性和工艺；验证检验设计是否达到要求并规划控制。质量目标要有业务与使用依据，不能随意把用户语言变成工程阈值。统计量只在数据和模型条件满足时有意义；没有分布与能力证据，不能根据一次演示声称极低缺陷率。",
+      "source_scopes": [
+        {
+          "title": "Design for Six Sigma (DFSS)",
+          "scope": "课程公开说明及DMADV提纲实读；不是课程教材"
+        },
+        {
+          "title": "DMAIC",
+          "scope": "公开网页相关内容实读"
+        }
+      ],
+      "declared_gaps": "已核课程介绍和详细提纲，而非完整训练教材或统计公式。下一步应补所选QFD、DOE、稳健与可靠性方法的原典，并用真实原始数据评估方法链。课程页面存在较旧软件要求，本卡不据此推荐当前工具版本。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R08",
+      "name": "用户观察与需求证据化",
+      "category": "A问题发现与需求定义",
+      "current_depth_basis": "访谈获得参与者对具体事件和意义的说明，观察提供行为与环境，沉浸或跟随帮助理解连续任务和取舍。三者互补而非互相认证：说法与行为不同本身就是需要探究的材料。原话、观察记录、研究者解释、需求假设分别保存；任何推断都应能回到事件。需求不是受访者指定的功能，也不是一次异常的自动泛化，而是对特定人、任务、约束和结果的可检验表达。",
+      "source_scopes": [
+        {
+          "title": "Interview",
+          "scope": "公开方法页实质过程和步骤已读"
+        },
+        {
+          "title": "Immersion",
+          "scope": "公开方法页实质过程和步骤已读"
+        }
+      ],
+      "declared_gaps": "目前依据为公开专业方法页，未包含统计抽样、特定行业伦理审查和量化需求研究完整教材。后续需选真实现场保存去敏记录、编码变更和参与者反馈，检验证据引用是否足以支持产品定义。对代表性和饱和度的判断须依研究目标另行设计。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R09",
+      "name": "待办任务理论",
+      "category": "A问题发现与需求定义",
+      "current_depth_basis": "分析单位是发生在情境中的进步，而不是抽象人口标签或单项功能。任务可以同时包含功能结果、社会关系和情绪意义；这些维度的作用随场景变化，不宜强行每项凑满。研究应重建实际选择过程与替代，而非只问未来会不会买。相似人口可能有不同任务，不同人口也可能在相似情境中寻求同一种进步。任务陈述是解释假设，需要用跨事件对照和后续行为检验。",
+      "source_scopes": [
+        {
+          "title": "Jobs to Be Done Theory",
+          "scope": "相关理论与案例网页段落实读"
+        }
+      ],
+      "declared_gaps": "已读机构理论介绍及公开案例解释，未取得系统性访谈编码教材或方法间效果比较。需用目标产品真实选择/放弃材料进一步检验任务分组，确认任务到指标的转译。所列教学例子不能作为已经确认的工业用户任务。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R10",
+      "name": "领先用户法",
+      "category": "A问题发现与需求定义",
+      "current_depth_basis": "领先用户要同时具备需求超前与解决收益显著两种特征；买得早不等于需求领先。研究先判断趋势和需要领域，再通过专家网络寻找有相关经验的使用者，理解其尝试、限制和所得，随后与用户及专业人员发展概念。跨领域领先使用也可能提供启发。原型经验是材料，不是无需核验的真理；概念商业潜力和一般用户可用性还要另查。",
+      "source_scopes": [
+        {
+          "title": "Lead User Project Handbook",
+          "scope": "前言、目录、两特征及第2章相关页面选读；非168页全文"
+        },
+        {
+          "title": "Lead User Innovation Handbook resource, Spring 2026",
+          "scope": "资源入口、课程年份与下载链接，未读新PDF"
+        }
+      ],
+      "declared_gaps": "已选读手册前言、概念定义及第2章趋势/用户/研讨相关页，未全文核读168页；2026资源是否更新具体实践尚待进一步阅读。后续应以实际联系和资料形成候选资格证据，处理共同开发知识权利，并测试从极端用户转向目标用户的适配。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R11",
+      "name": "Kano需求分类",
+      "category": "A问题发现与需求定义",
+      "current_depth_basis": "模型区分实现程度与满意反应，研究两者并非总是线性。调查对同一特性描述具备与不具备两种情境，获得相配回答后按指定规则解释。特性描述必须单一、清楚且不诱导，否则回答反映的是理解差异。不同人群和时间的分类可不同；同一特性出现混合类别，不应强迫归唯一标签。魅力变基本是一种常见演变可能，不是所有特性都按固定速度经历的必然规律。",
+      "source_scopes": [
+        {
+          "title": "What is the Kano Model?",
+          "scope": "公开概念及需求关系段落实读"
+        },
+        {
+          "title": "Kano Survey for feature prioritization",
+          "scope": "相关实践段落实读；第一次请求超时后第二次取得"
+        }
+      ],
+      "declared_gaps": "尚未选定并完整核验分类矩阵、平局/可疑处理和统计区间的采用版本；需补原始论文或权威方法教材及实际问卷数据。平台下一版应包含可复算的回答对测试，而不能只用网页画曲线。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R12",
+      "name": "质量功能展开",
+      "category": "A问题发现与需求定义",
+      "current_depth_basis": "先确认顾客及其需要，再把需要展开为可行动和可测的响应；关系判断使团队看到哪些技术工作支持哪些价值。质量屋可将顾客需要、工程特性、关系、技术相关性与对标放在一起，但建屋只是工具。技术目标应有数据、试验、历史或对标依据，不能从顾客愿望随意生成。部署还包含责任、过程和后续层级，要求在传递中保持语义和指标口径。",
+      "source_scopes": [
+        {
+          "title": "ISO 16355-1:2021",
+          "scope": "官方公开范围与版本实读；未读标准全文"
+        },
+        {
+          "title": "What is Quality Function Deployment?",
+          "scope": "公开概念与部署段落实读"
+        },
+        {
+          "title": "House of Quality Tutorial",
+          "scope": "公开质量屋介绍及对标目标段落实读"
+        },
+        {
+          "title": "Quick Facts about QFD",
+          "scope": "公开澄清段落实读；未读训练教材"
+        }
+      ],
+      "declared_gaps": "ISO全文与所采用QFD详细数学流程未全部取得；尚未选定重要度获取、关系量表与层级展开的具体实施版本。后续应补直接教材和真实需求资料，以有数据的产品案例验证关系与目标，并记录用户与工程师分歧。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R13",
+      "name": "人机工程与人本设计",
+      "category": "A问题发现与需求定义",
+      "current_depth_basis": "人的体型、力量、感知、记忆和决策能力存在差异，同一人在疲劳、穿戴防护用品、异常工况下的表现也会变化。通过重构任务分配、控制显示、作业位置与环境，使要求与能力匹配。HSE特别指出负荷过高和过低都可能影响表现，因此自动化程度越高并不自然等于更好的人因表现。",
+      "source_scopes": [
+        {
+          "title": "ISO 6385:2016 Ergonomics principles in the design of work systems",
+          "scope": "实际核读官网摘要与版本信息；未读付费标准全文"
+        },
+        {
+          "title": "Design",
+          "scope": "公开网页相关正文"
+        },
+        {
+          "title": "Workload",
+          "scope": "公开网页相关正文"
+        }
+      ],
+      "declared_gaps": "已核读ISO官网范围和HSE设计、负荷页面，未获得ISO标准全文，也未执行RULA、REBA等专项评分。本卡不包含经核定的人体数据库、地区合规阈值或临床判断。后续应补适用市场标准授权、目标人群数据和可重复的试验模板。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R14",
+      "name": "功能分解与接口分析",
+      "category": "B功能分析与概念生成",
+      "current_depth_basis": "把父级要求转译为功能，再把功能分解与分配到足以开展设计的层次，同时识别接口和派生要求。NASA强调每个功能的输入、输出、失效模式、失效后果与接口要求，并沿运行情景形成端到端路径。分解是递归迭代的，可能有多个合理架构，而非唯一正确树。",
+      "source_scopes": [
+        {
+          "title": "SEH 4.0 System Design Processes",
+          "scope": "实际核读公开章节中逻辑分解的输入、活动、输出相关段落"
+        }
+      ],
+      "declared_gaps": "已读NASA §4.3.1输入、活动、输出，未读其扩展指南中的全部功能分析技术。接口字段为平台操作结构，尚未与企业正式ICD模板对齐。本轮没有真实产品需求集、接口双方签署或集成测试结果，因此本档案为建模草案。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R15",
+      "name": "FAST功能逻辑分析",
+      "category": "B功能分析与概念生成",
+      "current_depth_basis": "功能采用动作与对象表达。向右问‘如何实现这个功能’形成更具体的手段；向左问‘为什么要做这个功能’回到更高目的。边界线区分本次研究与外部条件，支撑功能按所采用图型单独组织。此逻辑描述目的与手段，不是时间顺序，也不是统计或物理因果证明。",
+      "source_scopes": [
+        {
+          "title": "Value Analysis and Function Analysis System Technique",
+          "scope": "实际读取署名原文镜像中相关正文；作者官网URL读取未成功"
+        }
+      ],
+      "declared_gaps": "SAVE官网历史原文及USACE手册直接读取遭403，核读到其搜索索引片段；主要详细机制依据Kenneth Crow署名原文的公开镜像，镜像不是作者官网，可信边界已记录。尚需补取得作者官网或SAVE授权原文，确认选用图型的完整规则；本卡不复制外部图。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R16",
+      "name": "根因分析",
+      "category": "B功能分析与概念生成",
+      "current_depth_basis": "从已发生的不符合或事件出发，以证据重建发生过程，提出多个原因假设，核对它们如何产生结果及哪些屏障失效。原因可能组合出现，时间先后或相关性不足以证明因果。根因深度应服务可实施的防复发行动，不能无限追问，也不能为尽快结案停在第一个合理故事。",
+      "source_scopes": [
+        {
+          "title": "What is Root Cause Analysis (RCA)?",
+          "scope": "实际核读网页相关正文"
+        },
+        {
+          "title": "Investigating accidents and incidents HSG245",
+          "scope": "实际读取远程PDF文本相关章节及表单片段；并非全88页逐页阅读"
+        }
+      ],
+      "declared_gaps": "已核读ASQ公开RCA页面以及HSE HSG245所见调查章节与表单片段，未全读88页每个案例。本卡未给出某行业法定调查义务或根因唯一性判据，也未连接现场采集系统。后续需按领域补安全调查流程、检验能力与复发监测规则。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R17",
+      "name": "形态学分析",
+      "category": "B功能分析与概念生成",
+      "current_depth_basis": "方法先定义维度和候选值，再考察组合之间是否一致。工程应用中可把维度取为子功能、候选值取为实现原理。每一列选项不只写零件名，还写输入输出和作用条件。交叉一致性是在判断条件能否共存，不直接表示因果。平台把逻辑冲突、实证限制、用户硬约束和未知分别保存；不能因为某方案不受偏爱，就把它写成物理上不可能。成对相容也不足以证明多部件整体可行。",
+      "source_scopes": [
+        {
+          "title": "General Morphological Analysis",
+          "scope": "网页相关主体段落核读"
+        }
+      ],
+      "declared_gaps": "已核读Ritchey网页的定义、形态空间和CCA相关段落，未取得工程教材完整概念设计章节，也未采用其专用GMA软件。本条可供有边界的概念研究，尚缺真实企业任务、工程兼容性复核和方法效果评价。后续需要选择一个资料充分的机械设计过程，对功能拆分、被排除路线和验证结果作可追溯回看；本档案不认定任何获奖团队曾实际使用此法。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R18",
+      "name": "仿生设计",
+      "category": "B功能分析与概念生成",
+      "current_depth_basis": "核心跨越是从生物描述到工程机制：某个生物体在什么条件下通过哪些结构和物理作用完成何功能，抽象后如何成为可测试的设计命题。抽象时去掉物种名，保留相互作用、几何尺度、材料特性和作用条件。生物系统的结构可能同时服务多个功能，不能只截取一个漂亮局部。工程迁移需重新核查尺度效应、寿命、污染、制造、维护以及对环境的整体影响。",
+      "source_scopes": [
+        {
+          "title": "The Biomimicry Design Process",
+          "scope": "网页主体流程核读"
+        },
+        {
+          "title": "Abstract Design Strategies",
+          "scope": "页面已打开，相关抽象定义与指导核读"
+        },
+        {
+          "title": "Evaluate Fit & Function",
+          "scope": "页面已打开，相关评价范围核读"
+        }
+      ],
+      "declared_gaps": "本轮核读了Biomimicry Toolbox的整体流程，并取得机制抽象与适配评价页面。没有逐篇核读任一生物策略的原始实验，也未取得目标夹持案例的工程数据；案例为教学构造。后续应选具体功能，由生物与工程两侧共同核查机制、尺度和材料，形成带失败边界的真实迁移档案。科学术语和可持续性要求不宜压缩成任意可替换的提示词标签。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R19",
+      "name": "设计启发式",
+      "category": "B功能分析与概念生成",
+      "current_depth_basis": "设计启发式是产生想法的认知提示，提示与某个具体产品间并无一一确定映射。同一提示可推动已有方案沿原方向细化，也可引出不同方向；多个提示还可连续变换。重要的是留下原概念、采用的提示、改变后的作用关系和选择理由。原始研究观察到设计者在概念生成中使用多种策略，这类证据说明值得研究和教学，不等于每一张卡都带来可实现发明的统计保证。",
+      "source_scopes": [
+        {
+          "title": "Design Heuristics in Engineering Concept Generation",
+          "scope": "PDF摘要与研究设计相关页文字核读，未读完48页"
+        },
+        {
+          "title": "DH Idea Development Protocol and Materials",
+          "scope": "相关教学步骤与记录要求核读；非卡组全文"
+        }
+      ],
+      "declared_gaps": "本轮核读研究官网、研究论文的摘要与研究设计介绍、以及公开概念发展教学协议的活动和记录部分。未逐项审计77张卡的完整内容与权利，也未复现原研究或得到本项目工程师的任务评价。正式接入前，应确认可使用的提示集合、版本与许可，建立初始概念—变换—产物的真实记录，再测试它是否在目标机械任务中增加了有用路线。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R20",
+      "name": "C-K设计理论",
+      "category": "B功能分析与概念生成",
+      "current_depth_basis": "理论区分概念空间C与知识空间K：概念是在所选知识背景下尚无确定逻辑地位的命题，知识则有可讨论的逻辑状态。两者相对设计者掌握的知识而定。设计可通过增加或去掉属性扩展概念，通过推理、检索、专家和试验扩展知识，并促使概念获得可判断性。平台保留C→C、K→K、K→C和C→K的关系标签，不把它们简化成机械的线性阶段，也不把普通任务分解自动当作扩展性分割。",
+      "source_scopes": [
+        {
+          "title": "A New Approach of Innovative Design: An Introduction to C-K Theory",
+          "scope": "定义和推理机制相关页文字核读，非全数学证明复核"
+        }
+      ],
+      "declared_gaps": "本轮实质核读2003原始论文的定义、概念分割、联结/析取与四算子相关章节，未完成所有数学论证复查，也未系统比较2009等后续版本。学术网站另一介绍入口返回500，未据其内容补写。今后需要明确采用理论版本，选真实研发过程验证记录结构能否保留知识变化与概念变化；本档案不是C-K专家认证，也没有真实工程效果数据。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R21",
+      "name": "TRIZ体系",
+      "category": "C技术发明与矛盾求解",
+      "current_depth_basis": "核心工作是从具体对象抽象到可处理的问题模型，借助跨领域积累的解题知识形成解决模型，再翻译回有物理细节的方案。矛盾模型适合改善一项性能导致另一项恶化的关系；物场模型关注作用结构；功能导向检索以待实现功能寻找外部技术；ARIZ用于需要更严格重构的复杂问题。不是所有工具都要求先建立矛盾，不能为套用矩阵而制造一个不存在的冲突。",
+      "source_scopes": [
+        {
+          "title": "Problem Solving Tools",
+          "scope": "公开主文全文与工具映射表"
+        },
+        {
+          "title": "TRIZ Body of Knowledge",
+          "scope": "官网检索返回的介绍、知识目录和选录主体；直接打开部分超时，未读附件全文"
+        }
+      ],
+      "declared_gaps": "本条核读专业组织公开知识目录及工具主文，未核读全部历史原著、培训材料或每个分支的争论。不能据此宣称存在一个全球统一且固定不变的TRIZ执行标准，也未证明其对本平台项目的实际成功率。完整算法、矩阵、标准解和专利证据应在对应子条核验；当前是有出处的族级调用说明。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R22",
+      "name": "技术矛盾与发明原理",
+      "category": "C技术发明与矛盾求解",
+      "current_depth_basis": "使用IF—THEN—BUT型表述把措施、有益效果和副作用关联起来，再把特定指标映射到矩阵通用参数。经典矩阵以改善参数为行、恶化参数为列，提供若干发明原理建议，也可能为空。它是检索启发，不是证明、排序或优化计算。映射存在判断成分；为获得喜欢的原理而反复更换参数，会破坏可追溯性。",
+      "source_scopes": [
+        {
+          "title": "Engineering Contradiction",
+          "scope": "官网检索返回主体核读；直接打开相关页面部分超时；跨组复核：主Agent于2026-10-23直接成功打开55行正文，核验定义、IF/THEN/BUT、不同措施分别建模及反向处理；未核图片算法"
+        },
+        {
+          "title": "Contradiction Matrix",
+          "scope": "官网检索返回主体核读；未执行具体单元格查询；跨组复核：methods_a于2026-10-23直接成功打开主体，核验改善行/恶化列、非对称、可空及顺序不代表优先，记录见建设工作区/跨组复核-A.md"
+        },
+        {
+          "title": "40 Inventive Principles for Solving Technical Contradictions",
+          "scope": "实际打开并核读全部40条原则正文；未复制入库"
+        }
+      ],
+      "declared_gaps": "已核读MATRIZ官网检索返回的工程矛盾和矩阵主文；直接打开部分页面超时。未实际检索某一对参数的矩阵单元格，未取得40原理的完整授权语料，本文不提供伪造矩阵结果。经典39参数与后续扩展版本须分开存储。教学案例为平台构造，无专利检索或工程实测。 本轮追加直接核读作者基金会公开40原理正文1—40，仅保存题录和原创建议，不复制完整原理语料；仍未查询矩阵单元格。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R23",
+      "name": "物理矛盾与分离",
+      "category": "C技术发明与矛盾求解",
+      "current_depth_basis": "分离的作用是追问相反要求是否必须在相同位置、相同时段、相同关系和相同组织尺度成立。如果装入时要柔顺、承载时要刚，可改变工作阶段；如果接触表面要硬而内部要韧，可改变局部材料或结构；如果小单元可运动而整体需保持形状，可改变部件与整体的组织关系。每种方向只是生成机制的线索，不能把给部件贴标签当作消除物理约束。",
+      "source_scopes": [
+        {
+          "title": "Detailed Descriptions of the Topics Required for Levels 1–3",
+          "scope": "实际打开7页PDF，核读第1–3页相关纲要"
+        },
+        {
+          "title": "Contradictions",
+          "scope": "官网检索返回主体核读"
+        }
+      ],
+      "declared_gaps": "已核读MATRIZ公开课程纲要相关条款与官网矛盾主文检索结果。算法专页直接打开多次超时，未核读其完整算法。检索到训练手册有明确商业再利用限制，未将其专有表格、例题或流程转录入库；此档为独立解释与平台适配。没有得到全球统一分类或本平台有效性验证。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R24",
+      "name": "理想解与资源分析",
+      "category": "C技术发明与矛盾求解",
+      "current_depth_basis": "先把目标写成解决具体障碍的结果，暂缓指定某个新部件；随后在问题发生的作用区和时间内寻找能承担作用的现有资源。候选资源不仅是库存零件，还包括已有运动、温差、压力、弹性、重力、空隙、等待阶段和被视为废物的输出。资源存在不等于可用，关键是其数量、质量、位置、持续时间和可控性是否足以支持需要的作用。",
+      "source_scopes": [
+        {
+          "title": "Ideal Final Result",
+          "scope": "实际打开28行短文主文"
+        },
+        {
+          "title": "ARIZ Block 1",
+          "scope": "官网检索返回相关主体核读，未核读完整算法附件"
+        }
+      ],
+      "declared_gaps": "本条核读MATRIZ IFR短文及ARIZ Block1官网检索返回的作用区、作用时间、资源与IFR相关说明，未逐页核读ARIZ全部原典。所列资源证据字段和验证顺序是平台适配，并非声称原文统一模板。教学案例未经尺寸设计与工程试验，理想性也未被用作一个无需量纲说明的精确数值评分。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R25",
+      "name": "物场分析与标准解",
+      "category": "C技术发明与矛盾求解",
+      "current_depth_basis": "S1、S2与F分别标记相互作用的物质对象及作用场，工程场的分类可涉及机械、声、热、化学、电、磁等。模型描述有用作用是否成立及有害作用是否并存。标准解提出改变模型的典型方向，例如补全缺失作用、改变既有作用结构、引入更可控相互作用或寻找检测输出。图上的新增物质和场只是解决模型，尚需确定实际载体与参数。",
+      "source_scopes": [
+        {
+          "title": "Substance-Field Modeling",
+          "scope": "官网检索返回主体核读；直接打开部分超时"
+        },
+        {
+          "title": "Substance-Field Model",
+          "scope": "官网检索返回主体核读"
+        },
+        {
+          "title": "Standard Inventive Solutions",
+          "scope": "检索返回主文，实际核读五类、2.1/2.2及4.1/4.2选段；未读全76条"
+        }
+      ],
+      "declared_gaps": "已核读MATRIZ官网检索返回的物场建模、物场模型和标准解主体，包括五类与部分示例条文；未逐项核读全部76条及图片。本文没有建立完整可运行的标准解知识库，也没有给教学案例报某编号命中。经典物场与现代因果分析的使用顺序有流派差异，当前档案不将其中一种描述为强制统一规范。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R26",
+      "name": "功能裁剪",
+      "category": "C技术发明与矛盾求解",
+      "current_depth_basis": "设备裁剪的公开规则包含三种基本关系：当功能对象及对应需求消失，原载体可能不再必要；对象可能自行承担功能；其余系统或超系统的另一载体可能接管。第三种关系可从已有同类功能、与对象直接交互或具备所需资源的部件寻找候选。规则描述功能重新配置的方向，不保证被提名载体具备足够能力，也不允许在保留需求时静默删除功能。",
+      "source_scopes": [
+        {
+          "title": "Trimming",
+          "scope": "实际直接打开52行主文核读"
+        },
+        {
+          "title": "Trimming Rules",
+          "scope": "实际直接打开111行主文核读"
+        },
+        {
+          "title": "Trimming Problem",
+          "scope": "实际直接打开21行全文核读"
+        }
+      ],
+      "declared_gaps": "已直接打开并核读MATRIZ裁剪主文、设备与工艺裁剪规则、裁剪问题定义三篇正文。档案保留规则含义与原创适配，不复制完整专有规则表或图。当前案例没有工程数据；对每种工艺类型的细则尚未逐例验证。裁剪与价值工程、DFMA可互补，但不声称这些独立方法都源于TRIZ。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R27",
+      "name": "功能导向检索与科学效应",
+      "category": "C技术发明与矛盾求解",
+      "current_depth_basis": "用动作与对象及参数变化描述功能，将行业专有名词上提为一般功能，同时保留目标材料、尺寸、速度、环境和代价。搜索应优先关注该功能对其生存关键、或承受更严格条件的领域，那里可能积累较强技术能力。随后按功能参数选择候选，识别迁移产生的二次问题。原论文对已有技术的强效益判断属于作者主张，平台不把它提升成普遍成功保证。",
+      "source_scopes": [
+        {
+          "title": "New TRIZ-Based Tool—Function-Oriented Search",
+          "scope": "实际打开并核读全文，包括简化流程与迁移案例"
+        },
+        {
+          "title": "Function-Oriented Search",
+          "scope": "官网检索返回主体核读；直接打开404"
+        },
+        {
+          "title": "TRIZ Effects Database",
+          "scope": "实际打开66行入口正文；未执行库内查询"
+        }
+      ],
+      "declared_gaps": "实际打开并核读Litvin三页公开论文全文，另读GEN-TRIZ官网检索返回说明及Oxford Creativity效应数据库入口全文。未进入效应库执行实例查询，未抓取数据库内容或取得再分发许可。原论文12环节在本档压为六个操作阶段，明确是平台适配。教学例为原创，没有证明这些候选对具体容器可用。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R28",
+      "name": "ARIZ发明问题求解算法",
+      "category": "C技术发明与矛盾求解",
+      "current_depth_basis": "先将大问题缩为保留主功能的最小问题，明确冲突双方及相反措施，再分析作用区域、作用时间和物质场资源，构建理想最终结果与物理矛盾。后续调用资源、分离、标准解、科学效应等知识，若仍无解可改变问题表述，而不是无限重复同一假设。最终还要检查方案是否真正消除问题、能否推广以及实际思维过程在哪里偏离。",
+      "source_scopes": [
+        {
+          "title": "ARIZ",
+          "scope": "官网检索返回主体核读"
+        },
+        {
+          "title": "ARIZ Block 1",
+          "scope": "官网检索返回相关主体核读"
+        },
+        {
+          "title": "ARIZ-85-C, Parts 1–3",
+          "scope": "仅核读官网检索返回标题和开头说明；未完整核读附件"
+        },
+        {
+          "title": "ARIZ",
+          "scope": "实际打开109行并核读九部分概要；非完整子步骤"
+        }
+      ],
+      "declared_gaps": "已核读MATRIZ ARIZ主文的九部分与三块结构，以及Block1官网检索返回的前三部分说明。公开ARIZ-85-C附件检索标明只含Parts1–3，不能当完整九部分原文；本条未完整核读全部85C细则。要建设生产级ARIZ执行器，仍需取得可使用的完整版本、逐条建模并让有经验实践者审查。 追加实际核读Technical Innovation Center九部分公开概要全文，仍非完整子步骤。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R29",
+      "name": "技术系统进化趋势",
+      "category": "C技术发明与矛盾求解",
+      "current_depth_basis": "趋势从历史模式提示潜在变化，例如由固定结构转向可调结构、从单一状态转向更多可控状态、通过协调改善系统交互，或把局部功能融入更大系统。这些变化必须对应真实价值参数和约束。S曲线分析应针对某工作原理下的重要性能参数与投入或时间关系；当前公开说明也指出传统阶段指标的可靠性限制，不适合仅凭一个外观特征下结论。",
+      "source_scopes": [
+        {
+          "title": "Trends of Engineering Systems Evolution",
+          "scope": "实际直接打开61行主体核读"
+        },
+        {
+          "title": "Trend of Increasing Dynamization",
+          "scope": "官网检索返回主文核读"
+        },
+        {
+          "title": "S-Curve",
+          "scope": "官网检索返回主体核读"
+        }
+      ],
+      "declared_gaps": "实际直接打开MATRIZ TESE总览全文，并核读官网检索返回的动态化与S曲线主文。未核读所有趋势分支原著，也未复核其统计样本与“证明”主张。当前目录和流程是有来源的研究与平台适配；未建成预测模型，没有提供任何精确时间表或成熟度算法。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R30",
+      "name": "公理化设计",
+      "category": "D机构架构与系统设计",
+      "current_depth_basis": "独立性公理要求保持功能要求的独立性。设计矩阵表明哪些DP影响哪些FR：理想的对角关系可分别调整，适当排序的三角关系需要遵循调整次序，存在循环耦合时则难以独立满足要求。信息公理在满足第一公理的备选中偏向成功概率更高、信息含量更小的方案。这里的信息不是文件大小或文字多少，不能把零件数量少直接等同低信息量。",
+      "source_scopes": [
+        {
+          "title": "General Axiomatic Design Concepts",
+          "scope": "实际打开79行并核读正文全文"
+        },
+        {
+          "title": "2.882 Introduction to Axiomatic Design, lec202",
+          "scope": "实际打开90页PDF并核读相关页文本；未读全90页"
+        }
+      ],
+      "declared_gaps": "已实际核读MIT公理化设计组Introduction页面全文，包含四域、设计矩阵、往返分解和两条公理。未核读Suh两部著作全文，未建概率计算器，也未验证本平台案例。对非线性、冗余、动态复杂性和信息量公式的完整细则需后续原著与专家补充，本条不声称简明矩阵可覆盖所有复杂设计。 追加核读MIT2.882讲义第52—54页矩阵段，非全文。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R31",
+      "name": "DSM与模块化架构",
+      "category": "D机构架构与系统设计",
+      "current_depth_basis": "DSM以同一元素列表作为行列，用单元格表示某种依赖，可为二元关系或有定义的权重。必须声明“行影响列”或其转置约定，文献中两种均存在。聚类重排将紧密关联元素集中，提示模块候选；过程排序把需要先获得的信息尽量放前面，暴露循环。矩阵重排不改变真实系统依赖，仍需通过架构或工作方式变化改善。",
+      "source_scopes": [
+        {
+          "title": "Introduction to DSM",
+          "scope": "实际打开47行正文并核读全文"
+        },
+        {
+          "title": "Design Structure Matrix Methods and Applications",
+          "scope": "实际打开48行介绍全文；未读书全文"
+        }
+      ],
+      "declared_gaps": "已实际核读DSM专业社区Introduction全文，以及Eppinger在MIT的DSM Methods and Applications书目介绍与目录。未核读2012专著全文，未运行聚类或排序软件，也未取得具体算法的完整性能证明。本文步骤是建模和评审协议，不是某个已实现的最优化算法；工程案例为原创教学构造。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R32",
+      "name": "机构综合",
+      "category": "D机构架构与系统设计",
+      "current_depth_basis": "几何综合利用运动副和闭环约束把期望位置联系到杆长、铰点和运动关系。自由度用于检查允许的独立运动，但简单计数公式有刚体、独立约束和特定运动副等前提；冗余约束和特殊几何会使计数失真。经过若干精确位置只说明这些离散约束被满足，不能证明机构会以正确顺序、同一装配分支连续通过全过程。",
+      "source_scopes": [
+        {
+          "title": "2.007 Mechanisms: Kinematic Analysis and Synthesis",
+          "scope": "实际打开并核读讲义文本，未逐图重建图解"
+        }
+      ],
+      "declared_gaps": "已实际核读MIT2.007的38页机构运动学分析与综合讲义文本，包括自由度、冗余约束、四杆与滑块及三位置综合部分；未逐图重建图解，也未核读全部引用书籍。当前无求解器、CAD或动力学模型运行证据。本档为平面刚体机构的范围明确工作流，空间、柔顺、并联与复杂接触需独立深研。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R33",
+      "name": "Ashby材料选择",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "核心是把功能、约束、目标、可调变量分开。约束决定能否入围，例如导电、工作温度、最小刚度或成形方式；目标是在可行候选中尽量轻、便宜或降低环境负担。性能指数从相应性能方程及自由几何变量推导，不能脱离受力模式套用。材料图是比较空间的可视化，并不是仅凭泡泡位置作最后决策。记录材料牌号、热处理、方向、试验条件和数据范围，才能知道图上的数值是否可用于具体部件。 轴向弹性刚度限制的教学推导：m=ρAL、δ=FL/(EA)≤δ_max，因此A≥FL/(Eδ_max)，在此单一约束控制时m_min=ρFL²/(Eδ_max)，故最大化E/ρ。若强度限制控制，则由A≥F/σ_allow得到另一个指标σ_allow/ρ。这里是清楚假设下的基础推导，不是任意杆、梁、板都通用的材料排名。",
+      "source_scopes": [
+        {
+          "title": "Material selection: Translation, screening, ranking, documentation",
+          "scope": "公开28页讲义相关段落文字选读，未称全书核读"
+        },
+        {
+          "title": "Performance Indices Reference Booklet",
+          "scope": "公开33页手册的导论和相关目录表文字选读；未逐项核验全部公式"
+        }
+      ],
+      "declared_gaps": "未取得Materials Selection in Mechanical Design全书和商业物性数据库；未逐项复核性能指数手册的全部公式，未运行材料筛选软件。上线某一结构专题前需补相应受力公式、适用假设、批次设计值和制造/服役验证。当前可用作有边界的分析说明及输入准备，不能作为已认证选材程序。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R34",
+      "name": "面向制造与装配设计",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "先回答独立零件为什么存在，再问如何更好制造它。DFA可从BOM、装配顺序、抓取和插入困难、相对运动、必要材料差异及装配要求检查可合并候选。最低零件数量是分析参照，不是工程必须达到的数字。DFM则依据几何、材料、工艺、精度、批量和设备条件评估成本驱动。两者迭代：合并零件改变工艺和模具经济性，换工艺又可能改变分件与连接。应把装配动作与制造工序分别建模，再解释跨工序的变更影响。",
+      "source_scopes": [
+        {
+          "title": "What is DFMA? Design for Manufacture and Assembly Explained",
+          "scope": "官方网页定义与DFA/DFM流程段落选读；未采用宣传效果数字"
+        },
+        {
+          "title": "Product Simplification Using DFMA (2018)",
+          "scope": "8页公开论文的流程与最低零件准则段落选读"
+        }
+      ],
+      "declared_gaps": "未运行DFMA软件，未取得完整商业手册、标准时间表或本地工厂成本参数。Devenish论文中的分类和具体案例是作者实践，不能泛化为所有行业不变规则。执行某产品项目前，须补BOM、装配录像/动作数据、批量、质量要求和工艺报价，再做真实方案验证。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R35",
+      "name": "拓扑优化",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "密度法把设计域离散成单元，用密度变量描述材料分布；有限元计算响应，再以目标的灵敏度更新变量。原教育例针对体积约束下的柔顺度最小化，柔顺度与载荷方向下的变形响应有关。SIMP惩罚用于抑制中间密度，滤波用于约束不合理的细小变化和减轻网格依赖。优化收敛只说明迭代在给定模型中稳定，不能自动证明全局最优、制造可行或真实服役可靠。因此结果应与模型版本绑定，不能把载荷改变后的新问题继续引用旧最优解。 具体教育模型可写min_x c=fᵀu，约束K(x)u=f、Σv_e x_e≤V_limit、x_min≤x_e≤1；SIMP用x_e的惩罚幂插值单元刚度。变量、边界、载荷、体积及滤波共同定义问题。这里仅给教学模型，不含应力、疲劳、屈曲或制造约束的完整求解实现。",
+      "source_scopes": [
+        {
+          "title": "A 99 line topology optimization code written in MATLAB",
+          "scope": "实验室网页正文核读；代码本轮未运行"
+        },
+        {
+          "title": "A 99 line topology optimization code written in Matlab (2001)",
+          "scope": "公开8页论文数学模型、灵敏度滤波与迭代实现相关段落文字选读；未运行求解"
+        }
+      ],
+      "declared_gaps": "本轮已选读原论文模型与实现部分，但未逐行运行代码、未做网格与算法复现。当前以单一教育模型解释方法族，生产任务还需选择算法版本、有限元工具、制造约束、载荷谱和验证基准。代码许可及软件许可须在实际部署时核对；原论文可公开阅读不等于所有实现可任意再分发。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R36",
+      "name": "Pugh概念筛选",
+      "category": "F方案决策与验证评价",
+      "current_depth_basis": "比较矩阵的行来自要求，列是可比较的完整概念；选择datum作为共同参照，每格判断相对它更好、相当或更差，并写依据。平台另设未知状态，避免缺信息自动记成相同。汇总只帮助发现优势、弱项和需要改进的组合，不能把符号视为等距物理测量。更换合理基准、复核准则和整合优点，可减少对单一初始方案的依赖。控制收敛意味着以学习改进概念，而不是一次打分宣布永远最佳。基准不是不变真理，应与设计阶段和候选变化一起复审，保留前后轮次差异。",
+      "source_scopes": [
+        {
+          "title": "D-Lab II: Design Packet Phase 2 — Ideas",
+          "scope": "课程网页Pugh与分析试验段落核读"
+        },
+        {
+          "title": "What is a Decision Matrix?",
+          "scope": "专业机构网页用途与操作段落选读"
+        }
+      ],
+      "declared_gaps": "未核读Pugh原著完整受控收敛流程，当前说明侧重公开教学可支持的矩阵使用。具体任务还需确定准则、判断尺度、参与者、基准及权重依据，不能套固定权重。未开展真实团队决策对照实验，也无选择后产品结果；内容状态仅研究操作草稿。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R37",
+      "name": "多准则权衡分析",
+      "category": "F方案决策与验证评价",
+      "current_depth_basis": "先分强制要求与增强目标，明确决策对象和负责者，再建立候选与准则。准则的方向、单位、可接受范围和评分定义必须一致；加权合成只是某一偏好模型。归一化改变尺度，不消除主观性，也不自动使序数分值具有可加性。对重复反映相同价值的准则应检查相关和重复计算。评价结果需连同输入范围、假设及权重敏感性报告，稳定胜出与信息不足下的微小领先应有不同表述。应同时呈现不被其他方案全面支配的候选及其取舍，避免合成分数过早隐藏有价值的路线；这属于本卡的分析建议。",
+      "source_scopes": [
+        {
+          "title": "Systems Engineering Handbook §6.8 Decision Analysis",
+          "scope": "公开网页主体方法段落选读"
+        },
+        {
+          "title": "What is a Decision Matrix?",
+          "scope": "专业机构网页用途与操作段落选读"
+        }
+      ],
+      "declared_gaps": "本轮未核所有MCDA算法的假设和实现，未提供AHP一致性、效用函数拟合或随机多属性模型。实际任务需确定所选技术、权重形成过程、数据质量和决策权限，必要时补统计/优化工具与领域复核。尚无真实决策效果对照或长期跟踪结果，不能给方法成功率或通用最优保证。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R38",
+      "name": "试验设计与响应面",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "因素是被操纵或需记录的输入，响应是可测输出；交互意味着某因素的效果随另一因素水平改变。随机化、区组和重复用于处理不同误差与干扰，实验单位决定独立性。部分因子设计节约试验却可能混杂效应，选择时须知道可估什么。响应面在明确区域内用主效应、交互和必要曲率近似关系，曲面可能是坡、脊或鞍，不能默认都有内部峰值。模型检查和确认试验比只看拟合优度更关键。若设计计划与实际执行发生偏离，应保留两者并解释影响，不能在清洗数据时把异常运行删除到看不见。",
+      "source_scopes": [
+        {
+          "title": "e-Handbook §5.3.1 What are the objectives?",
+          "scope": "短网页全文文字核读"
+        },
+        {
+          "title": "e-Handbook §5.3.2 Select and scale process variables",
+          "scope": "短网页全文文字核读"
+        },
+        {
+          "title": "e-Handbook §5.7 DOE Terminology",
+          "scope": "公开术语网页相关条目核读"
+        },
+        {
+          "title": "e-Handbook §5.3.3.6 Response surface designs",
+          "scope": "公开网页模型说明相关段落核读"
+        },
+        {
+          "title": "e-Handbook §5.4.4 Test and revise DOE models",
+          "scope": "短网页全文及所列检查类别核读，未逐一打开所有子页"
+        },
+        {
+          "title": "e-Handbook 5.3.3.3.1 Two-level full factorial designs",
+          "scope": "公开短页全文核读，含2^3设计、标准顺序与重复说明"
+        }
+      ],
+      "declared_gaps": "本轮未实现试验设计生成器、统计检验或响应面求解，未遍历手册所有设计与分析公式。执行时需针对因素类型、约束、误差结构和预算选择设计，并由统计及领域人员复核。具体的样本量、显著性水平、功效和可接受误差不能从通用卡片默认给出；未开展本方法实际效果对照。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R39",
+      "name": "稳健参数与公差设计",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "先区分控制因子、噪声因子和响应。控制因子可在设计时选择，噪声因子服役中难以控制，但试验中可能可模拟。内外阵列把不同设计设置放到多种噪声条件下比较均值与变异；高均值和低变异未必在同一设置，应结合目标取舍。公差设计需了解输入变动如何经模型传到功能输出，以及收紧哪些因素最有价值。工程公差是允许界限，标准差、测量不确定度和规格限不是同一个量，不能直接互换。同一变量在实验室可被操纵，并不意味着服役中可受控；变量角色应随设计阶段明确，不以试验方便程度决定。",
+      "source_scopes": [
+        {
+          "title": "e-Handbook §5.5.6 What are Taguchi designs?",
+          "scope": "网页参数设计、内外阵列及公差设计相关段落核读；未复制全部示例表"
+        },
+        {
+          "title": "e-Handbook §2.5.6 Uncertainty budgets and sensitivity coefficients",
+          "scope": "短网页全文文字核读；未遍历全部误差传播子页"
+        },
+        {
+          "title": "e-Handbook 2.5.5 Propagation of error considerations",
+          "scope": "公开短页全文核读，重点协方差、误差传播近似与敏感度"
+        }
+      ],
+      "declared_gaps": "未实现田口信噪比计算、尺寸链软件、概率传播或蒙特卡洛求解；未取得具体GD&T标准和生产分布数据。不同目标函数、非线性、相关误差和接触状态需专项选择模型。正式应用必须补真实噪声范围、制造能力、测量系统及接受门槛，当前不能给任何通用公差数值。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R40",
+      "name": "失效模式与影响分析",
+      "category": "F方案决策与验证评价",
+      "current_depth_basis": "失效模式描述功能怎样没有按预期实现；影响是对局部、上层系统和用户的后果；原因是促成该模式的机制或条件；控制要区分预防和检测。风险评价可考虑后果严重性、发生可能和检测能力，但所采用尺度须明确来源和证据。发生度未知不等于低，检测存在也不等于有效。措施应指向减少原因、降低后果或改善控制，并在实施后用证据重新评估，不能通过改分数完成闭环。接口信息与过程变更需要纳入维护，旧分析不能因表格存在就永远有效。",
+      "source_scopes": [
+        {
+          "title": "What is FMEA? Failure Mode & Effects Analysis",
+          "scope": "专业机构公开网页定义、使用与步骤相关段落核读"
+        },
+        {
+          "title": "IEC 60812:2018 Failure modes and effects analysis (FMEA and FMECA)",
+          "scope": "官方公开摘要核读，未取得付费标准全文"
+        }
+      ],
+      "declared_gaps": "未取得IEC标准全文及具体行业FMEA手册，未建立行业评分、AP或关键性计算规则。当前没有真实故障率、检出能力和供应商控制数据，不能给发生度数值。若用于汽车、医疗、航空或特种设备等，需核适用行业规范、完整危险分析及有责任人员的评审，不能从此通用卡自动生成合规结论。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R41",
+      "name": "机械风险评估与风险降低",
+      "category": "F方案决策与验证评价",
+      "current_depth_basis": "风险评估以机械限制、危险识别、风险估计和评价形成迭代基础；风险降低有优先顺序：先考虑本质安全设计，再考虑防护和补充保护，最后提供必要的使用信息与剩余风险告知。警告不能随意代替可行的设计措施。危险是潜在伤害来源，危险情境是人员暴露条件，危险事件是导致伤害的事件，三者应分开描述。严重性与发生可能涉及暴露、事件和避免条件，缺资料时不能把未知写成低概率；采用定性或定量政策须说明依据。",
+      "source_scopes": [
+        {
+          "title": "ISO 12100:2010 Safety of machinery — General principles for design — Risk assessment and risk reduction",
+          "scope": "只核读官方公开范围与状态，未取得标准全文"
+        },
+        {
+          "title": "How to comply with EHSRs",
+          "scope": "公开指南正文有关生命周期、可预见误用、设计/防护/信息的段落核读"
+        }
+      ],
+      "declared_gaps": "未核读ISO全文、产品专用标准及地区法规，未确定该机械的危险阈值、控制架构、测试设备与受权评审人员。当前档案不支持直接确定防护尺寸、安全完整性/性能等级或签发符合性声明；具体项目应补充适用要求、现场数据与专业审查。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R42",
+      "name": "验证与确认",
+      "category": "F方案决策与验证评价",
+      "current_depth_basis": "verification的追溯对象是已确定版本的技术要求与设计基线；validation的追溯对象是利益相关方需要、运行概念、任务效果和使用情境。二者都可采用检查、分析、演示和试验，选择取决于所需证据，不是名称决定方法。同一活动可服务两者，但必须分别写清判断标准。证据链包括对象配置、方法、环境、设备与人员、判据、原始记录、结果、偏差和结论。分析或仿真应说明模型有效域，演示可见不等于精确测量。",
+      "source_scopes": [
+        {
+          "title": "Systems Engineering Handbook 5.3 Product Verification",
+          "scope": "公开手册验证目的、输入、方法、活动与输出相关段落核读"
+        },
+        {
+          "title": "Systems Engineering Handbook 5.4 Product Validation",
+          "scope": "公开手册有关预期环境、预期用户和利益相关方期待的正文核读"
+        }
+      ],
+      "declared_gaps": "尚无具体项目的基线、抽样或可靠性目标、测量不确定度、实验设施和审批规则；不支持自动生成合格报告。某些耐久、安全及特殊环境试验需要专门规范和资质，本档只能帮助识别与规划。需要把每个实际证据接入受控档案后，才能评估具体覆盖程度与结论。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R43",
+      "name": "生命周期评价与生态设计",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "基本逻辑是确定目标范围、建立投入与排放清单、按明确影响方法表征、解释结果并迭代。功能单位描述所提供的服务，参考流说明实现该服务需要多少产品或过程；比较须功能等效。边界、数据年份地区、能源结构、寿命、分配或系统扩展规则会显著影响结果。清单量不是影响结果，碳排只是一类指标，不能直接代表全部环境优劣。权重和归一化若使用，须披露价值选择而非伪装为自然常数。",
+      "source_scopes": [
+        {
+          "title": "Life Cycle Assessment: Principles and Practice (EPA/600/R-06/060, 2006)",
+          "scope": "题录、摘要、目录及功能等效、分配、完整性/敏感性/一致性相关段落核读，非逐页全文精读"
+        },
+        {
+          "title": "IEC 62430:2019 Environmentally conscious design (ECD) — Principles, requirements and guidance",
+          "scope": "只核读公开适用范围，未取得付费标准正文"
+        }
+      ],
+      "declared_gaps": "未取得具体BOM、供应链、用能、地区排放、寿命、维修和报废数据；未选择当前影响评价方法或授权数据库。此卡不计算实际影响，也不提供碳足迹认证。后续需指定目标受众、环境类别、数据质量与审查路径，才能据项目形成可用量化结果。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R44",
+      "name": "原型与假设测试",
+      "category": "F方案决策与验证评价",
+      "current_depth_basis": "原型保真度应服务待学内容，不是越像成品越好。外观模型可测握持空间却不能证明耐久，功能台架可测机理却不能证明用户能在现场顺利操作。假设要描述对象、条件、预期行为或性能及可观察证据；探索性问题可以开放，但不能事后包装为预先定义的确认。实验前明确支持、反驳或不确定的信号，控制引导、样本偏差和混杂影响，观察与解释分开记录。低成本学习不等于低安全要求。",
+      "source_scopes": [
+        {
+          "title": "Experiment Expedition",
+          "scope": "公开介绍正文核读；未把下载工作表当作已逐页阅读"
+        },
+        {
+          "title": "Systems Engineering Handbook 5.4 Product Validation",
+          "scope": "公开手册有关预期环境、预期用户和利益相关方期待的正文核读"
+        }
+      ],
+      "declared_gaps": "尚无具体假设优先级、原型、真实参与者、招募与实验记录。不同原型保真度能覆盖的物理机制需项目逐项确认，不能通用推定。若后续需要统计、危险工况或认证证据，需另建合适程序、样本、工具与责任审查；本档只提供研究和学习闭环。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R45",
+      "name": "价值工程",
+      "category": "F方案决策与验证评价",
+      "current_depth_basis": "功能描述应摆脱当前解法，可用动词与名词表达作用，并明确基本、必要支持及其他功能。成本是实际或预计资源消耗；功能价值/值得付出的资源是评价判断，不等于报价。价值改善可能来自同功能低全寿命成本、同资源更有效功能或合理组合，不应简单理解为所有功能加总除以采购价格。创造阶段先寻找同一必要功能的多种实现，再用要求、风险、全寿命成本及证据筛选；功能被牺牲的低价方案不因“节约”自动成立。",
+      "source_scopes": [
+        {
+          "title": "Value Engineering — VE Process",
+          "scope": "成功访问时核读主要内容的项目选择、调查、功能、创意、评价、开发、报告与跟踪阶段；后续重试超时"
+        },
+        {
+          "title": "Four basic steps in the job plan",
+          "scope": "公开教学网页四阶段正文核读"
+        }
+      ],
+      "declared_gaps": "尚无实际BOM、作业成本、功能分配、报价与实施数据，无法确定功能成本和节约。未核读SAVE付费标准或资格要求；其AboutVM页访问403，未作为全文证据。若需要专业VE工作坊或认证交付，应补充具体规范、主持能力、团队和成果审定要求。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R46",
+      "name": "专利景观与技术路线分析",
+      "category": "A问题发现与需求定义",
+      "current_depth_basis": "先定义技术边界、地域、时间和用途，随后用关键词、分类、主体、种子与引用等构建可复现查询，再抽样校核相关性和漏检。分析单位必须明确是公开文献、申请、专利族还是其他定义；简单族与扩展族不可混作同一计数。清洗姓名、集团归并和权利转移要有规则，申请人不自动等于当前权利人。日期可用优先权、申请或公开日期，各有用途；近期未公开等延迟会影响趋势。文本分类与统计结果要有可回查文献支撑。",
+      "source_scopes": [
+        {
+          "title": "Guidelines for Preparing Patent Landscape Reports (2015)",
+          "scope": "PDF题录、目录及日期/专利族、数据库搜索、名字清洗、族归并、年份字段、分类和报告相关段落核读；非131页全文逐页精读"
+        },
+        {
+          "title": "Patent Analytics",
+          "scope": "官方页面有关专利分析、研发/政策/合作用途的正文核读"
+        }
+      ],
+      "declared_gaps": "尚未建立具体主题数据集、数据库覆盖证明、分类与领域校核；没有实际专利数量、状态或路线结论。需补授权导出、检索专家、跨语言词表、时间截点与更新机制。若转为侵权、有效性或专利申请决策，需另建专门任务与专业审阅，不能直接沿用趋势报告结论。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R47",
+      "name": "集合式并行工程",
+      "category": "D机构架构与系统设计",
+      "current_depth_basis": "集合可以是离散概念、连续参数区间或二者组合，需说明什么条件下已知可行以及什么仍未知。权衡曲线和设计准则用于表达性能—成本—尺寸等边界，跨专业寻找可兼容交集。淘汰应基于证明不可行或相对劣势的证据，不能只凭偏好或一轮总分；保留淘汰条件以便要求变化后复查。延迟最后承诺意在获得足够知识，不是无限拖延；目标、硬约束和决策时点要明确，规格/公差可在学习中逐步确定但必要安全要求不可随意放松。",
+      "source_scopes": [
+        {
+          "title": "Set-Based Concurrent Engineering",
+          "scope": "公开词条正文核读"
+        },
+        {
+          "title": "Set-based Design",
+          "scope": "公开正文定义、并行组合、决策条件及实施相关段落核读"
+        }
+      ],
+      "declared_gaps": "暂无真实设计范围、跨专业知识、可靠权衡曲线或实验数据，不能输出实际集合交集与冻结建议。后续需要定义接口、参数、验证能力、决定责任和工装采购时机。数学优化可辅助连续空间搜索，但应另接有能力工具，不能由文字模型假装计算过可行域。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "R48",
+      "name": "问题定义与要求管理",
+      "category": "A问题发现与需求定义",
+      "current_depth_basis": "问题陈述描述目标用户/系统在情境下的缺口、影响及目标，不预先锁定没有必要的实现。利益相关方需要、期望、目标、约束、功能、性能和接口不是同层信息。要求应尽量单一、清楚、必要、可行、可验证且可追溯，包含量值/容差/条件或客观判定方式，避免只有形容词。硬约束与优化偏好分开，派生要求记录依据和分配关系，实施约束说明为何必须限制解法。每条保留来源、理由、责任、状态与版本，并建立双向追溯。",
+      "source_scopes": [
+        {
+          "title": "Framework for Innovation",
+          "scope": "官方正文四阶段、以人为先、协作和迭代相关段落核读"
+        },
+        {
+          "title": "Systems Engineering Handbook 4.2 Technical Requirements Definition",
+          "scope": "公开手册正文需求来源、约束接口、可接受陈述、追溯、可行可验证与基线段落核读"
+        }
+      ],
+      "declared_gaps": "暂无具体项目的访谈、任务观测、法规、工程边界与可行性证据，也没有责任人确认要求。量值、优先级、接受标准和变更权责都需项目补充。与旧IM-PD-001的内容和接口差异应在后续审稿/发布时比较，不在本阶段自动覆盖现有生产卡。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB01",
+      "name": "产品系统化与综合设计体系",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "平台将这套研究的核心理解为：设计的目标先于具体技术，功能与性能共同规定设计内容，不同方法按内容选择，最后用质量检验反查目标是否实现。四阶段不是四个互不交流的部门：调研提供需求、环境和风险，规划明确总体设计安排，实施将功能与性能变为可实现结构，检验把新证据带回前面。原论文的设计要素还涉及指导思想、质量、成本、周期、环境和服务，这里仅保留其概念身份，不自行推导所谓权威综合公式。2013摘要的三种主要性能是结构性能、使用性能和制造性能；它们与动态、智能、可视化三类设计手段分别记录，不互相替代。",
+      "source_scopes": [
+        {
+          "title": "科学发展观指导下的产品系统化设计的理论与方法",
+          "scope": "题录与摘要已核读；正文未取得"
+        },
+        {
+          "title": "系统化设计的理论和方法 · 概论",
+          "scope": "出版社章节目录已核读；书章正文尚未取得"
+        },
+        {
+          "title": "Systems Engineering Handbook §6.1 Technical Planning",
+          "scope": "网页相关方法段已核读"
+        },
+        {
+          "title": "闻邦椿院士积六十载之努力获取辉煌创新成果",
+          "scope": "官网相关设计方法段落完整核读；不是2003或2008论文正文"
+        }
+      ],
+      "declared_gaps": "尚未取得2013论文全文、2007综合设计专著全文及2017相关书章，因此不复原关联方程、质量表达式或原作者全部步骤。7D与后期书页简介7P等术语差异保留，未断言改名。还需真实设计任务的原始规划、过程变更与检验记录，核对平台接口是否足够；未获得专家评审或工程有效性验证。 2016年学校报道部分写5A检验，而2013作者摘要写3A，属于需对照版本的差异，不自动互换。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB02",
+      "name": "3I调研",
+      "category": "A问题发现与需求定义",
+      "current_depth_basis": "本轮能确认的是三类研究的并列结构和在系统化设计中的前置位置；不能确认书中每种具体技术、取样规则或风险算法。平台将其操作化为三份相互引用的证据清单和一份矛盾缺口表。需求发现变化时应同步检查环境与风险，避免三份报告各自成立而组合不可行。",
+      "source_scopes": [
+        {
+          "title": "系统化设计的理论和方法（2017）官方图书详情",
+          "scope": "实际核读简介与公开目录；未读348页全书"
+        },
+        {
+          "title": "第5章 系统化设计第一阶段：调研和选题",
+          "scope": "实际读取章节题录与细目录；未取得章节PDF"
+        },
+        {
+          "title": "科学发展观指导下的产品系统化设计的理论与方法",
+          "scope": "实际核读官方题录及摘要；未取得论文全文"
+        }
+      ],
+      "declared_gaps": "第5章官方目录已读，在线阅读入口在工具中只返回图标资源，未取得章PDF；出版社简介与2013摘要并非全文。下一步需授权原章，核查调研内容、环境分类、风险方法及选题标准。正式库应保留谱系专题标签，不能计为已还原的独立原创可执行方法。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB03",
+      "name": "7D总体规划",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "七个规划域共同描述一个设计任务：目标规定要达到的功能与性能；思想表达指导取舍的原则；环境说明用户、使用、制造和外部条件；过程安排任务之间的依赖与回返；内容说明要设计的功能、结构、控制、工艺等对象；方法说明用什么分析、生成、求解或评价手段；检验说明如何形成接受或修正的证据。此处七域释义为平台概括，不是逐字原典。关键不在每格写满，而在各域互相约束：目标改变可能影响内容、方法和检验，资源改变可能要求重新规划过程。NASA技术规划作为互补指南，帮助把资源、责任与计划更新写清楚，不代表两套方法等同。",
+      "source_scopes": [
+        {
+          "title": "科学发展观指导下的产品系统化设计的理论与方法",
+          "scope": "题录与摘要已核读；正文未取得"
+        },
+        {
+          "title": "系统化设计的理论和方法 · 设计规划或顶层设计",
+          "scope": "出版社章节目录已核读；书章正文尚未取得"
+        },
+        {
+          "title": "Systems Engineering Handbook §6.1 Technical Planning",
+          "scope": "网页相关方法段已核读"
+        },
+        {
+          "title": "闻邦椿院士积六十载之努力获取辉煌创新成果",
+          "scope": "官网相关设计方法段落完整核读；不是2003或2008论文正文"
+        }
+      ],
+      "declared_gaps": "2008论文全文和2017第6章正文尚未取得，分层图、映射域的精确定义及关联方程未完成全文核验。后续需要取得授权原文，对本卡概括逐项校准；若定义不同应发布新内容版并保留旧版本。还需真实产品设计的总体规划、修改依据和检验记录作为案例，现有教学例子不能代替实际采用证据。 2016年学校报道部分写5A检验，而2013作者摘要写3A，属于需对照版本的差异，不自动互换。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB04",
+      "name": "1+3+X综合设计",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "公开资料中的“1”以功能设计为核心，“3”指动态设计、智能设计和可视化设计，“X”指按具体对象选用的其他设计方法。X不是固定数量，也不是越多越好。可靠性、优化、制造装配或绿色设计是否需要，由问题、风险和资源决定。2013作者摘要将主要性能分为结构、使用和制造；这与动态、智能、可视化三类设计方法不是同一分类。经济与社会方面可作为其他评价考虑，但不能冒称该摘要的三大性能。协同的操作含义是共用版本化边界与工况，明确各项分析的输入产物，检查局部修改的跨专业影响；这一定义为平台概括。",
+      "source_scopes": [
+        {
+          "title": "科学发展观指导下的产品系统化设计的理论与方法",
+          "scope": "题录与摘要已核读；正文未取得"
+        },
+        {
+          "title": "系统化设计的理论和方法 · 全书目录",
+          "scope": "出版社章节目录已核读；书章正文尚未取得"
+        },
+        {
+          "title": "Systems Engineering Handbook §6.1 Technical Planning",
+          "scope": "网页相关方法段已核读"
+        },
+        {
+          "title": "闻邦椿院士积六十载之努力获取辉煌创新成果",
+          "scope": "官网相关设计方法段落完整核读；不是2003或2008论文正文"
+        }
+      ],
+      "declared_gaps": "尚需取得2008年论文与相关专著正文，核对概念精确定义、图表、方程和设计模式的适用边界。公开摘要不足以恢复完整算法。当前没有可公开复用的真实过程数据，教学示例只说明操作结构。后续应增加从功能任务到专业模型、冲突修订和试验记录的完整工程案例，并由相关专家审查。 2016年学校报道部分写5A检验，而2013作者摘要写3A，属于需对照版本的差异，不自动互换。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB05",
+      "name": "主辅功能与功能优化",
+      "category": "B功能分析与概念生成",
+      "current_depth_basis": "原典可确认的结构是从功能分析走向技术方案分解组合，再涉及实现主功能与多种支撑系统，最后进行方案选择和评价。本轮未读到作者的定义、判据、公式或具体设计要点。平台据此提出功能—支撑—接口—方案的检查结构，必须与经核读的功能分解方法共同使用。",
+      "source_scopes": [
+        {
+          "title": "系统化设计的理论和方法（2017）官方图书详情",
+          "scope": "实际核读简介与公开目录；未读348页全书"
+        },
+        {
+          "title": "闻邦椿院士积六十载之努力获取辉煌创新成果",
+          "scope": "实际读取相关公开正文；未采纳全文其他健康建议"
+        }
+      ],
+      "declared_gaps": "chapter07直连多次超时，直接请求403；已从HEP图书详情读到其细目录，但未获取第7章正文。尚缺主辅定义原文、合理功能判据、各系统设计要点及案例计算。需授权原章核读后才能升级为作者方法的可执行重建。 已新增实读东北大学新闻网2016报道作为体系线索；其中四阶段段落写5A，与2013论文摘要3A不同，暂作为版本或报道差异保留，不擅自统一。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB06",
+      "name": "面向结构性能的动态设计",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "把质量、刚度、阻尼、连接和激励映射到动力学模型，再分析自由与受迫响应及工况变化，通过试验校准未知参数并修改设计。线性系统可借模态展开理解不同振型对响应的贡献；非线性、接触、摩擦或大幅运动明显时须检查线性化范围。动态设计的价值在模型—试验—修正闭环，而不是一次求出若干固有频率后停止。",
+      "source_scopes": [
+        {
+          "title": "系统化设计的理论和方法 第8章",
+          "scope": "实际直接打开章目录全文；未取得章正文，在线阅读图标只到图片"
+        },
+        {
+          "title": "现代机械产品设计在新产品开发中的重要作用",
+          "scope": "官网题录摘要和检索返回选段；PDF直接打开超时，未读全文"
+        },
+        {
+          "title": "Vibration of Multi-Degree-of-Freedom Systems",
+          "scope": "实际核读官网检索返回的总览与主题，未观看视频"
+        },
+        {
+          "title": "现代机械产品设计在新产品开发中的重要作用（官方PDF）",
+          "scope": "methods_c正常取得官方PDF；本组实际核读共享文本相关节并目读印刷p44图2；未通读全部10页"
+        }
+      ],
+      "declared_gaps": "实际核读HEP第8章公开目录而非章正文，故只能确认内容环节与专题位置，不能宣称复现作者具体审核准则。MIT公开课程说明用于补充线性模态的一般学理，不代表闻邦椿原法。2003论文已核读官网题录摘要及检索返回选段，PDF直接打开超时；全部数值、具体模型和验证阈值仍需项目资料与专业审查。 追加进展：methods_c正常取得官方2003论文PDF，本组已核读分类与动态设计相关节；原先本组直接打开失败保留为获取历史，当前不再是全文未取得。仍未通读全部10页或复核全部理论。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB07",
+      "name": "面向使用性能的智能设计",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "核心连接是使用任务—工作性能目标—可观测状态—可调作用—控制或决策逻辑—实际效果。2003论文强调状态监测对工作过程控制及维护的作用，亦讨论非稳态、非线性、耦合和多变量带来的复杂性。是否用智能控制、规则、传统控制或其他技术必须由对象与问题决定；专题没有提供适用于所有机械的控制器。测到信号不等于观察到关键状态，预测准确也不等于闭环控制有效，性能优化还受结构安全、执行能力和实时限制。",
+      "source_scopes": [
+        {
+          "title": "现代机械产品设计在新产品开发中的重要作用——兼论面向产品总体质量的动态优化、智能化和可视化三化综合设计法 (2003,39(10):43–52)",
+          "scope": "期刊公开10页PDF取得，文本定位后实质核读智能设计定义、三化具体内容/关联和高层次特征；非逐项核验论文所有历史性主张"
+        },
+        {
+          "title": "系统化设计的理论和方法 第9章 面向使用性能的智能设计 (2017)",
+          "scope": "只读官方章节目录；正常在线阅读权限检查返回购章信息，未获取正文、未绕过付费"
+        },
+        {
+          "title": "Systems Engineering Handbook 5.4 Product Validation",
+          "scope": "公开手册有关预期环境、预期用户和利益相关方期待的正文核读"
+        }
+      ],
+      "declared_gaps": "未获得第9章付费正文、实际对象模型、传感执行能力、控制周期、数据集和性能基线，故不复建预测算法、阻抗模型或直接参数整定。后续应为具体控制/诊断子法另建来源与工具接口，并由相应工程人员审查，当前保持非运行时专题草稿。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB08",
+      "name": "面向制造性能的可视化设计",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "2007论文流程为创建模型、可视化仿真、结果分析、缺陷修改并循环；仿真包括模型验证、数据监测与变参数研究。其完整范围还包含运动、动力、工作和控制过程，不能说全部只属制造。本档取加工/装配侧，强调几何、运动、工艺和资源约束必须进入模型。显示无碰撞仅支持相应模型条件下的几何结论，不自动证明公差、变形、切削力、装配力或节拍可行。可视性帮助理解与检查，物理和数值模型决定分析能力。",
+      "source_scopes": [
+        {
+          "title": "现代机械产品设计在新产品开发中的重要作用——兼论面向产品总体质量的动态优化、智能化和可视化三化综合设计法 (2003,39(10):43–52)",
+          "scope": "期刊公开10页PDF取得，文本定位后实质核读智能设计定义、三化具体内容/关联和高层次特征；非逐项核验论文所有历史性主张"
+        },
+        {
+          "title": "现代机械可视优化设计方法研究 (2007,28(3):385–388)",
+          "scope": "期刊公开4页PDF正文全部主要章节核读；技术流程、六类内容、应用原则及例子已读"
+        },
+        {
+          "title": "系统化设计的理论和方法 第10章 面向制造性能的可视化设计 (2017)",
+          "scope": "官方章节目录核读，未取得章正文；不把在线阅读按钮当已读全文"
+        },
+        {
+          "title": "Systems Engineering Handbook 5.3 Product Verification",
+          "scope": "公开手册验证目的、输入、方法、活动与输出相关段落核读"
+        }
+      ],
+      "declared_gaps": "未取得2017第10章正文、项目模型、工装、过程数据、公差与软件环境；不输出实际干涉或加工通过。2007振动筛案例为论文作者报告的研究，不是本平台复现实验。后续需依据具体加工/装拆子法取得模型和算法规范，并验证仿真有效范围，才能形成工程结论。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB09",
+      "name": "深层次动态设计",
+      "category": "E性能优化与工程实现",
+      "current_depth_basis": "建立能够保留关键非线性与耦合的模型，用适合该方程和工况的解析近似或数值方法研究动态行为，再与试验比较。公开合著转子研究摘要体现了高维模型降维、与原模型对照、数值求解及分岔、轨迹等多视角分析。降维用于计算效率，但必须证明保留了目标行为；维数更高本身不证明结论更可靠。",
+      "source_scopes": [
+        {
+          "title": "人人都能挖掘和被利用的巨大潜能——科学方法论运用可取得的效果（上）",
+          "scope": "实际打开332行页面，核读相关署名段落"
+        },
+        {
+          "title": "系统化设计的理论和方法 第8章",
+          "scope": "实际打开目录；未读章正文"
+        },
+        {
+          "title": "非线性转子-轴承系统的动力学降维分析与试验研究",
+          "scope": "官网检索返回完整摘要核读；直接打开502；未读全文"
+        },
+        {
+          "title": "基于有限元法的非线性转子系统动态特性",
+          "scope": "官网检索返回摘要及题录核读；直接打开响应不受工具支持，未读全文"
+        },
+        {
+          "title": "现代机械产品设计在新产品开发中的重要作用（官方PDF）",
+          "scope": "methods_c正常取得官方PDF；本组实际核读共享文本相关节并目读印刷p44图2；未通读全部10页"
+        }
+      ],
+      "declared_gaps": "已实际打开闻邦椿2019署名文章并核读相关段落，实际读HEP第8章目录8.3.2；另读两篇合著转子研究的官网摘要或检索返回摘要。未取得相应论文与专著完整正文，未核验全部方程、数值参数或稳定性判据。摘要中的具体计算路线是案例证据，不推广成所有深层次动态设计都必须使用Newmark或某种降维。 追加进展：methods_c正常取得官方2003论文PDF，本组已核读分类与动态设计相关节；原先本组直接打开失败保留为获取历史，当前不再是全文未取得。仍未通读全部10页或复核全部理论。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB10",
+      "name": "设计质量检验与综合评价",
+      "category": "F方案决策与验证评价",
+      "current_depth_basis": "广义质量面向总功能和全性能，但具体指标应按产品任务选。2006模型将结构、工作、工艺性能分层，先各组得到对质量等级的隶属向量，再以组权重合成；其加权平均模型可写B_d=A_dR_d，上层R由各B_d组成，B=AR。隶属度描述对所定等级的归属，不等于通过概率或用户比例。2008另用物元、方向变换与AHP/熵组合权重，属另一模型路线，不能把两套算式混接。指标相关、重复与尺度会影响结果，模型选择必须附目的和假设。",
+      "source_scopes": [
+        {
+          "title": "系统化设计的理论和方法 第11章 设计质量检验与评估 (2017)",
+          "scope": "官方章节目录核读，未取得章正文"
+        },
+        {
+          "title": "“三化”综合设计法在产品质量综合评价中的应用 (2006,27(5):532–535)",
+          "scope": "官方4页PDF取得；中文提取乱码严重，已渲染并目读第533、534页模型、矩阵和例子；另核官网题录摘要及PDF英文摘要"
+        },
+        {
+          "title": "基于物元和组合权重的产品广义质量评价研究及应用 (2008,29(9):1314–1317)",
+          "scope": "官方4页PDF文本核读并渲染核对1316页公式；用表1数据对熵公式作有限数值核查，不是完整算法复现"
+        },
+        {
+          "title": "Systems Engineering Handbook 5.3 Product Verification",
+          "scope": "公开手册验证目的、输入、方法、活动与输出相关段落核读"
+        }
+      ],
+      "declared_gaps": "未取得2017章正文和3A完整原典，不能列出其所有内涵。未完成2008算法复现或勘误核验，当前禁止据印刷公式自动生成真实排名。没有实际产品指标、数据、专家输入或量表验证，暂无工程评价结果。后续需分别建模糊/物元子卡并核全部公式、退化输入和工具实现。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB11",
+      "name": "科学方法论规则与设计专家系统",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "本人2019文按核心、主观、外部、动态四方面组织十二对规则，并由科学哲学思想统领。核心为目的要求、任务态度、步骤方法；主观为思想品德、知识能力、健康生命、毅力战术；外部为机遇挑战、环境协调、条件利用；动态为学习运用、检查总结提高。平台将这些视作设计工作检查视角，不把它们转为未经核准的工程因果规则。",
+      "source_scopes": [
+        {
+          "title": "系统化设计的理论和方法（2017）官方图书详情",
+          "scope": "实际核读简介与公开目录；未读348页全书"
+        },
+        {
+          "title": "第4章 科学方法论应用的智能化及专家系统",
+          "scope": "实际核读章节题录与细目录；未取得章节正文"
+        },
+        {
+          "title": "闻邦椿院士积六十载之努力获取辉煌创新成果",
+          "scope": "实际核读方法论体系、十二对要素及知识库构想段落"
+        },
+        {
+          "title": "人人都能挖掘和被利用的巨大潜能——科学方法论运用可取得的效果（上）",
+          "scope": "实际核读作者署名、相关方法论规则与专家系统自述段落；不是全书"
+        }
+      ],
+      "declared_gaps": "已有作者本人公开文章中的12+1规则，缺口不再是完全未知名单。仍缺2017书第2章逐条展开、与2016内容态度表述的版本关系、第4章专家系统结构图、比较推理算法、知识库及可复现运行实例。作者在2019文章自述将共性知识纳入专家系统并增分析和自处理子系统，该自述不能替代独立系统验证或效果证据。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "research_id": "WB12",
+      "name": "国内外设计方法分类研究与出处去重",
+      "category": "G全流程规划与创新管理",
+      "current_depth_basis": "平台将来源主张与方法实体分开保存：前者记录谁在何时如何分类，后者记录定义、谱系、别名、版本和功能，两者以收录关系连接。实际目读图2可确认四个视角是设计步骤、设计内容、设计方法、设计思想；它们不是互斥的单一方法分类树，同一方法可能从不同视角被组织。第1.2节另列七种代表方向，与图2及回顾中七大类须分开，不以数字相同假设等同。",
+      "source_scopes": [
+        {
+          "title": "人人都能挖掘和被利用的巨大潜能——科学方法论运用可取得的效果（上）",
+          "scope": "实际打开本人署名文，核读分类自述与上下文"
+        },
+        {
+          "title": "闻邦椿院士积六十载之努力获取辉煌创新成果",
+          "scope": "实际打开并核读分类段落；未使用未核实奖项评价"
+        },
+        {
+          "title": "现代机械产品设计在新产品开发中的重要作用",
+          "scope": "题录摘要与检索返回PDF选段；直接PDF超时；未读分类页"
+        },
+        {
+          "title": "系统化设计的理论和方法 第8章",
+          "scope": "实际打开目录；未读正文"
+        },
+        {
+          "title": "现代机械产品设计在新产品开发中的重要作用（官方PDF）",
+          "scope": "methods_c正常取得官方PDF；本组实际核读共享文本相关节并目读印刷p44图2；未通读全部10页"
+        }
+      ],
+      "declared_gaps": "methods_c已正常取得2003原论文官方PDF，本组实际核读共享提取文本中的题录、分类、代表方法与高层次动态设计相关节，并目读印刷p44图2；未通读全部十页。原文确认图2四分类视角与第1.2节七种代表方向，尚未核得70多种归七大类的完整对应表。当前不再把原论文记为未取得，但不能把取得全文偷换成分类差异已解决；需进一步核读剩余正文或相关版本，保留来源差异。",
+      "upgrade_actions": [
+        "将输入与产物细化为可校验字段和语义约束",
+        "增加正常、缺输入、错误工况及误选方法的有预期答案任务",
+        "由领域专家核对原理、步骤、边界与示例；纠错后独立复核"
+      ],
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated"
+    }
+  ]
+}
