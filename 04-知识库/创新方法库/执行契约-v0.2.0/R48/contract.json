@@ -1,0 +1,274 @@
+{
+  "contract_version": "0.2.0",
+  "research_id": "R48",
+  "artifact_type": "ProblemBrief",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "artifact_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "ProblemBrief"
+        ]
+      },
+      "scope": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6000,
+        "pattern": "\\S"
+      },
+      "conditions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "fact",
+                "assumption",
+                "unknown"
+              ]
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+              },
+              "minItems": 0,
+              "maxItems": 200
+            }
+          },
+          "required": [
+            "id",
+            "text",
+            "kind",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "evidence_refs": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "payload": {
+        "type": "object",
+        "properties": {
+          "actor": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "object": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "boundary": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "desired_outcome": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "hard": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "acceptance": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "confirmed",
+                    "proposed",
+                    "unknown"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "hard",
+                "acceptance",
+                "status",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 200
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "fact",
+                    "assumption",
+                    "unknown"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "kind",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "unknowns": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          }
+        },
+        "required": [
+          "actor",
+          "object",
+          "boundary",
+          "desired_outcome",
+          "requirements",
+          "conditions",
+          "unknowns"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "required": [
+      "artifact_id",
+      "revision",
+      "task_id",
+      "task_revision",
+      "type",
+      "scope",
+      "conditions",
+      "evidence_refs",
+      "payload"
+    ],
+    "additionalProperties": false
+  },
+  "purpose": "澄清对象、目标、需求和约束",
+  "requires": [],
+  "stage": "frame",
+  "next": [
+    "R14"
+  ],
+  "stop": "关键对象或使用边界未知时先澄清；愿望不能伪装成已批准要求。",
+  "input_bindings": {
+    "initial_request": "task",
+    "stakeholder_evidence": "evidence",
+    "constraints_context": "task.boundary",
+    "decision_authority": "task.decision_authority"
+  },
+  "status": "platform_authored_not_expert_reviewed",
+  "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。",
+  "source_method_id": "IM-PD-001",
+  "source_content_version": "0.1.0",
+  "source_content_sha256": "ded5d34715a9e703f2dc6ab30fc9a69eb11dd0aa8aefea32d23697c67f95f4b2",
+  "implementation_scope": "concept_research_and_planning_only"
+}

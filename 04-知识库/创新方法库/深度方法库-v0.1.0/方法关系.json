@@ -1,0 +1,1321 @@
+{
+  "status": "declared_content_relations_not_runtime_workflow",
+  "relations": [
+    {
+      "source_research_id": "R01",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "问题简报→任务输入",
+      "condition": "对象目标须可辨"
+    },
+    {
+      "source_research_id": "R01",
+      "target_research_id": "R14",
+      "relation": "precedes",
+      "binding": "要求→功能模型",
+      "condition": "进入概念设计"
+    },
+    {
+      "source_research_id": "R01",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "要求和结构定义→验证计划",
+      "condition": "需要确认工程结果"
+    },
+    {
+      "source_research_id": "R02",
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "研究记录→发现活动",
+      "condition": "需要理解用户"
+    },
+    {
+      "source_research_id": "R02",
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "定义挑战→原理组合",
+      "condition": "概念路线需拓宽"
+    },
+    {
+      "source_research_id": "R02",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "方案假设→验证计划",
+      "condition": "判断实际用途"
+    },
+    {
+      "source_research_id": "R03",
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "现场证据→理解活动",
+      "condition": "进入用户研究"
+    },
+    {
+      "source_research_id": "R03",
+      "target_research_id": "R44",
+      "relation": "parallel",
+      "binding": "假设→原型计划",
+      "condition": "需要低成本学习"
+    },
+    {
+      "source_research_id": "R03",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "概念→工程验证和用途确认",
+      "condition": "关键假设需实证"
+    },
+    {
+      "source_research_id": "R04",
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "要求→功能分解",
+      "condition": "需分配功能"
+    },
+    {
+      "source_research_id": "R04",
+      "target_research_id": "R31",
+      "relation": "parallel",
+      "binding": "系统元素接口→DSM",
+      "condition": "需要分析依赖"
+    },
+    {
+      "source_research_id": "R04",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "要求与用途→V&V",
+      "condition": "进入实现与集成"
+    },
+    {
+      "source_research_id": "R05",
+      "target_research_id": "R04",
+      "relation": "part_of",
+      "binding": "生命周期过程→机电开发活动",
+      "condition": "多学科系统任务"
+    },
+    {
+      "source_research_id": "R05",
+      "target_research_id": "R31",
+      "relation": "parallel",
+      "binding": "接口→依赖分析",
+      "condition": "存在复杂耦合"
+    },
+    {
+      "source_research_id": "R05",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "分层依据→验证确认",
+      "condition": "实现后核查"
+    },
+    {
+      "source_research_id": "R06",
+      "target_research_id": "R37",
+      "relation": "parallel",
+      "binding": "关口备选→权衡分析",
+      "condition": "取舍复杂"
+    },
+    {
+      "source_research_id": "R06",
+      "target_research_id": "R42",
+      "relation": "parallel",
+      "binding": "技术不确定性→试验计划",
+      "condition": "需检验工程假设"
+    },
+    {
+      "source_research_id": "R06",
+      "target_research_id": "R47",
+      "relation": "parallel",
+      "binding": "候选集→阶段投入决定",
+      "condition": "保留多路线"
+    },
+    {
+      "source_research_id": "R07",
+      "target_research_id": "R12",
+      "relation": "requires",
+      "binding": "需求→QFD特性",
+      "condition": "需展开质量响应"
+    },
+    {
+      "source_research_id": "R07",
+      "target_research_id": "R38",
+      "relation": "parallel",
+      "binding": "影响因素→试验设计",
+      "condition": "可获得量测"
+    },
+    {
+      "source_research_id": "R07",
+      "target_research_id": "R39",
+      "relation": "parallel",
+      "binding": "噪声因素→稳健设计",
+      "condition": "变异重要"
+    },
+    {
+      "source_research_id": "R07",
+      "target_research_id": "R40",
+      "relation": "parallel",
+      "binding": "设计功能→FMEA",
+      "condition": "需识别失效"
+    },
+    {
+      "source_research_id": "R08",
+      "target_research_id": "R48",
+      "relation": "precedes",
+      "binding": "需求候选→问题简报",
+      "condition": "需要形成设计任务"
+    },
+    {
+      "source_research_id": "R08",
+      "target_research_id": "R12",
+      "relation": "precedes",
+      "binding": "需求及依据→QFD",
+      "condition": "进入工程响应"
+    },
+    {
+      "source_research_id": "R08",
+      "target_research_id": "R09",
+      "relation": "parallel",
+      "binding": "选择事件→JTBD",
+      "condition": "需解释替代和进步"
+    },
+    {
+      "source_research_id": "R09",
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "事件证据→选择情境",
+      "condition": "需真实研究"
+    },
+    {
+      "source_research_id": "R09",
+      "target_research_id": "R48",
+      "relation": "precedes",
+      "binding": "任务与需要→设计简报",
+      "condition": "定义产品任务"
+    },
+    {
+      "source_research_id": "R09",
+      "target_research_id": "R12",
+      "relation": "precedes",
+      "binding": "需求候选→工程响应",
+      "condition": "进入技术定义"
+    },
+    {
+      "source_research_id": "R10",
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "真实事件→筛选与访谈",
+      "condition": "需用户材料"
+    },
+    {
+      "source_research_id": "R10",
+      "target_research_id": "R17",
+      "relation": "precedes",
+      "binding": "机制线索→概念组合",
+      "condition": "需扩大解法"
+    },
+    {
+      "source_research_id": "R10",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "转化假设→验证",
+      "condition": "需目标场景确认"
+    },
+    {
+      "source_research_id": "R11",
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "真实需求→特性候选",
+      "condition": "需先发现需要"
+    },
+    {
+      "source_research_id": "R11",
+      "target_research_id": "R12",
+      "relation": "precedes",
+      "binding": "需求分类与依据→QFD",
+      "condition": "工程响应展开"
+    },
+    {
+      "source_research_id": "R11",
+      "target_research_id": "R37",
+      "relation": "precedes",
+      "binding": "价值证据→综合权衡",
+      "condition": "资源取舍"
+    },
+    {
+      "source_research_id": "R12",
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "需求证据→顾客需要",
+      "condition": "需有材料"
+    },
+    {
+      "source_research_id": "R12",
+      "target_research_id": "R11",
+      "relation": "parallel",
+      "binding": "满意度类别→需求理解",
+      "condition": "已有问卷时"
+    },
+    {
+      "source_research_id": "R12",
+      "target_research_id": "R14",
+      "relation": "precedes",
+      "binding": "技术响应→功能分析",
+      "condition": "进一步生成原理"
+    },
+    {
+      "source_research_id": "R12",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "目标与口径→验证",
+      "condition": "需要实证"
+    },
+    {
+      "source_research_id": "R13",
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "现场证据",
+      "condition": "任务事实不充分时"
+    },
+    {
+      "source_research_id": "R13",
+      "target_research_id": "R04",
+      "relation": "part_of",
+      "binding": "系统级人因要求",
+      "condition": "多人机协同系统"
+    },
+    {
+      "source_research_id": "R14",
+      "target_research_id": "R04",
+      "relation": "part_of",
+      "binding": "逻辑分解",
+      "condition": "系统工程设计阶段"
+    },
+    {
+      "source_research_id": "R14",
+      "target_research_id": "R15",
+      "relation": "parallel",
+      "binding": "功能表述复用",
+      "condition": "需检验目的手段逻辑时"
+    },
+    {
+      "source_research_id": "R14",
+      "target_research_id": "R01",
+      "relation": "precedes",
+      "binding": "方案综合输入",
+      "condition": "开始选择物理原理前"
+    },
+    {
+      "source_research_id": "R15",
+      "target_research_id": "R14",
+      "relation": "parallel",
+      "binding": "复用功能目录",
+      "condition": "需要接口与行为细化时"
+    },
+    {
+      "source_research_id": "R15",
+      "target_research_id": "R12",
+      "relation": "requires",
+      "binding": "需求来源",
+      "condition": "客户价值需澄清时"
+    },
+    {
+      "source_research_id": "R16",
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "功能接口模型",
+      "condition": "故障涉及跨功能交互时"
+    },
+    {
+      "source_research_id": "R16",
+      "target_research_id": "R13",
+      "relation": "parallel",
+      "binding": "任务与人因",
+      "condition": "人机行为是候选条件时"
+    },
+    {
+      "source_research_id": "R17",
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "function_model→functions",
+      "condition": "必要功能和边界可说明"
+    },
+    {
+      "source_research_id": "R17",
+      "target_research_id": "R27",
+      "relation": "parallel",
+      "binding": "机制候选→options",
+      "condition": "缺替代原理"
+    },
+    {
+      "source_research_id": "R17",
+      "target_research_id": "R36",
+      "relation": "precedes",
+      "binding": "concept_set→候选集",
+      "condition": "共同要求可比较"
+    },
+    {
+      "source_research_id": "R17",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "validation_questions→验证计划",
+      "condition": "关键假设可测"
+    },
+    {
+      "source_research_id": "R18",
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "功能模型→challenge",
+      "condition": "目标功能清晰"
+    },
+    {
+      "source_research_id": "R18",
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "工程概念→候选原理",
+      "condition": "需要与其他原理组合"
+    },
+    {
+      "source_research_id": "R18",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "evaluation_plan→V&V计划",
+      "condition": "形成可验证命题"
+    },
+    {
+      "source_research_id": "R18",
+      "target_research_id": "R43",
+      "relation": "parallel",
+      "binding": "环境疑问→LCA范围",
+      "condition": "拟提出环境收益"
+    },
+    {
+      "source_research_id": "R19",
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "变体→功能选项",
+      "condition": "可抽出不同原理"
+    },
+    {
+      "source_research_id": "R19",
+      "target_research_id": "R36",
+      "relation": "precedes",
+      "binding": "selection_package→候选集",
+      "condition": "准则可定义"
+    },
+    {
+      "source_research_id": "R19",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "验证问题→测试计划",
+      "condition": "需检查真实适用性"
+    },
+    {
+      "source_research_id": "R20",
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "属性分支→概念组合维度",
+      "condition": "需组织已知候选"
+    },
+    {
+      "source_research_id": "R20",
+      "target_research_id": "R18",
+      "relation": "parallel",
+      "binding": "知识缺口→自然策略探索",
+      "condition": "需寻找未知功能机制"
+    },
+    {
+      "source_research_id": "R20",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "待判属性→验证任务",
+      "condition": "形成具体试验命题"
+    },
+    {
+      "source_research_id": "R21",
+      "target_research_id": "R22",
+      "relation": "precedes",
+      "binding": "技术矛盾子入口",
+      "condition": "改善和恶化指标可描述"
+    },
+    {
+      "source_research_id": "R21",
+      "target_research_id": "R25",
+      "relation": "precedes",
+      "binding": "作用结构子入口",
+      "condition": "作用缺失、有害或不足"
+    },
+    {
+      "source_research_id": "R21",
+      "target_research_id": "R28",
+      "relation": "precedes",
+      "binding": "复杂问题重构入口",
+      "condition": "简单工具无效且需严格资源求解"
+    },
+    {
+      "source_research_id": "R22",
+      "target_research_id": "R21",
+      "relation": "part_of",
+      "binding": "TRIZ技术矛盾路线",
+      "condition": "两指标在具体措施下发生权衡"
+    },
+    {
+      "source_research_id": "R22",
+      "target_research_id": "R23",
+      "relation": "alternative",
+      "binding": "转同一属性相反要求",
+      "condition": "能够定位同一属性及两种必要状态"
+    },
+    {
+      "source_research_id": "R22",
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "扩展具体化候选",
+      "condition": "有多个可组合结构选项"
+    },
+    {
+      "source_research_id": "R23",
+      "target_research_id": "R21",
+      "relation": "part_of",
+      "binding": "TRIZ物理矛盾路线",
+      "condition": "同属性相反要求"
+    },
+    {
+      "source_research_id": "R23",
+      "target_research_id": "R27",
+      "relation": "precedes",
+      "binding": "检索属性切换效应",
+      "condition": "分离方向明确但实现机制缺失"
+    },
+    {
+      "source_research_id": "R23",
+      "target_research_id": "R32",
+      "relation": "parallel",
+      "binding": "机构实现条件分离",
+      "condition": "需要空间或时序组织"
+    },
+    {
+      "source_research_id": "R24",
+      "target_research_id": "R21",
+      "relation": "part_of",
+      "binding": "TRIZ资源视角",
+      "condition": "需要减少系统负担"
+    },
+    {
+      "source_research_id": "R24",
+      "target_research_id": "R28",
+      "relation": "part_of",
+      "binding": "ARIZ资源与IFR环节",
+      "condition": "严格算法执行需专门版本"
+    },
+    {
+      "source_research_id": "R24",
+      "target_research_id": "R26",
+      "relation": "parallel",
+      "binding": "接管被裁剪功能",
+      "condition": "已有资源可能承担功能"
+    },
+    {
+      "source_research_id": "R25",
+      "target_research_id": "R21",
+      "relation": "part_of",
+      "binding": "TRIZ作用结构路线",
+      "condition": "关键作用已定位"
+    },
+    {
+      "source_research_id": "R25",
+      "target_research_id": "R24",
+      "relation": "parallel",
+      "binding": "选择现有资源",
+      "condition": "新增物质或场受限"
+    },
+    {
+      "source_research_id": "R25",
+      "target_research_id": "R27",
+      "relation": "precedes",
+      "binding": "检索场与材料效应",
+      "condition": "解决模型缺具体机制"
+    },
+    {
+      "source_research_id": "R26",
+      "target_research_id": "R21",
+      "relation": "part_of",
+      "binding": "TRIZ功能重构路线",
+      "condition": "已有功能模型"
+    },
+    {
+      "source_research_id": "R26",
+      "target_research_id": "R24",
+      "relation": "parallel",
+      "binding": "寻找接管资源",
+      "condition": "新载体能力尚不明确"
+    },
+    {
+      "source_research_id": "R26",
+      "target_research_id": "R27",
+      "relation": "precedes",
+      "binding": "检索接管机制",
+      "condition": "裁剪问题需要外部技术"
+    },
+    {
+      "source_research_id": "R27",
+      "target_research_id": "R21",
+      "relation": "part_of",
+      "binding": "TRIZ功能路线",
+      "condition": "功能已明确"
+    },
+    {
+      "source_research_id": "R27",
+      "target_research_id": "R26",
+      "relation": "requires",
+      "binding": "承接裁剪问题",
+      "condition": "需新载体接管功能"
+    },
+    {
+      "source_research_id": "R27",
+      "target_research_id": "R18",
+      "relation": "parallel",
+      "binding": "生物机制检索",
+      "condition": "自然系统可能实现同功能"
+    },
+    {
+      "source_research_id": "R28",
+      "target_research_id": "R21",
+      "relation": "part_of",
+      "binding": "复杂TRIZ问题入口",
+      "condition": "简单工具不够"
+    },
+    {
+      "source_research_id": "R28",
+      "target_research_id": "R24",
+      "relation": "requires",
+      "binding": "作用区资源与IFR",
+      "condition": "进入模型具体化"
+    },
+    {
+      "source_research_id": "R28",
+      "target_research_id": "R23",
+      "relation": "requires",
+      "binding": "物理矛盾求解",
+      "condition": "形成相反要求"
+    },
+    {
+      "source_research_id": "R29",
+      "target_research_id": "R21",
+      "relation": "part_of",
+      "binding": "TRIZ演化视角",
+      "condition": "已有技术系统"
+    },
+    {
+      "source_research_id": "R29",
+      "target_research_id": "R26",
+      "relation": "parallel",
+      "binding": "裁剪方向",
+      "condition": "减少载体而保留功能"
+    },
+    {
+      "source_research_id": "R29",
+      "target_research_id": "R27",
+      "relation": "precedes",
+      "binding": "验证路线实现技术",
+      "condition": "趋势提示尚缺机制"
+    },
+    {
+      "source_research_id": "R30",
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "生成替代DP",
+      "condition": "架构耦合需新实现"
+    },
+    {
+      "source_research_id": "R30",
+      "target_research_id": "R23",
+      "relation": "parallel",
+      "binding": "分离相反要求",
+      "condition": "同一属性冲突"
+    },
+    {
+      "source_research_id": "R30",
+      "target_research_id": "R31",
+      "relation": "alternative",
+      "binding": "同类元素依赖分析",
+      "condition": "需模块与接口设计"
+    },
+    {
+      "source_research_id": "R31",
+      "target_research_id": "R30",
+      "relation": "parallel",
+      "binding": "功能实现与架构交叉审查",
+      "condition": "同时需要FR/DP与部件依赖"
+    },
+    {
+      "source_research_id": "R31",
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "组合模块方案",
+      "condition": "已有模块候选"
+    },
+    {
+      "source_research_id": "R31",
+      "target_research_id": "R32",
+      "relation": "parallel",
+      "binding": "机构接口与运动约束",
+      "condition": "机械模块边界涉及运动传递"
+    },
+    {
+      "source_research_id": "R32",
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "机构形式候选组合",
+      "condition": "存在多个功能实现"
+    },
+    {
+      "source_research_id": "R32",
+      "target_research_id": "R23",
+      "relation": "precedes",
+      "binding": "实现时空分离",
+      "condition": "需要特定运动时序"
+    },
+    {
+      "source_research_id": "R32",
+      "target_research_id": "R31",
+      "relation": "parallel",
+      "binding": "模块接口与运动依赖",
+      "condition": "机构嵌入产品架构"
+    },
+    {
+      "source_research_id": "R33",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "问题简报→design_task",
+      "condition": "目标和边界可识别"
+    },
+    {
+      "source_research_id": "R33",
+      "target_research_id": "R34",
+      "relation": "precedes",
+      "binding": "selection_dossier→材料工艺输入",
+      "condition": "剩余候选需制造装配权衡"
+    },
+    {
+      "source_research_id": "R33",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "验证任务→验证计划",
+      "condition": "方案需要性能确认"
+    },
+    {
+      "source_research_id": "R34",
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "功能模型→product_definition",
+      "condition": "必要功能可识别"
+    },
+    {
+      "source_research_id": "R34",
+      "target_research_id": "R33",
+      "relation": "parallel",
+      "binding": "材料工艺候选↔manufacturing_tradeoffs",
+      "condition": "材料与工艺共同约束"
+    },
+    {
+      "source_research_id": "R34",
+      "target_research_id": "R26",
+      "relation": "parallel",
+      "binding": "功能接替→simplification_candidates",
+      "condition": "裁剪方向需制造装配检验"
+    },
+    {
+      "source_research_id": "R34",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "dfma_dossier验证任务→V&V",
+      "condition": "结构变更需实证"
+    },
+    {
+      "source_research_id": "R35",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "问题与边界→structural_task",
+      "condition": "设计域和目标明确"
+    },
+    {
+      "source_research_id": "R35",
+      "target_research_id": "R33",
+      "relation": "requires",
+      "binding": "材料候选→material_model",
+      "condition": "物性和状态可追溯"
+    },
+    {
+      "source_research_id": "R35",
+      "target_research_id": "R34",
+      "relation": "parallel",
+      "binding": "制造约束→重构与模型",
+      "condition": "需实现而非仅展示布局"
+    },
+    {
+      "source_research_id": "R35",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "最终结构→V&V计划",
+      "condition": "最终几何和工况可验证"
+    },
+    {
+      "source_research_id": "R36",
+      "target_research_id": "R17",
+      "relation": "requires",
+      "binding": "概念组合→concepts",
+      "condition": "候选有真正原理差异"
+    },
+    {
+      "source_research_id": "R36",
+      "target_research_id": "R37",
+      "relation": "alternative",
+      "binding": "需多属性量化时→权衡分析",
+      "condition": "数据和偏好模型足够"
+    },
+    {
+      "source_research_id": "R36",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "关键差异→验证问题",
+      "condition": "仍有未知影响选择"
+    },
+    {
+      "source_research_id": "R37",
+      "target_research_id": "R36",
+      "relation": "alternative",
+      "binding": "相对基准矩阵↔量化权衡",
+      "condition": "数据与决策深度不同"
+    },
+    {
+      "source_research_id": "R37",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "敏感输入→验证计划",
+      "condition": "需要降低足以改变选择的不确定性"
+    },
+    {
+      "source_research_id": "R37",
+      "target_research_id": "R47",
+      "relation": "parallel",
+      "binding": "接近候选→集合保留",
+      "condition": "不确定性尚不足以淘汰"
+    },
+    {
+      "source_research_id": "R38",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "任务指标→experiment_goal",
+      "condition": "可测目标与边界明确"
+    },
+    {
+      "source_research_id": "R38",
+      "target_research_id": "R39",
+      "relation": "parallel",
+      "binding": "因素模型↔稳健参数设计",
+      "condition": "需要降低噪声敏感性"
+    },
+    {
+      "source_research_id": "R38",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "参数建议→独立验证",
+      "condition": "性能与用途仍需确认"
+    },
+    {
+      "source_research_id": "R39",
+      "target_research_id": "R38",
+      "relation": "parallel",
+      "binding": "因素空间↔稳健试验设计",
+      "condition": "需要实际统计设计"
+    },
+    {
+      "source_research_id": "R39",
+      "target_research_id": "R34",
+      "relation": "parallel",
+      "binding": "公差候选→工艺能力与成本",
+      "condition": "制造代价影响可行性"
+    },
+    {
+      "source_research_id": "R39",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "边界噪声→验证计划",
+      "condition": "最终性能需确认"
+    },
+    {
+      "source_research_id": "R40",
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "功能与接口→system_scope",
+      "condition": "风险从功能开始"
+    },
+    {
+      "source_research_id": "R40",
+      "target_research_id": "R16",
+      "relation": "parallel",
+      "binding": "原因候选→根因证据",
+      "condition": "实际故障需独立诊断"
+    },
+    {
+      "source_research_id": "R40",
+      "target_research_id": "R41",
+      "relation": "parallel",
+      "binding": "失效影响→机械危险",
+      "condition": "FMEA不替代机械风险流程"
+    },
+    {
+      "source_research_id": "R40",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "行动验证→V&V计划",
+      "condition": "需实施证据闭环"
+    },
+    {
+      "source_research_id": "R41",
+      "target_research_id": "R40",
+      "relation": "parallel",
+      "binding": "失效影响→危险情境",
+      "condition": "FMEA不能覆盖全部机械危险"
+    },
+    {
+      "source_research_id": "R41",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "safety_verification→验证计划",
+      "condition": "措施效果须取得证据"
+    },
+    {
+      "source_research_id": "R41",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "硬性安全要求→risk_policy",
+      "condition": "边界与要求先明确"
+    },
+    {
+      "source_research_id": "R42",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "要求/用途→requirements/intended_use",
+      "condition": "须有可判断目标"
+    },
+    {
+      "source_research_id": "R42",
+      "target_research_id": "R40",
+      "relation": "parallel",
+      "binding": "风险行动→V&V活动",
+      "condition": "FMEA措施需证据"
+    },
+    {
+      "source_research_id": "R42",
+      "target_research_id": "R44",
+      "relation": "parallel",
+      "binding": "原型学习→待确认假设",
+      "condition": "探索证据与正式结论分开"
+    },
+    {
+      "source_research_id": "R43",
+      "target_research_id": "R33",
+      "relation": "parallel",
+      "binding": "材料候选→清单和性能比较",
+      "condition": "需服务等效"
+    },
+    {
+      "source_research_id": "R43",
+      "target_research_id": "R34",
+      "relation": "parallel",
+      "binding": "制造装配→过程和报废数据",
+      "condition": "查负担转移"
+    },
+    {
+      "source_research_id": "R43",
+      "target_research_id": "R37",
+      "relation": "precedes",
+      "binding": "环境条件性结论→决策准则",
+      "condition": "环境不是唯一硬约束"
+    },
+    {
+      "source_research_id": "R44",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "问题/用户任务→design_intent",
+      "condition": "学习围绕实际意图"
+    },
+    {
+      "source_research_id": "R44",
+      "target_research_id": "R38",
+      "relation": "parallel",
+      "binding": "定量机理问题→DOE",
+      "condition": "需要统计因果研究时"
+    },
+    {
+      "source_research_id": "R44",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "待确认性能→正式V&V目标",
+      "condition": "探索不替代正式证据"
+    },
+    {
+      "source_research_id": "R45",
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "功能结构→value_target",
+      "condition": "摆脱既定零件"
+    },
+    {
+      "source_research_id": "R45",
+      "target_research_id": "R34",
+      "relation": "parallel",
+      "binding": "DFMA候选→替代和成本",
+      "condition": "检查可制造装配"
+    },
+    {
+      "source_research_id": "R45",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "必要功能保持→验证",
+      "condition": "收益不能替代性能证据"
+    },
+    {
+      "source_research_id": "R46",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "问题功能→patent_question",
+      "condition": "不能只按产品名检索"
+    },
+    {
+      "source_research_id": "R46",
+      "target_research_id": "R19",
+      "relation": "parallel",
+      "binding": "技术矛盾→专利问题方案分类",
+      "condition": "检索帮助发现解法线索"
+    },
+    {
+      "source_research_id": "R46",
+      "target_research_id": "R44",
+      "relation": "precedes",
+      "binding": "路线候选→原型假设",
+      "condition": "专利披露不等于性能已证"
+    },
+    {
+      "source_research_id": "R47",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "目标硬要求→sbce_targets",
+      "condition": "规格可探索边界先定"
+    },
+    {
+      "source_research_id": "R47",
+      "target_research_id": "R38",
+      "relation": "parallel",
+      "binding": "边界知识→DOE实验",
+      "condition": "量化性能范围时"
+    },
+    {
+      "source_research_id": "R47",
+      "target_research_id": "R37",
+      "relation": "parallel",
+      "binding": "证据充分选项→决策",
+      "condition": "总分不能替代兼容约束"
+    },
+    {
+      "source_research_id": "R48",
+      "target_research_id": "R01",
+      "relation": "parallel",
+      "binding": "需求发现→stakeholder_evidence",
+      "condition": "事实不足先补研究"
+    },
+    {
+      "source_research_id": "R48",
+      "target_research_id": "R14",
+      "relation": "precedes",
+      "binding": "功能要求→功能分析",
+      "condition": "解法前澄清作用"
+    },
+    {
+      "source_research_id": "R48",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "要求/用途→V&V目标",
+      "condition": "判据及追溯前置"
+    },
+    {
+      "source_research_id": "R48",
+      "target_research_id": "R44",
+      "relation": "parallel",
+      "binding": "待证问题→假设测试",
+      "condition": "探索与规格迭代"
+    },
+    {
+      "source_research_id": "WB01",
+      "target_research_id": "WB02",
+      "relation": "requires",
+      "binding": "总体任务→调研对象及问题",
+      "condition": "需要需求、环境和风险补证"
+    },
+    {
+      "source_research_id": "WB01",
+      "target_research_id": "WB03",
+      "relation": "precedes",
+      "binding": "调研与总体要求→规划输入",
+      "condition": "边界和关键未知已明确"
+    },
+    {
+      "source_research_id": "WB01",
+      "target_research_id": "WB04",
+      "relation": "precedes",
+      "binding": "总体规划→综合实施的目标与限制",
+      "condition": "方法输入和资源可识别"
+    },
+    {
+      "source_research_id": "WB01",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "设计要求与方案→V&V计划",
+      "condition": "必须保持要求、计划与真实结果分层"
+    },
+    {
+      "source_research_id": "WB02",
+      "target_research_id": "R08",
+      "relation": "parallel",
+      "binding": "需求研究",
+      "condition": "需实际用户证据时"
+    },
+    {
+      "source_research_id": "WB02",
+      "target_research_id": "WB03",
+      "relation": "precedes",
+      "binding": "规划输入",
+      "condition": "三类证据足以进入规划时"
+    },
+    {
+      "source_research_id": "WB03",
+      "target_research_id": "WB01",
+      "relation": "part_of",
+      "binding": "总体设计任务→规划阶段产物",
+      "condition": "需要规划而非单次作业执行"
+    },
+    {
+      "source_research_id": "WB03",
+      "target_research_id": "WB02",
+      "relation": "requires",
+      "binding": "需求/环境/风险记录→七域草图",
+      "condition": "调研证据够用或未知明确"
+    },
+    {
+      "source_research_id": "WB03",
+      "target_research_id": "WB04",
+      "relation": "precedes",
+      "binding": "planning_package→综合实施的目标与方法安排",
+      "condition": "关键约束已明确"
+    },
+    {
+      "source_research_id": "WB03",
+      "target_research_id": "R42",
+      "relation": "parallel",
+      "binding": "检验域→验证计划；验证反馈→规划修订",
+      "condition": "要求与接受口径随版本可追溯"
+    },
+    {
+      "source_research_id": "WB04",
+      "target_research_id": "WB01",
+      "relation": "part_of",
+      "binding": "总体任务→综合实施",
+      "condition": "总体任务明确"
+    },
+    {
+      "source_research_id": "WB04",
+      "target_research_id": "WB03",
+      "relation": "requires",
+      "binding": "planning_package→方法安排",
+      "condition": "规划已明确"
+    },
+    {
+      "source_research_id": "WB04",
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "功能模型→功能基线",
+      "condition": "必要功能已识别"
+    },
+    {
+      "source_research_id": "WB04",
+      "target_research_id": "WB05",
+      "relation": "parallel",
+      "binding": "关键问题→深层次设计",
+      "condition": "存在深入求解需求"
+    },
+    {
+      "source_research_id": "WB04",
+      "target_research_id": "WB10",
+      "relation": "precedes",
+      "binding": "设计包→质量评价",
+      "condition": "证据状态标明"
+    },
+    {
+      "source_research_id": "WB05",
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "功能接口分析",
+      "condition": "需要详细建模时"
+    },
+    {
+      "source_research_id": "WB05",
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "方案综合",
+      "condition": "选择实现原理时"
+    },
+    {
+      "source_research_id": "WB05",
+      "target_research_id": "WB04",
+      "relation": "part_of",
+      "binding": "功能层线索",
+      "condition": "综合设计实施层"
+    },
+    {
+      "source_research_id": "WB06",
+      "target_research_id": "R32",
+      "relation": "requires",
+      "binding": "承接机构运动结果",
+      "condition": "运动机构需动态响应设计"
+    },
+    {
+      "source_research_id": "WB06",
+      "target_research_id": "R39",
+      "relation": "parallel",
+      "binding": "建立仿真与验证",
+      "condition": "需要模型计算与试验对应"
+    },
+    {
+      "source_research_id": "WB07",
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "使用目标→service_task",
+      "condition": "先澄清目标"
+    },
+    {
+      "source_research_id": "WB07",
+      "target_research_id": "R32",
+      "relation": "parallel",
+      "binding": "动态响应→machine_behaviour",
+      "condition": "结构使用性能有耦合"
+    },
+    {
+      "source_research_id": "WB07",
+      "target_research_id": "R41",
+      "relation": "parallel",
+      "binding": "智能化失效→机械风险",
+      "condition": "感知控制失效需独立分析"
+    },
+    {
+      "source_research_id": "WB07",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "分层验证→V&V",
+      "condition": "需实际证据"
+    },
+    {
+      "source_research_id": "WB08",
+      "target_research_id": "R34",
+      "relation": "parallel",
+      "binding": "DFMA问题→manufacturing_question",
+      "condition": "制造装配规则配合模型"
+    },
+    {
+      "source_research_id": "WB08",
+      "target_research_id": "R44",
+      "relation": "parallel",
+      "binding": "过程假设→原型检查",
+      "condition": "低成本装拆学习"
+    },
+    {
+      "source_research_id": "WB08",
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "模型/实物结果→V&V证据",
+      "condition": "须分仿真和实物"
+    },
+    {
+      "source_research_id": "WB08",
+      "target_research_id": "WB07",
+      "relation": "parallel",
+      "binding": "使用与制造耦合→接口复核",
+      "condition": "结构或控制变更影响过程"
+    },
+    {
+      "source_research_id": "WB09",
+      "target_research_id": "R32",
+      "relation": "requires",
+      "binding": "机构运动与约束",
+      "condition": "运动副及接触决定非线性"
+    },
+    {
+      "source_research_id": "WB09",
+      "target_research_id": "R39",
+      "relation": "parallel",
+      "binding": "仿真及数值验证",
+      "condition": "需实际计算与模型校核"
+    },
+    {
+      "source_research_id": "WB10",
+      "target_research_id": "R37",
+      "relation": "parallel",
+      "binding": "多准则任务→评价模型选择",
+      "condition": "不能混量表与赋权"
+    },
+    {
+      "source_research_id": "WB10",
+      "target_research_id": "R42",
+      "relation": "parallel",
+      "binding": "硬要求/真实性能→V&V",
+      "condition": "评分与检验独立"
+    },
+    {
+      "source_research_id": "WB10",
+      "target_research_id": "R45",
+      "relation": "parallel",
+      "binding": "功能全寿命成本→价值评价",
+      "condition": "不必每次调用全部方法"
+    },
+    {
+      "source_research_id": "WB10",
+      "target_research_id": "WB07",
+      "relation": "requires",
+      "binding": "使用性能→质量指标证据",
+      "condition": "评价对应设计目标"
+    },
+    {
+      "source_research_id": "WB10",
+      "target_research_id": "WB08",
+      "relation": "requires",
+      "binding": "制造性能→质量指标证据",
+      "condition": "仿真限制须传递"
+    },
+    {
+      "source_research_id": "WB11",
+      "target_research_id": "R16",
+      "relation": "parallel",
+      "binding": "故障调查边界",
+      "condition": "讨论诊断用例时"
+    },
+    {
+      "source_research_id": "WB11",
+      "target_research_id": "R48",
+      "relation": "parallel",
+      "binding": "方法选择",
+      "condition": "构造推荐解释时"
+    },
+    {
+      "source_research_id": "WB12",
+      "target_research_id": "R01",
+      "relation": "parallel",
+      "binding": "全流程与分类组织",
+      "condition": "库级方法结构需一致"
+    },
+    {
+      "source_research_id": "WB12",
+      "target_research_id": "R21",
+      "relation": "parallel",
+      "binding": "方法族及子工具去重",
+      "condition": "TRIZ名称存在上下位关系"
+    }
+  ]
+}

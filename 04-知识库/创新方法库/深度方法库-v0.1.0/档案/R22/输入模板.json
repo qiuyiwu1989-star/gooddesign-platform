@@ -1,0 +1,31 @@
+{
+  "method_id": "IM-ML-022",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "intervention": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "改变什么以及改变前后状态",
+      "evidence_refs": [],
+      "missing_action": "补充措施"
+    },
+    "metrics": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "量纲、方向、工况和证据",
+      "evidence_refs": [],
+      "missing_action": "补测或标假设"
+    },
+    "constraints": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "必须保留的功能和边界",
+      "evidence_refs": [],
+      "missing_action": "确认工程边界"
+    }
+  }
+}

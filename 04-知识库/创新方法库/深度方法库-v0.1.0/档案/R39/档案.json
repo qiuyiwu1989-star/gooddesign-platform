@@ -1,0 +1,337 @@
+{
+  "research_id": "R39",
+  "method_id": "IM-ML-039",
+  "name": "稳健参数与公差设计",
+  "english_name": "Robust Parameter and Tolerance Design",
+  "kind": "method_family",
+  "category": "E性能优化与工程实现",
+  "lineage": [
+    "质量工程",
+    "田口参数设计",
+    "误差传播"
+  ],
+  "aliases": [
+    "稳健设计",
+    "内外阵列",
+    "公差优化"
+  ],
+  "summary": "先寻找对噪声变化不敏感的设计参数，再针对真正主导输出变异的因素权衡是否收紧公差，而不是把所有零件做得更精密。",
+  "sections": {
+    "identity": "本档以NIST对Taguchi参数与公差设计的公开说明为核心入口，另用测量不确定度预算解释灵敏度和变异贡献。稳健设计是广义方法族，田口内外阵列只是实现之一；测量误差传播也不能等同完整几何公差分析。本卡将二者按“先结构/参数减敏，再有选择地控变异”组织，算法和验证模型需针对任务确定。",
+    "problem": "产品在实验室平均性能达标，但温度、电压、材料批次、磨损或操作者变化后变得不稳定。常见反应是收紧所有公差、加昂贵检测或不断调中心值，却不清楚谁最影响输出。稳健设计关注功能对噪声的敏感性，公差设计再看控制某输入波动的成本与收益，帮助避免把钱花在不关键的精度上。它不保证所有噪声都可消除，也不把平均值合格等同尾部风险可接受。",
+    "principle": "先区分控制因子、噪声因子和响应。控制因子可在设计时选择，噪声因子服役中难以控制，但试验中可能可模拟。内外阵列把不同设计设置放到多种噪声条件下比较均值与变异；高均值和低变异未必在同一设置，应结合目标取舍。公差设计需了解输入变动如何经模型传到功能输出，以及收紧哪些因素最有价值。工程公差是允许界限，标准差、测量不确定度和规格限不是同一个量，不能直接互换。同一变量在实验室可被操纵，并不意味着服役中可受控；变量角色应随设计阶段明确，不以试验方便程度决定。",
+    "applicability": "适合存在可识别噪声、功能响应可测且设计有可调参数的产品或过程。需要说明噪声覆盖的现实范围、输入分布或边界及相互关系。若失效来自错误原理、结构断裂或未知根因，先修正基本方案。几何装配公差还需接触、基准与尺寸链模型；不适合用一个通用均方根公式处理所有情况。安全关键尾部事件应另按可靠性和危险分析要求评估。",
+    "interpretation": "产物包括控制/噪声地图、参数候选、均值与变异的证据、敏感性贡献、拟收紧公差及其成本假设。应说明选择是为了命中目标、降低变异还是兼顾二者。统计传播需要独立性、相关性或线性近似等假设，最坏情形分析和概率覆盖不可混称。若没有试验或模型，就只列减敏与公差研究计划，不能报告良率、寿命或噪声范围内达标率。",
+    "example": "教学演示，未试验：一套弹性夹持机构希望在工件尺寸变化时仍有合适的夹持作用。第一步把弹性元件和预紧设置列控制变量，把工件尺寸、温度与磨损列噪声候选。第二步明确响应是夹持力或接触状态，而不是仅调节旋钮位置。第三步计划在可信噪声边界上比较不同参数设置，并记录平均作用与变化幅度。第四步若模型显示某个尺寸对输出敏感，先研究改变机构传递关系能否减敏；仍不足时才比较收紧该尺寸公差的制造代价。第五步在代表性和边界工况确认。这里不填载荷、分布或改善数字，未证明任何方案已稳健。 最小教学传播例：若功能尺寸y=x1−x2，先给名义值与两输入允许界限±t1、±t2；最坏情况界限为±(t1+t2)。统计分析需另有真实标准差和相关信息，Var(y)=s1²+s2²−2Cov(x1,x2)，不能把公差t当标准差s。这个差值模型只是解释两种输出为何不同，不提供概率合格率；接触非线性或变量相关未知时不能机械套平方和。tolerance_tradeoff应分别保存允许界限、生产变化、测量不确定度及收紧代价。",
+    "pitfalls": "一是把正交表当万能稳健设计，未区分控制与噪声；先确定问题结构。二是以信噪比一个值代替全部性能和安全要求；保留原始响应与分布。三是把所有尺寸都收紧，忽略制造和维修成本；先做灵敏度与参数设计。四是把测量不确定度等同真实零件变异，或将相关误差当独立相加；分别建模。反例：产品根本无法达到必需功能，先做原理与结构改进，再谈减敏。",
+    "validation": "执行质量检查噪声是否来自真实服役证据、设计是否能辨识控制与噪声交互、测量变异是否分离、模型假设是否成立。工程验证需要在实际或代表性环境中检查功能、变异与边界，并追踪制造能力和老化。可用DOE、灵敏度分析、适当仿真和实物测试。无数据不能输出标准差或置信覆盖；无分布依据不能由仿真随机数冒称现场良率。",
+    "adaptation": "来源支持内外阵列、均值与变异权衡、参数设计优先及公差选择的经济性；不确定度页面只支持分量和灵敏度的通用关系。本文将其封装为输入、噪声模型、试验/计算、选择和确认五步，加入工况证据与停止规则，均属平台适配。教学夹持案例不是NIST原例，不代表真实工程效果。",
+    "gaps": "未实现田口信噪比计算、尺寸链软件、概率传播或蒙特卡洛求解；未取得具体GD&T标准和生产分布数据。不同目标函数、非线性、相关误差和接触状态需专项选择模型。正式应用必须补真实噪声范围、制造能力、测量系统及接受门槛，当前不能给任何通用公差数值。"
+  },
+  "inputs": [
+    {
+      "key": "robustness_goal",
+      "label": "功能目标与失效边界",
+      "type": "object",
+      "required": true,
+      "description": "响应、目标/规格、容许变化、寿命与工况",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "control_factors",
+      "label": "控制因素与备选设置",
+      "type": "array",
+      "required": true,
+      "description": "可选参数、单位、范围及成本",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "noise_factors",
+      "label": "噪声因素及证据",
+      "type": "array",
+      "required": true,
+      "description": "服役变化、批次、磨损、环境、范围/分布与相关性",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "model_or_data",
+      "label": "模型与试验数据",
+      "type": "object",
+      "required": false,
+      "description": "输入输出关系、测量误差、实际数据或试验计划",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R39-S01",
+      "title": "定义响应和变异目标",
+      "input_refs": [
+        "robustness_goal"
+      ],
+      "depends_on": [],
+      "operation": "区分命中目标、降低波动与避免失效；记录规格限、工程公差和测量不确定度的不同含义。",
+      "decision": "功能本身未满足先回结构；响应不明不做稳健排名。",
+      "output_key": "robustness_definition",
+      "output_description": "响应目标、变异与硬约束",
+      "checks": [
+        "均值和尾部风险分开",
+        "量纲明确"
+      ],
+      "stop_condition": "核心功能未知则停止",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查真实服役不稳定表现与接受门槛"
+      ]
+    },
+    {
+      "step_id": "R39-S02",
+      "title": "建立控制与噪声地图",
+      "input_refs": [
+        "robustness_definition",
+        "control_factors",
+        "noise_factors"
+      ],
+      "depends_on": [
+        "R39-S01"
+      ],
+      "operation": "区分设计可调与服役不可控变化，记录范围、关系和模拟能力，避免把所有输入同等对待。",
+      "decision": "噪声无依据则先采集；边界超出设备能力需改研究。",
+      "output_key": "factor_model",
+      "output_description": "控制、噪声、相互作用与覆盖缺口",
+      "checks": [
+        "环境不是任意取值",
+        "相关性可见"
+      ],
+      "stop_condition": "危险边界不明不建议试验",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查材料批次、温度、磨损和用户差异"
+      ]
+    },
+    {
+      "step_id": "R39-S03",
+      "title": "比较参数对均值与变异的影响",
+      "input_refs": [
+        "factor_model",
+        "model_or_data"
+      ],
+      "depends_on": [
+        "R39-S02"
+      ],
+      "operation": "用适合DOE或模型计算比较设计设置在噪声变化下的响应，记录均值、变异和假设。",
+      "decision": "无实际数据/计算只出计划；平均与变异冲突则显式权衡。",
+      "output_key": "parameter_review",
+      "output_description": "参数候选、响应及敏感性或待执行记录",
+      "checks": [
+        "不只看单一信噪比",
+        "计算与实测分开"
+      ],
+      "stop_condition": "模型失配或数据不独立则回研究",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查输入波动如何传到输出及测量贡献"
+      ]
+    },
+    {
+      "step_id": "R39-S04",
+      "title": "评估关键公差和代价",
+      "input_refs": [
+        "parameter_review",
+        "control_factors",
+        "model_or_data"
+      ],
+      "depends_on": [
+        "R39-S03"
+      ],
+      "operation": "先看参数/结构能否减敏，再识别关键输入的变异贡献及收紧成本；几何问题另核基准和尺寸链。",
+      "decision": "无贡献依据不全面收紧；传播假设不成立改用合适模型或试验。",
+      "output_key": "tolerance_tradeoff",
+      "output_description": "关键公差候选、贡献、成本和假设",
+      "checks": [
+        "公差限不等于标准差",
+        "相关与非线性不遗漏"
+      ],
+      "stop_condition": "无有效传播模型不报覆盖概率",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "查制造能力、公差成本与装配约束"
+      ]
+    },
+    {
+      "step_id": "R39-S05",
+      "title": "确认稳健性及适用范围",
+      "input_refs": [
+        "tolerance_tradeoff",
+        "robustness_definition",
+        "noise_factors"
+      ],
+      "depends_on": [
+        "R39-S04"
+      ],
+      "operation": "在代表与边界噪声工况确认功能和变异，保存未覆盖环境及维护条件。",
+      "decision": "无确认结果只给候选，不称在全范围稳健。",
+      "output_key": "robust_design_dossier",
+      "output_description": "参数公差建议、证据与确认计划/结果",
+      "checks": [
+        "环境覆盖明确",
+        "计划与结果分开"
+      ],
+      "stop_condition": "关键失效仍未知不定型",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "将边界工况交V&V和可靠性验证"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "robust_design_dossier",
+      "label": "稳健参数与公差研究档案",
+      "required_fields": [
+        "response",
+        "controls",
+        "noise",
+        "model",
+        "variation_evidence",
+        "tolerance_tradeoff",
+        "confirmation",
+        "limits"
+      ],
+      "interpretation": "仅支持已覆盖噪声与模型条件，不保证现场良率或寿命"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R38",
+      "relation": "parallel",
+      "binding": "因素空间↔稳健试验设计",
+      "condition": "需要实际统计设计"
+    },
+    {
+      "target_research_id": "R34",
+      "relation": "parallel",
+      "binding": "公差候选→工艺能力与成本",
+      "condition": "制造代价影响可行性"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "边界噪声→验证计划",
+      "condition": "最终性能需确认"
+    }
+  ],
+  "search_terms": [
+    "稳健",
+    "田口",
+    "参数设计",
+    "噪声因子",
+    "公差",
+    "变异"
+  ],
+  "sources": [
+    {
+      "publisher": "NIST/SEMATECH",
+      "authors": [
+        "NIST/SEMATECH"
+      ],
+      "title": "e-Handbook §5.5.6 What are Taguchi designs?",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section5/pri56.htm",
+      "locator": "Parameter Design / Tolerance Design",
+      "read_scope": "网页参数设计、内外阵列及公差设计相关段落核读；未复制全部示例表",
+      "supports": [
+        "控制因子与噪声因子",
+        "均值与变异权衡",
+        "先参数后有选择地收紧公差"
+      ],
+      "evidence_note": "稳健设计研究对不可控变化的敏感性；收紧所有公差代价高且未必有效，应定位关键贡献。",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；第三方全文、表格和算法实现权利另行核对"
+    },
+    {
+      "publisher": "NIST/SEMATECH",
+      "authors": [
+        "NIST/SEMATECH"
+      ],
+      "title": "e-Handbook §2.5.6 Uncertainty budgets and sensitivity coefficients",
+      "url": "https://www.itl.nist.gov/div898/handbook/mpc/section5/mpc56.htm",
+      "locator": "灵敏度系数与不确定度分量",
+      "read_scope": "短网页全文文字核读；未遍历全部误差传播子页",
+      "supports": [
+        "分量与响应灵敏度关系",
+        "不确定度预算"
+      ],
+      "evidence_note": "灵敏度系数说明输入不确定度怎样影响报告量；该测量框架可作思路，不能直接替代几何公差标准与装配模型。",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；第三方全文、表格和算法实现权利另行核对"
+    },
+    {
+      "source_id": "S03",
+      "publisher": "National Institute of Standards and Technology",
+      "authors": [
+        "NIST/SEMATECH"
+      ],
+      "title": "e-Handbook 2.5.5 Propagation of error considerations",
+      "url": "https://www.itl.nist.gov/div898/handbook/mpc/section5/mpc55.htm",
+      "locator": "传播、协方差与灵敏度",
+      "read_scope": "公开短页全文核读，重点协方差、误差传播近似与敏感度",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "统计变动传播依赖模型与协方差"
+      ],
+      "evidence_note": "测量不确定度语境仅支持传播关系，不是完整工程公差/GD&T标准；差值例为平台基础代数演示",
+      "rights": "链接、题录和原创解释，第三方权利保留"
+    }
+  ],
+  "schema_version": "method-dossier-1.0",
+  "version": "0.1.0",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "evaluations": [
+    {
+      "scenario": "输入足够的研究任务",
+      "expected": "产生robust_design_dossier，每项判断保留依据、假设和适用范围"
+    },
+    {
+      "scenario": "缺少robustness_goal",
+      "expected": "追问目标与边界，停止确定性分析，不编造输入"
+    },
+    {
+      "scenario": "候选违反明确硬约束",
+      "expected": "排除并解释，不用总分或统计指标抵消要求"
+    },
+    {
+      "scenario": "实际数据、测量或分析工具不可用",
+      "expected": "只保存研究/验证计划，不填造统计结果、有效性或风险降低"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项核读专业来源并编写平台深度操作草稿"
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "批次复核：补具体中间产物、教学模型与边界；不提升执行/验证状态"
+    }
+  ]
+}

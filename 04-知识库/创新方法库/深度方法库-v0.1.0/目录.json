@@ -1,0 +1,2019 @@
+{
+  "version": "0.1.0",
+  "status": "research_content_release",
+  "note": "研究内容可读，不代表既有运行执行器已经接入",
+  "methods": [
+    {
+      "research_id": "R01",
+      "method_id": "IM-ML-001",
+      "version": "0.1.0",
+      "name": "系统化工程设计",
+      "english_name": "Systematic Engineering Design",
+      "kind": "framework",
+      "category": "G全流程规划与创新管理",
+      "summary": "把技术产品从任务澄清、功能原理到实体和详细设计组织成可回返、有阶段产物的开发过程。",
+      "lineage": [
+        "系统化工程设计",
+        "VDI 2221",
+        "Pahl–Beitz"
+      ],
+      "aliases": [
+        "系统设计方法",
+        "系统化设计"
+      ],
+      "search_terms": [
+        "系统化设计",
+        "VDI2221",
+        "Pahl Beitz",
+        "概念设计",
+        "实体设计"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R01/档案.json",
+      "page": "methods/R01.html",
+      "sha256": "df70817ffb85b42cefe223b840953d20bb31c24a5546f3ae14dd5a115439e8db",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R02",
+      "method_id": "IM-ML-002",
+      "version": "0.1.0",
+      "name": "双钻",
+      "english_name": "Double Diamond",
+      "kind": "framework",
+      "category": "G全流程规划与创新管理",
+      "summary": "先扩展并重新定义问题，再扩展并筛选方案，用两轮发散—收敛避免过早接受原始需求或唯一解。",
+      "lineage": [
+        "Design Council",
+        "发散与收敛"
+      ],
+      "aliases": [
+        "Double Diamond",
+        "双钻模型"
+      ],
+      "search_terms": [
+        "双钻",
+        "发散收敛",
+        "发现定义开发交付",
+        "问题重定义"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R02/档案.json",
+      "page": "methods/R02.html",
+      "sha256": "549a9c543f6ee6d9b51b75553fbb8bd8a6fb0d5f7cfe83840cb78095766ab218",
+      "source_count": 1,
+      "step_count": 4
+    },
+    {
+      "research_id": "R03",
+      "method_id": "IM-ML-003",
+      "version": "0.1.0",
+      "name": "设计思维",
+      "english_name": "Design Thinking",
+      "kind": "framework",
+      "category": "G全流程规划与创新管理",
+      "summary": "通过理解人的经历、定义挑战、构思、原型与测试反复学习，发展有依据的产品概念。",
+      "lineage": [
+        "以人为本设计",
+        "Stanford d.school"
+      ],
+      "aliases": [
+        "Design Thinking"
+      ],
+      "search_terms": [
+        "设计思维",
+        "同理",
+        "原型",
+        "Stanford",
+        "五模式"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R03/档案.json",
+      "page": "methods/R03.html",
+      "sha256": "3db9485fce7a4337b4e2b5f2259c57be8f266000fdf6893c3e3e36ddffe34834",
+      "source_count": 1,
+      "step_count": 5
+    },
+    {
+      "research_id": "R04",
+      "method_id": "IM-ML-004",
+      "version": "0.1.0",
+      "name": "系统工程",
+      "english_name": "Systems Engineering",
+      "kind": "framework",
+      "category": "G全流程规划与创新管理",
+      "summary": "协调需求、架构、接口、实现与验证，使硬件、软件、人和支持条件共同满足系统级目标。",
+      "lineage": [
+        "Systems Engineering",
+        "ISO/IEC/IEEE 15288",
+        "NASA"
+      ],
+      "aliases": [
+        "SE",
+        "系统工程"
+      ],
+      "search_terms": [
+        "系统工程",
+        "SE",
+        "15288",
+        "需求追溯",
+        "接口管理",
+        "ConOps"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R04/档案.json",
+      "page": "methods/R04.html",
+      "sha256": "c04e01a2a0b2933e9528aea2b25a3f4ed41db2dde643389d2ebc07376fd15dff",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R05",
+      "method_id": "IM-ML-005",
+      "version": "0.1.0",
+      "name": "机电系统V模型",
+      "english_name": "V-model for Mechatronic Systems",
+      "kind": "framework",
+      "category": "G全流程规划与创新管理",
+      "summary": "把机电与信息物理系统的要求、跨学科设计、实现和集成验证建立对应关系，提前设计证明路径。",
+      "lineage": [
+        "机电系统开发",
+        "VDI/VDE 2206"
+      ],
+      "aliases": [
+        "机电V模型",
+        "V-Model"
+      ],
+      "search_terms": [
+        "V模型",
+        "机电系统",
+        "2206",
+        "跨学科开发",
+        "分层验证"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R05/档案.json",
+      "page": "methods/R05.html",
+      "sha256": "1abd6d8d009aedd9205fe635f8ddc5eea30784134920513e883e8d44efd61275",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R06",
+      "method_id": "IM-ML-006",
+      "version": "0.1.0",
+      "name": "阶段门",
+      "english_name": "Stage-Gate",
+      "kind": "framework",
+      "category": "G全流程规划与创新管理",
+      "summary": "在逐步增加研发投入前，以阶段证据和跨职能决策关口判断继续、终止、保留或返工。",
+      "lineage": [
+        "Robert G. Cooper",
+        "Stage-Gate"
+      ],
+      "aliases": [
+        "阶段门",
+        "阶段关口"
+      ],
+      "search_terms": [
+        "Stage Gate",
+        "阶段门",
+        "研发投资",
+        "Go Kill",
+        "关口决策"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R06/档案.json",
+      "page": "methods/R06.html",
+      "sha256": "2ba132d12dad76372ed4a4b462a005dc23cf66bda77a0a94e09cad6b35e6050c",
+      "source_count": 1,
+      "step_count": 5
+    },
+    {
+      "research_id": "R07",
+      "method_id": "IM-ML-007",
+      "version": "0.1.0",
+      "name": "六西格玛设计",
+      "english_name": "DFSS / DMADV",
+      "kind": "framework",
+      "category": "G全流程规划与创新管理",
+      "summary": "在新产品设计时把顾客需求转成关键质量特性，结合概念、参数与验证活动，使质量目标在设计阶段得到处理。",
+      "lineage": [
+        "质量工程",
+        "DFSS",
+        "DMADV"
+      ],
+      "aliases": [
+        "六西格玛设计",
+        "DMADV"
+      ],
+      "search_terms": [
+        "DFSS",
+        "DMADV",
+        "CTQ",
+        "设计质量",
+        "六西格玛"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R07/档案.json",
+      "page": "methods/R07.html",
+      "sha256": "6c334cd41ef73bc8d764c542ebd2e8fc32e565d5d0a8bebbb255cd68043f9cbd",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R08",
+      "method_id": "IM-ML-008",
+      "version": "0.1.0",
+      "name": "用户观察与需求证据化",
+      "english_name": "Field Research / Voice of Customer",
+      "kind": "method_family",
+      "category": "A问题发现与需求定义",
+      "summary": "把真实任务中的行为、原话和环境记录整理成有出处的需求候选，保留解释与反例。",
+      "lineage": [
+        "以人为本设计",
+        "Voice of Customer",
+        "田野研究"
+      ],
+      "aliases": [
+        "VOC",
+        "用户观察",
+        "需求证据化"
+      ],
+      "search_terms": [
+        "用户观察",
+        "VOC",
+        "访谈",
+        "沉浸",
+        "需求证据",
+        "田野研究"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R08/档案.json",
+      "page": "methods/R08.html",
+      "sha256": "1b0b73c8acd81dc60daacc0d7fe24e4f4aa620716c8e0b108f3e054d94cb180b",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R09",
+      "method_id": "IM-ML-009",
+      "version": "0.1.0",
+      "name": "待办任务理论",
+      "english_name": "Jobs to Be Done",
+      "kind": "framework",
+      "category": "A问题发现与需求定义",
+      "summary": "从真实选择事件的情境与期望进步理解用户为何采用或放弃某个方案，避免只按人群属性和功能清单定义需求。",
+      "lineage": [
+        "Jobs to Be Done",
+        "Christensen Institute"
+      ],
+      "aliases": [
+        "JTBD",
+        "待完成任务"
+      ],
+      "search_terms": [
+        "JTBD",
+        "Jobs to Be Done",
+        "任务进步",
+        "选择事件",
+        "替代方案"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R09/档案.json",
+      "page": "methods/R09.html",
+      "sha256": "b41fda66dff35c45fd0c2cd9ba6e642b789f795cfc634235915084cc17228912",
+      "source_count": 1,
+      "step_count": 5
+    },
+    {
+      "research_id": "R10",
+      "method_id": "IM-ML-010",
+      "version": "0.1.0",
+      "name": "领先用户法",
+      "english_name": "Lead User Method",
+      "kind": "method",
+      "category": "A问题发现与需求定义",
+      "summary": "寻找提前遭遇未来需求且解决问题收益显著的使用者，研究其需求和已有尝试，再共同发展可验证概念。",
+      "lineage": [
+        "Eric von Hippel",
+        "用户创新",
+        "Lead User"
+      ],
+      "aliases": [
+        "领先用户研究"
+      ],
+      "search_terms": [
+        "领先用户",
+        "Lead User",
+        "von Hippel",
+        "用户创新",
+        "前沿需求"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R10/档案.json",
+      "page": "methods/R10.html",
+      "sha256": "16e5bcecace1a6256ef42f54011e4a82fe465a9f222bf37d5d16179e67badc71",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R11",
+      "method_id": "IM-ML-011",
+      "version": "0.1.0",
+      "name": "Kano需求分类",
+      "english_name": "Kano Model",
+      "kind": "tool",
+      "category": "A问题发现与需求定义",
+      "summary": "以有/无某特性的配对反应区分需求对满意度的不同影响，支持需求取舍而不直接替代资源和工程决策。",
+      "lineage": [
+        "Noriaki Kano",
+        "顾客满意质量"
+      ],
+      "aliases": [
+        "KANO",
+        "卡诺模型"
+      ],
+      "search_terms": [
+        "Kano",
+        "卡诺",
+        "需求分类",
+        "魅力",
+        "配对问卷"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R11/档案.json",
+      "page": "methods/R11.html",
+      "sha256": "25f7e56089264d6c4467e0f61bc80b51e128a5a2e403e952099aa2dc8cdcad67",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R12",
+      "method_id": "IM-ML-012",
+      "version": "0.1.0",
+      "name": "质量功能展开",
+      "english_name": "Quality Function Deployment / QFD",
+      "kind": "method",
+      "category": "A问题发现与需求定义",
+      "summary": "把顾客需要转成可追踪的工程响应和组织行动，检查多项需求、技术特性与责任之间的关系。",
+      "lineage": [
+        "质量功能展开",
+        "QFD",
+        "ISO 16355"
+      ],
+      "aliases": [
+        "QFD",
+        "质量屋"
+      ],
+      "search_terms": [
+        "QFD",
+        "质量功能展开",
+        "质量屋",
+        "顾客需求",
+        "技术响应"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R12/档案.json",
+      "page": "methods/R12.html",
+      "sha256": "04fae068ad1bb9a55781f7e1c7288cc5b88f7c6b0afccb28fb90e8eaa449cb85",
+      "source_count": 4,
+      "step_count": 5
+    },
+    {
+      "research_id": "R13",
+      "method_id": "IM-ML-013",
+      "version": "0.1.0",
+      "name": "人机工程与人本设计",
+      "english_name": "Ergonomics / Human-centred Design",
+      "kind": "method_family",
+      "category": "A问题发现与需求定义",
+      "summary": "把人的能力、任务、设备、信息和组织环境作为一个工作系统共同设计，形成可检验的人机适配要求。",
+      "lineage": [
+        "人因工程",
+        "工作系统设计"
+      ],
+      "aliases": [
+        "人因工程",
+        "Human Factors Engineering"
+      ],
+      "search_terms": [
+        "人机工程",
+        "人因工程",
+        "工作系统",
+        "Human Factors"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R13/档案.json",
+      "page": "methods/R13.html",
+      "sha256": "db590a758372dcc9c97bd160732bb4d3c059bfba6a74f2a7407f3d1e4a21ea15",
+      "source_count": 3,
+      "step_count": 5
+    },
+    {
+      "research_id": "R14",
+      "method_id": "IM-FA-001",
+      "version": "0.1.0",
+      "name": "功能分解与接口分析",
+      "english_name": "Functional Decomposition",
+      "kind": "method",
+      "category": "B功能分析与概念生成",
+      "summary": "从目标要求建立功能与输入输出关系，再定义子系统接口，使后续原理和结构选择有可追溯边界。",
+      "lineage": [
+        "系统工程逻辑分解",
+        "功能架构"
+      ],
+      "aliases": [
+        "功能分析与分配"
+      ],
+      "search_terms": [
+        "功能分解",
+        "接口分析",
+        "逻辑分解",
+        "Functional Analysis"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R14/档案.json",
+      "page": "methods/R14.html",
+      "sha256": "8c09baad967ca18561c1cd67d9c8f96e65184e3b26222b44af6bccd641a8cac3",
+      "source_count": 1,
+      "step_count": 5
+    },
+    {
+      "research_id": "R15",
+      "method_id": "IM-ML-015",
+      "version": "0.1.0",
+      "name": "FAST功能逻辑分析",
+      "english_name": "Function Analysis System Technique",
+      "kind": "tool",
+      "category": "B功能分析与概念生成",
+      "summary": "用HOW与WHY双向问答构建功能目的和实现手段的逻辑图，暴露被既有结构掩盖的替代机会。",
+      "lineage": [
+        "价值工程",
+        "Charles W. Bytheway FAST"
+      ],
+      "aliases": [
+        "功能分析系统技术",
+        "HOW–WHY功能逻辑"
+      ],
+      "search_terms": [
+        "FAST",
+        "功能分析系统技术",
+        "HOW WHY",
+        "价值工程"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R15/档案.json",
+      "page": "methods/R15.html",
+      "sha256": "00a6e7c50ed23cb84674cab2d4d2f2bc0960c74cff83a25e50b30be9a6e381ef",
+      "source_count": 1,
+      "step_count": 5
+    },
+    {
+      "research_id": "R16",
+      "method_id": "IM-ML-016",
+      "version": "0.1.0",
+      "name": "根因分析",
+      "english_name": "Root Cause Analysis",
+      "kind": "method_family",
+      "category": "B功能分析与概念生成",
+      "summary": "以问题事实和可检验因果假设追查失效来源，再把纠正措施与复发验证闭合。",
+      "lineage": [
+        "质量改进",
+        "事件调查"
+      ],
+      "aliases": [
+        "RCA",
+        "根本原因分析"
+      ],
+      "search_terms": [
+        "根因分析",
+        "RCA",
+        "事件调查",
+        "屏障分析"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R16/档案.json",
+      "page": "methods/R16.html",
+      "sha256": "bfed7a07b5cf3e1b9a3b972324fb49c22485dd95c5f7322825b31bdd5cd95d87",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "R17",
+      "method_id": "IM-ML-017",
+      "version": "0.1.0",
+      "name": "形态学分析",
+      "english_name": "Morphological Analysis",
+      "kind": "method",
+      "category": "B功能分析与概念生成",
+      "summary": "把子功能或问题维度的候选状态显式列出，通过一致性检查形成可追溯的概念组合。",
+      "lineage": [
+        "形态学研究",
+        "系统化工程设计"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "形态学",
+        "Zwicky",
+        "形态学矩阵",
+        "CCA",
+        "功能组合"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R17/档案.json",
+      "page": "methods/R17.html",
+      "sha256": "84256c0208f0849670df5f0e39a119b4e9f6cfaf468bc731b7b0b58be6370e5d",
+      "source_count": 1,
+      "step_count": 5
+    },
+    {
+      "research_id": "R18",
+      "method_id": "IM-ML-018",
+      "version": "0.1.0",
+      "name": "仿生设计",
+      "english_name": "Biomimetics / Biomimicry",
+      "kind": "method_family",
+      "category": "B功能分析与概念生成",
+      "summary": "把工程功能转成生物功能问题，抽象自然策略后检验它在目标材料、尺度和环境中的适配。",
+      "lineage": [
+        "仿生设计",
+        "Biomimicry"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "仿生",
+        "Biomimicry",
+        "生物启发",
+        "功能生物化",
+        "机制抽象"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R18/档案.json",
+      "page": "methods/R18.html",
+      "sha256": "a723a589df441f7f8377ad9ff0ce32d93c6557f743b38ee916ca514b67f6a5bb",
+      "source_count": 3,
+      "step_count": 6
+    },
+    {
+      "research_id": "R19",
+      "method_id": "IM-ML-019",
+      "version": "0.1.0",
+      "name": "设计启发式",
+      "english_name": "Design Heuristics",
+      "kind": "tool_family",
+      "category": "B功能分析与概念生成",
+      "summary": "用具体的设计变换提示打破对首个概念的固着，并保存每次变换如何改变功能、结构与使用方式。",
+      "lineage": [
+        "Design Heuristics",
+        "工程设计认知研究"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "设计启发式",
+        "Design Heuristics",
+        "77卡",
+        "概念固着",
+        "概念变换"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R19/档案.json",
+      "page": "methods/R19.html",
+      "sha256": "5f8b27b151d78fb882bc8aac8ecc6ea27bedff8a14b26569874b6d6404330c25",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R20",
+      "method_id": "IM-ML-020",
+      "version": "0.1.0",
+      "name": "C-K设计理论",
+      "english_name": "Concept–Knowledge Theory",
+      "kind": "theory",
+      "category": "B功能分析与概念生成",
+      "summary": "把待成立的概念命题与已有知识分开，通过概念扩展和知识获取共同推动未知设计。",
+      "lineage": [
+        "C-K设计理论",
+        "设计推理研究"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "C-K",
+        "Concept Knowledge",
+        "概念知识",
+        "扩展性分割",
+        "设计推理"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R20/档案.json",
+      "page": "methods/R20.html",
+      "sha256": "8903092f146ad3897fd0deebb711afcae04bf9b59e77ac214e8e3e7bb6a26c52",
+      "source_count": 1,
+      "step_count": 5
+    },
+    {
+      "research_id": "R21",
+      "method_id": "IM-ML-021",
+      "version": "0.1.0",
+      "name": "TRIZ体系",
+      "english_name": "Theory of Inventive Problem Solving",
+      "kind": "method_family",
+      "category": "C技术发明与矛盾求解",
+      "summary": "以功能、矛盾、资源和演化等模型重述工程问题，再选择相应工具生成并验证发明性方案的理论与方法族。",
+      "lineage": [
+        "Altshuller及TRIZ学派",
+        "MATRIZ TRIZ知识体系"
+      ],
+      "aliases": [
+        "发明问题解决理论"
+      ],
+      "search_terms": [
+        "TRIZ body of knowledge MATRIZ",
+        "problem solving tools contradiction function"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R21/档案.json",
+      "page": "methods/R21.html",
+      "sha256": "c2b5ded370a6d1c4fbcdd8b9096084c4888f83aed808f97023353aa5cd4ce9e6",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R22",
+      "method_id": "IM-ML-022",
+      "version": "0.1.0",
+      "name": "技术矛盾与发明原理",
+      "english_name": "Engineering Contradiction / Matrix",
+      "kind": "tool",
+      "category": "C技术发明与矛盾求解",
+      "summary": "把具体改进措施引起的性能权衡表述为技术矛盾，选择可追溯的发明原理提示，并将提示转为工程候选。",
+      "lineage": [
+        "经典TRIZ",
+        "Altshuller技术矛盾与40发明原理"
+      ],
+      "aliases": [
+        "工程矛盾",
+        "矛盾矩阵"
+      ],
+      "search_terms": [
+        "MATRIZ engineering contradiction IF THEN BUT",
+        "TRIZ contradiction matrix improving worsening"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R22/档案.json",
+      "page": "methods/R22.html",
+      "sha256": "0f94ccc6c144d26c692e49a740d88e7b5de0b3c9fbce368b6e1ba4ca86b9f2e9",
+      "source_count": 3,
+      "step_count": 5
+    },
+    {
+      "research_id": "R23",
+      "method_id": "IM-ML-023",
+      "version": "0.1.0",
+      "name": "物理矛盾与分离",
+      "english_name": "Physical Contradiction / Separation",
+      "kind": "tool",
+      "category": "C技术发明与矛盾求解",
+      "summary": "识别同一对象同一属性的相反但各有依据的要求，通过改变要求成立的时间、空间、关系或系统层级寻找可实现的机制。",
+      "lineage": [
+        "经典TRIZ",
+        "物理矛盾求解"
+      ],
+      "aliases": [
+        "分离原理"
+      ],
+      "search_terms": [
+        "MATRIZ physical contradiction separation course outlines",
+        "physical contradiction same parameter"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R23/档案.json",
+      "page": "methods/R23.html",
+      "sha256": "cff40a6cd7ebacf6511d2020ca5a48a9334660ac1e91c397e1985353c6f38eda",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R24",
+      "method_id": "IM-ML-024",
+      "version": "0.1.0",
+      "name": "理想解与资源分析",
+      "english_name": "Ideal Final Result / Resource Analysis",
+      "kind": "tool_family",
+      "category": "C技术发明与矛盾求解",
+      "summary": "在保留必要功能和约束下表述期望消除的问题，系统盘点作用区及邻近系统可用资源，形成尽量少增负担的可验证候选。",
+      "lineage": [
+        "TRIZ理想性",
+        "ARIZ理想最终结果与物质场资源"
+      ],
+      "aliases": [
+        "IFR",
+        "理想最终结果",
+        "资源分析"
+      ],
+      "search_terms": [
+        "MATRIZ IFR ideal final result resources operation zone time",
+        "ARIZ substance field resources"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R24/档案.json",
+      "page": "methods/R24.html",
+      "sha256": "31fd0e09e75e487138a5e380532031b0ecd5a87874368c3907c5b2cd0422c4b0",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R25",
+      "method_id": "IM-ML-025",
+      "version": "0.1.0",
+      "name": "物场分析与标准解",
+      "english_name": "Substance–Field Analysis / Standard Solutions",
+      "kind": "tool_family",
+      "category": "C技术发明与矛盾求解",
+      "summary": "把关键作用抽象成物质与场的交互模型，按缺失、不足、有害或检测问题选择标准变换，再回译为具体工程机制。",
+      "lineage": [
+        "经典TRIZ",
+        "物场建模与76标准解"
+      ],
+      "aliases": [
+        "Su-Field Analysis",
+        "物质场分析",
+        "标准发明解"
+      ],
+      "search_terms": [
+        "MATRIZ standard inventive solutions five classes",
+        "substance field model measurement"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R25/档案.json",
+      "page": "methods/R25.html",
+      "sha256": "9fb819d53a2d667ad293dbcfecc9bf823c3e8b6067d8e417c09d1eb0cd5a852b",
+      "source_count": 3,
+      "step_count": 5
+    },
+    {
+      "research_id": "R26",
+      "method_id": "IM-ML-026",
+      "version": "0.1.0",
+      "name": "功能裁剪",
+      "english_name": "Trimming",
+      "kind": "tool",
+      "category": "C技术发明与矛盾求解",
+      "summary": "选择删除或部分删除功能载体，将其仍然必要的有用功能重新分配，并把尚未实现的接管方式转成新的求解问题。",
+      "lineage": [
+        "现代TRIZ功能分析",
+        "MATRIZ Trimming"
+      ],
+      "aliases": [
+        "Trimming",
+        "剪裁",
+        "功能简化"
+      ],
+      "search_terms": [
+        "MATRIZ trimming rules A B C trimming problem",
+        "trimming devices processes"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R26/档案.json",
+      "page": "methods/R26.html",
+      "sha256": "760f65b75522fc8326a7b82172c6bfa19f72012780bcc1a289929c489c87f477",
+      "source_count": 3,
+      "step_count": 5
+    },
+    {
+      "research_id": "R27",
+      "method_id": "IM-ML-027",
+      "version": "0.1.0",
+      "name": "功能导向检索与科学效应",
+      "english_name": "Function-Oriented Search / Scientific Effects",
+      "kind": "method_family",
+      "category": "C技术发明与矛盾求解",
+      "summary": "以功能及参数跨行业寻找既有技术，或以功能查询科学效应；明确迁移差距和二次问题，再用原理样机验证。",
+      "lineage": [
+        "Simon Litvin功能导向检索",
+        "TRIZ科学效应知识"
+      ],
+      "aliases": [
+        "FOS",
+        "Function-Oriented Search",
+        "科学效应检索"
+      ],
+      "search_terms": [
+        "Simon Litvin 2005 function oriented search secondary problems",
+        "Oxford Creativity effects database"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R27/档案.json",
+      "page": "methods/R27.html",
+      "sha256": "dc8fde926f926207a33d7ba57595a8037a41396ec70e251e699b086ff8a45498",
+      "source_count": 3,
+      "step_count": 6
+    },
+    {
+      "research_id": "R28",
+      "method_id": "IM-ML-028",
+      "version": "0.1.0",
+      "name": "ARIZ发明问题求解算法",
+      "english_name": "ARIZ-85C",
+      "kind": "method",
+      "category": "C技术发明与矛盾求解",
+      "summary": "针对复杂发明问题，以问题重构、作用区资源、理想最终结果和物理矛盾逐步推进，结合知识工具并复盘求解过程的版本化算法。",
+      "lineage": [
+        "Altshuller ARIZ",
+        "ARIZ-85C"
+      ],
+      "aliases": [
+        "ARIZ",
+        "发明问题解决算法"
+      ],
+      "search_terms": [
+        "MATRIZ ARIZ nine parts 85C",
+        "ARIZ block 1 operation zone time resources"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R28/档案.json",
+      "page": "methods/R28.html",
+      "sha256": "5ae50251aa65719adc033b5f5865697ab68a0ff5e7a2736d102dd7aed0fad0a7",
+      "source_count": 4,
+      "step_count": 7
+    },
+    {
+      "research_id": "R29",
+      "method_id": "IM-ML-029",
+      "version": "0.1.0",
+      "name": "技术系统进化趋势",
+      "english_name": "Trends of Engineering Systems Evolution",
+      "kind": "tool_family",
+      "category": "C技术发明与矛盾求解",
+      "summary": "借助技术系统演化模式审查架构与性能发展方向，形成可反驳的创新假设及路线分支，并用技术和市场证据验证。",
+      "lineage": [
+        "TRIZ技术演化研究",
+        "MATRIZ TESE"
+      ],
+      "aliases": [
+        "TESE",
+        "技术系统进化规律",
+        "技术演化趋势"
+      ],
+      "search_terms": [
+        "MATRIZ TESE dynamization S curve limitations",
+        "engineering systems evolution trends"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R29/档案.json",
+      "page": "methods/R29.html",
+      "sha256": "0926fa62c8bbd7a7b325db6e92cf28c158aa9ab9072fca8d07e5e150c829dd7e",
+      "source_count": 3,
+      "step_count": 5
+    },
+    {
+      "research_id": "R30",
+      "method_id": "IM-ML-030",
+      "version": "0.1.0",
+      "name": "公理化设计",
+      "english_name": "Axiomatic Design",
+      "kind": "theory_method",
+      "category": "D机构架构与系统设计",
+      "summary": "在顾客、功能、物理和过程域之间建立映射，以功能独立性诊断耦合，并在有可靠成功概率证据时比较信息含量。",
+      "lineage": [
+        "Nam P. Suh公理化设计",
+        "MIT Axiomatic Design Group"
+      ],
+      "aliases": [
+        "Axiomatic Design",
+        "AD"
+      ],
+      "search_terms": [
+        "MIT axiomatic design independence information domains zigzagging",
+        "Suh FR DP design matrix"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R30/档案.json",
+      "page": "methods/R30.html",
+      "sha256": "a0d476d3b2ce63e0d6077066fa2abe463d71fcfbb53611d85ed52b34a4ed05a0",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R31",
+      "method_id": "IM-ML-031",
+      "version": "0.1.0",
+      "name": "DSM与模块化架构",
+      "english_name": "Design Structure Matrix / Modular Architecture",
+      "kind": "method_family",
+      "category": "D机构架构与系统设计",
+      "summary": "用同一组系统元素的方阵表示依赖，通过聚类或排序识别模块边界、接口和循环耦合，再用架构约束审查候选划分。",
+      "lineage": [
+        "Design Structure Matrix研究",
+        "Eppinger与Browning架构建模"
+      ],
+      "aliases": [
+        "DSM",
+        "设计结构矩阵",
+        "依赖结构矩阵"
+      ],
+      "search_terms": [
+        "DSM introduction clustering sequencing row impacts column",
+        "Eppinger Browning DSM product architecture"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R31/档案.json",
+      "page": "methods/R31.html",
+      "sha256": "360a01ee7cf8639f37653805f74f3500a454591c02dfe38e6f46e15b195cc774",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R32",
+      "method_id": "IM-ML-032",
+      "version": "0.1.0",
+      "name": "机构综合",
+      "english_name": "Kinematic Synthesis",
+      "kind": "method_family",
+      "category": "D机构架构与系统设计",
+      "summary": "从期望运动、轨迹或输入输出关系反求机构形式与尺寸，区分结构选择、几何求解和全过程运动验证。",
+      "lineage": [
+        "机构学",
+        "运动学分析与综合"
+      ],
+      "aliases": [
+        "Mechanism Synthesis",
+        "运动综合",
+        "尺度综合"
+      ],
+      "search_terms": [
+        "MIT mechanism kinematic analysis synthesis three position",
+        "mechanism synthesis mobility redundancy"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R32/档案.json",
+      "page": "methods/R32.html",
+      "sha256": "609ceefc18a826cd835ec5a21d1bc32965c2e838c22ee8da986f84b2871bd00f",
+      "source_count": 1,
+      "step_count": 5
+    },
+    {
+      "research_id": "R33",
+      "method_id": "IM-ML-033",
+      "version": "0.1.0",
+      "name": "Ashby材料选择",
+      "english_name": "Ashby Materials Selection",
+      "kind": "method",
+      "category": "E性能优化与工程实现",
+      "summary": "把部件任务转成材料约束和优化目标，先排除不能胜任的材料，再按适用性能指数和可制造证据比较候选。",
+      "lineage": [
+        "系统化材料选择",
+        "Ashby"
+      ],
+      "aliases": [
+        "材料性能指数法",
+        "材料选择图"
+      ],
+      "search_terms": [
+        "Ashby",
+        "材料选择",
+        "性能指数",
+        "轻量化",
+        "材料图",
+        "screening ranking"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R33/档案.json",
+      "page": "methods/R33.html",
+      "sha256": "d08e1efcdbb8550a14841dfe681753d948e3fdd06a35cc1a4c37237df1d42457",
+      "source_count": 2,
+      "step_count": 4
+    },
+    {
+      "research_id": "R34",
+      "method_id": "IM-ML-034",
+      "version": "0.1.0",
+      "name": "面向制造与装配设计",
+      "english_name": "Design for Manufacture and Assembly / DFMA",
+      "kind": "method_family",
+      "category": "E性能优化与工程实现",
+      "summary": "先检查整个装配体中哪些零件与动作确有必要，再为保留的零件选择合适工艺，在功能不丢失的条件下减少制造和装配负担。",
+      "lineage": [
+        "DFMA",
+        "Boothroyd–Dewhurst"
+      ],
+      "aliases": [
+        "DFM",
+        "DFA",
+        "可制造性与装配性设计"
+      ],
+      "search_terms": [
+        "DFMA",
+        "DFA",
+        "DFM",
+        "零件简化",
+        "制造成本",
+        "装配顺序"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R34/档案.json",
+      "page": "methods/R34.html",
+      "sha256": "c861aff76cc53865077584c32d50b64b6dea78d73603266e3c64eaf56861d728",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R35",
+      "method_id": "IM-ML-035",
+      "version": "0.1.0",
+      "name": "拓扑优化",
+      "english_name": "Topology Optimization",
+      "kind": "computational_method",
+      "category": "E性能优化与工程实现",
+      "summary": "在明确的设计域、载荷和边界条件下，用计算优化探索材料放在哪里，并把结果重构和复核成可制造结构。",
+      "lineage": [
+        "结构优化",
+        "密度法",
+        "SIMP"
+      ],
+      "aliases": [
+        "材料分布优化",
+        "结构拓扑设计"
+      ],
+      "search_terms": [
+        "拓扑优化",
+        "SIMP",
+        "有限元",
+        "柔顺度",
+        "密度法",
+        "结构轻量化"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R35/档案.json",
+      "page": "methods/R35.html",
+      "sha256": "7791f309de0ce2e1ffb2b1ba385773cfb4155a6a92857fd614d794f668a66ca4",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R36",
+      "method_id": "IM-ML-036",
+      "version": "0.1.0",
+      "name": "Pugh概念筛选",
+      "english_name": "Pugh Concept Selection",
+      "kind": "tool",
+      "category": "F方案决策与验证评价",
+      "summary": "选一个共同基准，按源于要求的准则比较各概念的相对优劣，用差异和未知驱动概念改进与下一轮验证。",
+      "lineage": [
+        "概念设计",
+        "受控收敛"
+      ],
+      "aliases": [
+        "Pugh矩阵",
+        "基准相对比较"
+      ],
+      "search_terms": [
+        "Pugh",
+        "概念筛选",
+        "datum",
+        "决策矩阵",
+        "受控收敛"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R36/档案.json",
+      "page": "methods/R36.html",
+      "sha256": "3275add428e0cd2a90d31190ada3b6a41232de1b41acdcd8ee7210d224c53065",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R37",
+      "method_id": "IM-ML-037",
+      "version": "0.1.0",
+      "name": "多准则权衡分析",
+      "english_name": "Trade Studies / Multi-Criteria Decision Analysis",
+      "kind": "method_family",
+      "category": "F方案决策与验证评价",
+      "summary": "在先满足强制要求的候选中，显式表达多个评价准则、偏好与不确定性，形成可解释且能检查敏感性的选择建议。",
+      "lineage": [
+        "系统工程决策分析",
+        "MCDA"
+      ],
+      "aliases": [
+        "多属性决策",
+        "加权权衡矩阵"
+      ],
+      "search_terms": [
+        "MCDA",
+        "权衡分析",
+        "决策准则",
+        "敏感性",
+        "多属性"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R37/档案.json",
+      "page": "methods/R37.html",
+      "sha256": "3a0c37f8ef9d656a4baf7c06f8976d587fa819f45ef9daa45ae98367d3d1873c",
+      "source_count": 2,
+      "step_count": 5
+    },
+    {
+      "research_id": "R38",
+      "method_id": "IM-ML-038",
+      "version": "0.1.0",
+      "name": "试验设计与响应面",
+      "english_name": "Design of Experiments / Response Surface Methodology",
+      "kind": "method_family",
+      "category": "E性能优化与工程实现",
+      "summary": "根据要比较、筛选还是优化的问题选择试验结构，以可分析的因素组合采集数据，估计效应并用独立确认检验模型和参数建议。",
+      "lineage": [
+        "工程统计",
+        "DOE",
+        "响应面"
+      ],
+      "aliases": [
+        "实验设计",
+        "因素筛选",
+        "RSM"
+      ],
+      "search_terms": [
+        "DOE",
+        "响应面",
+        "RSM",
+        "随机化",
+        "区组",
+        "交互",
+        "混杂"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R38/档案.json",
+      "page": "methods/R38.html",
+      "sha256": "b7a996d63b6c12c988b93973a8f0061b786ea7843f15ebfea37fc70ffca6516b",
+      "source_count": 6,
+      "step_count": 5
+    },
+    {
+      "research_id": "R39",
+      "method_id": "IM-ML-039",
+      "version": "0.1.0",
+      "name": "稳健参数与公差设计",
+      "english_name": "Robust Parameter and Tolerance Design",
+      "kind": "method_family",
+      "category": "E性能优化与工程实现",
+      "summary": "先寻找对噪声变化不敏感的设计参数，再针对真正主导输出变异的因素权衡是否收紧公差，而不是把所有零件做得更精密。",
+      "lineage": [
+        "质量工程",
+        "田口参数设计",
+        "误差传播"
+      ],
+      "aliases": [
+        "稳健设计",
+        "内外阵列",
+        "公差优化"
+      ],
+      "search_terms": [
+        "稳健",
+        "田口",
+        "参数设计",
+        "噪声因子",
+        "公差",
+        "变异"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R39/档案.json",
+      "page": "methods/R39.html",
+      "sha256": "b85d824a32841cd4e00f990194197b1de407d55a2efb949088d951ffa1be5819",
+      "source_count": 3,
+      "step_count": 5
+    },
+    {
+      "research_id": "R40",
+      "method_id": "IM-ML-040",
+      "version": "0.1.0",
+      "name": "失效模式与影响分析",
+      "english_name": "Failure Modes and Effects Analysis / FMECA",
+      "kind": "method",
+      "category": "F方案决策与验证评价",
+      "summary": "从系统功能出发逐项识别可能怎样失效、影响什么、原因和控制在哪里，再据风险依据安排措施并跟踪验证。",
+      "lineage": [
+        "可靠性工程",
+        "质量风险分析"
+      ],
+      "aliases": [
+        "FMEA",
+        "DFMEA",
+        "PFMEA"
+      ],
+      "search_terms": [
+        "FMEA",
+        "DFMEA",
+        "PFMEA",
+        "FMECA",
+        "失效模式",
+        "RPN",
+        "风险行动"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R40/档案.json",
+      "page": "methods/R40.html",
+      "sha256": "c87c6138a25ba578d19e30ae975fc0115ddd8945cbe4cdfda13480bf69beb57f",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "R41",
+      "method_id": "IM-ML-041",
+      "version": "0.1.0",
+      "name": "机械风险评估与风险降低",
+      "english_name": "Machinery Risk Assessment and Risk Reduction",
+      "kind": "method",
+      "category": "F方案决策与验证评价",
+      "summary": "围绕机械生命周期、人员任务和危险情境评估风险，优先通过设计降低风险，再安排防护与剩余风险信息，并验证措施。",
+      "lineage": [
+        "机械安全工程",
+        "ISO 12100通用原则"
+      ],
+      "aliases": [
+        "机械危险分析",
+        "风险降低三步法"
+      ],
+      "search_terms": [
+        "ISO 12100",
+        "机械风险评估",
+        "本质安全设计",
+        "可预见误用",
+        "剩余风险"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R41/档案.json",
+      "page": "methods/R41.html",
+      "sha256": "affbc3c2767cbd8903d81d479a2e8fc46ce4f95631cc8b3e06adcadc7ac5cc41",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "R42",
+      "method_id": "IM-ML-042",
+      "version": "0.1.0",
+      "name": "验证与确认",
+      "english_name": "Verification and Validation (V&V)",
+      "kind": "framework",
+      "category": "F方案决策与验证评价",
+      "summary": "分开追踪规定要求的符合性与预期使用的适合性，选择检查、分析、演示或试验取得客观证据，并处理异常与配置变化。",
+      "lineage": [
+        "系统工程",
+        "产品实现与证据管理"
+      ],
+      "aliases": [
+        "V&V",
+        "产品验证",
+        "产品确认"
+      ],
+      "search_terms": [
+        "verification",
+        "validation",
+        "V&V",
+        "验证矩阵",
+        "确认",
+        "客观证据"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R42/档案.json",
+      "page": "methods/R42.html",
+      "sha256": "f55eb1f505c1674eec28b07c8de7c50dff341d3a26cac8db917cda0ac5c243d4",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "R43",
+      "method_id": "IM-ML-043",
+      "version": "0.1.0",
+      "name": "生命周期评价与生态设计",
+      "english_name": "Life Cycle Assessment (LCA) and Environmentally Conscious Design",
+      "kind": "method_family",
+      "category": "E性能优化与工程实现",
+      "summary": "以等效功能单位比较生命周期环境影响，查清数据、边界和分配假设，再把环境热点转成设计改进并复评负担转移。",
+      "lineage": [
+        "生命周期思维",
+        "环境管理",
+        "生态设计"
+      ],
+      "aliases": [
+        "LCA",
+        "ECD",
+        "全生命周期环境评价"
+      ],
+      "search_terms": [
+        "LCA",
+        "生态设计",
+        "功能单位",
+        "生命周期清单",
+        "环境热点",
+        "IEC 62430"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R43/档案.json",
+      "page": "methods/R43.html",
+      "sha256": "cf467a4b672c378615f7125d4aca3eb6d1c0811cde77fc8cf925b2c2138abacd",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "R44",
+      "method_id": "IM-ML-044",
+      "version": "0.1.0",
+      "name": "原型与假设测试",
+      "english_name": "Prototyping and Hypothesis-driven Experimentation",
+      "kind": "method_family",
+      "category": "F方案决策与验证评价",
+      "summary": "从高风险假设选择最小必要原型，预先定义可观察证据和下一步决策，通过实际实验学习而非把展示当验证。",
+      "lineage": [
+        "设计思维",
+        "实验学习",
+        "工程原型"
+      ],
+      "aliases": [
+        "原型测试",
+        "假设实验",
+        "低保真原型"
+      ],
+      "search_terms": [
+        "原型",
+        "假设测试",
+        "prototyping",
+        "低保真",
+        "实验学习",
+        "设计验证"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R44/档案.json",
+      "page": "methods/R44.html",
+      "sha256": "165f6a16cab771df77a42fade561e2be89a90ce765b0f4cd4989b6d1da5f7291",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "R45",
+      "method_id": "IM-ML-045",
+      "version": "0.1.0",
+      "name": "价值工程",
+      "english_name": "Value Engineering / Value Methodology",
+      "kind": "method",
+      "category": "F方案决策与验证评价",
+      "summary": "先澄清必要功能与成本，再创造满足同等功能的替代方案，以全寿命资源与性能证据提高价值并安排实施验证。",
+      "lineage": [
+        "功能分析",
+        "价值方法"
+      ],
+      "aliases": [
+        "VE",
+        "价值分析",
+        "Value Analysis"
+      ],
+      "search_terms": [
+        "价值工程",
+        "VE",
+        "功能成本",
+        "价值分析",
+        "全寿命成本",
+        "必要功能"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R45/档案.json",
+      "page": "methods/R45.html",
+      "sha256": "42ffb6a90102289761140fbc1f42aef5e2ee70bc44948eb5b7b64eb8933dfdf2",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "R46",
+      "method_id": "IM-ML-046",
+      "version": "0.1.0",
+      "name": "专利景观与技术路线分析",
+      "english_name": "Patent Landscape and Technology Route Analysis",
+      "kind": "method_family",
+      "category": "A问题发现与需求定义",
+      "summary": "建立可复现专利集合，处理族、名称、日期和分类口径，结合文本与非专利证据识别技术路线和趋势，保留覆盖与法律边界。",
+      "lineage": [
+        "专利信息分析",
+        "技术情报"
+      ],
+      "aliases": [
+        "Patent Landscape Report",
+        "PLR",
+        "专利地图"
+      ],
+      "search_terms": [
+        "专利景观",
+        "PLR",
+        "专利族",
+        "技术路线",
+        "patent analytics",
+        "专利地图"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R46/档案.json",
+      "page": "methods/R46.html",
+      "sha256": "9a501a56b5a1e7a3f292135961315c0c6b1c4e8fa148497050ef99f0819f0c8b",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "R47",
+      "method_id": "IM-ML-047",
+      "version": "0.1.0",
+      "name": "集合式并行工程",
+      "english_name": "Set-Based Concurrent Engineering (SBCE)",
+      "kind": "framework",
+      "category": "D机构架构与系统设计",
+      "summary": "把可行设计描述为多个选项与参数范围，跨专业并行学习交集，用证据逐步淘汰并在足够了解后作出承诺。",
+      "lineage": [
+        "精益产品开发",
+        "并行工程"
+      ],
+      "aliases": [
+        "集合设计",
+        "Set-based Design",
+        "基于集合的并行工程"
+      ],
+      "search_terms": [
+        "SBCE",
+        "集合式并行工程",
+        "可行集",
+        "权衡曲线",
+        "set-based design"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R47/档案.json",
+      "page": "methods/R47.html",
+      "sha256": "8f470f1faea327bd0b80a861a4549c853cca8082ee8119375095aaeb3a182806",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "R48",
+      "method_id": "IM-PD-001",
+      "version": "0.1.0",
+      "name": "问题定义与要求管理",
+      "english_name": "Problem Framing and Requirements Management",
+      "kind": "framework",
+      "category": "A问题发现与需求定义",
+      "summary": "从用户情境和事实澄清待解问题，把期望转为有条件、可验证、可追溯的要求，并管理假设、冲突和版本变更。",
+      "lineage": [
+        "设计问题框定",
+        "系统工程要求定义"
+      ],
+      "aliases": [
+        "设计任务澄清",
+        "需求基线",
+        "要求追溯"
+      ],
+      "search_terms": [
+        "问题定义",
+        "要求管理",
+        "需求澄清",
+        "requirements",
+        "双向追溯",
+        "IM-PD-001"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/R48/档案.json",
+      "page": "methods/R48.html",
+      "sha256": "1742b8ff1ba4a6212ea6e3ff240ea29244387cebcdc092ae9edb699bf868b828",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "WB01",
+      "method_id": "IM-WB-001",
+      "version": "0.1.0",
+      "name": "产品系统化与综合设计体系",
+      "english_name": "Wen’s Systematic and Comprehensive Product Design",
+      "kind": "lineage_framework_topic",
+      "category": "G全流程规划与创新管理",
+      "summary": "将调研、规划、实施与检验组织成可回返的产品设计体系，使功能与多类性能一起受到约束。",
+      "lineage": [
+        "闻邦椿综合设计",
+        "系统工程"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "产品系统化与综合设计体系",
+        "闻邦椿",
+        "系统化设计",
+        "方法选择",
+        "规划",
+        "综合设计"
+      ],
+      "content_status": "substantive_draft_with_primary_text_gap",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB01/档案.json",
+      "page": "methods/WB01.html",
+      "sha256": "76c20f9ef168928d8a4e9e230a5e5cd0dd19a46ea38f74629152e941bf1e8efc",
+      "source_count": 4,
+      "step_count": 5
+    },
+    {
+      "research_id": "WB02",
+      "method_id": "IM-WB-002",
+      "version": "0.1.0",
+      "name": "3I调研",
+      "english_name": "3I Investigation",
+      "kind": "谱系专题（非独立原创方法）",
+      "category": "A问题发现与需求定义",
+      "summary": "在设计规划前分别核查用户需求、产品环境与产品风险，形成有证据边界的选题和调研缺口；本卡为谱系专题与平台适配。",
+      "lineage": [
+        "闻邦椿产品系统化设计体系",
+        "闻邦椿、刘树英、郑玲合著",
+        "闻邦椿谱系专题／调研层"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "闻邦椿",
+        "3I调研",
+        "需求环境风险"
+      ],
+      "content_status": "research_draft",
+      "execution_status": "research_only_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB02/档案.json",
+      "page": "methods/WB02.html",
+      "sha256": "5dae7864a5217707f9dca9c3bec37669650f6a3b340d0f5b181bfbd453270db1",
+      "source_count": 3,
+      "step_count": 5
+    },
+    {
+      "research_id": "WB03",
+      "method_id": "IM-WB-003",
+      "version": "0.1.0",
+      "name": "7D总体规划",
+      "english_name": "Seven-Domain Product Design Planning",
+      "kind": "lineage_framework_topic",
+      "category": "G全流程规划与创新管理",
+      "summary": "在具体求解前联结目标、思想、环境、过程、内容、方法和质量检验，使规划可追溯、可检查和可更新。",
+      "lineage": [
+        "闻邦椿综合设计",
+        "系统工程"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "7D",
+        "7P",
+        "闻邦椿",
+        "顶层设计",
+        "总体规划",
+        "设计方法选择"
+      ],
+      "content_status": "substantive_draft_with_primary_text_gap",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB03/档案.json",
+      "page": "methods/WB03.html",
+      "sha256": "64c870047f1d049a81ec79afc0e28a711fc866d0350845a09907d9676f942837",
+      "source_count": 4,
+      "step_count": 5
+    },
+    {
+      "research_id": "WB04",
+      "method_id": "IM-WB-004",
+      "version": "0.1.0",
+      "name": "1+3+X综合设计",
+      "english_name": "1+3+X Integrated Product Design",
+      "kind": "lineage_framework_topic",
+      "category": "G全流程规划与创新管理",
+      "summary": "以功能为核心，协同动态、智能、可视化及任务所需的其他设计方法，检查局部优化对整体目标的影响。",
+      "lineage": [
+        "闻邦椿综合设计",
+        "系统工程"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "1+3+X",
+        "综合设计",
+        "功能设计",
+        "动态设计",
+        "智能设计",
+        "可视化设计",
+        "闻邦椿"
+      ],
+      "content_status": "substantive_draft_with_primary_text_gap",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB04/档案.json",
+      "page": "methods/WB04.html",
+      "sha256": "16d2e3f6120e02396d3404977801141cc7a3c904adc605693ca35a8f62af87e0",
+      "source_count": 4,
+      "step_count": 5
+    },
+    {
+      "research_id": "WB05",
+      "method_id": "IM-WB-005",
+      "version": "0.1.0",
+      "name": "主辅功能与功能优化",
+      "english_name": "Main and Auxiliary Function Design",
+      "kind": "谱系专题（非独立原创方法）",
+      "category": "B功能分析与概念生成",
+      "summary": "依据系统化设计的功能层研究线索，组织主辅功能、方案分解组合和功能实现的核查；原书规则未全得。",
+      "lineage": [
+        "闻邦椿系统化设计科学实施层",
+        "功能分析与方案综合",
+        "闻邦椿谱系专题／功能层"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "闻邦椿",
+        "主辅功能",
+        "功能优化设计"
+      ],
+      "content_status": "research_draft",
+      "execution_status": "research_only_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB05/档案.json",
+      "page": "methods/WB05.html",
+      "sha256": "bd44f9ffaa49f1256f688ecc5f1d902a60a0e92b19d1a5d555d46950f95e22bb",
+      "source_count": 2,
+      "step_count": 6
+    },
+    {
+      "research_id": "WB06",
+      "method_id": "IM-WB-006",
+      "version": "0.1.0",
+      "name": "面向结构性能的动态设计",
+      "english_name": "Dynamics-Based Design for Structural Performance",
+      "kind": "工程方法族专题",
+      "category": "E性能优化与工程实现",
+      "summary": "在系统化设计中围绕结构动态性能，联结运动分析、线性或非线性模型、动态响应、试验辨识与设计修正的工程方法族。",
+      "lineage": [
+        "闻邦椿等系统化设计体系",
+        "机械动力学与试验辨识"
+      ],
+      "aliases": [
+        "结构性能动态优化",
+        "一般动态设计"
+      ],
+      "search_terms": [
+        "闻邦椿 面向结构性能 动态设计 8.4",
+        "机械动态设计 模态 试验 辨识"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB06/档案.json",
+      "page": "methods/WB06.html",
+      "sha256": "3bc43531ff497c1ce25fe012b851d48b8e46b6ef77934811943d7f36544bee9f",
+      "source_count": 4,
+      "step_count": 5
+    },
+    {
+      "research_id": "WB07",
+      "method_id": "IM-WB-007",
+      "version": "0.1.0",
+      "name": "面向使用性能的智能设计",
+      "english_name": "Intelligent Design Oriented to Product Service Performance",
+      "kind": "lineage_topic",
+      "category": "E性能优化与工程实现",
+      "summary": "围绕实际使用性能，把操作、运动、工作参数和过程控制及状态监测组成研究任务，再选择模型、感知控制与验证方法；属于体系专题而非单一通用算法。",
+      "lineage": [
+        "闻邦椿产品系统化/综合设计体系",
+        "三化及1+3+X实施谱系",
+        "使用性能与工作过程控制"
+      ],
+      "aliases": [
+        "使用性能优化",
+        "工作参数智能控制",
+        "运行状态监测与诊断设计"
+      ],
+      "search_terms": [
+        "闻邦椿",
+        "使用性能",
+        "智能设计",
+        "三化",
+        "工作参数控制",
+        "状态监测"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB07/档案.json",
+      "page": "methods/WB07.html",
+      "sha256": "a9ec52985090c21b44fced6843deb9e3e82a42485b4612b8ddb26921ea2191d1",
+      "source_count": 3,
+      "step_count": 6
+    },
+    {
+      "research_id": "WB08",
+      "method_id": "IM-WB-008",
+      "version": "0.1.0",
+      "name": "面向制造性能的可视化设计",
+      "english_name": "Visualization Design Oriented to Manufacturing Performance",
+      "kind": "lineage_topic",
+      "category": "E性能优化与工程实现",
+      "summary": "以受控工程模型模拟加工、装配和拆卸过程，检验可达性与过程可行性，通过结果分析和修改循环改善制造性能；可视化是工程分析载体。",
+      "lineage": [
+        "闻邦椿产品系统化/综合设计体系",
+        "三化及1+3+X实施谱系",
+        "可视优化设计与制造装配过程"
+      ],
+      "aliases": [
+        "制造过程可视化",
+        "装配拆卸可视化",
+        "VOD制造性能专题"
+      ],
+      "search_terms": [
+        "闻邦椿",
+        "可视化设计",
+        "制造性能",
+        "VOD",
+        "装配拆卸",
+        "虚拟装配"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB08/档案.json",
+      "page": "methods/WB08.html",
+      "sha256": "c5c4259aeb6120c6b69913f75a0396d425e432652a8e550e2d81c9ea1a483f9d",
+      "source_count": 4,
+      "step_count": 6
+    },
+    {
+      "research_id": "WB09",
+      "method_id": "IM-WB-009",
+      "version": "0.1.0",
+      "name": "深层次动态设计",
+      "english_name": "Advanced Nonlinear Dynamics-Based Design",
+      "kind": "专项工程研究专题",
+      "category": "E性能优化与工程实现",
+      "summary": "针对线性近似不足以解释的机械动态行为，研究时变、强非线性、多参数、高维耦合与不确定条件，并通过模型和试验支持设计。",
+      "lineage": [
+        "闻邦椿非线性动态设计研究",
+        "非线性机械动力学"
+      ],
+      "aliases": [
+        "产品深层次动态设计",
+        "非线性动态设计"
+      ],
+      "search_terms": [
+        "闻邦椿 深层次动态设计 时变 强非线性",
+        "非线性转子 轴承 降维 分岔 试验"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB09/档案.json",
+      "page": "methods/WB09.html",
+      "sha256": "0747523172c02de1313e6c3f4f951644df1b8fa09cc598cad85943b394674f08",
+      "source_count": 5,
+      "step_count": 5
+    },
+    {
+      "research_id": "WB10",
+      "method_id": "IM-WB-010",
+      "version": "0.1.0",
+      "name": "设计质量检验与综合评价",
+      "english_name": "Design Quality Examination and Comprehensive Assessment",
+      "kind": "lineage_topic",
+      "category": "F方案决策与验证评价",
+      "summary": "将总功能与结构、使用、制造等性能对应到指标、权重和证据，选择清楚的评价模型并解释薄弱项；综合评分与工程符合性分别判断。",
+      "lineage": [
+        "闻邦椿产品系统化/综合设计体系",
+        "广义质量与3A检验谱系",
+        "多级模糊评价及组合赋权应用"
+      ],
+      "aliases": [
+        "广义质量评价",
+        "三化质量综合评价",
+        "设计质量评估"
+      ],
+      "search_terms": [
+        "闻邦椿",
+        "广义质量",
+        "3A",
+        "多级模糊综合评价",
+        "物元",
+        "组合权重"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB10/档案.json",
+      "page": "methods/WB10.html",
+      "sha256": "05b3fa3ecad2dbe263d966fd381fce971e5b19a4f513e23351ac5e672a5e1218",
+      "source_count": 4,
+      "step_count": 6
+    },
+    {
+      "research_id": "WB11",
+      "method_id": "IM-WB-011",
+      "version": "0.1.0",
+      "name": "科学方法论规则与设计专家系统",
+      "english_name": "Methodological Rules and Design Expert Systems",
+      "kind": "谱系专题（非独立原创方法）",
+      "category": "G全流程规划与创新管理",
+      "summary": "研究原典中的方法论规则、共性知识与专家系统如何组织，并形成待核规则档案；不把目录线索冒充规则全集。",
+      "lineage": [
+        "闻邦椿、刘树英、郑玲合著",
+        "科学方法论与知识组织",
+        "闻邦椿谱系专题／方法论层"
+      ],
+      "aliases": [],
+      "search_terms": [
+        "闻邦椿",
+        "科学方法论十二对规则",
+        "设计专家系统",
+        "比较推理"
+      ],
+      "content_status": "research_draft",
+      "execution_status": "research_only_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB11/档案.json",
+      "page": "methods/WB11.html",
+      "sha256": "c39e30817d5deb75856b5016b4f1af83e5be5b05dca2bf93923393f889e06905",
+      "source_count": 4,
+      "step_count": 6
+    },
+    {
+      "research_id": "WB12",
+      "method_id": "IM-WB-012",
+      "version": "0.1.0",
+      "name": "国内外设计方法分类研究与出处去重",
+      "english_name": "Design-Method Classification and Provenance Study",
+      "kind": "文献分类研究专题",
+      "category": "G全流程规划与创新管理",
+      "summary": "追溯闻邦椿对国内外设计方法分类的原文，区分既有方法、综合框架、编纂收录与平台分类，并建立别名和出处去重档案。",
+      "lineage": [
+        "闻邦椿2003设计方法分类线索",
+        "方法谱系与知识组织"
+      ],
+      "aliases": [
+        "七大类设计方法研究",
+        "70多种方法原典追溯"
+      ],
+      "search_terms": [
+        "闻邦椿 70多种 7大类 2003",
+        "现代机械产品设计在新产品开发中的重要作用 分类 原文"
+      ],
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "path": "档案/WB12/档案.json",
+      "page": "methods/WB12.html",
+      "sha256": "5acf85cdea9a07f241f8e38dd6b5b3a9b18bcc27a23953e9b1a96e2e69122243",
+      "source_count": 5,
+      "step_count": 5
+    }
+  ]
+}

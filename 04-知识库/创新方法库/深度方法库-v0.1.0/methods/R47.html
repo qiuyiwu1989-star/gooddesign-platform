@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>集合式并行工程 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R47 / IM-ML-047
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">D机构架构与系统设计</p><h1>集合式并行工程</h1><p class="english">Set-Based Concurrent Engineering (SBCE)</p><p class="intro">把可行设计描述为多个选项与参数范围，跨专业并行学习交集，用证据逐步淘汰并在足够了解后作出承诺。</p><div class="tags"><span>流程框架</span><span>精益产品开发</span><span>并行工程</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R47/方法结构.md">方法结构</a><a href="../档案/R47/操作指南.md">操作文档</a><a href="../档案/R47/档案.json">JSON档案</a><a href="../档案/R47/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>集合式并行工程是产品开发的决策与学习方式，不是一种优化求解器，也不等于多画几张方案。Lean Enterprise Institute词条给出可行集、权衡曲线、证据淘汰及延迟冻结原则；Lean Construction Institute提供建筑领域协作补充。本档将一般原则适配机械产品，不复制建筑组合算例，也不把某组织项目节奏当普遍标准。</p>
+</section><section><h2>解决什么问题</h2><p>先选一个看似最好的机构，再让结构、制造、控制和采购围绕它细化，常在接口、成本或性能冲突出现时大范围返工。另一极端是一直保留所有方案，迟迟不作决定。本法让多专业在尚有自由度时表达自己的可行范围、约束和未知，优先研究能够排除大量不兼容区域的问题，逐步收敛到可组合的系统。</p>
+</section><section><h2>原理与框架</h2><p>集合可以是离散概念、连续参数区间或二者组合，需说明什么条件下已知可行以及什么仍未知。权衡曲线和设计准则用于表达性能—成本—尺寸等边界，跨专业寻找可兼容交集。淘汰应基于证明不可行或相对劣势的证据，不能只凭偏好或一轮总分；保留淘汰条件以便要求变化后复查。延迟最后承诺意在获得足够知识，不是无限拖延；目标、硬约束和决策时点要明确，规格/公差可在学习中逐步确定但必要安全要求不可随意放松。</p>
+</section><section><h2>什么时候用</h2><p>适合架构、机构、材料工艺或接口耦合强、早期不确定性大且还可改变方案的任务。需跨专业共享知识、测试/分析能力及管理决策时机的资源。对于简单成熟件、已无选择空间或必须立即交付的紧急任务，维护复杂集合可能不划算。若企业实际只允许一个方案秘密推进，名称换成SBCE也不会带来可行集学习。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>目标与不可变约束<small>必需</small></td><td><p>系统性能、安全、成本、时间和承诺边界</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>跨专业选项与知识<small>必需</small></td><td><p>概念、参数范围、已知可行条件和未知</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>接口与兼容关系<small>可选</small></td><td><p>机械控制制造供应等耦合条件</p>
+</td><td>标记未知并说明影响</td></tr><tr><td>学习资源与决策时点<small>可选</small></td><td><p>分析试验、负责人、预算、工装采购承诺</p>
+</td><td>标记未知并说明影响</td></tr></tbody></table></div><section class="step" id="R47-S01"><span class="step-num">01</span><h3>明确目标与承诺节奏</h3><div class="step-line"><b>输入</b><p>sbce_targets、learning_capacity</p>
+</div><div class="step-line"><b>动作</b><p>区分不可变约束、可探索目标与待定规格，确定关键决定时点和责任。</p>
+</div><div class="step-line"><b>判断</b><p>延期需有学习价值，不无期限等待。</p>
+</div><div class="step-line"><b>产物</b><p>sbce_charter · 约束、可变项、决策条件和时间</p>
+</div><div class="step-line"><b>检查</b><p>安全硬约束固定；承诺代价可见</p>
+</div><div class="step-line"><b>返回或停止</b><p>目标/权责未知停止冻结</p>
+</div><div class="step-line"><b>知识查询</b><p>查要求与工装供应约束</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R47-S02"><span class="step-num">02</span><h3>描述跨专业设计集合</h3><div class="step-line"><b>输入</b><p>domain_options、sbce_charter</p>
+</div><div class="step-line"><b>动作</b><p>各专业描述多选项或参数域，列可行证据、条件、权衡曲线及未知。</p>
+</div><div class="step-line"><b>判断</b><p>无证据区域标未知，不写已不可行。</p>
+</div><div class="step-line"><b>产物</b><p>design_sets · 带条件证据的概念/参数集合</p>
+</div><div class="step-line"><b>检查</b><p>集合不是名称清单；知识来源可追踪</p>
+</div><div class="step-line"><b>返回或停止</b><p>无实际数据不伪造曲线</p>
+</div><div class="step-line"><b>知识查询</b><p>查设计准则、试验和模型边界</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R47-S03"><span class="step-num">03</span><h3>寻找兼容与冲突区域</h3><div class="step-line"><b>输入</b><p>design_sets、interface_conditions</p>
+</div><div class="step-line"><b>动作</b><p>建立跨域约束和兼容关系，分析可共存区域与关键冲突，保留空交集原因。</p>
+</div><div class="step-line"><b>判断</b><p>局部优不等系统兼容；空交集先回查条件。</p>
+</div><div class="step-line"><b>产物</b><p>compatibility_map · 交集候选、冲突和未知接口</p>
+</div><div class="step-line"><b>检查</b><p>耦合未遗漏；范围条件一致</p>
+</div><div class="step-line"><b>返回或停止</b><p>不相容不靠平均分抵消</p>
+</div><div class="step-line"><b>知识查询</b><p>查接口尺寸、工艺能力和控制响应</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R47-S04"><span class="step-num">04</span><h3>优先获取边界知识</h3><div class="step-line"><b>输入</b><p>compatibility_map、learning_capacity</p>
+</div><div class="step-line"><b>动作</b><p>按减少决策不确定性的价值安排分析、样件或试验，聚焦边界与高耦合问题。</p>
+</div><div class="step-line"><b>判断</b><p>没能力执行只列学习计划，不能假定边界已知。</p>
+</div><div class="step-line"><b>产物</b><p>boundary_learning · 边界证据、模型限制与待证项</p>
+</div><div class="step-line"><b>检查</b><p>实验对应关键未知；实际与计划分开</p>
+</div><div class="step-line"><b>返回或停止</b><p>危险或关键工具缺失停止执行</p>
+</div><div class="step-line"><b>知识查询</b><p>交DOE、仿真、原型或V&amp;V工具</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R47-S05"><span class="step-num">05</span><h3>按证据收缩可行集合</h3><div class="step-line"><b>输入</b><p>boundary_learning、design_sets</p>
+</div><div class="step-line"><b>动作</b><p>淘汰已证不可行/劣势区域，记录原因与要求条件，更新范围及接口交集。</p>
+</div><div class="step-line"><b>判断</b><p>仅偏好或缺数据不能作证据淘汰。</p>
+</div><div class="step-line"><b>产物</b><p>set_reduction_log · 保留/淘汰区域与可恢复条件</p>
+</div><div class="step-line"><b>检查</b><p>原依据保留；变更可回查</p>
+</div><div class="step-line"><b>返回或停止</b><p>硬约束导致全空则重新定义候选</p>
+</div><div class="step-line"><b>知识查询</b><p>查淘汰证据和替代机制</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R47-S06"><span class="step-num">06</span><h3>在足够知识下冻结</h3><div class="step-line"><b>输入</b><p>set_reduction_log、sbce_charter</p>
+</div><div class="step-line"><b>动作</b><p>审关键未知、兼容和承诺成本，决定冻结哪些选项/规格以及后续变更触发。</p>
+</div><div class="step-line"><b>判断</b><p>未满足承诺条件保持开放并升级资源/范围决定。</p>
+</div><div class="step-line"><b>产物</b><p>sbce_dossier · 集合知识、淘汰和阶段承诺档案</p>
+</div><div class="step-line"><b>检查</b><p>冻结有依据；未冻结项有责任</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键风险未知不宣称系统可行</p>
+</div><div class="step-line"><b>知识查询</b><p>将冻结接口交工程实现和验证</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>集合式开发档案</b> 集合与证据逐步收敛，不保证全局最优或零返工<small>targets、design_sets、tradeoffs、compatibility、learning、elimination、commitments、open_parameters</small></li></ul><p>输出是带条件与证据的集合、权衡边界、兼容关系、淘汰日志和承诺记录。空交集说明约束、知识或候选需重新审议，不应让AI选一个平均分高但无法组合的方案。集合缩小可能来自更好的知识，而不必每轮改结构；也可能发现过去误删的路线需要恢复。引擎应把未知区域与已证不可行分开，避免把缺资料当淘汰依据。每轮决策要记录什么证据足以冻结哪些接口，哪些仍留弹性。 知识库应保存“在哪些条件下不行”，而不只保存最后胜出的方案，这能让后续项目复用边界经验。条件不同则只作线索，不能直接继承淘汰。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示，未求解真实设计：开发夹持模块，机械组有两种原理和一组尺寸范围，制造组有两条工艺范围，控制组有响应与接口条件。S01固定载荷、节拍和安全硬要求。S02各组分别说明可行范围和未知，不先选唯一方案。S03做兼容图，发现某尺寸与工艺能力可能冲突但证据不足。S04优先安排边界样件和接口分析。S05证据若证实一组合不满足硬约束，就记录条件后淘汰该区域，不把整个原理永久否定。S06在关键边界清楚且承诺条件满足时冻结选项，并保留未冻结参数。本例不制造曲线或声称返工减少。 集合知识行可写“原理A；参数域:尺寸范围待确定；工艺域:工艺1/2；已知可行条件:尚无实证；冲突:工具可达待查；下一学习:边界装配；状态:unknown”。淘汰行需增加证据编号与条件，unknown不得自动进入eliminated。</p>
+<h2>反例与误用</h2><p>一是把“保留更多方案”当无限穷举，消耗资源无学习；聚焦高价值边界。二是只保留概念名称，没有范围和条件，无法找交集；补知识表达。三是按偏好过早淘汰，把数据缺失叫不行；区分未知。四是一直等更多信息错过工装/供应时点；定义最后负责任承诺条件。反例：法规已锁定且全接口定型的替换标准紧固件，若没有耦合与选项不确定性，常规选型比完整SBCE流程更合适。</p>
+<h2>检查与验证</h2><p>检查每个集合是否有参数域、适用条件、证据和负责人，跨域兼容是否真实分析，淘汰依据是否可复查，承诺是否考虑交期与变更成本。实际效果需要项目比较和返工数据，不能因用了集合图就宣称开发更快。若权衡曲线来自仿真，须注明模型有效域和边界试验，不能将拟合曲线外推为确定可行。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R48.html">问题定义与要求管理</a><small>requires</small><p>目标硬要求→sbce_targets；规格可探索边界先定</p></li><li><a href="R38.html">试验设计与响应面</a><small>parallel</small><p>边界知识→DOE实验；量化性能范围时</p></li><li><a href="R37.html">多准则权衡分析</a><small>parallel</small><p>证据充分选项→决策；总分不能替代兼容约束</p></li></ul><h2>平台适配</h2><p>LEI支持核心四原则，LCI支持协作、成本输入和决策条件；本档六步、兼容图、未知状态与机械夹持示例是平台适配。并未把集合必定带来最优解、零返工或所有组合都要详细设计当来源事实。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · Set-Based Concurrent Engineering</h3><p>Lean Enterprise Institute · <a target="_blank" rel="noopener noreferrer" href="https://www.lean.org/lexicon-terms/set-based-concurrent-engineering/">原始来源 ↗</a></p><p><b>定位：</b>词条完整核心定义与四项原则</p><p><b>核读范围：</b>公开词条正文核读</p><p><b>支持内容：</b>可行集、权衡曲线；证据淘汰与延迟冻结</p><p><b>核读释义：</b>精益产品开发词条，不是所有开发活动必须穷举全部组合</p><p><b>权利：</b>仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库</p></section><section class="source" id="source-S02"><h3>S02 · Set-based Design</h3><p>Lean Construction Institute · <a target="_blank" rel="noopener noreferrer" href="https://leanconstruction.org/lean-topics/set-based-design/">原始来源 ↗</a></p><p><b>定位：</b>Introduction / Practice / Implementation</p><p><b>核读范围：</b>公开正文定义、并行组合、决策条件及实施相关段落核读</p><p><b>支持内容：</b>跨专业协作及决策条件；以价值和成本约束探索</p><p><b>核读释义：</b>建筑语境迁移须重新确定机械接口和承诺时机；网页组合算例不照搬</p><p><b>权利：</b>仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库</p></section><h2>尚待补证</h2><p>暂无真实设计范围、跨专业知识、可靠权衡曲线或实验数据，不能输出实际集合交集与冻结建议。后续需要定义接口、参数、验证能力、决定责任和工装采购时机。数学优化可辅助连续空间搜索，但应另接有能力工具，不能由文字模型假装计算过可行域。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

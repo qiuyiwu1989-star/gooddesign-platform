@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>机电系统V模型 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R05 / IM-ML-005
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">G全流程规划与创新管理</p><h1>机电系统V模型</h1><p class="english">V-model for Mechatronic Systems</p><p class="intro">把机电与信息物理系统的要求、跨学科设计、实现和集成验证建立对应关系，提前设计证明路径。</p><div class="tags"><span>流程框架</span><span>机电系统开发</span><span>VDI/VDE 2206</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R05/方法结构.md">方法结构</a><a href="../档案/R05/操作指南.md">操作文档</a><a href="../档案/R05/档案.json">JSON档案</a><a href="../档案/R05/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>本档针对VDI/VDE 2206:2021-11的机电与信息物理系统开发语境，不把所有软件V模型变体视为同一版本。VDI官方介绍确认2021版扩展了机电系统开发框架，适用参与研发及制造等活动的角色，并不强制指定具体工具或项目组织。标准正文未取得，本卡因此提供公开范围内的解释和平台化活动，不声称复现全部条款或检查点。</p>
+</section><section><h2>解决什么问题</h2><p>机电产品常被分成机械、电气、软件三份任务，最后才发现各自理解的时间、位置、功率或安全状态不同。另一个遗漏是等样机做完才决定怎么测，造成关键要求无法通过现有接口观察。V模型把“设计什么”与“以后怎样证明”同时考虑，使分解和集成具有对应关系，避免把右侧验证当作末尾的一次验收表演。</p>
+</section><section><h2>原理与框架</h2><p>左侧逐步澄清系统目标、功能和专业设计；实现活动把定义转成部件、软件及装置；右侧按层次集成并检查是否符合相应设计依据。对应关系比字母V的图形更重要。机械、电气和信息处理之间需要持续交换模型和接口假设，而不是三组人顺序交接。模型分析、原型和试验可以在多个层次提前出现；流程可递归迭代，不是要求先把所有需求写死再开始制造。</p>
+</section><section><h2>什么时候用</h2><p>适合同时包含传感、执行、控制、软件、网络或人机交互的产品，尤其是接口决定性能的装备。纯机械零件不必为了采用V模型强加控制系统。必要输入是可说明的系统任务、分解层级及各专业边界；若对象和用途未定，应先做问题定义。专业设计尚不成熟时，右侧可以先规划集成实验，不把模型检查升为实物结果。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>机电系统任务<small>必需</small></td><td><p>用途、用户、环境、要求和决策层级</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>专业与接口条件<small>必需</small></td><td><p>机械电气软件边界、现有模型与工具</p>
+</td><td>补齐必要输入后继续</td></tr></tbody></table></div><section class="step" id="R05-S01"><span class="step-num">01</span><h3>界定系统任务和检查口径</h3><div class="step-line"><b>输入</b><p>system_task</p>
+</div><div class="step-line"><b>动作</b><p>定义系统正常/异常运行及各层目标，初步写未来怎样观察结果。</p>
+</div><div class="step-line"><b>判断</b><p>用途不明先回问题定义。</p>
+</div><div class="step-line"><b>产物</b><p>system_v_basis · 系统要求、工况与检查方向</p>
+</div><div class="step-line"><b>检查</b><p>不把结构选择当要求</p>
+</div><div class="step-line"><b>返回或停止</b><p>目标与边界未知则暂停</p>
+</div><div class="step-line"><b>知识查询</b><p>目标用途及异常工况</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R05-S02"><span class="step-num">02</span><h3>分解功能并分配专业</h3><div class="step-line"><b>输入</b><p>system_v_basis、discipline_context</p>
+</div><div class="step-line"><b>动作</b><p>把系统作用分配到机械、电气、信息处理和人，并标协同接口。</p>
+</div><div class="step-line"><b>判断</b><p>跨专业功能无人承担则修正分解。</p>
+</div><div class="step-line"><b>产物</b><p>discipline_allocation · 功能、专业责任及接口</p>
+</div><div class="step-line"><b>检查</b><p>检查人机功能</p>
+</div><div class="step-line"><b>返回或停止</b><p>必要作用未覆盖则不进入详细专业设计</p>
+</div><div class="step-line"><b>知识查询</b><p>功能与专业接口证据</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R05-S03"><span class="step-num">03</span><h3>同步专业设计与模型检查</h3><div class="step-line"><b>输入</b><p>discipline_allocation</p>
+</div><div class="step-line"><b>动作</b><p>组织专业方案，校核单位、坐标、时序与能量边界。</p>
+</div><div class="step-line"><b>判断</b><p>不一致则回设计而非留到总装。</p>
+</div><div class="step-line"><b>产物</b><p>domain_designs · 专业方案与模型/原型检查</p>
+</div><div class="step-line"><b>检查</b><p>模型条件可追踪</p>
+</div><div class="step-line"><b>返回或停止</b><p>工具缺失仅形成分析任务</p>
+</div><div class="step-line"><b>知识查询</b><p>传动、感知、控制的适配条件</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R05-S04"><span class="step-num">04</span><h3>建立分层集成及测试</h3><div class="step-line"><b>输入</b><p>domain_designs、system_v_basis</p>
+</div><div class="step-line"><b>动作</b><p>安排从高风险接口到子系统、整体的集成，分别匹配对应依据。</p>
+</div><div class="step-line"><b>判断</b><p>下层通过不自动判上层通过。</p>
+</div><div class="step-line"><b>产物</b><p>integration_evidence_plan · 层级、顺序、测试依据和资源</p>
+</div><div class="step-line"><b>检查</b><p>计划与实际证据分开</p>
+</div><div class="step-line"><b>返回或停止</b><p>接口冲突未解则不判整机可行</p>
+</div><div class="step-line"><b>知识查询</b><p>跨层验证与故障情境</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R05-S05"><span class="step-num">05</span><h3>管理反馈与基线</h3><div class="step-line"><b>输入</b><p>integration_evidence_plan</p>
+</div><div class="step-line"><b>动作</b><p>把实际发现回写为变更请求并标影响设计和验证版本。</p>
+</div><div class="step-line"><b>判断</b><p>目标变化则更新对应链，不沿用旧通过。</p>
+</div><div class="step-line"><b>产物</b><p>v_model_record · 跨层追溯、变更、未知及下一步</p>
+</div><div class="step-line"><b>检查</b><p>每项结论标明证据层级</p>
+</div><div class="step-line"><b>返回或停止</b><p>无真实测试不报通过</p>
+</div><div class="step-line"><b>知识查询</b><p>验证/确认范围及接受条件</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>机电V模型开发记录</b> 说明分层开发与证明计划，不是整机验证结论<small>levels、design_refs、interface_refs、verification_links、changes、unknowns</small></li></ul><p>判断V模型是否真正起作用，应检查每层设计是否有对应的要求和检查方式，跨专业接口是否明确，集成失败是否能回溯到相关层次。完成某层部件试验不能抵消系统层未验证；机械动作正确也不代表控制在时延或故障下仍正确。基线用于协调，不是禁止学习；新证据改变要求时，相关设计和测试应一起更新。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示：设计一个带位置反馈的电动调节台，未指定任何真实产品参数。系统层先定义定位任务、用户操作和断电后的期待状态；功能层分为驱动、导向、测位、控制、停止。专业设计分别建立传动、供电与控制方向，接口说明坐标、量纲、采样/响应和电气边界。集成先检查传感器与控制坐标，再接驱动与机械负载，最后研究真实任务与异常停机。若空载定位可用，只能说明该工况下的局部行为，不能直接宣布有载精度、安全和耐久达标。</p>
+<h2>反例与误用</h2><p>一是将V画成一次性日程表，跨层发现问题也不能返回；应按证据更新对应项。二是只有机械图、电气图和代码，没有接口约定；应明确数据、时序和物理作用。三是把仿真通过记成样机试验通过；两种证据范围分开。反例：已有机械机构只更换标准螺钉，若不影响机电接口，全面重跑V模型可能不成比例，应按变更影响裁剪。</p>
+<h2>检查与验证</h2><p>流程检查可从一条系统要求出发，追踪到功能、专业设计、接口和测试，找出孤立节点与过期测试。实际性能要使用适当模型与仪器，记录负载、温度、供电、软件版本和异常场景；安全相关控制另需适用专业标准。工具或试验条件缺失时只交集成计划和风险，不能以书面V对应关系证明可靠。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R04.html">系统工程</a><small>part_of</small><p>生命周期过程→机电开发活动；多学科系统任务</p></li><li><a href="R31.html">DSM与模块化架构</a><small>parallel</small><p>接口→依赖分析；存在复杂耦合</p></li><li><a href="R42.html">验证与确认</a><small>precedes</small><p>分层依据→验证确认；实现后核查</p></li></ul><h2>平台适配</h2><p>本卡的五项活动、数据字段、接口问题和调节台例子都是平台改编。原标准公开介绍只支持跨学科框架与迭代结构，不足以声明本卡符合全部2021版规范。验证/确认区别辅以NASA公开手册概念解释，不把NASA航天要求移植成通用机电强制条款。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · VDI/VDE 2206:2021-11 介绍</h3><p>VDI · <a target="_blank" rel="noopener noreferrer" href="https://www.vdi.de/mitgliedschaft/vdi-richtlinien/programme-zu-vdi-richtlinien/vdi-2206">原始来源 ↗</a></p><p><b>定位：</b>正文介绍与V-model入口</p><p><b>核读范围：</b>官方介绍实读；未读付费标准正文，未复制图</p><p><b>支持内容：</b>机电及信息物理系统跨学科框架、不强制具体工具</p><p><b>核读释义：</b>官方介绍把2021版用于复杂机电系统开发，并允许项目选择自己的方法与组织方式。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><section class="source" id="source-S02"><h3>S02 · Systems Engineering Handbook §2.0</h3><p>NASA · <a target="_blank" rel="noopener noreferrer" href="https://www.nasa.gov/reference/2-0-fundamentals-of-systems-engineering/">原始来源 ↗</a></p><p><b>定位：</b>§2.4 Verification / Validation</p><p><b>核读范围：</b>相关定义段落已读</p><p><b>支持内容：</b>验证和实际用途确认的区别</p><p><b>核读释义：</b>符合要求与满足预期用途是不同证明目标；本卡据此区分证据。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><h2>尚待补证</h2><p>后续需取得VDI/VDE 2206授权正文，核对具体活动和检查点；补充目标行业的安全控制、软件和电气标准，建立一个真实机电项目的跨层验证链。本轮没有实际模型、控制算法或调节台测试。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

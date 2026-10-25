@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-ML-039",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "robustness_goal": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "响应、目标/规格、容许变化、寿命与工况",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "control_factors": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "可选参数、单位、范围及成本",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "noise_factors": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "服役变化、批次、磨损、环境、范围/分布与相关性",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "model_or_data": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "输入输出关系、测量误差、实际数据或试验计划",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kano需求分类 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R11 / IM-ML-011
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">A问题发现与需求定义</p><h1>Kano需求分类</h1><p class="english">Kano Model</p><p class="intro">以有/无某特性的配对反应区分需求对满意度的不同影响，支持需求取舍而不直接替代资源和工程决策。</p><div class="tags"><span>工具</span><span>Noriaki Kano</span><span>顾客满意质量</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R11/方法结构.md">方法结构</a><a href="../档案/R11/操作指南.md">操作文档</a><a href="../档案/R11/档案.json">JSON档案</a><a href="../档案/R11/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>Kano模型与狩野纪昭的质量研究相关。本卡采用ASQ公开解释和GitLab研究手册的实际问卷实施说明；后者是实践者资料，不是原始理论作者。基本、期望和魅力需要的解释与调查中无差异、反向及可疑响应的处理应分开。当前不内置一张未经核定版本的分类矩阵，也不把模型推测当作实际问卷结果。</p>
+</section><section><h2>解决什么问题</h2><p>需求重要程度常被压成同一条线：功能越多、性能越高就越满意。实际可能有些特性缺失引起强烈不满，具备时却被视为理所当然；另一些能产生惊喜，还有些并不值得投入。Kano帮助识别这种关系差异，避免工程难度或内部热情替代用户价值，但它本身不决定安全门槛、研发成本和长期战略。</p>
+</section><section><h2>原理与框架</h2><p>模型区分实现程度与满意反应，研究两者并非总是线性。调查对同一特性描述具备与不具备两种情境，获得相配回答后按指定规则解释。特性描述必须单一、清楚且不诱导，否则回答反映的是理解差异。不同人群和时间的分类可不同；同一特性出现混合类别，不应强迫归唯一标签。魅力变基本是一种常见演变可能，不是所有特性都按固定速度经历的必然规律。</p>
+</section><section><h2>什么时候用</h2><p>适合已有可理解的需求或特性候选，需要研究其满意度作用的产品前端。不适合代替开放式需求发现，也不能用问卷让用户为不懂的底层机械原理投票。先定义人群、使用情境与产品基线，完成预测试；缺真实回答时只能准备题目和分类假设。涉及安全法规的要求，即使被部分用户视为无差异也不能删去。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>特性与人群情境<small>必需</small></td><td><p>每项特性的单一描述、人群、基线与安全边界</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>问卷材料或执行条件<small>必需</small></td><td><p>配对问题、预测试、实际回答及规则版本；可无数据但须明示</p>
+</td><td>补齐必要输入后继续</td></tr></tbody></table></div><section class="step" id="R11-S01"><span class="step-num">01</span><h3>定义人群和单一特性</h3><div class="step-line"><b>输入</b><p>feature_context</p>
+</div><div class="step-line"><b>动作</b><p>将需求候选写成参与者可理解的情境，不合并多项属性。</p>
+</div><div class="step-line"><b>判断</b><p>题义依赖专业知识且用户不懂则改为体验描述。</p>
+</div><div class="step-line"><b>产物</b><p>feature_statements · 人群、情境、特性与基线</p>
+</div><div class="step-line"><b>检查</b><p>不以技术难度定义价值</p>
+</div><div class="step-line"><b>返回或停止</b><p>对象和使用场景未知则追问</p>
+</div><div class="step-line"><b>知识查询</b><p>真实需求原话与场景</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R11-S02"><span class="step-num">02</span><h3>设计配对问卷并预测试</h3><div class="step-line"><b>输入</b><p>feature_statements、survey_data</p>
+</div><div class="step-line"><b>动作</b><p>为有/无特性准备匹配问题，检查理解和顺序影响。</p>
+</div><div class="step-line"><b>判断</b><p>两问不是同一特性或存在诱导则重写。</p>
+</div><div class="step-line"><b>产物</b><p>kano_questionnaire · 题目、选项、版本与预测试问题</p>
+</div><div class="step-line"><b>检查</b><p>不将描述中的收益直接当事实</p>
+</div><div class="step-line"><b>返回或停止</b><p>未预测试不宣称题目有效</p>
+</div><div class="step-line"><b>知识查询</b><p>特性解释与参与者理解证据</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R11-S03"><span class="step-num">03</span><h3>采集回答并核数据质量</h3><div class="step-line"><b>输入</b><p>kano_questionnaire、survey_data</p>
+</div><div class="step-line"><b>动作</b><p>保留参与者范围和配对回答，按预定规则处理缺失与可疑响应。</p>
+</div><div class="step-line"><b>判断</b><p>无实际回答时只交计划。</p>
+</div><div class="step-line"><b>产物</b><p>paired_responses · 回答对、缺失、分群与限制</p>
+</div><div class="step-line"><b>检查</b><p>不合成调查结果</p>
+</div><div class="step-line"><b>返回或停止</b><p>无真实数据不报类别比例</p>
+</div><div class="step-line"><b>知识查询</b><p>数据质量、样本范围与异常响应</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R11-S04"><span class="step-num">04</span><h3>按明确版本解释类别</h3><div class="step-line"><b>输入</b><p>paired_responses</p>
+</div><div class="step-line"><b>动作</b><p>使用有来源的分类规则，保留分布与不确定而非只贴单一标签。</p>
+</div><div class="step-line"><b>判断</b><p>规则未核定则输出待分析，不伪装已算。</p>
+</div><div class="step-line"><b>产物</b><p>category_evidence · 类别分布、依据、规则与不确定性</p>
+</div><div class="step-line"><b>检查</b><p>可疑和反向不混同</p>
+</div><div class="step-line"><b>返回或停止</b><p>分类表未知则不自动分类</p>
+</div><div class="step-line"><b>知识查询</b><p>采用分类规则与反例</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R11-S05"><span class="step-num">05</span><h3>交接需求决策</h3><div class="step-line"><b>输入</b><p>category_evidence、feature_context</p>
+</div><div class="step-line"><b>动作</b><p>结合硬约束和待验证事项提出后续权衡，不独断资源排序。</p>
+</div><div class="step-line"><b>判断</b><p>安全要求不得被满意度标签抵消。</p>
+</div><div class="step-line"><b>产物</b><p>kano_need_package · 需求理解、限制及后续问题</p>
+</div><div class="step-line"><b>检查</b><p>类别不等于实施效果</p>
+</div><div class="step-line"><b>返回或停止</b><p>未工程验证不承诺满意提升</p>
+</div><div class="step-line"><b>知识查询</b><p>成本、风险与QFD响应</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><h2>产物</h2><ul><li><b>Kano需求研究包</b> 支持满意度关系判断，不是完整优先级或工程合格结论<small>population、feature_versions、responses、classification_rule、distribution、limitations</small></li></ul><p>分类描述的是某类用户对特性提供与缺失的满意响应，不能视作特性永恒属性。基本型的缺失可能显著不满，具备未必额外加分；表现型常随满足程度变化；魅力型可能带来惊喜但缺失不一定不满。群体混合可能掩盖分化，应保留分布和细分而非只取最多票。类别不是优先级分数，仍须结合任务、风险、实现成本和战略；安全与合规必要项不以满意票数决定。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示：为戴手套的专业工具用户研究‘单手释放’与‘自动步骤提示’，没有正式调查数据。步骤1产出人群和使用情景，区分熟练工、新手及常见任务。步骤2为每个特性写一组具备与不具备的中性描述及相同响应选项，不把安全、速度和价格打包。步骤3预测试若有人把单手释放理解为容易误开，应返回描述步骤分清便利动作与意外触发，不把这种误解算成反向需求。步骤4正式采样计划记录每个人成对回答、特性顺序及分组，未实施则不报类别比例。步骤5仅在分类规则核准后生成分组分布、模糊或矛盾回答及解释。即使提示功能在熟练工中无差异，也不能推断新手同样如此，更不能据此移除安全信息。</p>
+<h2>反例与误用</h2><p>一是由AI依据常识直接分类并标用户结论，应明确这只是待调查假设。二是一个问题打包多项特性，导致不知道回答针对什么，应拆题并预测试。三是把基本需求一律排在所有其他事项前而不看硬约束、成本与基线，应交后续决策。反例：让不懂某轴承技术的用户对其存在/不存在直接回答满意度，题义与体验脱节，不能据此删工程必要项。</p>
+<h2>检查与验证</h2><p>调查质量检查目标人群、特性理解、配对回答、题目顺序、缺失和可疑项规则。分类实现需固定评价表来源和代码版本，并用已知回答对核对；本卡尚未执行实际分类工具。工程确认和市场结果另行研究。只有概念意见时不能报需求类别比例，真实问卷也不自动证明实施后满意度提高。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R08.html">用户观察与需求证据化</a><small>requires</small><p>真实需求→特性候选；需先发现需要</p></li><li><a href="R12.html">质量功能展开</a><small>precedes</small><p>需求分类与依据→QFD；工程响应展开</p></li><li><a href="R37.html">多准则权衡分析</a><small>precedes</small><p>价值证据→综合权衡；资源取舍</p></li></ul><h2>平台适配</h2><p>ASQ页面支持基本/正常/惊喜需要及其与QFD衔接；GitLab手册支持真实顾客数据、特性描述和配对问卷。平台增加证据标签、缺输入处置、版本和工程红线。没有复制商业问卷服务或外部图表，不把五类别标签当所有版本的完整规则。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · What is the Kano Model?</h3><p>ASQ · <a target="_blank" rel="noopener noreferrer" href="https://asq.org/quality-resources/kano-model">原始来源 ↗</a></p><p><b>定位：</b>Expected / Normal / Exciting Needs</p><p><b>核读范围：</b>公开概念及需求关系段落实读</p><p><b>支持内容：</b>满意度与实现程度的非线性解释、QFD关联</p><p><b>核读释义：</b>不同需要对满意反应有不同作用，需在顾客情境中理解。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><section class="source" id="source-S02"><h3>S02 · Kano Survey for feature prioritization</h3><p>GitLab Handbook · <a target="_blank" rel="noopener noreferrer" href="https://handbook.gitlab.com/handbook/upstream-studios/experience-research/kano-model/">原始来源 ↗</a></p><p><b>定位：</b>How to use / Preparation / Standardized questionnaire / Structure</p><p><b>核读范围：</b>相关实践段落实读；第一次请求超时后第二次取得</p><p><b>支持内容：</b>真实顾客数据、配对问卷和特性描述</p><p><b>核读释义：</b>该实践先打磨可理解特性，再以有/无配对问题采集反应；不是Kano原始论文。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><h2>尚待补证</h2><p>尚未选定并完整核验分类矩阵、平局/可疑处理和统计区间的采用版本；需补原始论文或权威方法教材及实际问卷数据。平台下一版应包含可复算的回答对测试，而不能只用网页画曲线。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

@@ -1,0 +1,23 @@
+{
+  "method_id": "IM-WB-002",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "brief": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "产品方向、对象、阶段与决策问题",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "evidence": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "含来源、时间、对象和访问边界",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    }
+  }
+}

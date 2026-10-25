@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>理想解与资源分析 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R24 / IM-ML-024
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">C技术发明与矛盾求解</p><h1>理想解与资源分析</h1><p class="english">Ideal Final Result / Resource Analysis</p><p class="intro">在保留必要功能和约束下表述期望消除的问题，系统盘点作用区及邻近系统可用资源，形成尽量少增负担的可验证候选。</p><div class="tags"><span>工具族</span><span>TRIZ理想性</span><span>ARIZ理想最终结果与物质场资源</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R24/方法结构.md">方法结构</a><a href="../档案/R24/操作指南.md">操作文档</a><a href="../档案/R24/档案.json">JSON档案</a><a href="../档案/R24/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>理想最终结果IFR与理想系统并非同一概念。MATRIZ公开说明将IFR用于具体问题，希望以尽量小的改变消除障碍且不使系统其他方面恶化；理想系统则是功能仍实现而传统系统负担趋近消失的方向性抽象。资源分析考察现有物质、场、空间、时间及属性能否承担新作用。二者在ARIZ中密切配合，也可作为独立问题重述和候选筛选工具。</p>
+</section><section><h2>解决什么问题</h2><p>适合团队陷入不断加零件、加传感器、加能耗的方案惯性，或者知道想消除何种缺陷却忽略现有系统潜能的场景。并不要求所有方案必须零成本，更不把自然资源当作无限免费。若任务是从零界定用户价值，先做需求研究；如果功能本身多余，先讨论需求删除，而不是设计更理想的多余功能。</p>
+</section><section><h2>原理与框架</h2><p>先把目标写成解决具体障碍的结果，暂缓指定某个新部件；随后在问题发生的作用区和时间内寻找能承担作用的现有资源。候选资源不仅是库存零件，还包括已有运动、温差、压力、弹性、重力、空隙、等待阶段和被视为废物的输出。资源存在不等于可用，关键是其数量、质量、位置、持续时间和可控性是否足以支持需要的作用。</p>
+</section><section><h2>什么时候用</h2><p>至少需要冲突对象、问题发生的区域和时段、主功能以及不可恶化条件。资源可以来自系统、对象或超系统，但调用邻近设备、操作者或环境会改变责任和使用条件，应列明代价。某资源在实验室存在却在户外、停机或维护阶段消失时，不可作为稳定依赖。安全冗余不能因追求理想性被直接裁掉。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>具体问题模型<small>必需</small></td><td><p>对象、损害、作用区和时段</p>
+</td><td>先定位问题</td></tr><tr><td>必须保留功能<small>必需</small></td><td><p>主功能与不可恶化要求</p>
+</td><td>补功能边界</td></tr><tr><td>已知资源<small>可选</small></td><td><p>物质场、空间、时间和参数证据</p>
+</td><td>从作用区开始调查</td></tr></tbody></table></div><section class="step" id="R24-S01"><span class="step-num">01</span><h3>定义结果而非预设部件</h3><div class="step-line"><b>输入</b><p>problem_model、functions、available</p>
+</div><div class="step-line"><b>动作</b><p>写明损害消失、主功能保留及不可恶化要求，区分IFR与远期理想系统。</p>
+</div><div class="step-line"><b>判断</b><p>需求被偷换则退回目标确认。</p>
+</div><div class="step-line"><b>产物</b><p>ifr · 有边界的IFR陈述</p>
+</div><div class="step-line"><b>检查</b><p>包含具体问题和工况</p>
+</div><div class="step-line"><b>返回或停止</b><p>主功能未明确则暂停</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R24-S02"><span class="step-num">02</span><h3>界定作用区和作用时间</h3><div class="step-line"><b>输入</b><p>ifr、problem_model、functions、available</p>
+</div><div class="step-line"><b>动作</b><p>记录发生问题的空间范围、阶段及资源必须介入的时段。</p>
+</div><div class="step-line"><b>判断</b><p>缺乏证据时标不确定并安排观察。</p>
+</div><div class="step-line"><b>产物</b><p>zone_time · 作用区时图</p>
+</div><div class="step-line"><b>检查</b><p>区分运行、停机和维护</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键时段未知则不宣称资源可用</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R24-S03"><span class="step-num">03</span><h3>盘点并表征资源</h3><div class="step-line"><b>输入</b><p>zone_time、problem_model、functions、available</p>
+</div><div class="step-line"><b>动作</b><p>调查对象、系统和超系统的物质场与时空资源，记录参数和代价。</p>
+</div><div class="step-line"><b>判断</b><p>不可持续或有权限障碍的资源标条件可用。</p>
+</div><div class="step-line"><b>产物</b><p>resource_table · 资源证据表</p>
+</div><div class="step-line"><b>检查</b><p>每项关联可承担的作用</p>
+</div><div class="step-line"><b>返回或停止</b><p>只有名称无能力依据则待查</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R24-S04"><span class="step-num">04</span><h3>匹配资源与所需作用</h3><div class="step-line"><b>输入</b><p>resource_table、problem_model、functions、available</p>
+</div><div class="step-line"><b>动作</b><p>探索资源自身或组合承担作用的机制，列能量与强度预算。</p>
+</div><div class="step-line"><b>判断</b><p>资源不足则查效应或允许必要新增，不虚构能力。</p>
+</div><div class="step-line"><b>产物</b><p>resource_concepts · 候选机制与依赖</p>
+</div><div class="step-line"><b>检查</b><p>不妨碍原功能</p>
+</div><div class="step-line"><b>返回或停止</b><p>硬约束冲突即淘汰</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R24-S05"><span class="step-num">05</span><h3>检验总负担与失效</h3><div class="step-line"><b>输入</b><p>resource_concepts、problem_model、functions、available</p>
+</div><div class="step-line"><b>动作</b><p>验证各工况下功能、损害和资源不足状态，比较全生命周期代价。</p>
+</div><div class="step-line"><b>判断</b><p>必要外部投入诚实记录，未测不判达到理想解。</p>
+</div><div class="step-line"><b>产物</b><p>resource_validation · 资源方案验证档案</p>
+</div><div class="step-line"><b>检查</b><p>覆盖不利工况和维护</p>
+</div><div class="step-line"><b>返回或停止</b><p>缺失关键预算则保持概念状态</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>IFR与资源利用档案</b> 用于约束方案，不保证达到不存在代价的理想系统。<small>IFR、作用区时间、资源参数、机制、新增负担、失效验证</small></li></ul><p>平台用两个明确不同的产物：结果陈述和资源证据表。结果陈述回答何种损害消失、有用功能怎样保留；资源表回答来源、可用工况、参数、权属、兼容性和新负担。对资源提出“它能否自己承担所需作用”的追问是探索提示，不是赋予资源不存在的能力。生成候选后以作用平衡、能量、材料相容性和失效工况核验。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学例：小型搬运夹具在放下工件后需要自动回位，现有设计另装回位电机。IFR可写为释放后夹具恢复待机姿态，同时不增加操作者负担且不损伤工件。资源盘点发现下降阶段的重力势能、已有弹性件及允许的等待时间；候选包括利用已有运动给弹性件储能或调整质心形成回位力矩。没有给出尺寸和势能预算前只算假设。若装置需要任意朝向工作，单靠重力方案应被淘汰。</p>
+<h2>反例与误用</h2><p>不要把“自动、免费、无害”当作已知事实，也不要用一个虚构的X元件掩盖尚未找到的实现机制。IFR写得越夸张不代表越好，必须保留任务工况和不可恶化条件。资源清单过长却不关联需要的作用没有价值；能量存在但无法在正确时刻释放，或者会妨碍原功能，也不能称为有效资源。</p>
+<h2>检查与验证</h2><p>先检查IFR是否针对已证实问题，是否偷换或删除必要需求。资源评价至少包含可获得性、作用强度、时间窗口、与主功能竞争及新增风险。候选用定量预算或台架试验证明资源足够，并测试资源不足时的安全状态。比较总负担时应覆盖维护、控制、培训、制造和环境约束，不能只数零件减少多少。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R21.html">TRIZ体系</a><small>part_of</small><p>TRIZ资源视角；需要减少系统负担</p></li><li><a href="R28.html">ARIZ发明问题求解算法</a><small>part_of</small><p>ARIZ资源与IFR环节；严格算法执行需专门版本</p></li><li><a href="R26.html">功能裁剪</a><small>parallel</small><p>接管被裁剪功能；已有资源可能承担功能</p></li></ul><h2>平台适配</h2><p>引擎可以为资源建立结构化字段：载体、可用属性、数量级、空间可达性、时间窗口、代价、证据、可承担功能及依赖。检索优先利用问题作用区内资源，再扩展到邻近系统；这是可解释的顺序建议，不能强行排除必要外部资源。与功能裁剪结合时先确认被删部件的全部有用功能，再指定资源接管，防止理想目标导致功能丢失。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · Ideal Final Result</h3><p>MATRIZ · <a target="_blank" rel="noopener noreferrer" href="https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/ariz-5892/ideal-final-result-5922/">原始来源 ↗</a></p><p><b>定位：</b>IFR定义主体</p><p><b>核读范围：</b>实际打开28行短文主文</p><p><b>支持内容：</b>IFR与理想系统区别；具体问题最小改变</p><p><b>核读释义：</b>不能把IFR等同零成本零系统的远期抽象。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><section class="source" id="source-S02"><h3>S02 · ARIZ Block 1</h3><p>MATRIZ · <a target="_blank" rel="noopener noreferrer" href="https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/ariz-5892/ariz-block-1/">原始来源 ↗</a></p><p><b>定位：</b>Parts 1–3的作用区时间资源与IFR说明</p><p><b>核读范围：</b>官网检索返回相关主体核读，未核读完整算法附件</p><p><b>支持内容：</b>作用区与作用时间；物质场资源；用资源具体化IFR</p><p><b>核读释义：</b>资源需在问题区域时段可发挥作用，不能只列清单。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><h2>尚待补证</h2><p>本条核读MATRIZ IFR短文及ARIZ Block1官网检索返回的作用区、作用时间、资源与IFR相关说明，未逐页核读ARIZ全部原典。所列资源证据字段和验证顺序是平台适配，并非声称原文统一模板。教学案例未经尺寸设计与工程试验，理想性也未被用作一个无需量纲说明的精确数值评分。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

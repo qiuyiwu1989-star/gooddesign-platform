@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-WB-010",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "quality_objective": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "版本、受众、任务、比较条件与决策用途",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "quality_criteria": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "功能性能、单位方向、层级、阈值、来源",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "assessment_evidence": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "实际量测、专家输入、隶属依据和缺数",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "assessment_policy": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "明确模型、权重、规则、工具和责任",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

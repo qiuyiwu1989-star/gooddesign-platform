@@ -1,0 +1,404 @@
+{
+  "research_id": "WB10",
+  "method_id": "IM-WB-010",
+  "name": "设计质量检验与综合评价",
+  "english_name": "Design Quality Examination and Comprehensive Assessment",
+  "kind": "lineage_topic",
+  "category": "F方案决策与验证评价",
+  "lineage": [
+    "闻邦椿产品系统化/综合设计体系",
+    "广义质量与3A检验谱系",
+    "多级模糊评价及组合赋权应用"
+  ],
+  "aliases": [
+    "广义质量评价",
+    "三化质量综合评价",
+    "设计质量评估"
+  ],
+  "summary": "将总功能与结构、使用、制造等性能对应到指标、权重和证据，选择清楚的评价模型并解释薄弱项；综合评分与工程符合性分别判断。",
+  "sections": {
+    "identity": "本专题是闻邦椿及合作者综合/系统化设计中的评价层，不是所有评价算法由其原创。2017第11章目录并列模糊评价、系统分析和价值工程；2006李小彭等论文给多级模糊应用；2008刘杰等给物元与组合权重应用。后者仅在引言谈7D，不是7D原论文。AHP、熵、模糊理论及价值工程各有独立谱系，本档不把合著应用或体系编排转成单人算法发明。",
+    "problem": "只验结构强度可能漏使用与制造表现，单一平均分也可能掩盖严重缺陷。不同量纲、方向和意见无法直接相加，权重若无来由会制造客观外观。本专题把评价目标、指标、模型与证据联起来，帮助发现质量差距并安排改进；它同时要求将不可补偿硬要求与偏好型综合评价分开，避免总分高就宣布安全合格。",
+    "principle": "广义质量面向总功能和全性能，但具体指标应按产品任务选。2006模型将结构、工作、工艺性能分层，先各组得到对质量等级的隶属向量，再以组权重合成；其加权平均模型可写B_d=A_dR_d，上层R由各B_d组成，B=AR。隶属度描述对所定等级的归属，不等于通过概率或用户比例。2008另用物元、方向变换与AHP/熵组合权重，属另一模型路线，不能把两套算式混接。指标相关、重复与尺度会影响结果，模型选择必须附目的和假设。",
+    "applicability": "适合方案比较、质量薄弱项诊断和设计复审，前提是评价对象、条件、指标、量表和数据来源可审。定性等级与定量性能可分别建合适映射，不应由AI即兴填隶属度。样本不足或权重未定时可整理评价计划，不能强出排名。正式产品检验、安全和法规符合性仍需工程证据与责任流程，综合评价不代替。",
+    "interpretation": "结果应保留分项、层级、权重、隶属规则和敏感性，不只一个质量等级。最大隶属选择会压缩信息，接近并列或权重改变可翻转时要报告不稳健。2008正文印刷熵公式与例e数值不能直接复得，有限核查发现例向量符合归一化的1减熵；本卡保留差异待作者/勘误核验，不默默修正后称完整复现。引擎不能默认启用该组合权重算法。评价模型适用与设计方法有效性也是两种问题，一次排序不证明体系普遍更好。 所有真实数据均应附测试条件与版本，缺失时保留未评价。",
+    "example": "原创算术演示，数字是教学设定而非测量：先假定硬要求另行检查。结构组两个指标的权重A1=(0.5,0.5)，三等级隶属行分别为(0.8,0.2,0)、(0.6,0.3,0.1)，得到B1=(0.7,0.25,0.05)。假定另两组已得到B2=(0.4,0.4,0.2)、B3=(0.5,0.3,0.2)。上层权重A=(0.4,0.4,0.2)，合成为B=(0.54,0.32,0.14)。只能说在该教学规则下第一等级隶属最高；54%不是实测合格率，也不能覆盖未检查安全项。若权重、等级映射或样本变了需复评，不沿用此结论。",
+    "pitfalls": "一是把隶属度写为发生概率或用户比例；说明构造含义。二是套论文汽车或桩机权重到所有机械；按目标重新确定。三是混合不同模型的归一化与权重，形式可算但含义错；固定模型。四是只保存最终排名，丢分项缺陷和敏感性；保留全过程。反例：要判某实际设备保护装置是否满足必要安全要求时，不能用成本、外观等高分抵消失败，应直接按适用要求验证。",
+    "validation": "检查指标覆盖和重复、方向量纲、权重非负及归一、隶属行定义和一致、矩阵维度、逐级计算与原始证据。数学算对不证明量表合理；需利益相关方和工程人员审内容。对权重、映射与缺数做敏感性，报告无法稳健排序。实际质量检验依赖测量与试验，文字和教学算术不构成工程验证。",
+    "adaptation": "六步用于选择与审查评价任务，不是3A原文细分步骤。2006正文可支撑二级加权模糊结构；2008仅提供另一应用及待核差异，不直接进入可执行算法。平台新增硬约束、证据状态与工程验证接口，上述三等级例子不复制论文矩阵。",
+    "gaps": "未取得2017章正文和3A完整原典，不能列出其所有内涵。未完成2008算法复现或勘误核验，当前禁止据印刷公式自动生成真实排名。没有实际产品指标、数据、专家输入或量表验证，暂无工程评价结果。后续需分别建模糊/物元子卡并核全部公式、退化输入和工具实现。"
+  },
+  "inputs": [
+    {
+      "key": "quality_objective",
+      "label": "评价目的与对象",
+      "type": "object",
+      "required": true,
+      "description": "版本、受众、任务、比较条件与决策用途",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "quality_criteria",
+      "label": "指标与硬要求",
+      "type": "array",
+      "required": true,
+      "description": "功能性能、单位方向、层级、阈值、来源",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "assessment_evidence",
+      "label": "数据与等级映射",
+      "type": "object",
+      "required": false,
+      "description": "实际量测、专家输入、隶属依据和缺数",
+      "missing_action": "mark_unknown"
+    },
+    {
+      "key": "assessment_policy",
+      "label": "模型与赋权政策",
+      "type": "object",
+      "required": false,
+      "description": "明确模型、权重、规则、工具和责任",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "WB10-S01",
+      "title": "界定评价和硬要求",
+      "input_refs": [
+        "quality_objective",
+        "quality_criteria"
+      ],
+      "depends_on": [],
+      "operation": "明确比较/诊断/检验目的，先分不可补偿要求与综合偏好，确定对象版本条件。",
+      "decision": "硬要求不满足不可被综合分抵消。",
+      "output_key": "quality_scope",
+      "output_description": "评价范围和独立检验门槛",
+      "checks": [
+        "用途明确",
+        "硬要求先分离"
+      ],
+      "stop_condition": "对象和目的未知停止排序",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "查要求与全功能全性能目标"
+      ]
+    },
+    {
+      "step_id": "WB10-S02",
+      "title": "建立分层指标与证据",
+      "input_refs": [
+        "quality_scope",
+        "quality_criteria",
+        "assessment_evidence"
+      ],
+      "depends_on": [
+        "WB10-S01"
+      ],
+      "operation": "按结构、使用、制造及任务相关维度组织指标，检查重叠、方向、量纲和数据来源。",
+      "decision": "不把目录指标直接当所有产品完整集合。",
+      "output_key": "quality_indicator_model",
+      "output_description": "指标层级、数据和覆盖缺口",
+      "checks": [
+        "重复指标可见",
+        "未知不填分"
+      ],
+      "stop_condition": "关键指标无证据仅做评价计划",
+      "source_refs": [
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "查性能测试和用户制造证据"
+      ]
+    },
+    {
+      "step_id": "WB10-S03",
+      "title": "选择模型和权重规则",
+      "input_refs": [
+        "quality_indicator_model",
+        "assessment_policy"
+      ],
+      "depends_on": [
+        "WB10-S02"
+      ],
+      "operation": "明确采用多级模糊、物元或其他路线，写权重理由、等级/归一化与合成规则。",
+      "decision": "不混算法；有公式争议的路线先停执行。",
+      "output_key": "quality_assessment_plan",
+      "output_description": "模型、矩阵、权重和限制",
+      "checks": [
+        "主观客观依据区分",
+        "规则执行前确定"
+      ],
+      "stop_condition": "WB2008差异未核不启用其自动计算",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按子法另核完整公式和退化输入"
+      ]
+    },
+    {
+      "step_id": "WB10-S04",
+      "title": "校核并执行分层分析",
+      "input_refs": [
+        "quality_assessment_plan",
+        "assessment_evidence"
+      ],
+      "depends_on": [
+        "WB10-S03"
+      ],
+      "operation": "核数据、矩阵维度和归一约束；有实际条件才按指定模型逐级计算，保留中间产物。",
+      "decision": "教学值与实测值分离；不能执行则planned。",
+      "output_key": "quality_analysis_record",
+      "output_description": "分项、各层向量及计算状态",
+      "checks": [
+        "隶属度非概率",
+        "不编造测量和专家意见"
+      ],
+      "stop_condition": "关键映射缺失不出真实等级",
+      "source_refs": [
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "依赖实际数据与审定计算工具"
+      ]
+    },
+    {
+      "step_id": "WB10-S05",
+      "title": "解释薄弱项与敏感性",
+      "input_refs": [
+        "quality_analysis_record",
+        "quality_indicator_model"
+      ],
+      "depends_on": [
+        "WB10-S04"
+      ],
+      "operation": "检查分项不足、权重/映射变化和缺数影响，将排序与解释假设分开。",
+      "decision": "不稳健则输出条件和补证，不报唯一赢家。",
+      "output_key": "quality_findings",
+      "output_description": "薄弱项、条件结论及改进优先",
+      "checks": [
+        "保留层级信息",
+        "作者有效性主张非平台验证"
+      ],
+      "stop_condition": "硬性失败独立处理",
+      "source_refs": [
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "查改进是否改善真实功能性能"
+      ]
+    },
+    {
+      "step_id": "WB10-S06",
+      "title": "衔接检验与设计迭代",
+      "input_refs": [
+        "quality_findings",
+        "quality_scope"
+      ],
+      "depends_on": [
+        "WB10-S05"
+      ],
+      "operation": "将问题绑定设计修改与工程检验，保存模型版本、证据、未闭环与更新条件。",
+      "decision": "综合评价完成不等产品合格或方法普适有效。",
+      "output_key": "generalized_quality_dossier",
+      "output_description": "设计质量检验与综合评价专题档案",
+      "checks": [
+        "事实假设分明",
+        "评估与验证状态分开"
+      ],
+      "stop_condition": "必要检验未完成保持开放",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S04"
+      ],
+      "knowledge_queries": [
+        "转V&V和价值工程等相应方法"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "generalized_quality_dossier",
+      "label": "广义质量评价专题档案",
+      "required_fields": [
+        "scope",
+        "hard_requirements",
+        "indicator_model",
+        "model_policy",
+        "weights",
+        "evidence",
+        "intermediate_results",
+        "findings",
+        "sensitivity",
+        "validation",
+        "gaps"
+      ],
+      "interpretation": "条件性综合评价，不是质量认证或实际合格率"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R37",
+      "relation": "parallel",
+      "binding": "多准则任务→评价模型选择",
+      "condition": "不能混量表与赋权"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "parallel",
+      "binding": "硬要求/真实性能→V&V",
+      "condition": "评分与检验独立"
+    },
+    {
+      "target_research_id": "R45",
+      "relation": "parallel",
+      "binding": "功能全寿命成本→价值评价",
+      "condition": "不必每次调用全部方法"
+    },
+    {
+      "target_research_id": "WB07",
+      "relation": "requires",
+      "binding": "使用性能→质量指标证据",
+      "condition": "评价对应设计目标"
+    },
+    {
+      "target_research_id": "WB08",
+      "relation": "requires",
+      "binding": "制造性能→质量指标证据",
+      "condition": "仿真限制须传递"
+    }
+  ],
+  "search_terms": [
+    "闻邦椿",
+    "广义质量",
+    "3A",
+    "多级模糊综合评价",
+    "物元",
+    "组合权重"
+  ],
+  "sources": [
+    {
+      "publisher": "高等教育出版社",
+      "authors": [
+        "闻邦椿",
+        "刘树英",
+        "郑玲"
+      ],
+      "title": "系统化设计的理论和方法 第11章 设计质量检验与评估 (2017)",
+      "url": "https://academic.hep.com.cn/br/CN/chapter/978-7-04-048177-8/chapter11",
+      "locator": "出版社题录及11.1–11.8目录",
+      "read_scope": "官方章节目录核读，未取得章正文",
+      "supports": [
+        "指标、权重和评价方法族",
+        "模糊评价、系统分析、价值工程并列"
+      ],
+      "evidence_note": "不把章名列举方法当作者独创，不从目录推演全套算式",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅研究链接、题录和原创释义；第三方全文/图片仅研究存档，未授权商业再分发"
+    },
+    {
+      "publisher": "东北大学学报（自然科学版）",
+      "authors": [
+        "李小彭",
+        "任朝晖",
+        "宋乃慧",
+        "闻邦椿"
+      ],
+      "title": "“三化”综合设计法在产品质量综合评价中的应用 (2006,27(5):532–535)",
+      "url": "https://xuebao.neu.edu.cn/natural/EN/article/downloadArticleFile.do?attachType=PDF&id=2933",
+      "locator": "第2节模型、第3节初级/二级评价，印刷页533–534",
+      "read_scope": "官方4页PDF取得；中文提取乱码严重，已渲染并目读第533、534页模型、矩阵和例子；另核官网题录摘要及PDF英文摘要",
+      "supports": [
+        "三类性能分层综合评价",
+        "加权平均合成和结果解释"
+      ],
+      "evidence_note": "模糊评价非闻邦椿独创；论文给液压振动沉拔桩机例子，未独立验证工程优越性",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅研究链接、题录和原创释义；第三方全文/图片仅研究存档，未授权商业再分发"
+    },
+    {
+      "publisher": "东北大学学报（自然科学版）",
+      "authors": [
+        "刘杰",
+        "李朝峰",
+        "李小彭",
+        "闻邦椿"
+      ],
+      "title": "基于物元和组合权重的产品广义质量评价研究及应用 (2008,29(9):1314–1317)",
+      "url": "https://xuebao.neu.edu.cn/natural/EN/article/downloadArticleFile.do?attachType=PDF&id=2359",
+      "locator": "第1–3节，印刷页1315–1317",
+      "read_scope": "官方4页PDF文本核读并渲染核对1316页公式；用表1数据对熵公式作有限数值核查，不是完整算法复现",
+      "supports": [
+        "总功能全性能和指标体系",
+        "AHP/熵与物元组合权重路线"
+      ],
+      "evidence_note": "不是7D原论文；印刷熵公式与例e向量不直接一致，需勘误/作者核验，不能直接启用算法",
+      "source_id": "S03",
+      "accessed_at": "2026-10-23",
+      "rights": "仅研究链接、题录和原创释义；第三方全文/图片仅研究存档，未授权商业再分发"
+    },
+    {
+      "publisher": "NASA",
+      "authors": [
+        "NASA"
+      ],
+      "title": "Systems Engineering Handbook 5.3 Product Verification",
+      "url": "https://www.nasa.gov/reference/5-3-product-verification/",
+      "locator": "5.3.1及V&V区别、方法",
+      "read_scope": "公开手册验证目的、输入、方法、活动与输出相关段落核读",
+      "supports": [
+        "符合规定要求的客观证据",
+        "检查、分析、演示、试验"
+      ],
+      "evidence_note": "NASA系统工程流程可适配产品机械开发，不等于行业认证",
+      "source_id": "S04",
+      "accessed_at": "2026-10-23",
+      "rights": "仅研究链接、题录和原创释义；第三方全文/图片仅研究存档，未授权商业再分发"
+    }
+  ],
+  "schema_version": "method-dossier-1.0",
+  "version": "0.1.0",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "evaluations": [
+    {
+      "scenario": "输入足够的专题研究任务",
+      "expected": "产生generalized_quality_dossier，区分谱系来源与平台适配"
+    },
+    {
+      "scenario": "缺少quality_objective",
+      "expected": "追问目标与边界，不由目录生成算法或数据"
+    },
+    {
+      "scenario": "候选违反明确硬约束",
+      "expected": "排除并说明，综合效益不可抵消"
+    },
+    {
+      "scenario": "模型、工具或实际证据不可用",
+      "expected": "保留计划和缺口，不宣称原论文复现或工程通过"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "核读官方书目录及合著论文正文，建立体系专题研究档案"
+    }
+  ]
+}

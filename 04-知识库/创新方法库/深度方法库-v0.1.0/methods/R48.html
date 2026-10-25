@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>问题定义与要求管理 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R48 / IM-PD-001
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">A问题发现与需求定义</p><h1>问题定义与要求管理</h1><p class="english">Problem Framing and Requirements Management</p><p class="intro">从用户情境和事实澄清待解问题，把期望转为有条件、可验证、可追溯的要求，并管理假设、冲突和版本变更。</p><div class="tags"><span>流程框架</span><span>设计问题框定</span><span>系统工程要求定义</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R48/方法结构.md">方法结构</a><a href="../档案/R48/操作指南.md">操作文档</a><a href="../档案/R48/档案.json">JSON档案</a><a href="../档案/R48/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>本档深化映射现有IM-PD-001身份，作为0.1.0研究草稿保存在建设工作区，不覆盖旧卡运行版本。问题框定面向为何解决、为谁解决和边界；工程要求管理面向必须实现什么、怎样判断及变更影响。Design Council支持发现与定义的迭代，NASA手册支持期望转技术要求；两者在本卡整合不是某一作者的新原创方法。</p>
+</section><section><h2>解决什么问题</h2><p>“做一台更智能的机器”可能同时包含真实痛点、预设方案、技术兴趣和营销愿望，直接进入解法会优化错误问题。即使需求列表很长，若“方便、可靠、低成本”没有对象、条件和判据，设计与测试也无法一致。本法先识别事实与假设，再把可支持的需要转成问题陈述、约束和验收方向，使后续方法调用围绕同一个任务。</p>
+</section><section><h2>原理与框架</h2><p>问题陈述描述目标用户/系统在情境下的缺口、影响及目标，不预先锁定没有必要的实现。利益相关方需要、期望、目标、约束、功能、性能和接口不是同层信息。要求应尽量单一、清楚、必要、可行、可验证且可追溯，包含量值/容差/条件或客观判定方式，避免只有形容词。硬约束与优化偏好分开，派生要求记录依据和分配关系，实施约束说明为何必须限制解法。每条保留来源、理由、责任、状态与版本，并建立双向追溯。</p>
+</section><section><h2>什么时候用</h2><p>适合项目前期、研究转产品、设计变更、需求冲突或测试验收困难时，也是多数引擎方法的前置。需要实际用户/业务/工程证据及有权确认目标的人；研究不足时可形成假设问题和补证计划，不能把AI推测写成客户已确认。探索任务不应过早锁死所有规格，但仍需写清目标和可学习条件；法规安全要求需独立查适用来源。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>初始意图与问题材料<small>必需</small></td><td><p>原话、项目背景、范围及期望改变</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>利益相关方与任务证据<small>可选</small></td><td><p>用户观察、访谈、业务和工程事实，附来源</p>
+</td><td>标记未知并说明影响</td></tr><tr><td>约束与系统环境<small>可选</small></td><td><p>接口、法规安全、技术资源、生命周期</p>
+</td><td>标记未知并说明影响</td></tr><tr><td>确认与变更权责<small>可选</small></td><td><p>目标责任、评审人员及批准机制</p>
+</td><td>标记未知并说明影响</td></tr></tbody></table></div><section class="step" id="R48-S01"><span class="step-num">01</span><h3>拆分原话与证据状态</h3><div class="step-line"><b>输入</b><p>initial_request、stakeholder_evidence</p>
+</div><div class="step-line"><b>动作</b><p>区分事实、需要、方案偏好、目标和假设，确认用户及任务情境缺口。</p>
+</div><div class="step-line"><b>判断</b><p>无实际证据标假设，不写成客户已确认。</p>
+</div><div class="step-line"><b>产物</b><p>intent_evidence_map · 原话、事实/假设和补证问题</p>
+</div><div class="step-line"><b>检查</b><p>来源保留；方案未强当需求</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键用户任务未知停止确定规格</p>
+</div><div class="step-line"><b>知识查询</b><p>查原始访谈、任务观测和项目资料</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R48-S02"><span class="step-num">02</span><h3>定义问题与成功方向</h3><div class="step-line"><b>输入</b><p>intent_evidence_map、constraints_context</p>
+</div><div class="step-line"><b>动作</b><p>形成用户/系统、情境、缺口、影响、目标和范围，明确不应预锁的解法。</p>
+</div><div class="step-line"><b>判断</b><p>根因未证不写因果事实，问题冲突先外显。</p>
+</div><div class="step-line"><b>产物</b><p>problem_frame · 问题陈述、边界、成功方向和待证</p>
+</div><div class="step-line"><b>检查</b><p>谁在何情境清楚；目标可学习</p>
+</div><div class="step-line"><b>返回或停止</b><p>无法形成共同任务先补研究</p>
+</div><div class="step-line"><b>知识查询</b><p>查需求发现和根因证据</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R48-S03"><span class="step-num">03</span><h3>组织约束功能性能接口</h3><div class="step-line"><b>输入</b><p>problem_frame、constraints_context</p>
+</div><div class="step-line"><b>动作</b><p>把需要转成分层功能、性能、接口和生命周期要求，区分硬约束与偏好。</p>
+</div><div class="step-line"><b>判断</b><p>指定实施方式须有必要理由，派生要求留依据。</p>
+</div><div class="step-line"><b>产物</b><p>requirement_structure · 要求层级、来源和取舍问题</p>
+</div><div class="step-line"><b>检查</b><p>约束不被评分抵消；父子关系可追踪</p>
+</div><div class="step-line"><b>返回或停止</b><p>硬约束互斥升级责任方决策</p>
+</div><div class="step-line"><b>知识查询</b><p>查功能分解、接口和适用要求</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R48-S04"><span class="step-num">04</span><h3>编写可验证单条要求</h3><div class="step-line"><b>输入</b><p>requirement_structure、decision_authority</p>
+</div><div class="step-line"><b>动作</b><p>给条目编号、责任、条件、量值/判据、理由与计划验证方式，未知阈值不编造。</p>
+</div><div class="step-line"><b>判断</b><p>不可观察的形容词退回澄清；探索指标保留待定状态。</p>
+</div><div class="step-line"><b>产物</b><p>requirement_draft · 可审要求与验证方向</p>
+</div><div class="step-line"><b>检查</b><p>单一明确；条件和判据足够</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键判据缺失不认定可验收</p>
+</div><div class="step-line"><b>知识查询</b><p>查实际能力、量测和任务成功条件</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R48-S05"><span class="step-num">05</span><h3>审查正确可行与一致</h3><div class="step-line"><b>输入</b><p>requirement_draft、stakeholder_evidence</p>
+</div><div class="step-line"><b>动作</b><p>由技术与利益相关方审必要性、可行、冲突、过度规定和双向追溯。</p>
+</div><div class="step-line"><b>判断</b><p>措辞合格不等需求正确，冲突和未知不得隐藏。</p>
+</div><div class="step-line"><b>产物</b><p>requirements_review · 评审问题、修订及确认状态</p>
+</div><div class="step-line"><b>检查</b><p>用户与技术都覆盖；可验证性有依据</p>
+</div><div class="step-line"><b>返回或停止</b><p>未决核心要求不标批准</p>
+</div><div class="step-line"><b>知识查询</b><p>查性能预算和验证资源</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R48-S06"><span class="step-num">06</span><h3>建立基线与变更追溯</h3><div class="step-line"><b>输入</b><p>requirements_review、decision_authority</p>
+</div><div class="step-line"><b>动作</b><p>在责任方确认后固定版本，维护来源—要求—设计—验证关系与变更影响。</p>
+</div><div class="step-line"><b>判断</b><p>未获确认保留draft；变化需回查产品和测试，不覆盖历史。</p>
+</div><div class="step-line"><b>产物</b><p>problem_requirements_dossier · 问题、要求基线、追溯与变更档案</p>
+</div><div class="step-line"><b>检查</b><p>历史可还原；批准不由AI伪造</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键变更未评审不沿用旧结论</p>
+</div><div class="step-line"><b>知识查询</b><p>为后续方法提供目标、约束和证据需求</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>问题与要求档案</b> 要求质量与基线状态不代表产品已通过验证<small>evidence、problem_frame、scope、requirements、rationale、traceability、review、baseline、changes、open_questions</small></li></ul><p>输出不是越多越好的要求清单，而是经确认的问题边界、要求基线、追溯、未决与变更机制。要求质量确认（requirements validation）是审要求本身是否正确可行可验证，不是已证明产品符合。利益冲突、不可行目标或信息不足应外显，并由有权责任方决定取舍。引擎应先路由问题澄清、需求发现、功能分析或实验补证，而不是把所有输入直接翻成规格。基线不是不可变；变更需保留原因、影响、批准与受影响的设计/验证版本。 当前未做与旧卡的专家冲突审查；新档仅作为深化材料，不提升旧版本的验证状态。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示，未有客户访谈：团队提出“做智能搬运车”。S01列用户、路线、载荷和场地都未知，不直接推荐自动驾驶。S02拟问题为“目标人员在特定搬运任务中存在效率或负担缺口”，标待证。S03把载荷、安全、人机接口与通行环境分组，区分“使用某传感器”是解法假设而非需求。S04为已证实任务规划可测成功条件，具体数值由现场与责任人确认，不凭空设门槛。S05审必要性、可行性、冲突和验证方式。S06只有确认后建立基线，场地改变时回查接口和试验。本例未声称访谈完成、要求已批准或方案可行。 要求草稿行可为“ID:REQ-待定；父源:任务观察待取得；功能:搬运；性能/条件:待确认；验证方式:待定；理由:效率或负担缺口待证；owner:未指定；status:draft”。该行展示缺口，不冒充有效产品要求；补证审查后才可形成可验证基线。</p>
+<h2>反例与误用</h2><p>一是把客户说的部件直接当不可变要求，误锁解空间；先问作用及必要理由。二是“尽量快、便宜、可靠”互相冲突但没有优先规则；分硬要求与偏好。三是需求分解后丢失来源，新增指标无人负责；保留父子追溯。四是失败后悄改要求，让测试看似通过；走变更与复验。反例：纯粹探索未知物理现象时，强行写成完整量产产品要求可能虚构精度，应先形成研究问题与实验成功条件。</p>
+<h2>检查与验证</h2><p>先看问题有没有事实来源、用户情境与边界，再审每条要求的清楚性、唯一性、必要性、一致性、可行性、可验证性和追溯。利益相关方评审与技术审查各有作用，不能由措辞整齐代替。产品实际符合与用途适合需要后续V&amp;V证据；该卡只能验证要求质量和规划覆盖，不能生成产品验收结果。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R01.html">系统化工程设计</a><small>parallel</small><p>需求发现→stakeholder_evidence；事实不足先补研究</p></li><li><a href="R14.html">功能分解与接口分析</a><small>precedes</small><p>功能要求→功能分析；解法前澄清作用</p></li><li><a href="R42.html">验证与确认</a><small>precedes</small><p>要求/用途→V&amp;V目标；判据及追溯前置</p></li><li><a href="R44.html">原型与假设测试</a><small>parallel</small><p>待证问题→假设测试；探索与规格迭代</p></li></ul><h2>平台适配</h2><p>Design Council提供先理解问题及非线性迭代，NASA提供约束接口、要求陈述、理由、追溯、要求质量确认与基线。平台将其组合为六步，增加事实/假设、缺失行动、引擎路由及状态；搬运车情境为教学演示。未要求所有产品采用NASA的审批名称或特定工具。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · Framework for Innovation</h3><p>Design Council · <a target="_blank" rel="noopener noreferrer" href="https://www.designcouncil.org.uk/resources/framework-for-innovation/">原始来源 ↗</a></p><p><b>定位：</b>Discover / Define及非线性迭代说明</p><p><b>核读范围：</b>官方正文四阶段、以人为先、协作和迭代相关段落核读</p><p><b>支持内容：</b>理解而非假定问题；发现与定义可迭代</p><p><b>核读释义：</b>双钻是过程表达，本档问题结构和工程要求字段为平台整合，网页作品CC BY4.0</p><p><b>权利：</b>仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库</p></section><section class="source" id="source-S02"><h3>S02 · Systems Engineering Handbook 4.2 Technical Requirements Definition</h3><p>NASA · <a target="_blank" rel="noopener noreferrer" href="https://www.nasa.gov/reference/4-2-technical-requirements-definition/">原始来源 ↗</a></p><p><b>定位：</b>4.2.1输入、活动、验证要求、基线与输出</p><p><b>核读范围：</b>公开手册正文需求来源、约束接口、可接受陈述、追溯、可行可验证与基线段落核读</p><p><b>支持内容：</b>期望转技术要求；可验证、追溯与变更控制</p><p><b>核读释义：</b>NASA项目流程适配，不是所有产品必须采用其审批机制</p><p><b>权利：</b>仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库</p></section><h2>尚待补证</h2><p>暂无具体项目的访谈、任务观测、法规、工程边界与可行性证据，也没有责任人确认要求。量值、优先级、接受标准和变更权责都需项目补充。与旧IM-PD-001的内容和接口差异应在后续审稿/发布时比较，不在本阶段自动覆盖现有生产卡。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

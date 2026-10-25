@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>机械风险评估与风险降低 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R41 / IM-ML-041
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">F方案决策与验证评价</p><h1>机械风险评估与风险降低</h1><p class="english">Machinery Risk Assessment and Risk Reduction</p><p class="intro">围绕机械生命周期、人员任务和危险情境评估风险，优先通过设计降低风险，再安排防护与剩余风险信息，并验证措施。</p><div class="tags"><span>具体方法</span><span>机械安全工程</span><span>ISO 12100通用原则</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R41/方法结构.md">方法结构</a><a href="../档案/R41/操作指南.md">操作文档</a><a href="../档案/R41/档案.json">JSON档案</a><a href="../档案/R41/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>本法是机械安全设计的通用风险过程，不是单一分值公式。ISO 12100:2010公开范围说明其面向设计者的风险评估和降低原则；本档未获得标准全文，不能替代正式条款。HSE公开指南补充任务情境和控制优先次序。平台将其整理为可追踪的六步研究流程，不声称复现标准完整要求，也不出具机械安全认证。</p>
+</section><section><h2>解决什么问题</h2><p>创新机构可能带来夹挤、剪切、卷入、飞出、失稳、热和能量释放等危险，正常操作图往往看不到清堵、调整、运输、安装、维护及报废时的暴露。只看零件失效表也会遗漏合理可预见误用、人机交互或危险的组合。本法先问谁在什么阶段做什么、接触何种能量，再判断需要哪些风险降低和证据，而不是先给安全等级。</p>
+</section><section><h2>原理与框架</h2><p>风险评估以机械限制、危险识别、风险估计和评价形成迭代基础；风险降低有优先顺序：先考虑本质安全设计，再考虑防护和补充保护，最后提供必要的使用信息与剩余风险告知。警告不能随意代替可行的设计措施。危险是潜在伤害来源，危险情境是人员暴露条件，危险事件是导致伤害的事件，三者应分开描述。严重性与发生可能涉及暴露、事件和避免条件，缺资料时不能把未知写成低概率；采用定性或定量政策须说明依据。</p>
+</section><section><h2>什么时候用</h2><p>适合新机械、新工艺、机构变更、使用环境变更及阶段性设计复审。需要足够的结构、动力、控制、人员任务和现场边界资料，并由具备机械安全与行业知识的人参与。早期可识别危险与设计替代，但不能在无实物、无控制数据时认定剩余风险可接受。特定机械、地区及产品法规可能有更具体要求，必须另外识别适用版本。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>机械边界与版本<small>必需</small></td><td><p>结构、驱动能量、控制、接口与限制</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>人员与生命周期任务<small>必需</small></td><td><p>操作维护、清堵、安装、运输及合理可预见误用</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>适用要求与评价政策<small>可选</small></td><td><p>地区/机械规范、风险尺度及责任</p>
+</td><td>标记未知并说明影响</td></tr><tr><td>已有安全证据<small>可选</small></td><td><p>测量、事故经验、保护功能与试验，未知保留</p>
+</td><td>标记未知并说明影响</td></tr></tbody></table></div><section class="step" id="R41-S01"><span class="step-num">01</span><h3>确定机械限制与生命周期</h3><div class="step-line"><b>输入</b><p>machine_scope、lifecycle_tasks</p>
+</div><div class="step-line"><b>动作</b><p>固定机器版本、用途、人员、场所、能量与生命周期任务，列明确限制和误用情境。</p>
+</div><div class="step-line"><b>判断</b><p>缺关键任务先补，不以正常工况代替全过程。</p>
+</div><div class="step-line"><b>产物</b><p>safety_scope · 边界、人员、任务及限制</p>
+</div><div class="step-line"><b>检查</b><p>用途与误用分清；维护安装纳入</p>
+</div><div class="step-line"><b>返回或停止</b><p>无法确认机器和人员边界则停止风险放行</p>
+</div><div class="step-line"><b>知识查询</b><p>查使用维护场景与能量接口</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R41-S02"><span class="step-num">02</span><h3>识别危险情境和事件</h3><div class="step-line"><b>输入</b><p>safety_scope、safety_evidence</p>
+</div><div class="step-line"><b>动作</b><p>按任务寻找能量/材料/运动危险，描述人员暴露、危险事件及可能伤害。</p>
+</div><div class="step-line"><b>判断</b><p>危险、情境、伤害混写则重构。</p>
+</div><div class="step-line"><b>产物</b><p>hazard_register · 危险—情境—事件—伤害链</p>
+</div><div class="step-line"><b>检查</b><p>包含异常和清堵；未知显式标注</p>
+</div><div class="step-line"><b>返回或停止</b><p>重大危险资料不足不得标可接受</p>
+</div><div class="step-line"><b>知识查询</b><p>查可达性、残余能量与伤害路径</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R41-S03"><span class="step-num">03</span><h3>估计并评价风险</h3><div class="step-line"><b>输入</b><p>hazard_register、risk_policy</p>
+</div><div class="step-line"><b>动作</b><p>依明确政策审严重性及可能性依据，判断是否需要降低，未知不强行评分。</p>
+</div><div class="step-line"><b>判断</b><p>无适用政策仅形成待评清单，不生成认证分值。</p>
+</div><div class="step-line"><b>产物</b><p>risk_decisions · 评价理由、补证项和需降低风险</p>
+</div><div class="step-line"><b>检查</b><p>评价依据一致；无事故不等于低风险</p>
+</div><div class="step-line"><b>返回或停止</b><p>硬要求或重大风险未解决不放行</p>
+</div><div class="step-line"><b>知识查询</b><p>查机械专用要求和任务暴露数据</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R41-S04"><span class="step-num">04</span><h3>按优先顺序设计降低措施</h3><div class="step-line"><b>输入</b><p>risk_decisions、machine_scope</p>
+</div><div class="step-line"><b>动作</b><p>先找本质安全设计替代，再考虑防护/补充保护与必要信息，检查新危险和维护可用性。</p>
+</div><div class="step-line"><b>判断</b><p>警告不得无依据替代可行设计；措施引入新风险需回溯。</p>
+</div><div class="step-line"><b>产物</b><p>reduction_plan · 措施、优先理由、责任与残余危险</p>
+</div><div class="step-line"><b>检查</b><p>措施对应危险链；权衡不抵消硬要求</p>
+</div><div class="step-line"><b>返回或停止</b><p>无法满足必要安全要求则退回概念</p>
+</div><div class="step-line"><b>知识查询</b><p>查结构替代、防护和控制功能</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R41-S05"><span class="step-num">05</span><h3>规划并取得措施验证</h3><div class="step-line"><b>输入</b><p>reduction_plan、safety_evidence</p>
+</div><div class="step-line"><b>动作</b><p>定义保护功能、适用条件和试验/检查证据，区分计划与实际结果。</p>
+</div><div class="step-line"><b>判断</b><p>证据不覆盖实际情境则补验证，不降风险状态。</p>
+</div><div class="step-line"><b>产物</b><p>safety_verification · 逐项措施证据与未验证项</p>
+</div><div class="step-line"><b>检查</b><p>版本环境可追踪；新危险复查</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键措施未验证不得闭环</p>
+</div><div class="step-line"><b>知识查询</b><p>转V&amp;V查覆盖与试验条件</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R41-S06"><span class="step-num">06</span><h3>记录剩余风险与复评条件</h3><div class="step-line"><b>输入</b><p>safety_verification、hazard_register</p>
+</div><div class="step-line"><b>动作</b><p>更新危险、措施、信息、残余风险及责任判定，指定变更触发复评。</p>
+</div><div class="step-line"><b>判断</b><p>只给研究建议；实际放行由具责任和能力的人按要求决定。</p>
+</div><div class="step-line"><b>产物</b><p>machinery_safety_dossier · 机械风险与降低完整记录</p>
+</div><div class="step-line"><b>检查</b><p>未闭环可见；不输出合规证书</p>
+</div><div class="step-line"><b>返回或停止</b><p>残余风险未审定保留开放</p>
+</div><div class="step-line"><b>知识查询</b><p>查变更、维护与交付信息需求</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>机械风险与降低档案</b> 是风险管理研究记录，不是产品安全认证<small>limits、tasks、hazards、risk_basis、measures、verification、residual_risks、open_items</small></li></ul><p>产物是危险情境登记、风险判断依据、措施比较、残余风险和验证清单。能量隔离、防护功能、停机响应等应有明确功能与验证条件。措施引入新的夹点、维护困难或旁路动机时要回到危险识别。安全放行依赖责任主体及适用要求，不能被模型平均分、成本节约或创新价值抵消；记录尚未消除的不确定性比制造一个漂亮低风险分更有用。 引擎接到“创新方案风险如何”时，应先查任务与能量，再调安全知识；若输入只有功能优势，输出信息需求而非等级。每个降低措施需绑定原危险编号、配置和验证项，防止后续方案改变后仍调用旧结论。研究排序只帮助安排工作，不能承担实际安全决定。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示，未进行实际安全评估：桌面送料装置需由操作员清理堵料。S01界定运行、换料和清堵，并记录驱动仍可能储能。S02把“手进入夹辊附近”写成情境，把卷入写为伤害路径。S03记录速度、间隙、可达性、清堵频率和停止条件缺失，暂不估低风险。S04比较改变送料结构避免可达夹点、设置防护与控制措施及必要信息，按优先顺序说明取舍。S05列可达性、停机及储能释放的验证计划。S06在未取得测试和现场证据前保留未闭环，不说装置已安全。本例不提供危险尺寸或控制安全等级。 危险登记最小行：任务=清堵；暴露=手靠近夹辊；能量=驱动/储能待核；事件=意外运动；伤害=卷入路径；依据=情境假设；措施层=先研究避免可达夹点；验证=可达/停止/隔离证据；状态=open。每条行与实际机器版本绑定。</p>
+<h2>反例与误用</h2><p>一是将“使用者小心”当主要措施，绕开可行设计改进；先审设计层。二是只评正常运行，遗漏清堵和维护；按生命周期任务逐项查。三是因事故历史为空就判低风险；无记录不等于无危险。四是改完结构不复评新夹点与旁路风险；重新识别。反例：若只有概念名称和营销图，本法只能产出信息需求与初步危险问题，不能给实际机械剩余风险或投放许可。</p>
+<h2>检查与验证</h2><p>先审查危险是否对应人员、任务、能量和阶段，措施是否有控制优先依据与责任，未知是否外显。工程验证需按适用机械和安全要求执行检查、计算、试验及使用情境复核；控制系统、防护装置等可能需要专门方法。资料审阅和表格一致性检查只证档案质量，不证安全功能性能。对不满足硬性要求的方案应停止推进，不能由AI签署安全结论。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R40.html">失效模式与影响分析</a><small>parallel</small><p>失效影响→危险情境；FMEA不能覆盖全部机械危险</p></li><li><a href="R42.html">验证与确认</a><small>precedes</small><p>safety_verification→验证计划；措施效果须取得证据</p></li><li><a href="R48.html">问题定义与要求管理</a><small>requires</small><p>硬性安全要求→risk_policy；边界与要求先明确</p></li></ul><h2>平台适配</h2><p>来源提供通用安全边界和公开指南的设计—防护—信息顺序。六步、证据字段、输入停止条件及教学装置为平台适配。HSE的英国农业机械法律背景未迁移为本平台所在地区的适用法律；ISO网页元数据不是标准条文库。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · ISO 12100:2010 Safety of machinery — General principles for design — Risk assessment and risk reduction</h3><p>International Organization for Standardization · <a target="_blank" rel="noopener noreferrer" href="https://www.iso.org/standard/51528.html">原始来源 ↗</a></p><p><b>定位：</b>公开摘要及出版状态</p><p><b>核读范围：</b>只核读官方公开范围与状态，未取得标准全文</p><p><b>支持内容：</b>生命周期风险评估与降低的标准边界</p><p><b>核读释义：</b>仅用范围说明，不从摘要复建标准条文或宣布合规</p><p><b>权利：</b>仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库</p></section><section class="source" id="source-S02"><h3>S02 · How to comply with EHSRs</h3><p>Health and Safety Executive · <a target="_blank" rel="noopener noreferrer" href="https://www.hse.gov.uk/agriculture/topics/machinery/comply.htm">原始来源 ↗</a></p><p><b>定位：</b>主要内容风险评估与控制层次</p><p><b>核读范围：</b>公开指南正文有关生命周期、可预见误用、设计/防护/信息的段落核读</p><p><b>支持内容：</b>风险识别需要情境；风险降低优先顺序</p><p><b>核读释义：</b>英国农业机械语境，仅迁移一般安全原则，不把当地法律/标记要求扩为全球结论</p><p><b>权利：</b>仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库</p></section><h2>尚待补证</h2><p>未核读ISO全文、产品专用标准及地区法规，未确定该机械的危险阈值、控制架构、测试设备与受权评审人员。当前档案不支持直接确定防护尺寸、安全完整性/性能等级或签发符合性声明；具体项目应补充适用要求、现场数据与专业审查。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

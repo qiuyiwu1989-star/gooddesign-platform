@@ -1,0 +1,51 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>稳健参数与公差设计 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R39 / IM-ML-039
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">E性能优化与工程实现</p><h1>稳健参数与公差设计</h1><p class="english">Robust Parameter and Tolerance Design</p><p class="intro">先寻找对噪声变化不敏感的设计参数，再针对真正主导输出变异的因素权衡是否收紧公差，而不是把所有零件做得更精密。</p><div class="tags"><span>方法族</span><span>质量工程</span><span>田口参数设计</span><span>误差传播</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R39/方法结构.md">方法结构</a><a href="../档案/R39/操作指南.md">操作文档</a><a href="../档案/R39/档案.json">JSON档案</a><a href="../档案/R39/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>本档以NIST对Taguchi参数与公差设计的公开说明为核心入口，另用测量不确定度预算解释灵敏度和变异贡献。稳健设计是广义方法族，田口内外阵列只是实现之一；测量误差传播也不能等同完整几何公差分析。本卡将二者按“先结构/参数减敏，再有选择地控变异”组织，算法和验证模型需针对任务确定。</p>
+</section><section><h2>解决什么问题</h2><p>产品在实验室平均性能达标，但温度、电压、材料批次、磨损或操作者变化后变得不稳定。常见反应是收紧所有公差、加昂贵检测或不断调中心值，却不清楚谁最影响输出。稳健设计关注功能对噪声的敏感性，公差设计再看控制某输入波动的成本与收益，帮助避免把钱花在不关键的精度上。它不保证所有噪声都可消除，也不把平均值合格等同尾部风险可接受。</p>
+</section><section><h2>原理与框架</h2><p>先区分控制因子、噪声因子和响应。控制因子可在设计时选择，噪声因子服役中难以控制，但试验中可能可模拟。内外阵列把不同设计设置放到多种噪声条件下比较均值与变异；高均值和低变异未必在同一设置，应结合目标取舍。公差设计需了解输入变动如何经模型传到功能输出，以及收紧哪些因素最有价值。工程公差是允许界限，标准差、测量不确定度和规格限不是同一个量，不能直接互换。同一变量在实验室可被操纵，并不意味着服役中可受控；变量角色应随设计阶段明确，不以试验方便程度决定。</p>
+</section><section><h2>什么时候用</h2><p>适合存在可识别噪声、功能响应可测且设计有可调参数的产品或过程。需要说明噪声覆盖的现实范围、输入分布或边界及相互关系。若失效来自错误原理、结构断裂或未知根因，先修正基本方案。几何装配公差还需接触、基准与尺寸链模型；不适合用一个通用均方根公式处理所有情况。安全关键尾部事件应另按可靠性和危险分析要求评估。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>功能目标与失效边界<small>必需</small></td><td><p>响应、目标/规格、容许变化、寿命与工况</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>控制因素与备选设置<small>必需</small></td><td><p>可选参数、单位、范围及成本</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>噪声因素及证据<small>必需</small></td><td><p>服役变化、批次、磨损、环境、范围/分布与相关性</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>模型与试验数据<small>可选</small></td><td><p>输入输出关系、测量误差、实际数据或试验计划</p>
+</td><td>标记未知并说明影响</td></tr></tbody></table></div><section class="step" id="R39-S01"><span class="step-num">01</span><h3>定义响应和变异目标</h3><div class="step-line"><b>输入</b><p>robustness_goal</p>
+</div><div class="step-line"><b>动作</b><p>区分命中目标、降低波动与避免失效；记录规格限、工程公差和测量不确定度的不同含义。</p>
+</div><div class="step-line"><b>判断</b><p>功能本身未满足先回结构；响应不明不做稳健排名。</p>
+</div><div class="step-line"><b>产物</b><p>robustness_definition · 响应目标、变异与硬约束</p>
+</div><div class="step-line"><b>检查</b><p>均值和尾部风险分开；量纲明确</p>
+</div><div class="step-line"><b>返回或停止</b><p>核心功能未知则停止</p>
+</div><div class="step-line"><b>知识查询</b><p>查真实服役不稳定表现与接受门槛</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R39-S02"><span class="step-num">02</span><h3>建立控制与噪声地图</h3><div class="step-line"><b>输入</b><p>robustness_definition、control_factors、noise_factors</p>
+</div><div class="step-line"><b>动作</b><p>区分设计可调与服役不可控变化，记录范围、关系和模拟能力，避免把所有输入同等对待。</p>
+</div><div class="step-line"><b>判断</b><p>噪声无依据则先采集；边界超出设备能力需改研究。</p>
+</div><div class="step-line"><b>产物</b><p>factor_model · 控制、噪声、相互作用与覆盖缺口</p>
+</div><div class="step-line"><b>检查</b><p>环境不是任意取值；相关性可见</p>
+</div><div class="step-line"><b>返回或停止</b><p>危险边界不明不建议试验</p>
+</div><div class="step-line"><b>知识查询</b><p>查材料批次、温度、磨损和用户差异</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R39-S03"><span class="step-num">03</span><h3>比较参数对均值与变异的影响</h3><div class="step-line"><b>输入</b><p>factor_model、model_or_data</p>
+</div><div class="step-line"><b>动作</b><p>用适合DOE或模型计算比较设计设置在噪声变化下的响应，记录均值、变异和假设。</p>
+</div><div class="step-line"><b>判断</b><p>无实际数据/计算只出计划；平均与变异冲突则显式权衡。</p>
+</div><div class="step-line"><b>产物</b><p>parameter_review · 参数候选、响应及敏感性或待执行记录</p>
+</div><div class="step-line"><b>检查</b><p>不只看单一信噪比；计算与实测分开</p>
+</div><div class="step-line"><b>返回或停止</b><p>模型失配或数据不独立则回研究</p>
+</div><div class="step-line"><b>知识查询</b><p>查输入波动如何传到输出及测量贡献</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R39-S04"><span class="step-num">04</span><h3>评估关键公差和代价</h3><div class="step-line"><b>输入</b><p>parameter_review、control_factors、model_or_data</p>
+</div><div class="step-line"><b>动作</b><p>先看参数/结构能否减敏，再识别关键输入的变异贡献及收紧成本；几何问题另核基准和尺寸链。</p>
+</div><div class="step-line"><b>判断</b><p>无贡献依据不全面收紧；传播假设不成立改用合适模型或试验。</p>
+</div><div class="step-line"><b>产物</b><p>tolerance_tradeoff · 关键公差候选、贡献、成本和假设</p>
+</div><div class="step-line"><b>检查</b><p>公差限不等于标准差；相关与非线性不遗漏</p>
+</div><div class="step-line"><b>返回或停止</b><p>无有效传播模型不报覆盖概率</p>
+</div><div class="step-line"><b>知识查询</b><p>查制造能力、公差成本与装配约束</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><section class="step" id="R39-S05"><span class="step-num">05</span><h3>确认稳健性及适用范围</h3><div class="step-line"><b>输入</b><p>tolerance_tradeoff、robustness_definition、noise_factors</p>
+</div><div class="step-line"><b>动作</b><p>在代表与边界噪声工况确认功能和变异，保存未覆盖环境及维护条件。</p>
+</div><div class="step-line"><b>判断</b><p>无确认结果只给候选，不称在全范围稳健。</p>
+</div><div class="step-line"><b>产物</b><p>robust_design_dossier · 参数公差建议、证据与确认计划/结果</p>
+</div><div class="step-line"><b>检查</b><p>环境覆盖明确；计划与结果分开</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键失效仍未知不定型</p>
+</div><div class="step-line"><b>知识查询</b><p>将边界工况交V&amp;V和可靠性验证</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><h2>产物</h2><ul><li><b>稳健参数与公差研究档案</b> 仅支持已覆盖噪声与模型条件，不保证现场良率或寿命<small>response、controls、noise、model、variation_evidence、tolerance_tradeoff、confirmation、limits</small></li></ul><p>产物包括控制/噪声地图、参数候选、均值与变异的证据、敏感性贡献、拟收紧公差及其成本假设。应说明选择是为了命中目标、降低变异还是兼顾二者。统计传播需要独立性、相关性或线性近似等假设，最坏情形分析和概率覆盖不可混称。若没有试验或模型，就只列减敏与公差研究计划，不能报告良率、寿命或噪声范围内达标率。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示，未试验：一套弹性夹持机构希望在工件尺寸变化时仍有合适的夹持作用。第一步把弹性元件和预紧设置列控制变量，把工件尺寸、温度与磨损列噪声候选。第二步明确响应是夹持力或接触状态，而不是仅调节旋钮位置。第三步计划在可信噪声边界上比较不同参数设置，并记录平均作用与变化幅度。第四步若模型显示某个尺寸对输出敏感，先研究改变机构传递关系能否减敏；仍不足时才比较收紧该尺寸公差的制造代价。第五步在代表性和边界工况确认。这里不填载荷、分布或改善数字，未证明任何方案已稳健。 最小教学传播例：若功能尺寸y=x1−x2，先给名义值与两输入允许界限±t1、±t2；最坏情况界限为±(t1+t2)。统计分析需另有真实标准差和相关信息，Var(y)=s1²+s2²−2Cov(x1,x2)，不能把公差t当标准差s。这个差值模型只是解释两种输出为何不同，不提供概率合格率；接触非线性或变量相关未知时不能机械套平方和。tolerance_tradeoff应分别保存允许界限、生产变化、测量不确定度及收紧代价。</p>
+<h2>反例与误用</h2><p>一是把正交表当万能稳健设计，未区分控制与噪声；先确定问题结构。二是以信噪比一个值代替全部性能和安全要求；保留原始响应与分布。三是把所有尺寸都收紧，忽略制造和维修成本；先做灵敏度与参数设计。四是把测量不确定度等同真实零件变异，或将相关误差当独立相加；分别建模。反例：产品根本无法达到必需功能，先做原理与结构改进，再谈减敏。</p>
+<h2>检查与验证</h2><p>执行质量检查噪声是否来自真实服役证据、设计是否能辨识控制与噪声交互、测量变异是否分离、模型假设是否成立。工程验证需要在实际或代表性环境中检查功能、变异与边界，并追踪制造能力和老化。可用DOE、灵敏度分析、适当仿真和实物测试。无数据不能输出标准差或置信覆盖；无分布依据不能由仿真随机数冒称现场良率。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R38.html">试验设计与响应面</a><small>parallel</small><p>因素空间↔稳健试验设计；需要实际统计设计</p></li><li><a href="R34.html">面向制造与装配设计</a><small>parallel</small><p>公差候选→工艺能力与成本；制造代价影响可行性</p></li><li><a href="R42.html">验证与确认</a><small>precedes</small><p>边界噪声→验证计划；最终性能需确认</p></li></ul><h2>平台适配</h2><p>来源支持内外阵列、均值与变异权衡、参数设计优先及公差选择的经济性；不确定度页面只支持分量和灵敏度的通用关系。本文将其封装为输入、噪声模型、试验/计算、选择和确认五步，加入工况证据与停止规则，均属平台适配。教学夹持案例不是NIST原例，不代表真实工程效果。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · e-Handbook §5.5.6 What are Taguchi designs?</h3><p>NIST/SEMATECH · <a target="_blank" rel="noopener noreferrer" href="https://www.itl.nist.gov/div898/handbook/pri/section5/pri56.htm">原始来源 ↗</a></p><p><b>定位：</b>Parameter Design / Tolerance Design</p><p><b>核读范围：</b>网页参数设计、内外阵列及公差设计相关段落核读；未复制全部示例表</p><p><b>支持内容：</b>控制因子与噪声因子；均值与变异权衡；先参数后有选择地收紧公差</p><p><b>核读释义：</b>稳健设计研究对不可控变化的敏感性；收紧所有公差代价高且未必有效，应定位关键贡献。</p><p><b>权利：</b>仅链接、题录和原创释义；第三方全文、表格和算法实现权利另行核对</p></section><section class="source" id="source-S02"><h3>S02 · e-Handbook §2.5.6 Uncertainty budgets and sensitivity coefficients</h3><p>NIST/SEMATECH · <a target="_blank" rel="noopener noreferrer" href="https://www.itl.nist.gov/div898/handbook/mpc/section5/mpc56.htm">原始来源 ↗</a></p><p><b>定位：</b>灵敏度系数与不确定度分量</p><p><b>核读范围：</b>短网页全文文字核读；未遍历全部误差传播子页</p><p><b>支持内容：</b>分量与响应灵敏度关系；不确定度预算</p><p><b>核读释义：</b>灵敏度系数说明输入不确定度怎样影响报告量；该测量框架可作思路，不能直接替代几何公差标准与装配模型。</p><p><b>权利：</b>仅链接、题录和原创释义；第三方全文、表格和算法实现权利另行核对</p></section><section class="source" id="source-S03"><h3>S03 · e-Handbook 2.5.5 Propagation of error considerations</h3><p>National Institute of Standards and Technology · <a target="_blank" rel="noopener noreferrer" href="https://www.itl.nist.gov/div898/handbook/mpc/section5/mpc55.htm">原始来源 ↗</a></p><p><b>定位：</b>传播、协方差与灵敏度</p><p><b>核读范围：</b>公开短页全文核读，重点协方差、误差传播近似与敏感度</p><p><b>支持内容：</b>统计变动传播依赖模型与协方差</p><p><b>核读释义：</b>测量不确定度语境仅支持传播关系，不是完整工程公差/GD&amp;T标准；差值例为平台基础代数演示</p><p><b>权利：</b>链接、题录和原创解释，第三方权利保留</p></section><h2>尚待补证</h2><p>未实现田口信噪比计算、尺寸链软件、概率传播或蒙特卡洛求解；未取得具体GD&amp;T标准和生产分布数据。不同目标函数、非线性、相关误差和接触状态需专项选择模型。正式应用必须补真实噪声范围、制造能力、测量系统及接受门槛，当前不能给任何通用公差数值。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

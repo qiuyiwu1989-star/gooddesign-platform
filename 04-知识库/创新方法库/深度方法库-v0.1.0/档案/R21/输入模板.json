@@ -1,0 +1,31 @@
+{
+  "method_id": "IM-ML-021",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "system": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "边界、对象、主功能、工况",
+      "evidence_refs": [],
+      "missing_action": "先做功能澄清"
+    },
+    "problem": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "现象证据、指标、基准、尝试措施",
+      "evidence_refs": [],
+      "missing_action": "请求证据或标待确认"
+    },
+    "constraints": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "安全、接口、成本与资源约束",
+      "evidence_refs": [],
+      "missing_action": "由项目负责人确认"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-ML-047",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "sbce_targets": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "系统性能、安全、成本、时间和承诺边界",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "domain_options": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "概念、参数范围、已知可行条件和未知",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "interface_conditions": {
+      "value": null,
+      "type": "array",
+      "required": false,
+      "description": "机械控制制造供应等耦合条件",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "learning_capacity": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "分析试验、负责人、预算、工装采购承诺",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

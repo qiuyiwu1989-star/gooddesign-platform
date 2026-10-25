@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-ML-046",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "patent_question": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "技术功能、决策问题、范围与受众",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "search_scope": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "截止、局别、数据库与可用字段",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "seed_terms": {
+      "value": null,
+      "type": "array",
+      "required": false,
+      "description": "已知文献、原理同义词、分类与主体",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "patent_data": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "查询、导出、全文、族和元数据及权限",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-ML-034",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "product_definition": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "功能、BOM、早期结构或CAD及不能丢失的要求",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "production_context": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "批量、设备、人工/自动装配、维修清洁和工艺边界",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "baseline_operations": {
+      "value": null,
+      "type": "array",
+      "required": false,
+      "description": "装配顺序、定位、翻转、紧固、调节及质检",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "cost_data": {
+      "value": null,
+      "type": "array",
+      "required": false,
+      "description": "数据时间、地域、单位及估算/实测属性",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

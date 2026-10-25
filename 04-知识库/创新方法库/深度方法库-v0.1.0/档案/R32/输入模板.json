@@ -1,0 +1,31 @@
+{
+  "method_id": "IM-ML-032",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "motion": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "点轨迹、刚体位姿或输入输出关系及精度顺序",
+      "evidence_refs": [],
+      "missing_action": "先形式化"
+    },
+    "boundary": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "机架、包络、运动副、驱动和接口",
+      "evidence_refs": [],
+      "missing_action": "补坐标和约束"
+    },
+    "loads": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "质量、速度、力、寿命和制造条件",
+      "evidence_refs": [],
+      "missing_action": "概念阶段标范围待确认"
+    }
+  }
+}

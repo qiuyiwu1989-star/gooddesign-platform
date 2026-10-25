@@ -1,0 +1,23 @@
+{
+  "method_id": "IM-ML-001",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "task_brief": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "对象、预期作用、用户、边界和硬约束",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "design_resources": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "现有知识、制造条件、时间及待补输入",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "method_id": "IM-ML-025",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "interaction": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "载体、对象、作用和工况",
+      "evidence_refs": [],
+      "missing_action": "先做功能分析"
+    },
+    "defect": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "缺失、不足、有害或测量困难及证据",
+      "evidence_refs": [],
+      "missing_action": "补问题定位"
+    },
+    "resources": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "可改物质场、禁止变化和安全边界",
+      "evidence_refs": [],
+      "missing_action": "确认边界"
+    }
+  }
+}

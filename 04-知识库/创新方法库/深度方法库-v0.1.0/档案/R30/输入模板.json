@@ -1,0 +1,31 @@
+{
+  "method_id": "IM-ML-030",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "needs": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "益处、场景、边界及来源",
+      "evidence_refs": [],
+      "missing_action": "先需求定义"
+    },
+    "fr": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "FR、范围与父子关系",
+      "evidence_refs": [],
+      "missing_action": "先分离功能与实现"
+    },
+    "dp": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "实现元素、范围和影响证据",
+      "evidence_refs": [],
+      "missing_action": "生成候选实现"
+    }
+  }
+}

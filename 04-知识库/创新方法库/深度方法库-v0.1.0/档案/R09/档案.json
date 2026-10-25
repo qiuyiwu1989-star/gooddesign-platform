@@ -1,0 +1,258 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R09",
+  "method_id": "IM-ML-009",
+  "version": "0.1.0",
+  "name": "待办任务理论",
+  "english_name": "Jobs to Be Done",
+  "kind": "framework",
+  "category": "A问题发现与需求定义",
+  "lineage": [
+    "Jobs to Be Done",
+    "Christensen Institute"
+  ],
+  "aliases": [
+    "JTBD",
+    "待完成任务"
+  ],
+  "summary": "从真实选择事件的情境与期望进步理解用户为何采用或放弃某个方案，避免只按人群属性和功能清单定义需求。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "本卡采用Christensen Institute所述Jobs to Be Done理论：人们在特定情境下寻求进步，并把产品或服务引入生活来完成这件事。JTBD有不同实践流派；本卡不把Christensen/Moesta视角与所有ODI量化流程、专有访谈模板或机会算法混为同一方法。它是需求解释框架，平台将其转为事件证据、任务假设和替代方案比较。",
+    "problem": "知道用户年龄、职业或偏好，并不一定解释为什么此刻换产品。一个功能听起来更先进，可能没有解除阻碍选择的焦虑；产品的实际竞争者也可能是手工、借用、延期或不行动。JTBD要把注意力从“谁喜欢哪些功能”移到“何时想改变什么、为什么现有方式不够、选择受到什么约束”，使产品边界能围绕真实任务重新定义。",
+    "principle": "分析单位是发生在情境中的进步，而不是抽象人口标签或单项功能。任务可以同时包含功能结果、社会关系和情绪意义；这些维度的作用随场景变化，不宜强行每项凑满。研究应重建实际选择过程与替代，而非只问未来会不会买。相似人口可能有不同任务，不同人口也可能在相似情境中寻求同一种进步。任务陈述是解释假设，需要用跨事件对照和后续行为检验。",
+    "applicability": "适合产品定位、替代方案研究、购买/采用障碍和体验边界探索；对机械创新，可用于明确使用任务和价值，但不能推导结构受力或安全指标。需要访问最近的实际选择、切换或放弃事件，保留当时情境和材料。只有一般态度问卷时可形成假设，不能宣称已找到唯一驱动原因。高风险场景的行为解释需更谨慎，不用心理推测替代专业判断。",
+    "interpretation": "好的任务表述能解释一个可识别的情境、用户希望的变化、已有替代和选择标准；能指出不属于该任务的反例。它不应只是“完成工作更快”这种无边界愿望，也不应把解法藏在“我要一个带AI的设备”中。任务与产品指标之间仍要经过功能和工程分析。即使访谈叙事一致，也不能自动证明市场规模、支付意愿或因果唯一性。",
+    "example": "教学演示：维修人员选择便携测量工具。假设访谈事件是夜间紧急排查、现场照明受限且需向同事解释结果；这些不是实际采集。事件图把手工记录、手机拍照、借用仪器和推迟检测都作为替代。暂定任务不写“买更高精度仪器”，而是“在紧急现场快速建立足以判断下一步并能交接的证据”。由此提出可读性、记录与交接等候选需要，再确认精度是否真正限制任务。若用户是实验室长期标定，则可能是另一个任务，应分组，不强行合并。",
+    "pitfalls": "一是把任务写成产品功能，例如“使用某APP导出报表”；应回到期望变化。二是靠团队臆想用户内心，为所有购买都补一个情感原因；应寻找事件证据。三是只研究已经购买者，忽略放弃或无行动；应比较阻碍与替代。反例：没有任何选择材料，模型凭用户画像生成一个听起来合理的Job，最多是研究假设而非洞察结论。",
+    "validation": "执行质量看事件是否具体、解释是否可反查、竞争性解释和反例是否保留、不同任务有无被混成一类。后续可通过概念测试、真实选择或使用观察核验产品是否帮助该进步，但不把一次语言认同当行为证实。工程性能与经济性另需测量和研究。缺输入时输出访谈问题和任务候选，不输出确定市场机会排序。",
+    "adaptation": "原典机构页面支持情境、进步及功能/社会/情感维度；平台自行组织选择事件表、任务边界、替代矩阵和交接字段。不声称按本卡就完成某个专有JTBD咨询流程，也未复制原案例的收益数字来证明本平台效果。",
+    "gaps": "已读机构理论介绍及公开案例解释，未取得系统性访谈编码教材或方法间效果比较。需用目标产品真实选择/放弃材料进一步检验任务分组，确认任务到指标的转译。所列教学例子不能作为已经确认的工业用户任务。"
+  },
+  "inputs": [
+    {
+      "key": "choice_events",
+      "label": "真实选择事件或研究材料",
+      "type": "array",
+      "required": true,
+      "description": "时间、触发、情境、采用/放弃及来源",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "product_context",
+      "label": "研究范围",
+      "type": "object",
+      "required": true,
+      "description": "目标领域、角色、现有产品和决策",
+      "missing_action": "ask_or_stop"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R09-S01",
+      "title": "重建具体选择情境",
+      "input_refs": [
+        "choice_events",
+        "product_context"
+      ],
+      "depends_on": [],
+      "operation": "按事件记录触发、限制、先前方式和变化，不只抄人口标签。",
+      "decision": "只有泛化意见时先补事件。",
+      "output_key": "circumstance_map",
+      "output_description": "选择前后事件与情境",
+      "checks": [
+        "不把动机推测当原话"
+      ],
+      "stop_condition": "没有事件则仅计划",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "采用、放弃与无行动材料"
+      ]
+    },
+    {
+      "step_id": "R09-S02",
+      "title": "分析希望获得的进步",
+      "input_refs": [
+        "circumstance_map"
+      ],
+      "depends_on": [
+        "R09-S01"
+      ],
+      "operation": "区分功能结果及有证据的社会/情绪需要，记录冲突。",
+      "decision": "没有证据的维度不强填。",
+      "output_key": "progress_hypotheses",
+      "output_description": "进步、依据与竞争解释",
+      "checks": [
+        "不把技术方案藏入需要"
+      ],
+      "stop_condition": "需心理推断时保持假设",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "事件中成功与失望的具体表达"
+      ]
+    },
+    {
+      "step_id": "R09-S03",
+      "title": "识别实际替代与阻碍",
+      "input_refs": [
+        "progress_hypotheses",
+        "circumstance_map"
+      ],
+      "depends_on": [
+        "R09-S02"
+      ],
+      "operation": "比较产品之外的手工、借用、延期等路径及采用障碍。",
+      "decision": "替代不同先检查是否属于同任务。",
+      "output_key": "alternative_map",
+      "output_description": "替代、选择准则、限制与焦虑证据",
+      "checks": [
+        "不只查同品类竞品"
+      ],
+      "stop_condition": "缺实际选择依据则不判驱动力大小",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "任务等价的替代方案与退出原因"
+      ]
+    },
+    {
+      "step_id": "R09-S04",
+      "title": "形成任务陈述并检查分群",
+      "input_refs": [
+        "alternative_map",
+        "progress_hypotheses"
+      ],
+      "depends_on": [
+        "R09-S03"
+      ],
+      "operation": "写情境—期望变化，跨事件比较支持与反例。",
+      "decision": "无法解释反例时拆分或修正任务。",
+      "output_key": "job_statements",
+      "output_description": "任务、边界、事件支持与反例",
+      "checks": [
+        "不以年龄直接替代任务分组"
+      ],
+      "stop_condition": "样本覆盖不足不泛化市场",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "不同场景与人群的行为差异"
+      ]
+    },
+    {
+      "step_id": "R09-S05",
+      "title": "转译产品研究与验证问题",
+      "input_refs": [
+        "job_statements"
+      ],
+      "depends_on": [
+        "R09-S04"
+      ],
+      "operation": "提出需求候选与概念检验，不直接确定结构或市场规模。",
+      "decision": "需求进入工程指标前需专门展开。",
+      "output_key": "jtbd_research_package",
+      "output_description": "任务假设、需求与后续验证",
+      "checks": [
+        "语言认同不等于行为验证"
+      ],
+      "stop_condition": "无真实数据不报购买比例",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "功能、指标与概念测试材料"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "jtbd_research_package",
+      "label": "JTBD任务研究包",
+      "required_fields": [
+        "circumstances",
+        "progress",
+        "alternatives",
+        "jobs",
+        "counterevidence",
+        "next_questions"
+      ],
+      "interpretation": "解释任务假设，不证明需求规模或因果唯一性"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "事件证据→选择情境",
+      "condition": "需真实研究"
+    },
+    {
+      "target_research_id": "R48",
+      "relation": "precedes",
+      "binding": "任务与需要→设计简报",
+      "condition": "定义产品任务"
+    },
+    {
+      "target_research_id": "R12",
+      "relation": "precedes",
+      "binding": "需求候选→工程响应",
+      "condition": "进入技术定义"
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Christensen Institute",
+      "authors": [
+        "Christensen Institute"
+      ],
+      "title": "Jobs to Be Done Theory",
+      "url": "https://www.christenseninstitute.org/theory/jobs-to-be-done/",
+      "locator": "理论定义、Unique Insight与Condominium案例解释",
+      "read_scope": "相关理论与案例网页段落实读",
+      "supports": [
+        "情境下的进步及产品被采用的解释"
+      ],
+      "evidence_note": "页面把任务置于特定情境与期望进步中，提醒功能之外的选择条件。",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "只有年龄画像",
+      "expected": "输出待采集选择事件，不宣布Job成立"
+    },
+    {
+      "scenario": "任务指定某软件",
+      "expected": "改写为期望结果"
+    },
+    {
+      "scenario": "不同事件冲突",
+      "expected": "保留反例并重新分组"
+    }
+  ],
+  "search_terms": [
+    "JTBD",
+    "Jobs to Be Done",
+    "任务进步",
+    "选择事件",
+    "替代方案"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项第一方检索核读、原创释义和平台操作适配"
+    }
+  ]
+}

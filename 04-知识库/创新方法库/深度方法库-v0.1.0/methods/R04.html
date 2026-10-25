@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>系统工程 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R04 / IM-ML-004
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">G全流程规划与创新管理</p><h1>系统工程</h1><p class="english">Systems Engineering</p><p class="intro">协调需求、架构、接口、实现与验证，使硬件、软件、人和支持条件共同满足系统级目标。</p><div class="tags"><span>流程框架</span><span>Systems Engineering</span><span>ISO/IEC/IEEE 15288</span><span>NASA</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R04/方法结构.md">方法结构</a><a href="../档案/R04/操作指南.md">操作文档</a><a href="../档案/R04/档案.json">JSON档案</a><a href="../档案/R04/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>系统工程是跨学科、全生命周期的工程组织与技术管理实践。本卡以ISO/IEC/IEEE 15288:2023公开范围及NASA系统工程手册第2、4章为依据。标准提供过程语言，不指定唯一生命周期或建模方法；NASA内容体现其项目背景，也不能直接作为所有企业的强制程序。平台将其转成需求—架构—接口—验证的读取与交接接口。</p>
+</section><section><h2>解决什么问题</h2><p>子系统各自达标，整体仍可能失败：电机能产生足够力，电源却无法供给峰值；算法识别准确，操作者不理解提示；设备功能可用，维护条件却无法满足。问题通常不在某个单件，而在需求分配、接口和使用场景之间。系统工程把这些关系作为设计对象，防止一个专业优化局部指标而破坏总体目标。</p>
+</section><section><h2>原理与框架</h2><p>系统级能力来自元素及其连接。系统边界不仅含产品本体，也包含人员、软件、设备、设施、过程和支撑资源。需求、运行概念和架构需要互相校核，逐层分配后再递归细化。接口使元素能分别开发但整体工作；集成不是最后装起来才开始想。验证回答规定要求是否满足，确认关注预期环境下的实际用途，两者目标不同。技术管理贯穿变更、风险、配置和决策。</p>
+</section><section><h2>什么时候用</h2><p>适合多个子系统或组织参与、有复杂人机/信息/物理接口、生命周期较长或集成风险显著的装备。小型项目仍需系统思考，但责任和文档可以裁剪；不应为一个简单零件配置航天规模评审。必须知道系统服务什么任务、边界和相关角色。若完整上游要求不可得，先建立暂定运行概念与未知，不把推断要求写成已批准基线。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>系统任务与运行情境<small>必需</small></td><td><p>任务、相关角色、生命周期、约束和异常场景</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>系统元素与已有证据<small>必需</small></td><td><p>硬件软件人、支持设备、接口、已知验证</p>
+</td><td>补齐必要输入后继续</td></tr></tbody></table></div><section class="step" id="R04-S01"><span class="step-num">01</span><h3>定义系统及运行场景</h3><div class="step-line"><b>输入</b><p>mission_context、system_inventory</p>
+</div><div class="step-line"><b>动作</b><p>写出目标能力、系统边界、操作者和正常/异常使用场景。</p>
+</div><div class="step-line"><b>判断</b><p>缺任务或边界则不分配详细要求。</p>
+</div><div class="step-line"><b>产物</b><p>conops_scope · 运行概念、元素与外部关系</p>
+</div><div class="step-line"><b>检查</b><p>覆盖人和支持条件</p>
+</div><div class="step-line"><b>返回或停止</b><p>系统服务任务未知则追问</p>
+</div><div class="step-line"><b>知识查询</b><p>真实运行与维护情境</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R04-S02"><span class="step-num">02</span><h3>形成并检查系统要求</h3><div class="step-line"><b>输入</b><p>conops_scope、mission_context</p>
+</div><div class="step-line"><b>动作</b><p>把期望转成要求与约束，分开目标、基线和未确认事项。</p>
+</div><div class="step-line"><b>判断</b><p>要求冲突或不可验证时回相关角色澄清。</p>
+</div><div class="step-line"><b>产物</b><p>system_requirements · 带来源和验收方向的要求集</p>
+</div><div class="step-line"><b>检查</b><p>目标不冒充已批准要求</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键要求冲突未处理则不冻结</p>
+</div><div class="step-line"><b>知识查询</b><p>指标口径、环境与成功条件</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R04-S03"><span class="step-num">03</span><h3>建立架构和功能分配</h3><div class="step-line"><b>输入</b><p>system_requirements、system_inventory</p>
+</div><div class="step-line"><b>动作</b><p>提出架构候选，分配功能并说明选择理由。</p>
+</div><div class="step-line"><b>判断</b><p>局部优化破坏整体条件则调整架构或要求。</p>
+</div><div class="step-line"><b>产物</b><p>allocated_architecture · 元素、功能、要求分配和取舍</p>
+</div><div class="step-line"><b>检查</b><p>每项系统能力有承担者</p>
+</div><div class="step-line"><b>返回或停止</b><p>必要功能无承担者则返回</p>
+</div><div class="step-line"><b>知识查询</b><p>候选机制与子系统边界</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R04-S04"><span class="step-num">04</span><h3>定义关键接口和集成次序</h3><div class="step-line"><b>输入</b><p>allocated_architecture</p>
+</div><div class="step-line"><b>动作</b><p>描述物理、能量、信息、时序及人机接口并安排渐进集成。</p>
+</div><div class="step-line"><b>判断</b><p>接口条件未知则标风险，先验证高风险连接。</p>
+</div><div class="step-line"><b>产物</b><p>interface_integration_plan · 接口定义、责任与集成测试安排</p>
+</div><div class="step-line"><b>检查</b><p>箭头须有内容与条件</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键接口冲突不判集成可行</p>
+</div><div class="step-line"><b>知识查询</b><p>接口失效、耦合与集成案例</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R04-S05"><span class="step-num">05</span><h3>建立验证确认与变更追溯</h3><div class="step-line"><b>输入</b><p>interface_integration_plan、system_requirements</p>
+</div><div class="step-line"><b>动作</b><p>为要求与用途规划证据，并保留配置版本和变更影响。</p>
+</div><div class="step-line"><b>判断</b><p>局部证据不足覆盖系统层则补系统试验。</p>
+</div><div class="step-line"><b>产物</b><p>system_assurance_package · 要求追溯、V&amp;V计划、风险及变更任务</p>
+</div><div class="step-line"><b>检查</b><p>验证和确认目标分开</p>
+</div><div class="step-line"><b>返回或停止</b><p>无系统证据不报整体成功</p>
+</div><div class="step-line"><b>知识查询</b><p>适用验证方式与异常场景证据</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>系统工程设计与保证包</b> 支持系统协调和下一步验证，不是整体性能证明<small>conops、requirements、architecture、interfaces、vv_plan、configuration、unknowns</small></li></ul><p>系统模型是否有用，取决于它能否解释“需求由谁承担、接口如何工作、怎样证明满足”。漂亮的方框图若没有接口内容和条件，不能叫架构已完成。配置基线表示有记录的共识，不等于所有参数最终正确；后续变更要分析受影响要求、模型、测试和使用。系统级成功不能由若干局部成功率简单相加或外推。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示：自动分拣线的系统包从运行概念开始，所有条件尚待工程确认。步骤1产出投料、识别、搬运、清理和异常恢复情景，列操作者及维护员责任。步骤2产出要求清单，分别写分拣正确性、吞吐、停机与恢复的判定方式，不凭空填目标数值。步骤3产出功能架构和分配表，识别—输送接口需要物件标识、时间关系和状态。发现相机结果可能晚于物件到达剔除点，返回要求与架构共同审查：调整速度、识别位置或处理方案，记录选择理由。步骤4产出集成顺序和验证计划，先测识别跟踪同步，再测执行机构与异常停止。步骤5产出确认计划，观察真实物料变化、人机任务和故障恢复是否满足用途。单个抓取模块演示成功只支持该模块证据，不能替代整线验证；部件满足图纸也不能证明整线适用。</p>
+<h2>反例与误用</h2><p>一是把系统工程等同项目排期，忽略技术要求和接口；应保留责任之外的技术连接。二是从下到上拼装，再补系统需求；应在开发前定义整体任务和集成检查。三是认为复用旧设备不需重新验证；环境、架构或使用改变可能带来新风险。反例：一项已定义边界的独立尺寸校核，无需复制完整系统生命周期文件。</p>
+<h2>检查与验证</h2><p>执行质量检查需求覆盖、接口完整、跨层追溯、变更影响及测试对应关系。工程确认需要真实系统与代表性环境，不能把分析模型当作实物全部证据。工具缺失时可交运行场景、要求分配和接口疑问；不声称完成系统优化。独立复核应关注未知、竞争解释和异常场景，而非只看模型字段填满。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R14.html">功能分解与接口分析</a><small>requires</small><p>要求→功能分解；需分配功能</p></li><li><a href="R31.html">DSM与模块化架构</a><small>parallel</small><p>系统元素接口→DSM；需要分析依赖</p></li><li><a href="R42.html">验证与确认</a><small>precedes</small><p>要求与用途→V&amp;V；进入实现与集成</p></li></ul><h2>平台适配</h2><p>标准范围支持生命周期过程及递归/并发使用；NASA相关章节支持系统整体、跨学科权衡、设计过程迭代与V&amp;V区分。本卡步骤和文件键是平台适配，未照搬NASA阶段审批或声称符合15288全套条款。实际项目应按规模与风险裁剪并保留依据。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · ISO/IEC/IEEE 15288:2023</h3><p>ISO · <a target="_blank" rel="noopener noreferrer" href="https://www.iso.org/standard/81702.html">原始来源 ↗</a></p><p><b>定位：</b>Abstract</p><p><b>核读范围：</b>官方范围与版本；未读付费全文</p><p><b>支持内容：</b>生命周期过程框架与不指定唯一方法</p><p><b>核读释义：</b>公开摘要说明过程可递归并发应用，并不规定具体设计模型。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><section class="source" id="source-S02"><h3>S02 · Systems Engineering Handbook §2 Fundamentals / §4 System Design Processes</h3><p>NASA · <a target="_blank" rel="noopener noreferrer" href="https://www.nasa.gov/reference/4-0-system-design-processes/">原始来源 ↗</a></p><p><b>定位：</b>§4.0设计过程相互关系；§4.1运行概念；辅助阅读§2.0</p><p><b>核读范围：</b>网页相关实质段落及§2.0定义/V&amp;V区分已读；非全手册</p><p><b>支持内容：</b>系统整体、递归设计、需求架构运行概念一致性</p><p><b>核读释义：</b>四类设计活动相互迭代；运行概念、要求与设计应协调，平台据此组织交接。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><h2>尚待补证</h2><p>ISO仅核公开范围，未读全部过程要求；NASA已读相关实质段落，未审其全部附件与行业标准。后续需加入目标行业接口控制、风险管理和配置管理的直接指南，并以真实集成失败/修正记录验证档案结构。当前卡不提供系统安全认证或最终责任签署。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

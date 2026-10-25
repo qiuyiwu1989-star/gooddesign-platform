@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-ML-037",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "decision_task": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "目标、时点、责任者、强制要求和可取舍目标",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "alternatives": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "完整边界、作用机制、所需资源和实施条件",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "criterion_data": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "单位、方向、范围、来源及估算/实测/假设状态",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "preferences": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "权重、评分函数、责任来源、可接受范围和争议",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

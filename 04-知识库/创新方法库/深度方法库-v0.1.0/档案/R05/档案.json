@@ -1,0 +1,275 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R05",
+  "method_id": "IM-ML-005",
+  "version": "0.1.0",
+  "name": "机电系统V模型",
+  "english_name": "V-model for Mechatronic Systems",
+  "kind": "framework",
+  "category": "G全流程规划与创新管理",
+  "lineage": [
+    "机电系统开发",
+    "VDI/VDE 2206"
+  ],
+  "aliases": [
+    "机电V模型",
+    "V-Model"
+  ],
+  "summary": "把机电与信息物理系统的要求、跨学科设计、实现和集成验证建立对应关系，提前设计证明路径。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "本档针对VDI/VDE 2206:2021-11的机电与信息物理系统开发语境，不把所有软件V模型变体视为同一版本。VDI官方介绍确认2021版扩展了机电系统开发框架，适用参与研发及制造等活动的角色，并不强制指定具体工具或项目组织。标准正文未取得，本卡因此提供公开范围内的解释和平台化活动，不声称复现全部条款或检查点。",
+    "problem": "机电产品常被分成机械、电气、软件三份任务，最后才发现各自理解的时间、位置、功率或安全状态不同。另一个遗漏是等样机做完才决定怎么测，造成关键要求无法通过现有接口观察。V模型把“设计什么”与“以后怎样证明”同时考虑，使分解和集成具有对应关系，避免把右侧验证当作末尾的一次验收表演。",
+    "principle": "左侧逐步澄清系统目标、功能和专业设计；实现活动把定义转成部件、软件及装置；右侧按层次集成并检查是否符合相应设计依据。对应关系比字母V的图形更重要。机械、电气和信息处理之间需要持续交换模型和接口假设，而不是三组人顺序交接。模型分析、原型和试验可以在多个层次提前出现；流程可递归迭代，不是要求先把所有需求写死再开始制造。",
+    "applicability": "适合同时包含传感、执行、控制、软件、网络或人机交互的产品，尤其是接口决定性能的装备。纯机械零件不必为了采用V模型强加控制系统。必要输入是可说明的系统任务、分解层级及各专业边界；若对象和用途未定，应先做问题定义。专业设计尚不成熟时，右侧可以先规划集成实验，不把模型检查升为实物结果。",
+    "interpretation": "判断V模型是否真正起作用，应检查每层设计是否有对应的要求和检查方式，跨专业接口是否明确，集成失败是否能回溯到相关层次。完成某层部件试验不能抵消系统层未验证；机械动作正确也不代表控制在时延或故障下仍正确。基线用于协调，不是禁止学习；新证据改变要求时，相关设计和测试应一起更新。",
+    "example": "教学演示：设计一个带位置反馈的电动调节台，未指定任何真实产品参数。系统层先定义定位任务、用户操作和断电后的期待状态；功能层分为驱动、导向、测位、控制、停止。专业设计分别建立传动、供电与控制方向，接口说明坐标、量纲、采样/响应和电气边界。集成先检查传感器与控制坐标，再接驱动与机械负载，最后研究真实任务与异常停机。若空载定位可用，只能说明该工况下的局部行为，不能直接宣布有载精度、安全和耐久达标。",
+    "pitfalls": "一是将V画成一次性日程表，跨层发现问题也不能返回；应按证据更新对应项。二是只有机械图、电气图和代码，没有接口约定；应明确数据、时序和物理作用。三是把仿真通过记成样机试验通过；两种证据范围分开。反例：已有机械机构只更换标准螺钉，若不影响机电接口，全面重跑V模型可能不成比例，应按变更影响裁剪。",
+    "validation": "流程检查可从一条系统要求出发，追踪到功能、专业设计、接口和测试，找出孤立节点与过期测试。实际性能要使用适当模型与仪器，记录负载、温度、供电、软件版本和异常场景；安全相关控制另需适用专业标准。工具或试验条件缺失时只交集成计划和风险，不能以书面V对应关系证明可靠。",
+    "adaptation": "本卡的五项活动、数据字段、接口问题和调节台例子都是平台改编。原标准公开介绍只支持跨学科框架与迭代结构，不足以声明本卡符合全部2021版规范。验证/确认区别辅以NASA公开手册概念解释，不把NASA航天要求移植成通用机电强制条款。",
+    "gaps": "后续需取得VDI/VDE 2206授权正文，核对具体活动和检查点；补充目标行业的安全控制、软件和电气标准，建立一个真实机电项目的跨层验证链。本轮没有实际模型、控制算法或调节台测试。"
+  },
+  "inputs": [
+    {
+      "key": "system_task",
+      "label": "机电系统任务",
+      "type": "object",
+      "required": true,
+      "description": "用途、用户、环境、要求和决策层级",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "discipline_context",
+      "label": "专业与接口条件",
+      "type": "object",
+      "required": true,
+      "description": "机械电气软件边界、现有模型与工具",
+      "missing_action": "ask_or_stop"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R05-S01",
+      "title": "界定系统任务和检查口径",
+      "input_refs": [
+        "system_task"
+      ],
+      "depends_on": [],
+      "operation": "定义系统正常/异常运行及各层目标，初步写未来怎样观察结果。",
+      "decision": "用途不明先回问题定义。",
+      "output_key": "system_v_basis",
+      "output_description": "系统要求、工况与检查方向",
+      "checks": [
+        "不把结构选择当要求"
+      ],
+      "stop_condition": "目标与边界未知则暂停",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "目标用途及异常工况"
+      ]
+    },
+    {
+      "step_id": "R05-S02",
+      "title": "分解功能并分配专业",
+      "input_refs": [
+        "system_v_basis",
+        "discipline_context"
+      ],
+      "depends_on": [
+        "R05-S01"
+      ],
+      "operation": "把系统作用分配到机械、电气、信息处理和人，并标协同接口。",
+      "decision": "跨专业功能无人承担则修正分解。",
+      "output_key": "discipline_allocation",
+      "output_description": "功能、专业责任及接口",
+      "checks": [
+        "检查人机功能"
+      ],
+      "stop_condition": "必要作用未覆盖则不进入详细专业设计",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "功能与专业接口证据"
+      ]
+    },
+    {
+      "step_id": "R05-S03",
+      "title": "同步专业设计与模型检查",
+      "input_refs": [
+        "discipline_allocation"
+      ],
+      "depends_on": [
+        "R05-S02"
+      ],
+      "operation": "组织专业方案，校核单位、坐标、时序与能量边界。",
+      "decision": "不一致则回设计而非留到总装。",
+      "output_key": "domain_designs",
+      "output_description": "专业方案与模型/原型检查",
+      "checks": [
+        "模型条件可追踪"
+      ],
+      "stop_condition": "工具缺失仅形成分析任务",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "传动、感知、控制的适配条件"
+      ]
+    },
+    {
+      "step_id": "R05-S04",
+      "title": "建立分层集成及测试",
+      "input_refs": [
+        "domain_designs",
+        "system_v_basis"
+      ],
+      "depends_on": [
+        "R05-S03"
+      ],
+      "operation": "安排从高风险接口到子系统、整体的集成，分别匹配对应依据。",
+      "decision": "下层通过不自动判上层通过。",
+      "output_key": "integration_evidence_plan",
+      "output_description": "层级、顺序、测试依据和资源",
+      "checks": [
+        "计划与实际证据分开"
+      ],
+      "stop_condition": "接口冲突未解则不判整机可行",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "跨层验证与故障情境"
+      ]
+    },
+    {
+      "step_id": "R05-S05",
+      "title": "管理反馈与基线",
+      "input_refs": [
+        "integration_evidence_plan"
+      ],
+      "depends_on": [
+        "R05-S04"
+      ],
+      "operation": "把实际发现回写为变更请求并标影响设计和验证版本。",
+      "decision": "目标变化则更新对应链，不沿用旧通过。",
+      "output_key": "v_model_record",
+      "output_description": "跨层追溯、变更、未知及下一步",
+      "checks": [
+        "每项结论标明证据层级"
+      ],
+      "stop_condition": "无真实测试不报通过",
+      "source_refs": [
+        "S02"
+      ],
+      "knowledge_queries": [
+        "验证/确认范围及接受条件"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "v_model_record",
+      "label": "机电V模型开发记录",
+      "required_fields": [
+        "levels",
+        "design_refs",
+        "interface_refs",
+        "verification_links",
+        "changes",
+        "unknowns"
+      ],
+      "interpretation": "说明分层开发与证明计划，不是整机验证结论"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R04",
+      "relation": "part_of",
+      "binding": "生命周期过程→机电开发活动",
+      "condition": "多学科系统任务"
+    },
+    {
+      "target_research_id": "R31",
+      "relation": "parallel",
+      "binding": "接口→依赖分析",
+      "condition": "存在复杂耦合"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "分层依据→验证确认",
+      "condition": "实现后核查"
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "VDI",
+      "authors": [
+        "VDI/VDE"
+      ],
+      "title": "VDI/VDE 2206:2021-11 介绍",
+      "url": "https://www.vdi.de/mitgliedschaft/vdi-richtlinien/programme-zu-vdi-richtlinien/vdi-2206",
+      "locator": "正文介绍与V-model入口",
+      "read_scope": "官方介绍实读；未读付费标准正文，未复制图",
+      "supports": [
+        "机电及信息物理系统跨学科框架、不强制具体工具"
+      ],
+      "evidence_note": "官方介绍把2021版用于复杂机电系统开发，并允许项目选择自己的方法与组织方式。",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    },
+    {
+      "publisher": "NASA",
+      "authors": [
+        "NASA"
+      ],
+      "title": "Systems Engineering Handbook §2.0",
+      "url": "https://www.nasa.gov/reference/2-0-fundamentals-of-systems-engineering/",
+      "locator": "§2.4 Verification / Validation",
+      "read_scope": "相关定义段落已读",
+      "supports": [
+        "验证和实际用途确认的区别"
+      ],
+      "evidence_note": "符合要求与满足预期用途是不同证明目标；本卡据此区分证据。",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "只有空载演示",
+      "expected": "只认可空载行为，不扩大到有载/故障"
+    },
+    {
+      "scenario": "机械软件坐标不一致",
+      "expected": "返回接口定义"
+    },
+    {
+      "scenario": "需求更改但测试未更改",
+      "expected": "标原证据待复核"
+    }
+  ],
+  "search_terms": [
+    "V模型",
+    "机电系统",
+    "2206",
+    "跨学科开发",
+    "分层验证"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项第一方检索核读、原创释义和平台操作适配"
+    }
+  ]
+}

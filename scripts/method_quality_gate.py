@@ -3,12 +3,21 @@ DIMENSIONS = ('problem', 'principle', 'evidence', 'reasoning', 'coverage', 'valu
 
 
 def assess(packet):
+    malformed = not isinstance(packet, dict)
+    if not malformed:
+        malformed = any(not isinstance(packet.get(k, []), list) or any(not isinstance(x, dict) for x in packet.get(k, []))
+                        for k in ('claims', 'evidence', 'reviews', 'issues'))
+        malformed = malformed or not isinstance(packet.get('ratings', {}), dict)
+        if not malformed: malformed = any(not isinstance(x, dict) for x in packet.get('ratings', {}).values())
+    if malformed:
+        return {'status': 'blocked', 'issues': ['malformed_quality_packet'], 'expert_certified': False,
+                'scope': 'checks_declared_records_only_not_truth_or_credentials'}
     issues = []
     def require(condition, code):
         if not condition:
             issues.append(code)
     require(packet.get('level') in {'research', 'concept', 'engineering', 'validated'}, 'invalid_delivery_level')
-    require(all(packet.get(k) for k in ('task_revision', 'method_versions', 'scope', 'author_id')), 'missing_provenance')
+    require(all(packet.get(k) for k in ('revision', 'task_revision', 'method_versions', 'scope', 'author_id')), 'missing_provenance')
     claims = packet.get('claims', [])
     require(bool(claims), 'missing_claims')
     evidence = packet.get('evidence', [])
@@ -19,9 +28,10 @@ def assess(packet):
         kind = claim.get('kind')
         require(kind in {'fact', 'inference', 'hypothesis'}, 'invalid_claim_kind')
         require(bool(claim.get('text')), 'empty_claim')
+        require(type(claim.get('critical')) is bool, 'criticality_not_declared')
         if kind == 'hypothesis':
             require(bool(claim.get('verification_question')), 'hypothesis_without_test')
-        if claim.get('critical') and kind in {'fact', 'inference'}:
+        if kind in {'fact', 'inference'}:
             cited = claim.get('evidence_refs', [])
             require(bool(cited), 'critical_claim_without_evidence')
             for rid in cited:

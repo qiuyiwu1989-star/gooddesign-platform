@@ -1,0 +1,279 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R10",
+  "method_id": "IM-ML-010",
+  "version": "0.1.0",
+  "name": "领先用户法",
+  "english_name": "Lead User Method",
+  "kind": "method",
+  "category": "A问题发现与需求定义",
+  "lineage": [
+    "Eric von Hippel",
+    "用户创新",
+    "Lead User"
+  ],
+  "aliases": [
+    "领先用户研究"
+  ],
+  "summary": "寻找提前遭遇未来需求且解决问题收益显著的使用者，研究其需求和已有尝试，再共同发展可验证概念。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "领先用户概念与Eric von Hippel的用户创新研究有关。本卡主要采用Joan Churchill、Eric von Hippel、Mary Sonnack于2009年公开的Lead User Project Handbook；作者前言说明内容来自此前项目实践并保留年代背景。2026 MIT OCW另有新资源入口，本轮仅核其页面，不视为已读新手册。本卡以旧手册相关定义和阶段选读作平台适配，不复制全文。",
+    "problem": "普通用户常围绕熟悉产品提出渐进改进，难以描述还未普及的需求；企业也可能只访最大客户或早期购买者，从而错过真正为未满足需求自行发明的人。领先用户法把前沿需求及已发生的试错作为研究资源，获得问题和解法的丰富信息，但不能把某个极端用户的方案直接当大众市场产品。",
+    "principle": "领先用户要同时具备需求超前与解决收益显著两种特征；买得早不等于需求领先。研究先判断趋势和需要领域，再通过专家网络寻找有相关经验的使用者，理解其尝试、限制和所得，随后与用户及专业人员发展概念。跨领域领先使用也可能提供启发。原型经验是材料，不是无需核验的真理；概念商业潜力和一般用户可用性还要另查。",
+    "applicability": "适合未来需求已在某些极端环境、专业场景或用户群中出现，且能够通过网络找到这些人。若任务只为复制成熟产品并降低单件成本，本法可能不是首选。必要条件包括明确研究领域、可能趋势和联系资源；若没有可信趋势，只能先研究，不应凭名气给某人贴领先用户标签。敏感知识、个人经验和共同开发的使用权需明确。",
+    "interpretation": "产物应说明每位候选为何符合两特征，其需求与目标市场的关系、已经做过什么和哪些效果未验证。不是名单越长越好，也不以专家头衔替代使用经验。共同构思后仍需保留未解决的工程和市场问题。来源中的历史方法效果报道不直接作为本平台成功率；项目找到新概念与概念能够量产盈利是不同结论。",
+    "example": "教学演示：研究经常戴手套操作的便携连接装置。假设目标市场将遇到更频繁的低温户外任务；趋势尚待证实。研究先联系极地作业、冷库维护等相关领域，按是否提前面对同类需要和是否有显著解决收益筛选，而不因某人买过最新装置就入选。候选可能自制大尺寸触点或改装锁止，团队记录作用原理和代价。共同讨论产生几个概念方向；后续仍要测戴手套动作、密封、误触与制造，不能宣布极端场景方案适合所有用户。",
+    "pitfalls": "一是把领先用户等同早期采用者或大客户；应检验需求与收益。二是只找行业内最知名专家，忽略实际使用和自制经验；应按知识任务选择人。三是将自制装置原样商业化，遗漏普通用户能力、法规与制造成本；应做转化与验证。反例：仅通过社交媒体粉丝量筛“领先用户”，没有需求和试错证据，不构成本方法。",
+    "validation": "研究质量可检查趋势依据、筛选逻辑、访谈记录、原理提取与概念改变。技术效果要核自制方案的测试条件和数据；没有原始证据只能称自述。市场潜力需面向目标群体研究，不从少数极端使用者外推规模。缺实际联系时输出网络搜索和筛选计划，不能编造专家访谈或共同开发反馈。",
+    "adaptation": "两特征定义和四阶段概念来自手册相关页；本卡将准备、趋势、筛选、方案理解和共同开发拆成五个可交接活动。手册中的建议时长、参与人数和商业效果不作为本平台固定要求；演示与数据字段由平台编写。",
+    "gaps": "已选读手册前言、概念定义及第2章趋势/用户/研讨相关页，未全文核读168页；2026资源是否更新具体实践尚待进一步阅读。后续应以实际联系和资料形成候选资格证据，处理共同开发知识权利，并测试从极端用户转向目标用户的适配。"
+  },
+  "inputs": [
+    {
+      "key": "research_domain",
+      "label": "需要领域与目标",
+      "type": "object",
+      "required": true,
+      "description": "目标任务、市场变化、资源与边界",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "trend_network",
+      "label": "趋势与联系线索",
+      "type": "object",
+      "required": true,
+      "description": "文献、专家、用户网络及来源",
+      "missing_action": "ask_or_stop"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R10-S01",
+      "title": "界定项目与趋势假设",
+      "input_refs": [
+        "research_domain",
+        "trend_network"
+      ],
+      "depends_on": [],
+      "operation": "明确探索领域、预期成果和可能使需求普及的变化。",
+      "decision": "趋势不明则先调查，不直接找名人。",
+      "output_key": "lead_study_focus",
+      "output_description": "研究焦点、趋势及证据缺口",
+      "checks": [
+        "趋势与需要相连"
+      ],
+      "stop_condition": "无明确任务范围则追问",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "需求趋势和相关专家网络"
+      ]
+    },
+    {
+      "step_id": "R10-S02",
+      "title": "调查趋势并框定需要",
+      "input_refs": [
+        "lead_study_focus",
+        "trend_network"
+      ],
+      "depends_on": [
+        "R10-S01"
+      ],
+      "operation": "通过文献和专家比较多个变化，选择值得深入的需要领域。",
+      "decision": "资料不足保持假设并继续核查。",
+      "output_key": "need_frame",
+      "output_description": "需要陈述、趋势支持和搜索方向",
+      "checks": [
+        "不把产品功能提前锁定"
+      ],
+      "stop_condition": "未来需求依据不足不推市场确定性",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "趋势、实际前沿任务与替代"
+      ]
+    },
+    {
+      "step_id": "R10-S03",
+      "title": "识别并筛选领先用户",
+      "input_refs": [
+        "need_frame",
+        "trend_network"
+      ],
+      "depends_on": [
+        "R10-S02"
+      ],
+      "operation": "通过推荐网络寻找需求超前且解决收益显著者，检查实际经历。",
+      "decision": "只有早买或头衔不够；记录排除理由。",
+      "output_key": "lead_user_candidates",
+      "output_description": "两特征依据、联系方式范围与限制",
+      "checks": [
+        "候选资格有事件证据"
+      ],
+      "stop_condition": "无接触不编访谈",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "自制、改装及使用困难的直接材料"
+      ]
+    },
+    {
+      "step_id": "R10-S04",
+      "title": "理解需求和已有解法",
+      "input_refs": [
+        "lead_user_candidates"
+      ],
+      "depends_on": [
+        "R10-S03"
+      ],
+      "operation": "研究实际试错、原理、效果自述与代价，分离可核和未知。",
+      "decision": "自述效果无数据不升级验证。",
+      "output_key": "lead_solution_insights",
+      "output_description": "需求、机制、边界与概念候选",
+      "checks": [
+        "不直接照搬自制品"
+      ],
+      "stop_condition": "权利不明不复制私有方案",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "原理、材料、使用条件和失败"
+      ]
+    },
+    {
+      "step_id": "R10-S05",
+      "title": "共同完善概念并规划转化",
+      "input_refs": [
+        "lead_solution_insights",
+        "research_domain"
+      ],
+      "depends_on": [
+        "R10-S04"
+      ],
+      "operation": "组织用户和专家补充/比较概念，识别面向目标群体的新验证。",
+      "decision": "极端用户可用不自动推广普通用户。",
+      "output_key": "lead_user_concepts",
+      "output_description": "概念、贡献、转化条件与验证任务",
+      "checks": [
+        "合作过程与结果如实记录"
+      ],
+      "stop_condition": "无共同活动只交计划",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "可制造性、一般用户和商业验证"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "lead_user_concepts",
+      "label": "领先用户概念研究包",
+      "required_fields": [
+        "trends",
+        "selection_evidence",
+        "needs",
+        "solutions",
+        "concepts",
+        "transfer_limits",
+        "validation_plan"
+      ],
+      "interpretation": "支持前沿需求探索，不证明大众市场或工程成熟"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "真实事件→筛选与访谈",
+      "condition": "需用户材料"
+    },
+    {
+      "target_research_id": "R17",
+      "relation": "precedes",
+      "binding": "机制线索→概念组合",
+      "condition": "需扩大解法"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "转化假设→验证",
+      "condition": "需目标场景确认"
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "MIT作者公开站",
+      "authors": [
+        "Joan Churchill",
+        "Eric von Hippel",
+        "Mary Sonnack"
+      ],
+      "title": "Lead User Project Handbook",
+      "url": "https://web.mit.edu/evhippel/www/Lead%20User%20Project%20Handbook%20(Full%20Version).pdf",
+      "locator": "PDF pp.12–14两特征；pp.32–46第2章阶段选读",
+      "read_scope": "前言、目录、两特征及第2章相关页面选读；非168页全文",
+      "supports": [
+        "领先用户两特征、趋势/筛选/共同完善概念"
+      ],
+      "evidence_note": "领先需求和解决收益需同时考虑；候选经验应转成概念并继续检验目标市场适配。",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    },
+    {
+      "publisher": "MIT OpenCourseWare",
+      "authors": [
+        "Erdin Beshimov"
+      ],
+      "title": "Lead User Innovation Handbook resource, Spring 2026",
+      "url": "https://www.ocw.mit.edu/courses/res-15-009-lead-user-innovation-handbook-spring-2026/resources/mitres_15_009_s26_handbook_pdf/",
+      "locator": "Resource page",
+      "read_scope": "资源入口、课程年份与下载链接，未读新PDF",
+      "supports": [
+        "后续更新原典的线索"
+      ],
+      "evidence_note": "新资源存在，不能据入口推断具体更新内容。",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "大客户但需求不领先",
+      "expected": "不自动入选"
+    },
+    {
+      "scenario": "用户自述成功无测试",
+      "expected": "保留自述标签"
+    },
+    {
+      "scenario": "仅研究人员计划",
+      "expected": "不报用户研讨完成"
+    }
+  ],
+  "search_terms": [
+    "领先用户",
+    "Lead User",
+    "von Hippel",
+    "用户创新",
+    "前沿需求"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项第一方检索核读、原创释义和平台操作适配"
+    }
+  ]
+}

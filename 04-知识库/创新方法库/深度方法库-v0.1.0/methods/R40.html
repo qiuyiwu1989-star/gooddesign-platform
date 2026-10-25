@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>失效模式与影响分析 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R40 / IM-ML-040
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">F方案决策与验证评价</p><h1>失效模式与影响分析</h1><p class="english">Failure Modes and Effects Analysis / FMECA</p><p class="intro">从系统功能出发逐项识别可能怎样失效、影响什么、原因和控制在哪里，再据风险依据安排措施并跟踪验证。</p><div class="tags"><span>具体方法</span><span>可靠性工程</span><span>质量风险分析</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R40/方法结构.md">方法结构</a><a href="../档案/R40/操作指南.md">操作文档</a><a href="../档案/R40/档案.json">JSON档案</a><a href="../档案/R40/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>FMEA是前瞻性风险分析方法，设计、过程、软件和接口均可按相应边界应用；FMECA增加关键性分析。本档用ASQ公开步骤与IEC 60812:2018公开范围说明，未取得付费标准全文，也未移植汽车行业专有评分或行动优先级表。不同体系的严重度、发生度、检测度和优先级规则不能混用。平台输入、证据状态和措施闭环是适配，不是某行业认证版本。</p>
+</section><section><h2>解决什么问题</h2><p>团队容易在故障发生后追责某个零件，却没有系统查哪些功能可能失效、后果会传到哪里、已有控制能否发现或预防。也可能做一张很长的FMEA表，最后只留下RPN数字而没人执行措施。本法把功能、失效模式、影响、原因、控制和行动串成可维护记录，帮助在设计早期发现遗漏。它不证明列出的原因已发生，也不能保证枚举完所有系统性危险。</p>
+</section><section><h2>原理与框架</h2><p>失效模式描述功能怎样没有按预期实现；影响是对局部、上层系统和用户的后果；原因是促成该模式的机制或条件；控制要区分预防和检测。风险评价可考虑后果严重性、发生可能和检测能力，但所采用尺度须明确来源和证据。发生度未知不等于低，检测存在也不等于有效。措施应指向减少原因、降低后果或改善控制，并在实施后用证据重新评估，不能通过改分数完成闭环。接口信息与过程变更需要纳入维护，旧分析不能因表格存在就永远有效。</p>
+</section><section><h2>什么时候用</h2><p>适合新设计、设计变更、工艺开发或旧系统用于新环境时。前提是边界、功能、工况和责任清楚，通常需要设计、制造、维护、质量及使用方共同参与。资料不足时可列潜在模式与补证问题，但不猜概率。对系统级危险、复杂多故障、共因或控制交互，还需其他安全和可靠性方法；不能仅靠单模式表替代完整机械风险评估。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>系统边界与功能<small>必需</small></td><td><p>产品/过程层级、阶段、接口、目标功能和版本</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>工况与要求<small>必需</small></td><td><p>使用、维护、异常及安全质量要求</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>失效与控制资料<small>可选</small></td><td><p>机理、测试、故障、控制效果，事实与假设分开</p>
+</td><td>标记未知并说明影响</td></tr><tr><td>评价与行动规则<small>可选</small></td><td><p>行业版本、尺度、阈值、权责，缺失不伪造分数</p>
+</td><td>标记未知并说明影响</td></tr></tbody></table></div><section class="step" id="R40-S01"><span class="step-num">01</span><h3>固定范围和功能结构</h3><div class="step-line"><b>输入</b><p>system_scope、operating_conditions</p>
+</div><div class="step-line"><b>动作</b><p>明确设计/过程FMEA边界、系统层级与生命周期阶段，列必要功能和接口。</p>
+</div><div class="step-line"><b>判断</b><p>边界或功能不清先补，不从零件名称直接跳评分。</p>
+</div><div class="step-line"><b>产物</b><p>fmea_boundary · 功能、层级、阶段和接口基准</p>
+</div><div class="step-line"><b>检查</b><p>功能非部件清单；版本固定</p>
+</div><div class="step-line"><b>返回或停止</b><p>核心功能未知停止风险排序</p>
+</div><div class="step-line"><b>知识查询</b><p>查任务功能、接口、使用维护条件</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R40-S02"><span class="step-num">02</span><h3>识别模式及影响</h3><div class="step-line"><b>输入</b><p>fmea_boundary、failure_evidence</p>
+</div><div class="step-line"><b>动作</b><p>描述各功能可能怎样失效，分别追踪局部、系统与用户后果，保留未覆盖模式。</p>
+</div><div class="step-line"><b>判断</b><p>模式与原因/影响混淆则重写；潜在模式不标已发生。</p>
+</div><div class="step-line"><b>产物</b><p>failure_modes · 模式—影响链及证据状态</p>
+</div><div class="step-line"><b>检查</b><p>影响跨层清楚；潜在与实际分离</p>
+</div><div class="step-line"><b>返回或停止</b><p>严重影响缺信息先升级补证</p>
+</div><div class="step-line"><b>知识查询</b><p>查同功能失效机制及上层影响</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R40-S03"><span class="step-num">03</span><h3>分析原因和现有控制</h3><div class="step-line"><b>输入</b><p>failure_modes、failure_evidence</p>
+</div><div class="step-line"><b>动作</b><p>为各模式列原因候选，区分预防控制与检测控制，记录实际覆盖和未知。</p>
+</div><div class="step-line"><b>判断</b><p>无机理只保留假设；控制未经证实不判有效。</p>
+</div><div class="step-line"><b>产物</b><p>cause_control_map · 原因、预防、检测与证据</p>
+</div><div class="step-line"><b>检查</b><p>原因不是症状；检测能力有依据</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键控制资料缺失不评低风险</p>
+</div><div class="step-line"><b>知识查询</b><p>查现场故障、磨损、误设与控制验证</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R40-S04"><span class="step-num">04</span><h3>按选定政策评价优先级</h3><div class="step-line"><b>输入</b><p>cause_control_map、rating_policy</p>
+</div><div class="step-line"><b>动作</b><p>选择明确体系评估后果、发生和检测等，不混不同量表；未知不自动填中或低。</p>
+</div><div class="step-line"><b>判断</b><p>没有政策或数据则定性列优先问题，不计算伪精确RPN。</p>
+</div><div class="step-line"><b>产物</b><p>risk_priorities · 依据、优先项、未知和高后果关注</p>
+</div><div class="step-line"><b>检查</b><p>尺度一致；严重风险不被乘积掩盖</p>
+</div><div class="step-line"><b>返回或停止</b><p>重大风险不能由总分自动放行</p>
+</div><div class="step-line"><b>知识查询</b><p>查适用行业评价规则而非随意套表</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R40-S05"><span class="step-num">05</span><h3>制定针对性措施</h3><div class="step-line"><b>输入</b><p>risk_priorities、cause_control_map</p>
+</div><div class="step-line"><b>动作</b><p>针对原因、后果或控制缺陷安排设计/过程措施，明确责任、资源及验证条件。</p>
+</div><div class="step-line"><b>判断</b><p>措施只改分不改机制则退回；新增失效须分析。</p>
+</div><div class="step-line"><b>产物</b><p>action_plan · 措施、责任、验证和剩余风险</p>
+</div><div class="step-line"><b>检查</b><p>措施对应风险链；新增代价可见</p>
+</div><div class="step-line"><b>返回或停止</b><p>硬要求无法满足则不批准方向</p>
+</div><div class="step-line"><b>知识查询</b><p>查结构替代、控制和维护措施的证据</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R40-S06"><span class="step-num">06</span><h3>跟踪实施和重新评价</h3><div class="step-line"><b>输入</b><p>action_plan、failure_evidence</p>
+</div><div class="step-line"><b>动作</b><p>实际实施与验证后再更新评价，保留前后依据及未闭环项；未实施写计划。</p>
+</div><div class="step-line"><b>判断</b><p>没有效果证据不降低风险状态，需求变更需复审。</p>
+</div><div class="step-line"><b>产物</b><p>fmea_dossier · 完整FMEA、行动和验证闭环记录</p>
+</div><div class="step-line"><b>检查</b><p>前后记录留存；计划不是结果</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键措施未验证不闭环</p>
+</div><div class="step-line"><b>知识查询</b><p>将措施效果交V&amp;V与风险评估</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>失效模式与行动档案</b> 前瞻风险研究，不代表根因确认、可靠度或安全认证<small>scope、functions、modes、effects、causes、controls、priorities、actions、verification、residual_unknowns</small></li></ul><p>有效档案不只是排名，而是功能链、风险依据、行动责任、时间、验证证据和剩余未知。严重后果即使低发生也不能因为乘积低就被忽略；相同RPN可能来自不同风险结构。采取措施前后要保留基线，只有实际实施和验证后才重新评价。没有数据可以写定性依据或unknown，不能由AI口吻生成精确发生率、检出率或产品可靠度。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示，非真实失效记录：一套夹持装置的必要功能是保持物件位置。第一步固定夹持、解锁和维护阶段。第二步列潜在模式“夹持作用不足”与影响“物件移动”，不把影响当模式。第三步列压力不足、磨损或设定错误为原因候选，各自需要证据，不宣称已查明。第四步检查有无压力监测、位置确认或维护控制，存在传感器仍需检出能力验证。第五步提出与每条原因对应的预防/检测或结构措施并列责任、验证和剩余问题。本演示不填写严重度数字、发生概率和措施后风险下降比例。 单条中间行可为“功能保持位置→模式夹持作用不足→系统影响物件移动→原因候选压力不足(待证)→预防未知→检测压力信号(检出覆盖待核)→行动验证压力与接触状态关系→状态open”。这行不是已确认根因，也不因为检测字段非空就给低风险。</p>
+<h2>反例与误用</h2><p>一是把原因、模式和影响写成同一句，造成措施无靶点；先回功能链。二是套固定评分给未知故障，得到伪精确RPN；先收证据或标未知。三是把检测措施存在当已能检出；确认覆盖、响应与失效情境。四是填完表就说安全问题解决，措施未实施、共因未分析；保留未闭环状态。反例：要判断某实际故障根因时，FMEA只提供候选，还需根因分析与试验，不可用潜在分析代替诊断事实。</p>
+<h2>检查与验证</h2><p>执行质量检查模式是否对应功能、影响是否跨层追踪、原因是否有机理或假设标签、控制是否区分预防检测、评价尺度是否一致，以及行动是否有责任与复查。工程验证需要实际设计变更、过程控制试验、故障注入或性能测试；验证方式随行业和风险确定。结构表检查不代表危险已被充分识别，软件通过也不能提升为工程可靠性结论。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R14.html">功能分解与接口分析</a><small>requires</small><p>功能与接口→system_scope；风险从功能开始</p></li><li><a href="R16.html">根因分析</a><small>parallel</small><p>原因候选→根因证据；实际故障需独立诊断</p></li><li><a href="R41.html">机械风险评估与风险降低</a><small>parallel</small><p>失效影响→机械危险；FMEA不替代机械风险流程</p></li><li><a href="R42.html">验证与确认</a><small>precedes</small><p>行动验证→V&amp;V计划；需实施证据闭环</p></li></ul><h2>平台适配</h2><p>ASQ支持FMEA的用途、分析链和措施维护；IEC公开摘要支持方法覆盖和FMECA关系，并指出通用标准不提供所有安全应用细则。本文使用六步平台流程，增加未知、来源定位、硬约束和验证分层。示例是教学情境，不是已发生事故或某型号实际采用记录。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · What is FMEA? Failure Mode &amp; Effects Analysis</h3><p>American Society for Quality · <a target="_blank" rel="noopener noreferrer" href="https://asq.org/quality-resources/fmea">原始来源 ↗</a></p><p><b>定位：</b>Overview / When to Use / FMEA Procedure</p><p><b>核读范围：</b>专业机构公开网页定义、使用与步骤相关段落核读</p><p><b>支持内容：</b>功能—失效模式—影响—原因—控制；措施与再评估</p><p><b>核读释义：</b>FMEA旨在前瞻识别和处理失效，覆盖设计与过程；优先级应建立在后果、发生和检测等所选尺度上。</p><p><b>权利：</b>仅链接、题录和原创释义；第三方全文、表格和算法实现权利另行核对</p></section><section class="source" id="source-S02"><h3>S02 · IEC 60812:2018 Failure modes and effects analysis (FMEA and FMECA)</h3><p>International Electrotechnical Commission · <a target="_blank" rel="noopener noreferrer" href="https://webstore.iec.ch/en/publication/26359">原始来源 ↗</a></p><p><b>定位：</b>公开说明/适用范围</p><p><b>核读范围：</b>官方公开摘要核读，未取得付费标准全文</p><p><b>支持内容：</b>FMEA/FMECA范围及方法目的；通用标准不提供特定安全应用全部指导</p><p><b>核读释义：</b>标准描述规划、实施、文档与维护，硬件、软件、过程和接口均可适用；不能把摘要视作完整执行条文。</p><p><b>权利：</b>仅链接、题录和原创释义；第三方全文、表格和算法实现权利另行核对</p></section><h2>尚待补证</h2><p>未取得IEC标准全文及具体行业FMEA手册，未建立行业评分、AP或关键性计算规则。当前没有真实故障率、检出能力和供应商控制数据，不能给发生度数值。若用于汽车、医疗、航空或特种设备等，需核适用行业规范、完整危险分析及有责任人员的评审，不能从此通用卡自动生成合规结论。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

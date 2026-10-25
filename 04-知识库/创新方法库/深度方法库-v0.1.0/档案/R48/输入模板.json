@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-PD-001",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "initial_request": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "原话、项目背景、范围及期望改变",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "stakeholder_evidence": {
+      "value": null,
+      "type": "array",
+      "required": false,
+      "description": "用户观察、访谈、业务和工程事实，附来源",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "constraints_context": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "接口、法规安全、技术资源、生命周期",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "decision_authority": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "目标责任、评审人员及批准机制",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

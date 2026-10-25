@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>功能裁剪 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R26 / IM-ML-026
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">C技术发明与矛盾求解</p><h1>功能裁剪</h1><p class="english">Trimming</p><p class="intro">选择删除或部分删除功能载体，将其仍然必要的有用功能重新分配，并把尚未实现的接管方式转成新的求解问题。</p><div class="tags"><span>工具</span><span>现代TRIZ功能分析</span><span>MATRIZ Trimming</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R26/方法结构.md">方法结构</a><a href="../档案/R26/操作指南.md">操作文档</a><a href="../档案/R26/档案.json">JSON档案</a><a href="../档案/R26/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>功能裁剪是一种以功能模型为基础的系统改进方法。目标不只是少零件，而是移除或部分移除某些载体，同时让必要功能由对象自身、剩余系统或超系统承担。MATRIZ将其直接产物区分为裁剪模型与裁剪问题；删除在模型上完成不等于物理方案成立。设备部件与工艺步骤的裁剪规则不同，不能用同一套零件逻辑笼统处理生产流程。</p>
+</section><section><h2>解决什么问题</h2><p>适合部件、工序、成本、质量、体积或故障点过多，且功能分析已经明确哪些载体承担哪些作用的系统。裁剪优先级应由项目目标和关键不利因素决定，不必只挑最贵或功能排名最低的零件。承载安全、隔离风险或失效保护的辅助部件可能价值很高，不能因为不直接改变目标对象就随意删除。</p>
+</section><section><h2>原理与框架</h2><p>设备裁剪的公开规则包含三种基本关系：当功能对象及对应需求消失，原载体可能不再必要；对象可能自行承担功能；其余系统或超系统的另一载体可能接管。第三种关系可从已有同类功能、与对象直接交互或具备所需资源的部件寻找候选。规则描述功能重新配置的方向，不保证被提名载体具备足够能力，也不允许在保留需求时静默删除功能。</p>
+</section><section><h2>什么时候用</h2><p>输入需要边界一致的功能模型、全部有用及有害作用、成本或其他目标参数、关键缺陷和硬约束。部分裁剪可只删除一个功能、结构段或工艺环节，但应说明剩余载体为何仍存在。工艺过程需先区分生产性、支持、运输、测量和纠正等步骤，核验相应规则；减少检验、纠正或物流步骤要证明上游或系统变化使其不再必要。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>现有功能模型<small>必需</small></td><td><p>载体、对象、有用有害作用及边界</p>
+</td><td>先建立功能模型</td></tr><tr><td>裁剪目标与缺陷<small>必需</small></td><td><p>成本、质量、部件数等目标及证据</p>
+</td><td>明确目标</td></tr><tr><td>必须保留条件<small>必需</small></td><td><p>主功能、安全和生命周期要求</p>
+</td><td>确认边界</td></tr></tbody></table></div><section class="step" id="R26-S01"><span class="step-num">01</span><h3>选择裁剪对象</h3><div class="step-line"><b>输入</b><p>function_model、goal、constraints</p>
+</div><div class="step-line"><b>动作</b><p>依据目标参数和关键缺陷选择载体或工艺步骤，说明优先理由。</p>
+</div><div class="step-line"><b>判断</b><p>安全功能不可因辅助排名低直接删除。</p>
+</div><div class="step-line"><b>产物</b><p>trim_target · 候选与目标依据</p>
+</div><div class="step-line"><b>检查</b><p>区别设备和工艺</p>
+</div><div class="step-line"><b>返回或停止</b><p>功能边界不一致则暂停</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><section class="step" id="R26-S02"><span class="step-num">02</span><h3>列全原载体作用</h3><div class="step-line"><b>输入</b><p>trim_target、function_model、goal、constraints</p>
+</div><div class="step-line"><b>动作</b><p>逐项列有用功能、有害作用和隐含维护安全作用。</p>
+</div><div class="step-line"><b>判断</b><p>发现遗漏作用则补原模型。</p>
+</div><div class="step-line"><b>产物</b><p>function_inventory · 完整作用清单</p>
+</div><div class="step-line"><b>检查</b><p>不能只列主作用</p>
+</div><div class="step-line"><b>返回或停止</b><p>功能无法核实则调查</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><section class="step" id="R26-S03"><span class="step-num">03</span><h3>逐功能安排去向</h3><div class="step-line"><b>输入</b><p>function_inventory、function_model、goal、constraints</p>
+</div><div class="step-line"><b>动作</b><p>判断需求是否消失、对象能否自行承担、其他载体能否接管；工艺按类型另查规则。</p>
+</div><div class="step-line"><b>判断</b><p>必要功能无去向则保留未解决状态。</p>
+</div><div class="step-line"><b>产物</b><p>redistribution · 裁剪前后功能映射</p>
+</div><div class="step-line"><b>检查</b><p>每项有依据和新载体</p>
+</div><div class="step-line"><b>返回或停止</b><p>主功能被静默删除则拒绝</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><section class="step" id="R26-S04"><span class="step-num">04</span><h3>生成裁剪模型与问题</h3><div class="step-line"><b>输入</b><p>redistribution、function_model、goal、constraints</p>
+</div><div class="step-line"><b>动作</b><p>绘制新配置，并把每项能力缺口写成新载体如何执行该功能的问题。</p>
+</div><div class="step-line"><b>判断</b><p>模型不等于方案，未解问题进入其他工具。</p>
+</div><div class="step-line"><b>产物</b><p>trimming_problems · 裁剪模型和问题ID</p>
+</div><div class="step-line"><b>检查</b><p>每个接管假设可追踪</p>
+</div><div class="step-line"><b>返回或停止</b><p>仅写删除无接管说明则回退</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><section class="step" id="R26-S05"><span class="step-num">05</span><h3>验证接管与全成本</h3><div class="step-line"><b>输入</b><p>trimming_problems、function_model、goal、constraints</p>
+</div><div class="step-line"><b>动作</b><p>测试新载体能力、失效和新增负担，比较制造维护用户总成本。</p>
+</div><div class="step-line"><b>判断</b><p>接管失败可部分裁剪或保留原件。</p>
+</div><div class="step-line"><b>产物</b><p>trimming_validation · 可行性及功能守恒记录</p>
+</div><div class="step-line"><b>检查</b><p>覆盖全部必要功能</p>
+</div><div class="step-line"><b>返回或停止</b><p>未解决关键接管问题不得实施</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><h2>产物</h2><ul><li><b>功能裁剪档案</b> 模型与实现状态分开登记。<small>目标载体、原功能、去向表、裁剪模型、裁剪问题、接管证据、全成本</small></li></ul><p>平台先选目标，再逐功能安排去向，形成裁剪前后差异表。每条原有必要功能必须有明确的新载体、功能无需保留的依据，或尚未解决的问题。若接管机制不明，写成“新载体如何在指定工况下完成某功能”，交给其他求解工具。引擎不应把所有功能都笼统改为由环境完成，也不能将用户新增劳动掩盖为系统自动简化。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学例：桌面支架使用独立回位弹簧、转轴和限位件。希望降低装配数量，选择回位弹簧作为裁剪候选。分析其不仅回位，还保持待机角度并补偿间隙。候选可让已有柔性支撑臂接管储能和回位，但仍需解决疲劳、保持力和间隙控制。若只证明支撑臂可回位而忽略间隙补偿，裁剪模型不完整。该例为原创推演，不能因减少一个零件就判定方案成功。</p>
+<h2>反例与误用</h2><p>最常见错误是把删除部件当作完成创新，随后遗漏它承担的不显眼功能。另一个错误是将功能转移给操作者却不统计时间、误操作和培训。规则A中删除功能对象不等于任意删除主功能目标；改变目标对象可能意味着改变产品任务，需要需求层面确认。把功能合并到单个件也可能导致制造困难、维修成本和共同失效增加。</p>
+<h2>检查与验证</h2><p>先做功能守恒检查：每条必要有用功能均有去向，删除依据可查。再验证接管载体的力、热、刚度、寿命、控制和兼容性，检查裁剪引起的新有害作用。成本评价覆盖模具、装配、质检、维修、报废和用户负担。没有实现接管机制的裁剪模型可以作为有用的研究产物，但应标记未解决，不能直接生成实施建议。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R21.html">TRIZ体系</a><small>part_of</small><p>TRIZ功能重构路线；已有功能模型</p></li><li><a href="R24.html">理想解与资源分析</a><small>parallel</small><p>寻找接管资源；新载体能力尚不明确</p></li><li><a href="R27.html">功能导向检索与科学效应</a><small>precedes</small><p>检索接管机制；裁剪问题需要外部技术</p></li></ul><h2>平台适配</h2><p>引擎以功能模型和目标参数作为调用门槛，输出候选载体及逐功能去向表，并把每个接管缺口生成独立裁剪问题ID。可以并行提出不同接管者，交R24查资源、R27查跨领域机制、R32查机构实现。不同版本的工艺裁剪规则作为独立知识条目管理，本档不把设备A/B/C规则泛化成所有场景的唯一算法。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · Trimming</h3><p>MATRIZ · <a target="_blank" rel="noopener noreferrer" href="https://wiki.matriz.org/docs/triz/problem-solving-tools-5807/trimming-6398/">原始来源 ↗</a></p><p><b>定位：</b>完整主文</p><p><b>核读范围：</b>实际直接打开52行主文核读</p><p><b>支持内容：</b>移除并重新分配功能；模型与问题产物</p><p><b>核读释义：</b>允许部分裁剪；选择由项目目标驱动。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><section class="source" id="source-S02"><h3>S02 · Trimming Rules</h3><p>MATRIZ · <a target="_blank" rel="noopener noreferrer" href="https://wiki.matriz.org/docs/triz/problem-solving-tools-5807/trimming-6398/trimming-rules-6730/">原始来源 ↗</a></p><p><b>定位：</b>设备A/B/C与工艺分类</p><p><b>核读范围：</b>实际直接打开111行主文核读</p><p><b>支持内容：</b>设备三类关系；工艺规则不同</p><p><b>核读释义：</b>对象消失、自身执行或其他载体接管须分别判断。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><section class="source" id="source-S03"><h3>S03 · Trimming Problem</h3><p>MATRIZ · <a target="_blank" rel="noopener noreferrer" href="https://wiki.matriz.org/docs/triz/problem-solving-tools-5807/trimming-6398/trimming-problem-6926/">原始来源 ↗</a></p><p><b>定位：</b>完整短文</p><p><b>核读范围：</b>实际直接打开21行全文核读</p><p><b>支持内容：</b>裁剪问题是新的求解问题</p><p><b>核读释义：</b>新载体如何执行有用功能，需要后续求解，不能以模型替代。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><h2>尚待补证</h2><p>已直接打开并核读MATRIZ裁剪主文、设备与工艺裁剪规则、裁剪问题定义三篇正文。档案保留规则含义与原创适配，不复制完整专有规则表或图。当前案例没有工程数据；对每种工艺类型的细则尚未逐例验证。裁剪与价值工程、DFMA可互补，但不声称这些独立方法都源于TRIZ。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

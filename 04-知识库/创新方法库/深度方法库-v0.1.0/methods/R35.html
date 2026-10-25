@@ -1,0 +1,51 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>拓扑优化 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R35 / IM-ML-035
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">E性能优化与工程实现</p><h1>拓扑优化</h1><p class="english">Topology Optimization</p><p class="intro">在明确的设计域、载荷和边界条件下，用计算优化探索材料放在哪里，并把结果重构和复核成可制造结构。</p><div class="tags"><span>计算方法</span><span>结构优化</span><span>密度法</span><span>SIMP</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R35/方法结构.md">方法结构</a><a href="../档案/R35/操作指南.md">操作文档</a><a href="../档案/R35/档案.json">JSON档案</a><a href="../档案/R35/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>拓扑优化是结构优化方法族，不限于一种算法。本档以Ole Sigmund的2001年99行MATLAB教育实现为明确技术例，原论文由DTU实验室提供，采用密度变量和SIMP惩罚的柔顺度优化。该示例不覆盖所有多物理场、接触、屈曲和制造问题。平台步骤描述如何准备、读取与验证计算任务，不表示本轮已运行算法或获得实际最优结构。</p>
+</section><section><h2>解决什么问题</h2><p>设计师凭经验开孔或削薄时，可能保留低效材料而切断关键传力路径；反过来，一张复杂的有机形态图也可能只是某个错误载荷或约束的产物。本方法把材料布局作为变量，在目标和约束下系统搜索。它解决的是被建模的结构问题，不能替代需求确认、载荷识别、连接建模和工程判断，更不能从单个静载结果推断疲劳、冲击或安全全都达标。</p>
+</section><section><h2>原理与框架</h2><p>密度法把设计域离散成单元，用密度变量描述材料分布；有限元计算响应，再以目标的灵敏度更新变量。原教育例针对体积约束下的柔顺度最小化，柔顺度与载荷方向下的变形响应有关。SIMP惩罚用于抑制中间密度，滤波用于约束不合理的细小变化和减轻网格依赖。优化收敛只说明迭代在给定模型中稳定，不能自动证明全局最优、制造可行或真实服役可靠。因此结果应与模型版本绑定，不能把载荷改变后的新问题继续引用旧最优解。 具体教育模型可写min_x c=fᵀu，约束K(x)u=f、Σv_e x_e≤V_limit、x_min≤x_e≤1；SIMP用x_e的惩罚幂插值单元刚度。变量、边界、载荷、体积及滤波共同定义问题。这里仅给教学模型，不含应力、疲劳、屈曲或制造约束的完整求解实现。</p>
+</section><section><h2>什么时候用</h2><p>适用于已知设计包络、支承、载荷及主要性能目标的材料分布探索，尤其是结构概念与轻量化。需要区分设计区、保留区和禁止区，并说明载荷工况、材料模型与最小尺度。若载荷来源不明、支承被简化得不合理、运动或接触使线弹性模型失效，先修正模型。对疲劳、屈曲、频率、热或多工况要求，应选择相应约束与算法，不能把教育代码直接作为生产求解器。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>结构设计任务<small>必需</small></td><td><p>目标、设计包络、保留/禁止区、接口和验收指标</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>载荷与支承工况<small>必需</small></td><td><p>方向、作用区、单位、时间/频率和来源，不能默认遗漏工况为零</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>材料与本构模型<small>必需</small></td><td><p>弹性/非线性等模型、参数、状态与单位</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>计算与制造条件<small>必需</small></td><td><p>算法、网格、滤波、制造限制、求解器版本和可用能力</p>
+</td><td>补齐必要输入后继续</td></tr></tbody></table></div><section class="step" id="R35-S01"><span class="step-num">01</span><h3>定义设计域与不可变接口</h3><div class="step-line"><b>输入</b><p>structural_task</p>
+</div><div class="step-line"><b>动作</b><p>区分可变材料域、保留连接区和禁止占用区，明确优化是形态探索还是定型分析。</p>
+</div><div class="step-line"><b>判断</b><p>接口/包络不清则返回任务，避免优化出无法安装的结构。</p>
+</div><div class="step-line"><b>产物</b><p>design_domain · 区域、接口和目标层级</p>
+</div><div class="step-line"><b>检查</b><p>孔和连接面可追溯；目标与约束分开</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键边界未知则停止求解</p>
+</div><div class="step-line"><b>知识查询</b><p>查目标安装边界和源结构传力路径</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R35-S02"><span class="step-num">02</span><h3>建立物理与优化模型</h3><div class="step-line"><b>输入</b><p>design_domain、load_cases、material_model、solver_context</p>
+</div><div class="step-line"><b>动作</b><p>由工程模型选择目标、约束、材料插值和载荷工况；核有限元边界与单位。</p>
+</div><div class="step-line"><b>判断</b><p>模型未覆盖主要失效模式时限于探索；不可把单工况泛化。</p>
+</div><div class="step-line"><b>产物</b><p>optimization_model · 变量、方程、边界、目标、约束与适用假设</p>
+</div><div class="step-line"><b>检查</b><p>支承不人为过刚；载荷与设计值有依据</p>
+</div><div class="step-line"><b>返回或停止</b><p>无有效模型或工具不输出优化结果</p>
+</div><div class="step-line"><b>知识查询</b><p>查所需线弹性/接触/屈曲假设及相关验证</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R35-S03"><span class="step-num">03</span><h3>执行并记录迭代</h3><div class="step-line"><b>输入</b><p>optimization_model、solver_context</p>
+</div><div class="step-line"><b>动作</b><p>实际求解时保存有限元、灵敏度、滤波、更新、目标和残差；未执行则明确未运行。</p>
+</div><div class="step-line"><b>判断</b><p>不收敛、约束不满足或数值异常则诊断，不挑一张漂亮图交付。</p>
+</div><div class="step-line"><b>产物</b><p>optimization_record · 输入快照、算法日志和密度结果或未执行任务单</p>
+</div><div class="step-line"><b>检查</b><p>记录网格滤波和版本；无调用不造日志</p>
+</div><div class="step-line"><b>返回或停止</b><p>求解错误或缺许可证时停止</p>
+</div><div class="step-line"><b>知识查询</b><p>查基准题、网格依赖及算法可靠性</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R35-S04"><span class="step-num">04</span><h3>检验数值与工况敏感性</h3><div class="step-line"><b>输入</b><p>optimization_record、load_cases</p>
+</div><div class="step-line"><b>动作</b><p>对比网格、特征尺度与载荷变化；检查中间密度、孤立材料和约束残差。</p>
+</div><div class="step-line"><b>判断</b><p>结果高度不稳定则回模型；不能只以目标下降判合格。</p>
+</div><div class="step-line"><b>产物</b><p>numerical_review · 敏感性、可解释性与需要复算项</p>
+</div><div class="step-line"><b>检查</b><p>网格与滤波变化被区分；多工况覆盖</p>
+</div><div class="step-line"><b>返回或停止</b><p>主要工况未覆盖不能转定型</p>
+</div><div class="step-line"><b>知识查询</b><p>查目标侧新增工况与材料缺陷敏感性</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R35-S05"><span class="step-num">05</span><h3>重构实体并交验证</h3><div class="step-line"><b>输入</b><p>numerical_review、structural_task、solver_context</p>
+</div><div class="step-line"><b>动作</b><p>将布局转为可制造几何，保存改动并按最终几何重新分析，提出试验与制造检验。</p>
+</div><div class="step-line"><b>判断</b><p>重构改变关键传力则必须重算，缺最终验证只保留概念。</p>
+</div><div class="step-line"><b>产物</b><p>topology_dossier · 模型、结果、重构、风险与验证计划</p>
+</div><div class="step-line"><b>检查</b><p>密度图非工程图；最终几何重新检验</p>
+</div><div class="step-line"><b>返回或停止</b><p>安全关键项未验证不定型</p>
+</div><div class="step-line"><b>知识查询</b><p>查DFMA制造条件和V&amp;V接受口径</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>拓扑优化研究档案</b> 只支持已建模的探索；未运行和已运行必须分清<small>model、load_cases、solver_version、iteration_record、numerical_checks、reconstruction、validation_plan</small></li></ul><p>有效产物包括模型定义、迭代参数、目标历史、约束残差、材料分布和后处理方案。形态图只是一个结果视图，必须能追溯设计域、边界和材料。检查不同网格、滤波尺度、初值和载荷变化下的稳定性；中间密度、细铰链或孤立材料都需解释。重构为实体CAD会改变刚度和应力，应使用重构后的几何重新分析，不沿用原密度图的结果当合格证明。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示，未运行求解：为一个安装孔位置固定、空间包络固定的支架探索减重。第一步将孔周和连接面列为保留区，其余为候选材料域。第二步列实际装配传力的待确认工况，未知偏载不能当不存在。第三步拟定柔顺度目标、体积限制和制造最小尺寸，由工程人员核模型。第四步计划用经验证求解器迭代并记录网格与滤波参数，本档不补造任何材料分布图或减重比例。第五步若得到结果，将其重构为满足加工和圆角要求的实体，重新进行强度、疲劳与装配复核。输出是计算方案和判断路径，不是已优化支架。 可审中间产物：design_domain记录保留接口、可设计区和禁入区；optimization_model逐项写目标、变量、载荷支承、体积限制与模型假设；optimization_record计划记录每轮目标/体积/变量变化及收敛条件；numerical_review列网格、滤波与漏载敏感性；topology_dossier将原分布、重构差异和复验绑定。不能用一个收敛数字替代以上记录。</p>
+<h2>反例与误用</h2><p>一是把“更轻”直接转为任意体积分数，未说明剩余结构必须满足什么；目标与约束应由任务定义。二是只算一个力方向就把其他工况忽略；先做载荷清单。三是把网格细化产生的细杆当制造优势；同时检查最小特征和稳定性。四是把优化图片直接送加工，忽略重构、连接及材料行为。反例：瓶颈是工件轨迹或装配动作而非承载布局时，机构综合或DFMA比结构拓扑优化更合适。</p>
+<h2>检查与验证</h2><p>方法执行检查关注方程、边界、单位、有限元求解、约束和迭代记录是否可复算；可以先用已知基准题检验软件。工程验证应基于最终几何、真实载荷、材料状态和制造缺陷，包含网格收敛、强度/刚度以及任务需要的疲劳、屈曲或试验。未接求解器时只能输出模型准备和验证清单；即使求解器报告收敛，也不能标实际产品经过工程验证。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R48.html">问题定义与要求管理</a><small>requires</small><p>问题与边界→structural_task；设计域和目标明确</p></li><li><a href="R33.html">Ashby材料选择</a><small>requires</small><p>材料候选→material_model；物性和状态可追溯</p></li><li><a href="R34.html">面向制造与装配设计</a><small>parallel</small><p>制造约束→重构与模型；需实现而非仅展示布局</p></li><li><a href="R42.html">验证与确认</a><small>precedes</small><p>最终结构→V&amp;V计划；最终几何和工况可验证</p></li></ul><h2>平台适配</h2><p>原论文支持具体的密度法、SIMP惩罚、有限元/灵敏度/滤波/更新迭代及教育边界。本文增加保留区、数据状态、制造重构与跨方法验证接口，作为平台任务封装。没有移植全部代码、没有计算真实结构，也没有把论文示例的性能值转移给目标产品。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · A 99 line topology optimization code written in MATLAB</h3><p>Technical University of Denmark, TopOpt · <a target="_blank" rel="noopener noreferrer" href="https://www.topopt.mek.dtu.dk/apps-and-software/a-99-line-topology-optimization-code-written-in-matlab">原始来源 ↗</a></p><p><b>定位：</b>代码介绍页正文及原论文链接</p><p><b>核读范围：</b>实验室网页正文核读；代码本轮未运行</p><p><b>支持内容：</b>教育代码定位；原论文与扩展边界</p><p><b>核读释义：</b>实验室将代码定位为结构优化教学起点，支持扩展研究；不是任意载荷和制造要求的一键通用解。</p><p><b>权利：</b>仅链接、题录和原创释义；不复制完整第三方表格、教材、数据库或软件规则</p></section><section class="source" id="source-S02"><h3>S02 · A 99 line topology optimization code written in Matlab (2001)</h3><p>Structural and Multidisciplinary Optimization / DTU · <a target="_blank" rel="noopener noreferrer" href="https://www.topopt.mek.dtu.dk/-/media/subsites/topopt/apps/dokumenter-og-filer-til-apps/matlab-1-.pdf">原始来源 ↗</a></p><p><b>定位：</b>原论文§2–3，PDF pp.2–4及附录；DOI 10.1007/s001580050176</p><p><b>核读范围：</b>公开8页论文数学模型、灵敏度滤波与迭代实现相关段落文字选读；未运行求解</p><p><b>支持内容：</b>密度变量与SIMP惩罚；有限元与灵敏度迭代；滤波及网格依赖</p><p><b>核读释义：</b>论文演示体积限制下的柔顺度优化，算法迭代包含有限元、灵敏度、滤波和更新；所得图像须结合模型假设解释。</p><p><b>权利：</b>仅链接、题录和原创释义；不复制完整第三方表格、教材、数据库或软件规则</p></section><h2>尚待补证</h2><p>本轮已选读原论文模型与实现部分，但未逐行运行代码、未做网格与算法复现。当前以单一教育模型解释方法族，生产任务还需选择算法版本、有限元工具、制造约束、载荷谱和验证基准。代码许可及软件许可须在实际部署时核对；原论文可公开阅读不等于所有实现可任意再分发。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

@@ -1,0 +1,285 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R07",
+  "method_id": "IM-ML-007",
+  "version": "0.1.0",
+  "name": "六西格玛设计",
+  "english_name": "DFSS / DMADV",
+  "kind": "framework",
+  "category": "G全流程规划与创新管理",
+  "lineage": [
+    "质量工程",
+    "DFSS",
+    "DMADV"
+  ],
+  "aliases": [
+    "六西格玛设计",
+    "DMADV"
+  ],
+  "summary": "在新产品设计时把顾客需求转成关键质量特性，结合概念、参数与验证活动，使质量目标在设计阶段得到处理。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "DFSS是面向设计的质量工程方法族，不是一个固定算法。ASQ公开课程明确其可采用不同路线，本档选择DMADV作为主要编排，不将其等同所有DFSS。DMAIC主要改善现有过程，DMADV面向新产品或重大重新设计；两者可共享工具，但使用情境不同。步骤内调用QFD、FMEA、稳健设计或统计分析须分别采用其实际方法与条件。",
+    "problem": "新产品容易在样机做完后才发现用户重要指标、生产波动或可靠性没有被设计考虑；靠出厂检验筛掉缺陷无法弥补结构性质量问题。DFSS试图从需要、可测质量特性和作用关系开始，把设计选择与变异影响联系起来，避免平均值看上去不错却在真实噪声下大量失效。它不是保证每个产品达到统一西格玛数字的口号。",
+    "principle": "定义确定任务与顾客；测量澄清质量特性及可信测量；分析寻找功能、概念与影响关系；设计将方案细化并考虑参数、接口、稳健性和工艺；验证检验设计是否达到要求并规划控制。质量目标要有业务与使用依据，不能随意把用户语言变成工程阈值。统计量只在数据和模型条件满足时有意义；没有分布与能力证据，不能根据一次演示声称极低缺陷率。",
+    "applicability": "适合新产品、重要改型或现有过程必须根本重构的任务，且能够定义质量特性、获取测量和调动工程专业知识。已有过程的局部持续改善往往先考虑DMAIC。早期未知技术可先用概念探索，不能为了填DMADV各阶段而伪造量测。ASQ课程对能力和工具有要求，本平台不能将一张卡视为获得专业资格或无需统计人员。",
+    "interpretation": "DFSS关注把顾客关键质量特性转成设计决策与证据，而非将大量质量工具机械串联。CTQ须说明对象、条件和测量方式；设计目标、规格界限与实测分布是不同信息。新产品尚无稳定过程数据时，能力指数不能充当可靠承诺。DMADV只是常见路线之一，组织若用其他DFSS路线，应标明术语映射与差异。已有过程不满足规格也未必一定重设计，可先判断是过程改善还是新的设计问题。",
+    "example": "教学演示：开发重复定位装置，未取得真实用户和试验数据。Define产物是用途与质量目标树，区分定位表现、操作及维护，不先写‘达到六西格玛’。Measure产物是候选CTQ及测量计划：重复定位误差的坐标、负载、温度、测次和测具要求必须明确，阈值待确认。Analyze产物是原理比较与因素图，区分可调结构参数、生产变化及使用噪声，间隙和温度只是待检假设。Design产物是参数与容差试验方案，要求同时考虑控制因素和实际噪声条件，不把单次理想样机表现当鲁棒性。Verify产物是测量系统和代表工况验证计划。若测具重复性不足以分辨设计差异，应返回测量步骤修正，而不是继续计算能力指数。全程没有虚构最优值、缺陷率或达标结论。",
+    "pitfalls": "一是把DFSS等同DMADV一种路线，应注明采用版本。二是未验证测量系统就分析小差异，可能把量具误差当设计效应；先核测量。三是没有统计依据却宣称“六西格玛级质量”，正确做法是保留数据和模型条件。反例：只需修正已有稳定工序的一项偏差，可能使用DMAIC更合适，不必重做整机产品定义。",
+    "validation": "方法执行质量检查需求到指标是否有来源、测量可否支撑精度、概念和参数选择是否有证据、验证是否覆盖噪声与制造条件。工程有效性需要真实测量与试验，统计软件输出也要检查假设、样本和模型适合性。缺工具只输出研究设计，不能声称显著性、过程能力或可靠性。平台结果需工程和质量人员按任务复核。",
+    "adaptation": "本卡依据ASQ课程的路线与工具组织作平台操作适配，不复制付费课程内容。五阶段名称和DFSS非单一路线有公开依据；具体产物键、定位装置演示和门槛是平台设计。没有把课程前置资格自动转换为本方法库审核资质。",
+    "gaps": "已核课程介绍和详细提纲，而非完整训练教材或统计公式。下一步应补所选QFD、DOE、稳健与可靠性方法的原典，并用真实原始数据评估方法链。课程页面存在较旧软件要求，本卡不据此推荐当前工具版本。"
+  },
+  "inputs": [
+    {
+      "key": "design_project",
+      "label": "设计任务与需求",
+      "type": "object",
+      "required": true,
+      "description": "顾客、用途、质量目标及现有基线",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "measurement_context",
+      "label": "测量和工程资源",
+      "type": "object",
+      "required": true,
+      "description": "指标、量具、数据、专业能力与试验资源",
+      "missing_action": "ask_or_stop"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R07-S01",
+      "title": "定义设计项目与质量问题",
+      "input_refs": [
+        "design_project"
+      ],
+      "depends_on": [],
+      "operation": "说明新设计或重构必要性，区分顾客价值与拟用技术。",
+      "decision": "局部现有过程改善可转DMAIC。",
+      "output_key": "dfss_charter",
+      "output_description": "设计目标、角色与范围",
+      "checks": [
+        "目标有顾客依据"
+      ],
+      "stop_condition": "对象用途不清则回定义",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "顾客任务和质量问题"
+      ]
+    },
+    {
+      "step_id": "R07-S02",
+      "title": "把需求转成可测特性",
+      "input_refs": [
+        "dfss_charter",
+        "measurement_context"
+      ],
+      "depends_on": [
+        "R07-S01"
+      ],
+      "operation": "识别关键质量特性、口径和测量可信度，必要时调用QFD。",
+      "decision": "没有阈值依据时保留待定，不算能力。",
+      "output_key": "ctq_measure_plan",
+      "output_description": "特性、单位、目标依据与测量计划",
+      "checks": [
+        "测量分辨能力与目标匹配"
+      ],
+      "stop_condition": "量测不可信则先改善",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "需求到工程特性证据"
+      ]
+    },
+    {
+      "step_id": "R07-S03",
+      "title": "分析概念与影响关系",
+      "input_refs": [
+        "ctq_measure_plan"
+      ],
+      "depends_on": [
+        "R07-S02"
+      ],
+      "operation": "组织功能、候选概念与因素关系，识别设计风险。",
+      "decision": "无因果证据只称影响假设。",
+      "output_key": "concept_factor_model",
+      "output_description": "概念、质量响应、因素及风险",
+      "checks": [
+        "不跳过原理比较"
+      ],
+      "stop_condition": "关键作用关系未知则列试验",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "概念选择、FMEA与影响机制"
+      ]
+    },
+    {
+      "step_id": "R07-S04",
+      "title": "设计参数与稳健路径",
+      "input_refs": [
+        "concept_factor_model",
+        "measurement_context"
+      ],
+      "depends_on": [
+        "R07-S03"
+      ],
+      "operation": "明确设计变量、接口、噪声及工艺，选择合适实验或计算。",
+      "decision": "无真实数据不输出最优参数。",
+      "output_key": "design_quality_plan",
+      "output_description": "设计方案、参数研究和制造条件",
+      "checks": [
+        "模型假设可核"
+      ],
+      "stop_condition": "统计或求解依赖缺失限计划",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "稳健、公差、可靠性及制造条件"
+      ]
+    },
+    {
+      "step_id": "R07-S05",
+      "title": "验证并形成质量交接",
+      "input_refs": [
+        "design_quality_plan",
+        "ctq_measure_plan"
+      ],
+      "depends_on": [
+        "R07-S04"
+      ],
+      "operation": "按目标规划或执行试验，区分实测结果与待执行控制安排。",
+      "decision": "未覆盖代表工况则不宣称普遍达标。",
+      "output_key": "dfss_quality_package",
+      "output_description": "DMADV产物、证据、控制与未知",
+      "checks": [
+        "不虚报西格玛水平"
+      ],
+      "stop_condition": "无数据不报能力/缺陷率",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "试点、可靠性测试及接受口径"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "dfss_quality_package",
+      "label": "DFSS质量设计包",
+      "required_fields": [
+        "ctq",
+        "measurement",
+        "concepts",
+        "parameters",
+        "verification",
+        "control",
+        "unknowns"
+      ],
+      "interpretation": "连通质量目标与设计证据，不能从流程完整推出质量保证"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R12",
+      "relation": "requires",
+      "binding": "需求→QFD特性",
+      "condition": "需展开质量响应"
+    },
+    {
+      "target_research_id": "R38",
+      "relation": "parallel",
+      "binding": "影响因素→试验设计",
+      "condition": "可获得量测"
+    },
+    {
+      "target_research_id": "R39",
+      "relation": "parallel",
+      "binding": "噪声因素→稳健设计",
+      "condition": "变异重要"
+    },
+    {
+      "target_research_id": "R40",
+      "relation": "parallel",
+      "binding": "设计功能→FMEA",
+      "condition": "需识别失效"
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "ASQ",
+      "authors": [
+        "ASQ"
+      ],
+      "title": "Design for Six Sigma (DFSS)",
+      "url": "https://asq.org/training/design-for-six-sigma--dfss--dfssasq",
+      "locator": "Description / Learning Objectives / Outline",
+      "read_scope": "课程公开说明及DMADV提纲实读；不是课程教材",
+      "supports": [
+        "DFSS非单一路线、DMADV与工具族"
+      ],
+      "evidence_note": "公开提纲将顾客需求、概念、参数、公差和验证活动纳入设计质量过程。",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    },
+    {
+      "publisher": "ASQ",
+      "authors": [
+        "ASQ"
+      ],
+      "title": "DMAIC",
+      "url": "https://asq.org/quality-resources/dmaic",
+      "locator": "Overview及DMADV区别",
+      "read_scope": "公开网页相关内容实读",
+      "supports": [
+        "既有过程改善与新设计路线区别"
+      ],
+      "evidence_note": "DMAIC与DMADV所处理的问题阶段不同，不应仅因名称相似混用。",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "无测量数据",
+      "expected": "只交特性与试验计划"
+    },
+    {
+      "scenario": "量具不足辨别变化",
+      "expected": "先检查测量系统"
+    },
+    {
+      "scenario": "局部现有过程改善",
+      "expected": "说明DMAIC替代适用性"
+    }
+  ],
+  "search_terms": [
+    "DFSS",
+    "DMADV",
+    "CTQ",
+    "设计质量",
+    "六西格玛"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项第一方检索核读、原创释义和平台操作适配"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-ML-044",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "design_intent": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "目标用户、情境、概念与待解决问题",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "assumptions": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "关键未知、影响、现有证据及可反驳条件",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "experiment_resources": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "时间、成本、参与者、材料、工具和安全限制",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "prototype_evidence": {
+      "value": null,
+      "type": "array",
+      "required": false,
+      "description": "模型能力、原始观察和偏差，不混事实假设",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

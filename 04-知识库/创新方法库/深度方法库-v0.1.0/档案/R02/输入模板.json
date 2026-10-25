@@ -1,0 +1,23 @@
+{
+  "method_id": "IM-ML-002",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "challenge": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "原始委托、受影响者、现有方案和未知",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "evidence_access": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "可接触人群、现场记录、原型与资源",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    }
+  }
+}

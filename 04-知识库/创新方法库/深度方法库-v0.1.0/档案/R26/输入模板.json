@@ -1,0 +1,31 @@
+{
+  "method_id": "IM-ML-026",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "function_model": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "载体、对象、有用有害作用及边界",
+      "evidence_refs": [],
+      "missing_action": "先建立功能模型"
+    },
+    "goal": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "成本、质量、部件数等目标及证据",
+      "evidence_refs": [],
+      "missing_action": "明确目标"
+    },
+    "constraints": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "主功能、安全和生命周期要求",
+      "evidence_refs": [],
+      "missing_action": "确认边界"
+    }
+  }
+}

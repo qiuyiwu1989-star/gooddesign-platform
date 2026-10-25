@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>根因分析 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R16 / IM-ML-016
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">B功能分析与概念生成</p><h1>根因分析</h1><p class="english">Root Cause Analysis</p><p class="intro">以问题事实和可检验因果假设追查失效来源，再把纠正措施与复发验证闭合。</p><div class="tags"><span>方法族</span><span>质量改进</span><span>事件调查</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R16/方法结构.md">方法结构</a><a href="../档案/R16/操作指南.md">操作文档</a><a href="../档案/R16/档案.json">JSON档案</a><a href="../档案/R16/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>根因分析是多种问题原因调查方法的集合，ASQ明确其包含不同工具与路径；不是只问五次为什么。HSE事故调查工作册提供收集信息、分析、风险控制、行动实施的公开实践框架。本卡将质量故障与机械事件调查共同建模，具体事故仍应由合适的专业团队负责。</p>
+</section><section><h2>解决什么问题</h2><p>设备重复停机，维修团队持续更换同一部件；故障报告只写‘操作不当’，但没有解释为什么任务和系统容许该行为。RCA要分开眼前症状、直接事件、促成条件和使问题反复出现的管理或设计缺陷，使干预针对可控制的机制。</p>
+</section><section><h2>原理与框架</h2><p>从已发生的不符合或事件出发，以证据重建发生过程，提出多个原因假设，核对它们如何产生结果及哪些屏障失效。原因可能组合出现，时间先后或相关性不足以证明因果。根因深度应服务可实施的防复发行动，不能无限追问，也不能为尽快结案停在第一个合理故事。</p>
+</section><section><h2>什么时候用</h2><p>适用于重复质量问题、现场失效、事故与险情、性能突然变化。先控制正在发生的危险并保护证据，再做调查。事件资料不足时输出调查计划；新产品尚未发生的潜在失效更适合FMEA等前瞻方法。高风险现场不可通过无保护重现故障来获取证据。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>事件与不符合<small>必需</small></td><td><p>发生条件、影响、目标表现和紧急处置</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>记录与证据<small>必需</small></td><td><p>量测、时间线、变更、访谈和实物</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>调查边界与责任<small>必需</small></td><td><p>调查人、可测试范围及措施权限</p>
+</td><td>补齐必要输入后继续</td></tr></tbody></table></div><section class="step" id="R16-S01"><span class="step-num">01</span><h3>定义问题并处理持续风险</h3><div class="step-line"><b>输入</b><p>problem、authority</p>
+</div><div class="step-line"><b>动作</b><p>记录具体偏差、影响和边界；危险处置与证据保护交专业人员执行。</p>
+</div><div class="step-line"><b>判断</b><p>问题陈述不得预置未经证实原因。</p>
+</div><div class="step-line"><b>产物</b><p>problem_definition · 事实问题与调查边界</p>
+</div><div class="step-line"><b>检查</b><p>区分事实推测；紧急处置另记</p>
+</div><div class="step-line"><b>返回或停止</b><p>持续危险未控制不得调查试验</p>
+</div><div class="step-line"><b>知识查询</b><p>同类故障 调查 证据保护</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R16-S02"><span class="step-num">02</span><h3>汇集过程与对照证据</h3><div class="step-line"><b>输入</b><p>problem_definition、records</p>
+</div><div class="step-line"><b>动作</b><p>建立事件时间线，记录发生与未发生条件、近期变化和屏障。</p>
+</div><div class="step-line"><b>判断</b><p>证据冲突保留双方来源。</p>
+</div><div class="step-line"><b>产物</b><p>evidence_map · 事实与证据索引</p>
+</div><div class="step-line"><b>检查</b><p>时间来源可核；包含对照条件</p>
+</div><div class="step-line"><b>返回或停止</b><p>证据不足仅输出调查计划</p>
+</div><div class="step-line"><b>知识查询</b><p>事件时间线 变化分析</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R16-S03"><span class="step-num">03</span><h3>形成多原因假设</h3><div class="step-line"><b>输入</b><p>evidence_map</p>
+</div><div class="step-line"><b>动作</b><p>结合事件、变化和屏障分析列直接与潜在条件，明确因果链缺口。</p>
+</div><div class="step-line"><b>判断</b><p>每个候选都标未确认，并考虑组合原因。</p>
+</div><div class="step-line"><b>产物</b><p>hypothesis_register · 原因假设与预测</p>
+</div><div class="step-line"><b>检查</b><p>不止单一故事；不以人员归责结案</p>
+</div><div class="step-line"><b>返回或停止</b><p>没有可区分预测需重写假设</p>
+</div><div class="step-line"><b>知识查询</b><p>根因 屏障分析 变化分析</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R16-S04"><span class="step-num">04</span><h3>检验原因及反证</h3><div class="step-line"><b>输入</b><p>hypothesis_register、evidence_map、authority</p>
+</div><div class="step-line"><b>动作</b><p>制定安全的检查、对照或试验，比较各假设预测并记录结果。</p>
+</div><div class="step-line"><b>判断</b><p>仅将证据支持的连接列为确认，其余保留不确定。</p>
+</div><div class="step-line"><b>产物</b><p>causal_assessment · 因果判断与证据边界</p>
+</div><div class="step-line"><b>检查</b><p>不把相关当因果；反证有处理</p>
+</div><div class="step-line"><b>返回或停止</b><p>高风险复现不得自动执行</p>
+</div><div class="step-line"><b>知识查询</b><p>故障机制 鉴别试验</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R16-S05"><span class="step-num">05</span><h3>制定机制对应措施</h3><div class="step-line"><b>输入</b><p>causal_assessment</p>
+</div><div class="step-line"><b>动作</b><p>把措施逐项映射到原因或失效屏障，明确责任、期限和新风险审查。</p>
+</div><div class="step-line"><b>判断</b><p>临时遏制不得冒充永久纠正。</p>
+</div><div class="step-line"><b>产物</b><p>corrective_plan · 纠正措施计划</p>
+</div><div class="step-line"><b>检查</b><p>每项有原因对应；包含有效性检验</p>
+</div><div class="step-line"><b>返回或停止</b><p>无执行权限则提交决策</p>
+</div><div class="step-line"><b>知识查询</b><p>纠正措施 防复发</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><section class="step" id="R16-S06"><span class="step-num">06</span><h3>验证有效并安排复开</h3><div class="step-line"><b>输入</b><p>corrective_plan、problem_definition</p>
+</div><div class="step-line"><b>动作</b><p>按预定工况和周期跟踪结果，区分措施完成、验证通过与证据不足。</p>
+</div><div class="step-line"><b>判断</b><p>复发或新证据触发重新调查。</p>
+</div><div class="step-line"><b>产物</b><p>rca_record · 闭环调查档案</p>
+</div><div class="step-line"><b>检查</b><p>记录暴露量；未测不标通过</p>
+</div><div class="step-line"><b>返回或停止</b><p>验证周期不足保持待验证</p>
+</div><div class="step-line"><b>知识查询</b><p>复发验证 纠正有效性</p>
+</div><p class="subtle">依据：<a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>根因调查与纠正闭环</b> 确认原因与推测分开保留<small>问题、证据、假设、原因判断、措施、验证、复开条件</small></li></ul><p>原因判读需区分必要条件、促成因素、触发事件和管理缺陷，具体链条可以有多个分支，‘最深一层’不自动最有用。没有某候选仍会发生故障，会削弱它作为必需原因的解释，但不必然排除其促成作用。措施有效也可能同时改变多个因素，不能倒推每个原假设都正确。调查结论应说明证据支持到哪里、替代解释是否排除以及控制措施覆盖哪些机制。停止追查的理由应是足以采取并验证防复发措施，而不是问够固定次数。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>完整教学演示：输送机电机反复过热，没有真实故障数据。步骤1输出问题定义模板，要求温度量测位置、工况、持续时间、影响和未发生条件，‘轴承差’不写进定义。步骤2输出时间线与证据索引，收集负载、散热、维修、控制改动及量测记录。步骤3输出多假设表：超载预测温升随负载变化，通风受阻预测散热路径异常，传感误差预测独立量测不一致，每项有待区分证据。步骤4由专业人员安排安全检查与对照；若两种量测冲突，返回证据步骤校核测量，而非选择喜欢的原因。步骤5仅对确认机制制定纠正，清理散热与维护责任需分开；换电机可先作为遏制而非根治。步骤6预定义相同负荷暴露与观察周期，复发或新证据重开调查。全过程不伪造试验结果或确认根因。</p>
+<h2>反例与误用</h2><p>只找最后接触设备的人，会掩盖程序、设计和组织条件。将每个分支都归为培训不足会让调查失效。只采发生故障的样本、不看未发生条件，会放大确认偏差。措施后短期没有复发可能只是暴露机会不足，必须说明工况和观察周期。</p>
+<h2>检查与验证</h2><p>每个关键因果连接应有证据、测试或明确待验证状态；记录反证如何处理，测试是否引入新的变量。对纠正措施检查机制是否改变、是否产生新风险、是否在相同或更严工况下有效。保留残余不确定性和重新开启调查的触发条件，禁止把会议投票当因果证明。 原因表可设支持、反证、未检验三种证据状态，另列证据是否独立、量测是否可信、机制是否能解释发生条件。优先检验能区分竞争假设的问题，而非最容易做的检查。对反复过热，清理通风后温度降低可支持散热相关机制，但若同时降低了负载，就无法单独确认通风的贡献；应记录混杂而非将所有改善都归于措施。措施复核要区分恢复产出、降低暴露和消除机制三类结果，预定观察周期不足时仍保持待验证。反例是‘培训已签到所以根因消除’：这只证明完成一次行动，没有证明原来的任务条件或失败屏障已改变。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R14.html">功能分解与接口分析</a><small>requires</small><p>功能接口模型；故障涉及跨功能交互时</p></li><li><a href="R13.html">人机工程与人本设计</a><small>parallel</small><p>任务与人因；人机行为是候选条件时</p></li></ul><h2>平台适配</h2><p>引擎先收集问题、时间线、变化与屏障，生成多假设调查表，提示缺少哪些可区分证据。只允许将经人工与工程确认的原因升为结论；模型生成原因标为假设。可推荐事件分析、变化分析或屏障分析，不强制所有问题采用同一鱼骨模板。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · What is Root Cause Analysis (RCA)?</h3><p>ASQ · <a target="_blank" rel="noopener noreferrer" href="https://asq.org/quality-resources/root-cause-analysis">原始来源 ↗</a></p><p><b>定位：</b>Definition；Approaches；Conducting Root Cause Analysis</p><p><b>核读范围：</b>实际核读网页相关正文</p><p><b>支持内容：</b>RCA方法族；事件变化屏障分析；团队及改进闭环</p><p><b>核读释义：</b>未把网页示例会议时间和分析周期写为方法强制要求。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><section class="source" id="source-S02"><h3>S02 · Investigating accidents and incidents HSG245</h3><p>Health and Safety Executive · <a target="_blank" rel="noopener noreferrer" href="https://www.hse.gov.uk/pubns/hsg245.pdf">原始来源 ↗</a></p><p><b>定位：</b>2004工作册；目录；正文信息收集约PDF第14–17页；调查表约56–64页</p><p><b>核读范围：</b>实际读取远程PDF文本相关章节及表单片段；并非全88页逐页阅读</p><p><b>支持内容：</b>四阶段调查框架；事实与归责分开；控制措施和责任计划</p><p><b>核读释义：</b>安全调查原则用于平台适配，不提供特定国家法律符合结论。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><h2>尚待补证</h2><p>已核读ASQ公开RCA页面以及HSE HSG245所见调查章节与表单片段，未全读88页每个案例。本卡未给出某行业法定调查义务或根因唯一性判据，也未连接现场采集系统。后续需按领域补安全调查流程、检验能力与复发监测规则。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

@@ -1,0 +1,23 @@
+{
+  "method_id": "IM-ML-008",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "research_question": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "要了解的任务、人群、结果和研究用途",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "field_access": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "参与者、同意、现场安全、历史材料和记录工具",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    }
+  }
+}

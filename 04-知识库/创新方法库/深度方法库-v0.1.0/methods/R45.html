@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>价值工程 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R45 / IM-ML-045
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">F方案决策与验证评价</p><h1>价值工程</h1><p class="english">Value Engineering / Value Methodology</p><p class="intro">先澄清必要功能与成本，再创造满足同等功能的替代方案，以全寿命资源与性能证据提高价值并安排实施验证。</p><div class="tags"><span>具体方法</span><span>功能分析</span><span>价值方法</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R45/方法结构.md">方法结构</a><a href="../档案/R45/操作指南.md">操作文档</a><a href="../档案/R45/档案.json">JSON档案</a><a href="../档案/R45/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>价值工程以必要功能及其实现资源为核心，是有结构的跨专业改进方法，不是采购压价或任意删减。FHWA公开工作计划列八阶段，McGill教学页用信息、创造、评价、报告四个大阶段；本档保留共同逻辑，整理成六步，不宣称阶段数全球唯一。价值、功能和成本评价都需具体项目定义，不能把通用口号当计算公式。</p>
+</section><section><h2>解决什么问题</h2><p>团队习惯围绕现有零件问“能便宜多少”，容易忽略零件原本承担什么功能以及是否有更好的实现方式。也可能为降制造成本增加使用能耗、维修和安全损失。本法从“必须做到什么”而非“必须保留哪个零件”出发，把高成本但低贡献的实现环节转成改进机会，避免降价损害用户真正需要的性能。</p>
+</section><section><h2>原理与框架</h2><p>功能描述应摆脱当前解法，可用动词与名词表达作用，并明确基本、必要支持及其他功能。成本是实际或预计资源消耗；功能价值/值得付出的资源是评价判断，不等于报价。价值改善可能来自同功能低全寿命成本、同资源更有效功能或合理组合，不应简单理解为所有功能加总除以采购价格。创造阶段先寻找同一必要功能的多种实现，再用要求、风险、全寿命成本及证据筛选；功能被牺牲的低价方案不因“节约”自动成立。</p>
+</section><section><h2>什么时候用</h2><p>适合概念、设计优化、工艺、服务或既有产品改进，尤其成本结构清楚且还有设计自由度时。应由设计、制造、采购、使用维护与质量等角色协作，需要功能目标与可靠成本口径。定型后变更也可做，但认证、工装和库存等转换成本会改变收益。若成本和功能都不明，先调查，不对节约比例作承诺。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>价值任务与功能要求<small>必需</small></td><td><p>目标、必要功能、性能安全及改动边界</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>成本与资源基线<small>必需</small></td><td><p>同口径制造使用维护转换成本及证据</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>现设计和可变项<small>可选</small></td><td><p>结构工艺、接口、供应及设计自由度</p>
+</td><td>标记未知并说明影响</td></tr><tr><td>团队与分析资源<small>可选</small></td><td><p>技术经济人员、报价、验证与实施能力</p>
+</td><td>标记未知并说明影响</td></tr></tbody></table></div><section class="step" id="R45-S01"><span class="step-num">01</span><h3>界定任务与必要功能</h3><div class="step-line"><b>输入</b><p>value_target、design_options</p>
+</div><div class="step-line"><b>动作</b><p>确定改善对象与范围，区分功能和现解法，明确不能牺牲的要求。</p>
+</div><div class="step-line"><b>判断</b><p>功能不清先调查，不从删零件开始。</p>
+</div><div class="step-line"><b>产物</b><p>function_baseline · 功能结构、要求和基线</p>
+</div><div class="step-line"><b>检查</b><p>动作用途清楚；必要性能受保护</p>
+</div><div class="step-line"><b>返回或停止</b><p>核心功能未知停止价值排名</p>
+</div><div class="step-line"><b>知识查询</b><p>查功能需求与设计自由度</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R45-S02"><span class="step-num">02</span><h3>调查功能成本与机会</h3><div class="step-line"><b>输入</b><p>function_baseline、cost_baseline</p>
+</div><div class="step-line"><b>动作</b><p>梳理全寿命资源，按明确规则关联功能，找高成本或可替代机会。</p>
+</div><div class="step-line"><b>判断</b><p>数据未知标区间和缺口，不把分摊值当客观功能价值。</p>
+</div><div class="step-line"><b>产物</b><p>function_cost_map · 功能—资源映射与调查重点</p>
+</div><div class="step-line"><b>检查</b><p>成本边界一致；分摊依据外显</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键成本无依据不报节约</p>
+</div><div class="step-line"><b>知识查询</b><p>查采购、加工、使用及转换成本</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R45-S03"><span class="step-num">03</span><h3>创造同功能替代</h3><div class="step-line"><b>输入</b><p>function_cost_map、design_options</p>
+</div><div class="step-line"><b>动作</b><p>暂缓评价，寻找不同原理、结构、工艺或组织方式满足必要功能。</p>
+</div><div class="step-line"><b>判断</b><p>只降要求的想法单独记录，不作为等效替代。</p>
+</div><div class="step-line"><b>产物</b><p>ve_alternatives · 替代方案及功能实现机制</p>
+</div><div class="step-line"><b>检查</b><p>多种实现路线；不被现部件锁定</p>
+</div><div class="step-line"><b>返回或停止</b><p>替代违反必要功能则重构</p>
+</div><div class="step-line"><b>知识查询</b><p>查功能原理与跨行业实现</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R45-S04"><span class="step-num">04</span><h3>评价技术与全寿命价值</h3><div class="step-line"><b>输入</b><p>ve_alternatives、value_target、cost_baseline</p>
+</div><div class="step-line"><b>动作</b><p>先筛硬要求，再比较性能风险与全寿命成本，保留估算、区间和敏感因素。</p>
+</div><div class="step-line"><b>判断</b><p>功能不等效不比节约；单点估算不代表实绩。</p>
+</div><div class="step-line"><b>产物</b><p>ve_evaluation · 留选/排除、成本与风险依据</p>
+</div><div class="step-line"><b>检查</b><p>转换成本计入；未知不自动乐观</p>
+</div><div class="step-line"><b>返回或停止</b><p>安全性能不满足排除</p>
+</div><div class="step-line"><b>知识查询</b><p>查材料DFMA、风险和经济数据</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R45-S05"><span class="step-num">05</span><h3>开发可审议改进提案</h3><div class="step-line"><b>输入</b><p>ve_evaluation、value_resources</p>
+</div><div class="step-line"><b>动作</b><p>细化设计、资源、实施步骤、验证标准和责任，说明基线比较与限制。</p>
+</div><div class="step-line"><b>判断</b><p>无验证或转换方案不宣称可直接量产。</p>
+</div><div class="step-line"><b>产物</b><p>ve_proposal · 功能保持、资源、验证和实施提案</p>
+</div><div class="step-line"><b>检查</b><p>技术经济都论证；责任明确</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键可行性未证则保留条件</p>
+</div><div class="step-line"><b>知识查询</b><p>交工程验证与制造评审</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R45-S06"><span class="step-num">06</span><h3>跟踪实施和实际价值</h3><div class="step-line"><b>输入</b><p>ve_proposal、cost_baseline</p>
+</div><div class="step-line"><b>动作</b><p>记录决策、实际实施、验证与实际资源变化，区分预测和实绩。</p>
+</div><div class="step-line"><b>判断</b><p>未实施只存提案；偏差回查功能及成本假设。</p>
+</div><div class="step-line"><b>产物</b><p>ve_dossier · 价值工程完整档案与跟踪</p>
+</div><div class="step-line"><b>检查</b><p>基线未暗改；未兑现收益可见</p>
+</div><div class="step-line"><b>返回或停止</b><p>必要功能验证失败不闭环</p>
+</div><div class="step-line"><b>知识查询</b><p>查实际费用、使用表现与变更</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>价值工程档案</b> 降价并非必然提高价值；收益须由实施证据支持<small>functions、cost_baseline、cost_mapping、alternatives、evaluation、proposal、implementation、verification、actual_vs_estimate</small></li></ul><p>产物包括功能—成本映射、替代方案、筛选理由、商业/技术论证和实施计划。费用应覆盖适用的制造、使用、维护、停机和报废，时间跨度及折现等经济假设要一致。某功能成本高只是调查信号，不证明它无用；低成本功能可能非常关键。引擎应保留原基线与改进后预测，并区分已实施实绩、估算和待证假设。价值改善需由必要功能保持和实际总资源变化支持，不能单看报价。 引擎可按成本异常、功能冗余和设计自由度匹配本法，但应先读取产品的必要功能与生命周期边界。每一收益计算绑定来源和条件，实际报价或设计变更后需重评，不能把旧项目的节约经验直接迁移为新项目的预计实绩。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示，未形成真实报价：支架装置需要定位与保持工件。S01确认必要功能与安全精度要求。S02将现结构材料、加工、装配及维护成本映射到功能，发现多件定位结构值得调查，不说成本必然浪费。S03生成改变定位原理、合并零件和改变工艺等替代。S04先排除不能满足刚度或可维护要求者，再在同周期核算资源。S05对留下方案列载荷、定位误差、工装投入和维修验证计划。S06待实施并测得效果才报告节约。本例没有给出节约百分比，也没有将合并零件必定等同价值提升。 功能成本中间行可为“功能:定位工件；现实现:多件定位结构；必要性能:待载荷精度确认；当前成本:待核；替代:自定位特征；转换代价:工装与报废库存待查；风险:维修能力；状态:研究”。这种结构使成本未知也能保存有意义的下一步，而不会先报收益。</p>
+<h2>反例与误用</h2><p>一是把删功能叫价值工程，降低后产品已不等效；先锁必要功能。二是把采购降价当全寿命节约，漏使用和转换成本；统一边界。三是功能成本分摊看似精确却无依据；说明分摊规则与区间。四是头脑风暴后没有实施责任，价值只停在报告；设置验证和跟踪。反例：为应对短期现金缺口直接压供应商账期属于财务动作，若没有功能分析与替代研究，不应包装成完整VE。</p>
+<h2>检查与验证</h2><p>检查功能是否可追溯用户要求、替代是否保持必要性能、成本数据是否同一基础、风险与转换代价是否纳入。技术上要用计算、样件或试验取得功能证据，经济上需实际报价、资源消耗和后续绩效。报告计算一致不代表节约实现；若关键成本或可靠性未知，输出区间、敏感因素及补证计划。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R14.html">功能分解与接口分析</a><small>requires</small><p>功能结构→value_target；摆脱既定零件</p></li><li><a href="R34.html">面向制造与装配设计</a><small>parallel</small><p>DFMA候选→替代和成本；检查可制造装配</p></li><li><a href="R42.html">验证与确认</a><small>precedes</small><p>必要功能保持→验证；收益不能替代性能证据</p></li></ul><h2>平台适配</h2><p>两来源支持功能调查、替代生成、评价与报告/跟踪。平台增加证据状态、功能成本绑定、硬约束先筛和V&amp;V接口；六步与夹具例子是原创整合，不是某协会认证VE标准的逐条重现。FAST图可作为功能分析工具，但不是每次调用都必须画或由本卡自动完成。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · Value Engineering — VE Process</h3><p>Federal Highway Administration · <a target="_blank" rel="noopener noreferrer" href="https://www.fhwa.dot.gov/ve/veproc.cfm">原始来源 ↗</a></p><p><b>定位：</b>VE Job Plan主要阶段</p><p><b>核读范围：</b>成功访问时核读主要内容的项目选择、调查、功能、创意、评价、开发、报告与跟踪阶段；后续重试超时</p><p><b>支持内容：</b>功能导向和生命周期价值；系统化VE工作计划</p><p><b>核读释义：</b>运输建设语境，不能将其行业法规或项目阈值套入机械产品</p><p><b>权利：</b>仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库</p></section><section class="source" id="source-S02"><h3>S02 · Four basic steps in the job plan</h3><p>McGill University, Department of Mechanical Engineering · <a target="_blank" rel="noopener noreferrer" href="https://www.mcgill.ca/ve/jobplan/steps">原始来源 ↗</a></p><p><b>定位：</b>Information gathering / Creation / Evaluation / Presentation</p><p><b>核读范围：</b>公开教学网页四阶段正文核读</p><p><b>支持内容：</b>功能/要求调查；满足同一功能的替代方案</p><p><b>核读释义：</b>教学简化四阶段，与其他组织八阶段口径不矛盾，不宣称唯一标准</p><p><b>权利：</b>仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库</p></section><h2>尚待补证</h2><p>尚无实际BOM、作业成本、功能分配、报价与实施数据，无法确定功能成本和节约。未核读SAVE付费标准或资格要求；其AboutVM页访问403，未作为全文证据。若需要专业VE工作坊或认证交付，应补充具体规范、主持能力、团队和成果审定要求。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

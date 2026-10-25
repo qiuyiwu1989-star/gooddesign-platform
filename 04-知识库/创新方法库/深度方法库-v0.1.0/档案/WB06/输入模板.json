@@ -1,0 +1,31 @@
+{
+  "method_id": "IM-WB-006",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "structure": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "几何、材料、质量连接和支承",
+      "evidence_refs": [],
+      "missing_action": "补设计资料"
+    },
+    "operation": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "工作循环、转速、载荷和外部激励",
+      "evidence_refs": [],
+      "missing_action": "补测运行数据"
+    },
+    "criteria": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "响应限值和测量记录",
+      "evidence_refs": [],
+      "missing_action": "定义验收量"
+    }
+  }
+}

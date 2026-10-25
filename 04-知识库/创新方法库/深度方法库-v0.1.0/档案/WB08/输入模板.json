@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-WB-008",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "manufacturing_question": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "加工、装配或拆卸目标、要求和检查范围",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "product_geometry": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "几何、BOM、单位、公差、版本和简化",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "process_resources": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "顺序、刀具夹具、工具人员空间和能力",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "simulation_capability": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "CAD/CAE/CAM、物理模型、证据和实物试验",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

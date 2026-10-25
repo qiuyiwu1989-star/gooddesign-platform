@@ -1,0 +1,87 @@
+{
+  "task": "ML-001",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "exact_scope_and_structure",
+      "passed": true,
+      "detail": {
+        "methods": 48,
+        "topics": 12
+      }
+    },
+    {
+      "name": "catalog_identity_uniqueness",
+      "passed": true,
+      "detail": 60
+    },
+    {
+      "name": "source_to_release_identical",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "all_templates_unfilled_and_correct",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "portable_cli_all_60_ids_and_steps",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "all_local_html_links_and_anchors",
+      "passed": true,
+      "detail": {
+        "html_pages": 61,
+        "broken": []
+      }
+    },
+    {
+      "name": "manifest_covers_all_files_and_hashes",
+      "passed": true,
+      "detail": {
+        "files": 503,
+        "bad_hashes": [],
+        "missing_from_manifest": []
+      }
+    },
+    {
+      "name": "existing_runtime_cards_unchanged",
+      "passed": true,
+      "detail": {
+        "files": 7,
+        "changed": []
+      }
+    }
+  ],
+  "nonblocking_length_warnings": [
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09",
+    "R10",
+    "R11",
+    "R12",
+    "R16",
+    "R18",
+    "R19",
+    "R21",
+    "R23",
+    "R24",
+    "R26",
+    "R27",
+    "R28",
+    "R29",
+    "R32",
+    "WB06",
+    "WB09",
+    "WB12"
+  ],
+  "scope": "content_structure_integrity_reader_not_expert_or_engineering_certification"
+}

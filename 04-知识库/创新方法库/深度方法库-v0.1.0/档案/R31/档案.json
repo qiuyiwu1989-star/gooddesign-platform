@@ -1,0 +1,302 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R31",
+  "method_id": "IM-ML-031",
+  "version": "0.1.0",
+  "name": "DSM与模块化架构",
+  "english_name": "Design Structure Matrix / Modular Architecture",
+  "kind": "method_family",
+  "category": "D机构架构与系统设计",
+  "lineage": [
+    "Design Structure Matrix研究",
+    "Eppinger与Browning架构建模"
+  ],
+  "aliases": [
+    "DSM",
+    "设计结构矩阵",
+    "依赖结构矩阵"
+  ],
+  "summary": "用同一组系统元素的方阵表示依赖，通过聚类或排序识别模块边界、接口和循环耦合，再用架构约束审查候选划分。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "DSM是表示和分析系统元素间关系的通用矩阵方法。产品架构可把部件或子系统作为元素，过程架构可把任务作为元素，组织架构则可把团队作为元素。矩阵紧凑不代表内容客观可靠，关键在元素粒度、依赖定义和证据。模块化是部分DSM分析的目标，DSM也用于排序和系统集成；二者不应登记成完全等义词。",
+    "problem": "适合接口复杂、模块边界不清、修改一处影响多处、或设计任务反馈频繁的项目。对只需列出零件清单的任务收益有限。产品模块聚类与流程任务排序的含义不同：前者希望合理管理模块内外耦合，后者关注信息先后与反馈迭代。把所有矩阵都聚成几个色块并不能同时解决两种问题。",
+    "principle": "DSM以同一元素列表作为行列，用单元格表示某种依赖，可为二元关系或有定义的权重。必须声明“行影响列”或其转置约定，文献中两种均存在。聚类重排将紧密关联元素集中，提示模块候选；过程排序把需要先获得的信息尽量放前面，暴露循环。矩阵重排不改变真实系统依赖，仍需通过架构或工作方式变化改善。",
+    "applicability": "输入需要同一层级元素、关系类型、方向、强度定义与来源。产品可分机械接触、载荷、能量、物质、信息和空间等关系层；是否能合并权重要说明。未知关系不应填成零；对称物理接触不代表所有影响都对称。元素数量过多先分层，不同层级同时混入会重复计算或夸大某些连接。",
+    "interpretation": "平台先固定分析问题与矩阵约定，再采集依赖，并把每个单元格绑定资料或责任人。给出多个聚类或排序方案，不把算法结果当最终模块。模块方案要检查可制造性、安装、运输、维护、更换、平台复用和安全隔离；一个与多模块连接的共享核心件不一定该被拆开，可能需要清晰接口而非强行独立。",
+    "example": "教学例：小型搬运设备包含底盘、驱动、电池、夹具、传感和控制。机械载荷依赖与控制信息依赖分别建层。若为了维修将驱动与电池分为独立可换单元，可能增加连接器、密封和结构接口；若只按信息联系把全部电控聚为一块，又可能使电池散热不合理。候选模块必须在各关系层及维修场景下比较。本例没有运行某聚类算法，不宣称得到了最优划分。 小矩阵示范：任务A＝确定载荷，B＝选择驱动，C＝校核支架；约定行提供输出、列接收输入，元素顺序A/B/C。矩阵M＝[[—,1,1],[0,—,1],[0,1,—]]表示A提供给B与C，B与C相互反馈。过程排序可把A放前，把B/C作为需协调迭代的块；不能声称换行列后B/C反馈消失。若元素换成三个实体模块，同样的图可提示B/C有紧密接口，却不能直接推出必须做成一个零件。聚类回答模块如何分，排序回答工作如何组织，分析目的不同。此处是人工教学矩阵，未运行优化程序。",
+    "pitfalls": "不要混淆行列方向导致把输入当输出；也不要把空白当确认无依赖。不同关系权重随意相加会让数字看似精确却难解释。聚类算法可能有多个局部结果，漂亮色块不证明模块质量。只追求最小模块间耦合也可能导致模块过大、成本增加或失去产品变型能力。流程中的循环可能是必要协同，不能一律删除。",
+    "validation": "首先抽查矩阵单元格能否映射到真实接口、文件或试验。验证候选模块时模拟一次典型变更、故障维修或产品变型，看影响是否受控；检查关键载荷、热、电和控制路径跨边界后仍成立。流程排序用实际信息就绪和迭代记录验证，而不是只比较对角线之外的标记数。改变依赖后应更新矩阵，不保留过时架构作为现状。",
+    "adaptation": "引擎将节点、关系层、方向约定、权重尺度、来源和未知状态保存为基础图，再生成DSM视图。聚类与排序属于可替换分析插件，输出参数和运行状态；未运行算法时只交专家建议划分。与公理化设计互补：FR—DP是跨域映射，DSM本体是同域依赖；多域矩阵MDM需要专门结构，不能假称普通DSM已完整表达所有层。",
+    "gaps": "已实际核读DSM专业社区Introduction全文，以及Eppinger在MIT的DSM Methods and Applications书目介绍与目录。未核读2012专著全文，未运行聚类或排序软件，也未取得具体算法的完整性能证明。本文步骤是建模和评审协议，不是某个已实现的最优化算法；工程案例为原创教学构造。"
+  },
+  "inputs": [
+    {
+      "key": "elements",
+      "label": "系统元素",
+      "type": "array",
+      "required": true,
+      "description": "同层级部件任务或团队",
+      "missing_action": "先定边界与层级"
+    },
+    {
+      "key": "dependencies",
+      "label": "依赖证据",
+      "type": "array",
+      "required": true,
+      "description": "方向、类型、权重及来源",
+      "missing_action": "补接口调查"
+    },
+    {
+      "key": "objective",
+      "label": "分析目的与约束",
+      "type": "object",
+      "required": true,
+      "description": "模块化、排序、维修或复用目标",
+      "missing_action": "明确目标"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R31-S01",
+      "title": "固定元素与约定",
+      "input_refs": [
+        "elements",
+        "dependencies",
+        "objective"
+      ],
+      "depends_on": [],
+      "operation": "说明分析类型、粒度、行列方向和关系定义，标对角线含义。",
+      "decision": "产品与任务不混为同一种分析。",
+      "output_key": "dsm_definition",
+      "output_description": "矩阵规范与元素表",
+      "checks": [
+        "同层级且方向明确"
+      ],
+      "stop_condition": "约定不清则暂停填表",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R31-S02",
+      "title": "采集分层依赖",
+      "input_refs": [
+        "dsm_definition",
+        "elements",
+        "dependencies",
+        "objective"
+      ],
+      "depends_on": [
+        "R31-S01"
+      ],
+      "operation": "逐对核验连接和影响，分别记录关系层、证据与未知。",
+      "decision": "未知不填零；不同层不无理由相加。",
+      "output_key": "dependency_layers",
+      "output_description": "可追溯多层矩阵",
+      "checks": [
+        "抽查方向与对称性"
+      ],
+      "stop_condition": "关键接口无证据则调查",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R31-S03",
+      "title": "选择分析操作",
+      "input_refs": [
+        "dependency_layers",
+        "elements",
+        "dependencies",
+        "objective"
+      ],
+      "depends_on": [
+        "R31-S02"
+      ],
+      "operation": "按模块化目的聚类或按流程目的排序，记录算法、参数或人工规则。",
+      "decision": "未运行算法明确标人工建议。",
+      "output_key": "dsm_analysis",
+      "output_description": "聚类或排序日志",
+      "checks": [
+        "不以重排冒充真实改善"
+      ],
+      "stop_condition": "只求色块美观则回目标",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R31-S04",
+      "title": "形成架构与接口候选",
+      "input_refs": [
+        "dsm_analysis",
+        "elements",
+        "dependencies",
+        "objective"
+      ],
+      "depends_on": [
+        "R31-S03"
+      ],
+      "operation": "将聚类变成模块边界与接口方案，处理共享件和循环。",
+      "decision": "必要循环保留协同机制，不强行删除。",
+      "output_key": "architecture_options",
+      "output_description": "模块接口或流程方案",
+      "checks": [
+        "各关系层均被考虑"
+      ],
+      "stop_condition": "违反安全制造约束则淘汰",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R31-S05",
+      "title": "用变更场景验证",
+      "input_refs": [
+        "architecture_options",
+        "elements",
+        "dependencies",
+        "objective"
+      ],
+      "depends_on": [
+        "R31-S04"
+      ],
+      "operation": "执行变型维修或信息反馈场景，比较真实影响和新增负担。",
+      "decision": "若实际依赖变化，更新矩阵版本。",
+      "output_key": "dsm_validation",
+      "output_description": "架构验证与修订",
+      "checks": [
+        "评价整体目标而非单指标"
+      ],
+      "stop_condition": "关键跨界作用未验证则待审",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "dsm_validation",
+      "label": "DSM架构分析档案",
+      "required_fields": [
+        "元素粒度",
+        "方向约定",
+        "关系层",
+        "来源与未知",
+        "分析日志",
+        "模块接口",
+        "验证"
+      ],
+      "interpretation": "矩阵是证据模型，分析结果须转成真实架构方案。"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R30",
+      "relation": "parallel",
+      "binding": "功能实现与架构交叉审查",
+      "condition": "同时需要FR/DP与部件依赖"
+    },
+    {
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "组合模块方案",
+      "condition": "已有模块候选"
+    },
+    {
+      "target_research_id": "R32",
+      "relation": "parallel",
+      "binding": "机构接口与运动约束",
+      "condition": "机械模块边界涉及运动传递"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "publisher": "DSM Web专业社区",
+      "authors": [],
+      "title": "Introduction to DSM",
+      "url": "https://dsmweb.org/introduction-to-dsm/",
+      "locator": "完整入门主文",
+      "read_scope": "实际打开47行正文并核读全文",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "方阵依赖",
+        "聚类与排序",
+        "两种方向约定",
+        "循环耦合"
+      ],
+      "evidence_note": "同一矩阵的转置约定并存，应显式记录。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S02",
+      "publisher": "Steven D. Eppinger / MIT",
+      "authors": [
+        "Steven D. Eppinger",
+        "Tyson R. Browning"
+      ],
+      "title": "Design Structure Matrix Methods and Applications",
+      "url": "https://stuff.mit.edu/people/eppinger/SDE-MIT/DSM_Book.html",
+      "locator": "书目、目录和介绍",
+      "read_scope": "实际打开48行介绍全文；未读书全文",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "产品组织过程多域模型",
+        "专著谱系"
+      ],
+      "evidence_note": "书目页证明内容范围，不等于具体算法已核读。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "流程DSM未声明方向",
+      "expected": "返回规范阶段"
+    },
+    {
+      "scenario": "只按信息层分模块导致载荷接口失效",
+      "expected": "判定多层审查不足，不能以聚类漂亮判优"
+    }
+  ],
+  "search_terms": [
+    "DSM introduction clustering sequencing row impacts column",
+    "Eppinger Browning DSM product architecture"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "051逐项检索与平台操作适配；保留原典核读范围"
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "补充有用/有害作用分记、趋势反证或DSM小矩阵，均为教学假设"
+    }
+  ]
+}

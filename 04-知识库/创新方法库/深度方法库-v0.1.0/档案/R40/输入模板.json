@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-ML-040",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "system_scope": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "产品/过程层级、阶段、接口、目标功能和版本",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "operating_conditions": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "使用、维护、异常及安全质量要求",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "failure_evidence": {
+      "value": null,
+      "type": "array",
+      "required": false,
+      "description": "机理、测试、故障、控制效果，事实与假设分开",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "rating_policy": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "行业版本、尺度、阈值、权责，缺失不伪造分数",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

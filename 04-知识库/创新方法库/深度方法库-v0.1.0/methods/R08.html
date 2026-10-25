@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>用户观察与需求证据化 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R08 / IM-ML-008
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">A问题发现与需求定义</p><h1>用户观察与需求证据化</h1><p class="english">Field Research / Voice of Customer</p><p class="intro">把真实任务中的行为、原话和环境记录整理成有出处的需求候选，保留解释与反例。</p><div class="tags"><span>方法族</span><span>以人为本设计</span><span>Voice of Customer</span><span>田野研究</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R08/方法结构.md">方法结构</a><a href="../档案/R08/操作指南.md">操作文档</a><a href="../档案/R08/档案.json">JSON档案</a><a href="../档案/R08/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>“用户观察与需求证据化”是本平台为方法库组织的研究方法族名称，不冒称独立国际标准。其依据包括IDEO.org Design Kit的Interview和Immersion公开方法。访谈、观察、跟随、情境走查各有用途；本卡把采集到的材料与需求版本连接起来，避免解释和事实混成一句结论。具体编码字段、证据标签和停机规则为平台设计。</p>
+</section><section><h2>解决什么问题</h2><p>用户说想要什么，并不总能揭示其实际行为和困难；工程师看见一个动作，也可能过早解释动机。若只保留“痛点总结”，团队无法知道这句话来自几个人、哪个场景、是原话还是推测，也无法在后续反证出现时修正。需求证据化要保留从事件到需求的推导路径，使需求可讨论、可补证，而非把调研变成漂亮人物画像。</p>
+</section><section><h2>原理与框架</h2><p>访谈获得参与者对具体事件和意义的说明，观察提供行为与环境，沉浸或跟随帮助理解连续任务和取舍。三者互补而非互相认证：说法与行为不同本身就是需要探究的材料。原话、观察记录、研究者解释、需求假设分别保存；任何推断都应能回到事件。需求不是受访者指定的功能，也不是一次异常的自动泛化，而是对特定人、任务、约束和结果的可检验表达。</p>
+</section><section><h2>什么时候用</h2><p>适合产品定义、使用流程改进和原型前后研究。应识别操作者、维护者、购买者、受影响者之间差异，并说明样本选择目的。涉及隐私、敏感信息、弱势人群或危险现场时，须适当同意和安全安排，不为收集素材而诱发风险。历史记录也可用，但应标其年代、选择偏差和上下文缺失。没有实际材料时只输出研究计划，语言模型不能代替受访者。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>研究问题与决策<small>必需</small></td><td><p>要了解的任务、人群、结果和研究用途</p>
+</td><td>补齐必要输入后继续</td></tr><tr><td>场景与采集条件<small>必需</small></td><td><p>参与者、同意、现场安全、历史材料和记录工具</p>
+</td><td>补齐必要输入后继续</td></tr></tbody></table></div><section class="step" id="R08-S01"><span class="step-num">01</span><h3>界定研究对象与采样理由</h3><div class="step-line"><b>输入</b><p>research_question、field_access</p>
+</div><div class="step-line"><b>动作</b><p>识别使用、维护和购买角色，选能暴露关键差异的场景与参与者。</p>
+</div><div class="step-line"><b>判断</b><p>没有真实可达材料时改为研究计划。</p>
+</div><div class="step-line"><b>产物</b><p>sampling_plan · 角色、场景、采样目的与限制</p>
+</div><div class="step-line"><b>检查</b><p>不只选支持团队意见的人</p>
+</div><div class="step-line"><b>返回或停止</b><p>安全或同意条件不具备则不采集</p>
+</div><div class="step-line"><b>知识查询</b><p>目标任务、角色和环境</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R08-S02"><span class="step-num">02</span><h3>采集事件而非要求赞同</h3><div class="step-line"><b>输入</b><p>sampling_plan、field_access</p>
+</div><div class="step-line"><b>动作</b><p>观察任务并询问具体经历，记录原话、动作、环境和时间。</p>
+</div><div class="step-line"><b>判断</b><p>诱导问题或缺上下文材料需要补采。</p>
+</div><div class="step-line"><b>产物</b><p>raw_event_records · 直接记录、上下文及来源定位</p>
+</div><div class="step-line"><b>检查</b><p>事实记录和即时印象分开</p>
+</div><div class="step-line"><b>返回或停止</b><p>不得用生成访谈替代采集</p>
+</div><div class="step-line"><b>知识查询</b><p>现场动作、替代工具和异常事件</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R08-S03"><span class="step-num">03</span><h3>区分解释并建立证据关系</h3><div class="step-line"><b>输入</b><p>raw_event_records</p>
+</div><div class="step-line"><b>动作</b><p>给原话、观察、解释和假设分别标签，保留互相矛盾材料。</p>
+</div><div class="step-line"><b>判断</b><p>解释没有事件依据则标未证假设。</p>
+</div><div class="step-line"><b>产物</b><p>coded_evidence · 事件编码、解释和竞争解释</p>
+</div><div class="step-line"><b>检查</b><p>不删不符合预期的反例</p>
+</div><div class="step-line"><b>返回或停止</b><p>记录身份不明则不作强证据</p>
+</div><div class="step-line"><b>知识查询</b><p>同事件不同解释及情境差异</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R08-S04"><span class="step-num">04</span><h3>形成需求候选与核对问题</h3><div class="step-line"><b>输入</b><p>coded_evidence、research_question</p>
+</div><div class="step-line"><b>动作</b><p>将方案要求改写为人/任务/约束下希望达到的结果，附依据与未知。</p>
+</div><div class="step-line"><b>判断</b><p>需求只来自一个事件时不泛化总体。</p>
+</div><div class="step-line"><b>产物</b><p>need_candidates · 需求、支持、反例和需确认口径</p>
+</div><div class="step-line"><b>检查</b><p>不把指定零件当唯一需求</p>
+</div><div class="step-line"><b>返回或停止</b><p>无证据只保留研究假设</p>
+</div><div class="step-line"><b>知识查询</b><p>需求到功能和工程指标的映射线索</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a></p></section><section class="step" id="R08-S05"><span class="step-num">05</span><h3>准备研究交接并追踪修订</h3><div class="step-line"><b>输入</b><p>need_candidates、sampling_plan</p>
+</div><div class="step-line"><b>动作</b><p>保存材料范围、需求版本和下一轮验证问题，说明样本限制。</p>
+</div><div class="step-line"><b>判断</b><p>决策风险超过证据覆盖则补研究。</p>
+</div><div class="step-line"><b>产物</b><p>need_evidence_package · 可追溯需求包与后续任务</p>
+</div><div class="step-line"><b>检查</b><p>没有调查不报发生率</p>
+</div><div class="step-line"><b>返回或停止</b><p>无原始材料不标用户已确认</p>
+</div><div class="step-line"><b>知识查询</b><p>用户回访与工程验证需要的材料</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>需求证据包</b> 支持特定情境的需求理解，不自动证明普遍市场需求<small>participants_scope、events、verbatims、interpretations、needs、counterevidence、unknowns</small></li></ul><p>需求证据的充分性取决于范围和决策风险。少量深访可以发现机制和假设，不能推出总体发生率或支付比例；观察到反复绕行也不能立刻断言产品难用，可能由制度、培训或环境引起。需求候选应连同支持、反例、适用人群和仍需确认事项交付。没有必要设置通用痛点分数；可按本任务的影响、频度证据和后果讨论优先级。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学演示：研究车间工人装卸小零件的动作。以下是假设事件，不是现场采集：一位操作者先垫软片再夹紧。观察层只记动作、工具和时序；访谈问题追问最近一次为何垫片，而不诱导“是不是怕夹坏”。若回答为了避免表面划伤，解释层提出接触损伤的需求假设；另一个操作者不用垫片，则记录工件材料、批次或夹紧条件差异。最终需求写成“在目标表面和工况下保持定位并限制接触损伤”，阈值仍需工程确认，不直接指定必须软夹爪。</p>
+<h2>反例与误用</h2><p>一是将用户原话润色后仍用引号表示，应保存原句和整理释义。二是把观察者感受当用户动机，应追问具体事件并保留竞争解释。三是只访问愿意配合的熟练用户，忽略新手、维护者或失败任务，应说明采样偏差。反例：内部团队让AI模拟十个人回答，并据此写成需求已验证；正确做法只能称访谈提纲测试或假设探索。</p>
+<h2>检查与验证</h2><p>采集质量检查身份与同意、记录时间、场景、原话完整性和解释标签；分析质量检查每条需求能否反查证据、有无反例和过强泛化。可请研究者交叉阅读和向参与者核对含义，但核对不是对全部因果的确认。工程指标和收益仍需测量与试验。没有原始记录时不得给访谈样本量、发生率或用户满意度结论。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R48.html">问题定义与要求管理</a><small>precedes</small><p>需求候选→问题简报；需要形成设计任务</p></li><li><a href="R12.html">质量功能展开</a><small>precedes</small><p>需求及依据→QFD；进入工程响应</p></li><li><a href="R09.html">待办任务理论</a><small>parallel</small><p>选择事件→JTBD；需解释替代和进步</p></li></ul><h2>平台适配</h2><p>Design Kit支持直接听取参与者、在情境中访谈、准确记录与延迟解释。本卡把这些原则转成项目库可保存的事件、证据、需求候选和反例字段；没有复制其整套方法步骤或建议时长。教学演示、判据和输出格式是平台适配，不意味着IDEO.org审核或实际现场研究完成。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · Interview</h3><p>IDEO.org Design Kit · <a target="_blank" rel="noopener noreferrer" href="https://www.designkit.org/methods/interview.html">原始来源 ↗</a></p><p><b>定位：</b>Process / Steps</p><p><b>核读范围：</b>公开方法页实质过程和步骤已读</p><p><b>支持内容：</b>具体情境访谈、准确记录原话及非言语情境</p><p><b>核读释义：</b>访谈材料应保留参与者实际说法，并结合所处情境理解。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><section class="source" id="source-S02"><h3>S02 · Immersion</h3><p>IDEO.org Design Kit · <a target="_blank" rel="noopener noreferrer" href="https://www.designkit.org/methods/immersion.html">原始来源 ↗</a></p><p><b>定位：</b>Process / Steps</p><p><b>核读范围：</b>公开方法页实质过程和步骤已读</p><p><b>支持内容：</b>在生活工作情境中观察与延迟解释</p><p><b>核读释义：</b>沉浸关注连续生活或工作环境，记录可观察细节并避免过早解释。</p><p><b>权利：</b>仅链接及原创释义；未复制外部全文或图表，第三方权利保留</p></section><h2>尚待补证</h2><p>目前依据为公开专业方法页，未包含统计抽样、特定行业伦理审查和量化需求研究完整教材。后续需选真实现场保存去敏记录、编码变更和参与者反馈，检验证据引用是否足以支持产品定义。对代表性和饱和度的判断须依研究目标另行设计。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

@@ -1,0 +1,23 @@
+{
+  "method_id": "IM-ML-011",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "feature_context": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "每项特性的单一描述、人群、基线与安全边界",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "survey_data": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "配对问题、预测试、实际回答及规则版本；可无数据但须明示",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    }
+  }
+}

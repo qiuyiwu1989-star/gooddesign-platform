@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>技术系统进化趋势 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R29 / IM-ML-029
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">C技术发明与矛盾求解</p><h1>技术系统进化趋势</h1><p class="english">Trends of Engineering Systems Evolution</p><p class="intro">借助技术系统演化模式审查架构与性能发展方向，形成可反驳的创新假设及路线分支，并用技术和市场证据验证。</p><div class="tags"><span>工具族</span><span>TRIZ技术演化研究</span><span>MATRIZ TESE</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R29/方法结构.md">方法结构</a><a href="../档案/R29/操作指南.md">操作文档</a><a href="../档案/R29/档案.json">JSON档案</a><a href="../档案/R29/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>技术系统演化趋势TESE是TRIZ的理论与启发工具族，研究工程系统在不同阶段可能出现的结构和性能变化。MATRIZ公开知识库给出动态化、可控性、协调、流改善、裁剪、超系统转移等方向。不同流派目录与层级不完全一致。本条把趋势作为形成设计机会和检索问题的透镜，不把其经验主张当成能精确预测任一技术未来的自然定律。</p>
+</section><section><h2>解决什么问题</h2><p>适合已有系统和历史技术资料，希望寻找下一代架构、识别发展瓶颈或避免继续优化接近极限的机制。不能只根据产品上市时间、销量或专利数量判断技术成熟阶段。一个产品可能包含成熟传动与新型感测等不同阶段子系统；技术演化、商业生命周期与企业成长曲线应分别分析。</p>
+</section><section><h2>原理与框架</h2><p>趋势从历史模式提示潜在变化，例如由固定结构转向可调结构、从单一状态转向更多可控状态、通过协调改善系统交互，或把局部功能融入更大系统。这些变化必须对应真实价值参数和约束。S曲线分析应针对某工作原理下的重要性能参数与投入或时间关系；当前公开说明也指出传统阶段指标的可靠性限制，不适合仅凭一个外观特征下结论。</p>
+</section><section><h2>什么时候用</h2><p>输入需要主功能、关键价值参数、现有原理、历史版本与性能数据、瓶颈机制及外部约束。数据不足可提出阶段假设并列待查证据，不输出成熟度精确百分比。安全、成本和可维护性可能让较简单静态结构优于复杂动态结构，因此趋势不是强制升级路径，也不意味着所有系统都必须逐一走完某条线。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>技术系统基线<small>必需</small></td><td><p>主功能、原理、子系统与版本</p>
+</td><td>先整理架构</td></tr><tr><td>价值参数与历史<small>必需</small></td><td><p>参数定义、量纲和历史证据</p>
+</td><td>缺数据则标阶段假设</td></tr><tr><td>瓶颈与约束<small>必需</small></td><td><p>物理极限、成本、接口和使用环境</p>
+</td><td>补瓶颈分析</td></tr></tbody></table></div><section class="step" id="R29-S01"><span class="step-num">01</span><h3>定义系统和分析尺度</h3><div class="step-line"><b>输入</b><p>baseline、performance、bottlenecks</p>
+</div><div class="step-line"><b>动作</b><p>分别界定产品与子系统、工作原理和待改善价值参数。</p>
+</div><div class="step-line"><b>判断</b><p>不同原理或子系统不混用单一成熟阶段。</p>
+</div><div class="step-line"><b>产物</b><p>evolution_scope · 分析对象与参数</p>
+</div><div class="step-line"><b>检查</b><p>参数有真实价值联系</p>
+</div><div class="step-line"><b>返回或停止</b><p>尺度不明确则暂停</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><section class="step" id="R29-S02"><span class="step-num">02</span><h3>整理发展证据</h3><div class="step-line"><b>输入</b><p>evolution_scope、baseline、performance、bottlenecks</p>
+</div><div class="step-line"><b>动作</b><p>记录历史性能、投入、限制和替代原理，给出多种阶段解释。</p>
+</div><div class="step-line"><b>判断</b><p>单个专利数或年龄不足以定阶段。</p>
+</div><div class="step-line"><b>产物</b><p>stage_evidence · 阶段假设与证据</p>
+</div><div class="step-line"><b>检查</b><p>说明数据来源和不足</p>
+</div><div class="step-line"><b>返回或停止</b><p>数据不足不报精确成熟度</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><section class="step" id="R29-S03"><span class="step-num">03</span><h3>选择相关趋势透镜</h3><div class="step-line"><b>输入</b><p>stage_evidence、baseline、performance、bottlenecks</p>
+</div><div class="step-line"><b>动作</b><p>按瓶颈选择动态化、协调、流、裁剪等少量趋势，说明相关性。</p>
+</div><div class="step-line"><b>判断</b><p>不强求全部趋势或逐级演化。</p>
+</div><div class="step-line"><b>产物</b><p>trend_lenses · 来源版本与趋势依据</p>
+</div><div class="step-line"><b>检查</b><p>每条对应具体障碍</p>
+</div><div class="step-line"><b>返回或停止</b><p>只有先进标签则剔除</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><section class="step" id="R29-S04"><span class="step-num">04</span><h3>构造路线分支</h3><div class="step-line"><b>输入</b><p>trend_lenses、baseline、performance、bottlenecks</p>
+</div><div class="step-line"><b>动作</b><p>把趋势提示具体化为结构或原理变化，列价值、成本、依赖与反证。</p>
+</div><div class="step-line"><b>判断</b><p>同时保留延续与替代方案以比较。</p>
+</div><div class="step-line"><b>产物</b><p>evolution_options · 路线假设树</p>
+</div><div class="step-line"><b>检查</b><p>每条有现实机制或待查问题</p>
+</div><div class="step-line"><b>返回或停止</b><p>违反硬约束则淘汰</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><section class="step" id="R29-S05"><span class="step-num">05</span><h3>验证并更新路线</h3><div class="step-line"><b>输入</b><p>evolution_options、baseline、performance、bottlenecks</p>
+</div><div class="step-line"><b>动作</b><p>收集工程和采用证据，检查反证，按结果调整路线而非保卫原预测。</p>
+</div><div class="step-line"><b>判断</b><p>未证实方向保持机会假设。</p>
+</div><div class="step-line"><b>产物</b><p>evolution_validation · 证据化路线与验证计划</p>
+</div><div class="step-line"><b>检查</b><p>技术与商业判断分开</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键假设失败即修订</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a> <a href="#source-S03">S03</a></p></section><h2>产物</h2><ul><li><b>技术演化机会档案</b> 用于机会探索，不提供确定未来。<small>分析尺度、参数历史、阶段假设、趋势版本、路线分支、反证、验证</small></li></ul><p>平台先构造系统及子系统的技术基线，再选与瓶颈相关的少量趋势进行对照。每条机会应包含当前状态、趋势提示、预期价值变化、实现机制、代价和反证条件。路线至少包括延续现有原理、局部架构变化及替代原理等可比较分支，避免只画一条必然向前的箭头。预测日期和商业成功不由趋势直接推导。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学例：固定孔距的装配夹具面对多规格工件，换型耗时较长。动态化透镜提示可调定位，但候选要具体到滑轨、可更换定位块或可编程位置。协调透镜提示夹具接口与工件基准统一；超系统透镜可能提示把定位功能与上游托盘整合。若现场只生产单一规格，增加调节机构可能降低刚度并增加误设风险，趋势启发应被工况证据否定。本例是原创假设，并非预测某行业必然发展。 反证记录示范：假设E1“多规格装配的主要换型时间来自夹具定位，因此可调结构会减少换型负担”；预测指标为同等定位重复性下的换型用时与误设次数。如果现场记录显示主要时间花在清洁和程序确认，夹具定位只占很小部分，则E1的瓶颈前提被反驳，动态化方向应降级或转查其他问题。如果可调方案刚度不足、误设增加，即使换型时间缩短，也不满足原约束，不能用趋势为它辩护。反证是更新路线的触发条件，不是把所有失败都解释成“还没到正确阶段”。</p>
+<h2>反例与误用</h2><p>趋势术语容易让任何事后变化都显得合理，要提前写出可失败的判断。不要把“智能化、微型化”当作自动有价值的方案，也不要以某条演化线的后段证明技术先进。跨尺度变化会引入制造和控制问题，转向超系统可能增加外部依赖和故障范围。只追求单个子系统性能也可能恶化整体协同，应观察系统瓶颈转移。</p>
+<h2>检查与验证</h2><p>路线评价必须回到功能、工况、成本和用户价值，检验趋势启发是否解决了已知障碍。对历史阶段判断至少比较多项独立指标，并记录不同解释。新机制用工程分析与原理试验验证，路线优先级还应结合供应、制造和采用约束。没有实测时标为机会假设，不宣称统计证明了个别项目的未来。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R21.html">TRIZ体系</a><small>part_of</small><p>TRIZ演化视角；已有技术系统</p></li><li><a href="R26.html">功能裁剪</a><small>parallel</small><p>裁剪方向；减少载体而保留功能</p></li><li><a href="R27.html">功能导向检索与科学效应</a><small>precedes</small><p>验证路线实现技术；趋势提示尚缺机制</p></li></ul><h2>平台适配</h2><p>引擎可用“当前特征—相关趋势—候选变化—价值参数—依赖—反证”字段匹配项目内容。趋势条目只负责生成与挑战假设，后续调用功能分析检查完整性、R26探索裁剪、R27查实现技术、方案评价比较取舍。目录按来源和版本组织，避免把不同学校的规律清单拼成假装统一的固定套数。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · Trends of Engineering Systems Evolution</h3><p>MATRIZ · <a target="_blank" rel="noopener noreferrer" href="https://wiki.matriz.org/docs/triz/trends-of-engineering-systems-evolution-tese-5919/">原始来源 ↗</a></p><p><b>定位：</b>完整总览</p><p><b>核读范围：</b>实际直接打开61行主体核读</p><p><b>支持内容：</b>趋势族及目录变化；系统演化视角</p><p><b>核读释义：</b>将来源的强经验主张标为作者理论，不扩展为确定预测。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><section class="source" id="source-S02"><h3>S02 · Trend of Increasing Dynamization</h3><p>MATRIZ · <a target="_blank" rel="noopener noreferrer" href="https://wiki.matriz.org/docs/triz/trends-of-engineering-systems-evolution-tese-5919/trend-of-increasing-dynamization/">原始来源 ↗</a></p><p><b>定位：</b>动态化主体</p><p><b>核读范围：</b>官网检索返回主文核读</p><p><b>支持内容：</b>可调动态方向；不必经历全部阶段</p><p><b>核读释义：</b>结构变化需要工况与代价判断。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><section class="source" id="source-S03"><h3>S03 · S-Curve</h3><p>MATRIZ · <a target="_blank" rel="noopener noreferrer" href="https://wiki.matriz.org/docs/triz/trends-of-engineering-systems-evolution-tese-5919/trend-of-s-curve-evolution/s-curve/">原始来源 ↗</a></p><p><b>定位：</b>性能参数与阶段说明</p><p><b>核读范围：</b>官网检索返回主体核读</p><p><b>支持内容：</b>性能S曲线；阶段指标局限</p><p><b>核读释义：</b>技术参数曲线不能直接等于产品商业生命周期。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><h2>尚待补证</h2><p>实际直接打开MATRIZ TESE总览全文，并核读官网检索返回的动态化与S曲线主文。未核读所有趋势分支原著，也未复核其统计样本与“证明”主张。当前目录和流程是有来源的研究与平台适配；未建成预测模型，没有提供任何精确时间表或成熟度算法。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

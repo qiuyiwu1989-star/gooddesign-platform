@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TRIZ体系 · 创新方法库</title><link rel="icon" href="data:,"><link rel="stylesheet" href="../library.css"></head><body><a class="skip" href="#main">跳至正文</a><header><a class="brand" href="../index.html">好设计 <span>创新方法库</span></a><span class="edition">研究内容版 0.1</span></header><div class="layout"><aside><a href="../index.html">← 返回全部方法</a><nav><a href="#understand">理解方法</a><a href="#operate">操作指南</a><a href="#example">案例与边界</a><a href="#relations">方法关系</a><a href="#sources">原典与核读</a></nav><p class="subtle">R21 / IM-ML-021
+版本 0.1.0</p></aside><main id="main"><div class="hero"><p class="eyebrow">C技术发明与矛盾求解</p><h1>TRIZ体系</h1><p class="english">Theory of Inventive Problem Solving</p><p class="intro">以功能、矛盾、资源和演化等模型重述工程问题，再选择相应工具生成并验证发明性方案的理论与方法族。</p><div class="tags"><span>方法族</span><span>Altshuller及TRIZ学派</span><span>MATRIZ TRIZ知识体系</span></div><p class="notice">平台研究与操作适配 · 未专家审核 · 工程效果未验证</p><div class="actions"><a href="../档案/R21/方法结构.md">方法结构</a><a href="../档案/R21/操作指南.md">操作文档</a><a href="../档案/R21/档案.json">JSON档案</a><a href="../档案/R21/深度说明.md">深度文档</a><button type="button" id="print">打印</button></div></div><details class="module" id="understand" open><summary>01 理解方法</summary><div><section><h2>身份与原典</h2><p>TRIZ是具有共同概念和研究传统的一组问题分析、方案生成与技术演化工具，不是一张矛盾矩阵，也不应登记成一个从输入直接计算唯一答案的算法。MATRIZ与相关专业组织把ARIZ、发明原理、物场与标准解、科学效应及系统分析等列入知识体系；不同流派、历史版本和商业实现有差异。本条作为方法族入口，实际执行应路由到具体子方法并记录版本。</p>
+</section><section><h2>解决什么问题</h2><p>适合已有工程对象、期望功能和明显障碍，却难以靠参数微调兼顾目标的任务。产品概念仍模糊、用户问题未经验证时，先做需求和功能澄清。单纯选材料牌号、按手册计算轴承寿命的任务通常不需要完整TRIZ。引擎首先判断需求缺口属于事实缺失、已知工程求解还是需要改变机制，避免把所有困难都称为技术矛盾。</p>
+</section><section><h2>原理与框架</h2><p>核心工作是从具体对象抽象到可处理的问题模型，借助跨领域积累的解题知识形成解决模型，再翻译回有物理细节的方案。矛盾模型适合改善一项性能导致另一项恶化的关系；物场模型关注作用结构；功能导向检索以待实现功能寻找外部技术；ARIZ用于需要更严格重构的复杂问题。不是所有工具都要求先建立矛盾，不能为套用矩阵而制造一个不存在的冲突。</p>
+</section><section><h2>什么时候用</h2><p>输入至少包括系统边界、主功能、具体不良现象、发生工况和已尝试措施。有试验或现场数据时保留量纲、基准和测量条件；只有口述时标注待确认。允许同时运行两条模型路线，但应共享同一问题编号，防止同一缺陷被重复计为多个独立创新机会。法规、安全和不可变接口作为约束保留，不由所谓创新原则自动推翻。</p>
+</section></div></details><details class="module" id="operate"><summary>02 怎样使用</summary><div><h2>输入准备</h2><div class="table-scroll"><table><thead><tr><th>输入</th><th>内容与来源</th><th>缺失时</th></tr></thead><tbody><tr><td>系统与主功能<small>必需</small></td><td><p>边界、对象、主功能、工况</p>
+</td><td>先做功能澄清</td></tr><tr><td>关键不良现象<small>必需</small></td><td><p>现象证据、指标、基准、尝试措施</p>
+</td><td>请求证据或标待确认</td></tr><tr><td>允许改变范围<small>必需</small></td><td><p>安全、接口、成本与资源约束</p>
+</td><td>由项目负责人确认</td></tr></tbody></table></div><section class="step" id="R21-S01"><span class="step-num">01</span><h3>审查问题就绪度</h3><div class="step-line"><b>输入</b><p>system、problem、constraints</p>
+</div><div class="step-line"><b>动作</b><p>将用户愿望改写成可观察功能与缺陷，区分事实和假设。</p>
+</div><div class="step-line"><b>判断</b><p>事实不足先补调查；纯常规计算转工程手册。</p>
+</div><div class="step-line"><b>产物</b><p>readiness · 问题证据和缺口</p>
+</div><div class="step-line"><b>检查</b><p>每个缺陷有工况</p>
+</div><div class="step-line"><b>返回或停止</b><p>主功能未知则暂停技术生成</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R21-S02"><span class="step-num">02</span><h3>选择关键问题</h3><div class="step-line"><b>输入</b><p>readiness、system、problem、constraints</p>
+</div><div class="step-line"><b>动作</b><p>按对主功能和目标的影响选需要优先解决的问题，避免仅优化症状。</p>
+</div><div class="step-line"><b>判断</b><p>多个问题存在因果关系时保留关系，不把相关性当因果。</p>
+</div><div class="step-line"><b>产物</b><p>key_problem · 关键问题与选择理由</p>
+</div><div class="step-line"><b>检查</b><p>目标和障碍有直接关联</p>
+</div><div class="step-line"><b>返回或停止</b><p>无法说明影响则回看现象</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R21-S03"><span class="step-num">03</span><h3>匹配问题模型</h3><div class="step-line"><b>输入</b><p>key_problem、system、problem、constraints</p>
+</div><div class="step-line"><b>动作</b><p>判断适合矛盾、作用结构、功能迁移、资源或复杂重构路线。</p>
+</div><div class="step-line"><b>判断</b><p>不强制所有路线先建立矛盾。</p>
+</div><div class="step-line"><b>产物</b><p>route · 候选子工具与模型</p>
+</div><div class="step-line"><b>检查</b><p>保留具体到抽象的映射</p>
+</div><div class="step-line"><b>返回或停止</b><p>模型丢失关键约束则重构</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R21-S04"><span class="step-num">04</span><h3>调用对应子方法</h3><div class="step-line"><b>输入</b><p>route、system、problem、constraints</p>
+</div><div class="step-line"><b>动作</b><p>以同一问题ID向R22—R29提供输入，记录版本、来源和分支结果。</p>
+</div><div class="step-line"><b>判断</b><p>工具不适用时返回路由阶段，不把空结果当无解。</p>
+</div><div class="step-line"><b>产物</b><p>candidate_set · 带来源和假设的候选方案</p>
+</div><div class="step-line"><b>检查</b><p>每个候选有机制描述</p>
+</div><div class="step-line"><b>返回或停止</b><p>仅剩术语无机制则不进入验证</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><section class="step" id="R21-S05"><span class="step-num">05</span><h3>建立验证与回溯</h3><div class="step-line"><b>输入</b><p>candidate_set、system、problem、constraints</p>
+</div><div class="step-line"><b>动作</b><p>定义证明目标和副作用的测试；用结果修正模型和工具选择。</p>
+</div><div class="step-line"><b>判断</b><p>未完成验证的方案保持假设状态。</p>
+</div><div class="step-line"><b>产物</b><p>verified_plan · 验证计划及模型修订记录</p>
+</div><div class="step-line"><b>检查</b><p>分别检查有用功能和新增损害</p>
+</div><div class="step-line"><b>返回或停止</b><p>关键约束不可测试时标待工程评审</p>
+</div><div class="step-line"><b>知识查询</b><p>按本步对象查询功能、机制、工况及验证边界，并保留原文位置</p>
+</div><p class="subtle">依据：<a href="#source-S01">S01</a> <a href="#source-S02">S02</a></p></section><h2>产物</h2><ul><li><b>TRIZ问题路由与验证档案</b> 用于继续调用具体方法，不代表自动完成发明。<small>原始问题、问题模型、子工具版本、候选方案、假设、验证计划</small></li></ul><p>平台把族级调用分成问题就绪度检查、关键问题选择、模型选择、子工具调用和物理验证五项管理活动。这是适配协议，不是声称原典只有五步。每次输出都须有原始现象到抽象模型的映射、工具版本、产生的假设和待验证事项。调用结果属于候选方案；新颖性、专利性、工程可行性和商业价值是不同判断，不从使用TRIZ这一事实推出。</p>
+</div></details><details class="module" id="example"><summary>03 案例与边界</summary><div><h2>完整示例</h2><p>教学例：便携夹持装置需要更强夹持力，但加粗弹簧增加操作者握力。先确认夹持力不足在什么材料、摩擦和偏心工况下出现；若主要是传力比关系，可进入技术矛盾路线；若同一夹持件需要装入时柔顺、工作时刚性，可进入物理矛盾与分离；若希望去掉独立回位弹簧，可做功能裁剪。三个入口可能产生不同候选，最终都要测量夹持力、释放力和寿命。本例是平台构造，不是历史成功案例。</p>
+<h2>反例与误用</h2><p>常见失误是先选一个发明原理再倒写问题，或把术语替换当作解决。另一个失误是把进化趋势当作确定预测，忽略成本、工况及系统间的相互作用。矩阵空格不表示无解；某个工具未产生可行方案也不表示问题无解。应检查抽象是否失真、资源是否遗漏、关键问题是否选错，再决定换工具或回到原始观察。</p>
+<h2>检查与验证</h2><p>族级验收检查工具选择理由是否可以被第三方追溯，是否至少区分现象、模型和方案，是否保留失败候选及淘汰依据。工程验收由具体方案确定，例如静载、疲劳、热、控制稳定性和制造试验。仅生成大量点子不算验证；仿真成立仍须说明边界条件和模型校准。文档质量、工具使用正确性和最终产品效果应分别记录。</p>
+</div></details><details class="module" id="relations"><summary>04 方法关系</summary><div><ul class="relations"><li><a href="R22.html">技术矛盾与发明原理</a><small>precedes</small><p>技术矛盾子入口；改善和恶化指标可描述</p></li><li><a href="R25.html">物场分析与标准解</a><small>precedes</small><p>作用结构子入口；作用缺失、有害或不足</p></li><li><a href="R28.html">ARIZ发明问题求解算法</a><small>precedes</small><p>复杂问题重构入口；简单工具无效且需严格资源求解</p></li></ul><h2>平台适配</h2><p>引擎以任务阶段、问题对象、可用事实、冲突形态和允许改变范围匹配子工具。低置信度时返回多个入口及补充问题，不能虚构精确评分。输出标准包含问题ID、候选工具、选择证据、输入缺口、交付物和下一验证。与功能分析、FMEA、形态学和公理化设计可组合，但保持各方法的概念定义，不把其他学派直接改名为TRIZ。</p>
+</div></details><details class="module" id="sources"><summary>05 原典与核读</summary><div><section class="source" id="source-S01"><h3>S01 · Problem Solving Tools</h3><p>MATRIZ · <a target="_blank" rel="noopener noreferrer" href="https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/">原始来源 ↗</a></p><p><b>定位：</b>主体工具选择表</p><p><b>核读范围：</b>公开主文全文与工具映射表</p><p><b>支持内容：</b>模型到工具的路线；并非所有工具需要矛盾</p><p><b>核读释义：</b>明确区分具体问题、问题模型、解决模型及具体方案。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><section class="source" id="source-S02"><h3>S02 · TRIZ Body of Knowledge</h3><p>Altshuller Institute / MATRIZ / ETRIA · <a target="_blank" rel="noopener noreferrer" href="https://www.aitriz.org/triz/triz-body-of-knowledge">原始来源 ↗</a></p><p><b>定位：</b>介绍与知识目录</p><p><b>核读范围：</b>官网检索返回的介绍、知识目录和选录主体；直接打开部分超时，未读附件全文</p><p><b>支持内容：</b>方法族边界；工具范围与版本差异</p><p><b>核读释义：</b>组织共同整理知识范围，承认教学和版本差异；不是本平台验证证据。</p><p><b>权利：</b>仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可</p></section><h2>尚待补证</h2><p>本条核读专业组织公开知识目录及工具主文，未核读全部历史原著、培训材料或每个分支的争论。不能据此宣称存在一个全球统一且固定不变的TRIZ执行标准，也未证明其对本平台项目的实际成功率。完整算法、矩阵、标准解和专利证据应在对应子条核验；当前是有出处的族级调用说明。</p>
+</div></details></main></div><footer>方法原典、平台适配与教学示例分别标注。研究内容需结合真实任务与工程证据使用。</footer><script src="../library.js" defer></script></body></html>

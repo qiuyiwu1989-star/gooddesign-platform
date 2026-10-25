@@ -1,0 +1,294 @@
+{
+  "contract_version": "0.2.0",
+  "research_id": "R14",
+  "artifact_type": "FunctionModel",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "artifact_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "FunctionModel"
+        ]
+      },
+      "scope": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6000,
+        "pattern": "\\S"
+      },
+      "conditions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "fact",
+                "assumption",
+                "unknown"
+              ]
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+              },
+              "minItems": 0,
+              "maxItems": 200
+            }
+          },
+          "required": [
+            "id",
+            "text",
+            "kind",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "evidence_refs": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "payload": {
+        "type": "object",
+        "properties": {
+          "boundary": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "functions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "verb_object": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "necessity": {
+                  "type": "string",
+                  "enum": [
+                    "necessary",
+                    "supporting",
+                    "unknown"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "verb_object",
+                "necessity",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 200
+          },
+          "flows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "from_function": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "to_function": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "flow_type": {
+                  "type": "string",
+                  "enum": [
+                    "material",
+                    "energy",
+                    "signal"
+                  ]
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "from_function",
+                "to_function",
+                "flow_type",
+                "description",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "fact",
+                    "assumption",
+                    "unknown"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "kind",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "unknowns": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          }
+        },
+        "required": [
+          "boundary",
+          "functions",
+          "flows",
+          "interfaces",
+          "unknowns"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "required": [
+      "artifact_id",
+      "revision",
+      "task_id",
+      "task_revision",
+      "type",
+      "scope",
+      "conditions",
+      "evidence_refs",
+      "payload"
+    ],
+    "additionalProperties": false
+  },
+  "purpose": "把任务转成必要功能与作用接口",
+  "requires": [
+    "ProblemBrief"
+  ],
+  "stage": "model",
+  "next": [
+    "R17"
+  ],
+  "stop": "未经证实的作用关系不得写成已确认根因。",
+  "input_bindings": {
+    "requirements": "artifact:ProblemBrief.payload.requirements",
+    "conops": "task"
+  },
+  "status": "platform_authored_not_expert_reviewed",
+  "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。",
+  "source_method_id": "IM-FA-001",
+  "source_content_version": "0.1.0",
+  "source_content_sha256": "52dfa4b0f71becf761ce05e0d66f74fcaa961064c97bab0e93fc98e4657baa1e",
+  "implementation_scope": "concept_research_and_planning_only"
+}

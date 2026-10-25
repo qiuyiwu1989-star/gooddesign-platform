@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-ML-033",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "design_task": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "功能、几何自由度、目标和硬约束；明确目标与实测的区别",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "service_conditions": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "载荷模式、温度、介质、寿命与单位，未知时只探索",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "material_data": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "牌号、状态、方向、物性范围、数据出处与许可",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "candidate_models": {
+      "value": null,
+      "type": "array",
+      "required": false,
+      "description": "适用假设、目标方程和待验证控制条件",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    }
+  }
+}

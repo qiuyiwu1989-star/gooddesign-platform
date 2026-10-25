@@ -1,0 +1,234 @@
+{
+  "contract_version": "0.2.0",
+  "research_id": "R42",
+  "artifact_type": "VerificationPlan",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "artifact_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "VerificationPlan"
+        ]
+      },
+      "scope": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6000,
+        "pattern": "\\S"
+      },
+      "conditions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "fact",
+                "assumption",
+                "unknown"
+              ]
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+              },
+              "minItems": 0,
+              "maxItems": 200
+            }
+          },
+          "required": [
+            "id",
+            "text",
+            "kind",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "evidence_refs": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "payload": {
+        "type": "object",
+        "properties": {
+          "requirements_revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "matrix": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "requirement_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "purpose": {
+                  "type": "string",
+                  "enum": [
+                    "verification",
+                    "validation"
+                  ]
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "inspection",
+                    "analysis",
+                    "demonstration",
+                    "test"
+                  ]
+                },
+                "criterion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "configuration": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "evidence_status": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "planned"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "requirement_id",
+                "purpose",
+                "method",
+                "criterion",
+                "configuration",
+                "evidence_status",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 200
+          },
+          "validation_questions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "uncovered_requirements": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "execution_status": {
+            "type": "string",
+            "enum": [
+              "planned"
+            ]
+          }
+        },
+        "required": [
+          "requirements_revision",
+          "matrix",
+          "validation_questions",
+          "uncovered_requirements",
+          "execution_status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "required": [
+      "artifact_id",
+      "revision",
+      "task_id",
+      "task_revision",
+      "type",
+      "scope",
+      "conditions",
+      "evidence_refs",
+      "payload"
+    ],
+    "additionalProperties": false
+  },
+  "purpose": "建立要求验证和预期使用确认的证据计划",
+  "requires": [
+    "ProblemBrief",
+    "PrototypePlan"
+  ],
+  "stage": "verify",
+  "next": [],
+  "stop": "verification与validation分开；计划就绪不代表产品通过。",
+  "input_bindings": {
+    "requirements": "artifact:ProblemBrief.payload.requirements",
+    "intended_use": "task",
+    "product_configuration": "artifact:PrototypePlan.payload.scope",
+    "test_capabilities": "task.resources"
+  },
+  "status": "platform_authored_not_expert_reviewed",
+  "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。",
+  "source_method_id": "IM-ML-042",
+  "source_content_version": "0.1.0",
+  "source_content_sha256": "e3b52bab746ebf6d6cbf7c4fbf94e4ce3d4b8c8cbfed0e33ec73af590d8cc959",
+  "implementation_scope": "concept_research_and_planning_only"
+}

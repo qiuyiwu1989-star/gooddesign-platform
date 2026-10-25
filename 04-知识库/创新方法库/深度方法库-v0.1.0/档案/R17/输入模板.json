@@ -1,0 +1,39 @@
+{
+  "method_id": "IM-ML-017",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "task": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "对象、目标、系统边界和硬约束；目标与事实分开",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "functions": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "动词加对象、输入输出和接口",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "options": {
+      "value": null,
+      "type": "array",
+      "required": false,
+      "description": "来源、作用条件及未知；允许后续检索补充",
+      "evidence_refs": [],
+      "missing_action": "mark_unknown"
+    },
+    "conditions": {
+      "value": null,
+      "type": "object",
+      "required": false,
+      "description": "材料、尺度、动力、载荷、空间及验收口径",
+      "evidence_refs": [],
+      "missing_action": "concept_only"
+    }
+  }
+}

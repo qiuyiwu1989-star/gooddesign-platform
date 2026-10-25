@@ -37,5 +37,11 @@ class GateTests(unittest.TestCase):
     def test_duplicate_evidence(self):
         p=packet();p['evidence']*=2;self.assertIn('duplicate_or_empty_evidence_id',assess(p)['issues'])
 
+    def test_missing_packet_revision_and_malformed_review(self):
+        p=packet();del p['revision']
+        self.assertEqual(assess(p)['status'],'blocked')
+        for invalid in (None,{'reviews':['not-a-review']},{'ratings':{'problem':3}}):
+            self.assertEqual(assess(invalid)['status'],'blocked')
+
 
 if __name__=='__main__':unittest.main()

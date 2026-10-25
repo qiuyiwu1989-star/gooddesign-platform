@@ -1,0 +1,23 @@
+{
+  "method_id": "IM-ML-010",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "research_domain": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "目标任务、市场变化、资源与边界",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "trend_network": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "文献、专家、用户网络及来源",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    }
+  }
+}

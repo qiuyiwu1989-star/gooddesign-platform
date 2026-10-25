@@ -1,0 +1,23 @@
+{
+  "method_id": "IM-FA-001",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "requirements": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "来源、条件、性能与约束",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    },
+    "conops": {
+      "value": null,
+      "type": "array",
+      "required": true,
+      "description": "正常、异常和生命周期场景",
+      "evidence_refs": [],
+      "missing_action": "ask_or_stop"
+    }
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "research_id": "R44",
+  "method_id": "IM-ML-044",
+  "name": "原型与假设测试",
+  "english_name": "Prototyping and Hypothesis-driven Experimentation",
+  "kind": "method_family",
+  "category": "F方案决策与验证评价",
+  "lineage": [
+    "设计思维",
+    "实验学习",
+    "工程原型"
+  ],
+  "aliases": [
+    "原型测试",
+    "假设实验",
+    "低保真原型"
+  ],
+  "summary": "从高风险假设选择最小必要原型，预先定义可观察证据和下一步决策，通过实际实验学习而非把展示当验证。",
+  "sections": {
+    "identity": "原型是一组围绕学习目标的表达或实验载体，可是纸面、交互、实体、仿真或服务扮演；不是固定开发阶段。本档以Stanford d.school Experiment Expedition公开介绍为设计学习来源，并用NASA确认章节区分工程用途证据。平台的假设登记、判据和停止条件为适配，不声称原型法由某一机构独创，也不复制有非商业许可限制的工作表。",
+    "problem": "团队经常一开始就做精致模型，投入很大却只证明能展示；或询问用户“喜欢吗”，得到礼貌评价，没检验购买、操作、维护和技术可行性的关键假设。反过来，把早期探索做成复杂正式实验也会拖慢学习。本法先明确最危险的不确定性，再做只需足以触发真实行为或检验机理的原型，把问题、证据与下一步决策接起来。",
+    "principle": "原型保真度应服务待学内容，不是越像成品越好。外观模型可测握持空间却不能证明耐久，功能台架可测机理却不能证明用户能在现场顺利操作。假设要描述对象、条件、预期行为或性能及可观察证据；探索性问题可以开放，但不能事后包装为预先定义的确认。实验前明确支持、反驳或不确定的信号，控制引导、样本偏差和混杂影响，观察与解释分开记录。低成本学习不等于低安全要求。",
+    "applicability": "适合概念初期、交互细节、机构机理、服务流程及高不确定设计变化。关键是存在可检验问题，并能在可接受风险与成本下取得相关证据。若真实危险、昂贵破坏或特殊环境使原型测试不可行，应先用安全替代、分析或专家规划。成熟产品法规、承载和可靠性结论需相应工程验证；几次早期原型访谈不能替代。",
+    "interpretation": "有效输出不只是修改建议，而是哪些假设受何种证据支持、哪些被反驳、哪些仍未知，下一步该继续、改向、补实验还是停止。测试失败可能来自假设错误、原型不足、任务不真实或方法偏差，应分别分析。样本少、便利招募和模拟环境应限制外推，不从少量参与者生成虚构市场比例、统计显著性或安全通过率。 引擎应按待学问题匹配原型能力，而不是按“做个原型”自动推荐高保真。为每轮保留原假设、原型版本、实际观察和改动理由，避免反复实验却无法累积知识。用户评价、行为观察与工程测量应分别存储，后续内容匹配也不能把三者当同强度证据。",
+    "example": "教学演示，尚未邀请参与者：设计可单手更换的工具头。S01假设目标维修人员戴手套时能理解锁定状态，暂不测试承载。S02用分镜固定取出、装入、判断锁定的任务，选择有真实触感的低成本原型。S03预先计划观察误判、停顿和解释，不以引导问答作成功证据；锁定判据需由任务要求明确。S04在安全无载条件观察并保留原话与行为。S05若误判可能来自提示不清，记录替代解释并设计下一轮，不立即归因用户能力。S06把后续结构承载测试交工程V&V。本例没有声称任何用户已成功。 假设卡可写“对象:目标维修人员；条件:戴手套、无载安全任务；假设:能识别锁定；原型覆盖:触感/提示，不覆盖承载；信号:误判与介入；判据:待任务确认；数据:none；状态:planned”。即使做完外观模型，承载和寿命仍是不同证据任务。",
+    "pitfalls": "一是先做漂亮样机再找问题，成本与学习脱节；先选关键假设。二是测试中解释答案或帮助完成，随后记“易用”；保留介入和失败。三是多个变量一起变，无法知道哪个起效；按目的隔离或明示探索。四是把模型体验好扩成产品已可量产和安全；分开证据适用域。反例：需要证实额定载荷下疲劳寿命时，纸模和用户喜好测试均不足，应转专门试验设计和验证。",
+    "validation": "检查每个假设是否有对应任务、原型能力、参与者/环境、观察项和决策规则；记录招募、提示、偏差及原始材料。真实学习要实际执行，设计好的实验计划不是支持证据。对安全、人身、保密及个人数据应遵循具体任务的适当规则。若要统计推断，需要合理样本与分析方法，不能由质性观察自动升级为群体结论。",
+    "adaptation": "d.school公开介绍支持分镜、待测元素、制作原型、实验收数、解释与选择的循环；NASA支持预期使用、环境和用户的工程确认边界。平台将其细化为六步并添加假设优先、证据状态和正式验证接口；工作表未复制，教学工具头情境为原创。",
+    "gaps": "尚无具体假设优先级、原型、真实参与者、招募与实验记录。不同原型保真度能覆盖的物理机制需项目逐项确认，不能通用推定。若后续需要统计、危险工况或认证证据，需另建合适程序、样本、工具与责任审查；本档只提供研究和学习闭环。"
+  },
+  "inputs": [
+    {
+      "key": "design_intent",
+      "label": "设计意图与任务",
+      "type": "object",
+      "required": true,
+      "description": "目标用户、情境、概念与待解决问题",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "assumptions",
+      "label": "待检验假设",
+      "type": "array",
+      "required": true,
+      "description": "关键未知、影响、现有证据及可反驳条件",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "experiment_resources",
+      "label": "实验资源与约束",
+      "type": "object",
+      "required": false,
+      "description": "时间、成本、参与者、材料、工具和安全限制",
+      "missing_action": "mark_unknown"
+    },
+    {
+      "key": "prototype_evidence",
+      "label": "原型与既有记录",
+      "type": "array",
+      "required": false,
+      "description": "模型能力、原始观察和偏差，不混事实假设",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R44-S01",
+      "title": "选择关键学习假设",
+      "input_refs": [
+        "design_intent",
+        "assumptions"
+      ],
+      "depends_on": [],
+      "operation": "按不确定性与决策影响选一个或少数可检验问题，区分探索和确认。",
+      "decision": "问题不可观察先重写，不能测试所有事。",
+      "output_key": "learning_target",
+      "output_description": "假设、理由、证据缺口与范围",
+      "checks": [
+        "假设可反驳",
+        "与决策相关"
+      ],
+      "stop_condition": "无明确学习目标暂停制作",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查原始需求与关键不确定性"
+      ]
+    },
+    {
+      "step_id": "R44-S02",
+      "title": "把任务转为最小原型",
+      "input_refs": [
+        "learning_target",
+        "experiment_resources"
+      ],
+      "depends_on": [
+        "R44-S01"
+      ],
+      "operation": "用分镜或任务流程标出待测环节，选择能表达相应行为/机理的最低必要保真度。",
+      "decision": "原型未覆盖目标机理则换载体，不用外观证承载。",
+      "output_key": "prototype_plan",
+      "output_description": "原型、任务和可测/不可测边界",
+      "checks": [
+        "保真度服务问题",
+        "危险可控"
+      ],
+      "stop_condition": "测试存在未控制危险停止",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查原型制作和物理机制限制"
+      ]
+    },
+    {
+      "step_id": "R44-S03",
+      "title": "预设观察与决策规则",
+      "input_refs": [
+        "prototype_plan",
+        "assumptions",
+        "experiment_resources"
+      ],
+      "depends_on": [
+        "R44-S02"
+      ],
+      "operation": "确定参与者环境、观察数据、提示、支持/反驳信号及下一步规则。",
+      "decision": "缺合理样本只做质性学习，不承诺统计结论。",
+      "output_key": "experiment_protocol",
+      "output_description": "实验计划、偏差控制及判读规则",
+      "checks": [
+        "执行前定规则",
+        "不引导作答"
+      ],
+      "stop_condition": "关键条件不能模拟则限制目标",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查用户代表性与任务情境"
+      ]
+    },
+    {
+      "step_id": "R44-S04",
+      "title": "实际实验并收集记录",
+      "input_refs": [
+        "experiment_protocol",
+        "prototype_evidence"
+      ],
+      "depends_on": [
+        "R44-S03"
+      ],
+      "operation": "安全执行任务，记录行为、原话、条件、原型问题和研究者介入。",
+      "decision": "未执行写planned，不能生成参与者反应。",
+      "output_key": "observations",
+      "output_description": "原始观察、偏差和执行状态",
+      "checks": [
+        "观察解释分离",
+        "原始材料保留"
+      ],
+      "stop_condition": "危险或不可接受偏差中止记录",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "依赖实际参与者与实验工具"
+      ]
+    },
+    {
+      "step_id": "R44-S05",
+      "title": "解释并检查替代原因",
+      "input_refs": [
+        "observations",
+        "learning_target"
+      ],
+      "depends_on": [
+        "R44-S04"
+      ],
+      "operation": "对假设标支持/反驳/未知，核原型不足、环境和方法偏差等替代解释。",
+      "decision": "超出证据范围不外推总体、寿命或安全。",
+      "output_key": "learning_findings",
+      "output_description": "证据与假设状态、替代解释",
+      "checks": [
+        "负面证据保留",
+        "无伪统计"
+      ],
+      "stop_condition": "关键证据不足保持未知",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查混杂因素和下一轮隔离变量"
+      ]
+    },
+    {
+      "step_id": "R44-S06",
+      "title": "决定迭代或转正式验证",
+      "input_refs": [
+        "learning_findings",
+        "prototype_plan"
+      ],
+      "depends_on": [
+        "R44-S05"
+      ],
+      "operation": "依据预设规则选择继续、修改、补实验或停止，需工程证明的问题转V&V。",
+      "decision": "没有实际数据只产计划，不宣称概念通过。",
+      "output_key": "prototype_learning_dossier",
+      "output_description": "假设—原型—观察—学习—下一步档案",
+      "checks": [
+        "下一步针对未知",
+        "探索与工程结论分清"
+      ],
+      "stop_condition": "硬约束不可满足停止该方向",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "将性能可靠性问题交DOE与V&V"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "prototype_learning_dossier",
+      "label": "原型假设学习档案",
+      "required_fields": [
+        "hypotheses",
+        "prototype",
+        "tasks",
+        "protocol",
+        "observations",
+        "biases",
+        "findings",
+        "next_decision",
+        "unresolved"
+      ],
+      "interpretation": "用于学习与方向决策，证据不自动外推工程性能"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "问题/用户任务→design_intent",
+      "condition": "学习围绕实际意图"
+    },
+    {
+      "target_research_id": "R38",
+      "relation": "parallel",
+      "binding": "定量机理问题→DOE",
+      "condition": "需要统计因果研究时"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "待确认性能→正式V&V目标",
+      "condition": "探索不替代正式证据"
+    }
+  ],
+  "search_terms": [
+    "原型",
+    "假设测试",
+    "prototyping",
+    "低保真",
+    "实验学习",
+    "设计验证"
+  ],
+  "sources": [
+    {
+      "publisher": "Stanford d.school",
+      "authors": [
+        "Thomas Both",
+        "Nadia Roumani"
+      ],
+      "title": "Experiment Expedition",
+      "url": "https://dschool.stanford.edu/tools/experiment-expedition",
+      "locator": "How does it work / Credits / License",
+      "read_scope": "公开介绍正文核读；未把下载工作表当作已逐页阅读",
+      "supports": [
+        "分镜、选择待测元素、原型、收集数据、解释与选择"
+      ],
+      "evidence_note": "原资源CC BY-NC-SA 4.0；本文原创概括和操作适配，不复制工作表或授权商业再分发",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+    },
+    {
+      "publisher": "NASA",
+      "authors": [
+        "NASA"
+      ],
+      "title": "Systems Engineering Handbook 5.4 Product Validation",
+      "url": "https://www.nasa.gov/reference/5-4-product-validation/",
+      "locator": "5.4.1目的、输入、活动与方法",
+      "read_scope": "公开手册有关预期环境、预期用户和利益相关方期待的正文核读",
+      "supports": [
+        "确认预期使用",
+        "异常闭环与结果报告"
+      ],
+      "evidence_note": "验证与确认目的分开，方法可能共用但追溯对象不同",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+    }
+  ],
+  "schema_version": "method-dossier-1.0",
+  "version": "0.1.0",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "evaluations": [
+    {
+      "scenario": "输入足够的研究任务",
+      "expected": "产生prototype_learning_dossier，每项判断保留依据、假设和适用范围"
+    },
+    {
+      "scenario": "缺少design_intent",
+      "expected": "追问目标与边界，停止确定性分析，不编造输入"
+    },
+    {
+      "scenario": "候选违反明确硬约束",
+      "expected": "排除并解释，不用总分或统计指标抵消要求"
+    },
+    {
+      "scenario": "实际数据、测量或分析工具不可用",
+      "expected": "只保存研究/验证计划，不填造实际结果、通过或风险降低"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项核读专业来源并编写平台深度操作草稿"
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "批次复核：补具体中间产物、教学模型与边界；不提升执行/验证状态"
+    }
+  ]
+}

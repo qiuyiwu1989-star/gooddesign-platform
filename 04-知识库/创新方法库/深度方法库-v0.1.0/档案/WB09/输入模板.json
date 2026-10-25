@@ -1,0 +1,31 @@
+{
+  "method_id": "IM-WB-009",
+  "version": "0.1.0",
+  "status": "unfilled_template_not_execution",
+  "inputs": {
+    "anomaly": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "线性基线偏差及可疑机制",
+      "evidence_refs": [],
+      "missing_action": "先测量复核"
+    },
+    "physics": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "本构、时变、耦合、不确定与边界",
+      "evidence_refs": [],
+      "missing_action": "补物理依据"
+    },
+    "scope": {
+      "value": null,
+      "type": "object",
+      "required": true,
+      "description": "参数区间初始条件路径及目标响应",
+      "evidence_refs": [],
+      "missing_action": "明确分析范围"
+    }
+  }
+}
