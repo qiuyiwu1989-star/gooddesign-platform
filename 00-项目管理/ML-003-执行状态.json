@@ -1,7 +1,7 @@
 {
   "task": "ML-003",
-  "status": "in_progress",
-  "phase": "v0.2.1_technical_audit_passed_external_validation_pending",
+  "status": "blocked",
+  "phase": "external_independent_review_and_customer_input_required",
   "authorization": "2026-10-25 user until goal complete",
   "existing_sdk": "mcp1.30.0",
   "next": [
@@ -37,7 +37,7 @@
   "post_review": "R42_overlap_and_baseline_repaired_in_new_run",
   "technical_release": {
     "version": "0.2.1",
-    "status": "contracts_and_runtime_checks_passed",
+    "status": "packaged_and_restore_verified",
     "package_proof": "output/handoff/ML-003-方法引擎技术试用-v0.2.1/package-verification.json",
     "previous_release_preserved": "0.2.0",
     "scope": "technical_pilot_not_expert_approved"
@@ -55,5 +55,12 @@
     "declared_support_statements": 283,
     "semantic_support_review": "pending"
   },
-  "constraint_trace_fix": "R36 requirement baseline, hard/unknown requirement coverage and reused comparison input checks"
+  "constraint_trace_fix": "R36 requirement baseline, hard/unknown requirement coverage and reused comparison input checks",
+  "blocker_audit": {
+    "same_condition_consecutive_goal_turns": 3,
+    "technical_work_completed_before_block": "v0.2.1 constraint trace fix and live/SDK/package verification",
+    "condition": "independent domain reviewers and real customer pilot inputs not obtained",
+    "evidence": "00-项目管理/ML-003-最终审计与外部依赖.md",
+    "overall_goal_complete": false
+  }
 }
