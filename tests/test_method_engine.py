@@ -134,6 +134,28 @@ class EngineTests(unittest.TestCase):
             self.assertEqual(store.submit(run['run_id'],revision,'wrong-id','R42',a)['status'],'blocked')
             self.assertEqual(store.submit(run['run_id'],revision,'correct','R42',fixtures['R42'])['revision'],6)
 
+    def test_comparison_cannot_omit_or_downgrade_requirement_gates(self):
+        fixtures=teaching_artifacts();upstream=[fixtures[r] for r in ('R48','R14','R17')]
+        for change,code in [({'requirement_ids':[]},'comparison_hard_or_unresolved_requirement_not_gated:Q1'),
+                            ({'hard':False},'comparison_hard_or_unresolved_requirement_not_gated:Q1'),
+                            ({'requirement_ids':['invented']},'comparison_unknown_requirement_reference')]:
+            artifact=copy.deepcopy(fixtures['R36']);artifact['payload']['criteria'][0].update(change)
+            checked=self.engine.check_output('R36',artifact,teaching_task(),upstream)
+            self.assertIn(code,[x['code'] for x in checked['issues']])
+            self.assertEqual(self.engine.plan(teaching_task(),artifacts=upstream+[artifact])['status'],'blocked')
+        artifact=copy.deepcopy(fixtures['R36']);artifact['payload']['requirements_revision']='old'
+        self.assertIn('comparison_requirement_baseline_revision_mismatch',[x['code'] for x in self.engine.check_output('R36',artifact,teaching_task(),upstream)['issues']])
+        # Even a locally passing comparison cannot rank while source hardness is unresolved.
+        upstream=copy.deepcopy(upstream);upstream[0]['payload']['requirements'][0]['hard']=None
+        upstream[2]['payload']['combinations'][0]['status']='candidate'
+        upstream[2]['payload']['compatibility'][0]['status']='compatible'
+        ev=dict(id='E1',server='case',project_id='P1',source_id='S1',source_revision='s1',locator='p1',text='source',text_sha256=hashlib.sha256(b'source').hexdigest())
+        artifact=copy.deepcopy(fixtures['R36']);artifact['payload']['recommendations']=['C1']
+        artifact['payload']['judgments'][0].update(value='pass',evidence_refs=['E1'])
+        self.assertNotEqual(self.engine.check_artifact('R36',artifact,[ev])['status'],'blocked')
+        checked=self.engine.check_output('R36',artifact,teaching_task(),upstream,[ev])
+        self.assertIn('comparison_requirement_hardness_unresolved:Q1',[x['code'] for x in checked['issues']])
+
     def test_case_adapter_revision_and_truncation(self):
         response={'source_id':'S1','source_sha256':'file-hash','chunks_sha256':'chunk-file-hash','revision':'current_ingest',
                   'read_scope':'partial','data':[{'id':'B1','text':'x'*100,'locator':'p1'}]}

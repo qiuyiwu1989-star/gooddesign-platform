@@ -68,6 +68,9 @@ def propose_artifact(rid, task, artifacts=None, evidence=None, reader=None, fold
         'References establish provenance, not truth. Keep assumptions/unknowns explicit, requirements proposed unless confirmed input evidence supports approval. '
         'With no supplied evidence, every requirement status must be proposed or unknown, never confirmed. Hardness unknown must be null rather than false. '
         'For concept comparison, unknown hard gates cannot support recommendations. Verification/prototype outputs are plans only. '
+        'In ComparisonRecord, copy requirements_revision EXACTLY from ProblemBrief.revision. Bind criteria.requirement_ids to existing requirement IDs. '
+        'Every hard=true or hard=null requirement must map to a hard criterion; do not omit safety or unresolved requirements. '
+        'If any requirement hardness is unknown, leave recommendations empty until it is resolved. '
         'In VerificationPlan, uncovered_requirements means IDs with NO matrix row, not IDs lacking completed evidence. None/planned evidence_status expresses unverified requirements already covered by a plan. These sets must not overlap. '
         'Copy requirements_revision EXACTLY from upstream ProblemBrief.revision, not artifact_id:revision. Every matrix requirement_id must be an existing upstream requirement ID. Put unmapped intended-use questions in validation_questions, not invented requirement IDs. '
         'Match schema strictly. No claims of expert certification, engineering validation or actual execution. INPUT JSON:\n'+encoded)

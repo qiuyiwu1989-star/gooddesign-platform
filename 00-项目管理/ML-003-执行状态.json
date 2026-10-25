@@ -1,7 +1,7 @@
 {
   "task": "ML-003",
   "status": "in_progress",
-  "phase": "technical_complete_independent_validation_pending",
+  "phase": "v0.2.1_technical_audit_passed_external_validation_pending",
   "authorization": "2026-10-25 user until goal complete",
   "existing_sdk": "mcp1.30.0",
   "next": [
@@ -23,7 +23,7 @@
     "application_request_result_bridge"
   ],
   "verification": {
-    "method_tests": 64,
+    "method_tests": 65,
     "sdk_two_server_checks": 16,
     "live_model_match": "completed",
     "live_model_step": "completed_as_draft",
@@ -33,13 +33,13 @@
     "paired_model_calls": 24,
     "six_node_review_export": 6
   },
-  "live_chain": "six_real_model_drafts_recorded_then_reviewed",
+  "live_chain": "v0.2.1:3 explicitly reused drafts +3 new real-model drafts; six cross-method checks passed",
   "post_review": "R42_overlap_and_baseline_repaired_in_new_run",
   "technical_release": {
-    "version": "0.2.0",
-    "status": "packaged_restore_passed",
-    "files": 588,
-    "commit": "f464f56",
+    "version": "0.2.1",
+    "status": "contracts_and_runtime_checks_passed",
+    "package_proof": "output/handoff/ML-003-方法引擎技术试用-v0.2.1/package-verification.json",
+    "previous_release_preserved": "0.2.0",
     "scope": "technical_pilot_not_expert_approved"
   },
   "comparison": {
@@ -54,5 +54,6 @@
     "source_records": 149,
     "declared_support_statements": 283,
     "semantic_support_review": "pending"
-  }
+  },
+  "constraint_trace_fix": "R36 requirement baseline, hard/unknown requirement coverage and reused comparison input checks"
 }

@@ -21,7 +21,7 @@ def teaching_artifacts():
              {'id': 'O2', 'function_id': 'F2', 'principle': 'manual screw with contact pad', 'conditions': ['pad friction and deformation unknown'], 'evidence_refs': []}],
              'combinations': [{'id': 'C1', 'option_ids': ['O1', 'O2'], 'status': 'unknown', 'reason': 'contact and load need tests'}],
              'compatibility': [{'option_ids': ['O1', 'O2'], 'status': 'unknown', 'reason': 'no actual geometry', 'evidence_refs': []}], 'unknowns': ['full motion and contact']}),
-      'R36': ('ComparisonRecord', {'baseline_id': 'C1', 'candidate_ids': ['C1'], 'criteria': [{'id': 'K1', 'text': 'retain without damage', 'hard': True}],
+      'R36': ('ComparisonRecord', {'requirements_revision': 'a1', 'baseline_id': 'C1', 'candidate_ids': ['C1'], 'criteria': [{'id': 'K1', 'text': 'retain without damage', 'hard': True, 'requirement_ids':['Q1']}],
              'judgments': [{'candidate_id': 'C1', 'criterion_id': 'K1', 'value': 'unknown', 'basis': 'no representative load/material or test', 'evidence_refs': []}],
              'recommendations': [], 'sensitivity': ['material may change preferred contact'], 'unknowns': ['hard gate not established']}),
       'R44': ('PrototypePlan', {'hypothesis': 'a broader contact pad may reduce visible marking while retaining', 'learning_goal': 'test retention and marking jointly',

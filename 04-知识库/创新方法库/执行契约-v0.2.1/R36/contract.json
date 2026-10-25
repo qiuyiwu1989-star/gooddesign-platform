@@ -1,0 +1,280 @@
+{
+  "contract_version": "0.2.1",
+  "research_id": "R36",
+  "artifact_type": "ComparisonRecord",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "artifact_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "ComparisonRecord"
+        ]
+      },
+      "scope": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6000,
+        "pattern": "\\S"
+      },
+      "conditions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "fact",
+                "assumption",
+                "unknown"
+              ]
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+              },
+              "minItems": 0,
+              "maxItems": 200
+            }
+          },
+          "required": [
+            "id",
+            "text",
+            "kind",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "evidence_refs": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "payload": {
+        "type": "object",
+        "properties": {
+          "requirements_revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "baseline_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "candidate_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "minItems": 1,
+            "maxItems": 200
+          },
+          "criteria": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "hard": {
+                  "type": "boolean"
+                },
+                "requirement_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "hard",
+                "requirement_ids"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 200
+          },
+          "judgments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "candidate_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "criterion_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "value": {
+                  "type": "string",
+                  "enum": [
+                    "better",
+                    "same",
+                    "worse",
+                    "unknown",
+                    "pass",
+                    "fail"
+                  ]
+                },
+                "basis": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "candidate_id",
+                "criterion_id",
+                "value",
+                "basis",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 200
+          },
+          "recommendations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "sensitivity": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "unknowns": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          }
+        },
+        "required": [
+          "requirements_revision",
+          "baseline_id",
+          "candidate_ids",
+          "criteria",
+          "judgments",
+          "recommendations",
+          "sensitivity",
+          "unknowns"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "required": [
+      "artifact_id",
+      "revision",
+      "task_id",
+      "task_revision",
+      "type",
+      "scope",
+      "conditions",
+      "evidence_refs",
+      "payload"
+    ],
+    "additionalProperties": false
+  },
+  "purpose": "用硬门槛和相对判断筛选概念",
+  "requires": [
+    "ProblemBrief",
+    "ConceptSet"
+  ],
+  "stage": "compare",
+  "next": [
+    "R44"
+  ],
+  "stop": "硬门槛未知或失败的候选不能作为已通过的推荐。",
+  "input_bindings": {
+    "problem_requirements": "artifact:ProblemBrief.payload.requirements",
+    "concepts": "artifact:ConceptSet.payload",
+    "evidence": "evidence",
+    "decision_preferences": "task.preferences"
+  },
+  "status": "platform_authored_not_expert_reviewed",
+  "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。",
+  "source_method_id": "IM-ML-036",
+  "source_content_version": "0.1.0",
+  "source_content_sha256": "aabcbcc266c8bf50cda10a9b6a0117338441fa7c9fcb6b67b30ce90dfd102908",
+  "implementation_scope": "concept_research_and_planning_only"
+}

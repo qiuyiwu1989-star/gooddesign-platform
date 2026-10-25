@@ -1,0 +1,226 @@
+{
+  "contract_version": "0.2.1",
+  "research_id": "R44",
+  "artifact_type": "PrototypePlan",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "artifact_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "task_revision": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "PrototypePlan"
+        ]
+      },
+      "scope": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6000,
+        "pattern": "\\S"
+      },
+      "conditions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "fact",
+                "assumption",
+                "unknown"
+              ]
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+              },
+              "minItems": 0,
+              "maxItems": 200
+            }
+          },
+          "required": [
+            "id",
+            "text",
+            "kind",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "evidence_refs": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+        },
+        "minItems": 0,
+        "maxItems": 200
+      },
+      "payload": {
+        "type": "object",
+        "properties": {
+          "hypothesis": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "learning_goal": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "procedure": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "minItems": 1,
+            "maxItems": 200
+          },
+          "measurements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "observable": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "unit_or_scale": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "criterion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "id",
+                "observable",
+                "unit_or_scale",
+                "criterion"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 200
+          },
+          "uncovered_questions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000,
+              "pattern": "\\S"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "execution_status": {
+            "type": "string",
+            "enum": [
+              "planned"
+            ]
+          }
+        },
+        "required": [
+          "hypothesis",
+          "learning_goal",
+          "scope",
+          "procedure",
+          "measurements",
+          "uncovered_questions",
+          "execution_status"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "required": [
+      "artifact_id",
+      "revision",
+      "task_id",
+      "task_revision",
+      "type",
+      "scope",
+      "conditions",
+      "evidence_refs",
+      "payload"
+    ],
+    "additionalProperties": false
+  },
+  "purpose": "将关键假设转为原型学习计划",
+  "requires": [
+    "ProblemBrief",
+    "ConceptSet",
+    "ComparisonRecord"
+  ],
+  "stage": "prototype",
+  "next": [
+    "R42"
+  ],
+  "stop": "未执行计划不能含实测结果；外观原型不证明寿命。",
+  "input_bindings": {
+    "design_intent": "artifact:ProblemBrief",
+    "assumptions": "artifact:ComparisonRecord.payload.unknowns",
+    "experiment_resources": "task.resources",
+    "prototype_evidence": "evidence"
+  },
+  "status": "platform_authored_not_expert_reviewed",
+  "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。",
+  "source_method_id": "IM-ML-044",
+  "source_content_version": "0.1.0",
+  "source_content_sha256": "31f983750326980a7c45dc901cb0d6d42b4a991f6cd7c70037ad5cf85a2af307",
+  "implementation_scope": "concept_research_and_planning_only"
+}

@@ -12,6 +12,7 @@ from pathlib import Path
 from mcp import ClientSession,StdioServerParameters
 from mcp.client.stdio import stdio_client
 from method_engine import ROOT
+from method_engine_contracts import CONTRACT_VERSION
 
 
 def selected_files():
@@ -21,14 +22,15 @@ def selected_files():
               'scripts/*method_engine*.py','tests/test_method_engine*.py','tests/method_engine_fixtures.py',
               'tests/test_method_quality_gate.py','tests/test_method_library_051.py','tests/test_method_application_adapter.py',
               'requirements-method-engine.txt','specs/ML-003*','00-项目管理/ML-003*',
-              '04-知识库/创新方法库/执行契约-v0.2.0/**/*','04-知识库/创新方法库/深度方法库-v0.1.0/**/*']
+              '04-知识库/创新方法库/执行契约-v'+CONTRACT_VERSION+'/**/*','04-知识库/创新方法库/深度方法库-v0.1.0/**/*']
     for pattern in patterns:files.update(p for p in ROOT.glob(pattern) if p.is_file())
     base=ROOT/'output/method-engine-ML003'
     for name in ['index.html','mcp-integration.json','live-model-mcp.json','adversarial-review.json','quality-passport.json',
                  'live-quality-packet.json','mcp-config.local.json','all-method-tests.txt','engine-tests.txt','browser-check.json']:
         if (base/name).is_file():files.add(base/name)
     for pattern in ['expert-review-pack/**/checked-result.json','expert-review-pack/*.json','expert-review-pack/*.md',
-                    'live-chain/*/report.json','live-chain/*/post-review-recheck.json','live-revision/*/report.json']:
+                    'live-chain/*/report.json','live-chain/*/post-review-recheck.json','live-revision/*/report.json',
+                    'v'+CONTRACT_VERSION+'/*.json','v'+CONTRACT_VERSION+'/*/report.json','v'+CONTRACT_VERSION+'/*.txt','v'+CONTRACT_VERSION+'/*.md','v'+CONTRACT_VERSION+'/*.html']:
         files.update(p for p in base.glob(pattern) if p.is_file())
     return sorted(files)
 
@@ -64,18 +66,18 @@ async def restore_check(archive):
 
 
 def main():
-    dest=ROOT/'output/handoff/ML-003-方法引擎技术试用-v0.2.0';dest.mkdir(parents=True,exist_ok=True)
-    archive=dest/'method-engine-pilot-v0.2.0.zip'
+    dest=ROOT/('output/handoff/ML-003-方法引擎技术试用-v'+CONTRACT_VERSION);dest.mkdir(parents=True,exist_ok=True)
+    archive=dest/('method-engine-pilot-v'+CONTRACT_VERSION+'.zip')
     if archive.exists():raise ValueError('frozen_pilot_package_exists_do_not_overwrite')
-    files=selected_files();manifest={'type':'project_overlay_not_standalone_installer','version':'0.2.0',
+    files=selected_files();manifest={'type':'project_overlay_not_standalone_installer','version':CONTRACT_VERSION,
         'base_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         'files':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files},
         'excluded':['case originals','SQLite databases','model input/event logs','credentials'],
         'expert_certified':False}
-    readme=('Method engine technical pilot overlay. Extract into an existing compatible gooddesign project checkout. '
+    readme=('Method engine technical pilot overlay '+CONTRACT_VERSION+'. Extract into an existing compatible gooddesign project checkout. '
             'Requires its tracked helper scripts, pinned project Python runtime and configured Codex authentication for optional model calls. '
             'Case MCP data is separate and not bundled. Host config paths are local examples and must be adjusted when moved. '
-            'Read output/method-engine-ML003/index.html and 00 management guide. '
+            'Read output/method-engine-ML003/v'+CONTRACT_VERSION+'/README.md and 00 management guide first; root proof pages may describe historical runs. '
             'Tests/real model calls prove bounded operation, not expert-level or engineering validation. No auto publication.\n')
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         for path in files:z.write(path,str(path.relative_to(ROOT)))

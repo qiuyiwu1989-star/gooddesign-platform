@@ -42,6 +42,20 @@ def context_issues(task):
     return errors
 
 
+def comparison_requirement_issues(comparison, brief):
+    p=comparison['payload'];requirements={r['id']:r for r in brief['payload']['requirements']};issues=[]
+    if p['requirements_revision']!=brief['revision']:issues.append('comparison_requirement_baseline_revision_mismatch')
+    mapped={rid for criterion in p['criteria'] for rid in criterion['requirement_ids']}
+    if not mapped<=requirements.keys():issues.append('comparison_unknown_requirement_reference')
+    for rid,requirement in requirements.items():
+        related=[c for c in p['criteria'] if rid in c['requirement_ids']]
+        if requirement['hard'] is not False and not any(c['hard'] for c in related):
+            issues.append('comparison_hard_or_unresolved_requirement_not_gated:'+rid)
+        if requirement['hard'] is None and p['recommendations']:
+            issues.append('comparison_requirement_hardness_unresolved:'+rid)
+    return issues
+
+
 class Engine:
     def __init__(self, library_path=library.DEFAULT_OUTPUT):
         self.library = Path(library_path)
@@ -120,6 +134,11 @@ class Engine:
             else: available.add(a['type'])
         if len(ids) != len(set(ids)) or len(types) != len(set(types)):
             errors.append('duplicate_artifact_identity_or_type_requires_explicit_selection')
+        if not errors:
+            by_type={a['type']:a for a in artifacts}
+            if 'ComparisonRecord' in by_type:
+                if 'ProblemBrief' not in by_type:errors.append('comparison_requirement_baseline_missing')
+                else:errors.extend(comparison_requirement_issues(by_type['ComparisonRecord'],by_type['ProblemBrief']))
         candidates = []
         for rid, meta in META.items():
             missing = sorted(set(meta['requires'])-available)
@@ -205,6 +224,7 @@ class Engine:
             functions={x['id'] for x in upstream['FunctionModel']['payload']['functions']}
             if not set(p['function_ids'])<=functions:issues.append('unknown_upstream_function')
         if rid=='R36':
+            issues.extend(comparison_requirement_issues(artifact,upstream['ProblemBrief']))
             combos={x['id']:x for x in upstream['ConceptSet']['payload']['combinations']}
             if not set(p['candidate_ids'])<=combos.keys():issues.append('unknown_upstream_candidate')
             if any(combos.get(x,{}).get('status')!='candidate' for x in p['recommendations']):issues.append('recommendation_not_ready_in_concept_set')

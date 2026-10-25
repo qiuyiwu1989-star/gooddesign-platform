@@ -8,6 +8,7 @@ from pathlib import Path
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from method_engine import ROOT
+from method_engine_contracts import CONTRACT_VERSION
 from method_case_adapter import read_case
 sys.path.insert(0, str(ROOT/'tests'))
 from method_engine_fixtures import teaching_task, teaching_artifacts
@@ -67,11 +68,11 @@ async def run():
                 await resumed.initialize()
                 state=await call(resumed,'method_run_get',{'run_id':run['run_id']})
                 check('server_restart_persistence',state['revision']==6 and len(state['submissions'])==6)
-    report={'status':'passed','checks':checks,'method_tool_count':len(names),'case_protocol':init.protocolVersion,'method_protocol':method_init.protocolVersion,
+    report={'status':'passed','contract_version':CONTRACT_VERSION,'checks':checks,'method_tool_count':len(names),'case_protocol':init.protocolVersion,'method_protocol':method_init.protocolVersion,
             'source_refs':[{k:e.get(k) for k in ('project_id','source_id','source_revision','source_sha256','chunk_id','locator','text_sha256','truncated')} for e in evidence],
             'analysis_mode':'authored_teaching_fixture_not_general_llm_inference','expert_certified':False,
             'scope':'actual_stdio_mcp_retrieval_and_execution_contracts_not_engineering_validation'}
-    dest=ROOT/'output/method-engine-ML003';dest.mkdir(exist_ok=True)
+    dest=ROOT/'output/method-engine-ML003'/('v'+CONTRACT_VERSION);dest.mkdir(parents=True,exist_ok=True)
     (dest/'mcp-integration.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'status':'passed','checks':len(checks),'report':str(dest/'mcp-integration.json')},ensure_ascii=False))
 

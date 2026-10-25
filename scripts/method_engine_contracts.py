@@ -4,7 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 
-CONTRACT_VERSION = '0.2.0'
+CONTRACT_VERSION = '0.2.1'
 OVERLAY = Path(__file__).resolve().parents[1]/('04-知识库/创新方法库/执行契约-v'+CONTRACT_VERSION)
 
 
@@ -38,8 +38,8 @@ PAYLOADS = {
      'combinations': arr(obj({'id': ID, 'option_ids': arr(ID, 1), 'status': enum('candidate', 'excluded', 'unknown'), 'reason': TEXT}), 1),
      'compatibility': arr(obj({'option_ids': arr(ID, 2), 'status': enum('compatible', 'incompatible', 'unknown'), 'reason': TEXT, 'evidence_refs': REFS})),
      'unknowns': arr(TEXT)})),
- 'R36': ('ComparisonRecord', obj({'baseline_id': ID, 'candidate_ids': arr(ID, 1),
-     'criteria': arr(obj({'id': ID, 'text': TEXT, 'hard': {'type': 'boolean'}}), 1),
+ 'R36': ('ComparisonRecord', obj({'requirements_revision': ID, 'baseline_id': ID, 'candidate_ids': arr(ID, 1),
+     'criteria': arr(obj({'id': ID, 'text': TEXT, 'hard': {'type': 'boolean'}, 'requirement_ids': arr(ID)}), 1),
      'judgments': arr(obj({'candidate_id': ID, 'criterion_id': ID, 'value': enum('better', 'same', 'worse', 'unknown', 'pass', 'fail'), 'basis': TEXT, 'evidence_refs': REFS}), 1),
      'recommendations': arr(ID), 'sensitivity': arr(TEXT), 'unknowns': arr(TEXT)})),
  'R44': ('PrototypePlan', obj({'hypothesis': TEXT, 'learning_goal': TEXT, 'scope': TEXT,

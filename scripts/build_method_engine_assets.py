@@ -30,7 +30,7 @@ NOTES = {
   'locator': 'Concept Evaluation / Pugh Chart Analysis',
   'claims': ['Pugh比较使用参照方案与统一准则。', '相对判断可写优于、相同或劣于参照。', '概念可经进一步研究、试验及组合后再比较。'],
   'adaptation': '原课程有符号计数与可选权重。本平台另加硬门槛和unknown状态，不把它们冒称为Pugh唯一原规则；未知不以0代替。',
-  'operation': '保留比较基准、候选和准则ID。先查硬门槛，再填写有依据的相对判断；证据不足写unknown。对基准、批量、工况变化作敏感性讨论。推荐不是最高符号总和的自动同义词，必须说明理由及仍需检验的问题。',
+  'operation': '保留需求基线版本、比较基准、候选和准则ID；用requirement_ids把准则绑定到需求简报。每项硬要求及硬软属性未知的要求必须映射到硬门槛；属性未知时不得推荐。先查硬门槛，再填写有依据的相对判断，证据不足写unknown。对基准、批量、工况变化作敏感性讨论。推荐不是最高符号总和的自动同义词；这些追溯与停止规则属于平台约束，不冒称Pugh原规则。',
   'counterexample': '半自动方案的维护成本未知时，填“与人工相同”会制造虚假优势。应提出维修频率、工时和耗材的补证任务，必要时暂不排名。'},
  'R44': {
   'source': 'https://dschool.stanford.edu/tools/experiment-expedition', 'locator': 'How does it work? / public introduction',
