@@ -465,3 +465,5 @@ Usercontinue:service2016-07research2first3primaryannual2014facts admitted viaact
 05116:33 dispatch limitation: gold_triage051 gear deepening failed before execution: selected model at capacity. No gear research claimed; task retained for next retry, other admitted service work unaffected.
 
 05117:03:precise41service research3八模块/六维0.1.2已冻结，actual stdio MCP14facts0AI/current evidence passed。服务工作单及98manifest状态已同步research3，保留冲突/合同/独立客户效果缺口。2017-08深研Agent重试已实际开始检索；水槽research3逐维证据锚定试评已安排，未在交付前宣称评分或达80。只读全量就绪审计刷新，历史0830冻结包不变。
+
+Usercontinue17:22:visible98rowprogress refreshed preservingfourtrialscorelabels. Gear2new3sources/8candidates remain researchpackage only,not production: rootpreflightlookedupproductionSID and correctlyfailedKeyError beforewriting;mustuseisolatedpackage source paths theningest/rebind afterindependentreview. No newfacts falselyclaimedpublished. Sinktrialdraft42.5pendingindependentcalibration,notproductionqualityscoreor80. Reviewsactive.
