@@ -15,7 +15,7 @@ def teaching_case(rid):
  out+='</div><h3>② 配对检查以后，还要看整体</h3><p>三个功能、每功能两个选项，共8个组合。12个跨功能配对判断均为教学模型预录；程序只检查记录与枚举，不会自行发现物理相容。配对未冲突，也不能替代整体检查。</p><div class="table-scroll"><table><thead><tr><th>组合</th><th>组成</th><th>研究状态</th><th>依据与未决</th></tr></thead><tbody>'
  for row in c['combinations']:out+='<tr><td>'+E(row['id'])+'</td><td>'+E(' + '.join(names[x]for x in row['option_ids']))+'</td><td>'+E(states[row['state']])+'</td><td>'+E(row['reason'])+'</td></tr>'
  out+='</tbody></table></div><h3>③ 选择下一步比较对象，而不是宣称最优</h3><p>结果为4个排除、3个条件性研究、1个模型比较基线。载荷、材料、寿命和几何尺寸仍未知，全部工程验证未执行。</p><h3>④ 看实际负例能否拦住错误</h3><p>18次隔离正负例执行检查了缺需求、悬空引用、不完整矩阵、未知暗填、冲突选择及判断状态等情形。独立追加的跨类型判断ID重名探针已被拒绝，输出引用可唯一反查；18项通过仍不等于原生契约已接通、工程有效或80分达标。</p><h3>⑤ 转成引擎能读的研究草稿</h3><p>独立复核的离线映射保留16条判断和全部未知；原有4个非排除组合全部保守标为未知，模型内可比较不升级成工程候选。实际MCP仅调用只读结构与跨方法绑定检查，未创建运行、未提交产物、未调用生成模型。原生门禁与附加保真检查各自的作用单独记录。</p></section>'
- return out
+ return out+adapter_examples()
 
 def function_case():
  b=ROOT/'output/method-reader-review/upgrades/R14-v0.2.1-proposal'
@@ -36,3 +36,14 @@ def function_case():
  out+='</tbody></table></div><h3>用正常与异常情景核对遗漏</h3>'
  for x in sc['scenarios']:out+='<article class="relation"><h3>'+E(x['name'])+'</h3><p>'+E(' → '.join(names[y]for y in x['function_path']))+'</p><p>'+E(x['expected'])+'</p><p>情景尚未实际试验。</p></article>'
  return out+'<p>功能覆盖不证明结构可制造或动态性能。两条结构路线仍是未知假设，下一步交给形态分析比较；不能把功能框图直接当作产品方案。</p></section>'
+
+def adapter_examples():
+ b=ROOT/'output/method-reader-review/upgrades/R17-native-adapter-v2'
+ review=ROOT/'output/method-reader-review/reviews/R17-native-adapter-v2/审核结论-v1.md'
+ if not review.exists()or not(b/'manifest.json').exists():return ''
+ files=json.loads((b/'manifest.json').read_text())['files'];entries=files.items()if isinstance(files,dict)else[(x['path'],x['sha256'])for x in files]
+ for name,sha in entries:
+  if hashlib.sha256((b/name).read_bytes()).hexdigest()!=sha:raise ValueError('R17跨案例适配包变化，停止展示')
+ r=json.loads((b/'execution-report.json').read_text())
+ if len(r['cases'])!=3 or r['engineering_validated'] or r['store_or_MCP_write']:raise ValueError('跨案例展示范围变化')
+ return '<section id="cross-context-adaptation"><h2>换一个问题，这个结构还能用吗？</h2><div class="relation-grid"><article class="relation"><h3>试样夹持</h3><p>定位、保持、解除：保留全部组合和未决条件。</p></article><article class="relation"><h3>观察记录与交接</h3><p>使用另一组功能与选项，明确协议假设，保留交接未知。</p></article><article class="relation"><h3>条目生成、存储与通知</h3><p>所有配对和整体关系均可未知，不因程序能枚举就产生可行结论。</p></article></div><p>三组教学任务已分别经过显式来源、任务及上游内容指纹绑定，并通过原生结构检查和独立复测。11个原负例及6个追加探针均被拒绝。适配器只处理明确定义的可信教学结构；哈希不是签名或事实认证，不能将任意输入代码视为可信。</p><p>这解除的是原先固定夹持案例的入口限制，不代表任意企业需求或工程模型已经接通。全部未排除组合保守保持未知，没有生产提交。</p></section>'
