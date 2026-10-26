@@ -3,6 +3,7 @@ from pathlib import Path
 import json,hashlib,html
 ROOT=Path(__file__).resolve().parents[1];E=lambda s:html.escape(str(s),quote=True)
 def teaching_case(rid):
+ if rid=='R44':return prototype_case()
  if rid=='R36':return pugh_case()
  if rid=='R48':return chain_example()
  if rid=='R14':return function_case()+chain_example()
@@ -72,8 +73,8 @@ def chain_example():
 
 
 def pugh_case():
- b=ROOT/'output/method-reader-review/upgrades/R36-v0.2.0-proposal'
- r=ROOT/'output/method-reader-review/reviews/R36-upgrade-v0.2.0/review.json'
+ b=ROOT/'output/method-reader-review/upgrades/R36-v0.2.1-proposal'
+ r=ROOT/'output/method-reader-review/reviews/R36-upgrade-v0.2.1/review.json'
  if not (b/'manifest.json').exists() or not r.exists():return ''
  files=json.loads((b/'manifest.json').read_text())['files']
  entries=files.items() if isinstance(files,dict) else [(x['path'],x['sha256'])for x in files]
@@ -85,4 +86,21 @@ def pugh_case():
  values={'unknown':'未知','pass':'教学规则通过','fail':'教学规则不通过','same':'与基准相同','better':'相对较少','worse':'相对较多'}
  out='<section id="pugh-teaching-example"><h2>看一张完整的相对比较表</h2><p>把纸本与封套作为共同基准，比较三种记录交接路线。这是协议教学假设，动作条目不是实测时间或效率；真实可读性仍未知，基准本身也不能自动算通过。</p><div class="table-scroll"><table><thead><tr><th>路线</th><th>比较准则</th><th>相对基准的判断</th><th>判断依据</th></tr></thead><tbody>'
  for x in rows:out+='<tr><td>'+E(names[x['candidate_id']])+'</td><td>'+E(criteria[x['criterion_id']])+'</td><td>'+E(values[x['value']])+'</td><td>'+E(x['basis'])+'</td></tr>'
- return out+'</tbody></table></div><h3>换基准，检查结论是否被参照物误导</h3><p>程序实际改用电子记录作为基准重新计算9格；动作数的相对符号随参照变化，不能据正号数量选胜者。纸本加邮件缺少转换环节，按教学规则排除；动作少不能抵消硬门槛。其余两条只保留研究，工程推荐为空。</p><h3>原典、平台规则与验证分开</h3><p>MIT原典允许可选权重；本例不加权、保留未知与不可补偿硬门槛，是平台保守适配。17项程序测试、5项输出检查与独立复测支持固定教学展示；原生比较记录9格仍保守为未知，原符号另存，不伪造证据。</p><p>新增边界探针发现重复准则仍可进入矩阵，正在另版修复；本例不作为任意准则输入的通用工具。真实用户验证尚未执行，不代表工程有效或80分达标。</p></section>'
+ return out+'</tbody></table></div><h3>换基准，检查结论是否被参照物误导</h3><p>程序实际改用电子记录作为基准重新计算9格；动作数的相对符号随参照变化，不能据正号数量选胜者。纸本加邮件缺少转换环节，按教学规则排除；动作少不能抵消硬门槛。其余两条只保留研究，工程推荐为空。</p><h3>原典、平台规则与验证分开</h3><p>MIT原典允许可选权重；本例不加权、保留未知与不可补偿硬门槛，是平台保守适配。19项程序测试、5项输出检查与独立复测支持固定教学展示；原生比较记录9格仍保守为未知，原符号另存，不伪造证据。</p><p>0.2.1已通过独立重复准则探针，拒绝同一操作重复计入矩阵；本例仍不是任意准则输入的通用工具。真实用户验证尚未执行，不代表工程有效或80分达标。</p></section>'
+
+
+def prototype_case():
+ b=ROOT/'output/method-reader-review/upgrades/R44-v0.2.0-proposal'
+ r=ROOT/'output/method-reader-review/reviews/R44-upgrade-v0.2.0/review.json'
+ if not (b/'manifest.json').exists() or not r.exists():return ''
+ files=json.loads((b/'manifest.json').read_text())['files']
+ entries=files.items() if isinstance(files,dict) else [(x['path'],x['sha256'])for x in files]
+ for name,sha in entries:
+  if hashlib.sha256((b/name).read_bytes()).hexdigest()!=sha:raise ValueError('原型教学包变化，停止展示')
+ a=json.loads((b/'artifacts/02-prototype-scope-and-tasks.json').read_text())
+ rules=json.loads((b/'artifacts/03-protocol-and-bias.json').read_text())['decision_rules']
+ out='<section id="prototype-teaching-plan"><h2>把未知变成一份可执行前核对的学习计划</h2><p>上一轮比较留下“接收者是否读懂记录”的未知。本例只计划用虚构文本研究字段标签和阅读顺序，不测试邮件发送、登录、权限或现场绩效。原型未制作、招募未开始、参与者为零；观察和发现均为空，下一步决定仍待定。</p><h3>先安排中性的任务</h3><ol class="flow">'
+ for task in a['tasks']:out+='<li>'+E(task['instruction'])+'</li>'
+ out+='</ol><h3>在看结果之前，约定怎样解释</h3><div class="relation-grid">'
+ for rule in rules:out+='<article class="relation"><h3>'+E(rule['if_signal'])+'</h3><p>'+E(rule['interpretation'])+'</p></article>'
+ return out+'</div><p>遗漏、错误复述和研究者提示要保留原话与行为，解释另列；人数和阈值尚未知。未取得同意与执行授权，不把计划写成已验证效果。18项程序测试与4项输出检查只支持固定计划的结构和保真；自由文字仍需人工语义核对，不能声称系统会识别所有矛盾叙述。</p></section>'
