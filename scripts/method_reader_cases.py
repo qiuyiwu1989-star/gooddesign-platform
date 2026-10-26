@@ -3,7 +3,8 @@ from pathlib import Path
 import json,hashlib,html
 ROOT=Path(__file__).resolve().parents[1];E=lambda s:html.escape(str(s),quote=True)
 def teaching_case(rid):
- if rid=='R14':return function_case()
+ if rid=='R48':return chain_example()
+ if rid=='R14':return function_case()+chain_example()
  if rid!='R17':return ''
  b=ROOT/'output/method-reader-review/upgrades/R17-v0.2.2'
  if not(b/'manifest.json').exists():return ''
@@ -15,7 +16,7 @@ def teaching_case(rid):
  out+='</div><h3>② 配对检查以后，还要看整体</h3><p>三个功能、每功能两个选项，共8个组合。12个跨功能配对判断均为教学模型预录；程序只检查记录与枚举，不会自行发现物理相容。配对未冲突，也不能替代整体检查。</p><div class="table-scroll"><table><thead><tr><th>组合</th><th>组成</th><th>研究状态</th><th>依据与未决</th></tr></thead><tbody>'
  for row in c['combinations']:out+='<tr><td>'+E(row['id'])+'</td><td>'+E(' + '.join(names[x]for x in row['option_ids']))+'</td><td>'+E(states[row['state']])+'</td><td>'+E(row['reason'])+'</td></tr>'
  out+='</tbody></table></div><h3>③ 选择下一步比较对象，而不是宣称最优</h3><p>结果为4个排除、3个条件性研究、1个模型比较基线。载荷、材料、寿命和几何尺寸仍未知，全部工程验证未执行。</p><h3>④ 看实际负例能否拦住错误</h3><p>18次隔离正负例执行检查了缺需求、悬空引用、不完整矩阵、未知暗填、冲突选择及判断状态等情形。独立追加的跨类型判断ID重名探针已被拒绝，输出引用可唯一反查；18项通过仍不等于原生契约已接通、工程有效或80分达标。</p><h3>⑤ 转成引擎能读的研究草稿</h3><p>独立复核的离线映射保留16条判断和全部未知；原有4个非排除组合全部保守标为未知，模型内可比较不升级成工程候选。实际MCP仅调用只读结构与跨方法绑定检查，未创建运行、未提交产物、未调用生成模型。原生门禁与附加保真检查各自的作用单独记录。</p></section>'
- return out+adapter_examples()
+ return out+adapter_examples()+chain_example()
 
 def function_case():
  b=ROOT/'output/method-reader-review/upgrades/R14-v0.2.2-proposal'
@@ -47,3 +48,15 @@ def adapter_examples():
  r=json.loads((b/'execution-report.json').read_text())
  if len(r['cases'])!=3 or r['engineering_validated'] or r['store_or_MCP_write']:raise ValueError('跨案例展示范围变化')
  return '<section id="cross-context-adaptation"><h2>换一个问题，这个结构还能用吗？</h2><div class="relation-grid"><article class="relation"><h3>试样夹持</h3><p>定位、保持、解除：保留全部组合和未决条件。</p></article><article class="relation"><h3>观察记录与交接</h3><p>使用另一组功能与选项，明确协议假设，保留交接未知。</p></article><article class="relation"><h3>条目生成、存储与通知</h3><p>所有配对和整体关系均可未知，不因程序能枚举就产生可行结论。</p></article></div><p>三组教学任务已分别经过显式来源、任务及上游内容指纹绑定，并通过原生结构检查和独立复测。11个原负例及6个追加探针均被拒绝。适配器只处理明确定义的可信教学结构；哈希不是签名或事实认证，不能将任意输入代码视为可信。</p><p>这解除的是原先固定夹持案例的入口限制，不代表任意企业需求或工程模型已经接通。全部未排除组合保守保持未知，没有生产提交。</p></section>'
+
+
+def chain_example():
+ """An independently reviewed fixed teaching chain, not a production run."""
+ b=ROOT/'output/method-reader-review/upgrades/three-method-chain-v1'
+ r=ROOT/'output/method-reader-review/reviews/three-method-chain-v1/review.json'
+ if not (b/'manifest.json').exists() or not r.exists():return ''
+ review=json.loads(r.read_text())
+ if review.get('verdict')!='fixed_explicit_teaching_chain_native_and_fidelity_passed':return ''
+ for x in json.loads((b/'manifest.json').read_text())['files']:
+  if hashlib.sha256((b/x['path']).read_bytes()).hexdigest()!=x['sha256']:raise ValueError('三方法教学链变化，停止展示')
+ return '<section id="three-method-chain"><h2>三个方法怎样接起来</h2><p>同一个试样夹持教学任务，先定义问题，再分解功能，最后组合原理。三步共享一份明确的需求版本；修改需求后，需要重新计算后续产物。</p><ol class="flow"><li><strong>问题定义：说清要解决什么</strong><p>保留三项必要需求，以及“操作力较低”的可选偏好。真实载荷、工况和验收阈值仍未知，需求尚未获客户确认。</p></li><li><strong>功能分析：说明各功能承担什么</strong><p>把可选偏好交给保持功能继续研究，完整保留物料、能量、信息流及接口。这是研究分配，不能证明已经实现低操作力。</p></li><li><strong>形态组合：比较原理并保留未决</strong><p>保留12项配对判断和4项整体判断。模型中未被排除的组合仍为未知，不自动变成工程候选；可选偏好也没有被偷偷当作已满足。</p></li></ol><h3>怎样防止交接时丢失信息</h3><p>独立隔离复测通过12项原测试；另加6项篡改探针，需求被改、指标方向反转、来源悬空、整体判断或接口丢失等均被拒绝。264项旧包与核心文件指纹保持不变。这里验证的是固定教学链的结构和信息保真，不是企业效果、工程相容或专家认证，也不是生产提交。</p></section>'
