@@ -527,3 +527,5 @@ Userwebsitearchitecture:核原026/027信息架构，output/inno-preview平台首
 05505:07:R17nativev2独立三教学任务+11原负例6追加探针全过，显式可信教学Schema离线适配可展示，非任意工程/MCP提交。读者页新增跨情境三案例与原生/保真/unknown限制；全部manifest校验后展示。R14v0.2.2三十测试交独立复测，R48问题定义完整教学/Task→ProblemBrief增补已派。覆盖batch22报告核验，现66案本轮产物32待，batch23已派。
 
 05505:37:R14已切独立复测30测试通过0.2.2教学展示，明确单向链非任意反馈/并行。R17组合重评76.25待另Agent校准，原60不变；根新增真正v2三任务真实stdio SDK(20工具/cross_method performed/0issues/engineeringfalse)全过，无Store/模型写入，报告native-mcp/R17-v2-readonly-sdk.json，不继承v1成果。R48增补交独立审核，R48→R14→R17新共用baseline显式链已派，不覆旧upstream。覆盖23/24六报告核验，现72案本轮产物26待；triage先组合评分独立校准后batch25。
+
+05506:续接收R17组合独立校准76.25，仅教学跨情境评价、不工程/不80；v2真实MCP三案另有root实测报告，校准旧报告未继承。R48原17+3测试过但独立发现保持指标ge→le/actor悬空来源仍接受，已交pilot在新三方法链修复加负例，旧包不覆。覆盖batch25索引与三JSON报告实核，队列/HTML刷新75案产物23待；batch26三案派执行，非生产审核入档。
