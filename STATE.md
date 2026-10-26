@@ -517,3 +517,5 @@ Userwebsitearchitecture:核原026/027信息架构，output/inno-preview平台首
 05502:37:原60方法内容初评+独立校准齐，四增补初评已交待校准，64视图已构建；均未80，页面完成不冒内容达标。四语义关系审查独立确认，阅读层hold不等执行门禁。R17离线原生适配核准保守政策：4非排除均unknown、compatible教学也unknown，原值/16判断旁车保真，无fact证据不伪造，不生产Store.submit。覆盖batch16三报告核验，现48案有本轮产物50待，batch17派执行。
 
 05503:07:全部64条方法独立基线校准齐(四增补47.5/60/60/60)，均未80，视图按实档SHA重建不封完成。R17离线原生适配已交38文件/11实测记录，rootmanifest指纹核过，独立复测+单独升级版本评分已派，原冻结R17分数不暗改。R14完整功能分析教学/原典/实际正负例/离线FunctionModel增补已派。覆盖batch17报告核验，现51案有本轮产物47待，batch18已派。
+
+05503:37:R17离线adapter独立复测contract/check_output+11实测通过，组合升级版试评75待独立校准(原60不变)，不凑80。根追加真实stdio SDK20工具method_check_artifact+Task+两上游inputs，状态structure_and_declared_consistency_passed/跨方法performed/工程false/0issues通过，无Store/模型写入；初两次断言误预期passed/valid，保首response后按实际协议校正，不说工具失败。R17读者页更新映射+只读协议验证边界，生产未submit。R1417实测包已交独立审核。覆盖batch18报告核验，现54本轮产物44待，batch19已派。
