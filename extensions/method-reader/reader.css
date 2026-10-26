@@ -4,3 +4,5 @@
 
 /* 055 visual graph and safe documents */
 .dependency-map{overflow:auto;margin:24px 0;padding:12px;background:var(--bg-surface,#fff);border:1px solid #ddd;border-radius:14px}.dependency-map svg{display:block;width:100%;height:auto;min-width:300px}.table-scroll{overflow:auto} .document{white-space:normal}.document table{border-collapse:collapse;width:100%;font-size:14px}.document td,.document th{padding:10px;border:1px solid #ddd;text-align:left}.document pre{white-space:pre-wrap;overflow-wrap:anywhere} @media print{header,.contents,.copy{display:none}.reader{max-width:none}.dependency-map{overflow:visible}section{break-inside:auto}}
+
+.reader .table-scroll table{border-collapse:collapse;width:100%;font-size:14px}.reader .table-scroll td,.reader .table-scroll th{padding:12px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}.reader .table-scroll th{background:var(--bg-surface,#fff)}

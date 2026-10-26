@@ -41,6 +41,8 @@ def detail(d,records):
     for i,s in enumerate(d['steps'],1):
         body+=f'<article class="step" id="{E(s["step_id"])}"><span class="number">{i:02}</span><h3>{E(s["title"])}</h3>'+paras(s['operation'])+'<div class="decision"><b>到这里，先判断</b>'+paras(s['decision'])+'</div><p><b>本步产物：</b>'+E(s['output_description'])+'</p><p><b>检查：</b>'+E('；'.join(s['checks']))+'</p><p class="stop"><b>何时返回或停下：</b>'+E(s['stop_condition'])+'</p></article>'
     body+='<h3>如何理解结果</h3>'+paras(sec['interpretation'])+'</section><section id="example"><h2>例子与使用边界</h2>'+''.join('<h3>'+LABELS[k]+'</h3>'+paras(sec[k]) for k in ['example','pitfalls','validation'])+'<h3>用这些情境检查你的理解</h3><p>以下为检查设想，未表示真实试验已经执行。</p><div class="relation-grid">'+''.join('<article class="relation"><h3>'+E(x['scenario'])+'</h3><p>'+E(x['expected'])+'</p></article>' for x in d.get('evaluations',[]))+'</div></section>'
+    from method_reader_cases import teaching_case
+    body+=teaching_case(rid)
     body+='<section id="relations"><h2>可以接着用哪些方法</h2><div class="relation-grid">'
     words={'requires':'前置准备','precedes':'下一步','parallel':'配合使用','complements':'配合使用','alternative':'替代选择'}
     for r in d.get('relations',[]):
