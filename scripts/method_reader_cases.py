@@ -3,6 +3,7 @@ from pathlib import Path
 import json,hashlib,html
 ROOT=Path(__file__).resolve().parents[1];E=lambda s:html.escape(str(s),quote=True)
 def teaching_case(rid):
+ if rid=='R36':return pugh_case()
  if rid=='R48':return chain_example()
  if rid=='R14':return function_case()+chain_example()
  if rid!='R17':return ''
@@ -68,3 +69,20 @@ def chain_example():
   passed=bound and len(checks)==3 and all(not x['is_error'] and x['response'].get('status')=='structure_and_declared_consistency_passed' and x['response'].get('cross_method_check')=='performed' and x['response'].get('engineering_validated') is False for x in checks)
   if passed:protocol='<p>三步还实际经过本机MCP只读接口检查：问题、功能模型、原理组合各检查一次，需求与输入版本一致。未调用生成模型、未提交生产数据；接口通过只说明结构与声明一致。</p>'
  return '<section id="three-method-chain"><h2>三个方法怎样接起来</h2><p>同一个试样夹持教学任务，先定义问题，再分解功能，最后组合原理。三步共享一份明确的需求版本；修改需求后，需要重新计算后续产物。</p><ol class="flow"><li><strong>问题定义：说清要解决什么</strong><p>保留三项必要需求，以及“操作力较低”的可选偏好。真实载荷、工况和验收阈值仍未知，需求尚未获客户确认。</p></li><li><strong>功能分析：说明各功能承担什么</strong><p>把可选偏好交给保持功能继续研究，完整保留物料、能量、信息流及接口。这是研究分配，不能证明已经实现低操作力。</p></li><li><strong>形态组合：比较原理并保留未决</strong><p>保留12项配对判断和4项整体判断。模型中未被排除的组合仍为未知，不自动变成工程候选；可选偏好也没有被偷偷当作已满足。</p></li></ol><h3>怎样防止交接时丢失信息</h3><p>独立隔离复测通过12项原测试；另加6项篡改探针，需求被改、指标方向反转、来源悬空、整体判断或接口丢失等均被拒绝。264项旧包与核心文件指纹保持不变。这里验证的是固定教学链的结构和信息保真，不是企业效果、工程相容或专家认证，也不是生产提交。</p>'+protocol+'</section>'
+
+
+def pugh_case():
+ b=ROOT/'output/method-reader-review/upgrades/R36-v0.2.0-proposal'
+ r=ROOT/'output/method-reader-review/reviews/R36-upgrade-v0.2.0/review.json'
+ if not (b/'manifest.json').exists() or not r.exists():return ''
+ files=json.loads((b/'manifest.json').read_text())['files']
+ entries=files.items() if isinstance(files,dict) else [(x['path'],x['sha256'])for x in files]
+ for name,sha in entries:
+  if hashlib.sha256((b/name).read_bytes()).hexdigest()!=sha:raise ValueError('Pugh教学包变化，停止展示')
+ rows=json.loads((b/'artifacts/02-complete-matrix.json').read_text())
+ names={'PAPER':'纸本与封套','EMAIL':'电子记录与邮件','MIXED':'纸本与邮件，未定义转换'}
+ criteria={'C-READ':'真实可读性','C-MEDIA':'媒介连续性','C-ACTIONS':'显式动作数'}
+ values={'unknown':'未知','pass':'教学规则通过','fail':'教学规则不通过','same':'与基准相同','better':'相对较少','worse':'相对较多'}
+ out='<section id="pugh-teaching-example"><h2>看一张完整的相对比较表</h2><p>把纸本与封套作为共同基准，比较三种记录交接路线。这是协议教学假设，动作条目不是实测时间或效率；真实可读性仍未知，基准本身也不能自动算通过。</p><div class="table-scroll"><table><thead><tr><th>路线</th><th>比较准则</th><th>相对基准的判断</th><th>判断依据</th></tr></thead><tbody>'
+ for x in rows:out+='<tr><td>'+E(names[x['candidate_id']])+'</td><td>'+E(criteria[x['criterion_id']])+'</td><td>'+E(values[x['value']])+'</td><td>'+E(x['basis'])+'</td></tr>'
+ return out+'</tbody></table></div><h3>换基准，检查结论是否被参照物误导</h3><p>程序实际改用电子记录作为基准重新计算9格；动作数的相对符号随参照变化，不能据正号数量选胜者。纸本加邮件缺少转换环节，按教学规则排除；动作少不能抵消硬门槛。其余两条只保留研究，工程推荐为空。</p><h3>原典、平台规则与验证分开</h3><p>MIT原典允许可选权重；本例不加权、保留未知与不可补偿硬门槛，是平台保守适配。17项程序测试、5项输出检查与独立复测支持固定教学展示；原生比较记录9格仍保守为未知，原符号另存，不伪造证据。</p><p>新增边界探针发现重复准则仍可进入矩阵，正在另版修复；本例不作为任意准则输入的通用工具。真实用户验证尚未执行，不代表工程有效或80分达标。</p></section>'
