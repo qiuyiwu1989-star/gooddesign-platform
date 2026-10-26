@@ -487,3 +487,5 @@ Usercontinue:SC9850KH2018-06research2eightindependentlyapprovedcellsadmitted,7re
 Userprioritychange:先其他98金奖基础覆盖再深度，现改breadth_before_deeper_rounds。建立coverage-round2全98队列，首3批9案已分派真实检索，队列仅assigned/queued不冒执行；骨/981已采积压继续核不丢弃，暂停新增单案多轮深挖。执行规则00-项目管理/054-全量覆盖优先执行.md。
 
 05120:37:覆盖前三批9案实际检索/原件可读/范围缺口日志已交，root90文件存在/manifestSHA核验通过并记录(非真伪审核)，本轮9已覆盖89待；进度表新增coverage-round2/覆盖进度.html。下一3批9案已派batch04-06，分配不冒执行。旧研究/评分不变；98113approved积压已审未发布，不挤占新覆盖排程。
+
+05121:07:第二轮前三至六批现18案实际基础检索覆盖，root校验manifest文件指纹及六案报告(报告核验非内容批准)已过，覆盖视图18/98、80待。batch04挑战页/坏编码、batch05动态模板/证书失败、batch06 TLS/返回首页语义失败均保留，不冒全文。下一batch07-09九案已派，未执行不算覆盖；首次索引projects/cases差异校验停住后兼容两显式键重跑，不放松SHA。评分/生产/历史包不变。
