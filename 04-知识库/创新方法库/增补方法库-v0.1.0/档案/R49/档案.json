@@ -1,0 +1,319 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R49",
+  "method_id": "IM-ML-049",
+  "version": "0.1.0",
+  "name": "功能—行为—结构推理（FBS）",
+  "english_name": "Function–Behaviour–Structure Framework",
+  "kind": "method",
+  "category": "B功能分析与概念生成",
+  "lineage": [
+    "增补研究档案"
+  ],
+  "aliases": [
+    "FBS",
+    "行为推理",
+    "功能行为结构",
+    "概念论证"
+  ],
+  "summary": "在功能与零件之间增加“期待什么行为、结构实际产生什么行为”的比较层，避免凭外形直接跳到机构方案。",
+  "content_status": "provisional_source_gap",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "FBS由John S. Gero等研究形成，区分功能、行为和结构；2004年情境化框架进一步讨论设计者与环境交互。这里不把它宣称为自动机构综合算法。作者站点正文访问本轮超时，核心定义依据其论文的检索片段与作者目录核对，未声称全文核读。",
+    "problem": "已有R14能分解功能，R17能组合原理，但两者之间仍容易发生“保护树体→弹簧刀头”的跳跃。FBS要求先解释期待的行为，再说明候选结构为何可能产生该行为。它补的是推理可解释性，不替代真实需求研究、力学模型或验证。",
+    "principle": "区分F（用途）、Be（期待行为）、S（组成和关系）、Bs（由结构分析得到的行为）。把期待与分析结果比较；不符合时可以重构结构，必要时回看行为或功能。完整FBS还包含文档与重构过程，本平台五步编排不是原文八过程的逐字复刻。",
+    "applicability": "适合需求已能解释、方案还在概念阶段，或团队反复争论某个零件却说不清行为依据的任务。至少需要系统边界、功能和行为观测口径。没有分析模型、条件或试验时，Bs只能记未知或条件性预测，不能与实测混用。",
+    "interpretation": "有价值的结果是一条能回查的F→Be→S→Bs→比较链。每个行为应附条件、量纲、证据或未知。功能覆盖不等于行为达标，行为达标也不自动证明全部价值目标实现；硬约束需独立核对。",
+    "example": "平台教学推演，非实测：割胶机器人希望保护树体。F是完成受控切割；Be可以先写“真实切入深度在不同树皮条件下可监测且不过界”，阈值待客户与专业人员确定。S1为贴面参照加机械限位，S2为传感辅助控制。Bs目前均未知：贴面距离并不等于到内部组织的距离。两路线都交出参照误差、定位漂移和复装变化的验证问题，而不是宣称某路线已安全。",
+    "pitfalls": "把“装一个传感器”当行为；把理想运动描述当结构分析结果；为凑链条编造测量值。反例：若已成熟机构只需公差校核，优先R39与真实计算，不强行重做完整概念推理。",
+    "validation": "平台结构检查可核对每条功能是否连接期待行为、结构与分析证据，未知是否保留。真实行为预测需适合的模型、量测或试验，并校核工况、测量误差和模型适用性。图中连线仅表示设计论证关系，不能由此推断物理因果已证实。",
+    "adaptation": "平台新增行为证据账、观测口径、未知标记及与R14/R17/R42交接。原典概念与这些字段分开；割胶例子是Host编写的教学适配，不是作者研究中的实例。",
+    "gaps": "已核作者目录和作者论文检索摘录；PDF本轮直接读取超时。缺原文八过程与情境化细节逐段复核、领域专家审阅及真实任务验证。因此当前适合有边界的概念阅读，不作为完整原算法或成熟执行契约。 本机直接下载亦出现站点证书已过期的错误，未绕过证书检查。"
+  },
+  "inputs": [
+    {
+      "key": "task",
+      "label": "问题与功能边界",
+      "type": "object",
+      "required": true,
+      "description": "研究对象、系统边界、用途与约束",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "behaviours",
+      "label": "期待行为",
+      "type": "array",
+      "required": true,
+      "description": "可观察的作用结果与条件；阈值可未知",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "structures",
+      "label": "候选结构",
+      "type": "array",
+      "required": false,
+      "description": "组件、连接和作用机制，不只给零件名",
+      "missing_action": "mark_unknown"
+    },
+    {
+      "key": "analysis",
+      "label": "行为分析依据",
+      "type": "array",
+      "required": false,
+      "description": "模型、试验、条件性推断或未知",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R49-S01",
+      "title": "区分用途与期待行为",
+      "input_refs": [
+        "task",
+        "behaviours",
+        "structures",
+        "analysis"
+      ],
+      "depends_on": [],
+      "operation": "把需求转成必要功能，再写可观察的期待行为及工况。",
+      "decision": "行为是否能与零件名称分开描述？",
+      "output_key": "expected_behaviour",
+      "output_description": "功能—期待行为对应表",
+      "checks": [
+        "不把方案名称当行为"
+      ],
+      "stop_condition": "用途与边界不清时回到R48。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R49-S02",
+      "title": "提出结构假设",
+      "input_refs": [
+        "expected_behaviour",
+        "task",
+        "behaviours",
+        "structures",
+        "analysis"
+      ],
+      "depends_on": [
+        "R49-S01"
+      ],
+      "operation": "记录可产生期待行为的组件和关系，并写机制理由及未证实假设。",
+      "decision": "是否存在由机制支持的连接，而非只靠形似？",
+      "output_key": "structure_hypotheses",
+      "output_description": "结构假设与作用解释",
+      "checks": [
+        "推断与证据分开"
+      ],
+      "stop_condition": "解释不了行为机制则不进入定型。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R49-S03",
+      "title": "分析结构所生行为",
+      "input_refs": [
+        "structure_hypotheses",
+        "task",
+        "behaviours",
+        "structures",
+        "analysis"
+      ],
+      "depends_on": [
+        "R49-S02"
+      ],
+      "operation": "为每条结构寻找合适模型或证据，保留条件、误差与未知。",
+      "decision": "分析结果来自计算、测量还是主张？",
+      "output_key": "derived_behaviour",
+      "output_description": "结构行为与依据账",
+      "checks": [
+        "缺模型不编造数值"
+      ],
+      "stop_condition": "模型适用条件不满足则停止定量比较。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R49-S04",
+      "title": "对照并选择重构位置",
+      "input_refs": [
+        "derived_behaviour",
+        "task",
+        "behaviours",
+        "structures",
+        "analysis"
+      ],
+      "depends_on": [
+        "R49-S03"
+      ],
+      "operation": "比较期待与分析行为，定位结构、行为定义或功能假设需要修改的地方。",
+      "decision": "差异来源已知还是仍待调查？",
+      "output_key": "reformulation",
+      "output_description": "差异及重构记录",
+      "checks": [
+        "不以改目标掩盖原需求未满足"
+      ],
+      "stop_condition": "硬要求无法满足时返回需求或候选。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R49-S05",
+      "title": "交接候选与验证",
+      "input_refs": [
+        "reformulation",
+        "task",
+        "behaviours",
+        "structures",
+        "analysis"
+      ],
+      "depends_on": [
+        "R49-S04"
+      ],
+      "operation": "输出可解释论证链，交给组合、方案比较和验证计划。",
+      "decision": "关键未知是否有下一步动作？",
+      "output_key": "handoff",
+      "output_description": "论证链与待验证问题",
+      "checks": [
+        "不把完整论证链当工程通过"
+      ],
+      "stop_condition": "没有观测方法时仅保留研究假设。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "reasoning_chain",
+      "label": "功能—行为—结构论证链",
+      "required_fields": [
+        "function",
+        "expected_behaviour",
+        "structure",
+        "derived_behaviour",
+        "evidence",
+        "unknowns"
+      ],
+      "interpretation": "论证记录，非物理有效性证明"
+    },
+    {
+      "key": "handoff",
+      "label": "后续验证输入",
+      "required_fields": [
+        "assumptions",
+        "conditions",
+        "validation_questions"
+      ],
+      "interpretation": "交接研究未知"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "function_model→功能边界",
+      "condition": "功能能与结构分开"
+    },
+    {
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "结构假设→候选原理",
+      "condition": "需要多路线组合"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "行为缺口→验证问题",
+      "condition": "存在可观察口径"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "title": "The situated function–behaviour–structure framework",
+      "url": "https://www.johngero.com/publications/2004/04GeroKannengDesignStud.pdf",
+      "publisher": "John Gero作者站点",
+      "authors": [
+        "John S. Gero",
+        "Udo Kannengiesser"
+      ],
+      "locator": "论文开头F/B/S定义与八过程介绍",
+      "read_scope": "仅检索摘录；直接读取PDF超时",
+      "evidence_note": "支持F、B、S区分及期待/结构行为比较；未据此声称核读全文",
+      "supports": [
+        "支持F、B、S区分及期待/结构行为比较；未据此声称核读全文"
+      ],
+      "accessed_at": "2026-10-26",
+      "rights": "仅题录、链接与平台原创释义；未复制原图或分发外部全文"
+    },
+    {
+      "source_id": "S02",
+      "title": "John Gero Publications",
+      "url": "https://sites.google.com/view/johngero/publications/publications",
+      "publisher": "John Gero",
+      "authors": [],
+      "locator": "2004及2014相关条目",
+      "read_scope": "作者目录正文核读",
+      "evidence_note": "核对FBS研究谱系与题录，不支持工程效果",
+      "supports": [
+        "核对FBS研究谱系与题录，不支持工程效果"
+      ],
+      "accessed_at": "2026-10-26",
+      "rights": "仅题录、链接与平台原创释义；未复制原图或分发外部全文"
+    }
+  ],
+  "search_terms": [
+    "FBS",
+    "行为推理",
+    "功能行为结构",
+    "概念论证"
+  ],
+  "evaluations": [
+    {
+      "scenario": "关键输入缺失",
+      "expected": "明确追问或输出待确认，不伪造输入。"
+    },
+    {
+      "scenario": "例子被用于真实工程选型",
+      "expected": "回到真实工况、证据和专业审查，不把教学假设当实测。"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-26",
+      "reason": "ML-012原始来源查缺增补；平台操作编排与教学示例，未专家复核"
+    }
+  ],
+  "integration_rationale": "补R14/R17之间的行为证据层；不是重新包装功能分解。",
+  "source_readiness": "limited_excerpt_only"
+}

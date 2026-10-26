@@ -8,6 +8,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin,urlsplit,unquote
 from build_method_reader import LIB,OUT,build
+from method_library_catalog import catalog
 from method_workbench_server import make_server, ROOT
 
 class Links(HTMLParser):
@@ -30,9 +31,9 @@ class Checks(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):cls.server.shutdown();cls.server.server_close()
     def get(self,path):return urllib.request.urlopen(self.base+urllib.parse.quote(path,safe='/:#?')).read()
-    def test_all_60_and_frozen_unchanged(self):
-        self.assertEqual(len(list((OUT/'methods').glob('*.html'))),60)
-        self.assertEqual(len(list((OUT/'icons').glob('*.svg'))),60)
+    def test_all_catalog_entries_and_frozen_unchanged(self):
+        self.assertEqual(len(list((OUT/'methods').glob('*.html'))),len(catalog()['methods']))
+        self.assertEqual(len(list((OUT/'icons').glob('*.svg'))),len(catalog()['methods']))
         self.assertEqual(self.hashes,{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in LIB.rglob('*') if p.is_file()})
     def test_all_internal_links_and_anchors(self):
         for file in OUT.rglob('*.html'):
@@ -58,6 +59,6 @@ class Checks(unittest.TestCase):
         text=(OUT/'integration.html').read_text();parser=Links();parser.feed(text)
         self.assertIn('METHOD_ENGINE_DB',text);self.assertIn('method_generate_function_options',text)
         self.assertIn('method_run_submit',text)
-        self.assertIn('20个工具',text)
+        self.assertIn('22个工具',text);self.assertIn('method_supplement_get',text)
 
 if __name__=='__main__':unittest.main(verbosity=2)

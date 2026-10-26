@@ -56,7 +56,7 @@ class WorkspaceChecks(unittest.TestCase):
     def test_01_catalog_and_content(self):
         code, catalog = self.request('/api/methods')
         self.assertEqual(code, 200)
-        self.assertEqual(len(catalog['methods']), 60)
+        self.assertEqual(len(catalog['methods']), 64)
         self.assertEqual(sum(m['executable_contract'] for m in catalog['methods']), 6)
         for m in catalog['methods']:
             self.assertEqual(self.request('/library/' + m['page'])[0], 200)

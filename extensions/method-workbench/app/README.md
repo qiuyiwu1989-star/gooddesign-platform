@@ -50,3 +50,5 @@ R17现在按功能模型逐功能生成2—3个候选原理。点击一次启动
 ML-009：方案与验证页增加候选方案审查，从本次已提交R17/R36读取，不调用模型；可展开原理、条件、接口声明和逐项准则，导出报告附输入指纹。选项配对为组合枚举，未审查不能视为冲突或工程失败。详情见项目管理ML-009交付。
 
 ML-011：侧栏“方法与案例库”包含显式A—G分类、SVG图标和新总览入口/library/index.html。新展示源extensions/method-reader，构建脚本scripts/build_method_reader.py。原方法附件链接经白名单修复；MCP与写入规范分别在/library/integration.html及/library/contributing.html。冻结资料不重写。
+
+ML-012：目录聚合64条（52方法档案+12专题），新增R49—R52研究增补，FBS补证中。可选method_engine_library_mcp.py提供22工具，新增method_supplement_search/get读取新条目；原18/20和六契约不变。当前生成/规划器不自动执行新条目，选择仅持久保存研究意图。

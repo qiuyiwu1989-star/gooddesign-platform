@@ -7,6 +7,7 @@ import secrets
 import sqlite3
 import subprocess
 import threading
+from method_library_catalog import catalog, public_document_base
 from method_workbench_review import review as candidate_review
 from method_workbench_execution import Execution
 from method_workbench_morphology import progress as morphology_progress
@@ -71,7 +72,7 @@ class Store:
         if not isinstance(data['conditions'], list) or len(data['conditions']) != 3 or any(not isinstance(v, str) or len(v) > 8000 for v in data['conditions']):
             raise ValueError('条件必须为三项文字')
         methods = data['selected_methods']
-        valid_ids = {m['research_id'] for m in json.loads((LIB / '目录.json').read_text())['methods']}
+        valid_ids = {m['research_id'] for m in catalog()['methods']}
         if not isinstance(methods, list) or any(not isinstance(x, str) or x not in valid_ids for x in methods) or len(set(methods)) != len(methods):
             raise ValueError('方法ID无效')
         reqs = data['requirements']
@@ -175,7 +176,7 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                 if path == '/api/session':
                     return self.send(200, {'csrf': token, 'mode': 'local_single_user', 'model_connected': None, 'model_execution_available': (ROOT / '.runtime/pipeline/bin/python').is_file(), 'model_connection_status': 'checked_on_explicit_generation_not_preverified'})
                 if path == '/api/methods':
-                    data = json.loads((LIB / '目录.json').read_text())
+                    data = catalog()
                     for m in data['methods']:
                         m['executable_contract'] = m['research_id'] in EXECUTABLE
                     return self.send(200, data)
@@ -215,10 +216,11 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                         import html
                         parts=rel.split('/')
                         allowed={'方法结构.md','操作指南.md','档案.json','深度说明.md','来源核读.md'}
-                        if rel.startswith('档案/') and (len(parts)!=3 or parts[1] not in {m['research_id'] for m in json.loads((LIB/'目录.json').read_text())['methods']} or parts[2] not in allowed):
+                        if rel.startswith('档案/') and (len(parts)!=3 or parts[1] not in {m['research_id'] for m in catalog()['methods']} or parts[2] not in allowed):
                             raise KeyError()
-                        target=(LIB/rel).resolve()
-                        if LIB.resolve() not in target.parents or not target.is_file():raise KeyError()
+                        document_base=public_document_base(parts[1]) if rel.startswith('档案/') else LIB
+                        target=(document_base/rel).resolve()
+                        if document_base.resolve() not in target.parents or not target.is_file():raise KeyError()
                         if target.suffix=='.json':return self.send(200,target.read_bytes())
                         text=target.read_text()
                         # Render escaped source with working links rather than serving a blocked attachment.

@@ -1,0 +1,352 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R52",
+  "method_id": "IM-ML-052",
+  "version": "0.1.0",
+  "name": "信息价值与验证优先级（VOI）",
+  "english_name": "Value of Information for Research Prioritisation",
+  "kind": "method",
+  "category": "F方案决策与验证评价",
+  "lineage": [
+    "增补研究档案"
+  ],
+  "aliases": [
+    "VOI",
+    "EVPI",
+    "EVPPI",
+    "EVSI",
+    "信息价值",
+    "验证优先级",
+    "研究排序"
+  ],
+  "summary": "评估哪些新证据可能改变当前决策，用学习价值与研究代价安排下一步验证，而不是只测最容易测的指标。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "信息价值是决策分析方法族；本条核读作者研究的摘要和预印本中不确定性、EVPPI及研究优先级相关章节。所用论文来自健康影响建模，本文明确把机器人研究应用作为跨领域平台适配，不宣称原论文提供机械效果证据。",
+    "problem": "R38回答怎样设计试验，R44回答怎样做原型测试，R36比较已有证据下的方案。VOI补问：资源有限时，先获取哪条证据最可能改善选择？一个参数即便测得更准，若所有可能结果都不改变决策，其研究优先级也未必高。",
+    "principle": "比较当前信息下的最优期望决策价值，与获得新信息后再作决定的期望价值。EVPI是假想完全信息的上界，EVPPI针对部分参数，EVSI针对具体研究结果；研究成本与等待损失须另计。决策翻转、误选代价和信息质量共同影响价值。",
+    "applicability": "适合有明确可选行动、关键不确定性和后续研究选择的任务。定量分析需要可辩护的概率或分布、价值/损失模型及研究观测模型。当前割胶任务没有这些数据，只能先做“哪些证据可能改变哪项决定”的定性结构化分析，不能伪算EVSI。",
+    "interpretation": "定量值依赖模型、价值口径和概率假设，不是普适优先级；不同研究的结果相关时不能简单相加价值。安全必需验证不能因估计商业信息价值低而取消。降低估计方差与改善方案选择是不同目标，要先说明是哪一种。",
+    "example": "平台定性演示：机械限位路线和传感辅助路线都存在参照误差未知，胶屑分离也未知。先问：若参照误差超出可接受范围，会淘汰哪条路线？若某收集件改进不影响当前路线选择，其试验可另排。因为尚无获认可阈值、概率和成本，此处不判定哪项最优先；先补客户口径，再给研究设计与成本范围。",
+    "pitfalls": "把未知多少当信息价值；给主观印象编一个概率后算出精确分数；把EVPI上界当实际试验收益；将不满足硬要求的方案放入商业收益权衡。反例：不可回避的安全与法规要求不由经济VOI豁免。",
+    "validation": "定性阶段检查每个研究结果是否对应明确决策分支；定量阶段复核单位、概率归一、观测模型、决策准则及敏感性。构造无论结果如何都不改决定的负例；完美信息无成本的理想模型下价值不应为负。研究完成后更新信息状态，但不事后把幸运结果当原先最优决策证明。",
+    "adaptation": "平台首先输出decision、uncertainty、possible_observation、would_change、study_cost、mandatory等字段；缺概率时保持定性标签。其与R42的结合用于组织验证问题，不包含已验证的贝叶斯计算器或采样求解器。",
+    "gaps": "已核作者论文摘要、预印本不确定性/VOI/优先级相关段落；未完整复现论文R程序，也没有机器人损失模型、概率分布和试验费用。当前不支持真实项目的数值EVPI/EVSI结论。"
+  },
+  "inputs": [
+    {
+      "key": "task",
+      "label": "要作出的决策",
+      "type": "object",
+      "required": true,
+      "description": "可选行动、价值或损失口径与时间范围",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "uncertainties",
+      "label": "影响决策的未知",
+      "type": "array",
+      "required": true,
+      "description": "参数、假设、关联性和当前证据",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "studies",
+      "label": "可选研究",
+      "type": "array",
+      "required": true,
+      "description": "可观察结果、研究质量、成本和等待时间",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "probabilities",
+      "label": "概率与模型",
+      "type": "array",
+      "required": false,
+      "description": "缺少时仅能定性，不自动估算",
+      "missing_action": "mark_unknown"
+    },
+    {
+      "key": "constraints",
+      "label": "必需验证与硬要求",
+      "type": "array",
+      "required": false,
+      "description": "专业审核或合规不能由商业价值取消",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R52-S01",
+      "title": "界定决策与不可交易要求",
+      "input_refs": [
+        "task",
+        "uncertainties",
+        "studies",
+        "probabilities",
+        "constraints"
+      ],
+      "depends_on": [],
+      "operation": "列出当前可选行动、决策准则和必需验证，先排除不满足硬要求的确定方案。",
+      "decision": "要改善选择，还是只提高某个估计精度？",
+      "output_key": "decision_scope",
+      "output_description": "决策与强制要求边界",
+      "checks": [
+        "区分损失口径与精度目标"
+      ],
+      "stop_condition": "决策本身未定义先回R48/R36。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R52-S02",
+      "title": "追踪未知如何改变选择",
+      "input_refs": [
+        "decision_scope",
+        "task",
+        "uncertainties",
+        "studies",
+        "probabilities",
+        "constraints"
+      ],
+      "depends_on": [
+        "R52-S01"
+      ],
+      "operation": "对每个未知列可能结果和相应决策分支，区分相关未知。",
+      "decision": "什么结果能让团队改变哪项决定？",
+      "output_key": "decision_branches",
+      "output_description": "未知—观测—决策分支图",
+      "checks": [
+        "不以未知数量代替决策影响"
+      ],
+      "stop_condition": "没有决策影响链时不赋数值价值。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R52-S03",
+      "title": "选择定性或定量分析",
+      "input_refs": [
+        "decision_branches",
+        "task",
+        "uncertainties",
+        "studies",
+        "probabilities",
+        "constraints"
+      ],
+      "depends_on": [
+        "R52-S02"
+      ],
+      "operation": "核对概率、收益损失和观测模型的可辩护性，缺失则明确只做定性。",
+      "decision": "数据支持计算还是仅支持研究提问？",
+      "output_key": "analysis_mode",
+      "output_description": "模型假设与分析层级",
+      "checks": [
+        "不从案例数字填客户概率"
+      ],
+      "stop_condition": "无法说明概率来源不输出EVSI数值。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R52-S04",
+      "title": "对照学习收益与研究代价",
+      "input_refs": [
+        "analysis_mode",
+        "task",
+        "uncertainties",
+        "studies",
+        "probabilities",
+        "constraints"
+      ],
+      "depends_on": [
+        "R52-S03"
+      ],
+      "operation": "定性核对翻转可能、误选代价、研究可得性；定量时区分完全/部分/样本信息并扣研究代价。",
+      "decision": "是否把完美信息上界当试验实际收益？",
+      "output_key": "research_options",
+      "output_description": "研究选择与敏感性说明",
+      "checks": [
+        "相关研究收益不直接相加"
+      ],
+      "stop_condition": "强制验证不得因经济值低而跳过。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R52-S05",
+      "title": "安排验证并更新决策",
+      "input_refs": [
+        "research_options",
+        "task",
+        "uncertainties",
+        "studies",
+        "probabilities",
+        "constraints"
+      ],
+      "depends_on": [
+        "R52-S04"
+      ],
+      "operation": "把研究方案交给R38/R44/R42，结果回来后更新假设、未知与决策。",
+      "decision": "决定依据是否保留输入版本和研究质量？",
+      "output_key": "handoff",
+      "output_description": "验证优先级理由与更新规则",
+      "checks": [
+        "不把计划当实测"
+      ],
+      "stop_condition": "没有可实施观测时保留待研究。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "decision_branches",
+      "label": "未知与决策分支",
+      "required_fields": [
+        "decision",
+        "uncertainty",
+        "observation",
+        "would_change",
+        "evidence"
+      ],
+      "interpretation": "定性结构，不自动等于数值VOI"
+    },
+    {
+      "key": "handoff",
+      "label": "研究优先级与验证任务",
+      "required_fields": [
+        "study",
+        "cost",
+        "mandatory",
+        "analysis_mode",
+        "assumptions",
+        "unknowns"
+      ],
+      "interpretation": "须结合专业约束与真实资源"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R36",
+      "relation": "requires",
+      "binding": "候选比较→决策问题",
+      "condition": "存在共同准则与候选行动"
+    },
+    {
+      "target_research_id": "R38",
+      "relation": "precedes",
+      "binding": "关键研究→试验设计",
+      "condition": "不是替代试验设计"
+    },
+    {
+      "target_research_id": "R44",
+      "relation": "precedes",
+      "binding": "学习目标→原型",
+      "condition": "研究结果可观察"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "验证理由→计划",
+      "condition": "强制验证仍保留"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "title": "A guide to Value of Information methods for prioritising research in health impact modelling (preprint)",
+      "url": "https://arxiv.org/pdf/1905.00008",
+      "publisher": "作者预印本 / arXiv",
+      "authors": [
+        "R. Johnson",
+        "J. Woodcock",
+        "A. de Nazelle",
+        "T. de Sa",
+        "R. Goel",
+        "M. Tainio",
+        "C. Jackson"
+      ],
+      "locator": "PDF第1–9页；Uncertainty、Value of Information、Using VoI",
+      "read_scope": "相关段落核读；未复现程序",
+      "evidence_note": "支持概率不确定性、EVPPI与研究优先级；健康领域研究不是机械项目验证",
+      "supports": [
+        "支持概率不确定性、EVPPI与研究优先级；健康领域研究不是机械项目验证"
+      ],
+      "accessed_at": "2026-10-26",
+      "rights": "仅题录、链接与平台原创释义；未复制原图或分发外部全文"
+    },
+    {
+      "source_id": "S02",
+      "title": "A guide to value of information methods for prioritising research in health impact modelling",
+      "url": "https://www.repository.cam.ac.uk/items/c2652ab1-2892-46a0-a7f6-ab5978a0a989",
+      "publisher": "University of Cambridge repository",
+      "authors": [
+        "Christopher Jackson et al."
+      ],
+      "locator": "摘要、题录、版本与DOI",
+      "read_scope": "已发表版摘要核读，全文下载本轮未成功",
+      "evidence_note": "支持EVPPI/EVSI及决策或估计目标区分；预印本与发表版未逐字对照",
+      "supports": [
+        "支持EVPPI/EVSI及决策或估计目标区分；预印本与发表版未逐字对照"
+      ],
+      "accessed_at": "2026-10-26",
+      "rights": "仅题录、链接与平台原创释义；未复制原图或分发外部全文"
+    }
+  ],
+  "search_terms": [
+    "VOI",
+    "EVPI",
+    "EVPPI",
+    "EVSI",
+    "信息价值",
+    "验证优先级",
+    "研究排序"
+  ],
+  "evaluations": [
+    {
+      "scenario": "关键输入缺失",
+      "expected": "明确追问或输出待确认，不伪造输入。"
+    },
+    {
+      "scenario": "例子被用于真实工程选型",
+      "expected": "回到真实工况、证据和专业审查，不把教学假设当实测。"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-26",
+      "reason": "ML-012原始来源查缺增补；平台操作编排与教学示例，未专家复核"
+    }
+  ],
+  "integration_rationale": "补比较/试验设计之间的“先学什么”，定性模式不冒充数值VOI。"
+}

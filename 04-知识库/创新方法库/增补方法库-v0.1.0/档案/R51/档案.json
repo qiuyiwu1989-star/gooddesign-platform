@@ -1,0 +1,331 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R51",
+  "method_id": "IM-ML-051",
+  "version": "0.1.0",
+  "name": "系统理论过程分析（STPA）",
+  "english_name": "System-Theoretic Process Analysis",
+  "kind": "method",
+  "category": "F方案决策与验证评价",
+  "lineage": [
+    "增补研究档案"
+  ],
+  "aliases": [
+    "STPA",
+    "STAMP",
+    "控制动作",
+    "反馈",
+    "安全约束",
+    "人机切换"
+  ],
+  "summary": "从控制动作、情境、反馈与过程模型分析系统风险，补充只看部件失效时容易遗漏的交互问题。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "STPA属于Leveson等发展的STAMP系统安全研究谱系。本轮实际核读MIT发布的John Thomas 2025入门讲义相关页及MIT自动驾驶研究中的方法描述；手册PHP入口当前返回维护信息，不能声称已核读该手册全文。",
+    "problem": "R40分析部件失效，R41覆盖机械风险评估。STPA另问：即使各部件都按设计工作，某个控制动作在特定情境下是否仍会造成损失？这适合涉及软件、传感、操作人员和执行机构的机电创新，而不是替代既有安全与可靠性方法。",
+    "principle": "先明确不可接受损失、系统危险状态与约束，建立控制与反馈关系，再识别控制动作未给出、给出、时序不当或持续时间不当可能导致的危险。进一步追查错误反馈、过程模型和执行链如何形成该情境。没有具体上下文的“动作危险”不是完整分析。",
+    "applicability": "适合自动控制、人机共作或多主体协作系统的早期架构与变更分析。需要边界、损失相关方和可说明的控制结构。若只有孤立部件尺寸资料，应先补系统信息；不应由通用Agent独立批准安全放行。",
+    "interpretation": "结果是情境化不安全控制动作、因果场景候选与安全约束的追溯链，不是失效率计算、穷尽证明或认证。未发现某种危险不表示安全，控制约束写完也不表示实施有效。",
+    "example": "平台教学分析：操作者要求停刀，但控制器把“电机停止”视作“刀具已脱离”，允许重新定位。需要调查残余接触、反馈时延和人工接管状态，而不是只问电机是否损坏。可能的约束方向是重新定位前需有适合本机构的状态确认；怎样确认、失效后怎样处理均需专业设计与验证，本条不提供可直接部署的安全控制方案。",
+    "pitfalls": "把不安全控制动作等同于元件故障；只写“算法错误”而不追问上下文；拿模型自评替代安全工程师；误以为STPA自动给出故障概率。反例：实际产品合规和防护设计仍需适用的工程流程、标准与专业审核，不能用本条图表替代。",
+    "validation": "追溯每条控制情境到危险与损失，再核对反馈、控制权和异常模式。由具资质与任务经验的人员质询场景，结合故障注入、仿真或受控试验验证约束。尚未实施与验证的约束只能保留为设计要求提案。",
+    "adaptation": "平台将控制动作—情境—危险—约束—验证问题映射成研究记录，并在割胶例中提示停刀、退刀、定位和接管之间的状态差异。这些工程场景为平台推演，不宣称MIT讲义证明某割胶方案危险或安全。",
+    "gaps": "已读2025讲义相关定义、控制环和UCA页及MIT研究相关描述；没有本机真实控制架构、反馈延迟、控制权规则或安全专家审阅。尚未核读完整2018手册，因此不宣称完整实施指南。"
+  },
+  "inputs": [
+    {
+      "key": "task",
+      "label": "系统边界与相关方",
+      "type": "object",
+      "required": true,
+      "description": "被分析对象、范围、运行模式及损失关注者",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "losses",
+      "label": "损失与危险提案",
+      "type": "array",
+      "required": true,
+      "description": "明确损失和系统状态，须专业核对",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "controls",
+      "label": "控制结构",
+      "type": "array",
+      "required": true,
+      "description": "控制者、动作、受控过程、反馈与控制权",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "evidence",
+      "label": "架构与运行证据",
+      "type": "array",
+      "required": false,
+      "description": "实际状态、时序、异常与接管记录",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R51-S01",
+      "title": "明确损失危险与约束",
+      "input_refs": [
+        "task",
+        "losses",
+        "controls",
+        "evidence"
+      ],
+      "depends_on": [],
+      "operation": "记录相关方不可接受的损失，定义边界内危险状态和约束提案。",
+      "decision": "损失与危险是否区分，边界是否可说明？",
+      "output_key": "safety_scope",
+      "output_description": "损失—危险—约束初稿",
+      "checks": [
+        "不以严重度自评分替代专业评审"
+      ],
+      "stop_condition": "关键相关方或边界不清时暂停。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R51-S02",
+      "title": "建立控制反馈模型",
+      "input_refs": [
+        "safety_scope",
+        "task",
+        "losses",
+        "controls",
+        "evidence"
+      ],
+      "depends_on": [
+        "R51-S01"
+      ],
+      "operation": "画控制者、动作、受控过程、反馈、模式与权限关系。",
+      "decision": "控制者相信的状态是否与实际状态区分？",
+      "output_key": "control_structure",
+      "output_description": "控制与反馈图及未知",
+      "checks": [
+        "图中每个动作能定位发送接收者"
+      ],
+      "stop_condition": "没有控制关系不继续填写UCA。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R51-S03",
+      "title": "逐情境检查控制动作",
+      "input_refs": [
+        "control_structure",
+        "task",
+        "losses",
+        "controls",
+        "evidence"
+      ],
+      "depends_on": [
+        "R51-S02"
+      ],
+      "operation": "对每个动作检查未提供、提供、时序和持续时间问题，关联具体情境。",
+      "decision": "是否能解释动作如何在情境下关联危险？",
+      "output_key": "uca_log",
+      "output_description": "上下文明确的UCA记录",
+      "checks": [
+        "不把所有动作都泛称危险"
+      ],
+      "stop_condition": "不能关联危险时作为待调查而非定论。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R51-S04",
+      "title": "追查场景并提出约束",
+      "input_refs": [
+        "uca_log",
+        "task",
+        "losses",
+        "controls",
+        "evidence"
+      ],
+      "depends_on": [
+        "R51-S03"
+      ],
+      "operation": "追踪反馈延迟、过程模型、执行链和人机交互假设，提出约束及来源。",
+      "decision": "原因可解释还是只有“软件出错”标签？",
+      "output_key": "causal_scenarios",
+      "output_description": "场景、约束及待补证",
+      "checks": [
+        "提案、已实现与已验证分开"
+      ],
+      "stop_condition": "证据不足不确定断言根因。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    },
+    {
+      "step_id": "R51-S05",
+      "title": "专业审查与验证交接",
+      "input_refs": [
+        "causal_scenarios",
+        "task",
+        "losses",
+        "controls",
+        "evidence"
+      ],
+      "depends_on": [
+        "R51-S04"
+      ],
+      "operation": "把约束对应到验证问题、责任人和运行模式，安排专业审查。",
+      "decision": "是否覆盖人工、自动及切换状态？",
+      "output_key": "handoff",
+      "output_description": "约束追溯与验证任务",
+      "checks": [
+        "无专家批准不得安全放行"
+      ],
+      "stop_condition": "没有合适安全专业资源只保留研究稿。",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "检索同功能或同决策的案例及工况，保留原文位置；缺证时不移用性能参数"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "uca_log",
+      "label": "不安全控制动作账",
+      "required_fields": [
+        "controller",
+        "action",
+        "context",
+        "hazard",
+        "loss",
+        "evidence"
+      ],
+      "interpretation": "风险分析记录而非事故概率"
+    },
+    {
+      "key": "handoff",
+      "label": "安全约束与验证交接",
+      "required_fields": [
+        "constraint",
+        "scenario",
+        "owner",
+        "validation_question",
+        "unknowns"
+      ],
+      "interpretation": "须专业审核及实际验证"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "接口功能→控制结构线索",
+      "condition": "需要补实际控制与反馈"
+    },
+    {
+      "target_research_id": "R40",
+      "relation": "parallel",
+      "binding": "部件失效↔控制交互",
+      "condition": "两者范围互补不相互取代"
+    },
+    {
+      "target_research_id": "R41",
+      "relation": "parallel",
+      "binding": "系统危险→机械风险审查",
+      "condition": "由专业人员整合"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "安全约束→验证问题",
+      "condition": "不作为安全认证"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "title": "A (quick) Introduction to STPA",
+      "url": "https://psas.scripts.mit.edu/home/wp-content/uploads/2025/2025-03-24-0900__STPA_Introduction__PUB.pdf",
+      "publisher": "MIT PSASS / John Thomas",
+      "authors": [
+        "John Thomas"
+      ],
+      "locator": "PDF第69–74页（文件页序）；控制环与四类UCA",
+      "read_scope": "相关文本段落核读，非整部手册",
+      "evidence_note": "支持控制环、上下文与四类UCA；不支持具体机器人合规",
+      "supports": [
+        "支持控制环、上下文与四类UCA；不支持具体机器人合规"
+      ],
+      "accessed_at": "2026-10-26",
+      "rights": "仅题录、链接与平台原创释义；未复制原图或分发外部全文"
+    },
+    {
+      "source_id": "S02",
+      "title": "A System Theoretic Approach to Cybersecurity Risks Analysis of Passenger Autonomous Vehicles",
+      "url": "https://web.mit.edu/smadnick/www/wp/2018-03.pdf",
+      "publisher": "MIT CISL",
+      "authors": [
+        "Chee Wei Lee"
+      ],
+      "locator": "STPA背景及5.2.2 Unsafe/Unsecure Control Actions",
+      "read_scope": "摘要和方法相关段落核读",
+      "evidence_note": "佐证STPA交互视角；其STPA-Sec案例不直接迁移为机器人安全结论",
+      "supports": [
+        "佐证STPA交互视角；其STPA-Sec案例不直接迁移为机器人安全结论"
+      ],
+      "accessed_at": "2026-10-26",
+      "rights": "仅题录、链接与平台原创释义；未复制原图或分发外部全文"
+    }
+  ],
+  "search_terms": [
+    "STPA",
+    "STAMP",
+    "控制动作",
+    "反馈",
+    "安全约束",
+    "人机切换"
+  ],
+  "evaluations": [
+    {
+      "scenario": "关键输入缺失",
+      "expected": "明确追问或输出待确认，不伪造输入。"
+    },
+    {
+      "scenario": "例子被用于真实工程选型",
+      "expected": "回到真实工况、证据和专业审查，不把教学假设当实测。"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-26",
+      "reason": "ML-012原始来源查缺增补；平台操作编排与教学示例，未专家复核"
+    }
+  ],
+  "integration_rationale": "补FMEA/机械风险之外的情境化控制与反馈分析。"
+}
