@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-CN" data-theme="light" data-zw-mode="product"><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1"><title>方法写入规范 · 好设计</title><link rel="stylesheet" href="/vendor/tokens.css"><link rel="stylesheet" href="/vendor/design-system.css"><link rel="stylesheet" href="/library/reader.css"><a class="skip" href="#main">跳到正文</a><header><a href="/">好设计 <span>／ 创新工作台</span></a><a href="/library/index.html">方法库</a><a href="/library/integration.html">引擎与MCP</a><a href="/library/contributing.html">方法写入规范</a></header><main id="main" class="reader"><h1>方法写入规范</h1><p class="lead">先有可追溯的方法内容，再有可执行契约。资料齐全、程序可读和专家认可分别验收。</p><h2>提交前，写清这七件事</h2><ol class="standards"><li><h3>身份和分类</h3><p>沿用稳定research_id、method_id，填写版本；A需求、B功能概念、C发明矛盾、D架构、E工程优化、F评价验证、G全流程管理。闻邦椿谱系专题与独立方法分开标注。</p></li><li><h3>原典与平台适配</h3><p>区分原典主张、平台操作编排、教学假设和真实实践；不得把获奖项目推断成方法应用实例。</p></li><li><h3>来源与核读范围</h3><p>每条来源保留作者/机构、题名、URL、定位、核读范围、日期、支持内容和权利；摘要或目录不能冒称全文。</p></li><li><h3>输入、操作和产物</h3><p>每项输入写必需性和缺失处置；步骤写稳定ID、依赖、动作、判断、产物、检查和停止条件；输出写含义与字段。</p></li><li><h3>关系与示例</h3><p>关系目标必须存在、交接条件明确；示例写假设和未知，真实实践须有案例及证据定位，不捏造效果。</p></li><li><h3>版本与发布</h3><p>在新版本工作区编辑，不覆盖冻结v0.1.0；记录变更原因、来源变化和关联契约影响。先结构验收，再语义复核，专家审核及工程验证另列。</p></li><li><h3>执行与负例</h3><p>新增执行契约前检查Schema、输入缺失、悬空引用、硬约束冲突、未知保留及跨方法交接；模型自评不能替代独立领域专家。</p></li></ol><h2>起草骨架（不是可直接入库的完整档案）</h2><div class="code"><button class="zw-btn copy" type="button">复制</button><pre tabindex="0"><code>{
+  &quot;schema_version&quot;: &quot;method-dossier-1.0&quot;,
+  &quot;research_id&quot;: &quot;待分配稳定ID&quot;,
+  &quot;method_id&quot;: &quot;待分配稳定ID&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;name&quot;: &quot;方法名称&quot;,
+  &quot;category&quot;: &quot;从A—G中选择&quot;,
+  &quot;summary&quot;: &quot;解决什么问题及边界&quot;,
+  &quot;sections&quot;: {
+    &quot;identity&quot;: &quot;待撰写与核读&quot;,
+    &quot;problem&quot;: &quot;待撰写与核读&quot;,
+    &quot;principle&quot;: &quot;待撰写与核读&quot;,
+    &quot;applicability&quot;: &quot;待撰写与核读&quot;,
+    &quot;interpretation&quot;: &quot;待撰写与核读&quot;,
+    &quot;example&quot;: &quot;待撰写与核读&quot;,
+    &quot;pitfalls&quot;: &quot;待撰写与核读&quot;,
+    &quot;validation&quot;: &quot;待撰写与核读&quot;,
+    &quot;adaptation&quot;: &quot;待撰写与核读&quot;,
+    &quot;gaps&quot;: &quot;待撰写与核读&quot;
+  },
+  &quot;inputs&quot;: [],
+  &quot;steps&quot;: [],
+  &quot;outputs&quot;: [],
+  &quot;relations&quot;: [],
+  &quot;sources&quot;: [],
+  &quot;evaluations&quot;: [],
+  &quot;change_log&quot;: []
+}</code></pre><span role="status" aria-live="polite"></span></div><p>骨架中的占位与空数组必须补齐，并通过项目现有结构验收；不要直接发布为完整方法。</p><h2>当前规范原件</h2><div class="actions"><a href="方法库结构规范.md">方法库结构规范</a><a href="入库依据与类型边界.md">入库依据与类型边界</a><a href="引擎接入说明.md">历史内容版接入说明</a></div><p>历史内容版说明反映冻结时状态；当前执行能力以本页关联的MCP接入页和六项契约为准。</p></main><footer>好设计 · 方法研究与平台适配，未经独立专家审核及工程验证。</footer><script src="/library/reader.js"></script></html>

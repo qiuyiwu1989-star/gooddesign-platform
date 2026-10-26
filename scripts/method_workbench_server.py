@@ -17,6 +17,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 LIB = ROOT / '04-知识库/创新方法库/深度方法库-v0.1.0'
+READER = ROOT / 'extensions/method-reader'
 PILOT = ROOT / 'output/rubber-tapping-pilot'
 WEB = ROOT / 'extensions/method-workbench'
 DEFAULT_DB = ROOT / 'output/method-workbench-private/demands.sqlite'
@@ -208,8 +209,25 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                     r = json.loads((PILOT / 'engine-report.json').read_text())
                     return self.send(200, {'run_id': r['run_id'], 'mode': r['mode'], 'task': r['task'], 'demand_packet_sha256': r['demand_packet_sha256'], 'expert_certified': False})
                 if path.startswith('/library/'):
-                    base, rel = LIB, path[len('/library/'):]
-                    if not (rel.startswith('methods/') or '/' not in rel) or Path(rel).suffix not in {'.html', '.css', '.js'}:
+                    rel = path[len('/library/'):] or 'index.html'
+                    # Only enumerated frozen public documents, never arbitrary filesystem paths.
+                    if rel.startswith('档案/') or rel in {'方法库结构规范.md','入库依据与类型边界.md','引擎接入说明.md'}:
+                        import html
+                        parts=rel.split('/')
+                        allowed={'方法结构.md','操作指南.md','档案.json','深度说明.md','来源核读.md'}
+                        if rel.startswith('档案/') and (len(parts)!=3 or parts[1] not in {m['research_id'] for m in json.loads((LIB/'目录.json').read_text())['methods']} or parts[2] not in allowed):
+                            raise KeyError()
+                        target=(LIB/rel).resolve()
+                        if LIB.resolve() not in target.parents or not target.is_file():raise KeyError()
+                        if target.suffix=='.json':return self.send(200,target.read_bytes())
+                        text=target.read_text()
+                        # Render escaped source with working links rather than serving a blocked attachment.
+                        from build_method_reader import page, document
+                        content=page(target.stem,'<main id="main" class="reader"><a href="/library/index.html">← 方法库</a><h1>'+html.escape(target.stem)+'</h1><article class="document">'+document(text)+'</article></main>')
+                        return self.send(200,content.encode(),'text/html; charset=utf-8')
+                    rel={'library.css':'reader.css','library.js':'reader.js'}.get(rel,rel)
+                    base = READER
+                    if not (rel in {'index.html','integration.html','contributing.html','reader.css','reader.js'} or (len(rel.split('/'))==2 and rel.split('/')[0] in {'methods','icons'} and Path(rel).suffix in {'.html','.svg'})):
                         raise KeyError()
                 elif path.startswith('/reports/'):
                     base, rel = PILOT, path[len('/reports/'):]
