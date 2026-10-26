@@ -90,5 +90,7 @@ def integration(records):
         rubric=json.loads(rubric_path.read_text())
         quality='<section id="quality-standard"><h2>逐方法质量评估标准</h2><p>按实际原典、步骤、产物与验证证据评分；待独立校准，不代表专家认证。未核读留空，不能用页面、字段、来源数量换分。</p><table><thead><tr><th>维度</th><th>权重</th><th>核查内容</th></tr></thead><tbody>'+''.join('<tr><td>'+E(x['id'])+'</td><td>'+str(x['weight'])+'</td><td>'+E(x['criterion'])+'</td></tr>' for x in rubric['dimensions'])+'</tbody></table><p>等级：'+E('；'.join(k+'：'+v for k,v in rubric['scale'].items()))+'</p><p>总分达到80且所有硬门槛通过才标达标；内容质量、执行就绪和专家审核分栏记录。</p></section>'
         body=body.replace('</main>',quality+'</main>')
+    from method_reader_quality import quality_section
+    body=body.replace('</main>',quality_section(records)+'</main>')
     (OUT/'contributing.html').write_text(page('方法写入规范',body))
 if __name__=='__main__':build()

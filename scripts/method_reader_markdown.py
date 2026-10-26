@@ -44,4 +44,5 @@ def document(text):
                 items.append(m[1]);i+=1
             out.append('<'+tag+'>'+''.join('<li>'+inline(x)+'</li>'for x in items)+'</'+tag+'>');continue
         out.append('<p>'+inline(line)+'</p>')
-    return ''.join(out)
+    notice='<aside class="notice"><b>历史内容版说明</b><p>以下保留冻结版本原文，执行卡与工具能力以<a href="/library/integration.html">当前引擎与MCP接入说明</a>为准。</p></aside>' if text.startswith('# 引擎接入说明：内容版接口') else ''
+    return notice+''.join(out)
