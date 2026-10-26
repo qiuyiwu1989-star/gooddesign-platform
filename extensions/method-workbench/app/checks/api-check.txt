@@ -6,8 +6,12 @@ test_05_private_path_isolation (__main__.WorkspaceChecks) ... ok
 test_06_validation (__main__.WorkspaceChecks) ... ok
 test_07_no_approval_or_false_lineage (__main__.WorkspaceChecks) ... ok
 test_08_actual_mcp_case_and_run (__main__.WorkspaceChecks) ... ok
+test_09_execution_rejects_bad_draft_without_model (__main__.WorkspaceChecks) ... /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py:1052: ResourceWarning: subprocess 94609 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 2.194s
+Ran 9 tests in 6.855s
 
 OK

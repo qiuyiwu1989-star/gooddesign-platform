@@ -1,4 +1,4 @@
-"""ML-006 local single-user workspace. No model execution or public deployment."""
+"""ML-006 local single-user workspace. Explicit single-node model execution; no public deployment."""
 import argparse
 import hashlib
 import json
@@ -7,6 +7,7 @@ import secrets
 import sqlite3
 import subprocess
 import threading
+from method_workbench_execution import Execution
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -127,6 +128,7 @@ def make_server(port=8786, db_path=DEFAULT_DB):
     store = Store(Path(db_path))
     token = secrets.token_urlsafe(32)
     run_lock = threading.Lock()
+    execution = Execution(Path(db_path).resolve().parent / 'execution.sqlite')
     engine_db = str(Path(db_path).resolve().parent / 'engine.sqlite')
 
     def bridge(request):
@@ -168,7 +170,7 @@ def make_server(port=8786, db_path=DEFAULT_DB):
             path = unquote(urlsplit(self.path).path)
             try:
                 if path == '/api/session':
-                    return self.send(200, {'csrf': token, 'mode': 'local_single_user', 'model_connected': False})
+                    return self.send(200, {'csrf': token, 'mode': 'local_single_user', 'model_connected': None, 'model_execution_available': (ROOT / '.runtime/pipeline/bin/python').is_file(), 'model_connection_status': 'checked_on_explicit_generation_not_preverified'})
                 if path == '/api/methods':
                     data = json.loads((LIB / '目录.json').read_text())
                     for m in data['methods']:
@@ -181,7 +183,18 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                     if len(parts) not in (4, 5):
                         raise KeyError()
                     return self.send(200, store.get(parts[3], int(parts[4]) if len(parts) == 5 else None))
+                if path.startswith('/api/execution/'):
+                    ident = path[len('/api/execution/'):]
+                    with store.connect() as db:
+                        row = db.execute('SELECT result FROM runs WHERE id=? ORDER BY rev DESC LIMIT 1', (ident,)).fetchone()
+                    if not row:
+                        raise KeyError()
+                    meta = json.loads(row[0])
+                    rid = meta['created']['run_id']
+                    state = bridge({'action': 'get_run', 'run_id': rid})
+                    return self.send(200, {'meta':meta, 'state':state, 'jobs':execution.listing(rid), 'evidence':execution.evidence(rid), 'notes':execution.notes(rid)})
                 if path.startswith('/api/run/'):
+
                     ident = path[len('/api/run/'):]
                     with store.connect() as db:
                         row = db.execute('SELECT result FROM runs WHERE id=? ORDER BY rev DESC LIMIT 1', (ident,)).fetchone()
@@ -213,7 +226,7 @@ def make_server(port=8786, db_path=DEFAULT_DB):
         def do_POST(self):
             if not self.trusted() or self.headers.get('X-CSRF-Token') != token:
                 return self.send(403, {'error': '访问校验失败，请刷新后重试'})
-            if urlsplit(self.path).path not in {'/api/demands', '/api/cases/search', '/api/runs'}:
+            if urlsplit(self.path).path not in {'/api/demands', '/api/cases/search', '/api/runs', '/api/execute', '/api/cases/sources', '/api/evidence/attach', '/api/execution/note'}:
                 return self.send(404, {'error': '不存在该操作'})
             try:
                 length = int(self.headers.get('Content-Length', 0))
@@ -223,6 +236,48 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                 if not isinstance(data, dict):
                     raise ValueError('请求必须是JSON对象')
                 path = urlsplit(self.path).path
+                if path == '/api/cases/sources':
+                    if not isinstance(data.get('project_id'), str) or len(data['project_id']) > 100:
+                        raise ValueError('案例ID无效')
+                    return self.send(200, bridge({'action': 'case_sources', 'project_id': data['project_id']}))
+                if path in ('/api/execute', '/api/evidence/attach', '/api/execution/note'):
+                    if not isinstance(data.get('id'), str) or type(data.get('revision')) is not int:
+                        raise ValueError('需求版本无效')
+                    with store.connect() as db:
+                        row = db.execute('SELECT result FROM runs WHERE id=? AND rev=?', (data['id'], data['revision'])).fetchone()
+                    if not row:
+                        raise ValueError('请先建立对应版本的运行计划')
+                    meta = json.loads(row[0]); rid = meta['created']['run_id']
+                    if path == '/api/execution/note':
+                        return self.send(201, {'notes':execution.notes(rid,data.get('text'))})
+                    if path == '/api/evidence/attach':
+                        for field in ('project_id','source_id'):
+                            if not isinstance(data.get(field), str) or len(data[field]) > 100:
+                                raise ValueError('案例/来源ID无效')
+                        if data.get('chunks_sha256') and (not isinstance(data['chunks_sha256'], str) or len(data['chunks_sha256']) != 64):
+                            raise ValueError('文本修订指纹无效')
+                        result = bridge({'action':'case_evidence','project_id':data['project_id'],'source_id':data['source_id'],'chunks_sha256':data.get('chunks_sha256')})
+                        if not result.get('evidence'):
+                            return self.send(422, {'error':'该来源没有可直接选择的摘录，请明确文本修订SHA。'+json.dumps(result.get('available',[]),ensure_ascii=False),'details':result})
+                        return self.send(200, {'evidence':execution.attach(rid, result['evidence']), 'read_scope':'first_chunk_excerpt_not_full_source'})
+                    if data.get('action') not in ('propose','submit'):
+                        raise ValueError('执行动作无效')
+                    state = bridge({'action':'get_run','run_id':rid})
+                    done = {x['method'] for x in state['submissions']}
+                    node = next((n for n in state['plan']['nodes'] if n['node_id'] not in done), None)
+                    if not node:
+                        raise ValueError('所有节点已提交，请阅读报告；修改需求请保存新版本')
+                    request = {'action':data['action'], 'method':node['node_id'], 'db':engine_db, 'run_id':rid,
+                               'expected_revision':state['revision'], 'evidence':execution.evidence(rid), 'notes':execution.notes(rid)}
+                    if data['action'] == 'submit':
+                        if not isinstance(data.get('artifact'),dict):
+                            raise ValueError('请提供待校验的产物JSON对象')
+                        request['artifact'] = data['artifact']
+                        note=data.get('review_note','')
+                        if not isinstance(note,str) or len(note)>4000:
+                            raise ValueError('评审说明格式无效')
+                        request['review_note']=note
+                    return self.send(202, execution.enqueue(request))
                 if path == '/api/cases/search':
                     query = data.get('query')
                     if not isinstance(query, str) or not query.strip() or len(query) > 300:
@@ -248,7 +303,7 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                                   'created': created, 'automatic_generation': False,
                                   'note': '实际方法MCP计划，尚无执行产物；所选内容方法不等同六节点参考执行链'}
                         if created.get('status') == 'blocked':
-                            return self.send(422, result)
+                            return self.send(422, {'error':'该来源没有可直接选择的摘录，请明确文本修订SHA。'+json.dumps(result.get('available',[]),ensure_ascii=False),'details':result})
                         with store.connect() as db:
                             db.execute('INSERT INTO runs VALUES (?,?,?)', (d['id'], saved['revision'], json.dumps(result, ensure_ascii=False)))
                         return self.send(201, result)

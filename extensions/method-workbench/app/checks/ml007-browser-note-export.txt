@@ -1,0 +1,9 @@
+### Result
+{"notePersisted":true,"download":"RUBBER-20261026-研究方案报告.md"}
+### Ran Playwright code
+```js
+await (async (page) => { await page.reload();await page.getByRole("button",{name:"方案与验证",exact:true}).click(); await page.getByRole("button",{name:"保存评审备注",exact:true}).waitFor(); await page.getByLabel("评审备注",{exact:true}).fill("浏览验收备注：仅检查持久化，不代表专家审核。"); await page.getByRole("button",{name:"保存评审备注",exact:true}).click(); await page.getByText("评审备注已保存，不改变产物和审核等级。",{exact:true}).waitFor(); await page.getByText("浏览验收备注：仅检查持久化，不代表专家审核。",{exact:true}).waitFor(); const dl=page.waitForEvent("download");await page.getByRole("button",{name:"导出研究报告",exact:true}).click();const download=await dl;await download.saveAs("output/method-workbench-check/ml007/browser-report.md");return {notePersisted:true,download:download.suggestedFilename()}; })(page);
+```
+### Events
+- Downloading file RUBBER-20261026-研究方案报告.md ...
+- Downloaded file RUBBER-20261026-研究方案报告.md to ".playwright-cli/RUBBER-20261026-研究方案报告.md"

@@ -1,0 +1,6 @@
+### Result
+{"evidenceAttached":true,"badDraftBlocked":true,"editorPreserved":"{}"}
+### Ran Playwright code
+```js
+await (async (page) => { await page.locator("#attach-evidence").click(); await page.waitForFunction(()=>document.querySelector("#status").textContent.includes("已保存真实案例")); await page.locator("#artifact-editor").locator("..").locator("summary").click(); await page.locator("#artifact-editor").fill("{}"); await page.locator("#submit-step").click(); await page.waitForFunction(()=>document.querySelector("#execution-panel").textContent.includes("R48 · 检查阻断 · 校验提交")); return {evidenceAttached:true,badDraftBlocked:true,editorPreserved:await page.locator("#artifact-editor").inputValue()}; })(page);
+```

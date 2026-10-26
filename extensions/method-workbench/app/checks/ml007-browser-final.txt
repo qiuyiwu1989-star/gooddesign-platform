@@ -1,0 +1,12 @@
+### Result
+{"submitted":6,"gateVisible":true,"download":"RUBBER-20261026-研究方案报告.md","widths":[320,375,767,768,1279,1280,1600]}
+### Ran Playwright code
+```js
+await (async (page) => { page.on("dialog",d=>d.dismiss());await page.goto("http://127.0.0.1:8786/");await page.getByRole("button",{name:"方案与验证",exact:true}).click();await page.getByText(/已提交 6 \/ 6 步/).waitFor({timeout:20000});const count=await page.locator("#execution-panel").innerText();const widths=[];for(const width of [320,375,767,768,1279,1280,1600]){await page.setViewportSize({width,height:900});if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error("overflow "+width);widths.push(width)}const dl=page.waitForEvent("download");await page.getByRole("button",{name:"导出研究报告",exact:true}).click();const download=await dl;await download.saveAs("output/method-workbench-check/ml007/工作台研究方案报告.md");await page.setViewportSize({width:1440,height:1000});await page.getByRole("button",{name:"切换明暗",exact:true}).click();await page.screenshot({path:"output/method-workbench-check/ml007/workspace-complete-dark.png",fullPage:true});return {submitted:6,gateVisible:count.includes("尚未通过"),download:download.suggestedFilename(),widths}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8786/
+- Page Title: 创新工作台 · 好设计 × 造物云
+### Events
+- Downloading file RUBBER-20261026-研究方案报告.md ...
+- Downloaded file RUBBER-20261026-研究方案报告.md to ".playwright-cli/RUBBER-20261026-研究方案报告.md"

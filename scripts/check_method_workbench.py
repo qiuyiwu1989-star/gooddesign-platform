@@ -143,6 +143,30 @@ class WorkspaceChecks(unittest.TestCase):
         self.assertEqual(len(task['demand_snapshot']['requirements']), 15)
         self.assertEqual(task['demand_snapshot']['problem'], d['problem'])
 
+    def test_09_execution_rejects_bad_draft_without_model(self):
+        import time
+        d=self.draft()
+        self.assertEqual(self.request('/api/demands',d)[0],201)
+        self.assertEqual(self.request('/api/runs',{'id':d['id'],'revision':1})[0],201)
+        body={'id':d['id'],'revision':1,'action':'submit','artifact':{}}
+        code,job=self.request('/api/execute',body)
+        self.assertEqual(code,202)
+        self.server.shutdown()
+        self.server.server_close()
+        self.launch()
+        deadline=time.time()+15
+        while time.time()<deadline:
+            code,state=self.request('/api/execution/'+d['id'])
+            latest=state['jobs'][-1]
+            if latest['state'] not in ('queued','running'):break
+            time.sleep(.2)
+        self.assertEqual(latest['state'],'blocked')
+        self.assertEqual(state['state']['revision'],0)
+        self.assertEqual(latest['result']['issues'][0]['code'],'baseline_requirement_missing')
+        self.assertEqual(self.request('/api/execution/note',{'id':d['id'],'revision':1,'text':'test note, not expert review'})[0],201)
+        self.assertEqual(len(self.request('/api/execution/'+d['id'])[1]['notes']),1)
+        self.assertEqual(self.request('/api/execute',body,{'X-CSRF-Token':'wrong'})[0],403)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
