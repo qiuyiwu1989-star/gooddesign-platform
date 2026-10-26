@@ -30,10 +30,17 @@ async def main():
             elif action == 'case_sources':
                 result = await call('gd_list_sources', {'project_id': request['project_id'], 'limit': 20})
             elif action == 'case_evidence':
-                response = await call('gd_read_evidence', {'project_id': request['project_id'], 'source_id': request['source_id'], 'offset': 0, 'limit': 1, **({'chunks_sha256':request['chunks_sha256']} if request.get('chunks_sha256') else {})})
+                response = await call('gd_read_evidence', {'project_id': request['project_id'], 'source_id': request['source_id'], 'offset': request.get('offset',0), 'limit': 1, **({'revision':request['research_revision']} if request.get('research_revision') else {}), **({'chunks_sha256':request['chunks_sha256']} if request.get('chunks_sha256') else {})})
                 from method_case_adapter import normalize
-                result = normalize(request['project_id'], request['source_id'], response)
-            elif action in ('propose','submit'):
+                result = normalize(request['project_id'], request['source_id'], response, max_chars=request.get('max_chars',800))
+                result.update(offset=request.get('offset',0),total=response.get('total'),next_offset=response.get('next_offset'))
+                if request.get('preview'):
+                    for e in result['evidence']:
+                        e['id'] += '-e'+e['text_sha256'][:10]
+                        e['read_offset']=request.get('offset',0)
+                        e['excerpt_limit']=request.get('max_chars',800)
+
+            elif action in ('propose','submit','morph_option','morph_assemble'):
                 from method_workbench_execution import alignment
                 state = await call('method_run_get', {'run_id': request['run_id']})
                 prior = [x['artifact'] for x in state['submissions']]
@@ -42,7 +49,28 @@ async def main():
                 if not node or node['node_id'] != request['method'] or state['revision'] != request['expected_revision']:
                     raise ValueError('运行版本或当前步骤已改变，请刷新')
                 method, task, evidence = request['method'], state['task'], request.get('evidence', [])
-                if action == 'propose':
+                if action in ('morph_option','morph_assemble'):
+                    from method_workbench_morphology import generate_function, assemble, inputs, PartGenerationError
+                    if method != 'R17':
+                        raise ValueError('分功能生成仅用于R17')
+                    stamp, _, _ = inputs(state,evidence)
+                    if stamp != request['input_fingerprint']:
+                        result={'status':'blocked','issues':[{'code':'morphology_inputs_changed'}]}
+                    else:
+                        folder=Path(request['db']).parent/'model-parts'
+                        try:
+                            if action=='morph_option':
+                                result=generate_function(state,evidence,request['function_id'],folder)
+                            else:
+                                result=assemble(state,evidence,request['parts'],folder)
+                                checked=await call('method_check_artifact',{'method_id':'R17','task':task,'artifact':result['artifact'],'inputs':prior,'evidence':evidence})
+                                result['check']=checked
+                                result['status']='blocked' if checked['status']=='blocked' else 'draft_requires_semantic_and_domain_review'
+                        except PartGenerationError as exc:
+                            result=exc.record
+                            result['input_fingerprint']=stamp
+                            result['function_id']=request.get('function_id')
+                elif action == 'propose':
                     from method_engine_contracts import META
                     relevant = [a for a in prior if a['type'] in META[method]['requires']]
                     result = await call('method_propose_artifact', {'method_id': method, 'task': task, 'artifacts': relevant, 'evidence': evidence, 'max_repairs': 0})

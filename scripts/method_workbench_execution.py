@@ -45,7 +45,8 @@ class Execution:
                 created REAL, updated REAL, request TEXT, result TEXT, pid INTEGER);
                 CREATE UNIQUE INDEX IF NOT EXISTS active_run ON jobs(run_id) WHERE state IN ('queued','running');
                 CREATE TABLE IF NOT EXISTS evidence (run_id TEXT,id TEXT,payload TEXT,PRIMARY KEY(run_id,id));
-                CREATE TABLE IF NOT EXISTS notes (id TEXT PRIMARY KEY,run_id TEXT,created REAL,text TEXT);''')
+                CREATE TABLE IF NOT EXISTS notes (id TEXT PRIMARY KEY,run_id TEXT,created REAL,text TEXT);
+                CREATE TABLE IF NOT EXISTS previews (id TEXT PRIMARY KEY,run_id TEXT,payload TEXT,created REAL);''')
 
     def connect(self):
         db = sqlite3.connect(self.path, timeout=15)
@@ -64,13 +65,30 @@ class Execution:
                 db.execute('INSERT INTO notes VALUES (?,?,?,?)',('note-'+uuid.uuid4().hex,run_id,time.time(),text))
             return [dict(r) for r in db.execute('SELECT id,created,text FROM notes WHERE run_id=? ORDER BY created',(run_id,))]
 
+    def preview(self, run_id, evidence=None, ident=None):
+        with self.connect() as db:
+            if ident is not None:
+                row=db.execute('SELECT payload FROM previews WHERE id=? AND run_id=?',(ident,run_id)).fetchone()
+                if not row:raise ValueError('预览不存在或不属于当前运行，请重新预览')
+                return json.loads(row[0])
+            ident='preview-'+uuid.uuid4().hex
+            db.execute('INSERT INTO previews VALUES (?,?,?,?)',(ident,run_id,json.dumps(evidence,ensure_ascii=False),time.time()))
+            return ident
+
     def attach(self, run_id, evidence):
         with self.connect() as db:
             if db.execute("SELECT 1 FROM jobs WHERE run_id=? AND state IN ('queued','running')", (run_id,)).fetchone():
                 raise FileExistsError('执行中不能修改证据，请等待当前任务结束')
+            stored=[json.loads(r[0]) for r in db.execute('SELECT payload FROM evidence WHERE run_id=?',(run_id,))]
+            def signature(e):return tuple(e.get(k) for k in ('project_id','source_id','source_revision','chunk_id','text_sha256'))
+            signatures={signature(e) for e in stored}; identities={e['id']:e for e in stored}
             for e in evidence:
                 if hashlib.sha256(e['text'].encode()).hexdigest() != e['text_sha256']:
                     raise ValueError('证据指纹不匹配')
+                if e['id'] in identities and identities[e['id']]['text_sha256']!=e['text_sha256']:
+                    raise ValueError('相同证据ID已有不同摘录，请使用预览选择新摘录')
+                if signature(e) in signatures:continue
+                signatures.add(signature(e));identities[e['id']]=e
                 db.execute('INSERT OR IGNORE INTO evidence VALUES (?,?,?)', (run_id, e['id'], json.dumps(e, ensure_ascii=False)))
         return self.evidence(run_id)
 
@@ -90,7 +108,7 @@ class Execution:
         return output
 
     def enqueue(self, request, spawn=True):
-        if request['action'] not in ('propose', 'submit'):
+        if request['action'] not in ('propose', 'submit', 'morph_option', 'morph_assemble'):
             raise ValueError('不支持的执行动作')
         ident = 'job-' + uuid.uuid4().hex
         now = time.time()
@@ -144,7 +162,7 @@ class Execution:
             if request.get('review_note'):
                 result['host_or_user_review_note'] = request['review_note']
                 result['review_scope'] = 'not_independent_domain_expert_review'
-            state = 'blocked' if result.get('status') == 'blocked' else ('draft' if request['action'] == 'propose' else 'submitted')
+            state = 'failed' if result.get('status')=='model_call_failed' else ('blocked' if result.get('status') == 'blocked' else ('part' if request['action']=='morph_option' else ('draft' if request['action'] in ('propose','morph_assemble') else 'submitted')))
             self.finish(ident, state, result)
         except subprocess.TimeoutExpired:
             self.finish(ident, 'failed', {'error': '执行超过240秒，未自动重试。请先检查运行与模型审计记录。'})

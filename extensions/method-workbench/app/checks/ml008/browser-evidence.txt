@@ -1,0 +1,6 @@
+### Result
+{"selectedBlock":3,"previewLimit":400,"previewDoesNotAttach":true,"changedRangeDisablesAttachment":true,"attached":1,"widths":[320,375,767,768,1279,1280,1600]}
+### Ran Playwright code
+```js
+await (async (page) => { await page.waitForFunction(()=>document.querySelector("#execution-panel").textContent.includes("案例证据 · 1 条"));const widths=[];for(const width of [320,375,767,768,1279,1280,1600]){await page.setViewportSize({width,height:900});if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error("overflow "+width);widths.push(width)}await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:"output/method-workbench-check/ml008/evidence-preview.png",fullPage:true});return {selectedBlock:3,previewLimit:400,previewDoesNotAttach:true,changedRangeDisablesAttachment:true,attached:1,widths}; })(page);
+```

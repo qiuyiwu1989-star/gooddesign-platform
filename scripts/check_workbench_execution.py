@@ -43,4 +43,19 @@ class Checks(unittest.TestCase):
         self.store.enqueue({'run_id':'run-test','method':'R48','action':'propose'},spawn=False)
         with self.assertRaises(FileExistsError):self.store.attach('run-test',[])
 
+    def test_preview_scope_and_restart(self):
+        ident=self.store.preview('run-test',[{'text':'frozen test excerpt'}])
+        restored=Execution(self.path)
+        self.assertEqual(restored.preview('run-test',ident=ident)[0]['text'],'frozen test excerpt')
+        with self.assertRaises(ValueError):restored.preview('other-run',ident=ident)
+
+    def test_exact_excerpt_dedup_and_identity_conflict(self):
+        import hashlib
+        e={'id':'E1','project_id':'fixture','source_id':'S1','source_revision':'r1','chunk_id':'B1','text':'fixture excerpt','text_sha256':hashlib.sha256(b'fixture excerpt').hexdigest()}
+        self.assertEqual(len(self.store.attach('run-test',[e])),1)
+        duplicate=dict(e,id='E2')
+        self.assertEqual(len(self.store.attach('run-test',[duplicate])),1)
+        changed=dict(e,text='changed',text_sha256=hashlib.sha256(b'changed').hexdigest())
+        with self.assertRaises(ValueError):self.store.attach('run-test',[changed])
+
 if __name__=='__main__':unittest.main(verbosity=2)

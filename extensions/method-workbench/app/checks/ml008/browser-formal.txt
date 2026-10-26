@@ -1,0 +1,9 @@
+### Result
+{"originalArtifactsPreserved":6,"previewAvailable":true,"widths":[320,375,767,768,1279,1280,1600]}
+### Ran Playwright code
+```js
+await (async (page) => { await page.goto("http://127.0.0.1:8786/");await page.locator("[data-page=results]").click();await page.getByText(/已提交 6 \/ 6 步/).waitFor();await page.locator("#preview-evidence").waitFor();const widths=[];for(const width of [320,375,767,768,1279,1280,1600]){await page.setViewportSize({width,height:900});if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error("overflow "+width);widths.push(width)}return {originalArtifactsPreserved:6,previewAvailable:true,widths}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8786/
+- Page Title: 创新工作台 · 好设计 × 造物云

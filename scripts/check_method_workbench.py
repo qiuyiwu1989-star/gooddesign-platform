@@ -167,6 +167,29 @@ class WorkspaceChecks(unittest.TestCase):
         self.assertEqual(len(self.request('/api/execution/'+d['id'])[1]['notes']),1)
         self.assertEqual(self.request('/api/execute',body,{'X-CSRF-Token':'wrong'})[0],403)
 
+    def test_10_selected_evidence_preview_is_not_attachment(self):
+        d=self.draft()
+        self.assertEqual(self.request('/api/demands',d)[0],201)
+        self.assertEqual(self.request('/api/runs',{'id':d['id'],'revision':1})[0],201)
+        body={'id':d['id'],'revision':1,'project_id':'2025-00','source_id':'Sc249f11de5b7c8a4','offset':2,'max_chars':400}
+        code,preview=self.request('/api/evidence/preview',body)
+        self.assertEqual(code,200)
+        self.assertEqual(preview['offset'],2)
+        self.assertEqual(preview['evidence'][0]['chunk_id'],'B0003')
+        self.assertLessEqual(len(preview['evidence'][0]['text']),400)
+        self.assertEqual(len(self.request('/api/execution/'+d['id'])[1]['evidence']),0)
+        code,saved=self.request('/api/evidence/attach',{'id':d['id'],'revision':1,'preview_id':preview['preview_id']})
+        self.assertEqual(code,200)
+        self.assertEqual(saved['evidence'][0]['text'],preview['evidence'][0]['text'])
+        body['max_chars']=100
+        preview2=self.request('/api/evidence/preview',body)[1]
+        self.assertNotEqual(preview2['evidence'][0]['id'],preview['evidence'][0]['id'])
+        self.assertEqual(self.request('/api/evidence/attach',{'id':d['id'],'revision':1,'preview_id':'wrong'})[0],400)
+        body['offset']=-1
+        self.assertEqual(self.request('/api/evidence/preview',body)[0],400)
+        body['offset']=2;body['chunks_sha256']='0'*64
+        self.assertEqual(self.request('/api/evidence/preview',body)[0],400)
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

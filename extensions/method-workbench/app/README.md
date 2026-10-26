@@ -1,4 +1,4 @@
-# ML-006 / ML-007 创新工作台
+# ML-006 / ML-007 / ML-008 创新工作台
 
 启动：双击项目 `scripts/启动创新工作台.command`，浏览器打开 http://127.0.0.1:8786/ 。关闭终端停止服务；重新启动保留已保存版本。
 也可在项目根运行 `python3 scripts/method_workbench_server.py`。
@@ -23,3 +23,26 @@
 - 迁移数据时关闭服务并复制整个私有目录，包含需求、引擎及执行任务三个数据库。私有模型调用原始审计另存既有运行数据目录。
 
 验证：`python3 scripts/check_method_workbench.py`（9组）、`python3 scripts/check_workbench_execution.py`（5组）。实际模型及MCP运行、浏览器和导出报告记录位于 `output/method-workbench-check/ml007/`。截图、完整案例摘录及数据库不入Git；原试验和正式工作台均保留作者及失败来源。
+
+## ML-008 增量生成和证据预览
+
+R17现在按功能模型逐功能生成2—3个候选原理。点击一次启动一个模型会话，当前片段保存后再点下一功能；全部片段齐备后，单独生成2—3套组合，再经原方法MCP检查。片段不是已提交ConceptSet，不代表相容性或工程验证。
+
+片段指纹绑定适配器VERSION、完整任务、需求/功能产物、证据、方法内容、契约及原计划的实现指纹。修改提示词或片段语义必须升级`method_workbench_morphology.VERSION`，不能静默漂移。运行实现或方法内容变更时，生成前会阻断并要求重新建计划。当前输入变化后的历史片段保留但不混用。
+
+证据流程为选择来源→指定文本块和字符数→预览→确认加入。文本块从1编号，摘录50—4000字符；可翻页。加入的就是已预览文本，不再次抓取漂移内容。相同内容复用已有记录，证据ID相同但文本不同会阻断。读取历史研究版时，先填写实际研究版本；多个冻结文本会出现修订选择。预览本身不加入模型输入。
+
+真实增量试验位于`output/method-workbench-check/ml008`：8个模型会话中7个成功保存片段，第8个F08日志记录HTTP429并在90秒限时退出。7/14进度重启后保留；没有自动新建重试任务，没有最终模型组合或R17提交。不能把这次试验说成全流程模型成功或“限流已解决”。
+
+补查原ML-007第三步也记录HTTP429，因此“长输出造成超时”未获证明。分片降低单次体量并支持恢复；底层CLI在单个限时会话内可能重连/重试，原日志保留。应用层不会自动追加修复/重试会话。新失败记录区分已记录的HTTP状态与本地终止原因。
+
+当前检查：HTTP/MCP 10组、持久执行7组、增量逻辑7组；另有实际SDK20工具入口检查和真实浏览器证据/断点/重启进度检查。注入读者的单测数据明确标注为fixture，不是实际模型结果。
+
+## 给其他Agent的增量MCP入口
+
+原`method_engine_mcp.py`继续保留18工具不变。可选入口`method_engine_incremental_mcp.py`在同一个服务中增加：
+- `method_generate_function_options`：按真实run_id和function_id生成单片段，最多一个90秒模型会话；调用者保存返回片段。
+- `method_assemble_function_options`：接收每个功能的完整同指纹片段，生成组合并执行原引擎检查；不自动提交。
+
+启动：`.runtime/pipeline/bin/python scripts/method_engine_incremental_mcp.py`，使用stdio。通过`METHOD_ENGINE_DB`指定原引擎运行库，例如本机`output/method-workbench-private/engine.sqlite`。保持固定SDK1.30.0，不自动升级依赖或修改全局Agent配置。选择这个增量入口即可得到20工具，无需同时注册原18工具入口。
+接口实现参考[MCP工具规范](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)，实际兼容性由固定运行环境的SDK检查确认。

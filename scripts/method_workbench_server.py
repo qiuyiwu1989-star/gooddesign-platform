@@ -8,6 +8,7 @@ import sqlite3
 import subprocess
 import threading
 from method_workbench_execution import Execution
+from method_workbench_morphology import progress as morphology_progress
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -192,7 +193,10 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                     meta = json.loads(row[0])
                     rid = meta['created']['run_id']
                     state = bridge({'action': 'get_run', 'run_id': rid})
-                    return self.send(200, {'meta':meta, 'state':state, 'jobs':execution.listing(rid), 'evidence':execution.evidence(rid), 'notes':execution.notes(rid)})
+                    jobs=execution.listing(rid); evidence=execution.evidence(rid)
+                    kinds={s['artifact']['type'] for s in state['submissions']}
+                    morph=morphology_progress(state,evidence,jobs) if {'ProblemBrief','FunctionModel'}<=kinds else None
+                    return self.send(200, {'meta':meta, 'state':state, 'jobs':jobs, 'evidence':evidence, 'notes':execution.notes(rid),'morphology':morph})
                 if path.startswith('/api/run/'):
 
                     ident = path[len('/api/run/'):]
@@ -226,7 +230,7 @@ def make_server(port=8786, db_path=DEFAULT_DB):
         def do_POST(self):
             if not self.trusted() or self.headers.get('X-CSRF-Token') != token:
                 return self.send(403, {'error': '访问校验失败，请刷新后重试'})
-            if urlsplit(self.path).path not in {'/api/demands', '/api/cases/search', '/api/runs', '/api/execute', '/api/cases/sources', '/api/evidence/attach', '/api/execution/note'}:
+            if urlsplit(self.path).path not in {'/api/demands', '/api/cases/search', '/api/runs', '/api/execute', '/api/cases/sources', '/api/evidence/attach', '/api/evidence/preview', '/api/execution/note'}:
                 return self.send(404, {'error': '不存在该操作'})
             try:
                 length = int(self.headers.get('Content-Length', 0))
@@ -240,7 +244,7 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                     if not isinstance(data.get('project_id'), str) or len(data['project_id']) > 100:
                         raise ValueError('案例ID无效')
                     return self.send(200, bridge({'action': 'case_sources', 'project_id': data['project_id']}))
-                if path in ('/api/execute', '/api/evidence/attach', '/api/execution/note'):
+                if path in ('/api/execute', '/api/evidence/attach', '/api/evidence/preview', '/api/execution/note'):
                     if not isinstance(data.get('id'), str) or type(data.get('revision')) is not int:
                         raise ValueError('需求版本无效')
                     with store.connect() as db:
@@ -250,13 +254,30 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                     meta = json.loads(row[0]); rid = meta['created']['run_id']
                     if path == '/api/execution/note':
                         return self.send(201, {'notes':execution.notes(rid,data.get('text'))})
-                    if path == '/api/evidence/attach':
+                    if path in ('/api/evidence/attach','/api/evidence/preview'):
+                        if path=='/api/evidence/attach' and data.get('preview_id'):
+                            if not isinstance(data['preview_id'],str) or len(data['preview_id'])>80:
+                                raise ValueError('预览ID无效')
+                            evidence=execution.preview(rid,ident=data['preview_id'])
+                            return self.send(200,{'evidence':execution.attach(rid,evidence),'read_scope':'selected_frozen_excerpt_not_full_source'})
                         for field in ('project_id','source_id'):
                             if not isinstance(data.get(field), str) or len(data[field]) > 100:
                                 raise ValueError('案例/来源ID无效')
                         if data.get('chunks_sha256') and (not isinstance(data['chunks_sha256'], str) or len(data['chunks_sha256']) != 64):
                             raise ValueError('文本修订指纹无效')
-                        result = bridge({'action':'case_evidence','project_id':data['project_id'],'source_id':data['source_id'],'chunks_sha256':data.get('chunks_sha256')})
+                        offset=data.get('offset',0); maximum=data.get('max_chars',800)
+                        if type(offset) is not int or not 0<=offset<=100000 or type(maximum) is not int or not 50<=maximum<=4000:
+                            raise ValueError('文本块位置须为0—100000整数，摘录长度须为50—4000整数')
+                        revision=data.get('research_revision')
+                        if revision is not None and (not isinstance(revision,str) or len(revision)>100):
+                            raise ValueError('研究版本无效')
+                        if data.get('chunks_sha256') and not revision:
+                            raise ValueError('选择冻结文本指纹时还需指定研究版本')
+                        result = bridge({'action':'case_evidence','project_id':data['project_id'],'source_id':data['source_id'],'chunks_sha256':data.get('chunks_sha256'),'research_revision':revision,'offset':offset,'max_chars':maximum,'preview':path=='/api/evidence/preview'})
+                        if path=='/api/evidence/preview':
+                            if result.get('status')=='needs_text_revision_choice':return self.send(200,result)
+                            if not result.get('evidence'):raise ValueError('该位置没有文本块，请调整位置')
+                            return self.send(200,{**result,'preview_id':execution.preview(rid,result['evidence'])})
                         if not result.get('evidence'):
                             return self.send(422, {'error':'该来源没有可直接选择的摘录，请明确文本修订SHA。'+json.dumps(result.get('available',[]),ensure_ascii=False),'details':result})
                         return self.send(200, {'evidence':execution.attach(rid, result['evidence']), 'read_scope':'first_chunk_excerpt_not_full_source'})
@@ -269,6 +290,13 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                         raise ValueError('所有节点已提交，请阅读报告；修改需求请保存新版本')
                     request = {'action':data['action'], 'method':node['node_id'], 'db':engine_db, 'run_id':rid,
                                'expected_revision':state['revision'], 'evidence':execution.evidence(rid), 'notes':execution.notes(rid)}
+                    if data['action']=='propose' and node['node_id']=='R17':
+                        morph=morphology_progress(state,request['evidence'],execution.listing(rid))
+                        request.update(input_fingerprint=morph['input_fingerprint'])
+                        if morph['next_function']:
+                            request.update(action='morph_option',function_id=morph['next_function'])
+                        else:
+                            request.update(action='morph_assemble',parts=morph['parts'])
                     if data['action'] == 'submit':
                         if not isinstance(data.get('artifact'),dict):
                             raise ValueError('请提供待校验的产物JSON对象')
@@ -303,7 +331,7 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                                   'created': created, 'automatic_generation': False,
                                   'note': '实际方法MCP计划，尚无执行产物；所选内容方法不等同六节点参考执行链'}
                         if created.get('status') == 'blocked':
-                            return self.send(422, {'error':'该来源没有可直接选择的摘录，请明确文本修订SHA。'+json.dumps(result.get('available',[]),ensure_ascii=False),'details':result})
+                            return self.send(422, {'error':'运行计划被阻断，请检查任务条件','details':result})
                         with store.connect() as db:
                             db.execute('INSERT INTO runs VALUES (?,?,?)', (d['id'], saved['revision'], json.dumps(result, ensure_ascii=False)))
                         return self.send(201, result)

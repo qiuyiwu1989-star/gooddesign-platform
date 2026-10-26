@@ -1,0 +1,9 @@
+### Result
+{"preserved":7,"total":14,"next":"生成子功能 F08 · 7/14","widths":[320,375,768,1280,1600]}
+### Ran Playwright code
+```js
+await (async (page) => { await page.goto("http://127.0.0.1:8790/");await page.locator("[data-page=results]").click();await page.getByRole("heading",{name:"形态学分析 · 分功能进度 7 / 14",exact:true}).waitFor();const button=await page.locator("#generate-step").innerText();if(!button.includes("F08"))throw Error("wrong resume function");const widths=[];for(const width of [320,375,768,1280,1600]){await page.setViewportSize({width,height:900});if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error("overflow "+width);widths.push(width)}await page.setViewportSize({width:1440,height:1000});await page.locator("#theme").click();await page.screenshot({path:"output/method-workbench-check/ml008/morphology-progress.png",fullPage:true});return {preserved:7,total:14,next:button,widths}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8790/
+- Page Title: 创新工作台 · 好设计 × 造物云

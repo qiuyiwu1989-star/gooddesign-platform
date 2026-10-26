@@ -1,0 +1,18 @@
+test_01_catalog_and_content (__main__.WorkspaceChecks) ... ok
+test_02_save_history_and_conflict (__main__.WorkspaceChecks) ... ok
+test_03_restart_and_restore_history_as_new (__main__.WorkspaceChecks) ... ok
+test_04_origin_host_csrf (__main__.WorkspaceChecks) ... ok
+test_05_private_path_isolation (__main__.WorkspaceChecks) ... ok
+test_06_validation (__main__.WorkspaceChecks) ... ok
+test_07_no_approval_or_false_lineage (__main__.WorkspaceChecks) ... ok
+test_08_actual_mcp_case_and_run (__main__.WorkspaceChecks) ... ok
+test_09_execution_rejects_bad_draft_without_model (__main__.WorkspaceChecks) ... /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py:1052: ResourceWarning: subprocess 2179 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_10_selected_evidence_preview_is_not_attachment (__main__.WorkspaceChecks) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 8.359s
+
+OK

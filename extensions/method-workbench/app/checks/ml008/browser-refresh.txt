@@ -1,0 +1,9 @@
+### Result
+{"previewPreserved":true,"notePreserved":true,"rangePreserved":4,"widths":[320,375,767,768,1279,1280,1600]}
+### Ran Playwright code
+```js
+await (async (page) => { await page.goto("http://127.0.0.1:8791/");await page.locator("[data-page=results]").click();await page.locator("#preview-evidence").waitFor();await page.locator("#evidence-project").fill("2025-00");await page.locator("#evidence-source").fill("Sc249f11de5b7c8a4");await page.locator("#evidence-offset").fill("4");await page.locator("#evidence-length").fill("300");await page.locator("#preview-evidence").click();await page.locator(".source-excerpt").waitFor();const before=await page.locator(".source-excerpt").innerText();await page.locator("#review-note").fill("刷新时保留的未提交评审文字");await page.locator("#refresh-execution").click();await page.waitForFunction(()=>document.querySelector(".source-excerpt")&&document.querySelector("#evidence-offset").value==="4");if(await page.locator(".source-excerpt").innerText()!==before)throw Error("preview lost");if(await page.locator("#review-note").inputValue()!=="刷新时保留的未提交评审文字")throw Error("note lost");const widths=[];for(const width of [320,375,767,768,1279,1280,1600]){await page.setViewportSize({width,height:900});if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error("overflow "+width);widths.push(width)}return {previewPreserved:true,notePreserved:true,rangePreserved:4,widths}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8791/
+- Page Title: 创新工作台 · 好设计 × 造物云
