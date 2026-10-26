@@ -1,0 +1,6 @@
+### Result
+{"layout":[{"width":320,"overflow":false},{"width":375,"overflow":false},{"width":640,"overflow":false},{"width":768,"overflow":false},{"width":1024,"overflow":false},{"width":1280,"overflow":false},{"width":1600,"overflow":false},{"width":1920,"overflow":false}],"dialog":true,"retained":true,"theme":"dark"}
+### Ran Playwright code
+```js
+await (async (page) => { const layout=[];for(const width of [320,375,640,768,1024,1280,1600,1920]){await page.setViewportSize({width,height:900});layout.push({width,overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)});}await page.locator("[data-next]").click();await page.locator("#c0").fill("橡胶树");await page.locator("[data-next]").click();await page.locator("[data-detail]").first().click();const dialog=await page.locator("dialog").evaluate(e=>e.open);await page.keyboard.press("Escape");await page.locator("[data-next]").click();await page.locator("[data-next]").click();const retained=(await page.locator("#view").textContent()).includes("橡胶树");await page.locator("#theme").click();return {layout,dialog,retained,theme:await page.locator("html").getAttribute("data-theme")}; })(page);
+```

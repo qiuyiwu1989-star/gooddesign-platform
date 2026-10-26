@@ -1,0 +1,281 @@
+/* Release V2.3 · 2026-10-20 · compatible interaction examples */
+/* Release V2.2 · 2026-10-20 · 兼容扩展 */
+/* Release V2.1 · 2026-10-20 · 与 V2.0 令牌值及组件API兼容 */
+/* ==========================================================================
+   造物云设计令牌 · Zaowuyun Design Tokens
+   Single source of truth — 提炼自 https://www.zaowuyun.com/design-system.html
+   用法：<link rel="stylesheet" href="tokens.css">
+        默认暗色；加 <html data-theme="light"> 切浅色。
+   规则：所有颜色/圆角/间距/阴影/动效一律用变量，不写字面值。
+   ========================================================================== */
+
+:root {
+  /* ---------- 表面 · Surface ---------- */
+  --bg:            #07070F;                    /* 页面地基 */
+  --bg2:           #100D24;                    /* 次级底 / 深色区块 */
+  --surf:          rgba(255,255,255,.05);      /* 表面 */
+  --card:          rgba(255,255,255,.055);     /* 卡片 */
+  --demo:          rgba(255,255,255,.03);      /* 演示区 */
+  --panel:         rgba(255,255,255,.022);     /* 面板（最淡） */
+
+  /* ---------- 玻璃 · Glass ---------- */
+  --glass:         rgba(255,255,255,.06);
+  --glassA:        rgba(255,255,255,.035);
+  --glassB:        rgba(255,255,255,.07);
+  --glassC:        rgba(255,255,255,.11);
+  --glassTop:      rgba(255,255,255,.16);      /* 顶部高光 */
+
+  /* ---------- 文字 · Text ---------- */
+  --fg:            #ECEEFF;                    /* 主文字 */
+  --fgStrong:      rgba(236,238,255,.72);      /* 次强 */
+  --fg2:           rgba(236,238,255,.68);      /* 次要 */
+  --fg3:           rgba(236,238,255,.28);      /* 辅助（仅装饰，勿承载正文） */
+
+  /* ---------- 品牌 · Brand ---------- */
+  --accent:        #7B80FF;                    /* 主色：链接 / CTA / 强调 */
+  --accentDeep:    #5B5FE0;                    /* hover / 加深 */
+  --acBg:          rgba(123,128,255,.13);      /* 主色浅底 */
+
+  /* ---------- 描边 · Border ---------- */
+  --bdr:           rgba(255,255,255,.08);      /* 组件边界 */
+  --bdrSoft:       rgba(255,255,255,.05);      /* 组件内分隔 */
+  --bdrBrt:        rgba(255,255,255,.16);      /* hover / 强调 */
+
+  /* ---------- 导航 / 页脚 ---------- */
+  --navBg:         rgba(9,10,20,.72);
+  --navBdr:        rgba(255,255,255,.09);
+  --ftrBg:         #0E0A1E;
+  --ftrBdr:        rgba(255,255,255,.12);
+  --ftrStrong:     rgba(255,255,255,.85);
+  --ftrText:       rgba(255,255,255,.5);
+  --ftrFaint:      rgba(255,255,255,.4);
+
+  /* ---------- 语义 · Semantic（仅状态反馈，不作主色）---------- */
+  --ok:            #4ECDA0;   --okBg:   rgba(78,205,160,.13);
+  --info:          #6AA6F5;   --infoBg: rgba(106,166,245,.13);
+  --warn:          #E8B45A;   --warnBg: rgba(232,180,90,.13);
+  --err:           #EC6E77;   --errBg:  rgba(236,110,119,.13);
+
+  /* ---------- Hero / 光晕 ---------- */
+  --heroBase:      #07070F;
+  --heroInk:       #ECEEFF;
+  --heroSub:       rgba(236,238,255,.6);
+  --glow1:         rgba(123,128,255,.4);
+  --glow2:         rgba(90,95,224,.24);
+  --glow3:         rgba(56,120,248,.12);
+  --bubble:        rgba(255,255,255,.05);
+  --bubbleBdr:     rgba(255,255,255,.06);
+  --sloganInk:     rgba(236,238,255,.05);      /* 巨幕水印字 */
+
+  /* ---------- 阴影 · Elevation ---------- */
+  --sh1:      0 1px 2px rgba(0,0,0,.45), 0 5px 14px -4px rgba(0,0,0,.5);
+  --sh2:      0 2px 6px rgba(0,0,0,.4), 0 14px 34px -8px rgba(0,0,0,.55), 0 34px 68px -24px rgba(0,0,0,.5);
+  --shGlass:  inset 0 1px 0 var(--glassTop), 0 1px 2px rgba(0,0,0,.35), 0 12px 32px -10px rgba(0,0,0,.5);
+
+  /* ======================================================================
+     以下为主题无关令牌（明暗共用）
+     ====================================================================== */
+
+  /* ---------- 字体 · Type ---------- */
+  --font-sans:   'Noto Sans SC', system-ui, -apple-system, 'PingFang SC', sans-serif;
+  --font-latin:  'Space Grotesk', ui-sans-serif, sans-serif;   /* 拉丁 / 数字 / 标签 */
+  --font-serif:  'Noto Serif SC', Georgia, serif;              /* 仅编辑式长文 */
+
+  /* 字阶（px） */
+  --fs-display: clamp(32px, 2.5vw + 20px, 60px);   /* 展示标题 */
+  --fs-h1:      clamp(28px, 1.25vw + 20px, 40px);
+  --fs-h2:      clamp(24px, .625vw + 20px, 32px);
+  --fs-h3:      clamp(20px, .25vw + 19px, 22px);
+  --fs-body:    16px;   /* 正文 */
+  --fs-note:    15px;   /* 段落说明 / 稍次于正文 */
+  --fs-sm:      14px;   /* UI 主力：导航项、按钮、表格 */
+  --fs-caption: 13px;   /* 卡片描述 / 辅助说明（小字主力）*/
+  --fs-xs:      12px;   /* 元信息 / 图例 */
+  --fs-label:   11px;   /* kicker / 分组标签（配 letter-spacing .1–.14em）*/
+
+  /* 字重 —— 中文只用这四档，禁止 800+（中文粗字重会糊成一团）
+     主力是 500：中文在 ≤16px 时 400 显轻飘、600 显闷，500 最清晰耐读。
+     · 400 仅用于长段落正文
+     · 500 UI 与多数文字的默认（导航、按钮、标签、卡片描述）
+     · 600 小标题 / 强调 / 表头
+     · 700 仅大标题与关键数字，用得越少越有力 */
+  --fw-normal:   400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* 行高 —— 按字号分档，字越大行高越紧 */
+  --lh-display: 1.15;  /* ≥40px 展示标题 */
+  --lh-tight:   1.25;  /* 24–36px 标题 */
+  --lh-snug:    1.45;  /* 18–20px 小标题 */
+  --lh-base:    1.7;   /* 正文（中文需要比西文更松）*/
+  --lh-caption: 1.55;  /* ≤13px 小字 */
+
+  /* ---------- 圆角 · Radius ---------- */
+  --r-xs:   6px;
+  --r-sm:   8px;
+  --r-md:   12px;   /* 按钮 / 图标位（最常用）*/
+  --r-lg:   18px;   /* 卡片 */
+  --r-xl:   22px;   /* 大面板 */
+  --r-full: 999px;  /* 胶囊 / 头像 */
+
+  /* ---------- 间距 · Space（基数 4）---------- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-16: 64px;   /* 区块纵向节奏 */
+  --sp-24: 96px;   /* 页面级 */
+
+  /* ---------- 布局 · Layout ---------- */
+  /* 容器三层 —— 按页面类型选，不要随手写数字
+     · --container-chrome 顶栏 / 页脚的通栏内层（全站一致）
+     · --container-wide   宽幅叙事页（首页、大屏演示）
+     · --container        标准内容页（默认，营销页与产品页都用它）
+     · --container-doc    文档页（内容密度高，如设计系统本身）*/
+  --container-chrome: 1600px;
+  --container-wide:   1600px;
+  --container:        1180px;   /* 默认 */
+  --container-doc:    1280px;
+  --measure:    680px;    /* 正文可读宽度上限 */
+  --gutter:     40px;     /* 桌面页边距 */
+  --gutter-sm:  20px;     /* 移动页边距 */
+
+  /* ---------- 动效 · Motion ---------- */
+  --t-fast:  .15s;   /* 微交互 */
+  --t-base:  .25s;   /* 常规 */
+  --t-slow:  .7s;    /* 入场 */
+  --ease:    cubic-bezier(.4, 1, .6, 1);   /* 全站默认缓动 */
+
+  /* 原生控件取品牌色 */
+  accent-color: var(--accent);
+}
+
+/* ==========================================================================
+   浅色主题 —— 同名令牌覆盖，组件代码无需改动
+   ========================================================================== */
+[data-theme="light"] {
+  --bg:        #F4F5F8;
+  --bg2:       #EDEEF6;
+  --surf:      rgba(255,255,255,.72);
+  --card:      rgba(255,255,255,.8);
+  --demo:      rgba(22,24,31,.025);
+  --panel:     rgba(22,24,31,.016);
+
+  --glass:     rgba(255,255,255,.7);
+  --glassA:    rgba(255,255,255,.5);
+  --glassB:    rgba(255,255,255,.72);
+  --glassC:    rgba(255,255,255,.9);
+  --glassTop:  rgba(255,255,255,.92);
+
+  --fg:        #16181F;
+  --fgStrong:  rgba(22,24,31,.80);
+  --fg2:       rgba(22,24,31,.68);
+  --fg3:       rgba(22,24,31,.40);
+
+  --accent:     #5A4FE6;
+  --accentDeep: #4438C4;
+  --acBg:       rgba(90,79,230,.08);
+
+  --bdr:       rgba(22,24,31,.10);
+  --bdrSoft:   rgba(22,24,31,.06);
+  --bdrBrt:    rgba(22,24,31,.17);
+
+  --navBg:     rgba(244,245,248,.82);
+  --navBdr:    rgba(22,24,31,.07);
+  --ftrBg:     #EAECF2;
+  --ftrBdr:    rgba(22,24,31,.10);
+  --ftrStrong: rgba(22,24,31,.86);
+  --ftrText:   rgba(22,24,31,.68);
+  --ftrFaint:  rgba(22,24,31,.42);
+
+  --ok:   #0E9C6B;  --okBg:   rgba(14,156,107,.1);
+  --info: #2C74D6;  --infoBg: rgba(44,116,214,.1);
+  --warn: #B77A22;  --warnBg: rgba(183,122,34,.1);
+  --err:  #D8474F;  --errBg:  rgba(216,71,79,.1);
+
+  --heroBase:  #ECEDF5;
+  --heroInk:   #171826;
+  --heroSub:   rgba(23,24,38,.62);
+  --glow1:     rgba(90,79,230,.15);
+  --glow2:     rgba(120,95,235,.09);
+  --glow3:     rgba(70,130,240,.07);
+  --bubble:    rgba(90,79,230,.05);
+  --bubbleBdr: rgba(90,79,230,.09);
+  --sloganInk: rgba(22,24,31,.045);
+
+  /* 浅底：发丝环 + 极低透明度叠影，近乎无影但有真实托起（暖墨调 24,21,14）*/
+  --sh1:     0 0 0 1px rgba(24,21,14,.05), 0 1px 2px rgba(24,21,14,.05), 0 4px 10px -3px rgba(24,21,14,.06);
+  --sh2:     0 0 0 1px rgba(24,21,14,.05), 0 2px 6px rgba(24,21,14,.05), 0 14px 28px -8px rgba(24,21,14,.09), 0 28px 56px -18px rgba(24,21,14,.07);
+  --shGlass: inset 0 1px 0 var(--glassTop), 0 0 0 1px rgba(24,21,14,.04), 0 12px 30px -10px rgba(24,21,14,.10);
+}
+
+/* ==========================================================================
+   基础样式（可选，按需取用）
+   ========================================================================== */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  line-height: var(--lh-base);
+  font-variant-numeric: tabular-nums;   /* 数字等宽，列对齐 */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 拉丁 / 数字 / 标签统一走 Space Grotesk */
+.mono { font-family: var(--font-latin); }
+
+a { color: var(--accent); text-decoration: none; }
+::selection { background: var(--accent); color: #fff; }
+
+/* 焦点态：键盘可见、鼠标不打扰 */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--r-xs);
+}
+
+/* 容器 */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+@media (max-width: 760px) {
+  .container { padding-inline: var(--gutter-sm); }
+}
+
+/* 尊重减弱动效 */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* V2.0 · 2026-10-20 · 布局宽度含左右内边距（border-box） */
+:root {
+ --action-bg:#5B5FE0; --action-hover:#484CC5; --action-fg:#FFFFFF;
+ --text-muted:var(--fg2); --focus-color:var(--accent);
+ --space-page:96px; --space-section:64px; --page-gutter:40px;
+ --grid-columns:12; --grid-gap:24px; --nav-height:64px;
+ --z-nav:60; --z-overlay:100; --z-toast:200;
+ --chart-1:#7B80FF; --chart-2:#45B8CF; --chart-3:#C38AE8; --chart-4:#D4A562; --chart-5:#A6B3C8;
+}
+[data-theme="light"] { --action-bg:#5A4FE6; --action-hover:#4438C4; --chart-1:#5A4FE6; --chart-2:#147D96; --chart-3:#9550BA; --chart-4:#94650E; --chart-5:#566478; }
+@media(max-width:1023px){:root{--page-gutter:32px;--grid-columns:8;--space-page:72px;--space-section:48px}}
+@media(max-width:767px){:root{--page-gutter:20px;--grid-columns:4;--grid-gap:16px;--space-page:48px;--space-section:40px;--nav-height:56px}}
+@media(max-width:359px){:root{--page-gutter:16px}}
+
+/* V2.2: semantic aliases and opt-in contexts */
+:root{--surface-canvas:var(--bg);--surface-content:#14131F;--surface-raised:#201E32;--text-primary:var(--fg);--text-secondary:var(--fg2);--border-default:var(--bdr);--control-min-height:44px;--row-space:var(--sp-3);color-scheme:dark}
+[data-theme="light"]{--surface-content:#FFFFFF;--surface-raised:#FFFFFF;color-scheme:light}
+[data-zw-mode="brand"]{--mode-heading-size:var(--fs-display);--mode-surface:var(--acBg);--mode-heading-weight:600}
+[data-zw-mode="product"]{--mode-heading-size:28px;--mode-surface:var(--surface-content);--mode-heading-weight:600}
+[data-zw-mode="reading"]{--mode-heading-size:var(--fs-h1);--mode-surface:var(--surface-content);--mode-heading-weight:600}
+
+:root{--overlay-backdrop:rgba(0,0,0,.5);--dialog-max-width:520px}
