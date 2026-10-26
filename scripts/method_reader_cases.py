@@ -59,4 +59,12 @@ def chain_example():
  if review.get('verdict')!='fixed_explicit_teaching_chain_native_and_fidelity_passed':return ''
  for x in json.loads((b/'manifest.json').read_text())['files']:
   if hashlib.sha256((b/x['path']).read_bytes()).hexdigest()!=x['sha256']:raise ValueError('三方法教学链变化，停止展示')
- return '<section id="three-method-chain"><h2>三个方法怎样接起来</h2><p>同一个试样夹持教学任务，先定义问题，再分解功能，最后组合原理。三步共享一份明确的需求版本；修改需求后，需要重新计算后续产物。</p><ol class="flow"><li><strong>问题定义：说清要解决什么</strong><p>保留三项必要需求，以及“操作力较低”的可选偏好。真实载荷、工况和验收阈值仍未知，需求尚未获客户确认。</p></li><li><strong>功能分析：说明各功能承担什么</strong><p>把可选偏好交给保持功能继续研究，完整保留物料、能量、信息流及接口。这是研究分配，不能证明已经实现低操作力。</p></li><li><strong>形态组合：比较原理并保留未决</strong><p>保留12项配对判断和4项整体判断。模型中未被排除的组合仍为未知，不自动变成工程候选；可选偏好也没有被偷偷当作已满足。</p></li></ol><h3>怎样防止交接时丢失信息</h3><p>独立隔离复测通过12项原测试；另加6项篡改探针，需求被改、指标方向反转、来源悬空、整体判断或接口丢失等均被拒绝。264项旧包与核心文件指纹保持不变。这里验证的是固定教学链的结构和信息保真，不是企业效果、工程相容或专家认证，也不是生产提交。</p></section>'
+ sdk=ROOT/'output/method-reader-review/native-mcp/three-method-chain-readonly-sdk.json'
+ protocol=''
+ if sdk.exists():
+  d=json.loads(sdk.read_text())
+  bound=all(hashlib.sha256(Path(x['path']).read_bytes()).hexdigest()==x['sha256'] for x in d['source_files'].values())
+  checks=d.get('checks',[])
+  passed=bound and len(checks)==3 and all(not x['is_error'] and x['response'].get('status')=='structure_and_declared_consistency_passed' and x['response'].get('cross_method_check')=='performed' and x['response'].get('engineering_validated') is False for x in checks)
+  if passed:protocol='<p>三步还实际经过本机MCP只读接口检查：问题、功能模型、原理组合各检查一次，需求与输入版本一致。未调用生成模型、未提交生产数据；接口通过只说明结构与声明一致。</p>'
+ return '<section id="three-method-chain"><h2>三个方法怎样接起来</h2><p>同一个试样夹持教学任务，先定义问题，再分解功能，最后组合原理。三步共享一份明确的需求版本；修改需求后，需要重新计算后续产物。</p><ol class="flow"><li><strong>问题定义：说清要解决什么</strong><p>保留三项必要需求，以及“操作力较低”的可选偏好。真实载荷、工况和验收阈值仍未知，需求尚未获客户确认。</p></li><li><strong>功能分析：说明各功能承担什么</strong><p>把可选偏好交给保持功能继续研究，完整保留物料、能量、信息流及接口。这是研究分配，不能证明已经实现低操作力。</p></li><li><strong>形态组合：比较原理并保留未决</strong><p>保留12项配对判断和4项整体判断。模型中未被排除的组合仍为未知，不自动变成工程候选；可选偏好也没有被偷偷当作已满足。</p></li></ol><h3>怎样防止交接时丢失信息</h3><p>独立隔离复测通过12项原测试；另加6项篡改探针，需求被改、指标方向反转、来源悬空、整体判断或接口丢失等均被拒绝。264项旧包与核心文件指纹保持不变。这里验证的是固定教学链的结构和信息保真，不是企业效果、工程相容或专家认证，也不是生产提交。</p>'+protocol+'</section>'
