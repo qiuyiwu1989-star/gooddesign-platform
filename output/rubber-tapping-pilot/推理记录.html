@@ -1,0 +1,133 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>实际调用记录</title><link rel="stylesheet" href="vendor/tokens.css"><link rel="stylesheet" href="vendor/design-system.css"><link rel="stylesheet" href="reports.css"><header><strong>造物云 / 好设计创新实验</strong><a href="index.html">实验概览</a><a href="需求报告.html">需求报告</a><a href="创新方案报告.html">创新方案报告</a><a href="推理记录.html">实际调用</a><button class="zw-btn" id="theme">切换明暗</button></header><main class="wrap"><h1>实际调用与能力边界</h1><p>案例与方法读取、规则匹配、规划、产物检查、持久提交和重启读取均为真实stdio MCP调用。结构化产物由Host Agent组织，不是后台语义模型自动生成。</p><p><a href="engine-report.json">执行JSON</a> · <a href="需求包.json">需求交接JSON</a> · <a href="Agent推理产物.json">六份结构化产物</a> · <a href="case-retrieval-audit.json">来源指纹与定位</a></p><pre>{
+  &quot;run_id&quot;: &quot;run-4dd2685d93584aa7b80e144610cd39bc&quot;,
+  &quot;mode&quot;: &quot;Host_Agent_reasoning_plus_real_method_MCP_not_backend_model_generation&quot;,
+  &quot;status&quot;: &quot;six_host_agent_artifacts_recorded_and_restored_pending_review&quot;,
+  &quot;demand_packet_sha256&quot;: &quot;5cd9a9d4bcbd5f5a54b4f87c5976127c4cf5858e3e5dd2f0ac364567dd60018a&quot;,
+  &quot;steps&quot;: [
+    {
+      &quot;method&quot;: &quot;R48&quot;,
+      &quot;check&quot;: &quot;structure_and_declared_consistency_passed&quot;,
+      &quot;saved_revision&quot;: 1
+    },
+    {
+      &quot;method&quot;: &quot;R14&quot;,
+      &quot;check&quot;: &quot;structure_and_declared_consistency_passed&quot;,
+      &quot;saved_revision&quot;: 2
+    },
+    {
+      &quot;method&quot;: &quot;R17&quot;,
+      &quot;check&quot;: &quot;structure_and_declared_consistency_passed&quot;,
+      &quot;saved_revision&quot;: 3
+    },
+    {
+      &quot;method&quot;: &quot;R36&quot;,
+      &quot;check&quot;: &quot;structure_and_declared_consistency_passed&quot;,
+      &quot;saved_revision&quot;: 4
+    },
+    {
+      &quot;method&quot;: &quot;R44&quot;,
+      &quot;check&quot;: &quot;structure_and_declared_consistency_passed&quot;,
+      &quot;saved_revision&quot;: 5
+    },
+    {
+      &quot;method&quot;: &quot;R42&quot;,
+      &quot;check&quot;: &quot;structure_and_declared_consistency_passed&quot;,
+      &quot;saved_revision&quot;: 6
+    }
+  ],
+  &quot;restart_revision&quot;: 6,
+  &quot;negative_case&quot;: {
+    &quot;status&quot;: &quot;blocked&quot;,
+    &quot;issues&quot;: [
+      {
+        &quot;code&quot;: &quot;comparison_hard_or_unresolved_requirement_not_gated:N01&quot;
+      }
+    ],
+    &quot;artifact_sha256&quot;: &quot;93fefd29868db9ae14da7f86e1303ebaca533a7e7f708e898a2bc38e1cd25888&quot;,
+    &quot;evidence_refs&quot;: [],
+    &quot;declared_unknowns&quot;: [
+      &quot;N04/N05/N06/N08/N09/N10/N11/N12/N15硬软属性未决&quot;,
+      &quot;没有可支持唯一技术路线推荐的证据&quot;,
+      &quot;建议优先开展的补证活动不是对产品方案优劣排名&quot;
+    ],
+    &quot;conclusion_level&quot;: &quot;conditional_research_or_plan_not_engineering_result&quot;,
+    &quot;semantic_support&quot;: &quot;not_independently_verified&quot;,
+    &quot;engineering_validated&quot;: false,
+    &quot;cross_method_check&quot;: &quot;performed&quot;
+  },
+  &quot;quality_gate&quot;: {
+    &quot;status&quot;: &quot;blocked&quot;,
+    &quot;issues&quot;: [
+      &quot;hard_constraints_unchecked&quot;,
+      &quot;insufficient_dimension:coverage&quot;,
+      &quot;insufficient_dimension:evidence&quot;,
+      &quot;insufficient_dimension:principle&quot;,
+      &quot;insufficient_dimension:problem&quot;,
+      &quot;insufficient_dimension:reasoning&quot;,
+      &quot;insufficient_dimension:reproducibility&quot;,
+      &quot;insufficient_dimension:usability&quot;,
+      &quot;insufficient_dimension:value&quot;,
+      &quot;missing_claims&quot;,
+      &quot;missing_current_independent_domain_review&quot;,
+      &quot;missing_provenance&quot;
+    ],
+    &quot;expert_certified&quot;: false,
+    &quot;scope&quot;: &quot;checks_declared_records_only_not_truth_or_credentials&quot;,
+    &quot;note&quot;: &quot;通过必要条件检查不验证外部评审身份、证据真实性、语义支持或工程结果；发布责任仍在应用流程。&quot;
+  },
+  &quot;backend_model_attempt&quot;: {
+    &quot;status&quot;: &quot;failed_429_then_180s_timeout&quot;,
+    &quot;call_id&quot;: &quot;match-51584e09ea9842f29d592f8db62239b0&quot;,
+    &quot;automatic_model_steps_completed&quot;: 0
+  },
+  &quot;case_projects&quot;: [
+    {
+      &quot;project_id&quot;: &quot;2025-00&quot;,
+      &quot;revision&quot;: &quot;research-000001&quot;,
+      &quot;read_sources&quot;: [
+        &quot;Sc249f11de5b7c8a4&quot;,
+        &quot;S11572e74e88d46c2&quot;
+      ],
+      &quot;record_count&quot;: 102,
+      &quot;errors&quot;: []
+    },
+    {
+      &quot;project_id&quot;: &quot;2024-06&quot;,
+      &quot;revision&quot;: &quot;research-000002&quot;,
+      &quot;read_sources&quot;: [
+        &quot;S31c5961f5d389d0e&quot;,
+        &quot;S1516f6071a1e01eb&quot;
+      ],
+      &quot;record_count&quot;: 26,
+      &quot;errors&quot;: []
+    },
+    {
+      &quot;project_id&quot;: &quot;2024-s07&quot;,
+      &quot;revision&quot;: &quot;research-000000&quot;,
+      &quot;read_sources&quot;: [
+        &quot;S01da495ba782409b&quot;
+      ],
+      &quot;record_count&quot;: 0,
+      &quot;errors&quot;: []
+    },
+    {
+      &quot;project_id&quot;: &quot;2025-03&quot;,
+      &quot;revision&quot;: &quot;research-000003&quot;,
+      &quot;read_sources&quot;: [
+        &quot;S923393bdd118bfc8&quot;,
+        &quot;Sdae17d5e980a13bd&quot;
+      ],
+      &quot;record_count&quot;: 21,
+      &quot;errors&quot;: []
+    },
+    {
+      &quot;project_id&quot;: &quot;2018-c01&quot;,
+      &quot;revision&quot;: &quot;research-000000&quot;,
+      &quot;read_sources&quot;: [
+        &quot;Sf9b36979ce40c18e&quot;
+      ],
+      &quot;record_count&quot;: 0,
+      &quot;errors&quot;: []
+    }
+  ]
+}</pre></main><script>document.querySelector("#theme").onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==="light"?"dark":"light"}</script></html>

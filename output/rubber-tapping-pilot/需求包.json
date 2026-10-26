@@ -1,0 +1,302 @@
+{
+  "schema": "research-demand-intake-0.1",
+  "request_id": "RUBBER-20261026",
+  "revision": "r1",
+  "origin": "user_supplied_meeting_plus_public_research_not_customer_approved",
+  "scenario": "rubber_tapping_research_pilot",
+  "requirements": [
+    {
+      "id": "N01",
+      "title": "保护树体及长期割面资源",
+      "stakeholder": "胶园经营者/农艺人员",
+      "need": "避免短期增产以伤树或过度耗皮为代价",
+      "hard_proposal": true,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S01",
+        "S06"
+      ],
+      "acceptance_proposal": "在定义明确的深度、耗皮与损伤口径下测量，并安排跨周期跟踪；阈值待客户及农艺人员确认",
+      "target_value": null
+    },
+    {
+      "id": "N02",
+      "title": "区分表面跟随与真实限深",
+      "stakeholder": "设备研发/农艺人员",
+      "need": "适应树干曲率及树皮差异，同时控制生物安全边界",
+      "hard_proposal": true,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "acceptance_proposal": "对曲率、厚度和旧割面分层试验；刀位移、剩余树皮及损伤分别记录；允许误差待定",
+      "target_value": null
+    },
+    {
+      "id": "N03",
+      "title": "隔离新切屑与胶乳",
+      "stakeholder": "收胶人员/加工方",
+      "need": "降低切屑混入及后续清理负担",
+      "hard_proposal": true,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S01",
+        "S07"
+      ],
+      "acceptance_proposal": "定义污染采样方法，比较杂质、损失胶乳及清理时间；限值待下游确认",
+      "target_value": null
+    },
+    {
+      "id": "N04",
+      "title": "处理旧胶线与黏附堵塞",
+      "stakeholder": "操作员/维护人员",
+      "need": "处理已有胶线、刀面黏附和排屑阻塞",
+      "hard_proposal": null,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S05",
+        "S07"
+      ],
+      "acceptance_proposal": "记录堵塞、停机、清理及重启；阈值待定，不能以空载切削代替",
+      "target_value": null
+    },
+    {
+      "id": "N05",
+      "title": "提高全流程有效产出",
+      "stakeholder": "胶园经营者",
+      "need": "提高单位人时的合格干胶产出，而非仅提高刀速",
+      "hard_proposal": null,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S01",
+        "S06"
+      ],
+      "acceptance_proposal": "同时记录定位、安装、切割、转场、收胶、清理、故障、人机协作时间及干胶口径；目标待实测",
+      "target_value": null
+    },
+    {
+      "id": "N06",
+      "title": "降低对熟练工的依赖",
+      "stakeholder": "操作员/经营者",
+      "need": "将关键判断转为可检查的设置与反馈",
+      "hard_proposal": null,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S03",
+        "S05"
+      ],
+      "acceptance_proposal": "新手与熟练人员分组，记录培训、误操作、返工与接管，不能仅调查喜欢程度",
+      "target_value": null
+    },
+    {
+      "id": "N07",
+      "title": "异常时安全退让并可接管",
+      "stakeholder": "操作员/研发人员",
+      "need": "失去接触、堵转或感知异常时停止危险切削并记录",
+      "hard_proposal": true,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "acceptance_proposal": "在受控环境验证急停、断电、传感异常、退出路径与复位条件；先安全审核",
+      "target_value": null
+    },
+    {
+      "id": "N08",
+      "title": "适应雨水与弱光的作业安排",
+      "stakeholder": "胶园经营者/操作员",
+      "need": "识别不适合作业条件并避免为自动化强行作业",
+      "hard_proposal": null,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S02",
+        "S06"
+      ],
+      "acceptance_proposal": "现场调查光照、湿度、雨后割面和允许时段；雨水防护不等于雨中可割",
+      "target_value": null
+    },
+    {
+      "id": "N09",
+      "title": "可清洗维护和耗材更换",
+      "stakeholder": "维护人员",
+      "need": "降低刀具、导向件与胶乳接触区维护负担",
+      "hard_proposal": null,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S05",
+        "S07"
+      ],
+      "acceptance_proposal": "计时清洗、换刀、复装校准，跟踪磨损和积胶；材料与费用未知",
+      "target_value": null
+    },
+    {
+      "id": "N10",
+      "title": "兼容现有胶园与装备",
+      "stakeholder": "设备方/胶园",
+      "need": "在手持、固定与移动架构之间避免过早锁定",
+      "hard_proposal": null,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "acceptance_proposal": "调查树距、坡度、挂载接口、供电与收胶流程，再确定目标平台",
+      "target_value": null
+    },
+    {
+      "id": "N11",
+      "title": "保持可追溯的作业与验收数据",
+      "stakeholder": "经营者/研发人员",
+      "need": "知道哪棵树何时按何配置作业，问题可追查",
+      "hard_proposal": null,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "acceptance_proposal": "记录树ID、时间、工具版本、工况、异常和数据缺失，不编造客户已有数字化基础",
+      "target_value": null
+    },
+    {
+      "id": "N12",
+      "title": "可比较的全生命周期经济性",
+      "stakeholder": "采购方/运营方",
+      "need": "把人工、维护、停机、折旧及树体影响纳入选择",
+      "hard_proposal": null,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S01",
+        "S06"
+      ],
+      "acceptance_proposal": "采集实际成本与利用率，用情景区间比较；不输出无数据ROI",
+      "target_value": null
+    },
+    {
+      "id": "N13",
+      "title": "保护胶乳有效品质与收集率",
+      "stakeholder": "加工方/收胶人员",
+      "need": "避免通过增加水分或牺牲品质制造表面增产",
+      "hard_proposal": true,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S01",
+        "S06"
+      ],
+      "acceptance_proposal": "由加工方确认干胶含量、杂质和收集损失测量方法；不能以初始流速代替季节产量",
+      "target_value": null
+    },
+    {
+      "id": "N14",
+      "title": "识别不适用树株并保留人工例外",
+      "stakeholder": "农艺人员/操作员",
+      "need": "对厚度未知、旧伤、树结或状态异常的对象先停止或转人工",
+      "hard_proposal": true,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S02",
+        "S06"
+      ],
+      "acceptance_proposal": "定义适用树株与例外规则，记录覆盖率与误拒绝；识别能力需验证",
+      "target_value": null
+    },
+    {
+      "id": "N15",
+      "title": "分阶段改造与可撤销试点",
+      "stakeholder": "经营者/设备研发",
+      "need": "先验证末端或局部改造，再决定整机投入",
+      "hard_proposal": null,
+      "status": "research_proposed_not_customer_confirmed",
+      "source_refs": [
+        "S03",
+        "S04"
+      ],
+      "acceptance_proposal": "完成接口勘察与局部验证，不把试验优先顺序解释成已选定产品架构",
+      "target_value": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "title": "DG/T 315—2024 割胶机",
+      "url": "https://www.moa.gov.cn/nybgb/2025/202501/202501/P020250114359428607129.pdf",
+      "read_scope": "官方PDF全文，重点§1、§3、§5.3和表4；表4截图核对",
+      "research_note": "该鉴定大纲适用于电驱手持式和固定式设备；定义刀次时间并提出作业质量与可靠性评价。其深度测量刺入至木质部，不能与刀具切入位移混用。移动机器人需另核适用范围。",
+      "accessed_at": "2026-10-26",
+      "verification": "author_read_not_independent_expert"
+    },
+    {
+      "id": "S02",
+      "title": "天然橡胶割胶机器人视觉伺服控制方法与割胶试验",
+      "url": "https://www.smartag.net.cn/article/2020/2096-8094/2096-8094-2020-2-4-56.shtml",
+      "read_scope": "期刊HTML，§2、§3、§4；2020卷期，2021网络出版",
+      "research_note": "研究样机采用双目视觉及多传感反馈，说明行业已有视觉路线。其切割深度与耗皮量有专门定义；该样机和试验树位结果不可直接外推到客户设备或异地胶园。",
+      "accessed_at": "2026-10-26",
+      "verification": "author_read_not_independent_expert"
+    },
+    {
+      "id": "S03",
+      "title": "割胶机切割仿形机构设计与试验",
+      "url": "https://www.aeeisp.com/zgnjhxb/en/article/doi/10.13733/j.jcam.issn.2095-5553.2024.02.010",
+      "read_scope": "期刊英文摘要，非全文",
+      "research_note": "该研究设计了导向、斜面组件与切刀组成的限深限厚机构，并在手持式设备开展试验；仿形限深属于已有技术方向，不能仅以采用导向器声称首创。",
+      "accessed_at": "2026-10-26",
+      "verification": "author_read_not_independent_expert"
+    },
+    {
+      "id": "S04",
+      "title": "Design and Experiment of Laser Ranging Depth Control Rubber Tapping Machine",
+      "url": "https://www.j-csam.org/jcsamen/article/abstract/20250426?st=article_issue",
+      "read_scope": "2025年期刊摘要，非全文",
+      "research_note": "已有激光测距调刀研究，涉及测距位置角度、工具调整和切割质量；摘要性能限于其试验配置，不能把报告的合格率当客户方案预测。",
+      "accessed_at": "2026-10-26",
+      "verification": "author_read_not_independent_expert"
+    },
+    {
+      "id": "S05",
+      "title": "橡胶所在橡胶树机械割胶策略优化方面取得新进展",
+      "url": "https://www.catas.cn/contents/9/246781.html",
+      "read_scope": "研究机构官方报道，非独立验证",
+      "research_note": "研究团队把旧胶线处理与刀片、导向器及农艺参数联合研究；旧胶线干扰应与新切屑污染分开诊断。报道与所述Forests论文是同一研究链，不计作独立重复验证。",
+      "accessed_at": "2026-10-26",
+      "verification": "author_read_not_independent_expert"
+    },
+    {
+      "id": "S06",
+      "title": "KAU Rubber Harvesting",
+      "url": "https://www.celkau.in/Crops/cashcrops/rubber/harvesting.php",
+      "read_scope": "农业大学官方收获指南，Tapping及Rain guarding段落",
+      "research_note": "该指南说明采胶方式应考虑品系、作业时段、耗皮与更新，并讨论雨水防护。因此产出异常不能只归因机械刀具；印度当地作业建议不直接移植为中国客户参数。",
+      "accessed_at": "2026-10-26",
+      "verification": "author_read_not_independent_expert"
+    },
+    {
+      "id": "S07",
+      "title": "An Optimization Study on a Novel Mechanical Rubber Tree Tapping Mechanism and Technology",
+      "url": "https://www.mdpi.com/1999-4907/14/12/2421",
+      "read_scope": "检索返回正文片段及附录；直开返回429，未逐页全文核读",
+      "research_note": "检索可见立刃刀片与可调导向器设计、胶线缠绕及切屑污染讨论；只作既有技术线索，不采用其拟合方程、最优参数或数值效果为设计依据。",
+      "accessed_at": "2026-10-26",
+      "verification": "author_read_not_independent_expert"
+    },
+    {
+      "id": "S08",
+      "title": "Comprehensive Evaluation of New Tapping Technologies for Rubber Trees",
+      "url": "https://www.rdzwxb.com/EN/10.3969/j.issn.1000-2561.2026.07.011",
+      "read_scope": "2026年题录与检索摘要；页面摘要模板未渲染，未读PDF",
+      "research_note": "最新检索摘要提示不同机采技术可能存在产胶、品质与伤口等权衡；因尚未取得正文，本实验不引用其数值结论，不据此排列设备优劣。",
+      "accessed_at": "2026-10-26",
+      "verification": "author_read_not_independent_expert"
+    }
+  ],
+  "unknowns": [
+    "目标企业、设备型号与架构",
+    "品系、树龄、树皮及树围分布",
+    "实际全流程效率与胶乳质量",
+    "预算、接口和验收负责人",
+    "农艺许可与现场试验条件"
+  ],
+  "approved": false
+}

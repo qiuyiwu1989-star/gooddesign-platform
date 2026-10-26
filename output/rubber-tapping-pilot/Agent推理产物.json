@@ -1,0 +1,1527 @@
+{
+  "authoring_mode": "host_agent_using_MCP_read_method_and_case_content_not_backend_model_generation",
+  "artifacts": {
+    "R48": {
+      "artifact_id": "RUBBER-research-brief",
+      "revision": "r1",
+      "task_id": "RUBBER-20261026",
+      "task_revision": "r1",
+      "type": "ProblemBrief",
+      "scope": "研究/概念/试验计划；平台架构、客户工况及目标值未知，不执行树体试验",
+      "conditions": [],
+      "evidence_refs": [],
+      "payload": {
+        "actor": "潜在胶园经营者、操作与农艺人员、设备方、加工方，尚未访谈确认",
+        "object": "rubber tapping end-effector and operating workflow",
+        "boundary": "研究/概念/试验计划；平台架构、客户工况及目标值未知，不执行树体试验",
+        "desired_outcome": "研究兼顾树体保护、胶乳洁净和有效产出的改进路线；研究需求N01—N15均为待客户确认，不得给出唯一工程推荐",
+        "requirements": [
+          {
+            "id": "N01",
+            "text": "保护树体及长期割面资源：避免短期增产以伤树或过度耗皮为代价",
+            "hard": true,
+            "acceptance": "在定义明确的深度、耗皮与损伤口径下测量，并安排跨周期跟踪；阈值待客户及农艺人员确认",
+            "status": "proposed",
+            "evidence_refs": [
+              "S01",
+              "S06"
+            ]
+          },
+          {
+            "id": "N02",
+            "text": "区分表面跟随与真实限深：适应树干曲率及树皮差异，同时控制生物安全边界",
+            "hard": true,
+            "acceptance": "对曲率、厚度和旧割面分层试验；刀位移、剩余树皮及损伤分别记录；允许误差待定",
+            "status": "proposed",
+            "evidence_refs": [
+              "S02",
+              "S03",
+              "S04"
+            ]
+          },
+          {
+            "id": "N03",
+            "text": "隔离新切屑与胶乳：降低切屑混入及后续清理负担",
+            "hard": true,
+            "acceptance": "定义污染采样方法，比较杂质、损失胶乳及清理时间；限值待下游确认",
+            "status": "proposed",
+            "evidence_refs": [
+              "S01",
+              "S07"
+            ]
+          },
+          {
+            "id": "N04",
+            "text": "处理旧胶线与黏附堵塞：处理已有胶线、刀面黏附和排屑阻塞",
+            "hard": null,
+            "acceptance": "记录堵塞、停机、清理及重启；阈值待定，不能以空载切削代替",
+            "status": "proposed",
+            "evidence_refs": [
+              "S05",
+              "S07"
+            ]
+          },
+          {
+            "id": "N05",
+            "text": "提高全流程有效产出：提高单位人时的合格干胶产出，而非仅提高刀速",
+            "hard": null,
+            "acceptance": "同时记录定位、安装、切割、转场、收胶、清理、故障、人机协作时间及干胶口径；目标待实测",
+            "status": "proposed",
+            "evidence_refs": [
+              "S01",
+              "S06"
+            ]
+          },
+          {
+            "id": "N06",
+            "text": "降低对熟练工的依赖：将关键判断转为可检查的设置与反馈",
+            "hard": null,
+            "acceptance": "新手与熟练人员分组，记录培训、误操作、返工与接管，不能仅调查喜欢程度",
+            "status": "proposed",
+            "evidence_refs": [
+              "S03",
+              "S05"
+            ]
+          },
+          {
+            "id": "N07",
+            "text": "异常时安全退让并可接管：失去接触、堵转或感知异常时停止危险切削并记录",
+            "hard": true,
+            "acceptance": "在受控环境验证急停、断电、传感异常、退出路径与复位条件；先安全审核",
+            "status": "proposed",
+            "evidence_refs": [
+              "S01",
+              "S02"
+            ]
+          },
+          {
+            "id": "N08",
+            "text": "适应雨水与弱光的作业安排：识别不适合作业条件并避免为自动化强行作业",
+            "hard": null,
+            "acceptance": "现场调查光照、湿度、雨后割面和允许时段；雨水防护不等于雨中可割",
+            "status": "proposed",
+            "evidence_refs": [
+              "S02",
+              "S06"
+            ]
+          },
+          {
+            "id": "N09",
+            "text": "可清洗维护和耗材更换：降低刀具、导向件与胶乳接触区维护负担",
+            "hard": null,
+            "acceptance": "计时清洗、换刀、复装校准，跟踪磨损和积胶；材料与费用未知",
+            "status": "proposed",
+            "evidence_refs": [
+              "S05",
+              "S07"
+            ]
+          },
+          {
+            "id": "N10",
+            "text": "兼容现有胶园与装备：在手持、固定与移动架构之间避免过早锁定",
+            "hard": null,
+            "acceptance": "调查树距、坡度、挂载接口、供电与收胶流程，再确定目标平台",
+            "status": "proposed",
+            "evidence_refs": [
+              "S01",
+              "S02"
+            ]
+          },
+          {
+            "id": "N11",
+            "text": "保持可追溯的作业与验收数据：知道哪棵树何时按何配置作业，问题可追查",
+            "hard": null,
+            "acceptance": "记录树ID、时间、工具版本、工况、异常和数据缺失，不编造客户已有数字化基础",
+            "status": "proposed",
+            "evidence_refs": [
+              "S01",
+              "S02"
+            ]
+          },
+          {
+            "id": "N12",
+            "text": "可比较的全生命周期经济性：把人工、维护、停机、折旧及树体影响纳入选择",
+            "hard": null,
+            "acceptance": "采集实际成本与利用率，用情景区间比较；不输出无数据ROI",
+            "status": "proposed",
+            "evidence_refs": [
+              "S01",
+              "S06"
+            ]
+          },
+          {
+            "id": "N13",
+            "text": "保护胶乳有效品质与收集率：避免通过增加水分或牺牲品质制造表面增产",
+            "hard": true,
+            "acceptance": "由加工方确认干胶含量、杂质和收集损失测量方法；不能以初始流速代替季节产量",
+            "status": "proposed",
+            "evidence_refs": [
+              "S01",
+              "S06"
+            ]
+          },
+          {
+            "id": "N14",
+            "text": "识别不适用树株并保留人工例外：对厚度未知、旧伤、树结或状态异常的对象先停止或转人工",
+            "hard": true,
+            "acceptance": "定义适用树株与例外规则，记录覆盖率与误拒绝；识别能力需验证",
+            "status": "proposed",
+            "evidence_refs": [
+              "S02",
+              "S06"
+            ]
+          },
+          {
+            "id": "N15",
+            "text": "分阶段改造与可撤销试点：先验证末端或局部改造，再决定整机投入",
+            "hard": null,
+            "acceptance": "完成接口勘察与局部验证，不把试验优先顺序解释成已选定产品架构",
+            "status": "proposed",
+            "evidence_refs": [
+              "S03",
+              "S04"
+            ]
+          }
+        ],
+        "conditions": [],
+        "unknowns": [
+          "目标企业、设备型号与架构",
+          "品系、树龄、树皮及树围分布",
+          "实际全流程效率与胶乳质量",
+          "预算、接口和验收负责人",
+          "农艺许可与现场试验条件"
+        ]
+      }
+    },
+    "R14": {
+      "artifact_id": "RUBBER-R14",
+      "revision": "r1",
+      "task_id": "RUBBER-20261026",
+      "task_revision": "r1",
+      "type": "FunctionModel",
+      "scope": "Host Agent研究草稿；客户型号、目标值、树体条件未确认；没有实验、专业审核或工程认证",
+      "conditions": [],
+      "evidence_refs": [],
+      "payload": {
+        "boundary": "研究/概念/试验计划；平台架构、客户工况及目标值未知，不执行树体试验",
+        "functions": [
+          {
+            "id": "F1",
+            "verb_object": "识别对象并建立局部轨迹",
+            "necessity": "necessary",
+            "evidence_refs": []
+          },
+          {
+            "id": "F2",
+            "verb_object": "约束切入与耗皮",
+            "necessity": "necessary",
+            "evidence_refs": []
+          },
+          {
+            "id": "F3",
+            "verb_object": "完成受控切削",
+            "necessity": "necessary",
+            "evidence_refs": []
+          },
+          {
+            "id": "F4",
+            "verb_object": "排出并隔离切屑与旧胶线",
+            "necessity": "necessary",
+            "evidence_refs": []
+          },
+          {
+            "id": "F5",
+            "verb_object": "监测异常并安全退出",
+            "necessity": "necessary",
+            "evidence_refs": []
+          },
+          {
+            "id": "F6",
+            "verb_object": "清理、更换与复核配置",
+            "necessity": "necessary",
+            "evidence_refs": []
+          },
+          {
+            "id": "F7",
+            "verb_object": "导流收集并记录作业",
+            "necessity": "necessary",
+            "evidence_refs": []
+          }
+        ],
+        "flows": [
+          {
+            "id": "L1",
+            "from_function": "F1",
+            "to_function": "F2",
+            "flow_type": "signal",
+            "description": "传递几何参考与未确认的不确定性，不代表内部组织深度已知",
+            "evidence_refs": []
+          },
+          {
+            "id": "L2",
+            "from_function": "F2",
+            "to_function": "F3",
+            "flow_type": "signal",
+            "description": "传递允许动作边界与暂停条件",
+            "evidence_refs": []
+          },
+          {
+            "id": "L3",
+            "from_function": "F3",
+            "to_function": "F4",
+            "flow_type": "material",
+            "description": "新切屑与旧胶线进入废物流，避免与胶乳共通",
+            "evidence_refs": []
+          },
+          {
+            "id": "L4",
+            "from_function": "F3",
+            "to_function": "F7",
+            "flow_type": "material",
+            "description": "胶乳进入独立收集路径，路径可行性待验",
+            "evidence_refs": []
+          },
+          {
+            "id": "L5",
+            "from_function": "F5",
+            "to_function": "F3",
+            "flow_type": "signal",
+            "description": "异常时停止切削并进入预定义退出状态",
+            "evidence_refs": []
+          },
+          {
+            "id": "L6",
+            "from_function": "F6",
+            "to_function": "F2",
+            "flow_type": "signal",
+            "description": "更换或清理后复核参考与限位，未经确认不复工",
+            "evidence_refs": []
+          }
+        ],
+        "interfaces": [
+          {
+            "id": "I1",
+            "text": "末端与移动/固定/手持平台接口未知；本模型不预选客户架构",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "I2",
+            "text": "农艺和加工端需共同确认树体边界与胶乳质量判据",
+            "kind": "assumption",
+            "evidence_refs": []
+          }
+        ],
+        "unknowns": [
+          "功能关系为研究分解，不是已查明的客户失效因果",
+          "树体内部边界不能仅由外表面定位得到",
+          "异常退出时的能量、切刀姿态和人工接近条件待安全审核"
+        ]
+      }
+    },
+    "R17": {
+      "artifact_id": "RUBBER-R17",
+      "revision": "r1",
+      "task_id": "RUBBER-20261026",
+      "task_revision": "r1",
+      "type": "ConceptSet",
+      "scope": "Host Agent研究草稿；客户型号、目标值、树体条件未确认；没有实验、专业审核或工程认证",
+      "conditions": [],
+      "evidence_refs": [],
+      "payload": {
+        "function_ids": [
+          "F1",
+          "F2",
+          "F3",
+          "F4",
+          "F5",
+          "F6",
+          "F7"
+        ],
+        "options": [
+          {
+            "id": "F1O0",
+            "function_id": "F1",
+            "principle": "现有定位方式待现场采集",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": []
+          },
+          {
+            "id": "F1O1",
+            "function_id": "F1",
+            "principle": "局部机械导向与粗定位",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S03"
+            ]
+          },
+          {
+            "id": "F1O2",
+            "function_id": "F1",
+            "principle": "表面视觉定位加局部机械参考",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S02",
+              "case-a81a5bd5f1f2e791d5e1371c"
+            ]
+          },
+          {
+            "id": "F1O3",
+            "function_id": "F1",
+            "principle": "人工引导与可检查的定位标记",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S03"
+            ]
+          },
+          {
+            "id": "F2O0",
+            "function_id": "F2",
+            "principle": "现有限深与基准待现场采集",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": []
+          },
+          {
+            "id": "F2O1",
+            "function_id": "F2",
+            "principle": "可调参考与限位；组织厚度未知时暂停",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S03"
+            ]
+          },
+          {
+            "id": "F2O2",
+            "function_id": "F2",
+            "principle": "几何/力位信息协同但独立核查残余树皮",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S04",
+              "case-0205da2905f4ccacbbb38094"
+            ]
+          },
+          {
+            "id": "F2O3",
+            "function_id": "F2",
+            "principle": "可检查限深基准加人工确认",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S03"
+            ]
+          },
+          {
+            "id": "F3O0",
+            "function_id": "F3",
+            "principle": "现有刀具与进给待现场采集",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": []
+          },
+          {
+            "id": "F3O1",
+            "function_id": "F3",
+            "principle": "比较连续条状切削与分阶段进给，不预定刀形",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S05"
+            ]
+          },
+          {
+            "id": "F3O2",
+            "function_id": "F3",
+            "principle": "沿局部轨迹切削并允许中途退出",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S02"
+            ]
+          },
+          {
+            "id": "F3O3",
+            "function_id": "F3",
+            "principle": "电动辅助切削，人工掌握例外处理",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S03"
+            ]
+          },
+          {
+            "id": "F4O0",
+            "function_id": "F4",
+            "principle": "现有切屑/胶线去向待现场采集",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": []
+          },
+          {
+            "id": "F4O1",
+            "function_id": "F4",
+            "principle": "物理分隔废物流与胶乳，旧胶线独立处理",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S01",
+              "S05",
+              "case-c1dd39efa2c949b7b81a8a58"
+            ]
+          },
+          {
+            "id": "F4O2",
+            "function_id": "F4",
+            "principle": "可拆卸隔离导流与堵塞观察，验证不阻流",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S01"
+            ]
+          },
+          {
+            "id": "F4O3",
+            "function_id": "F4",
+            "principle": "人工可见清屑口及隔离托接，避免运行中接触刀具",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S01"
+            ]
+          },
+          {
+            "id": "F5O0",
+            "function_id": "F5",
+            "principle": "现有异常保护与接管待现场采集",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": []
+          },
+          {
+            "id": "F5O1",
+            "function_id": "F5",
+            "principle": "驱动状态与接触状态交叉核查，异常退让",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S02",
+              "case-479a7157f5e4d5eecce6c304"
+            ]
+          },
+          {
+            "id": "F5O2",
+            "function_id": "F5",
+            "principle": "多信号状态机及接管，不将恒力视作安全深度",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "case-0205da2905f4ccacbbb38094",
+              "case-0290060f5fbcac9f3803c823"
+            ]
+          },
+          {
+            "id": "F5O3",
+            "function_id": "F5",
+            "principle": "停机后人工复核，切断危险能量再排障",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S01"
+            ]
+          },
+          {
+            "id": "F6O0",
+            "function_id": "F6",
+            "principle": "现有维护程序待现场采集",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": []
+          },
+          {
+            "id": "F6O1",
+            "function_id": "F6",
+            "principle": "可拆卸接触件，复装后校验基准",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S05"
+            ]
+          },
+          {
+            "id": "F6O2",
+            "function_id": "F6",
+            "principle": "模块更换与可追溯复标，适配接口待核",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S02"
+            ]
+          },
+          {
+            "id": "F6O3",
+            "function_id": "F6",
+            "principle": "简化清洗换刀与可视检查，耗时待测",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S03"
+            ]
+          },
+          {
+            "id": "F7O0",
+            "function_id": "F7",
+            "principle": "现有收胶与记录方式待现场采集",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": []
+          },
+          {
+            "id": "F7O1",
+            "function_id": "F7",
+            "principle": "保留胶园收集方式，补充异常与品质记录",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S06"
+            ]
+          },
+          {
+            "id": "F7O2",
+            "function_id": "F7",
+            "principle": "记录工况与结果，隔离新增导流部件造成的污染",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S01"
+            ]
+          },
+          {
+            "id": "F7O3",
+            "function_id": "F7",
+            "principle": "人工收胶，记录总工时与有效产出",
+            "conditions": [
+              "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+            ],
+            "evidence_refs": [
+              "S06"
+            ]
+          }
+        ],
+        "combinations": [
+          {
+            "id": "C0",
+            "option_ids": [
+              "F1O0",
+              "F2O0",
+              "F3O0",
+              "F4O0",
+              "F5O0",
+              "F6O0",
+              "F7O0"
+            ],
+            "status": "unknown",
+            "reason": "客户现状占位，不是已测基准；整体条件、机械兼容与所有关键门槛均未验证"
+          },
+          {
+            "id": "C1",
+            "option_ids": [
+              "F1O1",
+              "F2O1",
+              "F3O1",
+              "F4O1",
+              "F5O1",
+              "F6O1",
+              "F7O1"
+            ],
+            "status": "unknown",
+            "reason": "机械参考与双物流隔离模块；整体条件、机械兼容与所有关键门槛均未验证"
+          },
+          {
+            "id": "C2",
+            "option_ids": [
+              "F1O2",
+              "F2O2",
+              "F3O2",
+              "F4O2",
+              "F5O2",
+              "F6O2",
+              "F7O2"
+            ],
+            "status": "unknown",
+            "reason": "感知辅助与可退让闭环末端；整体条件、机械兼容与所有关键门槛均未验证"
+          },
+          {
+            "id": "C3",
+            "option_ids": [
+              "F1O3",
+              "F2O3",
+              "F3O3",
+              "F4O3",
+              "F5O3",
+              "F6O3",
+              "F7O3"
+            ],
+            "status": "unknown",
+            "reason": "人机协作的低门槛改造；整体条件、机械兼容与所有关键门槛均未验证"
+          }
+        ],
+        "compatibility": [
+          {
+            "option_ids": [
+              "F2O1",
+              "F5O1"
+            ],
+            "status": "unknown",
+            "reason": "柔顺或力反馈不能单独证明组织限深，需验证基准与退出动作",
+            "evidence_refs": [
+              "S03",
+              "case-0205da2905f4ccacbbb38094"
+            ]
+          },
+          {
+            "option_ids": [
+              "F4O1",
+              "F7O1"
+            ],
+            "status": "unknown",
+            "reason": "废物流隔离不得造成胶乳滞留或接触件污染",
+            "evidence_refs": [
+              "S01"
+            ]
+          }
+        ],
+        "unknowns": [
+          "C0仅为客户现状待调查占位；不得比较其虚构性能",
+          "C1—C3不是完整工程图或独立验证方案",
+          "公开专利后置检索涉及柔顺仿形与排屑，组合名称不代表新颖性"
+        ]
+      }
+    },
+    "R36": {
+      "artifact_id": "RUBBER-R36",
+      "revision": "r1",
+      "task_id": "RUBBER-20261026",
+      "task_revision": "r1",
+      "type": "ComparisonRecord",
+      "scope": "Host Agent研究草稿；客户型号、目标值、树体条件未确认；没有实验、专业审核或工程认证",
+      "conditions": [],
+      "evidence_refs": [],
+      "payload": {
+        "requirements_revision": "r1",
+        "baseline_id": "C0",
+        "candidate_ids": [
+          "C0",
+          "C1",
+          "C2",
+          "C3"
+        ],
+        "criteria": [
+          {
+            "id": "K01",
+            "text": "保护树体及长期割面资源：避免短期增产以伤树或过度耗皮为代价；判据：在定义明确的深度、耗皮与损伤口径下测量，并安排跨周期跟踪；阈值待客户及农艺人员确认",
+            "hard": true,
+            "requirement_ids": [
+              "N01"
+            ]
+          },
+          {
+            "id": "K02",
+            "text": "区分表面跟随与真实限深：适应树干曲率及树皮差异，同时控制生物安全边界；判据：对曲率、厚度和旧割面分层试验；刀位移、剩余树皮及损伤分别记录；允许误差待定",
+            "hard": true,
+            "requirement_ids": [
+              "N02"
+            ]
+          },
+          {
+            "id": "K03",
+            "text": "隔离新切屑与胶乳：降低切屑混入及后续清理负担；判据：定义污染采样方法，比较杂质、损失胶乳及清理时间；限值待下游确认",
+            "hard": true,
+            "requirement_ids": [
+              "N03"
+            ]
+          },
+          {
+            "id": "K04",
+            "text": "处理旧胶线与黏附堵塞：处理已有胶线、刀面黏附和排屑阻塞；判据：记录堵塞、停机、清理及重启；阈值待定，不能以空载切削代替",
+            "hard": true,
+            "requirement_ids": [
+              "N04"
+            ]
+          },
+          {
+            "id": "K05",
+            "text": "提高全流程有效产出：提高单位人时的合格干胶产出，而非仅提高刀速；判据：同时记录定位、安装、切割、转场、收胶、清理、故障、人机协作时间及干胶口径；目标待实测",
+            "hard": true,
+            "requirement_ids": [
+              "N05"
+            ]
+          },
+          {
+            "id": "K06",
+            "text": "降低对熟练工的依赖：将关键判断转为可检查的设置与反馈；判据：新手与熟练人员分组，记录培训、误操作、返工与接管，不能仅调查喜欢程度",
+            "hard": true,
+            "requirement_ids": [
+              "N06"
+            ]
+          },
+          {
+            "id": "K07",
+            "text": "异常时安全退让并可接管：失去接触、堵转或感知异常时停止危险切削并记录；判据：在受控环境验证急停、断电、传感异常、退出路径与复位条件；先安全审核",
+            "hard": true,
+            "requirement_ids": [
+              "N07"
+            ]
+          },
+          {
+            "id": "K08",
+            "text": "适应雨水与弱光的作业安排：识别不适合作业条件并避免为自动化强行作业；判据：现场调查光照、湿度、雨后割面和允许时段；雨水防护不等于雨中可割",
+            "hard": true,
+            "requirement_ids": [
+              "N08"
+            ]
+          },
+          {
+            "id": "K09",
+            "text": "可清洗维护和耗材更换：降低刀具、导向件与胶乳接触区维护负担；判据：计时清洗、换刀、复装校准，跟踪磨损和积胶；材料与费用未知",
+            "hard": true,
+            "requirement_ids": [
+              "N09"
+            ]
+          },
+          {
+            "id": "K10",
+            "text": "兼容现有胶园与装备：在手持、固定与移动架构之间避免过早锁定；判据：调查树距、坡度、挂载接口、供电与收胶流程，再确定目标平台",
+            "hard": true,
+            "requirement_ids": [
+              "N10"
+            ]
+          },
+          {
+            "id": "K11",
+            "text": "保持可追溯的作业与验收数据：知道哪棵树何时按何配置作业，问题可追查；判据：记录树ID、时间、工具版本、工况、异常和数据缺失，不编造客户已有数字化基础",
+            "hard": true,
+            "requirement_ids": [
+              "N11"
+            ]
+          },
+          {
+            "id": "K12",
+            "text": "可比较的全生命周期经济性：把人工、维护、停机、折旧及树体影响纳入选择；判据：采集实际成本与利用率，用情景区间比较；不输出无数据ROI",
+            "hard": true,
+            "requirement_ids": [
+              "N12"
+            ]
+          },
+          {
+            "id": "K13",
+            "text": "保护胶乳有效品质与收集率：避免通过增加水分或牺牲品质制造表面增产；判据：由加工方确认干胶含量、杂质和收集损失测量方法；不能以初始流速代替季节产量",
+            "hard": true,
+            "requirement_ids": [
+              "N13"
+            ]
+          },
+          {
+            "id": "K14",
+            "text": "识别不适用树株并保留人工例外：对厚度未知、旧伤、树结或状态异常的对象先停止或转人工；判据：定义适用树株与例外规则，记录覆盖率与误拒绝；识别能力需验证",
+            "hard": true,
+            "requirement_ids": [
+              "N14"
+            ]
+          },
+          {
+            "id": "K15",
+            "text": "分阶段改造与可撤销试点：先验证末端或局部改造，再决定整机投入；判据：完成接口勘察与局部验证，不把试验优先顺序解释成已选定产品架构",
+            "hard": true,
+            "requirement_ids": [
+              "N15"
+            ]
+          }
+        ],
+        "judgments": [
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K01",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K02",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K03",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K04",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K05",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K06",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K07",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K08",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K09",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K10",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K11",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K12",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K13",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K14",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C0",
+            "criterion_id": "K15",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K01",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K02",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K03",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K04",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K05",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K06",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K07",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K08",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K09",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K10",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K11",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K12",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K13",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K14",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C1",
+            "criterion_id": "K15",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K01",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K02",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K03",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K04",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K05",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K06",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K07",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K08",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K09",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K10",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K11",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K12",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K13",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K14",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C2",
+            "criterion_id": "K15",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K01",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K02",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K03",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K04",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K05",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K06",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K07",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K08",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K09",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K10",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K11",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K12",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K13",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K14",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          },
+          {
+            "candidate_id": "C3",
+            "criterion_id": "K15",
+            "value": "unknown",
+            "basis": "未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。",
+            "evidence_refs": []
+          }
+        ],
+        "recommendations": [],
+        "sensitivity": [
+          "平台由手持变移动时，定位与转场代价可能改变路线取舍",
+          "树株差异、积胶速度及维护负担可能改变收益",
+          "所有硬软属性未决项暂按门槛保守处理，待客户澄清后再比较"
+        ],
+        "unknowns": [
+          "N04/N05/N06/N08/N09/N10/N11/N12/N15硬软属性未决",
+          "没有可支持唯一技术路线推荐的证据",
+          "建议优先开展的补证活动不是对产品方案优劣排名"
+        ]
+      }
+    },
+    "R44": {
+      "artifact_id": "RUBBER-R44",
+      "revision": "r1",
+      "task_id": "RUBBER-20261026",
+      "task_revision": "r1",
+      "type": "PrototypePlan",
+      "scope": "Host Agent研究草稿；客户型号、目标值、树体条件未确认；没有实验、专业审核或工程认证",
+      "conditions": [],
+      "evidence_refs": [],
+      "payload": {
+        "hypothesis": "在明确基准与安全边界后，机械参考/废物流分离/可退让监测的组合可能改善清洁与可靠性；其收益和树体影响目前未知",
+        "learning_goal": "先分离限深、排屑、异常退出及维护因素，识别哪种机制值得进一步工程化",
+        "scope": "C1/C3可作为局部台架的待比较对象，C2按测量必要性补入；不是产品优选或现场试割许可",
+        "procedure": [
+          "G0与客户及农艺人员确认对象、基线、测量口径和许可；未满足不得进入活树试验",
+          "G1在非生物替代件上核查运动范围、接口、废物流路径及失电退出；替代件不证明真实树皮切削",
+          "G2采用经许可的样本及专业监督做局部对照，独立控制旧胶线、表面曲率与刀具配置；不以同树重复刀次冒充独立样本",
+          "G3在已批准边界内进行小范围真实作业，记录整周期、品质、损伤、异常与人工介入；样本规模由变异与目标差异确定",
+          "G4按事先判据解释支持、反驳或不确定，保存失败与退出记录；通过对应门槛后再讨论整机"
+        ],
+        "measurements": [
+          {
+            "id": "M1",
+            "observable": "切入位移、割后测量与损伤分别记录",
+            "unit_or_scale": "mm及经农艺确认的损伤口径",
+            "criterion": "测量定义、仪器、阈值与许可先确认；不得混用深度定义"
+          },
+          {
+            "id": "M2",
+            "observable": "新切屑、旧胶线、杂质与收集损失",
+            "unit_or_scale": "按加工方认可的质量/比例和时间单位",
+            "criterion": "明确采样与对照，检查隔离是否反而堵塞或失胶"
+          },
+          {
+            "id": "M3",
+            "observable": "完整作业周期与人工介入",
+            "unit_or_scale": "s/株、人工min/合格产出；干胶口径待定",
+            "criterion": "包括定位、切削、清理、转场与故障，不只报刀次时间"
+          },
+          {
+            "id": "M4",
+            "observable": "异常退出与恢复",
+            "unit_or_scale": "受控事件记录与复位条件",
+            "criterion": "先完成安全审核和非活树测试；不制造危险现场故障"
+          },
+          {
+            "id": "M5",
+            "observable": "维护和复标",
+            "unit_or_scale": "min/次、错误与重试记录",
+            "criterion": "清洗换刀后按已批准程序复核；阈值待操作方确认"
+          }
+        ],
+        "uncovered_questions": [
+          "短期局部测试不能证明跨周期树体健康或季节产量",
+          "缺少目标平台与真实材料，尚不能给出制造尺寸和控制增益",
+          "暂未完成真实用户培训、经济性与气候覆盖"
+        ],
+        "execution_status": "planned"
+      }
+    },
+    "R42": {
+      "artifact_id": "RUBBER-R42",
+      "revision": "r1",
+      "task_id": "RUBBER-20261026",
+      "task_revision": "r1",
+      "type": "VerificationPlan",
+      "scope": "Host Agent研究草稿；客户型号、目标值、树体条件未确认；没有实验、专业审核或工程认证",
+      "conditions": [],
+      "evidence_refs": [],
+      "payload": {
+        "requirements_revision": "r1",
+        "matrix": [
+          {
+            "requirement_id": "N01",
+            "purpose": "verification",
+            "method": "test",
+            "criterion": "在定义明确的深度、耗皮与损伤口径下测量，并安排跨周期跟踪；阈值待客户及农艺人员确认",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N02",
+            "purpose": "verification",
+            "method": "test",
+            "criterion": "对曲率、厚度和旧割面分层试验；刀位移、剩余树皮及损伤分别记录；允许误差待定",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N03",
+            "purpose": "verification",
+            "method": "test",
+            "criterion": "定义污染采样方法，比较杂质、损失胶乳及清理时间；限值待下游确认",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N04",
+            "purpose": "verification",
+            "method": "test",
+            "criterion": "记录堵塞、停机、清理及重启；阈值待定，不能以空载切削代替",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N05",
+            "purpose": "verification",
+            "method": "analysis",
+            "criterion": "同时记录定位、安装、切割、转场、收胶、清理、故障、人机协作时间及干胶口径；目标待实测",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N06",
+            "purpose": "verification",
+            "method": "analysis",
+            "criterion": "新手与熟练人员分组，记录培训、误操作、返工与接管，不能仅调查喜欢程度",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N07",
+            "purpose": "verification",
+            "method": "test",
+            "criterion": "在受控环境验证急停、断电、传感异常、退出路径与复位条件；先安全审核",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N08",
+            "purpose": "verification",
+            "method": "analysis",
+            "criterion": "现场调查光照、湿度、雨后割面和允许时段；雨水防护不等于雨中可割",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N09",
+            "purpose": "verification",
+            "method": "test",
+            "criterion": "计时清洗、换刀、复装校准，跟踪磨损和积胶；材料与费用未知",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N10",
+            "purpose": "verification",
+            "method": "analysis",
+            "criterion": "调查树距、坡度、挂载接口、供电与收胶流程，再确定目标平台",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N11",
+            "purpose": "verification",
+            "method": "analysis",
+            "criterion": "记录树ID、时间、工具版本、工况、异常和数据缺失，不编造客户已有数字化基础",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N12",
+            "purpose": "verification",
+            "method": "analysis",
+            "criterion": "采集实际成本与利用率，用情景区间比较；不输出无数据ROI",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N13",
+            "purpose": "verification",
+            "method": "test",
+            "criterion": "由加工方确认干胶含量、杂质和收集损失测量方法；不能以初始流速代替季节产量",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N14",
+            "purpose": "verification",
+            "method": "analysis",
+            "criterion": "定义适用树株与例外规则，记录覆盖率与误拒绝；识别能力需验证",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "N15",
+            "purpose": "verification",
+            "method": "analysis",
+            "criterion": "完成接口勘察与局部验证，不把试验优先顺序解释成已选定产品架构",
+            "configuration": "待冻结的目标设备/树株与割面/环境/刀具与传感配置；当前仅规划",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          }
+        ],
+        "validation_questions": [
+          "目标经营者是否认可合格产出与成本口径，而非只认刀次速度？",
+          "操作员是否能理解停机原因、低负担接管并在复位前确认安全？",
+          "农艺和加工端是否接受树体影响与胶乳品质判断？",
+          "新增装置是否适配现有作业、转场和收胶方式？"
+        ],
+        "uncovered_requirements": [],
+        "execution_status": "planned"
+      }
+    }
+  }
+}
