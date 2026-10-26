@@ -90,8 +90,8 @@ def pugh_case():
 
 
 def prototype_case():
- b=ROOT/'output/method-reader-review/upgrades/R44-v0.2.0-proposal'
- r=ROOT/'output/method-reader-review/reviews/R44-upgrade-v0.2.0/review.json'
+ b=ROOT/'output/method-reader-review/upgrades/R44-v0.2.1-proposal'
+ r=ROOT/'output/method-reader-review/reviews/R44-upgrade-v0.2.1/review.json'
  if not (b/'manifest.json').exists() or not r.exists():return ''
  files=json.loads((b/'manifest.json').read_text())['files']
  entries=files.items() if isinstance(files,dict) else [(x['path'],x['sha256'])for x in files]
@@ -103,4 +103,4 @@ def prototype_case():
  for task in a['tasks']:out+='<li>'+E(task['instruction'])+'</li>'
  out+='</ol><h3>在看结果之前，约定怎样解释</h3><div class="relation-grid">'
  for rule in rules:out+='<article class="relation"><h3>'+E(rule['if_signal'])+'</h3><p>'+E(rule['interpretation'])+'</p></article>'
- return out+'</div><p>遗漏、错误复述和研究者提示要保留原话与行为，解释另列；人数和阈值尚未知。未取得同意与执行授权，不把计划写成已验证效果。18项程序测试与4项输出检查只支持固定计划的结构和保真；自由文字仍需人工语义核对，不能声称系统会识别所有矛盾叙述。</p></section>'
+ return out+'</div><p>遗漏、错误复述和研究者提示要保留原话与行为，解释另列；人数和阈值尚未知。未取得同意与执行授权，不把计划写成已验证效果。20项程序测试与4项输出检查只支持固定计划的结构和保真。0.2.1把本教学材料限定为明确允许值，拒绝“现场运行并验证通过”的矛盾声明；这不是通用语义理解，其他自由文字仍需人工核对。</p></section>'
