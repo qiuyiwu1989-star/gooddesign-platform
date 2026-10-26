@@ -1,0 +1,9 @@
+### Result
+{"widths":[320,375,767,768,1279,1280,1600],"views":4,"plan":"该计划绑定当前已保存版本 · v1\n\nrun-0a455dfd88f04ee08955f86844400e43 · 计划已建立，尚未执行\n\nR48 → ProblemBrief\nR14 → FunctionModel\nR17 → ConceptSet\nR36 → ComparisonRecord\nR44 → PrototypePlan\nR42 → VerificationPlan\n固定六节点参考链；所选内容方法不自动转换为执行契约。无专家认证。"}
+### Ran Playwright code
+```js
+await (async (page) => { await page.goto("http://127.0.0.1:8786/"); await page.getByRole("button",{name:"方案与验证",exact:true}).click(); await page.getByRole("button",{name:"建立或读取运行计划",exact:true}).click(); await page.getByText("计划已建立或读取，尚未执行产物生成。",{exact:true}).waitFor({timeout:60000}); const plan=await page.locator("#run-result").innerText(); const widths=[]; for(const width of [320,375,767,768,1279,1280,1600]){await page.setViewportSize({width,height:900});for(const name of ["研究任务","需求档案","方法与案例","方案与验证"]){await page.getByRole("button",{name,exact:true}).click(); if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error(name+width);}widths.push(width);} await page.setViewportSize({width:1440,height:1000});await page.getByRole("button",{name:"研究任务",exact:true}).click();await page.screenshot({path:"output/method-workbench-check/workbench-light.png",fullPage:true}); return {widths,views:4,plan}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8786/
+- Page Title: 创新工作台 · 好设计 × 造物云

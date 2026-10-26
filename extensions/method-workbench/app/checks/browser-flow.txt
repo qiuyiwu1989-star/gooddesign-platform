@@ -1,0 +1,14 @@
+### Result
+{"historyRestore":true,"download":"RESEARCH-66064540-d7e7-46b9-987e-eaab993effec-需求草稿.json","conflictDraftPreserved":true,"focus":"problem"}
+### Ran Playwright code
+```js
+await (async (page) => { await page.getByLabel("实际问题").waitFor(); const original=await page.getByLabel("实际问题").inputValue(); if(original!=="第一版问题")throw Error("history incorrect: "+original); await page.getByRole("button",{name:"保存新版本",exact:true}).click(); await page.getByText("已保存为 v3。方案报告未重新生成。",{exact:true}).waitFor(); const dl=page.waitForEvent("download"); await page.getByRole("button",{name:"导出当前草稿",exact:true}).click(); const download=await dl; await download.saveAs("output/method-workbench-check/exported-demand.json"); await page.getByRole("button",{name:"方案与验证",exact:true}).click(); if(!await page.getByText("当前需求尚无对应的新运行",{exact:true}).isVisible())throw Error("stale report"); await page.getByRole("button",{name:"需求档案",exact:true}).click(); await page.getByLabel("实际问题").fill("请求失败时保留的草稿"); await page.route("**/api/demands",route=>route.request().method()==="POST"?route.fulfill({status:409,contentType:"application/json",body:JSON.stringify({error:"已有更新版本"})}):route.continue()); await page.getByRole("button",{name:"保存新版本",exact:true}).click(); await page.getByText(/已有更新版本。填写内容仍在/).waitFor(); if(await page.getByLabel("实际问题").inputValue()!=="请求失败时保留的草稿")throw Error("draft lost"); await page.unroute("**/api/demands"); await page.getByRole("button",{name:"保存新版本",exact:true}).click(); await page.getByText("已保存为 v4。方案报告未重新生成。",{exact:true}).waitFor(); await page.getByLabel("研究名称").focus(); await page.keyboard.press("Tab"); const focus=await page.evaluate(()=>document.activeElement.id); return {historyRestore:true,download:download.suggestedFilename(),conflictDraftPreserved:true,focus}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8787/
+- Page Title: 创新工作台 · 好设计 × 造物云
+- Console: 1 errors, 0 warnings
+### Events
+- New console entries: .playwright-cli/console-2026-10-26T09-13-55-414Z.log#L2
+- Downloading file RESEARCH-66064540-d7e7-46b9-987e-eaab993effec-需求草稿.json ...
+- Downloaded file RESEARCH-66064540-d7e7-46b9-987e-eaab993effec-需求草稿.json to ".playwright-cli/RESEARCH-66064540-d7e7-46b9-987e-eaab993effec-需求草稿.json"

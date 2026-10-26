@@ -1,0 +1,9 @@
+### Result
+{"cases":"匹配 1 条，最多显示12条；题录匹配不代表研究质量。\n2025-00 · 2025 · 金奖\n嫦娥五/六号月球钻取采样方法及系统设计\n\n哈尔滨工业大学,北京圣视环宇科技有限公司\n\n题录检索，非迁移可行性结论","plan":"该计划绑定当前已保存版本 · v1\n\nrun-764f72cdec0b4c74a28f9a94229bb73c · 计划已建立，尚未执行\n\nR48 → ProblemBrief\nR14 → FunctionModel\nR17 → ConceptSet\nR36 → ComparisonRecord\nR44 → PrototypePlan\nR42 → VerificationPlan\n固定六节点参考链；所选内容方法不自动转换为执行契约。无专家认证。","reused":true,"reload":true}
+### Ran Playwright code
+```js
+await (async (page) => { await page.goto("http://127.0.0.1:8787/"); await page.getByRole("button",{name:"方法与案例",exact:true}).click(); await page.getByLabel("案例关键词").fill("采样"); await page.getByRole("button",{name:"检索案例MCP",exact:true}).click(); await page.getByText("已读取真实案例MCP题录。",{exact:true}).waitFor({timeout:60000}); const cases=await page.locator("#case-results").innerText(); await page.getByRole("button",{name:"方案与验证",exact:true}).click(); await page.getByRole("button",{name:"建立或读取运行计划",exact:true}).click(); await page.getByText("计划已建立或读取，尚未执行产物生成。",{exact:true}).waitFor({timeout:60000}); const first=await page.locator("#run-result").innerText(); await page.getByRole("button",{name:"建立或读取运行计划",exact:true}).click(); await page.getByText("计划已建立或读取，尚未执行产物生成。",{exact:true}).waitFor({timeout:60000}); const second=await page.locator("#run-result").innerText(); if(first!==second)throw Error("duplicate run"); await page.reload(); await page.getByRole("button",{name:"方案与验证",exact:true}).click(); await page.getByText(/计划已建立，尚未执行/).waitFor(); return {cases,plan:first,reused:first===second,reload:true}; })(page);
+```
+### Page
+- Page URL: http://127.0.0.1:8787/
+- Page Title: 创新工作台 · 好设计 × 造物云
