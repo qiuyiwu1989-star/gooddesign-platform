@@ -483,3 +483,5 @@ Usercontinue:SC9850KH2018-06research2eightindependentlyapprovedcellsadmitted,7re
 05119:37:转子2018-05research2真实选录重绑3approved历史/工艺/产品背景入档，5records0AI，currentguide-review/evidence/actualMCPpassed。O01完整句被native分块切断已查明，两题名同义映射未证继续held，不盲批别名；5相关偏析专利未入。精确43已派，骨替代物薄案实际深研已派。part3-next5独立校准仅3可给总分(27.5/30/15)，981/骨整体映射不足改null，未擅自展示旧初评；待主Agent核版本/锚点后合并。
 
 05120:07:转子precise43当前0.1.1导读/六维冻结，actualMCPpassed。part3-next5三有数独立校准合并前已逐case复核原初评SHA/currentdatasetSHA；98视图现18校准Agent试评、53初评待校准、26暂不评分、1版本已变待复核，总98；981/骨null仍不按0。骨12候选真实新增含2015校方直接获奖报道，已下派独审；981整平台实际深研已下派。分数仅私有视图不写生产/不冒专家或80。
+
+Userprioritychange:先其他98金奖基础覆盖再深度，现改breadth_before_deeper_rounds。建立coverage-round2全98队列，首3批9案已分派真实检索，队列仅assigned/queued不冒执行；骨/981已采积压继续核不丢弃，暂停新增单案多轮深挖。执行规则00-项目管理/054-全量覆盖优先执行.md。
