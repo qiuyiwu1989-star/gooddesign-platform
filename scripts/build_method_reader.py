@@ -12,31 +12,10 @@ EXEC={'R48','R14','R17','R36','R44','R42'}
 LABELS={'identity':'方法从哪里来','problem':'解决什么问题','principle':'为什么有效','applicability':'什么时候适合用','interpretation':'如何理解结果','example':'跟着例子走一遍（教学示例）','pitfalls':'容易走偏的地方','validation':'怎样检查与验证','adaptation':'平台做了哪些适配','gaps':'还缺哪些证据'}
 CATS={m['category'][0]:m['category'][1:] for m in json.loads((LIB/'目录.json').read_text())['methods']}
 
-def icon(d):
-    # Semantic category motif plus stable per-method constellation; all vector, no fonts.
-    motifs={'A':'<circle cx="24" cy="22" r="11"/><path d="m32 30 10 10M19 22h10m-5-5v10"/>', 'B':'<path d="M12 15h10v10H12zM32 15h10v10H32zM12 35h10v10H12zM32 35h10v10H32zM22 20h10M17 25v10m20-10v10M22 40h10"/>','C':'<path d="m29 8-15 23h12l-3 17 17-25H28z"/>','D':'<path d="M9 35 27 45l18-10V17L27 7 9 17zM9 17l18 10 18-10M27 27v18"/>','E':'<path d="M10 42h36M14 36V24m10 12V17m10 19V26m10 10V10M10 19l13-9 12 9 11-14"/>','F':'<path d="M14 8h28v39H14zM20 18l3 3 6-7M20 31l3 3 6-7M33 20h4m-4 12h4M20 41h17"/>','G':'<circle cx="27" cy="27" r="8"/><path d="M27 7v12m0 16v12M7 27h12m16 0h12M13 13l8 8m12 12 8 8m0-28-8 8M21 33l-8 8"/>'}
-    n=int(re.sub(r'\D','',d['research_id']))
-    dots=''.join(f'<circle cx="{9+i*8}" cy="53" r="{1.8 if n&(1<<i) else .6}" fill="currentColor" stroke="none"/>' for i in range(6))
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 60" role="img" aria-label="{E(d["name"])}"><g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">{motifs[d["category"][0]]}{dots}</g></svg>'
+from method_reader_visuals import semantic_icon as icon, dependency_svg
 
 def paras(s):return ''.join('<p>'+E(p)+'</p>' for p in str(s).split('\n') if p.strip())
-def document(text):
-    """Safe minimal Markdown reader; original file content is not interpreted as HTML."""
-    out=[];fenced=False
-    for line in text.splitlines():
-        if line.startswith('```'):
-            out.append('</code></pre>' if fenced else '<pre tabindex="0"><code>');fenced=not fenced;continue
-        if fenced:out.append(E(line)+'\n');continue
-        match=re.match(r'^(#{1,6}) (.*)',line)
-        if match:
-            level=min(len(match[1])+1,6);out.append(f'<h{level}>'+E(match[2])+f'</h{level}>');continue
-        if not line.strip():continue
-        content=E(line)
-        content=re.sub(r'`([^`]+)`',r'<code>\1</code>',content)
-        content=re.sub(r'\*\*([^*]+)\*\*',r'<b>\1</b>',content)
-        out.append('<p>'+content+'</p>')
-    if fenced:out.append('</code></pre>')
-    return ''.join(out)
+from method_reader_markdown import document
 
 def page(title,body):
     return '<!doctype html><html lang="zh-CN" data-theme="light" data-zw-mode="product"><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+E(title)+' · 好设计</title><link rel="stylesheet" href="/vendor/tokens.css"><link rel="stylesheet" href="/vendor/design-system.css"><link rel="stylesheet" href="/library/reader.css"><a class="skip" href="#main">跳到正文</a><header><a href="/">好设计 <span>／ 创新工作台</span></a><a href="/library/index.html">方法库</a><a href="/library/integration.html">引擎与MCP</a><a href="/library/contributing.html">方法写入规范</a></header>'+body+'<footer>好设计 · 方法研究与平台适配，未经独立专家审核及工程验证。</footer><script src="/library/reader.js"></script></html>'
@@ -53,7 +32,7 @@ def detail(d,records):
     for i,s in enumerate(d['steps'],1):
         deps='、'.join(stepmap.get(x,x) for x in s.get('depends_on',[]))
         body+=f'<li><a href="#{E(s["step_id"])}"><span>{i:02}</span><strong>{E(s["title"])}</strong></a><p>{E(s["output_description"])}</p>'+('<small>承接：'+E(deps)+'</small>' if deps else '<small>起点或独立准备</small>')+'</li>'
-    body+='</ol></section><section id="operate"><h2>一步一步怎么做</h2>'
+    body+='</ol><div class="dependency-map">'+dependency_svg(d)+'</div></section><section id="operate"><h2>一步一步怎么做</h2>'
     for i,s in enumerate(d['steps'],1):
         body+=f'<article class="step" id="{E(s["step_id"])}"><span class="number">{i:02}</span><h3>{E(s["title"])}</h3>'+paras(s['operation'])+'<div class="decision"><b>到这里，先判断</b>'+paras(s['decision'])+'</div><p><b>本步产物：</b>'+E(s['output_description'])+'</p><p><b>检查：</b>'+E('；'.join(s['checks']))+'</p><p class="stop"><b>何时返回或停下：</b>'+E(s['stop_condition'])+'</p></article>'
     body+='<h3>如何理解结果</h3>'+paras(sec['interpretation'])+'</section><section id="example"><h2>例子与使用边界</h2>'+''.join('<h3>'+LABELS[k]+'</h3>'+paras(sec[k]) for k in ['example','pitfalls','validation'])+'<h3>用这些情境检查你的理解</h3><p>以下为检查设想，未表示真实试验已经执行。</p><div class="relation-grid">'+''.join('<article class="relation"><h3>'+E(x['scenario'])+'</h3><p>'+E(x['expected'])+'</p></article>' for x in d.get('evaluations',[]))+'</div></section>'
@@ -92,5 +71,6 @@ def integration(records):
     (OUT/'integration.html').write_text(page('引擎与MCP',body))
     template={'schema_version':'method-dossier-1.0','research_id':'待分配稳定ID','method_id':'待分配稳定ID','version':'0.1.0','name':'方法名称','category':'从A—G中选择','summary':'解决什么问题及边界','sections':{k:'待撰写与核读' for k in LABELS},'inputs':[],'steps':[],'outputs':[],'relations':[],'sources':[],'evaluations':[],'change_log':[]}
     body='<main id="main" class="reader"><h1>方法写入规范</h1><p class="lead">先有可追溯的方法内容，再有可执行契约。资料齐全、程序可读和专家认可分别验收。</p><h2>提交前，写清这七件事</h2><ol class="standards">'+''.join('<li><h3>'+a+'</h3><p>'+b+'</p></li>' for a,b in [('身份和分类','沿用稳定research_id、method_id，填写版本；A需求、B功能概念、C发明矛盾、D架构、E工程优化、F评价验证、G全流程管理。闻邦椿谱系专题与独立方法分开标注。'),('原典与平台适配','区分原典主张、平台操作编排、教学假设和真实实践；不得把获奖项目推断成方法应用实例。'),('来源与核读范围','每条来源保留作者/机构、题名、URL、定位、核读范围、日期、支持内容和权利；摘要或目录不能冒称全文。'),('输入、操作和产物','每项输入写必需性和缺失处置；步骤写稳定ID、依赖、动作、判断、产物、检查和停止条件；输出写含义与字段。'),('关系与示例','关系目标必须存在、交接条件明确；示例写假设和未知，真实实践须有案例及证据定位，不捏造效果。'),('版本与发布','在新版本工作区编辑，不覆盖冻结v0.1.0；记录变更原因、来源变化和关联契约影响。先结构验收，再语义复核，专家审核及工程验证另列。'),('执行与负例','新增执行契约前检查Schema、输入缺失、悬空引用、硬约束冲突、未知保留及跨方法交接；模型自评不能替代独立领域专家。')])+'</ol><h2>起草骨架（不是可直接入库的完整档案）</h2>'+code(json.dumps(template,ensure_ascii=False,indent=2))+'<p>骨架中的占位与空数组必须补齐，并通过项目现有结构验收；不要直接发布为完整方法。</p><h2>当前规范原件</h2><div class="actions"><a href="方法库结构规范.md">方法库结构规范</a><a href="入库依据与类型边界.md">入库依据与类型边界</a><a href="引擎接入说明.md">历史内容版接入说明</a></div><p>历史内容版说明反映冻结时状态；当前执行能力以本页关联的MCP接入页和六项契约为准。</p></main>'
+    body=body.replace('</main>','<h2>完整字段形状参考</h2><p>以下为现有形态分析档案的真实结构，只用于理解字段；新增方法必须重新分配身份、撰写内容、核读来源并验收，不能复制后改名发布。</p>'+code(json.dumps(records['R17'],ensure_ascii=False,indent=2))+'<h2>质量目标与发布门槛</h2><p>逐法目标80分，评分分开记录内容质量、执行就绪与专家审核。来源、原理、适用边界、操作、示例和验证须有证据；未知保留，图标、页面或测试通过不能替代内容审核。</p><p>未核读不得按0代填，正分必须有具体原文与字段锚点；存在来源缺失、对象错配、虚构实践或关键调用错误时不得标记达标。</p></main>')
     (OUT/'contributing.html').write_text(page('方法写入规范',body))
 if __name__=='__main__':build()
