@@ -18,7 +18,7 @@ def teaching_case(rid):
  return out
 
 def function_case():
- b=ROOT/'output/method-reader-review/upgrades/R14-v0.2.0-proposal'
+ b=ROOT/'output/method-reader-review/upgrades/R14-v0.2.1-proposal'
  if not (b/'manifest.json').exists():return ''
  manifest=json.loads((b/'manifest.json').read_text())
  files=manifest['files'];entries=files.items() if isinstance(files,dict) else [(x['path'],x['sha256'])for x in files]
@@ -28,7 +28,7 @@ def function_case():
  f=load('03-functional-decomposition.json');flows=load('02-black-box-flows.json')['flows'];sc=load('05-scenarios-and-alternatives.json')
  names={x['id']:x['verb_object']for x in f['functions']}
  names.update({'EXT-IN':'试样输入边界','EXT-OUT':'试样移出边界','EXT-ENERGY':'外部供能边界','EXT-ENV':'环境边界','EXT-USER':'使用者边界','EXT-SIGNAL':'外部信息边界'})
- out='<section id="reproducible-function-example"><h2>把功能分析走完整：试样夹持教学案例</h2><p>这个案例先分析要完成的功能，不提前指定机构。需求为教学假设，真实载荷、尺寸和安全阈值未知。固定案例通过17项程序检查及独立复测，但正常情景路径覆盖仍有已知漏检，新版本正在修复，不作通用覆盖保证。</p><h3>从总功能分到必要功能</h3><p>'+E(f['functions'][0]['verb_object'])+'</p><ol class="flow">'
+ out='<section id="reproducible-function-example"><h2>把功能分析走完整：试样夹持教学案例</h2><p>这个案例先分析要完成的功能，不提前指定机构。需求为教学假设，真实载荷、尺寸和安全阈值未知。固定案例通过22项程序检查及独立复测，正常路径短路已拦截。但独立探针发现外部物料边界缺失仍可能被标为覆盖，新版正在修复，不作通用黑箱完整保证。</p><h3>从总功能分到必要功能</h3><p>'+E(f['functions'][0]['verb_object'])+'</p><ol class="flow">'
  for row in f['functions'][1:]:out+='<li><strong>'+E(row['verb_object'])+'</strong><p>对应 '+E('、'.join(row['requirement_refs']))+'</p><p>未实现时：'+E(row['failure_mode'])+'</p></li>'
  out+='</ol><h3>把物料、能量、信息穿过系统边界</h3><div class="table-scroll"><table><thead><tr><th>类型</th><th>从哪里到哪里</th><th>含义</th><th>量值</th></tr></thead><tbody>'
  kinds={'material':'物料','energy':'能量','signal':'信息','information':'信息'}

@@ -521,3 +521,5 @@ Userwebsitearchitecture:核原026/027信息架构，output/inno-preview平台首
 05503:37:R17离线adapter独立复测contract/check_output+11实测通过，组合升级版试评75待独立校准(原60不变)，不凑80。根追加真实stdio SDK20工具method_check_artifact+Task+两上游inputs，状态structure_and_declared_consistency_passed/跨方法performed/工程false/0issues通过，无Store/模型写入；初两次断言误预期passed/valid，保首response后按实际协议校正，不说工具失败。R17读者页更新映射+只读协议验证边界，生产未submit。R1417实测包已交独立审核。覆盖batch18报告核验，现54本轮产物44待，batch19已派。
 
 05504:07:R14固定例(原17测试包)已按独立可展示裁定补读者页完整功能/边界流/情景，显著提示短路覆盖漏检、新0.2.1已修22测待独立复测。R17跨两任务求值器可复算，但旧nativeadapter无参固定夹持，通用hold；pilot派参数化v2源manifest/上游SHA显式绑定，不仅换常量，不为80升分。覆盖batch19/20六报告核验，root口头误称2017-02输电已由真实目录纠正并记录3误查不计，现60案本轮产物38待，batch21派执行。
+
+05504:37:R17nativev2显式五路径/五SHA三任务真实适配/11负例已交，独立隔离复测已派，不因旧固定案例而宣称通用。R14v0.2.1固定教学展示更新22测试与短路已修，新增外部物料边界遗漏继续明确hold；新0.2.2边界流/类型/外部端点修复已派。覆盖batch21三报告核验，现63案本轮产物35待，batch22已派。所有旧包/冻结源/生产不覆写。
