@@ -46,3 +46,5 @@ R17现在按功能模型逐功能生成2—3个候选原理。点击一次启动
 
 启动：`.runtime/pipeline/bin/python scripts/method_engine_incremental_mcp.py`，使用stdio。通过`METHOD_ENGINE_DB`指定原引擎运行库，例如本机`output/method-workbench-private/engine.sqlite`。保持固定SDK1.30.0，不自动升级依赖或修改全局Agent配置。选择这个增量入口即可得到20工具，无需同时注册原18工具入口。
 接口实现参考[MCP工具规范](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)，实际兼容性由固定运行环境的SDK检查确认。
+
+ML-009：方案与验证页增加候选方案审查，从本次已提交R17/R36读取，不调用模型；可展开原理、条件、接口声明和逐项准则，导出报告附输入指纹。选项配对为组合枚举，未审查不能视为冲突或工程失败。详情见项目管理ML-009交付。

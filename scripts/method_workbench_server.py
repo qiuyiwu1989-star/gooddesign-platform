@@ -7,6 +7,7 @@ import secrets
 import sqlite3
 import subprocess
 import threading
+from method_workbench_review import review as candidate_review
 from method_workbench_execution import Execution
 from method_workbench_morphology import progress as morphology_progress
 from datetime import datetime, timezone
@@ -196,7 +197,7 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                     jobs=execution.listing(rid); evidence=execution.evidence(rid)
                     kinds={s['artifact']['type'] for s in state['submissions']}
                     morph=morphology_progress(state,evidence,jobs) if {'ProblemBrief','FunctionModel'}<=kinds else None
-                    return self.send(200, {'meta':meta, 'state':state, 'jobs':jobs, 'evidence':evidence, 'notes':execution.notes(rid),'morphology':morph})
+                    return self.send(200, {'meta':meta, 'state':state, 'jobs':jobs, 'evidence':evidence, 'notes':execution.notes(rid),'morphology':morph,'candidate_review':candidate_review(state,evidence)})
                 if path.startswith('/api/run/'):
 
                     ident = path[len('/api/run/'):]
