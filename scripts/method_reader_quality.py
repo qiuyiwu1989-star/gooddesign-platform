@@ -1,6 +1,7 @@
 """055 evidence-bound private presentation of content reviews, never production scores."""
 from pathlib import Path
 import hashlib,json,html
+from method_library_catalog import public_document_base
 ROOT=Path(__file__).resolve().parents[1]
 E=lambda s:html.escape(str(s))
 def quality_section(records):
@@ -10,7 +11,7 @@ def quality_section(records):
   for folder in sorted(x.name for x in base.glob('batch*') if x.is_dir()):
    p=base/folder/f'{rid}-assessment.json'
    if p.exists():
-    x=json.loads(p.read_text());raw=ROOT/'04-知识库/创新方法库/深度方法库-v0.1.0/档案'/rid/'档案.json'
+    x=json.loads(p.read_text());raw=public_document_base(rid)/'档案'/rid/'档案.json'
     if hashlib.sha256(raw.read_bytes()).hexdigest()==x['dataset_sha256']:data=x;status='内容初评 · 待独立校准';score=str(x.get('total',x.get('score','—')));initial+=1
   for folder in sorted(x for x in base.glob('calibration*') if x.is_dir()):
    p=folder/f'{rid}-calibration-v1.json'

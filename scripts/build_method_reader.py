@@ -47,8 +47,12 @@ def detail(d,records):
     body+=teaching_case(rid)
     body+='<section id="relations"><h2>可以接着用哪些方法</h2><div class="relation-grid">'
     words={'requires':'前置准备','precedes':'下一步','parallel':'配合使用','complements':'配合使用','alternative':'替代选择'}
+    relation_holds={('WB04','WB05'):'这条交接的描述指向深层次设计，但目标页为主辅功能专题，关系意图待核。',('WB06','R39'):'稳健参数与公差设计不等于通用仿真验证，需先明确不确定性或公差输入。',('WB09','R39'):'此目标不代表通用数值求解或仿真验证能力，交接依据待核。',('WB07','R32'):'机构综合可给运动拓扑与几何，不能直接当作结构动态响应。'}
     for r in d.get('relations',[]):
         t=r['target_research_id'];target=records.get(t)
+        if (rid,t) in relation_holds:
+            body+='<article class="relation"><small>交接关系待核</small><h3>'+E(target['name'] if target else t)+'</h3><p>'+E(relation_holds[(rid,t)])+'</p><p>暂不作为自动交接建议，原档案关系保留供复核。</p></article>'
+            continue
         if target:body+=f'<a class="relation" href="{t}.html"><small>{E(words.get(r["relation"],"关联方法"))}</small><h3>{E(target["name"])}</h3><p>{E(r["condition"])}</p></a>'
     body+='</div><h3>平台适配说明</h3>'+paras(sec['adaptation'])+'</section><section id="sources"><h2>原典与依据</h2>'+paras(sec['identity'])
     for s in d['sources']:
