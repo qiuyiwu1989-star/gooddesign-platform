@@ -1,0 +1,18 @@
+[Unit]
+Description=OpenDesign authenticated read-only remote MCP
+After=network.target
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/innovation-mcp/current
+Environment=GOODDESIGN_MCP_KEYS_FILE=/etc/innovation-mcp/keys.json
+ExecStart=/var/www/innovation-design/venv/bin/python scripts/innovation_gateway_http.py
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+UMask=0077
+[Install]
+WantedBy=multi-user.target
