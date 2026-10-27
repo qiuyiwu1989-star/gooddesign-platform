@@ -3,6 +3,7 @@ from pathlib import Path
 import json,hashlib,html
 ROOT=Path(__file__).resolve().parents[1];E=lambda s:html.escape(str(s),quote=True)
 def teaching_case(rid):
+ if rid=='R02':return double_diamond_case()
  if rid=='R01':return systematic_case()
  if rid=='R42':return verification_case()
  if rid=='R44':return prototype_case()
@@ -136,3 +137,17 @@ def systematic_case():
  out='<section id="systematic-teaching-example"><h2>设计框架怎样留下可追问的过程</h2><p>这个原创夹具教学例子演示要求、功能、原理、布局与待验关系。它不是已经设计好的夹具；坐标与冲突均为教学假设，没有制造、仿真或实际试验。</p><ol class="flow">'
  for title,body in steps:out+='<li><strong>'+title+'</strong><p>'+body+'</p></li>'
  return out+'</ol><p>0.2.1经22项检查及独立追加探针，错误阶段文件、缺文件与回返错误原理被拒绝。验证范围是固定阶段对应和文件存在性，不是任意产物的语义一致性。二维相交面积只是示意算术，不是工程几何或强度证明。</p><p>原典核读限公开VDI摘要与出版社目录，未读取付费章节；教学补充不能冒充完整原典、实际设计经验或可执行MCP。</p></section>'
+
+
+def double_diamond_case():
+ b=ROOT/'output/method-reader-review/upgrades/R02-v0.2.1-proposal'
+ r=ROOT/'output/method-reader-review/reviews/R02-upgrade-v0.2.1/review.json'
+ if not (b/'manifest.json').exists() or not r.exists():return ''
+ files=json.loads((b/'manifest.json').read_text())['files']
+ entries=files.items() if isinstance(files,dict) else [(x['path'],x['sha256'])for x in files]
+ for name,sha in entries:
+  if hashlib.sha256((b/name).read_bytes()).hexdigest()!=sha:raise ValueError('双钻教学包变化，停止展示')
+ out='<section id="double-diamond-teaching"><h2>从“给小车加电机”开始，先别急着选方案</h2><p>原创教学请求不是已经确认的用户需求。第一钻尚未有真实研究证据，第二钻也只是研究计划；没有观察、访谈原话或用户测试结果。</p><ol class="flow">'
+ steps=[('发现：展开需要核实的假设','把推行、转向、停放和维护等问题分开，安排怎样取得证据；不把作者想象写成用户反馈。'),('定义：保留暂定问题版本','CH-1只是当前讨论起点，尚未证据收敛；另一问题CH-2是条件性提议，未被采用。'),('发展：比较不同作用路径','候选方案声明回应哪些假设，同时显式列出未覆盖项。声明覆盖不代表已经满足，更不能为凑覆盖硬加能力。'),('交付：先安排学习','保留比较、观察与下一轮决定的计划；没有执行就不填成功，也不把返回定义阶段画成已经发生。')]
+ for title,text in steps:out+='<li><strong>'+title+'</strong><p>'+text+'</p></li>'
+ return out+'</ol><p>0.2.1通过29项结构与一致性检查及独立原漏洞复测。候选覆盖采用“已声明＋明确未覆盖”的分区，条件问题用本教学允许内容校验；这是固定案例门禁，不是通用语义理解。真实共创、现场研究与反馈仍待开展，不能称方法效果或80分已达标。</p></section>'
