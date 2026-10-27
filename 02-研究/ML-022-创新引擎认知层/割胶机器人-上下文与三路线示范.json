@@ -1,0 +1,2838 @@
+{
+  "status": "host_reasoning_context_ready",
+  "context_sha256": "6b796680065b9c5b36f461bd3f12bb04c534a12ac5b58948099136906be7e5ca",
+  "context": {
+    "version": "ML022-0.1.0",
+    "task": {
+      "task_id": "RUBBER-ML022",
+      "revision": "context-v1",
+      "object": "rubber tapping end-effector and operating workflow",
+      "desired_outcome": "研究兼顾树体保护、胶乳洁净和有效产出的改进路线；研究需求N01—N15均为待客户确认，不得给出唯一工程推荐",
+      "boundary": "研究/概念/试验计划；平台架构、客户工况及目标值未知，不执行树体试验",
+      "delivery_level": "concept",
+      "stage": "frame",
+      "demand_packet_sha256": "5cd9a9d4bcbd5f5a54b4f87c5976127c4cf5858e3e5dd2f0ac364567dd60018a",
+      "source_policy": "公开研究笔记是作者释义而非逐字原文；案例指标不迁移为客户参数；所有需确认的硬软属性保持未知。"
+    },
+    "claims": [
+      {
+        "id": "C-MI02",
+        "text": "把任务成功条件分解到多个接口，关注相邻动作的兼容而非单项性能。",
+        "epistemic": "inferred",
+        "scope": "2025-00:AI-interpretation:MI02",
+        "evidence": [
+          {
+            "source_id": "04-知识库/标杆案例/2025-00-嫦娥钻取采样/机制解读.json",
+            "locator": "items[id=MI02].principle",
+            "scope": "2025-00:AI-interpretation:MI02"
+          }
+        ],
+        "limitation": "AI解读及建议验证方案，不是设计团队实际决策、已发生故障或已完成试验；不计入事实字段。"
+      },
+      {
+        "id": "T-RESEARCH",
+        "text": "研究兼顾树体保护、胶乳洁净和有效产出的改进路线；研究需求N01—N15均为待客户确认，不得给出唯一工程推荐",
+        "epistemic": "hypothesized",
+        "scope": "rubber:prior-research-not-customer-approved",
+        "evidence": [
+          {
+            "source_id": "output/rubber-tapping-pilot/engine-report.json",
+            "locator": "task.desired_outcome",
+            "scope": "rubber:prior-research-not-customer-approved"
+          }
+        ]
+      },
+      {
+        "id": "P-INTEGRATE",
+        "text": "构造研究路线：让切割和收集接口紧密集成，研究胶路连续性。",
+        "scope": "rubber:constructed-route",
+        "epistemic": "hypothesized",
+        "evidence": []
+      },
+      {
+        "id": "P-SEPARATE",
+        "text": "构造研究路线：分离树体接触与收集路径，研究清洁和维护。",
+        "scope": "rubber:constructed-route",
+        "epistemic": "hypothesized",
+        "evidence": []
+      }
+    ],
+    "supersession_proposals": [],
+    "boundary_research": [
+      {
+        "claim_ids": [
+          "P-INTEGRATE",
+          "P-SEPARATE"
+        ],
+        "question": "集成/分离在什么几何、污染与维护条件下各自成立？这是待审设计张力，不是已经观察到的事实冲突。",
+        "status": "boundary_conditions_require_research",
+        "auto_resolved": false
+      }
+    ],
+    "association_candidates": [
+      {
+        "claim_ids": [
+          "C-MI02",
+          "T-RESEARCH"
+        ],
+        "epistemic": "associated",
+        "principle": "研究完整动作链的相邻接口，不用单一部件性能代表整链效果。",
+        "target_scope": "rubber tapping end-effector and operating workflow",
+        "conditions_to_check": "切割→出胶→收集→清理的任务边界、物性、污染与生物损伤约束；不迁移月壤参数或专利采用事实。",
+        "status": "host_must_review_structure_and_test_target_conditions",
+        "source_facts_transferred": false
+      }
+    ],
+    "method_refs": [
+      {
+        "method_id": "R48",
+        "name": "问题定义与要求管理",
+        "content_sha256": "0a0c8a709f3b1d6c88734017787eb04f0619065fddc682559f3b7ac76f63e736",
+        "index_sha256": "d2d9708ce52f561102e7ee58ffe8cd0bb89fb93095fbdd3824c2144364d84b3d",
+        "partial_dimensions": [],
+        "execution_available": true
+      },
+      {
+        "method_id": "R49",
+        "name": "功能—行为—结构推理（FBS）",
+        "content_sha256": "f7e3755ec2ab80fc98cd27d6e98b27b9154044f4a9116de4598f0861f37c3e66",
+        "index_sha256": "d2d9708ce52f561102e7ee58ffe8cd0bb89fb93095fbdd3824c2144364d84b3d",
+        "partial_dimensions": [],
+        "execution_available": false
+      },
+      {
+        "method_id": "R23",
+        "name": "物理矛盾与分离",
+        "content_sha256": "4b1e3509d42de0d206ab65a9a0d80bfdc0ea716fee6ff709b770d2d03b584cbe",
+        "index_sha256": "d2d9708ce52f561102e7ee58ffe8cd0bb89fb93095fbdd3824c2144364d84b3d",
+        "partial_dimensions": [],
+        "execution_available": false
+      },
+      {
+        "method_id": "R52",
+        "name": "信息价值与验证优先级（VOI）",
+        "content_sha256": "34bed2e401f4fca88b7fea9b582f8efea085c94156d6efcc76a00600d8754eb2",
+        "index_sha256": "d2d9708ce52f561102e7ee58ffe8cd0bb89fb93095fbdd3824c2144364d84b3d",
+        "partial_dimensions": [],
+        "execution_available": false
+      },
+      {
+        "method_id": "R42",
+        "name": "验证与确认",
+        "content_sha256": "00b01df10b63b0c1d390047deb5aa31f34d6f0ffb94c43f4e4304cb1f5793963",
+        "index_sha256": "d2d9708ce52f561102e7ee58ffe8cd0bb89fb93095fbdd3824c2144364d84b3d",
+        "partial_dimensions": [],
+        "execution_available": true
+      }
+    ],
+    "existing_contract_plan": {
+      "task_id": "RUBBER-ML022",
+      "task_revision": "context-v1",
+      "task_sha256": "c281c53cfa9b6afcbde8bbb64359d3f0188134c664a39d216ad24be87a68deac",
+      "target": "R42",
+      "implementation_hashes": {
+        "method_engine.py": "90170fc291b735b5a0a19d9d3a17dc8fd74ca9add06e7d0e35de9a38617447e1",
+        "method_engine_contracts.py": "901b4d2ca5ab65900c3ad108d009e2a1d839890d1e4a81a4648670ad56268483",
+        "method_engine_store.py": "df80949af3285c50066eb0822d67c847c24326a3b47acad47f4f7bd4bb58fa17"
+      },
+      "inputs_snapshot": {
+        "artifacts": [],
+        "evidence": []
+      },
+      "nodes": [
+        {
+          "node_id": "R48",
+          "method_id": "IM-PD-001",
+          "method_version": "0.1.0",
+          "method_content_sha256": "ded5d34715a9e703f2dc6ab30fc9a69eb11dd0aa8aefea32d23697c67f95f4b2",
+          "contract_version": "0.2.1",
+          "contract_sha256": "05ac4bbb419c4698af64b8491fcf72175f5b6e67894bba37bdc6770fbda8dd02",
+          "contract_snapshot": {
+            "contract_version": "0.2.1",
+            "research_id": "R48",
+            "artifact_type": "ProblemBrief",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "artifact_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "ProblemBrief"
+                  ]
+                },
+                "scope": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "fact",
+                          "assumption",
+                          "unknown"
+                        ]
+                      },
+                      "evidence_refs": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                        },
+                        "minItems": 0,
+                        "maxItems": 200
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text",
+                      "kind",
+                      "evidence_refs"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "payload": {
+                  "type": "object",
+                  "properties": {
+                    "actor": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "object": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "boundary": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "desired_outcome": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "requirements": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "text": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "hard": {
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          },
+                          "acceptance": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "status": {
+                            "type": "string",
+                            "enum": [
+                              "confirmed",
+                              "proposed",
+                              "unknown"
+                            ]
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "text",
+                          "hard",
+                          "acceptance",
+                          "status",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "conditions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "text": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "kind": {
+                            "type": "string",
+                            "enum": [
+                              "fact",
+                              "assumption",
+                              "unknown"
+                            ]
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "text",
+                          "kind",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "unknowns": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "actor",
+                    "object",
+                    "boundary",
+                    "desired_outcome",
+                    "requirements",
+                    "conditions",
+                    "unknowns"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "artifact_id",
+                "revision",
+                "task_id",
+                "task_revision",
+                "type",
+                "scope",
+                "conditions",
+                "evidence_refs",
+                "payload"
+              ],
+              "additionalProperties": false
+            },
+            "purpose": "澄清对象、目标、需求和约束",
+            "requires": [],
+            "stage": "frame",
+            "next": [
+              "R14"
+            ],
+            "stop": "关键对象或使用边界未知时先澄清；愿望不能伪装成已批准要求。",
+            "input_bindings": {
+              "initial_request": "task",
+              "stakeholder_evidence": "evidence",
+              "constraints_context": "task.boundary",
+              "decision_authority": "task.decision_authority"
+            },
+            "status": "platform_authored_not_expert_reviewed",
+            "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+          },
+          "depends_on": [],
+          "bindings": [],
+          "output_type": "ProblemBrief",
+          "executor": "host_agent_or_human",
+          "steps": [
+            {
+              "step_id": "R48-S01",
+              "title": "拆分原话与证据状态",
+              "input_refs": [
+                "initial_request",
+                "stakeholder_evidence"
+              ],
+              "depends_on": [],
+              "operation": "区分事实、需要、方案偏好、目标和假设，确认用户及任务情境缺口。",
+              "decision": "无实际证据标假设，不写成客户已确认。",
+              "output_key": "intent_evidence_map",
+              "output_description": "原话、事实/假设和补证问题",
+              "checks": [
+                "来源保留",
+                "方案未强当需求"
+              ],
+              "stop_condition": "关键用户任务未知停止确定规格",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查原始访谈、任务观测和项目资料"
+              ]
+            },
+            {
+              "step_id": "R48-S02",
+              "title": "定义问题与成功方向",
+              "input_refs": [
+                "intent_evidence_map",
+                "constraints_context"
+              ],
+              "depends_on": [
+                "R48-S01"
+              ],
+              "operation": "形成用户/系统、情境、缺口、影响、目标和范围，明确不应预锁的解法。",
+              "decision": "根因未证不写因果事实，问题冲突先外显。",
+              "output_key": "problem_frame",
+              "output_description": "问题陈述、边界、成功方向和待证",
+              "checks": [
+                "谁在何情境清楚",
+                "目标可学习"
+              ],
+              "stop_condition": "无法形成共同任务先补研究",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "查需求发现和根因证据"
+              ]
+            },
+            {
+              "step_id": "R48-S03",
+              "title": "组织约束功能性能接口",
+              "input_refs": [
+                "problem_frame",
+                "constraints_context"
+              ],
+              "depends_on": [
+                "R48-S02"
+              ],
+              "operation": "把需要转成分层功能、性能、接口和生命周期要求，区分硬约束与偏好。",
+              "decision": "指定实施方式须有必要理由，派生要求留依据。",
+              "output_key": "requirement_structure",
+              "output_description": "要求层级、来源和取舍问题",
+              "checks": [
+                "约束不被评分抵消",
+                "父子关系可追踪"
+              ],
+              "stop_condition": "硬约束互斥升级责任方决策",
+              "source_refs": [
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查功能分解、接口和适用要求"
+              ]
+            },
+            {
+              "step_id": "R48-S04",
+              "title": "编写可验证单条要求",
+              "input_refs": [
+                "requirement_structure",
+                "decision_authority"
+              ],
+              "depends_on": [
+                "R48-S03"
+              ],
+              "operation": "给条目编号、责任、条件、量值/判据、理由与计划验证方式，未知阈值不编造。",
+              "decision": "不可观察的形容词退回澄清；探索指标保留待定状态。",
+              "output_key": "requirement_draft",
+              "output_description": "可审要求与验证方向",
+              "checks": [
+                "单一明确",
+                "条件和判据足够"
+              ],
+              "stop_condition": "关键判据缺失不认定可验收",
+              "source_refs": [
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查实际能力、量测和任务成功条件"
+              ]
+            },
+            {
+              "step_id": "R48-S05",
+              "title": "审查正确可行与一致",
+              "input_refs": [
+                "requirement_draft",
+                "stakeholder_evidence"
+              ],
+              "depends_on": [
+                "R48-S04"
+              ],
+              "operation": "由技术与利益相关方审必要性、可行、冲突、过度规定和双向追溯。",
+              "decision": "措辞合格不等需求正确，冲突和未知不得隐藏。",
+              "output_key": "requirements_review",
+              "output_description": "评审问题、修订及确认状态",
+              "checks": [
+                "用户与技术都覆盖",
+                "可验证性有依据"
+              ],
+              "stop_condition": "未决核心要求不标批准",
+              "source_refs": [
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查性能预算和验证资源"
+              ]
+            },
+            {
+              "step_id": "R48-S06",
+              "title": "建立基线与变更追溯",
+              "input_refs": [
+                "requirements_review",
+                "decision_authority"
+              ],
+              "depends_on": [
+                "R48-S05"
+              ],
+              "operation": "在责任方确认后固定版本，维护来源—要求—设计—验证关系与变更影响。",
+              "decision": "未获确认保留draft；变化需回查产品和测试，不覆盖历史。",
+              "output_key": "problem_requirements_dossier",
+              "output_description": "问题、要求基线、追溯与变更档案",
+              "checks": [
+                "历史可还原",
+                "批准不由AI伪造"
+              ],
+              "stop_condition": "关键变更未评审不沿用旧结论",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "为后续方法提供目标、约束和证据需求"
+              ]
+            }
+          ],
+          "stop_condition": "关键对象或使用边界未知时先澄清；愿望不能伪装成已批准要求。"
+        },
+        {
+          "node_id": "R14",
+          "method_id": "IM-FA-001",
+          "method_version": "0.1.0",
+          "method_content_sha256": "52dfa4b0f71becf761ce05e0d66f74fcaa961064c97bab0e93fc98e4657baa1e",
+          "contract_version": "0.2.1",
+          "contract_sha256": "ab46d6fd7327865daced57429d829f6692f5919f000b0a8304f463e386aef1e7",
+          "contract_snapshot": {
+            "contract_version": "0.2.1",
+            "research_id": "R14",
+            "artifact_type": "FunctionModel",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "artifact_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "FunctionModel"
+                  ]
+                },
+                "scope": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "fact",
+                          "assumption",
+                          "unknown"
+                        ]
+                      },
+                      "evidence_refs": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                        },
+                        "minItems": 0,
+                        "maxItems": 200
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text",
+                      "kind",
+                      "evidence_refs"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "payload": {
+                  "type": "object",
+                  "properties": {
+                    "boundary": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "functions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "verb_object": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "necessity": {
+                            "type": "string",
+                            "enum": [
+                              "necessary",
+                              "supporting",
+                              "unknown"
+                            ]
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "verb_object",
+                          "necessity",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "flows": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "from_function": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "to_function": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "flow_type": {
+                            "type": "string",
+                            "enum": [
+                              "material",
+                              "energy",
+                              "signal"
+                            ]
+                          },
+                          "description": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "from_function",
+                          "to_function",
+                          "flow_type",
+                          "description",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "interfaces": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "text": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "kind": {
+                            "type": "string",
+                            "enum": [
+                              "fact",
+                              "assumption",
+                              "unknown"
+                            ]
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "text",
+                          "kind",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "unknowns": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "boundary",
+                    "functions",
+                    "flows",
+                    "interfaces",
+                    "unknowns"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "artifact_id",
+                "revision",
+                "task_id",
+                "task_revision",
+                "type",
+                "scope",
+                "conditions",
+                "evidence_refs",
+                "payload"
+              ],
+              "additionalProperties": false
+            },
+            "purpose": "把任务转成必要功能与作用接口",
+            "requires": [
+              "ProblemBrief"
+            ],
+            "stage": "model",
+            "next": [
+              "R17"
+            ],
+            "stop": "未经证实的作用关系不得写成已确认根因。",
+            "input_bindings": {
+              "requirements": "artifact:ProblemBrief.payload.requirements",
+              "conops": "task"
+            },
+            "status": "platform_authored_not_expert_reviewed",
+            "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+          },
+          "depends_on": [
+            "R48"
+          ],
+          "bindings": [
+            {
+              "required_type": "ProblemBrief",
+              "source": {
+                "node": "R48",
+                "output_type": "ProblemBrief"
+              }
+            }
+          ],
+          "output_type": "FunctionModel",
+          "executor": "host_agent_or_human",
+          "steps": [
+            {
+              "step_id": "R14-S01",
+              "title": "确定建模边界与端到端情景",
+              "input_refs": [
+                "requirements",
+                "conops"
+              ],
+              "depends_on": [],
+              "operation": "列系统边界、外部对象与要求来源，选覆盖目标的运行情景。",
+              "decision": "目标或外部对象缺失则退回需求澄清。",
+              "output_key": "model_scope",
+              "output_description": "边界和情景集",
+              "checks": [
+                "边界有理由",
+                "含异常情景"
+              ],
+              "stop_condition": "顶层要求未明确暂停",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "同类系统 运行概念 外部接口"
+              ]
+            },
+            {
+              "step_id": "R14-S02",
+              "title": "转译并分解功能",
+              "input_refs": [
+                "model_scope",
+                "requirements"
+              ],
+              "depends_on": [
+                "R14-S01"
+              ],
+              "operation": "将顶层要求转为动作对象功能，逐层建立父子关系与分配理由。",
+              "decision": "停止于足以分配设计与验证责任的层次。",
+              "output_key": "function_catalog",
+              "output_description": "功能层级与要求映射",
+              "checks": [
+                "不是零件清单",
+                "子功能支撑父目标"
+              ],
+              "stop_condition": "无法解释父子支撑关系退回",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "功能分析 逻辑分解"
+              ]
+            },
+            {
+              "step_id": "R14-S03",
+              "title": "描述功能输入输出与路径",
+              "input_refs": [
+                "function_catalog",
+                "conops"
+              ],
+              "depends_on": [
+                "R14-S02"
+              ],
+              "operation": "逐项写输入输出、触发、行为与失败后果，建立情景路径。",
+              "decision": "无来源输入或无去向输出需查漏。",
+              "output_key": "functional_links",
+              "output_description": "功能关联和路径模型",
+              "checks": [
+                "所有流有端点",
+                "记录失效与后果"
+              ],
+              "stop_condition": "关键路径断裂不冻结",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "物料 能量 信号 功能流"
+              ]
+            },
+            {
+              "step_id": "R14-S04",
+              "title": "定义接口及派生要求",
+              "input_refs": [
+                "functional_links"
+              ],
+              "depends_on": [
+                "R14-S03"
+              ],
+              "operation": "为跨边界关系填写双方、参数、时序、状态、责任与验证方式。",
+              "decision": "双方约束冲突则协调架构或要求。",
+              "output_key": "interface_register",
+              "output_description": "接口契约与未决项",
+              "checks": [
+                "单位明确",
+                "双向责任可追溯"
+              ],
+              "stop_condition": "关键接口未闭合不进入集成基线",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "接口控制文档 时序 状态"
+              ]
+            },
+            {
+              "step_id": "R14-S05",
+              "title": "审查覆盖并记录基线候选",
+              "input_refs": [
+                "interface_register",
+                "function_catalog",
+                "requirements"
+              ],
+              "depends_on": [
+                "R14-S04"
+              ],
+              "operation": "按端到端场景审查覆盖、一致性与替代分配，记录决定及假设。",
+              "decision": "可行、可验证且内部一致才提出基线候选。",
+              "output_key": "functional_architecture",
+              "output_description": "功能架构与审查记录",
+              "checks": [
+                "保留替代方案",
+                "缺口不隐去"
+              ],
+              "stop_condition": "工程可行性未知标待验证",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "功能架构 需求追溯 审查"
+              ]
+            }
+          ],
+          "stop_condition": "未经证实的作用关系不得写成已确认根因。"
+        },
+        {
+          "node_id": "R17",
+          "method_id": "IM-ML-017",
+          "method_version": "0.1.0",
+          "method_content_sha256": "c0195c0ce63e28b6eab07d6007533913350aade08c33d040534650bff0bd23a4",
+          "contract_version": "0.2.1",
+          "contract_sha256": "44fe4e3d122ac75de2a7ebf90047f98e70b02306b762c71719971541d3881a1e",
+          "contract_snapshot": {
+            "contract_version": "0.2.1",
+            "research_id": "R17",
+            "artifact_type": "ConceptSet",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "artifact_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "ConceptSet"
+                  ]
+                },
+                "scope": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "fact",
+                          "assumption",
+                          "unknown"
+                        ]
+                      },
+                      "evidence_refs": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                        },
+                        "minItems": 0,
+                        "maxItems": 200
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text",
+                      "kind",
+                      "evidence_refs"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "payload": {
+                  "type": "object",
+                  "properties": {
+                    "function_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "options": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "function_id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "principle": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "conditions": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 6000,
+                              "pattern": "\\S"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "function_id",
+                          "principle",
+                          "conditions",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "combinations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "option_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 1,
+                            "maxItems": 200
+                          },
+                          "status": {
+                            "type": "string",
+                            "enum": [
+                              "candidate",
+                              "excluded",
+                              "unknown"
+                            ]
+                          },
+                          "reason": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "option_ids",
+                          "status",
+                          "reason"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "compatibility": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "option_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 2,
+                            "maxItems": 200
+                          },
+                          "status": {
+                            "type": "string",
+                            "enum": [
+                              "compatible",
+                              "incompatible",
+                              "unknown"
+                            ]
+                          },
+                          "reason": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "option_ids",
+                          "status",
+                          "reason",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "unknowns": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "function_ids",
+                    "options",
+                    "combinations",
+                    "compatibility",
+                    "unknowns"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "artifact_id",
+                "revision",
+                "task_id",
+                "task_revision",
+                "type",
+                "scope",
+                "conditions",
+                "evidence_refs",
+                "payload"
+              ],
+              "additionalProperties": false
+            },
+            "purpose": "从子功能选项组合候选概念",
+            "requires": [
+              "ProblemBrief",
+              "FunctionModel"
+            ],
+            "stage": "generate",
+            "next": [
+              "R36"
+            ],
+            "stop": "成对相容不代表整体可行；矛盾或条件未知要保留。",
+            "input_bindings": {
+              "task": "artifact:ProblemBrief",
+              "functions": "artifact:FunctionModel.payload.functions",
+              "options": "task.known_options",
+              "conditions": "artifact:ProblemBrief.payload.conditions"
+            },
+            "status": "platform_authored_not_expert_reviewed",
+            "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+          },
+          "depends_on": [
+            "R48",
+            "R14"
+          ],
+          "bindings": [
+            {
+              "required_type": "ProblemBrief",
+              "source": {
+                "node": "R48",
+                "output_type": "ProblemBrief"
+              }
+            },
+            {
+              "required_type": "FunctionModel",
+              "source": {
+                "node": "R14",
+                "output_type": "FunctionModel"
+              }
+            }
+          ],
+          "output_type": "ConceptSet",
+          "executor": "host_agent_or_human",
+          "steps": [
+            {
+              "step_id": "R17-S01",
+              "title": "界定可变功能和边界",
+              "input_refs": [
+                "task",
+                "functions",
+                "options",
+                "conditions"
+              ],
+              "depends_on": [],
+              "operation": "逐一确认必要功能及不可改变条件，将已指定零件与真正作用分开；建立功能到目标要求的联系。",
+              "decision": "对象或目标未知则追问；功能只是零件清单则返回分解。",
+              "output_key": "function_scope",
+              "output_description": "必要功能、可变范围、接口和硬约束。",
+              "checks": [
+                "每个功能说明对何对象产生什么作用。"
+              ],
+              "stop_condition": "不能明确任务对象或必要功能时停止。",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "查询案例的功能结构、输入输出及系统边界，不先找同形零件。"
+              ]
+            },
+            {
+              "step_id": "R17-S02",
+              "title": "组织候选原理",
+              "input_refs": [
+                "function_scope",
+                "task",
+                "functions",
+                "options",
+                "conditions"
+              ],
+              "depends_on": [
+                "R17-S01"
+              ],
+              "operation": "按子功能列出不同作用机制；相同原理的尺寸变化单列为参数变体，保存来源或平台假设。",
+              "decision": "每个必要功能无解法则补检索；只有单一路线时说明原因。",
+              "output_key": "option_matrix",
+              "output_description": "子功能—解法表及每项接口条件。",
+              "checks": [
+                "原理与部件名、参数变体不混层。"
+              ],
+              "stop_condition": "关键必要功能无候选且无法补充时返回前步。",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+              ]
+            },
+            {
+              "step_id": "R17-S03",
+              "title": "检查交叉与整体一致性",
+              "input_refs": [
+                "option_matrix",
+                "task",
+                "functions",
+                "options",
+                "conditions"
+              ],
+              "depends_on": [
+                "R17-S02"
+              ],
+              "operation": "逐对核对能量、运动、空间、载荷和控制条件，再检查三项以上交互；明确分离逻辑冲突、实证限制和目标约束。",
+              "decision": "有明确冲突排除；证据不足记unknown；成对通过仍需整体检查。",
+              "output_key": "compatibility_log",
+              "output_description": "每个检查对象、状态、理由、证据和待验证点。",
+              "checks": [
+                "未知不记通过，偏好不冒充物理冲突。"
+              ],
+              "stop_condition": "全部组合违反同一硬约束则返回选项或任务定义。",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+              ]
+            },
+            {
+              "step_id": "R17-S04",
+              "title": "形成可解释概念路线",
+              "input_refs": [
+                "compatibility_log",
+                "task",
+                "functions",
+                "options",
+                "conditions"
+              ],
+              "depends_on": [
+                "R17-S03"
+              ],
+              "operation": "选择原理组合，说明全功能链及接口如何工作，保留不同机制路线及复杂性代价。",
+              "decision": "路线须覆盖全部必要功能；欠缺功能则返回组合。",
+              "output_key": "concept_set",
+              "output_description": "候选方案、功能分配、差异、代价、出处及未知。",
+              "checks": [
+                "不以组合数量冒充创新质量。"
+              ],
+              "stop_condition": "无法说明必要功能接替和接口时不形成确定方案。",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+              ]
+            },
+            {
+              "step_id": "R17-S05",
+              "title": "交接比较与验证",
+              "input_refs": [
+                "concept_set",
+                "task",
+                "functions",
+                "options",
+                "conditions"
+              ],
+              "depends_on": [
+                "R17-S04"
+              ],
+              "operation": "把候选和关键未知转成比较输入及验证问题，指出需要何种模型、数据与测试。",
+              "decision": "缺载荷或材料只做概念比较，不唯一选型。",
+              "output_key": "handoff",
+              "output_description": "比较准则、基线、待验证假设和后续方法输入。",
+              "checks": [
+                "每个核心未知对应具体补证或验证动作。"
+              ],
+              "stop_condition": "没有验收口径时不得宣称方案已达标。",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+              ]
+            }
+          ],
+          "stop_condition": "成对相容不代表整体可行；矛盾或条件未知要保留。"
+        },
+        {
+          "node_id": "R36",
+          "method_id": "IM-ML-036",
+          "method_version": "0.1.0",
+          "method_content_sha256": "aabcbcc266c8bf50cda10a9b6a0117338441fa7c9fcb6b67b30ce90dfd102908",
+          "contract_version": "0.2.1",
+          "contract_sha256": "115a564a3af19d8b035bf803b49fded113621c87413303731041b41f75028f2c",
+          "contract_snapshot": {
+            "contract_version": "0.2.1",
+            "research_id": "R36",
+            "artifact_type": "ComparisonRecord",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "artifact_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "ComparisonRecord"
+                  ]
+                },
+                "scope": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "fact",
+                          "assumption",
+                          "unknown"
+                        ]
+                      },
+                      "evidence_refs": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                        },
+                        "minItems": 0,
+                        "maxItems": 200
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text",
+                      "kind",
+                      "evidence_refs"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "payload": {
+                  "type": "object",
+                  "properties": {
+                    "requirements_revision": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "baseline_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "candidate_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "criteria": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "text": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "hard": {
+                            "type": "boolean"
+                          },
+                          "requirement_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "text",
+                          "hard",
+                          "requirement_ids"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "judgments": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "candidate_id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "criterion_id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "value": {
+                            "type": "string",
+                            "enum": [
+                              "better",
+                              "same",
+                              "worse",
+                              "unknown",
+                              "pass",
+                              "fail"
+                            ]
+                          },
+                          "basis": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "candidate_id",
+                          "criterion_id",
+                          "value",
+                          "basis",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "recommendations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "sensitivity": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "unknowns": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "requirements_revision",
+                    "baseline_id",
+                    "candidate_ids",
+                    "criteria",
+                    "judgments",
+                    "recommendations",
+                    "sensitivity",
+                    "unknowns"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "artifact_id",
+                "revision",
+                "task_id",
+                "task_revision",
+                "type",
+                "scope",
+                "conditions",
+                "evidence_refs",
+                "payload"
+              ],
+              "additionalProperties": false
+            },
+            "purpose": "用硬门槛和相对判断筛选概念",
+            "requires": [
+              "ProblemBrief",
+              "ConceptSet"
+            ],
+            "stage": "compare",
+            "next": [
+              "R44"
+            ],
+            "stop": "硬门槛未知或失败的候选不能作为已通过的推荐。",
+            "input_bindings": {
+              "problem_requirements": "artifact:ProblemBrief.payload.requirements",
+              "concepts": "artifact:ConceptSet.payload",
+              "evidence": "evidence",
+              "decision_preferences": "task.preferences"
+            },
+            "status": "platform_authored_not_expert_reviewed",
+            "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+          },
+          "depends_on": [
+            "R48",
+            "R17"
+          ],
+          "bindings": [
+            {
+              "required_type": "ProblemBrief",
+              "source": {
+                "node": "R48",
+                "output_type": "ProblemBrief"
+              }
+            },
+            {
+              "required_type": "ConceptSet",
+              "source": {
+                "node": "R17",
+                "output_type": "ConceptSet"
+              }
+            }
+          ],
+          "output_type": "ComparisonRecord",
+          "executor": "host_agent_or_human",
+          "steps": [
+            {
+              "step_id": "R36-S01",
+              "title": "检查可比较性与硬约束",
+              "input_refs": [
+                "problem_requirements",
+                "concepts"
+              ],
+              "depends_on": [],
+              "operation": "核对各候选提供同一核心功能，先标明确约束冲突与未知；不为凑表造候选。",
+              "decision": "不具备共同任务返回定义；硬冲突排除，未知待补。",
+              "output_key": "feasible_concepts",
+              "output_description": "候选边界、排除与未知",
+              "checks": [
+                "同一功能目标",
+                "硬约束不被补偿"
+              ],
+              "stop_condition": "无可比较概念则停止矩阵",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "查概念的功能、接口、工况与目标约束"
+              ]
+            },
+            {
+              "step_id": "R36-S02",
+              "title": "确定准则与共同基准",
+              "input_refs": [
+                "feasible_concepts",
+                "problem_requirements",
+                "decision_preferences"
+              ],
+              "depends_on": [
+                "R36-S01"
+              ],
+              "operation": "从要求提炼可解释准则，固定datum并说明理由，避免重复计算同一价值。",
+              "decision": "准则只偏向某候选时重审；关键尺度不清先定义。",
+              "output_key": "comparison_frame",
+              "output_description": "基准、准则、口径及偏好理由",
+              "checks": [
+                "准则有要求来源",
+                "尺度与基准一致"
+              ],
+              "stop_condition": "关键准则未定义不打分",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查任务指标口径与用户价值依据"
+              ]
+            },
+            {
+              "step_id": "R36-S03",
+              "title": "逐格比较并标信息状态",
+              "input_refs": [
+                "comparison_frame",
+                "evidence"
+              ],
+              "depends_on": [
+                "R36-S02"
+              ],
+              "operation": "用更好、相同、较差及平台未知状态比较，逐格写依据与判断者。",
+              "decision": "缺证据不记相当；不同工况数据不直接比较。",
+              "output_key": "pugh_matrix",
+              "output_description": "符号、依据、未知与分歧",
+              "checks": [
+                "每格可追溯",
+                "同号非等量收益"
+              ],
+              "stop_condition": "关键判断仅猜测则不唯一选型",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "查支持具体性能比较的原文、数据与限制"
+              ]
+            },
+            {
+              "step_id": "R36-S04",
+              "title": "分析优势弱项并改进概念",
+              "input_refs": [
+                "pugh_matrix",
+                "feasible_concepts"
+              ],
+              "depends_on": [
+                "R36-S03"
+              ],
+              "operation": "观察优势分布、关键弱项与可结合的机制，必要时换合理基准检查稳定性。",
+              "decision": "排序随合理假设改变则保留接近路线并补证，不强推总分。",
+              "output_key": "concept_review",
+              "output_description": "候选改进、敏感项和补证任务",
+              "checks": [
+                "不只数符号",
+                "机制融合检查新复杂性"
+              ],
+              "stop_condition": "硬弱项无法改善则淘汰方向",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查可融合子机制及接口代价"
+              ]
+            },
+            {
+              "step_id": "R36-S05",
+              "title": "形成下一轮选择与验证",
+              "input_refs": [
+                "concept_review",
+                "problem_requirements"
+              ],
+              "depends_on": [
+                "R36-S04"
+              ],
+              "operation": "向决策者报告保留、合并、排除理由和最有价值的下一试验，不输出伪精确适配率。",
+              "decision": "证据不足时输出条件性研究优先序；验证后再更新。",
+              "output_key": "selection_dossier",
+              "output_description": "比较依据、决定候选与验证问题",
+              "checks": [
+                "计划与结果分离",
+                "保留未知和反例"
+              ],
+              "stop_condition": "缺关键工程验证不定型",
+              "source_refs": [
+                "S02"
+              ],
+              "knowledge_queries": [
+                "把差异假设交给V&V或DOE"
+              ]
+            }
+          ],
+          "stop_condition": "硬门槛未知或失败的候选不能作为已通过的推荐。"
+        },
+        {
+          "node_id": "R44",
+          "method_id": "IM-ML-044",
+          "method_version": "0.1.0",
+          "method_content_sha256": "31f983750326980a7c45dc901cb0d6d42b4a991f6cd7c70037ad5cf85a2af307",
+          "contract_version": "0.2.1",
+          "contract_sha256": "22fde6ef4501e6be8d62f62198c56560f61f81dabecaaeff349fffd8574628df",
+          "contract_snapshot": {
+            "contract_version": "0.2.1",
+            "research_id": "R44",
+            "artifact_type": "PrototypePlan",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "artifact_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "PrototypePlan"
+                  ]
+                },
+                "scope": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "fact",
+                          "assumption",
+                          "unknown"
+                        ]
+                      },
+                      "evidence_refs": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                        },
+                        "minItems": 0,
+                        "maxItems": 200
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text",
+                      "kind",
+                      "evidence_refs"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "payload": {
+                  "type": "object",
+                  "properties": {
+                    "hypothesis": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "learning_goal": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "scope": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "procedure": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "measurements": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "observable": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "unit_or_scale": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "criterion": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "observable",
+                          "unit_or_scale",
+                          "criterion"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "uncovered_questions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "execution_status": {
+                      "type": "string",
+                      "enum": [
+                        "planned"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "hypothesis",
+                    "learning_goal",
+                    "scope",
+                    "procedure",
+                    "measurements",
+                    "uncovered_questions",
+                    "execution_status"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "artifact_id",
+                "revision",
+                "task_id",
+                "task_revision",
+                "type",
+                "scope",
+                "conditions",
+                "evidence_refs",
+                "payload"
+              ],
+              "additionalProperties": false
+            },
+            "purpose": "将关键假设转为原型学习计划",
+            "requires": [
+              "ProblemBrief",
+              "ConceptSet",
+              "ComparisonRecord"
+            ],
+            "stage": "prototype",
+            "next": [
+              "R42"
+            ],
+            "stop": "未执行计划不能含实测结果；外观原型不证明寿命。",
+            "input_bindings": {
+              "design_intent": "artifact:ProblemBrief",
+              "assumptions": "artifact:ComparisonRecord.payload.unknowns",
+              "experiment_resources": "task.resources",
+              "prototype_evidence": "evidence"
+            },
+            "status": "platform_authored_not_expert_reviewed",
+            "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+          },
+          "depends_on": [
+            "R48",
+            "R17",
+            "R36"
+          ],
+          "bindings": [
+            {
+              "required_type": "ProblemBrief",
+              "source": {
+                "node": "R48",
+                "output_type": "ProblemBrief"
+              }
+            },
+            {
+              "required_type": "ConceptSet",
+              "source": {
+                "node": "R17",
+                "output_type": "ConceptSet"
+              }
+            },
+            {
+              "required_type": "ComparisonRecord",
+              "source": {
+                "node": "R36",
+                "output_type": "ComparisonRecord"
+              }
+            }
+          ],
+          "output_type": "PrototypePlan",
+          "executor": "host_agent_or_human",
+          "steps": [
+            {
+              "step_id": "R44-S01",
+              "title": "选择关键学习假设",
+              "input_refs": [
+                "design_intent",
+                "assumptions"
+              ],
+              "depends_on": [],
+              "operation": "按不确定性与决策影响选一个或少数可检验问题，区分探索和确认。",
+              "decision": "问题不可观察先重写，不能测试所有事。",
+              "output_key": "learning_target",
+              "output_description": "假设、理由、证据缺口与范围",
+              "checks": [
+                "假设可反驳",
+                "与决策相关"
+              ],
+              "stop_condition": "无明确学习目标暂停制作",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "查原始需求与关键不确定性"
+              ]
+            },
+            {
+              "step_id": "R44-S02",
+              "title": "把任务转为最小原型",
+              "input_refs": [
+                "learning_target",
+                "experiment_resources"
+              ],
+              "depends_on": [
+                "R44-S01"
+              ],
+              "operation": "用分镜或任务流程标出待测环节，选择能表达相应行为/机理的最低必要保真度。",
+              "decision": "原型未覆盖目标机理则换载体，不用外观证承载。",
+              "output_key": "prototype_plan",
+              "output_description": "原型、任务和可测/不可测边界",
+              "checks": [
+                "保真度服务问题",
+                "危险可控"
+              ],
+              "stop_condition": "测试存在未控制危险停止",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查原型制作和物理机制限制"
+              ]
+            },
+            {
+              "step_id": "R44-S03",
+              "title": "预设观察与决策规则",
+              "input_refs": [
+                "prototype_plan",
+                "assumptions",
+                "experiment_resources"
+              ],
+              "depends_on": [
+                "R44-S02"
+              ],
+              "operation": "确定参与者环境、观察数据、提示、支持/反驳信号及下一步规则。",
+              "decision": "缺合理样本只做质性学习，不承诺统计结论。",
+              "output_key": "experiment_protocol",
+              "output_description": "实验计划、偏差控制及判读规则",
+              "checks": [
+                "执行前定规则",
+                "不引导作答"
+              ],
+              "stop_condition": "关键条件不能模拟则限制目标",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查用户代表性与任务情境"
+              ]
+            },
+            {
+              "step_id": "R44-S04",
+              "title": "实际实验并收集记录",
+              "input_refs": [
+                "experiment_protocol",
+                "prototype_evidence"
+              ],
+              "depends_on": [
+                "R44-S03"
+              ],
+              "operation": "安全执行任务，记录行为、原话、条件、原型问题和研究者介入。",
+              "decision": "未执行写planned，不能生成参与者反应。",
+              "output_key": "observations",
+              "output_description": "原始观察、偏差和执行状态",
+              "checks": [
+                "观察解释分离",
+                "原始材料保留"
+              ],
+              "stop_condition": "危险或不可接受偏差中止记录",
+              "source_refs": [
+                "S01"
+              ],
+              "knowledge_queries": [
+                "依赖实际参与者与实验工具"
+              ]
+            },
+            {
+              "step_id": "R44-S05",
+              "title": "解释并检查替代原因",
+              "input_refs": [
+                "observations",
+                "learning_target"
+              ],
+              "depends_on": [
+                "R44-S04"
+              ],
+              "operation": "对假设标支持/反驳/未知，核原型不足、环境和方法偏差等替代解释。",
+              "decision": "超出证据范围不外推总体、寿命或安全。",
+              "output_key": "learning_findings",
+              "output_description": "证据与假设状态、替代解释",
+              "checks": [
+                "负面证据保留",
+                "无伪统计"
+              ],
+              "stop_condition": "关键证据不足保持未知",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查混杂因素和下一轮隔离变量"
+              ]
+            },
+            {
+              "step_id": "R44-S06",
+              "title": "决定迭代或转正式验证",
+              "input_refs": [
+                "learning_findings",
+                "prototype_plan"
+              ],
+              "depends_on": [
+                "R44-S05"
+              ],
+              "operation": "依据预设规则选择继续、修改、补实验或停止，需工程证明的问题转V&V。",
+              "decision": "没有实际数据只产计划，不宣称概念通过。",
+              "output_key": "prototype_learning_dossier",
+              "output_description": "假设—原型—观察—学习—下一步档案",
+              "checks": [
+                "下一步针对未知",
+                "探索与工程结论分清"
+              ],
+              "stop_condition": "硬约束不可满足停止该方向",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "将性能可靠性问题交DOE与V&V"
+              ]
+            }
+          ],
+          "stop_condition": "未执行计划不能含实测结果；外观原型不证明寿命。"
+        },
+        {
+          "node_id": "R42",
+          "method_id": "IM-ML-042",
+          "method_version": "0.1.0",
+          "method_content_sha256": "e3b52bab746ebf6d6cbf7c4fbf94e4ce3d4b8c8cbfed0e33ec73af590d8cc959",
+          "contract_version": "0.2.1",
+          "contract_sha256": "60d499676ecc8cc1cffccfde60be4dd5ca49eeaf7f0058921cc91e9f00f05d3e",
+          "contract_snapshot": {
+            "contract_version": "0.2.1",
+            "research_id": "R42",
+            "artifact_type": "VerificationPlan",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "artifact_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "task_revision": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "VerificationPlan"
+                  ]
+                },
+                "scope": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "fact",
+                          "assumption",
+                          "unknown"
+                        ]
+                      },
+                      "evidence_refs": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                        },
+                        "minItems": 0,
+                        "maxItems": 200
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text",
+                      "kind",
+                      "evidence_refs"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                },
+                "payload": {
+                  "type": "object",
+                  "properties": {
+                    "requirements_revision": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "matrix": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "requirement_id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                          },
+                          "purpose": {
+                            "type": "string",
+                            "enum": [
+                              "verification",
+                              "validation"
+                            ]
+                          },
+                          "method": {
+                            "type": "string",
+                            "enum": [
+                              "inspection",
+                              "analysis",
+                              "demonstration",
+                              "test"
+                            ]
+                          },
+                          "criterion": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "configuration": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 6000,
+                            "pattern": "\\S"
+                          },
+                          "evidence_status": {
+                            "type": "string",
+                            "enum": [
+                              "none",
+                              "planned"
+                            ]
+                          },
+                          "evidence_refs": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                            },
+                            "minItems": 0,
+                            "maxItems": 200
+                          }
+                        },
+                        "required": [
+                          "requirement_id",
+                          "purpose",
+                          "method",
+                          "criterion",
+                          "configuration",
+                          "evidence_status",
+                          "evidence_refs"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "validation_questions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "uncovered_requirements": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "execution_status": {
+                      "type": "string",
+                      "enum": [
+                        "planned"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "requirements_revision",
+                    "matrix",
+                    "validation_questions",
+                    "uncovered_requirements",
+                    "execution_status"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "artifact_id",
+                "revision",
+                "task_id",
+                "task_revision",
+                "type",
+                "scope",
+                "conditions",
+                "evidence_refs",
+                "payload"
+              ],
+              "additionalProperties": false
+            },
+            "purpose": "建立要求验证和预期使用确认的证据计划",
+            "requires": [
+              "ProblemBrief",
+              "PrototypePlan"
+            ],
+            "stage": "verify",
+            "next": [],
+            "stop": "verification与validation分开；计划就绪不代表产品通过。",
+            "input_bindings": {
+              "requirements": "artifact:ProblemBrief.payload.requirements",
+              "intended_use": "task",
+              "product_configuration": "artifact:PrototypePlan.payload.scope",
+              "test_capabilities": "task.resources"
+            },
+            "status": "platform_authored_not_expert_reviewed",
+            "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+          },
+          "depends_on": [
+            "R48",
+            "R44"
+          ],
+          "bindings": [
+            {
+              "required_type": "ProblemBrief",
+              "source": {
+                "node": "R48",
+                "output_type": "ProblemBrief"
+              }
+            },
+            {
+              "required_type": "PrototypePlan",
+              "source": {
+                "node": "R44",
+                "output_type": "PrototypePlan"
+              }
+            }
+          ],
+          "output_type": "VerificationPlan",
+          "executor": "host_agent_or_human",
+          "steps": [
+            {
+              "step_id": "R42-S01",
+              "title": "分离两类追溯目标",
+              "input_refs": [
+                "requirements",
+                "intended_use",
+                "product_configuration"
+              ],
+              "depends_on": [],
+              "operation": "将技术条款与用途期待分别编号，列产品层级与配置。",
+              "decision": "不可测要求先修订；不能以使用满意替代条款符合。",
+              "output_key": "vv_targets",
+              "output_description": "verification/validation目标及缺口",
+              "checks": [
+                "目的有区分",
+                "编号版本明确"
+              ],
+              "stop_condition": "关键目标未知停止合格结论",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查要求基线与运行概念"
+              ]
+            },
+            {
+              "step_id": "R42-S02",
+              "title": "建立方法与判据矩阵",
+              "input_refs": [
+                "vv_targets",
+                "test_capabilities"
+              ],
+              "depends_on": [
+                "R42-S01"
+              ],
+              "operation": "逐项选择检查、分析、演示或试验，确定环境、代表性、判据及数据。",
+              "decision": "同一活动服务两类目标仍分判据；无能力则外部补证。",
+              "output_key": "vv_plan",
+              "output_description": "目标—活动—判据—资源覆盖表",
+              "checks": [
+                "执行前定判据",
+                "模型适用域明确"
+              ],
+              "stop_condition": "关键方法不可执行只保存计划",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查测量、模型、用户与环境代表性"
+              ]
+            },
+            {
+              "step_id": "R42-S03",
+              "title": "检查就绪与配置",
+              "input_refs": [
+                "vv_plan",
+                "product_configuration",
+                "test_capabilities"
+              ],
+              "depends_on": [
+                "R42-S02"
+              ],
+              "operation": "确认对象基线、设备、程序、人员、安全与记录机制，记录偏离。",
+              "decision": "未满足就绪条件不冒称正式验证。",
+              "output_key": "readiness_record",
+              "output_description": "配置、能力和就绪缺口",
+              "checks": [
+                "工具适合目的",
+                "记录可回溯"
+              ],
+              "stop_condition": "安全或关键设备条件不足停止执行",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查设备校准、程序和样机版本"
+              ]
+            },
+            {
+              "step_id": "R42-S04",
+              "title": "执行并保存原始证据",
+              "input_refs": [
+                "readiness_record",
+                "vv_plan"
+              ],
+              "depends_on": [
+                "R42-S03"
+              ],
+              "operation": "按受控活动取得数据和观察，记录环境、偏差和异常，不改写原始结果。",
+              "decision": "不能实际执行时状态为planned；无数据不写通过。",
+              "output_key": "vv_evidence",
+              "output_description": "原始记录、条件与异常",
+              "checks": [
+                "证据关联对象",
+                "计划结果分离"
+              ],
+              "stop_condition": "超出安全或程序边界中止并记录",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "执行依赖实际试验/分析工具"
+              ]
+            },
+            {
+              "step_id": "R42-S05",
+              "title": "判读覆盖与处理异常",
+              "input_refs": [
+                "vv_evidence",
+                "vv_targets"
+              ],
+              "depends_on": [
+                "R42-S04"
+              ],
+              "operation": "逐判据区分符合、不符合、未验证及条件限制，调查异常来源与影响范围。",
+              "decision": "修改产品/要求/方法后决定需重做哪些活动。",
+              "output_key": "vv_findings",
+              "output_description": "分项结论、异常责任与复验需求",
+              "checks": [
+                "不追改及格线",
+                "无证据不默认通过"
+              ],
+              "stop_condition": "未闭环关键异常不签总体完成",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "查异常原因及变更影响"
+              ]
+            },
+            {
+              "step_id": "R42-S06",
+              "title": "报告并保留可复用证据",
+              "input_refs": [
+                "vv_findings",
+                "vv_evidence"
+              ],
+              "depends_on": [
+                "R42-S05"
+              ],
+              "operation": "形成两类目标的覆盖报告、限制、未闭环及配置变更触发条件。",
+              "decision": "工程结论受证据范围约束，交付与认证由适用流程决定。",
+              "output_key": "vv_dossier",
+              "output_description": "V&V计划、证据、结论和开放项",
+              "checks": [
+                "状态不混淆",
+                "责任与版本保留"
+              ],
+              "stop_condition": "缺关键证据保留未验证",
+              "source_refs": [
+                "S01",
+                "S02"
+              ],
+              "knowledge_queries": [
+                "将结果回传要求和设计迭代"
+              ]
+            }
+          ],
+          "stop_condition": "verification与validation分开；计划就绪不代表产品通过。"
+        }
+      ],
+      "status": "planned_not_executed",
+      "quality": "not_expert_reviewed_not_engineering_validated",
+      "plan_sha256": "86107d4b969b414ae3e2f34fa44dd1b77cc600f2e3a3eb7d81f1fb72f6a700cd"
+    },
+    "host_workflow": [
+      "核对需求版本、主张作用域、证据原件及核读范围；锚点存在不证明主张为真",
+      "逐项读取method_refs对应深化正文，核对前提；补证专题不可当完整算法",
+      "先研究冲突边界，再审跨案例结构同构；不得直接复制参数或现场事实",
+      "构造2到3条有不同机制的候选路径，给条件、二阶后果和证伪方法；缺依据不凑数",
+      "只按已有六契约形成研究产物，模型草稿另过语义与领域审查",
+      "记录实际采用、修订原因、试验配置及结果；反馈不自动升格为事实或专家认证"
+    ],
+    "capability_boundary": {
+      "model_called": false,
+      "case_mcp_called": false,
+      "persistent_memory_written": false,
+      "semantic_truth_verified": false,
+      "engineering_validated": false,
+      "expert_certified": false
+    }
+  },
+  "demonstration": {
+    "mode": "Host-authored_structure_transfer_example_not_model_or_field_execution",
+    "source_data_sha256": {
+      "prior_report": "9fcace694c3f44847e6bc35600a01ae2c6dc1b736c94b8bdeaf688d9bd3863a7",
+      "case_interpretation": "96638be270592e34eb49ab2ff9aa4e3a24e70c1ce1098ac3b490680d0d52b2f3"
+    },
+    "candidate_routes": [
+      {
+        "id": "A",
+        "mechanism": "受约束的接触/切割模块与可拆卸胶路分离",
+        "condition": "能定义接触边界，分离后的出胶路径不引入不可接受损失或污染",
+        "second_order_consequence": "便于单独清洁，但新增接口会增加泄漏、误装和卡滞研究工作",
+        "falsification": "在批准的替代介质台架研究中比较接口损失/污染/恢复；不直接上树"
+      },
+      {
+        "id": "B",
+        "mechanism": "用状态与时序分开作用、退出和清理",
+        "condition": "作用结束后存在允许的转换窗口，并能确认退出与残能状态",
+        "second_order_consequence": "可减少同一接触承担的冲突，但增加控制状态和故障恢复复杂性",
+        "falsification": "若转换时间/断电释放/陈旧信息无法满足批准边界，返回架构而非放宽约束"
+      },
+      {
+        "id": "C",
+        "mechanism": "先建立每树/每配置的边界识别与低能量研究协议，再研究自适应作用",
+        "condition": "需要可信的独立参考、可测响应及专业批准的损伤研究边界",
+        "second_order_consequence": "前期数据成本增加，但可能防止把树间差异误作控制误差",
+        "falsification": "若独立参考不能辨识关键边界，不进入自适应切割或编造深度指标"
+      }
+    ],
+    "next_action": "先由目标领域人员界定损伤/接触边界及参考方法；随后比较哪些非树体台架研究最可能排除错误路线。",
+    "no_unique_winner": "客户工况与硬边界未确认，三条仅为不同机制的研究候选，不给优胜或收益承诺。",
+    "feedback": "无真实结果，尚不能计算方法效果、预测命中率或方案质量提升。"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "round": "ML-022",
+  "tests": {
+    "command": ".runtime/pipeline/bin/python -m unittest discover -s tests -p test_method_engine*.py -v",
+    "exit_code": 0,
+    "passed_count": 31,
+    "log": "测试记录.txt"
+  },
+  "real_stdio_mcp": {
+    "new_opt_in_tools": 25,
+    "tested": [
+      "method_deep_content(WB05)",
+      "innovation_reasoning_context(R48,R52)"
+    ],
+    "model_called": false,
+    "case_mcp_called_in_this_round": false
+  },
+  "unchanged_against_pre_round_git_head": {
+    "scripts/method_engine.py": true,
+    "scripts/method_engine_contracts.py": true,
+    "scripts/method_engine_store.py": true,
+    "scripts/method_engine_mcp.py": true,
+    "scripts/method_engine_incremental_mcp.py": true,
+    "scripts/method_engine_library_mcp.py": true
+  },
+  "demonstration": "Host-authored research routes using local prior report and AI interpretation; not field results",
+  "production_deployed": false,
+  "personal_memory_written": false,
+  "effectiveness_or_expert_quality_proven": false
+}
