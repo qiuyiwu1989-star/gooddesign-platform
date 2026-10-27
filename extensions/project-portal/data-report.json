@@ -1,0 +1,2573 @@
+{
+  "schema": "gooddesign-data-report-1.0",
+  "generated_at": "2026-10-27T14:32:20+09:00",
+  "assessment_snapshot_at": "2026-10-26T11:08:15.808090+00:00",
+  "scope": "项目字段与来源数量仅统计98金奖当前库；560是题录总数。基线、增补、检索、发布、评估、达标分别统计。",
+  "summary": {
+    "catalog_entries": 560,
+    "gold_projects": 98,
+    "published_research": 98,
+    "basic_coverage": 98,
+    "deepening_reports": 21,
+    "fact_records": 1234,
+    "known_cells": 2528,
+    "project_source_entries": 679,
+    "methods": 64,
+    "method_calibrated": 64,
+    "incremental_projects": 2,
+    "incremental_fields": 9
+  },
+  "project_quality_counts": {
+    "待补证与内容评估": 24,
+    "独立Agent校准，非专家": 16,
+    "版本变更，待复评": 5,
+    "Agent初评，待校准": 53
+  },
+  "method_quality_counts": {
+    "独立Agent校准，非专家": 64
+  },
+  "project_calibrated_range": [
+    15.0,
+    58.75
+  ],
+  "method_baseline_range": [
+    47.5,
+    61.25
+  ],
+  "projects": [
+    {
+      "id": "2025-00",
+      "name": "嫦娥五/六号月球钻取采样方法及系统设计",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 102,
+      "known_cells": 799,
+      "source_entries": 172,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补冻结引文或修证据/归属链；人工旧引用单列，不伪装新契约通过",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2025-01",
+      "name": "高性能显示玻璃构件光热力协同加工装备",
+      "revision": "research-000006",
+      "coverage": true,
+      "deepening": false,
+      "records": 25,
+      "known_cells": 61,
+      "source_entries": 9,
+      "score": 42.5,
+      "score_revision": "research-000006",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果",
+        "历程与故事尚无已入档事实记录；先补关键事实，不用AI填充代替",
+        "质量与维护尚无已入档事实记录；先补关键事实，不用AI填充代替"
+      ]
+    },
+    {
+      "id": "2025-02",
+      "name": "三维集成芯片制造用的超精密减薄装备",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 21,
+      "known_cells": 46,
+      "source_entries": 16,
+      "score": 43.75,
+      "score_revision": "research-000002",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2025-03",
+      "name": "消化道早癌诊疗柔性手术机器人系统设计及应用",
+      "revision": "research-000003",
+      "coverage": true,
+      "deepening": true,
+      "records": 21,
+      "known_cells": 51,
+      "source_entries": 7,
+      "score": 41.25,
+      "score_revision": "research-000003",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果",
+        "历程与故事尚无已入档事实记录；先补关键事实，不用AI填充代替"
+      ]
+    },
+    {
+      "id": "2025-04",
+      "name": "高性能零件复杂内腔抛光磨料介质与装备",
+      "revision": "research-000004",
+      "coverage": true,
+      "deepening": true,
+      "records": 28,
+      "known_cells": 54,
+      "source_entries": 9,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "版本变更，待复评",
+      "gaps": [
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果",
+        "质量与维护尚无已入档事实记录；先补关键事实，不用AI填充代替"
+      ]
+    },
+    {
+      "id": "2025-05",
+      "name": "宽幅镁合金板带电磁铸轧成形成套智能装备",
+      "revision": "research-000003",
+      "coverage": true,
+      "deepening": true,
+      "records": 22,
+      "known_cells": 42,
+      "source_entries": 7,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "版本变更，待复评",
+      "gaps": [
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果",
+        "历程与故事尚无已入档事实记录；先补关键事实，不用AI填充代替"
+      ]
+    },
+    {
+      "id": "2025-06",
+      "name": "航空发动机转子惯性摩擦焊接装备与制造工艺设计",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": true,
+      "records": 21,
+      "known_cells": 37,
+      "source_entries": 4,
+      "score": 42.5,
+      "score_revision": "research-000002",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果",
+        "质量与维护尚无已入档事实记录；先补关键事实，不用AI填充代替"
+      ]
+    },
+    {
+      "id": "2025-07",
+      "name": "大运飞机舱室低噪声设计与应用",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 18,
+      "known_cells": 28,
+      "source_entries": 4,
+      "score": 35.0,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2025-08",
+      "name": "半导体金刚石散热材料制备关键工艺与核心装备设计",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 7,
+      "known_cells": 9,
+      "source_entries": 2,
+      "score": 21.25,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2025-09",
+      "name": "面向复杂山地地形的新型As列车及其互联互通创新设计",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 6,
+      "known_cells": 7,
+      "source_entries": 2,
+      "score": 17.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2024-00",
+      "name": "仿生微纳结构防冰减阻蒙皮",
+      "revision": "research-000003",
+      "coverage": true,
+      "deepening": false,
+      "records": 24,
+      "known_cells": 36,
+      "source_entries": 6,
+      "score": 40.0,
+      "score_revision": "research-000003",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2024-01",
+      "name": "空间可展结构成形-展开-性能保持设计方法与技术",
+      "revision": "research-000003",
+      "coverage": true,
+      "deepening": false,
+      "records": 22,
+      "known_cells": 29,
+      "source_entries": 3,
+      "score": 38.75,
+      "score_revision": "research-000003",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2024-02",
+      "name": "国和一号屏蔽电机主泵",
+      "revision": "research-000003",
+      "coverage": true,
+      "deepening": false,
+      "records": 17,
+      "known_cells": 19,
+      "source_entries": 3,
+      "score": 32.5,
+      "score_revision": "research-000003",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2024-03",
+      "name": "自主F级50MW重型燃气轮机设计",
+      "revision": "research-000003",
+      "coverage": true,
+      "deepening": false,
+      "records": 18,
+      "known_cells": 23,
+      "source_entries": 5,
+      "score": 32.5,
+      "score_revision": "research-000003",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2024-04",
+      "name": "空间分布式多束碳纤维同步缠绕装备设计开发",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": true,
+      "records": 25,
+      "known_cells": 36,
+      "source_entries": 5,
+      "score": 41.25,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2024-05",
+      "name": "多模式隧道掘进机",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 22,
+      "known_cells": 27,
+      "source_entries": 3,
+      "score": 41.25,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2024-06",
+      "name": "柔性重载机器人搅拌摩擦焊接与检测系统",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": true,
+      "records": 26,
+      "known_cells": 32,
+      "source_entries": 5,
+      "score": 41.25,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2024-07",
+      "name": "城市轨道交通列车走行部智能检测成套装备",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": true,
+      "records": 25,
+      "known_cells": 34,
+      "source_entries": 4,
+      "score": 41.25,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2024-08",
+      "name": "高效动压气悬浮离心机",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": true,
+      "records": 18,
+      "known_cells": 22,
+      "source_entries": 6,
+      "score": 41.25,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2024-09",
+      "name": "工业化建筑构件智能安装成套装备设计及应用",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": true,
+      "records": 12,
+      "known_cells": 19,
+      "source_entries": 4,
+      "score": 16.25,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2023-00",
+      "name": "800MN大型模锻压机",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 9,
+      "known_cells": 10,
+      "source_entries": 3,
+      "score": 23.75,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2023-01",
+      "name": "宽幅不锈钢薄带钢热连轧生产线设计及应用",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 4,
+      "known_cells": 5,
+      "source_entries": 4,
+      "score": 18.75,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2023-02",
+      "name": "重型商用车高效率长寿命变速器",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 7,
+      "known_cells": 8,
+      "source_entries": 2,
+      "score": 22.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2023-03",
+      "name": "圆形改性大模场双包层高功率工业光纤激光器",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 15,
+      "known_cells": 17,
+      "source_entries": 3,
+      "score": 32.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2023-04",
+      "name": "高耐压低摩擦新型磁性液体动密封技术",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 22,
+      "known_cells": 29,
+      "source_entries": 5,
+      "score": 41.25,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2023-05",
+      "name": "远海原油转驳核心装备关键设计制造技术",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": true,
+      "records": 22,
+      "known_cells": 28,
+      "source_entries": 3,
+      "score": 41.25,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2023-06",
+      "name": "三维地球磁层空间等离子体环境地面模拟装置",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": true,
+      "records": 19,
+      "known_cells": 30,
+      "source_entries": 4,
+      "score": 38.75,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2023-07",
+      "name": "700m水头400MW级高转速抽水蓄能机组",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 15,
+      "known_cells": 19,
+      "source_entries": 3,
+      "score": 36.25,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2023-08",
+      "name": "长距离空间螺旋极硬岩隧道掘进机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": true,
+      "records": 17,
+      "known_cells": 19,
+      "source_entries": 4,
+      "score": 42.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2023-09",
+      "name": "600~1000MW超超临界二次再热锅炉研制及应用",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 18,
+      "known_cells": 25,
+      "source_entries": 5,
+      "score": 43.75,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2021-00",
+      "name": "星球车复合式移动系统设计及运动性能验证",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 24,
+      "known_cells": 51,
+      "source_entries": 8,
+      "score": 52.5,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果",
+        "设计思路尚无已入档事实记录；先补关键事实，不用AI填充代替"
+      ]
+    },
+    {
+      "id": "2021-01",
+      "name": "白鹤滩1000MW水轮发电机组",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 15,
+      "known_cells": 34,
+      "source_entries": 21,
+      "score": 46.25,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2021-02",
+      "name": "高性能混联加工机器人",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 16,
+      "known_cells": 36,
+      "source_entries": 30,
+      "score": 38.75,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果",
+        "设计思路尚无已入档事实记录；先补关键事实，不用AI填充代替"
+      ]
+    },
+    {
+      "id": "2021-03",
+      "name": "“翼型风帆助推”超大型原油船",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 16,
+      "known_cells": 18,
+      "source_entries": 2,
+      "score": 36.25,
+      "score_revision": "research-000001",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2021-04",
+      "name": "隧道联络通道掘进机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 9,
+      "known_cells": 13,
+      "source_entries": 3,
+      "score": 25.0,
+      "score_revision": "research-000001",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2021-05",
+      "name": "高性能锻件智能化成形生产线",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 12,
+      "known_cells": 15,
+      "source_entries": 5,
+      "score": 15.0,
+      "score_revision": "research-000002",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2021-06",
+      "name": "深孔加工直线度控制技术及装备",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 15,
+      "known_cells": 19,
+      "source_entries": 6,
+      "score": 22.5,
+      "score_revision": "research-000002",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2021-07",
+      "name": "海洋钢桩水下检测机器人",
+      "revision": "research-000003",
+      "coverage": true,
+      "deepening": false,
+      "records": 18,
+      "known_cells": 28,
+      "source_entries": 5,
+      "score": 30.0,
+      "score_revision": "research-000003",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2021-08",
+      "name": "SLC-2E型多功能雷达",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 3,
+      "known_cells": 3,
+      "source_entries": 2,
+      "score": 10.0,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2021-09",
+      "name": "精雕JDMR600五轴高速加工中心",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 15,
+      "known_cells": 17,
+      "source_entries": 5,
+      "score": 21.25,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2020-00",
+      "name": "大直径全断面硬岩隧道掘进机",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 7,
+      "known_cells": 11,
+      "source_entries": 5,
+      "score": 30.0,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2020-01",
+      "name": "时速350公里新型高铁快运动车组研制项目",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 10,
+      "known_cells": 12,
+      "source_entries": 4,
+      "score": 21.25,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2020-02",
+      "name": "QMJ4260全断面煤巷高效掘进机",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 12,
+      "known_cells": 17,
+      "source_entries": 6,
+      "score": 38.75,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2020-03",
+      "name": "智能全向移动机器人",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 21,
+      "known_cells": 27,
+      "source_entries": 8,
+      "score": 35.0,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2020-04",
+      "name": "10MW海上风力发电机组",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 13,
+      "known_cells": 14,
+      "source_entries": 6,
+      "score": 25.0,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2020-05",
+      "name": "火眼实验室（气膜版）",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": true,
+      "records": 13,
+      "known_cells": 18,
+      "source_entries": 5,
+      "score": 27.5,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2020-06",
+      "name": "高刚度磨切一体加工机器人",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 11,
+      "known_cells": 20,
+      "source_entries": 6,
+      "score": 30.0,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2020-07",
+      "name": "面向新冠肺炎及六项呼吸道病毒核酸检测产品设计",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 9,
+      "known_cells": 11,
+      "source_entries": 5,
+      "score": 18.75,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2020-08",
+      "name": "新型液压驱动式钢板滚动剪切机",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 12,
+      "known_cells": 18,
+      "source_entries": 6,
+      "score": 27.5,
+      "score_revision": "research-000002",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2020-09",
+      "name": "十万等级制氧量空分装置MAC180离心压缩机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 4,
+      "known_cells": 4,
+      "source_entries": 3,
+      "score": 10.0,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2019-00",
+      "name": "六行智能采棉机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 8,
+      "known_cells": 9,
+      "source_entries": 3,
+      "score": 18.75,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2019-01",
+      "name": "芯片制造抛光装备与成套工艺",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 5,
+      "known_cells": 11,
+      "source_entries": 5,
+      "score": 16.25,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2019-02",
+      "name": "深水海上风机超大型自升自航式安装平台",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 7,
+      "known_cells": 8,
+      "source_entries": 3,
+      "score": 22.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2019-03",
+      "name": "“陕西北人”电子束（EB）胶印机设计",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 5,
+      "known_cells": 9,
+      "source_entries": 5,
+      "score": 22.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2019-04",
+      "name": "手机摄像头升降模组设计",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 7,
+      "known_cells": 11,
+      "source_entries": 6,
+      "score": 25.0,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2019-05",
+      "name": "XGC11000履带起重机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 9,
+      "known_cells": 12,
+      "source_entries": 3,
+      "score": 25.0,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2019-06",
+      "name": "中药全产业链智能制造解决方案",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": true,
+      "records": 2,
+      "known_cells": 2,
+      "source_entries": 2,
+      "score": 7.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2019-07",
+      "name": "71000kN全自动高速冲压线",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 4,
+      "known_cells": 4,
+      "source_entries": 2,
+      "score": 15.0,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2019-08",
+      "name": "ZYS113全智能三臂凿岩台车",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 6,
+      "known_cells": 6,
+      "source_entries": 7,
+      "score": 17.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2019-09",
+      "name": "投影式红外血管成像仪",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": true,
+      "records": 1,
+      "known_cells": 1,
+      "source_entries": 2,
+      "score": 6.25,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2018-00",
+      "name": "大跨径柔性吊装技术",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 2,
+      "known_cells": 6,
+      "source_entries": 3,
+      "score": 7.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2018-01",
+      "name": "光伏直驱变频空调系统研发及应用",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 10,
+      "known_cells": 14,
+      "source_entries": 4,
+      "score": 27.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2018-02",
+      "name": "农业全程机械化云管理服务平台",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 9,
+      "known_cells": 10,
+      "source_entries": 6,
+      "score": 22.5,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2018-03",
+      "name": "大型高精度衍射光栅刻划系统",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": true,
+      "records": 2,
+      "known_cells": 2,
+      "source_entries": 2,
+      "score": 15.0,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2018-04",
+      "name": "中速磁浮列车",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": true,
+      "records": 2,
+      "known_cells": 3,
+      "source_entries": 2,
+      "score": 10.0,
+      "score_revision": "research-000001",
+      "quality_status": "Agent初评，待校准",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2018-05",
+      "name": "大型核电转子锻件制造技术",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 5,
+      "known_cells": 5,
+      "source_entries": 4,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "版本变更，待复评",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2018-06",
+      "name": "SC9850KH",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": true,
+      "records": 7,
+      "known_cells": 10,
+      "source_entries": 4,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "版本变更，待复评",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2018-07",
+      "name": "核能汽轮发电机“华龙一号”",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 5,
+      "known_cells": 8,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2018-08",
+      "name": "浪潮天梭M13关键应用主机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 6,
+      "known_cells": 7,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2018-09",
+      "name": "大型灭火/水上救援水陆两栖飞机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 3,
+      "known_cells": 3,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2017-00",
+      "name": "500米口径射电望远镜柔性并联索驱动系统技术及装备",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 4,
+      "known_cells": 4,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2017-01",
+      "name": "“复兴号”中国标准动车组",
+      "revision": "research-000008",
+      "coverage": true,
+      "deepening": false,
+      "records": 44,
+      "known_cells": 93,
+      "source_entries": 41,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2017-02",
+      "name": "储能式轨道交通绿色设计",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 8,
+      "known_cells": 10,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2017-03",
+      "name": "“神威太湖之光”超级计算机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 8,
+      "known_cells": 13,
+      "source_entries": 2,
+      "score": 35,
+      "score_revision": "research-000001",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2017-04",
+      "name": "ARJ21新支线客机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 10,
+      "known_cells": 12,
+      "source_entries": 3,
+      "score": 26.25,
+      "score_revision": "research-000001",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2017-05",
+      "name": "天鲸号绞吸式挖泥船",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 2,
+      "known_cells": 2,
+      "source_entries": 3,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2017-06",
+      "name": "麒麟970",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 6,
+      "known_cells": 6,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2017-07",
+      "name": "翼龙II无人机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 2,
+      "known_cells": 2,
+      "source_entries": 3,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2017-08",
+      "name": "高速列车齿轮传动系统",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 6,
+      "known_cells": 6,
+      "source_entries": 4,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "版本变更，待复评",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2017-09",
+      "name": "城市地下空间工程大数据服务模式",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": true,
+      "records": 4,
+      "known_cells": 4,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2016-00",
+      "name": "超大断面矩形顶管机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 2,
+      "known_cells": 2,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2016-01",
+      "name": "30年“力出一孔”的管道思维",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 4,
+      "known_cells": 4,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2016-02",
+      "name": "移动社交生活方式",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 2,
+      "known_cells": 4,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2016-03",
+      "name": "农产品内在指标的可视化无损检测",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 3,
+      "known_cells": 5,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2016-04",
+      "name": "微风启动垂直轴风力发电机组",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 1,
+      "known_cells": 3,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2016-05",
+      "name": "咕咚洗衣机－世界上最小的洗衣机",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 11,
+      "known_cells": 16,
+      "source_entries": 4,
+      "score": 27.5,
+      "score_revision": "research-000002",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果"
+      ]
+    },
+    {
+      "id": "2016-06",
+      "name": "水槽式洗碗机",
+      "revision": "research-000003",
+      "coverage": true,
+      "deepening": false,
+      "records": 15,
+      "known_cells": 23,
+      "source_entries": 5,
+      "score": 36.25,
+      "score_revision": "research-000003",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2016-07",
+      "name": "机床企业的“4S店式”营销模式",
+      "revision": "research-000003",
+      "coverage": true,
+      "deepening": true,
+      "records": 14,
+      "known_cells": 14,
+      "source_entries": 7,
+      "score": 30.0,
+      "score_revision": "research-000003",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2015-00",
+      "name": "CRH380A型高速动车组",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 6,
+      "known_cells": 10,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2015-01",
+      "name": "“海洋石油981”3000米水深半潜式钻井平台",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 3,
+      "known_cells": 3,
+      "source_entries": 4,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2015-02",
+      "name": "蛟龙号载人潜水器",
+      "revision": "research-000008",
+      "coverage": true,
+      "deepening": false,
+      "records": 55,
+      "known_cells": 129,
+      "source_entries": 41,
+      "score": 58.75,
+      "score_revision": "research-000008",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补成果明细与逐项项目关联；同团队专利/论文不可自动算本项目成果",
+        "质量与维护尚无已入档事实记录；先补关键事实，不用AI填充代替"
+      ]
+    },
+    {
+      "id": "2015-03",
+      "name": "超高清一体化智能飞行影像系统",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 8,
+      "known_cells": 8,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2015-04",
+      "name": "“人单合一双赢”的开放式商业模式创新",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 3,
+      "known_cells": 3,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2015-05",
+      "name": "移动互联时代的智能出行新模式",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 4,
+      "known_cells": 4,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2015-06",
+      "name": "北斗——遥感卫星综合管理平台",
+      "revision": "research-000002",
+      "coverage": true,
+      "deepening": false,
+      "records": 7,
+      "known_cells": 6,
+      "source_entries": 8,
+      "score": 15.0,
+      "score_revision": "research-000002",
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2015-07",
+      "name": "巨型重载锻造操作机",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": true,
+      "records": 6,
+      "known_cells": 6,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "核对待确认原件归属或补第一手资料",
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开"
+      ]
+    },
+    {
+      "id": "2015-08",
+      "name": "硅砂雨水收集利用系统",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 6,
+      "known_cells": 6,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    },
+    {
+      "id": "2015-09",
+      "name": "骨替代物设计",
+      "revision": "research-000001",
+      "coverage": true,
+      "deepening": false,
+      "records": 2,
+      "known_cells": 2,
+      "source_entries": 2,
+      "score": null,
+      "score_revision": null,
+      "quality_status": "待补证与内容评估",
+      "gaps": [
+        "补获奖对象、正式名称及奖项出处",
+        "补需求/工况约束、技术机理与设计取舍；AI与团队真实方法分开",
+        "补原始试验、环境/基线/样本/不确定度；复核指标条件"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "R01",
+      "name": "系统化工程设计",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 48.75,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "取得授权概念/实体设计相关章节；补要求→功能→原理→结构的真实版本夹具示例及一条回返记录。"
+      ]
+    },
+    {
+      "id": "R02",
+      "name": "双钻",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "用去敏真实委托/观察/问题改写/小测试组成完整证据链，保存返回Define的实际产物。"
+      ]
+    },
+    {
+      "id": "R03",
+      "name": "设计思维",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 53.75,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "选读相应Bootleg具体卡并逐动作定位；补非高风险真实参与者原型迭代，核材料商业用途许可。"
+      ]
+    },
+    {
+      "id": "R04",
+      "name": "系统工程",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补接口控制原件和真实集成异常的要求版本/接口/测试更改链，不以NASA页面覆盖行业规范。"
+      ]
+    },
+    {
+      "id": "R05",
+      "name": "机电系统V模型",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 47.5,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "授权核2206关键检查点，完成系统要求→专业接口→集成测试逐层对照实例与坐标冲突返回记录。"
+      ]
+    },
+    {
+      "id": "R06",
+      "name": "阶段门",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "保存一个授权角色真实关口决定及资源承诺/补证返回，不把模型建议当组织批准。"
+      ]
+    },
+    {
+      "id": "R07",
+      "name": "六西格玛设计",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 48.75,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补测量系统/DOE/稳健方法直接原典及真实原始数据；用量具不足负例实际运行留输出。"
+      ]
+    },
+    {
+      "id": "R08",
+      "name": "用户观察与需求证据化",
+      "category": "A问题发现与需求定义",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补去敏事件原件→双人编码分歧→需求修订的小型真实包；明确同意与现场材料权利范围。"
+      ]
+    },
+    {
+      "id": "R09",
+      "name": "待办任务理论",
+      "category": "A问题发现与需求定义",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补至少两个实际选择/放弃事件及反例、编码与任务分群；完整展示如何由事件形成需求而不编市场规模。"
+      ]
+    },
+    {
+      "id": "R10",
+      "name": "领先用户法",
+      "category": "A问题发现与需求定义",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补第2章目标活动逐页定位和真实候选资格证据；展示未满足两特征者如何被排除及贡献/权利记录。"
+      ]
+    },
+    {
+      "id": "R11",
+      "name": "Kano需求分类",
+      "category": "A问题发现与需求定义",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "选定原始论文/权威分类矩阵版本，构造全回答对与缺失/反向/可疑边界的实际可复算测试。"
+      ]
+    },
+    {
+      "id": "R12",
+      "name": "质量功能展开",
+      "category": "A问题发现与需求定义",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "固定采用版本/量表及敏感性规则，用真实需要—工程响应矩阵保留未知关系、目标来源与责任验证。"
+      ]
+    },
+    {
+      "id": "R13",
+      "name": "人机工程与人本设计",
+      "category": "A问题发现与需求定义",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "取得目标人群数据和授权适用标准；以去敏换卷任务×人员条件×工况生成可重复试用原记录。"
+      ]
+    },
+    {
+      "id": "R14",
+      "name": "功能分解与接口分析",
+      "category": "B功能分析与概念生成",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补一个完整实际功能目录/流/接口双方单位时序及异常恢复记录，逐项把派生要求与验证闭环。"
+      ]
+    },
+    {
+      "id": "R15",
+      "name": "FAST功能逻辑分析",
+      "category": "B功能分析与概念生成",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "取得所选FAST图型授权直接原文，完成每条HOW/WHY问答与替代分支、支撑约束的可复读实例。"
+      ]
+    },
+    {
+      "id": "R16",
+      "name": "根因分析",
+      "category": "B功能分析与概念生成",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "用安全去敏真实事件形成支持/反证/混杂/确认的原因表，保留措施与同工况暴露期复发验证。"
+      ]
+    },
+    {
+      "id": "R17",
+      "name": "形态学分析",
+      "category": "B功能分析与概念生成",
+      "version": "0.1.0",
+      "score": 60.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "用一个真实完整功能解法矩阵，逐对/多项检查留下原始依据；输出可复算保留/排除/未知组合和交接包。"
+      ]
+    },
+    {
+      "id": "R18",
+      "name": "仿生设计",
+      "category": "B功能分析与概念生成",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "选一个具体自然策略，取原始实验并对照尺度/介质/材料，填完整机制—工程差异表并验证最危险迁移假设。"
+      ]
+    },
+    {
+      "id": "R19",
+      "name": "设计启发式",
+      "category": "B功能分析与概念生成",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "固定合法提示集与版本；实际保存基线→提示→变体→约束筛除，比较机制多样性而非只数草图。"
+      ]
+    },
+    {
+      "id": "R20",
+      "name": "C-K设计理论",
+      "category": "B功能分析与概念生成",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "记录真实知识扩展前后命题/属性变化及来源版本，用局部支持不得整体通过的负例实际留输出。"
+      ]
+    },
+    {
+      "id": "R21",
+      "name": "TRIZ体系",
+      "category": "C技术发明与矛盾求解",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "建同一问题ID三种就绪/路由教学输入；保存选中/拒绝工具及理由，缺主功能必须返回，不编矩阵命中。"
+      ]
+    },
+    {
+      "id": "R22",
+      "name": "技术矛盾与发明原理",
+      "category": "C技术发明与矛盾求解",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "固定一版本原参数定义与可合法使用矩阵；记录IF-THEN-BUT/原量纲/映射歧义/真实单元格，空格非无解及未查询不命中负例。"
+      ]
+    },
+    {
+      "id": "R23",
+      "name": "物理矛盾与分离",
+      "category": "C技术发明与矛盾求解",
+      "version": "0.1.0",
+      "score": 47.5,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "先做双侧同属性阈值及条件表，完整演示重叠/不重叠/切换窗口未知三例；先取直接分离规则原文。"
+      ]
+    },
+    {
+      "id": "R24",
+      "name": "理想解与资源分析",
+      "category": "C技术发明与矛盾求解",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "对假设重力回位建带单位mgh与需求功预算，列效率/方向/时窗未知；任意朝向或预算不足必须保留不适用。"
+      ]
+    },
+    {
+      "id": "R25",
+      "name": "物场分析与标准解",
+      "category": "C技术发明与矛盾求解",
+      "version": "0.1.0",
+      "score": 51.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补一条授权核读的具体标准前提；分别记录保持不足U与压痕风险H，原图→变换图→机制及禁止改变检查。"
+      ]
+    },
+    {
+      "id": "R26",
+      "name": "功能裁剪",
+      "category": "C技术发明与矛盾求解",
+      "version": "0.1.0",
+      "score": 60.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "建回位弹簧三必要功能去向表，缺间隙补偿必须拒绝完整裁剪；接管能力unknown不得写已实现，用户新增劳动单列。"
+      ]
+    },
+    {
+      "id": "R27",
+      "name": "功能导向检索与科学效应",
+      "category": "C技术发明与矛盾求解",
+      "version": "0.1.0",
+      "score": 60.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "先对无外泵排液进行真实公开源查询日志，区分科学效应和成熟技术，逐项填尺度/润湿/黏度/方向差异及关键验证。"
+      ]
+    },
+    {
+      "id": "R28",
+      "name": "ARIZ发明问题求解算法",
+      "category": "C技术发明与矛盾求解",
+      "version": "0.1.0",
+      "score": 47.5,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "先固定可用版本范围，做摘要状态机与部分执行标签；缺第四至九细则则不得宣称full85C，回溯必须保留旧模型。"
+      ]
+    },
+    {
+      "id": "R29",
+      "name": "技术系统进化趋势",
+      "category": "C技术发明与矛盾求解",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "用明确教学历史MPV序列与工况记录做阶段假设，不拟合即成熟百分比；单规格刚度下降反例须下调动态化路线。"
+      ]
+    },
+    {
+      "id": "R30",
+      "name": "公理化设计",
+      "category": "D机构架构与系统设计",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "以A0/A1/A2和unknown项矩阵做可复算分类/调整顺序；未知不填零、无分布不算信息量，载荷改变需重验。"
+      ]
+    },
+    {
+      "id": "R31",
+      "name": "DSM与模块化架构",
+      "category": "D机构架构与系统设计",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "以A/B/C依赖证据构造矩阵，实际求强连通分量及缩点排序；反向转置应解释一致，unknown不得变零。"
+      ]
+    },
+    {
+      "id": "R32",
+      "name": "机构综合",
+      "category": "D机构架构与系统设计",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "固定三位姿坐标/长度单位，保存铰点求解多解及完整运动扫描；离散点满足而分支跳变应拒。"
+      ]
+    },
+    {
+      "id": "R33",
+      "name": "Ashby材料选择",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "用明确教学轴向刚度数据推导E/ρ并筛温度硬约束；弯曲工况误用轴向指数、物性缺失不得排名。"
+      ]
+    },
+    {
+      "id": "R34",
+      "name": "面向制造与装配设计",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "做带密封维修约束的罩壳BOM/动作表和删件功能去向；完整教学产物复算，不把理论删件数当节拍。"
+      ]
+    },
+    {
+      "id": "R35",
+      "name": "拓扑优化",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 57.5,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "固定合法教学MBB边界/网格/体积分数实际运行，保存迭代与平衡残差；缺载荷拒绝，滤波变化与网格变化分测。"
+      ]
+    },
+    {
+      "id": "R36",
+      "name": "Pugh概念筛选",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 60.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "同三概念逐格证据/判者表，硬约束先筛，换datum检稳定；缺依据必须unknown，不以总和抵消硬失败。"
+      ]
+    },
+    {
+      "id": "R37",
+      "name": "多准则权衡分析",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 60.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "完成三路线原始值/单位/偏好来源及加权变换、权重反转区间；量纲直接相加/硬失败高分/缺值填零负例。"
+      ]
+    },
+    {
+      "id": "R38",
+      "name": "试验设计与响应面",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "实际生成2³设计/种子随机顺序/模型矩阵秩；无响应不报p值，无独立重复不报纯误差，两水平不辨全部二次项。"
+      ]
+    },
+    {
+      "id": "R39",
+      "name": "稳健参数与公差设计",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "以教学线性间隙和有源协方差计算最坏界/方差，相关性改变做敏感性；公差当sigma及无分布报良率均拒。"
+      ]
+    },
+    {
+      "id": "R40",
+      "name": "失效模式与影响分析",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "建夹持失效全链/原因假设/预防检测分表及一轮计划状态迁移；传感器存在不当检测有效，未验证行动不能闭环降风险。"
+      ]
+    },
+    {
+      "id": "R41",
+      "name": "机械风险评估与风险降低",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "建立教学清堵危险—情境—事件链及措施层次，状态迁移需真实证据；只有警告/无数据却标低风险/改版沿用结论必须拒。"
+      ]
+    },
+    {
+      "id": "R42",
+      "name": "验证与确认",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "制作两目标覆盖矩阵/固定配置及判据，用明确合成教学数据演示符合与用途失败并存；缺原始记录/改判据/配置变化不得通过。"
+      ]
+    },
+    {
+      "id": "R43",
+      "name": "生命周期评价与生态设计",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "以有量纲教学参考流做两泵等服务清单/分配/阶段贡献及寿命敏感性，非真实数据库结果；不等功能/缺数据填零/碳冒总环境须拒。"
+      ]
+    },
+    {
+      "id": "R44",
+      "name": "原型与假设测试",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "完成工具头戴手套假设卡/原型能力/提示/原始观察与替代解释；教学事件回放不冒真实参与者，纸模不能证承载。"
+      ]
+    },
+    {
+      "id": "R45",
+      "name": "价值工程",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "建立支架功能成本关联与同周期成本/转换费计算，教学明确价格假设；删必要功能、忽略转换费、预测冒实绩负例。"
+      ]
+    },
+    {
+      "id": "R46",
+      "name": "专利景观与技术路线分析",
+      "category": "A问题发现与需求定义",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "实际小主题查询保存语句时间原始导出/族政策/姓名映射和可复算趋势；A/B重复、集团误并、近期未公开、无真值召回率负例。"
+      ]
+    },
+    {
+      "id": "R47",
+      "name": "集合式并行工程",
+      "category": "D机构架构与系统设计",
+      "version": "0.1.0",
+      "score": 56.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "构造明确教学离散集合与区间接口，实际计算交集并保存证据淘汰/要求变化恢复；未知不淘汰、空交集不能平均分选取。"
+      ]
+    },
+    {
+      "id": "R48",
+      "name": "问题定义与要求管理",
+      "category": "A问题发现与需求定义",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "完成原话→事实假设→问题→有源要求→设计验证双向追溯与一次变更影响；未确认状态不得approved，解法偏好不默认硬约束。"
+      ]
+    },
+    {
+      "id": "WB01",
+      "name": "产品系统化与综合设计体系",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 47.5,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "先取得合法原论文/书章核规则；再做教学目标—内容—方法—检验闭环与回返日志，3A/5A及7D/7P保版本，不拼原创算法。"
+      ]
+    },
+    {
+      "id": "WB02",
+      "name": "3I调研",
+      "category": "A问题发现与需求定义",
+      "version": "0.1.0",
+      "score": 48.75,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "先补原章后对教学N/E/R完整关联与决策分支实际校验；需求有证环境未知不得可行，三表齐全不等调研完成或立项批准。"
+      ]
+    },
+    {
+      "id": "WB03",
+      "name": "7D总体规划",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 52.5,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "取得合法第6章/原论文，建立七域目标—活动—方法—检验图并实际变更传播；无目标活动/方法缺输入/未确认资源不能冻结。"
+      ]
+    },
+    {
+      "id": "WB04",
+      "name": "1+3+X综合设计",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 52.5,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "用教学共基线与跨专业假设表跑一轮刚体/柔性冲突回返及X方法就绪检查；无谓全调用/局部高分越硬门槛须拒。"
+      ]
+    },
+    {
+      "id": "WB05",
+      "name": "主辅功能与功能优化",
+      "category": "B功能分析与概念生成",
+      "version": "0.1.0",
+      "score": 48.75,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "补授权章内主辅定义后，填压装运行/回程两态功能承担及删除接替表；辅助自动删除、零件作功能、回程无保持应拒。"
+      ]
+    },
+    {
+      "id": "WB06",
+      "name": "面向结构性能的动态设计",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "固定教学二自由度M/K/C/激励并实际求模态与启动响应，对比独立解/单位；支承缺失或拟合冒独立验证必须停止。"
+      ]
+    },
+    {
+      "id": "WB07",
+      "name": "面向使用性能的智能设计",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "建立送料状态—测量—执行链与有版本教学日志；离线识别准不作闭环证据，无可观测性/延迟依据不能调参。"
+      ]
+    },
+    {
+      "id": "WB08",
+      "name": "面向制造性能的可视化设计",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 60.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "实际教学简化装拆几何逐中间状态检测与改版回归，保工具/公差未知；最终不碰不等路径可达，动画不证装配力。"
+      ]
+    },
+    {
+      "id": "WB09",
+      "name": "深层次动态设计",
+      "category": "E性能优化与工程实现",
+      "version": "0.1.0",
+      "score": 52.5,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "先补确证非线性子法，再做教学方程/步长收敛/初值与升降路径记录及降维误差；多峰不判混沌，数值不稳不判物理失稳。"
+      ]
+    },
+    {
+      "id": "WB10",
+      "name": "设计质量检验与综合评价",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 61.25,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "先实现教学两层加权矩阵并存全部中间向量/真实正负例；负权重/不归一/维度错/隶属当合格率拒，2008争议另待勘误。"
+      ]
+    },
+    {
+      "id": "WB11",
+      "name": "科学方法论规则与设计专家系统",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 53.75,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "取得规则展开/专家系统算法合法原文，先执行教学条件/例外/缺输入/冲突四态规则解释；作者建议不可变工程事实或人格评分。"
+      ]
+    },
+    {
+      "id": "WB12",
+      "name": "国内外设计方法分类研究与出处去重",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 55.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "用实际原词/角色/来源小数据做可撤销别名及父子关系导入，分别统计族/工具/专题；编者当原创、七类强凑、定义不足强并拒。"
+      ]
+    },
+    {
+      "id": "R49",
+      "name": "功能—行为—结构推理（FBS）",
+      "category": "B功能分析与概念生成",
+      "version": "0.1.0",
+      "score": 47.5,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "先取得合法原论文逐段八过程定位，再填F/Be/S/Bs完整教学链与一次重构；传感器名不当行为，缺模型Bs unknown不能变实测。"
+      ]
+    },
+    {
+      "id": "R50",
+      "name": "服务蓝图与产品服务系统协同",
+      "category": "G全流程规划与创新管理",
+      "version": "0.1.0",
+      "score": 60.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "建立一班次教学泳道/每次交接/异常及证据表，实际校验图引用与现状未来状态；相邻不当因果、凭据不当来源证据、无访谈不填耗时。"
+      ]
+    },
+    {
+      "id": "R51",
+      "name": "系统理论过程分析（STPA）",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 60.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "先补完整实施指南及损失危险控制定义，再做非部署教学控制环/UCA四类/上下文/约束追溯；没有上下文或未验证约束不得安全放行。"
+      ]
+    },
+    {
+      "id": "R52",
+      "name": "信息价值与验证优先级（VOI）",
+      "category": "F方案决策与验证评价",
+      "version": "0.1.0",
+      "score": 60.0,
+      "quality_status": "独立Agent校准，非专家",
+      "gaps": [
+        "用显式教学二行动二状态损失表/先验与研究观测表实际计算EVPI/EVSI并留后验；概率不归一、完美信息负值、无数据伪算、强制验证经济豁免拒。"
+      ]
+    }
+  ],
+  "method_upgrades": [
+    {
+      "id": "R17",
+      "score": 76.25,
+      "scope": "教学增补组合版本，独立Agent校准；不替换冻结基线"
+    },
+    {
+      "id": "R36",
+      "score": 75.0,
+      "scope": "教学增补组合版本，独立Agent校准；不替换冻结基线"
+    },
+    {
+      "id": "R44",
+      "score": 68.75,
+      "scope": "教学增补组合版本，独立Agent校准；不替换冻结基线"
+    }
+  ],
+  "incremental_admissions": [
+    {
+      "id": "2025-04",
+      "revision": "research-000004",
+      "fields": 4,
+      "scope": "相关专利题录参考，不是采用证明"
+    },
+    {
+      "id": "2025-05",
+      "revision": "research-000003",
+      "fields": 5,
+      "scope": "相关专利题录参考，不是采用证明"
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "项目资料与版本管线",
+      "status": "已可运行",
+      "detail": "资料归属、证据候选、审核发布、不可覆盖版本；机器转换与专业核读分别记录。"
+    },
+    {
+      "title": "项目阅读与检索",
+      "status": "已上线",
+      "detail": "项目首页、档案阅读、资料与解读、评估入口；原件与管理仍需登录。"
+    },
+    {
+      "title": "64方法内容与可视化",
+      "status": "已建立并校准基线",
+      "detail": "分类检索、图标、结构图、展开阅读、来源与写入规范；内容质量仍需提升。"
+    },
+    {
+      "title": "教学增补与独立复测",
+      "status": "持续完善",
+      "detail": "问题定义、功能分析、形态组合、Pugh、原型、V&V及系统设计等已形成增补；实际用户与工程验证仍有缺口。"
+    },
+    {
+      "title": "统一MCP入口",
+      "status": "本机已验收",
+      "detail": "10显式工具连接两库，版本绑定组包及独立计划保存回读；不自动调用模型，未开放公网HTTP。"
+    }
+  ],
+  "next_actions": [
+    "消化已独立核读材料，完成精确选录、原生重绑、审核入档及当前版导读/评估。",
+    "逐案解决身份归属、一手正文、原始验证工况及成果采用证据缺口。",
+    "对当前版本进行独立内容复评；旧分失效不沿用，未评不补0。",
+    "继续补方法完整产物、反例和真实应用证据，分别验收内容、执行与专家状态。"
+  ],
+  "quality_notice": "评分针对档案内容，不是项目技术价值或获奖水平。Agent校准不等于专家审核。尚无80分验收通过结论，不能按来源、字段或测试数量凑分。"
+}

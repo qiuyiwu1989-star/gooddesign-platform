@@ -20,6 +20,9 @@ class Handler(app.Handler):
             self.guard()
             import project_portal
             self.send(200,project_portal.home(),'text/html; charset=utf-8');return
+        if path=='/report/':
+            self.guard();import data_report_page
+            self.send(200,data_report_page.page(),'text/html; charset=utf-8');return
         if path=='/mcp/':
             self.guard();import innovation_gateway_page
             self.send(200,innovation_gateway_page.page(),'text/html; charset=utf-8');return
@@ -29,8 +32,10 @@ class Handler(app.Handler):
         if path.startswith('/portal/'):
             self.guard();import project_portal
             rel=path[len('/portal/'):]
+            if rel=='system.css':
+                self.send(200,(project_portal.ROOT/'extensions/inno/system.css').read_bytes(),'text/css; charset=utf-8');return
             if rel=='catalog.json':self.send(200,project_portal.catalog(self.server.store.lib));return
-            if rel in ('portal.css','portal.js','mcp-guide.js') or re.fullmatch(r'covers/case-[A-Za-z0-9_-]+\.jpg',rel):
+            if rel in ('portal.css','portal.js','mcp-guide.js','data-report.css','data-report.js') or re.fullmatch(r'covers/case-[A-Za-z0-9_-]+\.jpg',rel):
                 target=project_portal.ASSETS/rel
                 if target.is_file():
                     import mimetypes
@@ -48,7 +53,7 @@ class Handler(app.Handler):
                 if self.path.split('?')[0]=='/dossier/':
                     import project_portal
                     body=re.sub(r'<header class="workspace-header">.*?</header>',lambda m:project_portal.navigation(),body,count=1,flags=re.S)
-                    body=body.replace('</head>','<link rel="stylesheet" href="/inno/portal/portal.css"></head>',1)
+                    body=body.replace('</head>','<link rel="stylesheet" href="/inno/portal/portal.css"><link rel="stylesheet" href="/inno/portal/system.css"></head>',1)
                 if ctype.startswith('text/html'):
                     body=body.replace('● 本地私有','● 登录可见 · 只读')
         if isinstance(body,dict) and body.get('service')=='gooddesign-archive-pipeline':body.update(cloud_read_only=True,watcher_running=False)

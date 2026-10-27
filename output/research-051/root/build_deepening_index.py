@@ -6,7 +6,8 @@ b=ROOT/'output/research-051';q=json.loads((b/'coverage-round2/逐案深化队列
 for p in sorted((b/'deepening-round1').glob('batch*/index.json')):
  for c in json.loads(p.read_text()).get('cases',[]):
   report=ROOT/c['report']
-  if c.get('report_sha256') and hashlib.sha256(report.read_bytes()).hexdigest()!=c['report_sha256']:raise ValueError(report)
+  expected=c.get('report_sha256') or c.get('sha256')
+  if not expected or hashlib.sha256(report.read_bytes()).hexdigest()!=expected:raise ValueError(report)
   json.loads(report.read_text());reports[c['project_id']]=c
 assert len(q['items'])==98 and len({x['project_id']for x in q['items']})==98
 E=lambda x:html.escape(str(x));rows=[]
