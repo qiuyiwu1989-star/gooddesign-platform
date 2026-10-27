@@ -1,0 +1,332 @@
+{
+  "reviewer": "needs independent Agent",
+  "scope": "content arithmetic/source extraction, not engineering validation",
+  "author_manifest_sha256": "4e5e9f428cea5fc7730fed877c362e0e3ee74bdf37d9bbb98649444035ee855f",
+  "manifest_files_unchanged": 37,
+  "checks": [
+    {
+      "method_id": "R21/R25",
+      "scope": "间隙与库仑代理",
+      "values": [
+        0.19999999999999962,
+        2.0,
+        0.5
+      ],
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R22",
+      "scope": "局部材料质量及附件反例",
+      "values": [
+        206.0,
+        306.0
+      ],
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R23/R28",
+      "scope": "时间分离及变更分支",
+      "values": [
+        true,
+        true,
+        true
+      ],
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R24",
+      "scope": "可用能量不等于力/轨迹证明",
+      "values": {
+        "gross_J": 1.0,
+        "usable_J": 0.5,
+        "margin_J": 0.3
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R27",
+      "scope": "维持压差的理想牛顿管流；非真实胶乳",
+      "values": {
+        "pressure_Pa": 288.0,
+        "flow_ml_s": 0.07068583470577036,
+        "vertical_net_Pa": -693.0,
+        "viscosity_10x_ml_s": 0.007068583470577036
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R29",
+      "scope": "批量10选择V2，临界20平手",
+      "values": {
+        "n10": [
+          240,
+          210,
+          240
+        ],
+        "n20": [
+          480,
+          390,
+          390
+        ],
+        "n30": [
+          720,
+          570,
+          540
+        ]
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R30",
+      "scope": "三角映射顺序与超范围目标",
+      "values": {
+        "p1": 1.0,
+        "p2": 1.1666666666666667,
+        "reverse_order_displacement": 4.5,
+        "8mm_p2": 2.5
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R31",
+      "scope": "独立可达闭包而非读取作者SCC",
+      "values": {
+        "mutual_pairs": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "B",
+            "A"
+          ]
+        ]
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R32",
+      "scope": "独立121点几何检查，非连续一般机构证明",
+      "values": {
+        "points": 121,
+        "max_length_error_mm": 1.4210854715202004e-14,
+        "cross_180_in_150_210": true
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R33",
+      "scope": "独立力学重算与控制项比较",
+      "values": {
+        "A": {
+          "axial_mass_kg": 0.00034714285714285717,
+          "beam_mass_kg": 0.31816168396407685
+        },
+        "B": {
+          "axial_mass_kg": 0.0003342857142857142,
+          "beam_mass_kg": 0.530662120104955
+        }
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R34",
+      "scope": "装配动作和服务约束分别裁决",
+      "values": {
+        "A_s": 10,
+        "B_s": 20,
+        "B2_s": 8,
+        "B_service_constraint": false
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "WB04/WB06",
+      "scope": "同工况线性幅值；非原作者非线性算法",
+      "values": {
+        "WB04_A": 0.000998005980069749,
+        "WB04_B": 0.015811388300841896,
+        "WB04_C": 0.000998005980069749,
+        "WB06_k500": 0.0019841894753313627,
+        "required_c_at_resonance": 10.5409255338946
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "WB05",
+      "scope": "逐次状态递推，不把10/3取整当依据",
+      "values": {
+        "states_before_clean": [
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1,
+          2,
+          3,
+          1
+        ],
+        "clean_after": [
+          3,
+          6,
+          9
+        ],
+        "total_s": 16
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R22",
+      "scope": "官方原HTML四格独立定点读取，未做UI/历史版考证",
+      "values": {
+        "source_sha": "43b46003d45fc27face50c0e4dcd75c0b10dafed029beddfdadbfee46f362c35",
+        "cells": [
+          {
+            "improving": 14,
+            "worsening": 1,
+            "principles": [
+              1,
+              8,
+              40,
+              15
+            ]
+          },
+          {
+            "improving": 1,
+            "worsening": 14,
+            "principles": [
+              28,
+              27,
+              18,
+              40
+            ]
+          },
+          {
+            "improving": 14,
+            "worsening": 2,
+            "principles": [
+              40,
+              26,
+              27,
+              1
+            ]
+          },
+          {
+            "improving": 14,
+            "worsening": 14,
+            "principles": []
+          }
+        ]
+      },
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R35",
+      "scope": "只读原数值记录与正文表，未重跑有限元优化器",
+      "values": [
+        {
+          "label": "baseline",
+          "final": {
+            "iterations": 160,
+            "converged_design_change": false,
+            "compliance": 243.92026404302595,
+            "mean_physical_density": 0.45,
+            "volume_limit_residual": 0.0,
+            "free_equilibrium_relative_residual": 8.593248767280804e-14,
+            "selected_derivative_relative_error": 3.1037737607819693e-07,
+            "last_max_change": 0.007700131210916172
+          },
+          "binary": {
+            "threshold": 0.5,
+            "volume_fraction": 0.4625,
+            "compliance": 475.44369946988064,
+            "equilibrium_relative_residual": 7.42484019160241e-13,
+            "max_gauss_von_mises_normalized": 63.974476781813934,
+            "strength_pass": null,
+            "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+          }
+        },
+        {
+          "label": "mesh_refined",
+          "final": {
+            "iterations": 160,
+            "converged_design_change": false,
+            "compliance": 242.39710955434086,
+            "mean_physical_density": 0.45000000000000007,
+            "volume_limit_residual": 5.551115123125783e-17,
+            "free_equilibrium_relative_residual": 1.6471319031263278e-13,
+            "selected_derivative_relative_error": 3.780399604469409e-11,
+            "last_max_change": 0.01352578002227034
+          },
+          "binary": {
+            "threshold": 0.5,
+            "volume_fraction": 0.45,
+            "compliance": 314.0882172609346,
+            "equilibrium_relative_residual": 1.0231036083546755e-12,
+            "max_gauss_von_mises_normalized": 66.24404614979441,
+            "strength_pass": null,
+            "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+          }
+        },
+        {
+          "label": "filter_changed",
+          "final": {
+            "iterations": 91,
+            "converged_design_change": true,
+            "compliance": 305.21595194456785,
+            "mean_physical_density": 0.45,
+            "volume_limit_residual": 0.0,
+            "free_equilibrium_relative_residual": 8.414155742687378e-14,
+            "selected_derivative_relative_error": 3.0331616645326036e-07,
+            "last_max_change": 0.0049706995224853
+          },
+          "binary": {
+            "threshold": 0.5,
+            "volume_fraction": 0.35,
+            "compliance": 2381985.5756382467,
+            "equilibrium_relative_residual": 1.1469238154283763e-09,
+            "max_gauss_von_mises_normalized": 82.14493845051737,
+            "strength_pass": null,
+            "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+          }
+        },
+        {
+          "label": "other_context_corner_load",
+          "final": {
+            "iterations": 113,
+            "converged_design_change": true,
+            "compliance": 233.91520020404795,
+            "mean_physical_density": 0.45000000000000007,
+            "volume_limit_residual": 5.551115123125783e-17,
+            "free_equilibrium_relative_residual": 1.1009474451619571e-13,
+            "selected_derivative_relative_error": 3.837482887014687e-09,
+            "last_max_change": 0.004914085751490549
+          },
+          "binary": {
+            "threshold": 0.5,
+            "volume_fraction": 0.4875,
+            "compliance": 131.28899277908818,
+            "equilibrium_relative_residual": 1.7250001543562363e-13,
+            "max_gauss_von_mises_normalized": 38.28591734502483,
+            "strength_pass": null,
+            "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+          }
+        }
+      ],
+      "result": "consistent_with_declared_example"
+    },
+    {
+      "method_id": "R36",
+      "scope": "逐准则相对符号与改版支配",
+      "values": {
+        "B_vs_A": 0,
+        "C_vs_A": 0,
+        "C_vs_B": 2,
+        "C2_vs_A": 1
+      },
+      "result": "consistent_with_declared_example"
+    }
+  ]
+}

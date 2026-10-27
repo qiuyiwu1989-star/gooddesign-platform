@@ -1,0 +1,27 @@
+{
+  "identity": "normalized1Dgeometry_notCAD_validation",
+  "obstacle": [
+    2.5,
+    3.5
+  ],
+  "required_max_travel": 2,
+  "A": {
+    "width": 2,
+    "max_travel": 2,
+    "overlap_at1": 0.5,
+    "overlap_at2": 1
+  },
+  "B": {
+    "width": 2,
+    "max_travel": 0.4,
+    "task_lost": true
+  },
+  "C": {
+    "width": 0.4,
+    "max_travel": 2,
+    "minimum_nominal_gap": 0.1,
+    "task_retained": true,
+    "strength_manufacturability": "unknown"
+  },
+  "decision": "chooseC for further geometry/structure review, notB"
+}

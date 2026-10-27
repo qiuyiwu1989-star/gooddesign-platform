@@ -1,0 +1,33 @@
+{
+  "origin": "platform_constructed_plan_redesign",
+  "target": "research plan readiness for dusty surrogate fixture, not product validation",
+  "assumed_constraints": {
+    "max_calibrations_per_shift": 1,
+    "cleanroom_available": false
+  },
+  "V1": {
+    "method": "visual reference teaching alternative",
+    "requires_cleanroom": true,
+    "calibrations_per_shift": 4,
+    "validation_environment": "clean demonstration"
+  },
+  "V2": {
+    "method": "contact reference teaching alternative",
+    "requires_cleanroom": false,
+    "calibrations_per_shift": 1,
+    "validation_environment": "dusty surrogate fixture",
+    "propagated_changes": [
+      "contact load/indentation and contamination tasks added toDC",
+      "reference study before integration inDP",
+      "same target-context observation inDA"
+    ]
+  },
+  "decision": "V1 planning conflicts; chooseV2 to prepare bounded research under assumptions",
+  "not_decided": [
+    "actual accuracy",
+    "contact injury",
+    "field applicability",
+    "resource authorization",
+    "customer approval"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "identity": "constructed scenario responses, not random field distribution",
+  "A": {
+    "responses": [
+      120,
+      90,
+      120,
+      90
+    ],
+    "mean": 105,
+    "sample_sd": 17.320508075688775,
+    "all_ge98": false
+  },
+  "B": {
+    "responses": [
+      99,
+      101,
+      99,
+      101
+    ],
+    "mean": 100,
+    "sample_sd": 1.1547005383792515,
+    "all_ge98": true
+  },
+  "choice": "B under explicit scenario floor98",
+  "tolerance_options": [
+    {
+      "sensitivity": 2,
+      "halfwidth": 0.2,
+      "response_halfwidth": 0.4,
+      "feasible_for_toy_limit_point3": false
+    },
+    {
+      "sensitivity": 2,
+      "halfwidth": 0.1,
+      "response_halfwidth": 0.2,
+      "extra_cost_toy": 50
+    },
+    {
+      "sensitivity": 1,
+      "halfwidth": 0.2,
+      "response_halfwidth": 0.2,
+      "extra_cost_toy": 10
+    }
+  ],
+  "tolerance_choice": "parameter sensitivity reduction under all-other-constraints-equal teaching assumption"
+}

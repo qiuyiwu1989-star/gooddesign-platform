@@ -1,0 +1,25 @@
+{
+  "identity": "independent normalized cubic toy, not Wen equation",
+  "records": [
+    {
+      "x": 0.1,
+      "nonlinear_acceleration": -0.101,
+      "linear_acceleration": -0.1,
+      "relative_difference_to_linear": 0.010000000000000002
+    },
+    {
+      "x": 1,
+      "nonlinear_acceleration": -2,
+      "linear_acceleration": -1,
+      "relative_difference_to_linear": 1
+    },
+    {
+      "x": -1,
+      "nonlinear_acceleration": 2,
+      "linear_acceleration": 1,
+      "relative_difference_to_linear": 1
+    }
+  ],
+  "toy_error_limit": 0.05,
+  "decision": "x1 outside local linear initial-acceleration tolerance, no global stability conclusion"
+}

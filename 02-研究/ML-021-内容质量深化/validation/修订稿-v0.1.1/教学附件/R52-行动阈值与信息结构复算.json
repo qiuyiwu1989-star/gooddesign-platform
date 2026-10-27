@@ -1,0 +1,228 @@
+{
+  "identity": "all probabilities/losses synthetic; no client estimates",
+  "action_switch_good_probability": 0.7142857142857143,
+  "scenarios": [
+    {
+      "prior_good": 0.5,
+      "likelihood_positive_given_good_bad": [
+        0.8,
+        0.2
+      ],
+      "current_risks": {
+        "A": 50.0,
+        "B": 20.0
+      },
+      "branches": [
+        {
+          "signal": "positive",
+          "probability": 0.5,
+          "posterior_good": 0.8,
+          "risks": {
+            "A": 20.0,
+            "B": 32.0
+          },
+          "action": "A"
+        },
+        {
+          "signal": "negative",
+          "probability": 0.5,
+          "posterior_good": 0.19999999999999996,
+          "risks": {
+            "A": 80.0,
+            "B": 7.999999999999998
+          },
+          "action": "B"
+        }
+      ],
+      "risk_after_sample": 14.0,
+      "EVPI": 20.0,
+      "EVSI": 6.0,
+      "net_value": 3.0
+    },
+    {
+      "prior_good": 0.5,
+      "likelihood_positive_given_good_bad": [
+        0.6,
+        0.4
+      ],
+      "current_risks": {
+        "A": 50.0,
+        "B": 20.0
+      },
+      "branches": [
+        {
+          "signal": "positive",
+          "probability": 0.5,
+          "posterior_good": 0.6,
+          "risks": {
+            "A": 40.0,
+            "B": 24.0
+          },
+          "action": "B"
+        },
+        {
+          "signal": "negative",
+          "probability": 0.5,
+          "posterior_good": 0.4,
+          "risks": {
+            "A": 60.0,
+            "B": 16.0
+          },
+          "action": "B"
+        }
+      ],
+      "risk_after_sample": 20.0,
+      "EVPI": 20.0,
+      "EVSI": 0.0,
+      "net_value": -3.0
+    },
+    {
+      "prior_good": 0.5,
+      "likelihood_positive_given_good_bad": [
+        0.5,
+        0.5
+      ],
+      "current_risks": {
+        "A": 50.0,
+        "B": 20.0
+      },
+      "branches": [
+        {
+          "signal": "positive",
+          "probability": 0.5,
+          "posterior_good": 0.5,
+          "risks": {
+            "A": 50.0,
+            "B": 20.0
+          },
+          "action": "B"
+        },
+        {
+          "signal": "negative",
+          "probability": 0.5,
+          "posterior_good": 0.5,
+          "risks": {
+            "A": 50.0,
+            "B": 20.0
+          },
+          "action": "B"
+        }
+      ],
+      "risk_after_sample": 20.0,
+      "EVPI": 20.0,
+      "EVSI": 0.0,
+      "net_value": -3.0
+    },
+    {
+      "prior_good": 0.5,
+      "likelihood_positive_given_good_bad": [
+        1,
+        0
+      ],
+      "current_risks": {
+        "A": 50.0,
+        "B": 20.0
+      },
+      "branches": [
+        {
+          "signal": "positive",
+          "probability": 0.5,
+          "posterior_good": 1.0,
+          "risks": {
+            "A": 0.0,
+            "B": 40.0
+          },
+          "action": "A"
+        },
+        {
+          "signal": "negative",
+          "probability": 0.5,
+          "posterior_good": 0.0,
+          "risks": {
+            "A": 100.0,
+            "B": 0.0
+          },
+          "action": "B"
+        }
+      ],
+      "risk_after_sample": 0.0,
+      "EVPI": 20.0,
+      "EVSI": 20.0,
+      "net_value": 17.0
+    },
+    {
+      "prior_good": 0.2,
+      "likelihood_positive_given_good_bad": [
+        0.8,
+        0.2
+      ],
+      "current_risks": {
+        "A": 80.0,
+        "B": 8.0
+      },
+      "branches": [
+        {
+          "signal": "positive",
+          "probability": 0.32000000000000006,
+          "posterior_good": 0.5,
+          "risks": {
+            "A": 50.0,
+            "B": 20.0
+          },
+          "action": "B"
+        },
+        {
+          "signal": "negative",
+          "probability": 0.6800000000000002,
+          "posterior_good": 0.058823529411764684,
+          "risks": {
+            "A": 94.11764705882352,
+            "B": 2.3529411764705874
+          },
+          "action": "B"
+        }
+      ],
+      "risk_after_sample": 8.000000000000002,
+      "EVPI": 8.0,
+      "EVSI": -1.7763568394002505e-15,
+      "net_value": -3.0000000000000018
+    },
+    {
+      "prior_good": 0.8,
+      "likelihood_positive_given_good_bad": [
+        0.8,
+        0.2
+      ],
+      "current_risks": {
+        "A": 19.999999999999996,
+        "B": 32.0
+      },
+      "branches": [
+        {
+          "signal": "positive",
+          "probability": 0.6800000000000002,
+          "posterior_good": 0.9411764705882353,
+          "risks": {
+            "A": 5.882352941176468,
+            "B": 37.64705882352941
+          },
+          "action": "A"
+        },
+        {
+          "signal": "negative",
+          "probability": 0.31999999999999995,
+          "posterior_good": 0.5,
+          "risks": {
+            "A": 50.0,
+            "B": 20.0
+          },
+          "action": "B"
+        }
+      ],
+      "risk_after_sample": 10.399999999999999,
+      "EVPI": 19.999999999999996,
+      "EVSI": 9.599999999999998,
+      "net_value": 6.599999999999998
+    }
+  ]
+}

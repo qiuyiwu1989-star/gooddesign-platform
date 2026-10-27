@@ -1,0 +1,52 @@
+{
+  "identity": "independent synthetic mechanism not real tree/contact study",
+  "records": [
+    {
+      "structure": "A",
+      "k_N_mm": 8,
+      "x_mm": 2,
+      "mu_assumed": 0.3,
+      "N_N": 16,
+      "holding_N": 4.8,
+      "Be_hold_min_N": 5,
+      "Be_contact_max_N": 22,
+      "within_toy_model": false
+    },
+    {
+      "structure": "B",
+      "k_N_mm": 10,
+      "x_mm": 2,
+      "mu_assumed": 0.3,
+      "N_N": 20,
+      "holding_N": 6.0,
+      "Be_hold_min_N": 5,
+      "Be_contact_max_N": 22,
+      "within_toy_model": true
+    },
+    {
+      "structure": "B-reinterpreted",
+      "k_N_mm": 10,
+      "x_mm": 2,
+      "mu_assumed": 0.2,
+      "N_N": 20,
+      "holding_N": 4.0,
+      "Be_hold_min_N": 5,
+      "Be_contact_max_N": 22,
+      "within_toy_model": false
+    },
+    {
+      "structure": "C-overstiff",
+      "k_N_mm": 14,
+      "x_mm": 2,
+      "mu_assumed": 0.2,
+      "N_N": 28,
+      "holding_N": 5.6000000000000005,
+      "Be_hold_min_N": 5,
+      "Be_contact_max_N": 22,
+      "within_toy_model": false
+    }
+  ],
+  "first_decision": "B for conditional model study",
+  "reformulation": "at mu=.2 increasing k to14 breaks N<=22, investigate contact mechanism/assumptions not relax requirement silently",
+  "actual_experiment": false
+}

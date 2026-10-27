@@ -1,0 +1,42 @@
+{
+  "origin": "independent_constructed_local_redesign_not_measured",
+  "dimensions_mm": {
+    "sample_width": 10.0,
+    "guide_gap": 10.6,
+    "liner_each_side": 0.2,
+    "accepted_total_clearance_range": [
+      0.1,
+      0.3
+    ]
+  },
+  "force_assumptions_N": {
+    "normal": 5,
+    "available_tangential": 1
+  },
+  "friction_assumptions": {
+    "before": 0.4,
+    "after": 0.1
+  },
+  "before": {
+    "clearance_mm": 0.5999999999999996,
+    "friction_N": 2.0
+  },
+  "after": {
+    "clearance_mm": 0.19999999999999962,
+    "friction_N": 0.5
+  },
+  "preconditions": {
+    "useful_and_harmful_action_same_original_pair": true,
+    "original_pair_direct_contact_not_required": true,
+    "third_substance_allowed": true,
+    "low_cost_replaceable_liner_assumed": true
+  },
+  "decision": "choose liner concept for next-stage bench research under explicit assumptions",
+  "not_proved": [
+    "wear",
+    "contamination",
+    "scratch prevention",
+    "true coefficient under load",
+    "product or biological applicability"
+  ]
+}

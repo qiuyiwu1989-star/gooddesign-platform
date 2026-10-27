@@ -1,0 +1,100 @@
+{
+  "source": "https://wiki.matriz.org/docs/triz-tools/contradictions-matrix/",
+  "source_sha256": "43b46003d45fc27face50c0e4dcd75c0b10dafed029beddfdadbfee46f362c35",
+  "method": "literal JSON-number-or-empty-string parsing of public tool code, not JS execution",
+  "matrix_cell_count": 1521,
+  "matrix_year": "not_established_by_this_tool_page",
+  "read_scope": "tool parameter axes and four selected cells; not all 1521 original historical cells independently checked",
+  "selected_cells_for_verification": [
+    {
+      "improving_id": 14,
+      "improving_label": "14. Strength",
+      "worsening_id": 1,
+      "worsening_label": "01. Weight of moving object",
+      "principle_ids": [
+        1,
+        8,
+        40,
+        15
+      ]
+    },
+    {
+      "improving_id": 1,
+      "improving_label": "01. Weight of moving object",
+      "worsening_id": 14,
+      "worsening_label": "14. Strength",
+      "principle_ids": [
+        28,
+        27,
+        18,
+        40
+      ]
+    },
+    {
+      "improving_id": 14,
+      "improving_label": "14. Strength",
+      "worsening_id": 2,
+      "worsening_label": "02. Weight of stationary object",
+      "principle_ids": [
+        40,
+        26,
+        27,
+        1
+      ]
+    },
+    {
+      "improving_id": 14,
+      "improving_label": "14. Strength",
+      "worsening_id": 14,
+      "worsening_label": "14. Strength",
+      "principle_ids": []
+    }
+  ],
+  "private_raw_source": "02-研究/ML-021-内容质量深化/root/private-sources/MATRIZ-矩阵工具页.html",
+  "no_entire_matrix_republication": true,
+  "independent_ui_check": {
+    "tool": "actual Chromium UI via selectOption",
+    "cases": [
+      {
+        "improve": 14,
+        "worsen": 1,
+        "principles": [
+          1,
+          8,
+          40,
+          15
+        ]
+      },
+      {
+        "improve": 1,
+        "worsen": 14,
+        "principles": [
+          28,
+          27,
+          18,
+          40
+        ]
+      },
+      {
+        "improve": 14,
+        "worsen": 2,
+        "principles": [
+          40,
+          26,
+          27,
+          1
+        ]
+      },
+      {
+        "improve": 14,
+        "worsen": 14,
+        "principles": [],
+        "ui_message": "No solutions found for the given parameters"
+      }
+    ],
+    "four_outputs_match_literal_source_cells": true,
+    "not_an_engineering_no_solution_proof": true,
+    "site_console_errors_observed": 7,
+    "console_error_causes_not_investigated": true
+  }
+}

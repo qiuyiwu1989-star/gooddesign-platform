@@ -1,0 +1,315 @@
+[
+  {
+    "method_id": "R22",
+    "example": "局部材料质量",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "steel_cm3": 10,
+      "polymer_cm3": 90,
+      "fixture_g": 20
+    },
+    "computed": {
+      "mass_g": 206.0
+    },
+    "checks": {
+      "under300g": true
+    }
+  },
+  {
+    "method_id": "R23",
+    "example": "转换窗口",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "force_push_N": 12,
+      "force_release_N": 0.5,
+      "transition_s": 0.1,
+      "window_s": 0.2
+    },
+    "computed": {
+      "margin_s": 0.1
+    },
+    "checks": {
+      "push": true,
+      "release": true,
+      "window": true
+    }
+  },
+  {
+    "method_id": "R24",
+    "example": "下降资源",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "m_kg": 1,
+      "g_m_s2": 10,
+      "h_m": 0.1,
+      "eta": 0.5,
+      "required_J": 0.2
+    },
+    "computed": {
+      "available_J": 0.5,
+      "margin_J": 0.3
+    },
+    "checks": {
+      "energy": true,
+      "time": true
+    }
+  },
+  {
+    "method_id": "R27",
+    "example": "理想流体迁移",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "r_m": 0.0005,
+      "gamma_N_m": 0.072,
+      "mu_Pa_s": 0.001,
+      "L_m": 0.1
+    },
+    "computed": {
+      "capillary_Pa": 288.0,
+      "Q_m3_s": 7.068583470577036e-08,
+      "Q_mL_s": 0.07068583470577036,
+      "vertical_01m_Pa": 981
+    },
+    "checks": {
+      "target": true,
+      "upright_fails": true,
+      "viscosity10x_fails": true
+    }
+  },
+  {
+    "method_id": "R29",
+    "example": "批量反转",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "n": [
+        5,
+        10,
+        30
+      ]
+    },
+    "computed": {
+      "5": [
+        120,
+        120,
+        165
+      ],
+      "10": [
+        240,
+        210,
+        240
+      ],
+      "30": [
+        720,
+        570,
+        540
+      ]
+    },
+    "checks": {
+      "n10V2": true,
+      "n30V3": true
+    }
+  },
+  {
+    "method_id": "R30",
+    "example": "顺序调节",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "p1": 1,
+      "p2": 1.1666666666666667
+    },
+    "computed": {
+      "F1_N": 2,
+      "F2_mm": 4.0,
+      "wrong_F2_mm": 4.5
+    },
+    "checks": {
+      "target": true,
+      "within": true
+    }
+  },
+  {
+    "method_id": "R32",
+    "example": "平行四边形",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "links_mm": [
+        100,
+        40,
+        100,
+        40
+      ]
+    },
+    "computed": [
+      {
+        "theta_deg": 30,
+        "A_mm": [
+          34.64101615137755,
+          19.999999999999996
+        ],
+        "B_mm": [
+          134.64101615137756,
+          19.999999999999996
+        ]
+      },
+      {
+        "theta_deg": 90,
+        "A_mm": [
+          2.4492935982947065e-15,
+          40.0
+        ],
+        "B_mm": [
+          100.0,
+          40.0
+        ]
+      },
+      {
+        "theta_deg": 150,
+        "A_mm": [
+          -34.64101615137755,
+          19.999999999999996
+        ],
+        "B_mm": [
+          65.35898384862244,
+          19.999999999999996
+        ]
+      }
+    ],
+    "checks": {
+      "side_lengths": true,
+      "horizontal": true
+    }
+  },
+  {
+    "method_id": "R33",
+    "example": "材料排名反转",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "F_N": 100,
+      "L_m": 0.3,
+      "delta_m": 0.001
+    },
+    "computed": {
+      "A": {
+        "axial_area_m2": 4.2857142857142857e-07,
+        "axial_mass_kg": 0.00034714285714285717,
+        "beam_side_m": 0.019818985908082842,
+        "beam_mass_kg": 0.3181616839640769
+      },
+      "B": {
+        "axial_area_m2": 1.4285714285714285e-07,
+        "axial_mass_kg": 0.0003342857142857142,
+        "beam_side_m": 0.015059172746387376,
+        "beam_mass_kg": 0.530662120104955
+      }
+    },
+    "checks": {
+      "axial_B": true,
+      "beam_A": true
+    }
+  },
+  {
+    "method_id": "R34",
+    "example": "动作时",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "A": [
+        4,
+        4,
+        2
+      ],
+      "B": [
+        10,
+        10
+      ],
+      "B2": [
+        4,
+        2,
+        2
+      ]
+    },
+    "computed": {
+      "A_s": 10,
+      "B_s": 20,
+      "B2_s": 8
+    },
+    "checks": {
+      "B2_faster": true
+    }
+  },
+  {
+    "method_id": "WB04",
+    "example": "共同参数冲突",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "omega_rad_s": 31.622776601683793,
+      "F_N": 1,
+      "c_Ns_m": 2
+    },
+    "computed": {
+      "A_m": 0.000998005980069749,
+      "B_m": 0.015811388300841896,
+      "C_m": 0.000998005980069749
+    },
+    "checks": {
+      "B_fails": true,
+      "C_meets": true
+    }
+  },
+  {
+    "method_id": "WB05",
+    "example": "清理支撑",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "cycles": 10,
+      "residue_increment": 1,
+      "limit": 3,
+      "clean_s": 2
+    },
+    "computed": {
+      "clean_after": [
+        3,
+        6,
+        9
+      ],
+      "total_s": 16
+    },
+    "checks": {
+      "no_clean_fails": true,
+      "schedule": true
+    }
+  },
+  {
+    "method_id": "WB06",
+    "example": "增刚共振",
+    "provenance": "explicit_assumption_constructed_not_measured_or_customer_approved",
+    "input": {
+      "m_kg": 1,
+      "c_Ns_m": 2,
+      "omega": 31.622776601683793
+    },
+    "computed": {
+      "500": {
+        "static_m": 0.002,
+        "omega_n": 22.360679774997898,
+        "zeta": 0.044721359549995794,
+        "X_m": 0.0019841894753313627
+      },
+      "1000": {
+        "static_m": 0.001,
+        "omega_n": 31.622776601683793,
+        "zeta": 0.03162277660168379,
+        "X_m": 0.015811388300841896
+      },
+      "2000": {
+        "static_m": 0.0005,
+        "omega_n": 44.721359549995796,
+        "zeta": 0.022360679774997897,
+        "X_m": 0.000998005980069749
+      }
+    },
+    "checks": {
+      "B_worse": true,
+      "C_meets": true
+    }
+  }
+]

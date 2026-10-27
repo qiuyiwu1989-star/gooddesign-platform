@@ -1,0 +1,33 @@
+{
+  "identity": "synthetic BU, not carbon factors or actual LCA",
+  "FU": "10years100000 equivalent fixture cycles",
+  "A": {
+    "units": 2,
+    "production": 200,
+    "transport": 10,
+    "use": 30,
+    "repair": 20,
+    "end": 4,
+    "total": 264
+  },
+  "B": {
+    "units": 5,
+    "production": 300,
+    "transport": 25,
+    "use": 20,
+    "repair": 10,
+    "end": 10,
+    "total": 365
+  },
+  "B_life5years": {
+    "units": 2,
+    "production": 120,
+    "transport": 10,
+    "use": 20,
+    "repair": 10,
+    "end": 4,
+    "total": 164
+  },
+  "baseline_choice": "investigateA",
+  "changed_lifetime_choice": "investigateB"
+}

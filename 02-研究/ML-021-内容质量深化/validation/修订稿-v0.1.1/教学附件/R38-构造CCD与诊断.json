@@ -1,0 +1,117 @@
+{
+  "identity": "constructed teaching data, not actual experiments",
+  "design": "face_centered_CCD_not_rotatable",
+  "factors": {
+    "x1": "(pressure_kPa-20)/5",
+    "x2": "(speed_mm_s-50)/10"
+  },
+  "rows": [
+    {
+      "x1": -1.0,
+      "x2": -1.0,
+      "y": 6.0
+    },
+    {
+      "x1": -1.0,
+      "x2": 1.0,
+      "y": 2.0
+    },
+    {
+      "x1": 1.0,
+      "x2": -1.0,
+      "y": 10.0
+    },
+    {
+      "x1": 1.0,
+      "x2": 1.0,
+      "y": 6.0
+    },
+    {
+      "x1": -1.0,
+      "x2": 0.0,
+      "y": 6.0
+    },
+    {
+      "x1": 1.0,
+      "x2": 0.0,
+      "y": 10.0
+    },
+    {
+      "x1": 0.0,
+      "x2": -1.0,
+      "y": 10.0
+    },
+    {
+      "x1": 0.0,
+      "x2": 1.0,
+      "y": 6.0
+    },
+    {
+      "x1": 0.0,
+      "x2": 0.0,
+      "y": 9.8
+    },
+    {
+      "x1": 0.0,
+      "x2": 0.0,
+      "y": 9.9
+    },
+    {
+      "x1": 0.0,
+      "x2": 0.0,
+      "y": 10.0
+    },
+    {
+      "x1": 0.0,
+      "x2": 0.0,
+      "y": 10.1
+    },
+    {
+      "x1": 0.0,
+      "x2": 0.0,
+      "y": 10.2
+    }
+  ],
+  "coef_order": [
+    "intercept",
+    "x1",
+    "x2",
+    "x1x2",
+    "x1_squared",
+    "x2_squared"
+  ],
+  "coefficients": [
+    10.000000000000005,
+    2.0000000000000004,
+    -2.000000000000002,
+    6.632980183746519e-15,
+    -1.999999999999997,
+    -2.0000000000000053
+  ],
+  "rank": 6,
+  "residual_df": 7,
+  "pure_error_SS": 0.09999999999999928,
+  "pure_error_df": 4,
+  "lack_of_fit_SS": 0,
+  "lack_of_fit_df": 3,
+  "stationary_coded": [
+    0.5,
+    -0.4999999999999984
+  ],
+  "stationary_physical": {
+    "pressure_kPa": 22.5,
+    "speed_mm_s": 45
+  },
+  "Hessian_eigenvalues": [
+    -4.000000000000012,
+    -3.999999999999992
+  ],
+  "predicted_y": 11.000000000000004,
+  "constructed_independent_confirmation": [
+    10.9,
+    11,
+    11.1
+  ],
+  "confirmation_mean": 11.0,
+  "interpretation": "choose proposal for confirmation within assumed safe cube; not field optimum or proof of adequacy"
+}

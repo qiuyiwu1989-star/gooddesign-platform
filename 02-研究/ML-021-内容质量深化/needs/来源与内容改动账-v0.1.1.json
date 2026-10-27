@@ -1,0 +1,25 @@
+{
+  "version": "0.1.1",
+  "prior_manifest_sha256": "5d7bbec6d3ea03294fe402a765b2218cd9077db43cee33f964a488131e3ea3ec",
+  "archive": "修订历史/v0.1.0/",
+  "changes": [
+    {
+      "method": "R07",
+      "old_sha256": "4226fd74403188d718737d50fdb821618f12916c08ab758f1be4c9707c122989",
+      "new_sha256": "5c3f3975f00a698546e3bc53864ca8d11bb95e31a14f1c37398105aea644e2c0",
+      "reason": "C-R07-01 full constructed DMADV loop",
+      "source_change": "none; new R07 rows explicitly authored, no new empirical source",
+      "review_status": "pending_validation_delta_review"
+    },
+    {
+      "method": "R48",
+      "old_sha256": "d469406be81aac1510adb019431841b886316356452f2a3b5872bfe802fb8906",
+      "new_sha256": "0a0c8a709f3b1d6c88734017787eb04f0619065fddc682559f3b7ac76f63e736",
+      "reason": "C-R48-01 separate TBR unresolved status and requirement approval",
+      "source_change": "none; new R07 rows explicitly authored, no new empirical source",
+      "review_status": "pending_validation_delta_review"
+    }
+  ],
+  "old_ML018_packages_modified": false,
+  "field_research_added": false
+}

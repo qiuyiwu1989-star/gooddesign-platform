@@ -1,0 +1,123 @@
+{
+  "source_manifest_sha256": "c1ecaeec2840b0d243e26c5136599de32a51f399715b4e473eac8dd126c1d636",
+  "checks": [
+    {
+      "case": "all frozen author files",
+      "result": 50,
+      "identity": "fingerprint_only_not_content_quality"
+    },
+    {
+      "case": "R38 independent least-squares",
+      "coef": [
+        10.000000000000005,
+        2.0000000000000004,
+        -2.000000000000002,
+        6.632980183746519e-15,
+        -1.999999999999997,
+        -2.0000000000000053
+      ],
+      "rank": 6,
+      "residual_df": 7,
+      "pure_error_ss": 0.09999999999999928,
+      "result": "consistent"
+    },
+    {
+      "case": "R37 w=.6",
+      "A": 0.6599999999999999,
+      "B": 0.56,
+      "break_even_w": 0.5
+    },
+    {
+      "case": "R39 spread only not probability",
+      "A_s": 17.320508075688775,
+      "B_s": 1.1547005383792515
+    },
+    {
+      "case": "R43 boundary sums",
+      "A": 264,
+      "B": 365,
+      "B_new_life": 164
+    },
+    {
+      "case": "R45 cost crossing",
+      "A_n5": 200,
+      "B_n5": 230,
+      "cross_n": 2
+    },
+    {
+      "case": "R47 independent enumeration",
+      "before": [
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          20
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "after_response": [
+        [
+          1,
+          20
+        ],
+        [
+          2,
+          10
+        ]
+      ]
+    },
+    {
+      "case": "R49 force calculations",
+      "A_hold": 4.8,
+      "B_hold": 6.0,
+      "B_new_mu": 4.0,
+      "k14_N": 28,
+      "k14_hold": 5.6
+    },
+    {
+      "case": "R52 independent Bayes branches",
+      "EVSI": 6.0000000000000036,
+      "branches": [
+        {
+          "p_signal": 0.5,
+          "posterior": [
+            0.8,
+            0.19999999999999996
+          ],
+          "risk": 19.999999999999996
+        },
+        {
+          "p_signal": 0.5,
+          "posterior": [
+            0.19999999999999996,
+            0.8
+          ],
+          "risk": 7.999999999999998
+        }
+      ],
+      "weak_EVSI": 0.0,
+      "net": 3.0000000000000036
+    },
+    {
+      "case": "unseen R52 signal .7/.7",
+      "EVSI": 0.0,
+      "interpretation": "posterior .7 below5/7, no action switch, zero value"
+    },
+    {
+      "case": "unseen R47 f threshold6",
+      "survivors": [],
+      "interpretation": "empty set calls research/relaxation authority, not hidden champion"
+    },
+    {
+      "case": "unseen R43 B lifetime4 years",
+      "reference_flow": 3,
+      "interpretation": "discrete replacement requires explicit service boundary; do not linear-fraction device without model"
+    }
+  ],
+  "scope": "independent arithmetic and source-file integrity; not complete method proof"
+}

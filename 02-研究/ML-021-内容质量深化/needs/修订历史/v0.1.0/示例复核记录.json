@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-28",
+  "actual_activity": "local arithmetic/source-table crosschecks",
+  "field_or_user_experiments": 0,
+  "records": [
+    {
+      "method": "R01",
+      "calculation": "rectangle intersection",
+      "input": {
+        "unit": "mm",
+        "scope": "constructed rectangles"
+      },
+      "actual_output": [
+        0,
+        400,
+        0
+      ],
+      "scope": "teaching geometry not collision/engineering validation"
+    },
+    {
+      "method": "R02",
+      "calculation": "phase arithmetic",
+      "input": [
+        40,
+        60
+      ],
+      "actual_output": {
+        "total": 100,
+        "recovery_share": 0.6
+      },
+      "scope": "synthetic ticks not real seconds"
+    },
+    {
+      "method": "R05",
+      "calculation": "coordinate and age arithmetic",
+      "input": {
+        "mechanical": 2,
+        "software_command": -1,
+        "times": [
+          80,
+          100
+        ],
+        "teaching_limit_ms": 30
+      },
+      "actual_output": {
+        "software": -2,
+        "mechanical_command": 1,
+        "age": 20,
+        "at_limit_stale": true
+      },
+      "scope": "fixed arithmetic only"
+    },
+    {
+      "method": "R11",
+      "calculation": "source-table mapping cross-check",
+      "input": "existing table2 JSON",
+      "actual_output": [
+        [
+          "like",
+          "neutral",
+          "A"
+        ],
+        [
+          "like",
+          "dislike",
+          "O"
+        ],
+        [
+          "must_be",
+          "dislike",
+          "M"
+        ]
+      ],
+      "scope": "three constructed answer pairs not participants"
+    },
+    {
+      "method": "R12",
+      "calculation": "column normalization row means",
+      "input": [
+        [
+          1,
+          1.8,
+          1.25
+        ],
+        [
+          0.5555555555555556,
+          1,
+          0.5555555555555556
+        ],
+        [
+          0.8,
+          1.8,
+          1
+        ]
+      ],
+      "actual_output": [
+        0.4204590680561083,
+        0.21708672097726592,
+        0.36245421096662583
+      ],
+      "scope": "public display-value slice not survey replication"
+    },
+    {
+      "method": "R13",
+      "calculation": "representation distinction",
+      "input": {
+        "A": [
+          "green",
+          "green"
+        ],
+        "B": [
+          "current",
+          "stale"
+        ]
+      },
+      "actual_output": {
+        "A_collision": true,
+        "B_collision": false
+      },
+      "scope": "encoding only not human comprehension"
+    },
+    {
+      "method": "R17",
+      "calculation": "higher-order constraint",
+      "input": [
+        20,
+        25,
+        20
+      ],
+      "actual_output": {
+        "total": 65,
+        "limit": 50,
+        "exceeded": true
+      },
+      "scope": "synthetic watt values not device ratings"
+    },
+    {
+      "method": "R48",
+      "calculation": "new illustrative TBR budget",
+      "input": {
+        "total_ms": 500,
+        "other_serial_segments_ms": [
+          120,
+          80,
+          100
+        ]
+      },
+      "actual_output": 200,
+      "scope": "all authored coordination estimate not measured or approved timing"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "identity": "constructed fault-injection records, NOT real executed hardware tests",
+  "records": [
+    {
+      "id": "T1",
+      "condition": "shared supply removed",
+      "S1": "no fresh data",
+      "S2": "no fresh data",
+      "display": "old green remains",
+      "interpretation": "shared domain defeats named redundancy"
+    },
+    {
+      "id": "T2",
+      "condition": "old timestamp with supply on",
+      "gate": "accepts",
+      "interpretation": "age gate missing"
+    },
+    {
+      "id": "T3",
+      "configuration": "B",
+      "condition": "same stale input",
+      "gate": "no new enable, actual stop unknown",
+      "interpretation": "closes only recorded gate problem in lesson"
+    }
+  ],
+  "decision": "prioritize shared-domain investigation and freshness gate, not cosmetic green label",
+  "risk_score": null
+}

@@ -1,0 +1,46 @@
+{
+  "identity": "constructed values and preference, not customer interview",
+  "A": [
+    0.9,
+    0.3
+  ],
+  "B": [
+    0.4,
+    0.8
+  ],
+  "C": {
+    "value": [
+      1,
+      1
+    ],
+    "hard": "fail"
+  },
+  "runs": [
+    {
+      "w": 0.2,
+      "A": 0.42,
+      "B": 0.72,
+      "choice": "B"
+    },
+    {
+      "w": 0.5,
+      "A": 0.6,
+      "B": 0.6000000000000001,
+      "choice": "tie"
+    },
+    {
+      "w": 0.6,
+      "A": 0.6599999999999999,
+      "B": 0.56,
+      "choice": "A"
+    },
+    {
+      "w": 0.8,
+      "A": 0.78,
+      "B": 0.48,
+      "choice": "A"
+    }
+  ],
+  "crossing": 0.5,
+  "actual_interview": false
+}

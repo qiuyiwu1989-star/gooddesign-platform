@@ -1,0 +1,425 @@
+{
+  "schema": "ML021-content-gap-audit-1",
+  "date": "2026-10-28",
+  "scope": "24methods content quality, not runtime guarding",
+  "items": [
+    {
+      "method_id": "R19",
+      "name": "设计启发式",
+      "baseline": "02-研究/方法深化执行/MD-017-R19",
+      "manifest_sha256": "29aac329e74a9c144c2f5430e59d66ef3397a3995ae8d1313bea9595f948643e",
+      "concrete_gap": "提示后图关系变化写清，尚缺提示选择依据、逐轮草图如何转成机制族和语义审查完整例。",
+      "primary_locator_or_gap": "原协议PDF1–2；研究论文Methods/Results尚需再读",
+      "revision_action": "补完整单提示→两轮变体→取舍的原创实例；再读研究实证支持范围",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R20",
+      "name": "C-K设计理论",
+      "baseline": "02-研究/方法深化执行/MD-018-R20",
+      "manifest_sha256": "4174058c0320ededefa7fa2eaee20a12a79e22c8ad5cfdd00215ef2a01654d5c",
+      "concrete_gap": "反模型讲得清但C→C扩张/限制与K变化后的概念再生成仍短，读者难照着做。",
+      "primary_locator_or_gap": "C-K2003PDF5/8/9；具体案例段需补读",
+      "revision_action": "区分扩张与限制分割并做带属性账的完整两轮例",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R21",
+      "name": "TRIZ体系",
+      "baseline": "02-研究/方法深化执行/修订版/MD-019-R21-v0.1.1",
+      "manifest_sha256": "39ab23473b014f25cff89d10ea1d1ab1df2d556429cb85928f7215dc2a050057",
+      "concrete_gap": "路由纪律充分，尚缺模型何时真的适合/不适合、同问题多种表示怎样取舍的连贯实例。",
+      "primary_locator_or_gap": "MATRIZ Problem-solving tools模型/工具关系表",
+      "revision_action": "补同题四路线的材料和决策差异，保留无法自动诊断边界",
+      "priority": "P2",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R22",
+      "name": "技术矛盾与发明原理",
+      "baseline": "02-研究/方法深化执行/修订版/MD-020-R22-v0.1.1",
+      "manifest_sha256": "63bb53fa03b067864519f2c659ad2b40213398bd0a0dfe6bfab1f7068a01c22c",
+      "concrete_gap": "仅条件矛盾建模，没有完整固定矩阵/真实单元格，不能把稿名暗示为已执行完整原理法。",
+      "primary_locator_or_gap": "MATRIZ Engineering contradiction IF-THEN-BUT与alternative；矩阵未取",
+      "revision_action": "检索一手完整矩阵版本；取得前做建模候选稿并显式缺步骤",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R23",
+      "name": "物理矛盾与分离",
+      "baseline": "02-研究/方法深化执行/修订版/MD-021-R23-v0.1.2",
+      "manifest_sha256": "6a343cf494c14c04070b02d29095d7aa459f810dedb4f55a3b5f480a597d2ffc",
+      "concrete_gap": "时间分离较完整，其余空间/关系/层级仅点到，过渡负载与条件可辨性缺完整对照。",
+      "primary_locator_or_gap": "Level1PDF53–64及版权页1",
+      "revision_action": "补四方向适用条件和返回例，独立过渡状态账；不复制受限课程",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R24",
+      "name": "理想解与资源分析",
+      "baseline": "02-研究/方法深化执行/MD-022-R24",
+      "manifest_sha256": "ed438d440fb3049ce6a9d402a34305442905863686d576c583a8aa0ac2e0f248",
+      "concrete_gap": "mgh单例覆盖资源量，信息/时间/物质资源的可获得性与代价转移仍不够可操作。",
+      "primary_locator_or_gap": "MATRIZ IFR definition/key features；教学资源账",
+      "revision_action": "补资源资格五问、方向/位置/时窗预算与完整代价承担者实例",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R25",
+      "name": "物场分析与标准解",
+      "baseline": "02-研究/方法深化执行/修订版/MD-023-R25-v0.1.1",
+      "manifest_sha256": "d7cf95515a48dee0fd11ccd33be8d4a6c70bdc0c833deff0db953626fc6eeadf",
+      "concrete_gap": "现只执行1.1.1补角色，缺实际作用状态诊断与标准前提对照；易误以为三标签齐就完成。",
+      "primary_locator_or_gap": "76标准PDF1的1.1.1、PDF3–4有害作用组待深读",
+      "revision_action": "优先补完整建模/分流/阻断/机制转译例，核选定有害标准前提",
+      "priority": "P0",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R26",
+      "name": "功能裁剪",
+      "baseline": "02-研究/方法深化执行/MD-024-R26",
+      "manifest_sha256": "85be4cc54b90874d0fe5933ae7832dae4a9e553a980e82c662560cb73dd9688a",
+      "concrete_gap": "A/B/C有守卫但全有用作用如何发现、接管证据与代价转移的连贯设计工作仍短。",
+      "primary_locator_or_gap": "Level1PDF35–38",
+      "revision_action": "补一部件三作用的原/删/接管对照及确认责任，保留未证接管",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R27",
+      "name": "功能导向检索与科学效应",
+      "baseline": "02-研究/方法深化执行/修订版/MD-025-R27-v0.1.2",
+      "manifest_sha256": "8fd0aaee5e53917001c42d6e24b74d0efad0ce5299ee66722a05adf306521c02",
+      "concrete_gap": "真实查询与迁移差异已有，缺机制抽象层次、领域领先证据与怎样把差异变二次问题的详解。",
+      "primary_locator_or_gap": "Litvin2005PDF2–3；2018水滴Results/Methods",
+      "revision_action": "补查询逐次改写、被排除命中、迁移取证优先序；实物胶乳属性需现实输入",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R28",
+      "name": "ARIZ发明问题求解算法",
+      "baseline": "02-研究/方法深化执行/修订版/MD-026-R28-v0.1.1",
+      "manifest_sha256": "a3acb55326d1ad9c11a4ca0c1d6339a4948dee2aa9481f96841e550d9e8f2efc",
+      "concrete_gap": "已读1/2/3/6但未读九部分全流程，有限投影不足以称完整ARIZ指导。",
+      "primary_locator_or_gap": "基金会西语85V parts1/2/3/6；其余未核",
+      "revision_action": "补其余部分原文核读；保留译本身份与实际未解决例，不补造标准解",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R29",
+      "name": "技术系统进化趋势",
+      "baseline": "02-研究/方法深化执行/MD-027-R29",
+      "manifest_sha256": "77fdfb48ad906f71acb7121ee9eabb63bd8c351b2f0085c41b28d5ee0b34d7df",
+      "concrete_gap": "三个构造计数只能描述，趋势体系具体如何形成多条可反驳路线缺工作实例。",
+      "primary_locator_or_gap": "MATRIZ TESE Overview/hierarchy；原统计效度数据未得",
+      "revision_action": "补趋势启发/证据/竞争解释/失败预测对照，不能伪造实证规律",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R30",
+      "name": "公理化设计",
+      "baseline": "02-研究/方法深化执行/MD-030-R30",
+      "manifest_sha256": "c629cb589516cae848c53f0c4023f15b59fb0977321c6951287478dac0580b12",
+      "concrete_gap": "局部矩阵顺序例完整，但FR分层/约束/工作点及信息公理不能适用的操作判断需加深。",
+      "primary_locator_or_gap": "MIT AD定义、matrix和axioms段",
+      "revision_action": "补从需要到FR/DP排除方案词的工作过程与反序计算",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R31",
+      "name": "DSM与模块化架构",
+      "baseline": "02-研究/方法深化执行/修订版/MD-031-R31-v0.1.1",
+      "manifest_sha256": "f742e4b6e244a483671255e4d35ddfb6f5efac3d67834647c065c2df2bb3f0a8",
+      "concrete_gap": "SCC计算可懂，但任务信息DSM与产品模块聚类边界、未知一条边造成的规划变化未充分展开。",
+      "primary_locator_or_gap": "DSMWeb两图例与coupled-system段",
+      "revision_action": "做已知/未知D→A两图完整对照，说明迭代计划而非物理模块化",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R32",
+      "name": "机构综合",
+      "baseline": "02-研究/方法深化执行/修订版/MD-032-R32-v0.1.1",
+      "manifest_sha256": "3fcea5fdd8fee8cec3ed5d2a0871cca9fa88b42d02b5e9d5adccb5ed3cda95ee",
+      "concrete_gap": "特殊平行四边形有计算，但输入任务到拓扑/尺寸/分支的设计取舍和连续路径缺口需要更清楚。",
+      "primary_locator_or_gap": "MIT2.007PDF11/27/32/35–37",
+      "revision_action": "展开三姿态计算、闭环两解、死点与扫样区别；真实包络需现实输入",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R33",
+      "name": "Ashby材料选择",
+      "baseline": "02-研究/方法深化执行/修订版/MD-033-R33-v0.1.1",
+      "manifest_sha256": "31f4f96eda53dae5411ba434f19c9133a4b5d3397ffcf4c2abca81a958a44524",
+      "concrete_gap": "有两模型推导与反转，但物性证据适用范围、控制约束切换以及成本/工艺二筛可读工作单不足。",
+      "primary_locator_or_gap": "Ansys2025R1四因素/固定几何短页；自推静力",
+      "revision_action": "补刚度→强度控制的完整尺寸/回代，明确构造物性非采购数据",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R34",
+      "name": "面向制造与装配设计",
+      "baseline": "02-研究/方法深化执行/修订版/MD-034-R34-v0.1.2",
+      "manifest_sha256": "2b79d1ec38683960fdddd3bc52cbc759df1770b71c1e4ea1da319f2b6bd1e49f",
+      "concrete_gap": "动作/BOM/服务反例充分，仍缺装配基准与实际制造过程成本如何接续的完整工作链。",
+      "primary_locator_or_gap": "BD官方How it works三问/handling-fastening",
+      "revision_action": "补BOM逐件理由、动作定位、成本边界和维修影响；真实节拍需测时",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R35",
+      "name": "拓扑优化",
+      "baseline": "02-研究/方法深化执行/MD-035-R35",
+      "manifest_sha256": "7943020a22fc42b788d34fc56eeaa22f6b38850be98c095373eca46f68dd6a67",
+      "concrete_gap": "有实际求解却正文短，输入到FE/梯度/滤波/迭代/未收敛/重建的阅读链不足，容易只看云图。",
+      "primary_locator_or_gap": "Sigmund2001PDF2Eq1–4/3Eq5–6；平台数值4组",
+      "revision_action": "优先写完整过程、数值账与未收敛判断；原式/平台变体严格分开",
+      "priority": "P0",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "R36",
+      "name": "Pugh概念筛选",
+      "baseline": "02-研究/方法深化执行/修订版/MD-005-R36-v0.1.1",
+      "manifest_sha256": "d30e570082983503affb77afea388db7e47a5e8a9f86bacfbf8e454abf0251ec",
+      "concrete_gap": "未知保真完善，但强弱如何激发组合改进、评委分歧与datum敏感性完整例不够连贯。",
+      "primary_locator_or_gap": "现来源NASASE/ASEE与原Pugh书未全文",
+      "revision_action": "补真实可复查独立计数格、换基准和改进假设；不补工程分",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB01",
+      "name": "产品系统化与综合设计体系",
+      "baseline": "02-研究/方法深化执行/MD-053-WB01",
+      "manifest_sha256": "e800a6adcb53d10d6e2ccaab7c8db1c1021bda3c8b94ae1d1aa88c28b11ace46",
+      "concrete_gap": "谱系严谨但缺可供人用的层级判断例：体系/规划/专门设计工具各自何时输出什么。",
+      "primary_locator_or_gap": "2003PDF1/5–7；2017简介目录；2019自述5–8",
+      "revision_action": "补分层使用实例和版本主张对照，寻找可核专著页但不猜演化",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB02",
+      "name": "3I调研",
+      "baseline": "02-研究/方法深化执行/MD-054-WB02",
+      "manifest_sha256": "ecd45788150db582a5ac41510c440f3e25c644b09139f7b9869a0becfc08e10a",
+      "concrete_gap": "中文职责已核但原章细则未得；目前主要是平台问题覆盖，不足以当原3I操作算法。",
+      "primary_locator_or_gap": "HEP2017简介及目录5.2/5.3/5.4",
+      "revision_action": "补三类资料相互纠错的完整研究计划，明确平台适配与正文缺口",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB03",
+      "name": "7D总体规划",
+      "baseline": "02-研究/方法深化执行/MD-055-WB03",
+      "manifest_sha256": "8e54afbf8d60e76c3a540da69e1d8e0b85b6d76b4deb04e9614489ba388f908e",
+      "concrete_gap": "七域关系布尔例过短，未展示完整规划修订后的七域同步变更与检验闭环。",
+      "primary_locator_or_gap": "2019自述第3案例7；HEP2017简介7P/目录6.2.1 7D",
+      "revision_action": "优先做七域内容/边/冲突/回返/新版本实例，原章缺失不冒作者算法",
+      "priority": "P0",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB04",
+      "name": "1+3+X综合设计",
+      "baseline": "02-研究/方法深化执行/修订版/MD-056-WB04-v0.1.1",
+      "manifest_sha256": "870cab10aa00605eff22fcf555b3190fb851371d82e9603ba8095cd2da56aef4",
+      "concrete_gap": "共同m/k与维护反例有用，但功能、三个性能与X每域的产物及联合裁决过程仍短。",
+      "primary_locator_or_gap": "2019自述1+3+X；2003三化；2017目录",
+      "revision_action": "补同候选版本联审记录，参数可变性/特殊需要来源和未决项齐全",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB05",
+      "name": "主辅功能与功能优化",
+      "baseline": "02-研究/方法深化执行/MD-057-WB05",
+      "manifest_sha256": "d2ad8b0987a48119c1b16ce5ee00d7075c13f4d773db1ec985d7c1bf78dcd1ec",
+      "concrete_gap": "必要支撑图是原创，原作者主辅判据章节未得；读者需学会必要性取证而非只记不能删。",
+      "primary_locator_or_gap": "HEP2017目录7.2–7.11；Science2007目录第3章",
+      "revision_action": "补作用边界/必要性假设/删除与接管三路线完整责任账",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB06",
+      "name": "面向结构性能的动态设计",
+      "baseline": "02-研究/方法深化执行/MD-058-WB06",
+      "manifest_sha256": "26c1a44178ffa72223af37f78a53b8dc61d7829f9d9e2571b3ce80f5630678f9",
+      "concrete_gap": "SDOF数学有实际例，辨识/模型适用性/非线性转回与目标函数取舍说明不足。",
+      "primary_locator_or_gap": "Wen2003PDF3动态段；2017目录8.3/8.4",
+      "revision_action": "补完整配置→频响→静动反转→校核计划；实测与深层算法缺口保留",
+      "priority": "P1",
+      "work_types": [
+        "authored_content_revision",
+        "primary_research_where_gap",
+        "real_input_not_invented"
+      ],
+      "tests_are_not_content_depth_evidence": true,
+      "status": "authored_candidate_pending_independent_content_review"
+    }
+  ],
+  "first_actual_revisions": [
+    "R25",
+    "R35",
+    "WB03"
+  ],
+  "external_limits": [
+    "unacquired monograph chapters/permissions",
+    "target/customer evidence and engineering measurements",
+    "independent domain review"
+  ]
+}

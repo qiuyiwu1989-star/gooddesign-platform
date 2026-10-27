@@ -1,0 +1,24 @@
+{
+  "kind": "constructed normalized model, existing frozen computed results",
+  "source": "MD-035-R35/教学包",
+  "density_cases": [
+    {
+      "name": "baseline",
+      "c": 243.92026404302595,
+      "iterations": 160,
+      "converged": false
+    },
+    {
+      "name": "radius .26",
+      "c": 305.21595194456785,
+      "iterations": 91,
+      "converged": true
+    }
+  ],
+  "binary_reanalysis": {
+    "baseline_volume": 0.4625,
+    "allowed_volume": 0.45,
+    "radius_026_compliance": 2381985.5756382467
+  },
+  "decision": "reject naive threshold geometry; return to reconstruction; no strength certification"
+}

@@ -1,0 +1,57 @@
+{
+  "identity": "actual selected public patent claim texts, not physical performance or legal-scope judgment",
+  "read_date": "2026-10-28",
+  "source_identity": [
+    {
+      "source_path": "02-研究/方法深化执行/MD-045-R46/private-sources/cnA.html",
+      "raw_sha256": "20d805e3e4872a50c97365d874865109e7051b9acaffcbde94371444cf10016b",
+      "url": "https://patents.google.com/patent/CN110696008A/en",
+      "locator": "claims/#cl0001 (claim1, original Chinese spans plus translation)",
+      "claim_start_offset": 79456,
+      "claim_end_offset": 80855,
+      "actual_selected_read": "claim1 body, not all claims or legal construction"
+    },
+    {
+      "source_path": "02-研究/方法深化执行/MD-045-R46/private-sources/wo.html",
+      "raw_sha256": "736b972a3a79f3573029698f365bf622861f96d3d7a458768e149b14f517c59d",
+      "url": "https://patents.google.com/patent/WO2025011089A1/en",
+      "locator": "claims/#cl001 (claim1, original Chinese spans plus translation)",
+      "claim_start_offset": 70170,
+      "claim_end_offset": 71978,
+      "actual_selected_read": "claim1 body, not all claims or legal construction"
+    }
+  ],
+  "comparison": [
+    {
+      "dimension": "support and fixing interface",
+      "CN110696008A": "tree-fixed clamping mechanism carries motion and measurement-limit parts",
+      "WO2025011089A1": "autonomous mobile body with arm; arm-end connector has first device for tree fixation",
+      "interpretation": "both disclose tree fixation, not simple fixed-vs-unfixed contrast",
+      "unresolved": "installation/removal time, slip, contact burden and field access not evidenced"
+    },
+    {
+      "dimension": "cutting relative motion",
+      "CN110696008A": "motion mechanism drives cutting mechanism in spiral motion on clamp",
+      "WO2025011089A1": "cutter follows helical guide; linear module displaces guide vertically",
+      "interpretation": "same broad spiral concept, different disclosed arrangement/control reference",
+      "unresolved": "actual trajectory accuracy, shape adaptation and loading behaviour"
+    },
+    {
+      "dimension": "measurement variable and control target",
+      "CN110696008A": "measurement-limit module sends signal to controller for motion control; claim1 does not specify sensor variable",
+      "WO2025011089A1": "displacement unit detects vertical displacement of helical guide relative connector",
+      "interpretation": "WO selected claim names a specific reference displacement; neither proves biological boundary measurement",
+      "unresolved": "sensor uncertainty, latex/contamination effects, mapping to actual allowed tissue action"
+    }
+  ],
+  "source_rule": "each CN cell based on claim1/cl0001; each WO cell based on claim1/cl001",
+  "derived_platform_action": "separate clamping/reference interfaces, spiral path and vertical guide-feed measurement for function/model research; controlled proxy tests to be designed, no comparative winner or FTO",
+  "not_claimed": [
+    "full claim construction",
+    "actual product use",
+    "official status",
+    "global landscape",
+    "biological safety",
+    "new searches performed this round"
+  ]
+}

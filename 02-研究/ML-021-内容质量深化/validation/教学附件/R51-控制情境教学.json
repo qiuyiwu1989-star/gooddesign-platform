@@ -1,0 +1,22 @@
+{
+  "identity": "constructed partial STPA, not machine safety assessment",
+  "loss": "unacceptable contact harm",
+  "hazard": "contact action with person/object boundary not confirmed",
+  "contexts": {
+    "C1": "occupied and action present",
+    "C2": "clear but actual state unknown",
+    "C3": "clear/state confirmed/authorized"
+  },
+  "ucas": {
+    "U1": "no inhibit underC1",
+    "U2": "enable underC2",
+    "U3": "enable before stop/recovery review",
+    "U4": "release inhibit too soon while danger persists"
+  },
+  "scenarios": [
+    "stale feedback interpreted current",
+    "multiple controller authority overwrite"
+  ],
+  "decision": "prioritize feedback freshness and authority protocol studies",
+  "risk_frequency": null
+}

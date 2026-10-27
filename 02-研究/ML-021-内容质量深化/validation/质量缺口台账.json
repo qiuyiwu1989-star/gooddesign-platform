@@ -1,0 +1,1692 @@
+{
+  "version": "0.1.0",
+  "date": "2026-10-28",
+  "scope": "21 method bodies, not test/field count assessment",
+  "priority_first_three": [
+    "R38",
+    "R49",
+    "R52"
+  ],
+  "methods": [
+    {
+      "method_id": "R44",
+      "name": "原型与假设测试",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/研究说明.md",
+      "baseline_document_sha256": "68b4b224b22e9360dcc11ea25b52d15dc794da0233733d9f280e202abe03cb0d",
+      "baseline_manifest_sha256": "e460acfd096d67e44ab83016043f744a3c90d49aff5d876811de3d7cf32b7c8e",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "两种原型能力区分已清楚，尚缺具体研究问题—任务—观察—解释—下一决定的贯通实例",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "编制一份纯构造可阅读的观察编码示范并解释支持/反驳/无结论/测试无效；不制造真人试用"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "参与角色/同意、实际原型和原始观察",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/研究说明.md；02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/研究说明.md；02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/来源与主张.json",
+          "reason": "两种原型能力区分已清楚，尚缺具体研究问题—任务—观察—解释—下一决定的贯通实例"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/研究说明.md；02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/来源与主张.json",
+          "reason": "两种原型能力区分已清楚，尚缺具体研究问题—任务—观察—解释—下一决定的贯通实例"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/研究说明.md；02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/来源与主张.json",
+          "reason": "两种原型能力区分已清楚，尚缺具体研究问题—任务—观察—解释—下一决定的贯通实例"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/研究说明.md；02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/来源与主张.json",
+          "reason": "两种原型能力区分已清楚，尚缺具体研究问题—任务—观察—解释—下一决定的贯通实例"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/研究说明.md；02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/来源与主张.json",
+          "reason": "两种原型能力区分已清楚，尚缺具体研究问题—任务—观察—解释—下一决定的贯通实例"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/研究说明.md；02-研究/方法深化执行/修订版/MD-006-R44-v0.1.2/来源与主张.json",
+          "reason": "两种原型能力区分已清楚，尚缺具体研究问题—任务—观察—解释—下一决定的贯通实例"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R42",
+      "name": "验证与确认",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/研究说明.md",
+      "baseline_document_sha256": "e4e33177974ec3e436c7be12af7d7c0ab24f1597bbdd7648679390ca29e24e24",
+      "baseline_manifest_sha256": "efac7d7a52eb84b777aff59d49951388fe198591233ffdc1d449eab99b52affb",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "需求未基线时的停止判断准确，但读者缺验证与确认的两条完整证据链、偏差关闭及变更后复用判定示范",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "分别构造符合性与用途满足记录，解释为什么同一通过结果不能跨对象/配置复用"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "批准要求、预期用途、配置、校准与实际测试记录",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/研究说明.md；02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/研究说明.md；02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/来源与主张.json",
+          "reason": "需求未基线时的停止判断准确，但读者缺验证与确认的两条完整证据链、偏差关闭及变更后复用判定示范"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/研究说明.md；02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/来源与主张.json",
+          "reason": "需求未基线时的停止判断准确，但读者缺验证与确认的两条完整证据链、偏差关闭及变更后复用判定示范"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/研究说明.md；02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/来源与主张.json",
+          "reason": "需求未基线时的停止判断准确，但读者缺验证与确认的两条完整证据链、偏差关闭及变更后复用判定示范"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/研究说明.md；02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/来源与主张.json",
+          "reason": "需求未基线时的停止判断准确，但读者缺验证与确认的两条完整证据链、偏差关闭及变更后复用判定示范"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/研究说明.md；02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/来源与主张.json",
+          "reason": "需求未基线时的停止判断准确，但读者缺验证与确认的两条完整证据链、偏差关闭及变更后复用判定示范"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/研究说明.md；02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/来源与主张.json",
+          "reason": "需求未基线时的停止判断准确，但读者缺验证与确认的两条完整证据链、偏差关闭及变更后复用判定示范"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R49",
+      "name": "功能—行为—结构推理（FBS）",
+      "baseline_package": "02-研究/方法深化执行/MD-029-R49",
+      "baseline_document": "02-研究/方法深化执行/MD-029-R49/研究说明.md",
+      "baseline_document_sha256": "ee0df539dd7cab34968d07b15508a7f851fda80c88ab61609da6fe7c03fcb819",
+      "baseline_manifest_sha256": "1f37f5a35e4d2ee08b6d57045d32f655b504fc5c0945fa3deae9ccc36acde20d",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-029-R49/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-029-R49/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-029-R49/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "仅摘要可核且弹簧示例偏简，缺原作者F/Be/Bs/S角色与设计过程的可靠细则",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "重试原作者合法全文；受阻时明确提供基础表示/分析/评价/重构的有限平台教学，不冒situated八过程"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "完整作者原文与实际功能到可测行为的专业模型",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P0",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-029-R49/研究说明.md；02-研究/方法深化执行/MD-029-R49/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-029-R49/研究说明.md；02-研究/方法深化执行/MD-029-R49/来源与主张.json",
+          "reason": "仅摘要可核且弹簧示例偏简，缺原作者F/Be/Bs/S角色与设计过程的可靠细则"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-029-R49/研究说明.md；02-研究/方法深化执行/MD-029-R49/来源与主张.json",
+          "reason": "仅摘要可核且弹簧示例偏简，缺原作者F/Be/Bs/S角色与设计过程的可靠细则"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-029-R49/研究说明.md；02-研究/方法深化执行/MD-029-R49/来源与主张.json",
+          "reason": "仅摘要可核且弹簧示例偏简，缺原作者F/Be/Bs/S角色与设计过程的可靠细则"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-029-R49/研究说明.md；02-研究/方法深化执行/MD-029-R49/来源与主张.json",
+          "reason": "仅摘要可核且弹簧示例偏简，缺原作者F/Be/Bs/S角色与设计过程的可靠细则"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-029-R49/研究说明.md；02-研究/方法深化执行/MD-029-R49/来源与主张.json",
+          "reason": "仅摘要可核且弹簧示例偏简，缺原作者F/Be/Bs/S角色与设计过程的可靠细则"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-029-R49/研究说明.md；02-研究/方法深化执行/MD-029-R49/来源与主张.json",
+          "reason": "仅摘要可核且弹簧示例偏简，缺原作者F/Be/Bs/S角色与设计过程的可靠细则"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R47",
+      "name": "集合式并行工程",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/研究说明.md",
+      "baseline_document_sha256": "1aadfbf5cc844ca5022dc208a878541ceb348232e37ce2f2d70501860f546cad",
+      "baseline_manifest_sha256": "ffc69bf38291603056879d026805923b8ae122d67405a96536839eb077775c25",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "离散交集与重开计算完整，连续可行域/约束证据等级、收敛承诺条件与学习优先尚欠",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "解释点/区域、耦合约束及证据改变时重新打开的具体规则；不把多名字当集合开发"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "实际跨专业域/权衡曲线、学习成本与资源承诺",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/来源与主张.json",
+          "reason": "离散交集与重开计算完整，连续可行域/约束证据等级、收敛承诺条件与学习优先尚欠"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/来源与主张.json",
+          "reason": "离散交集与重开计算完整，连续可行域/约束证据等级、收敛承诺条件与学习优先尚欠"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/来源与主张.json",
+          "reason": "离散交集与重开计算完整，连续可行域/约束证据等级、收敛承诺条件与学习优先尚欠"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/来源与主张.json",
+          "reason": "离散交集与重开计算完整，连续可行域/约束证据等级、收敛承诺条件与学习优先尚欠"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/来源与主张.json",
+          "reason": "离散交集与重开计算完整，连续可行域/约束证据等级、收敛承诺条件与学习优先尚欠"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-037-R47-v0.1.1/来源与主张.json",
+          "reason": "离散交集与重开计算完整，连续可行域/约束证据等级、收敛承诺条件与学习优先尚欠"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R37",
+      "name": "多准则权衡分析",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/研究说明.md",
+      "baseline_document_sha256": "775203b17dc1b3235a2b7e340f73735746383c9447e633c79413f8c78be2db64",
+      "baseline_manifest_sha256": "f78bdd6fa1ecd7dd4fe7f8b3707b895e37daedb93dee18d0eeefcd74db6ab9e6",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "加性价值模型的偏好独立条件、摆幅权重访谈的问法与矛盾处理仍只作概述",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "补一轮完整摆幅提问—尺度—解析交点—受限决策的连贯实例；解释区间值/未知硬约束如何阻止排名"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "真实决策主体对摆幅取舍的回答、性能证据和不可豁免条件",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/来源与主张.json",
+          "reason": "加性价值模型的偏好独立条件、摆幅权重访谈的问法与矛盾处理仍只作概述"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/来源与主张.json",
+          "reason": "加性价值模型的偏好独立条件、摆幅权重访谈的问法与矛盾处理仍只作概述"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/来源与主张.json",
+          "reason": "加性价值模型的偏好独立条件、摆幅权重访谈的问法与矛盾处理仍只作概述"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/来源与主张.json",
+          "reason": "加性价值模型的偏好独立条件、摆幅权重访谈的问法与矛盾处理仍只作概述"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/来源与主张.json",
+          "reason": "加性价值模型的偏好独立条件、摆幅权重访谈的问法与矛盾处理仍只作概述"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-038-R37-v0.1.1/来源与主张.json",
+          "reason": "加性价值模型的偏好独立条件、摆幅权重访谈的问法与矛盾处理仍只作概述"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R38",
+      "name": "试验设计与响应面",
+      "baseline_package": "02-研究/方法深化执行/MD-039-R38",
+      "baseline_document": "02-研究/方法深化执行/MD-039-R38/研究说明.md",
+      "baseline_document_sha256": "a2b49ac5d5c2eddcb0f29444f1ebe2531fa84de1358ef510a945c38b1edfc1cf",
+      "baseline_manifest_sha256": "7a20cd44f724cb6fd7f86bc1dfc8d132d99aa78c15f2252cbe26720ce1bf1a86",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-039-R38/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-039-R38/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-039-R38/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "正文有可靠全因子复算但缺完整序贯响应面：曲率、扩充设计、二次项可估计、驻点分类与独立确认链",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "新增小型可跟随二次响应面例，展示信息矩阵秩、纯误差/失拟及安全域回返；保留NIST均值数据身份"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "实际工况因素范围、测量重复和独立确认试验",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P0",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-039-R38/研究说明.md；02-研究/方法深化执行/MD-039-R38/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-039-R38/研究说明.md；02-研究/方法深化执行/MD-039-R38/来源与主张.json",
+          "reason": "正文有可靠全因子复算但缺完整序贯响应面：曲率、扩充设计、二次项可估计、驻点分类与独立确认链"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-039-R38/研究说明.md；02-研究/方法深化执行/MD-039-R38/来源与主张.json",
+          "reason": "正文有可靠全因子复算但缺完整序贯响应面：曲率、扩充设计、二次项可估计、驻点分类与独立确认链"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-039-R38/研究说明.md；02-研究/方法深化执行/MD-039-R38/来源与主张.json",
+          "reason": "正文有可靠全因子复算但缺完整序贯响应面：曲率、扩充设计、二次项可估计、驻点分类与独立确认链"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-039-R38/研究说明.md；02-研究/方法深化执行/MD-039-R38/来源与主张.json",
+          "reason": "正文有可靠全因子复算但缺完整序贯响应面：曲率、扩充设计、二次项可估计、驻点分类与独立确认链"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-039-R38/研究说明.md；02-研究/方法深化执行/MD-039-R38/来源与主张.json",
+          "reason": "正文有可靠全因子复算但缺完整序贯响应面：曲率、扩充设计、二次项可估计、驻点分类与独立确认链"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-039-R38/研究说明.md；02-研究/方法深化执行/MD-039-R38/来源与主张.json",
+          "reason": "正文有可靠全因子复算但缺完整序贯响应面：曲率、扩充设计、二次项可估计、驻点分类与独立确认链"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R39",
+      "name": "稳健参数与公差设计",
+      "baseline_package": "02-研究/方法深化执行/MD-040-R39",
+      "baseline_document": "02-研究/方法深化执行/MD-040-R39/研究说明.md",
+      "baseline_document_sha256": "36862163b168d20826ad437bfcc61fd0aea9f4e7dcae008c1b0635277a3f2fee",
+      "baseline_manifest_sha256": "83383df2bb70103270be0fe53b086eeab6423849ec16f94262fdf1b11511916b",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-040-R39/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-040-R39/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-040-R39/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "均值/散布取舍已说明，尚缺控制×噪声交互的操作解释、目标型损失及公差经济选择的示范",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "用明确控制/噪声角色与分条件响应解释为何选不敏感设计；将公差成本/损失作为另一模型而非默认上精度"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "服役噪声分布、制造公差能力、成本与质量损失口径",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-040-R39/研究说明.md；02-研究/方法深化执行/MD-040-R39/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-040-R39/研究说明.md；02-研究/方法深化执行/MD-040-R39/来源与主张.json",
+          "reason": "均值/散布取舍已说明，尚缺控制×噪声交互的操作解释、目标型损失及公差经济选择的示范"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-040-R39/研究说明.md；02-研究/方法深化执行/MD-040-R39/来源与主张.json",
+          "reason": "均值/散布取舍已说明，尚缺控制×噪声交互的操作解释、目标型损失及公差经济选择的示范"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-040-R39/研究说明.md；02-研究/方法深化执行/MD-040-R39/来源与主张.json",
+          "reason": "均值/散布取舍已说明，尚缺控制×噪声交互的操作解释、目标型损失及公差经济选择的示范"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-040-R39/研究说明.md；02-研究/方法深化执行/MD-040-R39/来源与主张.json",
+          "reason": "均值/散布取舍已说明，尚缺控制×噪声交互的操作解释、目标型损失及公差经济选择的示范"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-040-R39/研究说明.md；02-研究/方法深化执行/MD-040-R39/来源与主张.json",
+          "reason": "均值/散布取舍已说明，尚缺控制×噪声交互的操作解释、目标型损失及公差经济选择的示范"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-040-R39/研究说明.md；02-研究/方法深化执行/MD-040-R39/来源与主张.json",
+          "reason": "均值/散布取舍已说明，尚缺控制×噪声交互的操作解释、目标型损失及公差经济选择的示范"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R40",
+      "name": "失效模式与影响分析",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/研究说明.md",
+      "baseline_document_sha256": "e468cc8a1459b058b644e9ed8173353aa160666b031b3c3dc69b6e25585c6eec",
+      "baseline_manifest_sha256": "ca6ad5662ee60f98acb5c9b54b3fca2ec25f7960648baf9d2b1a8c2d0bcfbd62",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "失效链与共因例有价值，但缺从任务分解到逐行可辨别模式、控制证据与行动优先的完整阅读过程",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "展开模式/原因/后果逐层区别与一次行动闭环的所需证据；不套汽车RPN"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "目标任务后果与量表适用性、控制试验和风险接受责任",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/来源与主张.json",
+          "reason": "失效链与共因例有价值，但缺从任务分解到逐行可辨别模式、控制证据与行动优先的完整阅读过程"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/来源与主张.json",
+          "reason": "失效链与共因例有价值，但缺从任务分解到逐行可辨别模式、控制证据与行动优先的完整阅读过程"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/来源与主张.json",
+          "reason": "失效链与共因例有价值，但缺从任务分解到逐行可辨别模式、控制证据与行动优先的完整阅读过程"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/来源与主张.json",
+          "reason": "失效链与共因例有价值，但缺从任务分解到逐行可辨别模式、控制证据与行动优先的完整阅读过程"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/来源与主张.json",
+          "reason": "失效链与共因例有价值，但缺从任务分解到逐行可辨别模式、控制证据与行动优先的完整阅读过程"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-041-R40-v0.1.1/来源与主张.json",
+          "reason": "失效链与共因例有价值，但缺从任务分解到逐行可辨别模式、控制证据与行动优先的完整阅读过程"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R41",
+      "name": "机械风险评估与风险降低",
+      "baseline_package": "02-研究/方法深化执行/MD-042-R41",
+      "baseline_document": "02-研究/方法深化执行/MD-042-R41/研究说明.md",
+      "baseline_document_sha256": "c44eaae49b5769158cc648b912c9598411ddc2e484a4126795d6afcd7f7c3481",
+      "baseline_manifest_sha256": "76733dbe8f336ac6946d49dc2facc0079db2dc2fa139d8d61da8f43b22017fd0",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-042-R41/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-042-R41/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-042-R41/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "危险识别账以状态门禁为主，设计消除/防护/信息三层措施如何比较和验证仍待展开",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "给一个构造介入任务，从危险区/能量路径推到措施选项及残余未知；明确不代表法规判断"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "设备边界、市场与使用分类、实际暴露和能量/停止数据",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-042-R41/研究说明.md；02-研究/方法深化执行/MD-042-R41/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-042-R41/研究说明.md；02-研究/方法深化执行/MD-042-R41/来源与主张.json",
+          "reason": "危险识别账以状态门禁为主，设计消除/防护/信息三层措施如何比较和验证仍待展开"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-042-R41/研究说明.md；02-研究/方法深化执行/MD-042-R41/来源与主张.json",
+          "reason": "危险识别账以状态门禁为主，设计消除/防护/信息三层措施如何比较和验证仍待展开"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-042-R41/研究说明.md；02-研究/方法深化执行/MD-042-R41/来源与主张.json",
+          "reason": "危险识别账以状态门禁为主，设计消除/防护/信息三层措施如何比较和验证仍待展开"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-042-R41/研究说明.md；02-研究/方法深化执行/MD-042-R41/来源与主张.json",
+          "reason": "危险识别账以状态门禁为主，设计消除/防护/信息三层措施如何比较和验证仍待展开"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-042-R41/研究说明.md；02-研究/方法深化执行/MD-042-R41/来源与主张.json",
+          "reason": "危险识别账以状态门禁为主，设计消除/防护/信息三层措施如何比较和验证仍待展开"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-042-R41/研究说明.md；02-研究/方法深化执行/MD-042-R41/来源与主张.json",
+          "reason": "危险识别账以状态门禁为主，设计消除/防护/信息三层措施如何比较和验证仍待展开"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R43",
+      "name": "生命周期评价与生态设计",
+      "baseline_package": "02-研究/方法深化执行/MD-043-R43",
+      "baseline_document": "02-研究/方法深化执行/MD-043-R43/研究说明.md",
+      "baseline_document_sha256": "c291abbd1c058d5900ed15092da098f0ac7f48403a18fde7c8314e7d35b22c5e",
+      "baseline_manifest_sha256": "f6e2066d338bb56aba681e447c4e6772ad893957c36de8957578e06b096e7781",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-043-R43/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-043-R43/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-043-R43/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "替换寿命算例可跟随，但尚缺参考流、分配/回收、影响类别与敏感性如何改变结论的完整过程",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "展开同等服务边界、清单质量、单位换算、不可比返回与负担转移；不把BU等同碳足迹"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "实物功能单位、真实清单/因子、地域技术年限与审查",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-043-R43/研究说明.md；02-研究/方法深化执行/MD-043-R43/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-043-R43/研究说明.md；02-研究/方法深化执行/MD-043-R43/来源与主张.json",
+          "reason": "替换寿命算例可跟随，但尚缺参考流、分配/回收、影响类别与敏感性如何改变结论的完整过程"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-043-R43/研究说明.md；02-研究/方法深化执行/MD-043-R43/来源与主张.json",
+          "reason": "替换寿命算例可跟随，但尚缺参考流、分配/回收、影响类别与敏感性如何改变结论的完整过程"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-043-R43/研究说明.md；02-研究/方法深化执行/MD-043-R43/来源与主张.json",
+          "reason": "替换寿命算例可跟随，但尚缺参考流、分配/回收、影响类别与敏感性如何改变结论的完整过程"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-043-R43/研究说明.md；02-研究/方法深化执行/MD-043-R43/来源与主张.json",
+          "reason": "替换寿命算例可跟随，但尚缺参考流、分配/回收、影响类别与敏感性如何改变结论的完整过程"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-043-R43/研究说明.md；02-研究/方法深化执行/MD-043-R43/来源与主张.json",
+          "reason": "替换寿命算例可跟随，但尚缺参考流、分配/回收、影响类别与敏感性如何改变结论的完整过程"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-043-R43/研究说明.md；02-研究/方法深化执行/MD-043-R43/来源与主张.json",
+          "reason": "替换寿命算例可跟随，但尚缺参考流、分配/回收、影响类别与敏感性如何改变结论的完整过程"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R45",
+      "name": "价值工程",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/研究说明.md",
+      "baseline_document_sha256": "330a36a3756493fc65da19b86da4435e82dfc914a31246d80d45c8518f2ac28d",
+      "baseline_manifest_sha256": "f6cf5bd9585f93a02d7bf9f141de84f84578a7f150feab59cf446e7ddbecf67d",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "来源已纠正但方法正文偏生命周期成本，必要功能/基本功能、worth与cost、发展/实施闭环需讲透",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "沿功能分析—替代机制—等效约束—代价转移—试验/实施解释一完整例，成本低不自动价值高"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "真实报价、量产/寿命边界、功能等效证据与实施结果",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/来源与主张.json",
+          "reason": "来源已纠正但方法正文偏生命周期成本，必要功能/基本功能、worth与cost、发展/实施闭环需讲透"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/来源与主张.json",
+          "reason": "来源已纠正但方法正文偏生命周期成本，必要功能/基本功能、worth与cost、发展/实施闭环需讲透"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/来源与主张.json",
+          "reason": "来源已纠正但方法正文偏生命周期成本，必要功能/基本功能、worth与cost、发展/实施闭环需讲透"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/来源与主张.json",
+          "reason": "来源已纠正但方法正文偏生命周期成本，必要功能/基本功能、worth与cost、发展/实施闭环需讲透"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/来源与主张.json",
+          "reason": "来源已纠正但方法正文偏生命周期成本，必要功能/基本功能、worth与cost、发展/实施闭环需讲透"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-044-R45-v0.1.1/来源与主张.json",
+          "reason": "来源已纠正但方法正文偏生命周期成本，必要功能/基本功能、worth与cost、发展/实施闭环需讲透"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R46",
+      "name": "专利景观与技术路线分析",
+      "baseline_package": "02-研究/方法深化执行/MD-045-R46",
+      "baseline_document": "02-研究/方法深化执行/MD-045-R46/研究说明.md",
+      "baseline_document_sha256": "3901729aa4588eaf3d2dc88f326cc548dbd44e9f17d9ed4d56607813addc88c3",
+      "baseline_manifest_sha256": "20f5b131396f67abf5bfe323ce4f8d8918b7e7cab31d0f5e3ca483077d86ef23",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-045-R46/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-045-R46/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-045-R46/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "小型真实专利样本可追溯，但检索扩展/筛选编码/归组与权项比较的人工判断仍需示范",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "用已取得文献完整展示纳排理由和申请组；区分publication/application/family与技术路线、FTO"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "官方状态/完整同族、目标实施方案与专业权项判断",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-045-R46/研究说明.md；02-研究/方法深化执行/MD-045-R46/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-045-R46/研究说明.md；02-研究/方法深化执行/MD-045-R46/来源与主张.json",
+          "reason": "小型真实专利样本可追溯，但检索扩展/筛选编码/归组与权项比较的人工判断仍需示范"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-045-R46/研究说明.md；02-研究/方法深化执行/MD-045-R46/来源与主张.json",
+          "reason": "小型真实专利样本可追溯，但检索扩展/筛选编码/归组与权项比较的人工判断仍需示范"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-045-R46/研究说明.md；02-研究/方法深化执行/MD-045-R46/来源与主张.json",
+          "reason": "小型真实专利样本可追溯，但检索扩展/筛选编码/归组与权项比较的人工判断仍需示范"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-045-R46/研究说明.md；02-研究/方法深化执行/MD-045-R46/来源与主张.json",
+          "reason": "小型真实专利样本可追溯，但检索扩展/筛选编码/归组与权项比较的人工判断仍需示范"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-045-R46/研究说明.md；02-研究/方法深化执行/MD-045-R46/来源与主张.json",
+          "reason": "小型真实专利样本可追溯，但检索扩展/筛选编码/归组与权项比较的人工判断仍需示范"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-045-R46/研究说明.md；02-研究/方法深化执行/MD-045-R46/来源与主张.json",
+          "reason": "小型真实专利样本可追溯，但检索扩展/筛选编码/归组与权项比较的人工判断仍需示范"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R50",
+      "name": "服务蓝图与产品服务系统协同",
+      "baseline_package": "02-研究/方法深化执行/MD-046-R50",
+      "baseline_document": "02-研究/方法深化执行/MD-046-R50/研究说明.md",
+      "baseline_document_sha256": "b191339c767be3ed0c8c8d068e4ec575e8a63ff3d7748c5b2a2e1f6348ff3dd0",
+      "baseline_manifest_sha256": "425f34f9337006e10ea2beb140253ea9ff07a98f4d148eb401ee11e6b6d74177",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-046-R50/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-046-R50/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-046-R50/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "完整班次责任蓝图已具备，但前台/后台交互、失败证据和未来/现状差异的绘图操作不够具体",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "从一个异常等待接单到前后台依赖与恢复重构，给可照做蓝图表和返工判断"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "真实旅程观察、责任人与等待/异常数据",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-046-R50/研究说明.md；02-研究/方法深化执行/MD-046-R50/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-046-R50/研究说明.md；02-研究/方法深化执行/MD-046-R50/来源与主张.json",
+          "reason": "完整班次责任蓝图已具备，但前台/后台交互、失败证据和未来/现状差异的绘图操作不够具体"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-046-R50/研究说明.md；02-研究/方法深化执行/MD-046-R50/来源与主张.json",
+          "reason": "完整班次责任蓝图已具备，但前台/后台交互、失败证据和未来/现状差异的绘图操作不够具体"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-046-R50/研究说明.md；02-研究/方法深化执行/MD-046-R50/来源与主张.json",
+          "reason": "完整班次责任蓝图已具备，但前台/后台交互、失败证据和未来/现状差异的绘图操作不够具体"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-046-R50/研究说明.md；02-研究/方法深化执行/MD-046-R50/来源与主张.json",
+          "reason": "完整班次责任蓝图已具备，但前台/后台交互、失败证据和未来/现状差异的绘图操作不够具体"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-046-R50/研究说明.md；02-研究/方法深化执行/MD-046-R50/来源与主张.json",
+          "reason": "完整班次责任蓝图已具备，但前台/后台交互、失败证据和未来/现状差异的绘图操作不够具体"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-046-R50/研究说明.md；02-研究/方法深化执行/MD-046-R50/来源与主张.json",
+          "reason": "完整班次责任蓝图已具备，但前台/后台交互、失败证据和未来/现状差异的绘图操作不够具体"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R51",
+      "name": "系统理论过程分析（STPA）",
+      "baseline_package": "02-研究/方法深化执行/MD-047-R51",
+      "baseline_document": "02-研究/方法深化执行/MD-047-R51/研究说明.md",
+      "baseline_document_sha256": "59afb4ff1d151ab4ce23b5c4df0768a1940cb05e17e8e3b53dd4dbd530a0c212",
+      "baseline_manifest_sha256": "bfc79c1d4870b332bc1be51ac92c81fc285ce4b9e7fa7d5b8381c7682665d0c6",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-047-R51/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-047-R51/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-047-R51/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "四类UCA条目正确但过短，角色、控制信念、上下文组合和情景推到约束的推理未讲透",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "展开一个控制环、上下文表、四类逐项适用判断与竞争因果情景，别把四格数当穷尽"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "真实控制架构/权限、反馈时序与安全专业审查",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-047-R51/研究说明.md；02-研究/方法深化执行/MD-047-R51/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-047-R51/研究说明.md；02-研究/方法深化执行/MD-047-R51/来源与主张.json",
+          "reason": "四类UCA条目正确但过短，角色、控制信念、上下文组合和情景推到约束的推理未讲透"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-047-R51/研究说明.md；02-研究/方法深化执行/MD-047-R51/来源与主张.json",
+          "reason": "四类UCA条目正确但过短，角色、控制信念、上下文组合和情景推到约束的推理未讲透"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-047-R51/研究说明.md；02-研究/方法深化执行/MD-047-R51/来源与主张.json",
+          "reason": "四类UCA条目正确但过短，角色、控制信念、上下文组合和情景推到约束的推理未讲透"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-047-R51/研究说明.md；02-研究/方法深化执行/MD-047-R51/来源与主张.json",
+          "reason": "四类UCA条目正确但过短，角色、控制信念、上下文组合和情景推到约束的推理未讲透"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-047-R51/研究说明.md；02-研究/方法深化执行/MD-047-R51/来源与主张.json",
+          "reason": "四类UCA条目正确但过短，角色、控制信念、上下文组合和情景推到约束的推理未讲透"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-047-R51/研究说明.md；02-研究/方法深化执行/MD-047-R51/来源与主张.json",
+          "reason": "四类UCA条目正确但过短，角色、控制信念、上下文组合和情景推到约束的推理未讲透"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "R52",
+      "name": "信息价值与验证优先级（VOI）",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/研究说明.md",
+      "baseline_document_sha256": "61c5c3eeaa7d8e043d78c56231033b647e4b1dc0e24e3f42de4d52423a5681d3",
+      "baseline_manifest_sha256": "aab2c7de9b2ea21ad84e10382bfdaa7ca0e05ede0177c756339c9137e16dfafc",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "贝叶斯例数字完整，需更深解释行动损失、信息结构、可改变行动/不改变行动、EVPI上界和群体/延误限制",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "补推导和零价值反例、信号质量/偏差/先验敏感性及研究决策规则，不只贴计算输出"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "客户概率/损失、研究信号质量、真实成本与决策时限",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P0",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/来源与主张.json",
+          "reason": "贝叶斯例数字完整，需更深解释行动损失、信息结构、可改变行动/不改变行动、EVPI上界和群体/延误限制"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/来源与主张.json",
+          "reason": "贝叶斯例数字完整，需更深解释行动损失、信息结构、可改变行动/不改变行动、EVPI上界和群体/延误限制"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/来源与主张.json",
+          "reason": "贝叶斯例数字完整，需更深解释行动损失、信息结构、可改变行动/不改变行动、EVPI上界和群体/延误限制"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/来源与主张.json",
+          "reason": "贝叶斯例数字完整，需更深解释行动损失、信息结构、可改变行动/不改变行动、EVPI上界和群体/延误限制"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/来源与主张.json",
+          "reason": "贝叶斯例数字完整，需更深解释行动损失、信息结构、可改变行动/不改变行动、EVPI上界和群体/延误限制"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/来源与主张.json",
+          "reason": "贝叶斯例数字完整，需更深解释行动损失、信息结构、可改变行动/不改变行动、EVPI上界和群体/延误限制"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB07",
+      "name": "面向使用性能的智能设计",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/研究说明.md",
+      "baseline_document_sha256": "724602dfdb13ca353ce72b152a21d3f19ec31e2054608b46913802623c041abc",
+      "baseline_manifest_sha256": "3c4e34bd0e8f4ddc4ff9882f1124ac059d81183557855d6eb6f5e5754a7e35cf",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "两类智能语义与代理回放可用，尚缺具体设计任务/模型选型与使用闭环的前提和证据界面",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "把设计辅助、产品感知决策控制分别写全流程；代理时效只验证局部数据条件"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "真实数据集、模型评测、控制响应与使用性能证据",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/来源与主张.json",
+          "reason": "两类智能语义与代理回放可用，尚缺具体设计任务/模型选型与使用闭环的前提和证据界面"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/来源与主张.json",
+          "reason": "两类智能语义与代理回放可用，尚缺具体设计任务/模型选型与使用闭环的前提和证据界面"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/来源与主张.json",
+          "reason": "两类智能语义与代理回放可用，尚缺具体设计任务/模型选型与使用闭环的前提和证据界面"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/来源与主张.json",
+          "reason": "两类智能语义与代理回放可用，尚缺具体设计任务/模型选型与使用闭环的前提和证据界面"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/来源与主张.json",
+          "reason": "两类智能语义与代理回放可用，尚缺具体设计任务/模型选型与使用闭环的前提和证据界面"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-059-WB07-v0.1.1/来源与主张.json",
+          "reason": "两类智能语义与代理回放可用，尚缺具体设计任务/模型选型与使用闭环的前提和证据界面"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB08",
+      "name": "面向制造性能的可视化设计",
+      "baseline_package": "02-研究/方法深化执行/MD-060-WB08",
+      "baseline_document": "02-研究/方法深化执行/MD-060-WB08/研究说明.md",
+      "baseline_document_sha256": "0f3253051bf12be2e9b37d2095a689da70f625f5ac9d3d46fc206cda4419d948",
+      "baseline_manifest_sha256": "c46aaa0d368afe0b184c6f1d5e96e376bab697146e12df354ae4081e9e60a882",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-060-WB08/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-060-WB08/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-060-WB08/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "同条件模型修改已示范，只有一维投影不足以说明加工/装配/动态等不同观察需求",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "补现象—模型能力—可测量—缺陷—修改代价的选择表与实际行程取舍；不称制造已验证"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "实际CAD/公差/工艺、求解与校准资料；2017专章",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-060-WB08/研究说明.md；02-研究/方法深化执行/MD-060-WB08/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-060-WB08/研究说明.md；02-研究/方法深化执行/MD-060-WB08/来源与主张.json",
+          "reason": "同条件模型修改已示范，只有一维投影不足以说明加工/装配/动态等不同观察需求"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-060-WB08/研究说明.md；02-研究/方法深化执行/MD-060-WB08/来源与主张.json",
+          "reason": "同条件模型修改已示范，只有一维投影不足以说明加工/装配/动态等不同观察需求"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-060-WB08/研究说明.md；02-研究/方法深化执行/MD-060-WB08/来源与主张.json",
+          "reason": "同条件模型修改已示范，只有一维投影不足以说明加工/装配/动态等不同观察需求"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-060-WB08/研究说明.md；02-研究/方法深化执行/MD-060-WB08/来源与主张.json",
+          "reason": "同条件模型修改已示范，只有一维投影不足以说明加工/装配/动态等不同观察需求"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-060-WB08/研究说明.md；02-研究/方法深化执行/MD-060-WB08/来源与主张.json",
+          "reason": "同条件模型修改已示范，只有一维投影不足以说明加工/装配/动态等不同观察需求"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-060-WB08/研究说明.md；02-研究/方法深化执行/MD-060-WB08/来源与主张.json",
+          "reason": "同条件模型修改已示范，只有一维投影不足以说明加工/装配/动态等不同观察需求"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB09",
+      "name": "深层次动态设计",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/研究说明.md",
+      "baseline_document_sha256": "55396687ad6ae0286bcedd3f36f7693cf89bc78e13b0fc7e00aff07e3585e740",
+      "baseline_manifest_sha256": "239097f0bf6d99ab7155b0701d37aa8db4f9f8905c82a43d41de621a556156d3",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "toy瞬时加速度只揭示立方项，读者仍不知如何判断线性近似失败及安排辨识/校核",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "给候选模型假设表、辨识与多初态/激励研究步骤，toy仅作局部推理，原专著未得不编作者方程"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "原著方程/适用域、实际激励和响应、参数辨识",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/来源与主张.json",
+          "reason": "toy瞬时加速度只揭示立方项，读者仍不知如何判断线性近似失败及安排辨识/校核"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/来源与主张.json",
+          "reason": "toy瞬时加速度只揭示立方项，读者仍不知如何判断线性近似失败及安排辨识/校核"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/来源与主张.json",
+          "reason": "toy瞬时加速度只揭示立方项，读者仍不知如何判断线性近似失败及安排辨识/校核"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/来源与主张.json",
+          "reason": "toy瞬时加速度只揭示立方项，读者仍不知如何判断线性近似失败及安排辨识/校核"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/来源与主张.json",
+          "reason": "toy瞬时加速度只揭示立方项，读者仍不知如何判断线性近似失败及安排辨识/校核"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-061-WB09-v0.1.1/来源与主张.json",
+          "reason": "toy瞬时加速度只揭示立方项，读者仍不知如何判断线性近似失败及安排辨识/校核"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB10",
+      "name": "设计质量检验与综合评价",
+      "baseline_package": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1",
+      "baseline_document": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/研究说明.md",
+      "baseline_document_sha256": "ff6a596cdb3642262a4c4e40cd799291eb4a3f5c4402c2a8a25719de4128bfa7",
+      "baseline_manifest_sha256": "0d3142c508bf9791ed83b8f99aceef41ebefd1f327a73705dac6a0cfd3bbc522",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "熵区分度反例可靠，但指标层级/证据/主观权重/隶属度/硬约束的分工还不够贯通",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "不同年份模型做身份表；构造指标判断与有无可聚合条件的实例，不把熵权当价值"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "2008模型全文、2010公式逐页及实际量表/偏好/检验数据",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/来源与主张.json",
+          "reason": "熵区分度反例可靠，但指标层级/证据/主观权重/隶属度/硬约束的分工还不够贯通"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/来源与主张.json",
+          "reason": "熵区分度反例可靠，但指标层级/证据/主观权重/隶属度/硬约束的分工还不够贯通"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/来源与主张.json",
+          "reason": "熵区分度反例可靠，但指标层级/证据/主观权重/隶属度/硬约束的分工还不够贯通"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/来源与主张.json",
+          "reason": "熵区分度反例可靠，但指标层级/证据/主观权重/隶属度/硬约束的分工还不够贯通"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/来源与主张.json",
+          "reason": "熵区分度反例可靠，但指标层级/证据/主观权重/隶属度/硬约束的分工还不够贯通"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/研究说明.md；02-研究/方法深化执行/修订版/MD-062-WB10-v0.1.1/来源与主张.json",
+          "reason": "熵区分度反例可靠，但指标层级/证据/主观权重/隶属度/硬约束的分工还不够贯通"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB11",
+      "name": "科学方法论规则与设计专家系统",
+      "baseline_package": "02-研究/方法深化执行/MD-063-WB11",
+      "baseline_document": "02-研究/方法深化执行/MD-063-WB11/研究说明.md",
+      "baseline_document_sha256": "e8fdec51b8d8c1df7588b037bfb58cde3f488ddf1f87b8578df76b0af5770684",
+      "baseline_manifest_sha256": "03188ebee165bf60b8f2f8882998ee2dd1cc28b6083102d19a801002659d571b",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-063-WB11/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-063-WB11/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-063-WB11/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "规则分型正确，但原则到可执行程序再到领域规则的审核及冲突/例外处理仍偏短",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "给一条程序规则的事实、未知、触发、停止和解释；未证领域规则禁用，与治理原则明确分工"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "原著规则原文/专家系统知识和运行记录、领域审核",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-063-WB11/研究说明.md；02-研究/方法深化执行/MD-063-WB11/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-063-WB11/研究说明.md；02-研究/方法深化执行/MD-063-WB11/来源与主张.json",
+          "reason": "规则分型正确，但原则到可执行程序再到领域规则的审核及冲突/例外处理仍偏短"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-063-WB11/研究说明.md；02-研究/方法深化执行/MD-063-WB11/来源与主张.json",
+          "reason": "规则分型正确，但原则到可执行程序再到领域规则的审核及冲突/例外处理仍偏短"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-063-WB11/研究说明.md；02-研究/方法深化执行/MD-063-WB11/来源与主张.json",
+          "reason": "规则分型正确，但原则到可执行程序再到领域规则的审核及冲突/例外处理仍偏短"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-063-WB11/研究说明.md；02-研究/方法深化执行/MD-063-WB11/来源与主张.json",
+          "reason": "规则分型正确，但原则到可执行程序再到领域规则的审核及冲突/例外处理仍偏短"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-063-WB11/研究说明.md；02-研究/方法深化执行/MD-063-WB11/来源与主张.json",
+          "reason": "规则分型正确，但原则到可执行程序再到领域规则的审核及冲突/例外处理仍偏短"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-063-WB11/研究说明.md；02-研究/方法深化执行/MD-063-WB11/来源与主张.json",
+          "reason": "规则分型正确，但原则到可执行程序再到领域规则的审核及冲突/例外处理仍偏短"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    },
+    {
+      "method_id": "WB12",
+      "name": "国内外设计方法分类研究与出处去重",
+      "baseline_package": "02-研究/方法深化执行/MD-064-WB12",
+      "baseline_document": "02-研究/方法深化执行/MD-064-WB12/研究说明.md",
+      "baseline_document_sha256": "efe35b8aba24b41e396c40f6d3f7a6fd1629f439b047c07b40ad1cbf18f0bf13",
+      "baseline_manifest_sha256": "998a897e192d4399b5e9e2805bcc13811b3cf4e085e42bda0105f12fe21b886e",
+      "evidence_locations": [
+        {
+          "path": "02-研究/方法深化执行/MD-064-WB12/研究说明.md",
+          "locator": "全文，含模型/例与边界说明",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-064-WB12/来源与主张.json",
+          "locator": "selected read/scope/claim fields",
+          "actual_read": true
+        },
+        {
+          "path": "02-研究/方法深化执行/MD-064-WB12/教学包",
+          "locator": "existing fixed input/intermediate/output archive, not new field evidence"
+        }
+      ],
+      "substantive_gap": "证据身份图谱有用，但别名/改版/子工具/依赖的判别准则和完整去重判断需展开",
+      "work_items": [
+        {
+          "type": "可直接修",
+          "action": "给三个真实来源身份和两个构造同名/异名情境的判别流程，保留未合并理由"
+        },
+        {
+          "type": "继续检索",
+          "action": "围绕上述缺口补一手方法段落；原书/公式缺失不凭二手推断"
+        },
+        {
+          "type": "需现实输入",
+          "action": "70余方法七类对应表和2003分类原文逐项核验",
+          "blocks": "真实设备/客户/专业结论；不阻止受限方法教学"
+        }
+      ],
+      "priority": "P1",
+      "seven_dimensions_baseline": {
+        "身份与边界准确": {
+          "rating": "充分",
+          "evidence": "02-研究/方法深化执行/MD-064-WB12/研究说明.md；02-研究/方法深化执行/MD-064-WB12/来源与主张.json",
+          "reason": "现有范围标识清楚；完整操作/推理与反例需按本项实质缺口继续展开"
+        },
+        "机制讲透": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-064-WB12/研究说明.md；02-研究/方法深化执行/MD-064-WB12/来源与主张.json",
+          "reason": "证据身份图谱有用，但别名/改版/子工具/依赖的判别准则和完整去重判断需展开"
+        },
+        "判断可操作": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-064-WB12/研究说明.md；02-研究/方法深化执行/MD-064-WB12/来源与主张.json",
+          "reason": "证据身份图谱有用，但别名/改版/子工具/依赖的判别准则和完整去重判断需展开"
+        },
+        "完整示范": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-064-WB12/研究说明.md；02-研究/方法深化执行/MD-064-WB12/来源与主张.json",
+          "reason": "证据身份图谱有用，但别名/改版/子工具/依赖的判别准则和完整去重判断需展开"
+        },
+        "反例与迁移": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-064-WB12/研究说明.md；02-研究/方法深化执行/MD-064-WB12/来源与主张.json",
+          "reason": "证据身份图谱有用，但别名/改版/子工具/依赖的判别准则和完整去重判断需展开"
+        },
+        "依据可追溯": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-064-WB12/研究说明.md；02-研究/方法深化执行/MD-064-WB12/来源与主张.json",
+          "reason": "证据身份图谱有用，但别名/改版/子工具/依赖的判别准则和完整去重判断需展开"
+        },
+        "阅读与交接": {
+          "rating": "局部",
+          "evidence": "02-研究/方法深化执行/MD-064-WB12/研究说明.md；02-研究/方法深化执行/MD-064-WB12/来源与主张.json",
+          "reason": "证据身份图谱有用，但别名/改版/子工具/依赖的判别准则和完整去重判断需展开"
+        }
+      },
+      "assessment_identity": "authoring-agent qualitative baseline audit, not calibrated score or approval",
+      "candidate_status": "rewrite_pending_independent_content_review"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0",
+  "date": "2026-10-28",
+  "sources": {
+    "R38": [
+      {
+        "id": "NIST-CCD",
+        "url": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri3361.htm",
+        "locator": "section5.3.3.6.1; three CCD types",
+        "read_scope": "actual public body selected paragraphs",
+        "supports": "curvature-supporting design and axial points/physical limits, face-centered not rotatable"
+      },
+      {
+        "id": "NIST-QUAD",
+        "url": "https://www.itl.nist.gov/div898/handbook/pri/section5/pri5514.htm",
+        "locator": "section5.5.5.1.4 procedure and confirmation steps",
+        "read_scope": "actual public selected procedure, not all numerical source examples",
+        "supports": "local quadratic approximation, fit diagnostics, stationary classification and independent confirmation"
+      }
+    ],
+    "R49": [
+      {
+        "id": "GERO-K2004-AUTHOR-UPLOAD",
+        "url": "https://www.researchgate.net/publication/222425879_The_Situated_Function-Behaviour-Structure_Framework",
+        "identity": "author-uploaded public full text, John Gero2018-09-10 upload identity visible",
+        "title": "The situated function–behaviour–structure framework",
+        "authors": [
+          "John S. Gero",
+          "Udo Kannengiesser"
+        ],
+        "doi": "10.1016/j.destud.2003.10.010",
+        "locator": "§1 pp374–375 F/B/S, formulation/synthesis/analysis/evaluation and reformulations; §3.1 pp378–379 three environments; §4.4 evaluation",
+        "private_snapshot": "private-sources/FBS-author-upload-selected-web.json",
+        "snapshot_sha256": "6ab51e3d0ba8249f56e3597b8dbacce8f7650d9feac0471e06b0e4ad5dd57bb1",
+        "read_scope": "selected actual author-uploaded body, not just abstract; not claimed complete situated implementation",
+        "supports": "purpose/expected vs derived behaviour/structure distinction, reformulation types and contextual environments",
+        "retrieval_difference": "author own-site PDF still timeout; author-uploaded body reached, earlier abstract-only boundary now expanded within named passages"
+      }
+    ],
+    "R52": [
+      {
+        "id": "JOHNSON2019",
+        "url": "https://arxiv.org/abs/1905.00008",
+        "locator": "PDF6–7 Value of Information Eq1",
+        "read_scope": "selected author-paper expected loss / EVPPI, not claim source contains our finite-signal EVSI example",
+        "supports": "decision-dependent expected loss and information; finite Bayes EVSI derivation and numbers independently authored"
+      }
+    ]
+  },
+  "teaching_identity": "all new numerical examples independent construction, not field/customer evidence",
+  "actual_computation_script": "优先三法教学复算.py",
+  "author_assessment": "draft content, pending independent content review; not automatically approved by numeric checks"
+}

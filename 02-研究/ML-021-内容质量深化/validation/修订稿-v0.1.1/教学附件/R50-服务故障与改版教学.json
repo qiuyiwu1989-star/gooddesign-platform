@@ -1,0 +1,19 @@
+{
+  "identity": "constructed event times, no actual service telemetry",
+  "old": {
+    "submitted": 0,
+    "viewed": 12,
+    "accepted": 20,
+    "acceptance_wait_min": 20,
+    "failure": "no explicit recipient and completed implies recovery"
+  },
+  "new": {
+    "submitted": 0,
+    "accepted": 3,
+    "maintenance_record": 15,
+    "recovery_evidence": 18,
+    "acceptance_wait_min": 3,
+    "status_at15": "maintenance done, recovery pending"
+  },
+  "decision": "keep explicit recipient and split recovery semantics, no field waiting improvement claim"
+}
