@@ -1,0 +1,126 @@
+{
+  "scope": "actual read-only teaching evaluator runs and separate arithmetic; not field validation",
+  "evaluator_sha256": "55ea207b7b45e6fe3befed1c9150053d72d872b8a4246ba7b0452343ff90edc4",
+  "script_sha256": "5509ac62a60f6185a3527d8834ad4f5f8bfa76d216feae6b3cdfa3b694da6bfb",
+  "cases": [
+    {
+      "id": "normal-all-unknown",
+      "category": "normal",
+      "input": "教学包/检查输入/normal-all-unknown.json",
+      "input_sha256": "aa8601c1b1c16c5f5300e35849cf52e53b21eb740b8ea09dcc32d4f39c022e1d",
+      "output": "教学包/检查输出/normal-all-unknown.json",
+      "output_sha256": "26508cdf21dfeed9fb0c3dd02f453b1cbad376c6b9fc522efde1daac8c52ba8b",
+      "exit_code": 0,
+      "expected_counts": {
+        "enumerated": 8,
+        "excluded": 0,
+        "conditional_research": 8,
+        "model_comparison_candidate": 0
+      },
+      "expected_error_contains": null,
+      "passed": true
+    },
+    {
+      "id": "missing-pair",
+      "category": "missing_material",
+      "input": "教学包/检查输入/missing-pair.json",
+      "input_sha256": "b713fde75332a96c63c2d00ccadf2a0564c9e325ed1900332ec712b0518c6823",
+      "output": "教学包/检查输出/missing-pair.json",
+      "output_sha256": "242531979b15e1bf414bf0e7fcb73434b8f757c1699c3eac28eb4b1675005882",
+      "exit_code": 2,
+      "expected_counts": null,
+      "expected_error_contains": "pair_matrix_incomplete",
+      "passed": true
+    },
+    {
+      "id": "not-production-mode",
+      "category": "not_applicable",
+      "input": "教学包/检查输入/not-production-mode.json",
+      "input_sha256": "adf5787888e2af09942d587b96536020433fc594c50ffbdce9858cb07a74befd",
+      "output": "教学包/检查输出/not-production-mode.json",
+      "output_sha256": "6490be62762c436277a2bef67b304c58d3b7cdd0972a4c30741af224a0b6cf0b",
+      "exit_code": 2,
+      "expected_counts": null,
+      "expected_error_contains": "teaching_assumptions_not_engineering",
+      "passed": true
+    },
+    {
+      "id": "pairwise-never-global",
+      "category": "boundary",
+      "input": "教学包/检查输入/pairwise-never-global.json",
+      "input_sha256": "3b20b4779b6653b5155bd0bed9014fd1f9943b11d5a0e4cfeaf70dd49b1993df",
+      "output": "教学包/检查输出/pairwise-never-global.json",
+      "output_sha256": "1c743b5deb980f1ce13daebac2af88a553754cd53c6c7b05082af66c9ab38d7e",
+      "exit_code": 0,
+      "expected_counts": {
+        "enumerated": 8,
+        "excluded": 0,
+        "conditional_research": 8,
+        "model_comparison_candidate": 0
+      },
+      "expected_error_contains": null,
+      "passed": true
+    },
+    {
+      "id": "selected-conflict",
+      "category": "conflict",
+      "input": "教学包/检查输入/selected-conflict.json",
+      "input_sha256": "b41fa17118d35d27f8ff77bcc79ad36655b162da65f285a2be22a493bc5ed810",
+      "output": "教学包/检查输出/selected-conflict.json",
+      "output_sha256": "12d40585a4133a38107c04adc0d3fba89caf07d011d759ab9ab95ca00af1497c",
+      "exit_code": 2,
+      "expected_counts": null,
+      "expected_error_contains": "selected_combination_is_excluded",
+      "passed": true
+    },
+    {
+      "id": "unknown-not-zero",
+      "category": "boundary",
+      "input": "教学包/检查输入/unknown-not-zero.json",
+      "input_sha256": "ba8968e4d077f95508d6a089bb6cab17026c3c3ae700fc17674243db4a395208",
+      "output": "教学包/检查输出/unknown-not-zero.json",
+      "output_sha256": "1dddc05d14a636d2bfd94e98f4ed39ce4fd4a462d919dcd1a133c70c06ee8a83",
+      "exit_code": 2,
+      "expected_counts": null,
+      "expected_error_contains": "0 is not of type 'null'",
+      "passed": true
+    },
+    {
+      "id": "global-judgment-id-collision",
+      "category": "conflict",
+      "input": "教学包/检查输入/global-judgment-id-collision.json",
+      "input_sha256": "26138c8525ee69eb4e20a8a0aa94b81a80f16cbd824e7e9c2a71247b5ec58876",
+      "output": "教学包/检查输出/global-judgment-id-collision.json",
+      "output_sha256": "34733289ee3611f24ff3cc8dd376e325a2fdf5dea1b36cd8aade41d3696c1f72",
+      "exit_code": 2,
+      "expected_counts": null,
+      "expected_error_contains": "duplicate_global_judgment_id",
+      "passed": true
+    },
+    {
+      "id": "cross-context-document",
+      "category": "transfer",
+      "input": "教学包/检查输入/cross-context-document.json",
+      "input_sha256": "05692137bad763bb253dafded8875cebec56df711b4939091c352d835bd7fcbf",
+      "output": "教学包/检查输出/cross-context-document.json",
+      "output_sha256": "88e23f2fcfb259d5b9c52cd2123971ca5529f41ceed217973081a8c39ceb5f59",
+      "exit_code": 0,
+      "expected_counts": {
+        "enumerated": 4,
+        "excluded": 2,
+        "conditional_research": 2,
+        "model_comparison_candidate": 0
+      },
+      "expected_error_contains": null,
+      "passed": true
+    }
+  ],
+  "passed": 8,
+  "arithmetic": {
+    "pair_checks": 12,
+    "whole_checks": 8,
+    "pair_all_fit": true,
+    "whole_over_limit": 1
+  },
+  "engineering_validated": false
+}

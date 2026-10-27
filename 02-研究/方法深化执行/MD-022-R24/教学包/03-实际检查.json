@@ -1,0 +1,198 @@
+{
+  "cases": [
+    {
+      "name": "正常预算",
+      "input": {
+        "id": "R24-GRAVITY-TEACH-001",
+        "mode": "independent_constructed_budget",
+        "mass_kg": 1,
+        "g_m_s2": 10,
+        "stroke_m": 0.1,
+        "efficiency": 0.5,
+        "required_work_J": 0.2,
+        "window_s": 3,
+        "required_time_s": 1,
+        "orientation_deg": 0,
+        "number_origin": "arbitrary illustrative values, g rounded to 10 for arithmetic; not local measured gravity or robot parameters"
+      },
+      "actual": {
+        "status": "budget_only_research_candidate",
+        "available_J": 0.5,
+        "margin_J": 0.3,
+        "engineering_validated": false,
+        "unresolved": [
+          "force versus position",
+          "acceleration and impact",
+          "friction variation",
+          "reset energy and labor",
+          "failure orientation"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "name": "缺效率",
+      "input": {
+        "id": "R24-GRAVITY-TEACH-001",
+        "mode": "independent_constructed_budget",
+        "mass_kg": 1,
+        "g_m_s2": 10,
+        "stroke_m": 0.1,
+        "efficiency": null,
+        "required_work_J": 0.2,
+        "window_s": 3,
+        "required_time_s": 1,
+        "orientation_deg": 0,
+        "number_origin": "arbitrary illustrative values, g rounded to 10 for arithmetic; not local measured gravity or robot parameters"
+      },
+      "actual": {
+        "status": "unknown",
+        "reason": "missing_budget_or_orientation"
+      },
+      "passed": true
+    },
+    {
+      "name": "方向相反不适用",
+      "input": {
+        "id": "R24-GRAVITY-TEACH-001",
+        "mode": "independent_constructed_budget",
+        "mass_kg": 1,
+        "g_m_s2": 10,
+        "stroke_m": 0.1,
+        "efficiency": 0.5,
+        "required_work_J": 0.2,
+        "window_s": 3,
+        "required_time_s": 1,
+        "orientation_deg": 180,
+        "number_origin": "arbitrary illustrative values, g rounded to 10 for arithmetic; not local measured gravity or robot parameters"
+      },
+      "actual": {
+        "status": "resource_direction_conflict"
+      },
+      "passed": true
+    },
+    {
+      "name": "等能量无余量边界",
+      "input": {
+        "id": "R24-GRAVITY-TEACH-001",
+        "mode": "independent_constructed_budget",
+        "mass_kg": 1,
+        "g_m_s2": 10,
+        "stroke_m": 0.1,
+        "efficiency": 0.5,
+        "required_work_J": 0.5,
+        "window_s": 3,
+        "required_time_s": 1,
+        "orientation_deg": 0,
+        "number_origin": "arbitrary illustrative values, g rounded to 10 for arithmetic; not local measured gravity or robot parameters"
+      },
+      "actual": {
+        "status": "budget_insufficient_or_no_margin",
+        "available_J": 0.5,
+        "margin_J": 0.0
+      },
+      "passed": true
+    },
+    {
+      "name": "需求功冲突",
+      "input": {
+        "id": "R24-GRAVITY-TEACH-001",
+        "mode": "independent_constructed_budget",
+        "mass_kg": 1,
+        "g_m_s2": 10,
+        "stroke_m": 0.1,
+        "efficiency": 0.5,
+        "required_work_J": 0.6,
+        "window_s": 3,
+        "required_time_s": 1,
+        "orientation_deg": 0,
+        "number_origin": "arbitrary illustrative values, g rounded to 10 for arithmetic; not local measured gravity or robot parameters"
+      },
+      "actual": {
+        "status": "budget_insufficient_or_no_margin",
+        "available_J": 0.5,
+        "margin_J": -0.09999999999999998
+      },
+      "passed": true
+    },
+    {
+      "name": "时间窗口边界",
+      "input": {
+        "id": "R24-GRAVITY-TEACH-001",
+        "mode": "independent_constructed_budget",
+        "mass_kg": 1,
+        "g_m_s2": 10,
+        "stroke_m": 0.1,
+        "efficiency": 0.5,
+        "required_work_J": 0.2,
+        "window_s": 3,
+        "required_time_s": 3,
+        "orientation_deg": 0,
+        "number_origin": "arbitrary illustrative values, g rounded to 10 for arithmetic; not local measured gravity or robot parameters"
+      },
+      "actual": {
+        "status": "time_window_not_established",
+        "available_J": 0.5
+      },
+      "passed": true
+    },
+    {
+      "name": "文档任务无机械资源预算不能硬套",
+      "input": {
+        "id": "DOC-HANDOFF-TEACH-001",
+        "mode": "independent_constructed_budget",
+        "mass_kg": null,
+        "g_m_s2": 10,
+        "stroke_m": 0.1,
+        "efficiency": 0.5,
+        "required_work_J": 0.2,
+        "window_s": 3,
+        "required_time_s": 1,
+        "orientation_deg": 0,
+        "number_origin": "arbitrary illustrative values, g rounded to 10 for arithmetic; not local measured gravity or robot parameters"
+      },
+      "actual": {
+        "status": "unknown",
+        "reason": "missing_budget_or_orientation"
+      },
+      "passed": true
+    },
+    {
+      "name": "不同情境展柜盖板斜向回落",
+      "input": {
+        "id": "DISPLAY-COVER-TEACH-001",
+        "mode": "independent_constructed_budget",
+        "mass_kg": 1,
+        "g_m_s2": 10,
+        "stroke_m": 0.1,
+        "efficiency": 0.5,
+        "required_work_J": 0.1,
+        "window_s": 3,
+        "required_time_s": 1,
+        "orientation_deg": 60,
+        "number_origin": "arbitrary illustrative values, g rounded to 10 for arithmetic; not local measured gravity or robot parameters"
+      },
+      "actual": {
+        "status": "budget_only_research_candidate",
+        "available_J": 0.25000000000000006,
+        "margin_J": 0.15000000000000005,
+        "engineering_validated": false,
+        "unresolved": [
+          "force versus position",
+          "acceleration and impact",
+          "friction variation",
+          "reset energy and labor",
+          "failure orientation"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "name": "布尔不冒充数值",
+      "actual": "rejected",
+      "passed": true
+    }
+  ],
+  "count": 9,
+  "scope": "explicit arithmetic only, not resource sufficiency of real mechanism"
+}

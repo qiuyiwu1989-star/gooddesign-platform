@@ -1,0 +1,42 @@
+{
+  "schema": "method-research-adapter-proposal-0.1.1",
+  "method_id": "R14",
+  "status": "suggested_contract_not_registered_mcp_tool",
+  "problem_id": "TAP-TEACH-001",
+  "input": {
+    "required": [
+      "problem_id",
+      "scope",
+      "versioned_upstream_path_and_sha256",
+      "research_functions_or_dimensions",
+      "explicit_unknowns",
+      "source_and_assumption_labels"
+    ],
+    "reject": [
+      "missing_or_changed_upstream",
+      "customer_approved_without_confirmation",
+      "unknown_replaced_by_zero_or_pass",
+      "dangling_references",
+      "unsupported_execution_scope"
+    ]
+  },
+  "output": {
+    "required": [
+      "input_sha256",
+      "scope",
+      "intermediate_artifacts",
+      "decisions_and_reasons",
+      "unknowns",
+      "handoff_bindings",
+      "checks_and_limits"
+    ],
+    "all_outputs_research_only": true
+  },
+  "actual_capability": "local declared-structure checker with nine cases; not general semantic or engineering validation",
+  "not_implemented": [
+    "registered generalized MCP endpoint",
+    "physical applicability inference",
+    "professional sign-off",
+    "field testing"
+  ]
+}

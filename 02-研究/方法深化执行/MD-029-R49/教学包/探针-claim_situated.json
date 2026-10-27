@@ -1,0 +1,37 @@
+{
+  "fixture": "FBS-LIMITED-01",
+  "context": {
+    "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "problem_version": "0.1.0",
+    "identity": "research_hypotheses_only_not_requirements",
+    "customer_approved": false,
+    "engineering_validated": false
+  },
+  "version": "0.1.0",
+  "source_scope": "author/publisher abstract only; no full situated eight-process reconstruction",
+  "F": "support stable holding in a constructed fixture",
+  "Be": {
+    "quantity": "normal force",
+    "target": null,
+    "unit": "N",
+    "customer_approved": false
+  },
+  "S": {
+    "concept": "ideal linear spring",
+    "stiffness": 10,
+    "stiffness_unit": "N/mm",
+    "deflection": 2,
+    "deflection_unit": "mm",
+    "provenance": "independent synthetic teaching values"
+  },
+  "analysis_assumptions": [
+    "linear elastic range",
+    "quasi-static",
+    "no losses or geometry transformation"
+  ],
+  "Bs_provenance": "analytical calculation, not measured",
+  "actual_measurement": null,
+  "engineering_pass": false,
+  "situated_worlds_implemented": true
+}

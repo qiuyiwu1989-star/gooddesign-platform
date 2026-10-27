@@ -1,0 +1,159 @@
+{
+  "cases": [
+    {
+      "name": "正常构造缺失角色",
+      "input": {
+        "object_hard_to_change": true,
+        "id": "R25-SUFIELD-TEACH-001",
+        "classification": "incomplete",
+        "elements": {
+          "S1": "object whose state is to change"
+        },
+        "can_introduce_substance": true,
+        "can_introduce_field": true,
+        "origin": "independent constructed abstract exercise; not tapping robot"
+      },
+      "actual": {
+        "status": "missing_element_research_prompt",
+        "rule": "1.1.1",
+        "missing": [
+          "F",
+          "S2"
+        ],
+        "action": "identify candidate missing roles and mechanism, not automatically select hardware",
+        "engineering_validated": false
+      },
+      "passed": true
+    },
+    {
+      "name": "缺限制资料",
+      "input": {
+        "object_hard_to_change": true,
+        "id": "R25-SUFIELD-TEACH-001",
+        "classification": "incomplete",
+        "elements": {
+          "S1": "object whose state is to change"
+        },
+        "can_introduce_substance": null,
+        "can_introduce_field": true,
+        "origin": "independent constructed abstract exercise; not tapping robot"
+      },
+      "actual": {
+        "status": "unknown",
+        "rule": "1.1.1",
+        "reason": "introduction constraints not known"
+      },
+      "passed": true
+    },
+    {
+      "name": "有害作用不套补全",
+      "input": {
+        "object_hard_to_change": true,
+        "id": "R25-SUFIELD-TEACH-001",
+        "classification": "harmful",
+        "elements": {
+          "S1": "object whose state is to change"
+        },
+        "can_introduce_substance": true,
+        "can_introduce_field": true,
+        "origin": "independent constructed abstract exercise; not tapping robot"
+      },
+      "actual": {
+        "status": "not_applicable_to_selected_1.1.1",
+        "rule": "1.1.1",
+        "reason": "only missing-element synthesis subset implemented"
+      },
+      "passed": true
+    },
+    {
+      "name": "完整模型边界",
+      "input": {
+        "object_hard_to_change": true,
+        "id": "R25-SUFIELD-TEACH-001",
+        "classification": "incomplete",
+        "elements": {
+          "S1": "object whose state is to change",
+          "S2": "tool",
+          "F": "mechanical interaction"
+        },
+        "can_introduce_substance": true,
+        "can_introduce_field": true,
+        "origin": "independent constructed abstract exercise; not tapping robot"
+      },
+      "actual": {
+        "status": "model_not_incomplete",
+        "rule": "1.1.1"
+      },
+      "passed": true
+    },
+    {
+      "name": "禁止增场冲突",
+      "input": {
+        "object_hard_to_change": true,
+        "id": "R25-SUFIELD-TEACH-001",
+        "classification": "incomplete",
+        "elements": {
+          "S1": "object whose state is to change"
+        },
+        "can_introduce_substance": true,
+        "can_introduce_field": false,
+        "origin": "independent constructed abstract exercise; not tapping robot"
+      },
+      "actual": {
+        "status": "blocked_by_selected_rule_precondition",
+        "rule": "1.1.1",
+        "next": "inspect actual restrictions; do not invent alternate standard text"
+      },
+      "passed": true
+    },
+    {
+      "name": "割胶不能虚称缺物场",
+      "input": {
+        "object_hard_to_change": true,
+        "id": "TAP-RESEARCH-UNKNOWN",
+        "classification": "unknown",
+        "elements": {
+          "S1": "tree local tissue",
+          "S2": "working tool",
+          "F": "mechanical action"
+        },
+        "can_introduce_substance": null,
+        "can_introduce_field": null,
+        "origin": "independent constructed abstract exercise; not tapping robot"
+      },
+      "actual": {
+        "status": "not_applicable_to_selected_1.1.1",
+        "rule": "1.1.1",
+        "reason": "only missing-element synthesis subset implemented"
+      },
+      "passed": true
+    },
+    {
+      "name": "另一情境缺能量场角色",
+      "input": {
+        "object_hard_to_change": true,
+        "id": "HEATING-TEACH-001",
+        "classification": "incomplete",
+        "elements": {
+          "S1": "dry inert test block",
+          "S2": "resistive heater"
+        },
+        "can_introduce_substance": true,
+        "can_introduce_field": true,
+        "origin": "independent constructed abstract exercise; not tapping robot"
+      },
+      "actual": {
+        "status": "missing_element_research_prompt",
+        "rule": "1.1.1",
+        "missing": [
+          "F"
+        ],
+        "action": "identify candidate missing roles and mechanism, not automatically select hardware",
+        "engineering_validated": false
+      },
+      "passed": true
+    }
+  ],
+  "count": 7,
+  "scope": "selected1.1.1 preconditions, not all76 standards"
+}

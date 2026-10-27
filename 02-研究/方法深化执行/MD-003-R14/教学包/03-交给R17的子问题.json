@@ -1,0 +1,34 @@
+{
+  "problem_id": "TAP-TEACH-001",
+  "version": "0.1.0",
+  "source_model": {
+    "path": "01-功能与接口输入-v0.1.0.json",
+    "sha256": "540f264402747654b04a3a26bfa5072090621ee19b1bef74e820bb635454c541"
+  },
+  "morphology_function_ids": [
+    "F-T02",
+    "F-T03",
+    "F-T06"
+  ],
+  "common_function_ids": [
+    "F-T01",
+    "F-T04",
+    "F-T05"
+  ],
+  "not_full_need_coverage_claim": true,
+  "unknowns_preserved": [
+    "U-T01",
+    "U-T02",
+    "U-T03",
+    "U-T04",
+    "U-T05"
+  ],
+  "required_checks": [
+    "surface reference is not internal tissue boundary",
+    "stop versus retreat distinguished",
+    "power and actuator hypotheses not confirmed",
+    "do not score unknowns as ties"
+  ],
+  "customer_approved": false,
+  "engineering_validated": false
+}

@@ -1,0 +1,36 @@
+{
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "problem_version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "use": "context_only_not_validated_requirement"
+  },
+  "C_to_C": {
+    "operation": "在仅表面与增加独立信息两个方向分割研究概念",
+    "result": "概念分割，不是已知解集合枚举"
+  },
+  "K_to_K": {
+    "operator": "K_to_K",
+    "rule": "same observable symbol maps to multiple hidden symbols",
+    "ambiguous_observations": {
+      "SAME-SIGNAL": [
+        "H-A",
+        "H-B"
+      ]
+    },
+    "surface_only_uniqueness": "refuted_in_constructed_countermodel"
+  },
+  "C_to_K": {
+    "operation": "用构造反模型给表面唯一性这一子命题确定否定状态",
+    "scope": "only a subclaim in this model; not finished engineering design"
+  },
+  "K_to_C": {
+    "operation": "从观测歧义重构C1，提出需要独立信息的新属性",
+    "result": "new unresolved design concept"
+  },
+  "knowledge_before_after": [
+    "K0只有局部代理记录，不能证明全属性",
+    "K1加入同观测异状态反模型，限定子命题状态改变"
+  ],
+  "original_theory_reconstruction": "selected introductory concepts only, no full axiomatic implementation"
+}

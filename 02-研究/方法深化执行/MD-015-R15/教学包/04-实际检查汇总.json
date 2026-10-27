@@ -1,0 +1,66 @@
+{
+  "method": "R15",
+  "cases": [
+    {
+      "method": "R15",
+      "case": "normal-declared-logic",
+      "class": "normal",
+      "expected_error": null,
+      "actual": "accepted_with_bounded_state",
+      "passed": true
+    },
+    {
+      "method": "R15",
+      "case": "missing-WHY-answer",
+      "class": "missing_material",
+      "expected_error": "declared_means_purpose_or_question_changed",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R15",
+      "case": "mistake-for-process-timeline",
+      "class": "not_applicable",
+      "expected_error": "logic_direction_or_temporal_confusion",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R15",
+      "case": "reverse-HOW",
+      "class": "boundary",
+      "expected_error": "logic_direction_or_temporal_confusion",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R15",
+      "case": "change-edge-kind",
+      "class": "conflict",
+      "expected_error": "declared_means_purpose_or_question_changed",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R15",
+      "case": "remove-support-function",
+      "class": "missing_material",
+      "expected_error": "support_function_lost_or_changed",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R15",
+      "case": "hide-scope-boundary",
+      "class": "boundary",
+      "expected_error": "node_identity_or_scope_changed",
+      "actual": "rejected",
+      "passed": true
+    }
+  ],
+  "executed": 7,
+  "passed": 7,
+  "scope": "fixed_declarations_and_bookkeeping_only_not_semantic_or_engineering_validator",
+  "actual_human_participants": 0,
+  "actual_field_trials": 0
+}

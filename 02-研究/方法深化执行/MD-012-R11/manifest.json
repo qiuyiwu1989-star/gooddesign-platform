@@ -1,0 +1,142 @@
+{
+  "version": "0.1.0",
+  "date": "2026-10-27",
+  "status": "ready_for_independent_agent_review",
+  "not_expert_certification": true,
+  "excluded": [
+    "private-sources/",
+    "__pycache__/"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "5812a5b269bb70d0a8a9334d613602dc5ce1de5e22ad62d8b636a0e326cf0654",
+      "bytes": 30
+    },
+    {
+      "path": "README.md",
+      "sha256": "84679f2a9eafac1813e0e16afc24936b479c9bd1108d2e26068e23eb6b307630",
+      "bytes": 972
+    },
+    {
+      "path": "反例与迁移.md",
+      "sha256": "ded24c452c41644fd28faed31b0eb2c8c40db61888169dde6f46025a0fad4b22",
+      "bytes": 973
+    },
+    {
+      "path": "审核与版本.json",
+      "sha256": "22b7ecc4165ceddbb628c869ee435382c0568ee75727efb8ef9318770126eba1",
+      "bytes": 780
+    },
+    {
+      "path": "教学包/00-分类矩阵版本.json",
+      "sha256": "d40cd593b4a82e90ccb65a33a7d2bdb964284dc254cacb2dc406fa688b70be0d",
+      "bytes": 1541
+    },
+    {
+      "path": "教学包/01-问卷草稿与未知.json",
+      "sha256": "10c48d4ab3ec28f51abfb098006149218a28af25be850d396f8ec89cfbf14995",
+      "bytes": 997
+    },
+    {
+      "path": "教学包/02-全回答对夹具.json",
+      "sha256": "eebdfed6577ea1a9b7b9abcdba442b00c697e24049653e2d4655d0bb2c8ea7ad",
+      "bytes": 5728
+    },
+    {
+      "path": "教学包/03-完整分类输出.json",
+      "sha256": "b7a2500bd46760e56801e8354c5cb6d9bb6dca72e1c2784b18ddc27e0dc9d81c",
+      "bytes": 4306
+    },
+    {
+      "path": "教学包/04-规则覆盖与解释.json",
+      "sha256": "9be8d6243c4a2cd73c7eeeacc7c85a47603adb58a90bb5a0a01cfc7fd2230563",
+      "bytes": 542
+    },
+    {
+      "path": "教学包/05-反例与迁移实际检查.json",
+      "sha256": "147bbf94420bb3636840d892e6bbbb24a46aa6ba54b02f63fb937a3a1e02c1ce",
+      "bytes": 14747
+    },
+    {
+      "path": "教学包/06-独立文档情境输入.json",
+      "sha256": "5b26a4d9ed922dd5ccb81c347c613ad9768de5d2aaa579529f673f089e14959e",
+      "bytes": 158
+    },
+    {
+      "path": "教学包/检查输入-compound-feature.json",
+      "sha256": "cca7d8d8fd451dafc33d61dd5c0f2fd234c7b448aa7b04f577671e3956c68736",
+      "bytes": 5729
+    },
+    {
+      "path": "教学包/检查输入-document-feature-mapping.json",
+      "sha256": "85a99582b9cc67eaaec2c49a4bd44dcff2b99e88010e8f200e847b95168ac641",
+      "bytes": 1054
+    },
+    {
+      "path": "教学包/检查输入-duplicate-response.json",
+      "sha256": "769b299216d50d6c29a906f0410ed2ece4364a8ffaf4f1df01f999bb6e80762f",
+      "bytes": 5923
+    },
+    {
+      "path": "教学包/检查输入-invalid-answer.json",
+      "sha256": "2bae79d3b17751594a5a650643b4ca4683bc698f78b99ff45b09c12835d0fb7f",
+      "bytes": 5732
+    },
+    {
+      "path": "教学包/检查输入-missing-answer-not-neutral.json",
+      "sha256": "ddb5818e0c0005a9c10b25e5684ecc8c90e0449c9d597e13a8673af22c0b4770",
+      "bytes": 5726
+    },
+    {
+      "path": "教学包/检查输入-normal-all25.json",
+      "sha256": "eebdfed6577ea1a9b7b9abcdba442b00c697e24049653e2d4655d0bb2c8ea7ad",
+      "bytes": 5728
+    },
+    {
+      "path": "教学包/检查输入-orientation-swapped.json",
+      "sha256": "6ad4f359e9bce05fd951fc8d5cb2b20d5890a6949f35b4ef266bf3fa2264e1ad",
+      "bytes": 5728
+    },
+    {
+      "path": "教学包/检查输入-safety-override.json",
+      "sha256": "03d86cf4a778d38c860cd8b7f241c1f378f5d3f4641dba8996799235b030b4c2",
+      "bytes": 5727
+    },
+    {
+      "path": "教学包/检查输入-unsupported-production-survey.json",
+      "sha256": "43aef625e615651b73823c2c35c2d6aa5810611e9108166c1fe05aa1b57d1e13",
+      "bytes": 5722
+    },
+    {
+      "path": "教学包/检查输入-version-mismatch.json",
+      "sha256": "c313f6f03152c9364cfc1957cc012d341b8d1b18b9934f59252f8ac813f4a59f",
+      "bytes": 5713
+    },
+    {
+      "path": "来源与主张.json",
+      "sha256": "f223397186ed00d9a976f672bf4733a176ea21b5c123f70d327d49ff0d8025d9",
+      "bytes": 3819
+    },
+    {
+      "path": "来源取得记录.json",
+      "sha256": "09bec91e3b5f5852e89d700765c2aa8157859c54fedba0445cc459a985f726dc",
+      "bytes": 1520
+    },
+    {
+      "path": "构建教学包.py",
+      "sha256": "80788f090677838176665b5d456e19b04a993dea525f4cb630edc873b8fe943a",
+      "bytes": 8181
+    },
+    {
+      "path": "研究说明.md",
+      "sha256": "f8b90f5ab82890a58718453efff0b7607fe1043f5f1d88f796d164fc3d0a9ba0",
+      "bytes": 4427
+    },
+    {
+      "path": "调用说明.json",
+      "sha256": "a0adca694aac3df604f6d6ea7ed511e08cdfc3d042637df2578c456faf0c9f4e",
+      "bytes": 1003
+    }
+  ]
+}

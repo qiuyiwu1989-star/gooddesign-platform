@@ -1,0 +1,184 @@
+{
+  "cases": [
+    {
+      "name": "正常研究候选未知保持",
+      "input": {
+        "id": "FOS-LIQUID-TEACH-001",
+        "generalized_function": "transport liquid along defined path",
+        "source_function": "transport liquid along defined path",
+        "query_log": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ],
+        "source_locator": "Li et al2018 Results/Methods, distilled water and impact conditions",
+        "evidence_level": "original_experiment",
+        "target_properties": {
+          "viscosity_Pa_s": null,
+          "wetting_contact_angle_deg": null,
+          "required_flow_m3_s": null,
+          "coagulation_time_s": null,
+          "cleaning_acceptance": null
+        },
+        "transfer_differences": [
+          "water to uncharacterized field latex",
+          "drop impact to continuous collection",
+          "clean microstructure to residue exposure",
+          "source topography to manufacturable washable surface",
+          "source orientation to variable orientation"
+        ],
+        "meets_customer_target": null
+      },
+      "actual": {
+        "status": "transfer_research_only",
+        "unknown_target_properties": [
+          "viscosity_Pa_s",
+          "wetting_contact_angle_deg",
+          "required_flow_m3_s",
+          "coagulation_time_s",
+          "cleaning_acceptance"
+        ],
+        "source_evidence": "original_experiment",
+        "source_success_not_target_success": true,
+        "ranking": "not_established"
+      },
+      "passed": true
+    },
+    {
+      "name": "缺真实检索链",
+      "input": {
+        "id": "FOS-LIQUID-TEACH-001",
+        "generalized_function": "transport liquid along defined path",
+        "source_function": "transport liquid along defined path",
+        "query_log": [],
+        "source_locator": "Li et al2018 Results/Methods, distilled water and impact conditions",
+        "evidence_level": "original_experiment",
+        "target_properties": {
+          "viscosity_Pa_s": null,
+          "wetting_contact_angle_deg": null,
+          "required_flow_m3_s": null,
+          "coagulation_time_s": null,
+          "cleaning_acceptance": null
+        },
+        "transfer_differences": [
+          "water to uncharacterized field latex",
+          "drop impact to continuous collection",
+          "clean microstructure to residue exposure",
+          "source topography to manufacturable washable surface",
+          "source orientation to variable orientation"
+        ],
+        "meets_customer_target": null
+      },
+      "actual": {
+        "status": "missing_search_or_primary_locator"
+      },
+      "passed": true
+    },
+    {
+      "name": "词相似作用不匹配",
+      "input": {
+        "id": "FOS-LIQUID-TEACH-001",
+        "generalized_function": "transport liquid along defined path",
+        "source_function": "form solid rubber microfluidic device",
+        "query_log": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ],
+        "source_locator": "Li et al2018 Results/Methods, distilled water and impact conditions",
+        "evidence_level": "original_experiment",
+        "target_properties": {
+          "viscosity_Pa_s": null,
+          "wetting_contact_angle_deg": null,
+          "required_flow_m3_s": null,
+          "coagulation_time_s": null,
+          "cleaning_acceptance": null
+        },
+        "transfer_differences": [
+          "water to uncharacterized field latex",
+          "drop impact to continuous collection",
+          "clean microstructure to residue exposure",
+          "source topography to manufacturable washable surface",
+          "source orientation to variable orientation"
+        ],
+        "meets_customer_target": null
+      },
+      "actual": {
+        "status": "functional_mismatch"
+      },
+      "passed": true
+    },
+    {
+      "name": "遗漏迁移差异边界",
+      "input": {
+        "id": "FOS-LIQUID-TEACH-001",
+        "generalized_function": "transport liquid along defined path",
+        "source_function": "transport liquid along defined path",
+        "query_log": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ],
+        "source_locator": "Li et al2018 Results/Methods, distilled water and impact conditions",
+        "evidence_level": "original_experiment",
+        "target_properties": {
+          "viscosity_Pa_s": null,
+          "wetting_contact_angle_deg": null,
+          "required_flow_m3_s": null,
+          "coagulation_time_s": null,
+          "cleaning_acceptance": null
+        },
+        "transfer_differences": [],
+        "meets_customer_target": null
+      },
+      "actual": {
+        "status": "missing_transfer_analysis"
+      },
+      "passed": true
+    },
+    {
+      "name": "把原领域成功当客户达标冲突",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "name": "不同情境墨水迁移",
+      "input": {
+        "id": "INK-TEACH-001",
+        "generalized_function": "transport liquid along defined path",
+        "source_function": "transport liquid along defined path",
+        "query_log": [
+          "Q01",
+          "Q02",
+          "Q03"
+        ],
+        "source_locator": "Li et al2018 Results/Methods, distilled water and impact conditions",
+        "evidence_level": "original_experiment",
+        "target_properties": {
+          "viscosity_Pa_s": null,
+          "pigment_particles": null,
+          "drying_time_s": null
+        },
+        "transfer_differences": [
+          "water to unknown pigment ink",
+          "source structure to cleanable writing channel"
+        ],
+        "meets_customer_target": null
+      },
+      "actual": {
+        "status": "transfer_research_only",
+        "unknown_target_properties": [
+          "viscosity_Pa_s",
+          "pigment_particles",
+          "drying_time_s"
+        ],
+        "source_evidence": "original_experiment",
+        "source_success_not_target_success": true,
+        "ranking": "not_established"
+      },
+      "passed": true
+    }
+  ],
+  "count": 6,
+  "scope": "explicit metadata and transfer gating, not autonomous scientific equivalence checker"
+}

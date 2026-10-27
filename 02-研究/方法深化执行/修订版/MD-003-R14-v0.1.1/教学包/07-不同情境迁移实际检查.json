@@ -1,0 +1,105 @@
+{
+  "input": {
+    "schema": "R14-research-teaching-model-0.1.1",
+    "problem_id": "DOC-TEACH-002",
+    "version": "0.1.1",
+    "upstream": {
+      "path": "02-研究/方法深化执行/修订版/MD-003-R14-v0.1.1/教学包/06-文档处理独立情境.json",
+      "sha256": "bcbd50e15a4bd01da37a862494bcad2b27dd657e5c009a3140ab2174e8092056",
+      "version": "0.1.0",
+      "problem_id": "DOC-TEACH-002"
+    },
+    "mode": "constructed_teaching_not_customer_evidence",
+    "scope": "independent authored document handling teaching context",
+    "functions": [
+      {
+        "id": "F-D01",
+        "verb_object": "保留来源身份",
+        "parent_need_ids": [
+          "N-D01"
+        ]
+      }
+    ],
+    "external_entities": [
+      "EXT-SOURCE"
+    ],
+    "interfaces": [
+      {
+        "id": "IF-D01",
+        "origin": "EXT-SOURCE",
+        "destination": "F-D01",
+        "producer_unit": null,
+        "consumer_unit": null,
+        "conversion": null,
+        "representation_units": null,
+        "threshold": null,
+        "unit_state": "unknown"
+      }
+    ],
+    "known_approved_targets": [],
+    "unknowns": [
+      {
+        "id": "U-D01",
+        "text": "真实格式与人工验收标准未知",
+        "value": null,
+        "origin": "locked_shared_context"
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "SC-D01",
+        "kind": "normal_research_path",
+        "function_ids": [
+          "F-D01"
+        ],
+        "interface_ids": [
+          "IF-D01"
+        ]
+      }
+    ],
+    "coverage": [
+      {
+        "need_id": "N-D01",
+        "function_ids": [
+          "F-D01"
+        ],
+        "status": "research_allocation_not_satisfaction",
+        "coverage_scope": "declared_research_functions"
+      }
+    ],
+    "limits": [
+      "structural checks do not prove semantic sufficiency",
+      "control feedback and material/energy interfaces are modeled separately",
+      "no conservation/stability/biological injury analysis",
+      "N-T04 only stop/maintenance handover represented; complete cleaning, maintenance and transfer remain outside boundary"
+    ],
+    "customer_approved": false,
+    "engineering_validated": false,
+    "source_needs": [
+      {
+        "id": "N-D01",
+        "text": "保留来源身份的构造文档处理研究"
+      }
+    ],
+    "source_unknowns": [
+      {
+        "id": "U-D01",
+        "text": "真实格式与人工验收标准未知",
+        "value": null
+      }
+    ],
+    "derived_unknowns": []
+  },
+  "actual_output": {
+    "status": "accepted_for_research_only",
+    "function_count": 1,
+    "interface_count": 1,
+    "preserved_shared_needs": 1,
+    "preserved_shared_unknowns": 1,
+    "derived_unknowns": 0,
+    "global_engineering_coverage": false,
+    "semantic_sufficiency": "not_automatically_checked",
+    "customer_approved": false
+  },
+  "limits": "authored desk case, identity/reference preservation only; no real document workflow or semantic sufficiency validation"
+}

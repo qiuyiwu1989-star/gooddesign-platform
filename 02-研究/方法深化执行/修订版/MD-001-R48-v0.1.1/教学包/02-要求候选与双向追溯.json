@@ -1,0 +1,188 @@
+{
+  "schema": "fixed_requirements_research_draft-1",
+  "problem_id": "TAP-TEACH-001",
+  "draft_version": "0.1.0",
+  "source_binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+  },
+  "evidence_binding": {
+    "path": "../../MD-002-R08-v0.1.1/教学包/03-竞争解释与修订.json",
+    "sha256": "c57a7fc6e54fdd421fdb22af1585712382979bc527fc126c7fe22f20acffbaeb",
+    "scope": "constructed_coding_not_field_evidence"
+  },
+  "customer_approved": false,
+  "engineering_validated": false,
+  "baseline_status": "not_baselined",
+  "actors": [
+    {
+      "id": "ACT-OP",
+      "name": "操作/维护者",
+      "status": "teaching_role_not_interviewed"
+    },
+    {
+      "id": "ACT-OWNER",
+      "name": "设备经营/管理者",
+      "status": "teaching_role_not_interviewed"
+    }
+  ],
+  "source_needs": [
+    {
+      "id": "N-T01",
+      "text": "研究如何描述和约束切入作用边界",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    },
+    {
+      "id": "N-T02",
+      "text": "研究异常发生后如何停止作用、恢复或转交人工处置",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    },
+    {
+      "id": "N-T03",
+      "text": "研究操作者如何知道当前状态、所依据的数据及其时效",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    },
+    {
+      "id": "N-T04",
+      "text": "研究清理、维护与转场对完整作业的影响",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    }
+  ],
+  "unknowns": [
+    {
+      "id": "U-T01",
+      "text": "目标树种、树龄、组织状态与现场环境",
+      "value": null
+    },
+    {
+      "id": "U-T02",
+      "text": "切入/余皮限值、测量口径与客户验收标准",
+      "value": null
+    },
+    {
+      "id": "U-T03",
+      "text": "异常类型、发生频率及实际恢复过程",
+      "value": null
+    },
+    {
+      "id": "U-T04",
+      "text": "供能、执行器、结构载荷与防护配置",
+      "value": null
+    },
+    {
+      "id": "U-T05",
+      "text": "使用者能力、劳动安排与维护资源",
+      "value": null
+    }
+  ],
+  "candidates": [
+    {
+      "id": "RQ-T01",
+      "need_id": "N-T01",
+      "text": "待明确作用边界对象与目标条件后，形成可测且可追溯的边界控制要求。",
+      "kind": "incomplete_requirement_candidate",
+      "metric_proposal": "作用位置/边界偏差等候选，须先与组织边界关系校核",
+      "unit": null,
+      "target": null,
+      "direction": null,
+      "acceptance": null,
+      "verification_proposal": "现场定义与测量可行性研究；后续才选分析/试验/检查等方式",
+      "verification_status": "proposed_not_executed",
+      "basis_ids": [
+        "N-T01"
+      ],
+      "customer_approved": false,
+      "mandatory": "not_customer_decided"
+    },
+    {
+      "id": "RQ-T02",
+      "need_id": "N-T02",
+      "text": "待异常类别与状态定义后，形成停止、恢复或人工交接的结果要求。",
+      "kind": "incomplete_requirement_candidate",
+      "metric_proposal": "异常检测/停止/恢复各段的可观察事件与时序，尚未选定",
+      "unit": null,
+      "target": null,
+      "direction": null,
+      "acceptance": null,
+      "verification_proposal": "任务分段与异常场景桌面研究，不预设自动恢复优于人工交接",
+      "verification_status": "proposed_not_executed",
+      "basis_ids": [
+        "N-T02"
+      ],
+      "customer_approved": false,
+      "mandatory": "not_customer_decided"
+    },
+    {
+      "id": "RQ-T03",
+      "need_id": "N-T03",
+      "text": "待操作决策所需状态及数据时效定义后，形成可用信息要求。",
+      "kind": "incomplete_requirement_candidate",
+      "metric_proposal": "状态识别、数据时效、理解错误等候选指标",
+      "unit": null,
+      "target": null,
+      "direction": null,
+      "acceptance": null,
+      "verification_proposal": "先做操作任务观察与理解测试，再决定正式确认方法",
+      "verification_status": "proposed_not_executed",
+      "basis_ids": [
+        "N-T03"
+      ],
+      "customer_approved": false,
+      "mandatory": "not_customer_decided"
+    },
+    {
+      "id": "RQ-T04",
+      "need_id": "N-T04",
+      "text": "待完整作业记录取得后，形成清理维护与交接的任务及服务要求。",
+      "kind": "incomplete_requirement_candidate",
+      "metric_proposal": "恢复负担分段、维护资源与等待；定义尚待观察",
+      "unit": null,
+      "target": null,
+      "direction": null,
+      "acceptance": null,
+      "verification_proposal": "R08记录现状；R50研究前后台责任；不从本构造样本估计收益",
+      "verification_status": "proposed_not_executed",
+      "basis_ids": [
+        "N-T04"
+      ],
+      "customer_approved": false,
+      "mandatory": "not_customer_decided"
+    }
+  ],
+  "retired_hypotheses": [
+    "H-T01"
+  ],
+  "accepted_causal_findings": [],
+  "next_action": "derive_research_functions_only_with_all_unknowns",
+  "r08_lineage_check": {
+    "package_version": "0.1.1",
+    "source_problem_version": "0.1.0",
+    "retired_hypotheses": [
+      "H-T01"
+    ],
+    "counterevidence_note_ids": [
+      "NOTE-T04"
+    ],
+    "scope": "fixed_constructed_necessity_counterexample_only_not_real_world_causal_result",
+    "state": "lineage_and_fixed_withdrawal_closed"
+  },
+  "source_scope": "all scenario inputs and events constructed; primary method literature does not establish customer facts",
+  "package_version": "0.1.1"
+}

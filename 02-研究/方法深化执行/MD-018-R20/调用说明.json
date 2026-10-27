@@ -1,0 +1,40 @@
+{
+  "method": "R20",
+  "version": "0.1.0",
+  "interface": "proposed_research_contract_not_registered_MCP",
+  "mcp_implemented": false,
+  "trigger": "概念属性缺知识支持，或局部知识被扩大成全设计确认",
+  "actual_local_capability": "relative concept/property status and finite countermodel reasoning",
+  "required_inputs": [
+    "source problem/version/SHA",
+    "declared model and material origin",
+    "scope/unknowns",
+    "method-specific identities and relations"
+  ],
+  "outputs": [
+    "C/K及逻辑状态范围",
+    "属性支持与未知",
+    "有限反模型及知识扩展",
+    "一次概念重构和后续知识问题"
+  ],
+  "states": [
+    "needs_material",
+    "bounded_research",
+    "return_to_model",
+    "not_engineering_validated"
+  ],
+  "limits": [
+    "2003原文选段，非后续全理论复刻",
+    "反模型是构造，不是树体实验",
+    "局部子命题否定不等目标产品全部不可能"
+  ],
+  "refusal": [
+    "构造素材冒充现场",
+    "无来源的批准/工程结果",
+    "不完整来源或模型身份",
+    "未执行工具却给执行结果"
+  ],
+  "permissions": "read supplied sources, write own bounded research artifacts only",
+  "complete_matrix_lookup_implemented": null,
+  "domain_expert_review": "not_performed"
+}

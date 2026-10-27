@@ -1,0 +1,187 @@
+{
+  "problem_id": "TAP-TEACH-001",
+  "version": "0.1.0",
+  "source_input": {
+    "file": "01-形态矩阵输入-v0.1.0.json",
+    "sha256": "b8077c1ead5fedb64b775a919bb7f74157e3bbfdf1cf9c4006586f9bbab44e7b"
+  },
+  "source_output": {
+    "file": "02-枚举实际输出.json",
+    "sha256": "ba9e01cfdba8546fc2416487055d1a627d6c512161c7b052b3131261c9208756"
+  },
+  "source_R14": {
+    "path": "02-研究/方法深化执行/MD-003-R14/教学包/01-功能与接口输入-v0.1.0.json",
+    "sha256": "540f264402747654b04a3a26bfa5072090621ee19b1bef74e820bb635454c541"
+  },
+  "scope": "three research functions, other functions remain in R14 common architecture; not full robot or full needs satisfaction",
+  "candidates": [
+    {
+      "candidate_id": "TAP-C01",
+      "source_combination_id": "M01",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "state": "conditional_research",
+      "name": "接触基准 + 几何相对限位 + 被动储能退出概念",
+      "satisfied_requirements": [],
+      "hard_constraint_results": {
+        "approved_target_available": "unknown",
+        "internal_tissue_boundary": "unknown",
+        "power": "unknown",
+        "abnormal_stop_and_recovery": "unknown"
+      },
+      "comparison_only": true,
+      "engineering_validated": false
+    },
+    {
+      "candidate_id": "TAP-C02",
+      "source_combination_id": "M02",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "state": "conditional_research",
+      "name": "接触基准 + 几何相对限位 + 受控执行退出概念",
+      "satisfied_requirements": [],
+      "hard_constraint_results": {
+        "approved_target_available": "unknown",
+        "internal_tissue_boundary": "unknown",
+        "power": "unknown",
+        "abnormal_stop_and_recovery": "unknown"
+      },
+      "comparison_only": true,
+      "engineering_validated": false
+    },
+    {
+      "candidate_id": "TAP-C03",
+      "source_combination_id": "M03",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "state": "conditional_research",
+      "name": "接触基准 + 感测反馈约束 + 被动储能退出概念",
+      "satisfied_requirements": [],
+      "hard_constraint_results": {
+        "approved_target_available": "unknown",
+        "internal_tissue_boundary": "unknown",
+        "power": "unknown",
+        "abnormal_stop_and_recovery": "unknown"
+      },
+      "comparison_only": true,
+      "engineering_validated": false
+    },
+    {
+      "candidate_id": "TAP-C04",
+      "source_combination_id": "M04",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "state": "conditional_research",
+      "name": "接触基准 + 感测反馈约束 + 受控执行退出概念",
+      "satisfied_requirements": [],
+      "hard_constraint_results": {
+        "approved_target_available": "unknown",
+        "internal_tissue_boundary": "unknown",
+        "power": "unknown",
+        "abnormal_stop_and_recovery": "unknown"
+      },
+      "comparison_only": true,
+      "engineering_validated": false
+    },
+    {
+      "candidate_id": "TAP-C05",
+      "source_combination_id": "M05",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "state": "conditional_research",
+      "name": "非接触表面测距 + 几何相对限位 + 被动储能退出概念",
+      "satisfied_requirements": [],
+      "hard_constraint_results": {
+        "approved_target_available": "unknown",
+        "internal_tissue_boundary": "unknown",
+        "power": "unknown",
+        "abnormal_stop_and_recovery": "unknown"
+      },
+      "comparison_only": true,
+      "engineering_validated": false
+    },
+    {
+      "candidate_id": "TAP-C06",
+      "source_combination_id": "M06",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "state": "conditional_research",
+      "name": "非接触表面测距 + 几何相对限位 + 受控执行退出概念",
+      "satisfied_requirements": [],
+      "hard_constraint_results": {
+        "approved_target_available": "unknown",
+        "internal_tissue_boundary": "unknown",
+        "power": "unknown",
+        "abnormal_stop_and_recovery": "unknown"
+      },
+      "comparison_only": true,
+      "engineering_validated": false
+    },
+    {
+      "candidate_id": "TAP-C07",
+      "source_combination_id": "M07",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "state": "conditional_research",
+      "name": "非接触表面测距 + 感测反馈约束 + 被动储能退出概念",
+      "satisfied_requirements": [],
+      "hard_constraint_results": {
+        "approved_target_available": "unknown",
+        "internal_tissue_boundary": "unknown",
+        "power": "unknown",
+        "abnormal_stop_and_recovery": "unknown"
+      },
+      "comparison_only": true,
+      "engineering_validated": false
+    },
+    {
+      "candidate_id": "TAP-C08",
+      "source_combination_id": "M08",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "state": "conditional_research",
+      "name": "非接触表面测距 + 感测反馈约束 + 受控执行退出概念",
+      "satisfied_requirements": [],
+      "hard_constraint_results": {
+        "approved_target_available": "unknown",
+        "internal_tissue_boundary": "unknown",
+        "power": "unknown",
+        "abnormal_stop_and_recovery": "unknown"
+      },
+      "comparison_only": true,
+      "engineering_validated": false
+    }
+  ],
+  "handoff_rules": [
+    "unknown is not zero or same-as-datum",
+    "may decide cannot rank yet",
+    "no hard constraint can be offset by preferences",
+    "fixed display datum is not recommendation"
+  ],
+  "customer_approved": false,
+  "engineering_validated": false
+}

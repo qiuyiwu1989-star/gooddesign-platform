@@ -1,0 +1,74 @@
+{
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "problem_version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "use": "context_only_not_validated_engineering_input"
+  },
+  "trace": [
+    {
+      "variant": "V-SEPARATE",
+      "hint": "OWN-H1",
+      "delta": {
+        "added": [
+          [
+            "module",
+            "reference",
+            "supports"
+          ],
+          [
+            "structure",
+            "module",
+            "supports"
+          ]
+        ],
+        "removed": [
+          [
+            "structure",
+            "reference",
+            "supports"
+          ]
+        ]
+      },
+      "state": "mechanism_graph_changed_research_only",
+      "physical_feasibility": "unknown",
+      "novelty_or_value_score": null
+    },
+    {
+      "variant": "V-DISTRIBUTE",
+      "hint": "OWN-H2",
+      "delta": {
+        "added": [
+          [
+            "actuator",
+            "contactA",
+            "acts_on"
+          ],
+          [
+            "actuator",
+            "contactB",
+            "acts_on"
+          ]
+        ],
+        "removed": []
+      },
+      "state": "mechanism_graph_changed_research_only",
+      "physical_feasibility": "unknown",
+      "novelty_or_value_score": null
+    },
+    {
+      "variant": "V-COSMETIC",
+      "hint": "OWN-H3",
+      "delta": {
+        "added": [],
+        "removed": []
+      },
+      "state": "no_mechanism_change_in_declared_graph",
+      "physical_feasibility": "unknown",
+      "novelty_or_value_score": null
+    }
+  ],
+  "changed_graphs": 2,
+  "engineering_candidates": [],
+  "scope": "graph difference under authored labels, not physical causality, creativity quality or product novelty"
+}

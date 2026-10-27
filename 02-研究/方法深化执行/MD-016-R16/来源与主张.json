@@ -1,0 +1,82 @@
+{
+  "method": "R16",
+  "date": "2026-10-27",
+  "claims": [
+    {
+      "claim_id": "RCA-S1",
+      "source_id": "HSE-CAUSE",
+      "claim": "区分直接原因与潜在条件，不能由事件现象自动推出唯一根因。",
+      "url": "https://www.hse.gov.uk/foi/internalops/og/ogprocedures/investigation/coreobjectives.htm",
+      "raw_sha256": "c2baae130adac16c5a55ab069e60435d3f78ec9c27c6936219672a6e4eca5879",
+      "text_sha256": "08b044fdc26189366ebbf62c03b31ea7f1b94632ebd6b080b1913e0a07d66c3e",
+      "raw_path_private": "02-研究/方法深化执行/MD-016-R16/private-sources/HSE-CAUSE.html",
+      "text_path_private": "02-研究/方法深化执行/MD-016-R16/private-sources/HSE-CAUSE.txt",
+      "locator": "Identify immediate and underlying causes",
+      "short_anchor": "Immediate (or direct)",
+      "anchor_start": 2638,
+      "read_scope": "selected sections only; not full original monograph or all industry standards",
+      "does_not_support": [
+        "真实目标人群/客户事实",
+        "本构造模型工程有效",
+        "所有原法规则已实现",
+        "独立专业认证"
+      ]
+    },
+    {
+      "claim_id": "RCA-S2",
+      "source_id": "HSE-HSG245",
+      "claim": "调查关注任务、人、组织因素和控制行动；本例的竞争矩阵与暴露计算是平台适配。",
+      "url": "https://www.hse.gov.uk/pubns/hsg245.pdf",
+      "raw_sha256": "89178ab75a16a58b1b5b7c8ffea0fc790d4979aa2f4d72b887c4be14f5147d86",
+      "text_sha256": "cd78f29f1dd1ff2824638cd94fc7322123b53ba05d13ffe1ded93da9d095563c",
+      "raw_path_private": "02-研究/方法深化执行/MD-016-R16/private-sources/HSE-HSG245.pdf",
+      "text_path_private": "02-研究/方法深化执行/MD-016-R16/private-sources/HSE-HSG245.txt",
+      "locator": "PDF第21/23/24页选段；非88页逐项精读",
+      "short_anchor": "Job factors:",
+      "anchor_start": 53527,
+      "read_scope": "selected sections only; not full original monograph or all industry standards",
+      "does_not_support": [
+        "真实目标人群/客户事实",
+        "本构造模型工程有效",
+        "所有原法规则已实现",
+        "独立专业认证"
+      ]
+    }
+  ],
+  "source_attempts": [
+    {
+      "id": "HSE-HSG245",
+      "url": "https://www.hse.gov.uk/pubns/hsg245.pdf",
+      "retrieved_date": "2026-10-27",
+      "acquisition_is_not_fulltext_review": true,
+      "final_url": "https://www.hse.gov.uk/pubns/hsg245.pdf",
+      "pages": 88,
+      "status": "acquired",
+      "raw_path": "02-研究/方法深化执行/MD-016-R16/private-sources/HSE-HSG245.pdf",
+      "raw_sha256": "89178ab75a16a58b1b5b7c8ffea0fc790d4979aa2f4d72b887c4be14f5147d86",
+      "text_sha256": "cd78f29f1dd1ff2824638cd94fc7322123b53ba05d13ffe1ded93da9d095563c",
+      "text_path": "02-研究/方法深化执行/MD-016-R16/private-sources/HSE-HSG245.txt",
+      "chars": 123351
+    },
+    {
+      "id": "HSE-CAUSE",
+      "url": "https://www.hse.gov.uk/foi/internalops/og/ogprocedures/investigation/coreobjectives.htm",
+      "retrieved_date": "2026-10-27",
+      "acquisition_is_not_fulltext_review": true,
+      "final_url": "https://www.hse.gov.uk/foi/internalops/og/ogprocedures/investigation/coreobjectives.htm",
+      "status": "acquired",
+      "raw_path": "02-研究/方法深化执行/MD-016-R16/private-sources/HSE-CAUSE.html",
+      "raw_sha256": "c2baae130adac16c5a55ab069e60435d3f78ec9c27c6936219672a6e4eca5879",
+      "text_sha256": "08b044fdc26189366ebbf62c03b31ea7f1b94632ebd6b080b1913e0a07d66c3e",
+      "text_path": "02-研究/方法深化执行/MD-016-R16/private-sources/HSE-CAUSE.txt",
+      "chars": 8434
+    }
+  ],
+  "retrieval_notes": [],
+  "platform_adaptations": [
+    "固定JSON模型与拒绝规则",
+    "构造输入、反例、状态及迁移情境",
+    "源版本/SHA与保真治理"
+  ],
+  "not_full_original_reconstruction": true
+}

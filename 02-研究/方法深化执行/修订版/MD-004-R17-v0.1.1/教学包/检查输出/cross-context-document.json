@@ -1,0 +1,132 @@
+{
+  "schema_version": "R17-teaching-output-0.2.2",
+  "case_id": "DOC-TEACH-001-MORPH",
+  "input_sha256": "05692137bad763bb253dafded8875cebec56df711b4939091c352d835bd7fcbf",
+  "mode": "teaching_assumptions_not_engineering",
+  "combinations": [
+    {
+      "id": "M01",
+      "option_ids": [
+        "PAPER",
+        "PAPER-S"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "P-DOC0",
+        "W-DOC0"
+      ],
+      "unknown_judgment_refs": [
+        "W-DOC0"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    },
+    {
+      "id": "M02",
+      "option_ids": [
+        "PAPER",
+        "DIGITAL-S"
+      ],
+      "state": "excluded",
+      "judgment_refs": [
+        "P-DOC1"
+      ],
+      "unknown_judgment_refs": [],
+      "reason": "明确模型冲突：本协议没有转换支路",
+      "engineering_validated": false
+    },
+    {
+      "id": "M03",
+      "option_ids": [
+        "DIGITAL",
+        "PAPER-S"
+      ],
+      "state": "excluded",
+      "judgment_refs": [
+        "P-DOC2"
+      ],
+      "unknown_judgment_refs": [],
+      "reason": "明确模型冲突：本协议没有转换支路",
+      "engineering_validated": false
+    },
+    {
+      "id": "M04",
+      "option_ids": [
+        "DIGITAL",
+        "DIGITAL-S"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "P-DOC3",
+        "W-DOC3"
+      ],
+      "unknown_judgment_refs": [
+        "W-DOC3"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    }
+  ],
+  "counts": {
+    "enumerated": 4,
+    "excluded": 2,
+    "conditional_research": 2,
+    "model_comparison_candidate": 0
+  },
+  "unresolved_conditions": [
+    {
+      "id": "C-DOC",
+      "name": "实际可读性与保存能力",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-DOC"
+      ],
+      "unknown_reason": "未研究真实任务与接口"
+    }
+  ],
+  "selection": {
+    "option_ids": [
+      "PAPER",
+      "PAPER-S"
+    ],
+    "reason": "不声称更好",
+    "decision": "comparison_only_not_unique_optimum"
+  },
+  "unknowns": [
+    {
+      "judgment_id": "W-DOC0",
+      "reason": "介质一致不证明可读性及真实流程有效",
+      "verification_question": "观察实际输入输出与读取任务",
+      "condition_refs": [
+        "C-DOC"
+      ]
+    },
+    {
+      "judgment_id": "W-DOC3",
+      "reason": "介质一致不证明可读性及真实流程有效",
+      "verification_question": "观察实际输入输出与读取任务",
+      "condition_refs": [
+        "C-DOC"
+      ]
+    }
+  ],
+  "validation_plan": [
+    {
+      "id": "V-DOC",
+      "question": "记录能否实际读回？",
+      "method": "另做真实任务观察；未执行",
+      "conditions_to_fix": [
+        "任务与接口"
+      ],
+      "acceptance_basis": "需实际任务定义",
+      "status": "not_executed",
+      "condition_refs": [
+        "C-DOC"
+      ]
+    }
+  ],
+  "engineering_validated": false,
+  "method_effectiveness_validated": false
+}

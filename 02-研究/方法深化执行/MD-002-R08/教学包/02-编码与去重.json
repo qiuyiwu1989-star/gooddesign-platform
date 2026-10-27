@@ -1,0 +1,67 @@
+{
+  "source_binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "path": "../../MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+  },
+  "coding_is_authored_fixture_not_automatic_transcript_analysis": true,
+  "coding": [
+    {
+      "note_id": "NOTE-T01",
+      "event_id": "EV-T01",
+      "evidence_layer": "constructed_observation",
+      "may_support_causal_claim": false
+    },
+    {
+      "note_id": "NOTE-T02",
+      "event_id": "EV-T01",
+      "evidence_layer": "constructed_participant_statement",
+      "may_support_causal_claim": false
+    },
+    {
+      "note_id": "NOTE-T03",
+      "event_id": "EV-T01",
+      "evidence_layer": "constructed_researcher_paraphrase",
+      "may_support_causal_claim": false
+    },
+    {
+      "note_id": "NOTE-T04",
+      "event_id": "EV-T02",
+      "evidence_layer": "constructed_observation",
+      "may_support_causal_claim": false
+    },
+    {
+      "note_id": "NOTE-T05",
+      "event_id": "EV-T03",
+      "evidence_layer": "constructed_observation",
+      "may_support_causal_claim": false
+    },
+    {
+      "note_id": "NOTE-T06",
+      "event_id": null,
+      "evidence_layer": "constructed_general_opinion",
+      "may_support_causal_claim": false
+    }
+  ],
+  "count_result": {
+    "note_count": 6,
+    "independent_constructed_event_count": 3,
+    "independent_events": [
+      "EV-T01",
+      "EV-T02",
+      "EV-T03"
+    ],
+    "source_representations_for_EV_T01": 3,
+    "generic_opinions_not_counted": 1,
+    "customer_findings": [],
+    "status": "fixed_fixture_structure_checked_not_field_validated"
+  },
+  "codebook": {
+    "event": "one bounded occurrence; multiple notes may represent it",
+    "observation": "what a constructed note explicitly encodes",
+    "statement": "what a teaching participant is authored to say",
+    "interpretation": "research explanation; not observation",
+    "need_hypothesis": "proposed issue worth studying, not customer-approved requirement"
+  }
+}

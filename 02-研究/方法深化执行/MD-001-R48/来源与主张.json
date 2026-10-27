@@ -1,0 +1,81 @@
+{
+  "method_id": "R48",
+  "version": "0.1.0",
+  "sources": [
+    {
+      "id": "NASA-C",
+      "url": "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/",
+      "final_url": "https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/",
+      "retrieved_date": "2026-10-27",
+      "raw_sha256": "768ed10d6b616003eec551794ebbed18900706c567848115faec07c52c241749",
+      "bytes": 264320,
+      "read_scope": "C.2 Product Requirement; C.3 TBD/TBR; C.4 Traceability/Correctness/Verifiability",
+      "read_mode": "web selected sections plus URL response identity; no full handbook claim",
+      "full_raw_retained": false
+    },
+    {
+      "id": "NASA-RM",
+      "url": "https://www.nasa.gov/reference/6-2-requirements-management/",
+      "final_url": "https://www.nasa.gov/reference/6-2-requirements-management/",
+      "retrieved_date": "2026-10-27",
+      "raw_sha256": "c3cef05be65757c89158d0228ff1d0af6fc28657741059efe5d0a2340c90fe86",
+      "bytes": 278835,
+      "read_scope": "6.2.1.2.3 traceability; 6.2.1.2.4 changes",
+      "read_mode": "web selected sections plus URL response identity; no full handbook claim",
+      "full_raw_retained": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-R48-01",
+      "type": "source_supported_scope",
+      "statement": "要求表达应可追溯、可检验，假设应在基线前核定。",
+      "source_ids": [
+        "NASA-C"
+      ],
+      "locator": "C.4 Traceability / Correctness / Verifiability",
+      "not_supported": "不证明本项目任何需求或目标已获确认。"
+    },
+    {
+      "id": "C-R48-02",
+      "type": "source_supported_scope",
+      "statement": "有依据时可用带解释与消除行动的TBR估计；不是所有未知必须永久留空。",
+      "source_ids": [
+        "NASA-C"
+      ],
+      "locator": "C.3 TBD/TBR条目",
+      "not_supported": "不授权Agent凭空填工程阈值。"
+    },
+    {
+      "id": "C-R48-03",
+      "type": "source_supported_scope",
+      "statement": "要求管理关注关联和变更影响，批准需通过相应授权流程。",
+      "source_ids": [
+        "NASA-RM"
+      ],
+      "locator": "6.2.1.2.3—6.2.1.2.4",
+      "not_supported": "平台JSON、拒绝条件和客户权限不是NASA制定。"
+    },
+    {
+      "id": "C-R48-04",
+      "type": "platform_adaptation",
+      "statement": "本教学保留target/unit/direction/acceptance为null，同时给未知指定消除行动。",
+      "source_ids": [],
+      "basis": "本构造输入无合理估计依据；不是NASA逐字规定。"
+    },
+    {
+      "id": "C-R48-05",
+      "type": "local_executed_observation",
+      "statement": "十项固定结构/状态/来源检查按预期执行。",
+      "source_ids": [],
+      "artifact": "教学包/04-实际检查结果.json",
+      "not_supported": "不证明任意文本语义正确、旧R48已修复或工程有效。"
+    }
+  ],
+  "gaps": [
+    "真实用户、工况、测量及验收材料未得",
+    "NASA全手册及具体行业要求未实施",
+    "独立Agent复核待进行；领域专家审核未进行"
+  ],
+  "full_standard_implementation": false
+}

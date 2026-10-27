@@ -1,0 +1,355 @@
+{
+  "cases": [
+    {
+      "name": "正常构造分派仍非工程通过",
+      "input": {
+        "id": "R26-FIXTURE-TEACH-001",
+        "customer_approved": false,
+        "removed_component": "dedicated release actuator (hypothetical)",
+        "original_functions": [
+          {
+            "id": "F01",
+            "action": "withdraw moving contact"
+          },
+          {
+            "id": "F02",
+            "action": "report return state"
+          },
+          {
+            "id": "F03",
+            "action": "keep withdrawal after primary power loss"
+          }
+        ],
+        "redistribution": [
+          {
+            "function_id": "F01",
+            "route": "C",
+            "new_carrier": "declared teaching carrier",
+            "takeover_evidence": "independent_constructed_assumption",
+            "engineering_validated": false
+          },
+          {
+            "function_id": "F02",
+            "route": "C",
+            "new_carrier": "declared teaching carrier",
+            "takeover_evidence": "independent_constructed_assumption",
+            "engineering_validated": false
+          },
+          {
+            "function_id": "F03",
+            "route": "B",
+            "new_carrier": "declared teaching carrier",
+            "takeover_evidence": "independent_constructed_assumption",
+            "engineering_validated": false
+          }
+        ]
+      },
+      "actual": {
+        "status": "redistribution_research_candidate",
+        "unresolved": [],
+        "physical_takeover_validated": false,
+        "required_next": [
+          "force/time/interface coverage",
+          "failure and maintenance",
+          "burden transfer"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "name": "缺接管证据",
+      "input": {
+        "id": "R26-FIXTURE-TEACH-001",
+        "customer_approved": false,
+        "removed_component": "dedicated release actuator (hypothetical)",
+        "original_functions": [
+          {
+            "id": "F01",
+            "action": "withdraw moving contact"
+          },
+          {
+            "id": "F02",
+            "action": "report return state"
+          },
+          {
+            "id": "F03",
+            "action": "keep withdrawal after primary power loss"
+          }
+        ],
+        "redistribution": [
+          {
+            "function_id": "F01",
+            "route": "C",
+            "new_carrier": "existing preload element",
+            "takeover_evidence": "independent_constructed_assumption",
+            "engineering_validated": false
+          },
+          {
+            "function_id": "F02",
+            "route": "C",
+            "new_carrier": null,
+            "takeover_evidence": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "function_id": "F03",
+            "route": "B",
+            "new_carrier": "moving member self-return behavior",
+            "takeover_evidence": "unknown",
+            "engineering_validated": false
+          }
+        ]
+      },
+      "actual": {
+        "status": "unresolved_function_queue",
+        "unresolved": [
+          {
+            "function": "F02",
+            "reason": "takeover not evidenced even for teaching assumption"
+          },
+          {
+            "function": "F03",
+            "reason": "takeover not evidenced even for teaching assumption"
+          }
+        ],
+        "physical_takeover_validated": false,
+        "required_next": [
+          "force/time/interface coverage",
+          "failure and maintenance",
+          "burden transfer"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "name": "对象仍需不适用A",
+      "input": {
+        "id": "R26-FIXTURE-TEACH-001",
+        "customer_approved": false,
+        "removed_component": "dedicated release actuator (hypothetical)",
+        "original_functions": [
+          {
+            "id": "F01",
+            "action": "withdraw moving contact"
+          },
+          {
+            "id": "F02",
+            "action": "report return state"
+          },
+          {
+            "id": "F03",
+            "action": "keep withdrawal after primary power loss"
+          }
+        ],
+        "redistribution": [
+          {
+            "function_id": "F01",
+            "route": "A",
+            "new_carrier": "existing preload element",
+            "takeover_evidence": "independent_constructed_assumption",
+            "engineering_validated": false,
+            "object_removed": false
+          },
+          {
+            "function_id": "F02",
+            "route": "C",
+            "new_carrier": null,
+            "takeover_evidence": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "function_id": "F03",
+            "route": "B",
+            "new_carrier": "moving member self-return behavior",
+            "takeover_evidence": "unknown",
+            "engineering_validated": false
+          }
+        ]
+      },
+      "actual": {
+        "status": "unresolved_function_queue",
+        "unresolved": [
+          {
+            "function": "F01",
+            "reason": "object not established removed; cannot just delete useful function"
+          },
+          {
+            "function": "F02",
+            "reason": "takeover not evidenced even for teaching assumption"
+          },
+          {
+            "function": "F03",
+            "reason": "takeover not evidenced even for teaching assumption"
+          }
+        ],
+        "physical_takeover_validated": false,
+        "required_next": [
+          "force/time/interface coverage",
+          "failure and maintenance",
+          "burden transfer"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "name": "删末项边界",
+      "input": {
+        "id": "R26-FIXTURE-TEACH-001",
+        "customer_approved": false,
+        "removed_component": "dedicated release actuator (hypothetical)",
+        "original_functions": [
+          {
+            "id": "F01",
+            "action": "withdraw moving contact"
+          },
+          {
+            "id": "F02",
+            "action": "report return state"
+          },
+          {
+            "id": "F03",
+            "action": "keep withdrawal after primary power loss"
+          }
+        ],
+        "redistribution": [
+          {
+            "function_id": "F01",
+            "route": "C",
+            "new_carrier": "existing preload element",
+            "takeover_evidence": "independent_constructed_assumption",
+            "engineering_validated": false
+          },
+          {
+            "function_id": "F02",
+            "route": "C",
+            "new_carrier": null,
+            "takeover_evidence": "unknown",
+            "engineering_validated": false
+          }
+        ]
+      },
+      "actual": {
+        "status": "incomplete_function_closure"
+      },
+      "passed": true
+    },
+    {
+      "name": "失能作用被删除冲突",
+      "input": {
+        "id": "R26-FIXTURE-TEACH-001",
+        "customer_approved": false,
+        "removed_component": "dedicated release actuator (hypothetical)",
+        "original_functions": [
+          {
+            "id": "F01",
+            "action": "withdraw moving contact"
+          },
+          {
+            "id": "F02",
+            "action": "report return state"
+          },
+          {
+            "id": "F03",
+            "action": "keep withdrawal after primary power loss"
+          }
+        ],
+        "redistribution": [
+          {
+            "function_id": "F01",
+            "route": "C",
+            "new_carrier": "existing preload element",
+            "takeover_evidence": "independent_constructed_assumption",
+            "engineering_validated": false
+          },
+          {
+            "function_id": "F02",
+            "route": "C",
+            "new_carrier": null,
+            "takeover_evidence": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "function_id": "F03",
+            "route": "A",
+            "new_carrier": "moving member self-return behavior",
+            "takeover_evidence": "unknown",
+            "engineering_validated": false,
+            "object_removed": false
+          }
+        ]
+      },
+      "actual": {
+        "status": "unresolved_function_queue",
+        "unresolved": [
+          {
+            "function": "F02",
+            "reason": "takeover not evidenced even for teaching assumption"
+          },
+          {
+            "function": "F03",
+            "reason": "object not established removed; cannot just delete useful function"
+          }
+        ],
+        "physical_takeover_validated": false,
+        "required_next": [
+          "force/time/interface coverage",
+          "failure and maintenance",
+          "burden transfer"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "name": "信息服务迁移仍有回执缺口",
+      "input": {
+        "id": "DOC-ROUTER-TEACH-001",
+        "customer_approved": false,
+        "removed_component": "separate notification relay",
+        "original_functions": [
+          {
+            "id": "FD01",
+            "action": "notify recipient"
+          },
+          {
+            "id": "FD02",
+            "action": "retain delivery receipt"
+          }
+        ],
+        "redistribution": [
+          {
+            "function_id": "FD01",
+            "route": "C",
+            "new_carrier": "existing event service",
+            "takeover_evidence": "independent_constructed_assumption",
+            "engineering_validated": false
+          },
+          {
+            "function_id": "FD02",
+            "route": "C",
+            "new_carrier": null,
+            "takeover_evidence": "unknown",
+            "engineering_validated": false
+          }
+        ]
+      },
+      "actual": {
+        "status": "unresolved_function_queue",
+        "unresolved": [
+          {
+            "function": "FD02",
+            "reason": "takeover not evidenced even for teaching assumption"
+          }
+        ],
+        "physical_takeover_validated": false,
+        "required_next": [
+          "force/time/interface coverage",
+          "failure and maintenance",
+          "burden transfer"
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "count": 6,
+  "scope": "complete declared useful-function IDs and explicit takeover hypotheses only; no semantic or physical proof"
+}

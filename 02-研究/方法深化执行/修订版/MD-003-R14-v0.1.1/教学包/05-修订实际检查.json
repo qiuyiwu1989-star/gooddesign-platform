@@ -1,0 +1,136 @@
+{
+  "scope": "fixed declared closure and adversarial mutations; not semantic or physical certification",
+  "checks": [
+    {
+      "name": "原正例",
+      "expected_accept": true,
+      "accepted": true,
+      "pass_": true,
+      "detail": {
+        "status": "accepted_for_research_only",
+        "function_count": 6,
+        "interface_count": 12,
+        "preserved_shared_needs": 4,
+        "preserved_shared_unknowns": 5,
+        "derived_unknowns": 0,
+        "global_engineering_coverage": false,
+        "semantic_sufficiency": "not_automatically_checked",
+        "customer_approved": false
+      }
+    },
+    {
+      "name": "删除全部未知",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "shared_unknowns_erased_or_changed"
+    },
+    {
+      "name": "删除单个未知",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "shared_unknowns_erased_or_changed"
+    },
+    {
+      "name": "未知填零",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "shared_unknowns_erased_or_changed"
+    },
+    {
+      "name": "删源需求",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "source_need_or_unknown_registry_changed"
+    },
+    {
+      "name": "删除需求覆盖",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "shared_need_coverage_erased"
+    },
+    {
+      "name": "清空需求功能引用",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "need_function_trace_not_closed"
+    },
+    {
+      "name": "漂移共享版本",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "upstream_identity_or_version_mismatch"
+    },
+    {
+      "name": "漂移共享SHA",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "upstream_identity_or_version_mismatch"
+    },
+    {
+      "name": "客户状态升级",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "unsubstantiated_or_missing_approval"
+    },
+    {
+      "name": "遗漏客户状态",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "unsubstantiated_or_missing_approval"
+    },
+    {
+      "name": "省略单位未知字段",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "missing_explicit_unit_or_unknown_fields"
+    },
+    {
+      "name": "单位冲突无转换",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "declared_unit_conflict"
+    },
+    {
+      "name": "维护覆盖升级",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "partial_service_scope_promoted"
+    },
+    {
+      "name": "删异常恢复情境",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "missing_recovery_scenario"
+    },
+    {
+      "name": "组件代替作用",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "component_wording_requires_review"
+    },
+    {
+      "name": "重复功能ID",
+      "expected_accept": false,
+      "accepted": false,
+      "pass_": true,
+      "detail": "duplicate_function_id"
+    }
+  ],
+  "passed": 17,
+  "total": 17
+}

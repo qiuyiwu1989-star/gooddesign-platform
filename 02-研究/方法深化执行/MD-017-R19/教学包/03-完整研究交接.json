@@ -1,0 +1,27 @@
+{
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "problem_version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "use": "context_only_not_validated_engineering_input"
+  },
+  "keep": [
+    "V-SEPARATE",
+    "V-DISTRIBUTE"
+  ],
+  "keep_scope": "仅保留两种不同图关系继续研究，不是工程选优",
+  "not_counted_as_new_mechanism": [
+    "V-COSMETIC"
+  ],
+  "open_interfaces": [
+    "模块连接与重复定位",
+    "接触分配和污染",
+    "状态可观测性与异常恢复"
+  ],
+  "next_methods": [
+    "R17组织可组合选项",
+    "R36按证据比较",
+    "R44研究危险假设"
+  ],
+  "no_customer_targets": true
+}

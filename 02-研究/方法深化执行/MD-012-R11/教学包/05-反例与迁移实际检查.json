@@ -1,0 +1,448 @@
+{
+  "script_sha256": "80788f090677838176665b5d456e19b04a993dea525f4cb630edc873b8fe943a",
+  "tests": [
+    {
+      "id": "normal-all25",
+      "category": "normal",
+      "expected": "accepted",
+      "actual": "accepted",
+      "input": "检查输入-normal-all25.json",
+      "input_sha256": "eebdfed6577ea1a9b7b9abcdba442b00c697e24049653e2d4655d0bb2c8ea7ad",
+      "output": {
+        "matrix_version": "JSSD2014-table2-transcription-v1",
+        "mappings": [
+          {
+            "id": "PAIR-01",
+            "category": "Q",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-02",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-03",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-04",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-05",
+            "category": "O",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-06",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-07",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-08",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-09",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-10",
+            "category": "M",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-11",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-12",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-13",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-14",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-15",
+            "category": "M",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-16",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-17",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-18",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-19",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-20",
+            "category": "M",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-21",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-22",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-23",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-24",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-25",
+            "category": "Q",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          }
+        ],
+        "meaning": "categorical rule coverage, not frequency in people or priority scores",
+        "safety_or_mandatory_status_changed": false,
+        "customer_conclusions": []
+      }
+    },
+    {
+      "id": "missing-answer-not-neutral",
+      "category": "missing",
+      "expected": "accepted",
+      "actual": "accepted",
+      "input": "检查输入-missing-answer-not-neutral.json",
+      "input_sha256": "ddb5818e0c0005a9c10b25e5684ecc8c90e0449c9d597e13a8673af22c0b4770",
+      "output": {
+        "matrix_version": "JSSD2014-table2-transcription-v1",
+        "mappings": [
+          {
+            "id": "PAIR-01",
+            "category": null,
+            "disposition": "incomplete_do_not_impute"
+          },
+          {
+            "id": "PAIR-02",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-03",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-04",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-05",
+            "category": "O",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-06",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-07",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-08",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-09",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-10",
+            "category": "M",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-11",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-12",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-13",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-14",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-15",
+            "category": "M",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-16",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-17",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-18",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-19",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-20",
+            "category": "M",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-21",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-22",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-23",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-24",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-25",
+            "category": "Q",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          }
+        ],
+        "meaning": "categorical rule coverage, not frequency in people or priority scores",
+        "safety_or_mandatory_status_changed": false,
+        "customer_conclusions": []
+      }
+    },
+    {
+      "id": "unsupported-production-survey",
+      "category": "not_applicable",
+      "expected": "rejected",
+      "actual": "rejected",
+      "input": "检查输入-unsupported-production-survey.json",
+      "input_sha256": "43aef625e615651b73823c2c35c2d6aa5810611e9108166c1fe05aa1b57d1e13",
+      "output": {
+        "error": "unsupported_real_survey_mode"
+      }
+    },
+    {
+      "id": "compound-feature",
+      "category": "boundary",
+      "expected": "rejected",
+      "actual": "rejected",
+      "input": "检查输入-compound-feature.json",
+      "input_sha256": "cca7d8d8fd451dafc33d61dd5c0f2fd234c7b448aa7b04f577671e3956c68736",
+      "output": {
+        "error": "compound_feature_requires_research"
+      }
+    },
+    {
+      "id": "orientation-swapped",
+      "category": "conflict",
+      "expected": "rejected",
+      "actual": "rejected",
+      "input": "检查输入-orientation-swapped.json",
+      "input_sha256": "6ad4f359e9bce05fd951fc8d5cb2b20d5890a6949f35b4ef266bf3fa2264e1ad",
+      "output": {
+        "error": "matrix_version_hash_or_orientation_mismatch"
+      }
+    },
+    {
+      "id": "version-mismatch",
+      "category": "conflict",
+      "expected": "rejected",
+      "actual": "rejected",
+      "input": "检查输入-version-mismatch.json",
+      "input_sha256": "c313f6f03152c9364cfc1957cc012d341b8d1b18b9934f59252f8ac813f4a59f",
+      "output": {
+        "error": "matrix_version_hash_or_orientation_mismatch"
+      }
+    },
+    {
+      "id": "invalid-answer",
+      "category": "boundary",
+      "expected": "rejected",
+      "actual": "rejected",
+      "input": "检查输入-invalid-answer.json",
+      "input_sha256": "2bae79d3b17751594a5a650643b4ca4683bc698f78b99ff45b09c12835d0fb7f",
+      "output": {
+        "error": "invalid_answer"
+      }
+    },
+    {
+      "id": "safety-override",
+      "category": "not_applicable",
+      "expected": "rejected",
+      "actual": "rejected",
+      "input": "检查输入-safety-override.json",
+      "input_sha256": "03d86cf4a778d38c860cd8b7f241c1f378f5d3f4641dba8996799235b030b4c2",
+      "output": {
+        "error": "kano_cannot_override_hard_requirement"
+      }
+    },
+    {
+      "id": "duplicate-response",
+      "category": "conflict",
+      "expected": "rejected",
+      "actual": "rejected",
+      "input": "检查输入-duplicate-response.json",
+      "input_sha256": "769b299216d50d6c29a906f0410ed2ece4364a8ffaf4f1df01f999bb6e80762f",
+      "output": {
+        "error": "duplicate_response_id"
+      }
+    },
+    {
+      "id": "document-feature-mapping",
+      "category": "transfer",
+      "expected": "accepted",
+      "actual": "accepted",
+      "input": "检查输入-document-feature-mapping.json",
+      "input_sha256": "85a99582b9cc67eaaec2c49a4bd44dcff2b99e88010e8f200e847b95168ac641",
+      "output": {
+        "matrix_version": "JSSD2014-table2-transcription-v1",
+        "mappings": [
+          {
+            "id": "DOC-P1",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "document_case"
+          },
+          {
+            "id": "DOC-P2",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "document_case"
+          }
+        ],
+        "meaning": "categorical rule coverage, not frequency in people or priority scores",
+        "safety_or_mandatory_status_changed": false,
+        "customer_conclusions": []
+      }
+    }
+  ],
+  "passed": 10,
+  "not_claimed": [
+    "real pretest",
+    "population proportions",
+    "automatic text understanding",
+    "cross-industry validity"
+  ]
+}

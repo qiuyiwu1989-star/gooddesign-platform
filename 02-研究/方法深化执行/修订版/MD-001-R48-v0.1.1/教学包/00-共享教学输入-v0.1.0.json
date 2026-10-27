@@ -1,0 +1,105 @@
+{
+  "schema": "gooddesign-method-teaching-context-1",
+  "problem_id": "TAP-TEACH-001",
+  "version": "0.1.0",
+  "date": "2026-10-27",
+  "provenance": "platform_constructed_teaching_scenario",
+  "not_customer_evidence": true,
+  "customer_approved": false,
+  "engineering_validated": false,
+  "statement": "研究割胶作业中如何理解并控制切入边界、识别异常与恢复作业；本题仅为方法交接教学，不声称已知真实用户诉求或工程可行性。",
+  "scope": {
+    "system_boundary": "作业头与树体接触、相对运动、状态感知及人工异常处置；整机转场与服务只列接口未知",
+    "excluded_claims": [
+      "真实树皮参数",
+      "客户批准的切割深度或余皮阈值",
+      "真实异常频率/恢复时间",
+      "用户市场规模",
+      "方案工程安全性"
+    ]
+  },
+  "roles": [
+    {
+      "id": "ACT-OP",
+      "name": "操作/维护者",
+      "status": "teaching_role_not_interviewed"
+    },
+    {
+      "id": "ACT-OWNER",
+      "name": "设备经营/管理者",
+      "status": "teaching_role_not_interviewed"
+    }
+  ],
+  "needs": [
+    {
+      "id": "N-T01",
+      "text": "研究如何描述和约束切入作用边界",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    },
+    {
+      "id": "N-T02",
+      "text": "研究异常发生后如何停止作用、恢复或转交人工处置",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    },
+    {
+      "id": "N-T03",
+      "text": "研究操作者如何知道当前状态、所依据的数据及其时效",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    },
+    {
+      "id": "N-T04",
+      "text": "研究清理、维护与转场对完整作业的影响",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    }
+  ],
+  "unknowns": [
+    {
+      "id": "U-T01",
+      "text": "目标树种、树龄、组织状态与现场环境",
+      "value": null
+    },
+    {
+      "id": "U-T02",
+      "text": "切入/余皮限值、测量口径与客户验收标准",
+      "value": null
+    },
+    {
+      "id": "U-T03",
+      "text": "异常类型、发生频率及实际恢复过程",
+      "value": null
+    },
+    {
+      "id": "U-T04",
+      "text": "供能、执行器、结构载荷与防护配置",
+      "value": null
+    },
+    {
+      "id": "U-T05",
+      "text": "使用者能力、劳动安排与维护资源",
+      "value": null
+    }
+  ],
+  "handoff_rules": [
+    "引用时同时绑定problem_id、version与文件SHA256",
+    "需求假设不得升级为客户要求或工程达标",
+    "下游可以提出功能与概念，但不得自动填写target或customer_approved",
+    "R08构造事件用于练习编码，不替代现场证据",
+    "若新增假设，单独登记并保留本版本不覆盖"
+  ]
+}

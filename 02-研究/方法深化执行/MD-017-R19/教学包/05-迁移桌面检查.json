@@ -1,0 +1,33 @@
+{
+  "scenario": "DOC-GRAPH-TEACH-001",
+  "origin": "constructed_desktop",
+  "baseline_edges": [
+    [
+      "record",
+      "recipient",
+      "direct_transfer"
+    ]
+  ],
+  "variant_edges": [
+    [
+      "record",
+      "version_index",
+      "indexed"
+    ],
+    [
+      "version_index",
+      "recipient",
+      "lookup"
+    ]
+  ],
+  "cosmetic_edges": [
+    [
+      "record",
+      "recipient",
+      "direct_transfer"
+    ]
+  ],
+  "physical_or_user_results": [],
+  "mechanism_graph_difference": true,
+  "cosmetic_graph_difference": false
+}

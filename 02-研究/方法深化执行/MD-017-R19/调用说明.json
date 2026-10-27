@@ -1,0 +1,40 @@
+{
+  "method": "R19",
+  "version": "0.1.0",
+  "interface": "proposed_research_contract_not_registered_MCP",
+  "mcp_implemented": false,
+  "trigger": "需要拓展概念且保留提示到变体的可审查关系",
+  "actual_local_capability": "authored concept graph transformation and explicit constraint handling",
+  "required_inputs": [
+    "source problem/version/SHA",
+    "declared model and material origin",
+    "scope/unknowns",
+    "method-specific identities and relations"
+  ],
+  "outputs": [
+    "父子概念与提示出处",
+    "声明关系的新增/删除",
+    "未知与明确失败分开",
+    "机制族而非创意总分"
+  ],
+  "states": [
+    "needs_material",
+    "bounded_research",
+    "return_to_model",
+    "not_engineering_validated"
+  ],
+  "limits": [
+    "未复制或完整执行77卡组",
+    "图差异不等创造力/物理因果",
+    "没有真实产品或设计师实验"
+  ],
+  "refusal": [
+    "构造素材冒充现场",
+    "无来源的批准/工程结果",
+    "不完整来源或模型身份",
+    "未执行工具却给执行结果"
+  ],
+  "permissions": "read supplied sources, write own bounded research artifacts only",
+  "complete_matrix_lookup_implemented": null,
+  "domain_expert_review": "not_performed"
+}

@@ -1,0 +1,55 @@
+{
+  "target": "platform-proposed collection/transport subproblem, not customer-confirmed new requirement",
+  "specific_function": "explore transport of collected field latex along a defined cleanable route",
+  "generalized_function": "transport liquid along defined path",
+  "preserved_constraints": [
+    "fluid identity",
+    "viscosity/rheology",
+    "orientation",
+    "contamination and cleaning",
+    "supply and required throughput",
+    "coagulation/residence time"
+  ],
+  "target_values": "all unknown, do not inherit water values",
+  "leading_area_hypotheses": [
+    "passive spacecraft fluid management",
+    "bioinspired directional wetting"
+  ],
+  "not_claimed": "these are search hypotheses, not objectively ranked industry leaders",
+  "hits": [
+    {
+      "id": "H01",
+      "url": "https://ntrs.nasa.gov/api/citations/20240004816/downloads/RoBi_2024_PassiveFluidStabilityRotating.pdf",
+      "read": "PDF1–3",
+      "level": "model_only",
+      "decision": "retain conceptual lead, no hardware maturity claim"
+    },
+    {
+      "id": "H02",
+      "url": "https://www.nature.com/articles/nature17189",
+      "read": "abstract/search preview only",
+      "level": "abstract_only",
+      "decision": "retain bibliographic trail, not full paper read"
+    },
+    {
+      "id": "H03",
+      "url": "https://www.nature.com/articles/s42005-018-0038-z",
+      "read": "Results directional versus breakdown regimes and Methods",
+      "level": "original_experiment",
+      "decision": "retain both mechanism and failure-boundary evidence"
+    },
+    {
+      "id": "H04",
+      "url": "https://sjst.psu.ac.th/index.php/article/1267/PaperPDF/download",
+      "read": "search abstract; direct acquisition SSL failed",
+      "level": "abstract_only_until_mirror_verified",
+      "decision": "do not assign latex viscosity from preview"
+    },
+    {
+      "id": "H05",
+      "url": "https://pubs.rsc.org/en/content/getauthorversionpdf/c4ra07458k",
+      "read": "search preview",
+      "decision": "reject functional match: latex used to fabricate solid channel is not transport of fresh latex"
+    }
+  ]
+}

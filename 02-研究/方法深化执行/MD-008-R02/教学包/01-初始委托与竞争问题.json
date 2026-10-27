@@ -1,0 +1,36 @@
+{
+  "schema": "fixed_double_diamond_information_fixture-1",
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "upstream_method_status": "first_batch_pending_revision_context_only"
+  },
+  "origin": "constructed_teaching_not_customer_material",
+  "prompt": "构造委托：让设备工作更快；初始偏好是提高驱动速度。",
+  "frames": [
+    {
+      "id": "FRAME-NORMAL",
+      "text": "正常作业动作占主要负担",
+      "status": "competing_hypothesis"
+    },
+    {
+      "id": "FRAME-RECOVERY",
+      "text": "异常恢复与清理占主要负担",
+      "status": "competing_hypothesis"
+    }
+  ],
+  "evidence_stage": "total_only",
+  "totals": [
+    100
+  ],
+  "segments": null,
+  "unit": "synthetic_tick_not_seconds",
+  "team_votes": {
+    "FRAME-NORMAL": 5,
+    "FRAME-RECOVERY": 0
+  },
+  "customer_approved": false,
+  "field_research_conducted": false,
+  "findings": []
+}

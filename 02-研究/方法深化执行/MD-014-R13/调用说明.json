@@ -1,0 +1,33 @@
+{
+  "method": "R13",
+  "version": "0.1.0",
+  "status": "suggested_adapter_not_registered_MCP",
+  "implemented_scope": "local_fixed_teaching_script_only",
+  "script": "02-研究/方法深化执行/MD-014-R13/教学与反例.py",
+  "not_general_semantic_validator": true,
+  "when_to_use": "需要分析人群、任务、环境及异常接管的适配",
+  "input": [
+    "角色与任务情境",
+    "信息/动作/反馈",
+    "目标人群数据状态",
+    "原始观察或构造标签"
+  ],
+  "output": [
+    "任务与信息缺口",
+    "仅编码层面的表征碰撞分析",
+    "待执行研究"
+  ],
+  "reject_or_return": [
+    "源身份/范围/版本失配",
+    "构造材料冒充客户/实测",
+    "未确认数据被升级为结论",
+    "固定关系被无依据篡改"
+  ],
+  "unimplemented": [
+    "通用MCP端点",
+    "任意自然语言语义验证",
+    "用户/工程现场验证",
+    "专家签署"
+  ],
+  "production_mutation": false
+}

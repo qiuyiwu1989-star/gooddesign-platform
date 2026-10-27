@@ -1,0 +1,260 @@
+{
+  "schema": "lead-user-teaching-0.1.0",
+  "problem_id": "TAP-TEACH-001",
+  "mode": "constructed_only",
+  "source_binding": {
+    "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "upstream_review": "first_batch_changes_requested_not_expert_approved"
+  },
+  "trend": {
+    "id": "TREND-TEACH-01",
+    "definition": "变化条件下持续作业需求（人为假设）",
+    "provenance": "teaching_assumption_not_market_evidence",
+    "assumption_refs": [
+      "A-TREND"
+    ]
+  },
+  "assumptions": [
+    {
+      "id": "A-TREND",
+      "text": "仅为练习假定：多数普通用户尚未面对的复杂条件持续作业需求趋势，不声称真实市场存在或增长。"
+    },
+    {
+      "id": "A-A",
+      "text": "虚构A名气大、购买早，但本趋势领先=false、显著收益=false。"
+    },
+    {
+      "id": "A-B",
+      "text": "虚构B在假定趋势上领先=true、显著收益=true，未自行开发产品。"
+    },
+    {
+      "id": "A-C",
+      "text": "虚构C已经改装，但趋势领先未知；显著收益=true。"
+    },
+    {
+      "id": "A-D",
+      "text": "虚构D属于类比领域，领先/收益=true，但目标场景适用性未知。"
+    },
+    {
+      "id": "A-E",
+      "text": "虚构E有自研成果和显著收益，但在所选趋势不领先。"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "LU-A",
+      "profile_provenance": "fictional_profile_not_real_person",
+      "ahead_of_named_trend": {
+        "value": false,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-A"
+        ]
+      },
+      "high_expected_benefit": {
+        "value": false,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-A"
+        ]
+      },
+      "self_developed_solution": {
+        "value": false,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-A"
+        ]
+      },
+      "domain": "target",
+      "transfer_fit": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-A"
+        ]
+      },
+      "outreach_performed": false,
+      "rights_status": "not_negotiated_no_real_participant"
+    },
+    {
+      "id": "LU-B",
+      "profile_provenance": "fictional_profile_not_real_person",
+      "ahead_of_named_trend": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-B"
+        ]
+      },
+      "high_expected_benefit": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-B"
+        ]
+      },
+      "self_developed_solution": {
+        "value": false,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-B"
+        ]
+      },
+      "domain": "target",
+      "transfer_fit": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-B"
+        ]
+      },
+      "outreach_performed": false,
+      "rights_status": "not_negotiated_no_real_participant"
+    },
+    {
+      "id": "LU-C",
+      "profile_provenance": "fictional_profile_not_real_person",
+      "ahead_of_named_trend": {
+        "value": null,
+        "state": "unknown",
+        "assumption_refs": [
+          "A-C"
+        ]
+      },
+      "high_expected_benefit": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-C"
+        ]
+      },
+      "self_developed_solution": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-C"
+        ]
+      },
+      "domain": "target",
+      "transfer_fit": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-C"
+        ]
+      },
+      "outreach_performed": false,
+      "rights_status": "not_negotiated_no_real_participant"
+    },
+    {
+      "id": "LU-D",
+      "profile_provenance": "fictional_profile_not_real_person",
+      "ahead_of_named_trend": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-D"
+        ]
+      },
+      "high_expected_benefit": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-D"
+        ]
+      },
+      "self_developed_solution": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-D"
+        ]
+      },
+      "domain": "analog",
+      "transfer_fit": {
+        "value": null,
+        "state": "unknown",
+        "assumption_refs": [
+          "A-D"
+        ]
+      },
+      "outreach_performed": false,
+      "rights_status": "not_negotiated_no_real_participant"
+    },
+    {
+      "id": "LU-E",
+      "profile_provenance": "fictional_profile_not_real_person",
+      "ahead_of_named_trend": {
+        "value": false,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-E"
+        ]
+      },
+      "high_expected_benefit": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-E"
+        ]
+      },
+      "self_developed_solution": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-E"
+        ]
+      },
+      "domain": "target",
+      "transfer_fit": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-E"
+        ]
+      },
+      "outreach_performed": false,
+      "rights_status": "not_negotiated_no_real_participant"
+    },
+    {
+      "id": "LU-A",
+      "profile_provenance": "fictional_profile_not_real_person",
+      "ahead_of_named_trend": {
+        "value": false,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-A"
+        ]
+      },
+      "high_expected_benefit": {
+        "value": false,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-A"
+        ]
+      },
+      "self_developed_solution": {
+        "value": false,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-A"
+        ]
+      },
+      "domain": "target",
+      "transfer_fit": {
+        "value": true,
+        "state": "declared_teaching",
+        "assumption_refs": [
+          "A-A"
+        ]
+      },
+      "outreach_performed": false,
+      "rights_status": "not_negotiated_no_real_participant"
+    }
+  ],
+  "customer_approved": false,
+  "field_research_conducted": false
+}

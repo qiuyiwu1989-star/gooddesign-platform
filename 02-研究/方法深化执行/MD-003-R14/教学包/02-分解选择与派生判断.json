@@ -1,0 +1,29 @@
+{
+  "problem_id": "TAP-TEACH-001",
+  "decisions": [
+    {
+      "id": "DEC-F01",
+      "question": "为何不把功能命名为配置传感器？",
+      "basis": "that specifies a candidate component and does not state what must be accomplished",
+      "choice": "establish local surface reference; biological boundary remains unknown",
+      "kind": "platform_interpretation"
+    },
+    {
+      "id": "DEC-F02",
+      "question": "功能分解何时停止？",
+      "choice": "when alternatives and interfaces can be examined in this limited research problem, not at a prescribed depth",
+      "kind": "platform_interpretation"
+    },
+    {
+      "id": "DEC-F03",
+      "question": "异常后能自动恢复吗？",
+      "choice": "no evidence permits it; explicit human reauthorization is a teaching control choice, not a verified safety solution",
+      "kind": "teaching_assumption"
+    }
+  ],
+  "alternative_decomposition": {
+    "alternative": "按感知/决策/执行分组",
+    "difference": "same responsibilities may be grouped differently; operational scenarios and traceability remain necessary",
+    "not_uniquely_correct": true
+  }
+}

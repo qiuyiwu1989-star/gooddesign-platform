@@ -1,0 +1,27 @@
+{
+  "F": "support stable holding in a constructed fixture",
+  "Be": {
+    "quantity": "normal force",
+    "target": null,
+    "unit": "N",
+    "customer_approved": false
+  },
+  "S": {
+    "concept": "ideal linear spring",
+    "stiffness": 10,
+    "stiffness_unit": "N/mm",
+    "deflection": 2,
+    "deflection_unit": "mm",
+    "provenance": "independent synthetic teaching values"
+  },
+  "Bs": {
+    "value": 20,
+    "unit": "N",
+    "basis": "k*x under stated ideal assumptions",
+    "type": "analytical_not_measured"
+  },
+  "comparison": "cannot_determine_compliance_target_unknown",
+  "reformulation_option": "obtain supported expected behaviour or revise model with recorded reason",
+  "engineering_pass": false,
+  "full_situated_FBS": false
+}

@@ -1,0 +1,92 @@
+{
+  "schema": "R15-fixed-lesson-1",
+  "problem_id": "CLAMP-FAST-TEACH-001",
+  "version": "0.1.0",
+  "provenance": "platform_constructed_selected_friction_principle",
+  "diagram_type": "simplified_classical_how_why_teaching_view_not_full_technical_or_customer_FAST",
+  "how_direction": "left_to_right",
+  "why_direction": "right_to_left",
+  "not_clock_sequence": true,
+  "nodes": [
+    {
+      "id": "H0",
+      "function": "稳定工件状态",
+      "scope": "outside_higher"
+    },
+    {
+      "id": "B1",
+      "function": "约束切向滑动",
+      "scope": "inside_basic"
+    },
+    {
+      "id": "S1",
+      "function": "产生接触摩擦",
+      "scope": "inside_secondary"
+    },
+    {
+      "id": "L0",
+      "function": "施加法向作用",
+      "scope": "outside_lower"
+    },
+    {
+      "id": "SUP1",
+      "function": "保持接触条件",
+      "scope": "inside_support"
+    }
+  ],
+  "edges": [
+    {
+      "id": "E01",
+      "purpose": "H0",
+      "means": "B1",
+      "kind": "means_purpose",
+      "how": "怎样稳定工件状态？通过约束切向滑动（本视图的一条局部路径）。",
+      "why": "为什么约束切向滑动？用于稳定工件状态。"
+    },
+    {
+      "id": "E02",
+      "purpose": "B1",
+      "means": "S1",
+      "kind": "temporal_before",
+      "how": "怎样约束切向滑动？研究接触摩擦作用。",
+      "why": "为什么产生接触摩擦？用于约束切向滑动。"
+    },
+    {
+      "id": "E03",
+      "purpose": "S1",
+      "means": "L0",
+      "kind": "means_purpose",
+      "how": "怎样产生接触摩擦？在本假设接触原理下施加法向作用。",
+      "why": "为什么施加法向作用？为研究接触摩擦提供条件。"
+    }
+  ],
+  "support": [
+    {
+      "function_id": "SUP1",
+      "supports": [
+        "B1",
+        "S1"
+      ],
+      "relation": "enabling_condition_not_timeline",
+      "why_needed": "接触状态影响此原理是否能形成所研究作用，不是可随便删掉的外观特征"
+    }
+  ],
+  "unknowns": [
+    {
+      "id": "UF1",
+      "topic": "摩擦与材料条件",
+      "value": null
+    },
+    {
+      "id": "UF2",
+      "topic": "允许接触载荷与结构",
+      "value": null
+    },
+    {
+      "id": "UF3",
+      "topic": "真实约束效果及损伤",
+      "value": null
+    }
+  ],
+  "engineering_validated": false
+}

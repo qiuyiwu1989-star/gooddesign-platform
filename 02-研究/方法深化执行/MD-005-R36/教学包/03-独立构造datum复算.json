@@ -1,0 +1,154 @@
+{
+  "problem_id": "DATUM-TEACH-001",
+  "provenance": "synthetic_counts_not_tapping_robot_data",
+  "criteria": {
+    "adjust_operations": {
+      "direction": "lower",
+      "unit": "count"
+    },
+    "modules": {
+      "direction": "lower",
+      "unit": "count"
+    },
+    "cleaning": {
+      "direction": "qualitative",
+      "unit": null
+    }
+  },
+  "values": {
+    "A": {
+      "adjust_operations": 3,
+      "modules": 2,
+      "cleaning": null
+    },
+    "B": {
+      "adjust_operations": 2,
+      "modules": 4,
+      "cleaning": null
+    },
+    "C": {
+      "adjust_operations": 1,
+      "modules": 3,
+      "cleaning": null
+    }
+  },
+  "runs": [
+    {
+      "datum": "A",
+      "rows": [
+        {
+          "candidate": "A",
+          "relations": {
+            "adjust_operations": "same",
+            "modules": "same",
+            "cleaning": "unknown"
+          },
+          "descriptive_net_known_only": 0,
+          "unknown_count": 1,
+          "engineering_recommendation": null
+        },
+        {
+          "candidate": "B",
+          "relations": {
+            "adjust_operations": "better",
+            "modules": "worse",
+            "cleaning": "unknown"
+          },
+          "descriptive_net_known_only": 0,
+          "unknown_count": 1,
+          "engineering_recommendation": null
+        },
+        {
+          "candidate": "C",
+          "relations": {
+            "adjust_operations": "better",
+            "modules": "worse",
+            "cleaning": "unknown"
+          },
+          "descriptive_net_known_only": 0,
+          "unknown_count": 1,
+          "engineering_recommendation": null
+        }
+      ],
+      "interpretation": "net_is_not_utility_or_optimality; unknown counted separately; no recommendation"
+    },
+    {
+      "datum": "B",
+      "rows": [
+        {
+          "candidate": "A",
+          "relations": {
+            "adjust_operations": "worse",
+            "modules": "better",
+            "cleaning": "unknown"
+          },
+          "descriptive_net_known_only": 0,
+          "unknown_count": 1,
+          "engineering_recommendation": null
+        },
+        {
+          "candidate": "B",
+          "relations": {
+            "adjust_operations": "same",
+            "modules": "same",
+            "cleaning": "unknown"
+          },
+          "descriptive_net_known_only": 0,
+          "unknown_count": 1,
+          "engineering_recommendation": null
+        },
+        {
+          "candidate": "C",
+          "relations": {
+            "adjust_operations": "better",
+            "modules": "better",
+            "cleaning": "unknown"
+          },
+          "descriptive_net_known_only": 2,
+          "unknown_count": 1,
+          "engineering_recommendation": null
+        }
+      ],
+      "interpretation": "net_is_not_utility_or_optimality; unknown counted separately; no recommendation"
+    },
+    {
+      "datum": "C",
+      "rows": [
+        {
+          "candidate": "A",
+          "relations": {
+            "adjust_operations": "worse",
+            "modules": "better",
+            "cleaning": "unknown"
+          },
+          "descriptive_net_known_only": 0,
+          "unknown_count": 1,
+          "engineering_recommendation": null
+        },
+        {
+          "candidate": "B",
+          "relations": {
+            "adjust_operations": "worse",
+            "modules": "worse",
+            "cleaning": "unknown"
+          },
+          "descriptive_net_known_only": -2,
+          "unknown_count": 1,
+          "engineering_recommendation": null
+        },
+        {
+          "candidate": "C",
+          "relations": {
+            "adjust_operations": "same",
+            "modules": "same",
+            "cleaning": "unknown"
+          },
+          "descriptive_net_known_only": 0,
+          "unknown_count": 1,
+          "engineering_recommendation": null
+        }
+      ],
+      "interpretation": "net_is_not_utility_or_optimality; unknown counted separately; no recommendation"
+    }
+  ]
+}

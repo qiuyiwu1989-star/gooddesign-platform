@@ -1,0 +1,101 @@
+{
+  "method": "R03",
+  "version": "0.1.0",
+  "date": "2026-10-27",
+  "sources": [
+    {
+      "id": "DS-BOOTLEG",
+      "url": "https://dschool.stanford.edu/tools/design-thinking-bootleg",
+      "final_url": "https://dschool.stanford.edu/tools/design-thinking-bootleg",
+      "date": "2026-10-27",
+      "raw_file": "private-sources/DS-BOOTLEG.html",
+      "raw_sha256": "818d9c0d3be549db377c50187732df14cd4f289ebe72c7c3d043cc32eda0b42e",
+      "text_file": "private-sources/DS-BOOTLEG.txt",
+      "text_sha256": "c946a395e8136a7fbf8923e4bab68431e8fd5c904c1cafc8ad351523f8031be0",
+      "status": "acquired_selected_review_required"
+    },
+    {
+      "id": "DS-PDF",
+      "url": "https://dschool.sfo3.digitaloceanspaces.com/documents/dschool_bootleg_deck_2018_final_sm2-6.pdf",
+      "final_url": "https://dschool.sfo3.digitaloceanspaces.com/documents/dschool_bootleg_deck_2018_final_sm2-6.pdf",
+      "date": "2026-10-27",
+      "raw_file": "private-sources/DS-PDF.pdf",
+      "raw_sha256": "889e6962081ea635e4453701212a9ee536f33ff46e8f555124ac4a5e07291850",
+      "text_file": "private-sources/DS-PDF.txt",
+      "text_sha256": "c40186e0e374627289f1adf6a748e433dfc45d25f5dfb755ec174bf755533388",
+      "status": "acquired_selected_review_required"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-DT-01",
+      "statement": "五模式可作为研究工具组合，不是必须一次顺序完成。",
+      "type": "source_selected_scope",
+      "source_id": "DS-BOOTLEG",
+      "url": "https://dschool.stanford.edu/tools/design-thinking-bootleg",
+      "locator": "How does it work?",
+      "short_anchor": "There are five",
+      "anchor_in_text": 3472,
+      "source_raw_sha256": "818d9c0d3be549db377c50187732df14cd4f289ebe72c7c3d043cc32eda0b42e",
+      "source_text_sha256": "c946a395e8136a7fbf8923e4bab68431e8fd5c904c1cafc8ad351523f8031be0",
+      "read_scope": "selected web sections or specifically listed PDF pages only",
+      "not_supported": [
+        "真实割胶需求",
+        "客户批准",
+        "真实用户或工程效果",
+        "平台完整原法执行"
+      ]
+    },
+    {
+      "id": "C-DT-02",
+      "statement": "明确所研究变量有助于选择原型与比较；本包标签与代码是平台例子。",
+      "type": "source_plus_platform_boundary",
+      "source_id": "DS-PDF",
+      "url": "https://dschool.sfo3.digitaloceanspaces.com/documents/dschool_bootleg_deck_2018_final_sm2-6.pdf",
+      "locator": "PDF页59—60，卡24",
+      "short_anchor": "Identify a Variable",
+      "anchor_in_text": 34755,
+      "source_raw_sha256": "889e6962081ea635e4453701212a9ee536f33ff46e8f555124ac4a5e07291850",
+      "source_text_sha256": "c40186e0e374627289f1adf6a748e433dfc45d25f5dfb755ec174bf755533388",
+      "read_scope": "selected web sections or specifically listed PDF pages only",
+      "not_supported": [
+        "真实割胶需求",
+        "客户批准",
+        "真实用户或工程效果",
+        "平台完整原法执行"
+      ]
+    },
+    {
+      "id": "C-DT-03",
+      "statement": "测试可以帮助理解使用者并促使修订问题，不能只收喜欢反馈。",
+      "type": "source_selected_scope",
+      "source_id": "DS-PDF",
+      "url": "https://dschool.sfo3.digitaloceanspaces.com/documents/dschool_bootleg_deck_2018_final_sm2-6.pdf",
+      "locator": "PDF页55—56，卡22；页12 How to test",
+      "short_anchor": "Testing with Users",
+      "anchor_in_text": 32655,
+      "source_raw_sha256": "889e6962081ea635e4453701212a9ee536f33ff46e8f555124ac4a5e07291850",
+      "source_text_sha256": "c40186e0e374627289f1adf6a748e433dfc45d25f5dfb755ec174bf755533388",
+      "read_scope": "selected web sections or specifically listed PDF pages only",
+      "not_supported": [
+        "真实割胶需求",
+        "客户批准",
+        "真实用户或工程效果",
+        "平台完整原法执行"
+      ]
+    }
+  ],
+  "platform_adaptations": [
+    "固定构造输入与ID",
+    "结构/声明检查规则",
+    "未知及未执行状态",
+    "建议调用schema"
+  ],
+  "gaps": [
+    "选卡核读，非90页逐卡精读",
+    "原型/真实参与者未产生",
+    "固定表示定义不是实测能力",
+    "CC BY-NC-SA原卡不在公共产物复印"
+  ],
+  "source_distribution": "raw/text/screenshots only in gitignored private-sources; no whole cards or source pages copied into public output"
+}

@@ -1,0 +1,504 @@
+{
+  "schema_version": "R17-teaching-output-0.2.2",
+  "case_id": "TAP-TEACH-001-MORPH-0.1.1",
+  "input_sha256": "aa8601c1b1c16c5f5300e35849cf52e53b21eb740b8ea09dcc32d4f39c022e1d",
+  "mode": "teaching_assumptions_not_engineering",
+  "combinations": [
+    {
+      "id": "M01",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "PJ-O-REF-M--O-LIM-G",
+        "PJ-O-REF-M--O-STOP-P",
+        "PJ-O-LIM-G--O-STOP-P",
+        "WJ-TAP-01"
+      ],
+      "unknown_judgment_refs": [
+        "PJ-O-REF-M--O-LIM-G",
+        "PJ-O-REF-M--O-STOP-P",
+        "PJ-O-LIM-G--O-STOP-P",
+        "WJ-TAP-01"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    },
+    {
+      "id": "M02",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "PJ-O-REF-M--O-LIM-G",
+        "PJ-O-REF-M--O-STOP-A",
+        "PJ-O-LIM-G--O-STOP-A",
+        "WJ-TAP-02"
+      ],
+      "unknown_judgment_refs": [
+        "PJ-O-REF-M--O-LIM-G",
+        "PJ-O-REF-M--O-STOP-A",
+        "PJ-O-LIM-G--O-STOP-A",
+        "WJ-TAP-02"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    },
+    {
+      "id": "M03",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "PJ-O-REF-M--O-LIM-C",
+        "PJ-O-REF-M--O-STOP-P",
+        "PJ-O-LIM-C--O-STOP-P",
+        "WJ-TAP-03"
+      ],
+      "unknown_judgment_refs": [
+        "PJ-O-REF-M--O-LIM-C",
+        "PJ-O-REF-M--O-STOP-P",
+        "PJ-O-LIM-C--O-STOP-P",
+        "WJ-TAP-03"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    },
+    {
+      "id": "M04",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "PJ-O-REF-M--O-LIM-C",
+        "PJ-O-REF-M--O-STOP-A",
+        "PJ-O-LIM-C--O-STOP-A",
+        "WJ-TAP-04"
+      ],
+      "unknown_judgment_refs": [
+        "PJ-O-REF-M--O-LIM-C",
+        "PJ-O-REF-M--O-STOP-A",
+        "PJ-O-LIM-C--O-STOP-A",
+        "WJ-TAP-04"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    },
+    {
+      "id": "M05",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "PJ-O-REF-S--O-LIM-G",
+        "PJ-O-REF-S--O-STOP-P",
+        "PJ-O-LIM-G--O-STOP-P",
+        "WJ-TAP-05"
+      ],
+      "unknown_judgment_refs": [
+        "PJ-O-REF-S--O-LIM-G",
+        "PJ-O-REF-S--O-STOP-P",
+        "PJ-O-LIM-G--O-STOP-P",
+        "WJ-TAP-05"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    },
+    {
+      "id": "M06",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "PJ-O-REF-S--O-LIM-G",
+        "PJ-O-REF-S--O-STOP-A",
+        "PJ-O-LIM-G--O-STOP-A",
+        "WJ-TAP-06"
+      ],
+      "unknown_judgment_refs": [
+        "PJ-O-REF-S--O-LIM-G",
+        "PJ-O-REF-S--O-STOP-A",
+        "PJ-O-LIM-G--O-STOP-A",
+        "WJ-TAP-06"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    },
+    {
+      "id": "M07",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "PJ-O-REF-S--O-LIM-C",
+        "PJ-O-REF-S--O-STOP-P",
+        "PJ-O-LIM-C--O-STOP-P",
+        "WJ-TAP-07"
+      ],
+      "unknown_judgment_refs": [
+        "PJ-O-REF-S--O-LIM-C",
+        "PJ-O-REF-S--O-STOP-P",
+        "PJ-O-LIM-C--O-STOP-P",
+        "WJ-TAP-07"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    },
+    {
+      "id": "M08",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "state": "conditional_research",
+      "judgment_refs": [
+        "PJ-O-REF-S--O-LIM-C",
+        "PJ-O-REF-S--O-STOP-A",
+        "PJ-O-LIM-C--O-STOP-A",
+        "WJ-TAP-08"
+      ],
+      "unknown_judgment_refs": [
+        "PJ-O-REF-S--O-LIM-C",
+        "PJ-O-REF-S--O-STOP-A",
+        "PJ-O-LIM-C--O-STOP-A",
+        "WJ-TAP-08"
+      ],
+      "reason": "保留研究，未决整体或接口条件禁止判通过",
+      "engineering_validated": false
+    }
+  ],
+  "counts": {
+    "enumerated": 8,
+    "excluded": 0,
+    "conditional_research": 8,
+    "model_comparison_candidate": 0
+  },
+  "unresolved_conditions": [
+    {
+      "id": "U-T01",
+      "name": "目标树种、树龄、组织状态与现场环境",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    },
+    {
+      "id": "U-T02",
+      "name": "切入/余皮限值、测量口径与客户验收标准",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    },
+    {
+      "id": "U-T03",
+      "name": "异常类型、发生频率及实际恢复过程",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    },
+    {
+      "id": "U-T04",
+      "name": "供能、执行器、结构载荷与防护配置",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    },
+    {
+      "id": "U-T05",
+      "name": "使用者能力、劳动安排与维护资源",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    }
+  ],
+  "selection": {
+    "option_ids": [
+      "O-REF-M",
+      "O-LIM-G",
+      "O-STOP-P"
+    ],
+    "reason": "固定第一组合便于复查；全部候选均待研究，不建议工程采用",
+    "decision": "comparison_only_not_unique_optimum"
+  },
+  "unknowns": [
+    {
+      "judgment_id": "PJ-O-REF-M--O-LIM-G",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-REF-M--O-STOP-P",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-LIM-G--O-STOP-P",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "WJ-TAP-01",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-REF-M--O-STOP-A",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-LIM-G--O-STOP-A",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "WJ-TAP-02",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-REF-M--O-LIM-C",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-LIM-C--O-STOP-P",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "WJ-TAP-03",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-LIM-C--O-STOP-A",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "WJ-TAP-04",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-REF-S--O-LIM-G",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-REF-S--O-STOP-P",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "WJ-TAP-05",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-REF-S--O-STOP-A",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "WJ-TAP-06",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ]
+    },
+    {
+      "judgment_id": "PJ-O-REF-S--O-LIM-C",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    },
+    {
+      "judgment_id": "WJ-TAP-07",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ]
+    },
+    {
+      "judgment_id": "WJ-TAP-08",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ]
+    }
+  ],
+  "validation_plan": [
+    {
+      "id": "VP-TAP-01",
+      "question": "表面参考能否为实际允许组织边界提供足够信息？",
+      "method": "先核目标树体/组织及测量原理，再设计受控非伤害研究；本轮未实施",
+      "conditions_to_fix": [
+        "树种组织",
+        "测量误差",
+        "客户/专业可接受边界",
+        "失效与保护"
+      ],
+      "acceptance_basis": "等待实际场景、专业依据和客户确认，不生成阈值",
+      "status": "not_executed",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    }
+  ],
+  "engineering_validated": false,
+  "method_effectiveness_validated": false
+}

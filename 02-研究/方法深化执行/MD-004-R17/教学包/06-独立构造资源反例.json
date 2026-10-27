@@ -1,0 +1,195 @@
+{
+  "scope": "artificial_arithmetic_demo_not_robot_data_or_customer_requirement",
+  "assumed_powers_W": {
+    "O-REF-M": 5,
+    "O-REF-S": 20,
+    "O-LIM-G": 0,
+    "O-LIM-C": 25,
+    "O-STOP-P": 0,
+    "O-STOP-A": 20
+  },
+  "assumed_limit_W": 50,
+  "pair_checks": [
+    {
+      "options": [
+        "O-REF-M",
+        "O-LIM-G"
+      ],
+      "sum_W": 5,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-REF-M",
+        "O-LIM-C"
+      ],
+      "sum_W": 30,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-REF-S",
+        "O-LIM-G"
+      ],
+      "sum_W": 20,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-REF-S",
+        "O-LIM-C"
+      ],
+      "sum_W": 45,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-REF-M",
+        "O-STOP-P"
+      ],
+      "sum_W": 5,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-REF-M",
+        "O-STOP-A"
+      ],
+      "sum_W": 25,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-REF-S",
+        "O-STOP-P"
+      ],
+      "sum_W": 20,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-REF-S",
+        "O-STOP-A"
+      ],
+      "sum_W": 40,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "sum_W": 0,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "sum_W": 20,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "sum_W": 25,
+      "within_artificial_budget": true
+    },
+    {
+      "options": [
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "sum_W": 45,
+      "within_artificial_budget": true
+    }
+  ],
+  "whole_checks": [
+    {
+      "options": [
+        "O-REF-M",
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "sum_W": 5,
+      "within_artificial_budget": true,
+      "engineering_compatibility": "unknown"
+    },
+    {
+      "options": [
+        "O-REF-M",
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "sum_W": 25,
+      "within_artificial_budget": true,
+      "engineering_compatibility": "unknown"
+    },
+    {
+      "options": [
+        "O-REF-M",
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "sum_W": 30,
+      "within_artificial_budget": true,
+      "engineering_compatibility": "unknown"
+    },
+    {
+      "options": [
+        "O-REF-M",
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "sum_W": 50,
+      "within_artificial_budget": true,
+      "engineering_compatibility": "unknown"
+    },
+    {
+      "options": [
+        "O-REF-S",
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "sum_W": 20,
+      "within_artificial_budget": true,
+      "engineering_compatibility": "unknown"
+    },
+    {
+      "options": [
+        "O-REF-S",
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "sum_W": 40,
+      "within_artificial_budget": true,
+      "engineering_compatibility": "unknown"
+    },
+    {
+      "options": [
+        "O-REF-S",
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "sum_W": 45,
+      "within_artificial_budget": true,
+      "engineering_compatibility": "unknown"
+    },
+    {
+      "options": [
+        "O-REF-S",
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "sum_W": 65,
+      "within_artificial_budget": false,
+      "engineering_compatibility": "unknown"
+    }
+  ],
+  "finding": "all 12 pairs fit, one 3-option combination exceeds; resource pass never establishes physical fit",
+  "customer_approved": false,
+  "engineering_validated": false
+}

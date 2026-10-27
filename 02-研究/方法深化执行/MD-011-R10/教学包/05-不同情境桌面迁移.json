@@ -1,0 +1,28 @@
+{
+  "scenario": "DOC-LU-TEACH-001",
+  "scope": "authored_cross_context_desktop_example",
+  "trend_assumption": "复杂版本交接需要（未核真实趋势）",
+  "profiles": [
+    {
+      "id": "DOC-A",
+      "ahead": true,
+      "benefit": true,
+      "self_innovation": false
+    },
+    {
+      "id": "DOC-B",
+      "ahead": false,
+      "benefit": true,
+      "self_innovation": true
+    }
+  ],
+  "decisions": [
+    "definition_match_in_assumed_context",
+    "not_match_in_named_trend"
+  ],
+  "not_transferred": [
+    "rubber-specific conditions",
+    "customer facts",
+    "qualification of real persons"
+  ]
+}

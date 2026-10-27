@@ -1,0 +1,89 @@
+{
+  "version": "0.1.0",
+  "sources": [
+    {
+      "id": "MIT-HANDBOOK",
+      "url": "https://web.mit.edu/evhippel/www-old/Lead%20User%20Project%20Handbook%20%28Full%20Version%29.pdf",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://web.mit.edu/evhippel/www-old/Lead%20User%20Project%20Handbook%20%28Full%20Version%29.pdf",
+      "http_status": 200,
+      "raw": "private-sources/MIT-HANDBOOK.pdf",
+      "sha256": "c357f70e4b975ac094b76af40c0de9f70191f0e45146c3ce82fc7aeebda5f7bd",
+      "bytes": 3681768,
+      "status": "machine_acquired_unreviewed",
+      "pdf_pages": 168,
+      "title": "Lead User Project Handbook, Churchill/von Hippel/Sonnack; 2009 web preface, text revisions stated 1998",
+      "read_scope": "PDF3前言、PDF13定义/早期购买区别、PDF17相关领域、PDF33/39/43阶段与趋势、PDF124-125访谈、PDF152-155共创安排",
+      "scope_type": "full_pdf_acquired_selected_pages_read",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    },
+    {
+      "id": "MIT-2026",
+      "url": "https://ocw.mit.edu/courses/res-15-009-lead-user-innovation-handbook-spring-2026/",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://ocw.mit.edu/courses/res-15-009-lead-user-innovation-handbook-spring-2026/",
+      "http_status": 200,
+      "raw": "private-sources/MIT-2026.html",
+      "sha256": "4f681bda1fe24b6d92d53e02b991a80c2df70e9ea1d9a1e87a1e454c2afdcceb",
+      "bytes": 43033,
+      "status": "machine_acquired_unreviewed",
+      "title": "MIT OCW Lead User Innovation Handbook 2026 case collection",
+      "read_scope": "Course Description：短篇案例汇编身份；不是168页原项目手册",
+      "scope_type": "identity_only",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    },
+    {
+      "id": "MIT-OLD1988",
+      "url": "https://web.mit.edu/evhippel/www-old/papers/Lead%20Users%20Eric%20von%20Hippel%20and%20Glen%20Urban%20-%201988.pdf",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://web.mit.edu/evhippel/www-old/papers/Lead%20Users%20Eric%20von%20Hippel%20and%20Glen%20Urban%20-%201988.pdf",
+      "http_status": 200,
+      "raw": "private-sources/MIT-OLD1988.pdf",
+      "sha256": "c00bd91a6af0c34ee19e6fdb68b079aa2dfdcab925478efcd4d9b25901d7d91d",
+      "bytes": 68776,
+      "status": "machine_acquired_unreviewed",
+      "pdf_pages": 24,
+      "title": "Urban/von Hippel author manuscript, June1986, related publication explicitly1988",
+      "read_scope": "PDF1身份、PDF2摘要、PDF3两特征、PDF5单案例方法/概念测试、PDF18定义不要求已创新及单例/非真实市场限制",
+      "scope_type": "author_manuscript_selected_pages_not_1988_journal_typeset",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-LU01",
+      "type": "primary_method_supported",
+      "statement": "领先用户须相对具体需要趋势判断，且有显著预期收益；不等同早期购买者。",
+      "source_id": "MIT-HANDBOOK",
+      "locator": "PDF13/39",
+      "limit": "不证明任何真实候选满足条件"
+    },
+    {
+      "id": "C-LU02",
+      "type": "primary_empirical_author_statement",
+      "statement": "已开展创新不是领先用户定义的必要条件；该稿单案例和概念评价不能外推实际市场产品成效。",
+      "source_id": "MIT-OLD1988",
+      "locator": "PDF18",
+      "limit": "作者稿，不是声称完整发表版重现"
+    },
+    {
+      "id": "C-LU03",
+      "type": "platform_adaptation",
+      "statement": "以三态资格、构造证据引用和迁移状态形成保守筛选；无真实人物、市场或邀请。",
+      "source_id": null
+    }
+  ],
+  "source_snapshot_policy": "原始文件内部private-sources；交付只包括原创分析、定位、哈希及有限事实性表转录",
+  "not_claimed": [
+    "全部原典全文精读",
+    "独立专家认证",
+    "真实客户研究",
+    "完整标准实施"
+  ]
+}

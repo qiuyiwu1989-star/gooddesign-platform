@@ -1,0 +1,56 @@
+{
+  "schema": "method-research-claim-evidence-1",
+  "sources": [
+    {
+      "id": "S-RITCHEY",
+      "title": "Tom Ritchey, General Morphological Analysis (2002, revised 2013)",
+      "url": "https://swemorph.com/ma.html",
+      "selected_read_scope": "GENERAL MORPHOLOGY、CROSS CONSISTENCY ASSESSMENT、CONCLUSIONS；网页正文核读，不声称Zwicky专著或商业软件全文",
+      "date": "2026-10-27",
+      "acquisition_status": "acquired",
+      "raw_file": "private-sources/S-RITCHEY.html",
+      "raw_sha256": "5da1e9727d7bf114824b829bb79a06e224d9e39deadd38db185092b91b721496",
+      "final_url": "https://swemorph.com/ma.html",
+      "public_redistribution": "not_included; cite link and original platform analysis only",
+      "not_claimed": [
+        "full NASA/VDI/ISO conformity",
+        "expert certification",
+        "customer or engineering validation"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL-M01",
+      "claim": "GMA定义维度与取值形成形式配置空间。",
+      "source_id": "S-RITCHEY",
+      "locator": "GENERAL MORPHOLOGY，parameters/conditions段",
+      "scope": "non-quantified problem structuring"
+    },
+    {
+      "id": "CL-M02",
+      "claim": "CCA检查一致性而非因果，区分逻辑、实证与规范判断。",
+      "source_id": "S-RITCHEY",
+      "locator": "CROSS CONSISTENCY ASSESSMENT，pair-wise及three types段",
+      "scope": "not proof of engineering compatibility"
+    },
+    {
+      "id": "CL-M03",
+      "claim": "规范性偏好不应混作逻辑/实证排除。",
+      "source_id": "S-RITCHEY",
+      "locator": "CROSS CONSISTENCY ASSESSMENT，normative judgments段",
+      "scope": "ordering of judgments, not a customer approval rule"
+    }
+  ],
+  "platform_adaptations": [
+    "TAP-TEACH-001构造功能/选项与未知",
+    "JSON字段、状态机和拒绝规则",
+    "教学检查与方法交接建议"
+  ],
+  "unsupported_or_missing": [
+    "目标树体、组织限值及真实用户证据",
+    "机械/生物损伤与现场试验",
+    "独立领域专家复核"
+  ],
+  "expert_certified": false
+}

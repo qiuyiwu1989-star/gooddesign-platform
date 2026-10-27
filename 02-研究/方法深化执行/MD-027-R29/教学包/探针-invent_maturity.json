@@ -1,0 +1,41 @@
+{
+  "fixture": "TESE-LIMITED-01",
+  "context": {
+    "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "problem_version": "0.1.0",
+    "identity": "research_hypotheses_only_not_requirements",
+    "customer_approved": false,
+    "engineering_validated": false
+  },
+  "version": "0.1.0",
+  "records": [
+    {
+      "year": 2021,
+      "operations": 8,
+      "unit": "count/task",
+      "condition": "same constructed dry cleaning task",
+      "provenance": "synthetic"
+    },
+    {
+      "year": 2022,
+      "operations": 6,
+      "unit": "count/task",
+      "condition": "same constructed dry cleaning task",
+      "provenance": "synthetic"
+    },
+    {
+      "year": 2023,
+      "operations": 5,
+      "unit": "count/task",
+      "condition": "same constructed dry cleaning task",
+      "provenance": "synthetic"
+    }
+  ],
+  "route": "selective automation hypothesis",
+  "counterevidence": "automation may add setup and fault recovery; those costs absent in these counts",
+  "maturity": 0.8,
+  "future_performance": null,
+  "inevitable": false,
+  "customer_target": null
+}

@@ -1,0 +1,181 @@
+{
+  "executed": true,
+  "checks": [
+    {
+      "name": "normal-source-closed",
+      "expected": "accepted",
+      "actual": "accepted",
+      "result": {
+        "package_version": "0.1.1",
+        "source_problem_version": "0.1.0",
+        "retired_hypotheses": [
+          "H-T01"
+        ],
+        "counterevidence_note_ids": [
+          "NOTE-T04"
+        ],
+        "scope": "fixed_constructed_necessity_counterexample_only_not_real_world_causal_result",
+        "state": "lineage_and_fixed_withdrawal_closed"
+      }
+    },
+    {
+      "name": "previous-cross-problem-accepted-now-rejected",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_shared_problem_version_or_sha_mismatch"
+      }
+    },
+    {
+      "name": "wrong-problem-version",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_shared_problem_version_or_sha_mismatch"
+      }
+    },
+    {
+      "name": "wrong-shared-sha",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_shared_problem_version_or_sha_mismatch"
+      }
+    },
+    {
+      "name": "wrong-shared-path",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_shared_path_outside_allowed_input"
+      }
+    },
+    {
+      "name": "missing-withdrawal-id",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_hypothesis_identity_not_closed"
+      }
+    },
+    {
+      "name": "duplicate-withdrawal-id",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_duplicate_hypothesis_id"
+      }
+    },
+    {
+      "name": "withdrawal-status-unknown",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_withdrawal_status_or_scope_mismatch"
+      }
+    },
+    {
+      "name": "dangling-counterevidence",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_dangling_or_duplicate_evidence_reference"
+      }
+    },
+    {
+      "name": "withdrawal-no-counterevidence",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_withdrawal_has_no_counterevidence"
+      }
+    },
+    {
+      "name": "counterevidence-insufficient",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_counterexample_does_not_refute_fixed_necessity"
+      }
+    },
+    {
+      "name": "raw-other-problem",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_shared_problem_version_or_sha_mismatch"
+      }
+    },
+    {
+      "name": "coding-source-other-version",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_shared_problem_version_or_sha_mismatch"
+      }
+    },
+    {
+      "name": "wrong-bound-record-sha",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_artifact_hash_mismatch"
+      }
+    },
+    {
+      "name": "unconfirmed-alternative-promoted",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "r08_unconfirmed_alternatives_promoted"
+      }
+    },
+    {
+      "name": "r48-extra-retired-id",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "package_or_lineage_result_changed"
+      }
+    },
+    {
+      "name": "r48-retired-id-omitted",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "rejected_cause_promoted"
+      }
+    },
+    {
+      "name": "r48-lineage-decision-tampered",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "package_or_lineage_result_changed"
+      }
+    },
+    {
+      "name": "r48-package-version-missing",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "package_or_lineage_result_changed"
+      }
+    }
+  ],
+  "passed": 19,
+  "closure_result": {
+    "package_version": "0.1.1",
+    "source_problem_version": "0.1.0",
+    "retired_hypotheses": [
+      "H-T01"
+    ],
+    "counterevidence_note_ids": [
+      "NOTE-T04"
+    ],
+    "scope": "fixed_constructed_necessity_counterexample_only_not_real_world_causal_result",
+    "state": "lineage_and_fixed_withdrawal_closed"
+  },
+  "does_not_prove": "arbitrary language entailment or real-world causes",
+  "package_version": "0.1.1"
+}

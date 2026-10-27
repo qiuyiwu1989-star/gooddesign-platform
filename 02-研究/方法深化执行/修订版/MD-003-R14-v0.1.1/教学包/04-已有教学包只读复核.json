@@ -1,0 +1,20 @@
+{
+  "packages": [
+    {
+      "path": "output/method-reader-review/upgrades/R14-v0.2.2-proposal",
+      "manifest_sha256": "37c6f978bae7722648020a6eb61b0b6adff389932201bb041d0394d9dc426d36",
+      "files_verified": 96,
+      "execution": "read_only_hash_recheck_not_rerun"
+    },
+    {
+      "path": "output/method-reader-review/upgrades/R17-v0.2.2",
+      "manifest_sha256": "64d8df2c2c6e697e8a86e6a3881a95b125e0f2f756b07a3e46ce6fe64c779100",
+      "files_verified": 62,
+      "execution": "read_only_hash_recheck_not_rerun"
+    }
+  ],
+  "independent_review_notes": [
+    "R14 existing 0.2.2 evaluator limited to declared chain shapes; do not call general feedback coverage checker",
+    "R17 native fixed adapter is not a generic input-accepting pipeline"
+  ]
+}

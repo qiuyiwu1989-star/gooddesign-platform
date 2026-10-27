@@ -1,0 +1,73 @@
+{
+  "schema": "method-research-claim-evidence-1",
+  "sources": [
+    {
+      "id": "S-NASA-FUNC",
+      "title": "NASA Systems Engineering Handbook §4.3",
+      "url": "https://www.nasa.gov/reference/4-0-system-design-processes/",
+      "selected_read_scope": "§4.3.1.2.1—.3 与 §4.3.1.3；网页选段，未读NASA扩展指南全文",
+      "date": "2026-10-27",
+      "acquisition_status": "acquired",
+      "raw_file": "private-sources/S-NASA-FUNC.html",
+      "raw_sha256": "95a3d86d97e7dd6f206b9abc5170dbd1be5be5443e95a8df0c1d7ab845e6e20a",
+      "final_url": "https://www.nasa.gov/reference/4-0-system-design-processes/",
+      "public_redistribution": "not_included; cite link and original platform analysis only",
+      "not_claimed": [
+        "full NASA/VDI/ISO conformity",
+        "expert certification",
+        "customer or engineering validation"
+      ]
+    },
+    {
+      "id": "S-NASA-IF",
+      "title": "NASA Systems Engineering Handbook §6.3",
+      "url": "https://www.nasa.gov/reference/6-3-interface-management/",
+      "selected_read_scope": "§6.3.1.2.2—.5、§6.3.1.3；网页选段",
+      "date": "2026-10-27",
+      "acquisition_status": "acquired",
+      "raw_file": "private-sources/S-NASA-IF.html",
+      "raw_sha256": "511ec8688916f56ed4307bab566a09f9b4685c8f433a1224a8da35ee8c969425",
+      "final_url": "https://www.nasa.gov/reference/6-3-interface-management/",
+      "public_redistribution": "not_included; cite link and original platform analysis only",
+      "not_claimed": [
+        "full NASA/VDI/ISO conformity",
+        "expert certification",
+        "customer or engineering validation"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL-F01",
+      "claim": "功能分析以要完成的作用及其输入输出/接口等描述支持要求分配。",
+      "source_id": "S-NASA-FUNC",
+      "locator": "§4.3.1.2.2，Functional Analysis段",
+      "scope": "method rationale, not a specific robot decomposition"
+    },
+    {
+      "id": "CL-F02",
+      "claim": "分解存在替代方式，并随架构理解迭代；派生要求应有来源。",
+      "source_id": "S-NASA-FUNC",
+      "locator": "§4.3.1.2.1—.3；§4.3.1.3",
+      "scope": "general systems engineering explanation"
+    },
+    {
+      "id": "CL-F03",
+      "claim": "接口需要维护变更及相关方协调，不能只有一个端点的自述。",
+      "source_id": "S-NASA-IF",
+      "locator": "§6.3.1.2.2—.5与§6.3.1.3",
+      "scope": "interface management explanation"
+    }
+  ],
+  "platform_adaptations": [
+    "TAP-TEACH-001构造功能/选项与未知",
+    "JSON字段、状态机和拒绝规则",
+    "教学检查与方法交接建议"
+  ],
+  "unsupported_or_missing": [
+    "目标树体、组织限值及真实用户证据",
+    "机械/生物损伤与现场试验",
+    "独立领域专家复核"
+  ],
+  "expert_certified": false
+}

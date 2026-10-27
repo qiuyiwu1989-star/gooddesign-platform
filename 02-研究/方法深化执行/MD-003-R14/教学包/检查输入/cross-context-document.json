@@ -1,0 +1,94 @@
+{
+  "schema": "R14-research-teaching-model-0.1.0",
+  "problem_id": "DOC-TEACH-001",
+  "version": "0.1.0",
+  "upstream": {
+    "kind": "independent_constructed_context",
+    "problem_id": "DOC-TEACH-001",
+    "customer_approved": false
+  },
+  "mode": "constructed_teaching_not_customer_evidence",
+  "scope": "document information handoff only",
+  "functions": [
+    {
+      "id": "FD1",
+      "verb_object": "接收文档",
+      "parent_need_ids": [
+        "ND1"
+      ]
+    },
+    {
+      "id": "FD2",
+      "verb_object": "保存文档",
+      "parent_need_ids": [
+        "ND1"
+      ]
+    }
+  ],
+  "external_entities": [
+    "EXT-USER",
+    "EXT-STORE"
+  ],
+  "interfaces": [
+    {
+      "id": "ID1",
+      "origin": "EXT-USER",
+      "destination": "FD1",
+      "threshold": null
+    },
+    {
+      "id": "ID2",
+      "origin": "FD1",
+      "destination": "FD2",
+      "threshold": null
+    },
+    {
+      "id": "ID3",
+      "origin": "FD2",
+      "destination": "EXT-STORE",
+      "threshold": null
+    }
+  ],
+  "known_approved_targets": [],
+  "unknowns": [
+    {
+      "id": "U-DOC1",
+      "text": "真实文档可读性、权限与保存能力",
+      "value": null,
+      "origin": "platform_document_teaching"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "SD1",
+      "kind": "declared_normal",
+      "function_ids": [
+        "FD1",
+        "FD2"
+      ],
+      "interface_ids": [
+        "ID1",
+        "ID2",
+        "ID3"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "need_id": "ND1",
+      "function_ids": [
+        "FD1",
+        "FD2"
+      ],
+      "status": "research_allocation_not_satisfaction"
+    }
+  ],
+  "limits": [
+    "structural checks do not prove semantic sufficiency",
+    "control feedback and material/energy interfaces are modeled separately",
+    "no conservation/stability/biological injury analysis",
+    "N-T04 only stop/maintenance handover represented; complete cleaning, maintenance and transfer remain outside boundary"
+  ],
+  "customer_approved": false,
+  "engineering_validated": false
+}

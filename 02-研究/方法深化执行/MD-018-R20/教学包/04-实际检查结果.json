@@ -1,0 +1,643 @@
+{
+  "executed": true,
+  "passed": 10,
+  "checks": [
+    {
+      "name": "normal-countermodel",
+      "class": "正常",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "authored_finite_countermodel_not_tree_data",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_in_constructed_model"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          },
+          {
+            "id": "O-B",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-B"
+          }
+        ],
+        "unknowns": [
+          "实际树体中信号与组织的关系",
+          "独立观测如何取得",
+          "操作安全与全用途"
+        ],
+        "confirmed_design": false,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": null
+      },
+      "expected": "accepted",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "K1_derivation": {
+          "operator": "K_to_K",
+          "rule": "same observable symbol maps to multiple hidden symbols",
+          "ambiguous_observations": {
+            "SAME-SIGNAL": [
+              "H-A",
+              "H-B"
+            ]
+          },
+          "surface_only_uniqueness": "refuted_in_constructed_countermodel"
+        },
+        "concept_status_change": {
+          "C0": "not_confirmed; component uniqueness refuted in this model",
+          "C1": "reformulated_with_additional_independent_information; unresolved",
+          "not_global_truth": "countermodel is authored, not evidence about actual tree tissue"
+        },
+        "property_ledger": [
+          {
+            "property": "observe_surface",
+            "status": "represented_in_proxy_model"
+          },
+          {
+            "property": "infer_hidden_uniquely",
+            "status": "refuted_in_this_model"
+          },
+          {
+            "property": "operate_safely",
+            "status": "unknown"
+          }
+        ],
+        "whole_design_confirmed": false,
+        "next_K_questions": [
+          "什么独立信息能区分同表面不同隐藏状态",
+          "目标工况下能否获取且如何校核",
+          "完整用途还有哪些属性未获支持"
+        ],
+        "physical_or_customer_claims": []
+      }
+    },
+    {
+      "name": "missing-model-object",
+      "class": "缺材料",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "authored_finite_countermodel_not_tree_data",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_in_constructed_model"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          }
+        ],
+        "unknowns": [
+          "实际树体中信号与组织的关系",
+          "独立观测如何取得",
+          "操作安全与全用途"
+        ],
+        "confirmed_design": false,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": null
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "insufficient_countermodel_objects"
+      }
+    },
+    {
+      "name": "proxy-as-tree-evidence",
+      "class": "不适用",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "real_tree_measurement",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_in_constructed_model"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          },
+          {
+            "id": "O-B",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-B"
+          }
+        ],
+        "unknowns": [
+          "实际树体中信号与组织的关系",
+          "独立观测如何取得",
+          "操作安全与全用途"
+        ],
+        "confirmed_design": false,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": null
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "context_or_origin_changed"
+      }
+    },
+    {
+      "name": "partial-property-not-whole",
+      "class": "边界",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "authored_finite_countermodel_not_tree_data",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_in_constructed_model"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          },
+          {
+            "id": "O-B",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-B"
+          }
+        ],
+        "unknowns": [
+          "实际树体中信号与组织的关系",
+          "独立观测如何取得",
+          "操作安全与全用途"
+        ],
+        "confirmed_design": true,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": null
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "unsupported_conjunction_or_result"
+      }
+    },
+    {
+      "name": "duplicate-object",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "authored_finite_countermodel_not_tree_data",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_in_constructed_model"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          },
+          {
+            "id": "O-B",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-B"
+          },
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          }
+        ],
+        "unknowns": [
+          "实际树体中信号与组织的关系",
+          "独立观测如何取得",
+          "操作安全与全用途"
+        ],
+        "confirmed_design": false,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": null
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "duplicate_object"
+      }
+    },
+    {
+      "name": "different-signal-no-global-proof",
+      "class": "边界",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "authored_finite_countermodel_not_tree_data",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_in_constructed_model"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          },
+          {
+            "id": "O-B",
+            "surface": "OTHER-SIGNAL",
+            "hidden": "H-B"
+          }
+        ],
+        "unknowns": [
+          "实际树体中信号与组织的关系",
+          "独立观测如何取得",
+          "操作安全与全用途"
+        ],
+        "confirmed_design": false,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": null
+      },
+      "expected": "accepted",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "K1_derivation": {
+          "operator": "K_to_K",
+          "rule": "same observable symbol maps to multiple hidden symbols",
+          "ambiguous_observations": {},
+          "surface_only_uniqueness": "not_refuted_in_supplied_rows_not_proven_for_real_world"
+        },
+        "concept_status_change": {
+          "C0": "unresolved_outside_supplied_rows",
+          "C1": "reformulated_with_additional_independent_information; unresolved",
+          "not_global_truth": "countermodel is authored, not evidence about actual tree tissue"
+        },
+        "property_ledger": [
+          {
+            "property": "observe_surface",
+            "status": "represented_in_proxy_model"
+          },
+          {
+            "property": "infer_hidden_uniquely",
+            "status": "not_established_for_target"
+          },
+          {
+            "property": "operate_safely",
+            "status": "unknown"
+          }
+        ],
+        "whole_design_confirmed": false,
+        "next_K_questions": [
+          "什么独立信息能区分同表面不同隐藏状态",
+          "目标工况下能否获取且如何校核",
+          "完整用途还有哪些属性未获支持"
+        ],
+        "physical_or_customer_claims": []
+      }
+    },
+    {
+      "name": "unknown-safety-not-proven",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "authored_finite_countermodel_not_tree_data",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_in_constructed_model"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          },
+          {
+            "id": "O-B",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-B"
+          }
+        ],
+        "unknowns": [],
+        "confirmed_design": false,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": null
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "unsupported_conjunction_or_result"
+      }
+    },
+    {
+      "name": "future-calibration-result-invented",
+      "class": "不适用",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "authored_finite_countermodel_not_tree_data",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_in_constructed_model"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          },
+          {
+            "id": "O-B",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-B"
+          }
+        ],
+        "unknowns": [
+          "实际树体中信号与组织的关系",
+          "独立观测如何取得",
+          "操作安全与全用途"
+        ],
+        "confirmed_design": false,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": "works"
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "unsupported_conjunction_or_result"
+      }
+    },
+    {
+      "name": "swap-problem-context",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "OTHER",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "authored_finite_countermodel_not_tree_data",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_in_constructed_model"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          },
+          {
+            "id": "O-B",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-B"
+          }
+        ],
+        "unknowns": [
+          "实际树体中信号与组织的关系",
+          "独立观测如何取得",
+          "操作安全与全用途"
+        ],
+        "confirmed_design": false,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": null
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "context_or_origin_changed"
+      }
+    },
+    {
+      "name": "K0-logical-status-invented",
+      "class": "边界",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "origin": "authored_finite_countermodel_not_tree_data",
+        "concept": {
+          "id": "C0",
+          "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+          "properties": [
+            "observe_surface",
+            "infer_hidden_uniquely",
+            "operate_safely"
+          ],
+          "initial_status": "unresolved_relative_to_K0"
+        },
+        "K0": [
+          {
+            "id": "K-S1",
+            "scope": "proxy_model",
+            "statement": "已有一对象的表面观测记录",
+            "logical_status": "true_for_all_trees"
+          }
+        ],
+        "additional_model_objects": [
+          {
+            "id": "O-A",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-A"
+          },
+          {
+            "id": "O-B",
+            "surface": "SAME-SIGNAL",
+            "hidden": "H-B"
+          }
+        ],
+        "unknowns": [
+          "实际树体中信号与组织的关系",
+          "独立观测如何取得",
+          "操作安全与全用途"
+        ],
+        "confirmed_design": false,
+        "engineering_validated": false,
+        "proposed_additional_observable_result": null
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "concept_or_initial_knowledge_changed"
+      }
+    }
+  ],
+  "real_experiments": 0,
+  "scope": "finite mapping arithmetic and fixed concept/status checks, not automatic CK design"
+}

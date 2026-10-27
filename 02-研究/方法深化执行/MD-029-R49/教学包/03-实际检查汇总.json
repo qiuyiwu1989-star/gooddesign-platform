@@ -1,0 +1,55 @@
+{
+  "executed_cases": 7,
+  "passed": 7,
+  "rows": [
+    {
+      "name": "fixed_positive",
+      "expected": "accept",
+      "actual": "accept",
+      "pass": true
+    },
+    {
+      "name": "unit_mismatch",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "fixed_model_semantics_or_units_changed",
+      "pass": true
+    },
+    {
+      "name": "turn_Bs_to_measurement",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "analysis_is_not_measurement_or_approval",
+      "pass": true
+    },
+    {
+      "name": "invent_Be",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "fixed_model_semantics_or_units_changed",
+      "pass": true
+    },
+    {
+      "name": "claim_situated",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "fixed_model_semantics_or_units_changed",
+      "pass": true
+    },
+    {
+      "name": "omit_model_assumptions",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "fixed_model_semantics_or_units_changed",
+      "pass": true
+    },
+    {
+      "name": "claim_pass",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "analysis_is_not_measurement_or_approval",
+      "pass": true
+    }
+  ],
+  "qualification": "fixed fixture structure/arithmetic checks, not general semantic or engineering validation"
+}

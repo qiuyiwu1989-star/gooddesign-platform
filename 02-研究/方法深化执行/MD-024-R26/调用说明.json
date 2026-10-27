@@ -1,0 +1,21 @@
+{
+  "method_id": "R26",
+  "version": "0.1.0",
+  "kind": "proposed_contract_not_MCP",
+  "actual_local_interface": "check(dict): declared useful-function closure only",
+  "trigger": "candidate component removal",
+  "required_inputs": [
+    "component",
+    "all declared useful functions",
+    "A/B/C route per function",
+    "takeover actor/evidence",
+    "failure and maintenance effects"
+  ],
+  "unknown_policy": "missing takeover remains unresolved; no removal recommendation",
+  "handoff": [
+    "R14",
+    "R24",
+    "R41",
+    "R44"
+  ]
+}

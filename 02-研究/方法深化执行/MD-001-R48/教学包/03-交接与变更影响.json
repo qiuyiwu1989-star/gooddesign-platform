@@ -1,0 +1,59 @@
+{
+  "source_binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+  },
+  "evidence_binding": {
+    "path": "../../MD-002-R08/教学包/03-竞争解释与修订.json",
+    "sha256": "7b4d25ed4323d05ec67eb2888d44f326fa344cff977dabd23a0fb0884691c3a4",
+    "scope": "constructed_coding_not_field_evidence"
+  },
+  "trace": [
+    {
+      "need_id": "N-T01",
+      "candidate_ids": [
+        "RQ-T01"
+      ],
+      "source_status": "research_need_hypothesis",
+      "allocated_to": "R14研究分解或R50服务研究，尚无实际功能交付批准"
+    },
+    {
+      "need_id": "N-T02",
+      "candidate_ids": [
+        "RQ-T02"
+      ],
+      "source_status": "research_need_hypothesis",
+      "allocated_to": "R14研究分解或R50服务研究，尚无实际功能交付批准"
+    },
+    {
+      "need_id": "N-T03",
+      "candidate_ids": [
+        "RQ-T03"
+      ],
+      "source_status": "research_need_hypothesis",
+      "allocated_to": "R14研究分解或R50服务研究，尚无实际功能交付批准"
+    },
+    {
+      "need_id": "N-T04",
+      "candidate_ids": [
+        "RQ-T04"
+      ],
+      "source_status": "research_need_hypothesis",
+      "allocated_to": "R14研究分解或R50服务研究，尚无实际功能交付批准"
+    }
+  ],
+  "change_scenario": {
+    "proposed_change": "将“消除暂停”改为“识别不同工况下残留和恢复负担”",
+    "changed_type": "platform_explanatory_hypothesis_not_customer_baseline",
+    "basis": "R08固定构造集H-T01被NOTE-T04反例否定",
+    "potentially_affected_artifacts": [
+      "问题解释",
+      "作用分解范围",
+      "概念生成目标",
+      "试验观察条件"
+    ],
+    "actual_downstream_files_modified": [],
+    "rebuild_rule": "下游已有产物如依赖旧原因解释，应人工核影响后按新版本重建；共享v0.1.0不得悄改"
+  }
+}

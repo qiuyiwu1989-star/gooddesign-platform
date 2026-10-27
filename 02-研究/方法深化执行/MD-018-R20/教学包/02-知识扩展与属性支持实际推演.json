@@ -1,0 +1,45 @@
+{
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "problem_version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "use": "context_only_not_validated_requirement"
+  },
+  "K1_derivation": {
+    "operator": "K_to_K",
+    "rule": "same observable symbol maps to multiple hidden symbols",
+    "ambiguous_observations": {
+      "SAME-SIGNAL": [
+        "H-A",
+        "H-B"
+      ]
+    },
+    "surface_only_uniqueness": "refuted_in_constructed_countermodel"
+  },
+  "concept_status_change": {
+    "C0": "not_confirmed; component uniqueness refuted in this model",
+    "C1": "reformulated_with_additional_independent_information; unresolved",
+    "not_global_truth": "countermodel is authored, not evidence about actual tree tissue"
+  },
+  "property_ledger": [
+    {
+      "property": "observe_surface",
+      "status": "represented_in_proxy_model"
+    },
+    {
+      "property": "infer_hidden_uniquely",
+      "status": "refuted_in_this_model"
+    },
+    {
+      "property": "operate_safely",
+      "status": "unknown"
+    }
+  ],
+  "whole_design_confirmed": false,
+  "next_K_questions": [
+    "什么独立信息能区分同表面不同隐藏状态",
+    "目标工况下能否获取且如何校核",
+    "完整用途还有哪些属性未获支持"
+  ],
+  "physical_or_customer_claims": []
+}

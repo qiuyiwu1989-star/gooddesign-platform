@@ -1,0 +1,168 @@
+{
+  "tests": [
+    {
+      "id": "normal",
+      "category": "normal",
+      "actual": "accepted",
+      "expected": "accepted",
+      "input": "检查输入-normal.json",
+      "input_sha256": "46615b162eff12e0a9fbeda77c443105c143f7d4a371e4d620c1c01079bc5d30",
+      "output": {
+        "results": [
+          {
+            "profile_id": "LU-A",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-B",
+            "decision": "definition_match_only_in_constructed_context",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-C",
+            "decision": "needs_qualification_evidence",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-D",
+            "decision": "analog_lead_candidate_transfer_unresolved",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-E",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          }
+        ],
+        "real_people": 0,
+        "field_qualification": false,
+        "claim_scope": "declared criteria with evidence references only; no free-text understanding"
+      }
+    },
+    {
+      "id": "missing-benefit-evidence",
+      "category": "missing",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-missing-benefit-evidence.json",
+      "input_sha256": "556a20a8257e73bf5af09c3a73d17d3f358613d424465e27e46545be147f5cab",
+      "output": {
+        "error": "missing_or_dangling_trait_evidence"
+      }
+    },
+    {
+      "id": "not-field-certifier",
+      "category": "not_applicable",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-not-field-certifier.json",
+      "input_sha256": "5aa800260d8c5f86e82dab03f761fadfdba0dc154bb4ba7b630e42f692155817",
+      "output": {
+        "error": "unsupported_field_or_approval_claim"
+      }
+    },
+    {
+      "id": "unknown-not-false",
+      "category": "boundary",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-unknown-not-false.json",
+      "input_sha256": "169f36aa5586c6123c8075afe6aa37b33fe8b8a6a363916beefd26278a36b452",
+      "output": {
+        "error": "unknown_must_remain_null"
+      }
+    },
+    {
+      "id": "version-conflict",
+      "category": "conflict",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-version-conflict.json",
+      "input_sha256": "f280e67d3be66126a7ec8114dbacf1717a41dde4cb7e0a684ad69fd48a1d4eff",
+      "output": {
+        "error": "upstream_binding_mismatch"
+      }
+    },
+    {
+      "id": "non-innovator-can-match",
+      "category": "boundary",
+      "actual": "accepted",
+      "expected": "accepted",
+      "input": "检查输入-non-innovator-can-match.json",
+      "input_sha256": "46615b162eff12e0a9fbeda77c443105c143f7d4a371e4d620c1c01079bc5d30",
+      "output": {
+        "results": [
+          {
+            "profile_id": "LU-A",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-B",
+            "decision": "definition_match_only_in_constructed_context",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-C",
+            "decision": "needs_qualification_evidence",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-D",
+            "decision": "analog_lead_candidate_transfer_unresolved",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-E",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          }
+        ],
+        "real_people": 0,
+        "field_qualification": false,
+        "claim_scope": "declared criteria with evidence references only; no free-text understanding"
+      }
+    },
+    {
+      "id": "duplicate-person",
+      "category": "conflict",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-duplicate-person.json",
+      "input_sha256": "ebd4b741d5f698f07d708a50189e9a1aa77dd459e487fdbaad618957b9fd8571",
+      "output": {
+        "error": "duplicate_profile_id"
+      }
+    }
+  ],
+  "passed": 7,
+  "failure_count": 0,
+  "another_context": "authored_desktop_two_trait_logic_only",
+  "script_sha256": "d7a7d25ac69541328ac3effd77bec3b282e7b22980900ddfbcffb338b2305be4",
+  "not_claimed": [
+    "automatic real-world qualification",
+    "field user research",
+    "customer acceptance"
+  ]
+}

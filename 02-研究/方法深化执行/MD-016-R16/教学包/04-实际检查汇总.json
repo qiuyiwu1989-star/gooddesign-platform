@@ -1,0 +1,66 @@
+{
+  "method": "R16",
+  "cases": [
+    {
+      "method": "R16",
+      "case": "normal-competing-causes",
+      "class": "normal",
+      "expected_error": null,
+      "actual": "accepted_with_bounded_state",
+      "passed": true
+    },
+    {
+      "method": "R16",
+      "case": "missing-evidence",
+      "class": "missing_material",
+      "expected_error": "evidence_identity_content_or_limit_changed",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R16",
+      "case": "fiction-as-customer-incident",
+      "class": "not_applicable",
+      "expected_error": "incident_scope_or_provenance_changed",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R16",
+      "case": "zero-exposure-benefit",
+      "class": "boundary",
+      "expected_error": "effectiveness_claim_unestablished",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R16",
+      "case": "declare-one-root",
+      "class": "conflict",
+      "expected_error": "unconfirmed_root_or_engineering_claim",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R16",
+      "case": "swap-cause-support-mapping",
+      "class": "conflict",
+      "expected_error": "competing_cause_or_support_mapping_changed",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R16",
+      "case": "action-completed-without-evidence",
+      "class": "boundary",
+      "expected_error": "action_mapping_or_completion_changed",
+      "actual": "rejected",
+      "passed": true
+    }
+  ],
+  "executed": 7,
+  "passed": 7,
+  "scope": "fixed_declarations_and_bookkeeping_only_not_semantic_or_engineering_validator",
+  "actual_human_participants": 0,
+  "actual_field_trials": 0
+}

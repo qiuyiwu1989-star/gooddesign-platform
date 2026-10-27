@@ -1,0 +1,86 @@
+{
+  "method": "R20",
+  "version": "0.1.0",
+  "date": "2026-10-27",
+  "sources": [
+    {
+      "id": "CK-2003",
+      "url": "https://www.designsociety.org/download-publication/24204/a_new_approach_of_innovative_design_an_introduction_to_c-k_theory",
+      "date": "2026-10-27",
+      "final_url": "https://www.designsociety.org/download-publication/24204/a_new_approach_of_innovative_design_an_introduction_to_c-k_theory",
+      "pages": 15,
+      "raw_file": "private-sources/CK-2003.pdf",
+      "raw_sha256": "0233ff504b93bfb6a149d7219cf33fc20d6f42d10afde4eacb09e9f075a6ecc2",
+      "text_file": "private-sources/CK-2003.txt",
+      "text_sha256": "9f90af192d4326e1a2beabfd894995a736ab312b2679f865a5dc500eac77568b",
+      "status": "acquired_selected_review_needed"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R20-S1",
+      "claim": "概念与知识的区别相对于K，不能把任意unknown字段直接当形式C。",
+      "type": "selected_primary_source_scope_with_platform_boundary",
+      "source_id": "CK-2003",
+      "url": "https://www.designsociety.org/download-publication/24204/a_new_approach_of_innovative_design_an_introduction_to_c-k_theory",
+      "locator": "PDF页5，3.1",
+      "short_anchor": "3.1. Assumptions",
+      "text_anchor_start": 14476,
+      "anchor_basis": "whitespace_collapsed_extracted_text",
+      "raw_sha256": "0233ff504b93bfb6a149d7219cf33fc20d6f42d10afde4eacb09e9f075a6ecc2",
+      "text_sha256": "9f90af192d4326e1a2beabfd894995a736ab312b2679f865a5dc500eac77568b",
+      "does_not_support": [
+        "本构造模型真实有效",
+        "用户需求已确认",
+        "平台完整实现所有原法规则"
+      ]
+    },
+    {
+      "id": "R20-S2",
+      "claim": "C与K之间的连接/分离使知识和概念变化相关。",
+      "type": "selected_primary_source_scope_with_platform_boundary",
+      "source_id": "CK-2003",
+      "url": "https://www.designsociety.org/download-publication/24204/a_new_approach_of_innovative_design_an_introduction_to_c-k_theory",
+      "locator": "PDF页8，3.3",
+      "short_anchor": "3.3. Disjunctions",
+      "text_anchor_start": 26246,
+      "anchor_basis": "whitespace_collapsed_extracted_text",
+      "raw_sha256": "0233ff504b93bfb6a149d7219cf33fc20d6f42d10afde4eacb09e9f075a6ecc2",
+      "text_sha256": "9f90af192d4326e1a2beabfd894995a736ab312b2679f865a5dc500eac77568b",
+      "does_not_support": [
+        "本构造模型真实有效",
+        "用户需求已确认",
+        "平台完整实现所有原法规则"
+      ]
+    },
+    {
+      "id": "R20-S3",
+      "claim": "四类操作描述两空间扩展；本包只是原创有限例，不是理论证明器。",
+      "type": "selected_primary_source_scope_with_platform_boundary",
+      "source_id": "CK-2003",
+      "url": "https://www.designsociety.org/download-publication/24204/a_new_approach_of_innovative_design_an_introduction_to_c-k_theory",
+      "locator": "PDF页9，原排版2.4四操作段",
+      "short_anchor": "The four C-K operators",
+      "text_anchor_start": 30417,
+      "anchor_basis": "whitespace_collapsed_extracted_text",
+      "raw_sha256": "0233ff504b93bfb6a149d7219cf33fc20d6f42d10afde4eacb09e9f075a6ecc2",
+      "text_sha256": "9f90af192d4326e1a2beabfd894995a736ab312b2679f865a5dc500eac77568b",
+      "does_not_support": [
+        "本构造模型真实有效",
+        "用户需求已确认",
+        "平台完整实现所有原法规则"
+      ]
+    }
+  ],
+  "platform_adaptations": [
+    "固定输入与JSON表示",
+    "实际程序检查和反例",
+    "原创变换/有限模型/路由/条件矛盾示例"
+  ],
+  "gaps": [
+    "2003原文选段，非后续全理论复刻",
+    "反模型是构造，不是树体实验",
+    "局部子命题否定不等目标产品全部不可能"
+  ],
+  "private_source_handling": "raw, text and images are ignored and excluded from manifest; only short locators in authored delivery"
+}

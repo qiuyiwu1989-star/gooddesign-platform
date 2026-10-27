@@ -1,0 +1,32 @@
+{
+  "method": "R16",
+  "version": "0.1.0",
+  "status": "suggested_adapter_not_registered_MCP",
+  "implemented_scope": "local_fixed_teaching_script_only",
+  "script": "02-研究/方法深化执行/MD-014-R13/教学与反例.py",
+  "not_general_semantic_validator": true,
+  "when_to_use": "已有事件材料，需组织竞争原因、反证和行动",
+  "input": [
+    "事件原件/条件与时间线",
+    "支持/反证及其能力范围",
+    "拟议行动、实施和可比暴露"
+  ],
+  "output": [
+    "竞争解释与未决证据",
+    "行动队列",
+    "描述性暴露指标或不可计算"
+  ],
+  "reject_or_return": [
+    "源身份/范围/版本失配",
+    "构造材料冒充客户/实测",
+    "未确认数据被升级为结论",
+    "固定关系被无依据篡改"
+  ],
+  "unimplemented": [
+    "通用MCP端点",
+    "任意自然语言语义验证",
+    "用户/工程现场验证",
+    "专家签署"
+  ],
+  "production_mutation": false
+}

@@ -1,0 +1,47 @@
+{
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "problem_version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "use": "context_only_not_validated_requirement"
+  },
+  "origin": "authored_finite_countermodel_not_tree_data",
+  "concept": {
+    "id": "C0",
+    "proposition": "仅凭表面观测唯一识别隐藏状态，并满足待研究的完整用途",
+    "properties": [
+      "observe_surface",
+      "infer_hidden_uniquely",
+      "operate_safely"
+    ],
+    "initial_status": "unresolved_relative_to_K0"
+  },
+  "K0": [
+    {
+      "id": "K-S1",
+      "scope": "proxy_model",
+      "statement": "已有一对象的表面观测记录",
+      "logical_status": "true_in_constructed_model"
+    }
+  ],
+  "additional_model_objects": [
+    {
+      "id": "O-A",
+      "surface": "SAME-SIGNAL",
+      "hidden": "H-A"
+    },
+    {
+      "id": "O-B",
+      "surface": "SAME-SIGNAL",
+      "hidden": "H-B"
+    }
+  ],
+  "unknowns": [
+    "实际树体中信号与组织的关系",
+    "独立观测如何取得",
+    "操作安全与全用途"
+  ],
+  "confirmed_design": false,
+  "engineering_validated": false,
+  "proposed_additional_observable_result": null
+}

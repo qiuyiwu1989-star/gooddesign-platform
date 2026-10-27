@@ -1,0 +1,55 @@
+{
+  "executed_cases": 7,
+  "passed": 7,
+  "rows": [
+    {
+      "name": "fixed_positive",
+      "expected": "accept",
+      "actual": "accept",
+      "pass": true
+    },
+    {
+      "name": "wrong_contact_structure",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "natural_mechanism_or_transfer_mapping_changed",
+      "pass": true
+    },
+    {
+      "name": "dry_generalization",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "natural_mechanism_or_transfer_mapping_changed",
+      "pass": true
+    },
+    {
+      "name": "omit_transfer_gap",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "natural_mechanism_or_transfer_mapping_changed",
+      "pass": true
+    },
+    {
+      "name": "invent_gain",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "unsupported_engineering_transfer",
+      "pass": true
+    },
+    {
+      "name": "claim_verified",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "unsupported_engineering_transfer",
+      "pass": true
+    },
+    {
+      "name": "omit_controls",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "missing_controls",
+      "pass": true
+    }
+  ],
+  "qualification": "fixed fixture structure/arithmetic checks, not general semantic or engineering validation"
+}

@@ -1,0 +1,43 @@
+{
+  "resource_ledger": [
+    {
+      "kind": "material",
+      "item": "existing moving assembly",
+      "amount": null,
+      "unit": "kg",
+      "at_required_location_time": "unknown"
+    },
+    {
+      "kind": "energy",
+      "item": "gravitational potential",
+      "amount": null,
+      "unit": "J",
+      "orientation": "unknown",
+      "note": "main robot chain unknown, separate illustrative .5 J is not assigned here"
+    },
+    {
+      "kind": "information",
+      "item": "existing state/time record",
+      "amount": null,
+      "unit": null,
+      "validity": "unknown"
+    },
+    {
+      "kind": "time",
+      "item": "abnormal stop interval",
+      "amount": null,
+      "unit": "s",
+      "availability": "unknown"
+    }
+  ],
+  "ideal_goal": "在保留退出作用的条件下探索减少新增回位驱动",
+  "goal_status": "platform_research_aspiration_not_customer_requirement",
+  "new_burdens": [
+    "reset lifting energy",
+    "orientation restriction",
+    "impact protection",
+    "maintenance labor",
+    "contamination and wear"
+  ],
+  "robot_quantity_budget": "unknown, do not import illustrative values"
+}

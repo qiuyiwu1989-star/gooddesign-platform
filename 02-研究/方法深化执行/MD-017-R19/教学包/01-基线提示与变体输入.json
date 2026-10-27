@@ -1,0 +1,127 @@
+{
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "problem_version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "use": "context_only_not_validated_engineering_input"
+  },
+  "origin": "authored_teaching_graphs",
+  "baseline": {
+    "id": "BASE-01",
+    "function": "研究参考与作用的关系",
+    "edges": [
+      [
+        "structure",
+        "reference",
+        "supports"
+      ],
+      [
+        "structure",
+        "actuator",
+        "supports"
+      ],
+      [
+        "reference",
+        "actuator",
+        "reference_signal"
+      ]
+    ]
+  },
+  "variants": [
+    {
+      "id": "V-SEPARATE",
+      "hint_id": "OWN-H1",
+      "parent": "BASE-01",
+      "edges": [
+        [
+          "structure",
+          "module",
+          "supports"
+        ],
+        [
+          "module",
+          "reference",
+          "supports"
+        ],
+        [
+          "structure",
+          "actuator",
+          "supports"
+        ],
+        [
+          "reference",
+          "actuator",
+          "reference_signal"
+        ]
+      ],
+      "declared_hard_state": "unknown",
+      "engineering_validated": false
+    },
+    {
+      "id": "V-DISTRIBUTE",
+      "hint_id": "OWN-H2",
+      "parent": "BASE-01",
+      "edges": [
+        [
+          "structure",
+          "reference",
+          "supports"
+        ],
+        [
+          "structure",
+          "actuator",
+          "supports"
+        ],
+        [
+          "reference",
+          "actuator",
+          "reference_signal"
+        ],
+        [
+          "actuator",
+          "contactA",
+          "acts_on"
+        ],
+        [
+          "actuator",
+          "contactB",
+          "acts_on"
+        ]
+      ],
+      "declared_hard_state": "unknown",
+      "engineering_validated": false
+    },
+    {
+      "id": "V-COSMETIC",
+      "hint_id": "OWN-H3",
+      "parent": "BASE-01",
+      "edges": [
+        [
+          "structure",
+          "reference",
+          "supports"
+        ],
+        [
+          "structure",
+          "actuator",
+          "supports"
+        ],
+        [
+          "reference",
+          "actuator",
+          "reference_signal"
+        ]
+      ],
+      "appearance": "different_color",
+      "declared_hard_state": "unknown",
+      "engineering_validated": false
+    }
+  ],
+  "hint_catalog": {
+    "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+    "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+    "OWN-H3": "只改变外观标识：作为机制不变反例"
+  },
+  "engineering_recommendation": null,
+  "physical_results": []
+}

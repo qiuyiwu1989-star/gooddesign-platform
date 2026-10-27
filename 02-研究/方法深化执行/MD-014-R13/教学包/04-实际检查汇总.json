@@ -1,0 +1,66 @@
+{
+  "method": "R13",
+  "cases": [
+    {
+      "method": "R13",
+      "case": "normal-encoding-not-usability",
+      "class": "normal",
+      "expected_error": null,
+      "actual": "accepted_with_bounded_state",
+      "passed": true
+    },
+    {
+      "method": "R13",
+      "case": "missing-abnormal-task",
+      "class": "missing_material",
+      "expected_error": "task_or_information_mapping_changed",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R13",
+      "case": "use-as-production-evidence",
+      "class": "not_applicable",
+      "expected_error": "provenance_changed",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R13",
+      "case": "invent-average-body-dimension",
+      "class": "boundary",
+      "expected_error": "unsupported_population_claim",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R13",
+      "case": "pretend-B-more-usable",
+      "class": "conflict",
+      "expected_error": "fabricated_user_or_engineering_result",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R13",
+      "case": "missing-state-encoding",
+      "class": "missing_material",
+      "expected_error": "state_representation_missing",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "method": "R13",
+      "case": "tamper-task-info-mapping",
+      "class": "conflict",
+      "expected_error": "task_or_information_mapping_changed",
+      "actual": "rejected",
+      "passed": true
+    }
+  ],
+  "executed": 7,
+  "passed": 7,
+  "scope": "fixed_declarations_and_bookkeeping_only_not_semantic_or_engineering_validator",
+  "actual_human_participants": 0,
+  "actual_field_trials": 0
+}

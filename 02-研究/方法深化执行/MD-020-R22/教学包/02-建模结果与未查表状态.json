@@ -1,0 +1,47 @@
+{
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "problem_version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "use": "analogical_contact_fixture_not_target_evidence"
+  },
+  "scenario": "conditional contact proxy",
+  "model": "IF increase assumed normal force, THEN assumed slip decrease, BUT assumed indentation increase",
+  "native_parameter_ledger": {
+    "ACT-FORCE": {
+      "quantity": "normal_force",
+      "unit": "N",
+      "role": "changed_action_parameter",
+      "direction": "increase",
+      "measured_value": null
+    },
+    "P-SLIP": {
+      "quantity": "relative_slip_magnitude",
+      "unit": "mm",
+      "role": "desired_improvement",
+      "direction": "decrease",
+      "measured_value": null
+    },
+    "P-MARK": {
+      "quantity": "indentation_depth",
+      "unit": "mm",
+      "role": "unwanted_worsening",
+      "direction": "increase",
+      "measured_value": null
+    }
+  },
+  "same_condition": "declared common label only; material/geometry/environment remain unknown",
+  "parameter_mapping": "unresolved_no_verified_official_ids",
+  "lookup_status": "not_performed_missing_complete_versioned_matrix",
+  "principle_hits": [],
+  "source_cell": null,
+  "no_solution_claim": false,
+  "engineering_candidates": [],
+  "next_tasks": [
+    "核真实作用关系与同工况资料",
+    "固定矩阵版本、参数定义和可用权限",
+    "比较多种参数映射并保留歧义",
+    "实际查表才记录单元格、原理及机制转译"
+  ],
+  "completion_scope": "problem_model_and_mapping_gap_only_not_complete_contradiction_matrix_method"
+}

@@ -1,0 +1,17 @@
+{
+  "scenario": "DOC-CK-TEACH-001",
+  "origin": "constructed_desktop",
+  "objects": [
+    {
+      "display_name": "report",
+      "content_sha": "AAA"
+    },
+    {
+      "display_name": "report",
+      "content_sha": "BBB"
+    }
+  ],
+  "question": "仅凭同名能否唯一识别版本",
+  "result": "存在同名异内容的构造反例；增加指纹是新的研究/实现要求，不自动证明权限和可靠交接",
+  "engineering_validated": false
+}

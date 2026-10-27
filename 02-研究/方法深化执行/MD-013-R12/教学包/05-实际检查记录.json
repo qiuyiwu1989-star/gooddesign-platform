@@ -1,0 +1,172 @@
+{
+  "script_sha256": "dd42e553db20eb7a57ef5687e3554e5635db47e0c445a3c6841172bad6a5b12d",
+  "tests": [
+    {
+      "id": "normal-unknown-matrix",
+      "category": "normal",
+      "actual": "accepted",
+      "expected": "accepted",
+      "input": "检查输入-normal-unknown-matrix.json",
+      "input_sha256": "299ba32cb1032209d5edb0979e541a59920485da9b2f43827c7ed277b6121d88",
+      "output": {
+        "status": "research_deployment_trace_only",
+        "needs": 4,
+        "responses": 4,
+        "unknown_relationships": 16,
+        "priority_scores": null,
+        "ranking": null,
+        "target_values_generated": false,
+        "reason": "未取得关系、可用偏好尺度及目标来源，不能聚合或反推阈值",
+        "next_actions": [
+          "核源需要",
+          "核响应/关系依据",
+          "取得偏好尺度和硬要求",
+          "独立定义工程目标及验收口径"
+        ],
+        "full_qfd_or_standard_compliance": false
+      }
+    },
+    {
+      "id": "missing-relationship",
+      "category": "missing",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-missing-relationship.json",
+      "input_sha256": "8501b0d71eedf6e2ff35c06e969441d57a3fcc85845a4476cbc8c03354d53658",
+      "output": {
+        "error": "relationship_grid_incomplete"
+      }
+    },
+    {
+      "id": "not-ranker",
+      "category": "not_applicable",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-not-ranker.json",
+      "input_sha256": "92b7febeeca4066b159f8d20e7781165026ab8bb4ca4f3567f6c08c27401e729",
+      "output": {
+        "error": "unsupported_approval_or_execution_mode"
+      }
+    },
+    {
+      "id": "unknown-to-zero",
+      "category": "boundary",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-unknown-to-zero.json",
+      "input_sha256": "dd4a5a4324a2bb7af4f7e209e0355799117ef44821e02519453da9d6cfe463fa",
+      "output": {
+        "error": "unfounded_relationship_score"
+      }
+    },
+    {
+      "id": "fake-target-from-nine",
+      "category": "conflict",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-fake-target-from-nine.json",
+      "input_sha256": "62d0cf27026bfbf486d47eb591a64aa95f42b528c614355baea0e4ec9ddfb3c9",
+      "output": {
+        "error": "unsupported_target_or_unit_injected"
+      }
+    },
+    {
+      "id": "unelicited-weight",
+      "category": "boundary",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-unelicited-weight.json",
+      "input_sha256": "d2dcc234dcbc1134452804c28c2d05eafaee80ae5cffa64c4d2930fadeab113c",
+      "output": {
+        "error": "unelicited_preference_score"
+      }
+    },
+    {
+      "id": "erase-source-unknowns",
+      "category": "missing",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-erase-source-unknowns.json",
+      "input_sha256": "e3ff9e4c1397757b9784799338587ac9242ddc990fa042c803826d77c8f25e47",
+      "output": {
+        "error": "shared_needs_or_unknowns_changed"
+      }
+    },
+    {
+      "id": "source-version",
+      "category": "conflict",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-source-version.json",
+      "input_sha256": "890cd804f045f5456a76b203e73166d24067ed906b7c474a6fc0fb8172af01c1",
+      "output": {
+        "error": "upstream_identity_mismatch"
+      }
+    },
+    {
+      "id": "hard-waiver",
+      "category": "not_applicable",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-hard-waiver.json",
+      "input_sha256": "fb8cb40da742d1c9ce3e448d3eab7dc6e043f69fa9eacc837a1ef15db1138b5d",
+      "output": {
+        "error": "preferences_cannot_waive_hard_requirement"
+      }
+    },
+    {
+      "id": "invented-relationship-evidence",
+      "category": "conflict",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-invented-relationship-evidence.json",
+      "input_sha256": "cddb73fb51291d8d7fa35b17a369e6a34970b4c7e47272ebc2d93c28ebc80fd3",
+      "output": {
+        "error": "unsupported_relationship_evidence"
+      }
+    },
+    {
+      "id": "missing-null-is-not-explicit-unknown",
+      "category": "missing",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-missing-null-is-not-explicit-unknown.json",
+      "input_sha256": "aaa557ae595454e092865e9ca7a00f9fc93293aa5f7f8249f70726f0ed85cdc3",
+      "output": {
+        "error": "missing_explicit_response_fields"
+      }
+    },
+    {
+      "id": "narrow-response-study-with-needs-retained",
+      "category": "boundary",
+      "actual": "accepted",
+      "expected": "accepted",
+      "input": "检查输入-narrow-response-study-with-needs-retained.json",
+      "input_sha256": "000fa14065862129472a55baf493042b2b38c2ae19cd8ca8d33b1f8c6e6a613b",
+      "output": {
+        "status": "research_deployment_trace_only",
+        "needs": 4,
+        "responses": 2,
+        "unknown_relationships": 8,
+        "priority_scores": null,
+        "ranking": null,
+        "target_values_generated": false,
+        "reason": "未取得关系、可用偏好尺度及目标来源，不能聚合或反推阈值",
+        "next_actions": [
+          "核源需要",
+          "核响应/关系依据",
+          "取得偏好尺度和硬要求",
+          "独立定义工程目标及验收口径"
+        ],
+        "full_qfd_or_standard_compliance": false
+      }
+    }
+  ],
+  "passed": 12,
+  "not_claimed": [
+    "general semantic sufficiency",
+    "real QFD deployment",
+    "numerical sensitivity sweep",
+    "expert validation"
+  ]
+}

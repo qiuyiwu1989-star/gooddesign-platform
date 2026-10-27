@@ -1,0 +1,88 @@
+{
+  "version": "0.1.0",
+  "sources": [
+    {
+      "id": "JSSD-2014",
+      "url": "https://www.jstage.jst.go.jp/article/jssdj/61/1/61_1_27/_pdf/-char/en",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://www.jstage.jst.go.jp/article/jssdj/61/1/61_1_27/_pdf/-char/en",
+      "http_status": 200,
+      "raw": "private-sources/JSSD-2014.pdf",
+      "sha256": "aa5305ecfdc7a8fb597f80d4ff304f2068904c8d4a1a04bbb619bd5ea5a1c71e",
+      "bytes": 1010328,
+      "status": "machine_acquired_unreviewed",
+      "pdf_pages": 10,
+      "title": "Hwang/Tsai/Mitsuhashi/Miyazaki2014, DOI10.11247/jssdj.61.1_27",
+      "read_scope": "PDF1题名/摘要，PDF4刊页30表2与相邻矛盾文字、PDF5-6样本与问卷范围；表2已视觉核对",
+      "scope_type": "empirical_paper_selected_sections_and_table_visual",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    },
+    {
+      "id": "KANO-1984",
+      "url": "https://www.jstage.jst.go.jp/article/quality/14/2/14_KJ00002952366/_article",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://www.jstage.jst.go.jp/article/quality/14/2/14_KJ00002952366/_article",
+      "http_status": 200,
+      "raw": "private-sources/KANO-1984.html",
+      "sha256": "5ed63f15ea1c1437e3bfe85bfb0f8f9976e9fec43f3ca11978b5fc6d09b47151",
+      "bytes": 64666,
+      "status": "machine_acquired_unreviewed",
+      "title": "Kano/Seraku/Takahashi/Tsuji1984, DOI10.20684/quality.14.2_147",
+      "read_scope": "机构题录及摘要；JOURNAL RESTRICTED ACCESS，不声称全文/原表已取得",
+      "scope_type": "metadata_abstract_only",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    },
+    {
+      "id": "GITLAB-PRACTICE",
+      "url": "https://handbook.gitlab.com/handbook/upstream-studios/experience-research/kano-model/",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://handbook.gitlab.com/handbook/upstream-studios/experience-research/kano-model/",
+      "http_status": 200,
+      "raw": "private-sources/GITLAB-PRACTICE.html",
+      "sha256": "553078eac196030f6f0faac5e0c6fa4cded75894c6dc09235997513d7f330fcb",
+      "bytes": 2339819,
+      "status": "machine_acquired_unreviewed",
+      "title": "GitLab Handbook Kano practice page",
+      "read_scope": "特性描述/定性预测试与正反问题操作；作为该组织实践，不是原理论全文",
+      "scope_type": "practitioner_primary_organization_page",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-K01",
+      "type": "metadata_abstract_supported",
+      "statement": "1984原文提出二维质量认识与类别研究；本轮未核原分类表全文。",
+      "source_id": "KANO-1984",
+      "locator": "Abstract",
+      "limit": "不据摘要编25格"
+    },
+    {
+      "id": "C-K02",
+      "type": "selected_primary_empirical_version",
+      "statement": "本包25格按2014论文PDF4表2行列转录；邻近文字称5个Q但表仅2个Q，明确采用表而保留差异。",
+      "source_id": "JSSD-2014",
+      "locator": "PDF4 Table2",
+      "limit": "不是原1984全文，也不复制其回归/客户结论"
+    },
+    {
+      "id": "C-K03",
+      "type": "platform_adaptation",
+      "statement": "完整回答对用于规则覆盖，缺答保持未知；构造夹具计数不当真实受访者分布，类别不自动转权重。",
+      "source_id": null
+    }
+  ],
+  "source_snapshot_policy": "原始文件内部private-sources；交付只包括原创分析、定位、哈希及有限事实性表转录",
+  "not_claimed": [
+    "全部原典全文精读",
+    "独立专家认证",
+    "真实客户研究",
+    "完整标准实施"
+  ]
+}

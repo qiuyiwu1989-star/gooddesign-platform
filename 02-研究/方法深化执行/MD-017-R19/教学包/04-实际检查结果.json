@@ -1,0 +1,1476 @@
+{
+  "executed": true,
+  "checks": [
+    {
+      "name": "normal-three-variants",
+      "class": "正常",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "baseline": {
+          "id": "BASE-01",
+          "function": "研究参考与作用的关系",
+          "edges": [
+            [
+              "structure",
+              "reference",
+              "supports"
+            ],
+            [
+              "structure",
+              "actuator",
+              "supports"
+            ],
+            [
+              "reference",
+              "actuator",
+              "reference_signal"
+            ]
+          ]
+        },
+        "variants": [
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "OWN-H1",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-DISTRIBUTE",
+            "hint_id": "OWN-H2",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ],
+              [
+                "actuator",
+                "contactA",
+                "acts_on"
+              ],
+              [
+                "actuator",
+                "contactB",
+                "acts_on"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": null,
+        "physical_results": []
+      },
+      "expected": "accepted",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "trace": [
+          {
+            "variant": "V-SEPARATE",
+            "hint": "OWN-H1",
+            "delta": {
+              "added": [
+                [
+                  "module",
+                  "reference",
+                  "supports"
+                ],
+                [
+                  "structure",
+                  "module",
+                  "supports"
+                ]
+              ],
+              "removed": [
+                [
+                  "structure",
+                  "reference",
+                  "supports"
+                ]
+              ]
+            },
+            "state": "mechanism_graph_changed_research_only",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          },
+          {
+            "variant": "V-DISTRIBUTE",
+            "hint": "OWN-H2",
+            "delta": {
+              "added": [
+                [
+                  "actuator",
+                  "contactA",
+                  "acts_on"
+                ],
+                [
+                  "actuator",
+                  "contactB",
+                  "acts_on"
+                ]
+              ],
+              "removed": []
+            },
+            "state": "mechanism_graph_changed_research_only",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          },
+          {
+            "variant": "V-COSMETIC",
+            "hint": "OWN-H3",
+            "delta": {
+              "added": [],
+              "removed": []
+            },
+            "state": "no_mechanism_change_in_declared_graph",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          }
+        ],
+        "changed_graphs": 2,
+        "engineering_candidates": [],
+        "scope": "graph difference under authored labels, not physical causality, creativity quality or product novelty"
+      }
+    },
+    {
+      "name": "missing-baseline",
+      "class": "缺材料",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "variants": [
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "OWN-H1",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-DISTRIBUTE",
+            "hint_id": "OWN-H2",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ],
+              [
+                "actuator",
+                "contactA",
+                "acts_on"
+              ],
+              [
+                "actuator",
+                "contactB",
+                "acts_on"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": null,
+        "physical_results": []
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "baseline_changed"
+      }
+    },
+    {
+      "name": "claim-real-engineering",
+      "class": "不适用",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "baseline": {
+          "id": "BASE-01",
+          "function": "研究参考与作用的关系",
+          "edges": [
+            [
+              "structure",
+              "reference",
+              "supports"
+            ],
+            [
+              "structure",
+              "actuator",
+              "supports"
+            ],
+            [
+              "reference",
+              "actuator",
+              "reference_signal"
+            ]
+          ]
+        },
+        "variants": [
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "OWN-H1",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": true
+          },
+          {
+            "id": "V-DISTRIBUTE",
+            "hint_id": "OWN-H2",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ],
+              [
+                "actuator",
+                "contactA",
+                "acts_on"
+              ],
+              [
+                "actuator",
+                "contactB",
+                "acts_on"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": null,
+        "physical_results": []
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "unsupported_hard_pass_or_validation"
+      }
+    },
+    {
+      "name": "cosmetic-not-new-mechanism",
+      "class": "边界",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "baseline": {
+          "id": "BASE-01",
+          "function": "研究参考与作用的关系",
+          "edges": [
+            [
+              "structure",
+              "reference",
+              "supports"
+            ],
+            [
+              "structure",
+              "actuator",
+              "supports"
+            ],
+            [
+              "reference",
+              "actuator",
+              "reference_signal"
+            ]
+          ]
+        },
+        "variants": [
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": null,
+        "physical_results": []
+      },
+      "expected": "accepted",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "trace": [
+          {
+            "variant": "V-COSMETIC",
+            "hint": "OWN-H3",
+            "delta": {
+              "added": [],
+              "removed": []
+            },
+            "state": "no_mechanism_change_in_declared_graph",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          }
+        ],
+        "changed_graphs": 0,
+        "engineering_candidates": [],
+        "scope": "graph difference under authored labels, not physical causality, creativity quality or product novelty"
+      }
+    },
+    {
+      "name": "explicit-hard-fail",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "baseline": {
+          "id": "BASE-01",
+          "function": "研究参考与作用的关系",
+          "edges": [
+            [
+              "structure",
+              "reference",
+              "supports"
+            ],
+            [
+              "structure",
+              "actuator",
+              "supports"
+            ],
+            [
+              "reference",
+              "actuator",
+              "reference_signal"
+            ]
+          ]
+        },
+        "variants": [
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "OWN-H1",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "fail",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-DISTRIBUTE",
+            "hint_id": "OWN-H2",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ],
+              [
+                "actuator",
+                "contactA",
+                "acts_on"
+              ],
+              [
+                "actuator",
+                "contactB",
+                "acts_on"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": null,
+        "physical_results": []
+      },
+      "expected": "accepted",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "trace": [
+          {
+            "variant": "V-SEPARATE",
+            "hint": "OWN-H1",
+            "delta": {
+              "added": [
+                [
+                  "module",
+                  "reference",
+                  "supports"
+                ],
+                [
+                  "structure",
+                  "module",
+                  "supports"
+                ]
+              ],
+              "removed": [
+                [
+                  "structure",
+                  "reference",
+                  "supports"
+                ]
+              ]
+            },
+            "state": "excluded_by_declared_teaching_hard_fail",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          },
+          {
+            "variant": "V-DISTRIBUTE",
+            "hint": "OWN-H2",
+            "delta": {
+              "added": [
+                [
+                  "actuator",
+                  "contactA",
+                  "acts_on"
+                ],
+                [
+                  "actuator",
+                  "contactB",
+                  "acts_on"
+                ]
+              ],
+              "removed": []
+            },
+            "state": "mechanism_graph_changed_research_only",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          },
+          {
+            "variant": "V-COSMETIC",
+            "hint": "OWN-H3",
+            "delta": {
+              "added": [],
+              "removed": []
+            },
+            "state": "no_mechanism_change_in_declared_graph",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          }
+        ],
+        "changed_graphs": 2,
+        "engineering_candidates": [],
+        "scope": "graph difference under authored labels, not physical causality, creativity quality or product novelty"
+      }
+    },
+    {
+      "name": "unregistered-hint",
+      "class": "缺材料",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "baseline": {
+          "id": "BASE-01",
+          "function": "研究参考与作用的关系",
+          "edges": [
+            [
+              "structure",
+              "reference",
+              "supports"
+            ],
+            [
+              "structure",
+              "actuator",
+              "supports"
+            ],
+            [
+              "reference",
+              "actuator",
+              "reference_signal"
+            ]
+          ]
+        },
+        "variants": [
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "official-card-999",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-DISTRIBUTE",
+            "hint_id": "OWN-H2",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ],
+              [
+                "actuator",
+                "contactA",
+                "acts_on"
+              ],
+              [
+                "actuator",
+                "contactB",
+                "acts_on"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": null,
+        "physical_results": []
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "variant_lineage_not_closed"
+      }
+    },
+    {
+      "name": "wrong-parent",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "baseline": {
+          "id": "BASE-01",
+          "function": "研究参考与作用的关系",
+          "edges": [
+            [
+              "structure",
+              "reference",
+              "supports"
+            ],
+            [
+              "structure",
+              "actuator",
+              "supports"
+            ],
+            [
+              "reference",
+              "actuator",
+              "reference_signal"
+            ]
+          ]
+        },
+        "variants": [
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "OWN-H1",
+            "parent": "OTHER",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-DISTRIBUTE",
+            "hint_id": "OWN-H2",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ],
+              [
+                "actuator",
+                "contactA",
+                "acts_on"
+              ],
+              [
+                "actuator",
+                "contactB",
+                "acts_on"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": null,
+        "physical_results": []
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "variant_lineage_not_closed"
+      }
+    },
+    {
+      "name": "duplicate-variant",
+      "class": "边界",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "baseline": {
+          "id": "BASE-01",
+          "function": "研究参考与作用的关系",
+          "edges": [
+            [
+              "structure",
+              "reference",
+              "supports"
+            ],
+            [
+              "structure",
+              "actuator",
+              "supports"
+            ],
+            [
+              "reference",
+              "actuator",
+              "reference_signal"
+            ]
+          ]
+        },
+        "variants": [
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "OWN-H1",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-DISTRIBUTE",
+            "hint_id": "OWN-H2",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ],
+              [
+                "actuator",
+                "contactA",
+                "acts_on"
+              ],
+              [
+                "actuator",
+                "contactB",
+                "acts_on"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "OWN-H1",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": null,
+        "physical_results": []
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "duplicate_variant_id"
+      }
+    },
+    {
+      "name": "unknown-not-pass",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "baseline": {
+          "id": "BASE-01",
+          "function": "研究参考与作用的关系",
+          "edges": [
+            [
+              "structure",
+              "reference",
+              "supports"
+            ],
+            [
+              "structure",
+              "actuator",
+              "supports"
+            ],
+            [
+              "reference",
+              "actuator",
+              "reference_signal"
+            ]
+          ]
+        },
+        "variants": [
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "OWN-H1",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "pass",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-DISTRIBUTE",
+            "hint_id": "OWN-H2",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ],
+              [
+                "actuator",
+                "contactA",
+                "acts_on"
+              ],
+              [
+                "actuator",
+                "contactB",
+                "acts_on"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": null,
+        "physical_results": []
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "unsupported_hard_pass_or_validation"
+      }
+    },
+    {
+      "name": "no-ranking",
+      "class": "不适用",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "origin": "authored_teaching_graphs",
+        "baseline": {
+          "id": "BASE-01",
+          "function": "研究参考与作用的关系",
+          "edges": [
+            [
+              "structure",
+              "reference",
+              "supports"
+            ],
+            [
+              "structure",
+              "actuator",
+              "supports"
+            ],
+            [
+              "reference",
+              "actuator",
+              "reference_signal"
+            ]
+          ]
+        },
+        "variants": [
+          {
+            "id": "V-SEPARATE",
+            "hint_id": "OWN-H1",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "module",
+                "supports"
+              ],
+              [
+                "module",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-DISTRIBUTE",
+            "hint_id": "OWN-H2",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ],
+              [
+                "actuator",
+                "contactA",
+                "acts_on"
+              ],
+              [
+                "actuator",
+                "contactB",
+                "acts_on"
+              ]
+            ],
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          },
+          {
+            "id": "V-COSMETIC",
+            "hint_id": "OWN-H3",
+            "parent": "BASE-01",
+            "edges": [
+              [
+                "structure",
+                "reference",
+                "supports"
+              ],
+              [
+                "structure",
+                "actuator",
+                "supports"
+              ],
+              [
+                "reference",
+                "actuator",
+                "reference_signal"
+              ]
+            ],
+            "appearance": "different_color",
+            "declared_hard_state": "unknown",
+            "engineering_validated": false
+          }
+        ],
+        "hint_catalog": {
+          "OWN-H1": "分离可替换的参考模块：平台自写操作提示，不是官方卡号",
+          "OWN-H2": "把单一作用点展开为分布接触：平台自写提示",
+          "OWN-H3": "只改变外观标识：作为机制不变反例"
+        },
+        "engineering_recommendation": "V-SEPARATE",
+        "physical_results": []
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "engineering_result_invented"
+      }
+    }
+  ],
+  "passed": 10,
+  "field_trials": 0,
+  "official_card_library_reproduced": false
+}

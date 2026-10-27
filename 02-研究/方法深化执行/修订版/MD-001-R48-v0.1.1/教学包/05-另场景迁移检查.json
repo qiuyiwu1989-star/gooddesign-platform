@@ -1,0 +1,26 @@
+{
+  "scenario_id": "DOC-HANDOFF-TEACH-001",
+  "scope": "constructed_desktop_transfer",
+  "prompt": "让资料交接更可靠",
+  "classification": [
+    {
+      "text": "更可靠",
+      "kind": "vague_desired_outcome",
+      "not_a_baselined_requirement": true
+    },
+    {
+      "text": "必须用某品牌数据库",
+      "kind": "unjustified_solution_constraint",
+      "disposition": "ask rationale; do not treat as user need"
+    },
+    {
+      "text": "交接时能核对资料版本",
+      "kind": "proposed_result_need",
+      "target": null,
+      "customer_approved": false
+    }
+  ],
+  "transfer_result": "可沿用来源→愿望/约束/要求候选→未知→验证问题的分层，但不得迁用割胶指标或工况",
+  "real_user_research": false,
+  "package_version": "0.1.1"
+}

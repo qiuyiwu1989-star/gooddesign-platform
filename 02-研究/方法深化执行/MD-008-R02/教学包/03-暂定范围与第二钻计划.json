@@ -1,0 +1,56 @@
+{
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "upstream_method_status": "first_batch_pending_revision_context_only"
+  },
+  "provisional_problem_version": "DD-DRAFT-0.1",
+  "statement": "先辨别完整作业各阶段负担及恢复需要，再决定是否改变驱动、恢复或服务。",
+  "source_of_change": "constructed arithmetic insight only",
+  "paths": [
+    {
+      "id": "PATH-SPEED",
+      "response_to": [
+        "N-T01"
+      ],
+      "uncovered": [
+        "N-T02",
+        "N-T03",
+        "N-T04"
+      ],
+      "status": "research_path",
+      "why_not_selected_as_solution": "No evidence that increased speed resolves recovery or is safe."
+    },
+    {
+      "id": "PATH-RECOVER",
+      "response_to": [
+        "N-T02",
+        "N-T03"
+      ],
+      "uncovered": [
+        "N-T01",
+        "N-T04"
+      ],
+      "status": "research_path",
+      "why_not_selected_as_solution": "Recovery sequence and states remain undefined."
+    },
+    {
+      "id": "PATH-SERVICE",
+      "response_to": [
+        "N-T04"
+      ],
+      "uncovered": [
+        "N-T01",
+        "N-T02",
+        "N-T03"
+      ],
+      "status": "research_path",
+      "why_not_selected_as_solution": "No observed full-shift service process."
+    }
+  ],
+  "delivery_plan": "设计实际记录各阶段与异常的低风险研究；真实材料到位后重新定义并比较",
+  "actual_user_tests": 0,
+  "observations": [],
+  "final_solution": null
+}

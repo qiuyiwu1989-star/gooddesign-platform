@@ -1,0 +1,35 @@
+{
+  "schema": "kano-table-fixture-0.1.0",
+  "mode": "constructed_answer_pairs_only",
+  "source_binding": {
+    "problem_id": "DOC-KANO-TEACH-001",
+    "version": "0.1.0",
+    "sha256": "5b26a4d9ed922dd5ccb81c347c613ad9768de5d2aaa579529f673f089e14959e",
+    "review_state": "constructed_not_expert_approved"
+  },
+  "matrix_version": "JSSD2014-table2-transcription-v1",
+  "matrix_sha256": "d40cd593b4a82e90ccb65a33a7d2bdb964284dc254cacb2dc406fa688b70be0d",
+  "orientation": {
+    "rows": "functional/presence",
+    "columns": "dysfunctional/absence"
+  },
+  "single_feature": true,
+  "comprehension_scope": "declared_for_test_not_actual_pretest",
+  "safety_override_requested": false,
+  "pairs": [
+    {
+      "id": "DOC-P1",
+      "functional": "like",
+      "dysfunctional": "neutral",
+      "segment": "document_case",
+      "provenance": "synthetic_rule_coverage"
+    },
+    {
+      "id": "DOC-P2",
+      "functional": "dislike",
+      "dysfunctional": "like",
+      "segment": "document_case",
+      "provenance": "synthetic_rule_coverage"
+    }
+  ]
+}

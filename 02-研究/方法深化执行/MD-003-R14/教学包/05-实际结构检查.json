@@ -1,0 +1,135 @@
+{
+  "checker_sha256": "af091a42eafb0ea024945fa08532312b887534083a0980999bbe7ec15cc5bef6",
+  "scope": "actual local checks of declared structure, not semantic or physical validation",
+  "cases": [
+    {
+      "id": "normal-reference-consistency",
+      "category": "normal",
+      "input": "教学包/检查输入/normal-reference-consistency.json",
+      "input_sha256": "540f264402747654b04a3a26bfa5072090621ee19b1bef74e820bb635454c541",
+      "expected": "accepted",
+      "actual": "accepted",
+      "passed": true,
+      "output": {
+        "status": "accepted_for_research_only",
+        "function_count": 6,
+        "interface_count": 12,
+        "unknown_count": 5,
+        "global_engineering_coverage": false,
+        "semantic_sufficiency": "not_automatically_checked",
+        "approval": false
+      }
+    },
+    {
+      "id": "missing-recovery",
+      "category": "missing_material",
+      "input": "教学包/检查输入/missing-recovery.json",
+      "input_sha256": "4e420bbd6a3737a6da43c5605124faf79421e38a8cdfa1e10522b86735c97c74",
+      "expected": "missing_recovery_scenario",
+      "actual": "missing_recovery_scenario",
+      "passed": true,
+      "output": {
+        "status": "rejected",
+        "reason": "missing_recovery_scenario"
+      }
+    },
+    {
+      "id": "unsupported-engineering-mode",
+      "category": "not_applicable",
+      "input": "教学包/检查输入/unsupported-engineering-mode.json",
+      "input_sha256": "ad070bf218d75115e18ef8ab99cfbbc102685c8e65e9bc2d153bd5a39a380c7f",
+      "expected": "unsupported_execution_scope",
+      "actual": "unsupported_execution_scope",
+      "passed": true,
+      "output": {
+        "status": "rejected",
+        "reason": "unsupported_execution_scope"
+      }
+    },
+    {
+      "id": "component-instead-of-function",
+      "category": "boundary",
+      "input": "教学包/检查输入/component-instead-of-function.json",
+      "input_sha256": "74dec8448cc7de3b3cc4755d4399c77ae3f4891342bab10b8ecf2e489519ede5",
+      "expected": "component_wording_requires_review",
+      "actual": "component_wording_requires_review",
+      "passed": true,
+      "output": {
+        "status": "rejected",
+        "reason": "component_wording_requires_review"
+      }
+    },
+    {
+      "id": "declared-units-conflict",
+      "category": "conflict",
+      "input": "教学包/检查输入/declared-units-conflict.json",
+      "input_sha256": "bfa965d32e67f731d90d5982f4cfb6973bb12dc941f4d9b681b987d4c5dce15c",
+      "expected": "declared_unit_conflict",
+      "actual": "declared_unit_conflict",
+      "passed": true,
+      "output": {
+        "status": "rejected",
+        "reason": "declared_unit_conflict"
+      }
+    },
+    {
+      "id": "unknown-zero-injection",
+      "category": "boundary",
+      "input": "教学包/检查输入/unknown-zero-injection.json",
+      "input_sha256": "3a10ee325b55ad9931b4b50d6413f59762b062d5515b6a2c38eb028733e3845c",
+      "expected": "unknown_filled",
+      "actual": "unknown_filled",
+      "passed": true,
+      "output": {
+        "status": "rejected",
+        "reason": "unknown_filled"
+      }
+    },
+    {
+      "id": "missing-physical-boundary",
+      "category": "missing_material",
+      "input": "教学包/检查输入/missing-physical-boundary.json",
+      "input_sha256": "8783d0929a666fe63f72285c6bb36c6346fad6c6294fbbff1886345512514172",
+      "expected": "dangling_interface_endpoint",
+      "actual": "dangling_interface_endpoint",
+      "passed": true,
+      "output": {
+        "status": "rejected",
+        "reason": "dangling_interface_endpoint"
+      }
+    },
+    {
+      "id": "upstream-problem-mismatch",
+      "category": "conflict",
+      "input": "教学包/检查输入/upstream-problem-mismatch.json",
+      "input_sha256": "1ab255d962f0fb162f695ffbb62f772e9549bc250e55c1dec83c6388625ab1e6",
+      "expected": "upstream_problem_mismatch",
+      "actual": "upstream_problem_mismatch",
+      "passed": true,
+      "output": {
+        "status": "rejected",
+        "reason": "upstream_problem_mismatch"
+      }
+    },
+    {
+      "id": "cross-context-document",
+      "category": "transfer",
+      "input": "教学包/检查输入/cross-context-document.json",
+      "input_sha256": "710d2e1a93e15804f415018e8dfaa64d70a29ca8032ea2e33e081ea9dfed5ca0",
+      "expected": "accepted",
+      "actual": "accepted",
+      "passed": true,
+      "output": {
+        "status": "accepted_for_research_only",
+        "function_count": 2,
+        "interface_count": 3,
+        "unknown_count": 1,
+        "global_engineering_coverage": false,
+        "semantic_sufficiency": "not_automatically_checked",
+        "approval": false
+      }
+    }
+  ],
+  "passed": 9,
+  "engineering_validated": false
+}

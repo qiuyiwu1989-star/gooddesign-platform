@@ -1,0 +1,29 @@
+{
+  "conflict_model": {
+    "action": "increase contact load",
+    "useful": "resist relative slip",
+    "harmful": "release burden may increase"
+  },
+  "physical_contradiction": {
+    "same_element": "contact element",
+    "property": "normal load",
+    "state_A": "high",
+    "condition_A": "work stage",
+    "state_B": "low",
+    "condition_B": "release stage",
+    "status": "hypothesis_not_proven"
+  },
+  "resource_unknowns": [
+    "actuator state",
+    "workpiece surface information"
+  ],
+  "proposed_direction": "separate holding and release conditions; investigate actuator feasibility",
+  "status": "unsolved",
+  "completed_full_ARIZ": false,
+  "engineering_pass": false,
+  "limitations": [
+    "no full nine-part execution",
+    "no standard-solution lookup claimed",
+    "no real holding or release experiment"
+  ]
+}

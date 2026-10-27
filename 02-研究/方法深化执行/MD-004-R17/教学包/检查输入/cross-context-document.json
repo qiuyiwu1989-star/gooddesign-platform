@@ -1,0 +1,282 @@
+{
+  "schema_version": "R17-teaching-input-0.2.2",
+  "case_id": "DOC-TEACH-001-MORPH",
+  "mode": "teaching_assumptions_not_engineering",
+  "scope": {
+    "object": "教学记录与归档协议",
+    "goal": "比较相同介质内的交接",
+    "hard_constraints": [
+      "协议禁止隐含打印/扫描/格式转换"
+    ],
+    "not_claimed": [
+      "现实中无法转换",
+      "可读性已验证",
+      "生产接口可用"
+    ]
+  },
+  "requirements": [
+    {
+      "id": "FD1",
+      "statement": "形成记录",
+      "kind": "functional",
+      "state": "teaching_assumption",
+      "mandatory": true,
+      "evidence_refs": [
+        "A-DOC"
+      ]
+    },
+    {
+      "id": "FD2",
+      "statement": "归档记录",
+      "kind": "functional",
+      "state": "teaching_assumption",
+      "mandatory": true,
+      "evidence_refs": [
+        "A-DOC"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "C-DOC",
+      "name": "实际可读性与保存能力",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-DOC"
+      ],
+      "unknown_reason": "未研究真实任务与接口"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "DD1",
+      "function": "形成记录",
+      "requirement_refs": [
+        "FD1"
+      ],
+      "option_ids": [
+        "PAPER",
+        "DIGITAL"
+      ]
+    },
+    {
+      "id": "DD2",
+      "function": "归档记录",
+      "requirement_refs": [
+        "FD2"
+      ],
+      "option_ids": [
+        "PAPER-S",
+        "DIGITAL-S"
+      ]
+    }
+  ],
+  "options": [
+    {
+      "id": "PAPER",
+      "dimension_id": "DD1",
+      "label": "PAPER",
+      "mechanism": "协议声明的paper处理",
+      "provides": [
+        "paper"
+      ],
+      "requires": [
+        "paper"
+      ],
+      "interfaces": [
+        "paper"
+      ],
+      "evidence_refs": [
+        "A-DOC"
+      ]
+    },
+    {
+      "id": "DIGITAL",
+      "dimension_id": "DD1",
+      "label": "DIGITAL",
+      "mechanism": "协议声明的digital处理",
+      "provides": [
+        "digital"
+      ],
+      "requires": [
+        "digital"
+      ],
+      "interfaces": [
+        "digital"
+      ],
+      "evidence_refs": [
+        "A-DOC"
+      ]
+    },
+    {
+      "id": "PAPER-S",
+      "dimension_id": "DD2",
+      "label": "PAPER-S",
+      "mechanism": "协议声明的paper处理",
+      "provides": [
+        "paper"
+      ],
+      "requires": [
+        "paper"
+      ],
+      "interfaces": [
+        "paper"
+      ],
+      "evidence_refs": [
+        "A-DOC"
+      ]
+    },
+    {
+      "id": "DIGITAL-S",
+      "dimension_id": "DD2",
+      "label": "DIGITAL-S",
+      "mechanism": "协议声明的digital处理",
+      "provides": [
+        "digital"
+      ],
+      "requires": [
+        "digital"
+      ],
+      "interfaces": [
+        "digital"
+      ],
+      "evidence_refs": [
+        "A-DOC"
+      ]
+    }
+  ],
+  "pair_judgments": [
+    {
+      "id": "P-DOC0",
+      "option_ids": [
+        "PAPER",
+        "PAPER-S"
+      ],
+      "state": "compatible_within_model",
+      "basis": "logical",
+      "reason": "仅协议介质一致",
+      "evidence_refs": [
+        "A-DOC"
+      ],
+      "condition_refs": [],
+      "verification_question": "如加入转换应建立新协议版本"
+    },
+    {
+      "id": "P-DOC1",
+      "option_ids": [
+        "PAPER",
+        "DIGITAL-S"
+      ],
+      "state": "incompatible",
+      "basis": "logical",
+      "reason": "本协议没有转换支路",
+      "evidence_refs": [
+        "A-DOC"
+      ],
+      "condition_refs": [],
+      "verification_question": "如加入转换应建立新协议版本"
+    },
+    {
+      "id": "P-DOC2",
+      "option_ids": [
+        "DIGITAL",
+        "PAPER-S"
+      ],
+      "state": "incompatible",
+      "basis": "logical",
+      "reason": "本协议没有转换支路",
+      "evidence_refs": [
+        "A-DOC"
+      ],
+      "condition_refs": [],
+      "verification_question": "如加入转换应建立新协议版本"
+    },
+    {
+      "id": "P-DOC3",
+      "option_ids": [
+        "DIGITAL",
+        "DIGITAL-S"
+      ],
+      "state": "compatible_within_model",
+      "basis": "logical",
+      "reason": "仅协议介质一致",
+      "evidence_refs": [
+        "A-DOC"
+      ],
+      "condition_refs": [],
+      "verification_question": "如加入转换应建立新协议版本"
+    }
+  ],
+  "whole_judgments": [
+    {
+      "id": "W-DOC0",
+      "option_ids": [
+        "PAPER",
+        "PAPER-S"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "介质一致不证明可读性及真实流程有效",
+      "evidence_refs": [
+        "A-DOC"
+      ],
+      "condition_refs": [
+        "C-DOC"
+      ],
+      "verification_question": "观察实际输入输出与读取任务"
+    },
+    {
+      "id": "W-DOC3",
+      "option_ids": [
+        "DIGITAL",
+        "DIGITAL-S"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "介质一致不证明可读性及真实流程有效",
+      "evidence_refs": [
+        "A-DOC"
+      ],
+      "condition_refs": [
+        "C-DOC"
+      ],
+      "verification_question": "观察实际输入输出与读取任务"
+    }
+  ],
+  "evidence_registry": [
+    {
+      "id": "A-DOC",
+      "kind": "teaching_assumption",
+      "description": "人为约定本练习不做格式转换",
+      "locator": "scope"
+    }
+  ],
+  "selection_policy": {
+    "decision": "comparison_only_not_unique_optimum",
+    "criteria": [
+      "仅固定展示基线"
+    ],
+    "selected_option_ids": [
+      "PAPER",
+      "PAPER-S"
+    ],
+    "reason": "不声称更好"
+  },
+  "validation_plan": [
+    {
+      "id": "V-DOC",
+      "question": "记录能否实际读回？",
+      "method": "另做真实任务观察；未执行",
+      "conditions_to_fix": [
+        "任务与接口"
+      ],
+      "acceptance_basis": "需实际任务定义",
+      "status": "not_executed",
+      "condition_refs": [
+        "C-DOC"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "status": "accepted_with_bounded_state",
+  "output": {
+    "method": "R16",
+    "state": "competing_explanations_unconfirmed",
+    "hypotheses": [
+      {
+        "id": "HRCA1",
+        "claim": "实际保持作用不足",
+        "support": [
+          "ER3"
+        ],
+        "counterevidence": [
+          "ER5"
+        ],
+        "unknowns": [
+          "实际接触状态和力记录",
+          "材料与载荷"
+        ],
+        "status": "unconfirmed"
+      },
+      {
+        "id": "HRCA2",
+        "claim": "请求指示可能被解释为实际夹紧",
+        "support": [
+          "ER1",
+          "ER2",
+          "ER4"
+        ],
+        "counterevidence": [],
+        "unknowns": [
+          "当时决策过程与其他信息",
+          "是否直接影响本次动作"
+        ],
+        "status": "unconfirmed"
+      },
+      {
+        "id": "HRCA3",
+        "claim": "对象状态变化可能影响保持",
+        "support": [],
+        "counterevidence": [],
+        "unknowns": [
+          "对象几何/材料变化",
+          "是否与以往工况相同"
+        ],
+        "status": "unconfirmed"
+      }
+    ],
+    "confirmed_root_causes": [],
+    "immediate_vs_underlying": "偏移现象、实际作用与组织/信息条件分开；本例未确认因果链",
+    "action_queue": [
+      {
+        "id": "AR1",
+        "hypotheses": [
+          "HRCA1"
+        ],
+        "proposal": "取得实际接触/保持与工况记录后再决定设计措施",
+        "owner_role": "待指定技术研究角色",
+        "completed": false
+      },
+      {
+        "id": "AR2",
+        "hypotheses": [
+          "HRCA2"
+        ],
+        "proposal": "区分请求与实际状态，并研究使用者是否理解",
+        "owner_role": "待指定界面/人因研究角色",
+        "completed": false
+      },
+      {
+        "id": "AR3",
+        "hypotheses": [
+          "HRCA3"
+        ],
+        "proposal": "核对象和工况变化及竞争解释",
+        "owner_role": "待指定现场研究角色",
+        "completed": false
+      }
+    ],
+    "follow_up": {
+      "event_rate_for_declared_exposure": null,
+      "sufficient_for_effectiveness_claim": false,
+      "reason": "no_comparable_exposure"
+    },
+    "requires": [
+      "事件原始记录与条件",
+      "支持和反证的区分性观察",
+      "措施实际实施证据",
+      "同类暴露与复查记录"
+    ],
+    "not_claimed": [
+      "真实事故根因",
+      "操作员过失",
+      "措施已有效"
+    ]
+  }
+}

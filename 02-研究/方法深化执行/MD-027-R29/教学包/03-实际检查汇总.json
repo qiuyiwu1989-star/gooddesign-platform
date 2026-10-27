@@ -1,0 +1,55 @@
+{
+  "executed_cases": 7,
+  "passed": 7,
+  "rows": [
+    {
+      "name": "fixed_positive",
+      "expected": "accept",
+      "actual": "accept",
+      "pass": true
+    },
+    {
+      "name": "unit_changed",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "source_observation_or_comparability_changed",
+      "pass": true
+    },
+    {
+      "name": "condition_changed",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "source_observation_or_comparability_changed",
+      "pass": true
+    },
+    {
+      "name": "invent_maturity",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "unsupported_prediction",
+      "pass": true
+    },
+    {
+      "name": "inevitable_future",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "unsupported_prediction",
+      "pass": true
+    },
+    {
+      "name": "omit_counterevidence",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "counterevidence_omitted",
+      "pass": true
+    },
+    {
+      "name": "invent_customer_target",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "unsupported_prediction",
+      "pass": true
+    }
+  ],
+  "qualification": "fixed fixture structure/arithmetic checks, not general semantic or engineering validation"
+}
