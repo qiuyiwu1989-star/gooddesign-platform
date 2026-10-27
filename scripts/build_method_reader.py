@@ -21,7 +21,9 @@ def paras(s):return ''.join('<p>'+E(p)+'</p>' for p in str(s).split('\n') if p.s
 from method_reader_markdown import document
 
 def page(title,body):
-    return '<!doctype html><html lang="zh-CN" data-theme="light" data-zw-mode="product"><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+E(title)+' · 好设计</title><link rel="stylesheet" href="/vendor/tokens.css"><link rel="stylesheet" href="/vendor/design-system.css"><link rel="stylesheet" href="/library/reader.css"><a class="skip" href="#main">跳到正文</a><header><a href="/">好设计 <span>／ 创新工作台</span></a><a href="/library/index.html">方法库</a><a href="/library/integration.html">引擎与MCP</a><a href="/library/contributing.html">方法写入规范</a></header>'+body+'<footer>好设计 · 方法研究与平台适配，未经独立专家审核及工程验证。</footer><script src="/library/reader.js"></script></html>'
+    from inno_site_chrome import navigation,footer
+    return '<!doctype html><html lang="zh-CN" data-theme="light" data-zw-mode="product"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+E(title)+' · 好设计</title><link rel="stylesheet" href="/vendor/tokens.css"><link rel="stylesheet" href="/vendor/design-system.css"><link rel="stylesheet" href="/inno/portal/portal.css"><link rel="stylesheet" href="/inno/portal/system.css"><link rel="stylesheet" href="/library/reader.css"></head><body class="inno-method-site">'+navigation('methods','main')+body+footer()+'<script src="/library/reader.js"></script></body></html>'
+
 def block(title,text):return '<section><h2>'+E(title)+'</h2>'+paras(text)+'</section>'
 def code(text):return '<div class="code"><button class="zw-btn copy" type="button">复制</button><pre tabindex="0"><code>'+E(text)+'</code></pre><span role="status" aria-live="polite"></span></div>'
 

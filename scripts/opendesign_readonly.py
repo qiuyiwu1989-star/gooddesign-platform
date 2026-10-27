@@ -54,6 +54,8 @@ class Handler(app.Handler):
                     import project_portal
                     body=re.sub(r'<header class="workspace-header">.*?</header>',lambda m:project_portal.navigation(),body,count=1,flags=re.S)
                     body=body.replace('</head>','<link rel="stylesheet" href="/inno/portal/portal.css"><link rel="stylesheet" href="/inno/portal/system.css"></head>',1)
+                    if '<footer class="pp-footer">' not in body:
+                        body=body.replace('</body>',project_portal.footer()+'</body>',1) if '</body>' in body else body.replace('</html>',project_portal.footer()+'</html>',1)
                 if ctype.startswith('text/html'):
                     body=body.replace('● 本地私有','● 登录可见 · 只读')
         if isinstance(body,dict) and body.get('service')=='gooddesign-archive-pipeline':body.update(cloud_read_only=True,watcher_running=False)

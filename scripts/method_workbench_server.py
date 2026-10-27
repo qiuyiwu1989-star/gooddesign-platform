@@ -172,7 +172,14 @@ def make_server(port=8786, db_path=DEFAULT_DB):
             if not self.trusted():
                 return self.send(403, {'error': '仅允许本机同源访问'})
             path = unquote(urlsplit(self.path).path)
+            if path.startswith('/inno/methods/'):
+                path='/library/'+(path[len('/inno/methods/'):] or 'index.html')
             try:
+                if path in ('/inno/portal/portal.css','/inno/portal/system.css'):
+                    asset=ROOT/('extensions/project-portal/portal.css' if path.endswith('/portal.css') else 'extensions/inno/system.css')
+                    return self.send(200,asset.read_bytes(),'text/css; charset=utf-8')
+                if path in ('/inno/','/inno/projects/','/inno/report/','/inno/mcp/','/inno/admin/','/inno/about/'):
+                    self.send_response(302);self.send_header('Location','https://opendesign.cc'+path);self.end_headers();return
                 if path == '/api/session':
                     return self.send(200, {'csrf': token, 'mode': 'local_single_user', 'model_connected': None, 'model_execution_available': (ROOT / '.runtime/pipeline/bin/python').is_file(), 'model_connection_status': 'checked_on_explicit_generation_not_preverified'})
                 if path == '/api/methods':

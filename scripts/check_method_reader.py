@@ -41,6 +41,7 @@ class Checks(unittest.TestCase):
             for href in parser.links:
                 u=urlsplit(urljoin(self.base+path,href))
                 if u.netloc!=urlsplit(self.base).netloc:continue
+                if u.path in {'/inno/','/inno/projects/','/inno/report/','/inno/mcp/','/inno/admin/','/inno/about/'}:continue
                 data=self.get(unquote(u.path))
                 if u.fragment:
                     target=Links();target.feed(data.decode());self.assertIn(unquote(u.fragment),target.ids,(path,href))

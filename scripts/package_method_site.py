@@ -30,6 +30,7 @@ class Links(HTMLParser):
   if not v or v.startswith(('http:','https:','data:','mailto:')):return
   resolved=unquote(urlsplit(urljoin('https://opendesign.cc/inno/methods/'+str(self.file.relative_to(OUT)),v)).path)
   if resolved=='/inno/projects/':return
+  if resolved in {'/inno/','/inno/projects/','/inno/report/','/inno/mcp/','/inno/admin/','/inno/about/','/inno/portal/portal.css','/inno/portal/system.css'}:return
   if not resolved.startswith('/inno/methods/'):raise ValueError(resolved)
   f=OUT/resolved[len('/inno/methods/'):];f=f/'index.html' if f.is_dir() else f
   if not f.is_file():raise ValueError(str(self.file)+' missing '+resolved)
