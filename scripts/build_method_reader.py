@@ -29,7 +29,7 @@ def code(text):return '<div class="code"><button class="zw-btn copy" type="butto
 
 def detail(d,records):
     rid=d['research_id'];sec=d['sections']
-    body=f'<main id="main" class="reader"><a href="../index.html">← 全部方法</a><div class="hero cat-{d["category"][0]}"><img class="method-icon" src="../icons/{rid}.svg" alt=""><p class="eyebrow">{E(d["category"])}</p><h1>{E(d["name"])}</h1><p class="english">{E(d["english_name"])}</p><p class="lead">{E(d["summary"])}</p><p class="boundary">研究稿 · {"闻邦椿谱系专题" if rid.startswith("WB") else "创新方法"} · 尚未独立专家审核或工程验证</p></div>'
+    body=f'<main id="main" class="reader"><a href="../index.html">← 全部方法</a><div class="hero cat-{d["category"][0]}"><img class="method-icon" src="../icons/{rid}.svg" alt=""><p class="eyebrow">{E(d["category"][1:])}</p><h1>{E(d["name"])}</h1><p class="english">{E(d["english_name"])}</p><p class="lead">{E(d["summary"])}</p><p class="boundary">研究稿 · {"闻邦椿谱系专题" if rid.startswith("WB") else "创新方法"} · 尚未独立专家审核或工程验证</p></div>'
     if d.get('source_readiness')=='limited_excerpt_only':body+='<p class="decision"><b>原典补证中：</b>当前仅有作者目录及论文检索摘录，直接全文访问失败；请按有限核读研究稿使用。</p>'
     if d.get('integration_rationale'):body+='<div class="decision"><b>本轮增补 · 为什么加入</b>'+paras(d['integration_rationale'])+'<p>内容可读，尚无执行契约。</p></div>'
     if rid=='R35':
@@ -69,10 +69,10 @@ def build():
     records={m['research_id']:read(m['research_id']) for m in catalog()['methods']}
     for rid,d in records.items():
         (OUT/'icons'/f'{rid}.svg').write_text(icon(d));(OUT/'methods'/f'{rid}.html').write_text(detail(d,records))
-    body='<main id="main" class="overview"><p class="eyebrow">好设计 · 方法库</p><h1>为真实问题，找到合适的方法</h1><p class="lead">从理解需求、构思原理到验证方案，探索52份方法档案与12份闻邦椿谱系专题，其中4份为本轮增补研究稿。</p><div class="actions"><a href="integration.html">引擎与MCP接入</a><a href="contributing.html">方法写入规范</a></div><label for="method-search">搜索方法</label><input id="method-search" type="search" placeholder="输入问题、方法名称或关键词"><nav class="categories" aria-label="方法分类"><button class="zw-btn" data-category="" aria-pressed="true">全部</button>'+''.join(f'<button class="zw-btn" data-category="{k}" aria-pressed="false"><b>{k}</b> {E(v)}</button>' for k,v in sorted(CATS.items()))+'</nav><p id="search-status" role="status"></p><div class="cards">'
+    body='<main id="main" class="overview"><p class="eyebrow">好设计 · 方法库</p><h1>为真实问题，找到合适的方法</h1><p class="lead">从理解需求、构思原理到验证方案，探索52份方法档案与12份闻邦椿谱系专题，其中4份为本轮增补研究稿。</p><div class="actions"><a href="integration.html">引擎与MCP接入</a><a href="contributing.html">方法写入规范</a></div><label for="method-search">搜索方法</label><input id="method-search" type="search" placeholder="输入问题、方法名称或关键词"><nav class="categories" aria-label="方法分类"><button class="zw-btn" data-category="" aria-pressed="true">全部</button>'+''.join(f'<button class="zw-btn" data-category="{k}" aria-pressed="false">{E(v)}</button>' for k,v in sorted(CATS.items()))+'</nav><p id="search-status" role="status"></p><div class="cards">'
     for rid,d in records.items():
         search=' '.join([rid,d['method_id'],d['name'],d['english_name'],d['summary']]+d.get('search_terms',[])+d.get('aliases',[])).lower()
-        body+=f'<a class="method-card cat-{d["category"][0]}" data-cat="{d["category"][0]}" data-search="{E(search)}" href="methods/{rid}.html"><img src="icons/{rid}.svg" alt=""><span class="category-badge" role="img" aria-label="{E(d["category"])}" title="{E(d["category"])}">{E(d["category"][0])}</span><h2>{E(d["name"])}</h2><p>{E(d["summary"])}</p><span>{"谱系专题" if rid.startswith("WB") else "方法"} · 阅读 →</span></a>'
+        body+=f'<a class="method-card cat-{d["category"][0]}" data-cat="{d["category"][0]}" data-search="{E(search)}" href="methods/{rid}.html"><img src="icons/{rid}.svg" alt=""><h2>{E(d["name"])}</h2><p>{E(d["summary"])}</p><span>{"谱系专题" if rid.startswith("WB") else "方法"} · 阅读 →</span></a>'
     (OUT/'index.html').write_text(page('方法库',body+'</div><p id="empty" hidden>没有找到匹配方法，可以换个关键词或选择其他分类。</p></main>'))
     integration(records)
     print('Built',len(records),'readers and icons')
