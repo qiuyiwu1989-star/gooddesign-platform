@@ -7,7 +7,11 @@ def build():
  progress=ROOT/'output/research-051/intake-processing-63/progress.json';active={r['project_id']:r for r in json.loads(progress.read_text())['projects']}if progress.exists()else{}
  rows=[]
  for x in xs:
-  r=active.get(x['id']);rows.append({'project_id':x['id'],'name':x['name'],'year':x['year'],'award':x['award'],'priority':0 if x['award']=='金奖'else 1 if r else 2,'current_cycle_stage':r['stage']if r else'已纳入范围，本轮尚未逐项核读','scope_only':not bool(r),'source_intake_directory':str((LIB/x['id']/'04-深研素材/外部投递').relative_to(ROOT)),'quality_score':None,'quality_note':'本队列不评分；旧评分须绑定当前内容版本另核','published_fields_this_cycle':r.get('published_fields',0)if r else 0,'partial_reader_mcp_verified':bool(r and r.get('reader_mcp_verified')),'gaps':r['gaps']if r else['先核现档与原件，形成具体缺口；不得假定全库无资料']})
+  r=active.get(x['id']);receipt=OUT/'receipts'/f"{x['id']}.json"
+  if r is None and receipt.exists():
+   candidate=json.loads(receipt.read_text())
+   if candidate.get('project_id')==x['id']:r=candidate
+  rows.append({'project_id':x['id'],'name':x['name'],'year':x['year'],'award':x['award'],'priority':0 if x['award']=='金奖'else 1 if r else 2,'current_cycle_stage':r['stage']if r else'已纳入范围，本轮尚未逐项核读','scope_only':not bool(r),'source_intake_directory':str((LIB/x['id']/'04-深研素材/外部投递').relative_to(ROOT)),'quality_score':None,'quality_note':'本队列不评分；旧评分须绑定当前内容版本另核','published_fields_this_cycle':r.get('published_fields',0)if r else 0,'native_pending_fields':r.get('native_pending',0)if r else 0,'partial_reader_mcp_verified':bool(r and r.get('reader_mcp_verified')),'gaps':r['gaps']if r else['先核现档与原件，形成具体缺口；不得假定全库无资料']})
  rows.sort(key=lambda r:(r['priority'],-r['year'],r['project_id']));OUT.mkdir(parents=True,exist_ok=True)
  data={'generated_at':datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).isoformat(),'index_sha256':hashlib.sha256(index.read_bytes()).hexdigest(),'scope_count':len(rows),'awards':{a:sum(x['award']==a for x in xs)for a in dict.fromkeys(x['award']for x in xs)},'notice':'560是授权处理范围，不是560案已完成Research。现63案进度是局部流程，独立评分/专家/工程验证另列。','projects':rows};(OUT/'全库项目质量提升队列.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
  E=lambda s:html.escape(str(s),quote=True)
