@@ -1,0 +1,947 @@
+{
+  "round": "ML-017",
+  "date": "2026-10-27",
+  "reports": 64,
+  "methods": 52,
+  "lineage_topics": 12,
+  "all_ids_match_catalog": true,
+  "prior_report_hashes_verified": 64,
+  "public_url_attempts": 80,
+  "machine_acquisition_status": {
+    "acquired_unreviewed": 64,
+    "acquisition_failed": 15,
+    "interstitial_not_source_content": 1
+  },
+  "all_original_fulltexts_read": false,
+  "new_expert_certifications": 0,
+  "online_library_changed": false,
+  "new_mcp_execution_contracts": 0,
+  "methods_index": [
+    {
+      "research_id": "R01",
+      "name": "系统化工程设计",
+      "report": "逐法档案/R01.md",
+      "sha256": "2e705591c55eec7c12accd5a70c7c09d298e06cdd639fc784c257c08a3237eee",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把设计阶段改成可追溯的设计承诺，分开需求、原理、布局和制造定义。",
+      "source_ids": [
+        "1ea6a457c53a19"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R02",
+      "name": "双钻",
+      "report": "逐法档案/R02.md",
+      "sha256": "74c7a0fd7852e217cc46ec4bb0a98bcbd62ee5331bdbfb15936a7f09dcc4d417",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究两次收敛各自排除了什么，第一钻保留竞争问题定义。",
+      "source_ids": [
+        "6e59bc8d6b4505",
+        "6890cadeb38392"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R03",
+      "name": "设计思维",
+      "report": "逐法档案/R03.md",
+      "sha256": "4a850517a7fd36c2e5f6b4f63c97f74432e49bcd31cd0f5acc44b03578fca7a9",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "按学习目的选择具体研究动作，拆开同理、定义、生成、原型和测试的作用。",
+      "source_ids": [
+        "70e514c9ce7cd1"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R04",
+      "name": "系统工程",
+      "report": "逐法档案/R04.md",
+      "sha256": "6bbbd75cfb94eae9850cc681781aa332bf207ac9d6095e534626235c3341d2cb",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "追踪用途—要求—架构—接口—证据在变更中的一致性。",
+      "source_ids": [
+        "b693cdc5414d6e",
+        "36974a25c56fb3"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R05",
+      "name": "机电系统V模型",
+      "report": "逐法档案/R05.md",
+      "sha256": "0e606ba6e7e778ab511bd4a7c5e08717395196c17b3c89fb6d51e5eab078717f",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究机、电、软在同一接口上的坐标、时间和控制权，而不只解释V形图。",
+      "source_ids": [
+        "3deac9d19ba477"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R06",
+      "name": "阶段门",
+      "report": "逐法档案/R06.md",
+      "sha256": "d20e9aa59a8cf3193133fbb122023445158efead1e1c7c2777e5a431e3a57d33",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把关口研究成组织资源与风险承诺，而非生成一个综合分数。",
+      "source_ids": [
+        "fba0cea6d64896"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R07",
+      "name": "六西格玛设计",
+      "report": "逐法档案/R07.md",
+      "sha256": "58e4bf1c472f7e9b8a5b49290f085d29d4b651bc683861989b490d397d7b76d0",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把顾客语言转为CTQ及可信测量，再安排DFSS方法族。",
+      "source_ids": [
+        "057ad1a64b7b24"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R08",
+      "name": "用户观察与需求证据化",
+      "report": "逐法档案/R08.md",
+      "sha256": "59a985933427daf8cdd88d97f5eacd8d7189af9fdfff4596732d1300d28c9f50",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "建立事件、行为、原话、研究解释与需求假设之间的可反查链。",
+      "source_ids": [
+        "2e6f97d2443320",
+        "7cf3d3e2546528"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R09",
+      "name": "待办任务理论",
+      "report": "逐法档案/R09.md",
+      "sha256": "7a90cfbf9f2b4d27d5314454fb4388107574df960331728dbc2f8820f99488ba",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把选择及改变现状的代价作为分析单位，避免空泛的任务句式。",
+      "source_ids": [
+        "8c2f208bf1f61e"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R10",
+      "name": "领先用户法",
+      "report": "逐法档案/R10.md",
+      "sha256": "5a4f0eefd53bf7da52d52b89ea0991abe441ce6b665aae4f9955504c5480d917",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "核实领先用户资格，区分领先需求与高购买意愿。",
+      "source_ids": [
+        "9aa813652559dc",
+        "736133f585ed01",
+        "3a49e0032e6617"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R11",
+      "name": "Kano需求分类",
+      "report": "逐法档案/R11.md",
+      "sha256": "6f44e8cc6103c5b3a4424b631eb3e842067ab9eaf5ac70d58e002c833bfbf244",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把特性表达、问卷理解和分类规则作为同一版本维护。",
+      "source_ids": [
+        "8ca4339f364de8",
+        "d019b673f25b90"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R12",
+      "name": "质量功能展开",
+      "report": "逐法档案/R12.md",
+      "sha256": "10d52997467408febfc985b3f380275772a833997648670dcb87612fda8ecb79",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究需要到工程响应的有条件关系，避免把填满质量屋当完成。",
+      "source_ids": [
+        "a9c3ba480756cc",
+        "b39b61aabf112b"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R13",
+      "name": "人机工程与人本设计",
+      "report": "逐法档案/R13.md",
+      "sha256": "4ce9cde76fc0884350cd19e643de99a93b15c6736deeca0f4f65fcd32ec91d5e",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究人群×任务×环境×异常接管，超越平均人体尺寸。",
+      "source_ids": [
+        "5b972eb496a481"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R14",
+      "name": "功能分解与接口分析",
+      "report": "逐法档案/R14.md",
+      "sha256": "52b79b1e5ba744a1ecb27cfedf6b02908b72b5a58d839b15e1b7cbae1ff47843",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把功能分解做到物质、能量、信息及异常恢复的接口可交接。",
+      "source_ids": [
+        "36974a25c56fb3"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R15",
+      "name": "FAST功能逻辑分析",
+      "report": "逐法档案/R15.md",
+      "sha256": "f658369b2d0ca74f20d9eea95efde27cf286b62f839c0d9c14f3015dfce143da",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究HOW/WHY连接的逻辑有效性，声明FAST图型和边界。",
+      "source_ids": [
+        "289e675ee4f9b7"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R16",
+      "name": "根因分析",
+      "report": "逐法档案/R16.md",
+      "sha256": "2cb1c6ffd2b8cc466151a635c660335aa7986e39abd6a28f9bb83e2bb832310c",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "由事件证据区分直接原因、潜在组织条件与防复发措施。",
+      "source_ids": [
+        "c372670576bbe6",
+        "894dfe33616eca"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R17",
+      "name": "形态学分析",
+      "report": "逐法档案/R17.md",
+      "sha256": "72467b8fa2aa92d72678c17ba00f7f4b3622459c95a928f67d2bee8035560fbf",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把形式空间、成对一致性和整体工程可行性设为不同层。",
+      "source_ids": [
+        "a5e31f14938f68"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R18",
+      "name": "仿生设计",
+      "report": "逐法档案/R18.md",
+      "sha256": "fff8f1fb2e4456ba28391e21c24c476c8ff47024d36ff3f95e47aeee12e1fe13",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把自然策略翻译为跨领域机制，再研究工程迁移的相似与失配。",
+      "source_ids": [
+        "62468ffaf44195"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R19",
+      "name": "设计启发式",
+      "report": "逐法档案/R19.md",
+      "sha256": "241cf7a4301e63e74029ea9c3862503e9c94e02070840b5e4704a4e42b9a7280",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "保留概念在特定启发下发生的机制变化，评价多样性而非草图数量。",
+      "source_ids": [
+        "820b977a2996e9"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R20",
+      "name": "C-K设计理论",
+      "report": "逐法档案/R20.md",
+      "sha256": "6d3ee658d29e5a6f1544464124f376a135413c6a892fa196273334b763883eae",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "追踪概念属性和知识同时扩展，防止局部证据支持整体概念。",
+      "source_ids": [
+        "c6e6e3c60c314d"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R21",
+      "name": "TRIZ体系",
+      "report": "逐法档案/R21.md",
+      "sha256": "be2f202383e8de16e85381f9e2eb536b39068eca9d8f91e677ac30f99fca605d",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把TRIZ作为诊断后选择工具的系统，保留拒绝路线。",
+      "source_ids": [
+        "ab8da70006b071"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R22",
+      "name": "技术矛盾与发明原理",
+      "report": "逐法档案/R22.md",
+      "sha256": "76640f47efcae15936cfdb4ee319663e3974922fd54dd144d78f96be087744bb",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "从措施的改善—恶化链形成技术矛盾，保留参数映射歧义。",
+      "source_ids": [
+        "dde5c990ae25d2"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R23",
+      "name": "物理矛盾与分离",
+      "report": "逐法档案/R23.md",
+      "sha256": "4bfb042722df0e96c51f6c3be6e6266c14e220a0f777ba8f522692d9e9d80152",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "核查同一属性在不同条件下的相反要求及重叠区。",
+      "source_ids": [
+        "8357b008cf4eef"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R24",
+      "name": "理想解与资源分析",
+      "report": "逐法档案/R24.md",
+      "sha256": "3e0cc38171076bff35cad8bad17f4933857a238a01ed0830af2515695085c30b",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把理想目标变成资源预算和代价转移检查。",
+      "source_ids": [
+        "28037986929927"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R25",
+      "name": "物场分析与标准解",
+      "report": "逐法档案/R25.md",
+      "sha256": "645e9d082c01e40583a7f5a1b491a31632a300bfd268697be343c7cfb19e9500",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究实际作用关系与不足/有害作用的模型转换。",
+      "source_ids": [
+        "3d888c93cbcc21"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R26",
+      "name": "功能裁剪",
+      "report": "逐法档案/R26.md",
+      "sha256": "2cbddd5efcd3a2283808ca41635376cd1841007544d034af4bce2753fa472bf8",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "对每项必要功能追踪裁剪后的承担者，显式保留新问题。",
+      "source_ids": [
+        "acc2ade884bbd9"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R27",
+      "name": "功能导向检索与科学效应",
+      "report": "逐法档案/R27.md",
+      "sha256": "2b19ebe43642a6bf3d6f223ca5d62b2bb4179d20856f1022b1195250894d21a2",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "用领域中性功能及关键条件检索，并把迁移后的二次问题纳入产物。",
+      "source_ids": [
+        "f5efc967c71241"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R28",
+      "name": "ARIZ发明问题求解算法",
+      "report": "逐法档案/R28.md",
+      "sha256": "eeec08e2c6692884b482786040d0804b8d4641b51b5ed083ce80ab060f8285fc",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究带回溯的版本化问题重构程序，而非将ARIZ写成一次提示词。",
+      "source_ids": [
+        "a33c2740177b0e"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R29",
+      "name": "技术系统进化趋势",
+      "report": "逐法档案/R29.md",
+      "sha256": "05c4b37c074c56649ca33e31b47454d5c55d4b64457580fdeac153768cd37a11",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把技术演化方向视为需与数据竞争的路线假设。",
+      "source_ids": [
+        "398980e246690f"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R30",
+      "name": "公理化设计",
+      "report": "逐法档案/R30.md",
+      "sha256": "f51e22b79a9d1da3ca48762937002c1ac5bfbff916515309083f40641cc19def",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "在明确工作点研究功能要求—设计参数依赖，分开未知、零与可顺序解耦。",
+      "source_ids": [
+        "38bd446b3bf260"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R31",
+      "name": "DSM与模块化架构",
+      "report": "逐法档案/R31.md",
+      "sha256": "fd96a24dd280e87e25e53dfd6a6889e87c9f1a33819bb0a589e7d0ace91c67b0",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "按依赖类型和矩阵方向研究模块化与迭代，而非只做聚类美化。",
+      "source_ids": [
+        "3b1d1bea2a691d"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R32",
+      "name": "机构综合",
+      "report": "逐法档案/R32.md",
+      "sha256": "7a7e5b4cf9be602b7b664842472385a5bae69c66271c9a56c9f86d89755ee84a",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "由运动要求、机构拓扑到尺寸与全行程分支验证。",
+      "source_ids": [
+        "eaa96ff0e7bf82"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R33",
+      "name": "Ashby材料选择",
+      "report": "逐法档案/R33.md",
+      "sha256": "30ca73ce132d351afb6f9e31a9b71ce160669ae2833358be50934ba30b83bf01",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "由功能、控制约束、目标和自由变量推导材料指数。",
+      "source_ids": [
+        "d247c4b724b84d",
+        "8c253444e18683"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R34",
+      "name": "面向制造与装配设计",
+      "report": "逐法档案/R34.md",
+      "sha256": "7a6cc7403f4413b9a1dca15deb5b229083f0782b4efefaea0282c85f9d905bca",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "先核必要零件和装配动作，再研究剩余零件的制造成本。",
+      "source_ids": [
+        "b18d5a36476ccd"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R35",
+      "name": "拓扑优化",
+      "report": "逐法档案/R35.md",
+      "sha256": "55f21a18867b8b2be0a097ad12863f810dd3ecfbafbd1425168dff0f71cb9dbd",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "将优化问题、数值求解和可制造产品视为不同成果。",
+      "source_ids": [
+        "392de718b73e30"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R36",
+      "name": "Pugh概念筛选",
+      "report": "逐法档案/R36.md",
+      "sha256": "afaf94cf6f21b2fe62ded86a28cccc503756d13c2a937299d48300f2cbaed2b4",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "以可回查的相对比较形成改进方向，保留未知和基准变化。",
+      "source_ids": [
+        "57ab334c94e61d",
+        "1d36767043e2ad"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R37",
+      "name": "多准则权衡分析",
+      "report": "逐法档案/R37.md",
+      "sha256": "f1c7fd94090377f8f02926ebe27f740c211ee240d901ce6c5b9e449bd858d633",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "分开性能事实、价值尺度、权重和可补偿规则。",
+      "source_ids": [
+        "18e1e179c6b680"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R38",
+      "name": "试验设计与响应面",
+      "report": "逐法档案/R38.md",
+      "sha256": "cb95712af6d9dd8c2f597a2c4f4e6679a5836289736abdca14553f97529e7eef",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "从试验目的、可估计效应到随机化、模型诊断和确认试验。",
+      "source_ids": [
+        "db45a51a2a26fd",
+        "9e02478b4c808a",
+        "d23c41d4f337f3"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R39",
+      "name": "稳健参数与公差设计",
+      "report": "逐法档案/R39.md",
+      "sha256": "ffafd8bb9043709c761ad7afc4221cf97531f0a3d9277597335e55d048ddd113",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究均值和散布的来源，区分可调设计参数与服役噪声。",
+      "source_ids": [
+        "b0f9f11d61645c",
+        "d23c41d4f337f3"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R40",
+      "name": "失效模式与影响分析",
+      "report": "逐法档案/R40.md",
+      "sha256": "d50f16c3fa427cef3c0d073e7de3290c6810fcaf33a977f148ed134bfe329a01",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "沿功能失效到局部、上级、最终影响追溯，并核查探测和补偿条件。",
+      "source_ids": [
+        "aec0fb050a9f43",
+        "a4038373ecaf8a"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R41",
+      "name": "机械风险评估与风险降低",
+      "report": "逐法档案/R41.md",
+      "sha256": "43d74d3fdd1042ab201d2fb5b8c006ca722362427dc0655e8f98d94875f682c4",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究危险情境到风险降低措施的全过程及残余风险。",
+      "source_ids": [
+        "6c258a00f3bff8"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R42",
+      "name": "验证与确认",
+      "report": "逐法档案/R42.md",
+      "sha256": "7d184bb15fbc288a6337f5ee1309a89164a134c2e429528006e4a10f60320d99",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把要求符合性和实际用途满足分开，证据绑定配置与环境。",
+      "source_ids": [
+        "8f7f8e52e95da5",
+        "a02af2c01912a0"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R43",
+      "name": "生命周期评价与生态设计",
+      "report": "逐法档案/R43.md",
+      "sha256": "6a2eece3da6a594015627e94e4742252715539e0c1122dd8bb32d857c0fbe842",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "以等效服务的功能单位比较生命周期，暴露边界、分配和数据缺口。",
+      "source_ids": [
+        "eebede67398607",
+        "a2d2265d5ce94d"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R44",
+      "name": "原型与假设测试",
+      "report": "逐法档案/R44.md",
+      "sha256": "f0a404e12f3221c705b3ae503e8aea8600352905968d95846528aae6cc591d43",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "围绕可被否定的关键假设设计最小学习活动。",
+      "source_ids": [
+        "a02af2c01912a0"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R45",
+      "name": "价值工程",
+      "report": "逐法档案/R45.md",
+      "sha256": "26fede3193415e139ff75bbdb23c1b571f771c70328d55dc2009a1df9993530d",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "在保持必要功能和质量的前提下研究价值，而非一律降成本。",
+      "source_ids": [
+        "3b72217e354436"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R46",
+      "name": "专利景观与技术路线分析",
+      "report": "逐法档案/R46.md",
+      "sha256": "0d11fba558db2a8a0b00b0e88cac1735ffaf64ac560b9505841cadbc467166e0",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究可复现的技术问题检索、筛选和分类，而非看申请量趋势图。",
+      "source_ids": [
+        "0fd6d5d435dfeb",
+        "fd8d6fd7514e96"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R47",
+      "name": "集合式并行工程",
+      "report": "逐法档案/R47.md",
+      "sha256": "bb8243d2a3588355525d0917fef156eb20d015d6e70d55dd9b84b04516731d86",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "保留跨专业的可行集合，按证据缩窄交集而非长期拖延选择。",
+      "source_ids": [
+        "d907d9edb9e6fa"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R48",
+      "name": "问题定义与要求管理",
+      "report": "逐法档案/R48.md",
+      "sha256": "5ce4f7ac4700b0ec0d20644c014b8ee4617ec1902d5d9aa62aee593df9d439a3",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "将愿望、问题、要求、目标值依据和验收方法分开管理。",
+      "source_ids": [
+        "a02af2c01912a0",
+        "b6a18fc13508a1"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R49",
+      "name": "功能—行为—结构推理（FBS）",
+      "report": "逐法档案/R49.md",
+      "sha256": "959f2f02385b1e4f223387da1e42dc263c8861a6137eff2c87482ee4a8a3a6e2",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究F、期待行为、结构与分析行为之间的转换和重构。",
+      "source_ids": [
+        "dc9106315b7393",
+        "a3d850a0c1b4d4",
+        "a36a84764e2af5",
+        "4e7bf0bbc30cff",
+        "d46a28367081ef"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R50",
+      "name": "服务蓝图与产品服务系统协同",
+      "report": "逐法档案/R50.md",
+      "sha256": "c9921c1a71043b2f6c62308818158b960007a45c5b8b190d383f6576c9cefe87",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把产品使用、交付、维护与异常恢复的前后台责任连起来。",
+      "source_ids": [
+        "e08babc792e151"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R51",
+      "name": "系统理论过程分析（STPA）",
+      "report": "逐法档案/R51.md",
+      "sha256": "a037b32f360f9bf94c63975224730c982b3e2e1fdb0078609a40ea77c4a6a38f",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "从不可接受损失、危险和控制情境识别不安全控制，而不只枚举部件故障。",
+      "source_ids": [
+        "e469186f8f8337",
+        "e46f9fc7583e01",
+        "01a1f925f7c78c",
+        "61354526e98446"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "R52",
+      "name": "信息价值与验证优先级（VOI）",
+      "report": "逐法档案/R52.md",
+      "sha256": "5f6ba6a509d6a8d6540cdb9cb6597423f48b09fcbe58e86a735ce0af04ce97f6",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把“还缺什么信息”变成可能改变决策的学习价值问题。",
+      "source_ids": [
+        "02426f074883c4"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB01",
+      "name": "产品系统化与综合设计体系",
+      "report": "逐法档案/WB01.md",
+      "sha256": "a5db6500afa452aad339b678aa5d350dcfd5d8692357907eb5a26842a5ccc800",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "按历史版本研究综合设计的组织体系，与具体求解器分层。",
+      "source_ids": [
+        "7094e23ebd42b9",
+        "5677a8efddbe77"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB02",
+      "name": "3I调研",
+      "report": "逐法档案/WB02.md",
+      "sha256": "a3ce44c0539595210b3227c9f31a48de13b6c7923d2ab6f995cb67d8f3251b57",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "只把3I中已核定的术语和职责录入，未得章节不扩写缩写。",
+      "source_ids": [
+        "7094e23ebd42b9"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB03",
+      "name": "7D总体规划",
+      "report": "逐法档案/WB03.md",
+      "sha256": "0123499d2a876469ffaa60e99ccb86c9f75ff168d75af0a9e1227d4d547e78c4",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "将7D看成规划维度间的依赖与一致性，而不是七个必填框。",
+      "source_ids": [
+        "7094e23ebd42b9"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB04",
+      "name": "1+3+X综合设计",
+      "report": "逐法档案/WB04.md",
+      "sha256": "22aa349afac19938b86e26113c111d47003d7097536a14f56017ca0d1737d4db",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究功能与多种性能的协同及权衡，避免分别最优后简单相加。",
+      "source_ids": [
+        "7094e23ebd42b9",
+        "5677a8efddbe77"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB05",
+      "name": "主辅功能与功能优化",
+      "report": "逐法档案/WB05.md",
+      "sha256": "232ffb33ca9ca81069ea45aa047c70759d2d9fb8a60358f578de811484b1fef1",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "辨别主辅功能与必要支撑关系，优化时保留任务完整性。",
+      "source_ids": [
+        "7094e23ebd42b9"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB06",
+      "name": "面向结构性能的动态设计",
+      "report": "逐法档案/WB06.md",
+      "sha256": "ecac0d3498beca809a7251427ded9e38edb60c45f7550b5a8c6895b329f6b231",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "将动态设计绑定工况、激励、结构和测量，区别模型与设备。",
+      "source_ids": [
+        "7094e23ebd42b9",
+        "73cc05e7e8d064"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB07",
+      "name": "面向使用性能的智能设计",
+      "report": "逐法档案/WB07.md",
+      "sha256": "d8b7ba66dcedf10fd27777ddebfd9cd1f2e9770e32cd7c93b96d5499e5638903",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "分开辅助设计的智能方法与产品在使用中的感知决策能力。",
+      "source_ids": [
+        "73cc05e7e8d064"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB08",
+      "name": "面向制造性能的可视化设计",
+      "report": "逐法档案/WB08.md",
+      "sha256": "4605022e6ab2ac1b13ab75718d19b935da69b99048436ed9996fa5ff0e50ebc9",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把可视优化落实为能定位缺陷并修改模型的工程观察。",
+      "source_ids": [
+        "0bcbf490afa7cc"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB09",
+      "name": "深层次动态设计",
+      "report": "逐法档案/WB09.md",
+      "sha256": "cd37c890315c5b4adb48e58982ac174b96caa8082743f77f975207f1315fec6c",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究强耦合、非线性和非稳态条件下哪些简化会失效。",
+      "source_ids": [
+        "7094e23ebd42b9"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB10",
+      "name": "设计质量检验与综合评价",
+      "report": "逐法档案/WB10.md",
+      "sha256": "929fd2bcfc853b1d23433e3edb3fbcaf89bb1b3abfa1ff29793c46563c7ea416",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "分开检验手段、指标体系和综合评价计算，研究权重/隶属度来源。",
+      "source_ids": [
+        "c68660f3727f00",
+        "d76c2cae30871f"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB11",
+      "name": "科学方法论规则与设计专家系统",
+      "report": "逐法档案/WB11.md",
+      "sha256": "c7aa3974084aa4a821ea1df65459deadaed7a199ef1ccd99e2572a331b922cf2",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "把哲学原则、程序规则、资源前提和领域因果知识分成不同规则类型。",
+      "source_ids": [
+        "7094e23ebd42b9",
+        "5677a8efddbe77"
+      ],
+      "full_primary_texts_all_reviewed": false
+    },
+    {
+      "research_id": "WB12",
+      "name": "国内外设计方法分类研究与出处去重",
+      "report": "逐法档案/WB12.md",
+      "sha256": "2b17fb3c4c88fd1ac4b62936debb84956a3b6394498f2b40d2d424559876ae4e",
+      "status": "bounded_research_and_deepening_design",
+      "new_engineering_validation": false,
+      "expert_certified": false,
+      "priority_focus": "研究同名、异名、上下位和不同视角分类，建立多关系图谱。",
+      "source_ids": [
+        "7094e23ebd42b9"
+      ],
+      "full_primary_texts_all_reviewed": false
+    }
+  ]
+}

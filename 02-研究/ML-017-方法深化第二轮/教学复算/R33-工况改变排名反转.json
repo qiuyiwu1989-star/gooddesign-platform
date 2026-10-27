@@ -1,0 +1,55 @@
+{
+  "scope": "synthetic_material_properties_teaching_algebra_not_selection_for_real_product",
+  "parameters_SI": {
+    "F_N": 100.0,
+    "L_m": 0.3,
+    "max_deflection_m": 0.001
+  },
+  "models": {
+    "tension": "delta=FL/EA; mass=rho*L*A; rank E/rho",
+    "square_cantilever": "delta=FL^3/(3EI), I=a^4/12; rank sqrt(E)/rho"
+  },
+  "rows": [
+    {
+      "id": "A",
+      "E_Pa": 70000000000.0,
+      "rho_kg_m3": 2700.0,
+      "tension_area_m2": 4.2857142857142857e-07,
+      "tension_mass_kg": 0.0003471428571428571,
+      "cantilever_square_side_m": 0.019818985908082842,
+      "cantilever_mass_kg": 0.3181616839640769,
+      "tension_deflection_m": 0.001,
+      "cantilever_deflection_m": 0.001
+    },
+    {
+      "id": "B",
+      "E_Pa": 210000000000.0,
+      "rho_kg_m3": 7800.0,
+      "tension_area_m2": 1.4285714285714285e-07,
+      "tension_mass_kg": 0.00033428571428571426,
+      "cantilever_square_side_m": 0.015059172746387376,
+      "cantilever_mass_kg": 0.5306621201049551,
+      "tension_deflection_m": 0.001,
+      "cantilever_deflection_m": 0.001
+    }
+  ],
+  "rank_tension": [
+    "B",
+    "A"
+  ],
+  "rank_bending": [
+    "A",
+    "B"
+  ],
+  "omitted_constraints": [
+    "strength",
+    "buckling",
+    "fatigue",
+    "minimum_section",
+    "temperature",
+    "corrosion",
+    "manufacturing",
+    "joints"
+  ],
+  "engineering_validated": false
+}
