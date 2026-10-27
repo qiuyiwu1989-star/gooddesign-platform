@@ -565,3 +565,5 @@ Userwebsitearchitecture:核原026/027信息架构，output/inno-preview平台首
 058用户确认项目介绍/档案免登录、原件管理仍登录：新public项目目录无admin token，/inno/和/projects/及精确/dossier/公开；其余/api/asset/admin全部继承认证，原件预览亦保护。原子切20261027-058，10匿名HTTPS检查通过（公开200，管理/来源/原件/预览401，主站200），旧057和nginx备份可回滚。未开放公网MCP/写入。
 
 055/056续接：R03v0.2.1独立27实际检查与候选/interaction错配拒绝通过，根新增原创五模式/纸面原型仅学提示的阅读节，不分发私有PDF/卡页；64构建5tests过。MCP防御8unit重验通过，接入文档同步known/source_statement/安全引用白名单/每次当前版本分页边界。深化报告实际5批15案，末三P0补证及R04增补已派，未据报告数升分或审批。
+
+059用户要求去掉顶部OpenDesign只读快照/本机处理提示：已从cloud wrapper移除整条注入及样式，线上切059，首页与档案实际响应核对无该文字；058保留可回滚，访问控制未改。

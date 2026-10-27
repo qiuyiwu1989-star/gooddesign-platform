@@ -33,9 +33,7 @@ class Handler(app.Handler):
             if isinstance(body,str):
                 body=prefixed(body)
                 if ctype.startswith('text/html'):
-                    banner='<div role="note" class="cloud-readonly-notice">OpenDesign · 项目只读快照 · 2026-10-27发布 · 上传、清洗和研究发布在本机后台进行。</div>'
-                    body=body.replace('</head>','<link rel="icon" href="data:,"><style>.cloud-readonly-notice{padding:10px 24px;background:#f0edff;color:#5145a0;font:13px/1.6 system-ui}</style></head>',1)
-                    body=body.replace('<body>','<body>'+banner,1).replace('● 本地私有','● 登录可见 · 只读')
+                    body=body.replace('● 本地私有','● 登录可见 · 只读')
         if isinstance(body,dict) and body.get('service')=='gooddesign-archive-pipeline':body.update(cloud_read_only=True,watcher_running=False)
         super().send(status,body,ctype,extra)
 
