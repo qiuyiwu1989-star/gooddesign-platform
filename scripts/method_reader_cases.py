@@ -3,6 +3,7 @@ from pathlib import Path
 import json,hashlib,html
 ROOT=Path(__file__).resolve().parents[1];E=lambda s:html.escape(str(s),quote=True)
 def teaching_case(rid):
+ if rid=='R03':return design_thinking_case()
  if rid=='R02':return double_diamond_case()
  if rid=='R01':return systematic_case()
  if rid=='R42':return verification_case()
@@ -151,3 +152,17 @@ def double_diamond_case():
  steps=[('发现：展开需要核实的假设','把推行、转向、停放和维护等问题分开，安排怎样取得证据；不把作者想象写成用户反馈。'),('定义：保留暂定问题版本','CH-1只是当前讨论起点，尚未证据收敛；另一问题CH-2是条件性提议，未被采用。'),('发展：比较不同作用路径','候选方案声明回应哪些假设，同时显式列出未覆盖项。声明覆盖不代表已经满足，更不能为凑覆盖硬加能力。'),('交付：先安排学习','保留比较、观察与下一轮决定的计划；没有执行就不填成功，也不把返回定义阶段画成已经发生。')]
  for title,text in steps:out+='<li><strong>'+title+'</strong><p>'+text+'</p></li>'
  return out+'</ol><p>0.2.1通过29项结构与一致性检查及独立原漏洞复测。候选覆盖采用“已声明＋明确未覆盖”的分区，条件问题用本教学允许内容校验；这是固定案例门禁，不是通用语义理解。真实共创、现场研究与反馈仍待开展，不能称方法效果或80分已达标。</p></section>'
+
+
+def design_thinking_case():
+ b=ROOT/'output/method-reader-review/upgrades/R03-v0.2.1-proposal'
+ r=ROOT/'output/method-reader-review/reviews/R03-upgrade-v0.2.1/review.json'
+ if not (b/'manifest.json').exists() or not r.exists():return ''
+ files=json.loads((b/'manifest.json').read_text())['files']
+ entries=files.items() if isinstance(files,dict) else [(x['path'],x['sha256'])for x in files]
+ for name,sha in entries:
+  if hashlib.sha256((b/name).read_bytes()).hexdigest()!=sha:raise ValueError('设计思维教学包变化，停止展示')
+ steps=[('理解人和情境','以普通桌面零件盒为原创教学任务。行为、原话和解释分别预留，实际记录为空，不用作者猜想代替用户。'),('暂定问题','形成可追问的观点与问题表述；仍是待研究假设，不能说已经验证了真实需求。'),('探索多条路径','比较不同作用路径及各自条件，不因名称新颖或填满步骤就确定胜者。'),('做有限原型','纸面滑动提示只安排研究关合提示能否被理解；真实开闭和锁定能力明确未覆盖。'),('计划测试并允许返回','一次只改变明确变量，保留原始行为和介入记录。没有实际观察就保留未知，返回定义阶段仍只是条件分支。')]
+ out='<section id="design-thinking-teaching"><h2>让原型只回答它能够回答的问题</h2><p>这是零件盒的原创教学计划，不是已完成的用户研究。纸面提示被理解，也不能证明盒体锁闭、承载或使用安全。</p><ol class="flow">'
+ for title,text in steps:out+='<li><strong>'+title+'</strong><p>'+text+'</p></li>'
+ return out+'</ol><p>0.2.1通过27项结构与状态检查及独立错配探针复测，限定滑动候选、交互和控制项一致。这不是自动识别任意方案语义，也不是方法效果验证；真实用户、样模和结果均未取得。</p><p>本页仅展示原创教学说明。原典选页范围与许可单独记录，私有PDF、卡片页和截图不在这里再分发。</p></section>'
