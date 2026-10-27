@@ -1,0 +1,54 @@
+{
+  "status": "executed_mathematical_teaching_only",
+  "source": "original invented values, not empirical observations",
+  "mcda": {
+    "assumption": "linear additive comparable utility with two criteria",
+    "crossing_weight": 0.5,
+    "results": [
+      {
+        "weight": 0.25,
+        "A": 0.44999999999999996,
+        "B": 0.7000000000000001,
+        "decision": "B"
+      },
+      {
+        "weight": 0.5,
+        "A": 0.6,
+        "B": 0.6000000000000001,
+        "decision": "tie"
+      },
+      {
+        "weight": 0.75,
+        "A": 0.75,
+        "B": 0.5,
+        "decision": "A"
+      }
+    ]
+  },
+  "fuzzy": {
+    "weights": [
+      0.6,
+      0.4
+    ],
+    "membership": [
+      [
+        0.8,
+        0.2,
+        0
+      ],
+      [
+        0.1,
+        0.6,
+        0.3
+      ]
+    ],
+    "result": [
+      0.52,
+      0.36,
+      0.12
+    ],
+    "interpretation": "grade membership vector, not probability of product quality"
+  },
+  "expert_certified": false,
+  "engineering_validation": false
+}

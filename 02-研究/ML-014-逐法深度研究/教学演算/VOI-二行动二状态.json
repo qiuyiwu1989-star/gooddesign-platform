@@ -1,0 +1,62 @@
+{
+  "scope": "executed_mathematical_teaching_only_not_field_test",
+  "all_probabilities_and_losses": "invented_for_teaching_not_customer_or_case_data",
+  "loss_units": "arbitrary_teaching_units_not_currency",
+  "actions": {
+    "M": "mechanical_route_label_only",
+    "S": "sensor_route_label_only"
+  },
+  "loss_table": {
+    "M": {
+      "normal": "0",
+      "difficult": "100"
+    },
+    "S": {
+      "normal": "30",
+      "difficult": "40"
+    }
+  },
+  "result": {
+    "prior": "1/2",
+    "action_without_study": "S",
+    "current_losses": {
+      "M": "50",
+      "S": "35"
+    },
+    "current_expected_loss": "35",
+    "perfect_information_expected_loss": "20",
+    "EVPI": "15",
+    "study_expected_loss": "29",
+    "EVSI": "6",
+    "study_cost": "4",
+    "net_learning_value": "2",
+    "branches": [
+      {
+        "observation": "positive",
+        "probability": "1/2",
+        "posterior_difficult": "4/5",
+        "chosen": "S",
+        "expected_loss": "38"
+      },
+      {
+        "observation": "negative",
+        "probability": "1/2",
+        "posterior_difficult": "1/5",
+        "chosen": "M",
+        "expected_loss": "20"
+      }
+    ]
+  },
+  "checks": {
+    "uninformative_study_zero_EVSI": true,
+    "perfect_study_equals_EVPI": true,
+    "invalid_probability_rejected": true
+  },
+  "source_scope": "Platform original numerical exercise using decision-theoretic expected-loss definitions; does not reproduce the source paper code.",
+  "source_url": "https://arxiv.org/pdf/1905.00008",
+  "not_concluded": [
+    "No real route recommendation",
+    "No field sensitivity or specificity measured",
+    "No safety constraint may be waived on economic value"
+  ]
+}

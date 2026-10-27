@@ -1,0 +1,491 @@
+{
+  "batch": "C",
+  "created_at": "2026-10-27",
+  "coverage_count": 28,
+  "methods": [
+    {
+      "research_id": "R37",
+      "name": "多准则权衡分析",
+      "report": "R37-深度研究.md",
+      "new_primary_sources": [
+        "https://www.nasa.gov/reference/6-8-decision-analysis/"
+      ],
+      "read_scope": "本轮正文6.8.1相关段落：决策、准则、知识状态及降低不确定性的条件；非展开指南全文",
+      "unresolved": [
+        "缺真实偏好调查和尺度验证",
+        "不覆盖所有MCDA算法的适用性与一致性检验"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "053652058dc37f142a723e0350cc673059feffa043cb60408b5edc1780117f9c",
+      "report_sha256": "7fc2090fac5a49520335090e8edd4d404945975618d472566ac10ae8c10ece92",
+      "input_assessment": "output/method-reader-review/content-quality/batch04/R37-assessment.json"
+    },
+    {
+      "research_id": "R38",
+      "name": "试验设计与响应面",
+      "report": "R38-深度研究.md",
+      "new_primary_sources": [
+        "https://www.itl.nist.gov/div898/handbook/pri/section3/pri3331.htm",
+        "https://www.itl.nist.gov/div898/handbook/pri/section4/pri44.htm"
+      ],
+      "read_scope": "本轮两水平全因子页全文文本；标准顺序、重复与设计矩阵；本轮模型检验页全文文本；未遍历各残差/失拟子页",
+      "unresolved": [
+        "未生成并执行真实DOE",
+        "缺测量误差、可行水平及功效依据"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "cd474befa0a68aa9db4962371973d3720ed9fec978a338917eccddd51a9743f8",
+      "report_sha256": "20bf6144d10d8419f88cb931c253a4d7b499766459a5d61b0e2628c21050f9db",
+      "input_assessment": "output/method-reader-review/content-quality/batch04/R38-assessment.json"
+    },
+    {
+      "research_id": "R39",
+      "name": "稳健参数与公差设计",
+      "report": "R39-深度研究.md",
+      "new_primary_sources": [
+        "https://www.itl.nist.gov/div898/handbook/pri/section5/pri56.htm"
+      ],
+      "read_scope": "本轮内外阵列、均值/变异取舍及公差设计段落；未复制完整数据表",
+      "unresolved": [
+        "未取得真实服役噪声分布",
+        "未实施公差传播与制造能力验证"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "9dd74a32f422d15607d8944286a7f04c5fa39a39bd8bf3be9d2427ccdb61c586",
+      "report_sha256": "81cf01b42c3dd789c76fd64d5908816fe2a8ee19b787824f6d369f4f9b42156a",
+      "input_assessment": "output/method-reader-review/content-quality/batch04/R39-assessment.json"
+    },
+    {
+      "research_id": "R40",
+      "name": "失效模式与影响分析",
+      "report": "R40-深度研究.md",
+      "new_primary_sources": [
+        "https://asq.org/quality-resources/fmea"
+      ],
+      "read_scope": "本轮范围、功能、失效和影响等步骤相关正文；不是行业FMEA标准全文",
+      "unresolved": [
+        "未核适用行业完整手册",
+        "没有故障频率或控制检出试验"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "085cd34af5b7cd957b3fbf62445c4fa834892fe9575434e7ae5b3e81da4b6047",
+      "report_sha256": "04f315b7d0711d75949de905bcff868106b46c5f2b246cb5340bc24b8baf3d13",
+      "input_assessment": "output/method-reader-review/content-quality/batch04/R40-assessment.json"
+    },
+    {
+      "research_id": "R41",
+      "name": "机械风险评估与风险降低",
+      "report": "R41-深度研究.md",
+      "new_primary_sources": [
+        "https://www.hse.gov.uk/agriculture/topics/machinery/comply.htm"
+      ],
+      "read_scope": "本轮安全集成与生命周期/措施优先序公开段落；不作为本项目当前法规意见",
+      "unresolved": [
+        "未核具体产品及销售地区现行标准全文",
+        "尚无风险估计和防护验证"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "e04e2f5ade53f810177f531b98d41b39c2db780cf52ba665859cbb5edc5a7417",
+      "report_sha256": "fbd42bc26fd4df48ad354537ca5235c5430cf9ee78007bbef6d02057af1b1a3f",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/R41-assessment.json"
+    },
+    {
+      "research_id": "R42",
+      "name": "验证与确认",
+      "report": "R42-深度研究.md",
+      "new_primary_sources": [
+        "https://www.nasa.gov/reference/5-3-product-verification/",
+        "https://www.nasa.gov/reference/5-4-product-validation/"
+      ],
+      "read_scope": "本轮检索主体中技术基线、执行/偏差/报告相关内容；本轮5.4正文相关段落，用户期待、预期环境与四种方法；非航天产品规则自动移用",
+      "unresolved": [
+        "缺实际产品配置与原始数据",
+        "没有独立工程/用户确认"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "e3b52bab746ebf6d6cbf7c4fbf94e4ce3d4b8c8cbfed0e33ec73af590d8cc959",
+      "report_sha256": "26bb2494e219376276993399eb68b546f5ec65213b32b75ade29344a08636cc1",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/R42-assessment.json"
+    },
+    {
+      "research_id": "R43",
+      "name": "生命周期评价与生态设计",
+      "report": "R43-深度研究.md",
+      "new_primary_sources": [
+        "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P1000L86.TXT"
+      ],
+      "read_scope": "本轮题录/摘要与Determine How the Data Should Be Organized功能单位/等效服务段落；非7544行逐行精读",
+      "unresolved": [
+        "缺供应链与运行数据",
+        "未选授权数据库及适用影响方法"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "20382f1ec20dbc007531c72cb57bb563b96d6ef891f2c3912f1605279abf4384",
+      "report_sha256": "9b8d5247db462f0a8345275c949b6024704761aa6723b79e08f1f0831ef19039",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/R43-assessment.json"
+    },
+    {
+      "research_id": "R44",
+      "name": "原型与假设测试",
+      "report": "R44-深度研究.md",
+      "new_primary_sources": [
+        "https://www.nasa.gov/reference/5-4-product-validation/"
+      ],
+      "read_scope": "本轮5.4 Methods of Validation相关段落，mock-up与分析/演示/检查/试验能力边界",
+      "unresolved": [
+        "无实际原型/参与者/观察数据",
+        "没有新增原型效果验证"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "31f983750326980a7c45dc901cb0d6d42b4a991f6cd7c70037ad5cf85a2af307",
+      "report_sha256": "e38399288a660047d08e8de64027662538204873975c59e4bab618b5052c1288",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/R44-assessment.json"
+    },
+    {
+      "research_id": "R45",
+      "name": "价值工程",
+      "report": "R45-深度研究.md",
+      "new_primary_sources": [
+        "https://www.mcgill.ca/ve/jobplan/steps"
+      ],
+      "read_scope": "本轮四基本步骤公开页全文文字；非SAVE标准或完整VE课程",
+      "unresolved": [
+        "缺真实成本/报价/维护记录",
+        "未核完整SAVE规范或专业VE实施"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "1ebe3412a31f99b3b998d71d790b0a3e449df5bf78a9e245313fadc943906de6",
+      "report_sha256": "0627fcd6df2d4ed946101ebc252d33913da2a8676b62ba1e0a4902cc42a7e46f",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/R45-assessment.json"
+    },
+    {
+      "research_id": "R46",
+      "name": "专利景观与技术路线分析",
+      "report": "R46-深度研究.md",
+      "new_primary_sources": [
+        "https://www.wipo.int/en/web/patent-analytics/index"
+      ],
+      "read_scope": "本轮官方概览的用途/景观定位；未据概览声称131页手册全读",
+      "unresolved": [
+        "未检索主题专利数据集",
+        "没有法律状态与FTO专业核查"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "22e191b4934c9c32a665d840555fed360cffaa0b8372a672b877a71c3f904572",
+      "report_sha256": "337f4c76fc68545ba34518c324df5d8d5a69bd17b37a4c89a70e7fd6ee74c1e3",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/R46-assessment.json"
+    },
+    {
+      "research_id": "R47",
+      "name": "集合式并行工程",
+      "report": "R47-深度研究.md",
+      "new_primary_sources": [
+        "https://www.lean.org/lexicon-terms/set-based-concurrent-engineering/"
+      ],
+      "read_scope": "本轮短词条全文文字；已知可行集、淘汰证据和延迟承诺",
+      "unresolved": [
+        "缺真实权衡曲线与跨专业边界",
+        "未建立可行域求解器"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "7653c5722741d219d4f8721bfaa6cd5adf1e12cc8200f9c498a8aef88f6b1808",
+      "report_sha256": "455e1955064527af675874fedc3bc0a5ff57df44f1abca3ead43d5a7b6ce90ef",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/R47-assessment.json"
+    },
+    {
+      "research_id": "R48",
+      "name": "问题定义与要求管理",
+      "report": "R48-深度研究.md",
+      "new_primary_sources": [
+        "https://www.nasa.gov/reference/5-4-product-validation/"
+      ],
+      "read_scope": "本轮用户期待基线与预期情境相关段落；需求管理细则仍据既有档案登记",
+      "unresolved": [
+        "客户未确认关键工况和口径",
+        "没有本轮新一手用户研究"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "ded5d34715a9e703f2dc6ab30fc9a69eb11dd0aa8aefea32d23697c67f95f4b2",
+      "report_sha256": "8001e05eff63ebf8b43d2f0a44bd3ac33eed02b6646b9f279e23d2bfeee35d2e",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/R48-assessment.json"
+    },
+    {
+      "research_id": "R49",
+      "name": "功能—行为—结构推理（FBS）",
+      "report": "R49-深度研究.md",
+      "new_primary_sources": [
+        "https://researchdiscovery.drexel.edu/esploro/outputs/journalArticle/The-situated-function-behaviour-structure-framework/991022156305504721"
+      ],
+      "read_scope": "本轮大学机构记录题录与摘要，确认情境化扩展及八过程身份；不是论文全文",
+      "unresolved": [
+        "作者论文正文仍未取得",
+        "机构摘要只证明框架性质，不支持完整操作步骤"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "56a1a62dd7ec75eb35dd9461e0bccc2547432f776dfb4df3d0e4b5b01945cda6",
+      "report_sha256": "a1750b7ae234b07fe3b17938b7cda3e8dc8bb46f208d32daf208fe8dd71bc021",
+      "input_assessment": "output/method-reader-review/content-quality/batch07/R49-assessment.json"
+    },
+    {
+      "research_id": "R50",
+      "name": "服务蓝图与产品服务系统协同",
+      "report": "R50-深度研究.md",
+      "new_primary_sources": [
+        "https://www.nngroup.com/articles/5-steps-service-blueprinting/"
+      ],
+      "read_scope": "本轮五步骤、范围、研究与内部核对相关正文；不把未来图当现状",
+      "unresolved": [
+        "没有客户一班次观察/访谈",
+        "缺实际后台支持与维修责任信息"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "f35ed02a6484552fdc0fd3e51aeb7a27e6798c54b67238ee796447c3540fdf48",
+      "report_sha256": "f8ed06341c2113137b33db71974a63e33f945f6165729a750e7d0f47d77b3222",
+      "input_assessment": "output/method-reader-review/content-quality/batch07/R50-assessment.json"
+    },
+    {
+      "research_id": "R51",
+      "name": "系统理论过程分析（STPA）",
+      "report": "R51-深度研究.md",
+      "new_primary_sources": [
+        "https://psas.scripts.mit.edu/home/wp-content/uploads/2025/2025-03-24-0900__STPA_Introduction__PUB.pdf"
+      ],
+      "read_scope": "本轮文件页序69—74的控制反馈、四类UCA与上下文文本；未读完整2018手册",
+      "unresolved": [
+        "完整实施指南未核",
+        "实际控制架构、延迟和权限未取得"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "0c0082dae5f384a2d4e21f39560f9f773cdc5dbaaa49403a316c9671eae5b066",
+      "report_sha256": "f6da6671cbe1843437d8cb30eb149fb21665b77028b4a2604f05bd6555277dcd",
+      "input_assessment": "output/method-reader-review/content-quality/batch07/R51-assessment.json"
+    },
+    {
+      "research_id": "R52",
+      "name": "信息价值与验证优先级（VOI）",
+      "report": "R52-深度研究.md",
+      "new_primary_sources": [
+        "https://arxiv.org/pdf/1905.00008"
+      ],
+      "read_scope": "本轮预印本第6—9页决策损失/估计目标/EVPPI相关段落；未复现作者R程序",
+      "unresolved": [
+        "实际客户损失/概率/研究质量未建模",
+        "教学程序不构成机械VOI工具验收"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "65fa65a6855b81cf36f053b91b89fe7e65b8a00b38ab1263adc2edf6260d8670",
+      "report_sha256": "cd98ed83bf161aceb39cc5356b095767b4fe3f9f7a52111ccc79524b073ff8be",
+      "input_assessment": "output/method-reader-review/content-quality/batch07/R52-assessment.json"
+    },
+    {
+      "research_id": "WB01",
+      "name": "产品系统化与综合设计体系",
+      "report": "WB01-深度研究.md",
+      "new_primary_sources": [
+        "https://neunews.neu.edu.cn/info/1002/849441.htm"
+      ],
+      "read_scope": "本轮本人2019文章产品设计与方法论相关正文段落；不采纳人物健康/宣传效果作为方法证据",
+      "unresolved": [
+        "2013/2008核心论文及专著全文仍有缺口",
+        "3A与5A版本关系未证实"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "8913eeaee668b99c78460309aff108563838ea2624fcbff75692c51a873664b3",
+      "report_sha256": "bd90af29540008aa592378ab0676cb2d3d6199b952b69dd0cfe3107244ebebd3",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/WB01-assessment.json"
+    },
+    {
+      "research_id": "WB02",
+      "name": "3I调研",
+      "report": "WB02-深度研究.md",
+      "new_primary_sources": [
+        "https://neunews.neu.edu.cn/info/1002/849441.htm"
+      ],
+      "read_scope": "本轮本人2019文章产品设计与方法论相关正文段落；不采纳人物健康/宣传效果作为方法证据",
+      "unresolved": [
+        "2017第5章正文未取得",
+        "三域细分、抽样和原作者操作判据未核"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "18e8436fe69681748dbbac69bd6c0ece3b9095c20c29b0618669d5661436c66a",
+      "report_sha256": "d5c18329cfa3c4cb7dcfc758ae11a0c13d712635f9c61765fb7f48509eec3efb",
+      "input_assessment": "output/method-reader-review/content-quality/batch05/WB02-assessment.json"
+    },
+    {
+      "research_id": "WB03",
+      "name": "7D总体规划",
+      "report": "WB03-深度研究.md",
+      "new_primary_sources": [
+        "https://neunews.neu.edu.cn/info/1002/849441.htm"
+      ],
+      "read_scope": "本轮本人2019文章产品设计与方法论相关正文段落；不采纳人物健康/宣传效果作为方法证据",
+      "unresolved": [
+        "2008论文/2017第6章正文未得",
+        "7D与书页简介7P差异未解决"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "ed4e861f3e91f05d41b0fcf7742f6e059b588c77c40cf5caae017b803a7e3a23",
+      "report_sha256": "8af669f994fd7fda2137f2940e3aeed482ab25b28cd89b4033d66a4cfb8c1b47",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB03-assessment.json"
+    },
+    {
+      "research_id": "WB04",
+      "name": "1+3+X综合设计",
+      "report": "WB04-深度研究.md",
+      "new_primary_sources": [
+        "https://neunews.neu.edu.cn/info/1002/849441.htm"
+      ],
+      "read_scope": "本轮本人2019文章产品设计与方法论相关正文段落；不采纳人物健康/宣传效果作为方法证据",
+      "unresolved": [
+        "2008完整模式/公式未核",
+        "真实跨专业协同修改链缺失"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "9c973edf9bba4b296d1ee898526c07b41c89e7c9a8237a8fc7e0dff13cef0faa",
+      "report_sha256": "e99ceef802f3f3fa2c863d00f6666c50e28da6335ad01bc1b3525112e7074556",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB04-assessment.json"
+    },
+    {
+      "research_id": "WB05",
+      "name": "主辅功能与功能优化",
+      "report": "WB05-深度研究.md",
+      "new_primary_sources": [
+        "https://neunews.neu.edu.cn/info/1002/849441.htm"
+      ],
+      "read_scope": "本轮本人2019文章产品设计与方法论相关正文段落；不采纳人物健康/宣传效果作为方法证据",
+      "unresolved": [
+        "第7章正文与原始功能判据缺失",
+        "实际支撑功能贡献尚未验证"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "5fc8228a12f3e3cd4dd791846e71274555a906a0a8de7f4c07447e3e10e51e5c",
+      "report_sha256": "f8029bcaea4f37eb23cbb0a716fbed31db3eda8812437c492f8e26d415faf6ff",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB05-assessment.json"
+    },
+    {
+      "research_id": "WB06",
+      "name": "面向结构性能的动态设计",
+      "report": "WB06-深度研究.md",
+      "new_primary_sources": [
+        "https://neunews.neu.edu.cn/info/1002/849441.htm",
+        "https://qikan.cmes.org/jxgcxb/CN/PDF/16926"
+      ],
+      "read_scope": "本轮2019本人文深层动态性质段落；本轮重新核读已有官方来源文本的动态设计相关节，PDF第3页/印刷45页；未新下载或通读全10页",
+      "unresolved": [
+        "原专著章正文未得",
+        "尚无模型辨识、求解与实测对照"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "25a454c166b1a11b646b35c6a739a442d161686ac56a08d130541db651e425cf",
+      "report_sha256": "4da5041c0cf277c493091e4d54a3adf53cad8f41c655dcd8453e400c5ecadb6b",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB06-assessment.json"
+    },
+    {
+      "research_id": "WB07",
+      "name": "面向使用性能的智能设计",
+      "report": "WB07-深度研究.md",
+      "new_primary_sources": [
+        "https://qikan.cmes.org/jxgcxb/CN/PDF/16926"
+      ],
+      "read_scope": "本轮重新核读已有官方PDF文本第3页、印刷45页“智能设计”两含义及本文所指；不是专著第9章全文",
+      "unresolved": [
+        "第9章完整方法及具体控制子法未核",
+        "无真实传感器/执行器/动态数据"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "e656ede6bcf2f87b4228997f2026f34bfe9b9716c15a04cedac9314df8dd5c61",
+      "report_sha256": "a49db4c4961fb5e8f837095cec10cca60409b6b9fec6a8375aa8d75677117775",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB07-assessment.json"
+    },
+    {
+      "research_id": "WB08",
+      "name": "面向制造性能的可视化设计",
+      "report": "WB08-深度研究.md",
+      "new_primary_sources": [
+        "https://xuebao.neu.edu.cn/natural/EN/article/downloadArticleFile.do?attachType=PDF&id=3518"
+      ],
+      "read_scope": "本轮重新核读已有官方来源提取文本第2—3页：六类内容、技术流程与模型先验证；未新运行原论文振动筛模型",
+      "unresolved": [
+        "第10章专著全文未得",
+        "缺工程模型、软件版本和现场校准"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "27177b654b5f267008953b189ae45522b87378cd0360576c50ebc9ca8b933a77",
+      "report_sha256": "ba21542ffdb29e95aaa3aa71b0843cdf254aab4fa7ce8c284718cbac483239ae",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB08-assessment.json"
+    },
+    {
+      "research_id": "WB09",
+      "name": "深层次动态设计",
+      "report": "WB09-深度研究.md",
+      "new_primary_sources": [
+        "https://neunews.neu.edu.cn/info/1002/849441.htm"
+      ],
+      "read_scope": "本轮本人2019文章产品设计与方法论相关正文段落；不采纳人物健康/宣传效果作为方法证据",
+      "unresolved": [
+        "缺专著与相关研究全文逐式校核",
+        "没有实际数值模型与验证数据"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "33a09ac5cf14c71c7fba72b6989a789ac8906e5d6607ea5304e92637c6e72750",
+      "report_sha256": "f7ab1834a16d0cfd87dcaf0a0f275132f5a7bea16ebe2b87741ba4664818ad4f",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB09-assessment.json"
+    },
+    {
+      "research_id": "WB10",
+      "name": "设计质量检验与综合评价",
+      "report": "WB10-深度研究.md",
+      "new_primary_sources": [
+        "https://xuebao.neu.edu.cn/natural/EN/article/downloadArticleFile.do?attachType=PDF&id=2933",
+        "https://xuebao.neu.edu.cn/natural/EN/article/downloadArticleFile.do?attachType=PDF&id=1327"
+      ],
+      "read_scope": "本轮目读已有官方PDF渲染的印刷533页，确认分层模糊矩阵；中文提取乱码未作为正文证据；仅本轮官网PDF检索摘录命中；直接下载工具返回不支持内容类型，未取得正文",
+      "unresolved": [
+        "2008模型未完整复现",
+        "3A完整内涵及2010正文未核",
+        "无实际产品量表和数据"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "2afa538ff5c2092f44adf294b487ac084ad17cdf0c4427d1a82568dad633f2e9",
+      "report_sha256": "424ad65f1533d57ac772dafde5f24c8bc21f16f143319953e9c566bc8c8ff00c",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB10-assessment.json"
+    },
+    {
+      "research_id": "WB11",
+      "name": "科学方法论规则与设计专家系统",
+      "report": "WB11-深度研究.md",
+      "new_primary_sources": [
+        "https://neunews.neu.edu.cn/info/1002/849441.htm"
+      ],
+      "read_scope": "本轮本人2019文章产品设计与方法论相关正文段落；不采纳人物健康/宣传效果作为方法证据",
+      "unresolved": [
+        "第2/4章正文与真实专家系统运行资料缺失",
+        "未验证规则转写的可靠性"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "1ba6746420262d1706d3f206b8efcf34ab26d08b0f2747e1f7616f4d3df9471c",
+      "report_sha256": "100f4041dca24e62a1b364406a273e766026d95bb20d8c3cba228b87606ba284",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB11-assessment.json"
+    },
+    {
+      "research_id": "WB12",
+      "name": "国内外设计方法分类研究与出处去重",
+      "report": "WB12-深度研究.md",
+      "new_primary_sources": [
+        "https://neunews.neu.edu.cn/info/1002/849441.htm"
+      ],
+      "read_scope": "本轮本人2019文章产品设计与方法论相关正文段落；不采纳人物健康/宣传效果作为方法证据",
+      "unresolved": [
+        "70余方法七类完整对应仍未取得",
+        "不同版本分类与实体映射需逐项核读"
+      ],
+      "execution_status": "research_or_teaching_design_not_engineering_validation",
+      "normalized_dossier_sha256": "2ea2ba5b0ee44ae656386e92666a3672636a5f947e31bc8d041108ea1466327d",
+      "report_sha256": "06083c444f4be831dcdcbcb4962a0e36b79162adcb97c54654de600c244da3c2",
+      "input_assessment": "output/method-reader-review/content-quality/batch06/WB12-assessment.json"
+    }
+  ],
+  "scope": "first_pass_deep_research_with_explicit_source_limits",
+  "expert_certified": false,
+  "engineering_validated": false
+}

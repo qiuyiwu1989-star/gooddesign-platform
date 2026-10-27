@@ -1,0 +1,28 @@
+{
+  "type": "independent_agent_exact_arithmetic_check_not_expert",
+  "producer_script_sha256": "77780c31d2e039068db66fe1afb7cc69a1b54244fce8fce7d145b2033d5e58ab",
+  "producer_output_sha256": "9b3bbedfed6939b6c51946ed25980230d1b7be266410eec1531bdf39a135deaf",
+  "independent_results": {
+    "M_loss": "50",
+    "S_loss": "35",
+    "current": "35",
+    "perfect": "20",
+    "positive_probability": "1/2",
+    "positive_posterior": "4/5",
+    "positive_min": "38",
+    "negative_probability": "1/2",
+    "negative_posterior": "1/5",
+    "negative_min": "20",
+    "study": "29",
+    "EVPI": "15",
+    "EVSI": "6",
+    "net": "2"
+  },
+  "boundary_checks": {
+    "uninformative_EVSI_zero": true,
+    "perfect_EVSI_equals_EVPI": true,
+    "invalid_prior_rejected": true
+  },
+  "producer_output_matches": true,
+  "engineering_validated": false
+}

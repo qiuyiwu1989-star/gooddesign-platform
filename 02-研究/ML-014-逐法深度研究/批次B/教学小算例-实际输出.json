@@ -1,0 +1,214 @@
+{
+  "mode": "platform_teaching_assumptions",
+  "engineering_validated": false,
+  "checks": {
+    "R24": {
+      "m_kg": 0.2,
+      "vertical_drop_m": 0.05,
+      "efficiency_assumption": 0.6,
+      "available_J": 0.05886000000000001,
+      "force_N": 3,
+      "stroke_m": 0.03,
+      "required_J": 0.09,
+      "budget": "insufficient",
+      "orientation_not_checked": true
+    },
+    "R30": {
+      "row": "FR",
+      "column": "DP",
+      "matrices": [
+        [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            null
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "classification": [
+        "diagonal_declared",
+        "lower_triangular_declared",
+        "coupled_in_current_order",
+        "unknown"
+      ],
+      "information_axiom_not_computed": true
+    },
+    "R31": {
+      "convention": "row impacts column",
+      "nodes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "edges": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B",
+          "A"
+        ],
+        [
+          "B",
+          "C"
+        ]
+      ],
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "strong_components": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "condensed_order": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ],
+      "physical_coupling_not_modified": true
+    },
+    "R32": {
+      "moving_bodies": 3,
+      "lower_pairs": 4,
+      "generic_planar_DOF": 1,
+      "special_geometry_redundancy_not_proven": true,
+      "full_motion_scan_executed": false
+    },
+    "R33": {
+      "F_N": 1000,
+      "L_m": 1,
+      "delta_max_m": 0.001,
+      "temperature_C": 80,
+      "materials": [
+        {
+          "id": "A",
+          "E_Pa": 70000000000.0,
+          "rho_kg_m3": 2700,
+          "temperature_limit_C": 150,
+          "temperature_pass": true,
+          "index_E_over_rho": 25925925.925925925,
+          "minimum_mass_kg_stiffness_only": 0.03857142857142857
+        },
+        {
+          "id": "B",
+          "E_Pa": 200000000000.0,
+          "rho_kg_m3": 7800,
+          "temperature_limit_C": 120,
+          "temperature_pass": true,
+          "index_E_over_rho": 25641025.64102564,
+          "minimum_mass_kg_stiffness_only": 0.039
+        },
+        {
+          "id": "C",
+          "E_Pa": 110000000000.0,
+          "rho_kg_m3": 4500,
+          "temperature_limit_C": 60,
+          "temperature_pass": false,
+          "index_E_over_rho": 24444444.444444444,
+          "minimum_mass_kg_stiffness_only": 0.04090909090909091
+        }
+      ],
+      "screened_ranking": [
+        "A",
+        "B"
+      ],
+      "other_constraints_unchecked": [
+        "strength",
+        "buckling",
+        "fatigue",
+        "corrosion",
+        "processing"
+      ]
+    },
+    "R36": {
+      "fixtures": [
+        {
+          "candidate": "C1",
+          "hard": null,
+          "marks": [
+            1,
+            1
+          ],
+          "state": "hold_hard_unknown"
+        },
+        {
+          "candidate": "C2",
+          "hard": false,
+          "marks": [
+            1,
+            1
+          ],
+          "state": "blocked_hard_failure"
+        },
+        {
+          "candidate": "C3",
+          "hard": true,
+          "marks": [
+            0,
+            null
+          ],
+          "state": "incomplete_comparison"
+        }
+      ],
+      "recommendations": [],
+      "weighted_optimization_not_run": true
+    }
+  }
+}
