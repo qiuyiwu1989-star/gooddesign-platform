@@ -1,9 +1,9 @@
 {
   "created_date": "2026-10-27",
-  "scope": "planned_64_deepening_tasks_not_dispatched_or_completed_research",
+  "scope": "multiagent_first_batch_execution_with_remaining_tasks_planned",
   "primary_owner": "current_method_library_agent",
   "active_task": null,
-  "next_task": "MD-001",
+  "next_task": "MD-008_after_batch_review",
   "tasks": [
     {
       "task_id": "MD-001",
@@ -12,8 +12,8 @@
       "name": "问题定义与要求管理",
       "batch": 1,
       "batch_name": "关键链贯通",
-      "status": "ready_to_start",
-      "owner": "current_method_library_agent",
+      "status": "research_in_progress",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-001-R48.md",
@@ -35,8 +35,8 @@
       "name": "用户观察与需求证据化",
       "batch": 1,
       "batch_name": "关键链贯通",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [
         "R48"
@@ -60,8 +60,8 @@
       "name": "功能分解与接口分析",
       "batch": 1,
       "batch_name": "关键链贯通",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "research_in_progress",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [
         "R48",
@@ -86,8 +86,8 @@
       "name": "形态学分析",
       "batch": 1,
       "batch_name": "关键链贯通",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [
         "R14"
@@ -111,8 +111,8 @@
       "name": "Pugh概念筛选",
       "batch": 1,
       "batch_name": "关键链贯通",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "research_in_progress",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [
         "R17"
@@ -136,8 +136,8 @@
       "name": "原型与假设测试",
       "batch": 1,
       "batch_name": "关键链贯通",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [
         "R36"
@@ -161,8 +161,8 @@
       "name": "验证与确认",
       "batch": 1,
       "batch_name": "关键链贯通",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [
         "R48",
@@ -1491,5 +1491,10 @@
         "published": false
       }
     }
+  ],
+  "active_tasks": [
+    "MD-001",
+    "MD-003",
+    "MD-005"
   ]
 }

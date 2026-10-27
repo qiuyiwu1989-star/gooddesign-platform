@@ -1,6 +1,10 @@
 from pathlib import Path
 import csv,json,hashlib
 ROOT=Path(__file__).resolve().parents[2];BASE=Path(__file__).resolve().parent
+if (BASE/'任务台账.json').exists():
+ existing=json.loads((BASE/'任务台账.json').read_text())
+ if any(t['status']not in ('planned','ready_to_start')for t in existing['tasks']):
+  raise SystemExit('已有执行进度，禁止初始化脚本覆盖；请显式更新任务状态。')
 research=ROOT/'02-研究/ML-017-方法深化第二轮'
 rows={x['id']:x for x in csv.DictReader((research/'逐法研究判断.tsv').open(),delimiter='\t')}
 names={x['research_id']:x['name']for x in json.loads((research/'研究清单.json').read_text())['methods_index']}
