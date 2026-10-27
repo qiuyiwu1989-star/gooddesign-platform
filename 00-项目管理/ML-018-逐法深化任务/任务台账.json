@@ -1,9 +1,9 @@
 {
   "created_date": "2026-10-27",
-  "scope": "batch02_dispatched_batch01_pending_findings_resolution",
+  "scope": "batch03_queued_batch02_cross_review_batch01_versioned_repair",
   "primary_owner": "current_method_library_agent",
   "active_task": null,
-  "next_task": "MD-017_after_batch02_review",
+  "next_task": "MD-030_after_batch03",
   "tasks": [
     {
       "task_id": "MD-001",
@@ -194,21 +194,22 @@
       "name": "双钻",
       "batch": 2,
       "batch_name": "需求与功能补全",
-      "status": "research_in_progress",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/needs_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/function_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-008-R02.md",
       "target_artifact": "原始委托、事件证据、两种问题定义、一次区分性小测试和范围修订记录。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
-      }
+      },
+      "progress_scope": "author_stage_completed_root_manifest_checked_review_pending"
     },
     {
       "task_id": "MD-009",
@@ -217,21 +218,22 @@
       "name": "设计思维",
       "batch": 2,
       "batch_name": "需求与功能补全",
-      "status": "assigned_queued",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/needs_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/function_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-009-R03.md",
       "target_artifact": "同一概念做纸面交互原型和机制台架，分别记录任务、观察、解释及设计修订。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
-      }
+      },
+      "progress_scope": "author_stage_completed_root_manifest_checked_review_pending"
     },
     {
       "task_id": "MD-010",
@@ -240,21 +242,22 @@
       "name": "待办任务理论",
       "batch": 2,
       "batch_name": "需求与功能补全",
-      "status": "assigned_queued",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/needs_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/function_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-010-R09.md",
       "target_artifact": "两次选择/放弃事件时间线、替代方式、推拉力量与需求修订。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
-      }
+      },
+      "progress_scope": "author_stage_completed_root_manifest_checked_review_pending"
     },
     {
       "task_id": "MD-011",
@@ -263,21 +266,22 @@
       "name": "领先用户法",
       "batch": 2,
       "batch_name": "需求与功能补全",
-      "status": "research_in_progress",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/function_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/validation_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-011-R10.md",
       "target_artifact": "候选筛选表、排除记录、类比领域推荐链、共创贡献与权利清单。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
-      }
+      },
+      "progress_scope": "author_stage_completed_root_manifest_checked_review_pending"
     },
     {
       "task_id": "MD-012",
@@ -286,21 +290,22 @@
       "name": "Kano需求分类",
       "batch": 2,
       "batch_name": "需求与功能补全",
-      "status": "assigned_queued",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/function_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/validation_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-012-R11.md",
       "target_artifact": "固定矩阵版本、完整回答对夹具、缺答负例、细分人群结果及问卷预测试。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
-      }
+      },
+      "progress_scope": "author_stage_completed_root_manifest_checked_review_pending"
     },
     {
       "task_id": "MD-013",
@@ -309,21 +314,22 @@
       "name": "质量功能展开",
       "batch": 2,
       "batch_name": "需求与功能补全",
-      "status": "assigned_queued",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/function_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/validation_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-013-R12.md",
       "target_artifact": "需要—技术响应—关系依据—目标—责任矩阵，并改变权重看排序稳定性。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
-      }
+      },
+      "progress_scope": "author_stage_completed_root_manifest_checked_review_pending"
     },
     {
       "task_id": "MD-014",
@@ -332,21 +338,22 @@
       "name": "人机工程与人本设计",
       "batch": 2,
       "batch_name": "需求与功能补全",
-      "status": "research_in_progress",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/validation_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/needs_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-014-R13.md",
       "target_artifact": "换刀/清洁/恢复任务分解、信息需求、姿态与认知负荷观察及改版前后对照。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
-      }
+      },
+      "progress_scope": "author_stage_completed_root_manifest_checked_review_pending"
     },
     {
       "task_id": "MD-015",
@@ -355,21 +362,22 @@
       "name": "FAST功能逻辑分析",
       "batch": 2,
       "batch_name": "需求与功能补全",
-      "status": "assigned_queued",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/validation_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/needs_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-015-R15.md",
       "target_artifact": "每条边的HOW/WHY问答、主链替代方案、支撑功能与范围外目的。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
-      }
+      },
+      "progress_scope": "author_stage_completed_root_manifest_checked_review_pending"
     },
     {
       "task_id": "MD-016",
@@ -378,21 +386,22 @@
       "name": "根因分析",
       "batch": 2,
       "batch_name": "需求与功能补全",
-      "status": "assigned_queued",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/validation_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/needs_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-016-R16.md",
       "target_artifact": "事件时间线、原因竞争表、屏障缺口、行动责任及按暴露机会核对的复查记录。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
-      }
+      },
+      "progress_scope": "author_stage_completed_root_manifest_checked_review_pending"
     },
     {
       "task_id": "MD-017",
@@ -401,8 +410,8 @@
       "name": "设计启发式",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-017-R19.md",
@@ -415,7 +424,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-018",
@@ -424,8 +434,8 @@
       "name": "C-K设计理论",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-018-R20.md",
@@ -438,7 +448,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-019",
@@ -447,8 +458,8 @@
       "name": "TRIZ体系",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-019-R21.md",
@@ -461,7 +472,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-020",
@@ -470,8 +482,8 @@
       "name": "技术矛盾与发明原理",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-020-R22.md",
@@ -484,7 +496,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-021",
@@ -493,8 +506,8 @@
       "name": "物理矛盾与分离",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-021-R23.md",
@@ -507,7 +520,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-022",
@@ -516,8 +530,8 @@
       "name": "理想解与资源分析",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-022-R24.md",
@@ -530,7 +544,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-023",
@@ -539,8 +554,8 @@
       "name": "物场分析与标准解",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-023-R25.md",
@@ -553,7 +568,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-024",
@@ -562,8 +578,8 @@
       "name": "功能裁剪",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-024-R26.md",
@@ -576,7 +592,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-025",
@@ -585,8 +602,8 @@
       "name": "功能导向检索与科学效应",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-025-R27.md",
@@ -599,7 +616,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-026",
@@ -608,8 +626,8 @@
       "name": "ARIZ发明问题求解算法",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-026-R28.md",
@@ -622,7 +640,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-027",
@@ -631,8 +650,8 @@
       "name": "技术系统进化趋势",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-027-R29.md",
@@ -645,7 +664,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-028",
@@ -654,8 +674,8 @@
       "name": "仿生设计",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-028-R18.md",
@@ -668,7 +688,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-029",
@@ -677,8 +698,8 @@
       "name": "功能—行为—结构推理（FBS）",
       "batch": 3,
       "batch_name": "创新原理生成",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_review_and_revision",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-029-R49.md",
@@ -691,7 +712,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_cross_review_then_batch01_v011_revision_then_batch03"
     },
     {
       "task_id": "MD-030",
@@ -1500,8 +1522,21 @@
     }
   ],
   "active_tasks": [
+    "MD-001",
+    "MD-002",
+    "MD-003",
+    "MD-004",
+    "MD-005",
+    "MD-006",
+    "MD-007",
     "MD-008",
+    "MD-009",
+    "MD-010",
     "MD-011",
-    "MD-014"
+    "MD-012",
+    "MD-013",
+    "MD-014",
+    "MD-015",
+    "MD-016"
   ]
 }
