@@ -1,0 +1,359 @@
+{
+  "cases": [
+    {
+      "name": "正常全寿命成本包含用户负担",
+      "input": {
+        "id": "R45-LIFE-COST-TEACH-001",
+        "origin": "synthetic_cost_units_not_quotes",
+        "necessary_functions": [
+          "provide controlled action",
+          "support maintainable recovery"
+        ],
+        "function_quality_status": "assumed_equivalent_for_cost_arithmetic_only",
+        "hard_requirements_waived": [],
+        "service_events": 5,
+        "alternatives": [
+          {
+            "id": "A",
+            "purchase_CU": 100.0,
+            "user_maintenance_per_event_CU": 20.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          },
+          {
+            "id": "B",
+            "purchase_CU": 80.0,
+            "user_maintenance_per_event_CU": 30.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          }
+        ],
+        "cost_unit": "arbitrary_CU_not_currency_or_real_quote",
+        "scope": "undiscounted same service, user burden included; not a validated VE recommendation"
+      },
+      "actual": {
+        "status": "cost_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "purchase_function_costs_CU": [
+              60.0,
+              40.0
+            ],
+            "purchase_CU": 100.0,
+            "user_life_maintenance_CU": 100.0,
+            "total_cost_arithmetic_CU": 200.0
+          },
+          {
+            "id": "B",
+            "purchase_function_costs_CU": [
+              48.0,
+              32.0
+            ],
+            "purchase_CU": 80.0,
+            "user_life_maintenance_CU": 150.0,
+            "total_cost_arithmetic_CU": 230.0
+          }
+        ],
+        "cost_order": [
+          "A",
+          "B"
+        ],
+        "value_recommendation": null,
+        "why": "equal function/quality only assumed; no real costs or acceptance; no numeric Function/Cost value score"
+      },
+      "passed": true
+    },
+    {
+      "name": "缺用户成本不填零",
+      "input": {
+        "id": "R45-LIFE-COST-TEACH-001",
+        "origin": "synthetic_cost_units_not_quotes",
+        "necessary_functions": [
+          "provide controlled action",
+          "support maintainable recovery"
+        ],
+        "function_quality_status": "assumed_equivalent_for_cost_arithmetic_only",
+        "hard_requirements_waived": [],
+        "service_events": 5,
+        "alternatives": [
+          {
+            "id": "A",
+            "purchase_CU": 100.0,
+            "user_maintenance_per_event_CU": 20.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          },
+          {
+            "id": "B",
+            "purchase_CU": 80.0,
+            "user_maintenance_per_event_CU": null,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          }
+        ],
+        "cost_unit": "arbitrary_CU_not_currency_or_real_quote",
+        "scope": "undiscounted same service, user burden included; not a validated VE recommendation"
+      },
+      "actual": {
+        "status": "cost_unknown",
+        "value_recommendation": null
+      },
+      "passed": true
+    },
+    {
+      "name": "删必要作用不适用价值改善",
+      "input": {
+        "id": "R45-LIFE-COST-TEACH-001",
+        "origin": "synthetic_cost_units_not_quotes",
+        "necessary_functions": [
+          "provide controlled action",
+          "support maintainable recovery"
+        ],
+        "function_quality_status": "recovery_function_lost",
+        "hard_requirements_waived": [],
+        "service_events": 5,
+        "alternatives": [
+          {
+            "id": "A",
+            "purchase_CU": 100.0,
+            "user_maintenance_per_event_CU": 20.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          },
+          {
+            "id": "B",
+            "purchase_CU": 80.0,
+            "user_maintenance_per_event_CU": 30.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          }
+        ],
+        "cost_unit": "arbitrary_CU_not_currency_or_real_quote",
+        "scope": "undiscounted same service, user burden included; not a validated VE recommendation"
+      },
+      "actual": {
+        "status": "function_quality_not_comparable",
+        "value_recommendation": null
+      },
+      "passed": true
+    },
+    {
+      "name": "恰等费用边界",
+      "input": {
+        "id": "R45-LIFE-COST-TEACH-001",
+        "origin": "synthetic_cost_units_not_quotes",
+        "necessary_functions": [
+          "provide controlled action",
+          "support maintainable recovery"
+        ],
+        "function_quality_status": "assumed_equivalent_for_cost_arithmetic_only",
+        "hard_requirements_waived": [],
+        "service_events": 2,
+        "alternatives": [
+          {
+            "id": "A",
+            "purchase_CU": 100.0,
+            "user_maintenance_per_event_CU": 20.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          },
+          {
+            "id": "B",
+            "purchase_CU": 80.0,
+            "user_maintenance_per_event_CU": 30.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          }
+        ],
+        "cost_unit": "arbitrary_CU_not_currency_or_real_quote",
+        "scope": "undiscounted same service, user burden included; not a validated VE recommendation"
+      },
+      "actual": {
+        "status": "cost_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "purchase_function_costs_CU": [
+              60.0,
+              40.0
+            ],
+            "purchase_CU": 100.0,
+            "user_life_maintenance_CU": 40.0,
+            "total_cost_arithmetic_CU": 140.0
+          },
+          {
+            "id": "B",
+            "purchase_function_costs_CU": [
+              48.0,
+              32.0
+            ],
+            "purchase_CU": 80.0,
+            "user_life_maintenance_CU": 60.0,
+            "total_cost_arithmetic_CU": 140.0
+          }
+        ],
+        "cost_order": [
+          "A",
+          "B"
+        ],
+        "value_recommendation": null,
+        "why": "equal function/quality only assumed; no real costs or acceptance; no numeric Function/Cost value score"
+      },
+      "passed": true
+    },
+    {
+      "name": "维护频度敏感性反转",
+      "input": {
+        "id": "R45-LIFE-COST-TEACH-001",
+        "origin": "synthetic_cost_units_not_quotes",
+        "necessary_functions": [
+          "provide controlled action",
+          "support maintainable recovery"
+        ],
+        "function_quality_status": "assumed_equivalent_for_cost_arithmetic_only",
+        "hard_requirements_waived": [],
+        "service_events": 1,
+        "alternatives": [
+          {
+            "id": "A",
+            "purchase_CU": 100.0,
+            "user_maintenance_per_event_CU": 20.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          },
+          {
+            "id": "B",
+            "purchase_CU": 80.0,
+            "user_maintenance_per_event_CU": 30.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          }
+        ],
+        "cost_unit": "arbitrary_CU_not_currency_or_real_quote",
+        "scope": "undiscounted same service, user burden included; not a validated VE recommendation"
+      },
+      "actual": {
+        "status": "cost_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "purchase_function_costs_CU": [
+              60.0,
+              40.0
+            ],
+            "purchase_CU": 100.0,
+            "user_life_maintenance_CU": 20.0,
+            "total_cost_arithmetic_CU": 120.0
+          },
+          {
+            "id": "B",
+            "purchase_function_costs_CU": [
+              48.0,
+              32.0
+            ],
+            "purchase_CU": 80.0,
+            "user_life_maintenance_CU": 30.0,
+            "total_cost_arithmetic_CU": 110.0
+          }
+        ],
+        "cost_order": [
+          "B",
+          "A"
+        ],
+        "value_recommendation": null,
+        "why": "equal function/quality only assumed; no real costs or acceptance; no numeric Function/Cost value score"
+      },
+      "passed": true
+    },
+    {
+      "name": "费用分派不守恒",
+      "actual": "rejected",
+      "reason": "function allocation not closed",
+      "passed": true
+    },
+    {
+      "name": "偏好豁免硬条件",
+      "actual": "rejected",
+      "reason": "necessary function/hard requirement erased",
+      "passed": true
+    },
+    {
+      "name": "布尔当维护次数",
+      "actual": "rejected",
+      "reason": "nonnegative integer service count required",
+      "passed": true
+    },
+    {
+      "name": "资料服务另一情境必要作用未知",
+      "input": {
+        "id": "DOC-SERVICE-TEACH",
+        "origin": "synthetic_cost_units_not_quotes",
+        "necessary_functions": [
+          "provide controlled action",
+          "support maintainable recovery"
+        ],
+        "function_quality_status": "unknown_notification_and_receipt_preserved",
+        "hard_requirements_waived": [],
+        "service_events": 5,
+        "alternatives": [
+          {
+            "id": "A",
+            "purchase_CU": 100.0,
+            "user_maintenance_per_event_CU": 20.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          },
+          {
+            "id": "B",
+            "purchase_CU": 80.0,
+            "user_maintenance_per_event_CU": 30.0,
+            "function_cost_shares": [
+              0.6,
+              0.4
+            ]
+          }
+        ],
+        "cost_unit": "arbitrary_CU_not_currency_or_real_quote",
+        "scope": "undiscounted same service, user burden included; not a validated VE recommendation"
+      },
+      "actual": {
+        "status": "function_quality_not_comparable",
+        "value_recommendation": null
+      },
+      "passed": true
+    }
+  ],
+  "count": 9,
+  "cost_shift_counterexample": "purchase80<100 but five user service events make230>200; synthetic only",
+  "real_costs": {
+    "quotes": null,
+    "volume": null,
+    "discount_rate": null,
+    "downtime": null,
+    "end_of_life": null
+  },
+  "actual_value_improvement": null
+}

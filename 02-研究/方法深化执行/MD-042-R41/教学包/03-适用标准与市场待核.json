@@ -1,0 +1,29 @@
+{
+  "market": null,
+  "classification": "rubber plantation tapping use needs agricultural/forestry boundary determination, no automatic assumption",
+  "candidate_sources": [
+    {
+      "id": "ISO12100:2010",
+      "role": "general machinery risk methodology",
+      "status": "public metadata says published/current, revision draft underway; full standard not acquired"
+    },
+    {
+      "id": "ISO18497-1:2024",
+      "role": "agricultural automated-function design principles",
+      "status": "scope excludes forestry/public roads; applicability not confirmed; must find relevant type-C scope"
+    },
+    {
+      "id": "HSE/PUWER guidance",
+      "role": "UK workplace equipment public guidance",
+      "status": "not target-country regulation determination"
+    }
+  ],
+  "needs_qualified_scope_review": [
+    "target country and product/use classification",
+    "fixed versus mobile use",
+    "functions and operator/bystander interaction",
+    "applicable type-C and control/safeguard standards",
+    "law/edition status at actual product release"
+  ],
+  "conformity_claim": null
+}

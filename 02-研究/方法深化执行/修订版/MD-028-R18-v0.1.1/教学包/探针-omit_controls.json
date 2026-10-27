@@ -1,0 +1,50 @@
+{
+  "fixture": "BIO-TRANSFER-01",
+  "context": {
+    "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "problem_version": "0.1.0",
+    "identity": "research_hypotheses_only_not_requirements",
+    "customer_approved": false,
+    "engineering_validated": false
+  },
+  "version": "0.1.0",
+  "source": "Bohn and Federle 2004 PNAS DOI10.1073/pnas.0405885101",
+  "organism": "Nepenthes bicalcarata / Oecophylla smaragdina friction experiment",
+  "evidence_scope": "selected methods, wet/dry comparisons and attachment-structure distinction",
+  "mechanisms": [
+    {
+      "condition": "wet peristome",
+      "affected_structure": "soft adhesive pad",
+      "effect": "water-film attachment disruption"
+    },
+    {
+      "condition": "anisotropic peristome topography",
+      "affected_structure": "claw",
+      "effect": "direction-dependent friction"
+    }
+  ],
+  "abstraction": "fluid film and surface geometry interact with contact structure; conditions matter",
+  "target": "explore cleanable contact interface in tapping research",
+  "differences": [
+    {
+      "variable": "fluid",
+      "nature": "aqueous wetting",
+      "target": "latex rheology and coagulation unknown"
+    },
+    {
+      "variable": "contact",
+      "nature": "insect pad/claw",
+      "target": "tool/material pair unknown"
+    },
+    {
+      "variable": "film stability",
+      "nature": "wet peristome",
+      "target": "field contamination and replenishment unknown"
+    }
+  ],
+  "engineering_gain": null,
+  "verified_transfer": false,
+  "test_plan": [],
+  "target_threshold": null
+}

@@ -1,0 +1,633 @@
+{
+  "original_files_unchanged": 46,
+  "manifests": [
+    {
+      "task": "MD-026-R28-v0.1.1",
+      "manifest_sha256": "a3acb55326d1ad9c11a4ca0c1d6339a4948dee2aa9481f96841e550d9e8f2efc",
+      "entries_checked": 24
+    },
+    {
+      "task": "MD-028-R18-v0.1.1",
+      "manifest_sha256": "aa7b9c08116dbb6c4dab7ad40e2fbe6199cb083a8ede46c320d397193e936e46",
+      "entries_checked": 20
+    }
+  ],
+  "replayed": "{\"methods\": [\"R28\", \"R18\"], \"checks\": 14, \"passed\": 14, \"no_engineering_or_user_validation\": true}\n",
+  "probes": [
+    {
+      "name": "R28-old-version-drift",
+      "input": {
+        "fixture": "ARIZ-LIMITED-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "99",
+        "source_version": "ARIZ-85V Spanish Foundation translation",
+        "implemented_scope": [
+          "mini_problem",
+          "conflict_pair",
+          "zone_time_resources",
+          "physical_contradiction_hypothesis",
+          "reformulation_record"
+        ],
+        "system": [
+          "contact element",
+          "workpiece",
+          "release actuator"
+        ],
+        "main_process": "maintain relative position during constructed work stage",
+        "technical_conflicts": [
+          {
+            "action": "increase contact load",
+            "useful": "resist relative slip",
+            "harmful": "release burden may increase"
+          },
+          {
+            "action": "reduce contact load",
+            "useful": "facilitate release",
+            "harmful": "holding resistance may decrease"
+          }
+        ],
+        "selected_conflict": 0,
+        "operating_zone": "contact interface",
+        "operating_times": {
+          "work": "holding",
+          "release": "disengagement"
+        },
+        "physical_contradiction": {
+          "same_element": "contact element",
+          "property": "normal load",
+          "state_A": "high",
+          "condition_A": "work stage",
+          "state_B": "low",
+          "condition_B": "release stage",
+          "status": "hypothesis_not_proven"
+        },
+        "resources": [
+          {
+            "item": "actuator state",
+            "availability": "unknown"
+          },
+          {
+            "item": "workpiece surface information",
+            "availability": "unknown"
+          }
+        ],
+        "IFR": "seek stable holding then release without added burdens; desired direction only",
+        "threshold": null,
+        "solution_status": "unsolved",
+        "reformulation": {
+          "parent_version": null,
+          "reason": null,
+          "prior_model_preserved": true
+        }
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "teaching_version_changed"
+      }
+    },
+    {
+      "name": "R18-old-three-empty",
+      "input": {
+        "fixture": "BIO-TRANSFER-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source": "Bohn and Federle 2004 PNAS DOI10.1073/pnas.0405885101",
+        "organism": "Nepenthes bicalcarata / Oecophylla smaragdina friction experiment",
+        "evidence_scope": "selected methods, wet/dry comparisons and attachment-structure distinction",
+        "mechanisms": [
+          {
+            "condition": "wet peristome",
+            "affected_structure": "soft adhesive pad",
+            "effect": "water-film attachment disruption"
+          },
+          {
+            "condition": "anisotropic peristome topography",
+            "affected_structure": "claw",
+            "effect": "direction-dependent friction"
+          }
+        ],
+        "abstraction": "fluid film and surface geometry interact with contact structure; conditions matter",
+        "target": "explore cleanable contact interface in tapping research",
+        "differences": [
+          {
+            "variable": "fluid",
+            "nature": "aqueous wetting",
+            "target": "latex rheology and coagulation unknown"
+          },
+          {
+            "variable": "contact",
+            "nature": "insect pad/claw",
+            "target": "tool/material pair unknown"
+          },
+          {
+            "variable": "film stability",
+            "nature": "wet peristome",
+            "target": "field contamination and replenishment unknown"
+          }
+        ],
+        "engineering_gain": null,
+        "verified_transfer": false,
+        "test_plan": [
+          "",
+          "",
+          ""
+        ],
+        "target_threshold": null
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "missing_controls"
+      }
+    },
+    {
+      "name": "R18-whitespace",
+      "input": {
+        "fixture": "BIO-TRANSFER-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source": "Bohn and Federle 2004 PNAS DOI10.1073/pnas.0405885101",
+        "organism": "Nepenthes bicalcarata / Oecophylla smaragdina friction experiment",
+        "evidence_scope": "selected methods, wet/dry comparisons and attachment-structure distinction",
+        "mechanisms": [
+          {
+            "condition": "wet peristome",
+            "affected_structure": "soft adhesive pad",
+            "effect": "water-film attachment disruption"
+          },
+          {
+            "condition": "anisotropic peristome topography",
+            "affected_structure": "claw",
+            "effect": "direction-dependent friction"
+          }
+        ],
+        "abstraction": "fluid film and surface geometry interact with contact structure; conditions matter",
+        "target": "explore cleanable contact interface in tapping research",
+        "differences": [
+          {
+            "variable": "fluid",
+            "nature": "aqueous wetting",
+            "target": "latex rheology and coagulation unknown"
+          },
+          {
+            "variable": "contact",
+            "nature": "insect pad/claw",
+            "target": "tool/material pair unknown"
+          },
+          {
+            "variable": "film stability",
+            "nature": "wet peristome",
+            "target": "field contamination and replenishment unknown"
+          }
+        ],
+        "engineering_gain": null,
+        "verified_transfer": false,
+        "test_plan": [
+          " ",
+          "\t",
+          "\n"
+        ],
+        "target_threshold": null
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "missing_controls"
+      }
+    },
+    {
+      "name": "R18-nonstr",
+      "input": {
+        "fixture": "BIO-TRANSFER-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source": "Bohn and Federle 2004 PNAS DOI10.1073/pnas.0405885101",
+        "organism": "Nepenthes bicalcarata / Oecophylla smaragdina friction experiment",
+        "evidence_scope": "selected methods, wet/dry comparisons and attachment-structure distinction",
+        "mechanisms": [
+          {
+            "condition": "wet peristome",
+            "affected_structure": "soft adhesive pad",
+            "effect": "water-film attachment disruption"
+          },
+          {
+            "condition": "anisotropic peristome topography",
+            "affected_structure": "claw",
+            "effect": "direction-dependent friction"
+          }
+        ],
+        "abstraction": "fluid film and surface geometry interact with contact structure; conditions matter",
+        "target": "explore cleanable contact interface in tapping research",
+        "differences": [
+          {
+            "variable": "fluid",
+            "nature": "aqueous wetting",
+            "target": "latex rheology and coagulation unknown"
+          },
+          {
+            "variable": "contact",
+            "nature": "insect pad/claw",
+            "target": "tool/material pair unknown"
+          },
+          {
+            "variable": "film stability",
+            "nature": "wet peristome",
+            "target": "field contamination and replenishment unknown"
+          }
+        ],
+        "engineering_gain": null,
+        "verified_transfer": false,
+        "test_plan": [
+          1,
+          2,
+          3
+        ],
+        "target_threshold": null
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "missing_controls"
+      }
+    },
+    {
+      "name": "R18-three-duplicate-nonempty",
+      "input": {
+        "fixture": "BIO-TRANSFER-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source": "Bohn and Federle 2004 PNAS DOI10.1073/pnas.0405885101",
+        "organism": "Nepenthes bicalcarata / Oecophylla smaragdina friction experiment",
+        "evidence_scope": "selected methods, wet/dry comparisons and attachment-structure distinction",
+        "mechanisms": [
+          {
+            "condition": "wet peristome",
+            "affected_structure": "soft adhesive pad",
+            "effect": "water-film attachment disruption"
+          },
+          {
+            "condition": "anisotropic peristome topography",
+            "affected_structure": "claw",
+            "effect": "direction-dependent friction"
+          }
+        ],
+        "abstraction": "fluid film and surface geometry interact with contact structure; conditions matter",
+        "target": "explore cleanable contact interface in tapping research",
+        "differences": [
+          {
+            "variable": "fluid",
+            "nature": "aqueous wetting",
+            "target": "latex rheology and coagulation unknown"
+          },
+          {
+            "variable": "contact",
+            "nature": "insect pad/claw",
+            "target": "tool/material pair unknown"
+          },
+          {
+            "variable": "film stability",
+            "nature": "wet peristome",
+            "target": "field contamination and replenishment unknown"
+          }
+        ],
+        "engineering_gain": null,
+        "verified_transfer": false,
+        "test_plan": [
+          "x",
+          "x",
+          "x"
+        ],
+        "target_threshold": null
+      },
+      "actual": "accepted",
+      "output": {
+        "evidence_chain": [
+          "original biological experiment",
+          "condition-bound mechanism",
+          "domain-neutral abstraction",
+          "unverified target hypothesis"
+        ],
+        "unresolved_transfer_variables": [
+          "fluid",
+          "contact",
+          "film stability"
+        ],
+        "engineering_concept": "investigate condition-specific surface/interface strategy",
+        "performance_gain": null,
+        "status": "requires_target_experiment",
+        "biological_observations_are_not_engineering_results": true
+      }
+    },
+    {
+      "name": "R28-source-version-change",
+      "input": {
+        "fixture": "ARIZ-LIMITED-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source_version": "ARIZ-other",
+        "implemented_scope": [
+          "mini_problem",
+          "conflict_pair",
+          "zone_time_resources",
+          "physical_contradiction_hypothesis",
+          "reformulation_record"
+        ],
+        "system": [
+          "contact element",
+          "workpiece",
+          "release actuator"
+        ],
+        "main_process": "maintain relative position during constructed work stage",
+        "technical_conflicts": [
+          {
+            "action": "increase contact load",
+            "useful": "resist relative slip",
+            "harmful": "release burden may increase"
+          },
+          {
+            "action": "reduce contact load",
+            "useful": "facilitate release",
+            "harmful": "holding resistance may decrease"
+          }
+        ],
+        "selected_conflict": 0,
+        "operating_zone": "contact interface",
+        "operating_times": {
+          "work": "holding",
+          "release": "disengagement"
+        },
+        "physical_contradiction": {
+          "same_element": "contact element",
+          "property": "normal load",
+          "state_A": "high",
+          "condition_A": "work stage",
+          "state_B": "low",
+          "condition_B": "release stage",
+          "status": "hypothesis_not_proven"
+        },
+        "resources": [
+          {
+            "item": "actuator state",
+            "availability": "unknown"
+          },
+          {
+            "item": "workpiece surface information",
+            "availability": "unknown"
+          }
+        ],
+        "IFR": "seek stable holding then release without added burdens; desired direction only",
+        "threshold": null,
+        "solution_status": "unsolved",
+        "reformulation": {
+          "parent_version": null,
+          "reason": null,
+          "prior_model_preserved": true
+        }
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_problem_or_scope_changed"
+      }
+    },
+    {
+      "name": "R28-no-full-claim",
+      "input": {
+        "fixture": "ARIZ-LIMITED-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source_version": "ARIZ-85V Spanish Foundation translation",
+        "implemented_scope": [
+          "mini_problem",
+          "conflict_pair",
+          "zone_time_resources",
+          "physical_contradiction_hypothesis",
+          "reformulation_record",
+          "full_ARIZ"
+        ],
+        "system": [
+          "contact element",
+          "workpiece",
+          "release actuator"
+        ],
+        "main_process": "maintain relative position during constructed work stage",
+        "technical_conflicts": [
+          {
+            "action": "increase contact load",
+            "useful": "resist relative slip",
+            "harmful": "release burden may increase"
+          },
+          {
+            "action": "reduce contact load",
+            "useful": "facilitate release",
+            "harmful": "holding resistance may decrease"
+          }
+        ],
+        "selected_conflict": 0,
+        "operating_zone": "contact interface",
+        "operating_times": {
+          "work": "holding",
+          "release": "disengagement"
+        },
+        "physical_contradiction": {
+          "same_element": "contact element",
+          "property": "normal load",
+          "state_A": "high",
+          "condition_A": "work stage",
+          "state_B": "low",
+          "condition_B": "release stage",
+          "status": "hypothesis_not_proven"
+        },
+        "resources": [
+          {
+            "item": "actuator state",
+            "availability": "unknown"
+          },
+          {
+            "item": "workpiece surface information",
+            "availability": "unknown"
+          }
+        ],
+        "IFR": "seek stable holding then release without added burdens; desired direction only",
+        "threshold": null,
+        "solution_status": "unsolved",
+        "reformulation": {
+          "parent_version": null,
+          "reason": null,
+          "prior_model_preserved": true
+        }
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_problem_or_scope_changed"
+      }
+    },
+    {
+      "name": "R18-invent-gain",
+      "input": {
+        "fixture": "BIO-TRANSFER-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source": "Bohn and Federle 2004 PNAS DOI10.1073/pnas.0405885101",
+        "organism": "Nepenthes bicalcarata / Oecophylla smaragdina friction experiment",
+        "evidence_scope": "selected methods, wet/dry comparisons and attachment-structure distinction",
+        "mechanisms": [
+          {
+            "condition": "wet peristome",
+            "affected_structure": "soft adhesive pad",
+            "effect": "water-film attachment disruption"
+          },
+          {
+            "condition": "anisotropic peristome topography",
+            "affected_structure": "claw",
+            "effect": "direction-dependent friction"
+          }
+        ],
+        "abstraction": "fluid film and surface geometry interact with contact structure; conditions matter",
+        "target": "explore cleanable contact interface in tapping research",
+        "differences": [
+          {
+            "variable": "fluid",
+            "nature": "aqueous wetting",
+            "target": "latex rheology and coagulation unknown"
+          },
+          {
+            "variable": "contact",
+            "nature": "insect pad/claw",
+            "target": "tool/material pair unknown"
+          },
+          {
+            "variable": "film stability",
+            "nature": "wet peristome",
+            "target": "field contamination and replenishment unknown"
+          }
+        ],
+        "engineering_gain": 0.5,
+        "verified_transfer": false,
+        "test_plan": [
+          "characterize actual fluid and material pair",
+          "compare wet/dry and geometry controls under matched exposure",
+          "record maintenance and adverse contact effects"
+        ],
+        "target_threshold": null
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "unsupported_engineering_transfer"
+      }
+    },
+    {
+      "name": "R18-context-version",
+      "input": {
+        "fixture": "BIO-TRANSFER-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "99",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source": "Bohn and Federle 2004 PNAS DOI10.1073/pnas.0405885101",
+        "organism": "Nepenthes bicalcarata / Oecophylla smaragdina friction experiment",
+        "evidence_scope": "selected methods, wet/dry comparisons and attachment-structure distinction",
+        "mechanisms": [
+          {
+            "condition": "wet peristome",
+            "affected_structure": "soft adhesive pad",
+            "effect": "water-film attachment disruption"
+          },
+          {
+            "condition": "anisotropic peristome topography",
+            "affected_structure": "claw",
+            "effect": "direction-dependent friction"
+          }
+        ],
+        "abstraction": "fluid film and surface geometry interact with contact structure; conditions matter",
+        "target": "explore cleanable contact interface in tapping research",
+        "differences": [
+          {
+            "variable": "fluid",
+            "nature": "aqueous wetting",
+            "target": "latex rheology and coagulation unknown"
+          },
+          {
+            "variable": "contact",
+            "nature": "insect pad/claw",
+            "target": "tool/material pair unknown"
+          },
+          {
+            "variable": "film stability",
+            "nature": "wet peristome",
+            "target": "field contamination and replenishment unknown"
+          }
+        ],
+        "engineering_gain": null,
+        "verified_transfer": false,
+        "test_plan": [
+          "characterize actual fluid and material pair",
+          "compare wet/dry and geometry controls under matched exposure",
+          "record maintenance and adverse contact effects"
+        ],
+        "target_threshold": null
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "context"
+      }
+    }
+  ]
+}

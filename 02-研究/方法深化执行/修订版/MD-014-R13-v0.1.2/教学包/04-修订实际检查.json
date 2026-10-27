@@ -1,0 +1,72 @@
+{
+  "cases": [
+    {
+      "name": "normal",
+      "accepted": true,
+      "expected_accept": true,
+      "pass": true
+    },
+    {
+      "name": "empty-variants",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true
+    },
+    {
+      "name": "only-B",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true
+    },
+    {
+      "name": "only-A",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true
+    },
+    {
+      "name": "replay-normal",
+      "accepted": true,
+      "expected_accept": true,
+      "pass": true
+    },
+    {
+      "name": "replay-missing-task",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true
+    },
+    {
+      "name": "replay-production",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true
+    },
+    {
+      "name": "replay-invent-body",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true
+    },
+    {
+      "name": "replay-claim-usability",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true
+    },
+    {
+      "name": "replay-missing-state",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true
+    },
+    {
+      "name": "replay-change-info",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true
+    }
+  ],
+  "passed": 11,
+  "scope": "fixed original7 plus4 variant checks; not human usability validation"
+}

@@ -1,0 +1,41 @@
+{
+  "local_reviews": [
+    {
+      "layout": "LAY-v1",
+      "requirement": "RQ-RELEASE-TEACH",
+      "gap_state": "return_principle_or_interface",
+      "engineering_pass": false,
+      "change_impact": [
+        "release geometry",
+        "actuation envelope",
+        "contact/load path",
+        "manufacturing access"
+      ],
+      "retained_unknowns": [
+        "force",
+        "damage",
+        "three-dimensional swept volume"
+      ]
+    },
+    {
+      "layout": "LAY-v2",
+      "requirement": "RQ-RELEASE-TEACH",
+      "gap_state": "local_gap_rule_pass",
+      "engineering_pass": false,
+      "change_impact": [
+        "release geometry",
+        "actuation envelope",
+        "contact/load path",
+        "manufacturing access"
+      ],
+      "retained_unknowns": [
+        "force",
+        "damage",
+        "three-dimensional swept volume"
+      ]
+    }
+  ],
+  "detail_definition": "held_no_manufacturing_release",
+  "customer_baseline": false,
+  "qualification": "additional declared geometry checkpoint, does not replace existing055 stages"
+}

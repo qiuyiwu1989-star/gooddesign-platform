@@ -1,0 +1,43 @@
+{
+  "method_id": "R08",
+  "version": "0.1.1",
+  "interface_kind": "proposed_research_contract_not_registered_mcp_tool",
+  "mcp_implemented": false,
+  "production_engine_modified": false,
+  "actual_local_capability": "rebuild/check the fixed authored teaching fixture only",
+  "trigger": "有可定位观察/访谈资料，需要区分记录、解释和需求假设",
+  "required_inputs": [
+    "problem identity/version/SHA",
+    "source materials with origin and read/record scope",
+    "roles and context; unknown explicit"
+  ],
+  "optional_inputs": [
+    "prior hypotheses and revisions",
+    "declared scenario boundaries"
+  ],
+  "outputs": [
+    "版本化研究草稿",
+    "来源/事件/判断追溯",
+    "未知与下一步取证任务"
+  ],
+  "reject_or_pause": [
+    "输入/来源绑定失配",
+    "构造素材冒充现场事实",
+    "需要客户确认却由Agent自行批准",
+    "缺少支持关键判断的材料"
+  ],
+  "unknown_policy": "保持未知并给取证行动；有依据的估计要标TBR和理由，不能作为已批准目标",
+  "tool_permissions": "本地只读源素材、写独立教学产物；无执行设备、现场数据上传或生产提交",
+  "handoff": [
+    "R08 ↔ R48",
+    "R14功能研究",
+    "R42验证计划研究"
+  ],
+  "checks_do_not_prove": [
+    "customer approval",
+    "physical feasibility",
+    "independent domain review",
+    "engineering validation"
+  ],
+  "revision_scope": "fixed cross-package provenance and withdrawal closure; input remains v0.1.0"
+}

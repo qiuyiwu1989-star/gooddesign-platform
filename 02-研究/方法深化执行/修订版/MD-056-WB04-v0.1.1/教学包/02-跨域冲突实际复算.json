@@ -1,0 +1,289 @@
+{
+  "cases": [
+    {
+      "name": "正常共同参数联审",
+      "input": {
+        "id": "WB04-JOINT-TEACH-001",
+        "origin": "independent_linear_joint_fixture_not_author_formula",
+        "function": "maintain controlled relative action, research assumption only",
+        "candidate": {
+          "id": "A",
+          "mass_kg": 2.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": true
+        },
+        "excitation": {
+          "force_N": 1.0,
+          "omega_rad_s": 31.622776601683793
+        },
+        "teaching_amplitude_limit_m": 0.003,
+        "X": {
+          "need_id": "TEACH-X-CLEAN",
+          "name": "replaceable contamination barrier",
+          "status": "constructed_special_requirement"
+        },
+        "customer_approved": false,
+        "engineering_validated": false,
+        "separate_optima_summed": false,
+        "manufacturing_cost": null,
+        "actual_function_evidence": null
+      },
+      "actual": {
+        "status": "joint_research_candidate_only",
+        "same_candidate_parameters_used": {
+          "id": "A",
+          "mass_kg": 2.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": true
+        },
+        "natural_omega_rad_s": 22.360679774997898,
+        "response_m": 0.000998005980069749,
+        "violations": [],
+        "separate_domain_scores_summed": false,
+        "engineering_selected": null,
+        "function_validated": false,
+        "cost": null,
+        "scope": "single linear mode and explicit teaching service property; not complete1+3+X solver"
+      },
+      "passed": true
+    },
+    {
+      "name": "只追减重移入共振冲突",
+      "input": {
+        "id": "WB04-JOINT-TEACH-001",
+        "origin": "independent_linear_joint_fixture_not_author_formula",
+        "function": "maintain controlled relative action, research assumption only",
+        "candidate": {
+          "id": "A",
+          "mass_kg": 1.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": true
+        },
+        "excitation": {
+          "force_N": 1.0,
+          "omega_rad_s": 31.622776601683793
+        },
+        "teaching_amplitude_limit_m": 0.003,
+        "X": {
+          "need_id": "TEACH-X-CLEAN",
+          "name": "replaceable contamination barrier",
+          "status": "constructed_special_requirement"
+        },
+        "customer_approved": false,
+        "engineering_validated": false,
+        "separate_optima_summed": false,
+        "manufacturing_cost": null,
+        "actual_function_evidence": null
+      },
+      "actual": {
+        "status": "joint_model_conflict",
+        "same_candidate_parameters_used": {
+          "id": "A",
+          "mass_kg": 1.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": true
+        },
+        "natural_omega_rad_s": 31.622776601683793,
+        "response_m": 0.015811388300841896,
+        "violations": [
+          "use_response_exceeds_constructed_limit"
+        ],
+        "separate_domain_scores_summed": false,
+        "engineering_selected": null,
+        "function_validated": false,
+        "cost": null,
+        "scope": "single linear mode and explicit teaching service property; not complete1+3+X solver"
+      },
+      "passed": true
+    },
+    {
+      "name": "制造合并破坏使用维护",
+      "input": {
+        "id": "WB04-JOINT-TEACH-001",
+        "origin": "independent_linear_joint_fixture_not_author_formula",
+        "function": "maintain controlled relative action, research assumption only",
+        "candidate": {
+          "id": "A",
+          "mass_kg": 2.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": false
+        },
+        "excitation": {
+          "force_N": 1.0,
+          "omega_rad_s": 31.622776601683793
+        },
+        "teaching_amplitude_limit_m": 0.003,
+        "X": {
+          "need_id": "TEACH-X-CLEAN",
+          "name": "replaceable contamination barrier",
+          "status": "constructed_special_requirement"
+        },
+        "customer_approved": false,
+        "engineering_validated": false,
+        "separate_optima_summed": false,
+        "manufacturing_cost": null,
+        "actual_function_evidence": null
+      },
+      "actual": {
+        "status": "joint_model_conflict",
+        "same_candidate_parameters_used": {
+          "id": "A",
+          "mass_kg": 2.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": false
+        },
+        "natural_omega_rad_s": 22.360679774997898,
+        "response_m": 0.000998005980069749,
+        "violations": [
+          "manufacturing_merge_breaks_X_service_requirement"
+        ],
+        "separate_domain_scores_summed": false,
+        "engineering_selected": null,
+        "function_validated": false,
+        "cost": null,
+        "scope": "single linear mode and explicit teaching service property; not complete1+3+X solver"
+      },
+      "passed": true
+    },
+    {
+      "name": "缺激励资料",
+      "input": {
+        "id": "WB04-JOINT-TEACH-001",
+        "origin": "independent_linear_joint_fixture_not_author_formula",
+        "function": "maintain controlled relative action, research assumption only",
+        "candidate": {
+          "id": "A",
+          "mass_kg": 2.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": true
+        },
+        "excitation": {
+          "force_N": 1.0,
+          "omega_rad_s": null
+        },
+        "teaching_amplitude_limit_m": 0.003,
+        "X": {
+          "need_id": "TEACH-X-CLEAN",
+          "name": "replaceable contamination barrier",
+          "status": "constructed_special_requirement"
+        },
+        "customer_approved": false,
+        "engineering_validated": false,
+        "separate_optima_summed": false,
+        "manufacturing_cost": null,
+        "actual_function_evidence": null
+      },
+      "actual": {
+        "status": "unknown_joint_model",
+        "selected": null
+      },
+      "passed": true
+    },
+    {
+      "name": "分领域最优分数相加不适用",
+      "actual": "rejected",
+      "reason": "unsupported approval or sum of separate optima",
+      "passed": true
+    },
+    {
+      "name": "凑X无来源",
+      "actual": "rejected",
+      "reason": "special need must keep source identity; not arbitrary X module",
+      "passed": true
+    },
+    {
+      "name": "布尔质量边界",
+      "actual": "rejected",
+      "reason": "positive finite nonboolean model quantities",
+      "passed": true
+    },
+    {
+      "name": "伪功能已证",
+      "actual": "rejected",
+      "reason": "unsupported approval or sum of separate optima",
+      "passed": true
+    },
+    {
+      "name": "展示支架另一情境联审",
+      "input": {
+        "id": "DISPLAY-JOINT-TEACH",
+        "origin": "independent_linear_joint_fixture_not_author_formula",
+        "function": "research stable display support",
+        "candidate": {
+          "id": "A",
+          "mass_kg": 3.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": true
+        },
+        "excitation": {
+          "force_N": 1.0,
+          "omega_rad_s": 31.622776601683793
+        },
+        "teaching_amplitude_limit_m": 0.003,
+        "X": {
+          "need_id": "TEACH-X-CLEAN",
+          "name": "replaceable contamination barrier",
+          "status": "constructed_special_requirement"
+        },
+        "customer_approved": false,
+        "engineering_validated": false,
+        "separate_optima_summed": false,
+        "manufacturing_cost": null,
+        "actual_function_evidence": null
+      },
+      "actual": {
+        "status": "joint_research_candidate_only",
+        "same_candidate_parameters_used": {
+          "id": "A",
+          "mass_kg": 3.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": true
+        },
+        "natural_omega_rad_s": 18.257418583505537,
+        "response_m": 0.0004997501873438867,
+        "violations": [],
+        "separate_domain_scores_summed": false,
+        "engineering_selected": null,
+        "function_validated": false,
+        "cost": null,
+        "scope": "single linear mode and explicit teaching service property; not complete1+3+X solver"
+      },
+      "passed": true
+    },
+    {
+      "name": "ignored-actual-function-evidence",
+      "actual": "rejected",
+      "reason": "actual function evidence field unsupported; use independently reviewed new contract",
+      "passed": true
+    },
+    {
+      "name": "ignored-manufacturing-cost",
+      "actual": "rejected",
+      "reason": "cost evidence unsupported in this model",
+      "passed": true
+    },
+    {
+      "name": "missing-function-evidence-unknown",
+      "actual": "rejected",
+      "reason": "actual function evidence field unsupported; use independently reviewed new contract",
+      "passed": true
+    }
+  ],
+  "count": 12,
+  "dependency_graph": [
+    "function->structure",
+    "same mass/stiffness->dynamic use response",
+    "manufacturing consolidation->serviceability",
+    "special need->service constraint"
+  ],
+  "joint_review": "function, structural, use, manufacturing, special needs must refer same candidate/version; no overall score"
+}

@@ -1,0 +1,27 @@
+{
+  "input": {
+    "object_hard_to_change": true,
+    "id": "R25-SUFIELD-TEACH-001",
+    "classification": "incomplete",
+    "elements": [
+      "unrelated-item"
+    ],
+    "can_introduce_substance": true,
+    "can_introduce_field": true,
+    "origin": "independent constructed abstract exercise; not tapping robot"
+  },
+  "method": "R25",
+  "name": "nonrole-element",
+  "output": {
+    "status": "missing_element_research_prompt",
+    "rule": "1.1.1",
+    "missing": [
+      "F",
+      "S1",
+      "S2"
+    ],
+    "action": "identify candidate missing roles and mechanism, not automatically select hardware",
+    "engineering_validated": false
+  },
+  "error": null
+}

@@ -1,0 +1,25 @@
+{
+  "method_id": "R33",
+  "version": "0.1.1",
+  "contract_status": "proposed_not_registered_MCP",
+  "actual_local_interface": "复算教学.py",
+  "capability": "synthetic axial/square-cantilever static material screening and sizing",
+  "required_inputs": [
+    "explicit input version/origin",
+    "boundary/constraints and units",
+    "known values and unknowns separately",
+    "source/assumption provenance"
+  ],
+  "unknown_policy": "no unknown property/constraint converted to pass or zero",
+  "output": "bounded research calculations and evidence gaps only",
+  "handoff": [
+    "R34",
+    "R43"
+  ],
+  "not_implemented": [
+    "customer approval",
+    "expert certification",
+    "production engineering release"
+  ],
+  "status": "pending_independent_agent_revision_review"
+}

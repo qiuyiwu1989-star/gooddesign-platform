@@ -1,0 +1,34 @@
+{
+  "input": {
+    "id": "R43-REPLACE-TEACH-001",
+    "origin": "synthetic_burden_units_not_emission_database",
+    "functional_unit": {
+      "service": "provide same hypothetical fixture function",
+      "duration_years": 10.0,
+      "work_cycles": 100000,
+      "performance_equivalence": "assumed_only_for_separate_teaching_math"
+    },
+    "boundary": [
+      "production",
+      "transport",
+      "use",
+      "repair",
+      "end_of_life"
+    ],
+    "allocation": "no_coproduct_in_constructed_model",
+    "impact_unit": "arbitrary_BU_not_kgCO2e",
+    "alternatives": [],
+    "numbers": "arbitrary arithmetic counterexample, zero other burdens are explicit toy assumptions, not missing field data"
+  },
+  "method": "R43",
+  "name": "empty-alternatives",
+  "output": {
+    "status": "synthetic_boundary_calculation_only",
+    "rows": [],
+    "arithmetic_rank": [],
+    "real_environmental_ranking": null,
+    "climate_benefit_kgCO2e": null,
+    "not_ISO_LCA_compliance": true
+  },
+  "error": null
+}

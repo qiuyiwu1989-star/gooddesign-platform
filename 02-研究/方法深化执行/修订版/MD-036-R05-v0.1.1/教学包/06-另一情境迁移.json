@@ -1,0 +1,15 @@
+{
+  "context": "document revision preview",
+  "interface": "preview revision vs saved revision, request ack vs persistence observation",
+  "different_conditions": [
+    "no mechanical frame",
+    "persistence clock and authority still required"
+  ],
+  "actual_desk_check": {
+    "preview_rev": 2,
+    "saved_rev": 1,
+    "equal": false
+  },
+  "result": "not_saved_revision_not_equal_preview",
+  "field_validation": false
+}

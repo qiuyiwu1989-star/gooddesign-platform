@@ -1,0 +1,452 @@
+[
+  {
+    "name": "normal_v1_return_v2_local_only",
+    "class": "正常",
+    "input": {
+      "origin": "supplement_to_existing_055_constructed_fixture",
+      "prior_package": {
+        "path": "output/method-reader-review/upgrades/R01-v0.2.1-proposal",
+        "sha256": {
+          "case.json": "7198a1969f24de47f294ade837da64d98f62f56ac205e9a8e97312d8bccc2c1b",
+          "verification.json": "1b975da0fd047bbe76b34e97b03d5ce5de286e9586e755f1c663ecee7ead440f",
+          "manifest.json": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b"
+        },
+        "status": "pending_independent_review_not_engineering"
+      },
+      "requirement": {
+        "id": "RQ-RELEASE-TEACH",
+        "version": "1",
+        "min_free_gap_mm": 5,
+        "basis": "new_authored_geometric_constraint_not_customer_requirement"
+      },
+      "principles": [
+        "P-SCREW",
+        "P-LEVER"
+      ],
+      "layouts": [
+        {
+          "id": "LAY-v1",
+          "principle": "P-LEVER",
+          "gap_mm": 2,
+          "manufacturing_simplicity": "hypothesis"
+        },
+        {
+          "id": "LAY-v2",
+          "principle": "P-LEVER",
+          "gap_mm": 6,
+          "manufacturing_simplicity": "unknown"
+        }
+      ],
+      "manufacturing_release": false,
+      "actual_tests": []
+    },
+    "output": {
+      "local_reviews": [
+        {
+          "layout": "LAY-v1",
+          "requirement": "RQ-RELEASE-TEACH",
+          "gap_state": "return_principle_or_interface",
+          "engineering_pass": false,
+          "change_impact": [
+            "release geometry",
+            "actuation envelope",
+            "contact/load path",
+            "manufacturing access"
+          ],
+          "retained_unknowns": [
+            "force",
+            "damage",
+            "three-dimensional swept volume"
+          ]
+        },
+        {
+          "layout": "LAY-v2",
+          "requirement": "RQ-RELEASE-TEACH",
+          "gap_state": "local_gap_rule_pass",
+          "engineering_pass": false,
+          "change_impact": [
+            "release geometry",
+            "actuation envelope",
+            "contact/load path",
+            "manufacturing access"
+          ],
+          "retained_unknowns": [
+            "force",
+            "damage",
+            "three-dimensional swept volume"
+          ]
+        }
+      ],
+      "detail_definition": "held_no_manufacturing_release",
+      "customer_baseline": false,
+      "qualification": "additional declared geometry checkpoint, does not replace existing055 stages"
+    },
+    "actual": "accepted",
+    "expected": "accepted",
+    "pass": true
+  },
+  {
+    "name": "missing_gap",
+    "class": "缺材料",
+    "input": {
+      "origin": "supplement_to_existing_055_constructed_fixture",
+      "prior_package": {
+        "path": "output/method-reader-review/upgrades/R01-v0.2.1-proposal",
+        "sha256": {
+          "case.json": "7198a1969f24de47f294ade837da64d98f62f56ac205e9a8e97312d8bccc2c1b",
+          "verification.json": "1b975da0fd047bbe76b34e97b03d5ce5de286e9586e755f1c663ecee7ead440f",
+          "manifest.json": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b"
+        },
+        "status": "pending_independent_review_not_engineering"
+      },
+      "requirement": {
+        "id": "RQ-RELEASE-TEACH",
+        "version": "1",
+        "min_free_gap_mm": 5,
+        "basis": "new_authored_geometric_constraint_not_customer_requirement"
+      },
+      "principles": [
+        "P-SCREW",
+        "P-LEVER"
+      ],
+      "layouts": [
+        {
+          "id": "LAY-v1",
+          "principle": "P-LEVER",
+          "gap_mm": null,
+          "manufacturing_simplicity": "hypothesis"
+        },
+        {
+          "id": "LAY-v2",
+          "principle": "P-LEVER",
+          "gap_mm": 6,
+          "manufacturing_simplicity": "unknown"
+        }
+      ],
+      "manufacturing_release": false,
+      "actual_tests": []
+    },
+    "output": {
+      "local_reviews": [
+        {
+          "layout": "LAY-v1",
+          "requirement": "RQ-RELEASE-TEACH",
+          "gap_state": "unknown",
+          "engineering_pass": false,
+          "change_impact": [
+            "release geometry",
+            "actuation envelope",
+            "contact/load path",
+            "manufacturing access"
+          ],
+          "retained_unknowns": [
+            "force",
+            "damage",
+            "three-dimensional swept volume"
+          ]
+        },
+        {
+          "layout": "LAY-v2",
+          "requirement": "RQ-RELEASE-TEACH",
+          "gap_state": "local_gap_rule_pass",
+          "engineering_pass": false,
+          "change_impact": [
+            "release geometry",
+            "actuation envelope",
+            "contact/load path",
+            "manufacturing access"
+          ],
+          "retained_unknowns": [
+            "force",
+            "damage",
+            "three-dimensional swept volume"
+          ]
+        }
+      ],
+      "detail_definition": "held_no_manufacturing_release",
+      "customer_baseline": false,
+      "qualification": "additional declared geometry checkpoint, does not replace existing055 stages"
+    },
+    "actual": "accepted",
+    "expected": "accepted",
+    "pass": true
+  },
+  {
+    "name": "equal_boundary",
+    "class": "边界",
+    "input": {
+      "origin": "supplement_to_existing_055_constructed_fixture",
+      "prior_package": {
+        "path": "output/method-reader-review/upgrades/R01-v0.2.1-proposal",
+        "sha256": {
+          "case.json": "7198a1969f24de47f294ade837da64d98f62f56ac205e9a8e97312d8bccc2c1b",
+          "verification.json": "1b975da0fd047bbe76b34e97b03d5ce5de286e9586e755f1c663ecee7ead440f",
+          "manifest.json": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b"
+        },
+        "status": "pending_independent_review_not_engineering"
+      },
+      "requirement": {
+        "id": "RQ-RELEASE-TEACH",
+        "version": "1",
+        "min_free_gap_mm": 5,
+        "basis": "new_authored_geometric_constraint_not_customer_requirement"
+      },
+      "principles": [
+        "P-SCREW",
+        "P-LEVER"
+      ],
+      "layouts": [
+        {
+          "id": "LAY-v1",
+          "principle": "P-LEVER",
+          "gap_mm": 2,
+          "manufacturing_simplicity": "hypothesis"
+        },
+        {
+          "id": "LAY-v2",
+          "principle": "P-LEVER",
+          "gap_mm": 5,
+          "manufacturing_simplicity": "unknown"
+        }
+      ],
+      "manufacturing_release": false,
+      "actual_tests": []
+    },
+    "output": {
+      "local_reviews": [
+        {
+          "layout": "LAY-v1",
+          "requirement": "RQ-RELEASE-TEACH",
+          "gap_state": "return_principle_or_interface",
+          "engineering_pass": false,
+          "change_impact": [
+            "release geometry",
+            "actuation envelope",
+            "contact/load path",
+            "manufacturing access"
+          ],
+          "retained_unknowns": [
+            "force",
+            "damage",
+            "three-dimensional swept volume"
+          ]
+        },
+        {
+          "layout": "LAY-v2",
+          "requirement": "RQ-RELEASE-TEACH",
+          "gap_state": "local_gap_rule_pass",
+          "engineering_pass": false,
+          "change_impact": [
+            "release geometry",
+            "actuation envelope",
+            "contact/load path",
+            "manufacturing access"
+          ],
+          "retained_unknowns": [
+            "force",
+            "damage",
+            "three-dimensional swept volume"
+          ]
+        }
+      ],
+      "detail_definition": "held_no_manufacturing_release",
+      "customer_baseline": false,
+      "qualification": "additional declared geometry checkpoint, does not replace existing055 stages"
+    },
+    "actual": "accepted",
+    "expected": "accepted",
+    "pass": true
+  },
+  {
+    "name": "manufacturing_release",
+    "class": "不适用",
+    "input": {
+      "origin": "supplement_to_existing_055_constructed_fixture",
+      "prior_package": {
+        "path": "output/method-reader-review/upgrades/R01-v0.2.1-proposal",
+        "sha256": {
+          "case.json": "7198a1969f24de47f294ade837da64d98f62f56ac205e9a8e97312d8bccc2c1b",
+          "verification.json": "1b975da0fd047bbe76b34e97b03d5ce5de286e9586e755f1c663ecee7ead440f",
+          "manifest.json": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b"
+        },
+        "status": "pending_independent_review_not_engineering"
+      },
+      "requirement": {
+        "id": "RQ-RELEASE-TEACH",
+        "version": "1",
+        "min_free_gap_mm": 5,
+        "basis": "new_authored_geometric_constraint_not_customer_requirement"
+      },
+      "principles": [
+        "P-SCREW",
+        "P-LEVER"
+      ],
+      "layouts": [
+        {
+          "id": "LAY-v1",
+          "principle": "P-LEVER",
+          "gap_mm": 2,
+          "manufacturing_simplicity": "hypothesis"
+        },
+        {
+          "id": "LAY-v2",
+          "principle": "P-LEVER",
+          "gap_mm": 6,
+          "manufacturing_simplicity": "unknown"
+        }
+      ],
+      "manufacturing_release": true,
+      "actual_tests": []
+    },
+    "output": {
+      "error": "scope_or_false_release"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "unlinked_principle",
+    "class": "冲突",
+    "input": {
+      "origin": "supplement_to_existing_055_constructed_fixture",
+      "prior_package": {
+        "path": "output/method-reader-review/upgrades/R01-v0.2.1-proposal",
+        "sha256": {
+          "case.json": "7198a1969f24de47f294ade837da64d98f62f56ac205e9a8e97312d8bccc2c1b",
+          "verification.json": "1b975da0fd047bbe76b34e97b03d5ce5de286e9586e755f1c663ecee7ead440f",
+          "manifest.json": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b"
+        },
+        "status": "pending_independent_review_not_engineering"
+      },
+      "requirement": {
+        "id": "RQ-RELEASE-TEACH",
+        "version": "1",
+        "min_free_gap_mm": 5,
+        "basis": "new_authored_geometric_constraint_not_customer_requirement"
+      },
+      "principles": [
+        "P-SCREW",
+        "P-LEVER"
+      ],
+      "layouts": [
+        {
+          "id": "LAY-v1",
+          "principle": "P-LEVER",
+          "gap_mm": 2,
+          "manufacturing_simplicity": "hypothesis"
+        },
+        {
+          "id": "LAY-v2",
+          "principle": "NO",
+          "gap_mm": 6,
+          "manufacturing_simplicity": "unknown"
+        }
+      ],
+      "manufacturing_release": false,
+      "actual_tests": []
+    },
+    "output": {
+      "error": "dangling_principle"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "bool_gap",
+    "class": "冲突",
+    "input": {
+      "origin": "supplement_to_existing_055_constructed_fixture",
+      "prior_package": {
+        "path": "output/method-reader-review/upgrades/R01-v0.2.1-proposal",
+        "sha256": {
+          "case.json": "7198a1969f24de47f294ade837da64d98f62f56ac205e9a8e97312d8bccc2c1b",
+          "verification.json": "1b975da0fd047bbe76b34e97b03d5ce5de286e9586e755f1c663ecee7ead440f",
+          "manifest.json": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b"
+        },
+        "status": "pending_independent_review_not_engineering"
+      },
+      "requirement": {
+        "id": "RQ-RELEASE-TEACH",
+        "version": "1",
+        "min_free_gap_mm": 5,
+        "basis": "new_authored_geometric_constraint_not_customer_requirement"
+      },
+      "principles": [
+        "P-SCREW",
+        "P-LEVER"
+      ],
+      "layouts": [
+        {
+          "id": "LAY-v1",
+          "principle": "P-LEVER",
+          "gap_mm": true,
+          "manufacturing_simplicity": "hypothesis"
+        },
+        {
+          "id": "LAY-v2",
+          "principle": "P-LEVER",
+          "gap_mm": 6,
+          "manufacturing_simplicity": "unknown"
+        }
+      ],
+      "manufacturing_release": false,
+      "actual_tests": []
+    },
+    "output": {
+      "error": "invalid_gap"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "erase_original_requirement",
+    "class": "冲突",
+    "input": {
+      "origin": "supplement_to_existing_055_constructed_fixture",
+      "prior_package": {
+        "path": "output/method-reader-review/upgrades/R01-v0.2.1-proposal",
+        "sha256": {
+          "case.json": "7198a1969f24de47f294ade837da64d98f62f56ac205e9a8e97312d8bccc2c1b",
+          "verification.json": "1b975da0fd047bbe76b34e97b03d5ce5de286e9586e755f1c663ecee7ead440f",
+          "manifest.json": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b"
+        },
+        "status": "pending_independent_review_not_engineering"
+      },
+      "requirement": {
+        "id": "RQ-RELEASE-TEACH",
+        "version": "1",
+        "min_free_gap_mm": 0,
+        "basis": "new_authored_geometric_constraint_not_customer_requirement"
+      },
+      "principles": [
+        "P-SCREW",
+        "P-LEVER"
+      ],
+      "layouts": [
+        {
+          "id": "LAY-v1",
+          "principle": "P-LEVER",
+          "gap_mm": 2,
+          "manufacturing_simplicity": "hypothesis"
+        },
+        {
+          "id": "LAY-v2",
+          "principle": "P-LEVER",
+          "gap_mm": 6,
+          "manufacturing_simplicity": "unknown"
+        }
+      ],
+      "manufacturing_release": false,
+      "actual_tests": []
+    },
+    "output": {
+      "error": "binding_or_requirement_changed"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  }
+]

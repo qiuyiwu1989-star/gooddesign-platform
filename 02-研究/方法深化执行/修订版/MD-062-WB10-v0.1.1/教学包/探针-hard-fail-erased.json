@@ -1,0 +1,43 @@
+{
+  "input": {
+    "id": "EVAL-TEACH-01",
+    "version": "0.1.0",
+    "origin": "independent_entropy_demo_not_2006_2010_author_model",
+    "data": [
+      [
+        1.0,
+        5.0
+      ],
+      [
+        2.0,
+        5.0
+      ],
+      [
+        3.0,
+        5.0
+      ]
+    ],
+    "criteria": [
+      "varying_descriptive_indicator",
+      "constant_hard_requirement_context"
+    ],
+    "hard_status": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "subjective_value_weights": null,
+    "fuzzy_memberships": null,
+    "overall_quality": null,
+    "author_versions": {
+      "2006": "three-optimization fuzzy evaluation selected title/abstract/figure only",
+      "2008": "model full text not acquired",
+      "2010": "entropy plus subjective weights abstract only",
+      "2019": "five inspection methods not substituted for earlier algorithms"
+    },
+    "threeA_equals_fiveA": false
+  },
+  "output": {
+    "error": "frozen_scope_identity_or_evidence_changed"
+  }
+}

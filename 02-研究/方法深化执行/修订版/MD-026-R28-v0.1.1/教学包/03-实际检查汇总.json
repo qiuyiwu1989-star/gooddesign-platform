@@ -1,0 +1,55 @@
+{
+  "executed_cases": 7,
+  "passed": 7,
+  "rows": [
+    {
+      "name": "fixed_positive",
+      "expected": "accept",
+      "actual": "accept",
+      "pass": true
+    },
+    {
+      "name": "missing_resource",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "frozen_problem_or_scope_changed",
+      "pass": true
+    },
+    {
+      "name": "reverse_time_condition",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "frozen_problem_or_scope_changed",
+      "pass": true
+    },
+    {
+      "name": "claim_solution",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "invented_solution_or_threshold",
+      "pass": true
+    },
+    {
+      "name": "invent_target",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "invented_solution_or_threshold",
+      "pass": true
+    },
+    {
+      "name": "lose_prior_model",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "lost_reformulation_history",
+      "pass": true
+    },
+    {
+      "name": "claim_full_ARIZ",
+      "expected": "reject",
+      "actual": "reject",
+      "reason": "frozen_problem_or_scope_changed",
+      "pass": true
+    }
+  ],
+  "qualification": "fixed fixture structure/arithmetic checks, not general semantic or engineering validation"
+}

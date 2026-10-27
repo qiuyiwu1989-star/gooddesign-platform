@@ -1,0 +1,53 @@
+{
+  "source_packages_unchanged": true,
+  "R14_author_replay_checks": 17,
+  "R17_author_replay_checks": 8,
+  "independent_attacks": [
+    {
+      "name": "重放-未知清空",
+      "accepted": false,
+      "result": "shared_unknowns_erased_or_changed"
+    },
+    {
+      "name": "重放-版本漂移",
+      "accepted": false,
+      "result": "upstream_identity_or_version_mismatch"
+    },
+    {
+      "name": "重放-需求覆盖删除",
+      "accepted": false,
+      "result": "shared_need_coverage_erased"
+    },
+    {
+      "name": "新-需求正文改写",
+      "accepted": false,
+      "result": "source_need_or_unknown_registry_changed"
+    },
+    {
+      "name": "新-反向引用不闭合",
+      "accepted": false,
+      "result": "need_function_trace_not_closed"
+    },
+    {
+      "name": "新-共享未知正文漂移",
+      "accepted": false,
+      "result": "source_need_or_unknown_registry_changed"
+    }
+  ],
+  "bindings": [
+    {
+      "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/02-要求候选与双向追溯.json",
+      "sha_matches": true
+    },
+    {
+      "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/manifest.json",
+      "sha_matches": true
+    },
+    {
+      "path": "02-研究/方法深化执行/修订版/MD-002-R08-v0.1.1/manifest.json",
+      "sha_matches": true
+    }
+  ],
+  "all_8_conditional": true,
+  "scope": "isolated fixed-fixture audit, not expert certification"
+}

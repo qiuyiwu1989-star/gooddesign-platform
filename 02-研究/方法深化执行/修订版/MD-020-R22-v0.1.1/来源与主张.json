@@ -1,0 +1,68 @@
+{
+  "method": "R22",
+  "version": "0.1.0",
+  "date": "2026-10-27",
+  "sources": [
+    {
+      "id": "MATRIZ-EC",
+      "url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/contradictions/engineering-contradiction-5995/",
+      "date": "2026-10-27",
+      "final_url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/contradictions/engineering-contradiction-5995/",
+      "raw_file": "private-sources/MATRIZ-EC.html",
+      "raw_sha256": "aa31d93f84cee187b1f3c4dc8c3a5934d779908c84ba8f07caf35fe50549fc54",
+      "text_file": "private-sources/MATRIZ-EC.txt",
+      "text_sha256": "122e43f6b6db20ec634852515c0344d495f2ada0a9c508545c78b5650a7d7882",
+      "status": "acquired_selected_review_needed"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R22-S1",
+      "claim": "某措施的改善与恶化共同构成技术矛盾模型，不能脱离措施和条件。",
+      "type": "selected_primary_source_scope_with_platform_boundary",
+      "source_id": "MATRIZ-EC",
+      "url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/contradictions/engineering-contradiction-5995/",
+      "locator": "Formulating the engineering contradiction",
+      "short_anchor": "IF-THEN-BUT",
+      "text_anchor_start": 3406,
+      "anchor_basis": "whitespace_collapsed_extracted_text",
+      "raw_sha256": "aa31d93f84cee187b1f3c4dc8c3a5934d779908c84ba8f07caf35fe50549fc54",
+      "text_sha256": "122e43f6b6db20ec634852515c0344d495f2ada0a9c508545c78b5650a7d7882",
+      "does_not_support": [
+        "本构造模型真实有效",
+        "用户需求已确认",
+        "平台完整实现所有原法规则"
+      ]
+    },
+    {
+      "id": "R22-S2",
+      "claim": "反向矛盾及矩阵方向需单独理解，不能凭直觉当同一查询。",
+      "type": "selected_primary_source_scope_with_platform_boundary",
+      "source_id": "MATRIZ-EC",
+      "url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/contradictions/engineering-contradiction-5995/",
+      "locator": "Alternative engineering contradiction",
+      "short_anchor": "not symmetrical",
+      "text_anchor_start": 5278,
+      "anchor_basis": "whitespace_collapsed_extracted_text",
+      "raw_sha256": "aa31d93f84cee187b1f3c4dc8c3a5934d779908c84ba8f07caf35fe50549fc54",
+      "text_sha256": "122e43f6b6db20ec634852515c0344d495f2ada0a9c508545c78b5650a7d7882",
+      "does_not_support": [
+        "本构造模型真实有效",
+        "用户需求已确认",
+        "平台完整实现所有原法规则"
+      ]
+    }
+  ],
+  "platform_adaptations": [
+    "固定输入与JSON表示",
+    "实际程序检查和反例",
+    "原创变换/有限模型/路由/条件矛盾示例"
+  ],
+  "gaps": [
+    "没有完整版本化矩阵，实际查询0",
+    "参数搜索词不是核定的官方ID",
+    "未形成原理命中或工程方案",
+    "只完成受限建模，非完整方法执行"
+  ],
+  "private_source_handling": "raw, text and images are ignored and excluded from manifest; only short locators in authored delivery"
+}

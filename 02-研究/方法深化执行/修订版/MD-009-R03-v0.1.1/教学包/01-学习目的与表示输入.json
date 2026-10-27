@@ -1,0 +1,56 @@
+{
+  "schema": "design_thinking_purpose_fixture-1",
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "upstream_method_status": "first_batch_revised_context_only_not_customer_approved"
+  },
+  "origin": "constructed_teaching_plan",
+  "learning_claim": "state_meaning",
+  "source_need": "N-T03",
+  "prototype": "P-PAPER-LABEL",
+  "declared_variable": "label",
+  "variants": [
+    {
+      "id": "V-A",
+      "label": "继续",
+      "shape": "same_card",
+      "position": "same_position"
+    },
+    {
+      "id": "V-B",
+      "label": "恢复",
+      "shape": "same_card",
+      "position": "same_position"
+    }
+  ],
+  "real_users": 0,
+  "observations": [],
+  "results": [],
+  "customer_approved": false,
+  "engineering_validated": false,
+  "threshold": null,
+  "mode_history": [
+    {
+      "mode": "Empathize",
+      "status": "real_context_missing"
+    },
+    {
+      "mode": "Define",
+      "status": "provisional_question"
+    },
+    {
+      "mode": "Ideate",
+      "status": "two_authored_label_variants"
+    },
+    {
+      "mode": "Prototype",
+      "status": "representation_plan_not_built"
+    },
+    {
+      "mode": "Test",
+      "status": "planned_not_executed"
+    }
+  ]
+}

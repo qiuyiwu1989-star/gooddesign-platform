@@ -1,0 +1,56 @@
+# -*- coding: utf-8 -*-
+from pathlib import Path
+import json,copy,math
+P=Path(__file__).parent;B=P.parent;DIR={'WB09':P,'WB10':B/'MD-062-WB10-v0.1.1'}
+def put(r,n,o):
+ p=DIR[r]/'教学包'/n;p.parent.mkdir(exist_ok=True,parents=True);p.write_text(json.dumps(o,ensure_ascii=False,indent=2))
+a={'id':'VIZ-TEACH-01','version':'0.1.0','origin':'independent_dimensionless_geometry_not_real_CAD','phenomenon':'1D projected geometric overlap only','unit':'normalized_length','obstacle':[2.5,3.5],'moving_width':2.,'same_test_positions':[0.,.2,.4,1.,2.],'old_model':{'version':'A','max_position':2.},'new_model':{'version':'B','max_position':.4},'change_reason':'reduce allowed travel in constructed model; task capability not verified','dynamic_or_safety_claim':False}
+b={'id':'DYN-TEACH-01','version':'0.1.0','source_scope':'author nonlinear-design direction only; no author-specific equation acquired','equation_identity':'independent normalized toy m*xdd+c*xd+k*x+alpha*x^3=F, not Wen equation','parameters':{'m':1.,'c':.2,'k':1.,'alpha':1.},'initial_states':[{'x':1.,'v':0.},{'x':-1.,'v':0.}], 'force':0.,'identification_data':[],'global_stability_claim':False,'real_robot_parameter_claim':False}
+c={'id':'EVAL-TEACH-01','version':'0.1.0','origin':'independent_entropy_demo_not_2006_2010_author_model','data':[[1.,5.],[2.,5.],[3.,5.]],'criteria':['varying_descriptive_indicator','constant_hard_requirement_context'],'hard_status':['unknown','fail','unknown'],'subjective_value_weights':None,'fuzzy_memberships':None,'overall_quality':None,'author_versions':{'2006':'three-optimization fuzzy evaluation selected title/abstract/figure only','2008':'model full text not acquired','2010':'entropy plus subjective weights abstract only','2019':'five inspection methods not substituted for earlier algorithms'},'threeA_equals_fiveA':False}
+d={'id':'RULE-TEACH-01','version':'0.1.0','origin':'platform_typed_rules_not_author_expert_system','rules':[{'id':'P1','type':'principle','statement':'考虑全局与协调的治理提醒','executable':False,'trigger':None,'action':'提出需要协调的问题','responsibility':'研究负责人待指定'},{'id':'PR1','type':'procedure','statement':'测量依据未取得时返回补证','executable':True,'trigger':'measurement_evidence_missing','action':'request_measurement_evidence','responsibility':'研究执行角色待指定'},{'id':'D1','type':'domain_causal_rule','statement':'某结构在某载荷必然安全（仅待审候选）','executable':False,'trigger':None,'action':None,'source_evidence':None,'responsibility':'机械专业待核'}],'facts':{'measurement_evidence_missing':True},'actual_author_system_execution':False,'expert_certified':False}
+e={'id':'GRAPH-TEACH-01','version':'0.1.0','origin':'evidence_identity_graph_not_author_full_classification','nodes':[{'id':'DOC-2006','type':'source','identity':'2006三化质量评价论文'},{'id':'DOC-2010','type':'source','identity':'2010熵权广义质量论文'},{'id':'DOC-2019','type':'source','identity':'2019作者署名自述'},{'id':'THREEA-2006','type':'framework_label','identity':'三化，定义需保留年份'},{'id':'FIVEA-2019','type':'framework_label','identity':'五种检验方式，非三化别名'},{'id':'CAT-70PLUS','type':'unresolved_classification','identity':'七类70余种对应表未取得'}],'edges':[{'from':'DOC-2006','to':'THREEA-2006','relation':'discusses','evidence':'PDF1 title/abstract/figure'},{'from':'DOC-2019','to':'FIVEA-2019','relation':'author_mentions','evidence':'署名自述 selected passage'},{'from':'DOC-2010','to':'DOC-2006','relation':'related_topic_not_identity','evidence':'different title/year/weighting scope'}],'auto_same_as':[],'author_seven_category_table':None,'full_70plus_mapping':False}
+BASES={r:copy.deepcopy(x)for r,x in [('WB08',a),('WB09',b),('WB10',c),('WB11',d),('WB12',e)]}
+def check(r,x):
+ if r=='WB09'and any(type(v)not in(int,float)or not math.isfinite(v)for v in x['parameters'].values()):raise ValueError('invalid_nonboolean_model_parameter')
+ if r=='WB10'and any(type(v)not in(int,float)or not math.isfinite(v)for row in x['data']for v in row):raise ValueError('invalid_nonboolean_indicator')
+ if x!=BASES[r]:raise ValueError('frozen_scope_identity_or_evidence_changed')
+ if r=='WB08':
+  results=[]
+  for model in[x['old_model'],x['new_model']]:
+   positions=[q for q in x['same_test_positions']if q<=model['max_position']];rows=[{'position':q,'overlap':max(0,min(q+x['moving_width'],x['obstacle'][1])-max(q,x['obstacle'][0]))}for q in positions];results.append({'model_version':model['version'],'condition':'same obstacle,width,units; admissible travel versioned','samples':rows,'interference_at_samples':any(q['overlap']>0 for q in rows)})
+  assert results[0]['interference_at_samples']and not results[1]['interference_at_samples']
+  return {'runs':results,'defect_location':'overlap at sampled positions1and2 in modelA','revision':'modelB limits travel; may lose task capability','full_continuous_collision_or_dynamics_validated':False,'manufacturing_validated':False}
+ if r=='WB09':
+  p=x['parameters'];rows=[{'initial':q,'initial_acceleration':(x['force']-p['c']*q['v']-p['k']*q['x']-p['alpha']*q['x']**3)/p['m'],'linearized_initial_acceleration':(x['force']-p['c']*q['v']-p['k']*q['x'])/p['m']}for q in x['initial_states']];assert rows[0]['initial_acceleration']==-2 and rows[1]['initial_acceleration']==2
+  return {'initial_condition_checks':rows,'not_trajectory_integration':True,'unidentified_parameters':True,'nonlinear_global_stability':None,'required_next':['actual excitation/load and contact model','parameter identification','step/tolerance and energy checks if numerical integration','multiple initial states/excitations','professional model validation']}
+ if r=='WB10':
+  n=len(x['data']);cols=list(zip(*x['data']));ent=[]
+  for col in cols:
+   probs=[v/sum(col)for v in col];h=-sum(z*math.log(z)for z in probs if z)/math.log(n);ent.append({'entropy':h,'dispersion':max(0,1-h)})
+  total=sum(q['dispersion']for q in ent);weights=[q['dispersion']/total for q in ent];assert math.isclose(weights[0],1)and abs(weights[1])<1e-12
+  return {'entropy_demo':ent,'dispersion_weights':weights,'customer_value_weights':None,'fuzzy_aggregation':None,'quality_rank':None,'hard_fail_candidate_indices':[i for i,s in enumerate(x['hard_status'])if s=='fail'],'hard_unknown_candidate_indices':[i for i,s in enumerate(x['hard_status'])if s=='unknown'],'meaning':'constant indicator can receive zero dispersion without losing hard-requirement status; no 3A/5A merge'}
+ if r=='WB11':return {'advice':[{'rule':'PR1','action':'request_measurement_evidence','basis':'declared missing fact, not physical law'}],'principle_as_prompt':['P1'],'disabled_domain_rules':['D1'],'engineering_inferences':[],'author_expert_system_executed':False}
+ if r=='WB12':
+  ids={n['id']for n in x['nodes']};assert all(z['from']in ids and z['to']in ids for z in x['edges']);return {'nodes':len(ids),'typed_edges':x['edges'],'identity_merges':[],'unresolved':['CAT-70PLUS'],'full_author_classification':False,'routing_use':'retain year, type, source and uncertainty, do not route aliases as duplicates automatically'}
+attacks={'WB08':[('animation-as-dynamics',lambda x:x.update(dynamic_or_safety_claim=True)),('unit-change',lambda x:x.update(unit='mm')),('obstacle-erased',lambda x:x.update(obstacle=[])),('model-version-drift',lambda x:x['new_model'].update(version='A')),('new-conditions-hidden',lambda x:x.update(moving_width=1)),('false-real-CAD',lambda x:x.update(origin='validated_CAD'))],'WB09':[('author-equation',lambda x:x.update(equation_identity='Wen original equation')),('claim-global-stable',lambda x:x.update(global_stability_claim=True)),('erase-initial-state',lambda x:x.update(initial_states=[])),('invent-identification',lambda x:x['identification_data'].append('measured')),('linear-is-global',lambda x:x['parameters'].update(alpha=0)),('fake-robot-param',lambda x:x.update(real_robot_parameter_claim=True))],'WB10':[('entropy-as-value',lambda x:x.update(subjective_value_weights=[1,0])),('hard-fail-erased',lambda x:x.update(hard_status=['pass']*3)),('fake-quality',lambda x:x.update(overall_quality=.9)),('merge-three-five',lambda x:x.update(threeA_equals_fiveA=True)),('fake-memberships',lambda x:x.update(fuzzy_memberships=[[1,0]])),('version-swap',lambda x:x['author_versions'].update({'2010':'same as2019'}))],'WB11':[('principle-executable',lambda x:x['rules'][0].update(executable=True)),('domain-without-source',lambda x:x['rules'][2].update(executable=True)),('fake-author-engine',lambda x:x.update(actual_author_system_execution=True)),('remove-trigger',lambda x:x['rules'][1].update(trigger=None)),('fake-certified',lambda x:x.update(expert_certified=True)),('fact-default-true',lambda x:x.update(facts={}))],'WB12':[('same-name-merge',lambda x:x.update(auto_same_as=[['THREEA-2006','FIVEA-2019']])),('invent-full-map',lambda x:x.update(full_70plus_mapping=True)),('invent-seven-table',lambda x:x.update(author_seven_category_table=['A','B','C','D','E','F','G'])),('dangling-edge',lambda x:x['edges'][0].update(to='NO')),('erase-evidence',lambda x:x['edges'][0].update(evidence='')),('source-year-merged',lambda x:x['nodes'][0].update(identity='same2010paper'))]}
+BASES={r:x for r,x in BASES.items()if r in DIR}
+for r,x in BASES.items():
+ put(r,'01-固定构造输入.json',x);put(r,'02-中间判断与输出.json',check(r,copy.deepcopy(x)));rows=[{'case':'normal','pass':True}]
+ for name,mut in attacks[r]:
+  q=copy.deepcopy(x);mut(q)
+  try:y=check(r,q);raise AssertionError('attack accepted')
+  except ValueError as ex:y={'error':str(ex)}
+  rows.append({'case':name,'rejected':True,'pass':True});put(r,'探针-'+name+'.json',{'input':q,'output':y})
+ put(r,'03-实际检查汇总.json',{'executed':7,'passed':7,'cases':rows,'scope':'fixed teaching structure and limited arithmetic only, not expert/field validation'})
+transfer={'WB08':{'context':'document page preview','model_A_width':120,'model_B_width':90,'available_width':100,'actual_computed_overflow_A':120>100,'actual_computed_overflow_B':90>100,'not_proof':'does not imply readable content or engineering manufacturability'},'WB09':{'context':'record queue model','initial_queues':[0,10],'observation':'different initial backlog changes waiting; no mechanical model transferred','field_data':None},'WB10':{'context':'document quality evaluation','variable_metric':'file size varies','constant_hard_condition':'permission may be equally required for all','result':'variation is not customer importance; no invented weights'},'WB11':{'context':'document review','principle':'consider whole reader journey','procedure':'missing source returns research request','domain_rule':'no automatic factual correctness from completed template','result':'typed advice remains distinct'},'WB12':{'context':'document evidence catalog','entities':['same title edition1','same title edition2'],'relation':'version_relation_not_identity','result':'retain editions and sources rather than merge by name'}}
+for r,t in transfer.items():
+ if r not in DIR:continue
+ t['actual_scope']='constructed desktop transfer, no field experiment';put(r,'04-另一情境迁移.json',t)
+print('14 original fixed checks passed; two revision attacks follow')
+
+for r in ['WB09','WB10']:
+ q=copy.deepcopy(BASES[r])
+ if r=='WB09':q['parameters']['m']=True
+ else:q['data'][0][0]=True
+ try:check(r,q);raise AssertionError('bool equals numeric accepted')
+ except ValueError as e:put(r,'05-布尔数值修订检查.json',{'input':q,'rejected':True,'reason':str(e)})

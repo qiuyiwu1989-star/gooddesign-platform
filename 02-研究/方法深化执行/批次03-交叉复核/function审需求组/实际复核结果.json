@@ -1,0 +1,270 @@
+{
+  "manifests": [
+    {
+      "package": "MD-017-R19",
+      "manifest_sha256": "29aac329e74a9c144c2f5430e59d66ef3397a3995ae8d1313bea9595f948643e",
+      "verified_files": 16
+    },
+    {
+      "package": "MD-018-R20",
+      "manifest_sha256": "4174058c0320ededefa7fa2eaee20a12a79e22c8ad5cfdd00215ef2a01654d5c",
+      "verified_files": 14
+    },
+    {
+      "package": "MD-019-R21",
+      "manifest_sha256": "48f1a660015da735a4fbab88bf39d7a1f6e38d6ad243e285dcbaa8e4185df065",
+      "verified_files": 14
+    },
+    {
+      "package": "MD-020-R22",
+      "manifest_sha256": "ce288ae56122b3e7cbe9e2becc068911356ba9d433d15f2f543f9064930bf565",
+      "verified_files": 14
+    }
+  ],
+  "source_claims": [
+    {
+      "package": "MD-017-R19",
+      "claim": "R19-S1",
+      "source_hash_and_anchor": true
+    },
+    {
+      "package": "MD-017-R19",
+      "claim": "R19-S2",
+      "source_hash_and_anchor": true
+    },
+    {
+      "package": "MD-018-R20",
+      "claim": "R20-S1",
+      "source_hash_and_anchor": true
+    },
+    {
+      "package": "MD-018-R20",
+      "claim": "R20-S2",
+      "source_hash_and_anchor": true
+    },
+    {
+      "package": "MD-018-R20",
+      "claim": "R20-S3",
+      "source_hash_and_anchor": true
+    },
+    {
+      "package": "MD-019-R21",
+      "claim": "R21-S1",
+      "source_hash_and_anchor": true
+    },
+    {
+      "package": "MD-019-R21",
+      "claim": "R21-S2",
+      "source_hash_and_anchor": true
+    },
+    {
+      "package": "MD-020-R22",
+      "claim": "R22-S1",
+      "source_hash_and_anchor": true
+    },
+    {
+      "package": "MD-020-R22",
+      "claim": "R22-S2",
+      "source_hash_and_anchor": true
+    }
+  ],
+  "independent_probes": [
+    {
+      "package": "MD-017-R19",
+      "name": "unseen-graph-only-foreign-node",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_engineering_input"
+        },
+        "trace": [
+          {
+            "variant": "V-SEPARATE",
+            "hint": "OWN-H1",
+            "delta": {
+              "added": [
+                [
+                  "alien",
+                  "other",
+                  "imaginary"
+                ],
+                [
+                  "module",
+                  "reference",
+                  "supports"
+                ],
+                [
+                  "structure",
+                  "module",
+                  "supports"
+                ]
+              ],
+              "removed": [
+                [
+                  "structure",
+                  "reference",
+                  "supports"
+                ]
+              ]
+            },
+            "state": "mechanism_graph_changed_research_only",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          },
+          {
+            "variant": "V-DISTRIBUTE",
+            "hint": "OWN-H2",
+            "delta": {
+              "added": [
+                [
+                  "actuator",
+                  "contactA",
+                  "acts_on"
+                ],
+                [
+                  "actuator",
+                  "contactB",
+                  "acts_on"
+                ]
+              ],
+              "removed": []
+            },
+            "state": "mechanism_graph_changed_research_only",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          },
+          {
+            "variant": "V-COSMETIC",
+            "hint": "OWN-H3",
+            "delta": {
+              "added": [],
+              "removed": []
+            },
+            "state": "no_mechanism_change_in_declared_graph",
+            "physical_feasibility": "unknown",
+            "novelty_or_value_score": null
+          }
+        ],
+        "changed_graphs": 2,
+        "engineering_candidates": [],
+        "scope": "graph difference under authored labels, not physical causality, creativity quality or product novelty"
+      }
+    },
+    {
+      "package": "MD-017-R19",
+      "name": "hard-pass-promotion",
+      "actual": "rejected",
+      "output": "unsupported_hard_pass_or_validation"
+    },
+    {
+      "package": "MD-018-R20",
+      "name": "no-ambiguity-does-not-confirm-whole",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "context_only_not_validated_requirement"
+        },
+        "K1_derivation": {
+          "operator": "K_to_K",
+          "rule": "same observable symbol maps to multiple hidden symbols",
+          "ambiguous_observations": {},
+          "surface_only_uniqueness": "not_refuted_in_supplied_rows_not_proven_for_real_world"
+        },
+        "concept_status_change": {
+          "C0": "unresolved_outside_supplied_rows",
+          "C1": "reformulated_with_additional_independent_information; unresolved",
+          "not_global_truth": "countermodel is authored, not evidence about actual tree tissue"
+        },
+        "property_ledger": [
+          {
+            "property": "observe_surface",
+            "status": "represented_in_proxy_model"
+          },
+          {
+            "property": "infer_hidden_uniquely",
+            "status": "not_established_for_target"
+          },
+          {
+            "property": "operate_safely",
+            "status": "unknown"
+          }
+        ],
+        "whole_design_confirmed": false,
+        "next_K_questions": [
+          "什么独立信息能区分同表面不同隐藏状态",
+          "目标工况下能否获取且如何校核",
+          "完整用途还有哪些属性未获支持"
+        ],
+        "physical_or_customer_claims": []
+      }
+    },
+    {
+      "package": "MD-018-R20",
+      "name": "target-unknowns-erased",
+      "actual": "rejected",
+      "output": "unsupported_conjunction_or_result"
+    },
+    {
+      "package": "MD-019-R21",
+      "name": "unseen-direction-boolean",
+      "actual": "accepted",
+      "output": {
+        "state": "research_route_suggestions",
+        "suggested": [
+          {
+            "method": "R22",
+            "reason": "declared same-condition IF/THEN/BUT with distinct parameters",
+            "status": "research_model_only_matrix_version_still_required"
+          }
+        ],
+        "rejected_routes": [
+          {
+            "method": "R25",
+            "reason": "interaction model absent"
+          }
+        ],
+        "executed": [],
+        "automatic_solver": false,
+        "numerical_score": null,
+        "next_action": "human/Agent review problem representation and required source/input before invoking a specific tool"
+      }
+    },
+    {
+      "package": "MD-019-R21",
+      "name": "same-condition-drift",
+      "actual": "rejected",
+      "output": "technical_model_conditions_mismatch"
+    },
+    {
+      "package": "MD-020-R22",
+      "name": "unseen-cell-injection",
+      "actual": "rejected",
+      "output": "matrix_lookup_or_hit_not_supported"
+    },
+    {
+      "package": "MD-020-R22",
+      "name": "unseen-matrix-version-claim",
+      "actual": "rejected",
+      "output": "matrix_lookup_or_hit_not_supported"
+    },
+    {
+      "package": "MD-020-R22",
+      "name": "unseen-zero-direction",
+      "actual": "rejected",
+      "output": "native_quantity_unit_direction_or_unknown_changed"
+    }
+  ],
+  "baseline_original_tests": {
+    "MD-017-R19": 10,
+    "MD-018-R20": 10,
+    "MD-019-R21": 10,
+    "MD-020-R22": 10
+  },
+  "scope": "fixed model/route and selected source review; not expert or target validation"
+}

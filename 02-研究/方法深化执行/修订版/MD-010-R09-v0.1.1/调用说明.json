@@ -1,0 +1,46 @@
+{
+  "method": "R09",
+  "version": "0.1.0",
+  "interface_kind": "proposed_research_contract_not_registered_tool",
+  "mcp_implemented": false,
+  "native_engine_modified": false,
+  "actual_local_capability": "fixed episode/role/timeline/reference/state checks",
+  "trigger": "需要解释一次改变、暂缓或维持现状的具体选择",
+  "reasoning_mechanism": "将情境、进步、替代与角色连接到有来源的任务假设",
+  "required_inputs": [
+    "具体选择/放弃事件及时间线",
+    "做决定者与使用者角色",
+    "原方式和替代方式",
+    "原件定位与解释分层"
+  ],
+  "outputs": [
+    "角色化进步假设",
+    "压力吸引顾虑及现有安排的编码",
+    "反例与后续访谈问题",
+    "尚不能推断的市场与因果事项"
+  ],
+  "states": [
+    "needs_material",
+    "provisional_research",
+    "return_to_question_or_representation",
+    "not_ready_for_baseline_or_engineering_claim"
+  ],
+  "mandatory_preservation": [
+    "source problem/version/SHA",
+    "material origin",
+    "role and context",
+    "unknowns",
+    "unexecuted activities",
+    "uncovered scope"
+  ],
+  "refusal": [
+    "构造输入升格为真实材料",
+    "缺关键身份或来源闭包",
+    "客户批准或工程结果无凭据",
+    "用计划伪造观察"
+  ],
+  "permissions": "read provided material; write own research artifacts only; no equipment control or publication",
+  "downstream_use": "research only, no autonomous customer baseline or engineering decision",
+  "independent_agent_review": "pending",
+  "domain_expert_review": "not_performed"
+}

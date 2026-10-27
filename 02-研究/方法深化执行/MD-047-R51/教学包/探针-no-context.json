@@ -1,0 +1,98 @@
+{
+  "input": {
+    "id": "STPA-TEACH-001",
+    "version": "0.1.0",
+    "scope": "hypothetical_local_contact_process_not_full_robot_safety_analysis",
+    "losses": [
+      {
+        "id": "L1",
+        "text": "不可接受的组织或人员损伤（研究假设）"
+      }
+    ],
+    "hazards": [
+      {
+        "id": "H1",
+        "text": "未知组织边界或恢复前提下仍有危险相对接触作用",
+        "losses": [
+          "L1"
+        ]
+      }
+    ],
+    "control_structure": {
+      "controller": "local_controller",
+      "controlled_process": "contact_action",
+      "actions": [
+        "enable",
+        "inhibit"
+      ],
+      "feedback": [
+        "actual_motion",
+        "data_timestamp",
+        "residual_state"
+      ],
+      "process_model": [
+        "boundary_known",
+        "actual_stop",
+        "recovery_authorized"
+      ]
+    },
+    "ucas": [
+      {
+        "id": "U1",
+        "class": "not_provided",
+        "action": "inhibit",
+        "context": "",
+        "hazards": [
+          "H1"
+        ],
+        "constraint": "边界信息失效应触发抑制请求与实际状态确认研究"
+      },
+      {
+        "id": "U2",
+        "class": "provided",
+        "action": "enable",
+        "context": "恢复前提未确认却使能",
+        "hazards": [
+          "H1"
+        ],
+        "constraint": "未确认恢复前提不得使能"
+      },
+      {
+        "id": "U3",
+        "class": "timing_order",
+        "action": "enable",
+        "context": "在实际停止/恢复审查之前过早使能",
+        "hazards": [
+          "H1"
+        ],
+        "constraint": "顺序应依据实际状态与授权，而非请求应答"
+      },
+      {
+        "id": "U4",
+        "class": "duration",
+        "action": "inhibit",
+        "context": "危险条件仍存在但过早终止抑制",
+        "hazards": [
+          "H1"
+        ],
+        "constraint": "解除抑制需有恢复条件依据"
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "SC1",
+        "uca": "U2",
+        "mechanism": "陈旧反馈被过程模型当成当前停止，控制算法据错误信念使能",
+        "control_flaw": "timestamp_validity_not_checked",
+        "not_necessarily_component_failure": true,
+        "derived_requirement": "拟分开反馈时点、停止状态及恢复授权",
+        "status": "candidate_not_approved"
+      }
+    ],
+    "safety_certified": false,
+    "frequencies": null
+  },
+  "output": {
+    "error": "fixed_control_context_or_trace_changed"
+  }
+}

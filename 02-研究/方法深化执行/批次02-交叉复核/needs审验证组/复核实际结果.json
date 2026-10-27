@@ -1,0 +1,234 @@
+{
+  "reviewer": "needs_deepening independent Agent not domain expert",
+  "original_files_unchanged": 99,
+  "original_fixed_checks_replayed": 21,
+  "original_stdout": "{\"cases\": 21, \"passed\": 21, \"R13\": \"encoding_collision_is_not_usability\", \"R15\": \"declared_how_why_not_clock\", \"R16\": \"no_confirmed_cause_zero_exposure_no_rate\"}\n",
+  "manifest_checks": [
+    {
+      "task": "MD-014-R13",
+      "manifest_files": 29
+    },
+    {
+      "task": "MD-015-R15",
+      "manifest_files": 27
+    },
+    {
+      "task": "MD-016-R16",
+      "manifest_files": 26
+    }
+  ],
+  "independent_probes": [
+    {
+      "name": "P01-R13-empty-representations",
+      "input_sha256": "0d98838e1739d2b8d4b137407a09dca6d97d0775997354f4a68529e553c2cc97",
+      "actual": "accepted",
+      "output": {
+        "method": "R13",
+        "state": "research_design_only",
+        "tasks": [
+          {
+            "id": "HF-T01",
+            "phase": "normal_monitoring",
+            "action": "识别当前作业状态",
+            "information": [
+              "state",
+              "measurement_freshness"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "监视与状态解释，实际负荷未知"
+          },
+          {
+            "id": "HF-T02",
+            "phase": "abnormal_takeover",
+            "action": "识别陈旧信息并请求抑制",
+            "information": [
+              "measurement_freshness",
+              "validity",
+              "stop_request_ack"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "从监视切换为异常判断，能力与时限未知"
+          },
+          {
+            "id": "HF-T03",
+            "phase": "abnormal_takeover",
+            "action": "核对停止状态与恢复前提",
+            "information": [
+              "actual_stop",
+              "residual_energy",
+              "reauthorization"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "区分请求与实际状态，实际表现未知"
+          },
+          {
+            "id": "HF-T04",
+            "phase": "maintenance",
+            "action": "清理与更换后交接",
+            "information": [
+              "isolation_status",
+              "maintenance_scope",
+              "reauthorization"
+            ],
+            "physical_demands": "姿态、力、可达性均未知",
+            "cognitive_demands": "维护责任与交接，实际负荷未知"
+          }
+        ],
+        "representation_analysis": [],
+        "measured_user_outcomes": [],
+        "target_population_known": false,
+        "research_questions": [
+          "目标角色能否理解时效标记",
+          "异常时能否区分请求与实际停止",
+          "维护姿态/力/可达性与职责是什么"
+        ],
+        "not_claimed": [
+          "B更易用",
+          "新手反应更快",
+          "设备更安全"
+        ],
+        "pending": [
+          "现场人群与任务记录",
+          "实际负荷与姿态数据",
+          "角色资格及参与同意",
+          "专业/用户复核"
+        ]
+      }
+    },
+    {
+      "name": "P02-R13-one-variant-only",
+      "input_sha256": "b950d6063f9027050208aec1a0bcf7bb9c3c3b5c8ae3d688ab48c68588a060d5",
+      "actual": "accepted",
+      "output": {
+        "method": "R13",
+        "state": "research_design_only",
+        "tasks": [
+          {
+            "id": "HF-T01",
+            "phase": "normal_monitoring",
+            "action": "识别当前作业状态",
+            "information": [
+              "state",
+              "measurement_freshness"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "监视与状态解释，实际负荷未知"
+          },
+          {
+            "id": "HF-T02",
+            "phase": "abnormal_takeover",
+            "action": "识别陈旧信息并请求抑制",
+            "information": [
+              "measurement_freshness",
+              "validity",
+              "stop_request_ack"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "从监视切换为异常判断，能力与时限未知"
+          },
+          {
+            "id": "HF-T03",
+            "phase": "abnormal_takeover",
+            "action": "核对停止状态与恢复前提",
+            "information": [
+              "actual_stop",
+              "residual_energy",
+              "reauthorization"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "区分请求与实际状态，实际表现未知"
+          },
+          {
+            "id": "HF-T04",
+            "phase": "maintenance",
+            "action": "清理与更换后交接",
+            "information": [
+              "isolation_status",
+              "maintenance_scope",
+              "reauthorization"
+            ],
+            "physical_demands": "姿态、力、可达性均未知",
+            "cognitive_demands": "维护责任与交接，实际负荷未知"
+          }
+        ],
+        "representation_analysis": [
+          {
+            "variant": "B",
+            "representation_collision": false,
+            "can_distinguish_declared_states_by_encoding": true,
+            "human_understanding": "unknown",
+            "workload": "unknown",
+            "reaction_time": null
+          }
+        ],
+        "measured_user_outcomes": [],
+        "target_population_known": false,
+        "research_questions": [
+          "目标角色能否理解时效标记",
+          "异常时能否区分请求与实际停止",
+          "维护姿态/力/可达性与职责是什么"
+        ],
+        "not_claimed": [
+          "B更易用",
+          "新手反应更快",
+          "设备更安全"
+        ],
+        "pending": [
+          "现场人群与任务记录",
+          "实际负荷与姿态数据",
+          "角色资格及参与同意",
+          "专业/用户复核"
+        ]
+      }
+    },
+    {
+      "name": "C01-R15-edge-support-swap",
+      "input_sha256": "49b71f5458f14a0726f90d281d9cf8ae35c538697ebc8818baa777205ce2d987",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: declared_means_purpose_or_question_changed"
+      }
+    },
+    {
+      "name": "C02-R15-support-omitted",
+      "input_sha256": "827a3c811fd78e4c91c79bb5ecfa55628b7c39c0a4abbabedb6e0c3bc3eec963",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: support_function_lost_or_changed"
+      }
+    },
+    {
+      "name": "C03-R16-counterevidence-loss",
+      "input_sha256": "15e043c1a3f8989772c41f6e5567d6f20e91e5e4e65904cc06b1f127ecb50798",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: competing_cause_or_support_mapping_changed"
+      }
+    },
+    {
+      "name": "C04-R16-noncomparable-success",
+      "input_sha256": "a0d1c4caff0b7f89bb94b323092ec003738a820cfeff851f2bdfc916ef77233f",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: effectiveness_claim_unestablished"
+      }
+    },
+    {
+      "name": "C05-R13-body-dimension-invented",
+      "input_sha256": "5020c636981539a4167fb6cc229f84fc5ee47c39e6e7e463d66c3a648b44a3de",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: unsupported_population_claim"
+      }
+    },
+    {
+      "name": "C06-R16-boolean-exposure",
+      "input_sha256": "f8edf6ad5aa84b39bbfe0f5aae1088fe4cc14c3c22450802dabb40f4aca9d50a",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: exposure_counts_must_be_integers"
+      }
+    }
+  ],
+  "engineering_validation": false
+}

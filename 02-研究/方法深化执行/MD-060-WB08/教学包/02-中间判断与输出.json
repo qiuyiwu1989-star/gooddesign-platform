@@ -1,0 +1,54 @@
+{
+  "runs": [
+    {
+      "model_version": "A",
+      "condition": "same obstacle,width,units; admissible travel versioned",
+      "samples": [
+        {
+          "position": 0.0,
+          "overlap": 0
+        },
+        {
+          "position": 0.2,
+          "overlap": 0
+        },
+        {
+          "position": 0.4,
+          "overlap": 0
+        },
+        {
+          "position": 1.0,
+          "overlap": 0.5
+        },
+        {
+          "position": 2.0,
+          "overlap": 1.0
+        }
+      ],
+      "interference_at_samples": true
+    },
+    {
+      "model_version": "B",
+      "condition": "same obstacle,width,units; admissible travel versioned",
+      "samples": [
+        {
+          "position": 0.0,
+          "overlap": 0
+        },
+        {
+          "position": 0.2,
+          "overlap": 0
+        },
+        {
+          "position": 0.4,
+          "overlap": 0
+        }
+      ],
+      "interference_at_samples": false
+    }
+  ],
+  "defect_location": "overlap at sampled positions1and2 in modelA",
+  "revision": "modelB limits travel; may lose task capability",
+  "full_continuous_collision_or_dynamics_validated": false,
+  "manufacturing_validated": false
+}

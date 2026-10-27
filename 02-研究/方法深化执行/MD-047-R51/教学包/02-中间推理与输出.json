@@ -1,0 +1,48 @@
+{
+  "loss_hazard_constraint_trace": [
+    {
+      "uca": "U1",
+      "hazards": [
+        "H1"
+      ],
+      "constraint": "边界信息失效应触发抑制请求与实际状态确认研究"
+    },
+    {
+      "uca": "U2",
+      "hazards": [
+        "H1"
+      ],
+      "constraint": "未确认恢复前提不得使能"
+    },
+    {
+      "uca": "U3",
+      "hazards": [
+        "H1"
+      ],
+      "constraint": "顺序应依据实际状态与授权，而非请求应答"
+    },
+    {
+      "uca": "U4",
+      "hazards": [
+        "H1"
+      ],
+      "constraint": "解除抑制需有恢复条件依据"
+    }
+  ],
+  "four_classes_present": true,
+  "scenario": [
+    {
+      "id": "SC1",
+      "uca": "U2",
+      "mechanism": "陈旧反馈被过程模型当成当前停止，控制算法据错误信念使能",
+      "control_flaw": "timestamp_validity_not_checked",
+      "not_necessarily_component_failure": true,
+      "derived_requirement": "拟分开反馈时点、停止状态及恢复授权",
+      "status": "candidate_not_approved"
+    }
+  ],
+  "status": "partial_constructed_hazard_analysis",
+  "complete_system_analysis": false,
+  "safety_certified": false,
+  "handoff": "R05 feedback/control authority; R42 verification evidence; R40 complementary failure analysis"
+}

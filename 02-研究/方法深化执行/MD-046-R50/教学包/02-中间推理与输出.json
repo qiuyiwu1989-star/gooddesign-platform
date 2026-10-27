@@ -1,0 +1,42 @@
+{
+  "layers": [
+    "user",
+    "frontstage",
+    "backstage",
+    "support",
+    "evidence_object"
+  ],
+  "visibility_boundary": "frontstage_vs_backstage_not_organization_rank",
+  "step_count": 5,
+  "open_waits": 5,
+  "actual_current_state_evidence": [],
+  "measured_savings": null,
+  "recoveries": [
+    {
+      "step": "BP1",
+      "owner": "班组协调角色待指派",
+      "action": "暂停接班并回查记录"
+    },
+    {
+      "step": "BP2",
+      "owner": "现场控制角色待指派",
+      "action": "抑制新动作请求并交异常处理"
+    },
+    {
+      "step": "BP3",
+      "owner": "维护协调角色待指派",
+      "action": "升级协调并保持恢复未授权"
+    },
+    {
+      "step": "BP4",
+      "owner": "维护执行角色待指派",
+      "action": "禁止以检修完成替代恢复授权"
+    },
+    {
+      "step": "BP5",
+      "owner": "交接责任角色待指派",
+      "action": "保留开放异常并交明确接收角色"
+    }
+  ],
+  "status": "future_research_map_only"
+}

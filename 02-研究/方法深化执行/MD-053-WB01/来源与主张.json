@@ -1,0 +1,72 @@
+{
+  "method": "WB01",
+  "scope": "2003primaryPDF1abstract andPDF5-7section3;2017publisher directory/intro;2019signedself-descriptioncase3items5-8;2008unverified",
+  "claims": [
+    {
+      "id": "WB01-C1",
+      "source_id": "WEN2003",
+      "url": "https://qikan.cmes.org/jxgcxb/CN/PDF/16926",
+      "locator": "PDFp1 title/abstract;PDFp5section3.1 andp6-7",
+      "supported_claim": "three-fold dynamic/intelligent/visual means, not3I four-stage attribution",
+      "support_scope": "selected_primary_or_official_publisher_only",
+      "not_supported": "platform algorithm validation or target engineering suitability"
+    },
+    {
+      "id": "WB01-C2",
+      "source_id": "HEP2017",
+      "url": "https://academic.hep.com.cn/br/CN/chapter/978-7-04-048177-8/chapter01",
+      "locator": "bookISBN/date andchapter5-11directory",
+      "supported_claim": "2017book organization only not chapter mechanics",
+      "support_scope": "selected_primary_or_official_publisher_only",
+      "not_supported": "platform algorithm validation or target engineering suitability"
+    },
+    {
+      "id": "WB01-C3",
+      "source_id": "HEPINTRO",
+      "url": "https://xuanshu.hep.com.cn/front/book/findBookDetails?bookId=59cf87baba9eb884cf8238c4",
+      "locator": "introduction7P vs contents6.2.1 7D",
+      "supported_claim": "same publisher page terminology discrepancy retained not resolved",
+      "support_scope": "selected_primary_or_official_publisher_only",
+      "not_supported": "platform algorithm validation or target engineering suitability"
+    },
+    {
+      "id": "WB01-C4",
+      "source_id": "NEU2019",
+      "url": "https://neunews.neu.edu.cn/info/1002/849441.htm",
+      "locator": "case3item5-8;2019-09-10signedauthor",
+      "supported_claim": "author stated3I/7D/1+3+X/5A fourstage;self report not independent effect validation",
+      "support_scope": "selected_primary_or_official_publisher_only",
+      "not_supported": "platform algorithm validation or target engineering suitability"
+    }
+  ],
+  "source_hashes": [
+    {
+      "id": "NEU2019",
+      "sha256": "cf33791c283f1f4f7d3efc0175cc451e5852c34f298cf08c521652d26f354d6d",
+      "status": "acquired_read_scope_separate"
+    },
+    {
+      "id": "HEP2017",
+      "sha256": "36e85ff6fe579c554ead3b6341d44a95ae246005abfe9cfa9ee720190eeaf5e9",
+      "status": "acquired_read_scope_separate"
+    },
+    {
+      "id": "WEN2003",
+      "sha256": "140c7f0449c877426a78a4fa4f7aa997eadedf5d908a81f92d616165f6cb0c99",
+      "status": "archived_legal_primary_pdf_selected_read_live_timeout"
+    },
+    {
+      "id": "HEPINTRO",
+      "sha256": "849869053b577e14f80b40993fde6c3b5e2c34676a0e5c7c80ab2ccc167c3c68",
+      "status": "publisher_intro_and_contents_only"
+    }
+  ],
+  "platform_adaptation": "version-separated claim ledger plus platform research orchestration",
+  "raw_originals": "private-sources ignored and excluded from manifest",
+  "gaps": [
+    "2008candidate primary edition identity missing",
+    "2017chapters missing",
+    "no proved evolution link",
+    "no independent effectiveness validation"
+  ]
+}

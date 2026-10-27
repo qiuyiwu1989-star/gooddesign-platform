@@ -1,0 +1,32 @@
+{
+  "queries_file": "教学包/01-实际查询日志.json",
+  "queries_sha256": "5ec40bd2cd3ae59fb127e1c849ca91d494de1f732808d0738509428a47c0d1fd",
+  "allowed_query_ids": [
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04"
+  ],
+  "selected_source": {
+    "source_id": "H03",
+    "query_id": "Q03",
+    "locator": "Li et al2018 Results/Methods, distilled water and impact conditions",
+    "evidence_level": "original_experiment",
+    "raw_path": "private-sources/breakdown.html",
+    "raw_sha256": "38b0ca24d693847fbce73a2fb15b27b113cce977e5a22b4282c430cfcfbd120c"
+  },
+  "contexts": {
+    "FOS-LIQUID-TEACH-001": {
+      "viscosity_Pa_s": null,
+      "wetting_contact_angle_deg": null,
+      "required_flow_m3_s": null,
+      "coagulation_time_s": null,
+      "cleaning_acceptance": null
+    },
+    "INK-TEACH-001": {
+      "viscosity_Pa_s": null,
+      "pigment_particles": null,
+      "drying_time_s": null
+    }
+  }
+}

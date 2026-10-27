@@ -1,0 +1,414 @@
+[
+  {
+    "name": "normal_roles_known_steps_unknown",
+    "class": "正常",
+    "input": {
+      "origin": "publisher_scoped_3I_roles_plus_explicit_platform_research_plan",
+      "source_version": "HEP2017 ISBN9787040481778 introduction_and_contents",
+      "known_chinese_roles": [
+        "用户需求调研",
+        "产品环境调研",
+        "产品风险调研"
+      ],
+      "english_I_expansions": null,
+      "chapter5_fulltext_acquired": false,
+      "source_original_steps": null,
+      "topic": "tapping robot research_not_customer_commission",
+      "questions": [
+        {
+          "id": "Q-N",
+          "role": "用户需求调研",
+          "question": "操作者/经营者在哪些具体异常与选择事件中需要帮助？",
+          "material": "event observation and interview plan",
+          "method_attribution": "platform R08/R09 adaptation not claimed WB original step",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-E",
+          "role": "产品环境调研",
+          "question": "树体/天气/作业组织/维护支持如何影响边界与使用？",
+          "material": "condition inventory and source retrieval plan",
+          "method_attribution": "platform context research adaptation",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-R",
+          "role": "产品风险调研",
+          "question": "作用越界、异常恢复或维护隔离缺口有哪些待审风险？",
+          "material": "hazard hypothesis and verification gap ledger",
+          "method_attribution": "platform R46/context and R40/R51 complementary routing not author procedure",
+          "evidence_ids": []
+        }
+      ],
+      "evidence_ledger": [],
+      "topic_selected_by_customer": false,
+      "priority_rank": null
+    },
+    "output": {
+      "role_coverage": [
+        "产品环境调研",
+        "产品风险调研",
+        "用户需求调研"
+      ],
+      "real_evidence_count": 0,
+      "source_method_depth": "Chinese scope verified from publisher; chapter mechanics missing",
+      "research_plan": [
+        {
+          "id": "Q-N",
+          "role": "用户需求调研",
+          "question": "操作者/经营者在哪些具体异常与选择事件中需要帮助？",
+          "material": "event observation and interview plan",
+          "method_attribution": "platform R08/R09 adaptation not claimed WB original step",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-E",
+          "role": "产品环境调研",
+          "question": "树体/天气/作业组织/维护支持如何影响边界与使用？",
+          "material": "condition inventory and source retrieval plan",
+          "method_attribution": "platform context research adaptation",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-R",
+          "role": "产品风险调研",
+          "question": "作用越界、异常恢复或维护隔离缺口有哪些待审风险？",
+          "material": "hazard hypothesis and verification gap ledger",
+          "method_attribution": "platform R46/context and R40/R51 complementary routing not author procedure",
+          "evidence_ids": []
+        }
+      ],
+      "missing_acquisition": [
+        {
+          "target": "2017 chapter5.2",
+          "scope": "needs methods/detail"
+        },
+        {
+          "target": "2017 chapter5.3",
+          "scope": "environment taxonomy/detail"
+        },
+        {
+          "target": "2017 chapter5.4",
+          "scope": "risk procedure/detail"
+        }
+      ],
+      "topic_decision": "not_ready_no_customer_material",
+      "original_3I_algorithm_executed": false,
+      "platform_research_can_continue": "explicitly label its other method provenance"
+    },
+    "actual": "accepted",
+    "expected": "accepted",
+    "pass": true
+  },
+  {
+    "name": "guess_three_English_words",
+    "class": "冲突",
+    "input": {
+      "origin": "publisher_scoped_3I_roles_plus_explicit_platform_research_plan",
+      "source_version": "HEP2017 ISBN9787040481778 introduction_and_contents",
+      "known_chinese_roles": [
+        "用户需求调研",
+        "产品环境调研",
+        "产品风险调研"
+      ],
+      "english_I_expansions": [
+        "invented1",
+        "invented2",
+        "invented3"
+      ],
+      "chapter5_fulltext_acquired": false,
+      "source_original_steps": null,
+      "topic": "tapping robot research_not_customer_commission",
+      "questions": [
+        {
+          "id": "Q-N",
+          "role": "用户需求调研",
+          "question": "操作者/经营者在哪些具体异常与选择事件中需要帮助？",
+          "material": "event observation and interview plan",
+          "method_attribution": "platform R08/R09 adaptation not claimed WB original step",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-E",
+          "role": "产品环境调研",
+          "question": "树体/天气/作业组织/维护支持如何影响边界与使用？",
+          "material": "condition inventory and source retrieval plan",
+          "method_attribution": "platform context research adaptation",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-R",
+          "role": "产品风险调研",
+          "question": "作用越界、异常恢复或维护隔离缺口有哪些待审风险？",
+          "material": "hazard hypothesis and verification gap ledger",
+          "method_attribution": "platform R46/context and R40/R51 complementary routing not author procedure",
+          "evidence_ids": []
+        }
+      ],
+      "evidence_ledger": [],
+      "topic_selected_by_customer": false,
+      "priority_rank": null
+    },
+    "output": {
+      "error": "unread_chapter_or_guessed_expansion"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "claim_chapter_read",
+    "class": "缺材料",
+    "input": {
+      "origin": "publisher_scoped_3I_roles_plus_explicit_platform_research_plan",
+      "source_version": "HEP2017 ISBN9787040481778 introduction_and_contents",
+      "known_chinese_roles": [
+        "用户需求调研",
+        "产品环境调研",
+        "产品风险调研"
+      ],
+      "english_I_expansions": null,
+      "chapter5_fulltext_acquired": true,
+      "source_original_steps": null,
+      "topic": "tapping robot research_not_customer_commission",
+      "questions": [
+        {
+          "id": "Q-N",
+          "role": "用户需求调研",
+          "question": "操作者/经营者在哪些具体异常与选择事件中需要帮助？",
+          "material": "event observation and interview plan",
+          "method_attribution": "platform R08/R09 adaptation not claimed WB original step",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-E",
+          "role": "产品环境调研",
+          "question": "树体/天气/作业组织/维护支持如何影响边界与使用？",
+          "material": "condition inventory and source retrieval plan",
+          "method_attribution": "platform context research adaptation",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-R",
+          "role": "产品风险调研",
+          "question": "作用越界、异常恢复或维护隔离缺口有哪些待审风险？",
+          "material": "hazard hypothesis and verification gap ledger",
+          "method_attribution": "platform R46/context and R40/R51 complementary routing not author procedure",
+          "evidence_ids": []
+        }
+      ],
+      "evidence_ledger": [],
+      "topic_selected_by_customer": false,
+      "priority_rank": null
+    },
+    "output": {
+      "error": "unread_chapter_or_guessed_expansion"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "copy_R08_as_author_steps",
+    "class": "不适用",
+    "input": {
+      "origin": "publisher_scoped_3I_roles_plus_explicit_platform_research_plan",
+      "source_version": "HEP2017 ISBN9787040481778 introduction_and_contents",
+      "known_chinese_roles": [
+        "用户需求调研",
+        "产品环境调研",
+        "产品风险调研"
+      ],
+      "english_I_expansions": null,
+      "chapter5_fulltext_acquired": false,
+      "source_original_steps": [
+        "interview",
+        "code"
+      ],
+      "topic": "tapping robot research_not_customer_commission",
+      "questions": [
+        {
+          "id": "Q-N",
+          "role": "用户需求调研",
+          "question": "操作者/经营者在哪些具体异常与选择事件中需要帮助？",
+          "material": "event observation and interview plan",
+          "method_attribution": "platform R08/R09 adaptation not claimed WB original step",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-E",
+          "role": "产品环境调研",
+          "question": "树体/天气/作业组织/维护支持如何影响边界与使用？",
+          "material": "condition inventory and source retrieval plan",
+          "method_attribution": "platform context research adaptation",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-R",
+          "role": "产品风险调研",
+          "question": "作用越界、异常恢复或维护隔离缺口有哪些待审风险？",
+          "material": "hazard hypothesis and verification gap ledger",
+          "method_attribution": "platform R46/context and R40/R51 complementary routing not author procedure",
+          "evidence_ids": []
+        }
+      ],
+      "evidence_ledger": [],
+      "topic_selected_by_customer": false,
+      "priority_rank": null
+    },
+    "output": {
+      "error": "unread_chapter_or_guessed_expansion"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "no_risk_question",
+    "class": "缺材料",
+    "input": {
+      "origin": "publisher_scoped_3I_roles_plus_explicit_platform_research_plan",
+      "source_version": "HEP2017 ISBN9787040481778 introduction_and_contents",
+      "known_chinese_roles": [
+        "用户需求调研",
+        "产品环境调研",
+        "产品风险调研"
+      ],
+      "english_I_expansions": null,
+      "chapter5_fulltext_acquired": false,
+      "source_original_steps": null,
+      "topic": "tapping robot research_not_customer_commission",
+      "questions": [
+        {
+          "id": "Q-N",
+          "role": "用户需求调研",
+          "question": "操作者/经营者在哪些具体异常与选择事件中需要帮助？",
+          "material": "event observation and interview plan",
+          "method_attribution": "platform R08/R09 adaptation not claimed WB original step",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-E",
+          "role": "产品环境调研",
+          "question": "树体/天气/作业组织/维护支持如何影响边界与使用？",
+          "material": "condition inventory and source retrieval plan",
+          "method_attribution": "platform context research adaptation",
+          "evidence_ids": []
+        }
+      ],
+      "evidence_ledger": [],
+      "topic_selected_by_customer": false,
+      "priority_rank": null
+    },
+    "output": {
+      "error": "platform_questions_or_evidence_status_changed"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "customer_picked_topic",
+    "class": "冲突",
+    "input": {
+      "origin": "publisher_scoped_3I_roles_plus_explicit_platform_research_plan",
+      "source_version": "HEP2017 ISBN9787040481778 introduction_and_contents",
+      "known_chinese_roles": [
+        "用户需求调研",
+        "产品环境调研",
+        "产品风险调研"
+      ],
+      "english_I_expansions": null,
+      "chapter5_fulltext_acquired": false,
+      "source_original_steps": null,
+      "topic": "tapping robot research_not_customer_commission",
+      "questions": [
+        {
+          "id": "Q-N",
+          "role": "用户需求调研",
+          "question": "操作者/经营者在哪些具体异常与选择事件中需要帮助？",
+          "material": "event observation and interview plan",
+          "method_attribution": "platform R08/R09 adaptation not claimed WB original step",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-E",
+          "role": "产品环境调研",
+          "question": "树体/天气/作业组织/维护支持如何影响边界与使用？",
+          "material": "condition inventory and source retrieval plan",
+          "method_attribution": "platform context research adaptation",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-R",
+          "role": "产品风险调研",
+          "question": "作用越界、异常恢复或维护隔离缺口有哪些待审风险？",
+          "material": "hazard hypothesis and verification gap ledger",
+          "method_attribution": "platform R46/context and R40/R51 complementary routing not author procedure",
+          "evidence_ids": []
+        }
+      ],
+      "evidence_ledger": [],
+      "topic_selected_by_customer": true,
+      "priority_rank": null
+    },
+    "output": {
+      "error": "unsupported_customer_selection_or_ranking"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "zero_rank_is_not_unknown",
+    "class": "边界",
+    "input": {
+      "origin": "publisher_scoped_3I_roles_plus_explicit_platform_research_plan",
+      "source_version": "HEP2017 ISBN9787040481778 introduction_and_contents",
+      "known_chinese_roles": [
+        "用户需求调研",
+        "产品环境调研",
+        "产品风险调研"
+      ],
+      "english_I_expansions": null,
+      "chapter5_fulltext_acquired": false,
+      "source_original_steps": null,
+      "topic": "tapping robot research_not_customer_commission",
+      "questions": [
+        {
+          "id": "Q-N",
+          "role": "用户需求调研",
+          "question": "操作者/经营者在哪些具体异常与选择事件中需要帮助？",
+          "material": "event observation and interview plan",
+          "method_attribution": "platform R08/R09 adaptation not claimed WB original step",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-E",
+          "role": "产品环境调研",
+          "question": "树体/天气/作业组织/维护支持如何影响边界与使用？",
+          "material": "condition inventory and source retrieval plan",
+          "method_attribution": "platform context research adaptation",
+          "evidence_ids": []
+        },
+        {
+          "id": "Q-R",
+          "role": "产品风险调研",
+          "question": "作用越界、异常恢复或维护隔离缺口有哪些待审风险？",
+          "material": "hazard hypothesis and verification gap ledger",
+          "method_attribution": "platform R46/context and R40/R51 complementary routing not author procedure",
+          "evidence_ids": []
+        }
+      ],
+      "evidence_ledger": [],
+      "topic_selected_by_customer": false,
+      "priority_rank": 0
+    },
+    "output": {
+      "error": "unsupported_customer_selection_or_ranking"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  }
+]

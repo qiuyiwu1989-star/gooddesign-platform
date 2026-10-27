@@ -1,0 +1,41 @@
+{
+  "sources": [
+    {
+      "url": "https://www.hse.gov.uk/work-equipment-machinery/introduction.htm",
+      "locator": "Assessing/managing; choose machine; use control measures",
+      "access": "web tool parsed primary body; direct HTTP403",
+      "snapshot": "private-sources/hse-web工具快照.json",
+      "snapshot_sha256": "1fb4388efe5cfff251c61aeeb59a2b743c8ef933973a9d655975282139ff11d9",
+      "not_original_bytes_hash": true
+    },
+    {
+      "url": "https://www.iso.org/standard/51528.html",
+      "locator": "Abstract; Published/current and under revision metadata",
+      "access": "web tool parsed primary body; direct HTTP403",
+      "snapshot": "private-sources/iso12100-web工具快照.json",
+      "snapshot_sha256": "4c1e38916ad5845cb5cb67f364f194555322eae82ce6b8ff3968fd63f18055d9",
+      "not_original_bytes_hash": true
+    },
+    {
+      "url": "https://www.iso.org/obp/ui?_escaped_fragment_=iso:std:iso:18497:-1:ed-1:v1:en",
+      "locator": "Foreword and Scope1, excludes forestry/public roads",
+      "access": "web tool parsed primary body; direct HTTP403",
+      "snapshot": "private-sources/iso18497-web工具快照.json",
+      "snapshot_sha256": "ea2d467a7d79f0d73fc964042c586f05775dacaea0fefc07aa5ae6022f7ca55f",
+      "not_original_bytes_hash": true
+    }
+  ],
+  "claims": [
+    "HSE distinguishes design/guards/information and covers clearing/maintenance tasks",
+    "ISO12100 public abstract covers lifecycle hazard/risk reduction documentation; full clauses not obtained",
+    "ISO18497-1:2024 replaces2018 with series and its Scope1 excludes forestry/public roads; target applicability unresolved"
+  ],
+  "date_checked": "2026-10-27",
+  "platform_adaptation": "original task hazard/control/verification/residual ledger, not standard compliance tool",
+  "not_verified": [
+    "country legal applicability",
+    "risk severity/frequency",
+    "safety control performance level",
+    "risk acceptance"
+  ]
+}

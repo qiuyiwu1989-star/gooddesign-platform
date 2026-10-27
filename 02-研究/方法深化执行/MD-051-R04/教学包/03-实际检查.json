@@ -1,0 +1,342 @@
+[
+  {
+    "name": "normal_changed_sensor",
+    "class": "正常",
+    "input": {
+      "origin": "055_supplement_independent_architecture_change_fixture",
+      "prior_binding": {
+        "case.json": "936547fe0b4d7807021518b5cfe5fdbf06b65a0211393bb4ea78f15dddb572f9",
+        "verification.json": "c1a7160aaa8278b3ed9d0904d782bb38a6e26a5bb1257e1afee6b0ce2bb3992c",
+        "manifest.json": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4"
+      },
+      "usage_need": {
+        "id": "NEED-OBSERVE",
+        "state": "research_not_approved"
+      },
+      "selected_architecture": "ARCH-B",
+      "architectures": {
+        "ARCH-A": {
+          "sensor": "SENSOR-A",
+          "derived_requirement": "DR-A-LATENCY",
+          "budget_ms": 300
+        },
+        "ARCH-B": {
+          "sensor": "SENSOR-B",
+          "derived_requirement": "DR-B-LATENCY",
+          "budget_ms": 100
+        }
+      },
+      "active_derived_requirement": "DR-B-LATENCY",
+      "evidence": {
+        "id": "EV-A",
+        "sensor": "SENSOR-A",
+        "architecture": "ARCH-A",
+        "actual_status": "constructed_plan_not_executed"
+      },
+      "claim_evidence_reused": false,
+      "interface_closed": false,
+      "engineering_pass": false
+    },
+    "output": {
+      "trace": {
+        "need": "NEED-OBSERVE",
+        "architecture": "ARCH-B",
+        "sensor": "SENSOR-B",
+        "derived_requirement": "DR-B-LATENCY",
+        "budget_ms": 100,
+        "budget_basis": "authored_configuration_specific_not_customer_limit"
+      },
+      "retire_or_reassess": [
+        "DR-A-LATENCY"
+      ],
+      "evidence_applicable": false,
+      "reason": "old sensor/configuration and unexecuted plan cannot verify new architecture",
+      "open_interfaces": [
+        "timestamp",
+        "identity",
+        "clock",
+        "authority",
+        "actual latency distribution"
+      ],
+      "next": [
+        "define new evidence/configuration binding",
+        "review architecture-derived constraints",
+        "plan integration check"
+      ],
+      "engineering_pass": false
+    },
+    "actual": "accepted",
+    "expected": "accepted",
+    "pass": true
+  },
+  {
+    "name": "old_budget_requirement",
+    "class": "冲突",
+    "input": {
+      "origin": "055_supplement_independent_architecture_change_fixture",
+      "prior_binding": {
+        "case.json": "936547fe0b4d7807021518b5cfe5fdbf06b65a0211393bb4ea78f15dddb572f9",
+        "verification.json": "c1a7160aaa8278b3ed9d0904d782bb38a6e26a5bb1257e1afee6b0ce2bb3992c",
+        "manifest.json": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4"
+      },
+      "usage_need": {
+        "id": "NEED-OBSERVE",
+        "state": "research_not_approved"
+      },
+      "selected_architecture": "ARCH-B",
+      "architectures": {
+        "ARCH-A": {
+          "sensor": "SENSOR-A",
+          "derived_requirement": "DR-A-LATENCY",
+          "budget_ms": 300
+        },
+        "ARCH-B": {
+          "sensor": "SENSOR-B",
+          "derived_requirement": "DR-B-LATENCY",
+          "budget_ms": 100
+        }
+      },
+      "active_derived_requirement": "DR-A-LATENCY",
+      "evidence": {
+        "id": "EV-A",
+        "sensor": "SENSOR-A",
+        "architecture": "ARCH-A",
+        "actual_status": "constructed_plan_not_executed"
+      },
+      "claim_evidence_reused": false,
+      "interface_closed": false,
+      "engineering_pass": false
+    },
+    "output": {
+      "error": "stale_derived_requirement"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "reuse_old_evidence",
+    "class": "冲突",
+    "input": {
+      "origin": "055_supplement_independent_architecture_change_fixture",
+      "prior_binding": {
+        "case.json": "936547fe0b4d7807021518b5cfe5fdbf06b65a0211393bb4ea78f15dddb572f9",
+        "verification.json": "c1a7160aaa8278b3ed9d0904d782bb38a6e26a5bb1257e1afee6b0ce2bb3992c",
+        "manifest.json": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4"
+      },
+      "usage_need": {
+        "id": "NEED-OBSERVE",
+        "state": "research_not_approved"
+      },
+      "selected_architecture": "ARCH-B",
+      "architectures": {
+        "ARCH-A": {
+          "sensor": "SENSOR-A",
+          "derived_requirement": "DR-A-LATENCY",
+          "budget_ms": 300
+        },
+        "ARCH-B": {
+          "sensor": "SENSOR-B",
+          "derived_requirement": "DR-B-LATENCY",
+          "budget_ms": 100
+        }
+      },
+      "active_derived_requirement": "DR-B-LATENCY",
+      "evidence": {
+        "id": "EV-A",
+        "sensor": "SENSOR-A",
+        "architecture": "ARCH-A",
+        "actual_status": "constructed_plan_not_executed"
+      },
+      "claim_evidence_reused": true,
+      "interface_closed": false,
+      "engineering_pass": false
+    },
+    "output": {
+      "error": "unsupported_reuse_or_closure"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "missing_architecture",
+    "class": "缺材料",
+    "input": {
+      "origin": "055_supplement_independent_architecture_change_fixture",
+      "prior_binding": {
+        "case.json": "936547fe0b4d7807021518b5cfe5fdbf06b65a0211393bb4ea78f15dddb572f9",
+        "verification.json": "c1a7160aaa8278b3ed9d0904d782bb38a6e26a5bb1257e1afee6b0ce2bb3992c",
+        "manifest.json": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4"
+      },
+      "usage_need": {
+        "id": "NEED-OBSERVE",
+        "state": "research_not_approved"
+      },
+      "selected_architecture": null,
+      "architectures": {
+        "ARCH-A": {
+          "sensor": "SENSOR-A",
+          "derived_requirement": "DR-A-LATENCY",
+          "budget_ms": 300
+        },
+        "ARCH-B": {
+          "sensor": "SENSOR-B",
+          "derived_requirement": "DR-B-LATENCY",
+          "budget_ms": 100
+        }
+      },
+      "active_derived_requirement": "DR-B-LATENCY",
+      "evidence": {
+        "id": "EV-A",
+        "sensor": "SENSOR-A",
+        "architecture": "ARCH-A",
+        "actual_status": "constructed_plan_not_executed"
+      },
+      "claim_evidence_reused": false,
+      "interface_closed": false,
+      "engineering_pass": false
+    },
+    "output": {
+      "error": "architecture_identity"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "pretend_closed",
+    "class": "边界",
+    "input": {
+      "origin": "055_supplement_independent_architecture_change_fixture",
+      "prior_binding": {
+        "case.json": "936547fe0b4d7807021518b5cfe5fdbf06b65a0211393bb4ea78f15dddb572f9",
+        "verification.json": "c1a7160aaa8278b3ed9d0904d782bb38a6e26a5bb1257e1afee6b0ce2bb3992c",
+        "manifest.json": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4"
+      },
+      "usage_need": {
+        "id": "NEED-OBSERVE",
+        "state": "research_not_approved"
+      },
+      "selected_architecture": "ARCH-B",
+      "architectures": {
+        "ARCH-A": {
+          "sensor": "SENSOR-A",
+          "derived_requirement": "DR-A-LATENCY",
+          "budget_ms": 300
+        },
+        "ARCH-B": {
+          "sensor": "SENSOR-B",
+          "derived_requirement": "DR-B-LATENCY",
+          "budget_ms": 100
+        }
+      },
+      "active_derived_requirement": "DR-B-LATENCY",
+      "evidence": {
+        "id": "EV-A",
+        "sensor": "SENSOR-A",
+        "architecture": "ARCH-A",
+        "actual_status": "constructed_plan_not_executed"
+      },
+      "claim_evidence_reused": false,
+      "interface_closed": true,
+      "engineering_pass": false
+    },
+    "output": {
+      "error": "unsupported_reuse_or_closure"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "real_pass",
+    "class": "不适用",
+    "input": {
+      "origin": "055_supplement_independent_architecture_change_fixture",
+      "prior_binding": {
+        "case.json": "936547fe0b4d7807021518b5cfe5fdbf06b65a0211393bb4ea78f15dddb572f9",
+        "verification.json": "c1a7160aaa8278b3ed9d0904d782bb38a6e26a5bb1257e1afee6b0ce2bb3992c",
+        "manifest.json": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4"
+      },
+      "usage_need": {
+        "id": "NEED-OBSERVE",
+        "state": "research_not_approved"
+      },
+      "selected_architecture": "ARCH-B",
+      "architectures": {
+        "ARCH-A": {
+          "sensor": "SENSOR-A",
+          "derived_requirement": "DR-A-LATENCY",
+          "budget_ms": 300
+        },
+        "ARCH-B": {
+          "sensor": "SENSOR-B",
+          "derived_requirement": "DR-B-LATENCY",
+          "budget_ms": 100
+        }
+      },
+      "active_derived_requirement": "DR-B-LATENCY",
+      "evidence": {
+        "id": "EV-A",
+        "sensor": "SENSOR-A",
+        "architecture": "ARCH-A",
+        "actual_status": "constructed_plan_not_executed"
+      },
+      "claim_evidence_reused": false,
+      "interface_closed": false,
+      "engineering_pass": true
+    },
+    "output": {
+      "error": "unsupported_reuse_or_closure"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "derived_to_original_need",
+    "class": "冲突",
+    "input": {
+      "origin": "055_supplement_independent_architecture_change_fixture",
+      "prior_binding": {
+        "case.json": "936547fe0b4d7807021518b5cfe5fdbf06b65a0211393bb4ea78f15dddb572f9",
+        "verification.json": "c1a7160aaa8278b3ed9d0904d782bb38a6e26a5bb1257e1afee6b0ce2bb3992c",
+        "manifest.json": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4"
+      },
+      "usage_need": {
+        "id": "NEED-OBSERVE",
+        "state": "approved_latency_100ms"
+      },
+      "selected_architecture": "ARCH-B",
+      "architectures": {
+        "ARCH-A": {
+          "sensor": "SENSOR-A",
+          "derived_requirement": "DR-A-LATENCY",
+          "budget_ms": 300
+        },
+        "ARCH-B": {
+          "sensor": "SENSOR-B",
+          "derived_requirement": "DR-B-LATENCY",
+          "budget_ms": 100
+        }
+      },
+      "active_derived_requirement": "DR-B-LATENCY",
+      "evidence": {
+        "id": "EV-A",
+        "sensor": "SENSOR-A",
+        "architecture": "ARCH-A",
+        "actual_status": "constructed_plan_not_executed"
+      },
+      "claim_evidence_reused": false,
+      "interface_closed": false,
+      "engineering_pass": false
+    },
+    "output": {
+      "error": "fixed_context_or_derived_budget_changed"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  }
+]

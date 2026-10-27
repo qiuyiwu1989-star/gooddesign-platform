@@ -1,0 +1,31 @@
+{
+  "reviewer": "validation_deepening Agent",
+  "status": "changes_requested_for_fidelity_guard",
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "P2",
+      "scope": "R14_shared_need_and_unknown_retention",
+      "evidence": [
+        "独立探针/R14-erase-shared-unknowns-输出.json",
+        "独立探针/R14-drop-shared-need-输出.json"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "F02",
+      "severity": "P2",
+      "scope": "R14_upstream_version",
+      "evidence": [
+        "独立探针/R14-tamper-source-version-输出.json"
+      ],
+      "status": "open"
+    }
+  ],
+  "observations": [
+    "单位检查只覆盖额外可选字段",
+    "原件目录需显式打包排除"
+  ],
+  "domain_expert_review": false,
+  "engineering_validation": false
+}

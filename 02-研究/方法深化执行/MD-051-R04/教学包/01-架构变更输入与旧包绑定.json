@@ -1,0 +1,35 @@
+{
+  "origin": "055_supplement_independent_architecture_change_fixture",
+  "prior_binding": {
+    "case.json": "936547fe0b4d7807021518b5cfe5fdbf06b65a0211393bb4ea78f15dddb572f9",
+    "verification.json": "c1a7160aaa8278b3ed9d0904d782bb38a6e26a5bb1257e1afee6b0ce2bb3992c",
+    "manifest.json": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4"
+  },
+  "usage_need": {
+    "id": "NEED-OBSERVE",
+    "state": "research_not_approved"
+  },
+  "selected_architecture": "ARCH-B",
+  "architectures": {
+    "ARCH-A": {
+      "sensor": "SENSOR-A",
+      "derived_requirement": "DR-A-LATENCY",
+      "budget_ms": 300
+    },
+    "ARCH-B": {
+      "sensor": "SENSOR-B",
+      "derived_requirement": "DR-B-LATENCY",
+      "budget_ms": 100
+    }
+  },
+  "active_derived_requirement": "DR-B-LATENCY",
+  "evidence": {
+    "id": "EV-A",
+    "sensor": "SENSOR-A",
+    "architecture": "ARCH-A",
+    "actual_status": "constructed_plan_not_executed"
+  },
+  "claim_evidence_reused": false,
+  "interface_closed": false,
+  "engineering_pass": false
+}

@@ -1,0 +1,47 @@
+{
+  "input": {
+    "id": "DFSS-TEACH-001",
+    "version": "0.1.0",
+    "mode": "new_design_research",
+    "framework": "selected_DMADV_family_not_single_algorithm",
+    "voice": "希望作用边界可理解并可核对（构造假设）",
+    "ctq": [
+      {
+        "id": "CTQ1",
+        "need": "N-T01",
+        "candidate": "边界信息与允许作用的对应",
+        "operational_definition": "拟定义参考信号、组织对象、时点、测量过程与误差；当前尚未确认",
+        "target": null,
+        "unit": null,
+        "approved": true
+      }
+    ],
+    "measurement_plan": {
+      "measurand": "同一构造参考件位置读数，仅教学测量计划非组织边界验证",
+      "parts": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "operators": [
+        "O1",
+        "O2"
+      ],
+      "repeats": 2,
+      "order": "randomized_and_blinded_proposed",
+      "calibration": "unknown",
+      "environment": "record_conditions_proposed",
+      "raw_observations": [],
+      "implemented": false
+    },
+    "design_response": "先研究测量原理与误差来源，再安排候选设计试验",
+    "confirmation_plan": "需真实场景/对象与专业判据；未实施",
+    "sigma_level": null,
+    "Cp": null,
+    "Cpk": null,
+    "engineering_validated": false
+  },
+  "output": {
+    "error": "fixed_CTQ_measurement_identity_or_validation_changed"
+  }
+}

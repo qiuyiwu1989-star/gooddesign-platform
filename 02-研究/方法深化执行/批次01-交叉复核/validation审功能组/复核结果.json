@@ -1,0 +1,231 @@
+{
+  "manifest_checks": [
+    {
+      "package": "MD-003-R14",
+      "entries": 23,
+      "bad": []
+    },
+    {
+      "package": "MD-004-R17",
+      "entries": 31,
+      "bad": []
+    }
+  ],
+  "replayed_cases": [
+    {
+      "package": "R14",
+      "case": "normal-reference-consistency",
+      "actual": "accepted",
+      "match_author": true,
+      "output": {
+        "status": "accepted_for_research_only",
+        "function_count": 6,
+        "interface_count": 12,
+        "unknown_count": 5,
+        "global_engineering_coverage": false,
+        "semantic_sufficiency": "not_automatically_checked",
+        "approval": false
+      }
+    },
+    {
+      "package": "R14",
+      "case": "missing-recovery",
+      "actual": "missing_recovery_scenario",
+      "match_author": true,
+      "output": {
+        "reason": "missing_recovery_scenario"
+      }
+    },
+    {
+      "package": "R14",
+      "case": "unsupported-engineering-mode",
+      "actual": "unsupported_execution_scope",
+      "match_author": true,
+      "output": {
+        "reason": "unsupported_execution_scope"
+      }
+    },
+    {
+      "package": "R14",
+      "case": "component-instead-of-function",
+      "actual": "component_wording_requires_review",
+      "match_author": true,
+      "output": {
+        "reason": "component_wording_requires_review"
+      }
+    },
+    {
+      "package": "R14",
+      "case": "declared-units-conflict",
+      "actual": "declared_unit_conflict",
+      "match_author": true,
+      "output": {
+        "reason": "declared_unit_conflict"
+      }
+    },
+    {
+      "package": "R14",
+      "case": "unknown-zero-injection",
+      "actual": "unknown_filled",
+      "match_author": true,
+      "output": {
+        "reason": "unknown_filled"
+      }
+    },
+    {
+      "package": "R14",
+      "case": "missing-physical-boundary",
+      "actual": "dangling_interface_endpoint",
+      "match_author": true,
+      "output": {
+        "reason": "dangling_interface_endpoint"
+      }
+    },
+    {
+      "package": "R14",
+      "case": "upstream-problem-mismatch",
+      "actual": "upstream_problem_mismatch",
+      "match_author": true,
+      "output": {
+        "reason": "upstream_problem_mismatch"
+      }
+    },
+    {
+      "package": "R14",
+      "case": "cross-context-document",
+      "actual": "accepted",
+      "match_author": true,
+      "output": {
+        "status": "accepted_for_research_only",
+        "function_count": 2,
+        "interface_count": 3,
+        "unknown_count": 1,
+        "global_engineering_coverage": false,
+        "semantic_sufficiency": "not_automatically_checked",
+        "approval": false
+      }
+    },
+    {
+      "package": "R17",
+      "case": "normal-all-unknown",
+      "exit_code": 0,
+      "match_author": true,
+      "output_sha256": "ba9e01cfdba8546fc2416487055d1a627d6c512161c7b052b3131261c9208756"
+    },
+    {
+      "package": "R17",
+      "case": "missing-pair",
+      "exit_code": 2,
+      "match_author": true,
+      "output_sha256": "82c9a69156533f1fa1dba87da001a14bd173a17bce3f1ffb2136b94210647b4e"
+    },
+    {
+      "package": "R17",
+      "case": "not-production-mode",
+      "exit_code": 2,
+      "match_author": true,
+      "output_sha256": "da967f91a9b74eebb0ba09bfe2bea8c4bf7c942257b8c53cb6647accfa1cbfd5"
+    },
+    {
+      "package": "R17",
+      "case": "pairwise-never-global",
+      "exit_code": 0,
+      "match_author": true,
+      "output_sha256": "eb1bbbd7c2dffa011c3dd15d963f981d8766d2bb056c915145e34762f07105fa"
+    },
+    {
+      "package": "R17",
+      "case": "selected-conflict",
+      "exit_code": 2,
+      "match_author": true,
+      "output_sha256": "08b6acc39d49d3ec82ab962545fc8330084c779400ceb4019f0fcdf019e25465"
+    },
+    {
+      "package": "R17",
+      "case": "unknown-not-zero",
+      "exit_code": 2,
+      "match_author": true,
+      "output_sha256": "4320bbf1a2083819da32d38c675d5ac2c6a16450319230a9ab81e1e9580fc2ab"
+    },
+    {
+      "package": "R17",
+      "case": "global-judgment-id-collision",
+      "exit_code": 2,
+      "match_author": true,
+      "output_sha256": "8608e9997016a654090ce879d508a330a35abe8823f33ab35221077acf4a9635"
+    },
+    {
+      "package": "R17",
+      "case": "cross-context-document",
+      "exit_code": 0,
+      "match_author": true,
+      "output_sha256": "88e23f2fcfb259d5b9c52cd2123971ca5529f41ceed217973081a8c39ceb5f59"
+    }
+  ],
+  "independent_probes": [
+    {
+      "id": "R14-erase-shared-unknowns",
+      "status": "accepted",
+      "output": {
+        "status": "accepted_for_research_only",
+        "function_count": 6,
+        "interface_count": 12,
+        "unknown_count": 0,
+        "global_engineering_coverage": false,
+        "semantic_sufficiency": "not_automatically_checked",
+        "approval": false
+      }
+    },
+    {
+      "id": "R14-tamper-source-version",
+      "status": "accepted",
+      "output": {
+        "status": "accepted_for_research_only",
+        "function_count": 6,
+        "interface_count": 12,
+        "unknown_count": 5,
+        "global_engineering_coverage": false,
+        "semantic_sufficiency": "not_automatically_checked",
+        "approval": false
+      }
+    },
+    {
+      "id": "R14-drop-shared-need",
+      "status": "accepted",
+      "output": {
+        "status": "accepted_for_research_only",
+        "function_count": 6,
+        "interface_count": 12,
+        "unknown_count": 5,
+        "global_engineering_coverage": false,
+        "semantic_sufficiency": "not_automatically_checked",
+        "approval": false
+      }
+    },
+    {
+      "id": "R14-drop-all-unit-representations",
+      "status": "accepted",
+      "output": {
+        "status": "accepted_for_research_only",
+        "function_count": 6,
+        "interface_count": 12,
+        "unknown_count": 5,
+        "global_engineering_coverage": false,
+        "semantic_sufficiency": "not_automatically_checked",
+        "approval": false
+      }
+    }
+  ],
+  "resource_recalculation": {
+    "pairs": 12,
+    "max_pair_W": 45,
+    "wholes": 8,
+    "max_whole_W": 65,
+    "cap_W": 50,
+    "whole_over": 1
+  },
+  "all_8_candidates_conditional": true,
+  "upstream_bindings_match": true,
+  "source_packages_unchanged": true,
+  "scope": "independent_agent_desktop_and_fixed_fixture_audit_not_domain_expert_or_engineering_validation"
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "R13-fixed-lesson-1",
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "status": "constructed_research_not_customer_evidence"
+  },
+  "first_batch_status_reference": [
+    {
+      "method": "R36",
+      "path": "02-研究/方法深化执行/MD-005-R36/教学包/02-主链逐格比较与补证队列.json",
+      "sha256": "c1184e5f4494d9a994e9f9a638683c36bea5c0d7d874a00c3314d36b17855163",
+      "use": "read_only_context_of_pending_fidelity_corrections_not_validated_dependency",
+      "status": "pending_root_coordinated_revision"
+    },
+    {
+      "method": "R44",
+      "path": "02-研究/方法深化执行/MD-006-R44/教学包/02-能力与解释分支计划.json",
+      "sha256": "baa65b1a9204794c593336ffc6c8fb1f3c2deb8b92659719ab19ec4bd487ef22",
+      "use": "read_only_context_of_pending_fidelity_corrections_not_validated_dependency",
+      "status": "pending_root_coordinated_revision"
+    },
+    {
+      "method": "R42",
+      "path": "02-研究/方法深化执行/MD-007-R42/教学包/02-未就绪计划与证据边界.json",
+      "sha256": "dfe7be3740d2e03bbc086678792b585ea03700d662359c61ccb7f548caa15c08",
+      "use": "read_only_context_of_pending_fidelity_corrections_not_validated_dependency",
+      "status": "pending_root_coordinated_revision"
+    }
+  ],
+  "provenance": "production_user_study",
+  "population": {
+    "target_population_known": false,
+    "participants": null,
+    "anthropometric_parameters": null,
+    "experience_groups": [
+      "novice_hypothesis",
+      "experienced_hypothesis"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "HF-T01",
+      "phase": "normal_monitoring",
+      "action": "识别当前作业状态",
+      "information": [
+        "state",
+        "measurement_freshness"
+      ],
+      "physical_demands": "unknown",
+      "cognitive_demands": "监视与状态解释，实际负荷未知"
+    },
+    {
+      "id": "HF-T02",
+      "phase": "abnormal_takeover",
+      "action": "识别陈旧信息并请求抑制",
+      "information": [
+        "measurement_freshness",
+        "validity",
+        "stop_request_ack"
+      ],
+      "physical_demands": "unknown",
+      "cognitive_demands": "从监视切换为异常判断，能力与时限未知"
+    },
+    {
+      "id": "HF-T03",
+      "phase": "abnormal_takeover",
+      "action": "核对停止状态与恢复前提",
+      "information": [
+        "actual_stop",
+        "residual_energy",
+        "reauthorization"
+      ],
+      "physical_demands": "unknown",
+      "cognitive_demands": "区分请求与实际状态，实际表现未知"
+    },
+    {
+      "id": "HF-T04",
+      "phase": "maintenance",
+      "action": "清理与更换后交接",
+      "information": [
+        "isolation_status",
+        "maintenance_scope",
+        "reauthorization"
+      ],
+      "physical_demands": "姿态、力、可达性均未知",
+      "cognitive_demands": "维护责任与交接，实际负荷未知"
+    }
+  ],
+  "states": [
+    {
+      "id": "S-CURRENT",
+      "semantic": "current_information"
+    },
+    {
+      "id": "S-STALE",
+      "semantic": "stale_information"
+    }
+  ],
+  "representations": {
+    "A": {
+      "S-CURRENT": "绿灯",
+      "S-STALE": "绿灯"
+    },
+    "B": {
+      "S-CURRENT": "绿灯；当前记录",
+      "S-STALE": "绿灯；记录陈旧，状态待核"
+    }
+  },
+  "records": [],
+  "conclusion": "not_empirically_evaluated",
+  "engineering_validated": false
+}

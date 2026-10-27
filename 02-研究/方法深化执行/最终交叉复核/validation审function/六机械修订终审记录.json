@@ -1,0 +1,325 @@
+{
+  "packages": [
+    {
+      "method": "R12",
+      "package": "MD-013-R12-v0.1.2",
+      "manifest_sha256": "08155b3b3738638a6e816601e5b674345bea297a5e779313887cd10ac1e8f2e4",
+      "replayed_author_cases": 22,
+      "all_author_assertions_passed": true,
+      "manifest_files_verified": 43
+    },
+    {
+      "method": "R23",
+      "package": "MD-021-R23-v0.1.2",
+      "manifest_sha256": "6a343cf494c14c04070b02d29095d7aa459f810dedb4f55a3b5f480a597d2ffc",
+      "replayed_author_cases": 15,
+      "all_author_assertions_passed": true,
+      "manifest_files_verified": 15
+    },
+    {
+      "method": "R27",
+      "package": "MD-025-R27-v0.1.2",
+      "manifest_sha256": "8fd0aaee5e53917001c42d6e24b74d0efad0ce5299ee66722a05adf306521c02",
+      "replayed_author_cases": 16,
+      "all_author_assertions_passed": true,
+      "manifest_files_verified": 18
+    },
+    {
+      "method": "R34",
+      "package": "MD-034-R34-v0.1.2",
+      "manifest_sha256": "2b79d1ec38683960fdddd3bc52cbc759df1770b71c1e4ea1da319f2b6bd1e49f",
+      "replayed_author_cases": 18,
+      "all_author_assertions_passed": true,
+      "manifest_files_verified": 14
+    },
+    {
+      "method": "WB07",
+      "package": "MD-059-WB07-v0.1.1",
+      "manifest_sha256": "3c4e34bd0e8f4ddc4ff9882f1124ac059d81183557855d6eb6f5e5754a7e35cf",
+      "replayed_author_cases": 11,
+      "all_author_assertions_passed": true,
+      "manifest_files_verified": 13
+    },
+    {
+      "method": "WB04",
+      "package": "MD-056-WB04-v0.1.1",
+      "manifest_sha256": "870cab10aa00605eff22fcf555b3190fb851371d82e9603ba8095cd2da56aef4",
+      "replayed_author_cases": 12,
+      "all_author_assertions_passed": true,
+      "manifest_files_verified": 13
+    }
+  ],
+  "author_cases_total": 94,
+  "independent_controls_and_attacks": [
+    {
+      "method": "R12",
+      "name": "normal-control",
+      "accepted": true,
+      "expected_accept": true,
+      "pass": true,
+      "output": {
+        "status": "research_deployment_trace_only",
+        "needs": 4,
+        "responses": 4,
+        "unknown_relationships": 16,
+        "priority_scores": null,
+        "ranking": null,
+        "target_values_generated": false,
+        "reason": "未取得关系、可用偏好尺度及目标来源，不能聚合或反推阈值",
+        "next_actions": [
+          "核源需要",
+          "核响应/关系依据",
+          "取得偏好尺度和硬要求",
+          "独立定义工程目标及验收口径"
+        ],
+        "full_qfd_or_standard_compliance": false
+      }
+    },
+    {
+      "method": "R23",
+      "name": "normal-control",
+      "accepted": true,
+      "expected_accept": true,
+      "pass": true,
+      "output": {
+        "status": "time_separation_research_candidate",
+        "gap_s": 2,
+        "switch_time_s": 1,
+        "engineering_validated": false,
+        "required_checks": [
+          "residual energy",
+          "switch sensing",
+          "failure state",
+          "orientation and load",
+          "tolerance and margin"
+        ]
+      }
+    },
+    {
+      "method": "R27",
+      "name": "normal-control",
+      "accepted": true,
+      "expected_accept": true,
+      "pass": true,
+      "output": {
+        "status": "transfer_research_only",
+        "unknown_target_properties": [
+          "viscosity_Pa_s",
+          "wetting_contact_angle_deg",
+          "required_flow_m3_s",
+          "coagulation_time_s",
+          "cleaning_acceptance"
+        ],
+        "source_evidence": "original_experiment",
+        "source_success_not_target_success": true,
+        "ranking": "not_established"
+      }
+    },
+    {
+      "method": "R34",
+      "name": "normal-control",
+      "accepted": true,
+      "expected_accept": true,
+      "pass": true,
+      "output": {
+        "status": "constructed_action_sum_only",
+        "part_count": 3,
+        "candidate_consolidation_ids": [],
+        "cycle_time_s": 10.0,
+        "line_takt_time_s": null,
+        "total_cost": null,
+        "engineering_validated": false,
+        "not_included": [
+          "parallel work",
+          "queues",
+          "yield",
+          "rework",
+          "tool availability",
+          "operator fatigue",
+          "real cycle observations"
+        ]
+      }
+    },
+    {
+      "method": "WB07",
+      "name": "normal-control",
+      "accepted": true,
+      "expected_accept": true,
+      "pass": true,
+      "output": {
+        "status": "design_assistance_plan_only",
+        "product_intelligence_validated": false,
+        "next": "trace inputs, compare independent engineering evidence and human review; no operational command"
+      }
+    },
+    {
+      "method": "WB04",
+      "name": "normal-control",
+      "accepted": true,
+      "expected_accept": true,
+      "pass": true,
+      "output": {
+        "status": "joint_research_candidate_only",
+        "same_candidate_parameters_used": {
+          "id": "A",
+          "mass_kg": 2.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": true
+        },
+        "natural_omega_rad_s": 22.360679774997898,
+        "response_m": 0.000998005980069749,
+        "violations": [],
+        "separate_domain_scores_summed": false,
+        "engineering_selected": null,
+        "function_validated": false,
+        "cost": null,
+        "scope": "single linear mode and explicit teaching service property; not complete1+3+X solver"
+      }
+    },
+    {
+      "method": "R12",
+      "name": "empty-text",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "response_text_required"
+      }
+    },
+    {
+      "method": "R12",
+      "name": "whitespace-text",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "response_text_required"
+      }
+    },
+    {
+      "method": "R23",
+      "name": "empty-object",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "nonblank object/parameter/unit required"
+      }
+    },
+    {
+      "method": "R23",
+      "name": "empty-parameter",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "nonblank object/parameter/unit required"
+      }
+    },
+    {
+      "method": "R23",
+      "name": "empty-unit",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "nonblank object/parameter/unit required"
+      }
+    },
+    {
+      "method": "R27",
+      "name": "empty-difference-item",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "nonblank explicit transfer differences required"
+      }
+    },
+    {
+      "method": "R27",
+      "name": "whitespace-difference-item",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "nonblank explicit transfer differences required"
+      }
+    },
+    {
+      "method": "R34",
+      "name": "duplicate-BOM-id",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "unique explicit BOM IDs required"
+      }
+    },
+    {
+      "method": "R34",
+      "name": "empty-BOM-id",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "unique explicit BOM IDs required"
+      }
+    },
+    {
+      "method": "WB07",
+      "name": "duplicate-sample-id",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "unique explicit sample IDs required"
+      }
+    },
+    {
+      "method": "WB07",
+      "name": "empty-sample-id",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "unique explicit sample IDs required"
+      }
+    },
+    {
+      "method": "WB04",
+      "name": "unsupported-actual-evidence",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "actual function evidence field unsupported; use independently reviewed new contract"
+      }
+    },
+    {
+      "method": "WB04",
+      "name": "missing-evidence-field",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "actual function evidence field unsupported; use independently reviewed new contract"
+      }
+    },
+    {
+      "method": "WB04",
+      "name": "unsupported-manufacturing-cost",
+      "accepted": false,
+      "expected_accept": false,
+      "pass": true,
+      "output": {
+        "error": "cost evidence unsupported in this model"
+      }
+    }
+  ],
+  "all_expected": true,
+  "original_file_count": 163,
+  "original_bytes_unchanged": true,
+  "review_scope": "only listed mechanical shape/identity closures and normal controls; no new semantic/engineering certification"
+}

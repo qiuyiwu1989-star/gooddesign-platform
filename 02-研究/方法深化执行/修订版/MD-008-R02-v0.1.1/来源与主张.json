@@ -1,0 +1,101 @@
+{
+  "method": "R02",
+  "version": "0.1.0",
+  "date": "2026-10-27",
+  "sources": [
+    {
+      "id": "DC-FRAME",
+      "url": "https://www.designcouncil.org.uk/resources/framework-for-innovation/",
+      "final_url": "https://www.designcouncil.org.uk/resources/framework-for-innovation/",
+      "date": "2026-10-27",
+      "raw_file": "private-sources/DC-FRAME.html",
+      "raw_sha256": "a2fa3dde82457eef133d9a6fe32ff5d8ed6f0ade5e38253f87fe85e4e4f153b0",
+      "text_file": "private-sources/DC-FRAME.txt",
+      "text_sha256": "7b6233bd48ff682c863259d51beffba7e1108a5d3b0d5878e1900e2c9cbe0876",
+      "status": "acquired_selected_review_required"
+    },
+    {
+      "id": "DC-DD",
+      "url": "https://www.designcouncil.org.uk/resources/the-double-diamond/",
+      "final_url": "https://www.designcouncil.org.uk/resources/the-double-diamond/",
+      "date": "2026-10-27",
+      "raw_file": "private-sources/DC-DD.html",
+      "raw_sha256": "db7b03f9dd1cd42a7c9ba73835dede1d6c8cecad016e76b835f25326e034425a",
+      "text_file": "private-sources/DC-DD.txt",
+      "text_sha256": "110bd4f10435b40071c3d9cb142a1c80be6d82d33786326d24a3ef984fbb7d3b",
+      "status": "acquired_selected_review_required"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-DD-01",
+      "statement": "两次拓展与聚焦组织问题探索及行动。",
+      "type": "source_selected_scope",
+      "source_id": "DC-FRAME",
+      "url": "https://www.designcouncil.org.uk/resources/framework-for-innovation/",
+      "locator": "The process: using the Double Diamond",
+      "short_anchor": "The two diamonds represent",
+      "anchor_in_text": 2559,
+      "source_raw_sha256": "a2fa3dde82457eef133d9a6fe32ff5d8ed6f0ade5e38253f87fe85e4e4f153b0",
+      "source_text_sha256": "7b6233bd48ff682c863259d51beffba7e1108a5d3b0d5878e1900e2c9cbe0876",
+      "read_scope": "selected web sections or specifically listed PDF pages only",
+      "not_supported": [
+        "真实割胶需求",
+        "客户批准",
+        "真实用户或工程效果",
+        "平台完整原法执行"
+      ]
+    },
+    {
+      "id": "C-DD-02",
+      "statement": "过程允许由新认识返回问题研究。",
+      "type": "source_selected_scope",
+      "source_id": "DC-FRAME",
+      "url": "https://www.designcouncil.org.uk/resources/framework-for-innovation/",
+      "locator": "Process非线性说明",
+      "short_anchor": "This is not a linear process",
+      "anchor_in_text": 3347,
+      "source_raw_sha256": "a2fa3dde82457eef133d9a6fe32ff5d8ed6f0ade5e38253f87fe85e4e4f153b0",
+      "source_text_sha256": "7b6233bd48ff682c863259d51beffba7e1108a5d3b0d5878e1900e2c9cbe0876",
+      "read_scope": "selected web sections or specifically listed PDF pages only",
+      "not_supported": [
+        "真实割胶需求",
+        "客户批准",
+        "真实用户或工程效果",
+        "平台完整原法执行"
+      ]
+    },
+    {
+      "id": "C-DD-03",
+      "statement": "四活动是过程表达，不是本包算术或门禁的原始算法。",
+      "type": "source_plus_platform_boundary",
+      "source_id": "DC-DD",
+      "url": "https://www.designcouncil.org.uk/resources/the-double-diamond/",
+      "locator": "How to use / Discover—Deliver",
+      "short_anchor": "How to use the Double Diamond.",
+      "anchor_in_text": 1856,
+      "source_raw_sha256": "db7b03f9dd1cd42a7c9ba73835dede1d6c8cecad016e76b835f25326e034425a",
+      "source_text_sha256": "110bd4f10435b40071c3d9cb142a1c80be6d82d33786326d24a3ef984fbb7d3b",
+      "read_scope": "selected web sections or specifically listed PDF pages only",
+      "not_supported": [
+        "真实割胶需求",
+        "客户批准",
+        "真实用户或工程效果",
+        "平台完整原法执行"
+      ]
+    }
+  ],
+  "platform_adaptations": [
+    "固定构造输入与ID",
+    "结构/声明检查规则",
+    "未知及未执行状态",
+    "建议调用schema"
+  ],
+  "gaps": [
+    "真实现场材料未得",
+    "桌面信息更新不等现场问题发现",
+    "按负担占比选择焦点仅为本构造表定义",
+    "原典框架不背书本平台schema"
+  ],
+  "source_distribution": "raw/text/screenshots only in gitignored private-sources; no whole cards or source pages copied into public output"
+}

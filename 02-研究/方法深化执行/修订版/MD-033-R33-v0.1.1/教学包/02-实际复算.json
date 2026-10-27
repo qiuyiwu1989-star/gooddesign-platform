@@ -1,0 +1,483 @@
+{
+  "cases": [
+    {
+      "name": "正常轴向",
+      "input": {
+        "id": "R33-TEACH-001",
+        "origin": "synthetic_not_database_or_measured",
+        "F_N": 100.0,
+        "L_m": 0.3,
+        "deflection_limit_m": 0.001,
+        "max_service_C": 50.0,
+        "geometry_free": true,
+        "model": "axial",
+        "materials": [
+          {
+            "id": "A",
+            "E_Pa": 70000000000.0,
+            "rho_kg_m3": 2700.0,
+            "allowable_stress_Pa": 300000000.0,
+            "temperature_limit_C": 120.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          },
+          {
+            "id": "B",
+            "E_Pa": 210000000000.0,
+            "rho_kg_m3": 7800.0,
+            "allowable_stress_Pa": 900000000.0,
+            "temperature_limit_C": 80.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          }
+        ]
+      },
+      "actual": {
+        "status": "constructed_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "area_m2": 4.2857142857142857e-07
+            },
+            "mass_kg": 0.0003471428571428571,
+            "deflection_m": 0.001,
+            "stress_Pa": 233333333.33333334,
+            "stiffness_index": 25925925.925925925,
+            "cost_comparison": "unknown"
+          },
+          {
+            "id": "B",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "area_m2": 1.4285714285714285e-07
+            },
+            "mass_kg": 0.00033428571428571426,
+            "deflection_m": 0.001,
+            "stress_Pa": 700000000.0,
+            "stiffness_index": 26923076.923076924,
+            "cost_comparison": "unknown"
+          }
+        ],
+        "ranking_by_mass": [
+          "B",
+          "A"
+        ],
+        "engineering_validated": false,
+        "cost_rank": null
+      },
+      "passed": true
+    },
+    {
+      "name": "弯曲改变排名",
+      "input": {
+        "id": "R33-TEACH-001",
+        "origin": "synthetic_not_database_or_measured",
+        "F_N": 100.0,
+        "L_m": 0.3,
+        "deflection_limit_m": 0.001,
+        "max_service_C": 50.0,
+        "geometry_free": true,
+        "model": "square_cantilever",
+        "materials": [
+          {
+            "id": "A",
+            "E_Pa": 70000000000.0,
+            "rho_kg_m3": 2700.0,
+            "allowable_stress_Pa": 300000000.0,
+            "temperature_limit_C": 120.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          },
+          {
+            "id": "B",
+            "E_Pa": 210000000000.0,
+            "rho_kg_m3": 7800.0,
+            "allowable_stress_Pa": 900000000.0,
+            "temperature_limit_C": 80.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          }
+        ]
+      },
+      "actual": {
+        "status": "constructed_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "square_side_m": 0.019818985908082842
+            },
+            "mass_kg": 0.3181616839640769,
+            "deflection_m": 0.0009999999999999998,
+            "stress_Pa": 23122150.226096652,
+            "stiffness_index": 97.99078929868854,
+            "cost_comparison": "unknown"
+          },
+          {
+            "id": "B",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "square_side_m": 0.015059172746387376
+            },
+            "mass_kg": 0.5306621201049551,
+            "deflection_m": 0.001,
+            "stress_Pa": 52707104.61235582,
+            "stiffness_index": 58.7509704481518,
+            "cost_comparison": "unknown"
+          }
+        ],
+        "ranking_by_mass": [
+          "A",
+          "B"
+        ],
+        "engineering_validated": false,
+        "cost_rank": null
+      },
+      "passed": true
+    },
+    {
+      "name": "缺物性",
+      "input": {
+        "id": "R33-TEACH-001",
+        "origin": "synthetic_not_database_or_measured",
+        "F_N": 100.0,
+        "L_m": 0.3,
+        "deflection_limit_m": 0.001,
+        "max_service_C": 50.0,
+        "geometry_free": true,
+        "model": "axial",
+        "materials": [
+          {
+            "id": "A",
+            "E_Pa": null,
+            "rho_kg_m3": 2700.0,
+            "allowable_stress_Pa": 300000000.0,
+            "temperature_limit_C": 120.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          },
+          {
+            "id": "B",
+            "E_Pa": 210000000000.0,
+            "rho_kg_m3": 7800.0,
+            "allowable_stress_Pa": 900000000.0,
+            "temperature_limit_C": 80.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          }
+        ]
+      },
+      "actual": {
+        "status": "constructed_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "state": "unknown",
+            "reason": "missing required material/processing evidence"
+          },
+          {
+            "id": "B",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "area_m2": 1.4285714285714285e-07
+            },
+            "mass_kg": 0.00033428571428571426,
+            "deflection_m": 0.001,
+            "stress_Pa": 700000000.0,
+            "stiffness_index": 26923076.923076924,
+            "cost_comparison": "unknown"
+          }
+        ],
+        "ranking_by_mass": [
+          "B"
+        ],
+        "engineering_validated": false,
+        "cost_rank": null
+      },
+      "passed": true
+    },
+    {
+      "name": "固定几何不适用",
+      "input": {
+        "id": "R33-TEACH-001",
+        "origin": "synthetic_not_database_or_measured",
+        "F_N": 100.0,
+        "L_m": 0.3,
+        "deflection_limit_m": 0.001,
+        "max_service_C": 50.0,
+        "geometry_free": false,
+        "model": "axial",
+        "materials": [
+          {
+            "id": "A",
+            "E_Pa": 70000000000.0,
+            "rho_kg_m3": 2700.0,
+            "allowable_stress_Pa": 300000000.0,
+            "temperature_limit_C": 120.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          },
+          {
+            "id": "B",
+            "E_Pa": 210000000000.0,
+            "rho_kg_m3": 7800.0,
+            "allowable_stress_Pa": 900000000.0,
+            "temperature_limit_C": 80.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          }
+        ]
+      },
+      "actual": {
+        "status": "not_applicable_fixed_geometry",
+        "ranking": null
+      },
+      "passed": true
+    },
+    {
+      "name": "温度等界",
+      "input": {
+        "id": "R33-TEACH-001",
+        "origin": "synthetic_not_database_or_measured",
+        "F_N": 100.0,
+        "L_m": 0.3,
+        "deflection_limit_m": 0.001,
+        "max_service_C": 80,
+        "geometry_free": true,
+        "model": "axial",
+        "materials": [
+          {
+            "id": "A",
+            "E_Pa": 70000000000.0,
+            "rho_kg_m3": 2700.0,
+            "allowable_stress_Pa": 300000000.0,
+            "temperature_limit_C": 120.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          },
+          {
+            "id": "B",
+            "E_Pa": 210000000000.0,
+            "rho_kg_m3": 7800.0,
+            "allowable_stress_Pa": 900000000.0,
+            "temperature_limit_C": 80.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          }
+        ]
+      },
+      "actual": {
+        "status": "constructed_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "area_m2": 4.2857142857142857e-07
+            },
+            "mass_kg": 0.0003471428571428571,
+            "deflection_m": 0.001,
+            "stress_Pa": 233333333.33333334,
+            "stiffness_index": 25925925.925925925,
+            "cost_comparison": "unknown"
+          },
+          {
+            "id": "B",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "area_m2": 1.4285714285714285e-07
+            },
+            "mass_kg": 0.00033428571428571426,
+            "deflection_m": 0.001,
+            "stress_Pa": 700000000.0,
+            "stiffness_index": 26923076.923076924,
+            "cost_comparison": "unknown"
+          }
+        ],
+        "ranking_by_mass": [
+          "B",
+          "A"
+        ],
+        "engineering_validated": false,
+        "cost_rank": null
+      },
+      "passed": true
+    },
+    {
+      "name": "温度筛除名义最优B",
+      "input": {
+        "id": "R33-TEACH-001",
+        "origin": "synthetic_not_database_or_measured",
+        "F_N": 100.0,
+        "L_m": 0.3,
+        "deflection_limit_m": 0.001,
+        "max_service_C": 100,
+        "geometry_free": true,
+        "model": "axial",
+        "materials": [
+          {
+            "id": "A",
+            "E_Pa": 70000000000.0,
+            "rho_kg_m3": 2700.0,
+            "allowable_stress_Pa": 300000000.0,
+            "temperature_limit_C": 120.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          },
+          {
+            "id": "B",
+            "E_Pa": 210000000000.0,
+            "rho_kg_m3": 7800.0,
+            "allowable_stress_Pa": 900000000.0,
+            "temperature_limit_C": 80.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          }
+        ]
+      },
+      "actual": {
+        "status": "constructed_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "area_m2": 4.2857142857142857e-07
+            },
+            "mass_kg": 0.0003471428571428571,
+            "deflection_m": 0.001,
+            "stress_Pa": 233333333.33333334,
+            "stiffness_index": 25925925.925925925,
+            "cost_comparison": "unknown"
+          },
+          {
+            "id": "B",
+            "state": "excluded",
+            "reason": "temperature/process constraint"
+          }
+        ],
+        "ranking_by_mass": [
+          "A"
+        ],
+        "engineering_validated": false,
+        "cost_rank": null
+      },
+      "passed": true
+    },
+    {
+      "name": "展示支架不同情境",
+      "input": {
+        "id": "DISPLAY-SUPPORT-TEACH",
+        "origin": "synthetic_not_database_or_measured",
+        "F_N": 50.0,
+        "L_m": 0.2,
+        "deflection_limit_m": 0.001,
+        "max_service_C": 50.0,
+        "geometry_free": true,
+        "model": "square_cantilever",
+        "materials": [
+          {
+            "id": "A",
+            "E_Pa": 70000000000.0,
+            "rho_kg_m3": 2700.0,
+            "allowable_stress_Pa": 300000000.0,
+            "temperature_limit_C": 120.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          },
+          {
+            "id": "B",
+            "E_Pa": 210000000000.0,
+            "rho_kg_m3": 7800.0,
+            "allowable_stress_Pa": 900000000.0,
+            "temperature_limit_C": 80.0,
+            "manufacturable": true,
+            "cost_per_kg": null
+          }
+        ]
+      },
+      "actual": {
+        "status": "constructed_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "square_side_m": 0.012295763059025288
+            },
+            "mass_kg": 0.08164032616999309,
+            "deflection_m": 0.001,
+            "stress_Pa": 32276378.029941376,
+            "stiffness_index": 97.99078929868854,
+            "cost_comparison": "unknown"
+          },
+          {
+            "id": "B",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "square_side_m": 0.009342759554564003
+            },
+            "mass_kg": 0.1361679635072593,
+            "deflection_m": 0.0009999999999999998,
+            "stress_Pa": 73574231.4921915,
+            "stiffness_index": 58.7509704481518,
+            "cost_comparison": "unknown"
+          }
+        ],
+        "ranking_by_mass": [
+          "A",
+          "B"
+        ],
+        "engineering_validated": false,
+        "cost_rank": null
+      },
+      "passed": true
+    },
+    {
+      "name": "弯曲板不套方梁指数",
+      "actual": "rejected",
+      "passed": true
+    },
+    {
+      "name": "old-service-NaN",
+      "actual": "rejected",
+      "reason": "finite nonboolean service temperature required",
+      "passed": true
+    },
+    {
+      "name": "service-Inf",
+      "actual": "rejected",
+      "reason": "finite nonboolean service temperature required",
+      "passed": true
+    },
+    {
+      "name": "service-bool",
+      "actual": "rejected",
+      "reason": "finite nonboolean service temperature required",
+      "passed": true
+    },
+    {
+      "name": "load-bool",
+      "actual": "rejected",
+      "reason": "positive finite physical quantities required",
+      "passed": true
+    },
+    {
+      "name": "geometry-string-false",
+      "actual": "rejected",
+      "reason": "explicit geometry boolean required",
+      "passed": true
+    },
+    {
+      "name": "property-bool",
+      "actual": "rejected",
+      "reason": "invalid material property shape",
+      "passed": true
+    }
+  ],
+  "count": 14,
+  "scope": "synthetic material properties, closed-form static stiffness/strength only, not purchasing decision"
+}

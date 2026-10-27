@@ -1,0 +1,495 @@
+{
+  "input": {
+    "schema": "R14-research-teaching-model-0.1.1",
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.1",
+    "upstream": {
+      "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+      "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+      "version": "0.1.0",
+      "problem_id": "TAP-TEACH-001"
+    },
+    "mode": "constructed_teaching_not_customer_evidence",
+    "scope": "workhead and local control interface; not entire robot or validated biological-depth control",
+    "functions": [
+      {
+        "id": "F-T01",
+        "verb_object": "定义允许作业区域",
+        "parent_need_ids": [
+          "N-T01",
+          "N-T03"
+        ],
+        "inputs": [
+          "区域边界及人工授权"
+        ],
+        "outputs": [
+          "区域可操作性与授权状态"
+        ],
+        "failure_and_return": "边界/授权未知则不允许自动进入作用",
+        "derivation": "platform_derived_research_function_not_customer_confirmed",
+        "customer_approved": false
+      },
+      {
+        "id": "F-T02",
+        "verb_object": "建立局部表面参考",
+        "parent_need_ids": [
+          "N-T01",
+          "N-T03"
+        ],
+        "inputs": [
+          "观察/接触获得的状态"
+        ],
+        "outputs": [
+          "带坐标系、时间戳、有效标记的参考"
+        ],
+        "failure_and_return": "表面参考不等于内部组织边界",
+        "derivation": "platform_derived_research_function_not_customer_confirmed",
+        "customer_approved": false
+      },
+      {
+        "id": "F-T03",
+        "verb_object": "约束相对切入作用",
+        "parent_need_ids": [
+          "N-T01",
+          "N-T03"
+        ],
+        "inputs": [
+          "参考及待确认的允许范围"
+        ],
+        "outputs": [
+          "允许/禁止作用及运动限制"
+        ],
+        "failure_and_return": "真实组织边界和限值未知，不能判深度合格",
+        "derivation": "platform_derived_research_function_not_customer_confirmed",
+        "customer_approved": false
+      },
+      {
+        "id": "F-T04",
+        "verb_object": "产生相对作业运动",
+        "parent_need_ids": [
+          "N-T01"
+        ],
+        "inputs": [
+          "作用许可、供能和目标对象"
+        ],
+        "outputs": [
+          "作用状态、残余物及反力"
+        ],
+        "failure_and_return": "不确定载荷、功率及危险后果",
+        "derivation": "platform_derived_research_function_not_customer_confirmed",
+        "customer_approved": false
+      },
+      {
+        "id": "F-T05",
+        "verb_object": "识别状态失效并抑制作用",
+        "parent_need_ids": [
+          "N-T02",
+          "N-T03"
+        ],
+        "inputs": [
+          "状态、测量时点和许可"
+        ],
+        "outputs": [
+          "抑制指令及需人工核查的信息"
+        ],
+        "failure_and_return": "未定义新鲜度阈值，不能写已实现及时检测",
+        "derivation": "platform_derived_research_function_not_customer_confirmed",
+        "customer_approved": false
+      },
+      {
+        "id": "F-T06",
+        "verb_object": "停止作用并交接恢复",
+        "parent_need_ids": [
+          "N-T02"
+        ],
+        "inputs": [
+          "抑制指令和残余能量状态"
+        ],
+        "outputs": [
+          "停止/待退出/待人工状态及恢复条件"
+        ],
+        "failure_and_return": "停止不等于安全退出，未知残余能量需保留",
+        "derivation": "platform_derived_research_function_not_customer_confirmed",
+        "customer_approved": false
+      }
+    ],
+    "external_entities": [
+      "EXT-OP",
+      "EXT-TREE",
+      "EXT-RESIDUE",
+      "EXT-POWER"
+    ],
+    "interfaces": [
+      {
+        "id": "IF-T01",
+        "origin": "F-T01",
+        "destination": "F-T02",
+        "flow_type": "signal",
+        "payload": "工作区域、授权及版本",
+        "representation_units": null,
+        "threshold": null,
+        "unknown_action": "区域或授权未明则退回F-T01",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": null,
+        "consumer_unit": null,
+        "conversion": null,
+        "unit_state": "unknown"
+      },
+      {
+        "id": "IF-T02",
+        "origin": "F-T02",
+        "destination": "F-T03",
+        "flow_type": "signal",
+        "payload": "局部表面参考、frame_id、t_meas、valid",
+        "representation_units": "mm and ms (representation only)",
+        "threshold": null,
+        "unknown_action": "坐标系/时效不能解释则unknown并请求抑制",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": "mm and ms (representation only)",
+        "consumer_unit": "mm and ms (representation only)",
+        "conversion": null,
+        "unit_state": "declared_representation"
+      },
+      {
+        "id": "IF-T03",
+        "origin": "F-T03",
+        "destination": "F-T04",
+        "flow_type": "signal",
+        "payload": "允许范围与作用许可",
+        "representation_units": "mm (no accepted target)",
+        "threshold": null,
+        "unknown_action": "未批准限值不标自动作业合格",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": "mm (no accepted target)",
+        "consumer_unit": "mm (no accepted target)",
+        "conversion": null,
+        "unit_state": "declared_representation"
+      },
+      {
+        "id": "IF-T04",
+        "origin": "F-T04",
+        "destination": "F-T05",
+        "flow_type": "signal",
+        "payload": "实际状态与时点",
+        "representation_units": "ms (no accepted latency)",
+        "threshold": null,
+        "unknown_action": "陈旧或缺失状态转为未知",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": "ms (no accepted latency)",
+        "consumer_unit": "ms (no accepted latency)",
+        "conversion": null,
+        "unit_state": "declared_representation"
+      },
+      {
+        "id": "IF-T05",
+        "origin": "F-T05",
+        "destination": "F-T03",
+        "flow_type": "signal",
+        "payload": "失效抑制反馈",
+        "representation_units": null,
+        "threshold": null,
+        "unknown_action": "不得因为有反馈环就强制删除边",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": null,
+        "consumer_unit": null,
+        "conversion": null,
+        "unit_state": "unknown"
+      },
+      {
+        "id": "IF-T06",
+        "origin": "F-T05",
+        "destination": "F-T06",
+        "flow_type": "signal",
+        "payload": "停止及交接请求",
+        "representation_units": null,
+        "threshold": null,
+        "unknown_action": "请求停止不等实际已停",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": null,
+        "consumer_unit": null,
+        "conversion": null,
+        "unit_state": "unknown"
+      },
+      {
+        "id": "IF-T07",
+        "origin": "F-T06",
+        "destination": "EXT-OP",
+        "flow_type": "signal",
+        "payload": "残余能量状态、恢复前置项",
+        "representation_units": null,
+        "threshold": null,
+        "unknown_action": "状态未知不得自动恢复",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": null,
+        "consumer_unit": null,
+        "conversion": null,
+        "unit_state": "unknown"
+      },
+      {
+        "id": "IF-T08",
+        "origin": "EXT-OP",
+        "destination": "F-T01",
+        "flow_type": "signal",
+        "payload": "人工核查与重新授权",
+        "representation_units": null,
+        "threshold": null,
+        "unknown_action": "原始授权不可跨异常沿用",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": null,
+        "consumer_unit": null,
+        "conversion": null,
+        "unit_state": "unknown"
+      },
+      {
+        "id": "IF-T09",
+        "origin": "EXT-TREE",
+        "destination": "F-T04",
+        "flow_type": "material",
+        "payload": "待作用树体局部",
+        "representation_units": null,
+        "threshold": null,
+        "unknown_action": "树种与组织状态未知",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": null,
+        "consumer_unit": null,
+        "conversion": null,
+        "unit_state": "unknown"
+      },
+      {
+        "id": "IF-T10",
+        "origin": "F-T04",
+        "destination": "EXT-RESIDUE",
+        "flow_type": "material",
+        "payload": "切除物/污染物",
+        "representation_units": null,
+        "threshold": null,
+        "unknown_action": "清理收集及对生物组织影响未知",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": null,
+        "consumer_unit": null,
+        "conversion": null,
+        "unit_state": "unknown"
+      },
+      {
+        "id": "IF-T11",
+        "origin": "EXT-POWER",
+        "destination": "F-T04",
+        "flow_type": "energy",
+        "payload": "作业供能",
+        "representation_units": "W (value unknown)",
+        "threshold": null,
+        "unknown_action": "功率/负载未测",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": "W (value unknown)",
+        "consumer_unit": "W (value unknown)",
+        "conversion": null,
+        "unit_state": "declared_representation"
+      },
+      {
+        "id": "IF-T12",
+        "origin": "F-T04",
+        "destination": "EXT-TREE",
+        "flow_type": "energy",
+        "payload": "接触反作用",
+        "representation_units": null,
+        "threshold": null,
+        "unknown_action": "未核力/方向和组织损伤",
+        "owner_agreement": "not_obtained",
+        "physical_validation": "not_executed",
+        "producer_unit": null,
+        "consumer_unit": null,
+        "conversion": null,
+        "unit_state": "unknown"
+      }
+    ],
+    "known_approved_targets": [],
+    "unknowns": [
+      {
+        "id": "U-T01",
+        "text": "目标树种、树龄、组织状态与现场环境",
+        "value": null,
+        "origin": "locked_shared_context"
+      },
+      {
+        "id": "U-T02",
+        "text": "切入/余皮限值、测量口径与客户验收标准",
+        "value": null,
+        "origin": "locked_shared_context"
+      },
+      {
+        "id": "U-T03",
+        "text": "异常类型、发生频率及实际恢复过程",
+        "value": null,
+        "origin": "locked_shared_context"
+      },
+      {
+        "id": "U-T04",
+        "text": "供能、执行器、结构载荷与防护配置",
+        "value": null,
+        "origin": "locked_shared_context"
+      },
+      {
+        "id": "U-T05",
+        "text": "使用者能力、劳动安排与维护资源",
+        "value": null,
+        "origin": "locked_shared_context"
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "SC-T01",
+        "kind": "normal_research_path",
+        "function_ids": [
+          "F-T01",
+          "F-T02",
+          "F-T03",
+          "F-T04",
+          "F-T05"
+        ],
+        "interface_ids": [
+          "IF-T01",
+          "IF-T02",
+          "IF-T03",
+          "IF-T04",
+          "IF-T05"
+        ],
+        "claim": "only a declared control path; no operation executed"
+      },
+      {
+        "id": "SC-T02",
+        "kind": "stale_feedback_or_loss",
+        "function_ids": [
+          "F-T05",
+          "F-T06",
+          "F-T01"
+        ],
+        "interface_ids": [
+          "IF-T06",
+          "IF-T07",
+          "IF-T08"
+        ],
+        "claim": "requires explicit human reauthorization; actual detect/stop time unknown"
+      }
+    ],
+    "coverage": [
+      {
+        "need_id": "N-T01",
+        "function_ids": [
+          "F-T01",
+          "F-T02",
+          "F-T03",
+          "F-T04"
+        ],
+        "status": "research_allocation_not_satisfaction",
+        "coverage_scope": "declared_research_functions"
+      },
+      {
+        "need_id": "N-T02",
+        "function_ids": [
+          "F-T05",
+          "F-T06"
+        ],
+        "status": "research_allocation_not_satisfaction",
+        "coverage_scope": "declared_research_functions"
+      },
+      {
+        "need_id": "N-T03",
+        "function_ids": [
+          "F-T01",
+          "F-T02",
+          "F-T03",
+          "F-T05"
+        ],
+        "status": "research_allocation_not_satisfaction",
+        "coverage_scope": "declared_research_functions"
+      }
+    ],
+    "limits": [
+      "structural checks do not prove semantic sufficiency",
+      "control feedback and material/energy interfaces are modeled separately",
+      "no conservation/stability/biological injury analysis",
+      "N-T04 only stop/maintenance handover represented; complete cleaning, maintenance and transfer remain outside boundary"
+    ],
+    "customer_approved": false,
+    "engineering_validated": false,
+    "source_needs": [
+      {
+        "id": "N-T01",
+        "text": "研究如何描述和约束切入作用边界",
+        "kind": "research_need_hypothesis",
+        "basis": "platform_teaching_prompt",
+        "target": null,
+        "unit": null,
+        "customer_approved": false
+      },
+      {
+        "id": "N-T02",
+        "text": "研究异常发生后如何停止作用、恢复或转交人工处置",
+        "kind": "research_need_hypothesis",
+        "basis": "platform_teaching_prompt",
+        "target": null,
+        "unit": null,
+        "customer_approved": false
+      },
+      {
+        "id": "N-T03",
+        "text": "研究操作者如何知道当前状态、所依据的数据及其时效",
+        "kind": "research_need_hypothesis",
+        "basis": "platform_teaching_prompt",
+        "target": null,
+        "unit": null,
+        "customer_approved": false
+      },
+      {
+        "id": "N-T04",
+        "text": "研究清理、维护与转场对完整作业的影响",
+        "kind": "research_need_hypothesis",
+        "basis": "platform_teaching_prompt",
+        "target": null,
+        "unit": null,
+        "customer_approved": false
+      }
+    ],
+    "source_unknowns": [
+      {
+        "id": "U-T01",
+        "text": "目标树种、树龄、组织状态与现场环境",
+        "value": null
+      },
+      {
+        "id": "U-T02",
+        "text": "切入/余皮限值、测量口径与客户验收标准",
+        "value": null
+      },
+      {
+        "id": "U-T03",
+        "text": "异常类型、发生频率及实际恢复过程",
+        "value": null
+      },
+      {
+        "id": "U-T04",
+        "text": "供能、执行器、结构载荷与防护配置",
+        "value": null
+      },
+      {
+        "id": "U-T05",
+        "text": "使用者能力、劳动安排与维护资源",
+        "value": null
+      }
+    ],
+    "derived_unknowns": []
+  },
+  "accepted": false,
+  "result": "shared_need_coverage_erased"
+}

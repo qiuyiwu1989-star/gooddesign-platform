@@ -1,0 +1,33 @@
+{
+  "input": {
+    "id": "DYN-TEACH-01",
+    "version": "0.1.0",
+    "source_scope": "author nonlinear-design direction only; no author-specific equation acquired",
+    "equation_identity": "independent normalized toy m*xdd+c*xd+k*x+alpha*x^3=F, not Wen equation",
+    "parameters": {
+      "m": 1.0,
+      "c": 0.2,
+      "k": 1.0,
+      "alpha": 1.0
+    },
+    "initial_states": [
+      {
+        "x": 1.0,
+        "v": 0.0
+      },
+      {
+        "x": -1.0,
+        "v": 0.0
+      }
+    ],
+    "force": 0.0,
+    "identification_data": [
+      "measured"
+    ],
+    "global_stability_claim": false,
+    "real_robot_parameter_claim": false
+  },
+  "output": {
+    "error": "frozen_scope_identity_or_evidence_changed"
+  }
+}

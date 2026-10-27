@@ -1,0 +1,34 @@
+{
+  "input": {
+    "id": "VIZ-TEACH-01",
+    "version": "0.1.0",
+    "origin": "validated_CAD",
+    "phenomenon": "1D projected geometric overlap only",
+    "unit": "normalized_length",
+    "obstacle": [
+      2.5,
+      3.5
+    ],
+    "moving_width": 2.0,
+    "same_test_positions": [
+      0.0,
+      0.2,
+      0.4,
+      1.0,
+      2.0
+    ],
+    "old_model": {
+      "version": "A",
+      "max_position": 2.0
+    },
+    "new_model": {
+      "version": "B",
+      "max_position": 0.4
+    },
+    "change_reason": "reduce allowed travel in constructed model; task capability not verified",
+    "dynamic_or_safety_claim": false
+  },
+  "output": {
+    "error": "frozen_scope_identity_or_evidence_changed"
+  }
+}

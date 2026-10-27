@@ -1,0 +1,191 @@
+{
+  "author_replays": [
+    {
+      "method": "MD-042-R41",
+      "count": 8
+    },
+    {
+      "method": "MD-043-R43",
+      "count": 7
+    },
+    {
+      "method": "MD-044-R45",
+      "count": 9
+    },
+    {
+      "method": "MD-045-R46",
+      "count": 9
+    }
+  ],
+  "independent_probes": [
+    {
+      "method": "R41",
+      "name": "erase-information-tier",
+      "output": {
+        "status": "hazard_research_chain_only",
+        "tasks_covered": [
+          "abnormal",
+          "foreseeable_misuse",
+          "maintenance",
+          "normal"
+        ],
+        "risk_acceptance": null,
+        "safe_to_use": false,
+        "missing": [
+          "target jurisdiction",
+          "machine/use boundary",
+          "exposure and severity evidence",
+          "measure design details",
+          "validated stopping/isolation/energy assumptions",
+          "competent review"
+        ],
+        "not_claimed": "standard compliance or machine safety"
+      },
+      "error": null
+    },
+    {
+      "method": "R41",
+      "name": "fake-safety-approval",
+      "output": null,
+      "error": "unsupported approval/provenance"
+    },
+    {
+      "method": "R43",
+      "name": "empty-alternatives",
+      "output": {
+        "status": "synthetic_boundary_calculation_only",
+        "rows": [],
+        "arithmetic_rank": [],
+        "real_environmental_ranking": null,
+        "climate_benefit_kgCO2e": null,
+        "not_ISO_LCA_compliance": true
+      },
+      "error": null
+    },
+    {
+      "method": "R43",
+      "name": "duplicate-alternative-id",
+      "output": {
+        "status": "synthetic_boundary_calculation_only",
+        "rows": [
+          {
+            "id": "A",
+            "whole_devices_for_service": 2,
+            "production_for_FU_BU": 200.0,
+            "other_for_FU_BU": 0.0,
+            "total_constructed_BU": 200.0
+          },
+          {
+            "id": "A",
+            "whole_devices_for_service": 5,
+            "production_for_FU_BU": 300.0,
+            "other_for_FU_BU": 0.0,
+            "total_constructed_BU": 300.0
+          }
+        ],
+        "arithmetic_rank": [
+          "A",
+          "A"
+        ],
+        "real_environmental_ranking": null,
+        "climate_benefit_kgCO2e": null,
+        "not_ISO_LCA_compliance": true
+      },
+      "error": null
+    },
+    {
+      "method": "R43",
+      "name": "NaN-lifetime",
+      "output": null,
+      "error": "invalid lifecycle quantities"
+    },
+    {
+      "method": "R45",
+      "name": "delete-necessary-function",
+      "output": null,
+      "error": "necessary function/hard requirement erased"
+    },
+    {
+      "method": "R45",
+      "name": "fake-currency",
+      "output": null,
+      "error": "cost provenance unsupported"
+    },
+    {
+      "method": "R45",
+      "name": "empty-alternatives",
+      "output": {
+        "status": "cost_model_only",
+        "rows": [],
+        "cost_order": [],
+        "value_recommendation": null,
+        "why": "equal function/quality only assumed; no real costs or acceptance; no numeric Function/Cost value score"
+      },
+      "error": null
+    },
+    {
+      "method": "R46",
+      "name": "invent-query-id",
+      "output": {
+        "status": "query_material_missing",
+        "complete_landscape": false,
+        "FTO": null
+      },
+      "error": null
+    },
+    {
+      "method": "R46",
+      "name": "duplicate-query-id",
+      "output": {
+        "status": "bounded_corpus_trace_only",
+        "selected_publications": 3,
+        "domestic_application_groups": {
+          "CN201910970991.9A": [
+            "CN110696008A",
+            "CN110696008B"
+          ],
+          "PCT/CN2024/082938": [
+            "WO2025011089A1"
+          ]
+        },
+        "group_count": 2,
+        "excluded_boundary_documents": [
+          "GB977348A"
+        ],
+        "extended_family_count": null,
+        "claim_coverage": null,
+        "legal_status_verified": false,
+        "FTO": null,
+        "technology_gap": null,
+        "complete_landscape": false,
+        "search_recall": null
+      },
+      "error": null
+    },
+    {
+      "method": "R46",
+      "name": "falsify-official-status",
+      "output": null,
+      "error": "unbound publication or classification/source drift"
+    }
+  ],
+  "R43_independent_BU": [
+    200,
+    300
+  ],
+  "R45_independent_CU": [
+    200,
+    230
+  ],
+  "R46_groups": {
+    "CN201910970991.9A": [
+      "CN110696008A",
+      "CN110696008B"
+    ],
+    "PCT/CN2024/082938": [
+      "WO2025011089A1"
+    ]
+  },
+  "original_bytes_unchanged": true,
+  "scope": "limited independent agent audit, not legal/safety/environmental certification"
+}

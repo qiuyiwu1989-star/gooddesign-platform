@@ -1,0 +1,75 @@
+{
+  "input": {
+    "id": "BLUE-TEACH-001",
+    "version": "0.1.0",
+    "identity": "observed_current_service",
+    "customer_approved": false,
+    "steps": [
+      {
+        "id": "BP1",
+        "user": "接班核对",
+        "frontstage": "显示交接记录身份",
+        "backstage": "核工单与版本",
+        "support": "记录服务",
+        "evidence_object": "交接记录",
+        "owner_role": "班组协调角色待指派",
+        "wait_s": null,
+        "failure": "记录不全",
+        "recovery": "暂停接班并回查记录"
+      },
+      {
+        "id": "BP2",
+        "user": "发起作业请求",
+        "frontstage": "区分请求与实际状态",
+        "backstage": "核任务授权及反馈",
+        "support": "控制/供能服务",
+        "evidence_object": "请求与状态分列",
+        "owner_role": "现场控制角色待指派",
+        "wait_s": null,
+        "failure": "反馈陈旧",
+        "recovery": "抑制新动作请求并交异常处理"
+      },
+      {
+        "id": "BP3",
+        "user": "报告异常等待处理",
+        "frontstage": "显示尚未恢复",
+        "backstage": "派发异常并保留上下文",
+        "support": "维护支持",
+        "evidence_object": "异常单",
+        "owner_role": "维护协调角色待指派",
+        "wait_s": null,
+        "failure": "无人接单",
+        "recovery": "升级协调并保持恢复未授权"
+      },
+      {
+        "id": "BP4",
+        "user": "清理检修后交接",
+        "frontstage": "显示检修范围与未决项",
+        "backstage": "核维护记录与隔离/恢复前提",
+        "support": "备件/工具支持",
+        "evidence_object": "维护与隔离记录",
+        "owner_role": "维护执行角色待指派",
+        "wait_s": null,
+        "failure": "缺恢复证据",
+        "recovery": "禁止以检修完成替代恢复授权"
+      },
+      {
+        "id": "BP5",
+        "user": "班末交班",
+        "frontstage": "显示任务完成身份与未决项",
+        "backstage": "核账与安排后续",
+        "support": "档案支持",
+        "evidence_object": "班末未决清单",
+        "owner_role": "交接责任角色待指派",
+        "wait_s": null,
+        "failure": "未决被遗失",
+        "recovery": "保留开放异常并交明确接收角色"
+      }
+    ],
+    "actual_observations": [],
+    "measured_waits": false
+  },
+  "output": {
+    "error": "fixed_future_blueprint_identity_roles_or_recovery_changed"
+  }
+}

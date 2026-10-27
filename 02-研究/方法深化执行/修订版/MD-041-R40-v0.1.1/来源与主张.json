@@ -1,0 +1,48 @@
+{
+  "method": "R40",
+  "source_read_scope": "GSFC-HDBK-8004 Baseline2024-08-20 PDF55pages; selected p7-8,23,26-27,34-37; p23 visually inspected",
+  "claims": [
+    {
+      "id": "R40-C1",
+      "source_id": "GSFC-HDBK-8004",
+      "url": "https://standards.nasa.gov/sites/default/files/standards/GSFC/Baseline/0/GSFC-HDBK-8004_Approved_0.pdf",
+      "locator": "1.1-1.3 PDFp7-8",
+      "supported_claim": "living configuration risk analysis and stated GSFC scope",
+      "support_scope": "selected institutional primary passage",
+      "not_supported": "target engineering effectiveness or platform schema approval"
+    },
+    {
+      "id": "R40-C2",
+      "source_id": "GSFC-HDBK-8004",
+      "url": "https://standards.nasa.gov/sites/default/files/standards/GSFC/Baseline/0/GSFC-HDBK-8004_Approved_0.pdf",
+      "locator": "Table1 PDFp23",
+      "supported_claim": "version-specific likelihood/severity/detection-prevention scheme; not cross-industry universal scale",
+      "support_scope": "selected institutional primary passage",
+      "not_supported": "target engineering effectiveness or platform schema approval"
+    },
+    {
+      "id": "R40-C3",
+      "source_id": "GSFC-HDBK-8004",
+      "url": "https://standards.nasa.gov/sites/default/files/standards/GSFC/Baseline/0/GSFC-HDBK-8004_Approved_0.pdf",
+      "locator": "4.3.2 causes PDFp26-27;4.3.3-4.3.4 p34-37",
+      "supported_claim": "causal data provenance, single-point/critical items and common cause analysis",
+      "support_scope": "selected institutional primary passage",
+      "not_supported": "target engineering effectiveness or platform schema approval"
+    }
+  ],
+  "source_fingerprints": [
+    {
+      "id": "GSFC-HDBK-8004",
+      "sha256": "89ac4511fe5431dd0699926da084c584983284a3c79f31911208dd67887992e3"
+    }
+  ],
+  "platform_adaptation": "constructed stale-observation chain/shared-power grouping, no numeric target ratings",
+  "full_original_system_replicated": false,
+  "raw_originals": "private-sources excluded from manifest/publication",
+  "gaps": [
+    "scale target applicability unapproved",
+    "all ratings unknown",
+    "no independent control evidence",
+    "not complete system single-point analysis"
+  ]
+}

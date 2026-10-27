@@ -1,0 +1,186 @@
+{
+  "isolated_replays": [
+    {
+      "method": "MD-021-R23",
+      "isolated_replay": "passed"
+    },
+    {
+      "method": "MD-022-R24",
+      "isolated_replay": "passed"
+    },
+    {
+      "method": "MD-023-R25",
+      "isolated_replay": "passed"
+    },
+    {
+      "method": "MD-024-R26",
+      "isolated_replay": "passed"
+    },
+    {
+      "method": "MD-025-R27",
+      "isolated_replay": "passed"
+    }
+  ],
+  "independent_probes": [
+    {
+      "method": "R23",
+      "name": "arbitrary-directions",
+      "output": {
+        "status": "time_separation_research_candidate",
+        "gap_s": 2,
+        "switch_time_s": 1,
+        "engineering_validated": false,
+        "required_checks": [
+          "residual energy",
+          "switch sensing",
+          "failure state",
+          "orientation and load",
+          "tolerance and margin"
+        ]
+      },
+      "error": null
+    },
+    {
+      "method": "R23",
+      "name": "negative-switch-time",
+      "output": {
+        "status": "time_separation_research_candidate",
+        "gap_s": 2,
+        "switch_time_s": -100,
+        "engineering_validated": false,
+        "required_checks": [
+          "residual energy",
+          "switch sensing",
+          "failure state",
+          "orientation and load",
+          "tolerance and margin"
+        ]
+      },
+      "error": null
+    },
+    {
+      "method": "R23",
+      "name": "reversed-interval",
+      "output": {
+        "status": "time_separation_research_candidate",
+        "gap_s": 6,
+        "switch_time_s": 1,
+        "engineering_validated": false,
+        "required_checks": [
+          "residual energy",
+          "switch sensing",
+          "failure state",
+          "orientation and load",
+          "tolerance and margin"
+        ]
+      },
+      "error": null
+    },
+    {
+      "method": "R24",
+      "name": "negative-mass",
+      "output": null,
+      "error": "invalid budget"
+    },
+    {
+      "method": "R24",
+      "name": "NaN-budget",
+      "output": null,
+      "error": "finite real numbers required, booleans rejected"
+    },
+    {
+      "method": "R25",
+      "name": "blank-existing-role",
+      "output": {
+        "status": "missing_element_research_prompt",
+        "rule": "1.1.1",
+        "missing": [
+          "F",
+          "S2"
+        ],
+        "action": "identify candidate missing roles and mechanism, not automatically select hardware",
+        "engineering_validated": false
+      },
+      "error": null
+    },
+    {
+      "method": "R25",
+      "name": "nonrole-element",
+      "output": {
+        "status": "missing_element_research_prompt",
+        "rule": "1.1.1",
+        "missing": [
+          "F",
+          "S1",
+          "S2"
+        ],
+        "action": "identify candidate missing roles and mechanism, not automatically select hardware",
+        "engineering_validated": false
+      },
+      "error": null
+    },
+    {
+      "method": "R26",
+      "name": "duplicate-function-declared",
+      "output": {
+        "status": "incomplete_function_closure"
+      },
+      "error": null
+    },
+    {
+      "method": "R26",
+      "name": "invent-validation",
+      "output": null,
+      "error": "no real engineering evidence in this packet"
+    },
+    {
+      "method": "R27",
+      "name": "erase-target-unknown-registry",
+      "output": {
+        "status": "transfer_research_only",
+        "unknown_target_properties": [],
+        "source_evidence": "original_experiment",
+        "source_success_not_target_success": true,
+        "ranking": "not_established"
+      },
+      "error": null
+    },
+    {
+      "method": "R27",
+      "name": "fictitious-query-id",
+      "output": {
+        "status": "transfer_research_only",
+        "unknown_target_properties": [
+          "viscosity_Pa_s",
+          "wetting_contact_angle_deg",
+          "required_flow_m3_s",
+          "coagulation_time_s",
+          "cleaning_acceptance"
+        ],
+        "source_evidence": "original_experiment",
+        "source_success_not_target_success": true,
+        "ranking": "not_established"
+      },
+      "error": null
+    },
+    {
+      "method": "R27",
+      "name": "caller-numeric-latex",
+      "output": {
+        "status": "transfer_research_only",
+        "unknown_target_properties": [
+          "wetting_contact_angle_deg",
+          "required_flow_m3_s",
+          "coagulation_time_s",
+          "cleaning_acceptance"
+        ],
+        "source_evidence": "original_experiment",
+        "source_success_not_target_success": true,
+        "ranking": "not_established"
+      },
+      "error": null
+    }
+  ],
+  "source_packages_unchanged": true,
+  "scope": "fixed teaching and declared metadata only; not expert certification"
+}

@@ -1,0 +1,29 @@
+{
+  "source": {
+    "url": "https://ansyshelp.ansys.com/public/Views/Secured/Granta/v251/en/Selector/sel_edu/what_is_performance_index.html",
+    "identity": "Ansys Granta2025R1 institutional help, not original Ashby book",
+    "raw_sha256": "5046bddf004ddf47b127b31da84e5f38d8dd35fb91f6966148c46f036e19b426",
+    "text_sha256": "1d3d62a532329acc63be60790be70c9d71d734e1e7f180759dea5ac3349e10b8",
+    "claims": [
+      {
+        "anchor": "free variable",
+        "offset": 6189
+      },
+      {
+        "anchor": "fixed design geometry",
+        "offset": 6399
+      }
+    ],
+    "supported_facts": "function, limiting constraint, objective, free variable define index; fixed geometry needs another approach"
+  },
+  "platform_derivation": "closed-form axial and square-cantilever stiffness/strength equations and synthetic numbers",
+  "property_provenance": "all A/B values synthetic teaching; not alloy datasheets or procurement database",
+  "baseline_reference": {
+    "path": "02-研究/ML-017-方法深化第二轮/R33-指数适用性复算.py",
+    "sha256": "d6daea81ebba086ed444595e2e9749cc93ddfd698d43e6bae809bdaf90c1de5f"
+  },
+  "not_established": [
+    "temperature/strength/cost/process real values",
+    "fatigue and corrosion"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "input": {
+    "id": "WB04-JOINT-TEACH-001",
+    "origin": "independent_linear_joint_fixture_not_author_formula",
+    "function": "maintain controlled relative action, research assumption only",
+    "candidate": {
+      "id": "A",
+      "mass_kg": 2.0,
+      "stiffness_N_m": 1000.0,
+      "damping_Ns_m": 2.0,
+      "seal_replaceable": true
+    },
+    "excitation": {
+      "force_N": 1.0,
+      "omega_rad_s": 31.622776601683793
+    },
+    "teaching_amplitude_limit_m": 0.003,
+    "X": {
+      "need_id": "TEACH-X-CLEAN",
+      "name": "replaceable contamination barrier",
+      "status": "constructed_special_requirement"
+    },
+    "customer_approved": false,
+    "engineering_validated": false,
+    "separate_optima_summed": true,
+    "manufacturing_cost": null,
+    "actual_function_evidence": null
+  },
+  "out": null,
+  "error": "unsupported approval or sum of separate optima"
+}

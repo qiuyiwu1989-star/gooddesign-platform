@@ -1,0 +1,34 @@
+{
+  "input": {
+    "id": "WB03-PLAN-TEACH-001",
+    "origin": "platform_relationship_fixture_not_author_algorithm",
+    "domains": {
+      "DO": "研究指定任务在目标环境下的作用与维护负担",
+      "DI": "保留未知、少干预而不牺牲必要作用",
+      "DE": "户外污物和工况需取证",
+      "DP": "先补证再比较，未执行现场步骤",
+      "DC": "作用头/恢复/维护接口研究",
+      "DM": "候选方法不依赖已知不存在的洁净设施",
+      "DA": "验证应针对目标环境和目标作用"
+    },
+    "relations": [],
+    "target_context": "field",
+    "validation_plan_context": "field",
+    "cleanroom_available": false,
+    "method_requires_cleanroom": false,
+    "maintenance_frequency": null,
+    "acceptance_target": null,
+    "customer_approved": false,
+    "engineering_validated": false,
+    "unknowns": [
+      "actual field conditions",
+      "maintenance workload",
+      "accepted performance thresholds"
+    ]
+  },
+  "out": {
+    "status": "missing_relationship_review",
+    "ready": false
+  },
+  "error": null
+}

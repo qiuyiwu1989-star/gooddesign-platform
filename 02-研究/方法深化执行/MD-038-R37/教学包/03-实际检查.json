@@ -1,0 +1,597 @@
+[
+  {
+    "name": "normal",
+    "class": "正常",
+    "input": {
+      "origin": "constructed_preference_not_customer_interview",
+      "criteria": [
+        {
+          "id": "serviceability",
+          "group": "service",
+          "unit": "authored_value_0_to_1"
+        },
+        {
+          "id": "mobility",
+          "group": "handling",
+          "unit": "authored_value_0_to_1"
+        }
+      ],
+      "value_basis": "explicit authored value functions; these are not raw measured performance",
+      "alternatives": [
+        {
+          "id": "A",
+          "values": [
+            0.9,
+            0.3
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "B",
+          "values": [
+            0.4,
+            0.8
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "C",
+          "values": [
+            1,
+            1
+          ],
+          "hard_status": "fail_within_fixture"
+        }
+      ],
+      "weight_first_range": [
+        0.2,
+        0.8
+      ],
+      "preference_record": {
+        "kind": "authored_swing_tradeoff_scenarios",
+        "real_interviews": 0,
+        "customer_approved": false
+      },
+      "additive_separability_assumption": true
+    },
+    "output": {
+      "state": "preference_sensitive",
+      "excluded": [
+        "C"
+      ],
+      "scenarios": [
+        {
+          "weight_service": 0.2,
+          "scores": {
+            "A": 0.42000000000000004,
+            "B": 0.7200000000000002
+          },
+          "winners": [
+            "B"
+          ]
+        },
+        {
+          "weight_service": 0.5,
+          "scores": {
+            "A": 0.6,
+            "B": 0.6000000000000001
+          },
+          "winners": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "weight_service": 0.8,
+          "scores": {
+            "A": 0.78,
+            "B": 0.48000000000000004
+          },
+          "winners": [
+            "A"
+          ]
+        }
+      ],
+      "A_B_crossover_weight": 0.5,
+      "unique_robust_winner": null,
+      "customer_decision": null,
+      "performance_evidence": "synthetic_only",
+      "qualification": "weighted value model under declared additive assumption, not calibrated customer preference"
+    },
+    "actual": "preference_sensitive",
+    "expected": "preference_sensitive",
+    "pass": true
+  },
+  {
+    "name": "missing_value",
+    "class": "缺材料",
+    "input": {
+      "origin": "constructed_preference_not_customer_interview",
+      "criteria": [
+        {
+          "id": "serviceability",
+          "group": "service",
+          "unit": "authored_value_0_to_1"
+        },
+        {
+          "id": "mobility",
+          "group": "handling",
+          "unit": "authored_value_0_to_1"
+        }
+      ],
+      "value_basis": "explicit authored value functions; these are not raw measured performance",
+      "alternatives": [
+        {
+          "id": "A",
+          "values": [
+            null,
+            0.3
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "B",
+          "values": [
+            0.4,
+            0.8
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "C",
+          "values": [
+            1,
+            1
+          ],
+          "hard_status": "fail_within_fixture"
+        }
+      ],
+      "weight_first_range": [
+        0.2,
+        0.8
+      ],
+      "preference_record": {
+        "kind": "authored_swing_tradeoff_scenarios",
+        "real_interviews": 0,
+        "customer_approved": false
+      },
+      "additive_separability_assumption": true
+    },
+    "output": {
+      "state": "needs_evidence",
+      "unknown": [
+        "A"
+      ],
+      "excluded": [
+        "C"
+      ],
+      "ranking": null
+    },
+    "actual": "needs_evidence",
+    "expected": "needs_evidence",
+    "pass": true
+  },
+  {
+    "name": "duplicate_mass_handling_preference",
+    "class": "冲突",
+    "input": {
+      "origin": "constructed_preference_not_customer_interview",
+      "criteria": [
+        {
+          "id": "serviceability",
+          "group": "service",
+          "unit": "authored_value_0_to_1"
+        },
+        {
+          "id": "mobility",
+          "group": "service",
+          "unit": "authored_value_0_to_1"
+        }
+      ],
+      "value_basis": "explicit authored value functions; these are not raw measured performance",
+      "alternatives": [
+        {
+          "id": "A",
+          "values": [
+            0.9,
+            0.3
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "B",
+          "values": [
+            0.4,
+            0.8
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "C",
+          "values": [
+            1,
+            1
+          ],
+          "hard_status": "fail_within_fixture"
+        }
+      ],
+      "weight_first_range": [
+        0.2,
+        0.8
+      ],
+      "preference_record": {
+        "kind": "authored_swing_tradeoff_scenarios",
+        "real_interviews": 0,
+        "customer_approved": false
+      },
+      "additive_separability_assumption": true
+    },
+    "output": {
+      "error": "duplicate_preference_or_criterion"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "unknown_hard_constraint",
+    "class": "缺材料",
+    "input": {
+      "origin": "constructed_preference_not_customer_interview",
+      "criteria": [
+        {
+          "id": "serviceability",
+          "group": "service",
+          "unit": "authored_value_0_to_1"
+        },
+        {
+          "id": "mobility",
+          "group": "handling",
+          "unit": "authored_value_0_to_1"
+        }
+      ],
+      "value_basis": "explicit authored value functions; these are not raw measured performance",
+      "alternatives": [
+        {
+          "id": "A",
+          "values": [
+            0.9,
+            0.3
+          ],
+          "hard_status": "unknown"
+        },
+        {
+          "id": "B",
+          "values": [
+            0.4,
+            0.8
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "C",
+          "values": [
+            1,
+            1
+          ],
+          "hard_status": "fail_within_fixture"
+        }
+      ],
+      "weight_first_range": [
+        0.2,
+        0.8
+      ],
+      "preference_record": {
+        "kind": "authored_swing_tradeoff_scenarios",
+        "real_interviews": 0,
+        "customer_approved": false
+      },
+      "additive_separability_assumption": true
+    },
+    "output": {
+      "state": "needs_evidence",
+      "unknown": [
+        "A"
+      ],
+      "excluded": [
+        "C"
+      ],
+      "ranking": null
+    },
+    "actual": "needs_evidence",
+    "expected": "needs_evidence",
+    "pass": true
+  },
+  {
+    "name": "equal_weight_tie",
+    "class": "边界",
+    "input": {
+      "origin": "constructed_preference_not_customer_interview",
+      "criteria": [
+        {
+          "id": "serviceability",
+          "group": "service",
+          "unit": "authored_value_0_to_1"
+        },
+        {
+          "id": "mobility",
+          "group": "handling",
+          "unit": "authored_value_0_to_1"
+        }
+      ],
+      "value_basis": "explicit authored value functions; these are not raw measured performance",
+      "alternatives": [
+        {
+          "id": "A",
+          "values": [
+            0.9,
+            0.3
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "B",
+          "values": [
+            0.4,
+            0.8
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "C",
+          "values": [
+            1,
+            1
+          ],
+          "hard_status": "fail_within_fixture"
+        }
+      ],
+      "weight_first_range": [
+        0.5,
+        0.5
+      ],
+      "preference_record": {
+        "kind": "authored_swing_tradeoff_scenarios",
+        "real_interviews": 0,
+        "customer_approved": false
+      },
+      "additive_separability_assumption": true
+    },
+    "output": {
+      "state": "preference_sensitive",
+      "excluded": [
+        "C"
+      ],
+      "scenarios": [
+        {
+          "weight_service": 0.5,
+          "scores": {
+            "A": 0.6,
+            "B": 0.6000000000000001
+          },
+          "winners": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "weight_service": 0.5,
+          "scores": {
+            "A": 0.6,
+            "B": 0.6000000000000001
+          },
+          "winners": [
+            "A",
+            "B"
+          ]
+        },
+        {
+          "weight_service": 0.5,
+          "scores": {
+            "A": 0.6,
+            "B": 0.6000000000000001
+          },
+          "winners": [
+            "A",
+            "B"
+          ]
+        }
+      ],
+      "A_B_crossover_weight": 0.5,
+      "unique_robust_winner": null,
+      "customer_decision": null,
+      "performance_evidence": "synthetic_only",
+      "qualification": "weighted value model under declared additive assumption, not calibrated customer preference"
+    },
+    "actual": "preference_sensitive",
+    "expected": "preference_sensitive",
+    "pass": true
+  },
+  {
+    "name": "nonadditive",
+    "class": "不适用",
+    "input": {
+      "origin": "constructed_preference_not_customer_interview",
+      "criteria": [
+        {
+          "id": "serviceability",
+          "group": "service",
+          "unit": "authored_value_0_to_1"
+        },
+        {
+          "id": "mobility",
+          "group": "handling",
+          "unit": "authored_value_0_to_1"
+        }
+      ],
+      "value_basis": "explicit authored value functions; these are not raw measured performance",
+      "alternatives": [
+        {
+          "id": "A",
+          "values": [
+            0.9,
+            0.3
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "B",
+          "values": [
+            0.4,
+            0.8
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "C",
+          "values": [
+            1,
+            1
+          ],
+          "hard_status": "fail_within_fixture"
+        }
+      ],
+      "weight_first_range": [
+        0.2,
+        0.8
+      ],
+      "preference_record": {
+        "kind": "authored_swing_tradeoff_scenarios",
+        "real_interviews": 0,
+        "customer_approved": false
+      },
+      "additive_separability_assumption": false
+    },
+    "output": {
+      "state": "inapplicable_additive_model",
+      "ranking": null
+    },
+    "actual": "inapplicable_additive_model",
+    "expected": "inapplicable_additive_model",
+    "pass": true
+  },
+  {
+    "name": "negative_weight",
+    "class": "冲突",
+    "input": {
+      "origin": "constructed_preference_not_customer_interview",
+      "criteria": [
+        {
+          "id": "serviceability",
+          "group": "service",
+          "unit": "authored_value_0_to_1"
+        },
+        {
+          "id": "mobility",
+          "group": "handling",
+          "unit": "authored_value_0_to_1"
+        }
+      ],
+      "value_basis": "explicit authored value functions; these are not raw measured performance",
+      "alternatives": [
+        {
+          "id": "A",
+          "values": [
+            0.9,
+            0.3
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "B",
+          "values": [
+            0.4,
+            0.8
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "C",
+          "values": [
+            1,
+            1
+          ],
+          "hard_status": "fail_within_fixture"
+        }
+      ],
+      "weight_first_range": [
+        -1,
+        0.8
+      ],
+      "preference_record": {
+        "kind": "authored_swing_tradeoff_scenarios",
+        "real_interviews": 0,
+        "customer_approved": false
+      },
+      "additive_separability_assumption": true
+    },
+    "output": {
+      "error": "invalid_weights"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "invent_interview",
+    "class": "冲突",
+    "input": {
+      "origin": "constructed_preference_not_customer_interview",
+      "criteria": [
+        {
+          "id": "serviceability",
+          "group": "service",
+          "unit": "authored_value_0_to_1"
+        },
+        {
+          "id": "mobility",
+          "group": "handling",
+          "unit": "authored_value_0_to_1"
+        }
+      ],
+      "value_basis": "explicit authored value functions; these are not raw measured performance",
+      "alternatives": [
+        {
+          "id": "A",
+          "values": [
+            0.9,
+            0.3
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "B",
+          "values": [
+            0.4,
+            0.8
+          ],
+          "hard_status": "assumed_pass_within_fixture"
+        },
+        {
+          "id": "C",
+          "values": [
+            1,
+            1
+          ],
+          "hard_status": "fail_within_fixture"
+        }
+      ],
+      "weight_first_range": [
+        0.2,
+        0.8
+      ],
+      "preference_record": {
+        "kind": "authored_swing_tradeoff_scenarios",
+        "real_interviews": 3,
+        "customer_approved": false
+      },
+      "additive_separability_assumption": true
+    },
+    "output": {
+      "error": "provenance_or_preference_promoted"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  }
+]

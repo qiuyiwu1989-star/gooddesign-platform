@@ -1,0 +1,306 @@
+{
+  "method": "R44",
+  "executed_cases": 11,
+  "passed": 11,
+  "cases": [
+    {
+      "method": "R44",
+      "case": "normal-plan-only",
+      "class": "normal",
+      "status": "pass",
+      "expected_error": null,
+      "observed": "accepted_with_bounded_state",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "hypotheses": [
+          {
+            "id": "H-R44-01",
+            "need": "N-T01",
+            "question": "表面参考是否足以支持待研究的作用边界表达？",
+            "alternative": "表面几何与隐藏组织边界不相同，表面代理可能无法支持目标声明",
+            "prototype_id": "P-SURROGATE",
+            "learning_scope": "局部代理材料与参考关系；不能确认真实树体内部边界",
+            "observation_plan": [
+              "记录已知代理几何与参考输出及其对应关系",
+              "检查偏差是否随表面状态改变；实际材料、测量方法待定"
+            ],
+            "measurement_unit_proposal": "待依据具体变量确认；不改源需求unit",
+            "threshold": null
+          },
+          {
+            "id": "H-R44-03",
+            "need": "N-T03",
+            "question": "状态样例中的时效标记是否帮助区分陈旧与当前信息？",
+            "alternative": "使用者可能忽视标记或错误理解时效",
+            "prototype_id": "P-PAPER",
+            "learning_scope": "状态理解研究；不能确认控制实时性或机械安全",
+            "observation_plan": [
+              "拟让目标角色判断当前与陈旧状态并说明依据",
+              "记录误解及无法判断；资格、同意与样本待定"
+            ],
+            "measurement_unit_proposal": "任务表现与解释编码待确认",
+            "threshold": null
+          }
+        ],
+        "capability_review": [
+          {
+            "hypothesis": "H-R44-01",
+            "prototype": "P-SURROGATE",
+            "capability_match": true,
+            "state": "planned_only"
+          },
+          {
+            "hypothesis": "H-R44-03",
+            "prototype": "P-PAPER",
+            "capability_match": true,
+            "state": "planned_only"
+          }
+        ],
+        "coverage": {
+          "planned_learning_needs": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "readiness": "not_ready",
+        "readiness_gaps": [
+          "材料与边界口径",
+          "测量方法与阈值依据",
+          "原型及资源",
+          "目标角色与研究同意",
+          "取样与干扰控制"
+        ],
+        "planned_interpretation_states": [
+          "supports_limited_hypothesis",
+          "contradicts_hypothesis",
+          "inconclusive",
+          "test_invalid"
+        ],
+        "observations": [],
+        "findings": [],
+        "next_decision": null,
+        "execution_status": "not_executed",
+        "scope": "plan_and_fixed_capability_check_only_not_empirical_test"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "missing-hypothesis",
+      "class": "missing_material",
+      "status": "pass",
+      "expected_error": "missing_or_unsupported_hypothesis",
+      "observed": "rejected",
+      "output": {
+        "error": "missing_or_unsupported_hypothesis"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "paper-cannot-answer-mechanism",
+      "class": "not_applicable",
+      "status": "pass",
+      "expected_error": null,
+      "observed": "accepted_with_bounded_state",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "hypotheses": [
+          {
+            "id": "H-R44-01",
+            "need": "N-T01",
+            "question": "表面参考是否足以支持待研究的作用边界表达？",
+            "alternative": "表面几何与隐藏组织边界不相同，表面代理可能无法支持目标声明",
+            "prototype_id": "P-PAPER",
+            "learning_scope": "局部代理材料与参考关系；不能确认真实树体内部边界",
+            "observation_plan": [
+              "记录已知代理几何与参考输出及其对应关系",
+              "检查偏差是否随表面状态改变；实际材料、测量方法待定"
+            ],
+            "measurement_unit_proposal": "待依据具体变量确认；不改源需求unit",
+            "threshold": null
+          },
+          {
+            "id": "H-R44-03",
+            "need": "N-T03",
+            "question": "状态样例中的时效标记是否帮助区分陈旧与当前信息？",
+            "alternative": "使用者可能忽视标记或错误理解时效",
+            "prototype_id": "P-PAPER",
+            "learning_scope": "状态理解研究；不能确认控制实时性或机械安全",
+            "observation_plan": [
+              "拟让目标角色判断当前与陈旧状态并说明依据",
+              "记录误解及无法判断；资格、同意与样本待定"
+            ],
+            "measurement_unit_proposal": "任务表现与解释编码待确认",
+            "threshold": null
+          }
+        ],
+        "capability_review": [
+          {
+            "hypothesis": "H-R44-01",
+            "prototype": "P-PAPER",
+            "capability_match": false,
+            "state": "cannot_answer_return_to_prototype_design"
+          },
+          {
+            "hypothesis": "H-R44-03",
+            "prototype": "P-PAPER",
+            "capability_match": true,
+            "state": "planned_only"
+          }
+        ],
+        "coverage": {
+          "planned_learning_needs": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "readiness": "not_ready",
+        "readiness_gaps": [
+          "材料与边界口径",
+          "测量方法与阈值依据",
+          "原型及资源",
+          "目标角色与研究同意",
+          "取样与干扰控制"
+        ],
+        "planned_interpretation_states": [
+          "supports_limited_hypothesis",
+          "contradicts_hypothesis",
+          "inconclusive",
+          "test_invalid"
+        ],
+        "observations": [],
+        "findings": [],
+        "next_decision": null,
+        "execution_status": "not_executed",
+        "scope": "plan_and_fixed_capability_check_only_not_empirical_test"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "threshold-filled",
+      "class": "boundary",
+      "status": "pass",
+      "expected_error": "hypothesis_mapping_changed",
+      "observed": "rejected",
+      "output": {
+        "error": "hypothesis_mapping_changed"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "fake-observation",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "fabricated_execution_or_observation",
+      "observed": "rejected",
+      "output": {
+        "error": "fabricated_execution_or_observation"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "fake-participant-count",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "fabricated_execution_or_observation",
+      "observed": "rejected",
+      "output": {
+        "error": "fabricated_execution_or_observation"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "false-engineering-binding",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "shared_context_binding_or_status_changed",
+      "observed": "rejected",
+      "output": {
+        "error": "shared_context_binding_or_status_changed"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "uncovered-needs-hidden",
+      "class": "missing_material",
+      "status": "pass",
+      "expected_error": "learning_coverage_changed",
+      "observed": "rejected",
+      "output": {
+        "error": "learning_coverage_changed"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "caller-redefines-capability-to-match-paper",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "caller_cannot_redefine_required_capability",
+      "observed": "rejected",
+      "output": {
+        "error": "caller_cannot_redefine_required_capability"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "duplicate-hypothesis",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "duplicate_hypothesis_id",
+      "observed": "rejected",
+      "output": {
+        "error": "duplicate_hypothesis_id"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R44",
+      "case": "wrong-source-path-right-sha",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "source_r36_path_mismatch",
+      "observed": "rejected",
+      "output": {
+        "error": "source_r36_path_mismatch"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    }
+  ],
+  "engineering_tests_executed": 0,
+  "new_participants": 0,
+  "qualification": "fixed_teaching_fixture_structure_only"
+}

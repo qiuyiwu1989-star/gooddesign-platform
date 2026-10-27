@@ -1,0 +1,94 @@
+{
+  "method_id": "R08",
+  "version": "0.1.1",
+  "sources": [
+    {
+      "id": "IDEO-I",
+      "url": "https://www.designkit.org/methods/interview.html",
+      "final_url": "https://www.designkit.org/methods/interview.html",
+      "retrieved_date": "2026-10-27",
+      "raw_sha256": "162b5f2f84a3b1c184a77409f2eaec8af196eb4f7492d2e35a0dba4c29fff570",
+      "bytes": 26888,
+      "read_scope": "Steps 1–4",
+      "read_mode": "web selected sections plus URL response identity; no full handbook claim",
+      "full_raw_retained": false
+    },
+    {
+      "id": "IDEO-M",
+      "url": "https://www.designkit.org/methods/immersion.html",
+      "final_url": "https://www.designkit.org/methods/immersion.html",
+      "retrieved_date": "2026-10-27",
+      "raw_sha256": "9278f72379dbe7e1d17bbfae1140223ab42761763c61fb4aa1212ce95256a3d7",
+      "bytes": 27665,
+      "read_scope": "Steps 2–4",
+      "read_mode": "web selected sections plus URL response identity; no full handbook claim",
+      "full_raw_retained": false
+    },
+    {
+      "id": "GDS-A",
+      "url": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+      "final_url": "https://www.gov.uk/service-manual/user-research/analyse-a-research-session",
+      "retrieved_date": "2026-10-27",
+      "raw_sha256": "4a408deb3214fb56122929effca8cf04aa57be3e33fc469a9bedecd8b7d08f47",
+      "bytes": 78561,
+      "read_scope": "Extract observations; Determine findings; Decide actions",
+      "read_mode": "web selected sections plus URL response identity; no full handbook claim",
+      "full_raw_retained": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-R08-01",
+      "type": "source_supported_scope",
+      "statement": "访谈应保存参与者实际表达及情境，而非研究者对其含义的替写。",
+      "source_ids": [
+        "IDEO-I"
+      ],
+      "locator": "Interview Steps 1—4",
+      "not_supported": "不保证样本代表性或因果发现。"
+    },
+    {
+      "id": "C-R08-02",
+      "type": "source_supported_scope",
+      "statement": "观察应保留具体所见所闻，并与研究印象区分。",
+      "source_ids": [
+        "IDEO-M"
+      ],
+      "locator": "Immersion Steps 2—4",
+      "not_supported": "不证明本包发生了真实浸入研究。"
+    },
+    {
+      "id": "C-R08-03",
+      "type": "source_supported_scope",
+      "statement": "分析可分别组织观察、发现和行动，使解释过程可查。",
+      "source_ids": [
+        "GDS-A"
+      ],
+      "locator": "Extract observations / Determine findings / Decide actions",
+      "not_supported": "我们的事件ID、去重和因果反例不是GOV.UK原算法。"
+    },
+    {
+      "id": "C-R08-04",
+      "type": "platform_adaptation",
+      "statement": "同一事件的观察、复述与解释按事件去重，分别保留来源性质。",
+      "source_ids": [],
+      "basis": "平台用于跨Agent的审计表示；不等同统计独立性已实证。"
+    },
+    {
+      "id": "C-R08-05",
+      "type": "local_executed_observation",
+      "statement": "十一项固定编码结构检查与另场景计数桌面检查按预期执行。",
+      "source_ids": [],
+      "artifact": "教学包/04-实际检查结果.json",
+      "not_supported": "不识别任意文本事件、不推断真实原因、不估计真实频率。"
+    }
+  ],
+  "gaps": [
+    "无真实参与者或原始媒体",
+    "编码A/B为人为编制示范，不是真实双人独立编码",
+    "未测研究者一致性或目标人群覆盖",
+    "独立Agent复核待进行；领域专家审核未进行"
+  ],
+  "full_standard_implementation": false,
+  "revision_scope": "fixed cross-package provenance and withdrawal closure; input remains v0.1.0"
+}

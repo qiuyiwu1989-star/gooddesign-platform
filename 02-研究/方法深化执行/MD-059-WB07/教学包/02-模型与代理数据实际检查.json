@@ -1,0 +1,208 @@
+{
+  "cases": [
+    {
+      "name": "设计智能辅助非运行智能",
+      "input": {
+        "id": "WB07-INTELLIGENCE-TEACH-001",
+        "origin": "platform_semantic_branch_fixture_not_author_Agent_architecture",
+        "branch": "design_assistance",
+        "goal": "prepare traceable design alternatives",
+        "artifact_kind": "design_candidate_record",
+        "training_dataset": [],
+        "real_model_inference_results": [],
+        "product_operation_improved": false,
+        "customer_approved": false,
+        "engineering_validated": false,
+        "unknowns": {
+          "actual_latency_ms": null,
+          "accuracy": null,
+          "accepted_control_bound": null
+        },
+        "control_proxy": null
+      },
+      "actual": {
+        "status": "design_assistance_plan_only",
+        "product_intelligence_validated": false,
+        "next": "trace inputs, compare independent engineering evidence and human review; no operational command"
+      },
+      "passed": true
+    },
+    {
+      "name": "产品运行研究分支代理回放",
+      "input": {
+        "id": "WB07-INTELLIGENCE-TEACH-001",
+        "origin": "platform_semantic_branch_fixture_not_author_Agent_architecture",
+        "branch": "product_operation",
+        "goal": "study availability of state for use",
+        "artifact_kind": "control_research_record",
+        "training_dataset": [],
+        "real_model_inference_results": [],
+        "product_operation_improved": false,
+        "customer_approved": false,
+        "engineering_validated": false,
+        "unknowns": {
+          "actual_latency_ms": null,
+          "accuracy": null,
+          "accepted_control_bound": null
+        },
+        "control_proxy": {
+          "configuration": "independent_synthetic_age_gate",
+          "unit": "synthetic_tick_not_ms",
+          "now": 10,
+          "max_age": 2,
+          "threshold_origin": "arbitrary teaching bound, not customer control requirement",
+          "samples": [
+            {
+              "id": "S1",
+              "timestamp": 8,
+              "valid": true
+            },
+            {
+              "id": "S2",
+              "timestamp": 7,
+              "valid": true
+            },
+            {
+              "id": "S3",
+              "timestamp": 8,
+              "valid": null
+            }
+          ]
+        }
+      },
+      "actual": {
+        "status": "control_proxy_replayed_only",
+        "rows": [
+          {
+            "sample": "S1",
+            "state": "within_constructed_age_only",
+            "machine_action": "not_authorized_by_this_research"
+          },
+          {
+            "sample": "S2",
+            "state": "stale",
+            "machine_action": "not_authorized_by_this_research"
+          },
+          {
+            "sample": "S3",
+            "state": "unknown",
+            "machine_action": "not_authorized_by_this_research"
+          }
+        ],
+        "product_intelligence_validated": false,
+        "failure_feedback": [
+          "missing/invalid/stale data require new research record and control design review",
+          "real thresholds, response latency, independent sensing and abnormal recovery not verified"
+        ],
+        "actual_model_training": false
+      },
+      "passed": true
+    },
+    {
+      "name": "缺控制材料",
+      "input": {
+        "id": "WB07-INTELLIGENCE-TEACH-001",
+        "origin": "platform_semantic_branch_fixture_not_author_Agent_architecture",
+        "branch": "product_operation",
+        "goal": "study availability of state for use",
+        "artifact_kind": "control_research_record",
+        "training_dataset": [],
+        "real_model_inference_results": [],
+        "product_operation_improved": false,
+        "customer_approved": false,
+        "engineering_validated": false,
+        "unknowns": {
+          "actual_latency_ms": null,
+          "accuracy": null,
+          "accepted_control_bound": null
+        },
+        "control_proxy": null
+      },
+      "actual": {
+        "status": "control_material_missing",
+        "product_intelligence_validated": false
+      },
+      "passed": true
+    },
+    {
+      "name": "语义未定不适用直接调用",
+      "input": {
+        "id": "WB07-INTELLIGENCE-TEACH-001",
+        "origin": "platform_semantic_branch_fixture_not_author_Agent_architecture",
+        "branch": "unclear",
+        "goal": "prepare traceable design alternatives",
+        "artifact_kind": "design_candidate_record",
+        "training_dataset": [],
+        "real_model_inference_results": [],
+        "product_operation_improved": false,
+        "customer_approved": false,
+        "engineering_validated": false,
+        "unknowns": {
+          "actual_latency_ms": null,
+          "accuracy": null,
+          "accepted_control_bound": null
+        },
+        "control_proxy": null
+      },
+      "actual": {
+        "status": "semantic_scope_unresolved",
+        "product_intelligence_validated": false
+      },
+      "passed": true
+    },
+    {
+      "name": "加大模型就使用性能改进",
+      "actual": "rejected",
+      "reason": "unsupported operation/approval claim",
+      "passed": true
+    },
+    {
+      "name": "设计记录当控制输出",
+      "actual": "rejected",
+      "reason": "design process and product control conflated",
+      "passed": true
+    },
+    {
+      "name": "未知延迟填0边界",
+      "actual": "rejected",
+      "reason": "unearned training/inference/metric evidence",
+      "passed": true
+    },
+    {
+      "name": "伪训练推理证据",
+      "actual": "rejected",
+      "reason": "unearned training/inference/metric evidence",
+      "passed": true
+    },
+    {
+      "name": "资料方案辅助另一情境",
+      "input": {
+        "id": "DOC-ASSIST-TEACH",
+        "origin": "platform_semantic_branch_fixture_not_author_Agent_architecture",
+        "branch": "design_assistance",
+        "goal": "prepare traceable design alternatives",
+        "artifact_kind": "design_candidate_record",
+        "training_dataset": [],
+        "real_model_inference_results": [],
+        "product_operation_improved": false,
+        "customer_approved": false,
+        "engineering_validated": false,
+        "unknowns": {
+          "actual_latency_ms": null,
+          "accuracy": null,
+          "accepted_control_bound": null
+        },
+        "control_proxy": null
+      },
+      "actual": {
+        "status": "design_assistance_plan_only",
+        "product_intelligence_validated": false,
+        "next": "trace inputs, compare independent engineering evidence and human review; no operational command"
+      },
+      "passed": true
+    }
+  ],
+  "count": 9,
+  "applicability": "fixed proxy conditions only, no real model training or control execution",
+  "not_author_claim": "2003 authors distinguished two meanings; this JSON/Agent contract is platform authored"
+}

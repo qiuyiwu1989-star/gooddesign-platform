@@ -1,0 +1,29 @@
+{
+  "method": "R04",
+  "scope": "NASA4.0 interdependency and4.3.1.2 architecture/4.3.1.3 derived requirements selected body;not completeISO15288",
+  "claims": [
+    {
+      "id": "R04-C1",
+      "source_id": "NASA4",
+      "url": "https://www.nasa.gov/reference/4-0-system-design-processes/",
+      "locator": "4.0 opening interrelationships;4.3.1.2.1;4.3.1.3",
+      "supported_claim": "architecture/ConOps/derived requirements consistency and architecture-dependent derivation",
+      "support_scope": "selected_primary_or_official_publisher_only",
+      "not_supported": "platform algorithm validation or target engineering suitability"
+    }
+  ],
+  "source_hashes": [
+    {
+      "id": "NASA4",
+      "sha256": "e9d5f45a494caad7c51b0e90c4071f34334ec69480e009e8a96d4b8c068cf57d",
+      "status": "acquired_read_scope_separate"
+    }
+  ],
+  "platform_adaptation": "055 supplement: sensor architecture change invalidates old derived budget/evidence applicability",
+  "raw_originals": "private-sources ignored and excluded from manifest",
+  "gaps": [
+    "budgets authored not measured",
+    "no real system integration",
+    "no completeISO15288 text"
+  ]
+}

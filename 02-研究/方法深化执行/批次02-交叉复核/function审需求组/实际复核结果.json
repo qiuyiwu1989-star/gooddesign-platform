@@ -1,0 +1,1095 @@
+{
+  "reviewer": "function_deepening independent Agent not domain expert",
+  "verified": [
+    {
+      "package": "MD-008-R02",
+      "manifest_sha256": "522c30e627ecfd5185daa1342c6b438cb55d301ead8337b0789e23fa9767ef3b",
+      "files_verified": 16,
+      "source_bytes_and_anchors_verified": [
+        "DC-FRAME",
+        "DC-DD"
+      ],
+      "isolated_rebuild_stdout": "{\"method\": \"R02\", \"checks\": 10, \"before\": \"cannot_distinguish_frames\", \"after\": \"FRAME-RECOVERY\", \"customer_approved\": false}\n"
+    },
+    {
+      "package": "MD-009-R03",
+      "manifest_sha256": "24d8d50fb97acb9ecd3bc36688d0ac81eb4cb010e304d037c773b127cce20860",
+      "files_verified": 14,
+      "source_bytes_and_anchors_verified": [
+        "DS-BOOTLEG",
+        "DS-PDF"
+      ],
+      "isolated_rebuild_stdout": "{\"method\": \"R03\", \"checks\": 10, \"state_plan\": true, \"real_boundary_plan\": false, \"actual_user_tests\": 0}\n"
+    },
+    {
+      "package": "MD-010-R09",
+      "manifest_sha256": "b60384dd5924e2b236b87ec54beee345a08515466971239a314d71b32cb77222",
+      "files_verified": 14,
+      "source_bytes_and_anchors_verified": [
+        "CI-JOBS"
+      ],
+      "isolated_rebuild_stdout": "{\"method\": \"R09\", \"checks\": 11, \"episodes\": 2, \"real_interviews\": 0, \"market_estimate\": null}\n"
+    }
+  ],
+  "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+  "probes": [
+    {
+      "package": "MD-008-R02",
+      "id": "R02-boolean-quantity",
+      "input": {
+        "schema": "fixed_double_diamond_information_fixture-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "upstream_method_status": "first_batch_pending_revision_context_only"
+        },
+        "origin": "constructed_teaching_not_customer_material",
+        "prompt": "构造委托：让设备工作更快；初始偏好是提高驱动速度。",
+        "frames": [
+          {
+            "id": "FRAME-NORMAL",
+            "text": "正常作业动作占主要负担",
+            "status": "competing_hypothesis"
+          },
+          {
+            "id": "FRAME-RECOVERY",
+            "text": "异常恢复与清理占主要负担",
+            "status": "competing_hypothesis"
+          }
+        ],
+        "evidence_stage": "constructed_segment_update",
+        "totals": [
+          true
+        ],
+        "segments": [
+          {
+            "normal": true,
+            "recovery": false
+          }
+        ],
+        "unit": "synthetic_tick_not_seconds",
+        "team_votes": {
+          "FRAME-NORMAL": 5,
+          "FRAME-RECOVERY": 0
+        },
+        "customer_approved": false,
+        "field_research_conducted": false,
+        "findings": []
+      },
+      "status": "accepted",
+      "output": {
+        "state": "constructed_partition_supports_provisional_focus",
+        "phase_totals": {
+          "normal": 1,
+          "recovery": 0
+        },
+        "recovery_fraction_in_constructed_table": 0.0,
+        "provisional_focus": "FRAME-NORMAL",
+        "real_customer_frame": null,
+        "causal_finding": null,
+        "next_action": "return_to_define_then_collect_real_context",
+        "does_not_prove": [
+          "actual_tapping_frequency",
+          "performance_gain",
+          "correct_solution",
+          "customer_priority"
+        ]
+      }
+    },
+    {
+      "package": "MD-008-R02",
+      "id": "R02-missing-explicit-approval",
+      "input": {
+        "schema": "fixed_double_diamond_information_fixture-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "upstream_method_status": "first_batch_pending_revision_context_only"
+        },
+        "origin": "constructed_teaching_not_customer_material",
+        "prompt": "构造委托：让设备工作更快；初始偏好是提高驱动速度。",
+        "frames": [
+          {
+            "id": "FRAME-NORMAL",
+            "text": "正常作业动作占主要负担",
+            "status": "competing_hypothesis"
+          },
+          {
+            "id": "FRAME-RECOVERY",
+            "text": "异常恢复与清理占主要负担",
+            "status": "competing_hypothesis"
+          }
+        ],
+        "evidence_stage": "total_only",
+        "totals": [
+          100
+        ],
+        "segments": null,
+        "unit": "synthetic_tick_not_seconds",
+        "team_votes": {
+          "FRAME-NORMAL": 5,
+          "FRAME-RECOVERY": 0
+        },
+        "field_research_conducted": false,
+        "findings": []
+      },
+      "status": "accepted",
+      "output": {
+        "state": "cannot_distinguish_frames",
+        "retained": [
+          "FRAME-NORMAL",
+          "FRAME-RECOVERY"
+        ],
+        "reason": "total alone has multiple decompositions; votes do not identify observed burden",
+        "customer_approved": false,
+        "next_action": "obtain_phase_defined_records",
+        "did_votes_confirm_need": false
+      }
+    },
+    {
+      "package": "MD-008-R02",
+      "id": "R02-without-votes-still-no-inference",
+      "input": {
+        "schema": "fixed_double_diamond_information_fixture-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "upstream_method_status": "first_batch_pending_revision_context_only"
+        },
+        "origin": "constructed_teaching_not_customer_material",
+        "prompt": "构造委托：让设备工作更快；初始偏好是提高驱动速度。",
+        "frames": [
+          {
+            "id": "FRAME-NORMAL",
+            "text": "正常作业动作占主要负担",
+            "status": "competing_hypothesis"
+          },
+          {
+            "id": "FRAME-RECOVERY",
+            "text": "异常恢复与清理占主要负担",
+            "status": "competing_hypothesis"
+          }
+        ],
+        "evidence_stage": "total_only",
+        "totals": [
+          100
+        ],
+        "segments": null,
+        "unit": "synthetic_tick_not_seconds",
+        "customer_approved": false,
+        "field_research_conducted": false,
+        "findings": []
+      },
+      "status": "accepted",
+      "output": {
+        "state": "cannot_distinguish_frames",
+        "retained": [
+          "FRAME-NORMAL",
+          "FRAME-RECOVERY"
+        ],
+        "reason": "total alone has multiple decompositions; votes do not identify observed burden",
+        "customer_approved": false,
+        "next_action": "obtain_phase_defined_records",
+        "did_votes_confirm_need": false
+      }
+    },
+    {
+      "package": "MD-009-R03",
+      "id": "R03-missing-observation-and-results",
+      "input": {
+        "schema": "design_thinking_purpose_fixture-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "upstream_method_status": "first_batch_pending_revision_context_only"
+        },
+        "origin": "constructed_teaching_plan",
+        "learning_claim": "state_meaning",
+        "source_need": "N-T03",
+        "prototype": "P-PAPER-LABEL",
+        "declared_variable": "label",
+        "variants": [
+          {
+            "id": "V-A",
+            "label": "继续",
+            "shape": "same_card",
+            "position": "same_position"
+          },
+          {
+            "id": "V-B",
+            "label": "恢复",
+            "shape": "same_card",
+            "position": "same_position"
+          }
+        ],
+        "real_users": 0,
+        "customer_approved": false,
+        "engineering_validated": false,
+        "threshold": null,
+        "mode_history": [
+          {
+            "mode": "Empathize",
+            "status": "real_context_missing"
+          },
+          {
+            "mode": "Define",
+            "status": "provisional_question"
+          },
+          {
+            "mode": "Ideate",
+            "status": "two_authored_label_variants"
+          },
+          {
+            "mode": "Prototype",
+            "status": "representation_plan_not_built"
+          },
+          {
+            "mode": "Test",
+            "status": "planned_not_executed"
+          }
+        ]
+      },
+      "status": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "upstream_method_status": "first_batch_pending_revision_context_only"
+        },
+        "learning_claim": "state_meaning",
+        "prototype": "P-PAPER-LABEL",
+        "declared_capability_match": true,
+        "match_scope": "fixed authored representation assumptions only; real adequacy not demonstrated",
+        "next_action": "plan_contextual_comprehension_observation",
+        "allowed_learning": "state_meaning_if_actual_task_research_later",
+        "actual_findings": [],
+        "actual_user_tests": 0,
+        "physical_performance": null,
+        "status": "plan_only_not_ready_for_use_validation"
+      }
+    },
+    {
+      "package": "MD-009-R03",
+      "id": "R03-code-text-semantic-not-checked",
+      "input": {
+        "schema": "design_thinking_purpose_fixture-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "upstream_method_status": "first_batch_pending_revision_context_only"
+        },
+        "origin": "constructed_teaching_plan",
+        "learning_claim": "state_meaning",
+        "source_need": "N-T03",
+        "prototype": "P-PAPER-LABEL",
+        "declared_variable": "label",
+        "variants": [
+          {
+            "id": "V-A",
+            "label": "构造攻击：该标签已证明刀具安全",
+            "shape": "same_card",
+            "position": "same_position"
+          },
+          {
+            "id": "V-B",
+            "label": "恢复",
+            "shape": "same_card",
+            "position": "same_position"
+          }
+        ],
+        "real_users": 0,
+        "observations": [],
+        "results": [],
+        "customer_approved": false,
+        "engineering_validated": false,
+        "threshold": null,
+        "mode_history": [
+          {
+            "mode": "Empathize",
+            "status": "real_context_missing"
+          },
+          {
+            "mode": "Define",
+            "status": "provisional_question"
+          },
+          {
+            "mode": "Ideate",
+            "status": "two_authored_label_variants"
+          },
+          {
+            "mode": "Prototype",
+            "status": "representation_plan_not_built"
+          },
+          {
+            "mode": "Test",
+            "status": "planned_not_executed"
+          }
+        ]
+      },
+      "status": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "upstream_method_status": "first_batch_pending_revision_context_only"
+        },
+        "learning_claim": "state_meaning",
+        "prototype": "P-PAPER-LABEL",
+        "declared_capability_match": true,
+        "match_scope": "fixed authored representation assumptions only; real adequacy not demonstrated",
+        "next_action": "plan_contextual_comprehension_observation",
+        "allowed_learning": "state_meaning_if_actual_task_research_later",
+        "actual_findings": [],
+        "actual_user_tests": 0,
+        "physical_performance": null,
+        "status": "plan_only_not_ready_for_use_validation"
+      }
+    },
+    {
+      "package": "MD-010-R09",
+      "id": "R09-nonsensical-job-with-valid-note-ids",
+      "input": {
+        "raw": {
+          "schema": "constructed_switching_episode_fixture-1",
+          "binding": {
+            "problem_id": "TAP-TEACH-001",
+            "version": "0.1.0",
+            "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+            "upstream_method_status": "first_batch_pending_revision_context_only"
+          },
+          "material_status": "all_authored_not_interview_records",
+          "stories": [
+            {
+              "id": "CHOICE-A",
+              "actor_id": "OWNER-A",
+              "actor_role": "ACT-OWNER",
+              "role_scope": "constructed_payer_decision_not_operator_experience",
+              "kind": "constructed_choice_episode",
+              "situation": "负责人考虑是否由现有人工作业改用新设备；无真实经营数据。",
+              "alternative_before": "continue_manual",
+              "considered": [
+                "purchase_robot",
+                "continue_manual",
+                "defer_decision"
+              ],
+              "notes": [
+                {
+                  "id": "A1",
+                  "stage": "trigger",
+                  "text": "构造：负责人说排班越来越难，开始寻找其他办法。"
+                },
+                {
+                  "id": "A2",
+                  "stage": "evaluation",
+                  "text": "构造：演示吸引了负责人，但他追问故障时本地谁来处理。"
+                },
+                {
+                  "id": "A3",
+                  "stage": "decision",
+                  "text": "构造：没有明确支援安排，负责人暂缓购买并继续人工。"
+                }
+              ],
+              "decision": "defer_purchase",
+              "actual_use_results": [],
+              "post_decision_outcome": null
+            },
+            {
+              "id": "CHOICE-B",
+              "actor_id": "OWNER-B",
+              "actor_role": "ACT-OWNER",
+              "role_scope": "constructed_payer_decision_not_operator_experience",
+              "kind": "constructed_choice_episode",
+              "situation": "另一负责人在不同服务条件下考虑试用；不是与A同工况对照。",
+              "alternative_before": "continue_manual",
+              "considered": [
+                "short_trial_rental",
+                "purchase_robot",
+                "continue_manual"
+              ],
+              "notes": [
+                {
+                  "id": "B1",
+                  "stage": "trigger",
+                  "text": "构造：负责人希望降低对临时排班的依赖。"
+                },
+                {
+                  "id": "B2",
+                  "stage": "evaluation",
+                  "text": "构造：供应方提出短期租用和本地支援，负责人认为退出代价较易判断。"
+                },
+                {
+                  "id": "B3",
+                  "stage": "decision",
+                  "text": "构造：负责人同意安排租用试用；试用尚未发生。"
+                }
+              ],
+              "decision": "plan_rental_trial",
+              "actual_use_results": [],
+              "post_decision_outcome": null
+            }
+          ],
+          "customer_approved": false,
+          "real_participants": 0,
+          "market_size": null
+        },
+        "coding": [
+          {
+            "story_id": "CHOICE-A",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "构造攻击：因此真实市场确定会购买机器人",
+            "social_progress": null,
+            "emotional_progress": "对异常后无人支援的担忧，仅在构造笔记层表达",
+            "forces": {
+              "push": [
+                "A1"
+              ],
+              "pull": [
+                "A2"
+              ],
+              "anxiety": [
+                "A2",
+                "A3"
+              ],
+              "habit_or_existing_arrangement": [
+                "A3"
+              ]
+            },
+            "status": "conditional_research_hypothesis"
+          },
+          {
+            "story_id": "CHOICE-B",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在退出与支援条件较可判断时试探新的作业方式",
+            "social_progress": null,
+            "emotional_progress": null,
+            "forces": {
+              "push": [
+                "B1"
+              ],
+              "pull": [
+                "B2"
+              ],
+              "anxiety": [
+                "B2"
+              ],
+              "habit_or_existing_arrangement": []
+            },
+            "status": "conditional_research_hypothesis"
+          }
+        ],
+        "causal_generalization": null,
+        "operator_experience_claim": null,
+        "segment_size": null,
+        "recommendation_to_buy": null
+      },
+      "status": "accepted",
+      "output": {
+        "status": "bounded_choice_coding_checked",
+        "episodes": 2,
+        "job_hypotheses": [
+          {
+            "story_id": "CHOICE-A",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "构造攻击：因此真实市场确定会购买机器人",
+            "social_progress": null,
+            "emotional_progress": "对异常后无人支援的担忧，仅在构造笔记层表达",
+            "forces": {
+              "push": [
+                "A1"
+              ],
+              "pull": [
+                "A2"
+              ],
+              "anxiety": [
+                "A2",
+                "A3"
+              ],
+              "habit_or_existing_arrangement": [
+                "A3"
+              ]
+            },
+            "status": "conditional_research_hypothesis"
+          },
+          {
+            "story_id": "CHOICE-B",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在退出与支援条件较可判断时试探新的作业方式",
+            "social_progress": null,
+            "emotional_progress": null,
+            "forces": {
+              "push": [
+                "B1"
+              ],
+              "pull": [
+                "B2"
+              ],
+              "anxiety": [
+                "B2"
+              ],
+              "habit_or_existing_arrangement": []
+            },
+            "status": "conditional_research_hypothesis"
+          }
+        ],
+        "selected_new_product": null,
+        "customer_needs_confirmed": [],
+        "causal_claims": [],
+        "market_estimate": null,
+        "next_questions": [
+          "实际选择发生时有哪些替代方案与责任安排",
+          "操作方是否有不同任务与困难",
+          "除支援外还有哪些条件改变",
+          "试用后的实际行为与结果"
+        ],
+        "warning": "two different constructed contexts do not identify causal effect or segment prevalence"
+      }
+    },
+    {
+      "package": "MD-010-R09",
+      "id": "R09-actor-instance-deleted",
+      "input": {
+        "raw": {
+          "schema": "constructed_switching_episode_fixture-1",
+          "binding": {
+            "problem_id": "TAP-TEACH-001",
+            "version": "0.1.0",
+            "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+            "upstream_method_status": "first_batch_pending_revision_context_only"
+          },
+          "material_status": "all_authored_not_interview_records",
+          "stories": [
+            {
+              "id": "CHOICE-A",
+              "actor_role": "ACT-OWNER",
+              "role_scope": "constructed_payer_decision_not_operator_experience",
+              "kind": "constructed_choice_episode",
+              "situation": "负责人考虑是否由现有人工作业改用新设备；无真实经营数据。",
+              "alternative_before": "continue_manual",
+              "considered": [
+                "purchase_robot",
+                "continue_manual",
+                "defer_decision"
+              ],
+              "notes": [
+                {
+                  "id": "A1",
+                  "stage": "trigger",
+                  "text": "构造：负责人说排班越来越难，开始寻找其他办法。"
+                },
+                {
+                  "id": "A2",
+                  "stage": "evaluation",
+                  "text": "构造：演示吸引了负责人，但他追问故障时本地谁来处理。"
+                },
+                {
+                  "id": "A3",
+                  "stage": "decision",
+                  "text": "构造：没有明确支援安排，负责人暂缓购买并继续人工。"
+                }
+              ],
+              "decision": "defer_purchase",
+              "actual_use_results": [],
+              "post_decision_outcome": null
+            },
+            {
+              "id": "CHOICE-B",
+              "actor_id": "OWNER-B",
+              "actor_role": "ACT-OWNER",
+              "role_scope": "constructed_payer_decision_not_operator_experience",
+              "kind": "constructed_choice_episode",
+              "situation": "另一负责人在不同服务条件下考虑试用；不是与A同工况对照。",
+              "alternative_before": "continue_manual",
+              "considered": [
+                "short_trial_rental",
+                "purchase_robot",
+                "continue_manual"
+              ],
+              "notes": [
+                {
+                  "id": "B1",
+                  "stage": "trigger",
+                  "text": "构造：负责人希望降低对临时排班的依赖。"
+                },
+                {
+                  "id": "B2",
+                  "stage": "evaluation",
+                  "text": "构造：供应方提出短期租用和本地支援，负责人认为退出代价较易判断。"
+                },
+                {
+                  "id": "B3",
+                  "stage": "decision",
+                  "text": "构造：负责人同意安排租用试用；试用尚未发生。"
+                }
+              ],
+              "decision": "plan_rental_trial",
+              "actual_use_results": [],
+              "post_decision_outcome": null
+            }
+          ],
+          "customer_approved": false,
+          "real_participants": 0,
+          "market_size": null
+        },
+        "coding": [
+          {
+            "story_id": "CHOICE-A",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在可掌控异常处置负担的情况下维持作业安排",
+            "social_progress": null,
+            "emotional_progress": "对异常后无人支援的担忧，仅在构造笔记层表达",
+            "forces": {
+              "push": [
+                "A1"
+              ],
+              "pull": [
+                "A2"
+              ],
+              "anxiety": [
+                "A2",
+                "A3"
+              ],
+              "habit_or_existing_arrangement": [
+                "A3"
+              ]
+            },
+            "status": "conditional_research_hypothesis"
+          },
+          {
+            "story_id": "CHOICE-B",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在退出与支援条件较可判断时试探新的作业方式",
+            "social_progress": null,
+            "emotional_progress": null,
+            "forces": {
+              "push": [
+                "B1"
+              ],
+              "pull": [
+                "B2"
+              ],
+              "anxiety": [
+                "B2"
+              ],
+              "habit_or_existing_arrangement": []
+            },
+            "status": "conditional_research_hypothesis"
+          }
+        ],
+        "causal_generalization": null,
+        "operator_experience_claim": null,
+        "segment_size": null,
+        "recommendation_to_buy": null
+      },
+      "status": "accepted",
+      "output": {
+        "status": "bounded_choice_coding_checked",
+        "episodes": 2,
+        "job_hypotheses": [
+          {
+            "story_id": "CHOICE-A",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在可掌控异常处置负担的情况下维持作业安排",
+            "social_progress": null,
+            "emotional_progress": "对异常后无人支援的担忧，仅在构造笔记层表达",
+            "forces": {
+              "push": [
+                "A1"
+              ],
+              "pull": [
+                "A2"
+              ],
+              "anxiety": [
+                "A2",
+                "A3"
+              ],
+              "habit_or_existing_arrangement": [
+                "A3"
+              ]
+            },
+            "status": "conditional_research_hypothesis"
+          },
+          {
+            "story_id": "CHOICE-B",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在退出与支援条件较可判断时试探新的作业方式",
+            "social_progress": null,
+            "emotional_progress": null,
+            "forces": {
+              "push": [
+                "B1"
+              ],
+              "pull": [
+                "B2"
+              ],
+              "anxiety": [
+                "B2"
+              ],
+              "habit_or_existing_arrangement": []
+            },
+            "status": "conditional_research_hypothesis"
+          }
+        ],
+        "selected_new_product": null,
+        "customer_needs_confirmed": [],
+        "causal_claims": [],
+        "market_estimate": null,
+        "next_questions": [
+          "实际选择发生时有哪些替代方案与责任安排",
+          "操作方是否有不同任务与困难",
+          "除支援外还有哪些条件改变",
+          "试用后的实际行为与结果"
+        ],
+        "warning": "two different constructed contexts do not identify causal effect or segment prevalence"
+      }
+    },
+    {
+      "package": "MD-010-R09",
+      "id": "R09-text-change-not-recode",
+      "input": {
+        "raw": {
+          "schema": "constructed_switching_episode_fixture-1",
+          "binding": {
+            "problem_id": "TAP-TEACH-001",
+            "version": "0.1.0",
+            "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+            "upstream_method_status": "first_batch_pending_revision_context_only"
+          },
+          "material_status": "all_authored_not_interview_records",
+          "stories": [
+            {
+              "id": "CHOICE-A",
+              "actor_id": "OWNER-A",
+              "actor_role": "ACT-OWNER",
+              "role_scope": "constructed_payer_decision_not_operator_experience",
+              "kind": "constructed_choice_episode",
+              "situation": "负责人考虑是否由现有人工作业改用新设备；无真实经营数据。",
+              "alternative_before": "continue_manual",
+              "considered": [
+                "purchase_robot",
+                "continue_manual",
+                "defer_decision"
+              ],
+              "notes": [
+                {
+                  "id": "A1",
+                  "stage": "trigger",
+                  "text": "构造：负责人说排班越来越难，开始寻找其他办法。"
+                },
+                {
+                  "id": "A2",
+                  "stage": "evaluation",
+                  "text": "构造攻击：负责人并不担心支援，只在意颜色"
+                },
+                {
+                  "id": "A3",
+                  "stage": "decision",
+                  "text": "构造：没有明确支援安排，负责人暂缓购买并继续人工。"
+                }
+              ],
+              "decision": "defer_purchase",
+              "actual_use_results": [],
+              "post_decision_outcome": null
+            },
+            {
+              "id": "CHOICE-B",
+              "actor_id": "OWNER-B",
+              "actor_role": "ACT-OWNER",
+              "role_scope": "constructed_payer_decision_not_operator_experience",
+              "kind": "constructed_choice_episode",
+              "situation": "另一负责人在不同服务条件下考虑试用；不是与A同工况对照。",
+              "alternative_before": "continue_manual",
+              "considered": [
+                "short_trial_rental",
+                "purchase_robot",
+                "continue_manual"
+              ],
+              "notes": [
+                {
+                  "id": "B1",
+                  "stage": "trigger",
+                  "text": "构造：负责人希望降低对临时排班的依赖。"
+                },
+                {
+                  "id": "B2",
+                  "stage": "evaluation",
+                  "text": "构造：供应方提出短期租用和本地支援，负责人认为退出代价较易判断。"
+                },
+                {
+                  "id": "B3",
+                  "stage": "decision",
+                  "text": "构造：负责人同意安排租用试用；试用尚未发生。"
+                }
+              ],
+              "decision": "plan_rental_trial",
+              "actual_use_results": [],
+              "post_decision_outcome": null
+            }
+          ],
+          "customer_approved": false,
+          "real_participants": 0,
+          "market_size": null
+        },
+        "coding": [
+          {
+            "story_id": "CHOICE-A",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在可掌控异常处置负担的情况下维持作业安排",
+            "social_progress": null,
+            "emotional_progress": "对异常后无人支援的担忧，仅在构造笔记层表达",
+            "forces": {
+              "push": [
+                "A1"
+              ],
+              "pull": [
+                "A2"
+              ],
+              "anxiety": [
+                "A2",
+                "A3"
+              ],
+              "habit_or_existing_arrangement": [
+                "A3"
+              ]
+            },
+            "status": "conditional_research_hypothesis"
+          },
+          {
+            "story_id": "CHOICE-B",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在退出与支援条件较可判断时试探新的作业方式",
+            "social_progress": null,
+            "emotional_progress": null,
+            "forces": {
+              "push": [
+                "B1"
+              ],
+              "pull": [
+                "B2"
+              ],
+              "anxiety": [
+                "B2"
+              ],
+              "habit_or_existing_arrangement": []
+            },
+            "status": "conditional_research_hypothesis"
+          }
+        ],
+        "causal_generalization": null,
+        "operator_experience_claim": null,
+        "segment_size": null,
+        "recommendation_to_buy": null
+      },
+      "status": "accepted",
+      "output": {
+        "status": "bounded_choice_coding_checked",
+        "episodes": 2,
+        "job_hypotheses": [
+          {
+            "story_id": "CHOICE-A",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在可掌控异常处置负担的情况下维持作业安排",
+            "social_progress": null,
+            "emotional_progress": "对异常后无人支援的担忧，仅在构造笔记层表达",
+            "forces": {
+              "push": [
+                "A1"
+              ],
+              "pull": [
+                "A2"
+              ],
+              "anxiety": [
+                "A2",
+                "A3"
+              ],
+              "habit_or_existing_arrangement": [
+                "A3"
+              ]
+            },
+            "status": "conditional_research_hypothesis"
+          },
+          {
+            "story_id": "CHOICE-B",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在退出与支援条件较可判断时试探新的作业方式",
+            "social_progress": null,
+            "emotional_progress": null,
+            "forces": {
+              "push": [
+                "B1"
+              ],
+              "pull": [
+                "B2"
+              ],
+              "anxiety": [
+                "B2"
+              ],
+              "habit_or_existing_arrangement": []
+            },
+            "status": "conditional_research_hypothesis"
+          }
+        ],
+        "selected_new_product": null,
+        "customer_needs_confirmed": [],
+        "causal_claims": [],
+        "market_estimate": null,
+        "next_questions": [
+          "实际选择发生时有哪些替代方案与责任安排",
+          "操作方是否有不同任务与困难",
+          "除支援外还有哪些条件改变",
+          "试用后的实际行为与结果"
+        ],
+        "warning": "two different constructed contexts do not identify causal effect or segment prevalence"
+      }
+    },
+    {
+      "package": "MD-010-R09",
+      "id": "R09-operator-role-negative",
+      "input": {
+        "raw": {
+          "schema": "constructed_switching_episode_fixture-1",
+          "binding": {
+            "problem_id": "TAP-TEACH-001",
+            "version": "0.1.0",
+            "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+            "upstream_method_status": "first_batch_pending_revision_context_only"
+          },
+          "material_status": "all_authored_not_interview_records",
+          "stories": [
+            {
+              "id": "CHOICE-A",
+              "actor_id": "OWNER-A",
+              "actor_role": "ACT-OWNER",
+              "role_scope": "constructed_payer_decision_not_operator_experience",
+              "kind": "constructed_choice_episode",
+              "situation": "负责人考虑是否由现有人工作业改用新设备；无真实经营数据。",
+              "alternative_before": "continue_manual",
+              "considered": [
+                "purchase_robot",
+                "continue_manual",
+                "defer_decision"
+              ],
+              "notes": [
+                {
+                  "id": "A1",
+                  "stage": "trigger",
+                  "text": "构造：负责人说排班越来越难，开始寻找其他办法。"
+                },
+                {
+                  "id": "A2",
+                  "stage": "evaluation",
+                  "text": "构造：演示吸引了负责人，但他追问故障时本地谁来处理。"
+                },
+                {
+                  "id": "A3",
+                  "stage": "decision",
+                  "text": "构造：没有明确支援安排，负责人暂缓购买并继续人工。"
+                }
+              ],
+              "decision": "defer_purchase",
+              "actual_use_results": [],
+              "post_decision_outcome": null
+            },
+            {
+              "id": "CHOICE-B",
+              "actor_id": "OWNER-B",
+              "actor_role": "ACT-OWNER",
+              "role_scope": "constructed_payer_decision_not_operator_experience",
+              "kind": "constructed_choice_episode",
+              "situation": "另一负责人在不同服务条件下考虑试用；不是与A同工况对照。",
+              "alternative_before": "continue_manual",
+              "considered": [
+                "short_trial_rental",
+                "purchase_robot",
+                "continue_manual"
+              ],
+              "notes": [
+                {
+                  "id": "B1",
+                  "stage": "trigger",
+                  "text": "构造：负责人希望降低对临时排班的依赖。"
+                },
+                {
+                  "id": "B2",
+                  "stage": "evaluation",
+                  "text": "构造：供应方提出短期租用和本地支援，负责人认为退出代价较易判断。"
+                },
+                {
+                  "id": "B3",
+                  "stage": "decision",
+                  "text": "构造：负责人同意安排租用试用；试用尚未发生。"
+                }
+              ],
+              "decision": "plan_rental_trial",
+              "actual_use_results": [],
+              "post_decision_outcome": null
+            }
+          ],
+          "customer_approved": false,
+          "real_participants": 0,
+          "market_size": null
+        },
+        "coding": [
+          {
+            "story_id": "CHOICE-A",
+            "job_actor_role": "ACT-OP",
+            "functional_progress_hypothesis": "在可掌控异常处置负担的情况下维持作业安排",
+            "social_progress": null,
+            "emotional_progress": "对异常后无人支援的担忧，仅在构造笔记层表达",
+            "forces": {
+              "push": [
+                "A1"
+              ],
+              "pull": [
+                "A2"
+              ],
+              "anxiety": [
+                "A2",
+                "A3"
+              ],
+              "habit_or_existing_arrangement": [
+                "A3"
+              ]
+            },
+            "status": "conditional_research_hypothesis"
+          },
+          {
+            "story_id": "CHOICE-B",
+            "job_actor_role": "ACT-OWNER",
+            "functional_progress_hypothesis": "在退出与支援条件较可判断时试探新的作业方式",
+            "social_progress": null,
+            "emotional_progress": null,
+            "forces": {
+              "push": [
+                "B1"
+              ],
+              "pull": [
+                "B2"
+              ],
+              "anxiety": [
+                "B2"
+              ],
+              "habit_or_existing_arrangement": []
+            },
+            "status": "conditional_research_hypothesis"
+          }
+        ],
+        "causal_generalization": null,
+        "operator_experience_claim": null,
+        "segment_size": null,
+        "recommendation_to_buy": null
+      },
+      "status": "rejected",
+      "output": {
+        "error": "payer_job_attributed_to_operator"
+      }
+    }
+  ],
+  "original_packages_unchanged": true
+}

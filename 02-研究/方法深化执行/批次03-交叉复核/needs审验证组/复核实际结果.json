@@ -1,0 +1,479 @@
+{
+  "unchanged_files": 99,
+  "replayed_stdout": "{\"methods\": [\"R28\", \"R29\", \"R18\", \"R49\"], \"checks\": 28, \"passed\": 28, \"no_engineering_or_user_validation\": true}\n",
+  "probes": [
+    {
+      "name": "ARIZ-version-drift",
+      "method": "R28",
+      "actual": "accepted",
+      "input": {
+        "fixture": "ARIZ-LIMITED-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "99.0",
+        "source_version": "ARIZ-85V Spanish Foundation translation",
+        "implemented_scope": [
+          "mini_problem",
+          "conflict_pair",
+          "zone_time_resources",
+          "physical_contradiction_hypothesis",
+          "reformulation_record"
+        ],
+        "system": [
+          "contact element",
+          "workpiece",
+          "release actuator"
+        ],
+        "main_process": "maintain relative position during constructed work stage",
+        "technical_conflicts": [
+          {
+            "action": "increase contact load",
+            "useful": "resist relative slip",
+            "harmful": "release burden may increase"
+          },
+          {
+            "action": "reduce contact load",
+            "useful": "facilitate release",
+            "harmful": "holding resistance may decrease"
+          }
+        ],
+        "selected_conflict": 0,
+        "operating_zone": "contact interface",
+        "operating_times": {
+          "work": "holding",
+          "release": "disengagement"
+        },
+        "physical_contradiction": {
+          "same_element": "contact element",
+          "property": "normal load",
+          "state_A": "high",
+          "condition_A": "work stage",
+          "state_B": "low",
+          "condition_B": "release stage",
+          "status": "hypothesis_not_proven"
+        },
+        "resources": [
+          {
+            "item": "actuator state",
+            "availability": "unknown"
+          },
+          {
+            "item": "workpiece surface information",
+            "availability": "unknown"
+          }
+        ],
+        "IFR": "seek stable holding then release without added burdens; desired direction only",
+        "threshold": null,
+        "solution_status": "unsolved",
+        "reformulation": {
+          "parent_version": null,
+          "reason": null,
+          "prior_model_preserved": true
+        }
+      },
+      "output": {
+        "conflict_model": {
+          "action": "increase contact load",
+          "useful": "resist relative slip",
+          "harmful": "release burden may increase"
+        },
+        "physical_contradiction": {
+          "same_element": "contact element",
+          "property": "normal load",
+          "state_A": "high",
+          "condition_A": "work stage",
+          "state_B": "low",
+          "condition_B": "release stage",
+          "status": "hypothesis_not_proven"
+        },
+        "resource_unknowns": [
+          "actuator state",
+          "workpiece surface information"
+        ],
+        "proposed_direction": "separate holding and release conditions; investigate actuator feasibility",
+        "status": "unsolved",
+        "completed_full_ARIZ": false,
+        "engineering_pass": false,
+        "limitations": [
+          "no full nine-part execution",
+          "no standard-solution lookup claimed",
+          "no real holding or release experiment"
+        ]
+      }
+    },
+    {
+      "name": "ARIZ-unknown-selected",
+      "method": "R28",
+      "actual": "rejected",
+      "input": {
+        "fixture": "ARIZ-LIMITED-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source_version": "ARIZ-85V Spanish Foundation translation",
+        "implemented_scope": [
+          "mini_problem",
+          "conflict_pair",
+          "zone_time_resources",
+          "physical_contradiction_hypothesis",
+          "reformulation_record"
+        ],
+        "system": [
+          "contact element",
+          "workpiece",
+          "release actuator"
+        ],
+        "main_process": "maintain relative position during constructed work stage",
+        "technical_conflicts": [
+          {
+            "action": "increase contact load",
+            "useful": "resist relative slip",
+            "harmful": "release burden may increase"
+          },
+          {
+            "action": "reduce contact load",
+            "useful": "facilitate release",
+            "harmful": "holding resistance may decrease"
+          }
+        ],
+        "selected_conflict": 99,
+        "operating_zone": "contact interface",
+        "operating_times": {
+          "work": "holding",
+          "release": "disengagement"
+        },
+        "physical_contradiction": {
+          "same_element": "contact element",
+          "property": "normal load",
+          "state_A": "high",
+          "condition_A": "work stage",
+          "state_B": "low",
+          "condition_B": "release stage",
+          "status": "hypothesis_not_proven"
+        },
+        "resources": [
+          {
+            "item": "actuator state",
+            "availability": "unknown"
+          },
+          {
+            "item": "workpiece surface information",
+            "availability": "unknown"
+          }
+        ],
+        "IFR": "seek stable holding then release without added burdens; desired direction only",
+        "threshold": null,
+        "solution_status": "unsolved",
+        "reformulation": {
+          "parent_version": null,
+          "reason": null,
+          "prior_model_preserved": true
+        }
+      },
+      "output": {
+        "error": "ValueError: frozen_problem_or_scope_changed"
+      }
+    },
+    {
+      "name": "TESE-erase-specific-counterevidence",
+      "method": "R29",
+      "actual": "accepted",
+      "input": {
+        "fixture": "TESE-LIMITED-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "records": [
+          {
+            "year": 2021,
+            "operations": 8,
+            "unit": "count/task",
+            "condition": "same constructed dry cleaning task",
+            "provenance": "synthetic"
+          },
+          {
+            "year": 2022,
+            "operations": 6,
+            "unit": "count/task",
+            "condition": "same constructed dry cleaning task",
+            "provenance": "synthetic"
+          },
+          {
+            "year": 2023,
+            "operations": 5,
+            "unit": "count/task",
+            "condition": "same constructed dry cleaning task",
+            "provenance": "synthetic"
+          }
+        ],
+        "route": "selective automation hypothesis",
+        "counterevidence": "irrelevant",
+        "maturity": null,
+        "future_performance": null,
+        "inevitable": false,
+        "customer_target": null
+      },
+      "output": {
+        "observed_constructed_changes": [
+          -2,
+          -1
+        ],
+        "net_change": -3,
+        "route": "selective automation hypothesis",
+        "counterevidence": "irrelevant",
+        "status": "hypothesis_only",
+        "future_performance": null,
+        "maturity": null,
+        "ranking": null,
+        "next": "obtain comparable field history, maintenance and recovery exposure before route comparison",
+        "not_a_curve_fit": true
+      }
+    },
+    {
+      "name": "BIO-three-empty-controls",
+      "method": "R18",
+      "actual": "accepted",
+      "input": {
+        "fixture": "BIO-TRANSFER-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source": "Bohn and Federle 2004 PNAS DOI10.1073/pnas.0405885101",
+        "organism": "Nepenthes bicalcarata / Oecophylla smaragdina friction experiment",
+        "evidence_scope": "selected methods, wet/dry comparisons and attachment-structure distinction",
+        "mechanisms": [
+          {
+            "condition": "wet peristome",
+            "affected_structure": "soft adhesive pad",
+            "effect": "water-film attachment disruption"
+          },
+          {
+            "condition": "anisotropic peristome topography",
+            "affected_structure": "claw",
+            "effect": "direction-dependent friction"
+          }
+        ],
+        "abstraction": "fluid film and surface geometry interact with contact structure; conditions matter",
+        "target": "explore cleanable contact interface in tapping research",
+        "differences": [
+          {
+            "variable": "fluid",
+            "nature": "aqueous wetting",
+            "target": "latex rheology and coagulation unknown"
+          },
+          {
+            "variable": "contact",
+            "nature": "insect pad/claw",
+            "target": "tool/material pair unknown"
+          },
+          {
+            "variable": "film stability",
+            "nature": "wet peristome",
+            "target": "field contamination and replenishment unknown"
+          }
+        ],
+        "engineering_gain": null,
+        "verified_transfer": false,
+        "test_plan": [
+          "",
+          "",
+          ""
+        ],
+        "target_threshold": null
+      },
+      "output": {
+        "evidence_chain": [
+          "original biological experiment",
+          "condition-bound mechanism",
+          "domain-neutral abstraction",
+          "unverified target hypothesis"
+        ],
+        "unresolved_transfer_variables": [
+          "fluid",
+          "contact",
+          "film stability"
+        ],
+        "engineering_concept": "investigate condition-specific surface/interface strategy",
+        "performance_gain": null,
+        "status": "requires_target_experiment",
+        "biological_observations_are_not_engineering_results": true
+      }
+    },
+    {
+      "name": "BIO-cross-problem",
+      "method": "R18",
+      "actual": "rejected",
+      "input": {
+        "fixture": "BIO-TRANSFER-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "99",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source": "Bohn and Federle 2004 PNAS DOI10.1073/pnas.0405885101",
+        "organism": "Nepenthes bicalcarata / Oecophylla smaragdina friction experiment",
+        "evidence_scope": "selected methods, wet/dry comparisons and attachment-structure distinction",
+        "mechanisms": [
+          {
+            "condition": "wet peristome",
+            "affected_structure": "soft adhesive pad",
+            "effect": "water-film attachment disruption"
+          },
+          {
+            "condition": "anisotropic peristome topography",
+            "affected_structure": "claw",
+            "effect": "direction-dependent friction"
+          }
+        ],
+        "abstraction": "fluid film and surface geometry interact with contact structure; conditions matter",
+        "target": "explore cleanable contact interface in tapping research",
+        "differences": [
+          {
+            "variable": "fluid",
+            "nature": "aqueous wetting",
+            "target": "latex rheology and coagulation unknown"
+          },
+          {
+            "variable": "contact",
+            "nature": "insect pad/claw",
+            "target": "tool/material pair unknown"
+          },
+          {
+            "variable": "film stability",
+            "nature": "wet peristome",
+            "target": "field contamination and replenishment unknown"
+          }
+        ],
+        "engineering_gain": null,
+        "verified_transfer": false,
+        "test_plan": [
+          "characterize actual fluid and material pair",
+          "compare wet/dry and geometry controls under matched exposure",
+          "record maintenance and adverse contact effects"
+        ],
+        "target_threshold": null
+      },
+      "output": {
+        "error": "ValueError: context"
+      }
+    },
+    {
+      "name": "FBS-fake-measurement",
+      "method": "R49",
+      "actual": "rejected",
+      "input": {
+        "fixture": "FBS-LIMITED-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source_scope": "author/publisher abstract only; no full situated eight-process reconstruction",
+        "F": "support stable holding in a constructed fixture",
+        "Be": {
+          "quantity": "normal force",
+          "target": null,
+          "unit": "N",
+          "customer_approved": false
+        },
+        "S": {
+          "concept": "ideal linear spring",
+          "stiffness": 10,
+          "stiffness_unit": "N/mm",
+          "deflection": 2,
+          "deflection_unit": "mm",
+          "provenance": "independent synthetic teaching values"
+        },
+        "analysis_assumptions": [
+          "linear elastic range",
+          "quasi-static",
+          "no losses or geometry transformation"
+        ],
+        "Bs_provenance": "analytical calculation, not measured",
+        "actual_measurement": 20,
+        "engineering_pass": false,
+        "situated_worlds_implemented": false
+      },
+      "output": {
+        "error": "ValueError: analysis_is_not_measurement_or_approval"
+      }
+    },
+    {
+      "name": "FBS-unknown-to-zero",
+      "method": "R49",
+      "actual": "rejected",
+      "input": {
+        "fixture": "FBS-LIMITED-01",
+        "context": {
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "problem_version": "0.1.0",
+          "identity": "research_hypotheses_only_not_requirements",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "version": "0.1.0",
+        "source_scope": "author/publisher abstract only; no full situated eight-process reconstruction",
+        "F": "support stable holding in a constructed fixture",
+        "Be": {
+          "quantity": "normal force",
+          "target": 0,
+          "unit": "N",
+          "customer_approved": false
+        },
+        "S": {
+          "concept": "ideal linear spring",
+          "stiffness": 10,
+          "stiffness_unit": "N/mm",
+          "deflection": 2,
+          "deflection_unit": "mm",
+          "provenance": "independent synthetic teaching values"
+        },
+        "analysis_assumptions": [
+          "linear elastic range",
+          "quasi-static",
+          "no losses or geometry transformation"
+        ],
+        "Bs_provenance": "analytical calculation, not measured",
+        "actual_measurement": null,
+        "engineering_pass": false,
+        "situated_worlds_implemented": false
+      },
+      "output": {
+        "error": "ValueError: fixed_model_semantics_or_units_changed"
+      }
+    }
+  ]
+}

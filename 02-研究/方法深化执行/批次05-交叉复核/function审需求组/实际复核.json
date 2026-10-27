@@ -1,0 +1,217 @@
+{
+  "verified_packages": [
+    {
+      "package": "MD-038-R37",
+      "manifest_sha256": "4040fc08791df09a6f439611c59adaa07d2b3a3ca73a4711db5c8405beabd8ce",
+      "files": 15,
+      "baseline_checks": 8,
+      "primary_fingerprints": 1
+    },
+    {
+      "package": "MD-039-R38",
+      "manifest_sha256": "7a20cd44f724cb6fd7f86bc1dfc8d132d99aa78c15f2252cbe26720ce1bf1a86",
+      "files": 15,
+      "baseline_checks": 8,
+      "primary_fingerprints": 3
+    },
+    {
+      "package": "MD-040-R39",
+      "manifest_sha256": "83383df2bb70103270be0fe53b086eeab6423849ec16f94262fdf1b11511916b",
+      "files": 13,
+      "baseline_checks": 8,
+      "primary_fingerprints": 1
+    },
+    {
+      "package": "MD-041-R40",
+      "manifest_sha256": "740d446e401c2a2385db7a97e1248bda522c1f1d7edc97c71ff9fb8af1c2842a",
+      "files": 13,
+      "baseline_checks": 8,
+      "primary_fingerprints": 1
+    }
+  ],
+  "independent_probes": [
+    {
+      "package": "MD-038-R37",
+      "probe": "new-string-additive-false",
+      "actual": "accepted",
+      "output_summary": {
+        "state": "preference_sensitive",
+        "excluded": [
+          "C"
+        ],
+        "scenarios": [
+          {
+            "weight_service": 0.2,
+            "scores": {
+              "A": 0.42000000000000004,
+              "B": 0.7200000000000002
+            },
+            "winners": [
+              "B"
+            ]
+          },
+          {
+            "weight_service": 0.5,
+            "scores": {
+              "A": 0.6,
+              "B": 0.6000000000000001
+            },
+            "winners": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "weight_service": 0.8,
+            "scores": {
+              "A": 0.78,
+              "B": 0.48000000000000004
+            },
+            "winners": [
+              "A"
+            ]
+          }
+        ],
+        "A_B_crossover_weight": 0.5,
+        "unique_robust_winner": null,
+        "customer_decision": null,
+        "performance_evidence": "synthetic_only",
+        "qualification": "weighted value model under declared additive assumption, not calibrated customer preference"
+      }
+    },
+    {
+      "package": "MD-038-R37",
+      "probe": "new-A-hard-fail",
+      "actual": "rejected",
+      "output_summary": {
+        "error": "StopIteration: "
+      }
+    },
+    {
+      "package": "MD-038-R37",
+      "probe": "new-nan-weight",
+      "actual": "rejected",
+      "output_summary": {
+        "error": "ValueError: invalid_weights"
+      }
+    },
+    {
+      "package": "MD-039-R38",
+      "probe": "new-bool-model-order",
+      "actual": "rejected",
+      "output_summary": {
+        "error": "ValueError: unsupported_order"
+      }
+    },
+    {
+      "package": "MD-039-R38",
+      "probe": "new-source-row-value-drift",
+      "actual": "rejected",
+      "output_summary": {
+        "error": "ValueError: frozen_source_row_changed"
+      }
+    },
+    {
+      "package": "MD-039-R38",
+      "probe": "new-saturated-variance-not-estimated",
+      "actual": "accepted",
+      "output_summary": {
+        "rank": 32,
+        "residual_df": 0,
+        "r_squared": 1.0,
+        "residual_rmse": null,
+        "residual_mean_square_by_direction": {
+          "-1": 1.9306266250016955e-25,
+          "1": 8.643391166325582e-26
+        },
+        "randomization": "published order is a permutation; actual execution not re-observed",
+        "pure_error_estimable_from_these_rows": false,
+        "error_basis": "zero df: no residual variance estimate",
+        "curvature_estimable": false,
+        "independent_confirmation": false,
+        "engineering_validated": false
+      }
+    },
+    {
+      "package": "MD-040-R39",
+      "probe": "new-field-distribution-invention",
+      "actual": "rejected",
+      "output_summary": {
+        "error": "ValueError: unsupported_control_distribution_target_cost_or_confirmation"
+      }
+    },
+    {
+      "package": "MD-040-R39",
+      "probe": "new-laboratory-noise-as-control",
+      "actual": "rejected",
+      "output_summary": {
+        "error": "ValueError: unsupported_control_distribution_target_cost_or_confirmation"
+      }
+    },
+    {
+      "package": "MD-041-R40",
+      "probe": "new-scale-revision-drift",
+      "actual": "rejected",
+      "output_summary": {
+        "error": "ValueError: unapproved_scale_transfer"
+      }
+    },
+    {
+      "package": "MD-041-R40",
+      "probe": "new-action-owner-boolean",
+      "actual": "accepted",
+      "output_summary": {
+        "failure_mode": "FM1",
+        "common_cause_groups": {
+          "PWR-A": [
+            "S1",
+            "S2",
+            "CTRL"
+          ]
+        },
+        "independent_backup_demonstrated": false,
+        "single_point_failure_status": "requires_system_model_not_proved_away",
+        "control_effectiveness": "unknown",
+        "ratings": {
+          "severity": null,
+          "occurrence": null,
+          "detection_prevention": null
+        },
+        "residual_risk": null,
+        "action_queue": [
+          {
+            "id": "A1",
+            "control": "CT1",
+            "owner_role": true,
+            "task": "define clock/age and fault-injection study",
+            "completion": "not_executed"
+          },
+          {
+            "id": "A2",
+            "control": "CT2",
+            "owner_role": "system_architecture_role",
+            "task": "investigate supply independence/common cause and latent faults",
+            "completion": "not_executed"
+          }
+        ],
+        "release_decision": null,
+        "engineering_validated": false,
+        "reason": "configuration-bound hypotheses, no control evidence or applicable calibrated rating basis"
+      }
+    },
+    {
+      "package": "MD-041-R40",
+      "probe": "new-action-control-wrong",
+      "actual": "rejected",
+      "output_summary": {
+        "error": "ValueError: action_reference_or_execution_claim"
+      }
+    }
+  ],
+  "independent_recalculation": {
+    "R38_normal_equations_rmse": 17.81631880117218,
+    "R39_min_sd_row": 7,
+    "R37_crossing_manual": 0.5
+  },
+  "scope": "Agent checks, not domain certification"
+}

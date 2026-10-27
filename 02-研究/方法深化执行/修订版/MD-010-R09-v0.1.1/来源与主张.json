@@ -1,0 +1,71 @@
+{
+  "method": "R09",
+  "version": "0.1.0",
+  "date": "2026-10-27",
+  "sources": [
+    {
+      "id": "CI-JOBS",
+      "url": "https://www.christenseninstitute.org/theory/jobs-to-be-done/",
+      "final_url": "https://www.christenseninstitute.org/theory/jobs-to-be-done/",
+      "date": "2026-10-27",
+      "raw_file": "private-sources/CI-JOBS.html",
+      "raw_sha256": "04225e63cc769d040af1df4c486bea6e12a7a984b9b1ce52b402f0bfa3f289c3",
+      "text_file": "private-sources/CI-JOBS.txt",
+      "text_sha256": "cd0db8d69bdd2ed87c74523b8a63cdebb38f8e2181477fff43c040cf23e67d77",
+      "status": "acquired_selected_review_required"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-JOBS-01",
+      "statement": "理论从情境中的进步解释选择，并关注功能、社会及情绪维度。",
+      "type": "source_selected_scope",
+      "source_id": "CI-JOBS",
+      "url": "https://www.christenseninstitute.org/theory/jobs-to-be-done/",
+      "locator": "Definition及Unique Insight",
+      "short_anchor": "Definition",
+      "anchor_in_text": 1733,
+      "source_raw_sha256": "04225e63cc769d040af1df4c486bea6e12a7a984b9b1ce52b402f0bfa3f289c3",
+      "source_text_sha256": "cd0db8d69bdd2ed87c74523b8a63cdebb38f8e2181477fff43c040cf23e67d77",
+      "read_scope": "selected web sections or specifically listed PDF pages only",
+      "not_supported": [
+        "真实割胶需求",
+        "客户批准",
+        "真实用户或工程效果",
+        "平台完整原法执行"
+      ]
+    },
+    {
+      "id": "C-JOBS-02",
+      "statement": "被引入生活或工作的产品/服务需放在进步与选择中理解。",
+      "type": "source_selected_scope",
+      "source_id": "CI-JOBS",
+      "url": "https://www.christenseninstitute.org/theory/jobs-to-be-done/",
+      "locator": "Unique Insight",
+      "short_anchor": "Unique Insight",
+      "anchor_in_text": 2489,
+      "source_raw_sha256": "04225e63cc769d040af1df4c486bea6e12a7a984b9b1ce52b402f0bfa3f289c3",
+      "source_text_sha256": "cd0db8d69bdd2ed87c74523b8a63cdebb38f8e2181477fff43c040cf23e67d77",
+      "read_scope": "selected web sections or specifically listed PDF pages only",
+      "not_supported": [
+        "真实割胶需求",
+        "客户批准",
+        "真实用户或工程效果",
+        "平台完整原法执行"
+      ]
+    }
+  ],
+  "platform_adaptations": [
+    "固定构造输入与ID",
+    "结构/声明检查规则",
+    "未知及未执行状态",
+    "建议调用schema"
+  ],
+  "gaps": [
+    "官方网页选段，非原著和所有访谈流派完整核读",
+    "两选择事件全为构造，无真实采访",
+    "四类力量是平台编码组织，不是统一标准算法",
+    "不估市场规模、支付意愿或因果效应"
+  ],
+  "source_distribution": "raw/text/screenshots only in gitignored private-sources; no whole cards or source pages copied into public output"
+}

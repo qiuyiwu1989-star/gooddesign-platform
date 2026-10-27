@@ -1,0 +1,199 @@
+{
+  "method": "R42",
+  "executed_cases": 11,
+  "passed": 11,
+  "cases": [
+    {
+      "method": "R42",
+      "case": "normal-not-ready",
+      "class": "normal",
+      "status": "pass",
+      "expected_error": null,
+      "observed": "accepted_with_bounded_state",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "configuration_id": "CFG-TAP-RESEARCH-0.1",
+        "source_item_count": 4,
+        "approved_requirement_count": 0,
+        "verification_conformance_claims": [],
+        "validation_effectiveness_claims": [],
+        "candidate_activities": [
+          {
+            "id": "V-P01",
+            "source_need": "N-T01",
+            "type": "proposed_analysis_or_test",
+            "objective": "研究如何形成可检验的边界要求",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          },
+          {
+            "id": "VAL-P03",
+            "source_need": "N-T03",
+            "type": "proposed_use_context_research",
+            "objective": "形成目标操作者状态理解的确认问题",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          }
+        ],
+        "coverage": {
+          "planned": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "ready": false,
+        "results": [],
+        "engineering_pass": false,
+        "next_actions": [
+          "确认需求身份与口径",
+          "确定配置、测量和资源",
+          "补异常恢复与完整作业场景",
+          "实际执行后再生成原始证据和偏差报告"
+        ],
+        "change_rule": "source requirement/configuration/intended_use changes require impact review; old evidence not transferred automatically",
+        "scope": "coverage_and_fixed_state_check_not_requirements_compliance_or_real_use_validation"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "missing-uncovered",
+      "class": "missing_material",
+      "status": "pass",
+      "expected_error": "coverage_partition_invalid",
+      "observed": "rejected",
+      "output": {
+        "error": "coverage_partition_invalid"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "wrong-configuration",
+      "class": "not_applicable",
+      "status": "pass",
+      "expected_error": "configuration_mismatch",
+      "observed": "rejected",
+      "output": {
+        "error": "configuration_mismatch"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "hypothesis-as-approved-requirement",
+      "class": "boundary",
+      "status": "pass",
+      "expected_error": "requirement_baseline_invented",
+      "observed": "rejected",
+      "output": {
+        "error": "requirement_baseline_invented"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "fake-pass",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "readiness_or_pass_invented",
+      "observed": "rejected",
+      "output": {
+        "error": "readiness_or_pass_invented"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "source-item-omitted",
+      "class": "missing_material",
+      "status": "pass",
+      "expected_error": "requirement_candidate_omitted",
+      "observed": "rejected",
+      "output": {
+        "error": "requirement_candidate_omitted"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "false-engineering-binding",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "shared_context_binding_or_status_changed",
+      "observed": "rejected",
+      "output": {
+        "error": "shared_context_binding_or_status_changed"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "old-source-version",
+      "class": "boundary",
+      "status": "pass",
+      "expected_error": "source_r44_changed",
+      "observed": "rejected",
+      "output": {
+        "error": "source_r44_changed"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "same-sets-swapped-need-requirement-pairs",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "need_requirement_pairing_changed",
+      "observed": "rejected",
+      "output": {
+        "error": "need_requirement_pairing_changed"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "duplicate-coverage",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "duplicate_coverage_id",
+      "observed": "rejected",
+      "output": {
+        "error": "duplicate_coverage_id"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    },
+    {
+      "method": "R42",
+      "case": "duplicate-source-item",
+      "class": "conflict",
+      "status": "pass",
+      "expected_error": "duplicate_source_item_id",
+      "observed": "rejected",
+      "output": {
+        "error": "duplicate_source_item_id"
+      },
+      "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+    }
+  ],
+  "engineering_tests_executed": 0,
+  "new_participants": 0,
+  "qualification": "fixed_teaching_fixture_structure_only"
+}

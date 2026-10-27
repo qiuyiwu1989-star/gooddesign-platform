@@ -1,0 +1,272 @@
+{
+  "packages": [
+    {
+      "package": "MD-030-R30",
+      "manifest_sha256": "c629cb589516cae848c53f0c4023f15b59fb0977321c6951287478dac0580b12",
+      "files": 14,
+      "primary_raw_sha_verified": true,
+      "baseline_checks": 8
+    },
+    {
+      "package": "MD-031-R31",
+      "manifest_sha256": "8fda7d7ebb90323406d05d9f1972dcf31960095f5624dda0d4b49cc7386d2056",
+      "files": 13,
+      "primary_raw_sha_verified": true,
+      "baseline_checks": 8
+    },
+    {
+      "package": "MD-032-R32",
+      "manifest_sha256": "e181e62f7dee92cc61c685ce764e0bf9febecf718817ddef2e0a6236c7d3d79a",
+      "files": 13,
+      "primary_raw_sha_verified": true,
+      "baseline_checks": 9
+    }
+  ],
+  "probes": [
+    {
+      "method": "MD-030-R30",
+      "probe": "new-workpoint-coordinate",
+      "actual": "rejected",
+      "result": {
+        "error": "fixed_workpoint_units_or_evidence_changed"
+      }
+    },
+    {
+      "method": "MD-030-R30",
+      "probe": "new-target-bool",
+      "actual": "rejected",
+      "result": {
+        "error": "target_vector_invalid"
+      }
+    },
+    {
+      "method": "MD-030-R30",
+      "probe": "new-unit-drift",
+      "actual": "rejected",
+      "result": {
+        "error": "fixed_workpoint_units_or_evidence_changed"
+      }
+    },
+    {
+      "method": "MD-031-R31",
+      "probe": "new-unknown-edge-not-full-order",
+      "actual": "accepted",
+      "result": {
+        "edge_direction": "provider_to_recipient",
+        "SCC": [
+          [
+            "A-reference-study",
+            "B-geometry-study"
+          ],
+          [
+            "C-integration-study"
+          ],
+          [
+            "D-test-plan"
+          ]
+        ],
+        "condensation_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "known_graph_order": [
+          [
+            "A-reference-study",
+            "B-geometry-study"
+          ],
+          [
+            "C-integration-study"
+          ],
+          [
+            "D-test-plan"
+          ]
+        ],
+        "complete_order": null,
+        "unknown_relations": true,
+        "interface_costs": null,
+        "schedule_benefit": null,
+        "physical_decoupling": false,
+        "qualification": "graph calculation only; cyclic group needs iteration planning, not automatically a physical module"
+      }
+    },
+    {
+      "method": "MD-031-R31",
+      "probe": "new-edge-direction-mismatch",
+      "actual": "rejected",
+      "result": {
+        "error": "matrix_evidence_direction_mismatch"
+      }
+    },
+    {
+      "method": "MD-031-R31",
+      "probe": "new-evidence-bool-index",
+      "actual": "accepted",
+      "result": {
+        "edge_direction": "provider_to_recipient",
+        "SCC": [
+          [
+            "A-reference-study",
+            "B-geometry-study"
+          ],
+          [
+            "C-integration-study"
+          ],
+          [
+            "D-test-plan"
+          ]
+        ],
+        "condensation_edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "known_graph_order": [
+          [
+            "A-reference-study",
+            "B-geometry-study"
+          ],
+          [
+            "C-integration-study"
+          ],
+          [
+            "D-test-plan"
+          ]
+        ],
+        "complete_order": [
+          [
+            "A-reference-study",
+            "B-geometry-study"
+          ],
+          [
+            "C-integration-study"
+          ],
+          [
+            "D-test-plan"
+          ]
+        ],
+        "unknown_relations": false,
+        "interface_costs": null,
+        "schedule_benefit": null,
+        "physical_decoupling": false,
+        "qualification": "graph calculation only; cyclic group needs iteration planning, not automatically a physical module"
+      }
+    },
+    {
+      "method": "MD-032-R32",
+      "probe": "new-nan-pose-angle",
+      "actual": "accepted",
+      "result": {
+        "synthesized_pivots_mm": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            0.0
+          ]
+        ],
+        "link_lengths_mm": {
+          "ground": 100.0,
+          "crank": 40.0,
+          "coupler": 100.0,
+          "rocker": 40.00000000000001
+        },
+        "generic_DOF_count": 1,
+        "DOF_caveat": "generic count; singular configurations require local constraint analysis",
+        "three_pose_residual_max_mm": 0.0,
+        "sample_count": 121,
+        "singular_angles_detected_deg": [],
+        "min_acute_transmission_deg": 29.999999999999996,
+        "min_constructed_obstacle_clearance_mm": 35.0,
+        "branch_switch_requested": false,
+        "sampled_path_status": "sampled_geometry_only_no_certificate",
+        "real_collision_clearance": "unknown",
+        "continuous_no_singularity_proof": false,
+        "engineering_pass": false
+      }
+    },
+    {
+      "method": "MD-032-R32",
+      "probe": "new-branch-switch-fractional",
+      "actual": "accepted",
+      "result": {
+        "synthesized_pivots_mm": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            0.0
+          ]
+        ],
+        "link_lengths_mm": {
+          "ground": 100.0,
+          "crank": 40.0,
+          "coupler": 100.0,
+          "rocker": 40.00000000000001
+        },
+        "generic_DOF_count": 1,
+        "DOF_caveat": "generic count; singular configurations require local constraint analysis",
+        "three_pose_residual_max_mm": 0.0,
+        "sample_count": 121,
+        "singular_angles_detected_deg": [],
+        "min_acute_transmission_deg": 29.999999999999996,
+        "min_constructed_obstacle_clearance_mm": 35.0,
+        "branch_switch_requested": true,
+        "sampled_path_status": "reject_toggle_or_branch_switch",
+        "real_collision_clearance": "unknown",
+        "continuous_no_singularity_proof": false,
+        "engineering_pass": false
+      }
+    },
+    {
+      "method": "MD-032-R32",
+      "probe": "new-subdegree-scan-not-certificate",
+      "actual": "accepted",
+      "result": {
+        "synthesized_pivots_mm": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            100.0,
+            0.0
+          ]
+        ],
+        "link_lengths_mm": {
+          "ground": 100.0,
+          "crank": 40.0,
+          "coupler": 100.0,
+          "rocker": 40.00000000000001
+        },
+        "generic_DOF_count": 1,
+        "DOF_caveat": "generic count; singular configurations require local constraint analysis",
+        "three_pose_residual_max_mm": 0.0,
+        "sample_count": 241,
+        "singular_angles_detected_deg": [],
+        "min_acute_transmission_deg": 29.999999999999996,
+        "min_constructed_obstacle_clearance_mm": 35.0,
+        "branch_switch_requested": false,
+        "sampled_path_status": "sampled_geometry_only_no_certificate",
+        "real_collision_clearance": "unknown",
+        "continuous_no_singularity_proof": false,
+        "engineering_pass": false
+      }
+    }
+  ],
+  "scope": "isolated fixed-model calculations and primary raw fingerprints; Agent review not engineering certificate"
+}

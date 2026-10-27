@@ -1,0 +1,40 @@
+{
+  "id": "RULE-TEACH-01",
+  "version": "0.1.0",
+  "origin": "platform_typed_rules_not_author_expert_system",
+  "rules": [
+    {
+      "id": "P1",
+      "type": "principle",
+      "statement": "考虑全局与协调的治理提醒",
+      "executable": false,
+      "trigger": null,
+      "action": "提出需要协调的问题",
+      "responsibility": "研究负责人待指定"
+    },
+    {
+      "id": "PR1",
+      "type": "procedure",
+      "statement": "测量依据未取得时返回补证",
+      "executable": true,
+      "trigger": "measurement_evidence_missing",
+      "action": "request_measurement_evidence",
+      "responsibility": "研究执行角色待指定"
+    },
+    {
+      "id": "D1",
+      "type": "domain_causal_rule",
+      "statement": "某结构在某载荷必然安全（仅待审候选）",
+      "executable": false,
+      "trigger": null,
+      "action": null,
+      "source_evidence": null,
+      "responsibility": "机械专业待核"
+    }
+  ],
+  "facts": {
+    "measurement_evidence_missing": true
+  },
+  "actual_author_system_execution": false,
+  "expert_certified": false
+}

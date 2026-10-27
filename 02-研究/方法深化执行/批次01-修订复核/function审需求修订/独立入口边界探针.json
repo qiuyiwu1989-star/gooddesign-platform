@@ -1,0 +1,18 @@
+{
+  "mutation": "delete package_version from standalone R08 raw check",
+  "actual": "accepted",
+  "result": {
+    "note_count": 6,
+    "independent_constructed_event_count": 3,
+    "independent_events": [
+      "EV-T01",
+      "EV-T02",
+      "EV-T03"
+    ],
+    "source_representations_for_EV_T01": 3,
+    "generic_opinions_not_counted": 1,
+    "customer_findings": [],
+    "status": "fixed_fixture_structure_checked_not_field_validated"
+  },
+  "interpretation": "standalone helper does not enforce package_version; downstream R48 cross-package validator rejects missing version. low API boundary issue, not reopened first-batch lineage defect"
+}

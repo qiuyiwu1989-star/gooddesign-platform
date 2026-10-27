@@ -1,0 +1,11 @@
+{
+  "case": "caller-redefines-capability-to-match-paper",
+  "class": "conflict",
+  "status": "pass",
+  "expected_error": "caller_cannot_redefine_required_capability",
+  "observed": "rejected",
+  "output": {
+    "error": "caller_cannot_redefine_required_capability"
+  },
+  "scope": "executed_python_fixed_fixture_check_not_real_prototype_or_engineering_test"
+}

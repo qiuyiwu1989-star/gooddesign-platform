@@ -1,0 +1,184 @@
+{
+  "isolated_runs": [
+    {
+      "method": "MD-055-WB03",
+      "checks": 9,
+      "manifest_sha256": "8e54afbf8d60e76c3a540da69e1d8e0b85b6d76b4deb04e9614489ba388f908e"
+    },
+    {
+      "method": "MD-056-WB04",
+      "checks": 9,
+      "manifest_sha256": "d41aadbe45174d519b3115feb18e215e378cde21d9de7887afc636e4d7bbb6c7"
+    },
+    {
+      "method": "MD-057-WB05",
+      "checks": 8,
+      "manifest_sha256": "d2ad8b0987a48119c1b16ce5ee00d7075c13f4d773db1ec985d7c1bf78dcd1ec"
+    },
+    {
+      "method": "MD-058-WB06",
+      "checks": 10,
+      "manifest_sha256": "26c1a44178ffa72223af37f78a53b8dc61d7829f9d9e2571b3ce80f5630678f9"
+    },
+    {
+      "method": "MD-059-WB07",
+      "checks": 9,
+      "manifest_sha256": "fc8e4c9e356123ec647b6fa0e71c36edae41fe72cfe40c25f11d4d339ba05a17"
+    }
+  ],
+  "probes": [
+    {
+      "method": "WB03",
+      "name": "erase-relations",
+      "out": {
+        "status": "missing_relationship_review",
+        "ready": false
+      },
+      "error": null
+    },
+    {
+      "method": "WB03",
+      "name": "substitute-field-validation",
+      "out": {
+        "status": "goal_verification_context_conflict",
+        "ready": false
+      },
+      "error": null
+    },
+    {
+      "method": "WB03",
+      "name": "semantically-contradict-free-text",
+      "out": {
+        "status": "declared_relationships_consistent_only",
+        "ready": false,
+        "unresolved": [
+          "actual field conditions",
+          "maintenance workload",
+          "accepted performance thresholds"
+        ],
+        "quality_validated": false,
+        "not_checked": "free text semantics and actual operational feasibility"
+      },
+      "error": null
+    },
+    {
+      "method": "WB04",
+      "name": "X-source-erased",
+      "out": null,
+      "error": "special need must keep source identity; not arbitrary X module"
+    },
+    {
+      "method": "WB04",
+      "name": "summed-independent-optima",
+      "out": null,
+      "error": "unsupported approval or sum of separate optima"
+    },
+    {
+      "method": "WB04",
+      "name": "actual-evidence-injected",
+      "out": {
+        "status": "joint_research_candidate_only",
+        "same_candidate_parameters_used": {
+          "id": "A",
+          "mass_kg": 2.0,
+          "stiffness_N_m": 1000.0,
+          "damping_Ns_m": 2.0,
+          "seal_replaceable": true
+        },
+        "natural_omega_rad_s": 22.360679774997898,
+        "response_m": 0.000998005980069749,
+        "violations": [],
+        "separate_domain_scores_summed": false,
+        "engineering_selected": null,
+        "function_validated": false,
+        "cost": null,
+        "scope": "single linear mode and explicit teaching service property; not complete1+3+X solver"
+      },
+      "error": null
+    },
+    {
+      "method": "WB05",
+      "name": "remove-necessary-auxiliary",
+      "out": {
+        "status": "necessary_function_lost",
+        "uncovered": [
+          "FS"
+        ],
+        "responsibility_changes": [],
+        "optimization_benefit": null,
+        "engineering_pass": false,
+        "cost": null,
+        "limit": "auxiliary is a classification, not permission to delete necessary support"
+      },
+      "error": null
+    },
+    {
+      "method": "WB05",
+      "name": "claimed-takeover",
+      "out": null,
+      "error": "takeover does not cover unique removed function"
+    },
+    {
+      "method": "WB06",
+      "name": "nonlinear-regime",
+      "out": {
+        "status": "linear_model_not_applicable",
+        "engineering_pass": false,
+        "next": "obtain actual contact/nonlinear model and evidence"
+      },
+      "error": null
+    },
+    {
+      "method": "WB06",
+      "name": "unbound-installation",
+      "out": null,
+      "error": "configuration/provenance/validation unsupported"
+    },
+    {
+      "method": "WB07",
+      "name": "fake-control-benefit",
+      "out": null,
+      "error": "unsupported operation/approval claim"
+    },
+    {
+      "method": "WB07",
+      "name": "duplicate-sample-id",
+      "out": {
+        "status": "control_proxy_replayed_only",
+        "rows": [
+          {
+            "sample": "S1",
+            "state": "within_constructed_age_only",
+            "machine_action": "not_authorized_by_this_research"
+          },
+          {
+            "sample": "S1",
+            "state": "stale",
+            "machine_action": "not_authorized_by_this_research"
+          },
+          {
+            "sample": "S3",
+            "state": "unknown",
+            "machine_action": "not_authorized_by_this_research"
+          }
+        ],
+        "product_intelligence_validated": false,
+        "failure_feedback": [
+          "missing/invalid/stale data require new research record and control design review",
+          "real thresholds, response latency, independent sensing and abnormal recovery not verified"
+        ],
+        "actual_model_training": false
+      },
+      "error": null
+    },
+    {
+      "method": "WB07",
+      "name": "NaN-time",
+      "out": null,
+      "error": "invalid time model"
+    }
+  ],
+  "independent_complex_response_match": true,
+  "original_bytes_unchanged": true,
+  "source_scope": "selected article/author self-report/publisher introduction only; no full books certified"
+}

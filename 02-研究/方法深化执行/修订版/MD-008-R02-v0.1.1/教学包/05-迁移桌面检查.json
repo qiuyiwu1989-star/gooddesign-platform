@@ -1,0 +1,22 @@
+{
+  "scenario": "DOC-HANDOFF-TEACH-002",
+  "origin": "constructed_desk_only",
+  "initial_request": "让录入更快",
+  "competing_frames": [
+    "录入慢",
+    "资料核对/追补负担大"
+  ],
+  "total_only": 100,
+  "two_compatible_partitions": [
+    {
+      "entry": 90,
+      "reconciliation": 10
+    },
+    {
+      "entry": 30,
+      "reconciliation": 70
+    }
+  ],
+  "result": "total alone cannot select frame",
+  "no_actual_user_findings": true
+}

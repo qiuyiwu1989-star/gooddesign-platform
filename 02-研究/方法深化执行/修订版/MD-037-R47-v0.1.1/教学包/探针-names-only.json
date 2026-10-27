@@ -1,0 +1,50 @@
+{
+  "input": {
+    "id": "SBCE-GRID-TEACH-001",
+    "provenance": "synthetic_domains_not_customer_budgets",
+    "version": "0.1.0",
+    "units": {
+      "mass": "kg",
+      "power": "W",
+      "coupling": "kg*W"
+    },
+    "mass_grid": [
+      "A",
+      "B"
+    ],
+    "power_grid": [
+      10,
+      20,
+      30
+    ],
+    "constraints": [
+      {
+        "id": "E-MECH",
+        "owner": "mechanical",
+        "predicate": "mass<=2",
+        "status": "constructed_assumption",
+        "source": "teaching-definition-v0.1.0"
+      },
+      {
+        "id": "E-ELEC",
+        "owner": "electrical",
+        "predicate": "power<=20",
+        "status": "constructed_assumption",
+        "source": "teaching-definition-v0.1.0"
+      },
+      {
+        "id": "E-IF",
+        "owner": "interface",
+        "predicate": "mass*power<=30",
+        "status": "constructed_assumption",
+        "source": "teaching-definition-v0.1.0"
+      }
+    ],
+    "real_latex_boundary": "unknown",
+    "customer_approved": false,
+    "commitment": false
+  },
+  "output": {
+    "error": "invalid_domain_numeric"
+  }
+}

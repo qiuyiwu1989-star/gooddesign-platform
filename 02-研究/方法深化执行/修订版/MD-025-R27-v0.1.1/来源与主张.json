@@ -1,0 +1,50 @@
+{
+  "sources": [
+    {
+      "raw": "private-sources/fos.pdf",
+      "sha256": "b7efe96eef26bc17d360a73b29ce6d1a75607ffe1f28c4c641767f576b9990bf",
+      "text_sha256": "6e607d08835ec61dfaaa67b6da7f0edcef2eb8e35a66aff7df9fa4ae0e89a4cd",
+      "url": "https://www.metodolog.ru/triz-journal/archives/2005/08/04.pdf",
+      "locator": "PDF1 definition, PDF2–3 steps and secondary adaptation problems"
+    },
+    {
+      "raw": "private-sources/capillary.pdf",
+      "sha256": "93638040594a01e987d122f2bc07eff12698836a7d984dd22e138afcf7f9c27d",
+      "text_sha256": "4f4b51b14793522ea1ae2b365ce1946870331dcf2696005b8345590228ca6aaa",
+      "url": "https://ntrs.nasa.gov/api/citations/20240004816/downloads/RoBi_2024_PassiveFluidStabilityRotating.pdf",
+      "locator": "PDF1–3 abstract/model/working-fluid constraints"
+    },
+    {
+      "raw": "private-sources/breakdown.html",
+      "sha256": "38b0ca24d693847fbce73a2fb15b27b113cce977e5a22b4282c430cfcfbd120c",
+      "text_sha256": "d218f4aed9949ccc7b74e97310c8095e3d14a0b3a29b19f8d090dd5f7b2e5162",
+      "url": "https://www.nature.com/articles/s42005-018-0038-z",
+      "locator": "Results impacting droplet/transition, Methods distilled water"
+    }
+  ],
+  "claims": [
+    {
+      "source": "fos.pdf",
+      "support": "similar function transfer requires target functional parameters and secondary adaptation work; source case not client evidence here"
+    },
+    {
+      "source": "capillary.pdf",
+      "support": "paper explores passive transport in a model, with fluid/wetting and gravity conditions; not validated latex equipment"
+    },
+    {
+      "source": "breakdown.html",
+      "support": "original water droplet experiments show directional transport has impact/structure-dependent breakdown; not universal one-way transport"
+    }
+  ],
+  "platform_adaptation": [
+    "new latex transport target hypothesis",
+    "actual web search and screening log",
+    "transfer-difference ledger",
+    "metadata guard checker"
+  ],
+  "not_obtained": [
+    "expert consultation",
+    "target-fluid measurements",
+    "customer target approval"
+  ]
+}

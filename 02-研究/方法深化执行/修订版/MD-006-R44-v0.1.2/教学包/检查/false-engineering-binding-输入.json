@@ -1,0 +1,90 @@
+{
+  "schema": "R44-teaching-input-1",
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "problem_version": "0.1.0",
+    "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+    "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+    "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+    "customer_approved": false,
+    "engineering_validated": true
+  },
+  "source_r36": {
+    "path": "../MD-005-R36-v0.1.1/教学包/02-主链逐格比较与补证队列.json",
+    "sha256": "7f8af7f9bdbab00246a78bd5159fc38ea4ec93a689c451f491a798d2ee7385e0"
+  },
+  "hypotheses": [
+    {
+      "id": "H-R44-01",
+      "need": "N-T01",
+      "question": "表面参考是否足以支持待研究的作用边界表达？",
+      "alternative": "表面几何与隐藏组织边界不相同，表面代理可能无法支持目标声明",
+      "prototype_id": "P-SURROGATE",
+      "learning_scope": "局部代理材料与参考关系；不能确认真实树体内部边界",
+      "observation_plan": [
+        "记录已知代理几何与参考输出及其对应关系",
+        "检查偏差是否随表面状态改变；实际材料、测量方法待定"
+      ],
+      "measurement_unit_proposal": "待依据具体变量确认；不改源需求unit",
+      "threshold": null
+    },
+    {
+      "id": "H-R44-03",
+      "need": "N-T03",
+      "question": "状态样例中的时效标记是否帮助区分陈旧与当前信息？",
+      "alternative": "使用者可能忽视标记或错误理解时效",
+      "prototype_id": "P-PAPER",
+      "learning_scope": "状态理解研究；不能确认控制实时性或机械安全",
+      "observation_plan": [
+        "拟让目标角色判断当前与陈旧状态并说明依据",
+        "记录误解及无法判断；资格、同意与样本待定"
+      ],
+      "measurement_unit_proposal": "任务表现与解释编码待确认",
+      "threshold": null
+    }
+  ],
+  "prototypes": [
+    {
+      "id": "P-SURROGATE",
+      "status": "planned_not_built",
+      "capabilities": [
+        "proxy_geometry_relation"
+      ],
+      "cannot_answer": [
+        "true_tree_tissue_accuracy",
+        "system_safety"
+      ]
+    },
+    {
+      "id": "P-PAPER",
+      "status": "planned_not_built",
+      "capabilities": [
+        "state_comprehension"
+      ],
+      "cannot_answer": [
+        "physical_cutting",
+        "control_latency"
+      ]
+    }
+  ],
+  "capability_needed": {
+    "H-R44-01": "proxy_geometry_relation",
+    "H-R44-03": "state_comprehension"
+  },
+  "coverage": {
+    "planned_learning_needs": [
+      "N-T01",
+      "N-T03"
+    ],
+    "uncovered": [
+      "N-T02",
+      "N-T04"
+    ]
+  },
+  "execution_status": "not_executed",
+  "participant_count": null,
+  "observations": [],
+  "findings": [],
+  "customer_approved": false
+}

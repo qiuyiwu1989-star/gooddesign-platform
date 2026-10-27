@@ -1,0 +1,40 @@
+{
+  "schema": "gooddesign-method-adapter-proposal-1",
+  "method": "R42",
+  "name": "bounded_verification_validation_plan",
+  "status": "proposed_contract_with_local_fixed_teaching_script_not_native_mcp",
+  "actual_implementation": {
+    "script": "02-研究/方法深化执行/修订版/MD-005-R36-v0.1.1/生成与检查.py",
+    "scope": "three frozen teaching inputs only; not general semantic interpreter",
+    "native_mcp_called": false,
+    "production_write": false
+  },
+  "trigger": "需要追溯声明、配置和证据覆盖",
+  "must_inputs": [
+    "问题版本与SHA",
+    "上游产物版本与SHA",
+    "来源及未知状态"
+  ],
+  "returns": [
+    "声明身份",
+    "计划覆盖与未覆盖",
+    "配置绑定",
+    "未就绪原因",
+    "空证据表"
+  ],
+  "refuse_or_return": [
+    "悬空引用或版本失配",
+    "虚构客户批准或执行",
+    "未知被填成通过",
+    "原型不具备所需能力应返回设计"
+  ],
+  "cannot_claim": [
+    "独立专家认证",
+    "真实用户验证",
+    "工程性能达标",
+    "完整原典算法已复刻"
+  ],
+  "package_version": "0.1.3",
+  "implementation_script": "02-研究/方法深化执行/修订版/MD-007-R42-v0.1.3/生成与检查.py",
+  "scope": "bounded fixed teaching only, not engineering validation"
+}

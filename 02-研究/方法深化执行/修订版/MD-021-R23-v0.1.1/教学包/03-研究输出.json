@@ -1,0 +1,36 @@
+{
+  "time_candidate": {
+    "status": "time_separation_research_candidate",
+    "gap_s": 2,
+    "switch_time_s": 1,
+    "engineering_validated": false,
+    "required_checks": [
+      "residual energy",
+      "switch sensing",
+      "failure state",
+      "orientation and load",
+      "tolerance and margin"
+    ]
+  },
+  "space_candidate": {
+    "idea": "保持区与人工释放界面探索不同位置",
+    "status": "unknown",
+    "missing": "是否仍为同一受力界面及残能路径"
+  },
+  "relation_candidate": {
+    "idea": "探索不同交互对象的选择响应",
+    "status": "unknown",
+    "missing": "实际对象和选择机制"
+  },
+  "system_level_candidate": {
+    "idea": "局部保持与系统可释放研究分层",
+    "status": "unknown",
+    "missing": "功能接管与失效传播"
+  },
+  "not_claimed": "clamp or tapping robot solution; no threshold approved",
+  "handoff": [
+    "R32 mechanism realization",
+    "R38 switching experiments",
+    "R41 transitional hazards"
+  ]
+}

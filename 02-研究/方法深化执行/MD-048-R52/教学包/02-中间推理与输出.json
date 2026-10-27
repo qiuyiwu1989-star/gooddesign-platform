@@ -1,0 +1,42 @@
+{
+  "status": "teaching_decision_model_only",
+  "current_risks": {
+    "A": 50.0,
+    "B": 20.0
+  },
+  "current_action": "B",
+  "posterior_actions": [
+    {
+      "signal": "positive",
+      "probability": 0.5,
+      "posterior": [
+        0.8,
+        0.2
+      ],
+      "conditional_risks": {
+        "A": 20.0,
+        "B": 32.0
+      },
+      "action": "A"
+    },
+    {
+      "signal": "negative",
+      "probability": 0.5,
+      "posterior": [
+        0.19999999999999996,
+        0.8
+      ],
+      "conditional_risks": {
+        "A": 80.0,
+        "B": 7.999999999999998
+      },
+      "action": "B"
+    }
+  ],
+  "expected_risk_after_sample": 14.0,
+  "EVPI": 20.0,
+  "EVSI": 6.0,
+  "net_sample_value": 3.0,
+  "engineering_recommendation": null,
+  "real_customer_probabilities": false
+}

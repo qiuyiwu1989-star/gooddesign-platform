@@ -1,0 +1,25 @@
+{
+  "source_binding": {
+    "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "review_state": "first_batch_changes_requested_not_expert_approved"
+  },
+  "allowed": "R14可研究作用、R42可提出验证口径；上游仍未审核/批准",
+  "handoff_fields": [
+    "need_id",
+    "response_id",
+    "relationship_state",
+    "responsibility_role",
+    "target_source",
+    "scope and source SHA"
+  ],
+  "not_allowed": [
+    "按空白或unknown填0",
+    "把9/3/1当物理阈值",
+    "用满意偏好豁免安全/硬要求",
+    "将已分配责任误写为实际任命"
+  ],
+  "r11_relation": "Kano类别不是本包工程重要性分值；本轮没有客户Kano结果可导入"
+}

@@ -1,0 +1,40 @@
+{
+  "version": "0.1.1",
+  "primary_source": {
+    "url": "https://www.fhwa.dot.gov/ve/veproc.cfm",
+    "identity": "US Federal Highway Administration VE Process and Job Plan body, updated2017-06-27; transportation guideline, not SAVEfull standard",
+    "raw_file": "private-sources/FHWA-VE-process.html",
+    "raw_sha256": "a442f4c4323b23544c1ea0c696f3bd262539b2470e66cef28f25a03d07ec33ab",
+    "text_file": "private-sources/FHWA-VE-process.txt",
+    "text_sha256": "735da56e7851fa29a3000bda1bc53e278696d725b1ebb4b12f3bf98f63dc581a",
+    "identity_checks": {
+      "title": "The Value Engineering (VE) Process and Job Plan",
+      "publisher": "FHWA / U.S.Department of Transportation",
+      "wrong_patent_content_absent": true
+    },
+    "claims": [
+      {
+        "anchor": "providing the needed functions safely",
+        "offset": 1557,
+        "support": "consider required functions with safe/reliable performance and overall cost"
+      },
+      {
+        "anchor": "Evaluation (evaluating the best and lowest life-cycle cost alternatives)",
+        "offset": 3195,
+        "support": "life-cycle cost evaluation rather than purchase price only"
+      },
+      {
+        "anchor": "Overstating or double counting savings should be avoided",
+        "offset": 10151,
+        "support": "avoid overstatement/double counting; follow implemented outcomes"
+      }
+    ]
+  },
+  "SAVE_access": "no readable body acquired; wrongly bound patent-return source claim withdrawn",
+  "correction": {
+    "old_bad_sha256": "34f8a210e07d6987a463872f620c85fe015e4cfa5b432441109388280c36bc33",
+    "old_package_unchanged": true
+  },
+  "platform_adaptation": "original syntheticCU function/lifecycle cost calculation, not FHWA conformity or SAVE certification",
+  "not_claimed": "full original standard, quotations, customer value or expert validation"
+}

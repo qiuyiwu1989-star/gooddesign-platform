@@ -1,0 +1,110 @@
+{
+  "before_input": {
+    "schema": "fixed_double_diamond_information_fixture-1",
+    "binding": {
+      "problem_id": "TAP-TEACH-001",
+      "version": "0.1.0",
+      "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+      "upstream_method_status": "first_batch_revised_context_only_not_customer_approved"
+    },
+    "origin": "constructed_teaching_not_customer_material",
+    "prompt": "构造委托：让设备工作更快；初始偏好是提高驱动速度。",
+    "frames": [
+      {
+        "id": "FRAME-NORMAL",
+        "text": "正常作业动作占主要负担",
+        "status": "competing_hypothesis"
+      },
+      {
+        "id": "FRAME-RECOVERY",
+        "text": "异常恢复与清理占主要负担",
+        "status": "competing_hypothesis"
+      }
+    ],
+    "evidence_stage": "total_only",
+    "totals": [
+      100
+    ],
+    "segments": null,
+    "unit": "synthetic_tick_not_seconds",
+    "team_votes": {
+      "FRAME-NORMAL": 5,
+      "FRAME-RECOVERY": 0
+    },
+    "customer_approved": false,
+    "field_research_conducted": false,
+    "findings": []
+  },
+  "before": {
+    "state": "cannot_distinguish_frames",
+    "retained": [
+      "FRAME-NORMAL",
+      "FRAME-RECOVERY"
+    ],
+    "reason": "total alone has multiple decompositions; votes do not identify observed burden",
+    "customer_approved": false,
+    "next_action": "obtain_phase_defined_records",
+    "did_votes_confirm_need": false
+  },
+  "constructed_update": {
+    "schema": "fixed_double_diamond_information_fixture-1",
+    "binding": {
+      "problem_id": "TAP-TEACH-001",
+      "version": "0.1.0",
+      "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+      "upstream_method_status": "first_batch_revised_context_only_not_customer_approved"
+    },
+    "origin": "constructed_teaching_not_customer_material",
+    "prompt": "构造委托：让设备工作更快；初始偏好是提高驱动速度。",
+    "frames": [
+      {
+        "id": "FRAME-NORMAL",
+        "text": "正常作业动作占主要负担",
+        "status": "competing_hypothesis"
+      },
+      {
+        "id": "FRAME-RECOVERY",
+        "text": "异常恢复与清理占主要负担",
+        "status": "competing_hypothesis"
+      }
+    ],
+    "evidence_stage": "constructed_segment_update",
+    "totals": [
+      100
+    ],
+    "segments": [
+      {
+        "normal": 40,
+        "recovery": 60
+      }
+    ],
+    "unit": "synthetic_tick_not_seconds",
+    "team_votes": {
+      "FRAME-NORMAL": 5,
+      "FRAME-RECOVERY": 0
+    },
+    "customer_approved": false,
+    "field_research_conducted": false,
+    "findings": []
+  },
+  "after": {
+    "state": "constructed_partition_supports_provisional_focus",
+    "phase_totals": {
+      "normal": 40,
+      "recovery": 60
+    },
+    "recovery_fraction_in_constructed_table": 0.6,
+    "provisional_focus": "FRAME-RECOVERY",
+    "real_customer_frame": null,
+    "causal_finding": null,
+    "next_action": "return_to_define_then_collect_real_context",
+    "does_not_prove": [
+      "actual_tapping_frequency",
+      "performance_gain",
+      "correct_solution",
+      "customer_priority"
+    ]
+  },
+  "executed_activity": "arithmetic/declared-partition desk check, no physical observation",
+  "note": "80/20 and40/60 can share a total of100; only the declared phase split changes which focus is supported inside the table."
+}

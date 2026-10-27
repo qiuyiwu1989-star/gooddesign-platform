@@ -1,0 +1,565 @@
+{
+  "original_files_unchanged": 111,
+  "manifests": {
+    "MD-060-WB08": "c46aaa0d368afe0b184c6f1d5e96e376bab697146e12df354ae4081e9e60a882",
+    "MD-061-WB09": "5ef57b9956be6cb6dc67d10cc531a8b736037be724a1519bfd8c0364e0e1804f",
+    "MD-062-WB10": "738905ca68342d283c7066a0f6652c511dfebf8a0ece062b7fe51169c6404c9e",
+    "MD-063-WB11": "03188ebee165bf60b8f2f8882998ee2dd1cc28b6083102d19a801002659d571b",
+    "MD-064-WB12": "998a897e192d4399b5e9e2805bcc13811b3cf4e085e42bda0105f12fe21b886e"
+  },
+  "replayed": "35 fixed teaching checks passed; no author equation or full classification invented\n",
+  "probes": [
+    {
+      "name": "WB08-hide-travel-change",
+      "input": {
+        "id": "VIZ-TEACH-01",
+        "version": "0.1.0",
+        "origin": "independent_dimensionless_geometry_not_real_CAD",
+        "phenomenon": "1D projected geometric overlap only",
+        "unit": "normalized_length",
+        "obstacle": [
+          2.5,
+          3.5
+        ],
+        "moving_width": 2.0,
+        "same_test_positions": [
+          0.0,
+          0.2,
+          0.4,
+          1.0,
+          2.0
+        ],
+        "old_model": {
+          "version": "A",
+          "max_position": 2.0
+        },
+        "new_model": {
+          "version": "B",
+          "max_position": 0.4
+        },
+        "change_reason": "",
+        "dynamic_or_safety_claim": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_scope_identity_or_evidence_changed"
+      }
+    },
+    {
+      "name": "WB08-task-claim",
+      "input": {
+        "id": "VIZ-TEACH-01",
+        "version": "0.1.0",
+        "origin": "independent_dimensionless_geometry_not_real_CAD",
+        "phenomenon": "1D projected geometric overlap only",
+        "unit": "normalized_length",
+        "obstacle": [
+          2.5,
+          3.5
+        ],
+        "moving_width": 2.0,
+        "same_test_positions": [
+          0.0,
+          0.2,
+          0.4,
+          1.0,
+          2.0
+        ],
+        "old_model": {
+          "version": "A",
+          "max_position": 2.0
+        },
+        "new_model": {
+          "version": "B",
+          "max_position": 0.4
+        },
+        "change_reason": "reduce allowed travel in constructed model; task capability not verified",
+        "dynamic_or_safety_claim": true
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_scope_identity_or_evidence_changed"
+      }
+    },
+    {
+      "name": "WB09-bool-mass",
+      "input": {
+        "id": "DYN-TEACH-01",
+        "version": "0.1.0",
+        "source_scope": "author nonlinear-design direction only; no author-specific equation acquired",
+        "equation_identity": "independent normalized toy m*xdd+c*xd+k*x+alpha*x^3=F, not Wen equation",
+        "parameters": {
+          "m": true,
+          "c": 0.2,
+          "k": 1.0,
+          "alpha": 1.0
+        },
+        "initial_states": [
+          {
+            "x": 1.0,
+            "v": 0.0
+          },
+          {
+            "x": -1.0,
+            "v": 0.0
+          }
+        ],
+        "force": 0.0,
+        "identification_data": [],
+        "global_stability_claim": false,
+        "real_robot_parameter_claim": false
+      },
+      "actual": "accepted",
+      "output": {
+        "initial_condition_checks": [
+          {
+            "initial": {
+              "x": 1.0,
+              "v": 0.0
+            },
+            "initial_acceleration": -2.0,
+            "linearized_initial_acceleration": -1.0
+          },
+          {
+            "initial": {
+              "x": -1.0,
+              "v": 0.0
+            },
+            "initial_acceleration": 2.0,
+            "linearized_initial_acceleration": 1.0
+          }
+        ],
+        "not_trajectory_integration": true,
+        "unidentified_parameters": true,
+        "nonlinear_global_stability": null,
+        "required_next": [
+          "actual excitation/load and contact model",
+          "parameter identification",
+          "step/tolerance and energy checks if numerical integration",
+          "multiple initial states/excitations",
+          "professional model validation"
+        ]
+      }
+    },
+    {
+      "name": "WB09-global-claim",
+      "input": {
+        "id": "DYN-TEACH-01",
+        "version": "0.1.0",
+        "source_scope": "author nonlinear-design direction only; no author-specific equation acquired",
+        "equation_identity": "independent normalized toy m*xdd+c*xd+k*x+alpha*x^3=F, not Wen equation",
+        "parameters": {
+          "m": 1.0,
+          "c": 0.2,
+          "k": 1.0,
+          "alpha": 1.0
+        },
+        "initial_states": [
+          {
+            "x": 1.0,
+            "v": 0.0
+          },
+          {
+            "x": -1.0,
+            "v": 0.0
+          }
+        ],
+        "force": 0.0,
+        "identification_data": [],
+        "global_stability_claim": true,
+        "real_robot_parameter_claim": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_scope_identity_or_evidence_changed"
+      }
+    },
+    {
+      "name": "WB10-bool-data",
+      "input": {
+        "id": "EVAL-TEACH-01",
+        "version": "0.1.0",
+        "origin": "independent_entropy_demo_not_2006_2010_author_model",
+        "data": [
+          [
+            true,
+            5.0
+          ],
+          [
+            2.0,
+            5.0
+          ],
+          [
+            3.0,
+            5.0
+          ]
+        ],
+        "criteria": [
+          "varying_descriptive_indicator",
+          "constant_hard_requirement_context"
+        ],
+        "hard_status": [
+          "unknown",
+          "fail",
+          "unknown"
+        ],
+        "subjective_value_weights": null,
+        "fuzzy_memberships": null,
+        "overall_quality": null,
+        "author_versions": {
+          "2006": "three-optimization fuzzy evaluation selected title/abstract/figure only",
+          "2008": "model full text not acquired",
+          "2010": "entropy plus subjective weights abstract only",
+          "2019": "five inspection methods not substituted for earlier algorithms"
+        },
+        "threeA_equals_fiveA": false
+      },
+      "actual": "accepted",
+      "output": {
+        "entropy_demo": [
+          {
+            "entropy": 0.920619835714305,
+            "dispersion": 0.07938016428569505
+          },
+          {
+            "entropy": 0.9999999999999998,
+            "dispersion": 2.220446049250313e-16
+          }
+        ],
+        "dispersion_weights": [
+          0.9999999999999972,
+          2.797230352482968e-15
+        ],
+        "customer_value_weights": null,
+        "fuzzy_aggregation": null,
+        "quality_rank": null,
+        "hard_fail_candidate_indices": [
+          1
+        ],
+        "hard_unknown_candidate_indices": [
+          0,
+          2
+        ],
+        "meaning": "constant indicator can receive zero dispersion without losing hard-requirement status; no 3A/5A merge"
+      }
+    },
+    {
+      "name": "WB10-hard-as-soft",
+      "input": {
+        "id": "EVAL-TEACH-01",
+        "version": "0.1.0",
+        "origin": "independent_entropy_demo_not_2006_2010_author_model",
+        "data": [
+          [
+            1.0,
+            5.0
+          ],
+          [
+            2.0,
+            5.0
+          ],
+          [
+            3.0,
+            5.0
+          ]
+        ],
+        "criteria": [
+          "varying_descriptive_indicator",
+          "constant_hard_requirement_context"
+        ],
+        "hard_status": [
+          "pass",
+          "pass",
+          "pass"
+        ],
+        "subjective_value_weights": null,
+        "fuzzy_memberships": null,
+        "overall_quality": null,
+        "author_versions": {
+          "2006": "three-optimization fuzzy evaluation selected title/abstract/figure only",
+          "2008": "model full text not acquired",
+          "2010": "entropy plus subjective weights abstract only",
+          "2019": "five inspection methods not substituted for earlier algorithms"
+        },
+        "threeA_equals_fiveA": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_scope_identity_or_evidence_changed"
+      }
+    },
+    {
+      "name": "WB11-domain-activate",
+      "input": {
+        "id": "RULE-TEACH-01",
+        "version": "0.1.0",
+        "origin": "platform_typed_rules_not_author_expert_system",
+        "rules": [
+          {
+            "id": "P1",
+            "type": "principle",
+            "statement": "考虑全局与协调的治理提醒",
+            "executable": false,
+            "trigger": null,
+            "action": "提出需要协调的问题",
+            "responsibility": "研究负责人待指定"
+          },
+          {
+            "id": "PR1",
+            "type": "procedure",
+            "statement": "测量依据未取得时返回补证",
+            "executable": true,
+            "trigger": "measurement_evidence_missing",
+            "action": "request_measurement_evidence",
+            "responsibility": "研究执行角色待指定"
+          },
+          {
+            "id": "D1",
+            "type": "domain_causal_rule",
+            "statement": "某结构在某载荷必然安全（仅待审候选）",
+            "executable": true,
+            "trigger": null,
+            "action": null,
+            "source_evidence": null,
+            "responsibility": "机械专业待核"
+          }
+        ],
+        "facts": {
+          "measurement_evidence_missing": true
+        },
+        "actual_author_system_execution": false,
+        "expert_certified": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_scope_identity_or_evidence_changed"
+      }
+    },
+    {
+      "name": "WB11-fact-invented",
+      "input": {
+        "id": "RULE-TEACH-01",
+        "version": "0.1.0",
+        "origin": "platform_typed_rules_not_author_expert_system",
+        "rules": [
+          {
+            "id": "P1",
+            "type": "principle",
+            "statement": "考虑全局与协调的治理提醒",
+            "executable": false,
+            "trigger": null,
+            "action": "提出需要协调的问题",
+            "responsibility": "研究负责人待指定"
+          },
+          {
+            "id": "PR1",
+            "type": "procedure",
+            "statement": "测量依据未取得时返回补证",
+            "executable": true,
+            "trigger": "measurement_evidence_missing",
+            "action": "request_measurement_evidence",
+            "responsibility": "研究执行角色待指定"
+          },
+          {
+            "id": "D1",
+            "type": "domain_causal_rule",
+            "statement": "某结构在某载荷必然安全（仅待审候选）",
+            "executable": false,
+            "trigger": null,
+            "action": null,
+            "source_evidence": null,
+            "responsibility": "机械专业待核"
+          }
+        ],
+        "facts": {
+          "measurement_evidence_missing": false
+        },
+        "actual_author_system_execution": false,
+        "expert_certified": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_scope_identity_or_evidence_changed"
+      }
+    },
+    {
+      "name": "WB12-fake-alias",
+      "input": {
+        "id": "GRAPH-TEACH-01",
+        "version": "0.1.0",
+        "origin": "evidence_identity_graph_not_author_full_classification",
+        "nodes": [
+          {
+            "id": "DOC-2006",
+            "type": "source",
+            "identity": "2006三化质量评价论文"
+          },
+          {
+            "id": "DOC-2010",
+            "type": "source",
+            "identity": "2010熵权广义质量论文"
+          },
+          {
+            "id": "DOC-2019",
+            "type": "source",
+            "identity": "2019作者署名自述"
+          },
+          {
+            "id": "THREEA-2006",
+            "type": "framework_label",
+            "identity": "三化，定义需保留年份"
+          },
+          {
+            "id": "FIVEA-2019",
+            "type": "framework_label",
+            "identity": "五种检验方式，非三化别名"
+          },
+          {
+            "id": "CAT-70PLUS",
+            "type": "unresolved_classification",
+            "identity": "七类70余种对应表未取得"
+          }
+        ],
+        "edges": [
+          {
+            "from": "DOC-2006",
+            "to": "THREEA-2006",
+            "relation": "discusses",
+            "evidence": "PDF1 title/abstract/figure"
+          },
+          {
+            "from": "DOC-2019",
+            "to": "FIVEA-2019",
+            "relation": "author_mentions",
+            "evidence": "署名自述 selected passage"
+          },
+          {
+            "from": "DOC-2010",
+            "to": "DOC-2006",
+            "relation": "related_topic_not_identity",
+            "evidence": "different title/year/weighting scope"
+          }
+        ],
+        "auto_same_as": [
+          [
+            "THREEA-2006",
+            "FIVEA-2019"
+          ]
+        ],
+        "author_seven_category_table": null,
+        "full_70plus_mapping": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_scope_identity_or_evidence_changed"
+      }
+    },
+    {
+      "name": "WB12-unknown-to-seven",
+      "input": {
+        "id": "GRAPH-TEACH-01",
+        "version": "0.1.0",
+        "origin": "evidence_identity_graph_not_author_full_classification",
+        "nodes": [
+          {
+            "id": "DOC-2006",
+            "type": "source",
+            "identity": "2006三化质量评价论文"
+          },
+          {
+            "id": "DOC-2010",
+            "type": "source",
+            "identity": "2010熵权广义质量论文"
+          },
+          {
+            "id": "DOC-2019",
+            "type": "source",
+            "identity": "2019作者署名自述"
+          },
+          {
+            "id": "THREEA-2006",
+            "type": "framework_label",
+            "identity": "三化，定义需保留年份"
+          },
+          {
+            "id": "FIVEA-2019",
+            "type": "framework_label",
+            "identity": "五种检验方式，非三化别名"
+          },
+          {
+            "id": "CAT-70PLUS",
+            "type": "unresolved_classification",
+            "identity": "七类70余种对应表未取得"
+          }
+        ],
+        "edges": [
+          {
+            "from": "DOC-2006",
+            "to": "THREEA-2006",
+            "relation": "discusses",
+            "evidence": "PDF1 title/abstract/figure"
+          },
+          {
+            "from": "DOC-2019",
+            "to": "FIVEA-2019",
+            "relation": "author_mentions",
+            "evidence": "署名自述 selected passage"
+          },
+          {
+            "from": "DOC-2010",
+            "to": "DOC-2006",
+            "relation": "related_topic_not_identity",
+            "evidence": "different title/year/weighting scope"
+          }
+        ],
+        "auto_same_as": [],
+        "author_seven_category_table": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A"
+        ],
+        "full_70plus_mapping": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "frozen_scope_identity_or_evidence_changed"
+      }
+    }
+  ],
+  "manifest_entry_checks": [
+    {
+      "task": "MD-060-WB08",
+      "manifest_entries_checked": 20,
+      "hashes_match": true,
+      "private_originals_excluded": true
+    },
+    {
+      "task": "MD-061-WB09",
+      "manifest_entries_checked": 18,
+      "hashes_match": true,
+      "private_originals_excluded": true
+    },
+    {
+      "task": "MD-062-WB10",
+      "manifest_entries_checked": 18,
+      "hashes_match": true,
+      "private_originals_excluded": true
+    },
+    {
+      "task": "MD-063-WB11",
+      "manifest_entries_checked": 18,
+      "hashes_match": true,
+      "private_originals_excluded": true
+    },
+    {
+      "task": "MD-064-WB12",
+      "manifest_entries_checked": 18,
+      "hashes_match": true,
+      "private_originals_excluded": true
+    }
+  ]
+}

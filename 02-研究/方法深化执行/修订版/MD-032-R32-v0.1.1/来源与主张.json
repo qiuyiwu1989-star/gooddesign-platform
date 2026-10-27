@@ -1,0 +1,42 @@
+{
+  "method": "R32",
+  "source_identity": "Dan Frey MIT2.007 Mechanisms: Kinematic Analysis and Synthesis 24FEB2009",
+  "source_url": "https://ocw.mit.edu/courses/2-007-design-and-manufacturing-i-spring-2009/3ad37424e0a9ae4ef3350892aa492ebe_MIT2_007s09_lec06.pdf",
+  "selected_read_scope": "38-page PDF selected PDF pages8-15,27,32,35-37; pages27 and32 visually inspected locally",
+  "claims": [
+    {
+      "id": "C32-01",
+      "source_url": "https://ocw.mit.edu/courses/2-007-design-and-manufacturing-i-spring-2009/3ad37424e0a9ae4ef3350892aa492ebe_MIT2_007s09_lec06.pdf",
+      "locator": "PDF p8,11-12",
+      "supported_claim": "analysis/synthesis distinction, generic planar mobility and redundancy caveat",
+      "support_level": "selected_primary_passage",
+      "not_supported": "platform fixture empirical validity or customer suitability"
+    },
+    {
+      "id": "C32-02",
+      "source_url": "https://ocw.mit.edu/courses/2-007-design-and-manufacturing-i-spring-2009/3ad37424e0a9ae4ef3350892aa492ebe_MIT2_007s09_lec06.pdf",
+      "locator": "PDF p27 Redundancy",
+      "supported_claim": "constraint counting can fail with redundant relations",
+      "support_level": "selected_primary_passage",
+      "not_supported": "platform fixture empirical validity or customer suitability"
+    },
+    {
+      "id": "C32-03",
+      "source_url": "https://ocw.mit.edu/courses/2-007-design-and-manufacturing-i-spring-2009/3ad37424e0a9ae4ef3350892aa492ebe_MIT2_007s09_lec06.pdf",
+      "locator": "PDF p32 3 Position Synthesis; p35-37",
+      "supported_claim": "three positions/two attachment points/graphical fourbar; mathematical transformations as route",
+      "support_level": "selected_primary_passage",
+      "not_supported": "platform fixture empirical validity or customer suitability"
+    }
+  ],
+  "source_raw_sha256": "4e768baca407947fbddf58bdc3ce3f9432b545903e5ec5e58c5522653abdde0c",
+  "platform_adaptation": "independent special parallelogram dimensional synthesis and finite sampled geometry; source does not certify our solver",
+  "originals_private": true,
+  "full_monograph_read": false,
+  "gaps": [
+    "not arbitrary topology synthesis",
+    "real envelopes/thickness/load unknown",
+    "finite scan not continuous certificate",
+    "no actual mechanism or robotics experiment"
+  ]
+}

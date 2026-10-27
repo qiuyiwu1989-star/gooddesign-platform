@@ -1,0 +1,51 @@
+{
+  "sources": [
+    {
+      "id": "S-R23-01",
+      "title": "MATRIZ Level 1 Training Manual",
+      "url": "https://matriz.org/wp-content/uploads/2019/01/Level-1-Manual-Word.pdf",
+      "identity": "MATRIZ-hosted GEN-TRIZ training publication, not Altshuller original edition",
+      "raw_file": "private-sources/source.pdf",
+      "sha256": "42805c3966cc4bd32b73c95f97b2b6c3c58245ce9d29539eccc31521fa910b67",
+      "text_sha256": "32a540abaaffa6d7d67212806c9926ea0934bdc4bea27e88389270651e9aeef7",
+      "pdf_pages": 129,
+      "rights": "page1 commercial reproduction/derivative limitation; no permission inferred",
+      "read_pages": [
+        1,
+        53,
+        54,
+        56,
+        59,
+        62,
+        64
+      ],
+      "claims": [
+        {
+          "id": "C01",
+          "locator": "PDF53",
+          "claim": "physical contradiction uses opposite demands on a single parameter; engineering contrast uses two"
+        },
+        {
+          "id": "C02",
+          "locator": "PDF54,56,59",
+          "claim": "space and time separation require different positions/times"
+        },
+        {
+          "id": "C03",
+          "locator": "PDF62,64",
+          "claim": "relation and system level distinguish interaction systems or hierarchy"
+        }
+      ]
+    }
+  ],
+  "platform_adaptation": [
+    "strict interval gap check and unknown propagation",
+    "equality treated insufficient without uncertainty margin",
+    "new clamp and document cases authored, not source examples"
+  ],
+  "not_verified": [
+    "all separation rules",
+    "customer parameters",
+    "engineering feasibility"
+  ]
+}

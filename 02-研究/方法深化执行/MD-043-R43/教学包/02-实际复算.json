@@ -1,0 +1,613 @@
+{
+  "cases": [
+    {
+      "name": "全服务替换反转只看机身结论",
+      "input": {
+        "id": "R43-REPLACE-TEACH-001",
+        "origin": "synthetic_burden_units_not_emission_database",
+        "functional_unit": {
+          "service": "provide same hypothetical fixture function",
+          "duration_years": 10.0,
+          "work_cycles": 100000,
+          "performance_equivalence": "assumed_only_for_separate_teaching_math"
+        },
+        "boundary": [
+          "production",
+          "transport",
+          "use",
+          "repair",
+          "end_of_life"
+        ],
+        "allocation": "no_coproduct_in_constructed_model",
+        "impact_unit": "arbitrary_BU_not_kgCO2e",
+        "alternatives": [
+          {
+            "id": "A",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 5.0,
+            "per_device_production_BU": 100.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          },
+          {
+            "id": "B",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 2.0,
+            "per_device_production_BU": 60.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          }
+        ],
+        "numbers": "arbitrary arithmetic counterexample, zero other burdens are explicit toy assumptions, not missing field data"
+      },
+      "actual": {
+        "status": "synthetic_boundary_calculation_only",
+        "rows": [
+          {
+            "id": "A",
+            "whole_devices_for_service": 2,
+            "production_for_FU_BU": 200.0,
+            "other_for_FU_BU": 0.0,
+            "total_constructed_BU": 200.0
+          },
+          {
+            "id": "B",
+            "whole_devices_for_service": 5,
+            "production_for_FU_BU": 300.0,
+            "other_for_FU_BU": 0.0,
+            "total_constructed_BU": 300.0
+          }
+        ],
+        "arithmetic_rank": [
+          "A",
+          "B"
+        ],
+        "real_environmental_ranking": null,
+        "climate_benefit_kgCO2e": null,
+        "not_ISO_LCA_compliance": true
+      },
+      "passed": true
+    },
+    {
+      "name": "寿命敏感性反转",
+      "input": {
+        "id": "R43-REPLACE-TEACH-001",
+        "origin": "synthetic_burden_units_not_emission_database",
+        "functional_unit": {
+          "service": "provide same hypothetical fixture function",
+          "duration_years": 10.0,
+          "work_cycles": 100000,
+          "performance_equivalence": "assumed_only_for_separate_teaching_math"
+        },
+        "boundary": [
+          "production",
+          "transport",
+          "use",
+          "repair",
+          "end_of_life"
+        ],
+        "allocation": "no_coproduct_in_constructed_model",
+        "impact_unit": "arbitrary_BU_not_kgCO2e",
+        "alternatives": [
+          {
+            "id": "A",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 5.0,
+            "per_device_production_BU": 100.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          },
+          {
+            "id": "B",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 5.0,
+            "per_device_production_BU": 60.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          }
+        ],
+        "numbers": "arbitrary arithmetic counterexample, zero other burdens are explicit toy assumptions, not missing field data"
+      },
+      "actual": {
+        "status": "synthetic_boundary_calculation_only",
+        "rows": [
+          {
+            "id": "A",
+            "whole_devices_for_service": 2,
+            "production_for_FU_BU": 200.0,
+            "other_for_FU_BU": 0.0,
+            "total_constructed_BU": 200.0
+          },
+          {
+            "id": "B",
+            "whole_devices_for_service": 2,
+            "production_for_FU_BU": 120.0,
+            "other_for_FU_BU": 0.0,
+            "total_constructed_BU": 120.0
+          }
+        ],
+        "arithmetic_rank": [
+          "B",
+          "A"
+        ],
+        "real_environmental_ranking": null,
+        "climate_benefit_kgCO2e": null,
+        "not_ISO_LCA_compliance": true
+      },
+      "passed": true
+    },
+    {
+      "name": "缺使用清单不能零填",
+      "input": {
+        "id": "R43-REPLACE-TEACH-001",
+        "origin": "synthetic_burden_units_not_emission_database",
+        "functional_unit": {
+          "service": "provide same hypothetical fixture function",
+          "duration_years": 10.0,
+          "work_cycles": 100000,
+          "performance_equivalence": "assumed_only_for_separate_teaching_math"
+        },
+        "boundary": [
+          "production",
+          "transport",
+          "use",
+          "repair",
+          "end_of_life"
+        ],
+        "allocation": "no_coproduct_in_constructed_model",
+        "impact_unit": "arbitrary_BU_not_kgCO2e",
+        "alternatives": [
+          {
+            "id": "A",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 5.0,
+            "per_device_production_BU": 100.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          },
+          {
+            "id": "B",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 2.0,
+            "per_device_production_BU": 60.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": null,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          }
+        ],
+        "numbers": "arbitrary arithmetic counterexample, zero other burdens are explicit toy assumptions, not missing field data"
+      },
+      "actual": {
+        "status": "inventory_unknown",
+        "ranking": null
+      },
+      "passed": true
+    },
+    {
+      "name": "服务不同不适用",
+      "input": {
+        "id": "R43-REPLACE-TEACH-001",
+        "origin": "synthetic_burden_units_not_emission_database",
+        "functional_unit": {
+          "service": "provide same hypothetical fixture function",
+          "duration_years": 10.0,
+          "work_cycles": 100000,
+          "performance_equivalence": "assumed_only_for_separate_teaching_math"
+        },
+        "boundary": [
+          "production",
+          "transport",
+          "use",
+          "repair",
+          "end_of_life"
+        ],
+        "allocation": "no_coproduct_in_constructed_model",
+        "impact_unit": "arbitrary_BU_not_kgCO2e",
+        "alternatives": [
+          {
+            "id": "A",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 5.0,
+            "per_device_production_BU": 100.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          },
+          {
+            "id": "B",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 1000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 2.0,
+            "per_device_production_BU": 60.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          }
+        ],
+        "numbers": "arbitrary arithmetic counterexample, zero other burdens are explicit toy assumptions, not missing field data"
+      },
+      "actual": {
+        "status": "goal_boundary_not_comparable",
+        "ranking": null
+      },
+      "passed": true
+    },
+    {
+      "name": "恰一台边界",
+      "input": {
+        "id": "R43-REPLACE-TEACH-001",
+        "origin": "synthetic_burden_units_not_emission_database",
+        "functional_unit": {
+          "service": "provide same hypothetical fixture function",
+          "duration_years": 10.0,
+          "work_cycles": 100000,
+          "performance_equivalence": "assumed_only_for_separate_teaching_math"
+        },
+        "boundary": [
+          "production",
+          "transport",
+          "use",
+          "repair",
+          "end_of_life"
+        ],
+        "allocation": "no_coproduct_in_constructed_model",
+        "impact_unit": "arbitrary_BU_not_kgCO2e",
+        "alternatives": [
+          {
+            "id": "A",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 10.0,
+            "per_device_production_BU": 100.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          },
+          {
+            "id": "B",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 2.0,
+            "per_device_production_BU": 60.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          }
+        ],
+        "numbers": "arbitrary arithmetic counterexample, zero other burdens are explicit toy assumptions, not missing field data"
+      },
+      "actual": {
+        "status": "synthetic_boundary_calculation_only",
+        "rows": [
+          {
+            "id": "A",
+            "whole_devices_for_service": 1,
+            "production_for_FU_BU": 100.0,
+            "other_for_FU_BU": 0.0,
+            "total_constructed_BU": 100.0
+          },
+          {
+            "id": "B",
+            "whole_devices_for_service": 5,
+            "production_for_FU_BU": 300.0,
+            "other_for_FU_BU": 0.0,
+            "total_constructed_BU": 300.0
+          }
+        ],
+        "arithmetic_rank": [
+          "A",
+          "B"
+        ],
+        "real_environmental_ranking": null,
+        "climate_benefit_kgCO2e": null,
+        "not_ISO_LCA_compliance": true
+      },
+      "passed": true
+    },
+    {
+      "name": "删边界冲突",
+      "input": {
+        "id": "R43-REPLACE-TEACH-001",
+        "origin": "synthetic_burden_units_not_emission_database",
+        "functional_unit": {
+          "service": "provide same hypothetical fixture function",
+          "duration_years": 10.0,
+          "work_cycles": 100000,
+          "performance_equivalence": "assumed_only_for_separate_teaching_math"
+        },
+        "boundary": [
+          "production",
+          "transport",
+          "use",
+          "repair",
+          "end_of_life"
+        ],
+        "allocation": "no_coproduct_in_constructed_model",
+        "impact_unit": "arbitrary_BU_not_kgCO2e",
+        "alternatives": [
+          {
+            "id": "A",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 5.0,
+            "per_device_production_BU": 100.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          },
+          {
+            "id": "B",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production"
+            ],
+            "service_life_years": 2.0,
+            "per_device_production_BU": 60.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          }
+        ],
+        "numbers": "arbitrary arithmetic counterexample, zero other burdens are explicit toy assumptions, not missing field data"
+      },
+      "actual": {
+        "status": "goal_boundary_not_comparable",
+        "ranking": null
+      },
+      "passed": true
+    },
+    {
+      "name": "展示支架另一情境寿命未知",
+      "input": {
+        "id": "DISPLAY-REPLACE-TEACH",
+        "origin": "synthetic_burden_units_not_emission_database",
+        "functional_unit": {
+          "service": "provide same hypothetical fixture function",
+          "duration_years": 10.0,
+          "work_cycles": 100000,
+          "performance_equivalence": "assumed_only_for_separate_teaching_math"
+        },
+        "boundary": [
+          "production",
+          "transport",
+          "use",
+          "repair",
+          "end_of_life"
+        ],
+        "allocation": "no_coproduct_in_constructed_model",
+        "impact_unit": "arbitrary_BU_not_kgCO2e",
+        "alternatives": [
+          {
+            "id": "A",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": 5.0,
+            "per_device_production_BU": 100.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          },
+          {
+            "id": "B",
+            "functional_unit": {
+              "service": "provide same hypothetical fixture function",
+              "duration_years": 10.0,
+              "work_cycles": 100000,
+              "performance_equivalence": "assumed_only_for_separate_teaching_math"
+            },
+            "boundary": [
+              "production",
+              "transport",
+              "use",
+              "repair",
+              "end_of_life"
+            ],
+            "service_life_years": null,
+            "per_device_production_BU": 60.0,
+            "total_service_other_BU": {
+              "transport": 0.0,
+              "use": 0.0,
+              "repair": 0.0,
+              "end_of_life": 0.0
+            }
+          }
+        ],
+        "numbers": "arbitrary arithmetic counterexample, zero other burdens are explicit toy assumptions, not missing field data"
+      },
+      "actual": {
+        "status": "inventory_unknown",
+        "ranking": null
+      },
+      "passed": true
+    }
+  ],
+  "count": 7
+}

@@ -1,0 +1,164 @@
+{
+  "replayed": [
+    {
+      "method": "MD-021-R23-v0.1.1",
+      "count": 12,
+      "manifest_sha256": "c6b909833b0592fd4b7312b5dc69c565860b15123373c3b5730facc2464c3c2e"
+    },
+    {
+      "method": "MD-023-R25-v0.1.1",
+      "count": 12,
+      "manifest_sha256": "d7cf95515a48dee0fd11ccd33be8d4a6c70bdc0c833deff0db953626fc6eeadf"
+    },
+    {
+      "method": "MD-025-R27-v0.1.1",
+      "count": 13,
+      "manifest_sha256": "ff951e66b841fee8811e44573e9cd6344ffd6094ca86c4811e3abb8fe1dad025"
+    },
+    {
+      "method": "MD-033-R33-v0.1.1",
+      "count": 14,
+      "manifest_sha256": "31f4f96eda53dae5411ba434f19c9133a4b5d3397ffcf4c2abca81a958a44524"
+    },
+    {
+      "method": "MD-034-R34-v0.1.1",
+      "count": 16,
+      "manifest_sha256": "1ecea1833a639d32ef91a7a649ff914ab117f5ce623524815f2e904730a0e754"
+    }
+  ],
+  "probes": [
+    {
+      "method": "R23",
+      "name": "old-arbitrary-directions",
+      "out": null,
+      "error": "supported opposite domain is high/low only"
+    },
+    {
+      "method": "R23",
+      "name": "old-negative-switch",
+      "out": null,
+      "error": "invalid switch time"
+    },
+    {
+      "method": "R23",
+      "name": "old-reversed-interval",
+      "out": null,
+      "error": "invalid finite nonnegative ordered interval"
+    },
+    {
+      "method": "R23",
+      "name": "new-empty-object",
+      "out": {
+        "status": "time_separation_research_candidate",
+        "gap_s": 2,
+        "switch_time_s": 1,
+        "engineering_validated": false,
+        "required_checks": [
+          "residual energy",
+          "switch sensing",
+          "failure state",
+          "orientation and load",
+          "tolerance and margin"
+        ]
+      },
+      "error": null
+    },
+    {
+      "method": "R25",
+      "name": "old-empty-role",
+      "out": null,
+      "error": "explicit nonblank role mapping required"
+    },
+    {
+      "method": "R25",
+      "name": "old-nonmapping",
+      "out": null,
+      "error": "explicit nonblank role mapping required"
+    },
+    {
+      "method": "R27",
+      "name": "old-fake-query",
+      "out": null,
+      "error": "query ID closure failed"
+    },
+    {
+      "method": "R27",
+      "name": "old-erased-unknowns",
+      "out": null,
+      "error": "target unknown registry changed or unsupported property evidence"
+    },
+    {
+      "method": "R27",
+      "name": "old-numeric-latex",
+      "out": null,
+      "error": "target unknown registry changed or unsupported property evidence"
+    },
+    {
+      "method": "R27",
+      "name": "new-empty-differences-content",
+      "out": {
+        "status": "transfer_research_only",
+        "unknown_target_properties": [
+          "viscosity_Pa_s",
+          "wetting_contact_angle_deg",
+          "required_flow_m3_s",
+          "coagulation_time_s",
+          "cleaning_acceptance"
+        ],
+        "source_evidence": "original_experiment",
+        "source_success_not_target_success": true,
+        "ranking": "not_established"
+      },
+      "error": null
+    },
+    {
+      "method": "R33",
+      "name": "old-NaN-temperature",
+      "out": null,
+      "error": "finite nonboolean service temperature required"
+    },
+    {
+      "method": "R33",
+      "name": "new-bool-temperature",
+      "out": null,
+      "error": "finite nonboolean service temperature required"
+    },
+    {
+      "method": "R34",
+      "name": "old-negative-qty",
+      "out": null,
+      "error": "positive nonboolean integer quantity required"
+    },
+    {
+      "method": "R34",
+      "name": "old-string-service",
+      "out": null,
+      "error": "explicit service booleans required"
+    },
+    {
+      "method": "R34",
+      "name": "new-duplicate-BOM-ID",
+      "out": {
+        "status": "constructed_action_sum_only",
+        "part_count": 3,
+        "candidate_consolidation_ids": [],
+        "cycle_time_s": 10.0,
+        "line_takt_time_s": null,
+        "total_cost": null,
+        "engineering_validated": false,
+        "not_included": [
+          "parallel work",
+          "queues",
+          "yield",
+          "rework",
+          "tool availability",
+          "operator fatigue",
+          "real cycle observations"
+        ]
+      },
+      "error": null
+    }
+  ],
+  "original_bytes_unchanged": true,
+  "scope": "independent bounded audit, not expert certification"
+}

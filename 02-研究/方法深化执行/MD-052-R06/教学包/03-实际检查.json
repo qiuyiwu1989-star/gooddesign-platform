@@ -1,0 +1,266 @@
+[
+  {
+    "name": "normal_unknown_hazard",
+    "class": "正常",
+    "input": {
+      "origin": "constructed_gate_advice_not_organizational_authorization",
+      "gate": "G-RESEARCH-001",
+      "hard_safety": "unknown",
+      "business_case": "promising_hypothesis",
+      "evidence_state": "incomplete",
+      "scope_requested": "physical_prototype",
+      "resource_proposal": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "actual_gatekeepers": [],
+      "actual_authorization": false,
+      "score_override": false
+    },
+    "output": {
+      "advisory_outcome": "Hold",
+      "reason": "unknown hard safety cannot be offset by forecast benefit",
+      "proposed_resource_limit": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "authorized_resource": null,
+      "actual_gate_decision": null,
+      "scope_permitted_by_this_script": null,
+      "reviewer_needed": "cross_functional_authority_and_domain_review",
+      "not_a_safety_waiver": true
+    },
+    "actual": "Hold",
+    "expected": "Hold",
+    "pass": true
+  },
+  {
+    "name": "revisable_packet",
+    "class": "缺材料",
+    "input": {
+      "origin": "constructed_gate_advice_not_organizational_authorization",
+      "gate": "G-RESEARCH-001",
+      "hard_safety": "unknown",
+      "business_case": "promising_hypothesis",
+      "evidence_state": "revisable",
+      "scope_requested": "physical_prototype",
+      "resource_proposal": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "actual_gatekeepers": [],
+      "actual_authorization": false,
+      "score_override": false
+    },
+    "output": {
+      "advisory_outcome": "Recycle",
+      "reason": "return to revise task/model before new commitment",
+      "proposed_resource_limit": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "authorized_resource": null,
+      "actual_gate_decision": null,
+      "scope_permitted_by_this_script": null,
+      "reviewer_needed": "cross_functional_authority_and_domain_review",
+      "not_a_safety_waiver": true
+    },
+    "actual": "Recycle",
+    "expected": "Recycle",
+    "pass": true
+  },
+  {
+    "name": "no_constructed_value",
+    "class": "边界",
+    "input": {
+      "origin": "constructed_gate_advice_not_organizational_authorization",
+      "gate": "G-RESEARCH-001",
+      "hard_safety": "unknown",
+      "business_case": "no_value_in_fixture",
+      "evidence_state": "incomplete",
+      "scope_requested": "physical_prototype",
+      "resource_proposal": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "actual_gatekeepers": [],
+      "actual_authorization": false,
+      "score_override": false
+    },
+    "output": {
+      "advisory_outcome": "Kill",
+      "reason": "constructed value rationale absent; organizational decision still required",
+      "proposed_resource_limit": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "authorized_resource": null,
+      "actual_gate_decision": null,
+      "scope_permitted_by_this_script": null,
+      "reviewer_needed": "cross_functional_authority_and_domain_review",
+      "not_a_safety_waiver": true
+    },
+    "actual": "Kill",
+    "expected": "Kill",
+    "pass": true
+  },
+  {
+    "name": "all_fixture_assumptions_met",
+    "class": "边界",
+    "input": {
+      "origin": "constructed_gate_advice_not_organizational_authorization",
+      "gate": "G-RESEARCH-001",
+      "hard_safety": "pass_in_fixture",
+      "business_case": "promising_hypothesis",
+      "evidence_state": "sufficient_in_fixture",
+      "scope_requested": "physical_prototype",
+      "resource_proposal": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "actual_gatekeepers": [],
+      "actual_authorization": false,
+      "score_override": false
+    },
+    "output": {
+      "advisory_outcome": "Go",
+      "reason": "only within declared fixed fixture, not real authorization",
+      "proposed_resource_limit": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "authorized_resource": null,
+      "actual_gate_decision": null,
+      "scope_permitted_by_this_script": null,
+      "reviewer_needed": "cross_functional_authority_and_domain_review",
+      "not_a_safety_waiver": true
+    },
+    "actual": "Go",
+    "expected": "Go",
+    "pass": true
+  },
+  {
+    "name": "profit_cannot_override_safety",
+    "class": "冲突",
+    "input": {
+      "origin": "constructed_gate_advice_not_organizational_authorization",
+      "gate": "G-RESEARCH-001",
+      "hard_safety": "unknown",
+      "business_case": "promising_hypothesis",
+      "evidence_state": "incomplete",
+      "scope_requested": "physical_prototype",
+      "resource_proposal": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "actual_gatekeepers": [],
+      "actual_authorization": false,
+      "score_override": true
+    },
+    "output": {
+      "error": "false_authorization_or_score_waiver"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "actual_authorization",
+    "class": "不适用",
+    "input": {
+      "origin": "constructed_gate_advice_not_organizational_authorization",
+      "gate": "G-RESEARCH-001",
+      "hard_safety": "unknown",
+      "business_case": "promising_hypothesis",
+      "evidence_state": "incomplete",
+      "scope_requested": "physical_prototype",
+      "resource_proposal": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "actual_gatekeepers": [],
+      "actual_authorization": true,
+      "score_override": false
+    },
+    "output": {
+      "error": "false_authorization_or_score_waiver"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "erase_owner",
+    "class": "缺材料",
+    "input": {
+      "origin": "constructed_gate_advice_not_organizational_authorization",
+      "gate": "G-RESEARCH-001",
+      "hard_safety": "unknown",
+      "business_case": "promising_hypothesis",
+      "evidence_state": "incomplete",
+      "scope_requested": "physical_prototype",
+      "resource_proposal": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "actual_gatekeepers": [],
+      "actual_authorization": false,
+      "score_override": false
+    },
+    "output": {
+      "error": "unbound_resources_owner_or_review"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "physical_scope_drift",
+    "class": "冲突",
+    "input": {
+      "origin": "constructed_gate_advice_not_organizational_authorization",
+      "gate": "G-RESEARCH-001",
+      "hard_safety": "unknown",
+      "business_case": "promising_hypothesis",
+      "evidence_state": "incomplete",
+      "scope_requested": "market_release",
+      "resource_proposal": {
+        "unit": "synthetic_person_hour_not_actual_budget",
+        "cap": 24,
+        "owner_role": "research_lead_unassigned",
+        "review_trigger": "before any physical actuation or new evidence"
+      },
+      "actual_gatekeepers": [],
+      "actual_authorization": false,
+      "score_override": false
+    },
+    "output": {
+      "error": "scope_identity"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  }
+]

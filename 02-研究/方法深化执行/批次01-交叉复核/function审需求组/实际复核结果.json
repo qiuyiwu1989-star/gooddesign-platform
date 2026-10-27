@@ -1,0 +1,880 @@
+{
+  "reviewer": "function_deepening independent Agent (not domain expert)",
+  "manifest_verification": [
+    {
+      "package": "MD-001-R48",
+      "manifest_sha256": "41f5bd091d956bc4cdf421911d0c0c5740e71afc3c0c82c954f5087cb9d30efb",
+      "files_verified": 14
+    },
+    {
+      "package": "MD-002-R08",
+      "manifest_sha256": "50c3b6d6224b5c8b9792dda93d5f01988019e72ee4cb19999561235f6a0788d1",
+      "files_verified": 13
+    }
+  ],
+  "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+  "isolated_original_rebuild_logs": {
+    "MD-002-R08": "{\"events\": {\"note_count\": 6, \"independent_constructed_event_count\": 3, \"independent_events\": [\"EV-T01\", \"EV-T02\", \"EV-T03\"], \"source_representations_for_EV_T01\": 3, \"generic_opinions_not_counted\": 1, \"customer_findings\": [], \"status\": \"fixed_fixture_structure_checked_not_field_validated\"}, \"executed_tests\": 11, \"transfer\": \"3 representations / 2 events checked\"}\n",
+    "MD-001-R48": "{\"result\": {\"status\": \"research_draft_structure_and_declared_fidelity_passed\", \"requirement_candidates\": 4, \"all_incomplete\": true, \"ready_for_customer_baseline\": false, \"permitted_next_action\": \"function_research_with_unknowns\", \"does_not_check\": [\"arbitrary_text_semantic_correctness\", \"customer_truth\", \"physical_feasibility\", \"actual_measurability\", \"safety\"]}, \"executed_tests\": 10, \"transfer\": \"classification desk check passed\"}\n"
+  },
+  "probes": [
+    {
+      "id": "R48-unsupported-text-with-valid-labels",
+      "method": "MD-001-R48",
+      "status": "accepted",
+      "input": {
+        "schema": "fixed_requirements_research_draft-1",
+        "problem_id": "TAP-TEACH-001",
+        "draft_version": "0.1.0",
+        "source_binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+        },
+        "evidence_binding": {
+          "path": "../../MD-002-R08/教学包/03-竞争解释与修订.json",
+          "sha256": "7b4d25ed4323d05ec67eb2888d44f326fa344cff977dabd23a0fb0884691c3a4",
+          "scope": "constructed_coding_not_field_evidence"
+        },
+        "customer_approved": false,
+        "engineering_validated": false,
+        "baseline_status": "not_baselined",
+        "actors": [
+          {
+            "id": "ACT-OP",
+            "name": "操作/维护者",
+            "status": "teaching_role_not_interviewed"
+          },
+          {
+            "id": "ACT-OWNER",
+            "name": "设备经营/管理者",
+            "status": "teaching_role_not_interviewed"
+          }
+        ],
+        "source_needs": [
+          {
+            "id": "N-T01",
+            "text": "研究如何描述和约束切入作用边界",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          },
+          {
+            "id": "N-T02",
+            "text": "研究异常发生后如何停止作用、恢复或转交人工处置",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          },
+          {
+            "id": "N-T03",
+            "text": "研究操作者如何知道当前状态、所依据的数据及其时效",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          },
+          {
+            "id": "N-T04",
+            "text": "研究清理、维护与转场对完整作业的影响",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "U-T01",
+            "text": "目标树种、树龄、组织状态与现场环境",
+            "value": null
+          },
+          {
+            "id": "U-T02",
+            "text": "切入/余皮限值、测量口径与客户验收标准",
+            "value": null
+          },
+          {
+            "id": "U-T03",
+            "text": "异常类型、发生频率及实际恢复过程",
+            "value": null
+          },
+          {
+            "id": "U-T04",
+            "text": "供能、执行器、结构载荷与防护配置",
+            "value": null
+          },
+          {
+            "id": "U-T05",
+            "text": "使用者能力、劳动安排与维护资源",
+            "value": null
+          }
+        ],
+        "candidates": [
+          {
+            "id": "RQ-T01",
+            "need_id": "N-T01",
+            "text": "构造攻击：保证无须测量即可绝对安全自动切割",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "作用位置/边界偏差等候选，须先与组织边界关系校核",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "现场定义与测量可行性研究；后续才选分析/试验/检查等方式",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T01"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          },
+          {
+            "id": "RQ-T02",
+            "need_id": "N-T02",
+            "text": "待异常类别与状态定义后，形成停止、恢复或人工交接的结果要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "异常检测/停止/恢复各段的可观察事件与时序，尚未选定",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "任务分段与异常场景桌面研究，不预设自动恢复优于人工交接",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T02"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          },
+          {
+            "id": "RQ-T03",
+            "need_id": "N-T03",
+            "text": "待操作决策所需状态及数据时效定义后，形成可用信息要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "状态识别、数据时效、理解错误等候选指标",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "先做操作任务观察与理解测试，再决定正式确认方法",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T03"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          },
+          {
+            "id": "RQ-T04",
+            "need_id": "N-T04",
+            "text": "待完整作业记录取得后，形成清理维护与交接的任务及服务要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "恢复负担分段、维护资源与等待；定义尚待观察",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "R08记录现状；R50研究前后台责任；不从本构造样本估计收益",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T04"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          }
+        ],
+        "retired_hypotheses": [
+          "H-T01"
+        ],
+        "accepted_causal_findings": [],
+        "next_action": "derive_research_functions_only_with_all_unknowns",
+        "source_scope": "all scenario inputs and events constructed; primary method literature does not establish customer facts"
+      },
+      "result": {
+        "status": "research_draft_structure_and_declared_fidelity_passed",
+        "requirement_candidates": 4,
+        "all_incomplete": true,
+        "ready_for_customer_baseline": false,
+        "permitted_next_action": "function_research_with_unknowns",
+        "does_not_check": [
+          "arbitrary_text_semantic_correctness",
+          "customer_truth",
+          "physical_feasibility",
+          "actual_measurability",
+          "safety"
+        ]
+      }
+    },
+    {
+      "id": "R48-dangling-retired-hypothesis",
+      "method": "MD-001-R48",
+      "status": "accepted",
+      "input": {
+        "schema": "fixed_requirements_research_draft-1",
+        "problem_id": "TAP-TEACH-001",
+        "draft_version": "0.1.0",
+        "source_binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+        },
+        "evidence_binding": {
+          "path": "../../MD-002-R08/教学包/03-竞争解释与修订.json",
+          "sha256": "7b4d25ed4323d05ec67eb2888d44f326fa344cff977dabd23a0fb0884691c3a4",
+          "scope": "constructed_coding_not_field_evidence"
+        },
+        "customer_approved": false,
+        "engineering_validated": false,
+        "baseline_status": "not_baselined",
+        "actors": [
+          {
+            "id": "ACT-OP",
+            "name": "操作/维护者",
+            "status": "teaching_role_not_interviewed"
+          },
+          {
+            "id": "ACT-OWNER",
+            "name": "设备经营/管理者",
+            "status": "teaching_role_not_interviewed"
+          }
+        ],
+        "source_needs": [
+          {
+            "id": "N-T01",
+            "text": "研究如何描述和约束切入作用边界",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          },
+          {
+            "id": "N-T02",
+            "text": "研究异常发生后如何停止作用、恢复或转交人工处置",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          },
+          {
+            "id": "N-T03",
+            "text": "研究操作者如何知道当前状态、所依据的数据及其时效",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          },
+          {
+            "id": "N-T04",
+            "text": "研究清理、维护与转场对完整作业的影响",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "U-T01",
+            "text": "目标树种、树龄、组织状态与现场环境",
+            "value": null
+          },
+          {
+            "id": "U-T02",
+            "text": "切入/余皮限值、测量口径与客户验收标准",
+            "value": null
+          },
+          {
+            "id": "U-T03",
+            "text": "异常类型、发生频率及实际恢复过程",
+            "value": null
+          },
+          {
+            "id": "U-T04",
+            "text": "供能、执行器、结构载荷与防护配置",
+            "value": null
+          },
+          {
+            "id": "U-T05",
+            "text": "使用者能力、劳动安排与维护资源",
+            "value": null
+          }
+        ],
+        "candidates": [
+          {
+            "id": "RQ-T01",
+            "need_id": "N-T01",
+            "text": "待明确作用边界对象与目标条件后，形成可测且可追溯的边界控制要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "作用位置/边界偏差等候选，须先与组织边界关系校核",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "现场定义与测量可行性研究；后续才选分析/试验/检查等方式",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T01"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          },
+          {
+            "id": "RQ-T02",
+            "need_id": "N-T02",
+            "text": "待异常类别与状态定义后，形成停止、恢复或人工交接的结果要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "异常检测/停止/恢复各段的可观察事件与时序，尚未选定",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "任务分段与异常场景桌面研究，不预设自动恢复优于人工交接",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T02"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          },
+          {
+            "id": "RQ-T03",
+            "need_id": "N-T03",
+            "text": "待操作决策所需状态及数据时效定义后，形成可用信息要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "状态识别、数据时效、理解错误等候选指标",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "先做操作任务观察与理解测试，再决定正式确认方法",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T03"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          },
+          {
+            "id": "RQ-T04",
+            "need_id": "N-T04",
+            "text": "待完整作业记录取得后，形成清理维护与交接的任务及服务要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "恢复负担分段、维护资源与等待；定义尚待观察",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "R08记录现状；R50研究前后台责任；不从本构造样本估计收益",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T04"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          }
+        ],
+        "retired_hypotheses": [
+          "H-T01",
+          "NO-SUCH-HYPOTHESIS"
+        ],
+        "accepted_causal_findings": [],
+        "next_action": "derive_research_functions_only_with_all_unknowns",
+        "source_scope": "all scenario inputs and events constructed; primary method literature does not establish customer facts"
+      },
+      "result": {
+        "status": "research_draft_structure_and_declared_fidelity_passed",
+        "requirement_candidates": 4,
+        "all_incomplete": true,
+        "ready_for_customer_baseline": false,
+        "permitted_next_action": "function_research_with_unknowns",
+        "does_not_check": [
+          "arbitrary_text_semantic_correctness",
+          "customer_truth",
+          "physical_feasibility",
+          "actual_measurability",
+          "safety"
+        ]
+      }
+    },
+    {
+      "id": "R08-text-encoding-disagreement",
+      "method": "MD-002-R08",
+      "status": "accepted",
+      "input": {
+        "schema": "fixed_constructed_observation_fixture-1",
+        "source_binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "path": "../../MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+        },
+        "all_records_constructed": true,
+        "field_research_conducted": false,
+        "real_participants": 0,
+        "consent_status": "not_applicable_no_real_participants",
+        "records": [
+          {
+            "id": "NOTE-T01",
+            "event_id": "EV-T01",
+            "session": "S-T01",
+            "actor": "ACT-OP",
+            "kind": "constructed_observation",
+            "text": "构造攻击：未暂停且未观察到残留",
+            "pause_before": true,
+            "residue_observed": true,
+            "independent_observation": true
+          },
+          {
+            "id": "NOTE-T02",
+            "event_id": "EV-T01",
+            "session": "S-T01",
+            "actor": "ACT-OP",
+            "kind": "constructed_participant_statement",
+            "text": "构造原话：上次停过以后又要清理。此话描述EV-T01，不是第二次事件。",
+            "independent_observation": false
+          },
+          {
+            "id": "NOTE-T03",
+            "event_id": "EV-T01",
+            "session": "S-T01",
+            "actor": "ACT-OP",
+            "kind": "constructed_researcher_paraphrase",
+            "text": "构造研究笔记：暂停可能使残留增加；这是对EV-T01的解释。",
+            "independent_observation": false
+          },
+          {
+            "id": "NOTE-T04",
+            "event_id": "EV-T02",
+            "session": "S-T02",
+            "actor": "ACT-OP",
+            "kind": "constructed_observation",
+            "text": "构造记录：本段连续作业未记录暂停，也观察到残留；材料和表面条件未记录。",
+            "pause_before": false,
+            "residue_observed": true,
+            "independent_observation": true
+          },
+          {
+            "id": "NOTE-T05",
+            "event_id": "EV-T03",
+            "session": "S-T03",
+            "actor": "ACT-OP",
+            "kind": "constructed_observation",
+            "text": "构造记录：另一段暂停之后未观察到明显残留；其他工况是否相同未知。",
+            "pause_before": true,
+            "residue_observed": false,
+            "independent_observation": true
+          },
+          {
+            "id": "NOTE-T06",
+            "event_id": null,
+            "session": "S-T04",
+            "actor": "ACT-OWNER",
+            "kind": "constructed_general_opinion",
+            "text": "构造原话：总之维护很麻烦。未指向可定位的具体事件。",
+            "independent_observation": false
+          }
+        ]
+      },
+      "result": {
+        "note_count": 6,
+        "independent_constructed_event_count": 3,
+        "independent_events": [
+          "EV-T01",
+          "EV-T02",
+          "EV-T03"
+        ],
+        "source_representations_for_EV_T01": 3,
+        "generic_opinions_not_counted": 1,
+        "customer_findings": [],
+        "status": "fixed_fixture_structure_checked_not_field_validated"
+      }
+    },
+    {
+      "id": "R08-remove-H01-counterexample-in-fields",
+      "method": "MD-002-R08",
+      "status": "accepted",
+      "input": {
+        "schema": "fixed_constructed_observation_fixture-1",
+        "source_binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "path": "../../MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+        },
+        "all_records_constructed": true,
+        "field_research_conducted": false,
+        "real_participants": 0,
+        "consent_status": "not_applicable_no_real_participants",
+        "records": [
+          {
+            "id": "NOTE-T01",
+            "event_id": "EV-T01",
+            "session": "S-T01",
+            "actor": "ACT-OP",
+            "kind": "constructed_observation",
+            "text": "构造记录：一次暂停之后看到残留，操作者停机并清理；没有记录材料状态。",
+            "pause_before": true,
+            "residue_observed": true,
+            "independent_observation": true
+          },
+          {
+            "id": "NOTE-T02",
+            "event_id": "EV-T01",
+            "session": "S-T01",
+            "actor": "ACT-OP",
+            "kind": "constructed_participant_statement",
+            "text": "构造原话：上次停过以后又要清理。此话描述EV-T01，不是第二次事件。",
+            "independent_observation": false
+          },
+          {
+            "id": "NOTE-T03",
+            "event_id": "EV-T01",
+            "session": "S-T01",
+            "actor": "ACT-OP",
+            "kind": "constructed_researcher_paraphrase",
+            "text": "构造研究笔记：暂停可能使残留增加；这是对EV-T01的解释。",
+            "independent_observation": false
+          },
+          {
+            "id": "NOTE-T04",
+            "event_id": "EV-T02",
+            "session": "S-T02",
+            "actor": "ACT-OP",
+            "kind": "constructed_observation",
+            "text": "构造记录：本段连续作业未记录暂停，也观察到残留；材料和表面条件未记录。",
+            "pause_before": true,
+            "residue_observed": false,
+            "independent_observation": true
+          },
+          {
+            "id": "NOTE-T05",
+            "event_id": "EV-T03",
+            "session": "S-T03",
+            "actor": "ACT-OP",
+            "kind": "constructed_observation",
+            "text": "构造记录：另一段暂停之后未观察到明显残留；其他工况是否相同未知。",
+            "pause_before": true,
+            "residue_observed": false,
+            "independent_observation": true
+          },
+          {
+            "id": "NOTE-T06",
+            "event_id": null,
+            "session": "S-T04",
+            "actor": "ACT-OWNER",
+            "kind": "constructed_general_opinion",
+            "text": "构造原话：总之维护很麻烦。未指向可定位的具体事件。",
+            "independent_observation": false
+          }
+        ]
+      },
+      "result": {
+        "note_count": 6,
+        "independent_constructed_event_count": 3,
+        "independent_events": [
+          "EV-T01",
+          "EV-T02",
+          "EV-T03"
+        ],
+        "source_representations_for_EV_T01": 3,
+        "generic_opinions_not_counted": 1,
+        "customer_findings": [],
+        "status": "fixed_fixture_structure_checked_not_field_validated"
+      }
+    },
+    {
+      "id": "R08-actor-closure-negative",
+      "method": "MD-002-R08",
+      "status": "rejected",
+      "input": {
+        "schema": "fixed_constructed_observation_fixture-1",
+        "source_binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "path": "../../MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+        },
+        "all_records_constructed": true,
+        "field_research_conducted": false,
+        "real_participants": 0,
+        "consent_status": "not_applicable_no_real_participants",
+        "records": [
+          {
+            "id": "NOTE-T01",
+            "event_id": "EV-T01",
+            "session": "S-T01",
+            "actor": "ACT-MISSING",
+            "kind": "constructed_observation",
+            "text": "构造记录：一次暂停之后看到残留，操作者停机并清理；没有记录材料状态。",
+            "pause_before": true,
+            "residue_observed": true,
+            "independent_observation": true
+          },
+          {
+            "id": "NOTE-T02",
+            "event_id": "EV-T01",
+            "session": "S-T01",
+            "actor": "ACT-OP",
+            "kind": "constructed_participant_statement",
+            "text": "构造原话：上次停过以后又要清理。此话描述EV-T01，不是第二次事件。",
+            "independent_observation": false
+          },
+          {
+            "id": "NOTE-T03",
+            "event_id": "EV-T01",
+            "session": "S-T01",
+            "actor": "ACT-OP",
+            "kind": "constructed_researcher_paraphrase",
+            "text": "构造研究笔记：暂停可能使残留增加；这是对EV-T01的解释。",
+            "independent_observation": false
+          },
+          {
+            "id": "NOTE-T04",
+            "event_id": "EV-T02",
+            "session": "S-T02",
+            "actor": "ACT-OP",
+            "kind": "constructed_observation",
+            "text": "构造记录：本段连续作业未记录暂停，也观察到残留；材料和表面条件未记录。",
+            "pause_before": false,
+            "residue_observed": true,
+            "independent_observation": true
+          },
+          {
+            "id": "NOTE-T05",
+            "event_id": "EV-T03",
+            "session": "S-T03",
+            "actor": "ACT-OP",
+            "kind": "constructed_observation",
+            "text": "构造记录：另一段暂停之后未观察到明显残留；其他工况是否相同未知。",
+            "pause_before": true,
+            "residue_observed": false,
+            "independent_observation": true
+          },
+          {
+            "id": "NOTE-T06",
+            "event_id": null,
+            "session": "S-T04",
+            "actor": "ACT-OWNER",
+            "kind": "constructed_general_opinion",
+            "text": "构造原话：总之维护很麻烦。未指向可定位的具体事件。",
+            "independent_observation": false
+          }
+        ]
+      },
+      "result": {
+        "error": "ValueError: unknown_actor"
+      }
+    },
+    {
+      "id": "R48-direction-still-incomplete-negative",
+      "method": "MD-001-R48",
+      "status": "rejected",
+      "input": {
+        "schema": "fixed_requirements_research_draft-1",
+        "problem_id": "TAP-TEACH-001",
+        "draft_version": "0.1.0",
+        "source_binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+        },
+        "evidence_binding": {
+          "path": "../../MD-002-R08/教学包/03-竞争解释与修订.json",
+          "sha256": "7b4d25ed4323d05ec67eb2888d44f326fa344cff977dabd23a0fb0884691c3a4",
+          "scope": "constructed_coding_not_field_evidence"
+        },
+        "customer_approved": false,
+        "engineering_validated": false,
+        "baseline_status": "not_baselined",
+        "actors": [
+          {
+            "id": "ACT-OP",
+            "name": "操作/维护者",
+            "status": "teaching_role_not_interviewed"
+          },
+          {
+            "id": "ACT-OWNER",
+            "name": "设备经营/管理者",
+            "status": "teaching_role_not_interviewed"
+          }
+        ],
+        "source_needs": [
+          {
+            "id": "N-T01",
+            "text": "研究如何描述和约束切入作用边界",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          },
+          {
+            "id": "N-T02",
+            "text": "研究异常发生后如何停止作用、恢复或转交人工处置",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          },
+          {
+            "id": "N-T03",
+            "text": "研究操作者如何知道当前状态、所依据的数据及其时效",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          },
+          {
+            "id": "N-T04",
+            "text": "研究清理、维护与转场对完整作业的影响",
+            "kind": "research_need_hypothesis",
+            "basis": "platform_teaching_prompt",
+            "target": null,
+            "unit": null,
+            "customer_approved": false
+          }
+        ],
+        "unknowns": [
+          {
+            "id": "U-T01",
+            "text": "目标树种、树龄、组织状态与现场环境",
+            "value": null
+          },
+          {
+            "id": "U-T02",
+            "text": "切入/余皮限值、测量口径与客户验收标准",
+            "value": null
+          },
+          {
+            "id": "U-T03",
+            "text": "异常类型、发生频率及实际恢复过程",
+            "value": null
+          },
+          {
+            "id": "U-T04",
+            "text": "供能、执行器、结构载荷与防护配置",
+            "value": null
+          },
+          {
+            "id": "U-T05",
+            "text": "使用者能力、劳动安排与维护资源",
+            "value": null
+          }
+        ],
+        "candidates": [
+          {
+            "id": "RQ-T01",
+            "need_id": "N-T01",
+            "text": "待明确作用边界对象与目标条件后，形成可测且可追溯的边界控制要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "作用位置/边界偏差等候选，须先与组织边界关系校核",
+            "unit": null,
+            "target": null,
+            "direction": "le",
+            "acceptance": null,
+            "verification_proposal": "现场定义与测量可行性研究；后续才选分析/试验/检查等方式",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T01"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          },
+          {
+            "id": "RQ-T02",
+            "need_id": "N-T02",
+            "text": "待异常类别与状态定义后，形成停止、恢复或人工交接的结果要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "异常检测/停止/恢复各段的可观察事件与时序，尚未选定",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "任务分段与异常场景桌面研究，不预设自动恢复优于人工交接",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T02"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          },
+          {
+            "id": "RQ-T03",
+            "need_id": "N-T03",
+            "text": "待操作决策所需状态及数据时效定义后，形成可用信息要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "状态识别、数据时效、理解错误等候选指标",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "先做操作任务观察与理解测试，再决定正式确认方法",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T03"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          },
+          {
+            "id": "RQ-T04",
+            "need_id": "N-T04",
+            "text": "待完整作业记录取得后，形成清理维护与交接的任务及服务要求。",
+            "kind": "incomplete_requirement_candidate",
+            "metric_proposal": "恢复负担分段、维护资源与等待；定义尚待观察",
+            "unit": null,
+            "target": null,
+            "direction": null,
+            "acceptance": null,
+            "verification_proposal": "R08记录现状；R50研究前后台责任；不从本构造样本估计收益",
+            "verification_status": "proposed_not_executed",
+            "basis_ids": [
+              "N-T04"
+            ],
+            "customer_approved": false,
+            "mandatory": "not_customer_decided"
+          }
+        ],
+        "retired_hypotheses": [
+          "H-T01"
+        ],
+        "accepted_causal_findings": [],
+        "next_action": "derive_research_functions_only_with_all_unknowns",
+        "source_scope": "all scenario inputs and events constructed; primary method literature does not establish customer facts"
+      },
+      "result": {
+        "error": "ValueError: unsupported_numeric_or_acceptance_completion"
+      }
+    }
+  ],
+  "mismatched_sibling_source_binding_rebuild": {
+    "status": "accepted",
+    "stdout": "{\"result\": {\"status\": \"research_draft_structure_and_declared_fidelity_passed\", \"requirement_candidates\": 4, \"all_incomplete\": true, \"ready_for_customer_baseline\": false, \"permitted_next_action\": \"function_research_with_unknowns\", \"does_not_check\": [\"arbitrary_text_semantic_correctness\", \"customer_truth\", \"physical_feasibility\", \"actual_measurability\", \"safety\"]}, \"executed_tests\": 10, \"transfer\": \"classification desk check passed\"}\n",
+    "resulting_evidence_binding": {
+      "path": "../../MD-002-R08/教学包/03-竞争解释与修订.json",
+      "sha256": "938b8217aab95d880aae5b7ab0100c0aaa48d6ba3d3106b3d9c5f0d62cef7480",
+      "scope": "constructed_coding_not_field_evidence"
+    },
+    "wrong_source_binding": {
+      "problem_id": "OTHER-PROBLEM",
+      "version": "0.1.0",
+      "path": "../../MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+      "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+    }
+  },
+  "originals_unchanged": true,
+  "source_http_bytes_available_for_hash_recheck": false
+}

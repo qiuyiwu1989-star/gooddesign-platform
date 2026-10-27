@@ -1,0 +1,76 @@
+{
+  "input": {
+    "id": "R43-REPLACE-TEACH-001",
+    "origin": "synthetic_burden_units_not_emission_database",
+    "functional_unit": {
+      "service": "provide same hypothetical fixture function",
+      "duration_years": 10.0,
+      "work_cycles": 100000,
+      "performance_equivalence": "assumed_only_for_separate_teaching_math"
+    },
+    "boundary": [
+      "production",
+      "transport",
+      "use",
+      "repair",
+      "end_of_life"
+    ],
+    "allocation": "no_coproduct_in_constructed_model",
+    "impact_unit": "arbitrary_BU_not_kgCO2e",
+    "alternatives": [
+      {
+        "id": "A",
+        "functional_unit": {
+          "service": "provide same hypothetical fixture function",
+          "duration_years": 10.0,
+          "work_cycles": 100000,
+          "performance_equivalence": "assumed_only_for_separate_teaching_math"
+        },
+        "boundary": [
+          "production",
+          "transport",
+          "use",
+          "repair",
+          "end_of_life"
+        ],
+        "service_life_years": NaN,
+        "per_device_production_BU": 100.0,
+        "total_service_other_BU": {
+          "transport": 0.0,
+          "use": 0.0,
+          "repair": 0.0,
+          "end_of_life": 0.0
+        }
+      },
+      {
+        "id": "B",
+        "functional_unit": {
+          "service": "provide same hypothetical fixture function",
+          "duration_years": 10.0,
+          "work_cycles": 100000,
+          "performance_equivalence": "assumed_only_for_separate_teaching_math"
+        },
+        "boundary": [
+          "production",
+          "transport",
+          "use",
+          "repair",
+          "end_of_life"
+        ],
+        "service_life_years": 2.0,
+        "per_device_production_BU": 60.0,
+        "total_service_other_BU": {
+          "transport": 0.0,
+          "use": 0.0,
+          "repair": 0.0,
+          "end_of_life": 0.0
+        }
+      }
+    ],
+    "numbers": "arbitrary arithmetic counterexample, zero other burdens are explicit toy assumptions, not missing field data"
+  },
+  "method": "R43",
+  "name": "NaN-lifetime",
+  "output": null,
+  "error": "invalid lifecycle quantities"
+}

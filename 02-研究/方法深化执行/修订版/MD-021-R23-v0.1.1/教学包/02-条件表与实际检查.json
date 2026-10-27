@@ -1,0 +1,336 @@
+{
+  "cases": [
+    {
+      "name": "正常构造条件",
+      "input": {
+        "id": "R23-CLAMP-TEACH-001",
+        "mode": "constructed_teaching",
+        "customer_approved": false,
+        "demands": [
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "high",
+            "interval_s": [
+              0,
+              4
+            ],
+            "target": null
+          },
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "low",
+            "interval_s": [
+              6,
+              8
+            ],
+            "target": null
+          }
+        ],
+        "switch_time_s": 1,
+        "numerical_status": "arbitrary teaching timing; not robot/customer values"
+      },
+      "actual": {
+        "status": "time_separation_research_candidate",
+        "gap_s": 2,
+        "switch_time_s": 1,
+        "engineering_validated": false,
+        "required_checks": [
+          "residual energy",
+          "switch sensing",
+          "failure state",
+          "orientation and load",
+          "tolerance and margin"
+        ]
+      },
+      "expected_status": "time_separation_research_candidate",
+      "passed": true
+    },
+    {
+      "name": "缺切换证据",
+      "input": {
+        "id": "R23-CLAMP-TEACH-001",
+        "mode": "constructed_teaching",
+        "customer_approved": false,
+        "demands": [
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "high",
+            "interval_s": [
+              0,
+              4
+            ],
+            "target": null
+          },
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "low",
+            "interval_s": [
+              6,
+              8
+            ],
+            "target": null
+          }
+        ],
+        "switch_time_s": null,
+        "numerical_status": "arbitrary teaching timing; not robot/customer values"
+      },
+      "actual": {
+        "status": "unknown",
+        "reason": "conditions_or_switch_unknown"
+      },
+      "expected_status": "unknown",
+      "passed": true
+    },
+    {
+      "name": "两参数不适用",
+      "input": {
+        "id": "R23-CLAMP-TEACH-001",
+        "mode": "constructed_teaching",
+        "customer_approved": false,
+        "demands": [
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "high",
+            "interval_s": [
+              0,
+              4
+            ],
+            "target": null
+          },
+          {
+            "object": "same constructed clamp",
+            "parameter": "mass",
+            "unit": "N",
+            "direction": "low",
+            "interval_s": [
+              6,
+              8
+            ],
+            "target": null
+          }
+        ],
+        "switch_time_s": 1,
+        "numerical_status": "arbitrary teaching timing; not robot/customer values"
+      },
+      "actual": {
+        "status": "not_same_parameter",
+        "next": "reformulate"
+      },
+      "expected_status": "not_same_parameter",
+      "passed": true
+    },
+    {
+      "name": "切换恰等窗口边界",
+      "input": {
+        "id": "R23-CLAMP-TEACH-001",
+        "mode": "constructed_teaching",
+        "customer_approved": false,
+        "demands": [
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "high",
+            "interval_s": [
+              0,
+              4
+            ],
+            "target": null
+          },
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "low",
+            "interval_s": [
+              6,
+              8
+            ],
+            "target": null
+          }
+        ],
+        "switch_time_s": 2,
+        "numerical_status": "arbitrary teaching timing; not robot/customer values"
+      },
+      "actual": {
+        "status": "transition_not_established",
+        "gap_s": 2,
+        "switch_time_s": 2,
+        "reason": "equality lacks margin; residual energy and uncertainty unchecked"
+      },
+      "expected_status": "transition_not_established",
+      "passed": true
+    },
+    {
+      "name": "同地同时相反要求",
+      "input": {
+        "id": "R23-CLAMP-TEACH-001",
+        "mode": "constructed_teaching",
+        "customer_approved": false,
+        "demands": [
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "high",
+            "interval_s": [
+              0,
+              4
+            ],
+            "target": null
+          },
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "low",
+            "interval_s": [
+              3,
+              7
+            ],
+            "target": null
+          }
+        ],
+        "switch_time_s": 1,
+        "numerical_status": "arbitrary teaching timing; not robot/customer values"
+      },
+      "actual": {
+        "status": "time_separation_not_established",
+        "overlap_s": 1,
+        "next": "inspect_space_relation_system_level_or_reformulate"
+      },
+      "expected_status": "time_separation_not_established",
+      "passed": true
+    },
+    {
+      "name": "非相反方向",
+      "input": {
+        "id": "R23-CLAMP-TEACH-001",
+        "mode": "constructed_teaching",
+        "customer_approved": false,
+        "demands": [
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "high",
+            "interval_s": [
+              0,
+              4
+            ],
+            "target": null
+          },
+          {
+            "object": "same constructed clamp",
+            "parameter": "holding_force",
+            "unit": "N",
+            "direction": "high",
+            "interval_s": [
+              6,
+              8
+            ],
+            "target": null
+          }
+        ],
+        "switch_time_s": 1,
+        "numerical_status": "arbitrary teaching timing; not robot/customer values"
+      },
+      "actual": {
+        "status": "not_opposite_demands"
+      },
+      "expected_status": "not_opposite_demands",
+      "passed": true
+    },
+    {
+      "name": "不同情境文档写权限",
+      "input": {
+        "id": "DOC-RELEASE-TEACH-001",
+        "mode": "constructed_teaching",
+        "customer_approved": false,
+        "demands": [
+          {
+            "object": "same constructed editable record",
+            "parameter": "write_permission",
+            "unit": "boolean",
+            "direction": "high",
+            "interval_s": [
+              0,
+              10
+            ],
+            "target": null
+          },
+          {
+            "object": "same constructed editable record",
+            "parameter": "write_permission",
+            "unit": "boolean",
+            "direction": "low",
+            "interval_s": [
+              14,
+              20
+            ],
+            "target": null
+          }
+        ],
+        "switch_time_s": 1,
+        "numerical_status": "arbitrary teaching timing; not robot/customer values"
+      },
+      "actual": {
+        "status": "time_separation_research_candidate",
+        "gap_s": 4,
+        "switch_time_s": 1,
+        "engineering_validated": false,
+        "required_checks": [
+          "residual energy",
+          "switch sensing",
+          "failure state",
+          "orientation and load",
+          "tolerance and margin"
+        ]
+      },
+      "expected_status": "time_separation_research_candidate",
+      "passed": true
+    },
+    {
+      "name": "old-arbitrary-directions",
+      "actual": "rejected",
+      "reason": "supported opposite domain is high/low only",
+      "passed": true
+    },
+    {
+      "name": "old-negative-switch",
+      "actual": "rejected",
+      "reason": "invalid switch time",
+      "passed": true
+    },
+    {
+      "name": "old-reversed-interval",
+      "actual": "rejected",
+      "reason": "invalid finite nonnegative ordered interval",
+      "passed": true
+    },
+    {
+      "name": "new-bool-time",
+      "actual": "rejected",
+      "reason": "invalid switch time",
+      "passed": true
+    },
+    {
+      "name": "new-nan-interval",
+      "actual": "rejected",
+      "reason": "invalid finite nonnegative ordered interval",
+      "passed": true
+    }
+  ],
+  "count": 12,
+  "scope": "fixed declared interval checks; not semantic proof or mechanism implementation"
+}

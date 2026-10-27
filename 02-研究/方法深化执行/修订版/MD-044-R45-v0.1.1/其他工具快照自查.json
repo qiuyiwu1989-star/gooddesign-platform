@@ -1,0 +1,43 @@
+{
+  "checks": [
+    {
+      "package": "MD-042-R41",
+      "file": "hse-web工具快照.json",
+      "sha256": "1fb4388efe5cfff251c61aeeb59a2b743c8ef933973a9d655975282139ff11d9",
+      "identity_or_body_anchor": "Introduction to machinery safety",
+      "expected_anchor_present": true,
+      "expected_host_present": true,
+      "wrong_CN110696008_content": false
+    },
+    {
+      "package": "MD-042-R41",
+      "file": "iso12100-web工具快照.json",
+      "sha256": "4c1e38916ad5845cb5cb67f364f194555322eae82ce6b8ff3968fd63f18055d9",
+      "identity_or_body_anchor": "ISO 12100:2010",
+      "expected_anchor_present": true,
+      "expected_host_present": true,
+      "wrong_CN110696008_content": false
+    },
+    {
+      "package": "MD-042-R41",
+      "file": "iso18497-web工具快照.json",
+      "sha256": "ea2d467a7d79f0d73fc964042c586f05775dacaea0fefc07aa5ae6022f7ca55f",
+      "identity_or_body_anchor": "ISO 18497-1:2024",
+      "expected_anchor_present": true,
+      "expected_host_present": true,
+      "wrong_CN110696008_content": false
+    },
+    {
+      "package": "MD-035-R35",
+      "file": "原典Web工具解析快照.json",
+      "sha256": "1b02ddabe69425f657c2bb89f4f976fc22fc1cf07bd106ee032763f1b4601937",
+      "identity_or_body_anchor": "The topology optimization problem",
+      "expected_anchor_present": true,
+      "expected_host_present": true,
+      "wrong_CN110696008_content": false
+    }
+  ],
+  "R35_note": "snapshot is paper section2-3 body excerpt, title not included; matching canonical DTU PDF URL and model section. No wrong patent return found",
+  "scope": "title/body-anchor/host known-misbind check, not original byte equality",
+  "FHWA": "independently acquired HTML/text verified separately"
+}

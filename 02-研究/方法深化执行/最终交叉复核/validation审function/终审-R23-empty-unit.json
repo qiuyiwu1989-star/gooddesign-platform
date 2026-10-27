@@ -1,0 +1,41 @@
+{
+  "input": {
+    "id": "R23-CLAMP-TEACH-001",
+    "mode": "constructed_teaching",
+    "customer_approved": false,
+    "demands": [
+      {
+        "object": "same constructed clamp",
+        "parameter": "holding_force",
+        "unit": "",
+        "direction": "high",
+        "interval_s": [
+          0,
+          4
+        ],
+        "target": null
+      },
+      {
+        "object": "same constructed clamp",
+        "parameter": "holding_force",
+        "unit": "",
+        "direction": "low",
+        "interval_s": [
+          6,
+          8
+        ],
+        "target": null
+      }
+    ],
+    "switch_time_s": 1,
+    "numerical_status": "arbitrary teaching timing; not robot/customer values"
+  },
+  "method": "R23",
+  "name": "empty-unit",
+  "accepted": false,
+  "expected_accept": false,
+  "pass": true,
+  "output": {
+    "error": "nonblank object/parameter/unit required"
+  }
+}

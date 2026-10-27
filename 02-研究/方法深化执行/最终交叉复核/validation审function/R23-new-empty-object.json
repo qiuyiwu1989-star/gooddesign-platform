@@ -1,0 +1,47 @@
+{
+  "input": {
+    "id": "R23-CLAMP-TEACH-001",
+    "mode": "constructed_teaching",
+    "customer_approved": false,
+    "demands": [
+      {
+        "object": "",
+        "parameter": "holding_force",
+        "unit": "N",
+        "direction": "high",
+        "interval_s": [
+          0,
+          4
+        ],
+        "target": null
+      },
+      {
+        "object": "",
+        "parameter": "holding_force",
+        "unit": "N",
+        "direction": "low",
+        "interval_s": [
+          6,
+          8
+        ],
+        "target": null
+      }
+    ],
+    "switch_time_s": 1,
+    "numerical_status": "arbitrary teaching timing; not robot/customer values"
+  },
+  "out": {
+    "status": "time_separation_research_candidate",
+    "gap_s": 2,
+    "switch_time_s": 1,
+    "engineering_validated": false,
+    "required_checks": [
+      "residual energy",
+      "switch sensing",
+      "failure state",
+      "orientation and load",
+      "tolerance and margin"
+    ]
+  },
+  "error": null
+}

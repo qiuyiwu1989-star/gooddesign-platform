@@ -1,0 +1,148 @@
+{
+  "schema": "R16-fixed-lesson-1",
+  "event_id": "RCA-TEACH-001",
+  "version": "0.1.0",
+  "provenance": "constructed_incident_not_customer_accident",
+  "event": "教学中工件在作业时出现一次相对偏移；原因未确认",
+  "evidence": [
+    {
+      "id": "ER1",
+      "kind": "constructed_operator_statement",
+      "content": "当时认为已经夹紧",
+      "limit": "事后表达，不等于当时状态或实际夹持力"
+    },
+    {
+      "id": "ER2",
+      "kind": "constructed_control_log",
+      "content": "夹紧请求已发送",
+      "limit": "不是实际夹持完成或接触力记录"
+    },
+    {
+      "id": "ER3",
+      "kind": "constructed_post_event_photo",
+      "content": "事后看见相对滑移痕迹",
+      "limit": "支持发生过相对运动，不唯一支持某个原因"
+    },
+    {
+      "id": "ER4",
+      "kind": "constructed_interface_spec",
+      "content": "绿灯仅表示请求已发出",
+      "limit": "显示语义不等于已观察到使用者错误解释"
+    },
+    {
+      "id": "ER5",
+      "kind": "constructed_different_condition_check",
+      "content": "另一对象、无作业载荷的构造检查没有出现偏移",
+      "limit": "与事件条件不同，只能形成范围很窄的反向线索，不能排除事件时保持不足，也不计作同类暴露"
+    }
+  ],
+  "timeline": [
+    {
+      "index": 1,
+      "event": "发出夹紧请求",
+      "evidence": [
+        "ER2"
+      ]
+    },
+    {
+      "index": 2,
+      "event": "参与角色认为已夹紧",
+      "evidence": [
+        "ER1"
+      ]
+    },
+    {
+      "index": 3,
+      "event": "教学偏移事件",
+      "evidence": [
+        "ER3"
+      ]
+    },
+    {
+      "index": 4,
+      "event": "在不同对象/无作业载荷下的后续构造检查",
+      "evidence": [
+        "ER5"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "HRCA1",
+      "claim": "实际保持作用不足",
+      "support": [
+        "ER3"
+      ],
+      "counterevidence": [
+        "ER5"
+      ],
+      "unknowns": [
+        "实际接触状态和力记录",
+        "材料与载荷"
+      ],
+      "status": "unconfirmed"
+    },
+    {
+      "id": "HRCA2",
+      "claim": "请求指示可能被解释为实际夹紧",
+      "support": [
+        "ER1",
+        "ER2",
+        "ER4"
+      ],
+      "counterevidence": [],
+      "unknowns": [
+        "当时决策过程与其他信息",
+        "是否直接影响本次动作"
+      ],
+      "status": "unconfirmed"
+    },
+    {
+      "id": "HRCA3",
+      "claim": "对象状态变化可能影响保持",
+      "support": [],
+      "counterevidence": [],
+      "unknowns": [
+        "对象几何/材料变化",
+        "是否与以往工况相同"
+      ],
+      "status": "unconfirmed"
+    }
+  ],
+  "actions": [
+    {
+      "id": "AR1",
+      "hypotheses": [
+        "HRCA1"
+      ],
+      "proposal": "取得实际接触/保持与工况记录后再决定设计措施",
+      "owner_role": "待指定技术研究角色",
+      "completed": false
+    },
+    {
+      "id": "AR2",
+      "hypotheses": [
+        "HRCA2"
+      ],
+      "proposal": "区分请求与实际状态，并研究使用者是否理解",
+      "owner_role": "待指定界面/人因研究角色",
+      "completed": false
+    },
+    {
+      "id": "AR3",
+      "hypotheses": [
+        "HRCA3"
+      ],
+      "proposal": "核对象和工况变化及竞争解释",
+      "owner_role": "待指定现场研究角色",
+      "completed": false
+    }
+  ],
+  "confirmed_root_causes": [],
+  "post_action": {
+    "comparable_exposures": true,
+    "events": 0,
+    "benefit_claim": null
+  },
+  "engineering_validated": false
+}

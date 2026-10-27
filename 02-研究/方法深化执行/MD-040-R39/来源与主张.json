@@ -1,0 +1,30 @@
+{
+  "method": "R39",
+  "source_read_scope": "NIST Taguchi parameter design text and Table5.7; selected illustrative example only",
+  "claims": [
+    {
+      "id": "R39-C1",
+      "source_id": "NIST-TAGUCHI",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section5/pri56.htm",
+      "locator": "Parameter Design;Table5.7;Interpretation of the table",
+      "supported_claim": "control/noise inner-outer design and mean/scatter compromise in a fictitious illustration",
+      "support_scope": "selected institutional primary passage",
+      "not_supported": "target engineering effectiveness or platform schema approval"
+    }
+  ],
+  "source_fingerprints": [
+    {
+      "id": "NIST-TAGUCHI",
+      "sha256": "b01b15f1c2984795b6c5bd56ec20ef6dfd72b3567c062e70d3f34337ef2fc00e"
+    }
+  ],
+  "platform_adaptation": "recalculated scenario sample mean/SD and declared two-metric nondominance; no field distribution",
+  "full_original_system_replicated": false,
+  "raw_originals": "private-sources excluded from manifest/publication",
+  "gaps": [
+    "fictitious source example",
+    "noise probability not known",
+    "no economic tolerance model",
+    "not whole Taguchi system"
+  ]
+}

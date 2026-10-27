@@ -1,0 +1,57 @@
+{
+  "id": "WB05-FUNCTION-TEACH-001",
+  "origin": "platform_function_dependency_fixture_not_author_rulebook",
+  "functions": [
+    {
+      "id": "FM",
+      "role": "main",
+      "action": "produce controlled action",
+      "owner_role": "working_head_research"
+    },
+    {
+      "id": "FR",
+      "role": "auxiliary",
+      "action": "maintain reference",
+      "owner_role": "reference_research"
+    },
+    {
+      "id": "FC",
+      "role": "auxiliary",
+      "action": "clear interfering residue",
+      "owner_role": "service_research"
+    },
+    {
+      "id": "FS",
+      "role": "auxiliary",
+      "action": "stop and support recovery",
+      "owner_role": "control_research"
+    }
+  ],
+  "dependencies": [
+    [
+      "FR",
+      "FM",
+      "reference_support"
+    ],
+    [
+      "FC",
+      "FM",
+      "continuity_support"
+    ],
+    [
+      "FS",
+      "FM",
+      "abnormal_recovery_support"
+    ]
+  ],
+  "necessary_in_constructed_task": [
+    "FM",
+    "FR",
+    "FC",
+    "FS"
+  ],
+  "takeovers": [],
+  "resource_costs": null,
+  "customer_approved": false,
+  "engineering_validated": false
+}

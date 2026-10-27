@@ -1,0 +1,67 @@
+{
+  "method": "R21",
+  "version": "0.1.0",
+  "date": "2026-10-27",
+  "sources": [
+    {
+      "id": "MATRIZ-TOOLS",
+      "url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/",
+      "date": "2026-10-27",
+      "final_url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/",
+      "raw_file": "private-sources/MATRIZ-TOOLS.html",
+      "raw_sha256": "3f80712d7965089481daaeeed2e42870b155c0ce3b083fd236457d6bde4ea041",
+      "text_file": "private-sources/MATRIZ-TOOLS.txt",
+      "text_sha256": "098e6338cb27ee4c2a34364e4adeb7ac25bb35b515f61b88c1b59393d415bfb1",
+      "status": "acquired_selected_review_needed"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R21-S1",
+      "claim": "工具选择依据问题模型，具体概念仍需转译与研究。",
+      "type": "selected_primary_source_scope_with_platform_boundary",
+      "source_id": "MATRIZ-TOOLS",
+      "url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/",
+      "locator": "问题→模型→工具→解模型说明",
+      "short_anchor": "In the first step",
+      "text_anchor_start": 2576,
+      "anchor_basis": "whitespace_collapsed_extracted_text",
+      "raw_sha256": "3f80712d7965089481daaeeed2e42870b155c0ce3b083fd236457d6bde4ea041",
+      "text_sha256": "098e6338cb27ee4c2a34364e4adeb7ac25bb35b515f61b88c1b59393d415bfb1",
+      "does_not_support": [
+        "本构造模型真实有效",
+        "用户需求已确认",
+        "平台完整实现所有原法规则"
+      ]
+    },
+    {
+      "id": "R21-S2",
+      "claim": "并非所有工具都需先构造矛盾；函数/作用模型可用不同路径。",
+      "type": "selected_primary_source_scope_with_platform_boundary",
+      "source_id": "MATRIZ-TOOLS",
+      "url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/",
+      "locator": "工具分组及关系表",
+      "short_anchor": "contradiction NOT required",
+      "text_anchor_start": 3124,
+      "anchor_basis": "whitespace_collapsed_extracted_text",
+      "raw_sha256": "3f80712d7965089481daaeeed2e42870b155c0ce3b083fd236457d6bde4ea041",
+      "text_sha256": "098e6338cb27ee4c2a34364e4adeb7ac25bb35b515f61b88c1b59393d415bfb1",
+      "does_not_support": [
+        "本构造模型真实有效",
+        "用户需求已确认",
+        "平台完整实现所有原法规则"
+      ]
+    }
+  ],
+  "platform_adaptations": [
+    "固定输入与JSON表示",
+    "实际程序检查和反例",
+    "原创变换/有限模型/路由/条件矛盾示例"
+  ],
+  "gaps": [
+    "不自动理解任意缺陷",
+    "未执行矩阵/ARIZ/标准解/效应验证",
+    "不输出数值匹配分或技术优胜"
+  ],
+  "private_source_handling": "raw, text and images are ignored and excluded from manifest; only short locators in authored delivery"
+}

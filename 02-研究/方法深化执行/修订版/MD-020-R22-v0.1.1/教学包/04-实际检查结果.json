@@ -1,0 +1,863 @@
+{
+  "executed": true,
+  "passed": 10,
+  "checks": [
+    {
+      "name": "normal-model-only",
+      "class": "正常",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "IF": {
+          "action": "increase_normal_force",
+          "parameter": "ACT-FORCE",
+          "condition_id": "COND-PROXY-A"
+        },
+        "THEN": {
+          "parameter": "P-SLIP",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "causal_relation_status": "teaching_hypothesis_not_measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": false,
+          "cell": null,
+          "principle_hits": []
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "accepted",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "scenario": "conditional contact proxy",
+        "model": "IF increase assumed normal force, THEN assumed slip decrease, BUT assumed indentation increase",
+        "native_parameter_ledger": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "same_condition": "declared common label only; material/geometry/environment remain unknown",
+        "parameter_mapping": "unresolved_no_verified_official_ids",
+        "lookup_status": "not_performed_missing_complete_versioned_matrix",
+        "principle_hits": [],
+        "source_cell": null,
+        "has_solution_claim": false,
+        "engineering_candidates": [],
+        "next_tasks": [
+          "核真实作用关系与同工况资料",
+          "固定矩阵版本、参数定义和可用权限",
+          "比较多种参数映射并保留歧义",
+          "实际查表才记录单元格、原理及机制转译"
+        ],
+        "completion_scope": "problem_model_and_mapping_gap_only_not_complete_contradiction_matrix_method"
+      }
+    },
+    {
+      "name": "missing-IF",
+      "class": "缺材料",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "THEN": {
+          "parameter": "P-SLIP",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "causal_relation_status": "teaching_hypothesis_not_measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": false,
+          "cell": null,
+          "principle_hits": []
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "contradiction_role_or_condition_mismatch"
+      }
+    },
+    {
+      "name": "pretend-matrix-query",
+      "class": "不适用",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "IF": {
+          "action": "increase_normal_force",
+          "parameter": "ACT-FORCE",
+          "condition_id": "COND-PROXY-A"
+        },
+        "THEN": {
+          "parameter": "P-SLIP",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "causal_relation_status": "teaching_hypothesis_not_measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": true,
+          "cell": null,
+          "principle_hits": []
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "matrix_lookup_or_hit_not_supported"
+      }
+    },
+    {
+      "name": "zero-is-not-unknown",
+      "class": "边界",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": 0
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "IF": {
+          "action": "increase_normal_force",
+          "parameter": "ACT-FORCE",
+          "condition_id": "COND-PROXY-A"
+        },
+        "THEN": {
+          "parameter": "P-SLIP",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "causal_relation_status": "teaching_hypothesis_not_measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": false,
+          "cell": null,
+          "principle_hits": []
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "native_quantity_unit_direction_or_unknown_changed"
+      }
+    },
+    {
+      "name": "mixed-conditions",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "IF": {
+          "action": "increase_normal_force",
+          "parameter": "ACT-FORCE",
+          "condition_id": "COND-PROXY-A"
+        },
+        "THEN": {
+          "parameter": "P-SLIP",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "OTHER"
+        },
+        "causal_relation_status": "teaching_hypothesis_not_measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": false,
+          "cell": null,
+          "principle_hits": []
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "contradiction_role_or_condition_mismatch"
+      }
+    },
+    {
+      "name": "wrong-unit",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "N",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "IF": {
+          "action": "increase_normal_force",
+          "parameter": "ACT-FORCE",
+          "condition_id": "COND-PROXY-A"
+        },
+        "THEN": {
+          "parameter": "P-SLIP",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "causal_relation_status": "teaching_hypothesis_not_measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": false,
+          "cell": null,
+          "principle_hits": []
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "native_quantity_unit_direction_or_unknown_changed"
+      }
+    },
+    {
+      "name": "mapping-ID-invented",
+      "class": "缺材料",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "IF": {
+          "action": "increase_normal_force",
+          "parameter": "ACT-FORCE",
+          "condition_id": "COND-PROXY-A"
+        },
+        "THEN": {
+          "parameter": "P-SLIP",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "causal_relation_status": "teaching_hypothesis_not_measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [
+            1,
+            2
+          ],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": false,
+          "cell": null,
+          "principle_hits": []
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "unverified_mapping_resolved_or_relabelled"
+      }
+    },
+    {
+      "name": "principle-hit-invented",
+      "class": "不适用",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "IF": {
+          "action": "increase_normal_force",
+          "parameter": "ACT-FORCE",
+          "condition_id": "COND-PROXY-A"
+        },
+        "THEN": {
+          "parameter": "P-SLIP",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "causal_relation_status": "teaching_hypothesis_not_measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": false,
+          "cell": null,
+          "principle_hits": [
+            10
+          ]
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "matrix_lookup_or_hit_not_supported"
+      }
+    },
+    {
+      "name": "assumed-model-as-measured",
+      "class": "边界",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "IF": {
+          "action": "increase_normal_force",
+          "parameter": "ACT-FORCE",
+          "condition_id": "COND-PROXY-A"
+        },
+        "THEN": {
+          "parameter": "P-SLIP",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "causal_relation_status": "measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": false,
+          "cell": null,
+          "principle_hits": []
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "relation_or_approval_promoted"
+      }
+    },
+    {
+      "name": "swap-improve-worsen",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "use": "analogical_contact_fixture_not_target_evidence"
+        },
+        "origin": "authored_conditional_contact_model",
+        "condition": {
+          "id": "COND-PROXY-A",
+          "configuration": "CONTACT-PROXY-A",
+          "material": null,
+          "geometry": null,
+          "environment": null,
+          "status": "assumed_common_condition_not_measured"
+        },
+        "native_parameters": {
+          "ACT-FORCE": {
+            "quantity": "normal_force",
+            "unit": "N",
+            "role": "changed_action_parameter",
+            "direction": "increase",
+            "measured_value": null
+          },
+          "P-SLIP": {
+            "quantity": "relative_slip_magnitude",
+            "unit": "mm",
+            "role": "desired_improvement",
+            "direction": "decrease",
+            "measured_value": null
+          },
+          "P-MARK": {
+            "quantity": "indentation_depth",
+            "unit": "mm",
+            "role": "unwanted_worsening",
+            "direction": "increase",
+            "measured_value": null
+          }
+        },
+        "IF": {
+          "action": "increase_normal_force",
+          "parameter": "ACT-FORCE",
+          "condition_id": "COND-PROXY-A"
+        },
+        "THEN": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "BUT": {
+          "parameter": "P-MARK",
+          "condition_id": "COND-PROXY-A"
+        },
+        "causal_relation_status": "teaching_hypothesis_not_measured",
+        "parameter_mapping": {
+          "status": "unresolved",
+          "search_labels": [
+            "减少相对滑移／维持作用位置",
+            "减少接触损伤／变形副作用"
+          ],
+          "official_parameter_ids": [],
+          "note": "these are platform search phrases, not verified parameters in any named matrix"
+        },
+        "matrix": {
+          "version": null,
+          "authorized_complete_content_acquired": false,
+          "lookup_performed": false,
+          "cell": null,
+          "principle_hits": []
+        },
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "contradiction_role_or_condition_mismatch"
+      }
+    }
+  ],
+  "actual_matrix_queries": 0,
+  "actual_engineering_trials": 0,
+  "method_scope": "partial_modeling_no_claimed_matrix_completion"
+}

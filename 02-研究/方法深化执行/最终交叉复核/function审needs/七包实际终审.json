@@ -1,0 +1,202 @@
+{
+  "packages": [
+    {
+      "package": "MD-050-R01",
+      "manifest_sha256": "5a7cf7f6e1c91a8086acd3be43ef0fde50adece1a81f7cc54d0d231ca8ffdc3b",
+      "entries": 15,
+      "original_fixed_checks": 7,
+      "source_originals_read_in_place_not_copied": true
+    },
+    {
+      "package": "MD-051-R04",
+      "manifest_sha256": "34c20e85ecb6eb9e67d9d56a6baf3ee7290e76649fcb10241929d207a60faf52",
+      "entries": 13,
+      "original_fixed_checks": 7,
+      "source_originals_read_in_place_not_copied": true
+    },
+    {
+      "package": "MD-052-R06",
+      "manifest_sha256": "689e018365e94251062271a5faed723762f9f7baaeb16044e080c8a1add86279",
+      "entries": 13,
+      "original_fixed_checks": 8,
+      "source_originals_read_in_place_not_copied": true
+    },
+    {
+      "package": "MD-053-WB01",
+      "manifest_sha256": "e800a6adcb53d10d6e2ccaab7c8db1c1021bda3c8b94ae1d1aa88c28b11ace46",
+      "entries": 13,
+      "original_fixed_checks": 7,
+      "source_originals_read_in_place_not_copied": true
+    },
+    {
+      "package": "MD-054-WB02",
+      "manifest_sha256": "ecd45788150db582a5ac41510c440f3e25c644b09139f7b9869a0becfc08e10a",
+      "entries": 13,
+      "original_fixed_checks": 7,
+      "source_originals_read_in_place_not_copied": true
+    },
+    {
+      "package": "修订版/MD-019-R21-v0.1.1",
+      "manifest_sha256": "39ab23473b014f25cff89d10ea1d1ab1df2d556429cb85928f7215dc2a050057",
+      "entries": 16,
+      "original_fixed_checks": 10,
+      "source_originals_read_in_place_not_copied": true
+    },
+    {
+      "package": "修订版/MD-020-R22-v0.1.1",
+      "manifest_sha256": "63bb53fa03b067864519f2c659ad2b40213398bd0a0dfe6bfab1f7068a01c22c",
+      "entries": 16,
+      "original_fixed_checks": 10,
+      "source_originals_read_in_place_not_copied": true
+    }
+  ],
+  "prior055_full_manifest_verification": [
+    {
+      "path": "output/method-reader-review/upgrades/R01-v0.2.1-proposal",
+      "manifest_sha256": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b",
+      "entries_verified": 72,
+      "bound_sha256": {
+        "case.json": "7198a1969f24de47f294ade837da64d98f62f56ac205e9a8e97312d8bccc2c1b",
+        "verification.json": "1b975da0fd047bbe76b34e97b03d5ce5de286e9586e755f1c663ecee7ead440f",
+        "manifest.json": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b"
+      }
+    },
+    {
+      "path": "output/method-reader-review/upgrades/R04-v0.2.1-proposal",
+      "manifest_sha256": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4",
+      "entries_verified": 97,
+      "bound_sha256": {
+        "case.json": "936547fe0b4d7807021518b5cfe5fdbf06b65a0211393bb4ea78f15dddb572f9",
+        "verification.json": "c1a7160aaa8278b3ed9d0904d782bb38a6e26a5bb1257e1afee6b0ce2bb3992c",
+        "manifest.json": "cc5a7bdf529408eee33ed5e6d1554c7e688b84307caeea50282778e2f3d82af4"
+      }
+    }
+  ],
+  "independent_probes": [
+    {
+      "package": "MD-050-R01",
+      "name": "new-prior-case-sha-drift",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: binding_or_requirement_changed"
+      }
+    },
+    {
+      "package": "MD-050-R01",
+      "name": "new-NaN-release-gap",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: invalid_gap"
+      }
+    },
+    {
+      "package": "MD-051-R04",
+      "name": "new-drift-evidence-sensor",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: invented_evidence_identity_or_status"
+      }
+    },
+    {
+      "package": "MD-051-R04",
+      "name": "new-architecture-dependent-rule",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: fixed_context_or_derived_budget_changed"
+      }
+    },
+    {
+      "package": "MD-052-R06",
+      "name": "new-Go-still-no-resource-authorization",
+      "actual": "returned",
+      "output": {
+        "advisory_outcome": "Go",
+        "reason": "only within declared fixed fixture, not real authorization",
+        "proposed_resource_limit": {
+          "unit": "synthetic_person_hour_not_actual_budget",
+          "cap": 24,
+          "owner_role": "research_lead_unassigned",
+          "review_trigger": "before any physical actuation or new evidence"
+        },
+        "authorized_resource": null,
+        "actual_gate_decision": null,
+        "scope_permitted_by_this_script": null,
+        "reviewer_needed": "cross_functional_authority_and_domain_review",
+        "not_a_safety_waiver": true
+      }
+    },
+    {
+      "package": "MD-052-R06",
+      "name": "new-real-owner-appointment",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: unbound_resources_owner_or_review"
+      }
+    },
+    {
+      "package": "MD-053-WB01",
+      "name": "new-unread-year-confirmation",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: source_identity_year_scope_or_terms_changed"
+      }
+    },
+    {
+      "package": "MD-053-WB01",
+      "name": "new-third-party-efficacy",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: unsupported_lineage_or_effectiveness"
+      }
+    },
+    {
+      "package": "MD-054-WB02",
+      "name": "new-third-I-renaming",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: verified_Chinese_roles_or_source_changed"
+      }
+    },
+    {
+      "package": "MD-054-WB02",
+      "name": "new-priority-selected-with-no-evidence",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: unsupported_customer_selection_or_ranking"
+      }
+    },
+    {
+      "package": "修订版/MD-019-R21-v0.1.1",
+      "name": "old-direction-bool",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: technical_direction_enum_required"
+      }
+    },
+    {
+      "package": "修订版/MD-019-R21-v0.1.1",
+      "name": "new-direction-string-nonsense",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: technical_direction_enum_required"
+      }
+    },
+    {
+      "package": "修订版/MD-020-R22-v0.1.1",
+      "name": "new-matrix-cell-without-lookup",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: matrix_lookup_or_hit_not_supported"
+      }
+    },
+    {
+      "package": "修订版/MD-020-R22-v0.1.1",
+      "name": "new-official-parameter-mapping-claim",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: unverified_mapping_resolved_or_relabelled"
+      }
+    }
+  ],
+  "scope": "independent Agent fixed/provenance review, original raw sources read only in place"
+}

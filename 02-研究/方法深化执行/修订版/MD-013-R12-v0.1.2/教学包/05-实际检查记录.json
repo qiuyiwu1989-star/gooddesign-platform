@@ -1,0 +1,282 @@
+{
+  "script_sha256": "2b5660b897accf116e89b180187a63e4bc35d6d4c4b741701ce1bd01c3302f87",
+  "tests": [
+    {
+      "id": "normal-unknown-matrix",
+      "category": "normal",
+      "actual": "accepted",
+      "expected": "accepted",
+      "input": "检查输入-normal-unknown-matrix.json",
+      "input_sha256": "ff2c3c4cc2057797203836ef26dc4e602f963db42d21de17db257f68ccef02b1",
+      "output": {
+        "status": "research_deployment_trace_only",
+        "needs": 4,
+        "responses": 4,
+        "unknown_relationships": 16,
+        "priority_scores": null,
+        "ranking": null,
+        "target_values_generated": false,
+        "reason": "未取得关系、可用偏好尺度及目标来源，不能聚合或反推阈值",
+        "next_actions": [
+          "核源需要",
+          "核响应/关系依据",
+          "取得偏好尺度和硬要求",
+          "独立定义工程目标及验收口径"
+        ],
+        "full_qfd_or_standard_compliance": false
+      }
+    },
+    {
+      "id": "missing-relationship",
+      "category": "missing",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-missing-relationship.json",
+      "input_sha256": "27a3ddbb4e0ba95a9023e1a2f459b68391012e24739a2821d7927fe3ef563a5f",
+      "output": {
+        "error": "relationship_grid_incomplete"
+      }
+    },
+    {
+      "id": "not-ranker",
+      "category": "not_applicable",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-not-ranker.json",
+      "input_sha256": "3b9723c0a0023f0d0265ed365bd38d84628af8dc70e5dce8e152492dba531d6a",
+      "output": {
+        "error": "unsupported_approval_or_execution_mode"
+      }
+    },
+    {
+      "id": "unknown-to-zero",
+      "category": "boundary",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-unknown-to-zero.json",
+      "input_sha256": "48e32c8fd6a6ebfb5a1f35b5ca3c2436b664523960a679fb5bb1cc41f574fb72",
+      "output": {
+        "error": "unfounded_relationship_score"
+      }
+    },
+    {
+      "id": "fake-target-from-nine",
+      "category": "conflict",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-fake-target-from-nine.json",
+      "input_sha256": "12e7b44f72ed8a97be1c9949a8b71cdff7632af13771d70d5fe2cb0318468861",
+      "output": {
+        "error": "unsupported_target_or_unit_injected"
+      }
+    },
+    {
+      "id": "unelicited-weight",
+      "category": "boundary",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-unelicited-weight.json",
+      "input_sha256": "97c5cfc5cbfda8ade2a888f2d1d7c86663b3606aa3e5f7bfdc8c2e64e0a2f9c3",
+      "output": {
+        "error": "unelicited_preference_score"
+      }
+    },
+    {
+      "id": "erase-source-unknowns",
+      "category": "missing",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-erase-source-unknowns.json",
+      "input_sha256": "5a2a9d792ec22a39404bd89d39c6d7abcf7b4b88f74e4fd8d573663dac8c186f",
+      "output": {
+        "error": "shared_needs_or_unknowns_changed"
+      }
+    },
+    {
+      "id": "source-version",
+      "category": "conflict",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-source-version.json",
+      "input_sha256": "d288a6738180b78e9df0f06b517b80689da8b5455823aaab261346431fbbcb48",
+      "output": {
+        "error": "upstream_identity_mismatch"
+      }
+    },
+    {
+      "id": "hard-waiver",
+      "category": "not_applicable",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-hard-waiver.json",
+      "input_sha256": "681834099e6191cb784f25f0cb20fb8dd4a816b3b1e564b743d1447537e82157",
+      "output": {
+        "error": "preferences_cannot_waive_hard_requirement"
+      }
+    },
+    {
+      "id": "invented-relationship-evidence",
+      "category": "conflict",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-invented-relationship-evidence.json",
+      "input_sha256": "5b61ef59bfa5d7868541c4e208e4d325f374459693b76acba4eb8844352ef38c",
+      "output": {
+        "error": "unsupported_relationship_evidence"
+      }
+    },
+    {
+      "id": "missing-null-is-not-explicit-unknown",
+      "category": "missing",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-missing-null-is-not-explicit-unknown.json",
+      "input_sha256": "06cab47a70fdcf95c95384774e0c6cd2e062c69dbc42869f4ef8623c3fe3ae15",
+      "output": {
+        "error": "response_identity_fields_missing_or_unregistered"
+      }
+    },
+    {
+      "id": "narrow-response-study-with-needs-retained",
+      "category": "boundary",
+      "actual": "accepted",
+      "expected": "accepted",
+      "input": "检查输入-narrow-response-study-with-needs-retained.json",
+      "input_sha256": "79b76a80896ce10e867abd9590084b4707ad147185ee296be1f05d0f60fc1cdf",
+      "output": {
+        "status": "research_deployment_trace_only",
+        "needs": 4,
+        "responses": 2,
+        "unknown_relationships": 8,
+        "priority_scores": null,
+        "ranking": null,
+        "target_values_generated": false,
+        "reason": "未取得关系、可用偏好尺度及目标来源，不能聚合或反推阈值",
+        "next_actions": [
+          "核源需要",
+          "核响应/关系依据",
+          "取得偏好尺度和硬要求",
+          "独立定义工程目标及验收口径"
+        ],
+        "full_qfd_or_standard_compliance": false
+      }
+    },
+    {
+      "id": "customer-accepted",
+      "category": "approval identity regression",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-customer-accepted.json",
+      "input_sha256": "83581df85bf74028d949cb3f74097f3aa0ad65497098b88582c36126236ed7df",
+      "output": {
+        "error": "response_approval_identity_promoted"
+      }
+    },
+    {
+      "id": "customer-confirmed-requirement",
+      "category": "approval identity regression",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-customer-confirmed-requirement.json",
+      "input_sha256": "aea998d8f4e6965d63c1dc0fc15ca0fe99aeeca1e36b202604bf22c5679ea411",
+      "output": {
+        "error": "response_approval_identity_promoted"
+      }
+    },
+    {
+      "id": "type-missing",
+      "category": "approval identity regression",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-type-missing.json",
+      "input_sha256": "b50c3c33951bf4deabdd23eb17ec7bbb7fa645c94a547fe2afe33c08516366f8",
+      "output": {
+        "error": "response_identity_fields_missing_or_unregistered"
+      }
+    },
+    {
+      "id": "acceptance-missing",
+      "category": "approval identity regression",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-acceptance-missing.json",
+      "input_sha256": "a24900dcfa5dd61d2f8c495eae9091903f2a7db5d7392dbf29bb1401a3487d54",
+      "output": {
+        "error": "response_identity_fields_missing_or_unregistered"
+      }
+    },
+    {
+      "id": "invented-action-approval",
+      "category": "approval identity regression",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-invented-action-approval.json",
+      "input_sha256": "7decb12b6626009527c3a374027ef9f45a39c0a051ba65d9e23de8c2117a8a1f",
+      "output": {
+        "error": "response_identity_fields_missing_or_unregistered"
+      }
+    },
+    {
+      "id": "invented-engineering-validation",
+      "category": "approval identity regression",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-invented-engineering-validation.json",
+      "input_sha256": "70e51d04a0b0ba2e447c2471134137d2901548b72e021c988c5edb1cb3cc7e4f",
+      "output": {
+        "error": "response_identity_fields_missing_or_unregistered"
+      }
+    },
+    {
+      "id": "real-appointment",
+      "category": "approval identity regression",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-real-appointment.json",
+      "input_sha256": "1cfff7365ae082bed1f6798159269b61b17efdeafb88b939a3ac77d692fd2063",
+      "output": {
+        "error": "responsibility_or_appointment_misrepresented"
+      }
+    },
+    {
+      "id": "schema-drift",
+      "category": "approval identity regression",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-schema-drift.json",
+      "input_sha256": "299ba32cb1032209d5edb0979e541a59920485da9b2f43827c7ed277b6121d88",
+      "output": {
+        "error": "unsupported_schema"
+      }
+    },
+    {
+      "id": "blank-response-text",
+      "category": "shape",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-blank-response-text.json",
+      "input_sha256": "3fc6df1f4aa29967cb4a834ee0d2eb298ba77f93313da8399690803883e8f6dc",
+      "output": {
+        "error": "response_text_required"
+      }
+    },
+    {
+      "id": "whitespace-response-text",
+      "category": "shape",
+      "actual": "rejected",
+      "expected": "rejected",
+      "input": "检查输入-whitespace-response-text.json",
+      "input_sha256": "3fd2ab68cff113f6339899bd5468b41044b31b0657b8d203f512eedf7769a515",
+      "output": {
+        "error": "response_text_required"
+      }
+    }
+  ],
+  "passed": 22,
+  "not_claimed": [
+    "general semantic sufficiency",
+    "real QFD deployment",
+    "numerical sensitivity sweep",
+    "expert validation"
+  ]
+}

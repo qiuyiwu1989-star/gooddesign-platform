@@ -1,0 +1,38 @@
+{
+  "origin": "supplement_to_existing_055_constructed_fixture",
+  "prior_package": {
+    "path": "output/method-reader-review/upgrades/R01-v0.2.1-proposal",
+    "sha256": {
+      "case.json": "7198a1969f24de47f294ade837da64d98f62f56ac205e9a8e97312d8bccc2c1b",
+      "verification.json": "1b975da0fd047bbe76b34e97b03d5ce5de286e9586e755f1c663ecee7ead440f",
+      "manifest.json": "d0fe4f340e41842d73168840e3bfe210a7091d4b24df15f6efc7675be04a4e0b"
+    },
+    "status": "pending_independent_review_not_engineering"
+  },
+  "requirement": {
+    "id": "RQ-RELEASE-TEACH",
+    "version": "1",
+    "min_free_gap_mm": 5,
+    "basis": "new_authored_geometric_constraint_not_customer_requirement"
+  },
+  "principles": [
+    "P-SCREW",
+    "P-LEVER"
+  ],
+  "layouts": [
+    {
+      "id": "LAY-v1",
+      "principle": "P-LEVER",
+      "gap_mm": 2,
+      "manufacturing_simplicity": "hypothesis"
+    },
+    {
+      "id": "LAY-v2",
+      "principle": "P-LEVER",
+      "gap_mm": 6,
+      "manufacturing_simplicity": "unknown"
+    }
+  ],
+  "manufacturing_release": false,
+  "actual_tests": []
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "strict_format_only_not_semantics",
+  "json_files_checked": 1407,
+  "intentional_invalid_input_fixtures": [
+    {
+      "path": "02-研究/方法深化执行/MD-048-R52/教学包/探针-NaN-loss.json",
+      "classification": "intentional_invalid_numeric_fixture_not_valid_call_input",
+      "strict_parse_error": "NaN"
+    },
+    {
+      "path": "02-研究/方法深化执行/修订版/MD-048-R52-v0.1.1/教学包/探针-NaN-loss.json",
+      "classification": "intentional_invalid_numeric_fixture_not_valid_call_input",
+      "strict_parse_error": "NaN"
+    },
+    {
+      "path": "02-研究/方法深化执行/修订版/MD-036-R05-v0.1.1/教学包/修订-NaN-command.json",
+      "classification": "intentional_invalid_numeric_fixture_not_valid_call_input",
+      "strict_parse_error": "NaN"
+    }
+  ],
+  "unexplained_format_errors": []
+}

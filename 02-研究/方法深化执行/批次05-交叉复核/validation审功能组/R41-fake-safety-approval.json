@@ -1,0 +1,73 @@
+{
+  "input": {
+    "id": "R41-TASK-TEACH-001",
+    "origin": "constructed_not_hazard_acceptance",
+    "market": null,
+    "machine_use_classification": "agricultural_or_forestry_unresolved",
+    "standard_applicability": "not_confirmed",
+    "customer_approved": false,
+    "safety_approved": true,
+    "hazards": [
+      {
+        "id": "HZ01",
+        "phase": "normal",
+        "task": "人员可能靠近构造作业头",
+        "hazard": "运动刀具/夹持区域",
+        "exposure": "operator_or_bystander",
+        "consequence": "割伤/挤压可能性，严重度与频率未评估",
+        "design_review": "candidate_elimination_or_reduced_energy_under_study",
+        "safeguard_review": "candidate_guarding_and_access_control_under_study",
+        "information_review": "residual_information_under_study",
+        "verification": "not_executed",
+        "residual_risk": "unknown",
+        "risk_score": null
+      },
+      {
+        "id": "HZ02",
+        "phase": "abnormal",
+        "task": "构造卡阻后准备介入",
+        "hazard": "残余能量及意外再启动",
+        "exposure": "operator",
+        "consequence": "意外运动伤害，未实测",
+        "design_review": "candidate_elimination_or_reduced_energy_under_study",
+        "safeguard_review": "candidate_guarding_and_access_control_under_study",
+        "information_review": "residual_information_under_study",
+        "verification": "not_executed",
+        "residual_risk": "unknown",
+        "risk_score": null
+      },
+      {
+        "id": "HZ03",
+        "phase": "maintenance",
+        "task": "构造清洁换件",
+        "hazard": "电源/弹性/重力等能量状态未定",
+        "exposure": "maintainer",
+        "consequence": "接触和释放能量伤害，未实测",
+        "design_review": "candidate_elimination_or_reduced_energy_under_study",
+        "safeguard_review": "candidate_guarding_and_access_control_under_study",
+        "information_review": "residual_information_under_study",
+        "verification": "not_executed",
+        "residual_risk": "unknown",
+        "risk_score": null
+      },
+      {
+        "id": "HZ04",
+        "phase": "foreseeable_misuse",
+        "task": "为观察状态可能跨越防护边界",
+        "hazard": "人在危险区时动作仍可能存在",
+        "exposure": "operator_or_bystander",
+        "consequence": "危险接近，非真实用户行为记录",
+        "design_review": "candidate_elimination_or_reduced_energy_under_study",
+        "safeguard_review": "candidate_guarding_and_access_control_under_study",
+        "information_review": "residual_information_under_study",
+        "verification": "not_executed",
+        "residual_risk": "unknown",
+        "risk_score": null
+      }
+    ]
+  },
+  "method": "R41",
+  "name": "fake-safety-approval",
+  "output": null,
+  "error": "unsupported approval/provenance"
+}

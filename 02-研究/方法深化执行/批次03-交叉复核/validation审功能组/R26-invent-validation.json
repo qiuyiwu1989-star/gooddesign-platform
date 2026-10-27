@@ -1,0 +1,48 @@
+{
+  "input": {
+    "id": "R26-FIXTURE-TEACH-001",
+    "customer_approved": false,
+    "removed_component": "dedicated release actuator (hypothetical)",
+    "original_functions": [
+      {
+        "id": "F01",
+        "action": "withdraw moving contact"
+      },
+      {
+        "id": "F02",
+        "action": "report return state"
+      },
+      {
+        "id": "F03",
+        "action": "keep withdrawal after primary power loss"
+      }
+    ],
+    "redistribution": [
+      {
+        "function_id": "F01",
+        "route": "C",
+        "new_carrier": "existing preload element",
+        "takeover_evidence": "independent_constructed_assumption",
+        "engineering_validated": true
+      },
+      {
+        "function_id": "F02",
+        "route": "C",
+        "new_carrier": null,
+        "takeover_evidence": "unknown",
+        "engineering_validated": false
+      },
+      {
+        "function_id": "F03",
+        "route": "B",
+        "new_carrier": "moving member self-return behavior",
+        "takeover_evidence": "unknown",
+        "engineering_validated": false
+      }
+    ]
+  },
+  "method": "R26",
+  "name": "invent-validation",
+  "output": null,
+  "error": "no real engineering evidence in this packet"
+}

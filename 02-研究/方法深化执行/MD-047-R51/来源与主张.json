@@ -1,0 +1,42 @@
+{
+  "method": "R51",
+  "version": "0.1.0",
+  "sources": [
+    {
+      "url": "https://psas.scripts.mit.edu/home/wp-content/uploads/2025/2025-03-24-0900__STPA_Introduction__PUB.pdf",
+      "identity": "John Thomas2025 A quick Introduction to STPA;79page author slides, not2018 handbook",
+      "locator": "PDF1 title/author; PDF69 control loop; PDF70 four UCA classes; PDF72–73 context table",
+      "supports": "control model with feedback/beliefs and four unsafe action categories",
+      "read_scope": "selected author slides re-read from archived primary PDF/text"
+    },
+    {
+      "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf",
+      "identity": "failed handbook endpoint",
+      "locator": "live response MIT script mitigation interstitial",
+      "supports": "none; not method content",
+      "read_scope": "not acquired"
+    }
+  ],
+  "platform_adaptations": [
+    "independent constructed teaching scenario",
+    "fixed structured identity guards",
+    "explicit unknown/no approval/no field execution states"
+  ],
+  "private_evidence": [
+    {
+      "path": "private-sources/e469186f8f8337.pdf",
+      "sha256": "5f32dcf5b9e08398b08bcb6384551b841c36c15838596b7c13766222451e21b6"
+    },
+    {
+      "path": "private-sources/e469186f8f8337.txt",
+      "sha256": "c70137f77520ca5927e6f726edff768e167931c7332f6e5131e74a17c403d340"
+    }
+  ],
+  "rights": "private originals excluded from public manifest and publication; no copied source diagrams/whole text",
+  "not_claimed": [
+    "original method complete implementation",
+    "real client probabilities or requirements",
+    "field validation",
+    "expert certification"
+  ]
+}

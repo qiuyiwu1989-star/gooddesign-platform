@@ -1,0 +1,841 @@
+{
+  "unchanged_files": 124,
+  "manifests": [
+    {
+      "task": "MD-036-R05-v0.1.1",
+      "sha256": "ebf030a5301ab9a4b2c006a52df637d69f7f10fc1e28335e52d638b4d7e7a50e",
+      "entries": 25
+    },
+    {
+      "task": "MD-037-R47-v0.1.1",
+      "sha256": "ffc69bf38291603056879d026805923b8ae122d67405a96536839eb077775c25",
+      "entries": 23
+    },
+    {
+      "task": "MD-006-R44-v0.1.2",
+      "sha256": "e460acfd096d67e44ab83016043f744a3c90d49aff5d876811de3d7cf32b7c8e",
+      "entries": 37
+    },
+    {
+      "task": "MD-007-R42-v0.1.2",
+      "sha256": "5b2bf3955f24bac873bdff7d8f7ef633d706c1d6c755402eb2a1072f1626524e",
+      "entries": 35
+    }
+  ],
+  "replays": [
+    {
+      "entry": "MD-036-R05-v0.1.1",
+      "stdout": "16 fixed checks passed; teaching only\n"
+    },
+    {
+      "entry": "MD-006-R44-v0.1.2",
+      "stdout": "{\"R36_cells\": 32, \"R36_unknown\": 32, \"R36_ranking\": null, \"R44_ready\": \"not_ready\", \"R42_ready\": false, \"actual_fixed_fixture_checks\": 36, \"all_pass\": true}\n"
+    }
+  ],
+  "probes": [
+    {
+      "name": "old-bool-command",
+      "input": {
+        "id": "V-IF-TEACH-001",
+        "provenance": "independent_constructed_interface_not_robot",
+        "version": "0.1.0",
+        "customer_approved": false,
+        "mechanical": {
+          "unit": "mm",
+          "positive": "outward",
+          "frame": "fixture-frame"
+        },
+        "software": {
+          "unit": "mm",
+          "positive": "inward",
+          "frame": "fixture-frame"
+        },
+        "transform": {
+          "scale": -1,
+          "offset": 0,
+          "verified_status": "declared_teaching_relation_only"
+        },
+        "sample": {
+          "value": 2,
+          "timestamp_ms": 80,
+          "now_ms": 100,
+          "clock": "same_constructed_monotonic_clock",
+          "age_limit_ms": 30
+        },
+        "command": {
+          "software_value": true,
+          "controller_owner": "motion_controller",
+          "other_writers": []
+        },
+        "timeout": {
+          "limit_ms": 30,
+          "response": "inhibit_new_motion_and_request_stop",
+          "actual_stop_confirmed": false,
+          "safe_state": "unconfirmed_pending_actual_motion_and_residual_energy_observation"
+        },
+        "trace": [
+          {
+            "left": "L1-use-context-intent",
+            "right": "T1-context-observation",
+            "evidence": "planned_not_executed"
+          },
+          {
+            "left": "L2-system-interface",
+            "right": "T2-sign-unit-time-authority-integration",
+            "evidence": "constructed_check_only"
+          },
+          {
+            "left": "L3-domain-coordinate",
+            "right": "T3-domain-unit-check",
+            "evidence": "declared_local_check_not_field"
+          }
+        ],
+        "engineering_validated": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "invalid_command_numeric"
+      }
+    },
+    {
+      "name": "old-NaN-command",
+      "input": {
+        "id": "V-IF-TEACH-001",
+        "provenance": "independent_constructed_interface_not_robot",
+        "version": "0.1.0",
+        "customer_approved": false,
+        "mechanical": {
+          "unit": "mm",
+          "positive": "outward",
+          "frame": "fixture-frame"
+        },
+        "software": {
+          "unit": "mm",
+          "positive": "inward",
+          "frame": "fixture-frame"
+        },
+        "transform": {
+          "scale": -1,
+          "offset": 0,
+          "verified_status": "declared_teaching_relation_only"
+        },
+        "sample": {
+          "value": 2,
+          "timestamp_ms": 80,
+          "now_ms": 100,
+          "clock": "same_constructed_monotonic_clock",
+          "age_limit_ms": 30
+        },
+        "command": {
+          "software_value": {
+            "native_python_nonfinite": "nan"
+          },
+          "controller_owner": "motion_controller",
+          "other_writers": []
+        },
+        "timeout": {
+          "limit_ms": 30,
+          "response": "inhibit_new_motion_and_request_stop",
+          "actual_stop_confirmed": false,
+          "safe_state": "unconfirmed_pending_actual_motion_and_residual_energy_observation"
+        },
+        "trace": [
+          {
+            "left": "L1-use-context-intent",
+            "right": "T1-context-observation",
+            "evidence": "planned_not_executed"
+          },
+          {
+            "left": "L2-system-interface",
+            "right": "T2-sign-unit-time-authority-integration",
+            "evidence": "constructed_check_only"
+          },
+          {
+            "left": "L3-domain-coordinate",
+            "right": "T3-domain-unit-check",
+            "evidence": "declared_local_check_not_field"
+          }
+        ],
+        "engineering_validated": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "invalid_command_numeric"
+      }
+    },
+    {
+      "name": "new-inf-command",
+      "input": {
+        "id": "V-IF-TEACH-001",
+        "provenance": "independent_constructed_interface_not_robot",
+        "version": "0.1.0",
+        "customer_approved": false,
+        "mechanical": {
+          "unit": "mm",
+          "positive": "outward",
+          "frame": "fixture-frame"
+        },
+        "software": {
+          "unit": "mm",
+          "positive": "inward",
+          "frame": "fixture-frame"
+        },
+        "transform": {
+          "scale": -1,
+          "offset": 0,
+          "verified_status": "declared_teaching_relation_only"
+        },
+        "sample": {
+          "value": 2,
+          "timestamp_ms": 80,
+          "now_ms": 100,
+          "clock": "same_constructed_monotonic_clock",
+          "age_limit_ms": 30
+        },
+        "command": {
+          "software_value": {
+            "native_python_nonfinite": "inf"
+          },
+          "controller_owner": "motion_controller",
+          "other_writers": []
+        },
+        "timeout": {
+          "limit_ms": 30,
+          "response": "inhibit_new_motion_and_request_stop",
+          "actual_stop_confirmed": false,
+          "safe_state": "unconfirmed_pending_actual_motion_and_residual_energy_observation"
+        },
+        "trace": [
+          {
+            "left": "L1-use-context-intent",
+            "right": "T1-context-observation",
+            "evidence": "planned_not_executed"
+          },
+          {
+            "left": "L2-system-interface",
+            "right": "T2-sign-unit-time-authority-integration",
+            "evidence": "constructed_check_only"
+          },
+          {
+            "left": "L3-domain-coordinate",
+            "right": "T3-domain-unit-check",
+            "evidence": "declared_local_check_not_field"
+          }
+        ],
+        "engineering_validated": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "invalid_command_numeric"
+      }
+    },
+    {
+      "name": "old-bool-grid",
+      "input": {
+        "id": "SBCE-GRID-TEACH-001",
+        "provenance": "synthetic_domains_not_customer_budgets",
+        "version": "0.1.0",
+        "units": {
+          "mass": "kg",
+          "power": "W",
+          "coupling": "kg*W"
+        },
+        "mass_grid": [
+          true,
+          2,
+          3
+        ],
+        "power_grid": [
+          10,
+          20,
+          30
+        ],
+        "constraints": [
+          {
+            "id": "E-MECH",
+            "owner": "mechanical",
+            "predicate": "mass<=2",
+            "status": "constructed_assumption",
+            "source": "teaching-definition-v0.1.0"
+          },
+          {
+            "id": "E-ELEC",
+            "owner": "electrical",
+            "predicate": "power<=20",
+            "status": "constructed_assumption",
+            "source": "teaching-definition-v0.1.0"
+          },
+          {
+            "id": "E-IF",
+            "owner": "interface",
+            "predicate": "mass*power<=30",
+            "status": "constructed_assumption",
+            "source": "teaching-definition-v0.1.0"
+          }
+        ],
+        "real_latex_boundary": "unknown",
+        "customer_approved": false,
+        "commitment": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "invalid_domain_numeric"
+      }
+    },
+    {
+      "name": "old-duplicate-hypothesis",
+      "input": {
+        "schema": "R44-teaching-input-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "source_r36": {
+          "path": "../MD-005-R36-v0.1.1/教学包/02-主链逐格比较与补证队列.json",
+          "sha256": "7f8af7f9bdbab00246a78bd5159fc38ea4ec93a689c451f491a798d2ee7385e0"
+        },
+        "hypotheses": [
+          {
+            "id": "H-R44-01",
+            "need": "N-T01",
+            "question": "表面参考是否足以支持待研究的作用边界表达？",
+            "alternative": "表面几何与隐藏组织边界不相同，表面代理可能无法支持目标声明",
+            "prototype_id": "P-SURROGATE",
+            "learning_scope": "局部代理材料与参考关系；不能确认真实树体内部边界",
+            "observation_plan": [
+              "记录已知代理几何与参考输出及其对应关系",
+              "检查偏差是否随表面状态改变；实际材料、测量方法待定"
+            ],
+            "measurement_unit_proposal": "待依据具体变量确认；不改源需求unit",
+            "threshold": null
+          },
+          {
+            "id": "H-R44-03",
+            "need": "N-T03",
+            "question": "状态样例中的时效标记是否帮助区分陈旧与当前信息？",
+            "alternative": "使用者可能忽视标记或错误理解时效",
+            "prototype_id": "P-PAPER",
+            "learning_scope": "状态理解研究；不能确认控制实时性或机械安全",
+            "observation_plan": [
+              "拟让目标角色判断当前与陈旧状态并说明依据",
+              "记录误解及无法判断；资格、同意与样本待定"
+            ],
+            "measurement_unit_proposal": "任务表现与解释编码待确认",
+            "threshold": null
+          },
+          {
+            "id": "H-R44-01",
+            "need": "N-T01",
+            "question": "表面参考是否足以支持待研究的作用边界表达？",
+            "alternative": "表面几何与隐藏组织边界不相同，表面代理可能无法支持目标声明",
+            "prototype_id": "P-SURROGATE",
+            "learning_scope": "局部代理材料与参考关系；不能确认真实树体内部边界",
+            "observation_plan": [
+              "记录已知代理几何与参考输出及其对应关系",
+              "检查偏差是否随表面状态改变；实际材料、测量方法待定"
+            ],
+            "measurement_unit_proposal": "待依据具体变量确认；不改源需求unit",
+            "threshold": null
+          }
+        ],
+        "prototypes": [
+          {
+            "id": "P-SURROGATE",
+            "status": "planned_not_built",
+            "capabilities": [
+              "proxy_geometry_relation"
+            ],
+            "cannot_answer": [
+              "true_tree_tissue_accuracy",
+              "system_safety"
+            ]
+          },
+          {
+            "id": "P-PAPER",
+            "status": "planned_not_built",
+            "capabilities": [
+              "state_comprehension"
+            ],
+            "cannot_answer": [
+              "physical_cutting",
+              "control_latency"
+            ]
+          }
+        ],
+        "capability_needed": {
+          "H-R44-01": "proxy_geometry_relation",
+          "H-R44-03": "state_comprehension"
+        },
+        "coverage": {
+          "planned_learning_needs": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "execution_status": "not_executed",
+        "participant_count": null,
+        "observations": [],
+        "findings": [],
+        "customer_approved": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "duplicate_hypothesis_id"
+      }
+    },
+    {
+      "name": "old-r36-path-drift",
+      "input": {
+        "schema": "R44-teaching-input-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "source_r36": {
+          "path": "unrelated.json",
+          "sha256": "7f8af7f9bdbab00246a78bd5159fc38ea4ec93a689c451f491a798d2ee7385e0"
+        },
+        "hypotheses": [
+          {
+            "id": "H-R44-01",
+            "need": "N-T01",
+            "question": "表面参考是否足以支持待研究的作用边界表达？",
+            "alternative": "表面几何与隐藏组织边界不相同，表面代理可能无法支持目标声明",
+            "prototype_id": "P-SURROGATE",
+            "learning_scope": "局部代理材料与参考关系；不能确认真实树体内部边界",
+            "observation_plan": [
+              "记录已知代理几何与参考输出及其对应关系",
+              "检查偏差是否随表面状态改变；实际材料、测量方法待定"
+            ],
+            "measurement_unit_proposal": "待依据具体变量确认；不改源需求unit",
+            "threshold": null
+          },
+          {
+            "id": "H-R44-03",
+            "need": "N-T03",
+            "question": "状态样例中的时效标记是否帮助区分陈旧与当前信息？",
+            "alternative": "使用者可能忽视标记或错误理解时效",
+            "prototype_id": "P-PAPER",
+            "learning_scope": "状态理解研究；不能确认控制实时性或机械安全",
+            "observation_plan": [
+              "拟让目标角色判断当前与陈旧状态并说明依据",
+              "记录误解及无法判断；资格、同意与样本待定"
+            ],
+            "measurement_unit_proposal": "任务表现与解释编码待确认",
+            "threshold": null
+          }
+        ],
+        "prototypes": [
+          {
+            "id": "P-SURROGATE",
+            "status": "planned_not_built",
+            "capabilities": [
+              "proxy_geometry_relation"
+            ],
+            "cannot_answer": [
+              "true_tree_tissue_accuracy",
+              "system_safety"
+            ]
+          },
+          {
+            "id": "P-PAPER",
+            "status": "planned_not_built",
+            "capabilities": [
+              "state_comprehension"
+            ],
+            "cannot_answer": [
+              "physical_cutting",
+              "control_latency"
+            ]
+          }
+        ],
+        "capability_needed": {
+          "H-R44-01": "proxy_geometry_relation",
+          "H-R44-03": "state_comprehension"
+        },
+        "coverage": {
+          "planned_learning_needs": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "execution_status": "not_executed",
+        "participant_count": null,
+        "observations": [],
+        "findings": [],
+        "customer_approved": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "source_r36_path_mismatch"
+      }
+    },
+    {
+      "name": "old-duplicate-item",
+      "input": {
+        "schema": "R42-teaching-input-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "source_r44": {
+          "path": "../MD-006-R44-v0.1.2/教学包/02-能力与解释分支计划.json",
+          "sha256": "f4d63a5bee68db4c75e08661cfdca234a249d6799556fc3a48cd107d56d60c1c"
+        },
+        "source_requirement_candidates": {
+          "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/02-要求候选与双向追溯.json",
+          "sha256": "edc3bf61175ecd9bac0accc20f68021de54d94369b89bf2ec1678d726d2dabaa"
+        },
+        "configuration_id": "CFG-TAP-RESEARCH-0.1",
+        "items": [
+          {
+            "source_need": "N-T01",
+            "source_requirement_candidate": "RQ-T01",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T02",
+            "source_requirement_candidate": "RQ-T02",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T03",
+            "source_requirement_candidate": "RQ-T03",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T04",
+            "source_requirement_candidate": "RQ-T04",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T01",
+            "source_requirement_candidate": "RQ-T01",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          }
+        ],
+        "activities": [
+          {
+            "id": "V-P01",
+            "source_need": "N-T01",
+            "type": "proposed_analysis_or_test",
+            "objective": "研究如何形成可检验的边界要求",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          },
+          {
+            "id": "VAL-P03",
+            "source_need": "N-T03",
+            "type": "proposed_use_context_research",
+            "objective": "形成目标操作者状态理解的确认问题",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          }
+        ],
+        "coverage": {
+          "planned": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "ready": false,
+        "results": [],
+        "engineering_pass": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "duplicate_source_item_id"
+      }
+    },
+    {
+      "name": "new-duplicate-coverage-label",
+      "input": {
+        "schema": "R42-teaching-input-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "source_r44": {
+          "path": "../MD-006-R44-v0.1.2/教学包/02-能力与解释分支计划.json",
+          "sha256": "f4d63a5bee68db4c75e08661cfdca234a249d6799556fc3a48cd107d56d60c1c"
+        },
+        "source_requirement_candidates": {
+          "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/02-要求候选与双向追溯.json",
+          "sha256": "edc3bf61175ecd9bac0accc20f68021de54d94369b89bf2ec1678d726d2dabaa"
+        },
+        "configuration_id": "CFG-TAP-RESEARCH-0.1",
+        "items": [
+          {
+            "source_need": "N-T01",
+            "source_requirement_candidate": "RQ-T01",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T02",
+            "source_requirement_candidate": "RQ-T02",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T03",
+            "source_requirement_candidate": "RQ-T03",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T04",
+            "source_requirement_candidate": "RQ-T04",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          }
+        ],
+        "activities": [
+          {
+            "id": "V-P01",
+            "source_need": "N-T01",
+            "type": "proposed_analysis_or_test",
+            "objective": "研究如何形成可检验的边界要求",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          },
+          {
+            "id": "VAL-P03",
+            "source_need": "N-T03",
+            "type": "proposed_use_context_research",
+            "objective": "形成目标操作者状态理解的确认问题",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          }
+        ],
+        "coverage": {
+          "planned": [
+            "N-T01",
+            "N-T03",
+            "N-T01"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "ready": false,
+        "results": [],
+        "engineering_pass": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "duplicate_coverage_id"
+      }
+    },
+    {
+      "name": "new-r44-path-drift",
+      "input": {
+        "schema": "R42-teaching-input-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "source_r44": {
+          "path": "unrelated.json",
+          "sha256": "f4d63a5bee68db4c75e08661cfdca234a249d6799556fc3a48cd107d56d60c1c"
+        },
+        "source_requirement_candidates": {
+          "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/02-要求候选与双向追溯.json",
+          "sha256": "edc3bf61175ecd9bac0accc20f68021de54d94369b89bf2ec1678d726d2dabaa"
+        },
+        "configuration_id": "CFG-TAP-RESEARCH-0.1",
+        "items": [
+          {
+            "source_need": "N-T01",
+            "source_requirement_candidate": "RQ-T01",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T02",
+            "source_requirement_candidate": "RQ-T02",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T03",
+            "source_requirement_candidate": "RQ-T03",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T04",
+            "source_requirement_candidate": "RQ-T04",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          }
+        ],
+        "activities": [
+          {
+            "id": "V-P01",
+            "source_need": "N-T01",
+            "type": "proposed_analysis_or_test",
+            "objective": "研究如何形成可检验的边界要求",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          },
+          {
+            "id": "VAL-P03",
+            "source_need": "N-T03",
+            "type": "proposed_use_context_research",
+            "objective": "形成目标操作者状态理解的确认问题",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          }
+        ],
+        "coverage": {
+          "planned": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "ready": false,
+        "results": [],
+        "engineering_pass": false
+      },
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "configuration_id": "CFG-TAP-RESEARCH-0.1",
+        "source_item_count": 4,
+        "approved_requirement_count": 0,
+        "verification_conformance_claims": [],
+        "validation_effectiveness_claims": [],
+        "candidate_activities": [
+          {
+            "id": "V-P01",
+            "source_need": "N-T01",
+            "type": "proposed_analysis_or_test",
+            "objective": "研究如何形成可检验的边界要求",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          },
+          {
+            "id": "VAL-P03",
+            "source_need": "N-T03",
+            "type": "proposed_use_context_research",
+            "objective": "形成目标操作者状态理解的确认问题",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          }
+        ],
+        "coverage": {
+          "planned": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "ready": false,
+        "results": [],
+        "engineering_pass": false,
+        "next_actions": [
+          "确认需求身份与口径",
+          "确定配置、测量和资源",
+          "补异常恢复与完整作业场景",
+          "实际执行后再生成原始证据和偏差报告"
+        ],
+        "change_rule": "source requirement/configuration/intended_use changes require impact review; old evidence not transferred automatically",
+        "scope": "coverage_and_fixed_state_check_not_requirements_compliance_or_real_use_validation"
+      }
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "R33_independent_closed_form_match": true,
+  "R33_axial_rank": [
+    "B",
+    "A"
+  ],
+  "R33_square_bending_rank": [
+    "A",
+    "B"
+  ],
+  "R35_element_eigenvalues": [
+    -2.9088381349706635e-16,
+    1.753475713698426e-17,
+    1.3415803141207848e-16,
+    0.3933884797889256,
+    0.4670329670329671,
+    0.9670329670329676,
+    1.115384615384615,
+    2.79342470702426
+  ],
+  "R35_independent_small_mesh": {
+    "iterations": 30,
+    "converged_design_change": false,
+    "compliance": 225.66691307740336,
+    "mean_physical_density": 0.45000000000000007,
+    "volume_limit_residual": 5.551115123125783e-17,
+    "free_equilibrium_relative_residual": 2.9488075715177745e-14,
+    "selected_derivative_relative_error": 3.23589479141542e-07,
+    "last_max_change": 0.07769237783302174
+  },
+  "R35_original_runs": [
+    {
+      "label": "baseline",
+      "converged": false,
+      "iterations": 160,
+      "change": 0.007700131210916172
+    },
+    {
+      "label": "mesh_refined",
+      "converged": false,
+      "iterations": 160,
+      "change": 0.01352578002227034
+    },
+    {
+      "label": "filter_changed",
+      "converged": true,
+      "iterations": 91,
+      "change": 0.0049706995224853
+    },
+    {
+      "label": "other_context_corner_load",
+      "converged": true,
+      "iterations": 113,
+      "change": 0.004914085751490549
+    }
+  ],
+  "probes": [
+    {
+      "method": "R33",
+      "name": "unknown-material-no-rank",
+      "result": {
+        "status": "constructed_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "state": "unknown",
+            "reason": "missing required material/processing evidence"
+          },
+          {
+            "id": "B",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "area_m2": 1.4285714285714285e-07
+            },
+            "mass_kg": 0.00033428571428571426,
+            "deflection_m": 0.001,
+            "stress_Pa": 700000000.0,
+            "stiffness_index": 26923076.923076924,
+            "cost_comparison": "unknown"
+          }
+        ],
+        "ranking_by_mass": [
+          "B"
+        ],
+        "engineering_validated": false,
+        "cost_rank": null
+      },
+      "error": null
+    },
+    {
+      "method": "R33",
+      "name": "temperature-NaN",
+      "result": {
+        "status": "constructed_model_only",
+        "rows": [
+          {
+            "id": "A",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "area_m2": 4.2857142857142857e-07
+            },
+            "mass_kg": 0.0003471428571428571,
+            "deflection_m": 0.001,
+            "stress_Pa": 233333333.33333334,
+            "stiffness_index": 25925925.925925925,
+            "cost_comparison": "unknown"
+          },
+          {
+            "id": "B",
+            "state": "constructed_feasible_only",
+            "geometry": {
+              "area_m2": 1.4285714285714285e-07
+            },
+            "mass_kg": 0.00033428571428571426,
+            "deflection_m": 0.001,
+            "stress_Pa": 700000000.0,
+            "stiffness_index": 26923076.923076924,
+            "cost_comparison": "unknown"
+          }
+        ],
+        "ranking_by_mass": [
+          "B",
+          "A"
+        ],
+        "engineering_validated": false,
+        "cost_rank": null
+      },
+      "error": null
+    },
+    {
+      "method": "R34",
+      "name": "negative-BOM-quantity",
+      "result": {
+        "status": "constructed_action_sum_only",
+        "part_count": 1,
+        "candidate_consolidation_ids": [],
+        "cycle_time_s": 10.0,
+        "line_takt_time_s": null,
+        "total_cost": null,
+        "engineering_validated": false,
+        "not_included": [
+          "parallel work",
+          "queues",
+          "yield",
+          "rework",
+          "tool availability",
+          "operator fatigue",
+          "real cycle observations"
+        ]
+      },
+      "error": null
+    },
+    {
+      "method": "R34",
+      "name": "boolean-service-policy",
+      "result": {
+        "status": "constructed_action_sum_only",
+        "part_count": 3,
+        "candidate_consolidation_ids": [],
+        "cycle_time_s": 10.0,
+        "line_takt_time_s": null,
+        "total_cost": null,
+        "engineering_validated": false,
+        "not_included": [
+          "parallel work",
+          "queues",
+          "yield",
+          "rework",
+          "tool availability",
+          "operator fatigue",
+          "real cycle observations"
+        ]
+      },
+      "error": null
+    }
+  ],
+  "original_packages_unchanged": true
+}

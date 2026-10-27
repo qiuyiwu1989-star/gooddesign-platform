@@ -1,0 +1,839 @@
+{
+  "cases": [
+    {
+      "name": "正常绑定工况",
+      "input": {
+        "id": "WB06-SDOF-TEACH-001",
+        "origin": "independent_linear_oscillator_not_Wen_full_dynamic_algorithm",
+        "configuration": "single_linear_mode_fixed_mounting_TEACH-1",
+        "mass_kg": 1.0,
+        "stiffness_N_m": 500.0,
+        "damping_Ns_m": 2.0,
+        "force_N": 1.0,
+        "omega_rad_s": 31.622776601683793,
+        "valid_omega_range_rad_s": [
+          1.0,
+          50.0
+        ],
+        "known_nonlinear_contact": false,
+        "modal_measurement_evidence": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "actual": {
+        "status": "linear_response_research_only",
+        "natural_omega_rad_s": 22.360679774997898,
+        "natural_frequency_Hz": 3.5588127170858854,
+        "damping_ratio": 0.044721359549995794,
+        "static_displacement_m": 0.002,
+        "response_at_declared_excitation_m": 0.0019841894753313627,
+        "dynamic_to_static_ratio": 0.9920947376656813,
+        "sensitivity": {
+          "domega_dk": 0.022360679774997897,
+          "domega_dm": -11.180339887498949
+        },
+        "finite_difference_domega_dk": 0.022360679773569814,
+        "frequency_scan": [
+          {
+            "omega_rad_s": 1,
+            "response_m": 0.0020039919198407093
+          },
+          {
+            "omega_rad_s": 2,
+            "response_m": 0.0020160634745481193
+          },
+          {
+            "omega_rad_s": 3,
+            "response_m": 0.002036507830262161
+          },
+          {
+            "omega_rad_s": 4,
+            "response_m": 0.002065833523332642
+          },
+          {
+            "omega_rad_s": 5,
+            "response_m": 0.0021047967726081336
+          },
+          {
+            "omega_rad_s": 6,
+            "response_m": 0.0021544520352572913
+          },
+          {
+            "omega_rad_s": 7,
+            "response_m": 0.0022162273637545715
+          },
+          {
+            "omega_rad_s": 8,
+            "response_m": 0.0022920351727781316
+          },
+          {
+            "omega_rad_s": 9,
+            "response_m": 0.0023844356063589056
+          },
+          {
+            "omega_rad_s": 10,
+            "response_m": 0.0024968808471946117
+          },
+          {
+            "omega_rad_s": 11,
+            "response_m": 0.0026340883639518775
+          },
+          {
+            "omega_rad_s": 12,
+            "response_m": 0.0028026271809222926
+          },
+          {
+            "omega_rad_s": 13,
+            "response_m": 0.003011870585520401
+          },
+          {
+            "omega_rad_s": 14,
+            "response_m": 0.003275608910402092
+          },
+          {
+            "omega_rad_s": 15,
+            "response_m": 0.0036149170058472537
+          },
+          {
+            "omega_rad_s": 16,
+            "response_m": 0.004063563650005818
+          },
+          {
+            "omega_rad_s": 17,
+            "response_m": 0.004678980269350302
+          },
+          {
+            "omega_rad_s": 18,
+            "response_m": 0.00556656211524185
+          },
+          {
+            "omega_rad_s": 19,
+            "response_m": 0.006939593511335981
+          },
+          {
+            "omega_rad_s": 20,
+            "response_m": 0.009284766908852592
+          },
+          {
+            "omega_rad_s": 21,
+            "response_m": 0.013807887937845497
+          },
+          {
+            "omega_rad_s": 22,
+            "response_m": 0.021358941442919024
+          },
+          {
+            "omega_rad_s": 23,
+            "response_m": 0.018389687012948967
+          },
+          {
+            "omega_rad_s": 24,
+            "response_m": 0.01112485398724962
+          },
+          {
+            "omega_rad_s": 25,
+            "response_m": 0.007427813527082073
+          },
+          {
+            "omega_rad_s": 26,
+            "response_m": 0.005448964250334662
+          },
+          {
+            "omega_rad_s": 27,
+            "response_m": 0.004250242669220042
+          },
+          {
+            "omega_rad_s": 28,
+            "response_m": 0.0034546075809395883
+          },
+          {
+            "omega_rad_s": 29,
+            "response_m": 0.0028910308297630007
+          },
+          {
+            "omega_rad_s": 30,
+            "response_m": 0.002472340882170744
+          },
+          {
+            "omega_rad_s": 31,
+            "response_m": 0.00214984176403302
+          },
+          {
+            "omega_rad_s": 32,
+            "response_m": 0.0018943199486833161
+          },
+          {
+            "omega_rad_s": 33,
+            "response_m": 0.0016872333162830414
+          },
+          {
+            "omega_rad_s": 34,
+            "response_m": 0.0015162658021307
+          },
+          {
+            "omega_rad_s": 35,
+            "response_m": 0.001372925820951226
+          },
+          {
+            "omega_rad_s": 36,
+            "response_m": 0.0012511735255283708
+          },
+          {
+            "omega_rad_s": 37,
+            "response_m": 0.0011465982548078558
+          },
+          {
+            "omega_rad_s": 38,
+            "response_m": 0.001055905574569617
+          },
+          {
+            "omega_rad_s": 39,
+            "response_m": 0.0009765862495919948
+          },
+          {
+            "omega_rad_s": 40,
+            "response_m": 0.0009066961972352672
+          },
+          {
+            "omega_rad_s": 41,
+            "response_m": 0.0008447063774036349
+          },
+          {
+            "omega_rad_s": 42,
+            "response_m": 0.0007893980280803788
+          },
+          {
+            "omega_rad_s": 43,
+            "response_m": 0.0007397880525283485
+          },
+          {
+            "omega_rad_s": 44,
+            "response_m": 0.0006950749101744847
+          },
+          {
+            "omega_rad_s": 45,
+            "response_m": 0.0006545987334767223
+          },
+          {
+            "omega_rad_s": 46,
+            "response_m": 0.0006178114955237913
+          },
+          {
+            "omega_rad_s": 47,
+            "response_m": 0.000584254395943454
+          },
+          {
+            "omega_rad_s": 48,
+            "response_m": 0.000553540508831616
+          },
+          {
+            "omega_rad_s": 49,
+            "response_m": 0.0005253413192451817
+          },
+          {
+            "omega_rad_s": 50,
+            "response_m": 0.0004993761694389224
+          }
+        ],
+        "engineering_pass": false,
+        "calibration": "not_measured",
+        "response_acceptance": null
+      },
+      "passed": true
+    },
+    {
+      "name": "静刚度变好但接近共振冲突",
+      "input": {
+        "id": "WB06-SDOF-TEACH-001",
+        "origin": "independent_linear_oscillator_not_Wen_full_dynamic_algorithm",
+        "configuration": "single_linear_mode_fixed_mounting_TEACH-1",
+        "mass_kg": 1.0,
+        "stiffness_N_m": 1000.0,
+        "damping_Ns_m": 2.0,
+        "force_N": 1.0,
+        "omega_rad_s": 31.622776601683793,
+        "valid_omega_range_rad_s": [
+          1.0,
+          50.0
+        ],
+        "known_nonlinear_contact": false,
+        "modal_measurement_evidence": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "actual": {
+        "status": "linear_response_research_only",
+        "natural_omega_rad_s": 31.622776601683793,
+        "natural_frequency_Hz": 5.032921210448704,
+        "damping_ratio": 0.03162277660168379,
+        "static_displacement_m": 0.001,
+        "response_at_declared_excitation_m": 0.015811388300841896,
+        "dynamic_to_static_ratio": 15.811388300841895,
+        "sensitivity": {
+          "domega_dk": 0.015811388300841896,
+          "domega_dm": -15.811388300841896
+        },
+        "finite_difference_domega_dk": 0.015811388299979967,
+        "frequency_scan": [
+          {
+            "omega_rad_s": 1,
+            "response_m": 0.001000998994995011
+          },
+          {
+            "omega_rad_s": 2,
+            "response_m": 0.0010040079675818193
+          },
+          {
+            "omega_rad_s": 3,
+            "response_m": 0.0010090632412480289
+          },
+          {
+            "omega_rad_s": 4,
+            "response_m": 0.0010162265777716427
+          },
+          {
+            "omega_rad_s": 5,
+            "response_m": 0.0010255870842806412
+          },
+          {
+            "omega_rad_s": 6,
+            "response_m": 0.0010372640363052325
+          },
+          {
+            "omega_rad_s": 7,
+            "response_m": 0.0010514107871672132
+          },
+          {
+            "omega_rad_s": 8,
+            "response_m": 0.0010682200099369687
+          },
+          {
+            "omega_rad_s": 9,
+            "response_m": 0.001087930619741629
+          },
+          {
+            "omega_rad_s": 10,
+            "response_m": 0.0011108368642573445
+          },
+          {
+            "omega_rad_s": 11,
+            "response_m": 0.0011373002680723668
+          },
+          {
+            "omega_rad_s": 12,
+            "response_m": 0.0011677654020443935
+          },
+          {
+            "omega_rad_s": 13,
+            "response_m": 0.001202780868756889
+          },
+          {
+            "omega_rad_s": 14,
+            "response_m": 0.0012430275254090707
+          },
+          {
+            "omega_rad_s": 15,
+            "response_m": 0.0012893569308154234
+          },
+          {
+            "omega_rad_s": 16,
+            "response_m": 0.0013428445146970846
+          },
+          {
+            "omega_rad_s": 17,
+            "response_m": 0.0014048643915258016
+          },
+          {
+            "omega_rad_s": 18,
+            "response_m": 0.0014771967329492864
+          },
+          {
+            "omega_rad_s": 19,
+            "response_m": 0.001562185382525893
+          },
+          {
+            "omega_rad_s": 20,
+            "response_m": 0.001662975263094348
+          },
+          {
+            "omega_rad_s": 21,
+            "response_m": 0.001783880720593475
+          },
+          {
+            "omega_rad_s": 22,
+            "response_m": 0.0019309769538194495
+          },
+          {
+            "omega_rad_s": 23,
+            "response_m": 0.002113088465314663
+          },
+          {
+            "omega_rad_s": 24,
+            "response_m": 0.002343521151686219
+          },
+          {
+            "omega_rad_s": 25,
+            "response_m": 0.0026432744018203592
+          },
+          {
+            "omega_rad_s": 26,
+            "response_m": 0.0030474211444269958
+          },
+          {
+            "omega_rad_s": 27,
+            "response_m": 0.0036188915751506584
+          },
+          {
+            "omega_rad_s": 28,
+            "response_m": 0.004481467121137967
+          },
+          {
+            "omega_rad_s": 29,
+            "response_m": 0.005908477509124052
+          },
+          {
+            "omega_rad_s": 30,
+            "response_m": 0.008574929257125443
+          },
+          {
+            "omega_rad_s": 31,
+            "response_m": 0.013652592788242303
+          },
+          {
+            "omega_rad_s": 32,
+            "response_m": 0.014630143399516321
+          },
+          {
+            "omega_rad_s": 33,
+            "response_m": 0.009025138432583455
+          },
+          {
+            "omega_rad_s": 34,
+            "response_m": 0.005876256184028355
+          },
+          {
+            "omega_rad_s": 35,
+            "response_m": 0.004243807894803486
+          },
+          {
+            "omega_rad_s": 36,
+            "response_m": 0.003282660821493064
+          },
+          {
+            "omega_rad_s": 37,
+            "response_m": 0.0026571228875837223
+          },
+          {
+            "omega_rad_s": 38,
+            "response_m": 0.0022199650349380685
+          },
+          {
+            "omega_rad_s": 39,
+            "response_m": 0.0018982304875529016
+          },
+          {
+            "omega_rad_s": 40,
+            "response_m": 0.0016520465011377247
+          },
+          {
+            "omega_rad_s": 41,
+            "response_m": 0.0014578978956579552
+          },
+          {
+            "omega_rad_s": 42,
+            "response_m": 0.001301060223599613
+          },
+          {
+            "omega_rad_s": 43,
+            "response_m": 0.0011718595329009021
+          },
+          {
+            "omega_rad_s": 44,
+            "response_m": 0.0010636853400016355
+          },
+          {
+            "omega_rad_s": 45,
+            "response_m": 0.0009718705358358884
+          },
+          {
+            "omega_rad_s": 46,
+            "response_m": 0.0008930280191579368
+          },
+          {
+            "omega_rad_s": 47,
+            "response_m": 0.0008246410981728063
+          },
+          {
+            "omega_rad_s": 48,
+            "response_m": 0.0007648014117507987
+          },
+          {
+            "omega_rad_s": 49,
+            "response_m": 0.0007120360013364358
+          },
+          {
+            "omega_rad_s": 50,
+            "response_m": 0.0006651901052377392
+          }
+        ],
+        "engineering_pass": false,
+        "calibration": "not_measured",
+        "response_acceptance": null
+      },
+      "passed": true
+    },
+    {
+      "name": "缺激励不补零",
+      "input": {
+        "id": "WB06-SDOF-TEACH-001",
+        "origin": "independent_linear_oscillator_not_Wen_full_dynamic_algorithm",
+        "configuration": "single_linear_mode_fixed_mounting_TEACH-1",
+        "mass_kg": 1.0,
+        "stiffness_N_m": 500.0,
+        "damping_Ns_m": 2.0,
+        "force_N": 1.0,
+        "omega_rad_s": null,
+        "valid_omega_range_rad_s": [
+          1.0,
+          50.0
+        ],
+        "known_nonlinear_contact": false,
+        "modal_measurement_evidence": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "actual": {
+        "status": "model_or_excitation_unknown",
+        "engineering_pass": false
+      },
+      "passed": true
+    },
+    {
+      "name": "非线性接触不适用",
+      "input": {
+        "id": "WB06-SDOF-TEACH-001",
+        "origin": "independent_linear_oscillator_not_Wen_full_dynamic_algorithm",
+        "configuration": "single_linear_mode_fixed_mounting_TEACH-1",
+        "mass_kg": 1.0,
+        "stiffness_N_m": 500.0,
+        "damping_Ns_m": 2.0,
+        "force_N": 1.0,
+        "omega_rad_s": 31.622776601683793,
+        "valid_omega_range_rad_s": [
+          1.0,
+          50.0
+        ],
+        "known_nonlinear_contact": true,
+        "modal_measurement_evidence": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "actual": {
+        "status": "linear_model_not_applicable",
+        "engineering_pass": false,
+        "next": "obtain actual contact/nonlinear model and evidence"
+      },
+      "passed": true
+    },
+    {
+      "name": "模型频段边界外",
+      "input": {
+        "id": "WB06-SDOF-TEACH-001",
+        "origin": "independent_linear_oscillator_not_Wen_full_dynamic_algorithm",
+        "configuration": "single_linear_mode_fixed_mounting_TEACH-1",
+        "mass_kg": 1.0,
+        "stiffness_N_m": 500.0,
+        "damping_Ns_m": 2.0,
+        "force_N": 1.0,
+        "omega_rad_s": 51.0,
+        "valid_omega_range_rad_s": [
+          1.0,
+          50.0
+        ],
+        "known_nonlinear_contact": false,
+        "modal_measurement_evidence": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "actual": {
+        "status": "outside_declared_model_band",
+        "engineering_pass": false
+      },
+      "passed": true
+    },
+    {
+      "name": "零刚度",
+      "actual": "rejected",
+      "reason": "positive finite nonboolean quantities required",
+      "passed": true
+    },
+    {
+      "name": "NaN频率",
+      "actual": "rejected",
+      "reason": "positive finite nonboolean quantities required",
+      "passed": true
+    },
+    {
+      "name": "换安装配置仍用旧模型",
+      "actual": "rejected",
+      "reason": "configuration/provenance/validation unsupported",
+      "passed": true
+    },
+    {
+      "name": "伪实测模态",
+      "actual": "rejected",
+      "reason": "configuration/provenance/validation unsupported",
+      "passed": true
+    },
+    {
+      "name": "展示机构另一情境",
+      "input": {
+        "id": "DISPLAY-DYNAMICS-TEACH",
+        "origin": "independent_linear_oscillator_not_Wen_full_dynamic_algorithm",
+        "configuration": "single_linear_mode_fixed_mounting_TEACH-1",
+        "mass_kg": 2.0,
+        "stiffness_N_m": 500.0,
+        "damping_Ns_m": 2.0,
+        "force_N": 1.0,
+        "omega_rad_s": 31.622776601683793,
+        "valid_omega_range_rad_s": [
+          1.0,
+          50.0
+        ],
+        "known_nonlinear_contact": false,
+        "modal_measurement_evidence": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "actual": {
+        "status": "linear_response_research_only",
+        "natural_omega_rad_s": 15.811388300841896,
+        "natural_frequency_Hz": 2.516460605224352,
+        "damping_ratio": 0.03162277660168379,
+        "static_displacement_m": 0.002,
+        "response_at_declared_excitation_m": 0.0006660748630287955,
+        "dynamic_to_static_ratio": 0.33303743151439774,
+        "sensitivity": {
+          "domega_dk": 0.015811388300841896,
+          "domega_dm": -3.952847075210474
+        },
+        "finite_difference_domega_dk": 0.015811388300868146,
+        "frequency_scan": [
+          {
+            "omega_rad_s": 1,
+            "response_m": 0.0020080159351636385
+          },
+          {
+            "omega_rad_s": 2,
+            "response_m": 0.0020324531555432853
+          },
+          {
+            "omega_rad_s": 3,
+            "response_m": 0.002074528072610465
+          },
+          {
+            "omega_rad_s": 4,
+            "response_m": 0.0021364400198739374
+          },
+          {
+            "omega_rad_s": 5,
+            "response_m": 0.002221673728514689
+          },
+          {
+            "omega_rad_s": 6,
+            "response_m": 0.002335530804088787
+          },
+          {
+            "omega_rad_s": 7,
+            "response_m": 0.0024860550508181414
+          },
+          {
+            "omega_rad_s": 8,
+            "response_m": 0.002685689029394169
+          },
+          {
+            "omega_rad_s": 9,
+            "response_m": 0.002954393465898573
+          },
+          {
+            "omega_rad_s": 10,
+            "response_m": 0.003325950526188696
+          },
+          {
+            "omega_rad_s": 11,
+            "response_m": 0.003861953907638899
+          },
+          {
+            "omega_rad_s": 12,
+            "response_m": 0.004687042303372438
+          },
+          {
+            "omega_rad_s": 13,
+            "response_m": 0.0060948422888539916
+          },
+          {
+            "omega_rad_s": 14,
+            "response_m": 0.008962934242275934
+          },
+          {
+            "omega_rad_s": 15,
+            "response_m": 0.017149858514250885
+          },
+          {
+            "omega_rad_s": 16,
+            "response_m": 0.029260286799032642
+          },
+          {
+            "omega_rad_s": 17,
+            "response_m": 0.01175251236805671
+          },
+          {
+            "omega_rad_s": 18,
+            "response_m": 0.006565321642986128
+          },
+          {
+            "omega_rad_s": 19,
+            "response_m": 0.004439930069876137
+          },
+          {
+            "omega_rad_s": 20,
+            "response_m": 0.0033040930022754495
+          },
+          {
+            "omega_rad_s": 21,
+            "response_m": 0.002602120447199226
+          },
+          {
+            "omega_rad_s": 22,
+            "response_m": 0.002127370680003271
+          },
+          {
+            "omega_rad_s": 23,
+            "response_m": 0.0017860560383158735
+          },
+          {
+            "omega_rad_s": 24,
+            "response_m": 0.0015296028235015973
+          },
+          {
+            "omega_rad_s": 25,
+            "response_m": 0.0013303802104754783
+          },
+          {
+            "omega_rad_s": 26,
+            "response_m": 0.0011715289695469627
+          },
+          {
+            "omega_rad_s": 27,
+            "response_m": 0.001042186985369415
+          },
+          {
+            "omega_rad_s": 28,
+            "response_m": 0.0009350450768045524
+          },
+          {
+            "omega_rad_s": 29,
+            "response_m": 0.000845006994912355
+          },
+          {
+            "omega_rad_s": 30,
+            "response_m": 0.0007684127768066813
+          },
+          {
+            "omega_rad_s": 31,
+            "response_m": 0.0007025674040196969
+          },
+          {
+            "omega_rad_s": 32,
+            "response_m": 0.0006454434396555345
+          },
+          {
+            "omega_rad_s": 33,
+            "response_m": 0.0005954871108775467
+          },
+          {
+            "omega_rad_s": 34,
+            "response_m": 0.0005514881803209417
+          },
+          {
+            "omega_rad_s": 35,
+            "response_m": 0.0005124904149173432
+          },
+          {
+            "omega_rad_s": 36,
+            "response_m": 0.0004777286169603671
+          },
+          {
+            "omega_rad_s": 37,
+            "response_m": 0.0004465834642075519
+          },
+          {
+            "omega_rad_s": 38,
+            "response_m": 0.0004185485526652068
+          },
+          {
+            "omega_rad_s": 39,
+            "response_m": 0.00039320596494601105
+          },
+          {
+            "omega_rad_s": 40,
+            "response_m": 0.00037020790049563574
+          },
+          {
+            "omega_rad_s": 41,
+            "response_m": 0.00034926268491940383
+          },
+          {
+            "omega_rad_s": 42,
+            "response_m": 0.00033012398880329785
+          },
+          {
+            "omega_rad_s": 43,
+            "response_m": 0.00031258243006410493
+          },
+          {
+            "omega_rad_s": 44,
+            "response_m": 0.00029645896798709216
+          },
+          {
+            "omega_rad_s": 45,
+            "response_m": 0.00028159965916099
+          },
+          {
+            "omega_rad_s": 46,
+            "response_m": 0.0002678714593291888
+          },
+          {
+            "omega_rad_s": 47,
+            "response_m": 0.0002551588361848346
+          },
+          {
+            "omega_rad_s": 48,
+            "response_m": 0.0002433610165204504
+          },
+          {
+            "omega_rad_s": 49,
+            "response_m": 0.00023238973370775723
+          },
+          {
+            "omega_rad_s": 50,
+            "response_m": 0.0002221673728514689
+          }
+        ],
+        "engineering_pass": false,
+        "calibration": "not_measured",
+        "response_acceptance": null
+      },
+      "passed": true
+    }
+  ],
+  "count": 10,
+  "measurement_plan": [
+    "define actual mounting/load/temperature",
+    "identify mass/stiffness/damping from independent measurements",
+    "measure excitation spectrum",
+    "compare transfer function and residual over declared band",
+    "rebuild for contact/nonlinear/time-varying regimes"
+  ],
+  "actual_test_data": []
+}

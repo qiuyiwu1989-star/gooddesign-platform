@@ -1,0 +1,84 @@
+{
+  "input": {
+    "id": "R34-SEAL-TEACH-001",
+    "origin": "independent_constructed_not_shopfloor",
+    "bom": [
+      {
+        "id": "HOUSING",
+        "qty": 1,
+        "relative_motion": false,
+        "different_material": true,
+        "assembly_disassembly_separate": true
+      },
+      {
+        "id": "SEAL",
+        "qty": 1,
+        "relative_motion": false,
+        "different_material": true,
+        "assembly_disassembly_separate": true
+      },
+      {
+        "id": "CAP",
+        "qty": 1,
+        "relative_motion": false,
+        "different_material": false,
+        "assembly_disassembly_separate": true
+      }
+    ],
+    "assembly_datum": "declared housing seating face; actual tolerances unknown",
+    "actions": [
+      {
+        "id": "A1",
+        "action": "orient housing",
+        "time_s": 4.0
+      },
+      {
+        "id": "A2",
+        "action": "insert seal and inspect",
+        "time_s": 4.0
+      },
+      {
+        "id": "A3",
+        "action": "fit cover",
+        "time_s": 2.0
+      }
+    ],
+    "time_origin": "arbitrary teaching numbers, no measured or proprietary DFA tables",
+    "service_requires_replaceable_seal": true,
+    "seal_replaceable": true,
+    "cost_components": {
+      "material": null,
+      "process_setup": null,
+      "unit_processing": null,
+      "tooling_amortization": null,
+      "inspection": null,
+      "assembly_labor": null,
+      "service": null,
+      "scrap": null
+    },
+    "production_volume": null
+  },
+  "method": "R34",
+  "name": "normal-control",
+  "accepted": true,
+  "expected_accept": true,
+  "pass": true,
+  "output": {
+    "status": "constructed_action_sum_only",
+    "part_count": 3,
+    "candidate_consolidation_ids": [],
+    "cycle_time_s": 10.0,
+    "line_takt_time_s": null,
+    "total_cost": null,
+    "engineering_validated": false,
+    "not_included": [
+      "parallel work",
+      "queues",
+      "yield",
+      "rework",
+      "tool availability",
+      "operator fatigue",
+      "real cycle observations"
+    ]
+  }
+}

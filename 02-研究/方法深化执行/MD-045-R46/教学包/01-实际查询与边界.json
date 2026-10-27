@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-27",
+  "execution": "actual web search restricted to Google Patents indexed pages, not native complete database export",
+  "queries": [
+    {
+      "id": "Q01",
+      "q": "\"rubber tapping robot\" site:patents.google.com/patent/"
+    },
+    {
+      "id": "Q02",
+      "q": "\"割胶机器人\" site:patents.google.com/patent/"
+    },
+    {
+      "id": "Q03",
+      "q": "\"rubber tapping\" \"A01G23\" site:patents.google.com/patent/"
+    },
+    {
+      "id": "Q04",
+      "q": "\"CN110696008B\" site:patents.google.com/patent/",
+      "purpose": "post-discovery exact-number control, not independent recall benchmark"
+    }
+  ],
+  "geography": "CN/WO examples plusGB handtool negative boundary; not worldwide coverage",
+  "time": "publications visible through2026-10-27, no guaranteed completeness or unpublished applications",
+  "family_rule": "same domestic application number groups A/B; no extended-INPADOC implementation",
+  "raw_returns_sha256": "9a448af6752067cb165461e78efb6629eaf586e20ad5827ed870034c47f260a9",
+  "control_return_sha256": "34f8a210e07d6987a463872f620c85fe015e4cfa5b432441109388280c36bc33",
+  "precision_recall": "no full relevance ground truth; cannot estimate recall or statistical precision"
+}

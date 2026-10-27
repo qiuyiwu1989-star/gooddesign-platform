@@ -1,0 +1,673 @@
+{
+  "unchanged_files": 91,
+  "manifests": {
+    "MD-046-R50": "425f34f9337006e10ea2beb140253ea9ff07a98f4d148eb401ee11e6b6d74177",
+    "MD-047-R51": "bfc79c1d4870b332bc1be51ac92c81fc285ce4b9e7fa7d5b8381c7682665d0c6",
+    "MD-048-R52": "8548a1ad2f2bfa303b65543e0ae553a68112193c59ce8518d1d12b2c61788145",
+    "MD-049-R07": "4ae0b6be277916d16554cb2b87a18b5606e9a89dbb31840948335e25d78d8eeb"
+  },
+  "replayed": "28 fixed checks plus4 VOI sensitivity runs; no field validation\n",
+  "VOI_independent_algebra": {
+    "current_risk": 20,
+    "expected_sample_risk": 14,
+    "EVSI": 6,
+    "EVPI": 20,
+    "net": 3
+  },
+  "twelve_cells_all_null": true,
+  "probes": [
+    {
+      "name": "VOI-no-info",
+      "input": {
+        "id": "VOI-TEACH-001",
+        "provenance": "independent_teaching_probabilities_losses_not_customer_estimates",
+        "states": [
+          "good",
+          "bad"
+        ],
+        "actions": [
+          "A",
+          "B"
+        ],
+        "prior": [
+          0.5,
+          0.5
+        ],
+        "loss": {
+          "A": [
+            0.0,
+            100.0
+          ],
+          "B": [
+            40.0,
+            0.0
+          ]
+        },
+        "signal_positive_likelihood": [
+          0.5,
+          0.5
+        ],
+        "study_cost": 2.0,
+        "delay_loss": 1.0,
+        "loss_unit": "synthetic_loss_units",
+        "hard_requirement_waiver": false
+      },
+      "actual": "accepted",
+      "output": {
+        "status": "teaching_decision_model_only",
+        "current_risks": {
+          "A": 50.0,
+          "B": 20.0
+        },
+        "current_action": "B",
+        "posterior_actions": [
+          {
+            "signal": "positive",
+            "probability": 0.5,
+            "posterior": [
+              0.5,
+              0.5
+            ],
+            "conditional_risks": {
+              "A": 50.0,
+              "B": 20.0
+            },
+            "action": "B"
+          },
+          {
+            "signal": "negative",
+            "probability": 0.5,
+            "posterior": [
+              0.5,
+              0.5
+            ],
+            "conditional_risks": {
+              "A": 50.0,
+              "B": 20.0
+            },
+            "action": "B"
+          }
+        ],
+        "expected_risk_after_sample": 20.0,
+        "EVPI": 20.0,
+        "EVSI": 0.0,
+        "net_sample_value": -3.0,
+        "engineering_recommendation": null,
+        "real_customer_probabilities": false
+      }
+    },
+    {
+      "name": "VOI-impossible-signal",
+      "input": {
+        "id": "VOI-TEACH-001",
+        "provenance": "independent_teaching_probabilities_losses_not_customer_estimates",
+        "states": [
+          "good",
+          "bad"
+        ],
+        "actions": [
+          "A",
+          "B"
+        ],
+        "prior": [
+          0.5,
+          0.5
+        ],
+        "loss": {
+          "A": [
+            0.0,
+            100.0
+          ],
+          "B": [
+            40.0,
+            0.0
+          ]
+        },
+        "signal_positive_likelihood": [
+          0,
+          0
+        ],
+        "study_cost": 2.0,
+        "delay_loss": 1.0,
+        "loss_unit": "synthetic_loss_units",
+        "hard_requirement_waiver": false
+      },
+      "actual": "accepted",
+      "output": {
+        "status": "teaching_decision_model_only",
+        "current_risks": {
+          "A": 50.0,
+          "B": 20.0
+        },
+        "current_action": "B",
+        "posterior_actions": [
+          {
+            "signal": "positive",
+            "probability": 0,
+            "posterior": null,
+            "action": null
+          },
+          {
+            "signal": "negative",
+            "probability": 1.0,
+            "posterior": [
+              0.5,
+              0.5
+            ],
+            "conditional_risks": {
+              "A": 50.0,
+              "B": 20.0
+            },
+            "action": "B"
+          }
+        ],
+        "expected_risk_after_sample": 20.0,
+        "EVPI": 20.0,
+        "EVSI": 0.0,
+        "net_sample_value": -3.0,
+        "engineering_recommendation": null,
+        "real_customer_probabilities": false
+      }
+    },
+    {
+      "name": "VOI-invalid-prior",
+      "input": {
+        "id": "VOI-TEACH-001",
+        "provenance": "independent_teaching_probabilities_losses_not_customer_estimates",
+        "states": [
+          "good",
+          "bad"
+        ],
+        "actions": [
+          "A",
+          "B"
+        ],
+        "prior": [
+          1,
+          1
+        ],
+        "loss": {
+          "A": [
+            0.0,
+            100.0
+          ],
+          "B": [
+            40.0,
+            0.0
+          ]
+        },
+        "signal_positive_likelihood": [
+          0.8,
+          0.2
+        ],
+        "study_cost": 2.0,
+        "delay_loss": 1.0,
+        "loss_unit": "synthetic_loss_units",
+        "hard_requirement_waiver": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "probability_domain"
+      }
+    },
+    {
+      "name": "VOI-bool-likelihood",
+      "input": {
+        "id": "VOI-TEACH-001",
+        "provenance": "independent_teaching_probabilities_losses_not_customer_estimates",
+        "states": [
+          "good",
+          "bad"
+        ],
+        "actions": [
+          "A",
+          "B"
+        ],
+        "prior": [
+          0.5,
+          0.5
+        ],
+        "loss": {
+          "A": [
+            0.0,
+            100.0
+          ],
+          "B": [
+            40.0,
+            0.0
+          ]
+        },
+        "signal_positive_likelihood": [
+          true,
+          false
+        ],
+        "study_cost": 2.0,
+        "delay_loss": 1.0,
+        "loss_unit": "synthetic_loss_units",
+        "hard_requirement_waiver": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "nonfinite_or_boolean"
+      }
+    },
+    {
+      "name": "VOI-missing-prior-and-invalid-likelihood",
+      "input": {
+        "id": "VOI-TEACH-001",
+        "provenance": "independent_teaching_probabilities_losses_not_customer_estimates",
+        "states": [
+          "good",
+          "bad"
+        ],
+        "actions": [
+          "A",
+          "B"
+        ],
+        "prior": null,
+        "loss": {
+          "A": [
+            0.0,
+            100.0
+          ],
+          "B": [
+            40.0,
+            0.0
+          ]
+        },
+        "signal_positive_likelihood": [
+          2,
+          -1
+        ],
+        "study_cost": 2.0,
+        "delay_loss": 1.0,
+        "loss_unit": "synthetic_loss_units",
+        "hard_requirement_waiver": false
+      },
+      "actual": "accepted",
+      "output": {
+        "status": "cannot_compute_missing_probability",
+        "EVPI": null,
+        "EVSI": null
+      }
+    },
+    {
+      "name": "STPA-swap-context",
+      "input": {
+        "id": "STPA-TEACH-001",
+        "version": "0.1.0",
+        "scope": "hypothetical_local_contact_process_not_full_robot_safety_analysis",
+        "losses": [
+          {
+            "id": "L1",
+            "text": "不可接受的组织或人员损伤（研究假设）"
+          }
+        ],
+        "hazards": [
+          {
+            "id": "H1",
+            "text": "未知组织边界或恢复前提下仍有危险相对接触作用",
+            "losses": [
+              "L1"
+            ]
+          }
+        ],
+        "control_structure": {
+          "controller": "local_controller",
+          "controlled_process": "contact_action",
+          "actions": [
+            "enable",
+            "inhibit"
+          ],
+          "feedback": [
+            "actual_motion",
+            "data_timestamp",
+            "residual_state"
+          ],
+          "process_model": [
+            "boundary_known",
+            "actual_stop",
+            "recovery_authorized"
+          ]
+        },
+        "ucas": [
+          {
+            "id": "U1",
+            "class": "not_provided",
+            "action": "inhibit",
+            "context": "unrelated",
+            "hazards": [
+              "H1"
+            ],
+            "constraint": "边界信息失效应触发抑制请求与实际状态确认研究"
+          },
+          {
+            "id": "U2",
+            "class": "provided",
+            "action": "enable",
+            "context": "恢复前提未确认却使能",
+            "hazards": [
+              "H1"
+            ],
+            "constraint": "未确认恢复前提不得使能"
+          },
+          {
+            "id": "U3",
+            "class": "timing_order",
+            "action": "enable",
+            "context": "在实际停止/恢复审查之前过早使能",
+            "hazards": [
+              "H1"
+            ],
+            "constraint": "顺序应依据实际状态与授权，而非请求应答"
+          },
+          {
+            "id": "U4",
+            "class": "duration",
+            "action": "inhibit",
+            "context": "危险条件仍存在但过早终止抑制",
+            "hazards": [
+              "H1"
+            ],
+            "constraint": "解除抑制需有恢复条件依据"
+          }
+        ],
+        "scenarios": [
+          {
+            "id": "SC1",
+            "uca": "U2",
+            "mechanism": "陈旧反馈被过程模型当成当前停止，控制算法据错误信念使能",
+            "control_flaw": "timestamp_validity_not_checked",
+            "not_necessarily_component_failure": true,
+            "derived_requirement": "拟分开反馈时点、停止状态及恢复授权",
+            "status": "candidate_not_approved"
+          }
+        ],
+        "safety_certified": false,
+        "frequencies": null
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "fixed_control_context_or_trace_changed"
+      }
+    },
+    {
+      "name": "STPA-delete-one-class",
+      "input": {
+        "id": "STPA-TEACH-001",
+        "version": "0.1.0",
+        "scope": "hypothetical_local_contact_process_not_full_robot_safety_analysis",
+        "losses": [
+          {
+            "id": "L1",
+            "text": "不可接受的组织或人员损伤（研究假设）"
+          }
+        ],
+        "hazards": [
+          {
+            "id": "H1",
+            "text": "未知组织边界或恢复前提下仍有危险相对接触作用",
+            "losses": [
+              "L1"
+            ]
+          }
+        ],
+        "control_structure": {
+          "controller": "local_controller",
+          "controlled_process": "contact_action",
+          "actions": [
+            "enable",
+            "inhibit"
+          ],
+          "feedback": [
+            "actual_motion",
+            "data_timestamp",
+            "residual_state"
+          ],
+          "process_model": [
+            "boundary_known",
+            "actual_stop",
+            "recovery_authorized"
+          ]
+        },
+        "ucas": [
+          {
+            "id": "U1",
+            "class": "not_provided",
+            "action": "inhibit",
+            "context": "边界信息已失效但未发抑制",
+            "hazards": [
+              "H1"
+            ],
+            "constraint": "边界信息失效应触发抑制请求与实际状态确认研究"
+          },
+          {
+            "id": "U2",
+            "class": "provided",
+            "action": "enable",
+            "context": "恢复前提未确认却使能",
+            "hazards": [
+              "H1"
+            ],
+            "constraint": "未确认恢复前提不得使能"
+          },
+          {
+            "id": "U3",
+            "class": "timing_order",
+            "action": "enable",
+            "context": "在实际停止/恢复审查之前过早使能",
+            "hazards": [
+              "H1"
+            ],
+            "constraint": "顺序应依据实际状态与授权，而非请求应答"
+          }
+        ],
+        "scenarios": [
+          {
+            "id": "SC1",
+            "uca": "U2",
+            "mechanism": "陈旧反馈被过程模型当成当前停止，控制算法据错误信念使能",
+            "control_flaw": "timestamp_validity_not_checked",
+            "not_necessarily_component_failure": true,
+            "derived_requirement": "拟分开反馈时点、停止状态及恢复授权",
+            "status": "candidate_not_approved"
+          }
+        ],
+        "safety_certified": false,
+        "frequencies": null
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "fixed_control_context_or_trace_changed"
+      }
+    },
+    {
+      "name": "DFSS-fake-12readings",
+      "input": {
+        "id": "DFSS-TEACH-001",
+        "version": "0.1.0",
+        "mode": "new_design_research",
+        "framework": "selected_DMADV_family_not_single_algorithm",
+        "voice": "希望作用边界可理解并可核对（构造假设）",
+        "ctq": [
+          {
+            "id": "CTQ1",
+            "need": "N-T01",
+            "candidate": "边界信息与允许作用的对应",
+            "operational_definition": "拟定义参考信号、组织对象、时点、测量过程与误差；当前尚未确认",
+            "target": null,
+            "unit": null,
+            "approved": false
+          }
+        ],
+        "measurement_plan": {
+          "measurand": "同一构造参考件位置读数，仅教学测量计划非组织边界验证",
+          "parts": [
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "operators": [
+            "O1",
+            "O2"
+          ],
+          "repeats": 2,
+          "order": "randomized_and_blinded_proposed",
+          "calibration": "unknown",
+          "environment": "record_conditions_proposed",
+          "raw_observations": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "implemented": false
+        },
+        "design_response": "先研究测量原理与误差来源，再安排候选设计试验",
+        "confirmation_plan": "需真实场景/对象与专业判据；未实施",
+        "sigma_level": null,
+        "Cp": null,
+        "Cpk": null,
+        "engineering_validated": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "fixed_CTQ_measurement_identity_or_validation_changed"
+      }
+    },
+    {
+      "name": "DFSS-repeat-bool",
+      "input": {
+        "id": "DFSS-TEACH-001",
+        "version": "0.1.0",
+        "mode": "new_design_research",
+        "framework": "selected_DMADV_family_not_single_algorithm",
+        "voice": "希望作用边界可理解并可核对（构造假设）",
+        "ctq": [
+          {
+            "id": "CTQ1",
+            "need": "N-T01",
+            "candidate": "边界信息与允许作用的对应",
+            "operational_definition": "拟定义参考信号、组织对象、时点、测量过程与误差；当前尚未确认",
+            "target": null,
+            "unit": null,
+            "approved": false
+          }
+        ],
+        "measurement_plan": {
+          "measurand": "同一构造参考件位置读数，仅教学测量计划非组织边界验证",
+          "parts": [
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "operators": [
+            "O1",
+            "O2"
+          ],
+          "repeats": true,
+          "order": "randomized_and_blinded_proposed",
+          "calibration": "unknown",
+          "environment": "record_conditions_proposed",
+          "raw_observations": [],
+          "implemented": false
+        },
+        "design_response": "先研究测量原理与误差来源，再安排候选设计试验",
+        "confirmation_plan": "需真实场景/对象与专业判据；未实施",
+        "sigma_level": null,
+        "Cp": null,
+        "Cpk": null,
+        "engineering_validated": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "fixed_CTQ_measurement_identity_or_validation_changed"
+      }
+    },
+    {
+      "name": "BLUE-zero-wait",
+      "input": {
+        "id": "BLUE-TEACH-001",
+        "version": "0.1.0",
+        "identity": "future_hypothetical_shift_not_observed_current_service",
+        "customer_approved": false,
+        "steps": [
+          {
+            "id": "BP1",
+            "user": "接班核对",
+            "frontstage": "显示交接记录身份",
+            "backstage": "核工单与版本",
+            "support": "记录服务",
+            "evidence_object": "交接记录",
+            "owner_role": "班组协调角色待指派",
+            "wait_s": 0,
+            "failure": "记录不全",
+            "recovery": "暂停接班并回查记录"
+          },
+          {
+            "id": "BP2",
+            "user": "发起作业请求",
+            "frontstage": "区分请求与实际状态",
+            "backstage": "核任务授权及反馈",
+            "support": "控制/供能服务",
+            "evidence_object": "请求与状态分列",
+            "owner_role": "现场控制角色待指派",
+            "wait_s": null,
+            "failure": "反馈陈旧",
+            "recovery": "抑制新动作请求并交异常处理"
+          },
+          {
+            "id": "BP3",
+            "user": "报告异常等待处理",
+            "frontstage": "显示尚未恢复",
+            "backstage": "派发异常并保留上下文",
+            "support": "维护支持",
+            "evidence_object": "异常单",
+            "owner_role": "维护协调角色待指派",
+            "wait_s": null,
+            "failure": "无人接单",
+            "recovery": "升级协调并保持恢复未授权"
+          },
+          {
+            "id": "BP4",
+            "user": "清理检修后交接",
+            "frontstage": "显示检修范围与未决项",
+            "backstage": "核维护记录与隔离/恢复前提",
+            "support": "备件/工具支持",
+            "evidence_object": "维护与隔离记录",
+            "owner_role": "维护执行角色待指派",
+            "wait_s": null,
+            "failure": "缺恢复证据",
+            "recovery": "禁止以检修完成替代恢复授权"
+          },
+          {
+            "id": "BP5",
+            "user": "班末交班",
+            "frontstage": "显示任务完成身份与未决项",
+            "backstage": "核账与安排后续",
+            "support": "档案支持",
+            "evidence_object": "班末未决清单",
+            "owner_role": "交接责任角色待指派",
+            "wait_s": null,
+            "failure": "未决被遗失",
+            "recovery": "保留开放异常并交明确接收角色"
+          }
+        ],
+        "actual_observations": [],
+        "measured_waits": false
+      },
+      "actual": "rejected",
+      "output": {
+        "error": "fixed_future_blueprint_identity_roles_or_recovery_changed"
+      }
+    }
+  ]
+}

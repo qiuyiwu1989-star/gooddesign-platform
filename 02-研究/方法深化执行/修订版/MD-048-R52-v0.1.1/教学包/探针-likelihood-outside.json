@@ -1,0 +1,39 @@
+{
+  "input": {
+    "id": "VOI-TEACH-001",
+    "provenance": "independent_teaching_probabilities_losses_not_customer_estimates",
+    "states": [
+      "good",
+      "bad"
+    ],
+    "actions": [
+      "A",
+      "B"
+    ],
+    "prior": [
+      0.5,
+      0.5
+    ],
+    "loss": {
+      "A": [
+        0.0,
+        100.0
+      ],
+      "B": [
+        40.0,
+        0.0
+      ]
+    },
+    "signal_positive_likelihood": [
+      1.2,
+      0.2
+    ],
+    "study_cost": 2.0,
+    "delay_loss": 1.0,
+    "loss_unit": "synthetic_loss_units",
+    "hard_requirement_waiver": false
+  },
+  "output": {
+    "error": "probability_domain"
+  }
+}

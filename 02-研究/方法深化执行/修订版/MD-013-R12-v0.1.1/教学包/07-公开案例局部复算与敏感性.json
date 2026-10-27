@@ -1,0 +1,120 @@
+{
+  "scope": "published_non_rubber_case_partial_recalculation_from_displayed_rounded_ratios",
+  "source": {
+    "url": "https://static1.squarespace.com/static/5eb315d2b0e6914ba0419e47/t/5eb87c450e4d61663a0a7eb6/1589148741728/mazur_2013_qfd_for_membership_organizations.pdf",
+    "sha256": "60f07a852d8f10149c7196ecae7bfdb510ed6ef2aab033427639470b324b0d36",
+    "locator": "PDF page10 / printed page9 / Figure2"
+  },
+  "need_labels_paraphrased": [
+    "质量方法改进",
+    "质量实践改进",
+    "组织改进"
+  ],
+  "base": {
+    "matrix": [
+      [
+        1,
+        1.8,
+        1.25
+      ],
+      [
+        0.5555555555555556,
+        1,
+        0.5555555555555556
+      ],
+      [
+        0.8,
+        1.8,
+        1
+      ]
+    ],
+    "normalized_column_row_average": [
+      0.4204590680561083,
+      0.21708672097726592,
+      0.36245421096662583
+    ],
+    "ordering": [
+      0,
+      2,
+      1
+    ]
+  },
+  "reported_displayed_row_averages": [
+    0.421,
+    0.216,
+    0.363
+  ],
+  "reproduction_tolerance": 0.002,
+  "observed_max_difference": 0.0010867209772659203,
+  "not_exact_replication": "published comparison fractions and sums are display-rounded; original participant matrices not available",
+  "sensitivity": {
+    "algebraic_tie_t": 1,
+    "tie": {
+      "matrix": [
+        [
+          1,
+          1.8,
+          1
+        ],
+        [
+          0.5555555555555556,
+          1,
+          0.5555555555555556
+        ],
+        [
+          1.0,
+          1.8,
+          1
+        ]
+      ],
+      "normalized_column_row_average": [
+        0.391304347826087,
+        0.21739130434782608,
+        0.391304347826087
+      ],
+      "ordering": [
+        0,
+        2,
+        1
+      ]
+    },
+    "counterfactual_inverted_display_ratio": {
+      "matrix": [
+        [
+          1,
+          1.8,
+          0.8
+        ],
+        [
+          0.5555555555555556,
+          1,
+          0.5555555555555556
+        ],
+        [
+          1.25,
+          1.8,
+          1
+        ]
+      ],
+      "normalized_column_row_average": [
+        0.36245421096662583,
+        0.21708672097726592,
+        0.4204590680561083
+      ],
+      "ordering": [
+        2,
+        0,
+        1
+      ]
+    },
+    "not_a_confidence_interval": true,
+    "not_new_survey_data": true
+  },
+  "not_claimed": [
+    "QFD full deployment replication",
+    "eigenvector/CR replication",
+    "client importance",
+    "engineering targets",
+    "rubber robot ranking"
+  ]
+}

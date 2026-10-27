@@ -1,0 +1,40 @@
+{
+  "method": "R21",
+  "version": "0.1.0",
+  "interface": "proposed_research_contract_not_registered_MCP",
+  "mcp_implemented": false,
+  "trigger": "已识别问题，需要决定哪些TRIZ工具输入具备或缺失",
+  "actual_local_capability": "declared problem model readiness and nonnumerical tool routing",
+  "required_inputs": [
+    "source problem/version/SHA",
+    "declared model and material origin",
+    "scope/unknowns",
+    "method-specific identities and relations"
+  ],
+  "outputs": [
+    "模型就绪/缺口",
+    "建议和拒绝路线及理由",
+    "具体工具前提",
+    "保持未执行的研究状态"
+  ],
+  "states": [
+    "needs_material",
+    "bounded_research",
+    "return_to_model",
+    "not_engineering_validated"
+  ],
+  "limits": [
+    "不自动理解任意缺陷",
+    "未执行矩阵/ARIZ/标准解/效应验证",
+    "不输出数值匹配分或技术优胜"
+  ],
+  "refusal": [
+    "构造素材冒充现场",
+    "无来源的批准/工程结果",
+    "不完整来源或模型身份",
+    "未执行工具却给执行结果"
+  ],
+  "permissions": "read supplied sources, write own bounded research artifacts only",
+  "complete_matrix_lookup_implemented": null,
+  "domain_expert_review": "not_performed"
+}

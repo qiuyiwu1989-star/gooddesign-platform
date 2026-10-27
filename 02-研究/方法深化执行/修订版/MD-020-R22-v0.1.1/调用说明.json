@@ -1,0 +1,41 @@
+{
+  "method": "R22",
+  "version": "0.1.0",
+  "interface": "proposed_research_contract_not_registered_MCP",
+  "mcp_implemented": false,
+  "trigger": "同一措施下有需核实的改善—恶化关系",
+  "actual_local_capability": "partial technical contradiction modeling and explicit lookup gap",
+  "required_inputs": [
+    "source problem/version/SHA",
+    "declared model and material origin",
+    "scope/unknowns",
+    "method-specific identities and relations"
+  ],
+  "outputs": [
+    "原量、方向与工况",
+    "IF/THEN/BUT条件模型",
+    "未解决参数映射",
+    "未查表状态及所缺证据"
+  ],
+  "states": [
+    "needs_material",
+    "bounded_research",
+    "return_to_model",
+    "not_engineering_validated"
+  ],
+  "limits": [
+    "没有完整版本化矩阵，实际查询0",
+    "参数搜索词不是核定的官方ID",
+    "未形成原理命中或工程方案",
+    "只完成受限建模，非完整方法执行"
+  ],
+  "refusal": [
+    "构造素材冒充现场",
+    "无来源的批准/工程结果",
+    "不完整来源或模型身份",
+    "未执行工具却给执行结果"
+  ],
+  "permissions": "read supplied sources, write own bounded research artifacts only",
+  "complete_matrix_lookup_implemented": false,
+  "domain_expert_review": "not_performed"
+}

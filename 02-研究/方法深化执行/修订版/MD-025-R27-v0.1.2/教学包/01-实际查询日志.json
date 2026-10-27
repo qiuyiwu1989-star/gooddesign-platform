@@ -1,0 +1,30 @@
+{
+  "execution_date": "2026-10-27",
+  "tool": "web search, actually executed",
+  "queries": [
+    {
+      "id": "Q01",
+      "query": "site.nasa.gov capillary flow liquid transport microgravity viscosity surface tension contact angle",
+      "screening": "NASA2024 passive transport model, selected as conceptual lead; source is modeling not deployed proof"
+    },
+    {
+      "id": "Q02",
+      "query": "site.pnas.org liquid directional transport conical fibers capillary viscosity",
+      "screening": "returned mixed-domain hits, none used as exact PNAS evidence"
+    },
+    {
+      "id": "Q03",
+      "query": "site.nature.com directional liquid transport peristome Nepenthes surface wetting 2016",
+      "screening": "2016 source abstract plus2018 original experimental breakdown paper; select latter for limitations"
+    },
+    {
+      "id": "Q04",
+      "query": "natural rubber latex microfluidic capillary channel coagulation viscosity original research",
+      "screening": "2012 latex capillary viscosity paper hit, plus misleading rubber-as-channel-material hits explicitly rejected"
+    }
+  ],
+  "raw_return": "private-sources/原始查询返回.json contains Q01-Q03 full tool return, excluded from public manifest",
+  "Q04_evidence": "primary journal search hit metadata and abstract; full acquisition recorded separately",
+  "expert_contact": "not_performed",
+  "search_limit": "bounded sample, no exhaustive leading-area or best-technology claim"
+}

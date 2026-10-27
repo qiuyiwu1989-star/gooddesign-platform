@@ -1,0 +1,12 @@
+{
+  "context": "document archive reliability",
+  "failure_mode": "backup unavailable when primary storage fails",
+  "common_cause": "both copies on same physical disk",
+  "actual_desk_check": "two directory names share one declared device identity; distinct names do not imply independence",
+  "ratings": null,
+  "actions": [
+    "identify failure domains",
+    "exercise restore separately from checking backup exists"
+  ],
+  "real_restore_test": false
+}

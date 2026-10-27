@@ -1,0 +1,79 @@
+{
+  "origin": "constructed_research_architecture_not_actual_machine",
+  "configuration": "TAP-FMEA-DRAFT-001",
+  "phase": "abnormal_motion_inhibition",
+  "scale_reference": {
+    "document": "GSFC-HDBK-8004",
+    "revision": "Baseline2024-08-20",
+    "locator": "Table1 PDFp23",
+    "applicability_to_target": "not_approved",
+    "transfer_numeric_ratings": false
+  },
+  "components": [
+    {
+      "id": "S1",
+      "power": "PWR-A"
+    },
+    {
+      "id": "S2",
+      "power": "PWR-A"
+    },
+    {
+      "id": "CTRL",
+      "power": "PWR-A"
+    }
+  ],
+  "failure_chain": {
+    "id": "FM1",
+    "function": "provide timely boundary-related observation",
+    "mode": "stale output treated as current",
+    "mechanism": "validity gate fails to discriminate stale sample",
+    "causes": [
+      "clock mismatch hypothesis",
+      "shared supply disturbance hypothesis"
+    ],
+    "local_effect": "invalid observation persists",
+    "higher_effect": "motion inhibition may not be requested",
+    "end_effect": "uncontrolled contact hypothesis; consequence not assessed"
+  },
+  "controls": [
+    {
+      "id": "CT1",
+      "kind": "staleness gate",
+      "state": "planned",
+      "effectiveness_evidence": []
+    },
+    {
+      "id": "CT2",
+      "kind": "second observation channel",
+      "state": "planned",
+      "effectiveness_evidence": []
+    }
+  ],
+  "claimed_independent_redundancy": false,
+  "single_point_review": "shared PWR-A requires assessment; no complete fault model",
+  "ratings": {
+    "severity": null,
+    "occurrence": null,
+    "detection_prevention": null
+  },
+  "residual_risk": null,
+  "actions": [
+    {
+      "id": "A1",
+      "control": "CT1",
+      "owner_role": "controls_research_role",
+      "task": "define clock/age and fault-injection study",
+      "completion": "not_executed"
+    },
+    {
+      "id": "A2",
+      "control": "CT2",
+      "owner_role": "system_architecture_role",
+      "task": "investigate supply independence/common cause and latent faults",
+      "completion": "not_executed"
+    }
+  ],
+  "customer_approved": false,
+  "engineering_validated": false
+}

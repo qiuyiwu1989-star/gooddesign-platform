@@ -1,0 +1,65 @@
+{
+  "input": {
+    "id": "GRAPH-TEACH-01",
+    "version": "0.1.0",
+    "origin": "evidence_identity_graph_not_author_full_classification",
+    "nodes": [
+      {
+        "id": "DOC-2006",
+        "type": "source",
+        "identity": "same2010paper"
+      },
+      {
+        "id": "DOC-2010",
+        "type": "source",
+        "identity": "2010熵权广义质量论文"
+      },
+      {
+        "id": "DOC-2019",
+        "type": "source",
+        "identity": "2019作者署名自述"
+      },
+      {
+        "id": "THREEA-2006",
+        "type": "framework_label",
+        "identity": "三化，定义需保留年份"
+      },
+      {
+        "id": "FIVEA-2019",
+        "type": "framework_label",
+        "identity": "五种检验方式，非三化别名"
+      },
+      {
+        "id": "CAT-70PLUS",
+        "type": "unresolved_classification",
+        "identity": "七类70余种对应表未取得"
+      }
+    ],
+    "edges": [
+      {
+        "from": "DOC-2006",
+        "to": "THREEA-2006",
+        "relation": "discusses",
+        "evidence": "PDF1 title/abstract/figure"
+      },
+      {
+        "from": "DOC-2019",
+        "to": "FIVEA-2019",
+        "relation": "author_mentions",
+        "evidence": "署名自述 selected passage"
+      },
+      {
+        "from": "DOC-2010",
+        "to": "DOC-2006",
+        "relation": "related_topic_not_identity",
+        "evidence": "different title/year/weighting scope"
+      }
+    ],
+    "auto_same_as": [],
+    "author_seven_category_table": null,
+    "full_70plus_mapping": false
+  },
+  "output": {
+    "error": "frozen_scope_identity_or_evidence_changed"
+  }
+}

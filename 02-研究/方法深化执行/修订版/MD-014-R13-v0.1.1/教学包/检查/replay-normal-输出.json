@@ -1,0 +1,89 @@
+{
+  "method": "R13",
+  "state": "research_design_only",
+  "tasks": [
+    {
+      "id": "HF-T01",
+      "phase": "normal_monitoring",
+      "action": "识别当前作业状态",
+      "information": [
+        "state",
+        "measurement_freshness"
+      ],
+      "physical_demands": "unknown",
+      "cognitive_demands": "监视与状态解释，实际负荷未知"
+    },
+    {
+      "id": "HF-T02",
+      "phase": "abnormal_takeover",
+      "action": "识别陈旧信息并请求抑制",
+      "information": [
+        "measurement_freshness",
+        "validity",
+        "stop_request_ack"
+      ],
+      "physical_demands": "unknown",
+      "cognitive_demands": "从监视切换为异常判断，能力与时限未知"
+    },
+    {
+      "id": "HF-T03",
+      "phase": "abnormal_takeover",
+      "action": "核对停止状态与恢复前提",
+      "information": [
+        "actual_stop",
+        "residual_energy",
+        "reauthorization"
+      ],
+      "physical_demands": "unknown",
+      "cognitive_demands": "区分请求与实际状态，实际表现未知"
+    },
+    {
+      "id": "HF-T04",
+      "phase": "maintenance",
+      "action": "清理与更换后交接",
+      "information": [
+        "isolation_status",
+        "maintenance_scope",
+        "reauthorization"
+      ],
+      "physical_demands": "姿态、力、可达性均未知",
+      "cognitive_demands": "维护责任与交接，实际负荷未知"
+    }
+  ],
+  "representation_analysis": [
+    {
+      "variant": "A",
+      "representation_collision": true,
+      "can_distinguish_declared_states_by_encoding": false,
+      "human_understanding": "unknown",
+      "workload": "unknown",
+      "reaction_time": null
+    },
+    {
+      "variant": "B",
+      "representation_collision": false,
+      "can_distinguish_declared_states_by_encoding": true,
+      "human_understanding": "unknown",
+      "workload": "unknown",
+      "reaction_time": null
+    }
+  ],
+  "measured_user_outcomes": [],
+  "target_population_known": false,
+  "research_questions": [
+    "目标角色能否理解时效标记",
+    "异常时能否区分请求与实际停止",
+    "维护姿态/力/可达性与职责是什么"
+  ],
+  "not_claimed": [
+    "B更易用",
+    "新手反应更快",
+    "设备更安全"
+  ],
+  "pending": [
+    "现场人群与任务记录",
+    "实际负荷与姿态数据",
+    "角色资格及参与同意",
+    "专业/用户复核"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "context": "document research-review-publication",
+  "nodes": [
+    "author",
+    "reviewer",
+    "publisher"
+  ],
+  "directed_edges": [
+    "author->reviewer",
+    "reviewer->author",
+    "reviewer->publisher"
+  ],
+  "desktop_conclusion": "author/reviewer feedback pair precedes publication in declared graph",
+  "scope": "mapping only; not actual organizational productivity measurement",
+  "interface_costs": null,
+  "physical_modules_claimed": false
+}

@@ -1,0 +1,52 @@
+{
+  "method": "R18",
+  "sources": [
+    {
+      "title": "Bohn and Federle 2004 original study",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC521129/",
+      "locator": "Abstract; Materials and Methods; Fig3; wet/dry and friction results",
+      "claim_scope": "source-level selected passage only; platform teaching is independent construction",
+      "full_text_read": "selected_sections_only"
+    },
+    {
+      "title": "Biomimicry Institute abstraction",
+      "url": "https://toolbox.biomimicry.org/methods/abstract/",
+      "locator": "Abstract design strategies",
+      "claim_scope": "source-level selected passage only; platform teaching is independent construction",
+      "full_text_read": "selected_sections_only"
+    }
+  ],
+  "platform_rules": [
+    "unknown is not passed",
+    "hypothesis is not approved requirement",
+    "no field/expert certification"
+  ],
+  "source_depth": "selected_primary_sections",
+  "copyright": "raw originals private-sources excluded from manifest/publication; no full-text redistribution",
+  "private_evidence_inventory": [
+    {
+      "path": "private-sources/BIOMIMICRY.html",
+      "sha256": "3e4c8f2da2bbb7d8e3781ae4f2265749eb3c9761a07bc8f401188dcf5eeb7f17",
+      "not_in_public_manifest": true,
+      "read_scope": "selected sections or failure recorded; see source locators"
+    },
+    {
+      "path": "private-sources/BIOMIMICRY.txt",
+      "sha256": "23fa61e6122060d0b7fdae5a78bcef4772850b95630eaeb4f51d39578fe50757",
+      "not_in_public_manifest": true,
+      "read_scope": "selected sections or failure recorded; see source locators"
+    },
+    {
+      "path": "private-sources/BOHN-2004.html",
+      "sha256": "5438ef41bd3b0e56656de5c797329fc5ecd4371a5029af29731de7470807ae7e",
+      "not_in_public_manifest": true,
+      "read_scope": "selected sections or failure recorded; see source locators"
+    },
+    {
+      "path": "private-sources/BOHN-2004.txt",
+      "sha256": "d4cb044c354046c021dec66c402a0f23a83d9c550d872f573b77d85ed94035b2",
+      "not_in_public_manifest": true,
+      "read_scope": "selected sections or failure recorded; see source locators"
+    }
+  ]
+}

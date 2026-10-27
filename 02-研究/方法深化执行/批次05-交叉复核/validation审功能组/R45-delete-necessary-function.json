@@ -1,0 +1,36 @@
+{
+  "input": {
+    "id": "R45-LIFE-COST-TEACH-001",
+    "origin": "synthetic_cost_units_not_quotes",
+    "necessary_functions": [],
+    "function_quality_status": "assumed_equivalent_for_cost_arithmetic_only",
+    "hard_requirements_waived": [],
+    "service_events": 5,
+    "alternatives": [
+      {
+        "id": "A",
+        "purchase_CU": 100.0,
+        "user_maintenance_per_event_CU": 20.0,
+        "function_cost_shares": [
+          0.6,
+          0.4
+        ]
+      },
+      {
+        "id": "B",
+        "purchase_CU": 80.0,
+        "user_maintenance_per_event_CU": 30.0,
+        "function_cost_shares": [
+          0.6,
+          0.4
+        ]
+      }
+    ],
+    "cost_unit": "arbitrary_CU_not_currency_or_real_quote",
+    "scope": "undiscounted same service, user burden included; not a validated VE recommendation"
+  },
+  "method": "R45",
+  "name": "delete-necessary-function",
+  "output": null,
+  "error": "necessary function/hard requirement erased"
+}

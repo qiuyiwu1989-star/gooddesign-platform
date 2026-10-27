@@ -1,0 +1,68 @@
+{
+  "source_binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "path": "../../MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+  },
+  "hypotheses": [
+    {
+      "id": "H-T01",
+      "proposition": "在本构造记录中，残留只会在暂停后出现",
+      "scope": "fixed_fixture_only",
+      "status": "rejected_in_fixture",
+      "support_note_ids": [
+        "NOTE-T01"
+      ],
+      "counter_note_ids": [
+        "NOTE-T04"
+      ],
+      "reason": "EV-T02的构造字段为未暂停且有残留，违反必要条件；不能据此推断真实现场因果。"
+    },
+    {
+      "id": "H-T02",
+      "proposition": "暂停在目标现场可能增加残留概率",
+      "scope": "real_world_question",
+      "status": "unknown",
+      "support_note_ids": [
+        "NOTE-T01"
+      ],
+      "counter_note_ids": [
+        "NOTE-T04",
+        "NOTE-T05"
+      ],
+      "reason": "极小构造集、非同工况比较，无真实取样；不能估计概率或因果。"
+    },
+    {
+      "id": "H-T03",
+      "proposition": "材料状态或表面条件可能影响残留及恢复",
+      "scope": "real_world_question",
+      "status": "unknown",
+      "support_note_ids": [],
+      "counter_note_ids": [],
+      "reason": "三个构造事件都未包含这些条件；只能形成下一轮观察问题。"
+    }
+  ],
+  "authored_coding_disagreement": {
+    "not_actual_two_person_coding": true,
+    "view_A": "将NOTE-T01/02/03当三次独立支持并据此选“消除暂停”",
+    "view_B": "三条同属EV-T01且分属观察/原话/解释，不得三计；EV-T02削弱单因解释",
+    "resolution": "以事件为单位去重，撤回H-T01在教学集中的成立主张；保留H-T02/H-T03待现场研究。"
+  },
+  "need_revision": {
+    "old_teaching_idea": "通过消除所有暂停解决残留",
+    "new_teaching_question": "哪些作业/材料/停放条件与残留及恢复负担有关？",
+    "relation_to_shared_needs": "N-T02/N-T04继续保留研究假设；本包未更改共享v0.1.0或批准新阈值"
+  },
+  "package_version": "0.1.1",
+  "artifact_bindings": {
+    "raw_records": {
+      "path": "01-构造事件原件.json",
+      "sha256": "1f4de1a75bc5d04f422b960fadb42ca44f1658adb41ba5d3ba53242fd1239624"
+    },
+    "coding": {
+      "path": "02-编码与去重.json",
+      "sha256": "57c720bc62035b85437fc65a6796bfadddbbdb1acf7e92be85868ec8dac86291"
+    }
+  }
+}

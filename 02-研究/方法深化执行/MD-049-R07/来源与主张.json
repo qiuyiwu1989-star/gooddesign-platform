@@ -1,0 +1,50 @@
+{
+  "method": "R07",
+  "version": "0.1.0",
+  "sources": [
+    {
+      "url": "https://www.nist.gov/baldrige/lean-iso-and-six-sigma",
+      "identity": "NIST public institutional explanation",
+      "locator": "Six Sigma paragraphs DMAIC vs DMADV",
+      "supports": "existing process improvement vs new product/process design distinction",
+      "read_scope": "selected paragraphs; not complete DFSS standard"
+    },
+    {
+      "url": "https://www.itl.nist.gov/div898/handbook/mpc/section4/mpc46.htm",
+      "identity": "NIST SEMATECH Handbook section2.4.6",
+      "locator": "representativeness; time change; specific measurement uncertainty",
+      "supports": "gauge study relevance to working conditions and sources beyond short-term variation",
+      "read_scope": "selected measurement principles; no full uncertainty budget implemented"
+    }
+  ],
+  "platform_adaptations": [
+    "independent constructed teaching scenario",
+    "fixed structured identity guards",
+    "explicit unknown/no approval/no field execution states"
+  ],
+  "private_evidence": [
+    {
+      "path": "private-sources/NIST-DFSS.html",
+      "sha256": "75f70ca6a57d4f9d5da9d594f6a35f54953d58e13df4dbfb2240eb5f189cc9ef"
+    },
+    {
+      "path": "private-sources/NIST-DFSS.txt",
+      "sha256": "60ed03d9c945f211e745b126d56410c2a5a17049070ce1e3b40508322d5b0a5b"
+    },
+    {
+      "path": "private-sources/NIST-GAUGE.html",
+      "sha256": "34a1372ca8ddb790ecaac19c2bc1b21c45482cb67f9afb9fb1ff73a0797fd59f"
+    },
+    {
+      "path": "private-sources/NIST-GAUGE.txt",
+      "sha256": "8e6a27cf5e1d12ae576dfd14c50c28c47c2ed9454b7386be53b262842bfef691"
+    }
+  ],
+  "rights": "private originals excluded from public manifest and publication; no copied source diagrams/whole text",
+  "not_claimed": [
+    "original method complete implementation",
+    "real client probabilities or requirements",
+    "field validation",
+    "expert certification"
+  ]
+}

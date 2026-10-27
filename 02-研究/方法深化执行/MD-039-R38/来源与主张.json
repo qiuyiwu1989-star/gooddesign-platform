@@ -1,0 +1,47 @@
+{
+  "method": "R38",
+  "source_read_scope": "NIST full-factorial example data description/table/initial 26parameter fit plus model diagnostic outline; no final transformed model",
+  "claims": [
+    {
+      "id": "R38-C1",
+      "source_id": "NIST-EXAMPLE",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section4/pri471.htm",
+      "locator": "Description of Experiment;32-row design table; initial model",
+      "supported_claim": "published modified ceramic illustration, mean response, factors and randomized order",
+      "support_scope": "selected institutional primary passage",
+      "not_supported": "target engineering effectiveness or platform schema approval"
+    },
+    {
+      "id": "R38-C2",
+      "source_id": "NIST-MODELCHECK",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section4/pri44.htm",
+      "locator": "Graphical Indicators;Overall numerical indicators",
+      "supported_claim": "residual/fit and model-diagnostic tools",
+      "support_scope": "selected institutional primary passage",
+      "not_supported": "target engineering effectiveness or platform schema approval"
+    }
+  ],
+  "source_fingerprints": [
+    {
+      "id": "NIST-EXAMPLE",
+      "sha256": "43c150ee30c1189147e8df87e28e3a72959efb2c335f215a1c6abf1ead048a92"
+    },
+    {
+      "id": "NIST-MODELCHECK",
+      "sha256": "8215d47f646b1f0ec2ceb9a913897eb6f79187ae7a6644ff57c268eb2f15495a"
+    },
+    {
+      "id": "CERAMIC",
+      "sha256": "6141438bd5a4e49b1a47e281c2e2b7b939864022271628b8130e5c30eb797072"
+    }
+  ],
+  "platform_adaptation": "independent public-data raw-response refit plus separate authored heteroscedastic counterexample",
+  "full_original_system_replicated": false,
+  "raw_originals": "private-sources excluded from manifest/publication",
+  "gaps": [
+    "individual15replicates unavailable",
+    "order4/5 pooled error assumption",
+    "no curvature estimate",
+    "no actual confirmation/new experiment"
+  ]
+}

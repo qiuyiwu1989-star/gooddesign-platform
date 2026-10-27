@@ -1,0 +1,198 @@
+{
+  "packages": [
+    {
+      "package": "MD-002-R08-v0.1.2",
+      "manifest_sha256": "8340944df7c8fd00a822adfccd9ea03080302422230f5239482f4c994502c7ff",
+      "files_verified": 18,
+      "baseline_count": 11
+    },
+    {
+      "package": "MD-031-R31-v0.1.1",
+      "manifest_sha256": "f742e4b6e244a483671255e4d35ddfb6f5efac3d67834647c065c2df2bb3f0a8",
+      "files_verified": 16,
+      "baseline_count": 8
+    },
+    {
+      "package": "MD-032-R32-v0.1.1",
+      "manifest_sha256": "3fcea5fdd8fee8cec3ed5d2a0871cca9fa88b42d02b5e9d5adccb5ed3cda95ee",
+      "files_verified": 16,
+      "baseline_count": 9
+    },
+    {
+      "package": "MD-038-R37-v0.1.1",
+      "manifest_sha256": "f78bdd6fa1ecd7dd4fe7f8b3707b895e37daedb93dee18d0eeefcd74db6ab9e6",
+      "files_verified": 16,
+      "baseline_count": 8
+    },
+    {
+      "package": "MD-041-R40-v0.1.1",
+      "manifest_sha256": "ca6ad5662ee60f98acb5c9b54b3fca2ec25f7960648baf9d2b1a8c2d0bcfbd62",
+      "files_verified": 16,
+      "baseline_count": 8
+    }
+  ],
+  "probes": [
+    {
+      "package": "MD-002-R08-v0.1.2",
+      "name": "old-package-version-deletion",
+      "actual": "rejected",
+      "result": {
+        "error": "ValueError: standalone_artifact_package_version_mismatch"
+      }
+    },
+    {
+      "package": "MD-002-R08-v0.1.2",
+      "name": "new-artifact-version-mixed-as-helper",
+      "actual": "rejected",
+      "result": {
+        "error": "ValueError: standalone_artifact_package_version_mismatch"
+      }
+    },
+    {
+      "package": "MD-031-R31-v0.1.1",
+      "name": "old-bool-edge",
+      "actual": "rejected",
+      "result": {
+        "error": "ValueError: edge_endpoint_strict_integer_id_required"
+      }
+    },
+    {
+      "package": "MD-031-R31-v0.1.1",
+      "name": "new-float-edge-index",
+      "actual": "rejected",
+      "result": {
+        "error": "ValueError: edge_endpoint_strict_integer_id_required"
+      }
+    },
+    {
+      "package": "MD-032-R32-v0.1.1",
+      "name": "old-NaN-input-angle",
+      "actual": "rejected",
+      "result": {
+        "error": "ValueError: pose_numeric"
+      }
+    },
+    {
+      "package": "MD-032-R32-v0.1.1",
+      "name": "new-inf-input-angle",
+      "actual": "rejected",
+      "result": {
+        "error": "ValueError: pose_numeric"
+      }
+    },
+    {
+      "package": "MD-038-R37-v0.1.1",
+      "name": "old-string-false",
+      "actual": "rejected",
+      "result": {
+        "error": "ValueError: additive_assumption_boolean_required"
+      }
+    },
+    {
+      "package": "MD-038-R37-v0.1.1",
+      "name": "old-A-fail-safe-return",
+      "actual": "returned",
+      "result": {
+        "state": "remaining_feasible_only",
+        "excluded": [
+          "A",
+          "C"
+        ],
+        "scenarios": [
+          {
+            "weight_service": 0.2,
+            "scores": {
+              "B": 0.7200000000000002
+            },
+            "winners": [
+              "B"
+            ]
+          },
+          {
+            "weight_service": 0.5,
+            "scores": {
+              "B": 0.6000000000000001
+            },
+            "winners": [
+              "B"
+            ]
+          },
+          {
+            "weight_service": 0.8,
+            "scores": {
+              "B": 0.48000000000000004
+            },
+            "winners": [
+              "B"
+            ]
+          }
+        ],
+        "A_B_crossover_weight": null,
+        "unique_robust_winner": null,
+        "customer_decision": null,
+        "performance_evidence": "synthetic_only",
+        "qualification": "weighted value model under declared additive assumption, not calibrated customer preference"
+      }
+    },
+    {
+      "package": "MD-038-R37-v0.1.1",
+      "name": "new-all-fail-safe-return",
+      "actual": "returned",
+      "result": {
+        "state": "no_candidate",
+        "excluded": [
+          "A",
+          "B",
+          "C"
+        ],
+        "ranking": null,
+        "customer_decision": null
+      }
+    },
+    {
+      "package": "MD-041-R40-v0.1.1",
+      "name": "old-bool-owner",
+      "actual": "rejected",
+      "result": {
+        "error": "ValueError: action_identity_or_owner_role_string_required"
+      }
+    },
+    {
+      "package": "MD-041-R40-v0.1.1",
+      "name": "new-owner-list",
+      "actual": "rejected",
+      "result": {
+        "error": "ValueError: action_identity_or_owner_role_string_required"
+      }
+    }
+  ],
+  "R08_artifacts_v011_unchanged": [
+    {
+      "file": "01-构造事件原件.json",
+      "sha256": "1f4de1a75bc5d04f422b960fadb42ca44f1658adb41ba5d3ba53242fd1239624",
+      "identical": true
+    },
+    {
+      "file": "02-编码与去重.json",
+      "sha256": "57c720bc62035b85437fc65a6796bfadddbbdb1acf7e92be85868ec8dac86291",
+      "identical": true
+    },
+    {
+      "file": "03-竞争解释与修订.json",
+      "sha256": "c57a7fc6e54fdd421fdb22af1585712382979bc527fc126c7fe22f20acffbaeb",
+      "identical": true
+    },
+    {
+      "file": "04-实际检查结果.json",
+      "sha256": "72d8f594a21289db20c558d255c2183d615aa941796dcbf778aa9a597fe9dba3",
+      "identical": true
+    },
+    {
+      "file": "05-另场景迁移检查.json",
+      "sha256": "c27bf00cb64bd36df699d5309a4e71a0ec17dae046e4b83f10388091d7dd0236",
+      "identical": true
+    }
+  ],
+  "raw_originals": "not copied or modified",
+  "expert_certification": false
+}

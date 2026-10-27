@@ -1,0 +1,29 @@
+{
+  "nodes": 6,
+  "typed_edges": [
+    {
+      "from": "DOC-2006",
+      "to": "THREEA-2006",
+      "relation": "discusses",
+      "evidence": "PDF1 title/abstract/figure"
+    },
+    {
+      "from": "DOC-2019",
+      "to": "FIVEA-2019",
+      "relation": "author_mentions",
+      "evidence": "署名自述 selected passage"
+    },
+    {
+      "from": "DOC-2010",
+      "to": "DOC-2006",
+      "relation": "related_topic_not_identity",
+      "evidence": "different title/year/weighting scope"
+    }
+  ],
+  "identity_merges": [],
+  "unresolved": [
+    "CAT-70PLUS"
+  ],
+  "full_author_classification": false,
+  "routing_use": "retain year, type, source and uncertainty, do not route aliases as duplicates automatically"
+}

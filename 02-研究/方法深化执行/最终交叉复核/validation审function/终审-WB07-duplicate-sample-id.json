@@ -1,0 +1,51 @@
+{
+  "input": {
+    "id": "WB07-INTELLIGENCE-TEACH-001",
+    "origin": "platform_semantic_branch_fixture_not_author_Agent_architecture",
+    "branch": "product_operation",
+    "goal": "study availability of state for use",
+    "artifact_kind": "control_research_record",
+    "training_dataset": [],
+    "real_model_inference_results": [],
+    "product_operation_improved": false,
+    "customer_approved": false,
+    "engineering_validated": false,
+    "unknowns": {
+      "actual_latency_ms": null,
+      "accuracy": null,
+      "accepted_control_bound": null
+    },
+    "control_proxy": {
+      "configuration": "independent_synthetic_age_gate",
+      "unit": "synthetic_tick_not_ms",
+      "now": 10,
+      "max_age": 2,
+      "threshold_origin": "arbitrary teaching bound, not customer control requirement",
+      "samples": [
+        {
+          "id": "S1",
+          "timestamp": 8,
+          "valid": true
+        },
+        {
+          "id": "S1",
+          "timestamp": 7,
+          "valid": true
+        },
+        {
+          "id": "S3",
+          "timestamp": 8,
+          "valid": null
+        }
+      ]
+    }
+  },
+  "method": "WB07",
+  "name": "duplicate-sample-id",
+  "accepted": false,
+  "expected_accept": false,
+  "pass": true,
+  "output": {
+    "error": "unique explicit sample IDs required"
+  }
+}

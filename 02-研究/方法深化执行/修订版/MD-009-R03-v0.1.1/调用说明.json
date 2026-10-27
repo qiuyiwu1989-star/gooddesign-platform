@@ -1,0 +1,46 @@
+{
+  "method": "R03",
+  "version": "0.1.0",
+  "interface_kind": "proposed_research_contract_not_registered_tool",
+  "mcp_implemented": false,
+  "native_engine_modified": false,
+  "actual_local_capability": "fixed learning purpose/variable/control/declared representation checks",
+  "trigger": "需要决定本次研究学什么、用何种表示、发现是否应改问题",
+  "reasoning_mechanism": "以学习目的切换模式，区分理解、机制及产品声明",
+  "required_inputs": [
+    "具体学习问题与来源需要",
+    "表示及不能回答的范围",
+    "变量、控制项、任务与观察计划",
+    "模式状态与来源绑定"
+  ],
+  "outputs": [
+    "目的与表示匹配声明",
+    "观察与解释计划",
+    "未执行/无结论/测试失效边界",
+    "后续模式或验证任务"
+  ],
+  "states": [
+    "needs_material",
+    "provisional_research",
+    "return_to_question_or_representation",
+    "not_ready_for_baseline_or_engineering_claim"
+  ],
+  "mandatory_preservation": [
+    "source problem/version/SHA",
+    "material origin",
+    "role and context",
+    "unknowns",
+    "unexecuted activities",
+    "uncovered scope"
+  ],
+  "refusal": [
+    "构造输入升格为真实材料",
+    "缺关键身份或来源闭包",
+    "客户批准或工程结果无凭据",
+    "用计划伪造观察"
+  ],
+  "permissions": "read provided material; write own research artifacts only; no equipment control or publication",
+  "downstream_use": "research only, no autonomous customer baseline or engineering decision",
+  "independent_agent_review": "pending",
+  "domain_expert_review": "not_performed"
+}

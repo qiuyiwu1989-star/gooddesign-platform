@@ -1,0 +1,44 @@
+{
+  "state": "preference_sensitive",
+  "excluded": [
+    "C"
+  ],
+  "scenarios": [
+    {
+      "weight_service": 0.2,
+      "scores": {
+        "A": 0.42000000000000004,
+        "B": 0.7200000000000002
+      },
+      "winners": [
+        "B"
+      ]
+    },
+    {
+      "weight_service": 0.5,
+      "scores": {
+        "A": 0.6,
+        "B": 0.6000000000000001
+      },
+      "winners": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "weight_service": 0.8,
+      "scores": {
+        "A": 0.78,
+        "B": 0.48000000000000004
+      },
+      "winners": [
+        "A"
+      ]
+    }
+  ],
+  "A_B_crossover_weight": 0.5,
+  "unique_robust_winner": null,
+  "customer_decision": null,
+  "performance_evidence": "synthetic_only",
+  "qualification": "weighted value model under declared additive assumption, not calibrated customer preference"
+}

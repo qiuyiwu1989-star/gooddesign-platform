@@ -1,0 +1,38 @@
+{
+  "failure_mode": "FM1",
+  "common_cause_groups": {
+    "PWR-A": [
+      "S1",
+      "S2",
+      "CTRL"
+    ]
+  },
+  "independent_backup_demonstrated": false,
+  "single_point_failure_status": "requires_system_model_not_proved_away",
+  "control_effectiveness": "unknown",
+  "ratings": {
+    "severity": null,
+    "occurrence": null,
+    "detection_prevention": null
+  },
+  "residual_risk": null,
+  "action_queue": [
+    {
+      "id": "A1",
+      "control": "CT1",
+      "owner_role": "controls_research_role",
+      "task": "define clock/age and fault-injection study",
+      "completion": "not_executed"
+    },
+    {
+      "id": "A2",
+      "control": "CT2",
+      "owner_role": "system_architecture_role",
+      "task": "investigate supply independence/common cause and latent faults",
+      "completion": "not_executed"
+    }
+  ],
+  "release_decision": null,
+  "engineering_validated": false,
+  "reason": "configuration-bound hypotheses, no control evidence or applicable calibrated rating basis"
+}

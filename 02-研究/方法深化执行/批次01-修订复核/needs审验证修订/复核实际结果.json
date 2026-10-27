@@ -1,0 +1,346 @@
+{
+  "scope": "independent Agent bounded review, not expert certification",
+  "original_files_unchanged": 111,
+  "manifests": [
+    {
+      "task": "MD-005-R36-v0.1.1",
+      "manifest_sha256": "d30e570082983503affb77afea388db7e47a5e8a9f86bacfbf8e454abf0251ec",
+      "entries": 46
+    },
+    {
+      "task": "MD-006-R44-v0.1.1",
+      "manifest_sha256": "1cb9a56e61bfd091d2af30f7c130bb7e33a01a9db89247dea9251089f153fe20",
+      "entries": 31
+    },
+    {
+      "task": "MD-007-R42-v0.1.1",
+      "manifest_sha256": "608ea26101ca2bc4018d12cf708e5f7324d58602c0e5a7bd4a9cd38b2624400f",
+      "entries": 31
+    }
+  ],
+  "upstream_artifact_hashes_checked": [
+    {
+      "key": "problem",
+      "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+      "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+    },
+    {
+      "key": "concepts",
+      "path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+      "sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b"
+    },
+    {
+      "key": "requirement_candidates",
+      "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/02-要求候选与双向追溯.json",
+      "sha256": "edc3bf61175ecd9bac0accc20f68021de54d94369b89bf2ec1678d726d2dabaa"
+    }
+  ],
+  "original_replayed": 32,
+  "stdout": "{\"R36_cells\": 32, \"R36_unknown\": 32, \"R36_ranking\": null, \"R44_ready\": \"not_ready\", \"R42_ready\": false, \"actual_fixed_fixture_checks\": 32, \"all_pass\": true}\n",
+  "probes": [
+    {
+      "name": "OLD01-criterion-drift",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: criterion_fields_or_mapping_changed"
+      }
+    },
+    {
+      "name": "OLD02-hard-state-empty",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: source_hard_status_changed_or_incomplete"
+      }
+    },
+    {
+      "name": "OLD03-capability-disguise",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: caller_cannot_redefine_required_capability"
+      }
+    },
+    {
+      "name": "OLD04-pair-swap",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: need_requirement_pairing_changed"
+      }
+    },
+    {
+      "name": "OLD05-candidate-states-empty",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: source_candidate_states_changed_or_incomplete"
+      }
+    },
+    {
+      "name": "NEW01-duplicate-hypothesis",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "hypotheses": [
+          {
+            "id": "H-R44-01",
+            "need": "N-T01",
+            "question": "表面参考是否足以支持待研究的作用边界表达？",
+            "alternative": "表面几何与隐藏组织边界不相同，表面代理可能无法支持目标声明",
+            "prototype_id": "P-SURROGATE",
+            "learning_scope": "局部代理材料与参考关系；不能确认真实树体内部边界",
+            "observation_plan": [
+              "记录已知代理几何与参考输出及其对应关系",
+              "检查偏差是否随表面状态改变；实际材料、测量方法待定"
+            ],
+            "measurement_unit_proposal": "待依据具体变量确认；不改源需求unit",
+            "threshold": null
+          },
+          {
+            "id": "H-R44-03",
+            "need": "N-T03",
+            "question": "状态样例中的时效标记是否帮助区分陈旧与当前信息？",
+            "alternative": "使用者可能忽视标记或错误理解时效",
+            "prototype_id": "P-PAPER",
+            "learning_scope": "状态理解研究；不能确认控制实时性或机械安全",
+            "observation_plan": [
+              "拟让目标角色判断当前与陈旧状态并说明依据",
+              "记录误解及无法判断；资格、同意与样本待定"
+            ],
+            "measurement_unit_proposal": "任务表现与解释编码待确认",
+            "threshold": null
+          },
+          {
+            "id": "H-R44-01",
+            "need": "N-T01",
+            "question": "表面参考是否足以支持待研究的作用边界表达？",
+            "alternative": "表面几何与隐藏组织边界不相同，表面代理可能无法支持目标声明",
+            "prototype_id": "P-SURROGATE",
+            "learning_scope": "局部代理材料与参考关系；不能确认真实树体内部边界",
+            "observation_plan": [
+              "记录已知代理几何与参考输出及其对应关系",
+              "检查偏差是否随表面状态改变；实际材料、测量方法待定"
+            ],
+            "measurement_unit_proposal": "待依据具体变量确认；不改源需求unit",
+            "threshold": null
+          }
+        ],
+        "capability_review": [
+          {
+            "hypothesis": "H-R44-01",
+            "prototype": "P-SURROGATE",
+            "capability_match": true,
+            "state": "planned_only"
+          },
+          {
+            "hypothesis": "H-R44-03",
+            "prototype": "P-PAPER",
+            "capability_match": true,
+            "state": "planned_only"
+          },
+          {
+            "hypothesis": "H-R44-01",
+            "prototype": "P-SURROGATE",
+            "capability_match": true,
+            "state": "planned_only"
+          }
+        ],
+        "coverage": {
+          "planned_learning_needs": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "readiness": "not_ready",
+        "readiness_gaps": [
+          "材料与边界口径",
+          "测量方法与阈值依据",
+          "原型及资源",
+          "目标角色与研究同意",
+          "取样与干扰控制"
+        ],
+        "planned_interpretation_states": [
+          "supports_limited_hypothesis",
+          "contradicts_hypothesis",
+          "inconclusive",
+          "test_invalid"
+        ],
+        "observations": [],
+        "findings": [],
+        "next_decision": null,
+        "execution_status": "not_executed",
+        "scope": "plan_and_fixed_capability_check_only_not_empirical_test"
+      }
+    },
+    {
+      "name": "NEW02-duplicate-coverage-item",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "configuration_id": "CFG-TAP-RESEARCH-0.1",
+        "source_item_count": 5,
+        "approved_requirement_count": 0,
+        "verification_conformance_claims": [],
+        "validation_effectiveness_claims": [],
+        "candidate_activities": [
+          {
+            "id": "V-P01",
+            "source_need": "N-T01",
+            "type": "proposed_analysis_or_test",
+            "objective": "研究如何形成可检验的边界要求",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          },
+          {
+            "id": "VAL-P03",
+            "source_need": "N-T03",
+            "type": "proposed_use_context_research",
+            "objective": "形成目标操作者状态理解的确认问题",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          }
+        ],
+        "coverage": {
+          "planned": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "ready": false,
+        "results": [],
+        "engineering_pass": false,
+        "next_actions": [
+          "确认需求身份与口径",
+          "确定配置、测量和资源",
+          "补异常恢复与完整作业场景",
+          "实际执行后再生成原始证据和偏差报告"
+        ],
+        "change_rule": "source requirement/configuration/intended_use changes require impact review; old evidence not transferred automatically",
+        "scope": "coverage_and_fixed_state_check_not_requirements_compliance_or_real_use_validation"
+      }
+    },
+    {
+      "name": "NEW03-reference-path-metadata-drift",
+      "actual": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "hypotheses": [
+          {
+            "id": "H-R44-01",
+            "need": "N-T01",
+            "question": "表面参考是否足以支持待研究的作用边界表达？",
+            "alternative": "表面几何与隐藏组织边界不相同，表面代理可能无法支持目标声明",
+            "prototype_id": "P-SURROGATE",
+            "learning_scope": "局部代理材料与参考关系；不能确认真实树体内部边界",
+            "observation_plan": [
+              "记录已知代理几何与参考输出及其对应关系",
+              "检查偏差是否随表面状态改变；实际材料、测量方法待定"
+            ],
+            "measurement_unit_proposal": "待依据具体变量确认；不改源需求unit",
+            "threshold": null
+          },
+          {
+            "id": "H-R44-03",
+            "need": "N-T03",
+            "question": "状态样例中的时效标记是否帮助区分陈旧与当前信息？",
+            "alternative": "使用者可能忽视标记或错误理解时效",
+            "prototype_id": "P-PAPER",
+            "learning_scope": "状态理解研究；不能确认控制实时性或机械安全",
+            "observation_plan": [
+              "拟让目标角色判断当前与陈旧状态并说明依据",
+              "记录误解及无法判断；资格、同意与样本待定"
+            ],
+            "measurement_unit_proposal": "任务表现与解释编码待确认",
+            "threshold": null
+          }
+        ],
+        "capability_review": [
+          {
+            "hypothesis": "H-R44-01",
+            "prototype": "P-SURROGATE",
+            "capability_match": true,
+            "state": "planned_only"
+          },
+          {
+            "hypothesis": "H-R44-03",
+            "prototype": "P-PAPER",
+            "capability_match": true,
+            "state": "planned_only"
+          }
+        ],
+        "coverage": {
+          "planned_learning_needs": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "readiness": "not_ready",
+        "readiness_gaps": [
+          "材料与边界口径",
+          "测量方法与阈值依据",
+          "原型及资源",
+          "目标角色与研究同意",
+          "取样与干扰控制"
+        ],
+        "planned_interpretation_states": [
+          "supports_limited_hypothesis",
+          "contradicts_hypothesis",
+          "inconclusive",
+          "test_invalid"
+        ],
+        "observations": [],
+        "findings": [],
+        "next_decision": null,
+        "execution_status": "not_executed",
+        "scope": "plan_and_fixed_capability_check_only_not_empirical_test"
+      }
+    },
+    {
+      "name": "CONTROL01-actual-trial-invented",
+      "actual": "rejected",
+      "output": {
+        "error": "ValueError: fabricated_execution_or_observation"
+      }
+    }
+  ]
+}

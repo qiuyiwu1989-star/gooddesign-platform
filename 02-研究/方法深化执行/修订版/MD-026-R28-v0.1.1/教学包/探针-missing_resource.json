@@ -1,0 +1,67 @@
+{
+  "fixture": "ARIZ-LIMITED-01",
+  "context": {
+    "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "problem_version": "0.1.0",
+    "identity": "research_hypotheses_only_not_requirements",
+    "customer_approved": false,
+    "engineering_validated": false
+  },
+  "version": "0.1.0",
+  "source_version": "ARIZ-85V Spanish Foundation translation",
+  "implemented_scope": [
+    "mini_problem",
+    "conflict_pair",
+    "zone_time_resources",
+    "physical_contradiction_hypothesis",
+    "reformulation_record"
+  ],
+  "system": [
+    "contact element",
+    "workpiece",
+    "release actuator"
+  ],
+  "main_process": "maintain relative position during constructed work stage",
+  "technical_conflicts": [
+    {
+      "action": "increase contact load",
+      "useful": "resist relative slip",
+      "harmful": "release burden may increase"
+    },
+    {
+      "action": "reduce contact load",
+      "useful": "facilitate release",
+      "harmful": "holding resistance may decrease"
+    }
+  ],
+  "selected_conflict": 0,
+  "operating_zone": "contact interface",
+  "operating_times": {
+    "work": "holding",
+    "release": "disengagement"
+  },
+  "physical_contradiction": {
+    "same_element": "contact element",
+    "property": "normal load",
+    "state_A": "high",
+    "condition_A": "work stage",
+    "state_B": "low",
+    "condition_B": "release stage",
+    "status": "hypothesis_not_proven"
+  },
+  "resources": [
+    {
+      "item": "actuator state",
+      "availability": "unknown"
+    }
+  ],
+  "IFR": "seek stable holding then release without added burdens; desired direction only",
+  "threshold": null,
+  "solution_status": "unsolved",
+  "reformulation": {
+    "parent_version": null,
+    "reason": null,
+    "prior_model_preserved": true
+  }
+}

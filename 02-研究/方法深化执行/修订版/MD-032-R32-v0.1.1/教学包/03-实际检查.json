@@ -1,0 +1,703 @@
+[
+  {
+    "name": "normal_three_pose_and_scan",
+    "class": "正常",
+    "input": {
+      "origin": "independent_planar_rigid_geometry_fixture",
+      "length_unit": "mm",
+      "angle_unit": "degree",
+      "topology": "four_bar_4R",
+      "poses": [
+        {
+          "input_deg": 30,
+          "A": [
+            34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            134.64101615137756,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 90,
+          "A": [
+            2.4492935982947065e-15,
+            40.0
+          ],
+          "B": [
+            100.0,
+            40.0
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 150,
+          "A": [
+            -34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            65.35898384862244,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        }
+      ],
+      "tolerance_mm": 1e-07,
+      "scan_start": 30,
+      "scan_end": 150,
+      "scan_step_deg": 1,
+      "selected_branch": "parallelogram",
+      "switch_at_deg": null,
+      "obstacle": {
+        "center": [
+          0,
+          80
+        ],
+        "radius_mm": 5,
+        "identity": "constructed_circle_not_actual_tree_or_person"
+      },
+      "physical_envelope_known": false,
+      "engineering_pass": false
+    },
+    "actual": "sampled_geometry_only_no_certificate",
+    "expected": "sampled_geometry_only_no_certificate",
+    "pass": true,
+    "summary": {
+      "synthesized_pivots_mm": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          0.0
+        ]
+      ],
+      "link_lengths_mm": {
+        "ground": 100.0,
+        "crank": 40.0,
+        "coupler": 100.0,
+        "rocker": 40.00000000000001
+      },
+      "generic_DOF_count": 1,
+      "DOF_caveat": "generic count; singular configurations require local constraint analysis",
+      "three_pose_residual_max_mm": 0.0,
+      "sample_count": 121,
+      "singular_angles_detected_deg": [],
+      "min_acute_transmission_deg": 29.999999999999996,
+      "min_constructed_obstacle_clearance_mm": 35.0,
+      "branch_switch_requested": false,
+      "sampled_path_status": "sampled_geometry_only_no_certificate",
+      "real_collision_clearance": "unknown",
+      "continuous_no_singularity_proof": false,
+      "engineering_pass": false
+    }
+  },
+  {
+    "name": "three_pose_but_toggle_between",
+    "class": "边界",
+    "input": {
+      "origin": "independent_planar_rigid_geometry_fixture",
+      "length_unit": "mm",
+      "angle_unit": "degree",
+      "topology": "four_bar_4R",
+      "poses": [
+        {
+          "input_deg": 30,
+          "A": [
+            34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            134.64101615137756,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 90,
+          "A": [
+            2.4492935982947065e-15,
+            40.0
+          ],
+          "B": [
+            100.0,
+            40.0
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 150,
+          "A": [
+            -34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            65.35898384862244,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        }
+      ],
+      "tolerance_mm": 1e-07,
+      "scan_start": 150,
+      "scan_end": 210,
+      "scan_step_deg": 1,
+      "selected_branch": "parallelogram",
+      "switch_at_deg": null,
+      "obstacle": {
+        "center": [
+          0,
+          80
+        ],
+        "radius_mm": 5,
+        "identity": "constructed_circle_not_actual_tree_or_person"
+      },
+      "physical_envelope_known": false,
+      "engineering_pass": false
+    },
+    "actual": "reject_toggle_or_branch_switch",
+    "expected": "reject_toggle_or_branch_switch",
+    "pass": true,
+    "summary": {
+      "synthesized_pivots_mm": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          0.0
+        ]
+      ],
+      "link_lengths_mm": {
+        "ground": 100.0,
+        "crank": 40.0,
+        "coupler": 100.0,
+        "rocker": 40.00000000000001
+      },
+      "generic_DOF_count": 1,
+      "DOF_caveat": "generic count; singular configurations require local constraint analysis",
+      "three_pose_residual_max_mm": 0.0,
+      "sample_count": 61,
+      "singular_angles_detected_deg": [
+        180
+      ],
+      "min_acute_transmission_deg": 7.016709298534876e-15,
+      "min_constructed_obstacle_clearance_mm": 54.99999999999999,
+      "branch_switch_requested": false,
+      "sampled_path_status": "reject_toggle_or_branch_switch",
+      "real_collision_clearance": "unknown",
+      "continuous_no_singularity_proof": false,
+      "engineering_pass": false
+    }
+  },
+  {
+    "name": "three_pose_but_branch_jump",
+    "class": "冲突",
+    "input": {
+      "origin": "independent_planar_rigid_geometry_fixture",
+      "length_unit": "mm",
+      "angle_unit": "degree",
+      "topology": "four_bar_4R",
+      "poses": [
+        {
+          "input_deg": 30,
+          "A": [
+            34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            134.64101615137756,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 90,
+          "A": [
+            2.4492935982947065e-15,
+            40.0
+          ],
+          "B": [
+            100.0,
+            40.0
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 150,
+          "A": [
+            -34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            65.35898384862244,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        }
+      ],
+      "tolerance_mm": 1e-07,
+      "scan_start": 30,
+      "scan_end": 150,
+      "scan_step_deg": 1,
+      "selected_branch": "parallelogram",
+      "switch_at_deg": 90,
+      "obstacle": {
+        "center": [
+          0,
+          80
+        ],
+        "radius_mm": 5,
+        "identity": "constructed_circle_not_actual_tree_or_person"
+      },
+      "physical_envelope_known": false,
+      "engineering_pass": false
+    },
+    "actual": "reject_toggle_or_branch_switch",
+    "expected": "reject_toggle_or_branch_switch",
+    "pass": true,
+    "summary": {
+      "synthesized_pivots_mm": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          0.0
+        ]
+      ],
+      "link_lengths_mm": {
+        "ground": 100.0,
+        "crank": 40.0,
+        "coupler": 100.0,
+        "rocker": 40.00000000000001
+      },
+      "generic_DOF_count": 1,
+      "DOF_caveat": "generic count; singular configurations require local constraint analysis",
+      "three_pose_residual_max_mm": 0.0,
+      "sample_count": 121,
+      "singular_angles_detected_deg": [],
+      "min_acute_transmission_deg": 29.999999999999996,
+      "min_constructed_obstacle_clearance_mm": 35.0,
+      "branch_switch_requested": true,
+      "sampled_path_status": "reject_toggle_or_branch_switch",
+      "real_collision_clearance": "unknown",
+      "continuous_no_singularity_proof": false,
+      "engineering_pass": false
+    }
+  },
+  {
+    "name": "missing_pose",
+    "class": "缺材料",
+    "input": {
+      "origin": "independent_planar_rigid_geometry_fixture",
+      "length_unit": "mm",
+      "angle_unit": "degree",
+      "topology": "four_bar_4R",
+      "poses": [
+        {
+          "input_deg": 30,
+          "A": [
+            34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            134.64101615137756,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 90,
+          "A": [
+            2.4492935982947065e-15,
+            40.0
+          ],
+          "B": [
+            100.0,
+            40.0
+          ],
+          "body_orientation_deg": 0
+        }
+      ],
+      "tolerance_mm": 1e-07,
+      "scan_start": 30,
+      "scan_end": 150,
+      "scan_step_deg": 1,
+      "selected_branch": "parallelogram",
+      "switch_at_deg": null,
+      "obstacle": {
+        "center": [
+          0,
+          80
+        ],
+        "radius_mm": 5,
+        "identity": "constructed_circle_not_actual_tree_or_person"
+      },
+      "physical_envelope_known": false,
+      "engineering_pass": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "summary": {
+      "error": "need_three_poses"
+    }
+  },
+  {
+    "name": "unsupported_spatial_topology",
+    "class": "不适用",
+    "input": {
+      "origin": "independent_planar_rigid_geometry_fixture",
+      "length_unit": "mm",
+      "angle_unit": "degree",
+      "topology": "spatial_6R",
+      "poses": [
+        {
+          "input_deg": 30,
+          "A": [
+            34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            134.64101615137756,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 90,
+          "A": [
+            2.4492935982947065e-15,
+            40.0
+          ],
+          "B": [
+            100.0,
+            40.0
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 150,
+          "A": [
+            -34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            65.35898384862244,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        }
+      ],
+      "tolerance_mm": 1e-07,
+      "scan_start": 30,
+      "scan_end": 150,
+      "scan_step_deg": 1,
+      "selected_branch": "parallelogram",
+      "switch_at_deg": null,
+      "obstacle": {
+        "center": [
+          0,
+          80
+        ],
+        "radius_mm": 5,
+        "identity": "constructed_circle_not_actual_tree_or_person"
+      },
+      "physical_envelope_known": false,
+      "engineering_pass": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "summary": {
+      "error": "unsupported_topology_or_origin"
+    }
+  },
+  {
+    "name": "unit_mismatch",
+    "class": "冲突",
+    "input": {
+      "origin": "independent_planar_rigid_geometry_fixture",
+      "length_unit": "m",
+      "angle_unit": "degree",
+      "topology": "four_bar_4R",
+      "poses": [
+        {
+          "input_deg": 30,
+          "A": [
+            34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            134.64101615137756,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 90,
+          "A": [
+            2.4492935982947065e-15,
+            40.0
+          ],
+          "B": [
+            100.0,
+            40.0
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 150,
+          "A": [
+            -34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            65.35898384862244,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        }
+      ],
+      "tolerance_mm": 1e-07,
+      "scan_start": 30,
+      "scan_end": 150,
+      "scan_step_deg": 1,
+      "selected_branch": "parallelogram",
+      "switch_at_deg": null,
+      "obstacle": {
+        "center": [
+          0,
+          80
+        ],
+        "radius_mm": 5,
+        "identity": "constructed_circle_not_actual_tree_or_person"
+      },
+      "physical_envelope_known": false,
+      "engineering_pass": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "summary": {
+      "error": "units"
+    }
+  },
+  {
+    "name": "claim_real_envelope",
+    "class": "缺材料",
+    "input": {
+      "origin": "independent_planar_rigid_geometry_fixture",
+      "length_unit": "mm",
+      "angle_unit": "degree",
+      "topology": "four_bar_4R",
+      "poses": [
+        {
+          "input_deg": 30,
+          "A": [
+            34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            134.64101615137756,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 90,
+          "A": [
+            2.4492935982947065e-15,
+            40.0
+          ],
+          "B": [
+            100.0,
+            40.0
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 150,
+          "A": [
+            -34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            65.35898384862244,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        }
+      ],
+      "tolerance_mm": 1e-07,
+      "scan_start": 30,
+      "scan_end": 150,
+      "scan_step_deg": 1,
+      "selected_branch": "parallelogram",
+      "switch_at_deg": null,
+      "obstacle": {
+        "center": [
+          0,
+          80
+        ],
+        "radius_mm": 5,
+        "identity": "constructed_circle_not_actual_tree_or_person"
+      },
+      "physical_envelope_known": true,
+      "engineering_pass": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "summary": {
+      "error": "unsupported_physical_claim"
+    }
+  },
+  {
+    "name": "coarse_scan",
+    "class": "边界",
+    "input": {
+      "origin": "independent_planar_rigid_geometry_fixture",
+      "length_unit": "mm",
+      "angle_unit": "degree",
+      "topology": "four_bar_4R",
+      "poses": [
+        {
+          "input_deg": 30,
+          "A": [
+            34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            134.64101615137756,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 90,
+          "A": [
+            2.4492935982947065e-15,
+            40.0
+          ],
+          "B": [
+            100.0,
+            40.0
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 150,
+          "A": [
+            -34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            65.35898384862244,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        }
+      ],
+      "tolerance_mm": 1e-07,
+      "scan_start": 30,
+      "scan_end": 150,
+      "scan_step_deg": 100,
+      "selected_branch": "parallelogram",
+      "switch_at_deg": null,
+      "obstacle": {
+        "center": [
+          0,
+          80
+        ],
+        "radius_mm": 5,
+        "identity": "constructed_circle_not_actual_tree_or_person"
+      },
+      "physical_envelope_known": false,
+      "engineering_pass": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "summary": {
+      "error": "invalid_scan_range"
+    }
+  },
+  {
+    "name": "pose_inconsistent",
+    "class": "冲突",
+    "input": {
+      "origin": "independent_planar_rigid_geometry_fixture",
+      "length_unit": "mm",
+      "angle_unit": "degree",
+      "topology": "four_bar_4R",
+      "poses": [
+        {
+          "input_deg": 30,
+          "A": [
+            34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            134.64101615137756,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 90,
+          "A": [
+            2.4492935982947065e-15,
+            40.0
+          ],
+          "B": [
+            100.0,
+            45
+          ],
+          "body_orientation_deg": 0
+        },
+        {
+          "input_deg": 150,
+          "A": [
+            -34.64101615137755,
+            19.999999999999996
+          ],
+          "B": [
+            65.35898384862244,
+            19.999999999999996
+          ],
+          "body_orientation_deg": 0
+        }
+      ],
+      "tolerance_mm": 1e-07,
+      "scan_start": 30,
+      "scan_end": 150,
+      "scan_step_deg": 1,
+      "selected_branch": "parallelogram",
+      "switch_at_deg": null,
+      "obstacle": {
+        "center": [
+          0,
+          80
+        ],
+        "radius_mm": 5,
+        "identity": "constructed_circle_not_actual_tree_or_person"
+      },
+      "physical_envelope_known": false,
+      "engineering_pass": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "summary": {
+      "error": "fixed_pose_constraint_conflict"
+    }
+  }
+]

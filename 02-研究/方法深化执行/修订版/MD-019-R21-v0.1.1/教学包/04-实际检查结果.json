@@ -1,0 +1,427 @@
+{
+  "executed": true,
+  "passed": 10,
+  "checks": [
+    {
+      "name": "normal-function-search",
+      "class": "正常",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": "在指定边界对目标施加受控作用",
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": null,
+        "su_field": null,
+        "tools_executed": [],
+        "solution_principles": [],
+        "numerical_route_score": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "research_route_suggestions",
+      "actual": "research_route_suggestions",
+      "output": {
+        "state": "research_route_suggestions",
+        "suggested": [
+          {
+            "method": "R27",
+            "reason": "function/goal known but mechanism/model unresolved; search functions/effects without fabricating contradiction",
+            "status": "research_search_only"
+          }
+        ],
+        "rejected_routes": [
+          {
+            "method": "R22",
+            "reason": "no explicit IF/THEN/BUT; do not invent one to force a route"
+          },
+          {
+            "method": "R25",
+            "reason": "interaction model absent"
+          }
+        ],
+        "executed": [],
+        "automatic_solver": false,
+        "numerical_score": null,
+        "next_action": "human/Agent review problem representation and required source/input before invoking a specific tool"
+      }
+    },
+    {
+      "name": "missing-main-function",
+      "class": "缺材料",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": null,
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": null,
+        "su_field": null,
+        "tools_executed": [],
+        "solution_principles": [],
+        "numerical_route_score": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "return_to_problem_definition",
+      "actual": "return_to_problem_definition",
+      "output": {
+        "state": "return_to_problem_definition",
+        "suggested": [
+          "R48",
+          "R14"
+        ],
+        "rejected_routes": [
+          {
+            "method": "R22",
+            "reason": "no contradiction established"
+          },
+          {
+            "method": "R25",
+            "reason": "no action model established"
+          }
+        ],
+        "executed": []
+      }
+    },
+    {
+      "name": "no-contradiction-forced",
+      "class": "不适用",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": "在指定边界对目标施加受控作用",
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": null,
+        "su_field": null,
+        "tools_executed": [],
+        "solution_principles": [],
+        "numerical_route_score": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "research_route_suggestions",
+      "actual": "research_route_suggestions",
+      "output": {
+        "state": "research_route_suggestions",
+        "suggested": [
+          {
+            "method": "R27",
+            "reason": "function/goal known but mechanism/model unresolved; search functions/effects without fabricating contradiction",
+            "status": "research_search_only"
+          }
+        ],
+        "rejected_routes": [
+          {
+            "method": "R22",
+            "reason": "no explicit IF/THEN/BUT; do not invent one to force a route"
+          },
+          {
+            "method": "R25",
+            "reason": "interaction model absent"
+          }
+        ],
+        "executed": [],
+        "automatic_solver": false,
+        "numerical_score": null,
+        "next_action": "human/Agent review problem representation and required source/input before invoking a specific tool"
+      }
+    },
+    {
+      "name": "same-condition-model",
+      "class": "正常",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": "在指定边界对目标施加受控作用",
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": {
+          "IF": "在构造模型中提高压紧作用",
+          "THEN": {
+            "parameter": "slip",
+            "direction": "decrease",
+            "condition": "COND-TEACH-A"
+          },
+          "BUT": {
+            "parameter": "indentation",
+            "direction": "increase",
+            "condition": "COND-TEACH-A"
+          },
+          "condition": "COND-TEACH-A",
+          "status": "hypothetical_not_empirically_established"
+        },
+        "su_field": null,
+        "tools_executed": [],
+        "solution_principles": [],
+        "numerical_route_score": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "research_route_suggestions",
+      "actual": "research_route_suggestions",
+      "output": {
+        "state": "research_route_suggestions",
+        "suggested": [
+          {
+            "method": "R22",
+            "reason": "declared same-condition IF/THEN/BUT with distinct parameters",
+            "status": "research_model_only_matrix_version_still_required"
+          }
+        ],
+        "rejected_routes": [
+          {
+            "method": "R25",
+            "reason": "interaction model absent"
+          }
+        ],
+        "executed": [],
+        "automatic_solver": false,
+        "numerical_score": null,
+        "next_action": "human/Agent review problem representation and required source/input before invoking a specific tool"
+      }
+    },
+    {
+      "name": "mixed-condition-contradiction",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": "在指定边界对目标施加受控作用",
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": {
+          "IF": "在构造模型中提高压紧作用",
+          "THEN": {
+            "parameter": "slip",
+            "direction": "decrease",
+            "condition": "COND-TEACH-A"
+          },
+          "BUT": {
+            "parameter": "indentation",
+            "direction": "increase",
+            "condition": "OTHER"
+          },
+          "condition": "COND-TEACH-A",
+          "status": "hypothetical_not_empirically_established"
+        },
+        "su_field": null,
+        "tools_executed": [],
+        "solution_principles": [],
+        "numerical_route_score": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "technical_model_conditions_mismatch"
+      }
+    },
+    {
+      "name": "incomplete-action-model",
+      "class": "缺材料",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": "在指定边界对目标施加受控作用",
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": null,
+        "su_field": {
+          "substances": [
+            "TOOL"
+          ],
+          "field": "mechanical_contact",
+          "problem_tag": "insufficient_useful_or_harmful_action",
+          "status": "declared_model_not_validated"
+        },
+        "tools_executed": [],
+        "solution_principles": [],
+        "numerical_route_score": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "su_field_model_incomplete"
+      }
+    },
+    {
+      "name": "same-property-not-technical-pair",
+      "class": "边界",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": "在指定边界对目标施加受控作用",
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": {
+          "IF": "在构造模型中提高压紧作用",
+          "THEN": {
+            "parameter": "slip",
+            "direction": "decrease",
+            "condition": "COND-TEACH-A"
+          },
+          "BUT": {
+            "parameter": "slip",
+            "direction": "increase",
+            "condition": "COND-TEACH-A"
+          },
+          "condition": "COND-TEACH-A",
+          "status": "hypothetical_not_empirically_established"
+        },
+        "su_field": null,
+        "tools_executed": [],
+        "solution_principles": [],
+        "numerical_route_score": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "research_route_suggestions",
+      "actual": "research_route_suggestions",
+      "output": {
+        "state": "research_route_suggestions",
+        "suggested": [
+          {
+            "method": "R27",
+            "reason": "function/goal known but mechanism/model unresolved; search functions/effects without fabricating contradiction",
+            "status": "research_search_only"
+          }
+        ],
+        "rejected_routes": [
+          {
+            "method": "R22",
+            "reason": "same property is not a two-parameter technical model; examine conditions and possible R23 model separately"
+          },
+          {
+            "method": "R25",
+            "reason": "interaction model absent"
+          }
+        ],
+        "executed": [],
+        "automatic_solver": false,
+        "numerical_score": null,
+        "next_action": "human/Agent review problem representation and required source/input before invoking a specific tool"
+      }
+    },
+    {
+      "name": "no-numerical-ranking",
+      "class": "边界",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": "在指定边界对目标施加受控作用",
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": null,
+        "su_field": null,
+        "tools_executed": [],
+        "solution_principles": [],
+        "numerical_route_score": 0.99,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "route_promoted_to_execution_or_validation"
+      }
+    },
+    {
+      "name": "no-pretend-principle-hit",
+      "class": "不适用",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": "在指定边界对目标施加受控作用",
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": null,
+        "su_field": null,
+        "tools_executed": [],
+        "solution_principles": [
+          1,
+          10
+        ],
+        "numerical_route_score": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "route_promoted_to_execution_or_validation"
+      }
+    },
+    {
+      "name": "no-tool-execution",
+      "class": "冲突",
+      "input": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "scope": "constructed_context_only"
+        },
+        "origin": "authored_problem_model_fixture",
+        "main_function": "在指定边界对目标施加受控作用",
+        "defect_or_goal": "需研究有用作用、残留和损伤的关系",
+        "technical_contradiction": null,
+        "su_field": null,
+        "tools_executed": [
+          "ARIZ"
+        ],
+        "solution_principles": [],
+        "numerical_route_score": null,
+        "customer_approved": false,
+        "engineering_validated": false
+      },
+      "expected": "rejected",
+      "actual": "rejected",
+      "output": {
+        "error": "route_promoted_to_execution_or_validation"
+      }
+    }
+  ],
+  "real_TRIZ_tool_executions": 0,
+  "scope": "declared readiness/route consistency, not semantic problem diagnosis or technology solving"
+}

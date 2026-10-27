@@ -1,0 +1,30 @@
+{
+  "initial_condition_checks": [
+    {
+      "initial": {
+        "x": 1.0,
+        "v": 0.0
+      },
+      "initial_acceleration": -2.0,
+      "linearized_initial_acceleration": -1.0
+    },
+    {
+      "initial": {
+        "x": -1.0,
+        "v": 0.0
+      },
+      "initial_acceleration": 2.0,
+      "linearized_initial_acceleration": 1.0
+    }
+  ],
+  "not_trajectory_integration": true,
+  "unidentified_parameters": true,
+  "nonlinear_global_stability": null,
+  "required_next": [
+    "actual excitation/load and contact model",
+    "parameter identification",
+    "step/tolerance and energy checks if numerical integration",
+    "multiple initial states/excitations",
+    "professional model validation"
+  ]
+}

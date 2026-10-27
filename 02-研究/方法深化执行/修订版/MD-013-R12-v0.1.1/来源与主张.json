@@ -1,0 +1,126 @@
+{
+  "version": "0.1.0",
+  "sources": [
+    {
+      "id": "QFDI-FACTS",
+      "url": "https://www.qfdi.org/qfd-quick-facts",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://www.qfdi.org/qfd-quick-facts",
+      "http_status": 200,
+      "raw": "private-sources/QFDI-FACTS.html",
+      "sha256": "193954a296115ee915167c0e8bcda94bccf2c6af7ec81541e4df0982b10c3662",
+      "bytes": 76396,
+      "status": "machine_acquired_unreviewed",
+      "title": "QFD Institute Quick Facts",
+      "read_scope": "1综合系统、3产品与服务、4不等于HoQ；5后机构推广声明不当独立实证",
+      "scope_type": "institutional_position_selected",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    },
+    {
+      "id": "QFDI-AHP-TUTORIAL",
+      "url": "https://www.qfdi.org/ahp-tutorial",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://www.qfdi.org/ahp-tutorial",
+      "http_status": 200,
+      "raw": "private-sources/QFDI-AHP-TUTORIAL.html",
+      "sha256": "22127ad048b74ed9e98bbeda858d9c93d8c251d84f44516baf55a16ae5edb317",
+      "bytes": 78136,
+      "status": "machine_acquired_unreviewed",
+      "title": "QFD Institute AHP tutorial",
+      "read_scope": "AHP及尺度/ISO表述是机构立场；未由此宣称标准全文要求或保证效果",
+      "scope_type": "institutional_position_selected",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    },
+    {
+      "id": "QFDI-WHAT",
+      "url": "https://www.qfdi.org/what-is-qfd",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://www.qfdi.org/what-is-qfd",
+      "http_status": 200,
+      "raw": "private-sources/QFDI-WHAT.html",
+      "sha256": "588798254ee3539a018c5cca60fa682ebd7da31166e19beb25a627f54bc2229c",
+      "bytes": 77303,
+      "status": "machine_acquired_unreviewed",
+      "title": "QFD Institute What is QFD",
+      "read_scope": "需要展开至设计、制造与服务等组织功能的说明",
+      "scope_type": "institutional_position_selected",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    },
+    {
+      "id": "QFDI-MEMBERSHIP2013",
+      "url": "https://static1.squarespace.com/static/5eb315d2b0e6914ba0419e47/t/5eb87c450e4d61663a0a7eb6/1589148741728/mazur_2013_qfd_for_membership_organizations.pdf",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "final_url": "https://static1.squarespace.com/static/5eb315d2b0e6914ba0419e47/t/5eb87c450e4d61663a0a7eb6/1589148741728/mazur_2013_qfd_for_membership_organizations.pdf",
+      "http_status": 200,
+      "raw": "private-sources/QFDI-MEMBERSHIP2013.pdf",
+      "sha256": "60f07a852d8f10149c7196ecae7bfdb510ed6ef2aab033427639470b324b0d36",
+      "bytes": 302785,
+      "status": "machine_acquired_unreviewed",
+      "pdf_pages": 12,
+      "title": "Glenn H.Mazur2013 QFD for Membership Organizations",
+      "read_scope": "PDF2摘要，PDF5-9需要翻译/分层/优先级，PDF10刊页9图2视觉核对，PDF11图3用于区分不同显示值；非全调查重建",
+      "scope_type": "case_author_report_selected_sections_and_partial_recalculation",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    },
+    {
+      "id": "ISO16355-CATALOG",
+      "url": "https://www.iso.org/standard/74103.html",
+      "date": "2026-10-27",
+      "fulltext_reviewed": false,
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden",
+      "title": "ISO16355-1:2021官方目录",
+      "read_scope": "web工具核题录/摘要；直接HTTP取得失败，未得61页标准全文",
+      "scope_type": "web_verified_catalog_only",
+      "fulltext_entirely_read": false,
+      "public_raw_distribution": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "C-Q01",
+      "type": "institutional_position",
+      "statement": "QFD展开需要至组织各功能，不能以填一张HoQ代替完整工作。",
+      "source_id": "QFDI-FACTS",
+      "locator": "items1,3,4",
+      "limit": "机构方法说明不等标准全文实施"
+    },
+    {
+      "id": "C-Q02",
+      "type": "primary_author_case",
+      "statement": "2013组织案例从需要与层级进入优先级及行动；本包只复算图2显示比较值的列归一化行平均切片。",
+      "source_id": "QFDI-MEMBERSHIP2013",
+      "locator": "PDF5-10, Figure2",
+      "limit": "未得原参与者矩阵；无客户目标迁移"
+    },
+    {
+      "id": "C-Q03",
+      "type": "public_catalog_scope",
+      "statement": "ISO16355-1:2021公开题录/摘要可核，未取得完整标准。",
+      "source_id": "ISO16355-CATALOG",
+      "locator": "official catalog abstract",
+      "limit": "不以QFDI关于AHP的描述替代标准条款"
+    },
+    {
+      "id": "C-Q04",
+      "type": "platform_adaptation",
+      "statement": "需要、关系、偏好、目标与验证分层；主链全部未知不排名，单独公布公开案例复算与代数边界。",
+      "source_id": null
+    }
+  ],
+  "source_snapshot_policy": "原始文件内部private-sources；交付只包括原创分析、定位、哈希及有限事实性表转录",
+  "not_claimed": [
+    "全部原典全文精读",
+    "独立专家认证",
+    "真实客户研究",
+    "完整标准实施"
+  ]
+}

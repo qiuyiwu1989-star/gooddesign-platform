@@ -1,0 +1,466 @@
+{
+  "original_manifests": [
+    {
+      "package": "MD-011-R10",
+      "checked": 25,
+      "mismatches": []
+    },
+    {
+      "package": "MD-012-R11",
+      "checked": 26,
+      "mismatches": []
+    },
+    {
+      "package": "MD-013-R12",
+      "checked": 29,
+      "mismatches": []
+    }
+  ],
+  "replayed": [
+    {
+      "package": "MD-011-R10",
+      "actual_replayed_tests": 7,
+      "failure_count": 0
+    },
+    {
+      "package": "MD-012-R11",
+      "actual_replayed_tests": 10,
+      "failure_count": 0
+    },
+    {
+      "package": "MD-013-R12",
+      "actual_replayed_tests": 12,
+      "failure_count": 0
+    }
+  ],
+  "probes": [
+    {
+      "case": "R10-no-innovation-still-match",
+      "status": "accepted",
+      "output": {
+        "results": [
+          {
+            "profile_id": "LU-A",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-B",
+            "decision": "definition_match_only_in_constructed_context",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-C",
+            "decision": "needs_qualification_evidence",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-D",
+            "decision": "analog_lead_candidate_transfer_unresolved",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-E",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          }
+        ],
+        "real_people": 0,
+        "field_qualification": false,
+        "claim_scope": "declared criteria with evidence references only; no free-text understanding"
+      }
+    },
+    {
+      "case": "R10-ahead-unknown-not-qualified",
+      "status": "accepted",
+      "output": {
+        "results": [
+          {
+            "profile_id": "LU-A",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-B",
+            "decision": "needs_qualification_evidence",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-C",
+            "decision": "needs_qualification_evidence",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-D",
+            "decision": "analog_lead_candidate_transfer_unresolved",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-E",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          }
+        ],
+        "real_people": 0,
+        "field_qualification": false,
+        "claim_scope": "declared criteria with evidence references only; no free-text understanding"
+      }
+    },
+    {
+      "case": "R10-no-trait-evidence",
+      "status": "rejected",
+      "output": {
+        "error": "missing_or_dangling_trait_evidence"
+      }
+    },
+    {
+      "case": "R10-claim-contacted-real-user",
+      "status": "rejected",
+      "output": {
+        "error": "unsupported_profile_scope"
+      }
+    },
+    {
+      "case": "R10-text-evidence-contradicts-declared-trait",
+      "status": "accepted",
+      "output": {
+        "results": [
+          {
+            "profile_id": "LU-A",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-B",
+            "decision": "definition_match_only_in_constructed_context",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-C",
+            "decision": "needs_qualification_evidence",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-D",
+            "decision": "analog_lead_candidate_transfer_unresolved",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          },
+          {
+            "profile_id": "LU-E",
+            "decision": "not_definition_match_in_named_teaching_trend",
+            "self_development_is_required": false,
+            "real_lead_user_confirmed": false,
+            "next": "核趋势及收益依据、场景迁移与共创安排；不是营销名单或实际邀请"
+          }
+        ],
+        "real_people": 0,
+        "field_qualification": false,
+        "claim_scope": "declared criteria with evidence references only; no free-text understanding"
+      }
+    },
+    {
+      "case": "R11-transposed-orientation",
+      "status": "rejected",
+      "output": {
+        "error": "matrix_version_hash_or_orientation_mismatch"
+      }
+    },
+    {
+      "case": "R11-questionable-still-preserved",
+      "status": "accepted",
+      "output": {
+        "matrix_version": "JSSD2014-table2-transcription-v1",
+        "mappings": [
+          {
+            "id": "PAIR-01",
+            "category": "Q",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-25",
+            "category": "Q",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          }
+        ],
+        "meaning": "categorical rule coverage, not frequency in people or priority scores",
+        "safety_or_mandatory_status_changed": false,
+        "customer_conclusions": []
+      }
+    },
+    {
+      "case": "R11-unknown-answer-not-neutral",
+      "status": "accepted",
+      "output": {
+        "matrix_version": "JSSD2014-table2-transcription-v1",
+        "mappings": [
+          {
+            "id": "PAIR-01",
+            "category": null,
+            "disposition": "incomplete_do_not_impute"
+          },
+          {
+            "id": "PAIR-02",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-03",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-04",
+            "category": "A",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-05",
+            "category": "O",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-06",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-07",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-08",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-09",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-10",
+            "category": "M",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-11",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-12",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-13",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-14",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-15",
+            "category": "M",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-16",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-17",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-18",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-19",
+            "category": "I",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-20",
+            "category": "M",
+            "disposition": "table_mapping_only",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-21",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-22",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-23",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-24",
+            "category": "R",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          },
+          {
+            "id": "PAIR-25",
+            "category": "Q",
+            "disposition": "recheck_question_or_opposing_preference",
+            "segment": "matrix_coverage_not_person_sample"
+          }
+        ],
+        "meaning": "categorical rule coverage, not frequency in people or priority scores",
+        "safety_or_mandatory_status_changed": false,
+        "customer_conclusions": []
+      }
+    },
+    {
+      "case": "R11-wrong-matrix-hash",
+      "status": "rejected",
+      "output": {
+        "error": "matrix_version_hash_or_orientation_mismatch"
+      }
+    },
+    {
+      "case": "R12-fabricated-importance",
+      "status": "rejected",
+      "output": {
+        "error": "unelicited_preference_score"
+      }
+    },
+    {
+      "case": "R12-cell-unknown-to-zero",
+      "status": "rejected",
+      "output": {
+        "error": "unfounded_relationship_score"
+      }
+    },
+    {
+      "case": "R12-hide-source-unknowns",
+      "status": "rejected",
+      "output": {
+        "error": "shared_needs_or_unknowns_changed"
+      }
+    },
+    {
+      "case": "R12-approved-acceptance-label",
+      "status": "accepted",
+      "output": {
+        "status": "research_deployment_trace_only",
+        "needs": 4,
+        "responses": 4,
+        "unknown_relationships": 16,
+        "priority_scores": null,
+        "ranking": null,
+        "target_values_generated": false,
+        "reason": "未取得关系、可用偏好尺度及目标来源，不能聚合或反推阈值",
+        "next_actions": [
+          "核源需要",
+          "核响应/关系依据",
+          "取得偏好尺度和硬要求",
+          "独立定义工程目标及验收口径"
+        ],
+        "full_qfd_or_standard_compliance": false
+      }
+    },
+    {
+      "case": "R12-promote-response-type",
+      "status": "accepted",
+      "output": {
+        "status": "research_deployment_trace_only",
+        "needs": 4,
+        "responses": 4,
+        "unknown_relationships": 16,
+        "priority_scores": null,
+        "ranking": null,
+        "target_values_generated": false,
+        "reason": "未取得关系、可用偏好尺度及目标来源，不能聚合或反推阈值",
+        "next_actions": [
+          "核源需要",
+          "核响应/关系依据",
+          "取得偏好尺度和硬要求",
+          "独立定义工程目标及验收口径"
+        ],
+        "full_qfd_or_standard_compliance": false
+      }
+    }
+  ],
+  "QFD_exact_rational_weights": [
+    "103533/246238",
+    "53455/246238",
+    "44625/123119"
+  ],
+  "QFD_decimal_weights": [
+    0.42045906805610833,
+    0.2170867209772659,
+    0.3624542109666258
+  ],
+  "Kano_table_entries": 25,
+  "Kano_Q_entries": 2,
+  "original_packages_unchanged": true,
+  "scope": "independent_agent_source_and_fixed_fixture_audit_not_expert_or_field_validation"
+}

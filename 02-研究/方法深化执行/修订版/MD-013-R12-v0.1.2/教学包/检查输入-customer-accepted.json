@@ -1,0 +1,286 @@
+{
+  "schema": "qfd-research-deployment-0.1.2",
+  "problem_id": "TAP-TEACH-001",
+  "mode": "research_unknowns_only",
+  "source_binding": {
+    "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "review_state": "first_batch_changes_requested_not_expert_approved"
+  },
+  "source_needs": [
+    {
+      "id": "N-T01",
+      "text": "研究如何描述和约束切入作用边界",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    },
+    {
+      "id": "N-T02",
+      "text": "研究异常发生后如何停止作用、恢复或转交人工处置",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    },
+    {
+      "id": "N-T03",
+      "text": "研究操作者如何知道当前状态、所依据的数据及其时效",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    },
+    {
+      "id": "N-T04",
+      "text": "研究清理、维护与转场对完整作业的影响",
+      "kind": "research_need_hypothesis",
+      "basis": "platform_teaching_prompt",
+      "target": null,
+      "unit": null,
+      "customer_approved": false
+    }
+  ],
+  "source_unknowns": [
+    {
+      "id": "U-T01",
+      "text": "目标树种、树龄、组织状态与现场环境",
+      "value": null
+    },
+    {
+      "id": "U-T02",
+      "text": "切入/余皮限值、测量口径与客户验收标准",
+      "value": null
+    },
+    {
+      "id": "U-T03",
+      "text": "异常类型、发生频率及实际恢复过程",
+      "value": null
+    },
+    {
+      "id": "U-T04",
+      "text": "供能、执行器、结构载荷与防护配置",
+      "value": null
+    },
+    {
+      "id": "U-T05",
+      "text": "使用者能力、劳动安排与维护资源",
+      "value": null
+    }
+  ],
+  "response_actions": [
+    {
+      "id": "HOW-T01",
+      "type": "research_response_not_frozen_engineering_requirement",
+      "text": "研究允许组织边界与可观测信号的对应及测量误差",
+      "measurement_unit": null,
+      "target": null,
+      "direction": null,
+      "target_source": null,
+      "responsibility_role": "技术/组织专业共同研究",
+      "appointment_status": "not_assigned_to_real_person",
+      "acceptance_status": "customer_accepted"
+    },
+    {
+      "id": "HOW-T02",
+      "type": "research_response_not_frozen_engineering_requirement",
+      "text": "分开定义异常触发、停止、退出、恢复事件并取得记录",
+      "measurement_unit": null,
+      "target": null,
+      "direction": null,
+      "target_source": null,
+      "responsibility_role": "现场/控制研究",
+      "appointment_status": "not_assigned_to_real_person",
+      "acceptance_status": "not_defined"
+    },
+    {
+      "id": "HOW-T03",
+      "type": "research_response_not_frozen_engineering_requirement",
+      "text": "研究操作决策所需状态、测量时点及理解方式",
+      "measurement_unit": null,
+      "target": null,
+      "direction": null,
+      "target_source": null,
+      "responsibility_role": "人因/信息研究",
+      "appointment_status": "not_assigned_to_real_person",
+      "acceptance_status": "not_defined"
+    },
+    {
+      "id": "HOW-T04",
+      "type": "research_response_not_frozen_engineering_requirement",
+      "text": "梳理清理维护与转场的任务责任、资源和等待",
+      "measurement_unit": null,
+      "target": null,
+      "direction": null,
+      "target_source": null,
+      "responsibility_role": "服务/使用研究",
+      "appointment_status": "not_assigned_to_real_person",
+      "acceptance_status": "not_defined"
+    }
+  ],
+  "relationships": [
+    {
+      "need_id": "N-T01",
+      "response_id": "HOW-T01",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T01",
+      "response_id": "HOW-T02",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T01",
+      "response_id": "HOW-T03",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T01",
+      "response_id": "HOW-T04",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T02",
+      "response_id": "HOW-T01",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T02",
+      "response_id": "HOW-T02",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T02",
+      "response_id": "HOW-T03",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T02",
+      "response_id": "HOW-T04",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T03",
+      "response_id": "HOW-T01",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T03",
+      "response_id": "HOW-T02",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T03",
+      "response_id": "HOW-T03",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T03",
+      "response_id": "HOW-T04",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T04",
+      "response_id": "HOW-T01",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T04",
+      "response_id": "HOW-T02",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T04",
+      "response_id": "HOW-T03",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    },
+    {
+      "need_id": "N-T04",
+      "response_id": "HOW-T04",
+      "state": "unknown",
+      "strength": null,
+      "evidence_refs": [],
+      "rationale_question": "该响应对本需要的作用、条件及责任应由材料或专业判断明确，不能因名称相似填强相关"
+    }
+  ],
+  "importance": [
+    {
+      "need_id": "N-T01",
+      "scale": "not_elicited",
+      "value": null,
+      "source": null
+    },
+    {
+      "need_id": "N-T02",
+      "scale": "not_elicited",
+      "value": null,
+      "source": null
+    },
+    {
+      "need_id": "N-T03",
+      "scale": "not_elicited",
+      "value": null,
+      "source": null
+    },
+    {
+      "need_id": "N-T04",
+      "scale": "not_elicited",
+      "value": null,
+      "source": null
+    }
+  ],
+  "customer_approved": false,
+  "hard_requirement_waivers": [],
+  "assumption": "仅建立需要到研究响应的追溯结构；不是填完质量屋或完成ISO16355实施"
+}

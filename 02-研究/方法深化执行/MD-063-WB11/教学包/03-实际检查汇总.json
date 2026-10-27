@@ -1,0 +1,41 @@
+{
+  "executed": 7,
+  "passed": 7,
+  "cases": [
+    {
+      "case": "normal",
+      "pass": true
+    },
+    {
+      "case": "principle-executable",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "domain-without-source",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "fake-author-engine",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "remove-trigger",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "fake-certified",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "fact-default-true",
+      "rejected": true,
+      "pass": true
+    }
+  ],
+  "scope": "fixed teaching structure and limited arithmetic only, not expert/field validation"
+}

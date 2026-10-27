@@ -1,0 +1,41 @@
+{
+  "input": {
+    "id": "FOS-LIQUID-TEACH-001",
+    "generalized_function": "transport liquid along defined path",
+    "source_function": "transport liquid along defined path",
+    "source_binding": {
+      "source_id": "H03",
+      "query_id": "Q03",
+      "locator": "Li et al2018 Results/Methods, distilled water and impact conditions",
+      "evidence_level": "original_experiment",
+      "raw_path": "private-sources/breakdown.html",
+      "raw_sha256": "38b0ca24d693847fbce73a2fb15b27b113cce977e5a22b4282c430cfcfbd120c"
+    },
+    "query_log": [
+      "Q01",
+      "Q02",
+      "Q03"
+    ],
+    "source_locator": "Li et al2018 Results/Methods, distilled water and impact conditions",
+    "evidence_level": "original_experiment",
+    "target_properties": {
+      "viscosity_Pa_s": null,
+      "wetting_contact_angle_deg": null,
+      "required_flow_m3_s": null,
+      "coagulation_time_s": null,
+      "cleaning_acceptance": null
+    },
+    "transfer_differences": [
+      "  "
+    ],
+    "meets_customer_target": null
+  },
+  "method": "R27",
+  "name": "whitespace-difference-item",
+  "accepted": false,
+  "expected_accept": false,
+  "pass": true,
+  "output": {
+    "error": "nonblank explicit transfer differences required"
+  }
+}

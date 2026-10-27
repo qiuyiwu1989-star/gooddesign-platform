@@ -1,0 +1,1019 @@
+{
+  "unchanged_files": 143,
+  "manifests": [
+    {
+      "task": "MD-014-R13-v0.1.2",
+      "manifest_sha256": "8810ae4a433d0c5fcae21bde00ccda0f2384b8363406fa4648d10643c36b8557",
+      "entries": 36
+    },
+    {
+      "task": "MD-007-R42-v0.1.3",
+      "manifest_sha256": "efac7d7a52eb84b777aff59d49951388fe198591233ffdc1d449eab99b52affb",
+      "entries": 39
+    },
+    {
+      "task": "MD-061-WB09-v0.1.1",
+      "manifest_sha256": "239097f0bf6d99ab7155b0701d37aa8db4f9f8905c82a43d41de621a556156d3",
+      "entries": 21
+    },
+    {
+      "task": "MD-062-WB10-v0.1.1",
+      "manifest_sha256": "0d3142c508bf9791ed83b8f99aceef41ebefd1f327a73705dac6a0cfd3bbc522",
+      "entries": 20
+    },
+    {
+      "task": "MD-048-R52-v0.1.1",
+      "manifest_sha256": "aab2c7de9b2ea21ad84e10382bfdaa7ca0e05ede0177c756339c9137e16dfafc",
+      "entries": 22
+    }
+  ],
+  "replayed": [
+    {
+      "entry": "MD-014-R13-v0.1.2",
+      "stdout": "R13 four revision checks passed; not usability evidence\n"
+    },
+    {
+      "entry": "MD-007-R42-v0.1.3",
+      "stdout": "{\"R36_cells\": 32, \"R36_unknown\": 32, \"R36_ranking\": null, \"R44_ready\": \"not_ready\", \"R42_ready\": false, \"actual_fixed_fixture_checks\": 37, \"all_pass\": true}\n"
+    },
+    {
+      "entry": "MD-061-WB09-v0.1.1",
+      "stdout": "14 original fixed checks passed; two revision attacks follow\n"
+    },
+    {
+      "entry": "MD-048-R52-v0.1.1",
+      "stdout": "7 original fixed checks plus4 VOI sensitivity runs; revision cases follow\n"
+    }
+  ],
+  "independent_cases": 11,
+  "passed": 11,
+  "probes": [
+    {
+      "name": "R13-normal",
+      "input": {
+        "schema": "R13-fixed-lesson-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "status": "constructed_research_not_customer_evidence"
+        },
+        "first_batch_status_reference": [
+          {
+            "method": "R36",
+            "path": "02-研究/方法深化执行/MD-005-R36/教学包/02-主链逐格比较与补证队列.json",
+            "sha256": "c1184e5f4494d9a994e9f9a638683c36bea5c0d7d874a00c3314d36b17855163",
+            "use": "read_only_context_of_pending_fidelity_corrections_not_validated_dependency",
+            "status": "pending_root_coordinated_revision"
+          },
+          {
+            "method": "R44",
+            "path": "02-研究/方法深化执行/MD-006-R44/教学包/02-能力与解释分支计划.json",
+            "sha256": "baa65b1a9204794c593336ffc6c8fb1f3c2deb8b92659719ab19ec4bd487ef22",
+            "use": "read_only_context_of_pending_fidelity_corrections_not_validated_dependency",
+            "status": "pending_root_coordinated_revision"
+          },
+          {
+            "method": "R42",
+            "path": "02-研究/方法深化执行/MD-007-R42/教学包/02-未就绪计划与证据边界.json",
+            "sha256": "dfe7be3740d2e03bbc086678792b585ea03700d662359c61ccb7f548caa15c08",
+            "use": "read_only_context_of_pending_fidelity_corrections_not_validated_dependency",
+            "status": "pending_root_coordinated_revision"
+          }
+        ],
+        "provenance": "constructed_teaching_not_field_observation",
+        "population": {
+          "target_population_known": false,
+          "participants": null,
+          "anthropometric_parameters": null,
+          "experience_groups": [
+            "novice_hypothesis",
+            "experienced_hypothesis"
+          ]
+        },
+        "tasks": [
+          {
+            "id": "HF-T01",
+            "phase": "normal_monitoring",
+            "action": "识别当前作业状态",
+            "information": [
+              "state",
+              "measurement_freshness"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "监视与状态解释，实际负荷未知"
+          },
+          {
+            "id": "HF-T02",
+            "phase": "abnormal_takeover",
+            "action": "识别陈旧信息并请求抑制",
+            "information": [
+              "measurement_freshness",
+              "validity",
+              "stop_request_ack"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "从监视切换为异常判断，能力与时限未知"
+          },
+          {
+            "id": "HF-T03",
+            "phase": "abnormal_takeover",
+            "action": "核对停止状态与恢复前提",
+            "information": [
+              "actual_stop",
+              "residual_energy",
+              "reauthorization"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "区分请求与实际状态，实际表现未知"
+          },
+          {
+            "id": "HF-T04",
+            "phase": "maintenance",
+            "action": "清理与更换后交接",
+            "information": [
+              "isolation_status",
+              "maintenance_scope",
+              "reauthorization"
+            ],
+            "physical_demands": "姿态、力、可达性均未知",
+            "cognitive_demands": "维护责任与交接，实际负荷未知"
+          }
+        ],
+        "states": [
+          {
+            "id": "S-CURRENT",
+            "semantic": "current_information"
+          },
+          {
+            "id": "S-STALE",
+            "semantic": "stale_information"
+          }
+        ],
+        "representations": {
+          "A": {
+            "S-CURRENT": "绿灯",
+            "S-STALE": "绿灯"
+          },
+          "B": {
+            "S-CURRENT": "绿灯；当前记录",
+            "S-STALE": "绿灯；记录陈旧，状态待核"
+          }
+        },
+        "records": [],
+        "conclusion": "not_empirically_evaluated",
+        "engineering_validated": false
+      },
+      "actual": "accepted",
+      "expected": "accepted",
+      "output": {
+        "method": "R13",
+        "state": "research_design_only",
+        "tasks": [
+          {
+            "id": "HF-T01",
+            "phase": "normal_monitoring",
+            "action": "识别当前作业状态",
+            "information": [
+              "state",
+              "measurement_freshness"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "监视与状态解释，实际负荷未知"
+          },
+          {
+            "id": "HF-T02",
+            "phase": "abnormal_takeover",
+            "action": "识别陈旧信息并请求抑制",
+            "information": [
+              "measurement_freshness",
+              "validity",
+              "stop_request_ack"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "从监视切换为异常判断，能力与时限未知"
+          },
+          {
+            "id": "HF-T03",
+            "phase": "abnormal_takeover",
+            "action": "核对停止状态与恢复前提",
+            "information": [
+              "actual_stop",
+              "residual_energy",
+              "reauthorization"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "区分请求与实际状态，实际表现未知"
+          },
+          {
+            "id": "HF-T04",
+            "phase": "maintenance",
+            "action": "清理与更换后交接",
+            "information": [
+              "isolation_status",
+              "maintenance_scope",
+              "reauthorization"
+            ],
+            "physical_demands": "姿态、力、可达性均未知",
+            "cognitive_demands": "维护责任与交接，实际负荷未知"
+          }
+        ],
+        "representation_analysis": [
+          {
+            "variant": "A",
+            "representation_collision": true,
+            "can_distinguish_declared_states_by_encoding": false,
+            "human_understanding": "unknown",
+            "workload": "unknown",
+            "reaction_time": null
+          },
+          {
+            "variant": "B",
+            "representation_collision": false,
+            "can_distinguish_declared_states_by_encoding": true,
+            "human_understanding": "unknown",
+            "workload": "unknown",
+            "reaction_time": null
+          }
+        ],
+        "measured_user_outcomes": [],
+        "target_population_known": false,
+        "research_questions": [
+          "目标角色能否理解时效标记",
+          "异常时能否区分请求与实际停止",
+          "维护姿态/力/可达性与职责是什么"
+        ],
+        "not_claimed": [
+          "B更易用",
+          "新手反应更快",
+          "设备更安全"
+        ],
+        "pending": [
+          "现场人群与任务记录",
+          "实际负荷与姿态数据",
+          "角色资格及参与同意",
+          "专业/用户复核"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "R13-empty-encoding",
+      "input": {
+        "schema": "R13-fixed-lesson-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "version": "0.1.0",
+          "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+          "status": "constructed_research_not_customer_evidence"
+        },
+        "first_batch_status_reference": [
+          {
+            "method": "R36",
+            "path": "02-研究/方法深化执行/MD-005-R36/教学包/02-主链逐格比较与补证队列.json",
+            "sha256": "c1184e5f4494d9a994e9f9a638683c36bea5c0d7d874a00c3314d36b17855163",
+            "use": "read_only_context_of_pending_fidelity_corrections_not_validated_dependency",
+            "status": "pending_root_coordinated_revision"
+          },
+          {
+            "method": "R44",
+            "path": "02-研究/方法深化执行/MD-006-R44/教学包/02-能力与解释分支计划.json",
+            "sha256": "baa65b1a9204794c593336ffc6c8fb1f3c2deb8b92659719ab19ec4bd487ef22",
+            "use": "read_only_context_of_pending_fidelity_corrections_not_validated_dependency",
+            "status": "pending_root_coordinated_revision"
+          },
+          {
+            "method": "R42",
+            "path": "02-研究/方法深化执行/MD-007-R42/教学包/02-未就绪计划与证据边界.json",
+            "sha256": "dfe7be3740d2e03bbc086678792b585ea03700d662359c61ccb7f548caa15c08",
+            "use": "read_only_context_of_pending_fidelity_corrections_not_validated_dependency",
+            "status": "pending_root_coordinated_revision"
+          }
+        ],
+        "provenance": "constructed_teaching_not_field_observation",
+        "population": {
+          "target_population_known": false,
+          "participants": null,
+          "anthropometric_parameters": null,
+          "experience_groups": [
+            "novice_hypothesis",
+            "experienced_hypothesis"
+          ]
+        },
+        "tasks": [
+          {
+            "id": "HF-T01",
+            "phase": "normal_monitoring",
+            "action": "识别当前作业状态",
+            "information": [
+              "state",
+              "measurement_freshness"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "监视与状态解释，实际负荷未知"
+          },
+          {
+            "id": "HF-T02",
+            "phase": "abnormal_takeover",
+            "action": "识别陈旧信息并请求抑制",
+            "information": [
+              "measurement_freshness",
+              "validity",
+              "stop_request_ack"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "从监视切换为异常判断，能力与时限未知"
+          },
+          {
+            "id": "HF-T03",
+            "phase": "abnormal_takeover",
+            "action": "核对停止状态与恢复前提",
+            "information": [
+              "actual_stop",
+              "residual_energy",
+              "reauthorization"
+            ],
+            "physical_demands": "unknown",
+            "cognitive_demands": "区分请求与实际状态，实际表现未知"
+          },
+          {
+            "id": "HF-T04",
+            "phase": "maintenance",
+            "action": "清理与更换后交接",
+            "information": [
+              "isolation_status",
+              "maintenance_scope",
+              "reauthorization"
+            ],
+            "physical_demands": "姿态、力、可达性均未知",
+            "cognitive_demands": "维护责任与交接，实际负荷未知"
+          }
+        ],
+        "states": [
+          {
+            "id": "S-CURRENT",
+            "semantic": "current_information"
+          },
+          {
+            "id": "S-STALE",
+            "semantic": "stale_information"
+          }
+        ],
+        "representations": {
+          "A": {
+            "S-CURRENT": "绿灯",
+            "S-STALE": "绿灯"
+          },
+          "B": {
+            "S-CURRENT": "",
+            "S-STALE": ""
+          }
+        },
+        "records": [],
+        "conclusion": "not_empirically_evaluated",
+        "engineering_validated": false
+      },
+      "actual": "rejected",
+      "expected": "rejected",
+      "output": {
+        "error_type": "ValueError",
+        "error": "blank_or_nontext_representation"
+      },
+      "pass": true
+    },
+    {
+      "name": "R42-normal",
+      "input": {
+        "schema": "R42-teaching-input-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "source_r44": {
+          "path": "../MD-006-R44-v0.1.2/教学包/02-能力与解释分支计划.json",
+          "sha256": "f4d63a5bee68db4c75e08661cfdca234a249d6799556fc3a48cd107d56d60c1c"
+        },
+        "source_requirement_candidates": {
+          "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/02-要求候选与双向追溯.json",
+          "sha256": "edc3bf61175ecd9bac0accc20f68021de54d94369b89bf2ec1678d726d2dabaa"
+        },
+        "configuration_id": "CFG-TAP-RESEARCH-0.1",
+        "items": [
+          {
+            "source_need": "N-T01",
+            "source_requirement_candidate": "RQ-T01",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T02",
+            "source_requirement_candidate": "RQ-T02",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T03",
+            "source_requirement_candidate": "RQ-T03",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T04",
+            "source_requirement_candidate": "RQ-T04",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          }
+        ],
+        "activities": [
+          {
+            "id": "V-P01",
+            "source_need": "N-T01",
+            "type": "proposed_analysis_or_test",
+            "objective": "研究如何形成可检验的边界要求",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          },
+          {
+            "id": "VAL-P03",
+            "source_need": "N-T03",
+            "type": "proposed_use_context_research",
+            "objective": "形成目标操作者状态理解的确认问题",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          }
+        ],
+        "coverage": {
+          "planned": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "ready": false,
+        "results": [],
+        "engineering_pass": false
+      },
+      "actual": "accepted",
+      "expected": "accepted",
+      "output": {
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "configuration_id": "CFG-TAP-RESEARCH-0.1",
+        "source_item_count": 4,
+        "approved_requirement_count": 0,
+        "verification_conformance_claims": [],
+        "validation_effectiveness_claims": [],
+        "candidate_activities": [
+          {
+            "id": "V-P01",
+            "source_need": "N-T01",
+            "type": "proposed_analysis_or_test",
+            "objective": "研究如何形成可检验的边界要求",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          },
+          {
+            "id": "VAL-P03",
+            "source_need": "N-T03",
+            "type": "proposed_use_context_research",
+            "objective": "形成目标操作者状态理解的确认问题",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          }
+        ],
+        "coverage": {
+          "planned": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "ready": false,
+        "results": [],
+        "engineering_pass": false,
+        "next_actions": [
+          "确认需求身份与口径",
+          "确定配置、测量和资源",
+          "补异常恢复与完整作业场景",
+          "实际执行后再生成原始证据和偏差报告"
+        ],
+        "change_rule": "source requirement/configuration/intended_use changes require impact review; old evidence not transferred automatically",
+        "scope": "coverage_and_fixed_state_check_not_requirements_compliance_or_real_use_validation"
+      },
+      "pass": true
+    },
+    {
+      "name": "R42-source-path",
+      "input": {
+        "schema": "R42-teaching-input-1",
+        "binding": {
+          "problem_id": "TAP-TEACH-001",
+          "problem_version": "0.1.0",
+          "source_problem_path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+          "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+          "source_concept_path": "02-研究/方法深化执行/修订版/MD-004-R17-v0.1.1/教学包/03-交给R36的候选-v0.1.1.json",
+          "source_concept_sha256": "6bdf209c54df1a00f448dfdae90044e12bd18f1fed692992e3d7691ea642d71b",
+          "customer_approved": false,
+          "engineering_validated": false
+        },
+        "source_r44": {
+          "path": "unrelated.json",
+          "sha256": "f4d63a5bee68db4c75e08661cfdca234a249d6799556fc3a48cd107d56d60c1c"
+        },
+        "source_requirement_candidates": {
+          "path": "02-研究/方法深化执行/修订版/MD-001-R48-v0.1.1/教学包/02-要求候选与双向追溯.json",
+          "sha256": "edc3bf61175ecd9bac0accc20f68021de54d94369b89bf2ec1678d726d2dabaa"
+        },
+        "configuration_id": "CFG-TAP-RESEARCH-0.1",
+        "items": [
+          {
+            "source_need": "N-T01",
+            "source_requirement_candidate": "RQ-T01",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T02",
+            "source_requirement_candidate": "RQ-T02",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T03",
+            "source_requirement_candidate": "RQ-T03",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          },
+          {
+            "source_need": "N-T04",
+            "source_requirement_candidate": "RQ-T04",
+            "identity": "research_hypothesis_not_baselined_requirement",
+            "approved_target": null,
+            "unit": null
+          }
+        ],
+        "activities": [
+          {
+            "id": "V-P01",
+            "source_need": "N-T01",
+            "type": "proposed_analysis_or_test",
+            "objective": "研究如何形成可检验的边界要求",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          },
+          {
+            "id": "VAL-P03",
+            "source_need": "N-T03",
+            "type": "proposed_use_context_research",
+            "objective": "形成目标操作者状态理解的确认问题",
+            "configuration_id": "CFG-TAP-RESEARCH-0.1",
+            "threshold": null,
+            "resources": "unknown",
+            "result": null
+          }
+        ],
+        "coverage": {
+          "planned": [
+            "N-T01",
+            "N-T03"
+          ],
+          "uncovered": [
+            "N-T02",
+            "N-T04"
+          ]
+        },
+        "ready": false,
+        "results": [],
+        "engineering_pass": false
+      },
+      "actual": "rejected",
+      "expected": "rejected",
+      "output": {
+        "error_type": "ValueError",
+        "error": "source_r44_path_mismatch"
+      },
+      "pass": true
+    },
+    {
+      "name": "WB09-normal",
+      "input": {
+        "id": "DYN-TEACH-01",
+        "version": "0.1.0",
+        "source_scope": "author nonlinear-design direction only; no author-specific equation acquired",
+        "equation_identity": "independent normalized toy m*xdd+c*xd+k*x+alpha*x^3=F, not Wen equation",
+        "parameters": {
+          "m": 1.0,
+          "c": 0.2,
+          "k": 1.0,
+          "alpha": 1.0
+        },
+        "initial_states": [
+          {
+            "x": 1.0,
+            "v": 0.0
+          },
+          {
+            "x": -1.0,
+            "v": 0.0
+          }
+        ],
+        "force": 0.0,
+        "identification_data": [],
+        "global_stability_claim": false,
+        "real_robot_parameter_claim": false
+      },
+      "actual": "accepted",
+      "expected": "accepted",
+      "output": {
+        "initial_condition_checks": [
+          {
+            "initial": {
+              "x": 1.0,
+              "v": 0.0
+            },
+            "initial_acceleration": -2.0,
+            "linearized_initial_acceleration": -1.0
+          },
+          {
+            "initial": {
+              "x": -1.0,
+              "v": 0.0
+            },
+            "initial_acceleration": 2.0,
+            "linearized_initial_acceleration": 1.0
+          }
+        ],
+        "not_trajectory_integration": true,
+        "unidentified_parameters": true,
+        "nonlinear_global_stability": null,
+        "required_next": [
+          "actual excitation/load and contact model",
+          "parameter identification",
+          "step/tolerance and energy checks if numerical integration",
+          "multiple initial states/excitations",
+          "professional model validation"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "name": "WB09-bool-mass",
+      "input": {
+        "id": "DYN-TEACH-01",
+        "version": "0.1.0",
+        "source_scope": "author nonlinear-design direction only; no author-specific equation acquired",
+        "equation_identity": "independent normalized toy m*xdd+c*xd+k*x+alpha*x^3=F, not Wen equation",
+        "parameters": {
+          "m": true,
+          "c": 0.2,
+          "k": 1.0,
+          "alpha": 1.0
+        },
+        "initial_states": [
+          {
+            "x": 1.0,
+            "v": 0.0
+          },
+          {
+            "x": -1.0,
+            "v": 0.0
+          }
+        ],
+        "force": 0.0,
+        "identification_data": [],
+        "global_stability_claim": false,
+        "real_robot_parameter_claim": false
+      },
+      "actual": "rejected",
+      "expected": "rejected",
+      "output": {
+        "error_type": "ValueError",
+        "error": "invalid_nonboolean_model_parameter"
+      },
+      "pass": true
+    },
+    {
+      "name": "WB10-normal",
+      "input": {
+        "id": "EVAL-TEACH-01",
+        "version": "0.1.0",
+        "origin": "independent_entropy_demo_not_2006_2010_author_model",
+        "data": [
+          [
+            1.0,
+            5.0
+          ],
+          [
+            2.0,
+            5.0
+          ],
+          [
+            3.0,
+            5.0
+          ]
+        ],
+        "criteria": [
+          "varying_descriptive_indicator",
+          "constant_hard_requirement_context"
+        ],
+        "hard_status": [
+          "unknown",
+          "fail",
+          "unknown"
+        ],
+        "subjective_value_weights": null,
+        "fuzzy_memberships": null,
+        "overall_quality": null,
+        "author_versions": {
+          "2006": "three-optimization fuzzy evaluation selected title/abstract/figure only",
+          "2008": "model full text not acquired",
+          "2010": "entropy plus subjective weights abstract only",
+          "2019": "five inspection methods not substituted for earlier algorithms"
+        },
+        "threeA_equals_fiveA": false
+      },
+      "actual": "accepted",
+      "expected": "accepted",
+      "output": {
+        "entropy_demo": [
+          {
+            "entropy": 0.920619835714305,
+            "dispersion": 0.07938016428569505
+          },
+          {
+            "entropy": 0.9999999999999998,
+            "dispersion": 2.220446049250313e-16
+          }
+        ],
+        "dispersion_weights": [
+          0.9999999999999972,
+          2.797230352482968e-15
+        ],
+        "customer_value_weights": null,
+        "fuzzy_aggregation": null,
+        "quality_rank": null,
+        "hard_fail_candidate_indices": [
+          1
+        ],
+        "hard_unknown_candidate_indices": [
+          0,
+          2
+        ],
+        "meaning": "constant indicator can receive zero dispersion without losing hard-requirement status; no 3A/5A merge"
+      },
+      "pass": true
+    },
+    {
+      "name": "WB10-bool-data",
+      "input": {
+        "id": "EVAL-TEACH-01",
+        "version": "0.1.0",
+        "origin": "independent_entropy_demo_not_2006_2010_author_model",
+        "data": [
+          [
+            true,
+            5.0
+          ],
+          [
+            2.0,
+            5.0
+          ],
+          [
+            3.0,
+            5.0
+          ]
+        ],
+        "criteria": [
+          "varying_descriptive_indicator",
+          "constant_hard_requirement_context"
+        ],
+        "hard_status": [
+          "unknown",
+          "fail",
+          "unknown"
+        ],
+        "subjective_value_weights": null,
+        "fuzzy_memberships": null,
+        "overall_quality": null,
+        "author_versions": {
+          "2006": "three-optimization fuzzy evaluation selected title/abstract/figure only",
+          "2008": "model full text not acquired",
+          "2010": "entropy plus subjective weights abstract only",
+          "2019": "five inspection methods not substituted for earlier algorithms"
+        },
+        "threeA_equals_fiveA": false
+      },
+      "actual": "rejected",
+      "expected": "rejected",
+      "output": {
+        "error_type": "ValueError",
+        "error": "invalid_nonboolean_indicator"
+      },
+      "pass": true
+    },
+    {
+      "name": "R52-normal",
+      "input": {
+        "id": "VOI-TEACH-001",
+        "provenance": "independent_teaching_probabilities_losses_not_customer_estimates",
+        "states": [
+          "good",
+          "bad"
+        ],
+        "actions": [
+          "A",
+          "B"
+        ],
+        "prior": [
+          0.5,
+          0.5
+        ],
+        "loss": {
+          "A": [
+            0.0,
+            100.0
+          ],
+          "B": [
+            40.0,
+            0.0
+          ]
+        },
+        "signal_positive_likelihood": [
+          0.8,
+          0.2
+        ],
+        "study_cost": 2.0,
+        "delay_loss": 1.0,
+        "loss_unit": "synthetic_loss_units",
+        "hard_requirement_waiver": false
+      },
+      "actual": "accepted",
+      "expected": "accepted",
+      "output": {
+        "status": "teaching_decision_model_only",
+        "current_risks": {
+          "A": 50.0,
+          "B": 20.0
+        },
+        "current_action": "B",
+        "posterior_actions": [
+          {
+            "signal": "positive",
+            "probability": 0.5,
+            "posterior": [
+              0.8,
+              0.2
+            ],
+            "conditional_risks": {
+              "A": 20.0,
+              "B": 32.0
+            },
+            "action": "A"
+          },
+          {
+            "signal": "negative",
+            "probability": 0.5,
+            "posterior": [
+              0.19999999999999996,
+              0.8
+            ],
+            "conditional_risks": {
+              "A": 80.0,
+              "B": 7.999999999999998
+            },
+            "action": "B"
+          }
+        ],
+        "expected_risk_after_sample": 14.0,
+        "EVPI": 20.0,
+        "EVSI": 6.0,
+        "net_sample_value": 3.0,
+        "engineering_recommendation": null,
+        "real_customer_probabilities": false
+      },
+      "pass": true
+    },
+    {
+      "name": "R52-missing-prior-invalid-likelihood",
+      "input": {
+        "id": "VOI-TEACH-001",
+        "provenance": "independent_teaching_probabilities_losses_not_customer_estimates",
+        "states": [
+          "good",
+          "bad"
+        ],
+        "actions": [
+          "A",
+          "B"
+        ],
+        "prior": null,
+        "loss": {
+          "A": [
+            0.0,
+            100.0
+          ],
+          "B": [
+            40.0,
+            0.0
+          ]
+        },
+        "signal_positive_likelihood": [
+          2,
+          -1
+        ],
+        "study_cost": 2.0,
+        "delay_loss": 1.0,
+        "loss_unit": "synthetic_loss_units",
+        "hard_requirement_waiver": false
+      },
+      "actual": "rejected",
+      "expected": "rejected",
+      "output": {
+        "error_type": "ValueError",
+        "error": "probability_domain"
+      },
+      "pass": true
+    },
+    {
+      "name": "R52-missing-prior-valid-likelihood",
+      "input": {
+        "id": "VOI-TEACH-001",
+        "provenance": "independent_teaching_probabilities_losses_not_customer_estimates",
+        "states": [
+          "good",
+          "bad"
+        ],
+        "actions": [
+          "A",
+          "B"
+        ],
+        "prior": null,
+        "loss": {
+          "A": [
+            0.0,
+            100.0
+          ],
+          "B": [
+            40.0,
+            0.0
+          ]
+        },
+        "signal_positive_likelihood": [
+          0.8,
+          0.2
+        ],
+        "study_cost": 2.0,
+        "delay_loss": 1.0,
+        "loss_unit": "synthetic_loss_units",
+        "hard_requirement_waiver": false
+      },
+      "actual": "accepted",
+      "expected": "accepted",
+      "output": {
+        "status": "cannot_compute_missing_probability",
+        "EVPI": null,
+        "EVSI": null
+      },
+      "pass": true
+    }
+  ]
+}

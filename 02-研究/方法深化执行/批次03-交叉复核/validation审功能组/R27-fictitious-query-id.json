@@ -1,0 +1,43 @@
+{
+  "input": {
+    "id": "FOS-LIQUID-TEACH-001",
+    "generalized_function": "transport liquid along defined path",
+    "source_function": "transport liquid along defined path",
+    "query_log": [
+      "NO_SUCH_QUERY"
+    ],
+    "source_locator": "Li et al2018 Results/Methods, distilled water and impact conditions",
+    "evidence_level": "original_experiment",
+    "target_properties": {
+      "viscosity_Pa_s": null,
+      "wetting_contact_angle_deg": null,
+      "required_flow_m3_s": null,
+      "coagulation_time_s": null,
+      "cleaning_acceptance": null
+    },
+    "transfer_differences": [
+      "water to uncharacterized field latex",
+      "drop impact to continuous collection",
+      "clean microstructure to residue exposure",
+      "source topography to manufacturable washable surface",
+      "source orientation to variable orientation"
+    ],
+    "meets_customer_target": null
+  },
+  "method": "R27",
+  "name": "fictitious-query-id",
+  "output": {
+    "status": "transfer_research_only",
+    "unknown_target_properties": [
+      "viscosity_Pa_s",
+      "wetting_contact_angle_deg",
+      "required_flow_m3_s",
+      "coagulation_time_s",
+      "cleaning_acceptance"
+    ],
+    "source_evidence": "original_experiment",
+    "source_success_not_target_success": true,
+    "ranking": "not_established"
+  },
+  "error": null
+}

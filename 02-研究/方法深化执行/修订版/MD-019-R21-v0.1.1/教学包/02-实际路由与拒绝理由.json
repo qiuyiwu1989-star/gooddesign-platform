@@ -1,0 +1,102 @@
+{
+  "model_routes": [
+    {
+      "function_only": {
+        "state": "research_route_suggestions",
+        "suggested": [
+          {
+            "method": "R27",
+            "reason": "function/goal known but mechanism/model unresolved; search functions/effects without fabricating contradiction",
+            "status": "research_search_only"
+          }
+        ],
+        "rejected_routes": [
+          {
+            "method": "R22",
+            "reason": "no explicit IF/THEN/BUT; do not invent one to force a route"
+          },
+          {
+            "method": "R25",
+            "reason": "interaction model absent"
+          }
+        ],
+        "executed": [],
+        "automatic_solver": false,
+        "numerical_score": null,
+        "next_action": "human/Agent review problem representation and required source/input before invoking a specific tool"
+      }
+    },
+    {
+      "technical_model": {
+        "state": "research_route_suggestions",
+        "suggested": [
+          {
+            "method": "R22",
+            "reason": "declared same-condition IF/THEN/BUT with distinct parameters",
+            "status": "research_model_only_matrix_version_still_required"
+          }
+        ],
+        "rejected_routes": [
+          {
+            "method": "R25",
+            "reason": "interaction model absent"
+          }
+        ],
+        "executed": [],
+        "automatic_solver": false,
+        "numerical_score": null,
+        "next_action": "human/Agent review problem representation and required source/input before invoking a specific tool"
+      }
+    },
+    {
+      "action_model": {
+        "state": "research_route_suggestions",
+        "suggested": [
+          {
+            "method": "R25",
+            "reason": "declared interacting substances, field and action defect",
+            "status": "research_model_only_specific_standard_prerequisite_unread"
+          }
+        ],
+        "rejected_routes": [
+          {
+            "method": "R22",
+            "reason": "no explicit IF/THEN/BUT; do not invent one to force a route"
+          }
+        ],
+        "executed": [],
+        "automatic_solver": false,
+        "numerical_score": null,
+        "next_action": "human/Agent review problem representation and required source/input before invoking a specific tool"
+      }
+    },
+    {
+      "multiple_models": {
+        "state": "research_route_suggestions",
+        "suggested": [
+          {
+            "method": "R22",
+            "reason": "declared same-condition IF/THEN/BUT with distinct parameters",
+            "status": "research_model_only_matrix_version_still_required"
+          },
+          {
+            "method": "R25",
+            "reason": "declared interacting substances, field and action defect",
+            "status": "research_model_only_specific_standard_prerequisite_unread"
+          }
+        ],
+        "rejected_routes": [],
+        "executed": [],
+        "automatic_solver": false,
+        "numerical_score": null,
+        "next_action": "human/Agent review problem representation and required source/input before invoking a specific tool"
+      }
+    }
+  ],
+  "not_new_algorithms": [
+    "no contradiction-matrix lookup",
+    "no ARIZ execution",
+    "no scientific-effect feasibility validation"
+  ],
+  "tool_family_note": "tools depend on problem model; different representations can yield several research paths, no universal ranking"
+}

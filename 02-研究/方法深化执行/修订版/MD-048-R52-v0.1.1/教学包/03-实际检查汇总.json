@@ -1,0 +1,42 @@
+{
+  "executed": 7,
+  "passed": 7,
+  "cases": [
+    {
+      "case": "normal",
+      "accepted": true,
+      "pass": true
+    },
+    {
+      "case": "probability-sum",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "case": "likelihood-outside",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "case": "NaN-loss",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "case": "negative-cost",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "case": "fake-customer",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "case": "hard-waiver",
+      "accepted": false,
+      "pass": true
+    }
+  ],
+  "scope": "fixed fixture checks only; no field tests/participants/professional certification"
+}

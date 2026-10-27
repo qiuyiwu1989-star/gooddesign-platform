@@ -1,0 +1,35 @@
+{
+  "input": {
+    "id": "R23-CLAMP-TEACH-001",
+    "mode": "constructed_teaching",
+    "customer_approved": false,
+    "demands": [
+      {
+        "object": "same constructed clamp",
+        "parameter": "holding_force",
+        "unit": "N",
+        "direction": "banana",
+        "interval_s": [
+          0,
+          4
+        ],
+        "target": null
+      },
+      {
+        "object": "same constructed clamp",
+        "parameter": "holding_force",
+        "unit": "N",
+        "direction": "orange",
+        "interval_s": [
+          6,
+          8
+        ],
+        "target": null
+      }
+    ],
+    "switch_time_s": 1,
+    "numerical_status": "arbitrary teaching timing; not robot/customer values"
+  },
+  "out": null,
+  "error": "supported opposite domain is high/low only"
+}

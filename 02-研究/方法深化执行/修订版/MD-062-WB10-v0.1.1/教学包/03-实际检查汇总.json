@@ -1,0 +1,41 @@
+{
+  "executed": 7,
+  "passed": 7,
+  "cases": [
+    {
+      "case": "normal",
+      "pass": true
+    },
+    {
+      "case": "entropy-as-value",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "hard-fail-erased",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "fake-quality",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "merge-three-five",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "fake-memberships",
+      "rejected": true,
+      "pass": true
+    },
+    {
+      "case": "version-swap",
+      "rejected": true,
+      "pass": true
+    }
+  ],
+  "scope": "fixed teaching structure and limited arithmetic only, not expert/field validation"
+}

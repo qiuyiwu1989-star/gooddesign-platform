@@ -1,0 +1,165 @@
+{
+  "manifests": [
+    {
+      "package": "MD-008-R02",
+      "manifest_sha256": "a5351a4fbfdcd9fc32a07cc8dfc2832f8d2ff38564c254a84bd3d1d17e3c6f06",
+      "files": 16
+    },
+    {
+      "package": "MD-009-R03",
+      "manifest_sha256": "77818523c003bdddf5c37530dae4f861e0382ffc299801f4c5ce1509bc5439cd",
+      "files": 16
+    },
+    {
+      "package": "MD-010-R09",
+      "manifest_sha256": "81e7ff0dba31e59b8ccc2d71daad91fbcadb132c6bedd56293659fe8e036b64d",
+      "files": 16
+    }
+  ],
+  "baseline_checks": {
+    "MD-008-R02": 10,
+    "MD-009-R03": 10,
+    "MD-010-R09": 11
+  },
+  "probes": [
+    {
+      "method": "MD-008-R02",
+      "probe": "old-bool-total",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "invalid_total"
+    },
+    {
+      "method": "MD-008-R02",
+      "probe": "old-bool-phase",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "invalid_phase_value"
+    },
+    {
+      "method": "MD-008-R02",
+      "probe": "new-nan-total",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "invalid_total"
+    },
+    {
+      "method": "MD-008-R02",
+      "probe": "new-negative-phase",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "invalid_phase_value"
+    },
+    {
+      "method": "MD-008-R02",
+      "probe": "new-synthetic-unit-as-seconds",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "synthetic_unit_promoted"
+    },
+    {
+      "method": "MD-009-R03",
+      "probe": "old-missing-observations",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "required_state_array_missing_or_wrong_type"
+    },
+    {
+      "method": "MD-009-R03",
+      "probe": "old-missing-results",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "required_state_array_missing_or_wrong_type"
+    },
+    {
+      "method": "MD-009-R03",
+      "probe": "old-observations-empty-string",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "required_state_array_missing_or_wrong_type"
+    },
+    {
+      "method": "MD-009-R03",
+      "probe": "new-result-dict",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "required_state_array_missing_or_wrong_type"
+    },
+    {
+      "method": "MD-009-R03",
+      "probe": "new-two-variable-change",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "comparison_does_not_isolate_declared_variable"
+    },
+    {
+      "method": "MD-010-R09",
+      "probe": "old-missing-actor",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "actor_instance_missing"
+    },
+    {
+      "method": "MD-010-R09",
+      "probe": "old-blank-actor",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "actor_instance_missing"
+    },
+    {
+      "method": "MD-010-R09",
+      "probe": "old-bool-actor",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "actor_instance_missing"
+    },
+    {
+      "method": "MD-010-R09",
+      "probe": "new-actor-container",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "actor_instance_missing"
+    },
+    {
+      "method": "MD-010-R09",
+      "probe": "new-role-mismatch",
+      "expected": "rejected",
+      "actual": "rejected",
+      "matched": true,
+      "result": "payer_job_attributed_to_operator"
+    },
+    {
+      "method": "MD-008-R02",
+      "probe": "known-independent-missing-customer-flag",
+      "expected": "accepted",
+      "actual": "accepted",
+      "matched": true,
+      "result": {
+        "state": "cannot_distinguish_frames",
+        "retained": [
+          "FRAME-NORMAL",
+          "FRAME-RECOVERY"
+        ],
+        "reason": "total alone has multiple decompositions; votes do not identify observed burden",
+        "customer_approved": false,
+        "next_action": "obtain_phase_defined_records",
+        "did_votes_confirm_need": false
+      }
+    }
+  ],
+  "scope": "fixed helper input/state guards; not semantic or field validity"
+}
