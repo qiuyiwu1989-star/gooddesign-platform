@@ -3,6 +3,7 @@ from pathlib import Path
 import json,hashlib,html
 ROOT=Path(__file__).resolve().parents[1];E=lambda s:html.escape(str(s),quote=True)
 def teaching_case(rid):
+ if rid=='R01':return systematic_case()
  if rid=='R42':return verification_case()
  if rid=='R44':return prototype_case()
  if rid=='R36':return pugh_case()
@@ -121,3 +122,17 @@ def verification_case():
   title='技术要求验证' if x['purpose']=='verification' else '预期用途确认'
   out+='<article class="relation"><h3>'+title+'</h3><ol>'+''.join('<li>'+E(v)+'</li>'for v in x['procedure'])+'</ol><p>当前：未执行、未验证；判据仍待确认。</p></article>'
  return out+'</div><h3>主动列出尚未覆盖的要求</h3><p>负载、时长和电源边界还未定义，续航要求尚无对应活动。它被明确列为未覆盖，不隐藏成“整体计划已完成”。样机配置尚未制作，软件版本、试样编号、温度与阈值未知，人员和测量资源也未就绪。</p><p>23项软件测试、5项保真检查及独立追加探针检查的是计划声明与追溯。真实产品和用户试验均为零，结果与异常记录为空；当前结论是未验证，不是通过或不合格。正式执行需要另版真实基线、配置、人员、授权与原始数据。</p></section>'
+
+
+def systematic_case():
+ b=ROOT/'output/method-reader-review/upgrades/R01-v0.2.1-proposal'
+ r=ROOT/'output/method-reader-review/reviews/R01-upgrade-v0.2.1/review.json'
+ if not (b/'manifest.json').exists() or not r.exists():return ''
+ files=json.loads((b/'manifest.json').read_text())['files']
+ entries=files.items() if isinstance(files,dict) else [(x['path'],x['sha256'])for x in files]
+ for name,sha in entries:
+  if hashlib.sha256((b/name).read_bytes()).hexdigest()!=sha:raise ValueError('系统化设计教学包变化，停止展示')
+ steps=[('先明确要求','定位、保持、解除和取样路径分别列要求；尺寸、载荷、损伤限度未知，不补默认值。'),('再研究作用原理','螺旋与杠杆两条路线分别解释怎样承担功能；都保留未知，不宣布胜者。'),('布置以后允许返回','二维教学布局发现取样区域冲突，返回概念层修订杠杆路线。修订后仍待全行程与三维研究，未关闭工程问题。'),('详细定义保留停点','材料、制造尺寸与公差未确认，不能生成制造放行结论。'),('留下决定与回返记录','每一步对应实际教学产物，回返记录指向发生冲突的原理；可以追问为何改、还缺什么。')]
+ out='<section id="systematic-teaching-example"><h2>设计框架怎样留下可追问的过程</h2><p>这个原创夹具教学例子演示要求、功能、原理、布局与待验关系。它不是已经设计好的夹具；坐标与冲突均为教学假设，没有制造、仿真或实际试验。</p><ol class="flow">'
+ for title,body in steps:out+='<li><strong>'+title+'</strong><p>'+body+'</p></li>'
+ return out+'</ol><p>0.2.1经22项检查及独立追加探针，错误阶段文件、缺文件与回返错误原理被拒绝。验证范围是固定阶段对应和文件存在性，不是任意产物的语义一致性。二维相交面积只是示意算术，不是工程几何或强度证明。</p><p>原典核读限公开VDI摘要与出版社目录，未读取付费章节；教学补充不能冒充完整原典、实际设计经验或可执行MCP。</p></section>'
