@@ -14,6 +14,10 @@ def prefixed(text):
     return text.replace('href="/"','href="/inno/"').replace("href='/'","href='/inno/'")
 
 class Handler(app.Handler):
+    def do_GET(self):
+        if self.path.split('?')[0] in ('/projects','/projects/'):
+            self.send_response(302);self.send_header('Location','/inno/');self.send_header('Cache-Control','private, no-store');self.end_headers();return
+        super().do_GET()
     def do_POST(self):self.send(403,dict(error='云端是只读资料快照；上传、清洗与研究发布请使用本机后台。'))
     do_PUT=do_PATCH=do_DELETE=do_POST
     def send(self,status,body,ctype='application/json; charset=utf-8',extra=None):
@@ -22,7 +26,7 @@ class Handler(app.Handler):
             if isinstance(body,str):
                 body=prefixed(body)
                 if ctype.startswith('text/html'):
-                    banner='<div role="note" class="cloud-readonly-notice">OpenDesign · 受保护的只读快照 · 2026-10-22发布 · 上传、清洗和研究发布在本机后台进行。</div>'
+                    banner='<div role="note" class="cloud-readonly-notice">OpenDesign · 受保护的只读快照 · 2026-10-27发布 · 上传、清洗和研究发布在本机后台进行。</div>'
                     body=body.replace('</head>','<link rel="icon" href="data:,"><style>.cloud-readonly-notice{padding:10px 24px;background:#f0edff;color:#5145a0;font:13px/1.6 system-ui}</style></head>',1)
                     body=body.replace('<body>','<body>'+banner,1).replace('● 本地私有','● 登录可见 · 只读')
         if isinstance(body,dict) and body.get('service')=='gooddesign-archive-pipeline':body.update(cloud_read_only=True,watcher_running=False)
