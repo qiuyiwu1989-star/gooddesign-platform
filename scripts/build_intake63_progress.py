@@ -18,7 +18,7 @@ def build():
   stale=bool(detail)and detail.get('input_pin_sha256')!=pin_digest
   row={'project_id':pid,'name':x['name'],'year':x['year'],'award':x['award'],'counts':counts,'batches':batches,'input_pin_sha256':pin_digest,'mechanical_checked':allpass,'content_reviewed_claims':0,'native_pending':0,'published_fields':0,'reader_mcp_verified':False,'stage':'待内容核读','gaps':['尚未逐条核读，不代表事实成立或质量达标']}
   if detail and not stale:
-   for k in ['content_reviewed_claims','native_pending','published_fields','reader_mcp_verified','stage','gaps','evidence_paths','revision','dispositions']: 
+   for k in ['content_reviewed_claims','native_pending','published_fields','reader_mcp_verified','stage','gaps','evidence_paths','revision','dispositions']:
     if k in detail:row[k]=detail[k]
   if stale:row.update(stage='输入变化待重新核对',gaps=['交付源文件已变化，旧处置不沿用'])
   rows.append(row)
