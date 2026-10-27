@@ -20,4 +20,22 @@ def quality_section(records):
     if c['dataset_sha256']==data['dataset_sha256']:status='独立Agent校准 · 非专家';score=str(c['calibrated_total']);calibrated+=1;initial-=1;break
   if data:task=data.get('primary_research_task',task)
   rows.append('<tr><td><a href="methods/'+E(rid)+'.html">'+E(d['name'])+'</a></td><td>'+E(score)+'</td><td>'+E(status)+'</td><td>'+E(task)+'</td></tr>')
- return '<section id="content-quality"><h2>逐方法内容质量进度</h2><p>'+str(calibrated)+'份已有独立Agent校准，'+str(initial)+'份初评待校准，其余待内容核读。这是档案内容质量，不是方法本身的价值，也不是工程或专家认证。未评不算0，界面测试不加内容分；本轮尚无达到80分的结论。</p><div class="table-scroll"><table><thead><tr><th>方法</th><th>研究试评分</th><th>状态</th><th>下一步</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div></section>'
+ return '<section id="content-quality"><h2>逐方法内容质量进度</h2><p>'+str(calibrated)+'份已有独立Agent校准，'+str(initial)+'份初评待校准，其余待内容核读。这是档案内容质量，不是方法本身的价值，也不是工程或专家认证。未评不算0，界面测试不加内容分；本轮尚无达到80分的结论。</p><div class="table-scroll"><table><thead><tr><th>方法</th><th>研究试评分</th><th>状态</th><th>下一步</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div></section>'+upgrade_section()
+
+
+def upgrade_section():
+ """Keep reviewed upgrade snapshots separate from frozen baseline scores."""
+ b=ROOT/'output/method-reader-review/reviews';rows=[]
+ specs=[('R17','R17-composite-v2-calibration/calibration.json','76.25','组合升级版 · 独立Agent校准','教学跨情境程序实测；仍缺真实使用者与工程应用证据'),('R36','R36-composite-v1-reassessment/assessment.json','75','组合升级版 · 初评待另一Agent校准','缺跨实际任务应用、真实可读性观测及多轮改进'),('R44','R44-composite-v1-reassessment/assessment.json','68.75','组合升级版 · 初评待另一Agent校准','缺操作原典深度，以及真实原型、原始观察和学习决定链')]
+ for rid,rel,score,status,gap in specs:
+  p=b/rel
+  if not p.exists():continue
+  d=json.loads(p.read_text())
+  if rid=='R17':
+   src=ROOT/d['source_assessment']
+   if hashlib.sha256(src.read_bytes()).hexdigest()!=d['source_assessment_sha256']:continue
+   if str(d['calibrated_total'])!=score:continue
+  elif str(d['total_score']).rstrip('0').rstrip('.')!=score:continue
+  rows.append('<tr><td><a href="methods/'+rid+'.html">'+rid+'</a></td><td>'+E(score)+'</td><td>'+E(status)+'</td><td>'+E(gap)+'</td></tr>')
+ if not rows:return ''
+ return '<section id="upgrade-quality"><h2>增补版本有了哪些进步</h2><p>以下单独评估新教学产物与适配组合，不覆盖上表冻结档案的分数。分数按各次报告的版本与证据快照解释；软件通过、教学复算、真实应用和专家审核分别记录，均未达到80分验收。</p><div class="table-scroll"><table><thead><tr><th>方法</th><th>增补试评分</th><th>评审状态</th><th>主要未达项</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div></section>'
