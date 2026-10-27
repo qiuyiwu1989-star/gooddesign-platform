@@ -36,6 +36,11 @@ def upgrade_section():
    if hashlib.sha256(src.read_bytes()).hexdigest()!=d['source_assessment_sha256']:continue
    if str(d['calibrated_total'])!=score:continue
   elif str(d['total_score']).rstrip('0').rstrip('.')!=score:continue
+  if rid in ['R36','R44']:
+   cp=b/(rid+'-composite-v1-calibration/calibration.json')
+   if cp.exists():
+    c=json.loads(cp.read_text())
+    if c.get('independent_calibration_completed') and float(c['calibrated_total'])==float(score):status='组合升级版 · 独立Agent校准'
   rows.append('<tr><td><a href="methods/'+rid+'.html">'+rid+'</a></td><td>'+E(score)+'</td><td>'+E(status)+'</td><td>'+E(gap)+'</td></tr>')
  if not rows:return ''
  return '<section id="upgrade-quality"><h2>增补版本有了哪些进步</h2><p>以下单独评估新教学产物与适配组合，不覆盖上表冻结档案的分数。分数按各次报告的版本与证据快照解释；软件通过、教学复算、真实应用和专家审核分别记录，均未达到80分验收。</p><div class="table-scroll"><table><thead><tr><th>方法</th><th>增补试评分</th><th>评审状态</th><th>主要未达项</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div></section>'
