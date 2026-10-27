@@ -9,7 +9,7 @@ OUT=ROOT/'output/method-site-release/site'
 if OUT.exists():shutil.rmtree(OUT)
 OUT.mkdir(parents=True,exist_ok=False)
 def rewrite(text):
- text=text.replace('/library/','/methods/').replace('/vendor/','/methods/vendor/').replace('href="/"','href="/methods/"').replace('好设计 <span>／ 创新工作台</span>','好设计 <span>／ 方法库</span>')
+ text=text.replace('/library/','/inno/methods/').replace('/vendor/','/inno/methods/vendor/').replace('href="/"','href="/inno/methods/"').replace('好设计 <span>／ 创新工作台</span>','好设计 <span>／ 方法库</span>')
  return re.sub(r'(href="[^"#?]+)\.md(?=["#?])',r'\1.html',text)
 for p in (ROOT/'extensions/method-reader').rglob('*'):
  if p.is_file() and p.suffix in {'.html','.svg','.css','.js'}:
@@ -19,7 +19,7 @@ for base in [BASE,SUPPLEMENT]:
  for p in base.rglob('*'):
   if not p.is_file() or p.suffix not in {'.md','.json','.csv'}:continue
   rel=p.relative_to(base);q=OUT/rel;q.parent.mkdir(parents=True,exist_ok=True)
-  if p.suffix=='.md':q=q.with_suffix('.html');q.write_text(rewrite(page(p.stem,'<main id="main" class="reader"><a href="/methods/">← 方法库</a><h1>'+p.stem+'</h1><article class="document">'+document(p.read_text())+'</article></main>')))
+  if p.suffix=='.md':q=q.with_suffix('.html');q.write_text(rewrite(page(p.stem,'<main id="main" class="reader"><a href="/inno/methods/">← 方法库</a><h1>'+p.stem+'</h1><article class="document">'+document(p.read_text())+'</article></main>')))
   else:shutil.copyfile(p,q)
 (OUT/'vendor').mkdir(exist_ok=True)
 for name in ['tokens.css','design-system.css']:shutil.copyfile(ROOT/'extensions/method-workbench/vendor'/name,OUT/'vendor'/name)
@@ -27,9 +27,9 @@ class Links(HTMLParser):
  def handle_starttag(self,tag,attrs):
   a=dict(attrs);v=a.get('href',a.get('src',''))
   if not v or v.startswith(('http:','https:','data:','mailto:')):return
-  resolved=unquote(urlsplit(urljoin('https://opendesign.cc/methods/'+str(self.file.relative_to(OUT)),v)).path)
-  if not resolved.startswith('/methods/'):raise ValueError(resolved)
-  f=OUT/resolved[len('/methods/'):];f=f/'index.html' if f.is_dir() else f
+  resolved=unquote(urlsplit(urljoin('https://opendesign.cc/inno/methods/'+str(self.file.relative_to(OUT)),v)).path)
+  if not resolved.startswith('/inno/methods/'):raise ValueError(resolved)
+  f=OUT/resolved[len('/inno/methods/'):];f=f/'index.html' if f.is_dir() else f
   if not f.is_file():raise ValueError(str(self.file)+' missing '+resolved)
 for p in OUT.rglob('*.html'):
  a=Links();a.file=p;a.feed(p.read_text())
