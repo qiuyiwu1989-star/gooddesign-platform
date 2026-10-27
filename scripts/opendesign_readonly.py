@@ -20,6 +20,9 @@ class Handler(app.Handler):
             self.guard()
             import project_portal
             self.send(200,project_portal.home(),'text/html; charset=utf-8');return
+        if path=='/mcp/':
+            self.guard();import innovation_gateway_page
+            self.send(200,innovation_gateway_page.page(),'text/html; charset=utf-8');return
         if path=='/about/':
             self.guard();import project_portal
             self.send(200,project_portal.about(),'text/html; charset=utf-8');return
@@ -27,7 +30,7 @@ class Handler(app.Handler):
             self.guard();import project_portal
             rel=path[len('/portal/'):]
             if rel=='catalog.json':self.send(200,project_portal.catalog(self.server.store.lib));return
-            if rel in ('portal.css','portal.js') or re.fullmatch(r'covers/case-[A-Za-z0-9_-]+\.jpg',rel):
+            if rel in ('portal.css','portal.js','mcp-guide.js') or re.fullmatch(r'covers/case-[A-Za-z0-9_-]+\.jpg',rel):
                 target=project_portal.ASSETS/rel
                 if target.is_file():
                     import mimetypes
