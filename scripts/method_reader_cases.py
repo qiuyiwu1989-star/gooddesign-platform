@@ -3,6 +3,7 @@ from pathlib import Path
 import json,hashlib,html
 ROOT=Path(__file__).resolve().parents[1];E=lambda s:html.escape(str(s),quote=True)
 def teaching_case(rid):
+ if rid=='R42':return verification_case()
  if rid=='R44':return prototype_case()
  if rid=='R36':return pugh_case()
  if rid=='R48':return chain_example()
@@ -104,3 +105,19 @@ def prototype_case():
  out+='</ol><h3>在看结果之前，约定怎样解释</h3><div class="relation-grid">'
  for rule in rules:out+='<article class="relation"><h3>'+E(rule['if_signal'])+'</h3><p>'+E(rule['interpretation'])+'</p></article>'
  return out+'</div><p>遗漏、错误复述和研究者提示要保留原话与行为，解释另列；人数和阈值尚未知。未取得同意与执行授权，不把计划写成已验证效果。20项程序测试与4项输出检查只支持固定计划的结构和保真。0.2.1把本教学材料限定为明确允许值，拒绝“现场运行并验证通过”的矛盾声明；这不是通用语义理解，其他自由文字仍需人工核对。</p></section>'
+
+
+def verification_case():
+ b=ROOT/'output/method-reader-review/upgrades/R42-v0.2.0-proposal'
+ r=ROOT/'output/method-reader-review/reviews/R42-upgrade-v0.2.0/review.json'
+ if not (b/'manifest.json').exists() or not r.exists():return ''
+ files=json.loads((b/'manifest.json').read_text())['files']
+ entries=files.items() if isinstance(files,dict) else [(x['path'],x['sha256'])for x in files]
+ for name,sha in entries:
+  if hashlib.sha256((b/name).read_bytes()).hexdigest()!=sha:raise ValueError('验证确认教学包变化，停止展示')
+ a=json.loads((b/'artifacts/02-configuration-and-methods.json').read_text())
+ out='<section id="verification-teaching-plan"><h2>验证技术要求，也确认预期用途</h2><p>便携检测设备教学计划把两种问题分开：测量误差是否符合技术要求，以及目标用户戴手套能否完成现场任务。做过演示，不能替代误差测试；误差合格也不能替代用途确认。</p><div class="relation-grid">'
+ for x in a['activities']:
+  title='技术要求验证' if x['purpose']=='verification' else '预期用途确认'
+  out+='<article class="relation"><h3>'+title+'</h3><ol>'+''.join('<li>'+E(v)+'</li>'for v in x['procedure'])+'</ol><p>当前：未执行、未验证；判据仍待确认。</p></article>'
+ return out+'</div><h3>主动列出尚未覆盖的要求</h3><p>负载、时长和电源边界还未定义，续航要求尚无对应活动。它被明确列为未覆盖，不隐藏成“整体计划已完成”。样机配置尚未制作，软件版本、试样编号、温度与阈值未知，人员和测量资源也未就绪。</p><p>23项软件测试、5项保真检查及独立追加探针检查的是计划声明与追溯。真实产品和用户试验均为零，结果与异常记录为空；当前结论是未验证，不是通过或不合格。正式执行需要另版真实基线、配置、人员、授权与原始数据。</p></section>'
