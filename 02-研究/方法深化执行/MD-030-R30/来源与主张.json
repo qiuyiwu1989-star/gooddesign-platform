@@ -1,0 +1,42 @@
+{
+  "method": "R30",
+  "source_identity": "MIT Axiomatic Design Group introduction",
+  "source_url": "https://web.mit.edu/axiom/www/introduction.shtml",
+  "selected_read_scope": "HTML body selected definitions, matrix, axioms only; not Suh books",
+  "claims": [
+    {
+      "id": "C30-01",
+      "source_url": "https://web.mit.edu/axiom/www/introduction.shtml",
+      "locator": "Definitions associated with the domains",
+      "supported_claim": "FR/DP/constraint distinctions",
+      "support_level": "selected_primary_passage",
+      "not_supported": "platform fixture empirical validity or customer suitability"
+    },
+    {
+      "id": "C30-02",
+      "source_url": "https://web.mit.edu/axiom/www/introduction.shtml",
+      "locator": "The mapping is represented by a design matrix",
+      "supported_claim": "column DP affects row FR; mathematical relation possible",
+      "support_level": "selected_primary_passage",
+      "not_supported": "platform fixture empirical validity or customer suitability"
+    },
+    {
+      "id": "C30-03",
+      "source_url": "https://web.mit.edu/axiom/www/introduction.shtml",
+      "locator": "The fourth main concept",
+      "supported_claim": "independence/information axioms and order-sensitive decoupling",
+      "support_level": "selected_primary_passage",
+      "not_supported": "platform fixture empirical validity or customer suitability"
+    }
+  ],
+  "source_raw_sha256": "0da4964397a07dc59d5b6e2b8631a4efd07d1123ef2ac6938ea2834461dcbe30",
+  "platform_adaptation": "fixed local analytical FR/DP model, not measured mechanics",
+  "originals_private": true,
+  "full_monograph_read": false,
+  "gaps": [
+    "model coefficients authored",
+    "customer targets unknown",
+    "probability distribution absent",
+    "not full original method implementation"
+  ]
+}

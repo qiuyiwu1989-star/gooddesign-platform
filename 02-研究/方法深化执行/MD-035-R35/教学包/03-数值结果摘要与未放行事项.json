@@ -1,0 +1,92 @@
+{
+  "results": [
+    {
+      "label": "baseline",
+      "iterations": 160,
+      "converged_design_change": false,
+      "compliance": 243.92026404302595,
+      "mean_physical_density": 0.45,
+      "volume_limit_residual": 0.0,
+      "free_equilibrium_relative_residual": 8.593248767280804e-14,
+      "selected_derivative_relative_error": 3.1037737607819693e-07,
+      "last_max_change": 0.007700131210916172,
+      "binary_reanalysis": {
+        "threshold": 0.5,
+        "volume_fraction": 0.4625,
+        "compliance": 475.44369946988064,
+        "equilibrium_relative_residual": 7.42484019160241e-13,
+        "max_gauss_von_mises_normalized": 63.974476781813934,
+        "strength_pass": null,
+        "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+      }
+    },
+    {
+      "label": "mesh_refined",
+      "iterations": 160,
+      "converged_design_change": false,
+      "compliance": 242.39710955434086,
+      "mean_physical_density": 0.45000000000000007,
+      "volume_limit_residual": 5.551115123125783e-17,
+      "free_equilibrium_relative_residual": 1.6471319031263278e-13,
+      "selected_derivative_relative_error": 3.780399604469409e-11,
+      "last_max_change": 0.01352578002227034,
+      "binary_reanalysis": {
+        "threshold": 0.5,
+        "volume_fraction": 0.45,
+        "compliance": 314.0882172609346,
+        "equilibrium_relative_residual": 1.0231036083546755e-12,
+        "max_gauss_von_mises_normalized": 66.24404614979441,
+        "strength_pass": null,
+        "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+      }
+    },
+    {
+      "label": "filter_changed",
+      "iterations": 91,
+      "converged_design_change": true,
+      "compliance": 305.21595194456785,
+      "mean_physical_density": 0.45,
+      "volume_limit_residual": 0.0,
+      "free_equilibrium_relative_residual": 8.414155742687378e-14,
+      "selected_derivative_relative_error": 3.0331616645326036e-07,
+      "last_max_change": 0.0049706995224853,
+      "binary_reanalysis": {
+        "threshold": 0.5,
+        "volume_fraction": 0.35,
+        "compliance": 2381985.5756382467,
+        "equilibrium_relative_residual": 1.1469238154283763e-09,
+        "max_gauss_von_mises_normalized": 82.14493845051737,
+        "strength_pass": null,
+        "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+      }
+    },
+    {
+      "label": "other_context_corner_load",
+      "iterations": 113,
+      "converged_design_change": true,
+      "compliance": 233.91520020404795,
+      "mean_physical_density": 0.45000000000000007,
+      "volume_limit_residual": 5.551115123125783e-17,
+      "free_equilibrium_relative_residual": 1.1009474451619571e-13,
+      "selected_derivative_relative_error": 3.837482887014687e-09,
+      "last_max_change": 0.004914085751490549,
+      "binary_reanalysis": {
+        "threshold": 0.5,
+        "volume_fraction": 0.4875,
+        "compliance": 131.28899277908818,
+        "equilibrium_relative_residual": 1.7250001543562363e-13,
+        "max_gauss_von_mises_normalized": 38.28591734502483,
+        "strength_pass": null,
+        "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+      }
+    }
+  ],
+  "guard_checks": 6,
+  "independent_engineering_strength_review": "not_obtained",
+  "CAD_reconstruction": "thresholded_grid_only_not_CAD",
+  "fatigue_buckling_manufacturing": "not_verified",
+  "failed_convergence_cases": [
+    "baseline",
+    "mesh_refined"
+  ]
+}

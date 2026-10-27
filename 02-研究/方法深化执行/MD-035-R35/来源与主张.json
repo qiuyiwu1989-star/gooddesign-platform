@@ -1,0 +1,40 @@
+{
+  "primary": {
+    "author": "Ole Sigmund",
+    "title": "A99 line topology optimization code written in Matlab",
+    "year": 2001,
+    "doi": "10.1007/s001580050176",
+    "institutional_pdf_url": "https://www.topopt.mek.dtu.dk/-/media/subsites/topopt/apps/dokumenter-og-filer-til-apps/matlab-1-.pdf",
+    "page_count": 8,
+    "actual_read": "web tool parsed PDF pages1–3, objective/constraints/sensitivity/filter and stopping discussion",
+    "locator": "PDF2 Eq1–4; PDF3 Eq5–6 and3.1; institutional teaching-use page",
+    "raw_pdf_acquisition": "direct HTTP403; not acquired, do not claim original PDF byte hash",
+    "web_tool_snapshot_file": "private-sources/原典Web工具解析快照.json",
+    "snapshot_sha256": "1b02ddabe69425f657c2bb89f4f976fc22fc1cf07bd106ee032763f1b4601937",
+    "snapshot_is_not_raw_pdf": true,
+    "supported_facts": [
+      "static compliance minimization with material density variables",
+      "original Eq1 volume equality",
+      "original mesh independence uses sensitivity filtering",
+      "design-change stopping is numerical, not manufacturing validation"
+    ]
+  },
+  "platform_variant": {
+    "id": "platform-density-filter-SIMP-volume-inequality-v0.1.0",
+    "written_from": "original Python Q4 quadrature implementation, not copied top.m",
+    "differences": [
+      "cantilever with full left-edge clamp rather than original half-MBB boundary",
+      "density filter and chain-rule gradient rather than original sensitivity filter",
+      "volume inequality mean physical density<=0.45, not original equality Eq1",
+      "Emin stiffness interpolation and minimum design0.001",
+      "fixed160 iteration cap and0.005 design-change criterion"
+    ]
+  },
+  "legal_boundary": "institutional page describes educational code use; only original mathematical implementation and authored outputs delivered; no third-party source code redistributed",
+  "unverified": [
+    "independent solver validation",
+    "final CAD remesh",
+    "real material allowables",
+    "fatigue/buckling/manufacturability"
+  ]
+}

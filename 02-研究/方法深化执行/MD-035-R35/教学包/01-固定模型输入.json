@@ -1,0 +1,27 @@
+{
+  "id": "R35-CANTILEVER-TEACH-001",
+  "mode": "normalized_constructed_education",
+  "nx": 20,
+  "ny": 8,
+  "L": 2.0,
+  "H": 0.8,
+  "boundary": "left_edge_clamped",
+  "load_case": "right_middle_down",
+  "volume_limit": 0.45,
+  "filter_radius": 0.18,
+  "E0": 1.0,
+  "Emin": 1e-06,
+  "nu": 0.3,
+  "penalty": 3.0,
+  "thickness": 1.0,
+  "load_amplitude": -1.0,
+  "numerical_origin": "normalized educational inputs; no material/robot meaning",
+  "boundary_dofs": "both translations at every left-edge node",
+  "excluded": [
+    "stress constraint",
+    "fatigue",
+    "buckling",
+    "manufacturing",
+    "multiple real loads"
+  ]
+}

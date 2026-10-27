@@ -1,0 +1,584 @@
+[
+  {
+    "name": "positive",
+    "class": "正常",
+    "input": {
+      "binding": {
+        "problem": "TAP-TEACH-001",
+        "input_version": "0.1.0",
+        "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+        "identity": "constructed_research_context_only"
+      },
+      "origin": "independent_ideal_local_model",
+      "FR": [
+        {
+          "id": "FR1",
+          "name": "holding force increment",
+          "unit": "N"
+        },
+        {
+          "id": "FR2",
+          "name": "release clearance increment",
+          "unit": "mm"
+        }
+      ],
+      "DP": [
+        {
+          "id": "DP1",
+          "name": "adjuster1 increment",
+          "unit": "mm"
+        },
+        {
+          "id": "DP2",
+          "name": "adjuster2 increment",
+          "unit": "mm"
+        }
+      ],
+      "workpoint": {
+        "DP1_mm": 0,
+        "DP2_mm": 0,
+        "load": "ideal_declared_model_only"
+      },
+      "A": [
+        [
+          2,
+          0
+        ],
+        [
+          0.5,
+          3
+        ]
+      ],
+      "matrix_evidence": "analytical_derivatives_of_authored_linear_model_not_measured",
+      "delta_target": [
+        2,
+        4
+      ],
+      "information_probability": null,
+      "customer_approved": false
+    },
+    "actual": "decoupled_in_declared_local_model",
+    "expected": "decoupled_in_declared_local_model",
+    "pass": true,
+    "output": {
+      "classification": "decoupled_in_declared_local_model",
+      "adjustment_order": [
+        "DP1",
+        "DP2"
+      ],
+      "delta_DP_mm": [
+        1.0,
+        1.1666666666666667
+      ],
+      "after_DP1": [
+        2.0,
+        0.5
+      ],
+      "after_DP2": [
+        2.0,
+        4.0
+      ],
+      "finite_difference_J": [
+        [
+          2.0,
+          0.0
+        ],
+        [
+          0.5,
+          3.0
+        ]
+      ],
+      "information_content": null,
+      "engineering_pass": false,
+      "scope": "linear mathematical fixture; no physical independence proof"
+    }
+  },
+  {
+    "name": "unknown_not_zero",
+    "class": "缺材料",
+    "input": {
+      "binding": {
+        "problem": "TAP-TEACH-001",
+        "input_version": "0.1.0",
+        "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+        "identity": "constructed_research_context_only"
+      },
+      "origin": "independent_ideal_local_model",
+      "FR": [
+        {
+          "id": "FR1",
+          "name": "holding force increment",
+          "unit": "N"
+        },
+        {
+          "id": "FR2",
+          "name": "release clearance increment",
+          "unit": "mm"
+        }
+      ],
+      "DP": [
+        {
+          "id": "DP1",
+          "name": "adjuster1 increment",
+          "unit": "mm"
+        },
+        {
+          "id": "DP2",
+          "name": "adjuster2 increment",
+          "unit": "mm"
+        }
+      ],
+      "workpoint": {
+        "DP1_mm": 0,
+        "DP2_mm": 0,
+        "load": "ideal_declared_model_only"
+      },
+      "A": [
+        [
+          2,
+          null
+        ],
+        [
+          0.5,
+          3
+        ]
+      ],
+      "matrix_evidence": "analytical_derivatives_of_authored_linear_model_not_measured",
+      "delta_target": [
+        2,
+        4
+      ],
+      "information_probability": null,
+      "customer_approved": false
+    },
+    "actual": "unknown",
+    "expected": "unknown",
+    "pass": true,
+    "output": {
+      "classification": "unknown",
+      "adjustment_order": null,
+      "reason": "unknown entry cannot be replaced by zero",
+      "information_content": null,
+      "engineering_pass": false
+    }
+  },
+  {
+    "name": "unknown_claimed_zero_disagrees_model",
+    "class": "冲突",
+    "input": {
+      "binding": {
+        "problem": "TAP-TEACH-001",
+        "input_version": "0.1.0",
+        "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+        "identity": "constructed_research_context_only"
+      },
+      "origin": "independent_ideal_local_model",
+      "FR": [
+        {
+          "id": "FR1",
+          "name": "holding force increment",
+          "unit": "N"
+        },
+        {
+          "id": "FR2",
+          "name": "release clearance increment",
+          "unit": "mm"
+        }
+      ],
+      "DP": [
+        {
+          "id": "DP1",
+          "name": "adjuster1 increment",
+          "unit": "mm"
+        },
+        {
+          "id": "DP2",
+          "name": "adjuster2 increment",
+          "unit": "mm"
+        }
+      ],
+      "workpoint": {
+        "DP1_mm": 0,
+        "DP2_mm": 0,
+        "load": "ideal_declared_model_only"
+      },
+      "A": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "matrix_evidence": "analytical_derivatives_of_authored_linear_model_not_measured",
+      "delta_target": [
+        2,
+        4
+      ],
+      "information_probability": null,
+      "customer_approved": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "output": {
+      "error": "matrix_disagrees_with_authored_model"
+    }
+  },
+  {
+    "name": "changed_load",
+    "class": "不适用",
+    "input": {
+      "binding": {
+        "problem": "TAP-TEACH-001",
+        "input_version": "0.1.0",
+        "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+        "identity": "constructed_research_context_only"
+      },
+      "origin": "independent_ideal_local_model",
+      "FR": [
+        {
+          "id": "FR1",
+          "name": "holding force increment",
+          "unit": "N"
+        },
+        {
+          "id": "FR2",
+          "name": "release clearance increment",
+          "unit": "mm"
+        }
+      ],
+      "DP": [
+        {
+          "id": "DP1",
+          "name": "adjuster1 increment",
+          "unit": "mm"
+        },
+        {
+          "id": "DP2",
+          "name": "adjuster2 increment",
+          "unit": "mm"
+        }
+      ],
+      "workpoint": {
+        "DP1_mm": 0,
+        "DP2_mm": 0,
+        "load": "real_tree_load"
+      },
+      "A": [
+        [
+          2,
+          0
+        ],
+        [
+          0.5,
+          3
+        ]
+      ],
+      "matrix_evidence": "analytical_derivatives_of_authored_linear_model_not_measured",
+      "delta_target": [
+        2,
+        4
+      ],
+      "information_probability": null,
+      "customer_approved": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "output": {
+      "error": "fixed_workpoint_units_or_evidence_changed"
+    }
+  },
+  {
+    "name": "zero_increment",
+    "class": "边界",
+    "input": {
+      "binding": {
+        "problem": "TAP-TEACH-001",
+        "input_version": "0.1.0",
+        "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+        "identity": "constructed_research_context_only"
+      },
+      "origin": "independent_ideal_local_model",
+      "FR": [
+        {
+          "id": "FR1",
+          "name": "holding force increment",
+          "unit": "N"
+        },
+        {
+          "id": "FR2",
+          "name": "release clearance increment",
+          "unit": "mm"
+        }
+      ],
+      "DP": [
+        {
+          "id": "DP1",
+          "name": "adjuster1 increment",
+          "unit": "mm"
+        },
+        {
+          "id": "DP2",
+          "name": "adjuster2 increment",
+          "unit": "mm"
+        }
+      ],
+      "workpoint": {
+        "DP1_mm": 0,
+        "DP2_mm": 0,
+        "load": "ideal_declared_model_only"
+      },
+      "A": [
+        [
+          2,
+          0
+        ],
+        [
+          0.5,
+          3
+        ]
+      ],
+      "matrix_evidence": "analytical_derivatives_of_authored_linear_model_not_measured",
+      "delta_target": [
+        0,
+        0
+      ],
+      "information_probability": null,
+      "customer_approved": false
+    },
+    "actual": "decoupled_in_declared_local_model",
+    "expected": "decoupled_in_declared_local_model",
+    "pass": true,
+    "output": {
+      "classification": "decoupled_in_declared_local_model",
+      "adjustment_order": [
+        "DP1",
+        "DP2"
+      ],
+      "delta_DP_mm": [
+        0.0,
+        0.0
+      ],
+      "after_DP1": [
+        0.0,
+        0.0
+      ],
+      "after_DP2": [
+        0.0,
+        0.0
+      ],
+      "finite_difference_J": [
+        [
+          2.0,
+          0.0
+        ],
+        [
+          0.5,
+          3.0
+        ]
+      ],
+      "information_content": null,
+      "engineering_pass": false,
+      "scope": "linear mathematical fixture; no physical independence proof"
+    }
+  },
+  {
+    "name": "bool_coefficient",
+    "class": "冲突",
+    "input": {
+      "binding": {
+        "problem": "TAP-TEACH-001",
+        "input_version": "0.1.0",
+        "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+        "identity": "constructed_research_context_only"
+      },
+      "origin": "independent_ideal_local_model",
+      "FR": [
+        {
+          "id": "FR1",
+          "name": "holding force increment",
+          "unit": "N"
+        },
+        {
+          "id": "FR2",
+          "name": "release clearance increment",
+          "unit": "mm"
+        }
+      ],
+      "DP": [
+        {
+          "id": "DP1",
+          "name": "adjuster1 increment",
+          "unit": "mm"
+        },
+        {
+          "id": "DP2",
+          "name": "adjuster2 increment",
+          "unit": "mm"
+        }
+      ],
+      "workpoint": {
+        "DP1_mm": 0,
+        "DP2_mm": 0,
+        "load": "ideal_declared_model_only"
+      },
+      "A": [
+        [
+          2,
+          false
+        ],
+        [
+          0.5,
+          3
+        ]
+      ],
+      "matrix_evidence": "analytical_derivatives_of_authored_linear_model_not_measured",
+      "delta_target": [
+        2,
+        4
+      ],
+      "information_probability": null,
+      "customer_approved": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "output": {
+      "error": "invalid_matrix_value"
+    }
+  },
+  {
+    "name": "invent_probability",
+    "class": "缺材料",
+    "input": {
+      "binding": {
+        "problem": "TAP-TEACH-001",
+        "input_version": "0.1.0",
+        "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+        "identity": "constructed_research_context_only"
+      },
+      "origin": "independent_ideal_local_model",
+      "FR": [
+        {
+          "id": "FR1",
+          "name": "holding force increment",
+          "unit": "N"
+        },
+        {
+          "id": "FR2",
+          "name": "release clearance increment",
+          "unit": "mm"
+        }
+      ],
+      "DP": [
+        {
+          "id": "DP1",
+          "name": "adjuster1 increment",
+          "unit": "mm"
+        },
+        {
+          "id": "DP2",
+          "name": "adjuster2 increment",
+          "unit": "mm"
+        }
+      ],
+      "workpoint": {
+        "DP1_mm": 0,
+        "DP2_mm": 0,
+        "load": "ideal_declared_model_only"
+      },
+      "A": [
+        [
+          2,
+          0
+        ],
+        [
+          0.5,
+          3
+        ]
+      ],
+      "matrix_evidence": "analytical_derivatives_of_authored_linear_model_not_measured",
+      "delta_target": [
+        2,
+        4
+      ],
+      "information_probability": 0.95,
+      "customer_approved": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "output": {
+      "error": "unsupported_probability_or_approval"
+    }
+  },
+  {
+    "name": "unit_change",
+    "class": "冲突",
+    "input": {
+      "binding": {
+        "problem": "TAP-TEACH-001",
+        "input_version": "0.1.0",
+        "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+        "identity": "constructed_research_context_only"
+      },
+      "origin": "independent_ideal_local_model",
+      "FR": [
+        {
+          "id": "FR1",
+          "name": "holding force increment",
+          "unit": "kN"
+        },
+        {
+          "id": "FR2",
+          "name": "release clearance increment",
+          "unit": "mm"
+        }
+      ],
+      "DP": [
+        {
+          "id": "DP1",
+          "name": "adjuster1 increment",
+          "unit": "mm"
+        },
+        {
+          "id": "DP2",
+          "name": "adjuster2 increment",
+          "unit": "mm"
+        }
+      ],
+      "workpoint": {
+        "DP1_mm": 0,
+        "DP2_mm": 0,
+        "load": "ideal_declared_model_only"
+      },
+      "A": [
+        [
+          2,
+          0
+        ],
+        [
+          0.5,
+          3
+        ]
+      ],
+      "matrix_evidence": "analytical_derivatives_of_authored_linear_model_not_measured",
+      "delta_target": [
+        2,
+        4
+      ],
+      "information_probability": null,
+      "customer_approved": false
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true,
+    "output": {
+      "error": "fixed_workpoint_units_or_evidence_changed"
+    }
+  }
+]

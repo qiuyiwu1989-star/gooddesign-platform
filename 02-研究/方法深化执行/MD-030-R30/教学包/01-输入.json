@@ -1,0 +1,55 @@
+{
+  "binding": {
+    "problem": "TAP-TEACH-001",
+    "input_version": "0.1.0",
+    "shared_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "identity": "constructed_research_context_only"
+  },
+  "origin": "independent_ideal_local_model",
+  "FR": [
+    {
+      "id": "FR1",
+      "name": "holding force increment",
+      "unit": "N"
+    },
+    {
+      "id": "FR2",
+      "name": "release clearance increment",
+      "unit": "mm"
+    }
+  ],
+  "DP": [
+    {
+      "id": "DP1",
+      "name": "adjuster1 increment",
+      "unit": "mm"
+    },
+    {
+      "id": "DP2",
+      "name": "adjuster2 increment",
+      "unit": "mm"
+    }
+  ],
+  "workpoint": {
+    "DP1_mm": 0,
+    "DP2_mm": 0,
+    "load": "ideal_declared_model_only"
+  },
+  "A": [
+    [
+      2,
+      0
+    ],
+    [
+      0.5,
+      3
+    ]
+  ],
+  "matrix_evidence": "analytical_derivatives_of_authored_linear_model_not_measured",
+  "delta_target": [
+    2,
+    4
+  ],
+  "information_probability": null,
+  "customer_approved": false
+}

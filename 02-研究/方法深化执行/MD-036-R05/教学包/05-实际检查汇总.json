@@ -1,0 +1,47 @@
+{
+  "cases": [
+    {
+      "name": "normal",
+      "pass": true,
+      "actual": "accepted_bounded"
+    },
+    {
+      "name": "missing-time",
+      "pass": true,
+      "actual": "rejected"
+    },
+    {
+      "name": "unit-conflict",
+      "pass": true,
+      "actual": "rejected"
+    },
+    {
+      "name": "sign-conflict",
+      "pass": true,
+      "actual": "rejected"
+    },
+    {
+      "name": "double-writer",
+      "pass": true,
+      "actual": "rejected"
+    },
+    {
+      "name": "fake-safe",
+      "pass": true,
+      "actual": "rejected"
+    },
+    {
+      "name": "missing-left-right",
+      "pass": true,
+      "actual": "rejected"
+    },
+    {
+      "name": "age-equals-limit",
+      "pass": true,
+      "actual": "stale_no_safe_confirmation"
+    }
+  ],
+  "executed": 8,
+  "passed": 8,
+  "scope": "fixed teaching only, no actual field or user trials"
+}

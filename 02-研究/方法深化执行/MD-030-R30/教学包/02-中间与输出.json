@@ -1,0 +1,32 @@
+{
+  "classification": "decoupled_in_declared_local_model",
+  "adjustment_order": [
+    "DP1",
+    "DP2"
+  ],
+  "delta_DP_mm": [
+    1.0,
+    1.1666666666666667
+  ],
+  "after_DP1": [
+    2.0,
+    0.5
+  ],
+  "after_DP2": [
+    2.0,
+    4.0
+  ],
+  "finite_difference_J": [
+    [
+      2.0,
+      0.0
+    ],
+    [
+      0.5,
+      3.0
+    ]
+  ],
+  "information_content": null,
+  "engineering_pass": false,
+  "scope": "linear mathematical fixture; no physical independence proof"
+}

@@ -1,0 +1,61 @@
+{
+  "input": {
+    "id": "V-IF-TEACH-001",
+    "provenance": "independent_constructed_interface_not_robot",
+    "version": "0.1.0",
+    "customer_approved": false,
+    "mechanical": {
+      "unit": "mm",
+      "positive": "outward",
+      "frame": "fixture-frame"
+    },
+    "software": {
+      "unit": "mm",
+      "positive": "inward",
+      "frame": "fixture-frame"
+    },
+    "transform": {
+      "scale": -1,
+      "offset": 0,
+      "verified_status": "declared_teaching_relation_only"
+    },
+    "sample": {
+      "value": 2,
+      "now_ms": 100,
+      "clock": "same_constructed_monotonic_clock",
+      "age_limit_ms": 30
+    },
+    "command": {
+      "software_value": -1,
+      "controller_owner": "motion_controller",
+      "other_writers": []
+    },
+    "timeout": {
+      "limit_ms": 30,
+      "response": "inhibit_new_motion_and_request_stop",
+      "actual_stop_confirmed": false,
+      "safe_state": "unconfirmed_pending_actual_motion_and_residual_energy_observation"
+    },
+    "trace": [
+      {
+        "left": "L1-use-context-intent",
+        "right": "T1-context-observation",
+        "evidence": "planned_not_executed"
+      },
+      {
+        "left": "L2-system-interface",
+        "right": "T2-sign-unit-time-authority-integration",
+        "evidence": "constructed_check_only"
+      },
+      {
+        "left": "L3-domain-coordinate",
+        "right": "T3-domain-unit-check",
+        "evidence": "declared_local_check_not_field"
+      }
+    ],
+    "engineering_validated": false
+  },
+  "output": {
+    "error": "'timestamp_ms'"
+  }
+}

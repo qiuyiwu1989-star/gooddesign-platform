@@ -1,9 +1,9 @@
 {
   "created_date": "2026-10-27",
-  "scope": "29_authored_8_new_assigned_27_planned_reviews_and_repairs_active",
+  "scope": "37_authored_12_assigned_15_remaining_quality_work_active",
   "primary_owner": "current_method_library_agent",
   "active_task": null,
-  "next_task": "MD-038_after_batch04",
+  "next_task": "MD-050_after_batch05",
   "tasks": [
     {
       "task_id": "MD-001",
@@ -729,18 +729,18 @@
       "name": "公理化设计",
       "batch": 4,
       "batch_name": "工程架构与实现",
-      "status": "assigned_queued_after_review_and_revision",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/needs_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/function_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-030-R30.md",
       "target_artifact": "FR/DP定义、带单位工作点、矩阵证据、排列顺序及扰动检查。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
       },
@@ -753,18 +753,18 @@
       "name": "DSM与模块化架构",
       "batch": 4,
       "batch_name": "工程架构与实现",
-      "status": "assigned_queued_after_review_and_revision",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/needs_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/function_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-031-R31.md",
       "target_artifact": "方向图例、边的证据、强连通分量、缩点顺序及模块间接口成本。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
       },
@@ -777,18 +777,18 @@
       "name": "机构综合",
       "batch": 4,
       "batch_name": "工程架构与实现",
-      "status": "assigned_queued_after_review_and_revision",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/needs_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/function_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-032-R32.md",
       "target_artifact": "位姿/单位/容差、候选拓扑、尺寸解、多解分支、碰撞和传动角扫描。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
       },
@@ -801,18 +801,18 @@
       "name": "Ashby材料选择",
       "batch": 4,
       "batch_name": "工程架构与实现",
-      "status": "assigned_queued_after_review_and_revision",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/function_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/validation_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-033-R33.md",
       "target_artifact": "推导式、物性来源与范围、硬筛、指数排名、成本及工艺二次筛选；本轮附两种工况排名反转的构造模型复算。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
       },
@@ -825,18 +825,18 @@
       "name": "面向制造与装配设计",
       "batch": 4,
       "batch_name": "工程架构与实现",
-      "status": "assigned_queued_after_review_and_revision",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/function_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/validation_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-034-R34.md",
       "target_artifact": "BOM与动作分解、必要性依据、装配基准、服务约束及分量成本。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
       },
@@ -849,18 +849,18 @@
       "name": "拓扑优化",
       "batch": 4,
       "batch_name": "工程架构与实现",
-      "status": "assigned_queued_after_review_and_revision",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/function_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/validation_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-035-R35.md",
       "target_artifact": "合法教学模型、输入版本、迭代、网格/滤波敏感性、几何重建及独立强度复核。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
       },
@@ -873,18 +873,18 @@
       "name": "机电系统V模型",
       "batch": 4,
       "batch_name": "工程架构与实现",
-      "status": "assigned_queued_after_review_and_revision",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/validation_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/needs_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-036-R05.md",
       "target_artifact": "接口合同含单位、正方向、采样时刻、超时和安全状态，加一条集成异常记录。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
       },
@@ -897,18 +897,18 @@
       "name": "集合式并行工程",
       "batch": 4,
       "batch_name": "工程架构与实现",
-      "status": "assigned_queued_after_review_and_revision",
+      "status": "cross_agent_review_in_progress",
       "owner": "/root/validation_deepening",
-      "independent_reviewer": null,
+      "independent_reviewer": "/root/needs_deepening",
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-037-R47.md",
       "target_artifact": "各专业可行域、权衡曲线、集合交集、排除历史及收敛承诺条件。",
       "progress": {
-        "source_review": false,
-        "mechanism": false,
-        "worked_example": false,
-        "negative_cases": false,
-        "transfer": false,
+        "source_review": true,
+        "mechanism": true,
+        "worked_example": true,
+        "negative_cases": true,
+        "transfer": true,
         "independent_review": false,
         "published": false
       },
@@ -921,8 +921,8 @@
       "name": "多准则权衡分析",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-038-R37.md",
@@ -935,7 +935,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-039",
@@ -944,8 +945,8 @@
       "name": "试验设计与响应面",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-039-R38.md",
@@ -958,7 +959,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-040",
@@ -967,8 +969,8 @@
       "name": "稳健参数与公差设计",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-040-R39.md",
@@ -981,7 +983,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-041",
@@ -990,8 +993,8 @@
       "name": "失效模式与影响分析",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/needs_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-041-R40.md",
@@ -1004,7 +1007,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-042",
@@ -1013,8 +1017,8 @@
       "name": "机械风险评估与风险降低",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-042-R41.md",
@@ -1027,7 +1031,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-043",
@@ -1036,8 +1041,8 @@
       "name": "生命周期评价与生态设计",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-043-R43.md",
@@ -1050,7 +1055,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-044",
@@ -1059,8 +1065,8 @@
       "name": "价值工程",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-044-R45.md",
@@ -1073,7 +1079,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-045",
@@ -1082,8 +1089,8 @@
       "name": "专利景观与技术路线分析",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/function_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-045-R46.md",
@@ -1096,7 +1103,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-046",
@@ -1105,8 +1113,8 @@
       "name": "服务蓝图与产品服务系统协同",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-046-R50.md",
@@ -1119,7 +1127,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-047",
@@ -1128,8 +1137,8 @@
       "name": "系统理论过程分析（STPA）",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-047-R51.md",
@@ -1142,7 +1151,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-048",
@@ -1151,8 +1161,8 @@
       "name": "信息价值与验证优先级（VOI）",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-048-R52.md",
@@ -1165,7 +1175,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-049",
@@ -1174,8 +1185,8 @@
       "name": "六西格玛设计",
       "batch": 5,
       "batch_name": "权衡风险与验证",
-      "status": "planned",
-      "owner": "current_method_library_agent",
+      "status": "assigned_queued_after_quality_work",
+      "owner": "/root/validation_deepening",
       "independent_reviewer": null,
       "source_material_dependencies": [],
       "planned_task_card": "任务卡/MD-049-R07.md",
@@ -1188,7 +1199,8 @@
         "transfer": false,
         "independent_review": false,
         "published": false
-      }
+      },
+      "work_priority": "batch02_revision_review_then_batch04_review_then_batch03_repairs_then_batch05"
     },
     {
       "task_id": "MD-050",

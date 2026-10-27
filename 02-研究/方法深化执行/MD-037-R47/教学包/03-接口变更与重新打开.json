@@ -1,0 +1,308 @@
+{
+  "prior_version": "0.1.0",
+  "new_version": "0.1.1-interface-change",
+  "reason": "independent constructed interface bound changes30to40; not actual engineering change",
+  "old_history_preserved": {
+    "version": "0.1.0",
+    "interface_bound": 30,
+    "rows": [
+      {
+        "mass_kg": 1,
+        "power_W": 10,
+        "constructed_response_index": 3.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [],
+        "status": "conditional_research",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 1,
+        "power_W": 20,
+        "constructed_response_index": 4.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [],
+        "status": "conditional_research",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 1,
+        "power_W": 30,
+        "constructed_response_index": 5.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-ELEC"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 2,
+        "power_W": 10,
+        "constructed_response_index": 5.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [],
+        "status": "conditional_research",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 2,
+        "power_W": 20,
+        "constructed_response_index": 6.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-IF"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 2,
+        "power_W": 30,
+        "constructed_response_index": 7.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-ELEC",
+          "E-IF"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 3,
+        "power_W": 10,
+        "constructed_response_index": 7.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-MECH"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 3,
+        "power_W": 20,
+        "constructed_response_index": 8.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-MECH",
+          "E-IF"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 3,
+        "power_W": 30,
+        "constructed_response_index": 9.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-MECH",
+          "E-ELEC",
+          "E-IF"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      }
+    ],
+    "intersection": [
+      [
+        1,
+        10
+      ],
+      [
+        1,
+        20
+      ],
+      [
+        2,
+        10
+      ]
+    ],
+    "commitment": false,
+    "why_not_commit": "unknown target field and no engineering evidence",
+    "continuous_feasibility_claim": false
+  },
+  "new_evaluation": {
+    "version": "0.1.1-interface-change",
+    "interface_bound": 40,
+    "rows": [
+      {
+        "mass_kg": 1,
+        "power_W": 10,
+        "constructed_response_index": 3.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [],
+        "status": "conditional_research",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 1,
+        "power_W": 20,
+        "constructed_response_index": 4.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [],
+        "status": "conditional_research",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 1,
+        "power_W": 30,
+        "constructed_response_index": 5.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-ELEC"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 2,
+        "power_W": 10,
+        "constructed_response_index": 5.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [],
+        "status": "conditional_research",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 2,
+        "power_W": 20,
+        "constructed_response_index": 6.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [],
+        "status": "conditional_research",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 2,
+        "power_W": 30,
+        "constructed_response_index": 7.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-ELEC",
+          "E-IF"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 3,
+        "power_W": 10,
+        "constructed_response_index": 7.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-MECH"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 3,
+        "power_W": 20,
+        "constructed_response_index": 8.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-MECH",
+          "E-IF"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      },
+      {
+        "mass_kg": 3,
+        "power_W": 30,
+        "constructed_response_index": 9.0,
+        "index_not_real_robot_performance": true,
+        "excluded_by": [
+          "E-MECH",
+          "E-ELEC",
+          "E-IF"
+        ],
+        "status": "excluded_within_teaching_model",
+        "unresolved": [
+          "real_latex_boundary"
+        ],
+        "engineering_pass": false
+      }
+    ],
+    "intersection": [
+      [
+        1,
+        10
+      ],
+      [
+        1,
+        20
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        2,
+        20
+      ]
+    ],
+    "commitment": false,
+    "why_not_commit": "unknown target field and no engineering evidence",
+    "continuous_feasibility_claim": false
+  },
+  "reopened_points": [
+    [
+      2,
+      20
+    ]
+  ],
+  "not_automatically_approved": true
+}

@@ -1,0 +1,4845 @@
+{
+  "cases": [
+    {
+      "label": "baseline",
+      "result": {
+        "input": {
+          "id": "R35-CANTILEVER-TEACH-001",
+          "mode": "normalized_constructed_education",
+          "nx": 20,
+          "ny": 8,
+          "L": 2.0,
+          "H": 0.8,
+          "boundary": "left_edge_clamped",
+          "load_case": "right_middle_down",
+          "volume_limit": 0.45,
+          "filter_radius": 0.18,
+          "E0": 1.0,
+          "Emin": 1e-06,
+          "nu": 0.3,
+          "penalty": 3.0,
+          "thickness": 1.0,
+          "load_amplitude": -1.0,
+          "numerical_origin": "normalized educational inputs; no material/robot meaning",
+          "boundary_dofs": "both translations at every left-edge node",
+          "excluded": [
+            "stress constraint",
+            "fatigue",
+            "buckling",
+            "manufacturing",
+            "multiple real loads"
+          ]
+        },
+        "formulation": "platform-density-filter-SIMP-volume-inequality-v0.1.0",
+        "history": [
+          {
+            "iteration": 1,
+            "compliance": 767.1876098446402,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.730260422682582e-13,
+            "max_design_change": 0.10000000000000003
+          },
+          {
+            "iteration": 2,
+            "compliance": 533.6297170584472,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.582448137043836e-14,
+            "max_design_change": 0.10000000000000003
+          },
+          {
+            "iteration": 3,
+            "compliance": 435.54183439290364,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.942585013039636e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 4,
+            "compliance": 380.6539869908097,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 5.881069507013146e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 5,
+            "compliance": 344.18147411679706,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.065821402939497e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 6,
+            "compliance": 317.49304151858394,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.658991062182438e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 7,
+            "compliance": 300.04055662905733,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.490659440402715e-14,
+            "max_design_change": 0.08050497588320102
+          },
+          {
+            "iteration": 8,
+            "compliance": 291.57110035795756,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.328904278476715e-14,
+            "max_design_change": 0.05924369629050186
+          },
+          {
+            "iteration": 9,
+            "compliance": 286.1183025693399,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.755978111121951e-14,
+            "max_design_change": 0.06924024464048228
+          },
+          {
+            "iteration": 10,
+            "compliance": 282.19529936705095,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.809374871809239e-14,
+            "max_design_change": 0.05724884304240563
+          },
+          {
+            "iteration": 11,
+            "compliance": 279.1152153902314,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.608475849936039e-14,
+            "max_design_change": 0.06502882589913495
+          },
+          {
+            "iteration": 12,
+            "compliance": 276.53663134196955,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.687979088933073e-14,
+            "max_design_change": 0.055281931712489185
+          },
+          {
+            "iteration": 13,
+            "compliance": 274.29615474078247,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.778259332776382e-14,
+            "max_design_change": 0.0388832469920517
+          },
+          {
+            "iteration": 14,
+            "compliance": 272.4200089195107,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.124602617973046e-14,
+            "max_design_change": 0.03862237387645384
+          },
+          {
+            "iteration": 15,
+            "compliance": 270.8121258457112,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.071587585909149e-14,
+            "max_design_change": 0.036924697404897455
+          },
+          {
+            "iteration": 16,
+            "compliance": 269.3386560001139,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.898445113244022e-14,
+            "max_design_change": 0.039881728900450275
+          },
+          {
+            "iteration": 17,
+            "compliance": 267.97535125018356,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.24478570272464e-14,
+            "max_design_change": 0.041994891078999785
+          },
+          {
+            "iteration": 18,
+            "compliance": 266.7180727475614,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.219293772476793e-14,
+            "max_design_change": 0.043659281281496654
+          },
+          {
+            "iteration": 19,
+            "compliance": 265.5342592626569,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.863548460529061e-14,
+            "max_design_change": 0.04507711101364309
+          },
+          {
+            "iteration": 20,
+            "compliance": 264.41386148576646,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.178725651555508e-14,
+            "max_design_change": 0.045949224732204086
+          },
+          {
+            "iteration": 21,
+            "compliance": 263.3513353097193,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.35202144233145e-14,
+            "max_design_change": 0.0464783577569271
+          },
+          {
+            "iteration": 22,
+            "compliance": 262.34271471811655,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.40226036185018e-14,
+            "max_design_change": 0.028151529283510945
+          },
+          {
+            "iteration": 23,
+            "compliance": 261.4361264777818,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.295402874596316e-14,
+            "max_design_change": 0.030572821899736535
+          },
+          {
+            "iteration": 24,
+            "compliance": 260.6996265096669,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.12188742365967e-14,
+            "max_design_change": 0.0350734525298777
+          },
+          {
+            "iteration": 25,
+            "compliance": 260.079252634291,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.826983132323448e-14,
+            "max_design_change": 0.03587593789604593
+          },
+          {
+            "iteration": 26,
+            "compliance": 259.52119517891765,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 6.904089136299662e-14,
+            "max_design_change": 0.03441786803954372
+          },
+          {
+            "iteration": 27,
+            "compliance": 259.0103938920646,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.510172566972058e-14,
+            "max_design_change": 0.03316793393175865
+          },
+          {
+            "iteration": 28,
+            "compliance": 258.5351395899727,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.377020047956677e-14,
+            "max_design_change": 0.031669282600880644
+          },
+          {
+            "iteration": 29,
+            "compliance": 258.0885385084693,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.195967322078711e-14,
+            "max_design_change": 0.021875524966936677
+          },
+          {
+            "iteration": 30,
+            "compliance": 257.6830873034978,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.364496686273778e-14,
+            "max_design_change": 0.02111523498537482
+          },
+          {
+            "iteration": 31,
+            "compliance": 257.34116730628057,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 7.697682405555592e-14,
+            "max_design_change": 0.01804439761267085
+          },
+          {
+            "iteration": 32,
+            "compliance": 257.02306721194077,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.955798803953676e-14,
+            "max_design_change": 0.017595485454410364
+          },
+          {
+            "iteration": 33,
+            "compliance": 256.72072451032835,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.275551449118956e-14,
+            "max_design_change": 0.01722972690636071
+          },
+          {
+            "iteration": 34,
+            "compliance": 256.4333810873442,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.192813821456909e-14,
+            "max_design_change": 0.017529392940553667
+          },
+          {
+            "iteration": 35,
+            "compliance": 256.1648833144206,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.170455858614752e-14,
+            "max_design_change": 0.0168301048028634
+          },
+          {
+            "iteration": 36,
+            "compliance": 255.9098166910245,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.887385194478095e-14,
+            "max_design_change": 0.016265056597336736
+          },
+          {
+            "iteration": 37,
+            "compliance": 255.6614527715041,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.542347867169766e-14,
+            "max_design_change": 0.01617677918923449
+          },
+          {
+            "iteration": 38,
+            "compliance": 255.4192428749066,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.423165086709563e-14,
+            "max_design_change": 0.01681818817895564
+          },
+          {
+            "iteration": 39,
+            "compliance": 255.18177858712147,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.879832846126062e-14,
+            "max_design_change": 0.017464819080427463
+          },
+          {
+            "iteration": 40,
+            "compliance": 254.94836492438003,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.017877893629146e-13,
+            "max_design_change": 0.01810134172941774
+          },
+          {
+            "iteration": 41,
+            "compliance": 254.72127643763375,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.817785251324469e-14,
+            "max_design_change": 0.018737122031623865
+          },
+          {
+            "iteration": 42,
+            "compliance": 254.4973421768333,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.3515534302417e-14,
+            "max_design_change": 0.01934779780572482
+          },
+          {
+            "iteration": 43,
+            "compliance": 254.27603334065617,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 9.042093925463267e-14,
+            "max_design_change": 0.019924000435855405
+          },
+          {
+            "iteration": 44,
+            "compliance": 254.05722286434263,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.863764798233878e-14,
+            "max_design_change": 0.020455923054553793
+          },
+          {
+            "iteration": 45,
+            "compliance": 253.840734378952,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.213512634954468e-14,
+            "max_design_change": 0.020934538627941368
+          },
+          {
+            "iteration": 46,
+            "compliance": 253.62635644361325,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.34142704878424e-14,
+            "max_design_change": 0.0213493681099709
+          },
+          {
+            "iteration": 47,
+            "compliance": 253.41427709689884,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.895510288734648e-14,
+            "max_design_change": 0.021689088818969027
+          },
+          {
+            "iteration": 48,
+            "compliance": 253.20462074958033,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.42060607412566e-14,
+            "max_design_change": 0.02194710469945882
+          },
+          {
+            "iteration": 49,
+            "compliance": 252.99722392363978,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.457353904341075e-14,
+            "max_design_change": 0.02212047634457559
+          },
+          {
+            "iteration": 50,
+            "compliance": 252.79073676990177,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.988711702752256e-14,
+            "max_design_change": 0.022226225662712817
+          },
+          {
+            "iteration": 51,
+            "compliance": 252.58684525787416,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.99206032871695e-14,
+            "max_design_change": 0.022258168971193815
+          },
+          {
+            "iteration": 52,
+            "compliance": 252.38416114311724,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.474608434220037e-14,
+            "max_design_change": 0.022224124470328954
+          },
+          {
+            "iteration": 53,
+            "compliance": 252.18138575169144,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.685145006538485e-14,
+            "max_design_change": 0.02211872000087689
+          },
+          {
+            "iteration": 54,
+            "compliance": 251.9787340415158,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.079421931665406e-13,
+            "max_design_change": 0.021939049413055356
+          },
+          {
+            "iteration": 55,
+            "compliance": 251.77607959654762,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.04653259324655e-14,
+            "max_design_change": 0.021695351441190502
+          },
+          {
+            "iteration": 56,
+            "compliance": 251.5732361137112,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.155613863933888e-14,
+            "max_design_change": 0.021393620273179814
+          },
+          {
+            "iteration": 57,
+            "compliance": 251.370150601317,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.409610550858748e-14,
+            "max_design_change": 0.021035564534201634
+          },
+          {
+            "iteration": 58,
+            "compliance": 251.16676789756872,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 1.0228910570601857e-13,
+            "max_design_change": 0.020624169072423815
+          },
+          {
+            "iteration": 59,
+            "compliance": 250.96304408272175,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.983401008340949e-14,
+            "max_design_change": 0.020162263429870153
+          },
+          {
+            "iteration": 60,
+            "compliance": 250.75896146440843,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.833653053057241e-14,
+            "max_design_change": 0.020508975936477714
+          },
+          {
+            "iteration": 61,
+            "compliance": 250.55454263465424,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.664306351322018e-14,
+            "max_design_change": 0.02086188692171531
+          },
+          {
+            "iteration": 62,
+            "compliance": 250.34986121922975,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.055118169204681e-14,
+            "max_design_change": 0.021174192095586353
+          },
+          {
+            "iteration": 63,
+            "compliance": 250.14504764340353,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.136965797663415e-14,
+            "max_design_change": 0.02149376633793887
+          },
+          {
+            "iteration": 64,
+            "compliance": 249.9401422816855,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1959414268520587e-13,
+            "max_design_change": 0.021967481117402987
+          },
+          {
+            "iteration": 65,
+            "compliance": 249.73438998327174,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0404851490998471e-13,
+            "max_design_change": 0.015450854135807601
+          },
+          {
+            "iteration": 66,
+            "compliance": 249.55134788897843,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.201859624025145e-14,
+            "max_design_change": 0.013054043752069144
+          },
+          {
+            "iteration": 67,
+            "compliance": 249.3990486764581,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.179169014786247e-14,
+            "max_design_change": 0.012856931028587426
+          },
+          {
+            "iteration": 68,
+            "compliance": 249.2571797571551,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.025390830965442e-13,
+            "max_design_change": 0.012876396463529755
+          },
+          {
+            "iteration": 69,
+            "compliance": 249.12186576403087,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.47032668338087e-14,
+            "max_design_change": 0.012815914250861371
+          },
+          {
+            "iteration": 70,
+            "compliance": 248.99309178018962,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.954792929032313e-14,
+            "max_design_change": 0.012820742487501063
+          },
+          {
+            "iteration": 71,
+            "compliance": 248.86943083140434,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0366030304344305e-13,
+            "max_design_change": 0.012771500005488212
+          },
+          {
+            "iteration": 72,
+            "compliance": 248.75000917246282,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.492311641722278e-14,
+            "max_design_change": 0.012653293784571168
+          },
+          {
+            "iteration": 73,
+            "compliance": 248.6341642051102,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.895400679341357e-14,
+            "max_design_change": 0.012461172898434625
+          },
+          {
+            "iteration": 74,
+            "compliance": 248.52137754004394,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0895227542483929e-13,
+            "max_design_change": 0.012196722238696639
+          },
+          {
+            "iteration": 75,
+            "compliance": 248.41123983101897,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.587310600740736e-14,
+            "max_design_change": 0.011863931159101615
+          },
+          {
+            "iteration": 76,
+            "compliance": 248.30343375224945,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.194832255131114e-14,
+            "max_design_change": 0.011977731002417918
+          },
+          {
+            "iteration": 77,
+            "compliance": 248.1977223759203,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0351143749898506e-13,
+            "max_design_change": 0.012045698146097183
+          },
+          {
+            "iteration": 78,
+            "compliance": 248.09393931198164,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0490618649434468e-13,
+            "max_design_change": 0.01206039395074096
+          },
+          {
+            "iteration": 79,
+            "compliance": 247.99197891840907,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.213522341380359e-14,
+            "max_design_change": 0.012022036852700368
+          },
+          {
+            "iteration": 80,
+            "compliance": 247.89208321232388,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 8.884388978408614e-14,
+            "max_design_change": 0.011920201345102938
+          },
+          {
+            "iteration": 81,
+            "compliance": 247.79592656583316,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.338304774931333e-14,
+            "max_design_change": 0.01176432976643696
+          },
+          {
+            "iteration": 82,
+            "compliance": 247.70116029656918,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.283730677708939e-14,
+            "max_design_change": 0.01157111216652873
+          },
+          {
+            "iteration": 83,
+            "compliance": 247.60816712493727,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0136197020433148e-13,
+            "max_design_change": 0.011495012944607752
+          },
+          {
+            "iteration": 84,
+            "compliance": 247.51699161930628,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.25255158974114e-13,
+            "max_design_change": 0.01179357045102436
+          },
+          {
+            "iteration": 85,
+            "compliance": 247.42742650945655,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.227035444397838e-14,
+            "max_design_change": 0.01209459229840848
+          },
+          {
+            "iteration": 86,
+            "compliance": 247.3399118171946,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.827092043355125e-14,
+            "max_design_change": 0.012392230535908544
+          },
+          {
+            "iteration": 87,
+            "compliance": 247.25441330075986,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.166036675626722e-13,
+            "max_design_change": 0.012698886816304933
+          },
+          {
+            "iteration": 88,
+            "compliance": 247.17063289846527,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.81310951072846e-14,
+            "max_design_change": 0.013018450555733252
+          },
+          {
+            "iteration": 89,
+            "compliance": 247.08858378358264,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.78788056231947e-14,
+            "max_design_change": 0.013342229113590509
+          },
+          {
+            "iteration": 90,
+            "compliance": 247.00825057439167,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.560379664733157e-14,
+            "max_design_change": 0.013668396067684996
+          },
+          {
+            "iteration": 91,
+            "compliance": 246.92959097799644,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.918707122096332e-14,
+            "max_design_change": 0.013995648282089768
+          },
+          {
+            "iteration": 92,
+            "compliance": 246.85253805985798,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.767589951878226e-14,
+            "max_design_change": 0.014322834529495343
+          },
+          {
+            "iteration": 93,
+            "compliance": 246.77700303322388,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.801273826808077e-14,
+            "max_design_change": 0.014648843495837505
+          },
+          {
+            "iteration": 94,
+            "compliance": 246.70287832226458,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.926901242753109e-14,
+            "max_design_change": 0.01497256449572082
+          },
+          {
+            "iteration": 95,
+            "compliance": 246.6300407267794,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.933588707269983e-14,
+            "max_design_change": 0.015292863199174889
+          },
+          {
+            "iteration": 96,
+            "compliance": 246.55835455523217,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.06334397738749e-13,
+            "max_design_change": 0.015608566646187927
+          },
+          {
+            "iteration": 97,
+            "compliance": 246.48767463543538,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.725782096096223e-14,
+            "max_design_change": 0.015918453789996345
+          },
+          {
+            "iteration": 98,
+            "compliance": 246.41784914433748,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.893448430488052e-14,
+            "max_design_change": 0.016221249912875657
+          },
+          {
+            "iteration": 99,
+            "compliance": 246.34872222649537,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0063057453539266e-13,
+            "max_design_change": 0.016515624048551336
+          },
+          {
+            "iteration": 100,
+            "compliance": 246.28013638816168,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.192954191808413e-14,
+            "max_design_change": 0.01680018896749058
+          },
+          {
+            "iteration": 101,
+            "compliance": 246.2119346676476,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.380531545026648e-14,
+            "max_design_change": 0.014999377249399592
+          },
+          {
+            "iteration": 102,
+            "compliance": 246.14530532632642,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.711663517829805e-14,
+            "max_design_change": 0.009807070603104595
+          },
+          {
+            "iteration": 103,
+            "compliance": 246.0909614047162,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.215383343263143e-14,
+            "max_design_change": 0.009131794869175147
+          },
+          {
+            "iteration": 104,
+            "compliance": 246.04140903365652,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.3722218444998585e-13,
+            "max_design_change": 0.009356324697855856
+          },
+          {
+            "iteration": 105,
+            "compliance": 245.9948750002905,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.884748251244066e-14,
+            "max_design_change": 0.009684241291245343
+          },
+          {
+            "iteration": 106,
+            "compliance": 245.95050981201314,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.327988147453129e-14,
+            "max_design_change": 0.009985523009252595
+          },
+          {
+            "iteration": 107,
+            "compliance": 245.90792097613695,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.0290075849856e-14,
+            "max_design_change": 0.010256922958484016
+          },
+          {
+            "iteration": 108,
+            "compliance": 245.8668145244733,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.760761851610356e-14,
+            "max_design_change": 0.010506932197111518
+          },
+          {
+            "iteration": 109,
+            "compliance": 245.8269460472271,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.594173037524151e-14,
+            "max_design_change": 0.010743237125944938
+          },
+          {
+            "iteration": 110,
+            "compliance": 245.7881018087014,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.900044185196426e-14,
+            "max_design_change": 0.01096579276824583
+          },
+          {
+            "iteration": 111,
+            "compliance": 245.7506261864666,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.326073131946801e-14,
+            "max_design_change": 0.01117869687386619
+          },
+          {
+            "iteration": 112,
+            "compliance": 245.7140635202952,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.653501441862834e-14,
+            "max_design_change": 0.011392409908797196
+          },
+          {
+            "iteration": 113,
+            "compliance": 245.67788445809677,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.467928169309157e-14,
+            "max_design_change": 0.011607225161221368
+          },
+          {
+            "iteration": 114,
+            "compliance": 245.64195923095394,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0265097491070394e-13,
+            "max_design_change": 0.011819925451603819
+          },
+          {
+            "iteration": 115,
+            "compliance": 245.60616680345709,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.757129714676593e-14,
+            "max_design_change": 0.012029735193418212
+          },
+          {
+            "iteration": 116,
+            "compliance": 245.57039384472003,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.054827013543758e-13,
+            "max_design_change": 0.012236190249105605
+          },
+          {
+            "iteration": 117,
+            "compliance": 245.53453395916108,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.2550674695515077e-13,
+            "max_design_change": 0.012438783479195692
+          },
+          {
+            "iteration": 118,
+            "compliance": 245.49848707061489,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.092517120953718e-14,
+            "max_design_change": 0.012780192371856347
+          },
+          {
+            "iteration": 119,
+            "compliance": 245.46264753849698,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1169881216140549e-13,
+            "max_design_change": 0.013067318387088966
+          },
+          {
+            "iteration": 120,
+            "compliance": 245.42748697778637,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0390361586411012e-13,
+            "max_design_change": 0.013118098720502291
+          },
+          {
+            "iteration": 121,
+            "compliance": 245.39234327550685,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0570523418413489e-13,
+            "max_design_change": 0.013232107148565486
+          },
+          {
+            "iteration": 122,
+            "compliance": 245.35688399004601,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.512002378459642e-14,
+            "max_design_change": 0.013392588490589774
+          },
+          {
+            "iteration": 123,
+            "compliance": 245.32092833688358,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0560273535605838e-13,
+            "max_design_change": 0.013576815564476097
+          },
+          {
+            "iteration": 124,
+            "compliance": 245.28435835148912,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.028813657014763e-14,
+            "max_design_change": 0.013762777031011919
+          },
+          {
+            "iteration": 125,
+            "compliance": 245.24708539482265,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0493548496142314e-13,
+            "max_design_change": 0.013938568378399463
+          },
+          {
+            "iteration": 126,
+            "compliance": 245.20908567253306,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.17709046659737e-13,
+            "max_design_change": 0.014088005891014777
+          },
+          {
+            "iteration": 127,
+            "compliance": 245.17103200414277,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.10150192530036e-13,
+            "max_design_change": 0.014206328973323301
+          },
+          {
+            "iteration": 128,
+            "compliance": 245.13200489757762,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0141727298613091e-13,
+            "max_design_change": 0.014324863529064147
+          },
+          {
+            "iteration": 129,
+            "compliance": 245.09197510585187,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.834986317160312e-14,
+            "max_design_change": 0.014422759327701984
+          },
+          {
+            "iteration": 130,
+            "compliance": 245.0509200690468,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.352596301536274e-14,
+            "max_design_change": 0.014497759063048399
+          },
+          {
+            "iteration": 131,
+            "compliance": 245.00882466601269,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1067256010355908e-13,
+            "max_design_change": 0.0145476172325405
+          },
+          {
+            "iteration": 132,
+            "compliance": 244.96568176738242,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.174311122439399e-14,
+            "max_design_change": 0.01457066016238584
+          },
+          {
+            "iteration": 133,
+            "compliance": 244.92149301953765,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.397273830562375e-14,
+            "max_design_change": 0.014565413410493444
+          },
+          {
+            "iteration": 134,
+            "compliance": 244.8762697470533,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0867354464242166e-13,
+            "max_design_change": 0.014530537543665623
+          },
+          {
+            "iteration": 135,
+            "compliance": 244.83003391849945,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.976665001078904e-14,
+            "max_design_change": 0.01446481893157947
+          },
+          {
+            "iteration": 136,
+            "compliance": 244.7828191183989,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.052010318521074e-13,
+            "max_design_change": 0.014367193847884097
+          },
+          {
+            "iteration": 137,
+            "compliance": 244.73467146464603,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.967483821473696e-14,
+            "max_design_change": 0.014236787832007436
+          },
+          {
+            "iteration": 138,
+            "compliance": 244.68565040876922,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.802766948669805e-14,
+            "max_design_change": 0.014072962152843371
+          },
+          {
+            "iteration": 139,
+            "compliance": 244.6358293511041,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.004863828555358e-14,
+            "max_design_change": 0.013875362361265742
+          },
+          {
+            "iteration": 140,
+            "compliance": 244.5852960035768,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.005309936876075e-13,
+            "max_design_change": 0.013155312789519563
+          },
+          {
+            "iteration": 141,
+            "compliance": 244.53896557433785,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.495575054817395e-14,
+            "max_design_change": 0.01215934643179803
+          },
+          {
+            "iteration": 142,
+            "compliance": 244.49803023698152,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.989989336260794e-14,
+            "max_design_change": 0.011158848646665942
+          },
+          {
+            "iteration": 143,
+            "compliance": 244.45959743323183,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.035172291383413e-14,
+            "max_design_change": 0.010451456274178678
+          },
+          {
+            "iteration": 144,
+            "compliance": 244.4228626546975,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.021169785854775e-13,
+            "max_design_change": 0.00989943297889756
+          },
+          {
+            "iteration": 145,
+            "compliance": 244.38744211728692,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.576226476146696e-14,
+            "max_design_change": 0.00944246354162559
+          },
+          {
+            "iteration": 146,
+            "compliance": 244.3531149062106,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1310704536680437e-13,
+            "max_design_change": 0.009046250143718682
+          },
+          {
+            "iteration": 147,
+            "compliance": 244.31973682982664,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.182864669348406e-13,
+            "max_design_change": 0.008690491233314696
+          },
+          {
+            "iteration": 148,
+            "compliance": 244.28720411925661,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.250021726374138e-13,
+            "max_design_change": 0.008362740672329338
+          },
+          {
+            "iteration": 149,
+            "compliance": 244.25543716348056,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.71575897739453e-14,
+            "max_design_change": 0.008055140657142718
+          },
+          {
+            "iteration": 150,
+            "compliance": 244.22437273678963,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.378559055932222e-14,
+            "max_design_change": 0.007762589697256961
+          },
+          {
+            "iteration": 151,
+            "compliance": 244.19395994368284,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0119449451871105e-13,
+            "max_design_change": 0.00768616649965459
+          },
+          {
+            "iteration": 152,
+            "compliance": 244.1641578429491,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.949250403959202e-14,
+            "max_design_change": 0.007723315732985403
+          },
+          {
+            "iteration": 153,
+            "compliance": 244.13493386460544,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.420166311310497e-14,
+            "max_design_change": 0.007750529218262803
+          },
+          {
+            "iteration": 154,
+            "compliance": 244.10626262418282,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0232793919381062e-13,
+            "max_design_change": 0.0077686567366070935
+          },
+          {
+            "iteration": 155,
+            "compliance": 244.07812495492448,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0254257188358137e-13,
+            "max_design_change": 0.007778169281438152
+          },
+          {
+            "iteration": 156,
+            "compliance": 244.05050707066016,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0655215546205669e-13,
+            "max_design_change": 0.007779309264500545
+          },
+          {
+            "iteration": 157,
+            "compliance": 244.0233998160502,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0511526021984246e-13,
+            "max_design_change": 0.007770973641892387
+          },
+          {
+            "iteration": 158,
+            "compliance": 243.99683613365545,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1812910199910304e-13,
+            "max_design_change": 0.007754635933399978
+          },
+          {
+            "iteration": 159,
+            "compliance": 243.97080981059227,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0286845005122191e-13,
+            "max_design_change": 0.007731438535080404
+          },
+          {
+            "iteration": 160,
+            "compliance": 243.94528477106377,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.979088615606844e-14,
+            "max_design_change": 0.007700131210916172
+          }
+        ],
+        "final": {
+          "iterations": 160,
+          "converged_design_change": false,
+          "compliance": 243.92026404302595,
+          "mean_physical_density": 0.45,
+          "volume_limit_residual": 0.0,
+          "free_equilibrium_relative_residual": 8.593248767280804e-14,
+          "selected_derivative_relative_error": 3.1037737607819693e-07,
+          "last_max_change": 0.007700131210916172
+        },
+        "physical_density": [
+          [
+            1.0,
+            0.9789747368137025,
+            0.9338189403690071,
+            0.9321482857955727,
+            0.9536915286687111,
+            0.9029746813064424,
+            0.8376202861983931,
+            0.810986608317469,
+            0.7842446305677693,
+            0.7829696515756093,
+            0.829749118158909,
+            0.8265710726187514,
+            0.7814108942220739,
+            0.6611511691006278,
+            0.426373185781615,
+            0.23927482386624013,
+            0.07852086932238755,
+            0.001,
+            0.001,
+            0.001
+          ],
+          [
+            0.7617251761337599,
+            0.726926322444833,
+            0.6499372722158846,
+            0.6468727020829197,
+            0.7357109826211949,
+            0.7666444284754899,
+            0.6689108151820145,
+            0.5229787526217371,
+            0.4138448316851846,
+            0.4626322776209924,
+            0.6108198439072958,
+            0.5455992187013005,
+            0.46493032169323073,
+            0.5632246925302167,
+            0.6194462126751883,
+            0.5791477822173512,
+            0.36308903067683496,
+            0.18239754226193572,
+            0.06063349854428447,
+            0.0014646229015226563
+          ],
+          [
+            0.23927482386624008,
+            0.22497066030705426,
+            0.1906606599914547,
+            0.18939127347953721,
+            0.2866745982563838,
+            0.4868849130109676,
+            0.5780901465831811,
+            0.43119948437427247,
+            0.2975661301259308,
+            0.3707017769813298,
+            0.47069235801772186,
+            0.2616456528828141,
+            0.12388951433917092,
+            0.19340398288655297,
+            0.36373405050478236,
+            0.5792962133066485,
+            0.627881174928482,
+            0.5589429589593353,
+            0.35026985969841473,
+            0.22813012262106516
+          ],
+          [
+            0.001,
+            0.001,
+            0.0010000000000000002,
+            0.0010000000000000002,
+            0.03584532023298159,
+            0.17967736360223888,
+            0.4498895798606529,
+            0.6496943632837268,
+            0.6493835796591194,
+            0.5922654378259208,
+            0.35098541366595687,
+            0.09310559737472804,
+            0.005892744115261169,
+            0.0011382443897902238,
+            0.06018810697469181,
+            0.18218275972820752,
+            0.3911620218608534,
+            0.6928114808595585,
+            0.775222618356691,
+            0.722838203212778
+          ],
+          [
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.03584532023323062,
+            0.17967736360290093,
+            0.4498895798612123,
+            0.649694363283627,
+            0.649383579658539,
+            0.5922654378254659,
+            0.3509854136660334,
+            0.09310559737492792,
+            0.0058927441153241245,
+            0.0011382443897895082,
+            0.06018810697469033,
+            0.1821827597282068,
+            0.3911620218608565,
+            0.6928114808595665,
+            0.7752226183566802,
+            0.722838203212731
+          ],
+          [
+            0.23927482386624008,
+            0.2249706603070544,
+            0.1906606599915096,
+            0.18939127347965062,
+            0.286674598256873,
+            0.4868849130120159,
+            0.578090146583594,
+            0.4311994843738286,
+            0.2975661301251874,
+            0.37070177698072704,
+            0.4706923580176761,
+            0.2616456528831343,
+            0.12388951433931612,
+            0.19340398288655353,
+            0.363734050504779,
+            0.5792962133066469,
+            0.6278811749284849,
+            0.5589429589593423,
+            0.3502698596984057,
+            0.22813012262102822
+          ],
+          [
+            0.7617251761337599,
+            0.7269263224448335,
+            0.6499372722159984,
+            0.6468727020831749,
+            0.7357109826213815,
+            0.7666444284754468,
+            0.6689108151815657,
+            0.5229787526211431,
+            0.41384483168474306,
+            0.4626322776206071,
+            0.6108198439070195,
+            0.545599218701356,
+            0.464930321693314,
+            0.5632246925301974,
+            0.6194462126751756,
+            0.5791477822173503,
+            0.3630890306768349,
+            0.18239754226193608,
+            0.06063349854428534,
+            0.0014646229015232196
+          ],
+          [
+            1.0,
+            0.9789747368137027,
+            0.9338189403690793,
+            0.932148285795722,
+            0.9536915286686585,
+            0.9029746813060764,
+            0.8376202861979818,
+            0.8109866083171606,
+            0.7842446305675438,
+            0.782969651575401,
+            0.8297491181587214,
+            0.8265710726187012,
+            0.7814108942220634,
+            0.6611511691005634,
+            0.42637318578158534,
+            0.23927482386624022,
+            0.07852086932238764,
+            0.001,
+            0.001,
+            0.001
+          ]
+        ],
+        "thresholded_reanalysis": {
+          "threshold": 0.5,
+          "volume_fraction": 0.4625,
+          "compliance": 475.44369946988064,
+          "equilibrium_relative_residual": 7.42484019160241e-13,
+          "max_gauss_von_mises_normalized": 63.974476781813934,
+          "strength_pass": null,
+          "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+        },
+        "engineering_validated": false
+      }
+    },
+    {
+      "label": "mesh_refined",
+      "result": {
+        "input": {
+          "id": "R35-CANTILEVER-TEACH-001",
+          "mode": "normalized_constructed_education",
+          "nx": 30,
+          "ny": 12,
+          "L": 2.0,
+          "H": 0.8,
+          "boundary": "left_edge_clamped",
+          "load_case": "right_middle_down",
+          "volume_limit": 0.45,
+          "filter_radius": 0.18,
+          "E0": 1.0,
+          "Emin": 1e-06,
+          "nu": 0.3,
+          "penalty": 3.0,
+          "thickness": 1.0,
+          "load_amplitude": -1.0,
+          "numerical_origin": "normalized educational inputs; no material/robot meaning",
+          "boundary_dofs": "both translations at every left-edge node",
+          "excluded": [
+            "stress constraint",
+            "fatigue",
+            "buckling",
+            "manufacturing",
+            "multiple real loads"
+          ]
+        },
+        "formulation": "platform-density-filter-SIMP-volume-inequality-v0.1.0",
+        "history": [
+          {
+            "iteration": 1,
+            "compliance": 774.1279265239277,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 2.9116298881125045e-13,
+            "max_design_change": 0.10000000000000003
+          },
+          {
+            "iteration": 2,
+            "compliance": 537.5255464182849,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.3764088548646166e-13,
+            "max_design_change": 0.10000000000000003
+          },
+          {
+            "iteration": 3,
+            "compliance": 438.25136567224706,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.241049837118209e-13,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 4,
+            "compliance": 382.3893335270444,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1551573857704193e-13,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 5,
+            "compliance": 343.73954675636884,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.2383764641296024e-13,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 6,
+            "compliance": 314.6809856288422,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.229620432644063e-13,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 7,
+            "compliance": 296.8298487044834,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.2761692714190643e-13,
+            "max_design_change": 0.0976358056140571
+          },
+          {
+            "iteration": 8,
+            "compliance": 288.527314359515,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.2019778671376742e-13,
+            "max_design_change": 0.06976367446885812
+          },
+          {
+            "iteration": 9,
+            "compliance": 283.44697770567035,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 1.435646299063713e-13,
+            "max_design_change": 0.08252366559566582
+          },
+          {
+            "iteration": 10,
+            "compliance": 279.8520257878824,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.51954639990268e-13,
+            "max_design_change": 0.0624054847004718
+          },
+          {
+            "iteration": 11,
+            "compliance": 276.98558035607795,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.7291531954599363e-13,
+            "max_design_change": 0.06392300556177022
+          },
+          {
+            "iteration": 12,
+            "compliance": 274.59438242551846,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.4462033956043894e-13,
+            "max_design_change": 0.049429964236727075
+          },
+          {
+            "iteration": 13,
+            "compliance": 272.5382771732598,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.3029550297246107e-13,
+            "max_design_change": 0.0634242616793772
+          },
+          {
+            "iteration": 14,
+            "compliance": 270.6895824187749,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5193977035079936e-13,
+            "max_design_change": 0.04383366565712954
+          },
+          {
+            "iteration": 15,
+            "compliance": 269.0443974174928,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.4893775364070946e-13,
+            "max_design_change": 0.04785720484084255
+          },
+          {
+            "iteration": 16,
+            "compliance": 267.56305936119975,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 1.4730191476073922e-13,
+            "max_design_change": 0.04605581743916953
+          },
+          {
+            "iteration": 17,
+            "compliance": 266.18309159261895,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5260808597340733e-13,
+            "max_design_change": 0.049041419646856155
+          },
+          {
+            "iteration": 18,
+            "compliance": 264.88297328869794,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.543831660474633e-13,
+            "max_design_change": 0.05075623988597211
+          },
+          {
+            "iteration": 19,
+            "compliance": 263.6585181200742,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.551833175866248e-13,
+            "max_design_change": 0.05436044528612716
+          },
+          {
+            "iteration": 20,
+            "compliance": 262.5249644162085,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5867787574097212e-13,
+            "max_design_change": 0.05346942663177179
+          },
+          {
+            "iteration": 21,
+            "compliance": 261.49282111083335,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5643388785953992e-13,
+            "max_design_change": 0.04531484457919488
+          },
+          {
+            "iteration": 22,
+            "compliance": 260.5895937932244,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5391900189794268e-13,
+            "max_design_change": 0.037436917313059204
+          },
+          {
+            "iteration": 23,
+            "compliance": 259.787973814134,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5006125840299547e-13,
+            "max_design_change": 0.03627552621375285
+          },
+          {
+            "iteration": 24,
+            "compliance": 259.0653192852637,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5109027838343954e-13,
+            "max_design_change": 0.03477966806439392
+          },
+          {
+            "iteration": 25,
+            "compliance": 258.38915087469917,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6554586701154302e-13,
+            "max_design_change": 0.03373232116684022
+          },
+          {
+            "iteration": 26,
+            "compliance": 257.7595694974935,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7892915376205904e-13,
+            "max_design_change": 0.03797820768133142
+          },
+          {
+            "iteration": 27,
+            "compliance": 257.1747372069364,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7073973706499972e-13,
+            "max_design_change": 0.042191095346142626
+          },
+          {
+            "iteration": 28,
+            "compliance": 256.61972258226314,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6102453484705795e-13,
+            "max_design_change": 0.04492209187022522
+          },
+          {
+            "iteration": 29,
+            "compliance": 256.0820750250033,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5877518007816442e-13,
+            "max_design_change": 0.04692527532402724
+          },
+          {
+            "iteration": 30,
+            "compliance": 255.56014894749532,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.592251367269384e-13,
+            "max_design_change": 0.04858467138013611
+          },
+          {
+            "iteration": 31,
+            "compliance": 255.0564546846743,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 1.5039949373337604e-13,
+            "max_design_change": 0.04962439720192213
+          },
+          {
+            "iteration": 32,
+            "compliance": 254.5645099648719,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5978288059687068e-13,
+            "max_design_change": 0.04305256787700951
+          },
+          {
+            "iteration": 33,
+            "compliance": 254.10711524547727,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6522842342337153e-13,
+            "max_design_change": 0.044758649594988986
+          },
+          {
+            "iteration": 34,
+            "compliance": 253.68628529639585,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.4394514631561475e-13,
+            "max_design_change": 0.046838814105144344
+          },
+          {
+            "iteration": 35,
+            "compliance": 253.29322978231957,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.710827015958149e-13,
+            "max_design_change": 0.019335160294387754
+          },
+          {
+            "iteration": 36,
+            "compliance": 252.96955487896756,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.4385796356740569e-13,
+            "max_design_change": 0.017848466571284582
+          },
+          {
+            "iteration": 37,
+            "compliance": 252.67682115991778,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 1.7768155096790506e-13,
+            "max_design_change": 0.018371330796321583
+          },
+          {
+            "iteration": 38,
+            "compliance": 252.40208656707475,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5689775072330326e-13,
+            "max_design_change": 0.018624095872782354
+          },
+          {
+            "iteration": 39,
+            "compliance": 252.1413081280213,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.388060065026508e-13,
+            "max_design_change": 0.018512177097459004
+          },
+          {
+            "iteration": 40,
+            "compliance": 251.89521973472054,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6253174602506287e-13,
+            "max_design_change": 0.018451644458947647
+          },
+          {
+            "iteration": 41,
+            "compliance": 251.66192272074127,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.500502087399482e-13,
+            "max_design_change": 0.01798546725471073
+          },
+          {
+            "iteration": 42,
+            "compliance": 251.4375588340698,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.8090435285716148e-13,
+            "max_design_change": 0.017740390229249337
+          },
+          {
+            "iteration": 43,
+            "compliance": 251.2213964764548,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6367432663376506e-13,
+            "max_design_change": 0.017678401872836647
+          },
+          {
+            "iteration": 44,
+            "compliance": 251.01519655918463,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 1.5459205893263107e-13,
+            "max_design_change": 0.01694871000599074
+          },
+          {
+            "iteration": 45,
+            "compliance": 250.8137309213227,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.7465009900285667e-13,
+            "max_design_change": 0.01648008511387955
+          },
+          {
+            "iteration": 46,
+            "compliance": 250.61634867271283,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5528992578994024e-13,
+            "max_design_change": 0.016718772593786346
+          },
+          {
+            "iteration": 47,
+            "compliance": 250.42273922190813,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6269196698359646e-13,
+            "max_design_change": 0.01751283744157106
+          },
+          {
+            "iteration": 48,
+            "compliance": 250.23333131587722,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.464793802949323e-13,
+            "max_design_change": 0.018293112166555048
+          },
+          {
+            "iteration": 49,
+            "compliance": 250.04632817509324,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7265154361741708e-13,
+            "max_design_change": 0.019061715622736064
+          },
+          {
+            "iteration": 50,
+            "compliance": 249.86143069973036,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.81822758717713e-13,
+            "max_design_change": 0.019922094909589072
+          },
+          {
+            "iteration": 51,
+            "compliance": 249.6795204111344,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.9005585840570738e-13,
+            "max_design_change": 0.02087794208630611
+          },
+          {
+            "iteration": 52,
+            "compliance": 249.5013149693284,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.7674246661218268e-13,
+            "max_design_change": 0.021724745546806923
+          },
+          {
+            "iteration": 53,
+            "compliance": 249.32503928814776,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.4954247928067876e-13,
+            "max_design_change": 0.022434471410032075
+          },
+          {
+            "iteration": 54,
+            "compliance": 249.15041083374237,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.647253194911574e-13,
+            "max_design_change": 0.02332842826851589
+          },
+          {
+            "iteration": 55,
+            "compliance": 248.97959876139126,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.784564133728568e-13,
+            "max_design_change": 0.023985750965734742
+          },
+          {
+            "iteration": 56,
+            "compliance": 248.81320268732836,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.559440035066237e-13,
+            "max_design_change": 0.024553686666846652
+          },
+          {
+            "iteration": 57,
+            "compliance": 248.65121881047529,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.4958655082623676e-13,
+            "max_design_change": 0.02486268248369561
+          },
+          {
+            "iteration": 58,
+            "compliance": 248.49294117708078,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.354843067139792e-13,
+            "max_design_change": 0.025169666311109173
+          },
+          {
+            "iteration": 59,
+            "compliance": 248.33858319507962,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7923587308761304e-13,
+            "max_design_change": 0.025452186168518742
+          },
+          {
+            "iteration": 60,
+            "compliance": 248.18791327067368,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.4836007957891498e-13,
+            "max_design_change": 0.02546655455464797
+          },
+          {
+            "iteration": 61,
+            "compliance": 248.03863159433098,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5590919779712216e-13,
+            "max_design_change": 0.02545999871990956
+          },
+          {
+            "iteration": 62,
+            "compliance": 247.89037528985287,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7805022664556974e-13,
+            "max_design_change": 0.025431024967676907
+          },
+          {
+            "iteration": 63,
+            "compliance": 247.74295546230434,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.7167463423953637e-13,
+            "max_design_change": 0.0254995518994392
+          },
+          {
+            "iteration": 64,
+            "compliance": 247.59577198299544,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5364881325637804e-13,
+            "max_design_change": 0.02596262889797607
+          },
+          {
+            "iteration": 65,
+            "compliance": 247.4480382087556,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5495504201328843e-13,
+            "max_design_change": 0.02662196101427383
+          },
+          {
+            "iteration": 66,
+            "compliance": 247.2993950856605,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6069041440347406e-13,
+            "max_design_change": 0.027354997840551953
+          },
+          {
+            "iteration": 67,
+            "compliance": 247.15026899026964,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.968352793808002e-13,
+            "max_design_change": 0.02811119534988138
+          },
+          {
+            "iteration": 68,
+            "compliance": 246.99928059012146,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.572040335790539e-13,
+            "max_design_change": 0.029029611723208504
+          },
+          {
+            "iteration": 69,
+            "compliance": 246.8465937282172,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.584436846031758e-13,
+            "max_design_change": 0.029732992313119766
+          },
+          {
+            "iteration": 70,
+            "compliance": 246.69168215807773,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 2.040025265333634e-13,
+            "max_design_change": 0.023504808347716066
+          },
+          {
+            "iteration": 71,
+            "compliance": 246.55129463504164,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 1.6184748128040628e-13,
+            "max_design_change": 0.02437659154455518
+          },
+          {
+            "iteration": 72,
+            "compliance": 246.42357666565204,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6143750549524226e-13,
+            "max_design_change": 0.024980560036397703
+          },
+          {
+            "iteration": 73,
+            "compliance": 246.30080096799642,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6806254611271775e-13,
+            "max_design_change": 0.025057412619822417
+          },
+          {
+            "iteration": 74,
+            "compliance": 246.1819385610749,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6133273191428426e-13,
+            "max_design_change": 0.024815748202541954
+          },
+          {
+            "iteration": 75,
+            "compliance": 246.0664048516588,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7035061907283445e-13,
+            "max_design_change": 0.024370755425532464
+          },
+          {
+            "iteration": 76,
+            "compliance": 245.95382330292267,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5066137484087284e-13,
+            "max_design_change": 0.024137297861072105
+          },
+          {
+            "iteration": 77,
+            "compliance": 245.8464964929684,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6192235591427125e-13,
+            "max_design_change": 0.023515079160687957
+          },
+          {
+            "iteration": 78,
+            "compliance": 245.74465053987083,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.7169614520274096e-13,
+            "max_design_change": 0.02252537735373028
+          },
+          {
+            "iteration": 79,
+            "compliance": 245.64601456326835,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6333461117049239e-13,
+            "max_design_change": 0.021554178591280282
+          },
+          {
+            "iteration": 80,
+            "compliance": 245.54996442591036,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.661536472909432e-13,
+            "max_design_change": 0.020640196141826106
+          },
+          {
+            "iteration": 81,
+            "compliance": 245.4563173120248,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5537518299991112e-13,
+            "max_design_change": 0.020810088123483728
+          },
+          {
+            "iteration": 82,
+            "compliance": 245.36521766251656,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.7337306531990644e-13,
+            "max_design_change": 0.021016839087727335
+          },
+          {
+            "iteration": 83,
+            "compliance": 245.276116973769,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.754380364693538e-13,
+            "max_design_change": 0.02121929484167151
+          },
+          {
+            "iteration": 84,
+            "compliance": 245.18884302036852,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5089810498712228e-13,
+            "max_design_change": 0.021571996256810833
+          },
+          {
+            "iteration": 85,
+            "compliance": 245.1040795065361,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7129101808689143e-13,
+            "max_design_change": 0.021949622280326153
+          },
+          {
+            "iteration": 86,
+            "compliance": 245.0228346341495,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.892779869950696e-13,
+            "max_design_change": 0.021871596037433272
+          },
+          {
+            "iteration": 87,
+            "compliance": 244.9436481429491,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6655644157457097e-13,
+            "max_design_change": 0.0220022255341511
+          },
+          {
+            "iteration": 88,
+            "compliance": 244.8666837241416,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.8326202196043785e-13,
+            "max_design_change": 0.015829859136393787
+          },
+          {
+            "iteration": 89,
+            "compliance": 244.7969616828427,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6919632947052423e-13,
+            "max_design_change": 0.013914495216325873
+          },
+          {
+            "iteration": 90,
+            "compliance": 244.73639615942358,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.59924118349765e-13,
+            "max_design_change": 0.013422287276245504
+          },
+          {
+            "iteration": 91,
+            "compliance": 244.68102026245123,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.8049902942123734e-13,
+            "max_design_change": 0.013034127023373254
+          },
+          {
+            "iteration": 92,
+            "compliance": 244.62958465557043,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6811270980485392e-13,
+            "max_design_change": 0.012481100918192878
+          },
+          {
+            "iteration": 93,
+            "compliance": 244.5810129735506,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5406877799515829e-13,
+            "max_design_change": 0.012099046294437033
+          },
+          {
+            "iteration": 94,
+            "compliance": 244.53526401977817,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7093067184559648e-13,
+            "max_design_change": 0.011990042013334645
+          },
+          {
+            "iteration": 95,
+            "compliance": 244.49126071388235,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5481998614846545e-13,
+            "max_design_change": 0.012003580593707763
+          },
+          {
+            "iteration": 96,
+            "compliance": 244.448622143517,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.739138390149654e-13,
+            "max_design_change": 0.012095711323280578
+          },
+          {
+            "iteration": 97,
+            "compliance": 244.40710202918413,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.543299157949665e-13,
+            "max_design_change": 0.012235966230034312
+          },
+          {
+            "iteration": 98,
+            "compliance": 244.36651667769954,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.60945722592882e-13,
+            "max_design_change": 0.012404039398144051
+          },
+          {
+            "iteration": 99,
+            "compliance": 244.32672264961212,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6803705380028725e-13,
+            "max_design_change": 0.012586473471039472
+          },
+          {
+            "iteration": 100,
+            "compliance": 244.28760833877004,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5595014501212998e-13,
+            "max_design_change": 0.012775086314047668
+          },
+          {
+            "iteration": 101,
+            "compliance": 244.24910788289012,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.4898754403051099e-13,
+            "max_design_change": 0.012793668982631512
+          },
+          {
+            "iteration": 102,
+            "compliance": 244.21161016212213,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5055906495644213e-13,
+            "max_design_change": 0.012976224666193248
+          },
+          {
+            "iteration": 103,
+            "compliance": 244.17488187809317,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.663576845556497e-13,
+            "max_design_change": 0.013195733603532156
+          },
+          {
+            "iteration": 104,
+            "compliance": 244.13854618110776,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6264593257698992e-13,
+            "max_design_change": 0.013382525935101586
+          },
+          {
+            "iteration": 105,
+            "compliance": 244.10251168003992,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.716880639724458e-13,
+            "max_design_change": 0.013541493769211876
+          },
+          {
+            "iteration": 106,
+            "compliance": 244.0667266864789,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6154868614910516e-13,
+            "max_design_change": 0.01367509406375833
+          },
+          {
+            "iteration": 107,
+            "compliance": 244.03114669692332,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.633343959691227e-13,
+            "max_design_change": 0.013782648554611476
+          },
+          {
+            "iteration": 108,
+            "compliance": 243.99573209318498,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6579115063175692e-13,
+            "max_design_change": 0.013860033175415787
+          },
+          {
+            "iteration": 109,
+            "compliance": 243.96044414742875,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6235586123490216e-13,
+            "max_design_change": 0.013916590998911516
+          },
+          {
+            "iteration": 110,
+            "compliance": 243.92524742631036,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.508370871915461e-13,
+            "max_design_change": 0.013953566168293352
+          },
+          {
+            "iteration": 111,
+            "compliance": 243.89037834854332,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7860036644931348e-13,
+            "max_design_change": 0.013960928506322523
+          },
+          {
+            "iteration": 112,
+            "compliance": 243.85570684846067,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.585138736753869e-13,
+            "max_design_change": 0.013925529454653307
+          },
+          {
+            "iteration": 113,
+            "compliance": 243.82102424984268,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6303886907873125e-13,
+            "max_design_change": 0.013884003943747614
+          },
+          {
+            "iteration": 114,
+            "compliance": 243.78633685154142,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6329263549889501e-13,
+            "max_design_change": 0.013815589154407115
+          },
+          {
+            "iteration": 115,
+            "compliance": 243.75158523264673,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.8603391469332175e-13,
+            "max_design_change": 0.013724297524717766
+          },
+          {
+            "iteration": 116,
+            "compliance": 243.7169274291941,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.666650360473173e-13,
+            "max_design_change": 0.013605316561685121
+          },
+          {
+            "iteration": 117,
+            "compliance": 243.68222697097502,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5128883570922808e-13,
+            "max_design_change": 0.013459946629926112
+          },
+          {
+            "iteration": 118,
+            "compliance": 243.64746273071748,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.785739739781995e-13,
+            "max_design_change": 0.0132899300515954
+          },
+          {
+            "iteration": 119,
+            "compliance": 243.6128769996247,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5607583268960041e-13,
+            "max_design_change": 0.013089135861241025
+          },
+          {
+            "iteration": 120,
+            "compliance": 243.57820643924325,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6321455823752427e-13,
+            "max_design_change": 0.012861176849354616
+          },
+          {
+            "iteration": 121,
+            "compliance": 243.54346722430407,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.736008721523368e-13,
+            "max_design_change": 0.012606929090095614
+          },
+          {
+            "iteration": 122,
+            "compliance": 243.50867857409293,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.8031971296275368e-13,
+            "max_design_change": 0.012651432790709571
+          },
+          {
+            "iteration": 123,
+            "compliance": 243.4738626859033,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.876255988809578e-13,
+            "max_design_change": 0.01282701049081808
+          },
+          {
+            "iteration": 124,
+            "compliance": 243.43904402539175,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6459875137321424e-13,
+            "max_design_change": 0.012986118691563076
+          },
+          {
+            "iteration": 125,
+            "compliance": 243.4042497083544,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.463601842826786e-13,
+            "max_design_change": 0.013126883657525346
+          },
+          {
+            "iteration": 126,
+            "compliance": 243.3695095028155,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.8859362240587966e-13,
+            "max_design_change": 0.013248252301518937
+          },
+          {
+            "iteration": 127,
+            "compliance": 243.33485545092077,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.7337345618821924e-13,
+            "max_design_change": 0.013406444434191478
+          },
+          {
+            "iteration": 128,
+            "compliance": 243.3003663750331,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.666878527690458e-13,
+            "max_design_change": 0.013553568626847978
+          },
+          {
+            "iteration": 129,
+            "compliance": 243.2660531391876,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.4778314732551733e-13,
+            "max_design_change": 0.013653923130076184
+          },
+          {
+            "iteration": 130,
+            "compliance": 243.23193967380553,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.8523087771800115e-13,
+            "max_design_change": 0.01371179028778724
+          },
+          {
+            "iteration": 131,
+            "compliance": 243.1980601233727,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.9644615411668831e-13,
+            "max_design_change": 0.013734011429175186
+          },
+          {
+            "iteration": 132,
+            "compliance": 243.16444986352425,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7927291762240712e-13,
+            "max_design_change": 0.013724470377610376
+          },
+          {
+            "iteration": 133,
+            "compliance": 243.13114470511124,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.7125695466821307e-13,
+            "max_design_change": 0.013685677407545671
+          },
+          {
+            "iteration": 134,
+            "compliance": 243.09818035894514,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7574012168534972e-13,
+            "max_design_change": 0.013619478410657027
+          },
+          {
+            "iteration": 135,
+            "compliance": 243.06559197372752,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.804910354307657e-13,
+            "max_design_change": 0.01352740113535067
+          },
+          {
+            "iteration": 136,
+            "compliance": 243.03341371838226,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6074031012028512e-13,
+            "max_design_change": 0.013410837761467898
+          },
+          {
+            "iteration": 137,
+            "compliance": 243.0016784077538,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6283581902468505e-13,
+            "max_design_change": 0.013271145574582088
+          },
+          {
+            "iteration": 138,
+            "compliance": 242.9704171712577,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.655197230623231e-13,
+            "max_design_change": 0.013109702075343455
+          },
+          {
+            "iteration": 139,
+            "compliance": 242.93965916766862,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.792207956119229e-13,
+            "max_design_change": 0.012926268159382137
+          },
+          {
+            "iteration": 140,
+            "compliance": 242.9094572228442,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5391463843966824e-13,
+            "max_design_change": 0.012725207385144044
+          },
+          {
+            "iteration": 141,
+            "compliance": 242.8798237850113,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.8416118082146243e-13,
+            "max_design_change": 0.012507912745054917
+          },
+          {
+            "iteration": 142,
+            "compliance": 242.85076586349683,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5713669862090644e-13,
+            "max_design_change": 0.012315797907327841
+          },
+          {
+            "iteration": 143,
+            "compliance": 242.82230744229796,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6620860658741967e-13,
+            "max_design_change": 0.01233267686330386
+          },
+          {
+            "iteration": 144,
+            "compliance": 242.7945592693101,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7099089662952292e-13,
+            "max_design_change": 0.012383757987676769
+          },
+          {
+            "iteration": 145,
+            "compliance": 242.76740370334528,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.733669233595719e-13,
+            "max_design_change": 0.012452810607977094
+          },
+          {
+            "iteration": 146,
+            "compliance": 242.74080660754845,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5801431071228894e-13,
+            "max_design_change": 0.012535317052899453
+          },
+          {
+            "iteration": 147,
+            "compliance": 242.71473962349256,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6709370574226773e-13,
+            "max_design_change": 0.012626225822711334
+          },
+          {
+            "iteration": 148,
+            "compliance": 242.68917759304554,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.6036000678951625e-13,
+            "max_design_change": 0.012721390475755823
+          },
+          {
+            "iteration": 149,
+            "compliance": 242.66409764288485,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5600523896416935e-13,
+            "max_design_change": 0.012816032939292898
+          },
+          {
+            "iteration": 150,
+            "compliance": 242.63950534709346,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.7405331699070412e-13,
+            "max_design_change": 0.012905170752739004
+          },
+          {
+            "iteration": 151,
+            "compliance": 242.61544257949853,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5051860199726846e-13,
+            "max_design_change": 0.012991432095538324
+          },
+          {
+            "iteration": 152,
+            "compliance": 242.5919494591561,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.83907040330001e-13,
+            "max_design_change": 0.01307189063656955
+          },
+          {
+            "iteration": 153,
+            "compliance": 242.56886717461356,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7655906973727108e-13,
+            "max_design_change": 0.013149849079482023
+          },
+          {
+            "iteration": 154,
+            "compliance": 242.5461539511641,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.70693435450453e-13,
+            "max_design_change": 0.013220894995963017
+          },
+          {
+            "iteration": 155,
+            "compliance": 242.52383367478978,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.674810864639062e-13,
+            "max_design_change": 0.013290723320567022
+          },
+          {
+            "iteration": 156,
+            "compliance": 242.50185939327494,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.6414898233961894e-13,
+            "max_design_change": 0.013353979507717328
+          },
+          {
+            "iteration": 157,
+            "compliance": 242.48021949032335,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.561458704269303e-13,
+            "max_design_change": 0.013404830417433455
+          },
+          {
+            "iteration": 158,
+            "compliance": 242.45898814282953,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.66715732574094e-13,
+            "max_design_change": 0.013454527320524878
+          },
+          {
+            "iteration": 159,
+            "compliance": 242.43806440818892,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.538392076720619e-13,
+            "max_design_change": 0.013494967117032908
+          },
+          {
+            "iteration": 160,
+            "compliance": 242.41744052246509,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5760327689843961e-13,
+            "max_design_change": 0.01352578002227034
+          }
+        ],
+        "final": {
+          "iterations": 160,
+          "converged_design_change": false,
+          "compliance": 242.39710955434086,
+          "mean_physical_density": 0.45000000000000007,
+          "volume_limit_residual": 5.551115123125783e-17,
+          "free_equilibrium_relative_residual": 1.6471319031263278e-13,
+          "selected_derivative_relative_error": 3.780399604469409e-11,
+          "last_max_change": 0.01352578002227034
+        },
+        "physical_density": [
+          [
+            0.9992837099093963,
+            0.965101316647972,
+            0.9260659533541253,
+            0.9133921108725597,
+            0.9475362800238939,
+            0.9800147463285566,
+            0.9894586393872407,
+            0.9594743801909049,
+            0.9166754803519941,
+            0.890537032565651,
+            0.887019955480948,
+            0.8865473546562628,
+            0.886493891284951,
+            0.8864938912849512,
+            0.8864938912849509,
+            0.886560181593288,
+            0.8871757540639154,
+            0.861730531158627,
+            0.7986300320565947,
+            0.6849941797295247,
+            0.5411427035026404,
+            0.3846515128794519,
+            0.24656969169764592,
+            0.14298093319134814,
+            0.06764371382082845,
+            0.02192369977519752,
+            0.001,
+            0.001,
+            0.001,
+            0.001
+          ],
+          [
+            0.8758343331529892,
+            0.8171665156566772,
+            0.7667577424797591,
+            0.7483398021061008,
+            0.792654375953338,
+            0.8524901857902012,
+            0.8862880453409401,
+            0.8711943273561258,
+            0.8100889519484822,
+            0.7252745587093544,
+            0.6710335617074175,
+            0.6517633078047389,
+            0.6507757101048419,
+            0.6507591233019108,
+            0.652717469565862,
+            0.6766757296157422,
+            0.6937531270408503,
+            0.6892614818071364,
+            0.6724183064725135,
+            0.6698750259381221,
+            0.6417225477596857,
+            0.5794374704990415,
+            0.46319744624086473,
+            0.3464588483073734,
+            0.23307137518528148,
+            0.1505664153576622,
+            0.07589977296970722,
+            0.024735049509813808,
+            0.001,
+            0.001
+          ],
+          [
+            0.628537547132783,
+            0.5594101593229922,
+            0.47160632724745427,
+            0.4545338995425948,
+            0.5118832850411108,
+            0.6149280602047233,
+            0.6888082316732492,
+            0.718051923581033,
+            0.6696910011048829,
+            0.5737266608703594,
+            0.4697009533774994,
+            0.41193269024756896,
+            0.39227309370849434,
+            0.3956932794905519,
+            0.42528200843194675,
+            0.4671040530829088,
+            0.4711638855979418,
+            0.44877493425525705,
+            0.44342076202310443,
+            0.50860316055711,
+            0.5865858652835706,
+            0.6329302801072634,
+            0.6228465664746423,
+            0.576093899507308,
+            0.499163593522871,
+            0.38648581332388277,
+            0.262164248554247,
+            0.15687317575040396,
+            0.07842379311971916,
+            0.028141067374039576
+          ],
+          [
+            0.28977500723448607,
+            0.2422450206637587,
+            0.1849906717038851,
+            0.16799000701405806,
+            0.20889453789889872,
+            0.2975161092701397,
+            0.40958446412324645,
+            0.5403927860594138,
+            0.5888679432877632,
+            0.5505316440234826,
+            0.4498856715316574,
+            0.37448202396057423,
+            0.34191473488487467,
+            0.3420708252804321,
+            0.373032289374113,
+            0.3958853058106277,
+            0.3790840138334405,
+            0.2790038657206936,
+            0.21637051282445124,
+            0.24408489601466796,
+            0.35519516561465986,
+            0.4677136818685894,
+            0.5620089359460392,
+            0.6235234596632806,
+            0.6526612204811666,
+            0.6087730274675209,
+            0.5225942700078638,
+            0.38477347566330006,
+            0.282381473156863,
+            0.18967580688748426
+          ],
+          [
+            0.0816718796301123,
+            0.060756624133427535,
+            0.02780082777937426,
+            0.019217260184195745,
+            0.042341958500272725,
+            0.08675040808910325,
+            0.18777271851478938,
+            0.32893541580710484,
+            0.48580472683968823,
+            0.5605419595469027,
+            0.5611939982189407,
+            0.5197902612718914,
+            0.4829361332434672,
+            0.46663899595572206,
+            0.4554672958587391,
+            0.42207955779816225,
+            0.3327725006906783,
+            0.18430334003623416,
+            0.08173200879690844,
+            0.06256808752405563,
+            0.12106638110276227,
+            0.19626048092056872,
+            0.3009021676401154,
+            0.4168972436131537,
+            0.5325265566466157,
+            0.5887525796101953,
+            0.6266300599871946,
+            0.616340823769457,
+            0.5668465938353566,
+            0.47098790877522195
+          ],
+          [
+            0.001,
+            0.0009999999999999998,
+            0.001,
+            0.001,
+            0.001,
+            0.0013335392453338165,
+            0.046403892637465124,
+            0.18068724766720096,
+            0.3684234282923589,
+            0.5264143667674803,
+            0.6049158462375468,
+            0.6133264870381512,
+            0.5898255044530459,
+            0.5449913443995525,
+            0.47966522369294107,
+            0.3952908253105437,
+            0.2683340503612781,
+            0.12736372902924303,
+            0.025279861891879495,
+            0.0010972382291985234,
+            0.010755656052749264,
+            0.03763523039944842,
+            0.08765544465008714,
+            0.1824463355220411,
+            0.30037213363915494,
+            0.44514430758023127,
+            0.5880957098045476,
+            0.7253377713431095,
+            0.7525730774530719,
+            0.7318057524238151
+          ],
+          [
+            0.001,
+            0.0009999999999999998,
+            0.001,
+            0.001,
+            0.001,
+            0.00133353924532883,
+            0.04640389263745589,
+            0.1806872476671786,
+            0.36842342829232133,
+            0.5264143667674108,
+            0.6049158462374838,
+            0.613326487038116,
+            0.5898255044530437,
+            0.544991344399574,
+            0.47966522369296666,
+            0.3952908253105751,
+            0.26833405036131375,
+            0.12736372902926554,
+            0.025279861891883488,
+            0.0010972382291983803,
+            0.010755656052686429,
+            0.037635230399353396,
+            0.0876554446500239,
+            0.18244633552204065,
+            0.30037213363914617,
+            0.4451443075802163,
+            0.5880957098045454,
+            0.7253377713431542,
+            0.752573077453142,
+            0.7318057524239048
+          ],
+          [
+            0.08167187963003392,
+            0.06075662413338628,
+            0.02780082777935601,
+            0.019217260184158556,
+            0.04234195850023921,
+            0.08675040808908316,
+            0.1877727185147534,
+            0.328935415807032,
+            0.48580472683960524,
+            0.5605419595468188,
+            0.5611939982188612,
+            0.5197902612718444,
+            0.48293613324347723,
+            0.46663899595575453,
+            0.4554672958587932,
+            0.4220795577982405,
+            0.33277250069076647,
+            0.18430334003629,
+            0.08173200879689836,
+            0.06256808752394924,
+            0.12106638110256088,
+            0.19626048092033815,
+            0.3009021676399405,
+            0.41689724361311475,
+            0.5325265566466363,
+            0.5887525796101907,
+            0.6266300599872092,
+            0.6163408237695507,
+            0.5668465938355514,
+            0.47098790877540897
+          ],
+          [
+            0.2897750072342913,
+            0.2422450206636293,
+            0.18499067170378755,
+            0.16799000701396274,
+            0.2088945378988099,
+            0.29751610927006833,
+            0.40958446412317484,
+            0.5403927860593432,
+            0.5888679432877015,
+            0.5505316440234362,
+            0.4498856715316234,
+            0.3744820239605642,
+            0.34191473488489244,
+            0.34207082528046384,
+            0.37303228937416744,
+            0.3958853058107127,
+            0.37908401383355,
+            0.2790038657207301,
+            0.21637051282439182,
+            0.24408489601446465,
+            0.3551951656143506,
+            0.46771368186822193,
+            0.562008935945872,
+            0.6235234596632797,
+            0.6526612204812576,
+            0.6087730274675736,
+            0.5225942700078969,
+            0.38477347566337633,
+            0.28238147315699735,
+            0.18967580688762475
+          ],
+          [
+            0.6285375471324739,
+            0.5594101593228182,
+            0.4716063272473132,
+            0.45453389954245516,
+            0.5118832850409796,
+            0.6149280602046299,
+            0.6888082316731658,
+            0.718051923580938,
+            0.6696910011048401,
+            0.57372666087036,
+            0.46970095337751816,
+            0.4119326902475823,
+            0.3922730937085047,
+            0.3956932794905602,
+            0.42528200843196906,
+            0.46710405308296415,
+            0.4711638855980057,
+            0.44877493425525206,
+            0.44342076202306,
+            0.5086031605569663,
+            0.5865858652833775,
+            0.6329302801070638,
+            0.6228465664745997,
+            0.5760938995074075,
+            0.4991635935230419,
+            0.38648581332397447,
+            0.2621642485542848,
+            0.15687317575043716,
+            0.07842379311977435,
+            0.028141067374090514
+          ],
+          [
+            0.8758343331527771,
+            0.8171665156565358,
+            0.7667577424796534,
+            0.7483398021059975,
+            0.7926543759532418,
+            0.8524901857901295,
+            0.8862880453408776,
+            0.8711943273560656,
+            0.810088951948445,
+            0.7252745587093521,
+            0.6710335617074277,
+            0.6517633078047413,
+            0.6507757101048423,
+            0.650759123301911,
+            0.6527174695658646,
+            0.6766757296157622,
+            0.693753127040874,
+            0.689261481807177,
+            0.6724183064725965,
+            0.6698750259382409,
+            0.6417225477597557,
+            0.579437470499078,
+            0.46319744624098624,
+            0.34645884830755014,
+            0.2330713751854226,
+            0.1505664153577373,
+            0.07589977296973432,
+            0.024735049509813815,
+            0.001,
+            0.001
+          ],
+          [
+            0.9992837099092804,
+            0.9651013166479105,
+            0.9260659533540984,
+            0.9133921108725047,
+            0.9475362800238443,
+            0.9800147463285381,
+            0.9894586393872158,
+            0.9594743801908698,
+            0.9166754803519749,
+            0.8905370325656565,
+            0.8870199554809495,
+            0.8865473546562631,
+            0.8864938912849509,
+            0.886493891284951,
+            0.8864938912849509,
+            0.8865601815932878,
+            0.8871757540639141,
+            0.8617305311587523,
+            0.7986300320568687,
+            0.6849941797299739,
+            0.5411427035029668,
+            0.38465151287969385,
+            0.2465696916977865,
+            0.14298093319148986,
+            0.06764371382092196,
+            0.021923699775234423,
+            0.001,
+            0.001,
+            0.001,
+            0.001
+          ]
+        ],
+        "thresholded_reanalysis": {
+          "threshold": 0.5,
+          "volume_fraction": 0.45,
+          "compliance": 314.0882172609346,
+          "equilibrium_relative_residual": 1.0231036083546755e-12,
+          "max_gauss_von_mises_normalized": 66.24404614979441,
+          "strength_pass": null,
+          "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+        },
+        "engineering_validated": false
+      }
+    },
+    {
+      "label": "filter_changed",
+      "result": {
+        "input": {
+          "id": "R35-CANTILEVER-TEACH-001",
+          "mode": "normalized_constructed_education",
+          "nx": 20,
+          "ny": 8,
+          "L": 2.0,
+          "H": 0.8,
+          "boundary": "left_edge_clamped",
+          "load_case": "right_middle_down",
+          "volume_limit": 0.45,
+          "filter_radius": 0.26,
+          "E0": 1.0,
+          "Emin": 1e-06,
+          "nu": 0.3,
+          "penalty": 3.0,
+          "thickness": 1.0,
+          "load_amplitude": -1.0,
+          "numerical_origin": "normalized educational inputs; no material/robot meaning",
+          "boundary_dofs": "both translations at every left-edge node",
+          "excluded": [
+            "stress constraint",
+            "fatigue",
+            "buckling",
+            "manufacturing",
+            "multiple real loads"
+          ]
+        },
+        "formulation": "platform-density-filter-SIMP-volume-inequality-v0.1.0",
+        "history": [
+          {
+            "iteration": 1,
+            "compliance": 767.187609844575,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.5914453764215855e-13,
+            "max_design_change": 0.10000000000000003
+          },
+          {
+            "iteration": 2,
+            "compliance": 555.9276004013147,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.987084739525312e-14,
+            "max_design_change": 0.10000000000000003
+          },
+          {
+            "iteration": 3,
+            "compliance": 462.86233130944487,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 5.038557751830127e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 4,
+            "compliance": 410.85311162894163,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 5.965824443833848e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 5,
+            "compliance": 380.75227592060764,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 6.297682250664313e-14,
+            "max_design_change": 0.09999999999999998
+          },
+          {
+            "iteration": 6,
+            "compliance": 360.4544223003826,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.764317700200409e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 7,
+            "compliance": 347.93155463252106,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.962365846695896e-14,
+            "max_design_change": 0.06556449050104379
+          },
+          {
+            "iteration": 8,
+            "compliance": 341.49710406735227,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.999196739854557e-14,
+            "max_design_change": 0.06558952045747257
+          },
+          {
+            "iteration": 9,
+            "compliance": 336.50483940327297,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.28110993520243e-14,
+            "max_design_change": 0.04279399869420519
+          },
+          {
+            "iteration": 10,
+            "compliance": 332.4396683232872,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.408951162508147e-14,
+            "max_design_change": 0.041471904829926354
+          },
+          {
+            "iteration": 11,
+            "compliance": 329.1589979005002,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.159082733158116e-14,
+            "max_design_change": 0.030376042022826955
+          },
+          {
+            "iteration": 12,
+            "compliance": 326.57599446541906,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.891699946937234e-14,
+            "max_design_change": 0.03438777546415295
+          },
+          {
+            "iteration": 13,
+            "compliance": 324.48331819720454,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.901986782835424e-14,
+            "max_design_change": 0.027809897446571474
+          },
+          {
+            "iteration": 14,
+            "compliance": 322.74915281061385,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.124935028344473e-14,
+            "max_design_change": 0.023899586863497913
+          },
+          {
+            "iteration": 15,
+            "compliance": 321.3233626205571,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.283127554038933e-14,
+            "max_design_change": 0.02839617730655264
+          },
+          {
+            "iteration": 16,
+            "compliance": 320.0962360512405,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.148370704605328e-14,
+            "max_design_change": 0.020723961758633558
+          },
+          {
+            "iteration": 17,
+            "compliance": 319.05546193425334,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.326576032193161e-14,
+            "max_design_change": 0.019404915280721524
+          },
+          {
+            "iteration": 18,
+            "compliance": 318.1476217624629,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.855711021826301e-14,
+            "max_design_change": 0.020576646609465343
+          },
+          {
+            "iteration": 19,
+            "compliance": 317.34671764197384,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.235344819876773e-14,
+            "max_design_change": 0.02050117362766002
+          },
+          {
+            "iteration": 20,
+            "compliance": 316.6270650625322,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.83629510063339e-14,
+            "max_design_change": 0.019985262639723333
+          },
+          {
+            "iteration": 21,
+            "compliance": 315.968359956059,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 5.6435230950625244e-14,
+            "max_design_change": 0.019566545464503537
+          },
+          {
+            "iteration": 22,
+            "compliance": 315.3610233498514,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.192084210936981e-14,
+            "max_design_change": 0.018462596050179858
+          },
+          {
+            "iteration": 23,
+            "compliance": 314.80472745785914,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.303326681197234e-14,
+            "max_design_change": 0.017739494073359174
+          },
+          {
+            "iteration": 24,
+            "compliance": 314.3002345826769,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.518504385325187e-14,
+            "max_design_change": 0.016728879145845532
+          },
+          {
+            "iteration": 25,
+            "compliance": 313.83570191612785,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 7.357484516820303e-14,
+            "max_design_change": 0.01634854616261694
+          },
+          {
+            "iteration": 26,
+            "compliance": 313.4031249561745,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.732197987481249e-14,
+            "max_design_change": 0.015909956510568368
+          },
+          {
+            "iteration": 27,
+            "compliance": 312.9957836055999,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.05344912031517e-14,
+            "max_design_change": 0.015483843389268004
+          },
+          {
+            "iteration": 28,
+            "compliance": 312.6100321217349,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.861185524538356e-14,
+            "max_design_change": 0.015022676837149196
+          },
+          {
+            "iteration": 29,
+            "compliance": 312.2480844248497,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.19657210773172e-14,
+            "max_design_change": 0.014554674286547442
+          },
+          {
+            "iteration": 30,
+            "compliance": 311.9044275745803,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.12447294779939e-14,
+            "max_design_change": 0.014115959886167317
+          },
+          {
+            "iteration": 31,
+            "compliance": 311.5768697228698,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.397923716206564e-14,
+            "max_design_change": 0.013669750949801052
+          },
+          {
+            "iteration": 32,
+            "compliance": 311.2644307961244,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.081203294553979e-14,
+            "max_design_change": 0.013540295508380318
+          },
+          {
+            "iteration": 33,
+            "compliance": 310.96621348941494,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.877260072357132e-14,
+            "max_design_change": 0.013422222114435556
+          },
+          {
+            "iteration": 34,
+            "compliance": 310.68138969051887,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.477736730133188e-14,
+            "max_design_change": 0.013303306860936392
+          },
+          {
+            "iteration": 35,
+            "compliance": 310.4091935763619,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.938945189362641e-14,
+            "max_design_change": 0.013183780383456689
+          },
+          {
+            "iteration": 36,
+            "compliance": 310.1489146089075,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.051306700151344e-14,
+            "max_design_change": 0.013064758709621094
+          },
+          {
+            "iteration": 37,
+            "compliance": 309.8998922208871,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.093775356817932e-14,
+            "max_design_change": 0.012946807668680504
+          },
+          {
+            "iteration": 38,
+            "compliance": 309.6615110249251,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.574520486436507e-14,
+            "max_design_change": 0.01282524267415519
+          },
+          {
+            "iteration": 39,
+            "compliance": 309.43409530457836,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.883026305002619e-14,
+            "max_design_change": 0.012713415496226843
+          },
+          {
+            "iteration": 40,
+            "compliance": 309.2166289865764,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.514405781497141e-14,
+            "max_design_change": 0.012596411148856679
+          },
+          {
+            "iteration": 41,
+            "compliance": 309.0093635310261,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.484095170310509e-14,
+            "max_design_change": 0.012465083126023457
+          },
+          {
+            "iteration": 42,
+            "compliance": 308.81031574095414,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.38653603369595e-14,
+            "max_design_change": 0.012367914323067275
+          },
+          {
+            "iteration": 43,
+            "compliance": 308.61899908130994,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.052897882911085e-14,
+            "max_design_change": 0.012265402111614088
+          },
+          {
+            "iteration": 44,
+            "compliance": 308.4350632882532,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.494340373616701e-14,
+            "max_design_change": 0.008899318644022047
+          },
+          {
+            "iteration": 45,
+            "compliance": 308.26102557870604,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.894292765568196e-14,
+            "max_design_change": 0.009908882916303985
+          },
+          {
+            "iteration": 46,
+            "compliance": 308.1023382164868,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.044716817573218e-14,
+            "max_design_change": 0.009659454250036226
+          },
+          {
+            "iteration": 47,
+            "compliance": 307.95491154080634,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.979263262643709e-14,
+            "max_design_change": 0.010297786863316394
+          },
+          {
+            "iteration": 48,
+            "compliance": 307.8186580402274,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.301617303753888e-14,
+            "max_design_change": 0.011214162835661012
+          },
+          {
+            "iteration": 49,
+            "compliance": 307.69006267897197,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.087898375932712e-14,
+            "max_design_change": 0.010877521629184317
+          },
+          {
+            "iteration": 50,
+            "compliance": 307.5685979412054,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.963458782236034e-14,
+            "max_design_change": 0.010363136867169942
+          },
+          {
+            "iteration": 51,
+            "compliance": 307.45288125558864,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.442337480609882e-14,
+            "max_design_change": 0.009862368083792594
+          },
+          {
+            "iteration": 52,
+            "compliance": 307.3424972501738,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.681248569047027e-14,
+            "max_design_change": 0.009393111537409071
+          },
+          {
+            "iteration": 53,
+            "compliance": 307.23708406282447,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.981980202244377e-14,
+            "max_design_change": 0.008956803097001309
+          },
+          {
+            "iteration": 54,
+            "compliance": 307.1363190174657,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.404649467097594e-14,
+            "max_design_change": 0.008550246483910118
+          },
+          {
+            "iteration": 55,
+            "compliance": 307.0399101880188,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.722887898891659e-14,
+            "max_design_change": 0.008169742665035673
+          },
+          {
+            "iteration": 56,
+            "compliance": 306.9475908811868,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.303324865136015e-14,
+            "max_design_change": 0.007932635797406995
+          },
+          {
+            "iteration": 57,
+            "compliance": 306.85938820654724,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.063622308934841e-14,
+            "max_design_change": 0.007604758700612391
+          },
+          {
+            "iteration": 58,
+            "compliance": 306.7749446284877,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.21660815720861e-14,
+            "max_design_change": 0.007234403507529352
+          },
+          {
+            "iteration": 59,
+            "compliance": 306.69391044161534,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.153700866137376e-14,
+            "max_design_change": 0.006890252563601207
+          },
+          {
+            "iteration": 60,
+            "compliance": 306.61606771176776,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.422620932082803e-14,
+            "max_design_change": 0.006814593932972179
+          },
+          {
+            "iteration": 61,
+            "compliance": 306.5412265855175,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.395505751877324e-14,
+            "max_design_change": 0.006760434349239786
+          },
+          {
+            "iteration": 62,
+            "compliance": 306.4692105898378,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.888871700076355e-14,
+            "max_design_change": 0.006682611829799956
+          },
+          {
+            "iteration": 63,
+            "compliance": 306.3998778961776,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.103157782890746e-14,
+            "max_design_change": 0.006634307624721059
+          },
+          {
+            "iteration": 64,
+            "compliance": 306.3355473809203,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.54590006377169e-14,
+            "max_design_change": 0.00655324212564351
+          },
+          {
+            "iteration": 65,
+            "compliance": 306.27445446146976,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.389501383170201e-14,
+            "max_design_change": 0.006493590793029247
+          },
+          {
+            "iteration": 66,
+            "compliance": 306.21636219479836,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.370550856905565e-14,
+            "max_design_change": 0.006426649872369572
+          },
+          {
+            "iteration": 67,
+            "compliance": 306.1610698372123,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.682013560725453e-14,
+            "max_design_change": 0.00634296949398247
+          },
+          {
+            "iteration": 68,
+            "compliance": 306.10779649215846,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.105916506257003e-14,
+            "max_design_change": 0.0062410783269878645
+          },
+          {
+            "iteration": 69,
+            "compliance": 306.056311700637,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.586529912890949e-14,
+            "max_design_change": 0.0061333191539544585
+          },
+          {
+            "iteration": 70,
+            "compliance": 306.0064402646338,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.794122061244756e-14,
+            "max_design_change": 0.006023460621890603
+          },
+          {
+            "iteration": 71,
+            "compliance": 305.9580440676929,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.431892633599947e-14,
+            "max_design_change": 0.005915102758470847
+          },
+          {
+            "iteration": 72,
+            "compliance": 305.91135730848157,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 6.913919418773015e-14,
+            "max_design_change": 0.005805984715659324
+          },
+          {
+            "iteration": 73,
+            "compliance": 305.8659683211692,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.540905771672443e-14,
+            "max_design_change": 0.005700083559237373
+          },
+          {
+            "iteration": 74,
+            "compliance": 305.8217357461806,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.437517946709038e-14,
+            "max_design_change": 0.005596458819570382
+          },
+          {
+            "iteration": 75,
+            "compliance": 305.7785949227083,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 7.404680285269613e-14,
+            "max_design_change": 0.005495006795359386
+          },
+          {
+            "iteration": 76,
+            "compliance": 305.7364894890726,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.175282091206811e-14,
+            "max_design_change": 0.005395623320944537
+          },
+          {
+            "iteration": 77,
+            "compliance": 305.6953696888463,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 6.201705961610464e-14,
+            "max_design_change": 0.005298118663249529
+          },
+          {
+            "iteration": 78,
+            "compliance": 305.65519112361346,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.159889777025367e-14,
+            "max_design_change": 0.005238389458888548
+          },
+          {
+            "iteration": 79,
+            "compliance": 305.616062993335,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 8.715351134243946e-14,
+            "max_design_change": 0.0054681021930022
+          },
+          {
+            "iteration": 80,
+            "compliance": 305.579114539114,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.077632864306497e-14,
+            "max_design_change": 0.005428648134996661
+          },
+          {
+            "iteration": 81,
+            "compliance": 305.5436762904437,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.074468103400519e-14,
+            "max_design_change": 0.005366660015042379
+          },
+          {
+            "iteration": 82,
+            "compliance": 305.5092822141055,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.294880075579453e-14,
+            "max_design_change": 0.005366176006235124
+          },
+          {
+            "iteration": 83,
+            "compliance": 305.4760364167536,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.009042615941908e-14,
+            "max_design_change": 0.005363303933242025
+          },
+          {
+            "iteration": 84,
+            "compliance": 305.4436141840782,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.423420022813416e-14,
+            "max_design_change": 0.00534442710448535
+          },
+          {
+            "iteration": 85,
+            "compliance": 305.41193323900194,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.861476844244587e-14,
+            "max_design_change": 0.005453971046128325
+          },
+          {
+            "iteration": 86,
+            "compliance": 305.38138703237627,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.414303095794512e-14,
+            "max_design_change": 0.00546080091079959
+          },
+          {
+            "iteration": 87,
+            "compliance": 305.3520710442715,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.141415955427439e-14,
+            "max_design_change": 0.005314387745256943
+          },
+          {
+            "iteration": 88,
+            "compliance": 305.3234763188767,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.081535128470499e-14,
+            "max_design_change": 0.005206923305647315
+          },
+          {
+            "iteration": 89,
+            "compliance": 305.29565341699964,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.36565682284518e-14,
+            "max_design_change": 0.005116906101322094
+          },
+          {
+            "iteration": 90,
+            "compliance": 305.2685381722291,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.090433737097812e-14,
+            "max_design_change": 0.005039888047280505
+          },
+          {
+            "iteration": 91,
+            "compliance": 305.2419793437081,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 7.600005799092258e-14,
+            "max_design_change": 0.0049706995224853
+          }
+        ],
+        "final": {
+          "iterations": 91,
+          "converged_design_change": true,
+          "compliance": 305.21595194456785,
+          "mean_physical_density": 0.45,
+          "volume_limit_residual": 0.0,
+          "free_equilibrium_relative_residual": 8.414155742687378e-14,
+          "selected_derivative_relative_error": 3.0331616645326036e-07,
+          "last_max_change": 0.0049706995224853
+        },
+        "physical_density": [
+          [
+            0.8919670350150555,
+            0.8843635973080036,
+            0.881057943520831,
+            0.8750795288802918,
+            0.8699136927312774,
+            0.8416158938871013,
+            0.7912543708051125,
+            0.7537407096496479,
+            0.7421532584358721,
+            0.7250718085923242,
+            0.6898181744452108,
+            0.6680000875343503,
+            0.654080420042789,
+            0.6146973204846173,
+            0.5067210922852654,
+            0.4049553724119297,
+            0.29451939516873676,
+            0.16652868027704823,
+            0.057035889349928995,
+            0.005744372623559231
+          ],
+          [
+            0.6593375489346208,
+            0.6481148170706535,
+            0.6433571648565994,
+            0.6339052302868098,
+            0.6403474523447119,
+            0.6381293475623014,
+            0.6002843529832873,
+            0.5585263614778074,
+            0.5350270755687783,
+            0.5143106920201294,
+            0.47989469889121356,
+            0.45924239106529996,
+            0.46251667818053865,
+            0.4770300319687142,
+            0.49752726111228307,
+            0.49323297588231985,
+            0.4302004352931502,
+            0.30327705016342865,
+            0.19727503170416044,
+            0.12207326185150663
+          ],
+          [
+            0.3164557373860723,
+            0.3163020709156936,
+            0.30530002679722146,
+            0.30981275786574947,
+            0.3514725557506089,
+            0.4226779051750754,
+            0.4575444789496684,
+            0.4355243640705244,
+            0.39747233501151435,
+            0.37685930003037127,
+            0.3611137736590171,
+            0.3407568448390571,
+            0.3219747360413595,
+            0.316910169859171,
+            0.35119225107323904,
+            0.41817546680937334,
+            0.4614913912187675,
+            0.44956351839441344,
+            0.3970663083342124,
+            0.35802424395292065
+          ],
+          [
+            0.07491923262125129,
+            0.07583250384380238,
+            0.06702645269697005,
+            0.08385825657860035,
+            0.17561361160382993,
+            0.3279057794512852,
+            0.44341811321539853,
+            0.44351432673543906,
+            0.4031133754988633,
+            0.38030141258461636,
+            0.3792962233679711,
+            0.353985948309552,
+            0.2798882345157445,
+            0.2016477043470647,
+            0.19216994941225765,
+            0.26862203827829645,
+            0.3916044158401768,
+            0.5043780691802806,
+            0.5716440572531959,
+            0.6036415558642295
+          ],
+          [
+            0.07491923262125129,
+            0.07583250384380236,
+            0.06702645269696988,
+            0.0838582565786003,
+            0.1756136116038302,
+            0.32790577945128596,
+            0.44341811321539903,
+            0.44351432673543956,
+            0.40311337549886284,
+            0.38030141258461425,
+            0.379296223367971,
+            0.35398594830955354,
+            0.27988823451574535,
+            0.20164770434705775,
+            0.19216994941224533,
+            0.26862203827828524,
+            0.3916044158401706,
+            0.5043780691802782,
+            0.5716440572531967,
+            0.6036415558642304
+          ],
+          [
+            0.31645573738607247,
+            0.3163020709156935,
+            0.3053000267972209,
+            0.30981275786574913,
+            0.3514725557506091,
+            0.4226779051750765,
+            0.4575444789496701,
+            0.435524364070526,
+            0.3974723350115144,
+            0.3768593000303699,
+            0.3611137736590161,
+            0.34075684483905755,
+            0.32197473604135607,
+            0.3169101698591549,
+            0.35119225107321184,
+            0.4181754668093444,
+            0.46149139121875415,
+            0.4495635183944118,
+            0.39706630833421547,
+            0.3580242439529228
+          ],
+          [
+            0.6593375489346209,
+            0.6481148170706532,
+            0.6433571648565988,
+            0.6339052302868087,
+            0.6403474523447115,
+            0.6381293475623016,
+            0.6002843529832886,
+            0.5585263614778111,
+            0.5350270755687809,
+            0.5143106920201287,
+            0.47989469889121206,
+            0.45924239106529874,
+            0.46251667818053166,
+            0.47703003196869476,
+            0.4975272611122541,
+            0.493232975882298,
+            0.43020043529314156,
+            0.3032770501634298,
+            0.1972750317041637,
+            0.12207326185150902
+          ],
+          [
+            0.8919670350150556,
+            0.8843635973080035,
+            0.8810579435208303,
+            0.8750795288802908,
+            0.8699136927312763,
+            0.8416158938871007,
+            0.7912543708051131,
+            0.7537407096496508,
+            0.7421532584358754,
+            0.7250718085923253,
+            0.6898181744452094,
+            0.6680000875343473,
+            0.6540804200427823,
+            0.6146973204846047,
+            0.5067210922852496,
+            0.4049553724119181,
+            0.2945193951687357,
+            0.16652868027705248,
+            0.057035889349931514,
+            0.005744372623560287
+          ]
+        ],
+        "thresholded_reanalysis": {
+          "threshold": 0.5,
+          "volume_fraction": 0.35,
+          "compliance": 2381985.5756382467,
+          "equilibrium_relative_residual": 1.1469238154283763e-09,
+          "max_gauss_von_mises_normalized": 82.14493845051737,
+          "strength_pass": null,
+          "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+        },
+        "engineering_validated": false
+      }
+    },
+    {
+      "label": "other_context_corner_load",
+      "result": {
+        "input": {
+          "id": "DISPLAY-BRACKET-TEACH",
+          "mode": "normalized_constructed_education",
+          "nx": 20,
+          "ny": 8,
+          "L": 2.0,
+          "H": 0.8,
+          "boundary": "left_edge_clamped",
+          "load_case": "right_top_down",
+          "volume_limit": 0.45,
+          "filter_radius": 0.18,
+          "E0": 1.0,
+          "Emin": 1e-06,
+          "nu": 0.3,
+          "penalty": 3.0,
+          "thickness": 1.0,
+          "load_amplitude": -1.0,
+          "numerical_origin": "normalized educational inputs; no material/robot meaning",
+          "boundary_dofs": "both translations at every left-edge node",
+          "excluded": [
+            "stress constraint",
+            "fatigue",
+            "buckling",
+            "manufacturing",
+            "multiple real loads"
+          ]
+        },
+        "formulation": "platform-density-filter-SIMP-volume-inequality-v0.1.0",
+        "history": [
+          {
+            "iteration": 1,
+            "compliance": 806.1892195865219,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.7202676341753035e-13,
+            "max_design_change": 0.10000000000000003
+          },
+          {
+            "iteration": 2,
+            "compliance": 565.4363962727698,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.883958841081194e-14,
+            "max_design_change": 0.10000000000000003
+          },
+          {
+            "iteration": 3,
+            "compliance": 459.88783230701443,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.196732859400174e-14,
+            "max_design_change": 0.10000000000000003
+          },
+          {
+            "iteration": 4,
+            "compliance": 399.34655214787216,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 7.735603666526202e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 5,
+            "compliance": 357.58570166239036,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.163093749720333e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 6,
+            "compliance": 327.2755251515846,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.56026434875175e-14,
+            "max_design_change": 0.1
+          },
+          {
+            "iteration": 7,
+            "compliance": 307.6023510863098,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.803553071857547e-14,
+            "max_design_change": 0.07441999377428543
+          },
+          {
+            "iteration": 8,
+            "compliance": 298.0783275012601,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.398605196760871e-14,
+            "max_design_change": 0.06840113430666761
+          },
+          {
+            "iteration": 9,
+            "compliance": 291.7378523833208,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.504766637544586e-14,
+            "max_design_change": 0.06666957935906725
+          },
+          {
+            "iteration": 10,
+            "compliance": 286.99622488344556,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.49291185096842e-14,
+            "max_design_change": 0.0677308487125875
+          },
+          {
+            "iteration": 11,
+            "compliance": 283.21065263521274,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0195164321929895e-13,
+            "max_design_change": 0.06625021479844306
+          },
+          {
+            "iteration": 12,
+            "compliance": 280.0216285047873,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.099824113966828e-14,
+            "max_design_change": 0.05043171716863526
+          },
+          {
+            "iteration": 13,
+            "compliance": 277.3242369871886,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.914354868899789e-14,
+            "max_design_change": 0.05559096496061
+          },
+          {
+            "iteration": 14,
+            "compliance": 275.0520413871248,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.286617559958952e-14,
+            "max_design_change": 0.0652533748829951
+          },
+          {
+            "iteration": 15,
+            "compliance": 273.04174776803245,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0973654665895678e-13,
+            "max_design_change": 0.05515564429345321
+          },
+          {
+            "iteration": 16,
+            "compliance": 271.2266550600276,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.795522285582863e-14,
+            "max_design_change": 0.05108148333498308
+          },
+          {
+            "iteration": 17,
+            "compliance": 269.66984049053326,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.3450397155651896e-13,
+            "max_design_change": 0.05303959976505246
+          },
+          {
+            "iteration": 18,
+            "compliance": 268.2496490498477,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0090807958601075e-13,
+            "max_design_change": 0.0613241332420188
+          },
+          {
+            "iteration": 19,
+            "compliance": 266.89278661722466,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.378983704375923e-14,
+            "max_design_change": 0.06508111237262859
+          },
+          {
+            "iteration": 20,
+            "compliance": 265.6021187542124,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.706287155501132e-14,
+            "max_design_change": 0.06430016193090715
+          },
+          {
+            "iteration": 21,
+            "compliance": 264.34261320006846,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1136943462592701e-13,
+            "max_design_change": 0.06010018128018768
+          },
+          {
+            "iteration": 22,
+            "compliance": 263.0670707611761,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.673381064595325e-14,
+            "max_design_change": 0.06090022197957046
+          },
+          {
+            "iteration": 23,
+            "compliance": 261.7661699197204,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0751409307522828e-13,
+            "max_design_change": 0.05273534648573652
+          },
+          {
+            "iteration": 24,
+            "compliance": 260.47102434633223,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.860297384270424e-14,
+            "max_design_change": 0.056083615094399075
+          },
+          {
+            "iteration": 25,
+            "compliance": 259.20482378815205,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.967856924424205e-14,
+            "max_design_change": 0.06006040952925573
+          },
+          {
+            "iteration": 26,
+            "compliance": 257.94584097251555,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.786883808883421e-14,
+            "max_design_change": 0.05569339729521283
+          },
+          {
+            "iteration": 27,
+            "compliance": 256.7089807364159,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.873958661393798e-14,
+            "max_design_change": 0.0556948964147056
+          },
+          {
+            "iteration": 28,
+            "compliance": 255.5708778872537,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 8.733253788879788e-14,
+            "max_design_change": 0.0512348239457483
+          },
+          {
+            "iteration": 29,
+            "compliance": 254.4697467986322,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0368800991342041e-13,
+            "max_design_change": 0.052663085782684305
+          },
+          {
+            "iteration": 30,
+            "compliance": 253.4120411678491,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0411283354861708e-13,
+            "max_design_change": 0.042409261347893135
+          },
+          {
+            "iteration": 31,
+            "compliance": 252.35672262811227,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.656175477168376e-14,
+            "max_design_change": 0.035644325930550225
+          },
+          {
+            "iteration": 32,
+            "compliance": 251.32925032778428,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.826442523886586e-14,
+            "max_design_change": 0.03918154458445755
+          },
+          {
+            "iteration": 33,
+            "compliance": 250.30768359702034,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0141681055529943e-13,
+            "max_design_change": 0.04157801701320349
+          },
+          {
+            "iteration": 34,
+            "compliance": 249.28434673389702,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.798416288560797e-14,
+            "max_design_change": 0.04085654002888714
+          },
+          {
+            "iteration": 35,
+            "compliance": 248.2747160608797,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.681176510754922e-14,
+            "max_design_change": 0.03750613226468173
+          },
+          {
+            "iteration": 36,
+            "compliance": 247.28704248919934,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0976402868875852e-13,
+            "max_design_change": 0.03544582845524369
+          },
+          {
+            "iteration": 37,
+            "compliance": 246.32297693503523,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.526071115304792e-14,
+            "max_design_change": 0.03752242080928192
+          },
+          {
+            "iteration": 38,
+            "compliance": 245.3904978180754,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.428590478112479e-14,
+            "max_design_change": 0.03763388958689279
+          },
+          {
+            "iteration": 39,
+            "compliance": 244.50914663531955,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1036987583713227e-13,
+            "max_design_change": 0.04021495555419097
+          },
+          {
+            "iteration": 40,
+            "compliance": 243.6986766756959,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.170657491022152e-14,
+            "max_design_change": 0.04242293894460336
+          },
+          {
+            "iteration": 41,
+            "compliance": 242.96178451710782,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.098748127477713e-13,
+            "max_design_change": 0.04214950765318792
+          },
+          {
+            "iteration": 42,
+            "compliance": 242.27870381983442,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1010038719893903e-13,
+            "max_design_change": 0.04288739383208984
+          },
+          {
+            "iteration": 43,
+            "compliance": 241.6513109055673,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.383375671749094e-14,
+            "max_design_change": 0.04232886061630525
+          },
+          {
+            "iteration": 44,
+            "compliance": 241.082334286717,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.159471032794002e-14,
+            "max_design_change": 0.03702122036830602
+          },
+          {
+            "iteration": 45,
+            "compliance": 240.57882140306828,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0494204809242647e-13,
+            "max_design_change": 0.03581329045397441
+          },
+          {
+            "iteration": 46,
+            "compliance": 240.116129198916,
+            "mean_physical_density": 0.4499999999999999,
+            "relative_free_equilibrium_residual": 9.996673633812924e-14,
+            "max_design_change": 0.0351265931436715
+          },
+          {
+            "iteration": 47,
+            "compliance": 239.67798269977934,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.017973131944572e-13,
+            "max_design_change": 0.034450765070967004
+          },
+          {
+            "iteration": 48,
+            "compliance": 239.26021839348024,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.116923696060359e-13,
+            "max_design_change": 0.03532031416125414
+          },
+          {
+            "iteration": 49,
+            "compliance": 238.86569376926818,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1052080667933103e-13,
+            "max_design_change": 0.0371721120432299
+          },
+          {
+            "iteration": 50,
+            "compliance": 238.50611831888446,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 1.0716314106924469e-13,
+            "max_design_change": 0.036989613089920326
+          },
+          {
+            "iteration": 51,
+            "compliance": 238.16872085521408,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1045329837039785e-13,
+            "max_design_change": 0.036943538993681524
+          },
+          {
+            "iteration": 52,
+            "compliance": 237.84964917101155,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 8.847064341934433e-14,
+            "max_design_change": 0.03710345236438051
+          },
+          {
+            "iteration": 53,
+            "compliance": 237.5493644116491,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0761043590259765e-13,
+            "max_design_change": 0.03877347828454325
+          },
+          {
+            "iteration": 54,
+            "compliance": 237.28504899090916,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1201106116183652e-13,
+            "max_design_change": 0.032407656521107664
+          },
+          {
+            "iteration": 55,
+            "compliance": 237.06662018635632,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1283071308687342e-13,
+            "max_design_change": 0.032307178248776824
+          },
+          {
+            "iteration": 56,
+            "compliance": 236.8787342299079,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0713668498617428e-13,
+            "max_design_change": 0.03140240982205933
+          },
+          {
+            "iteration": 57,
+            "compliance": 236.7110834173988,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.224596005928226e-13,
+            "max_design_change": 0.03013498405368853
+          },
+          {
+            "iteration": 58,
+            "compliance": 236.55894040161837,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0819497236546135e-13,
+            "max_design_change": 0.028742184815281013
+          },
+          {
+            "iteration": 59,
+            "compliance": 236.41943701317524,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.096707123165921e-14,
+            "max_design_change": 0.027290434750541825
+          },
+          {
+            "iteration": 60,
+            "compliance": 236.29087359658104,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1709343609976144e-13,
+            "max_design_change": 0.025844521952198884
+          },
+          {
+            "iteration": 61,
+            "compliance": 236.1710363881449,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1482825599183443e-13,
+            "max_design_change": 0.024425834061828078
+          },
+          {
+            "iteration": 62,
+            "compliance": 236.05891365547922,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.266421781286074e-13,
+            "max_design_change": 0.023065083043897205
+          },
+          {
+            "iteration": 63,
+            "compliance": 235.95308023404735,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0685081535122894e-13,
+            "max_design_change": 0.021787548694035652
+          },
+          {
+            "iteration": 64,
+            "compliance": 235.85184012599228,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0975545972568165e-13,
+            "max_design_change": 0.020591372000443253
+          },
+          {
+            "iteration": 65,
+            "compliance": 235.75448845207495,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.5838457936015973e-13,
+            "max_design_change": 0.01999172712193431
+          },
+          {
+            "iteration": 66,
+            "compliance": 235.66311421138985,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.2293299844049442e-13,
+            "max_design_change": 0.02053588376203852
+          },
+          {
+            "iteration": 67,
+            "compliance": 235.57660166203425,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1424985359102526e-13,
+            "max_design_change": 0.020993897168119502
+          },
+          {
+            "iteration": 68,
+            "compliance": 235.493369154295,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0291908561942003e-13,
+            "max_design_change": 0.021243073851037186
+          },
+          {
+            "iteration": 69,
+            "compliance": 235.41284341251168,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0610128616064108e-13,
+            "max_design_change": 0.02178963605114037
+          },
+          {
+            "iteration": 70,
+            "compliance": 235.33770216433422,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.225989977885653e-13,
+            "max_design_change": 0.021730097752922894
+          },
+          {
+            "iteration": 71,
+            "compliance": 235.26629422683166,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.4498310263537267e-13,
+            "max_design_change": 0.021457874780476005
+          },
+          {
+            "iteration": 72,
+            "compliance": 235.197560602878,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.2766060268987412e-13,
+            "max_design_change": 0.021081437001722936
+          },
+          {
+            "iteration": 73,
+            "compliance": 235.1310360176397,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1559503462274117e-13,
+            "max_design_change": 0.020739483589656493
+          },
+          {
+            "iteration": 74,
+            "compliance": 235.0665901382511,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1721560267997468e-13,
+            "max_design_change": 0.020263733696114006
+          },
+          {
+            "iteration": 75,
+            "compliance": 235.00412745385373,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0447962728973389e-13,
+            "max_design_change": 0.01968077560712489
+          },
+          {
+            "iteration": 76,
+            "compliance": 234.9435859599931,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1263453207903686e-13,
+            "max_design_change": 0.019558634964676913
+          },
+          {
+            "iteration": 77,
+            "compliance": 234.88697959151625,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1615585563005056e-13,
+            "max_design_change": 0.018789908623656815
+          },
+          {
+            "iteration": 78,
+            "compliance": 234.83279201524277,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.2965896555522914e-13,
+            "max_design_change": 0.017957837029261015
+          },
+          {
+            "iteration": 79,
+            "compliance": 234.78051748050336,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0383098690420383e-13,
+            "max_design_change": 0.017143069136009492
+          },
+          {
+            "iteration": 80,
+            "compliance": 234.72998200862108,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0172937589961762e-13,
+            "max_design_change": 0.016344578768427098
+          },
+          {
+            "iteration": 81,
+            "compliance": 234.68112204086194,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.907087444058132e-14,
+            "max_design_change": 0.015557116039270347
+          },
+          {
+            "iteration": 82,
+            "compliance": 234.63392384752353,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1459858112971154e-13,
+            "max_design_change": 0.014777083373145317
+          },
+          {
+            "iteration": 83,
+            "compliance": 234.5883961095104,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1836258711625296e-13,
+            "max_design_change": 0.014003029081417262
+          },
+          {
+            "iteration": 84,
+            "compliance": 234.54455648261342,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 9.452495348135651e-14,
+            "max_design_change": 0.013235290736052119
+          },
+          {
+            "iteration": 85,
+            "compliance": 234.5024244760779,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0283264525277282e-13,
+            "max_design_change": 0.012474221398905971
+          },
+          {
+            "iteration": 86,
+            "compliance": 234.4620342797367,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.2071814452451535e-13,
+            "max_design_change": 0.011851589387862016
+          },
+          {
+            "iteration": 87,
+            "compliance": 234.423491152491,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.354373767225877e-13,
+            "max_design_change": 0.011102709985048587
+          },
+          {
+            "iteration": 88,
+            "compliance": 234.38676560651274,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.381626499466828e-13,
+            "max_design_change": 0.010305109122379363
+          },
+          {
+            "iteration": 89,
+            "compliance": 234.3520245263126,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.417327652980757e-13,
+            "max_design_change": 0.009628415079615898
+          },
+          {
+            "iteration": 90,
+            "compliance": 234.3189684748807,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.3927383239910938e-13,
+            "max_design_change": 0.00958095316097915
+          },
+          {
+            "iteration": 91,
+            "compliance": 234.28757947412026,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0607100407371344e-13,
+            "max_design_change": 0.009502414823687466
+          },
+          {
+            "iteration": 92,
+            "compliance": 234.25783346278584,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0009569738155734e-13,
+            "max_design_change": 0.009393815941859174
+          },
+          {
+            "iteration": 93,
+            "compliance": 234.22972514981777,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0669823977672253e-13,
+            "max_design_change": 0.009254473163511356
+          },
+          {
+            "iteration": 94,
+            "compliance": 234.2034238721705,
+            "mean_physical_density": 0.4500000000000002,
+            "relative_free_equilibrium_residual": 9.611616737683446e-14,
+            "max_design_change": 0.009087053935075307
+          },
+          {
+            "iteration": 95,
+            "compliance": 234.178627900962,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0486118153227678e-13,
+            "max_design_change": 0.00889777277766901
+          },
+          {
+            "iteration": 96,
+            "compliance": 234.15528864230293,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1315329019377129e-13,
+            "max_design_change": 0.008689855664180346
+          },
+          {
+            "iteration": 97,
+            "compliance": 234.13344189317309,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.047364835115435e-13,
+            "max_design_change": 0.008478423675635283
+          },
+          {
+            "iteration": 98,
+            "compliance": 234.11320422597944,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0267642138169822e-13,
+            "max_design_change": 0.008258700218169712
+          },
+          {
+            "iteration": 99,
+            "compliance": 234.094167819178,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0457134526067122e-13,
+            "max_design_change": 0.008028606191930132
+          },
+          {
+            "iteration": 100,
+            "compliance": 234.07626954898836,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 9.746050274025792e-14,
+            "max_design_change": 0.00779047221514978
+          },
+          {
+            "iteration": 101,
+            "compliance": 234.05944731652073,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.2224702958433046e-13,
+            "max_design_change": 0.0075466981830203395
+          },
+          {
+            "iteration": 102,
+            "compliance": 234.04364014138403,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0143286298500077e-13,
+            "max_design_change": 0.007299466905409113
+          },
+          {
+            "iteration": 103,
+            "compliance": 234.02878847795225,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1305311372172847e-13,
+            "max_design_change": 0.007050740720825399
+          },
+          {
+            "iteration": 104,
+            "compliance": 234.01483452866395,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0600224006832301e-13,
+            "max_design_change": 0.006802263973830935
+          },
+          {
+            "iteration": 105,
+            "compliance": 234.0017225110847,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1994982637249606e-13,
+            "max_design_change": 0.0065555651868583475
+          },
+          {
+            "iteration": 106,
+            "compliance": 233.98939887123043,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.2048425312659667e-13,
+            "max_design_change": 0.006311962140614913
+          },
+          {
+            "iteration": 107,
+            "compliance": 233.97781244214403,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.2094746484247793e-13,
+            "max_design_change": 0.006171467821984633
+          },
+          {
+            "iteration": 108,
+            "compliance": 233.96708816352614,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.0291082628471263e-13,
+            "max_design_change": 0.0059671426342739475
+          },
+          {
+            "iteration": 109,
+            "compliance": 233.95708918987071,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1912204692573938e-13,
+            "max_design_change": 0.0057400437751788935
+          },
+          {
+            "iteration": 110,
+            "compliance": 233.94770329917384,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.0939865002073864e-13,
+            "max_design_change": 0.005518326328937395
+          },
+          {
+            "iteration": 111,
+            "compliance": 233.9388674444904,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.1035915742479287e-13,
+            "max_design_change": 0.005306608592167528
+          },
+          {
+            "iteration": 112,
+            "compliance": 233.93053243335652,
+            "mean_physical_density": 0.45000000000000007,
+            "relative_free_equilibrium_residual": 1.1600536784736102e-13,
+            "max_design_change": 0.005105308255941854
+          },
+          {
+            "iteration": 113,
+            "compliance": 233.92265589224294,
+            "mean_physical_density": 0.45,
+            "relative_free_equilibrium_residual": 1.161509628540188e-13,
+            "max_design_change": 0.004914085751490549
+          }
+        ],
+        "final": {
+          "iterations": 113,
+          "converged_design_change": true,
+          "compliance": 233.91520020404795,
+          "mean_physical_density": 0.45000000000000007,
+          "volume_limit_residual": 5.551115123125783e-17,
+          "free_equilibrium_relative_residual": 1.1009474451619571e-13,
+          "selected_derivative_relative_error": 3.837482887014687e-09,
+          "last_max_change": 0.004914085751490549
+        },
+        "physical_density": [
+          [
+            1.0,
+            0.9820107388150581,
+            0.9469499656077536,
+            0.930318696209138,
+            0.9447713136730446,
+            0.9809601208541576,
+            0.9915845155694379,
+            0.9478822434910965,
+            0.8903605430283251,
+            0.8732100027654539,
+            0.9057795721596351,
+            0.8587964282322698,
+            0.5919390287857387,
+            0.2901145487787993,
+            0.07852086932238755,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001
+          ],
+          [
+            0.7617251761337599,
+            0.7317098942783269,
+            0.671470129083167,
+            0.6458888406216549,
+            0.667745546692449,
+            0.7343253178585092,
+            0.7557830691025418,
+            0.6802675816758867,
+            0.6369643344649976,
+            0.7311884540876563,
+            0.7797548116002302,
+            0.7525262281211513,
+            0.7283082568919355,
+            0.622513758876435,
+            0.310298729212162,
+            0.07257399731937526,
+            0.007111130030931317,
+            0.001,
+            0.001,
+            0.001
+          ],
+          [
+            0.23927482386624008,
+            0.22727745672802427,
+            0.20063779505621476,
+            0.18800112594078489,
+            0.19898242510478456,
+            0.23560617007518214,
+            0.303189351785993,
+            0.3695268119463032,
+            0.5095551140998844,
+            0.7189455083375389,
+            0.6166808189621875,
+            0.3878251764311362,
+            0.47953599150240866,
+            0.6894963428325027,
+            0.6505835351469358,
+            0.3581115721711695,
+            0.12526781422546046,
+            0.026410699886453923,
+            0.001,
+            0.001
+          ],
+          [
+            0.001,
+            0.001,
+            0.0010000000000000002,
+            0.0010000000000000002,
+            0.0010000000000000002,
+            0.06473357594695182,
+            0.2915744206863191,
+            0.5912616583925784,
+            0.7366787143687739,
+            0.6364214590706796,
+            0.30208924400460535,
+            0.08397795992600761,
+            0.11166999107966827,
+            0.3290637710310065,
+            0.6440220993540965,
+            0.7032773520530216,
+            0.4877612487464587,
+            0.2347383322445033,
+            0.05990143149560415,
+            0.001
+          ],
+          [
+            0.001,
+            0.001,
+            0.001,
+            0.0047844247348802415,
+            0.06774914072697975,
+            0.3082427258805902,
+            0.6368237838328136,
+            0.7560066907709618,
+            0.6342385191987773,
+            0.3037377305307315,
+            0.06083386148691767,
+            0.0014496485558566255,
+            0.001,
+            0.05990143149560415,
+            0.3041875991812313,
+            0.630611487006926,
+            0.7449172176439411,
+            0.6306114870069262,
+            0.30418759918123073,
+            0.0785208693223876
+          ],
+          [
+            0.23927482386624008,
+            0.24094594683402176,
+            0.2409459468340217,
+            0.24879365606539744,
+            0.38074637644743037,
+            0.6719858685730828,
+            0.7169922037348001,
+            0.4458812410358701,
+            0.21087311927271116,
+            0.06211132699977858,
+            0.0011358410116859932,
+            0.001,
+            0.001009270764620488,
+            0.0028925138606972402,
+            0.07250160118149718,
+            0.2587110247806951,
+            0.5012700631700492,
+            0.6965849486377589,
+            0.6318401936459586,
+            0.38911587899526223
+          ],
+          [
+            0.7617251761337599,
+            0.7600540531659784,
+            0.7600540531659783,
+            0.7638384779008585,
+            0.7963169269917405,
+            0.8139079205709884,
+            0.6562783120058319,
+            0.40306477410533537,
+            0.2725085242169616,
+            0.24647775991278997,
+            0.24122763846117495,
+            0.2409459468340217,
+            0.24096517149039381,
+            0.24487381622491627,
+            0.26775965560223336,
+            0.3166757265855157,
+            0.3881805393871577,
+            0.5603275783970072,
+            0.7641914896777134,
+            0.7891820354207115
+          ],
+          [
+            1.0,
+            1.0,
+            1.0,
+            0.9999999999999999,
+            0.9167967935717176,
+            0.7697898306091913,
+            0.7570082706026005,
+            0.7361537593085059,
+            0.6977363927193638,
+            0.6876836753016815,
+            0.6843830887704544,
+            0.6842043068113721,
+            0.6842165081741305,
+            0.6866950666445499,
+            0.7007875388798985,
+            0.7136247727932281,
+            0.7052332225806417,
+            0.7132620268626837,
+            0.7925315847554584,
+            0.9144878872521884
+          ]
+        ],
+        "thresholded_reanalysis": {
+          "threshold": 0.5,
+          "volume_fraction": 0.4875,
+          "compliance": 131.28899277908818,
+          "equilibrium_relative_residual": 1.7250001543562363e-13,
+          "max_gauss_von_mises_normalized": 38.28591734502483,
+          "strength_pass": null,
+          "reason": "no real material allowable/load/fatigue evidence; ersatz residual material remains; threshold geometry is not CAD or independent engineering solver"
+        },
+        "engineering_validated": false
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "missing-support",
+      "actual": "rejected",
+      "reason": "unverified support configuration"
+    },
+    {
+      "name": "zero-volume",
+      "actual": "rejected",
+      "reason": "invalid dimension/volume/filter"
+    },
+    {
+      "name": "no-filter",
+      "actual": "rejected",
+      "reason": "invalid dimension/volume/filter"
+    },
+    {
+      "name": "claim-real-part",
+      "actual": "rejected",
+      "reason": "not engineering input"
+    },
+    {
+      "name": "ignored-material-injection",
+      "actual": "rejected",
+      "reason": "unsupported constitutive/load constants"
+    },
+    {
+      "name": "unknown-load-case",
+      "actual": "rejected",
+      "reason": "unsupported load case"
+    }
+  ],
+  "claim_boundary": "actual numerical runs, not CAD strength or manufacturing validation"
+}
