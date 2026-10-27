@@ -1,5 +1,5 @@
 """ML-015 single source for /inno/ website navigation and footer."""
-LINKS=(('projects','/inno/projects/','项目库'),('methods','/inno/methods/','方法库'),('report','/inno/report/','数据总览'),('industry','https://gooddesign.qiuyiwu.com/industry-demo/','企业创新 ↗'))
+LINKS=(('projects','/inno/projects/','项目库'),('methods','/inno/methods/','方法库'),('needs','/inno/needs/','需求研究'),('report','/inno/report/','数据总览'),('industry','https://gooddesign.qiuyiwu.com/industry-demo/','企业创新 ↗'))
 
 def navigation(active='projects',content_id='workspace-content'):
     if content_id not in ('workspace-content','main'):raise ValueError('unsupported content target')

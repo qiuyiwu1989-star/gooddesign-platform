@@ -34,6 +34,7 @@ def detail(d,records):
     if d.get('integration_rationale'):body+='<div class="decision"><b>本轮增补 · 为什么加入</b>'+paras(d['integration_rationale'])+'<p>内容可读，尚无执行契约。</p></div>'
     if rid=='R35':
         body+='<aside class="notice"><h2>先区分原典与本页示例</h2><p>Sigmund原论文第2页式(1)采用体积分数等式 V/V₀=f。本档教学模型写为体积上限约束，是平台的一般化适配，不能直接当作原代码逐式复现。比较结果前，先固定采用哪一种约束、载荷与边界条件。</p><a href="https://www.topopt.mek.dtu.dk/-/media/subsites/topopt/apps/dokumenter-og-filer-til-apps/matlab-1-.pdf" target="_blank" rel="noopener noreferrer">核对原论文</a></aside>'
+    body+='<p><a class="zw-btn zw-btn--primary" href="/inno/needs/?method='+E(rid)+'">带着这个方法研究问题 →</a></p>'
     body+='<nav class="contents" aria-label="文章目录">'+''.join(f'<a href="#{key}">{name}</a>' for key,name in [('understand','理解方法'),('structure','结构图'),('operate','怎么使用'),('example','例子与边界'),('relations','关联方法'),('sources','原始依据'),('connect','调用与档案')])+'</nav>'
     body+='<section id="understand"><h2>先理解这个方法</h2>'+''.join('<h3>'+LABELS[k]+'</h3>'+paras(sec[k]) for k in ['problem','principle','applicability'])+'</section>'
     body+='<section id="structure"><h2>一张图看懂结构</h2><p>依据本档案的输入、步骤与产物生成；卡片按档案顺序排列，具体依赖以“承接”标注为准，不强制串行。未表示实际运行已完成。</p><div class="io-grid"><article><h3>开始前准备</h3>'+''.join('<p>'+E(x['label'])+(' · 必需' if x.get('required') else ' · 可补充')+'</p><small>'+E(x.get('description',''))+'</small>' for x in d['inputs'])+'</article><article><h3>结束时带走</h3>'+''.join('<p>'+E(x['label'])+'</p>' for x in d['outputs'])+'</article></div><ol class="flow">'

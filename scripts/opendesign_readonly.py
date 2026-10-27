@@ -20,6 +20,9 @@ class Handler(app.Handler):
             self.guard()
             import project_portal
             self.send(200,project_portal.home(),'text/html; charset=utf-8');return
+        if path=='/needs/':
+            self.guard();import needs_research_page
+            self.send(200,needs_research_page.page(),'text/html; charset=utf-8');return
         if path=='/report/':
             self.guard();import data_report_page
             self.send(200,data_report_page.page(),'text/html; charset=utf-8');return
@@ -32,6 +35,10 @@ class Handler(app.Handler):
         if path.startswith('/portal/'):
             self.guard();import project_portal
             rel=path[len('/portal/'):]
+            if rel in ('needs.css','needs.js','method-catalog.json'):
+                target=project_portal.ROOT/'extensions/needs-research'/rel
+                import mimetypes
+                self.send(200,target.read_bytes(),mimetypes.guess_type(str(target))[0] or 'application/octet-stream');return
             if rel=='system.css':
                 self.send(200,(project_portal.ROOT/'extensions/inno/system.css').read_bytes(),'text/css; charset=utf-8');return
             if rel=='catalog.json':self.send(200,project_portal.catalog(self.server.store.lib));return
@@ -54,6 +61,11 @@ class Handler(app.Handler):
                     import project_portal
                     body=re.sub(r'<header class="workspace-header">.*?</header>',lambda m:project_portal.navigation(),body,count=1,flags=re.S)
                     body=body.replace('</head>','<link rel="stylesheet" href="/inno/portal/portal.css"><link rel="stylesheet" href="/inno/portal/system.css"></head>',1)
+                    project_id=urllib.parse.parse_qs(urllib.parse.urlsplit(self.path).query).get('project',[''])[0]
+                    if re.fullmatch(r'[A-Za-z0-9_-]{1,80}',project_id):
+                        bridge='<aside class="nr-bridge"><div><b>把这个项目带入你的研究</b><p>作为你选择的阅读参考；方法关联和迁移条件仍需核对。</p></div><a class="pp-button" href="/inno/needs/?project='+urllib.parse.quote(project_id,safe='')+'">从这个项目开始 →</a></aside>'
+                        body=body.replace('</main>',bridge+'</main>',1)
+                        body=body.replace('</head>','<link rel="stylesheet" href="/inno/portal/needs.css"></head>',1)
                     if '<footer class="pp-footer">' not in body:
                         body=body.replace('</body>',project_portal.footer()+'</body>',1) if '</body>' in body else body.replace('</html>',project_portal.footer()+'</html>',1)
                 if ctype.startswith('text/html'):
