@@ -573,3 +573,5 @@ Userwebsitearchitecture:核原026/027信息架构，output/inno-preview平台首
 持续任务续接：深化报告实际6批18案，P0均完成本轮定向查询但缺口未全解，下一3P1已派；batch02/03独审8候选原生安全准备已派，非生产。R04独审26原检查过但新恢复用途多requirement绕过/Infinity非JSON有限数缺口发现，未展示泛化新包，修复任务已交。060与056完成范围按最新文档保留，不重开旧故障或冒80。
 
 061用户要求统一MCP执行与实用说明：新innovation_gateway_mcp.py10显式工具（9只读/1保存独立计划），复用项目只读API与64校验方法目录，不引入执行/模型/Store。prepare按明确ID绑定项目revision/datasetSHA和方法version/SHA，120KB封顶；start仅外置盘独立计划，不改源库。根6unit过，独立真实SDK22+6调用与保存回读已核，空证据版本漏洞修复；最后query长度/未知字段P2已修待独立增补复测。JSON/TOML路径语法已核，061统一说明与真实SDK教学run示例已落盘。非HTTP部署/自动分析/工程结论。
+
+061最终独立增量复测完成：10真实SDK调用，query/fields/entity/重复/分页/空证据版本6负例拒，合法检索/同版字段/三法prepare/SDK教学记录回读4正例过；6unit复跑过。runtime-v1-fix2绑定当前代码SHA，原初轮响应保留。统一MCP本机可用，文档061含标准JSON/Codex TOML、直接任务提示、调用链和真实run示例，不冒客户端已自动安装或远程HTTP服务。
