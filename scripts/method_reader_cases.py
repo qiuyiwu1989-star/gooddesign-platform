@@ -3,6 +3,7 @@ from pathlib import Path
 import json,hashlib,html
 ROOT=Path(__file__).resolve().parents[1];E=lambda s:html.escape(str(s),quote=True)
 def teaching_case(rid):
+ if rid=='R04':return systems_engineering_case()
  if rid=='R03':return design_thinking_case()
  if rid=='R02':return double_diamond_case()
  if rid=='R01':return systematic_case()
@@ -166,3 +167,27 @@ def design_thinking_case():
  out='<section id="design-thinking-teaching"><h2>让原型只回答它能够回答的问题</h2><p>这是零件盒的原创教学计划，不是已完成的用户研究。纸面提示被理解，也不能证明盒体锁闭、承载或使用安全。</p><ol class="flow">'
  for title,text in steps:out+='<li><strong>'+title+'</strong><p>'+text+'</p></li>'
  return out+'</ol><p>0.2.1通过27项结构与状态检查及独立错配探针复测，限定滑动候选、交互和控制项一致。这不是自动识别任意方案语义，也不是方法效果验证；真实用户、样模和结果均未取得。</p><p>本页仅展示原创教学说明。原典选页范围与许可单独记录，私有PDF、卡片页和截图不在这里再分发。</p></section>'
+
+
+
+
+def systems_engineering_case():
+ """Fixed independently reviewed R04 teaching, not live system engineering."""
+ b=ROOT/'output/method-reader-review/upgrades/R04-v0.2.1-proposal'
+ r=ROOT/'output/method-reader-review/reviews/R04-upgrade-v0.2.1/review.json'
+ if not (b/'manifest.json').exists() or not r.exists():return ''
+ if hashlib.sha256(r.read_bytes()).hexdigest()!='fc89299b847ce443cde634112a58a9547090796e9a28a25839c879e4b210d934':raise ValueError('R04独立审核版本变化，停止展示')
+ review=json.loads(r.read_text())
+ if review.get('verdict')!='fixed_teaching_vv_purpose_and_finite_numeric_patch_passed' or review['tests']['actual_subprocess_tests']!=32:return ''
+ for item in json.loads((b/'manifest.json').read_text())['files']:
+  if hashlib.sha256((b/item['path']).read_bytes()).hexdigest()!=item['sha256']:raise ValueError('R04固定教学包变化，停止展示')
+ result=json.loads((b/'check-result.json').read_text())
+ if result.get('engineering_validated') is not False or result.get('mcp_execution') is not False:raise ValueError('R04教学边界变化，停止展示')
+ names={'TIM-BASE':'原始教学点','TIM-SLOWER':'研究降低输送速度','TIM-UPSTREAM':'研究前移识别位置','TIM-PROCESS':'研究缩短处理时间'}
+ out='<section id="systems-engineering-teaching"><h2>系统要成功，先把接口讲清楚</h2><p>自动分拣线的原创教学包不仅包括识别与执行，还包括操作者、维护、供能和场地条件。要求、接口和运行情景均是待研究草案，没有真实产线测量或整体性能结论。</p><ol class="flow">'
+ steps=[('从任务和场景开始','正常分流、识别迟到或缺失、清理和恢复分别说明；不把人员与支持条件留到最后。'),('让要求有共同承担者','正确分流、处理节奏、恢复与供能分别分配给相关元素。分配完整不表示能力已经满足。'),('把接口箭头展开','物件标识、位置参照、时间基准、超时处理及两端责任仍未知。相机能识别，不等于结果能正确关联到执行点。'),('发现冲突，返回要求与架构','根据教学点假设检查时序，再比较降速、前移识别或改处理方案。没有选定路线，也没有关闭真实集成问题。'),('逐步集成，保留两类证据','先规划关键连接，再扩到执行、供能、人机与恢复。验证追溯规定条款，确认追溯预期用途，所有活动均未执行。')]
+ for title,text in steps:out+='<li><strong>'+E(title)+'</strong><p>'+E(text)+'</p></li>'
+ out+='</ol><h3>只用点假设，演示为什么局部模块不能代表整线</h3><p>以下为作者给定的恒速、串行延时示意算术，不是实测、平均值或最坏时延。抖动、时钟、物料与实际接口仍未知；正余量和零余量都不能判工程通过。</p><div class="table-scroll"><table><thead><tr><th>研究情景</th><th>到达时间点值</th><th>串行耗时点值</th><th>点余量</th></tr></thead><tbody>'
+ for row in result['timing_calculations']:
+  out+='<tr><td>'+E(names[row['case_id']])+'</td><td>'+E(format(row['available_s'],'.2f'))+' s</td><td>'+E(format(row['serial_point_delay_s'],'.2f'))+' s</td><td>'+E(format(row['point_margin_s'],'+.2f'))+' s</td></tr>'
+ return out+'</tbody></table></div><h3>原典、平台教学和真实工程分开</h3><p>原典核读限NASA设计协调与接口管理相关段、ISO公开范围；没有读付费标准全文。五步字段、接口草案和点值都是平台教学适配，不代表标准原生算法或行业ICD。</p><p>0.2.1的32项结构与算术检查及独立追加探针验证了每条要求的验证/确认目的、有限数值与固定引用边界，不是系统性能或方法效果认证。尚无实际行业接口控制原件、真实时延分布、集成失败/纠正记录或用户用途证据。此方法没有新增执行契约或MCP，未产生生产写入。</p><p><a href="https://www.nasa.gov/reference/6-3-interface-management/" target="_blank" rel="noopener noreferrer">补充原典：NASA接口管理 ↗</a> · <a href="https://www.nasa.gov/reference/4-0-system-design-processes/" target="_blank" rel="noopener noreferrer">NASA系统设计协调 ↗</a></p></section>'
