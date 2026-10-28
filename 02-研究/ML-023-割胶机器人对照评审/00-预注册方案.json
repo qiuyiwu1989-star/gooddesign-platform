@@ -1,0 +1,45 @@
+{
+  "experiment": "ML023-pilot-single-pair",
+  "common_bundle_sha256": "76495e1de1208be1d4ac11d019ba13e39378005a25b71d90ee5783b95a01efa3",
+  "bundle_bytes": 242160,
+  "design": "同资料和输出上限，仅工作流指令不同；同父模型，各一次生成；不是效果总体估计",
+  "shared_methods": [
+    "R48",
+    "R49",
+    "R23",
+    "R52",
+    "R42"
+  ],
+  "demand_status": "all proposed; no customer approval",
+  "assessment_axes": [
+    "需求覆盖与硬约束",
+    "证据支持与作用域",
+    "机制差异与推导",
+    "工程条件与可实施性",
+    "验证的决策价值"
+  ],
+  "ratings": "每维不具备/局部/充分，附段落与证据；不预设新组胜，不以字数或术语数量评分",
+  "blocking_errors": [
+    "假现场/客户批准",
+    "跨案例参数/事实当目标事实",
+    "错误关键机制",
+    "未执行试验写成结果"
+  ],
+  "blind_review": "两名新上下文Agent只读共同资料与匿名方案，第二名顺序反转；有限遮盲，非严格双盲或专家审查",
+  "source_budget": "only frozen bundle; no network or other repository reads",
+  "generation_budget": {
+    "generations_per_arm": 1,
+    "output_character_cap": 5000,
+    "same_model": "inherited parent"
+  },
+  "limitations": [
+    "一次配对，无重复样本",
+    "不限制或计量隐式推理token和运行成本，不声称总计算预算相同",
+    "原型/需求与既有释义不是客户批准或新核原典",
+    "方法正文两组相同，比较编排指令而非正文升级效果"
+  ],
+  "protocol_sha256": {
+    "u": "75b9a54e089603f65d15c2076e332bc204e80d6a5e2dab6f7b97dd1538f44915",
+    "v": "a7530858b86aa3976ec4503700230837a66a0a37ac444c798537049a2da50d20"
+  }
+}
