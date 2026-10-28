@@ -41,6 +41,24 @@ class CognitionTests(unittest.TestCase):
         source['text'] = 'caller changed later'
         self.assertNotEqual(packet['claims'][0]['text'], source['text'])
 
+    def test_full_contract_schemas_are_not_repeated_in_model_context(self):
+        from method_engine import Engine, digest
+        result = prepare_context(task(), [claim()], ['R48', 'R49', 'R23', 'R52', 'R42'])
+        plan = result['context']['existing_contract_plan']
+        self.assertEqual(plan['full_plan_sha256'], Engine().plan(task())['plan_sha256'])
+        self.assertFalse(plan['full_plan_returned'])
+        self.assertNotIn('contract_snapshot', plan['nodes'][0])
+        self.assertTrue(result['fits_existing_semantic_match_limit'])
+        self.assertLess(result['model_context_chars'], 20000)
+        projection = dict(plan); recorded = projection.pop('projection_sha256')
+        self.assertEqual(digest(projection), recorded)
+
+    def test_large_context_reports_overflow_without_truncating_claims(self):
+        c = claim(); c['text'] = 'x' * 21000
+        result = prepare_context(task(), [c], ['R48'])
+        self.assertFalse(result['fits_existing_semantic_match_limit'])
+        self.assertEqual(result['context']['claims'][0]['text'], c['text'])
+
     def test_observation_requires_anchor_and_matching_scope(self):
         c = claim(); c['evidence'] = []
         with self.assertRaisesRegex(ValueError, 'requires_anchor'):

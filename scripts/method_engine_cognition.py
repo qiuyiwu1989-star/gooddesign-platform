@@ -132,12 +132,42 @@ def prepare_context(task, claims, method_ids, conflicts=None, associations=None)
     methods = [read_deep_method(i) for i in method_ids]
     # Keep contents separate from compact model context to avoid silent truncation.
     plan = Engine().plan(task)
-    packet = {'version': 'ML022-0.1.0', 'task': task, 'claims': claims,
+    # Full plans repeat six JSON schemas; retrieve them through method_plan.
+    # Bind the full-plan digest explicitly, without claiming this projection has
+    # that digest or silently truncating method/contract material.
+    compact_plan = {k: plan[k] for k in ('task_id', 'task_revision', 'task_sha256',
+                    'target', 'implementation_hashes', 'status', 'quality') if k in plan}
+    compact_plan['nodes'] = [{k: n[k] for k in ('node_id', 'method_id', 'method_version',
+                             'method_content_sha256', 'contract_version', 'contract_sha256',
+                             'depends_on', 'output_type', 'executor', 'stop_condition')}
+                             for n in plan['nodes']]
+    if 'issues' in plan:
+        compact_plan['issues'] = plan['issues']
+    compact_plan['full_plan_sha256'] = plan.get('plan_sha256')
+    compact_plan['full_plan_returned'] = False
+    compact_plan['full_plan_tool'] = 'method_plan'
+    compact_plan['projection_sha256'] = digest(compact_plan)
+    packet = {'version': 'ML022-0.1.2', 'task': task, 'claims': claims,
               'supersession_proposals': supersessions, 'boundary_research': research,
               'association_candidates': links,
               'method_refs': [{k: m[k] for k in ('method_id', 'name', 'content_sha256',
                                 'index_sha256', 'partial_dimensions', 'execution_available')} for m in methods],
-              'existing_contract_plan': plan,
+              'existing_contract_plan': compact_plan,
+              'research_readiness': {
+                  'status': 'not_assessed_by_engine', 'physical_test_permission_granted': False,
+                  'required_before_physical_tests': [
+                      '明确台架/装夹/防护与故障注入隔离，确认人员能力、责任及资源缺失的暂停位置',
+                      '独立参考、校准、重复装夹与测量不确定性足以分辨要比较的机制；不能只用被测设备自证',
+                      '区分几何代理件与真实材料/组织，写清代理覆盖和不得外推的范围',
+                      '断电/失联后的能量、保持或退让路径，以及手动检查与复位许可须实际审查',
+                      '清洗/换件/复装校准、各出口物料账及恢复基线可追溯',
+                      '列出人工、维护、停机、折旧、利用率及长期影响的补证主体；缺数不能批准扩大试点'],
+                  'decision_branch_rules': [
+                      '测不清：结论不可解释，先修量测；不能判路线或模型失败',
+                      '测得清且配置违反给定研究条件：停该配置并返设计；不能悄改判据',
+                      '代理件满足但目标真实边界未知：仅保留代理范围结论，不作目标许可'],
+                  'dependency_rule': '按风险与数据依赖分支；危险配置停止后，独立且已审查的非危险研究可另行继续，不强制全部串行',
+                  'scope': '供Host补齐就绪材料与专业审查，不是已执行检查或试验授权'},
               'host_workflow': [
                   '核对需求版本、主张作用域、证据原件及核读范围；锚点存在不证明主张为真',
                   '逐项读取method_refs对应深化正文，核对前提；补证专题不可当完整算法',
@@ -150,8 +180,11 @@ def prepare_context(task, claims, method_ids, conflicts=None, associations=None)
                                       'engineering_validated': False, 'expert_certified': False}}
     # Return a fresh JSON tree, so a caller cannot mutate an already hashed packet.
     packet = json.loads(json.dumps(packet, ensure_ascii=False, allow_nan=False))
+    chars = len(json.dumps(packet, ensure_ascii=False))
     return {'status': 'host_reasoning_context_ready' if plan['status'] != 'blocked' else 'blocked',
-            'context_sha256': digest(packet), 'context': packet}
+            'context_sha256': digest(packet), 'context': packet,
+            'model_context_chars': chars, 'fits_existing_semantic_match_limit': chars <= 20000,
+            'model_context_note': '模型入口上限为20000字符；超限须显式选择证据，禁止静默截断或假装已调用模型'}
 
 
 def feedback_summary(records):
