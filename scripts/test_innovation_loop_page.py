@@ -33,4 +33,10 @@ class PageTests(unittest.TestCase):
   self.assertIn('task-select',s);self.assertIn("url.searchParams.set('task'",s);self.assertIn('研究行动与停止条件',s);self.assertIn('本任务方法',s)
  def test_bad_bundle(self):
   with self.assertRaises(ValueError):page([])
+ def test_decision_overview_and_side_panel(self):
+  s=page({'routes':[{'id':'R','mechanism':'unsafe </script>'}],'clarifications':[]})
+  for token in ['decision-overview','route-grid','evidence-panel','showModal()','反馈这条路线','/api/clarifications','待确认补充','clarify-records']:
+   self.assertIn(token,s)
+  self.assertIn('不自动改写需求',s)
+  self.assertNotIn('unsafe </script>',s)
 if __name__=='__main__':unittest.main()

@@ -23,7 +23,7 @@ def bundle(task_id='rubber-v1'):
  methods=[]
  for mid in ['R48','R14','R17']:
   m=read_deep_method(mid);methods.append({k:m[k] for k in ['method_id','name','content_sha256','scope']})
- return {'tasks':list_tasks(),'current_task_id':task_id,'requirement':rq,'routes':routes,'comparison':compare_routes(rq,routes),'experiences':checked_experiences(),'feedback':[f for f in s.list_records('feedback') if f['requirement_ref']==ref],'claims':[c for c in s.list_records('claim') if c['route_ref']['id'] in ids],'methods':methods,'transfer':{'notice':'本任务尚未逐项完成双侧机制语义验证；不继承教学迁移的适用结论'},'research_action':[s.get('action',a['id'],a['revision']) for a in task['actions']],'notice':task['input_status']+'：当前为平台研究提案，原客户逐字需求和领域批准未取得；经验展示不表示与本任务相关，方法正文未自动执行。'}
+ return {'tasks':list_tasks(),'current_task_id':task_id,'clarifications':[c for c in s.list_records('clarification') if c['requirement_ref']==ref],'requirement':rq,'routes':routes,'comparison':compare_routes(rq,routes),'experiences':checked_experiences(),'feedback':[f for f in s.list_records('feedback') if f['requirement_ref']==ref],'claims':[c for c in s.list_records('claim') if c['route_ref']['id'] in ids],'methods':methods,'transfer':{'notice':'本任务尚未逐项完成双侧机制语义验证；不继承教学迁移的适用结论'},'research_action':[s.get('action',a['id'],a['revision']) for a in task['actions']],'notice':task['input_status']+'：当前为平台研究提案，原客户逐字需求和领域批准未取得；经验展示不表示与本任务相关，方法正文未自动执行。'}
 class Handler(BaseHTTPRequestHandler):
  def allowed(self):return self.headers.get('Host')==f'127.0.0.1:{self.server.server_port}'
  def respond(self,status,value,ctype='application/json; charset=utf-8'):
@@ -44,13 +44,19 @@ class Handler(BaseHTTPRequestHandler):
  def do_POST(self):
   origin=f'http://127.0.0.1:{self.server.server_port}'
   if not self.allowed() or self.headers.get('Origin')!=origin:return self.respond(403,{'error':'invalid_origin'})
-  if self.path!='/api/feedback':return self.respond(404,{'error':'not_found'})
+  if self.path not in ('/api/feedback','/api/clarifications'):return self.respond(404,{'error':'not_found'})
   try:
    if self.headers.get('Content-Type','').split(';')[0]!='application/json':raise ValueError('json_required')
    length=int(self.headers.get('Content-Length','0'))
    if not 0<length<=32768:raise ValueError('invalid_length')
    data=json.loads(self.rfile.read(length))
    if not isinstance(data,dict):raise ValueError('object_required')
+   if self.path=='/api/clarifications':
+    from innovation_loop_tasks import load_task
+    if set(data)!=set(['task_id','field','value','actor']):raise ValueError('invalid_clarification_fields')
+    task=load_task(data['task_id']);rq=task['requirement']
+    record=dict(data,schema_version='0.1.0',id='CLAR-'+digest({'input':data,'requirement_revision':rq['revision']})[:32],revision=1,requirement_ref={'id':rq['id'],'revision':rq['revision']},status='pending_review')
+    return self.respond(200,LoopStore().put('clarification',record,0))
    return self.respond(200,LoopStore().put('feedback',data, data.get('revision',1)-1))
   except (ValueError,TypeError,KeyError) as e:return self.respond(400,{'error':str(e)})
 if __name__=='__main__':

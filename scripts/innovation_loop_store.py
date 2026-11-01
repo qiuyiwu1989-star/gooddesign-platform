@@ -42,6 +42,14 @@ class LoopStore:
                 ref=obj[key];linked=self.get(target,ref['id'],ref['revision'])
                 if target=='route' and linked['requirement_ref']!=obj['requirement_ref']:raise ValueError('feedback_requirement_mismatch')
                 if target=='claim' and linked['route_ref']!=obj['route_ref']:raise ValueError('feedback_claim_mismatch')
+        elif kind=='clarification':
+            from innovation_loop_tasks import load_task
+            task=load_task(obj.get('task_id'));rq=task['requirement'];ref={'id':rq['id'],'revision':rq['revision']}
+            if obj.get('requirement_ref')!=ref:raise ValueError('clarification_requirement_mismatch')
+            self.get('requirement',ref['id'],ref['revision'])
+            if obj.get('schema_version')!='0.1.0' or type(obj.get('revision')) is not int or obj['revision']<1 or not isinstance(obj.get('id'),str) or not obj['id']:raise ValueError('invalid_clarification_identity')
+            if obj.get('field') not in ('budget','operating_context','acceptance_threshold') or obj.get('status')!='pending_review':raise ValueError('clarification_is_pending_only')
+            if not all(isinstance(obj.get(k),str) and obj[k].strip() and len(obj[k])<=maxlen for k,maxlen in [('value',8000),('actor',200)]):raise ValueError('clarification_text_required')
         elif kind=='experience':
             from innovation_loop_experience import validate_experience
             obj=validate_experience(obj)
