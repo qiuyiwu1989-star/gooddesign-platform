@@ -2,7 +2,7 @@
 title: GoodDesign 多 Agent 共享背景页
 version: 2026-11-08
 audience: agents, developers, product collaborators
-production_release: 20261105-097
+production_release: 20261106-112
 local_focus: application-center, agent-access, reasoning-canvas, research-engine
 ---
 
@@ -23,9 +23,9 @@ local_focus: application-center, agent-access, reasoning-canvas, research-engine
 
 ## 2. 当前生产与本地状态
 
-- 当前生产：`https://opendesign.cc/inno/`，生产基线 `20261105-097`。
-- 应用中心本地最新：`specs/109-应用中心桌面控制台视觉.md`，尚未部署。
-- 应用接入规范本地最新：`specs/111-应用中心接入与Agent开发规范.md`，尚未部署。
+- 当前生产：`https://opendesign.cc/inno/`，生产基线 `20261106-112`。
+- 应用中心控制台与应用注册规范已随 112 上线；线上 registry 是否公开仍由 111 线决定。
+- 推理画布本地最新：`specs/113-推理画布受保护试点第一阶段.md` 与 `specs/114-推理画布受保护试点第二阶段.md`，尚未部署。
 - 服务器发布前仍需先处理根分区空间；不要直接覆盖生产 release。
 - 当前工作区存在多个并行会话改动，提交时只添加本会话明确文件，禁止 `git add -A`。
 
@@ -217,6 +217,8 @@ HTML、Markdown、图示和汇报页必须由同一个 `research-pack.json` 生�
 8. `specs/099-创新研究输出物标准.md`
 9. `specs/104-企业创新工作台-产品定义.md`
 10. `specs/107-企业创新工作台-开发任务拆解.md`
+11. `specs/113-推理画布受保护试点第一阶段.md`
+12. `specs/114-推理画布受保护试点第二阶段.md`
 
 常用本地命令：
 
@@ -229,8 +231,9 @@ python3 -m unittest tests.test_application_registry_111
 
 ## 11. 当前建议的下一步
 
-1. 将本共享页同步到 GitHub，作为多 Agent 共同入口。
-2. 为每个应用补一份由 Manifest 生成的 `APP_SKILL.md`。
-3. 为 Agent 增加最小示例：读取注册表、调用 capabilities、组装研究上下文、校验 GDRP。
-4. 等 Manifest、MCP 参数和 GDRP 输出稳定后，再决定 Python / TypeScript SDK。
-5. 生产发布前先处理服务器根分区空间，并把 109 应用中心与 111 注册表作为独立 release 验收。
+1. 推理画布 113 已完成本机状态服务与 GDRP JSON 导出；114 已完成本地三角色视图与 GDRP 人读报告。
+2. 下一步做 RC-16 受保护试点部署，先处理登录保护、数据目录、健康检查和回滚。
+3. 同步修复 110 暴露的检索质量问题：匹配体归一化与查询词源语汇化。
+4. 为每个应用补一份由 Manifest 生成的 `APP_SKILL.md`。
+5. 为 Agent 增加最小示例：读取注册表、调用 capabilities、组装研究上下文、校验 GDRP。
+6. 等 Manifest、MCP 参数和 GDRP 输出稳定后，再决定 Python / TypeScript SDK。

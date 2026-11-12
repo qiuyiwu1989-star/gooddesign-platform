@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" data-zw-mode="product">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>推理画布 · 企业创新工作台 · GoodDesign</title>
+  <link rel="stylesheet" href="../method-workbench/vendor/tokens.css">
+  <link rel="stylesheet" href="../method-workbench/vendor/design-system.css">
+  <link rel="stylesheet" href="../design-system/gooddesign.css">
+  <link rel="stylesheet" href="reasoning-canvas.css?v=studio4">
+</head>
+<body>
+  <main id="main" class="gd-rc gd-rc--app">
+    <header class="gd-rc-topbar">
+      <div class="gd-rc-topbar-brand">
+        <span class="gd-kicker">GoodDesign · 企业创新工作台</span>
+        <strong>推理画布 · 割胶机器人</strong>
+      </div>
+      <div class="gd-rc-topbar-actions">
+        <span id="rc-flow-hint" class="gd-rc-flow-hint">数字员工按逻辑逐步展开，0 次模型调用</span>
+        <span id="rc-workspace-status" class="gd-rc-workspace-status">本地草稿</span>
+        <label class="gd-rc-role">角色
+          <select id="rc-role" class="gd-rc-select gd-rc-role-select" aria-label="选择当前角色">
+            <option value="designer">设计师</option>
+            <option value="advisor">顾问</option>
+            <option value="expert">专家</option>
+          </select>
+        </label>
+        <button class="gd-button gd-rc-mini-btn" id="rc-save" type="button">保存工作区</button>
+        <button class="gd-button gd-rc-mini-btn" id="rc-gdrp" type="button">导出研究包</button>
+        <button class="gd-button gd-rc-mini-btn" id="rc-report" type="button">导出报告</button>
+        <button class="gd-button gd-button--primary gd-rc-mini-btn" id="rc-flow-run" type="button">开始推理</button>
+        <button class="gd-button gd-rc-mini-btn" id="rc-export" type="button">导出推理档案</button>
+        <button class="gd-button gd-button--quiet gd-rc-mini-btn" id="rc-reset" type="button">重置</button>
+      </div>
+    </header>
+    <div class="gd-rc-stage">
+      <div class="gd-rc-viewport" id="rc-viewport">
+        <div class="gd-rc-world" id="rc-world">
+          <svg class="gd-rc-edges" id="rc-edges" aria-hidden="true"></svg>
+        </div>
+        <div class="gd-rc-roster" id="rc-roster" aria-label="数字员工团队"></div>
+        <div class="gd-rc-feedwrap">
+          <button class="gd-rc-feed-toggle" id="rc-feed-toggle" type="button" aria-expanded="true">协作记录</button>
+          <div class="gd-rc-feed" id="rc-feed" aria-live="polite"></div>
+        </div>
+        <div class="gd-rc-zoombar">
+          <button class="gd-button gd-button--quiet gd-rc-mini-btn" id="rc-zoom-out" type="button" aria-label="缩小">−</button>
+          <span id="rc-zoom-label" class="gd-rc-zoom-label">100%</span>
+          <button class="gd-button gd-button--quiet gd-rc-mini-btn" id="rc-zoom-in" type="button" aria-label="放大">+</button>
+          <button class="gd-button gd-button--quiet gd-rc-mini-btn" id="rc-zoom-reset" type="button">复位视图</button>
+        </div>
+        <p class="gd-rc-foot">静态原型：内容来自割胶机器人真实研究材料，未调用在线模型。</p>
+      </div>
+      <aside class="gd-rc-detail" id="rc-detail" aria-label="节点详情" aria-live="polite"></aside>
+    </div>
+  </main>
+  <script src="data.js?v=studio4"></script>
+  <script src="state.js?v=studio4"></script>
+  <script src="reasoning-canvas.js?v=studio4"></script>
+</body>
+</html>
