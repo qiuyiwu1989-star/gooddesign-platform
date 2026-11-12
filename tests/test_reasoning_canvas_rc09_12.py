@@ -26,7 +26,8 @@ class ReasoningCanvasRoleAndReportTests(unittest.TestCase):
         html = open(os.path.join(EXT, "index.html"), encoding="utf-8").read()
         js = open(os.path.join(EXT, "reasoning-canvas.js"), encoding="utf-8").read()
         self.assertIn('id="rc-report"', html)
-        self.assertIn("/api/rc/gdrp_package", js)
+        self.assertIn("RC_API", js)
+        self.assertIn("gdrp_package", js)
         self.assertIn("report_html", js)
 
 

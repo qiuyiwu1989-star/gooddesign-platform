@@ -25,7 +25,7 @@ local_focus: application-center, agent-access, reasoning-canvas, research-engine
 
 - 当前生产：`https://opendesign.cc/inno/`，生产基线 `20261106-112`。
 - 应用中心控制台与应用注册规范已随 112 上线；线上 registry 是否公开仍由 111 线决定。
-- 推理画布本地最新：`specs/113-推理画布受保护试点第一阶段.md` 与 `specs/114-推理画布受保护试点第二阶段.md`，尚未部署。
+- 推理画布本地 113/114 已完成状态、角色与报告；115 已部署为受保护试点 `/inno/canvas/`，登录后浏览器走招待完成。
 - 服务器发布前仍需先处理根分区空间；不要直接覆盖生产 release。
 - 当前工作区存在多个并行会话改动，提交时只添加本会话明确文件，禁止 `git add -A`。
 
@@ -219,6 +219,7 @@ HTML、Markdown、图示和汇报页必须由同一个 `research-pack.json` 生�
 10. `specs/107-企业创新工作台-开发任务拆解.md`
 11. `specs/113-推理画布受保护试点第一阶段.md`
 12. `specs/114-推理画布受保护试点第二阶段.md`
+13. `specs/115-推理画布受保护试点部署.md`
 
 常用本地命令：
 

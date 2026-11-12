@@ -6,6 +6,7 @@
 
   /* RC-08 本机工作区：localStorage 仍是降级层，服务可达时追加不可覆盖修订 */
   const WORKSPACE_ID = 'rubber-tapping-demo';
+  const RC_API = location.pathname.startsWith('/inno/canvas/') ? '/inno/canvas/api/rc' : '/api/rc';
   const workspaceStatusEl = document.getElementById('rc-workspace-status');
   let workspaceRevision = 0;
   let remoteAvailable = false;
@@ -43,7 +44,7 @@
     const snapshot = JSON.parse(JSON.stringify(state));
     const base = workspaceRevision;
     try {
-      const j = await apiPost('/api/rc/state', { workspace_id: WORKSPACE_ID, base_revision: base, state: snapshot });
+      const j = await apiPost(`${RC_API}/state`, { workspace_id: WORKSPACE_ID, base_revision: base, state: snapshot });
       workspaceRevision = j.result.revision;
       remoteAvailable = true;
       setWorkspaceStatus(`已保存 · r${workspaceRevision}`, 'ok');
@@ -59,7 +60,7 @@
 
   async function restoreWorkspace() {
     try {
-      const j = await apiGet(`/api/rc/state?workspace_id=${encodeURIComponent(WORKSPACE_ID)}`);
+      const j = await apiGet(`${RC_API}/state?workspace_id=${encodeURIComponent(WORKSPACE_ID)}`);
       state = Object.assign(S.defaultState(), j.result.state || {});
       workspaceRevision = j.result.revision;
       remoteAvailable = true;
@@ -287,7 +288,7 @@
     flowRunning = true;
     flowBtn.disabled = true;
     if (!flowEngineData) {
-      try { flowEngineData = (await apiGet('/api/rc/engine_candidates')).result; }
+      try { flowEngineData = (await apiGet(`${RC_API}/engine_candidates`)).result; }
       catch (e) { flowEngineData = null; }
     }
     clearFlowDom();
@@ -328,7 +329,7 @@
   async function restoreFlow() {
     if (!state.flow.runs || isMobileCanvas()) return;
     if (!flowEngineData) {
-      try { flowEngineData = (await apiGet('/api/rc/engine_candidates')).result; } catch (e) { flowEngineData = null; }
+      try { flowEngineData = (await apiGet(`${RC_API}/engine_candidates`)).result; } catch (e) { flowEngineData = null; }
     }
     buildFlow();
     spawnBatch(flowNodes.map(n => n.id));
@@ -836,7 +837,7 @@
         searchUI = { domain, q, results: null, error: '', busy: true };
         const status = document.getElementById('rc-search-status');
         status.textContent = '检索中…';
-        apiGet(`/api/rc/search_${domain === 'methods' ? 'methods' : 'projects'}?q=${encodeURIComponent(q)}`)
+        apiGet(`${RC_API}/search_${domain === 'methods' ? 'methods' : 'projects'}?q=${encodeURIComponent(q)}`)
           .then(j => {
             searchUI.busy = false; searchUI.results = { domain, result: j.result };
             S.logSearch(state, domain, q, j.result.total); save(); renderCanvas();
@@ -855,7 +856,7 @@
       engLoad.addEventListener('click', () => {
         const status = document.getElementById('rc-engine-status');
         status.textContent = '读取冻结样例…';
-        apiGet('/api/rc/engine_candidates')
+        apiGet(`${RC_API}/engine_candidates`)
           .then(j => { engineUI = { loaded: true, data: j.result, error: '', busy: false }; status.textContent = ''; renderEngineList(); })
           .catch(err => { engineUI = { loaded: false, data: null, error: serviceHint(err), busy: false }; status.textContent = engineUI.error; });
       });
@@ -881,7 +882,7 @@
   });
   document.getElementById('rc-gdrp').addEventListener('click', () => {
     setWorkspaceStatus('正在生成研究包…', 'warn');
-    apiGet(`/api/rc/gdrp?workspace_id=${encodeURIComponent(WORKSPACE_ID)}`)
+    apiGet(`${RC_API}/gdrp?workspace_id=${encodeURIComponent(WORKSPACE_ID)}`)
       .then(j => {
         const name = `${j.result.research_pack.package_id}.research-pack.json`;
         const blob = new Blob([JSON.stringify(j.result.research_pack, null, 2)], { type: 'application/json;charset=utf-8' });
@@ -896,7 +897,7 @@
   });
   document.getElementById('rc-report').addEventListener('click', () => {
     setWorkspaceStatus('正在生成报告…', 'warn');
-    apiGet(`/api/rc/gdrp_package?workspace_id=${encodeURIComponent(WORKSPACE_ID)}`)
+    apiGet(`${RC_API}/gdrp_package?workspace_id=${encodeURIComponent(WORKSPACE_ID)}`)
       .then(j => {
         const name = `${j.result.research_pack.package_id}.report.html`;
         const blob = new Blob([j.result.report_html], { type: 'text/html;charset=utf-8' });
