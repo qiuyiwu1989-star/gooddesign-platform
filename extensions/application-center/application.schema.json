@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://haoshejiguan.com/apps/application.schema.json",
+  "title": "GoodDesign Application Manifest",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/application"
+  },
+  "$defs": {
+    "application": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "id",
+        "title",
+        "kind",
+        "category",
+        "user",
+        "audience",
+        "task",
+        "status",
+        "status_label",
+        "summary",
+        "output",
+        "outputs",
+        "route",
+        "action",
+        "inputs",
+        "capabilities",
+        "permissions",
+        "evidence",
+        "release"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "gd-app-0.1"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 2
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 3
+        },
+        "category": {
+          "enum": [
+            "experience",
+            "innovation",
+            "access"
+          ]
+        },
+        "user": {
+          "type": "string",
+          "minLength": 2
+        },
+        "audience": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "task": {
+          "type": "string",
+          "minLength": 2
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "pilot",
+            "live",
+            "deprecated"
+          ]
+        },
+        "status_label": {
+          "type": "string",
+          "minLength": 2
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 8
+        },
+        "output": {
+          "type": "string",
+          "minLength": 2
+        },
+        "outputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "route": {
+          "$ref": "#/$defs/route"
+        },
+        "action": {
+          "type": "string",
+          "minLength": 2
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "capabilities": {
+          "$ref": "#/$defs/capabilities"
+        },
+        "permissions": {
+          "$ref": "#/$defs/permissions"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "release": {
+          "$ref": "#/$defs/release"
+        }
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "catalog",
+        "detail",
+        "runtime"
+      ],
+      "properties": {
+        "catalog": {
+          "const": "/apps/"
+        },
+        "detail": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^/apps/[a-z0-9-]+/$"
+        },
+        "runtime": {
+          "type": "string",
+          "pattern": "^/"
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mcp_status",
+        "mcp_tools",
+        "engine",
+        "engine_status",
+        "writes"
+      ],
+      "properties": {
+        "mcp_status": {
+          "enum": [
+            "not_connected",
+            "planned",
+            "available"
+          ]
+        },
+        "mcp_tools": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "inno_capabilities",
+              "inno_search_projects",
+              "inno_search_methods",
+              "inno_read_project",
+              "inno_read_method",
+              "inno_search_fields",
+              "inno_read_evidence",
+              "inno_prepare_research"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "engine": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "GD-CRE-0.1",
+            null
+          ]
+        },
+        "engine_status": {
+          "enum": [
+            "not_connected",
+            "planned",
+            "available",
+            "not_applicable"
+          ]
+        },
+        "writes": {
+          "enum": [
+            "none",
+            "client_local",
+            "tenant_scoped",
+            "tenant_scoped_planned",
+            "server_workspace_pilot"
+          ]
+        }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "public_read",
+        "requires_login",
+        "tenant_isolation",
+        "mcp_access"
+      ],
+      "properties": {
+        "public_read": {
+          "type": "boolean"
+        },
+        "requires_login": {
+          "type": "boolean"
+        },
+        "tenant_isolation": {
+          "type": "boolean"
+        },
+        "mcp_access": {
+          "enum": [
+            "none",
+            "planned_read_only",
+            "bearer_read_only"
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_ids",
+        "must_show_boundary",
+        "forbidden_claims"
+      ],
+      "properties": {
+        "case_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "chang-e",
+              "pump-079",
+              "rubber-tapping",
+              "mcp-research",
+              "yuhuan"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "must_show_boundary": {
+          "const": true
+        },
+        "forbidden_claims": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "approved",
+              "confirmed",
+              "customer_confirmed",
+              "engineering_validated",
+              "expert_reviewed",
+              "model_called",
+              "remote_write",
+              "recommendations",
+              "public",
+              "training_authorized"
+            ]
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requires"
+      ],
+      "properties": {
+        "requires": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "enum": [
+              "schema_check",
+              "desktop_1440_check",
+              "mobile_390_check",
+              "dark_mode_check",
+              "mcp_contract_check",
+              "auth_check",
+              "rollback_ready"
+            ]
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

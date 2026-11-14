@@ -1,0 +1,527 @@
+[
+  {
+    "schema_version": "gd-app-0.1",
+    "id": "museum",
+    "title": "好设计馆",
+    "kind": "content_experience",
+    "category": "experience",
+    "user": "公众与教育",
+    "audience": [
+      "公众",
+      "教育工作者"
+    ],
+    "task": "看展与学习",
+    "status": "live",
+    "status_label": "已上线",
+    "summary": "把真实项目转成展区、故事和互动体验，每件展品都能回到项目档案。",
+    "output": "主题展览、项目讲解、学习入口",
+    "outputs": [
+      "主题展览",
+      "项目讲解",
+      "学习入口"
+    ],
+    "route": {
+      "catalog": "/apps/",
+      "detail": null,
+      "runtime": "/museum/"
+    },
+    "action": "进入好设计馆",
+    "inputs": [
+      "ProjectRef",
+      "ExhibitContentRef",
+      "EvidenceBoundary"
+    ],
+    "capabilities": {
+      "mcp_status": "not_connected",
+      "mcp_tools": [],
+      "engine": null,
+      "engine_status": "not_connected",
+      "writes": "none"
+    },
+    "permissions": {
+      "public_read": true,
+      "requires_login": false,
+      "tenant_isolation": false,
+      "mcp_access": "none"
+    },
+    "evidence": {
+      "case_ids": [
+        "chang-e"
+      ],
+      "must_show_boundary": true,
+      "forbidden_claims": [
+        "engineering_validated",
+        "expert_reviewed",
+        "customer_confirmed"
+      ]
+    },
+    "release": {
+      "requires": [
+        "schema_check",
+        "desktop_1440_check",
+        "mobile_390_check",
+        "dark_mode_check",
+        "rollback_ready"
+      ]
+    }
+  },
+  {
+    "schema_version": "gd-app-0.1",
+    "id": "education",
+    "title": "科技教育",
+    "kind": "learning_app",
+    "category": "experience",
+    "user": "教师与学生",
+    "audience": [
+      "教师",
+      "学生"
+    ],
+    "task": "学习真实设计",
+    "status": "live",
+    "status_label": "已有内容",
+    "summary": "使用真实项目原理、来源和活动单组织学习，不把答案当成证据。",
+    "output": "活动单、项目阅读、教学参考",
+    "outputs": [
+      "活动单",
+      "项目阅读",
+      "教学参考"
+    ],
+    "route": {
+      "catalog": "/apps/",
+      "detail": null,
+      "runtime": "/museum/#education"
+    },
+    "action": "查看学习内容",
+    "inputs": [
+      "ProjectRef",
+      "LearningActivityRef",
+      "EvidenceBoundary"
+    ],
+    "capabilities": {
+      "mcp_status": "not_connected",
+      "mcp_tools": [],
+      "engine": null,
+      "engine_status": "not_connected",
+      "writes": "none"
+    },
+    "permissions": {
+      "public_read": true,
+      "requires_login": false,
+      "tenant_isolation": false,
+      "mcp_access": "none"
+    },
+    "evidence": {
+      "case_ids": [
+        "chang-e"
+      ],
+      "must_show_boundary": true,
+      "forbidden_claims": [
+        "engineering_validated",
+        "expert_reviewed",
+        "customer_confirmed"
+      ]
+    },
+    "release": {
+      "requires": [
+        "schema_check",
+        "desktop_1440_check",
+        "mobile_390_check",
+        "dark_mode_check",
+        "rollback_ready"
+      ]
+    }
+  },
+  {
+    "schema_version": "gd-app-0.1",
+    "id": "needs",
+    "title": "需求研究",
+    "kind": "research_intake",
+    "category": "innovation",
+    "user": "企业与研究人员",
+    "audience": [
+      "企业研究人员",
+      "创新顾问"
+    ],
+    "task": "定义创新问题",
+    "status": "live",
+    "status_label": "已上线",
+    "summary": "把模糊想法校准为可研究、可验证、可交接的问题，保留未知和待确认条件。",
+    "output": "需求研究简报、参考与方法路线",
+    "outputs": [
+      "需求研究简报",
+      "参考与方法路线"
+    ],
+    "route": {
+      "catalog": "/apps/",
+      "detail": null,
+      "runtime": "/needs/"
+    },
+    "action": "开始定义问题",
+    "inputs": [
+      "ProblemBrief",
+      "ProjectRef",
+      "MethodRef",
+      "TaskRevision"
+    ],
+    "capabilities": {
+      "mcp_status": "planned",
+      "mcp_tools": [
+        "inno_search_projects",
+        "inno_search_methods",
+        "inno_read_project",
+        "inno_read_method",
+        "inno_prepare_research"
+      ],
+      "engine": "GD-CRE-0.1",
+      "engine_status": "planned",
+      "writes": "client_local"
+    },
+    "permissions": {
+      "public_read": true,
+      "requires_login": false,
+      "tenant_isolation": false,
+      "mcp_access": "planned_read_only"
+    },
+    "evidence": {
+      "case_ids": [
+        "pump-079"
+      ],
+      "must_show_boundary": true,
+      "forbidden_claims": [
+        "engineering_validated",
+        "expert_reviewed",
+        "customer_confirmed",
+        "recommendations"
+      ]
+    },
+    "release": {
+      "requires": [
+        "schema_check",
+        "desktop_1440_check",
+        "mobile_390_check",
+        "dark_mode_check",
+        "mcp_contract_check",
+        "rollback_ready"
+      ]
+    }
+  },
+  {
+    "schema_version": "gd-app-0.1",
+    "id": "enterprise",
+    "title": "企业创新工作台",
+    "kind": "research_workbench",
+    "category": "innovation",
+    "user": "企业与产业园区",
+    "audience": [
+      "企业设计师",
+      "企业工程师",
+      "产业园区"
+    ],
+    "task": "推进研究验证",
+    "status": "pilot",
+    "status_label": "授权试点",
+    "summary": "在授权空间推进任务、路线、证据、验证和反馈，所有判断保留版本与边界。",
+    "output": "研究任务、验证计划、反馈记录",
+    "outputs": [
+      "研究任务",
+      "验证计划",
+      "反馈记录"
+    ],
+    "route": {
+      "catalog": "/apps/",
+      "detail": null,
+      "runtime": "/loop/"
+    },
+    "action": "进入授权工作台",
+    "inputs": [
+      "Task",
+      "ProblemBrief",
+      "CaseLibrary",
+      "MethodLibrary",
+      "ExecutionPolicy"
+    ],
+    "capabilities": {
+      "mcp_status": "planned",
+      "mcp_tools": [
+        "inno_search_projects",
+        "inno_search_methods",
+        "inno_read_project",
+        "inno_read_method",
+        "inno_search_fields",
+        "inno_read_evidence",
+        "inno_prepare_research"
+      ],
+      "engine": "GD-CRE-0.1",
+      "engine_status": "planned",
+      "writes": "tenant_scoped"
+    },
+    "permissions": {
+      "public_read": false,
+      "requires_login": true,
+      "tenant_isolation": true,
+      "mcp_access": "planned_read_only"
+    },
+    "evidence": {
+      "case_ids": [
+        "rubber-tapping"
+      ],
+      "must_show_boundary": true,
+      "forbidden_claims": [
+        "approved",
+        "confirmed",
+        "engineering_validated",
+        "expert_reviewed",
+        "recommendations",
+        "public",
+        "training_authorized"
+      ]
+    },
+    "release": {
+      "requires": [
+        "schema_check",
+        "desktop_1440_check",
+        "mobile_390_check",
+        "dark_mode_check",
+        "mcp_contract_check",
+        "auth_check",
+        "rollback_ready"
+      ]
+    }
+  },
+  {
+    "schema_version": "gd-app-0.1",
+    "id": "canvas",
+    "title": "推理画布",
+    "kind": "reasoning_canvas",
+    "category": "innovation",
+    "user": "企业与研究人员",
+    "audience": [
+      "企业设计师",
+      "企业工程师",
+      "创新顾问"
+    ],
+    "task": "推演与取舍",
+    "status": "pilot",
+    "status_label": "受保护试点",
+    "summary": "把发问、查证、发散、质疑、取舍和立约组织成可追溯的推理工作区，每次保存形成不可覆盖的版本。",
+    "output": "推理工作区、GDRP研究包、推理运行记录",
+    "outputs": [
+      "推理工作区",
+      "GDRP研究包",
+      "推理运行记录"
+    ],
+    "route": {
+      "catalog": "/apps/",
+      "detail": null,
+      "runtime": "/canvas/"
+    },
+    "action": "进入推理画布",
+    "inputs": [
+      "Task",
+      "ProblemBrief",
+      "CaseLibrary",
+      "MethodRef",
+      "ExecutionPolicy"
+    ],
+    "capabilities": {
+      "mcp_status": "planned",
+      "mcp_tools": [
+        "inno_search_projects",
+        "inno_search_methods",
+        "inno_read_project",
+        "inno_read_evidence",
+        "inno_prepare_research"
+      ],
+      "engine": "GD-CRE-0.1",
+      "engine_status": "available",
+      "writes": "server_workspace_pilot"
+    },
+    "permissions": {
+      "public_read": false,
+      "requires_login": true,
+      "tenant_isolation": false,
+      "mcp_access": "planned_read_only"
+    },
+    "evidence": {
+      "case_ids": [
+        "rubber-tapping"
+      ],
+      "must_show_boundary": true,
+      "forbidden_claims": [
+        "approved",
+        "confirmed",
+        "engineering_validated",
+        "expert_reviewed",
+        "recommendations",
+        "public",
+        "training_authorized"
+      ]
+    },
+    "release": {
+      "requires": [
+        "schema_check",
+        "desktop_1440_check",
+        "mobile_390_check",
+        "dark_mode_check",
+        "auth_check",
+        "rollback_ready"
+      ]
+    }
+  },
+  {
+    "schema_version": "gd-app-0.1",
+    "id": "mcp",
+    "title": "Agent 与 MCP 接入",
+    "kind": "developer_connector",
+    "category": "access",
+    "user": "开发者与Agent",
+    "audience": [
+      "开发者",
+      "Agent"
+    ],
+    "task": "读取与组包",
+    "status": "live",
+    "status_label": "已上线",
+    "summary": "使用8项只读工具检索项目和方法、核对证据并组装有版本的研究上下文。",
+    "output": "研究上下文、证据引用、客户端配置",
+    "outputs": [
+      "研究上下文",
+      "证据引用",
+      "客户端配置"
+    ],
+    "route": {
+      "catalog": "/apps/",
+      "detail": null,
+      "runtime": "/mcp/"
+    },
+    "action": "配置MCP",
+    "inputs": [
+      "ClientConfig",
+      "ProjectRef",
+      "MethodRef",
+      "ResearchVersion"
+    ],
+    "capabilities": {
+      "mcp_status": "available",
+      "mcp_tools": [
+        "inno_capabilities",
+        "inno_search_projects",
+        "inno_search_methods",
+        "inno_read_project",
+        "inno_read_method",
+        "inno_search_fields",
+        "inno_read_evidence",
+        "inno_prepare_research"
+      ],
+      "engine": null,
+      "engine_status": "not_applicable",
+      "writes": "none"
+    },
+    "permissions": {
+      "public_read": true,
+      "requires_login": false,
+      "tenant_isolation": false,
+      "mcp_access": "bearer_read_only"
+    },
+    "evidence": {
+      "case_ids": [
+        "mcp-research"
+      ],
+      "must_show_boundary": true,
+      "forbidden_claims": [
+        "model_called",
+        "remote_write",
+        "engineering_validated",
+        "expert_reviewed"
+      ]
+    },
+    "release": {
+      "requires": [
+        "schema_check",
+        "desktop_1440_check",
+        "mobile_390_check",
+        "dark_mode_check",
+        "mcp_contract_check",
+        "auth_check",
+        "rollback_ready"
+      ]
+    }
+  },
+  {
+    "schema_version": "gd-app-0.1",
+    "id": "regional",
+    "title": "产业创新 Agent",
+    "kind": "regional_program",
+    "category": "access",
+    "user": "政府与产业园区",
+    "audience": [
+      "政府部门",
+      "产业园区",
+      "区域企业"
+    ],
+    "task": "调研地方产业",
+    "status": "pilot",
+    "status_label": "试点运行",
+    "summary": "输入地方产业，现场组织产业扫描、企业深读、机制双侧映射和研究报告，所有方向标注研究假设。",
+    "output": "区域产业调研报告、客户画像、机制映射清单",
+    "outputs": [
+      "区域产业调研报告",
+      "客户画像",
+      "机制映射清单"
+    ],
+    "route": {
+      "catalog": "/apps/",
+      "detail": null,
+      "runtime": "/expo/"
+    },
+    "action": "打开产业创新Agent",
+    "inputs": [
+      "RegionProfile",
+      "EnterpriseRef",
+      "ProductRef",
+      "ProblemBrief"
+    ],
+    "capabilities": {
+      "mcp_status": "planned",
+      "mcp_tools": [
+        "inno_search_projects",
+        "inno_search_methods",
+        "inno_read_project",
+        "inno_read_method",
+        "inno_prepare_research"
+      ],
+      "engine": "GD-CRE-0.1",
+      "engine_status": "planned",
+      "writes": "none"
+    },
+    "permissions": {
+      "public_read": true,
+      "requires_login": false,
+      "tenant_isolation": false,
+      "mcp_access": "planned_read_only"
+    },
+    "evidence": {
+      "case_ids": [
+        "yuhuan"
+      ],
+      "must_show_boundary": true,
+      "forbidden_claims": [
+        "customer_confirmed",
+        "engineering_validated",
+        "expert_reviewed",
+        "public",
+        "training_authorized"
+      ]
+    },
+    "release": {
+      "requires": [
+        "schema_check",
+        "desktop_1440_check",
+        "mobile_390_check",
+        "dark_mode_check",
+        "mcp_contract_check",
+        "rollback_ready"
+      ]
+    }
+  }
+]

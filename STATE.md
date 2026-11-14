@@ -1,5 +1,17 @@
 # State
 
+## 最新本地变更（2026-11-14，127应用中心真实产品地图补全）
+apps.json 六应用升七应用：新增 canvas 推理画布（pilot/受保护试点、runtime /canvas/、GD-CRE-0.1 available、writes=server_workspace_pilot 新枚举、tenant_isolation=false 如实标注），regional 更新为已上线产品面「产业创新 Agent」（pilot/试点运行、runtime /expo/、writes=none、id 不变）。schema writes 枚举追加 server_workspace_pilot，registry 版本保持 gd-app-registry-0.1。渲染器增 canvas 图标"画"与深青 #0F6674 色调、规划阶段空状态。状态分布 4 可用/3 试点/0 规划。111/101/103/096 测试同步 7 应用，17 项相关回归+全量通过，桌面/深色/390 浏览器验收通过；未部署生产，随下次页面族发布上线。详 specs/127。
+
+## 最新生产变更（2026-11-14，121v6小好深研多Agent节点图）
+应用户"多Agent演示感+取名"要求，展厅Agent定名小好深研并上线节点图形态：运行页顶部8节点链（输入→侦察→深读→规划→检索→校验→撰稿→报告），节点为小好分身棋子（工作紫环脉冲/完成绿点/待机半透明），连线标注流动数量（6板块/6家/7需求/5关联），与阶段状态机同一事件源（静态回放与真实SSE共用）。数据纪律零变化。截图验证（output/design-121/v6-*.png），已上线https://haoshejiguan.com/expo/（v5备份）。expo_agent_server的blk4事件增报candidates数。未提交Git。
+
+## 最新生产变更（2026-11-14，123模型通道切至阿里云百炼）
+按用户提供的新API，expo agent模型通道从火山方舟切至阿里云百炼compatible-mode（deepseek-v4.1-flash-1017），配置更新于/etc/innovation-expo.env（旧配置备份.bak-20261114，密钥不入仓库）。实测嘉善：102秒全流程、真实召回8个候选、11条机制关联（优于原通道2候选/6关联），产出自带"模型生成·待核"标注。123编号为项目任务流水号（specs/STATE/TASKS/测试按号互查，防并行撞号），非版本号。后续提升路线：提示词向产品技术需求校准、web_search联网真实调研、planner多子问题循环、110检索归一化、固定样例评价回路。未提交Git。
+
+## 最新生产变更（2026-11-14，121v5 Agent界面Linear极简重构）
+按用户"Linear官网/苹果备忘录式干净"定调重构展厅Agent界面（视觉规范v2新增第14节Linear式极简原则：砍标语提示次要标签、页面靠布局说话、UX/DX/AX同升、不弄坏任何东西）：首页只剩"输入一个地方产业"与发丝线输入行；运行页去kick角标/解说段/卡片堆，改发丝线分区；报告一行meta+扁平表格；诚实标注（待核/研究假设/hard=null）做轻保留；功能与数据纪律零变化（静态回放+真实SSE+降级+打印全部保留）。三张Playwright截图验证通过（output/design-121/v5-*.png），已上线https://haoshejiguan.com/expo/（v4备份index-agent-v4-backup.html）。未提交Git。
+
 ## 最新本地修复（2026-11-14，126检索质量确定性修复）
 110 评估规定的两个 model_assisted 前置修复已完成：ik.search 匹配体经 `_norm` 空白归一化（去 JSON 转义空白+全部空白后 casefold，召回单调不减，仍逐字匹配），机械自召回 95.3%→100%，基线 15 个换行未中窗口全部闭合并有专项锁定；`build_queries` 新增 source_vocabulary 标注与无 hints 零召回预警（不改变检索行为）。修复后报告 output/retrieval-eval-v1/post-fix-20261114.json（生成即冻结）：改写 0% 与抽象词零触达不变，语义召回与 460 不可检索项目扩库另立任务。8 专项+32 相关回归+741 全量通过；冻结样例与 110 基线报告未重算；生产未改。编号说明：本会话原占用 123，与并行会话冲突后改 126（125 亦被并行 MCP 密钥会话占用），spec/验收/测试文件均已更名。详 specs/126 与 00-项目管理/126 验收。
 
