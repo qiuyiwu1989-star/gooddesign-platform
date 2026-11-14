@@ -11,8 +11,8 @@ class ApplicationCenterProductShelf103Tests(unittest.TestCase):
         for marker in (
             'KINDS', "'museum': 'experience'", 'app-search-input',
             'data-tone=museum', 'data-tone=education', 'data-tone=needs',
-            'data-tone=enterprise', 'data-tone=mcp', 'data-tone=regional',
-            'app-card-summary', 'app-card-open', 'app-detail-hero',
+            'data-tone=enterprise', 'data-tone=canvas', 'data-tone=mcp', 'data-tone=regional',
+            'app-card-value', 'app-card-foot', 'app-detail-hero',
             'activeKind', 'activeStatus', 'applyFilters',
         ):
             self.assertIn(marker, text)
@@ -21,8 +21,8 @@ class ApplicationCenterProductShelf103Tests(unittest.TestCase):
         text = (ROOT / 'output/inno-preview/gooddesign-site/inno/apps/index.html').read_text()
         for marker in (
             '全部应用', '内容学习', '创新研究', '接入扩展',
-            '搜索应用、任务或人群', '卡片用于选择，右侧面板展示当前应用',
-            'app-card-summary', 'app-card-open', 'app-detail-hero',
+            '搜索应用', '点选卡片，右侧查看价值、开发者与案例',
+            'app-card-value', 'app-card-foot', 'app-detail-hero',
             'app-workbench', 'app-detail-title', 'app-case-title',
             'app-data', 'selectApp',
         ):

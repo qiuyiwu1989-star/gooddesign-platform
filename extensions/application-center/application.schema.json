@@ -22,10 +22,12 @@
         "status",
         "status_label",
         "summary",
+        "value",
         "output",
         "outputs",
         "route",
         "action",
+        "developer",
         "inputs",
         "capabilities",
         "permissions",
@@ -122,6 +124,14 @@
         },
         "release": {
           "$ref": "#/$defs/release"
+        },
+        "value": {
+          "type": "string",
+          "minLength": 4
+        },
+        "developer": {
+          "type": "string",
+          "minLength": 2
         }
       }
     },

@@ -10,16 +10,16 @@ class ApplicationCenterInteractionContractsTests(unittest.TestCase):
         text = (ROOT / 'scripts/app_center_096.py').read_text()
         for marker in (
             'app-workbench', 'app-dock', 'app-detail-title', 'app-case-title',
-            'app-output-chips', 'app-flow', 'app-roadmap', 'app-data', 'selectApp',
+            'app-card-value', 'app-card-foot', 'app-detail-developer', 'app-data', 'selectApp',
         ):
             self.assertIn(marker, text)
 
     def test_built_page_contains_real_apps_cases_and_status_planning(self):
         text = (ROOT / 'output/inno-preview/gooddesign-site/inno/apps/index.html').read_text()
         for marker in (
-            '全部应用', '内容学习', '创新研究', '接入扩展', '适用人群',
-            '当前任务', '应用状态', '交付物', '真实案例路径',
-            '应用规划', '现在可用', '试点推进', '规划建设',
+            '全部应用', '内容学习', '创新研究', '接入扩展', '当前应用',
+            '分类', '开发者', '好设计团队', '应用案例',
+            '现在可用', '试点推进', '规划建设',
         ):
             self.assertIn(marker, text)
         data_text = text.split('id="app-data">', 1)[1].split('</script>', 1)[0]

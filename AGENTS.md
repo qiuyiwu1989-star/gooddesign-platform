@@ -336,3 +336,5 @@ ML-029方法页标准与三类标杆：方法页标准-v1及specs/ML-029定义�
 126检索修复：ik.search匹配体经_norm归一化（去JSON转义空白与全部空白后casefold），跨行/排版差异不再丢命中，召回单调不减仍为逐字匹配；build_queries标注source_vocabulary，无query_hints功能附zero_recall_warning（110基线抽象词零触达，零结果不得解读为无相关知识）。修复后报告output/retrieval-eval-v1/post-fix-20261114.json：自召回100%（318/0未中），改写0%与抽象词零触达不变。语义召回与460不可检索项目扩库仍另立任务；割胶冻结run与110基线报告未重算。8专项+32相关回归+741全量通过；生产未改。
 
 127应用中心产品地图补全：apps.json七应用——新增canvas推理画布（pilot/受保护试点，runtime /canvas/，engine GD-CRE-0.1 available，writes=server_workspace_pilot新枚举，tenant_isolation=false如实标注）；regional改产业创新Agent（pilot/试点运行，runtime /expo/，writes=none，tenant_isolation=false，id不变）。schema的writes枚举追加server_workspace_pilot，registry版本不变。app_center_096增canvas图标"画"/深青#0F6674色调/case_map→rubber-tapping，规划阶段空列表显示诚实空状态。状态分布：现在可用4/试点推进3/规划建设0。111/101/103测试6→7，浏览器096计数同步。17项相关回归+全量通过，桌面/深色/390浏览器验收通过；未部署生产。
+
+128应用中心商店化简化：卡片只承载图标/状态徽章/名字/分类/价值一句话/开发者·案例，详情面板为名字+CTA+价值+分类状态开发者三行+案例卡；删除用户·任务行、长摘要、交付物chips、编号案例路径、底部应用规划区（侧栏状态行保留口径）。apps.json新增必填value与developer（全部好设计团队），schema同步，registry版本不变，完整Manifest仍供Agent。场景导航改名分类，共享底座一句话，搜索占位"搜索应用"。25项相关回归+全量通过，桌面/深色/390浏览器验收通过；未部署。

@@ -1,5 +1,17 @@
 # State
 
+## 最新本地变更（2026-11-14，128应用中心商店化简化）
+用户反馈应用中心复杂字太多，要一眼看去就是应用中心：每个应用直接呈现分类/名字/价值/开发人员/案例。卡片降为图标+徽章/名字/分类/价值一句/开发者·案例五行结构；详情面板删适用人群/当前任务/交付物/编号案例路径，留价值+三行信息+案例卡；删底部应用规划区（侧栏状态行保留）；apps.json 新增必填 value 与 developer 字段（schema 同步，registry 版本不变，完整 Manifest 仍供 Agent）。25 项相关回归+全量通过，桌面/深色/390 浏览器验收通过。详 specs/128。未部署生产。
+
+## 最新生产变更（2026-11-14，121v7节点卡片化+任意地名交付质量）
+五项修复与一项能力升级：①修"演示失败"误报——SSE正常结束时EventSource的error被误当连接中断，done后忽略（真bug）；②对象名不再出现拼音（key输入显示中文标签，自由输入显示原文）；③行内时间戳收编为左下单点运行时钟（绿点脉冲）；④节点卡片化+角色专属字形（入/⌖/◉/✎/⌕/✓/✍/报），工作态紫环光晕；⑤全画面动态（流式草稿+骨架+光环）。任意地名交付质量：检索升级为两轮（模型源语汇词→不足2候选自动放宽到行业通用机制词，仍全真实命中并如实记录轮次）。实测：嘉兴8候选6关联、绍兴由0候选提升至5关联（黄酒客群/渠道问题映射真实项目且差异同列），与玉环/嘉善同质量。已上线expo/（v6备份）。未提交Git。
+
+## 最新生产变更（2026-11-14，123模型流式输出上线）
+针对"模型调用几十秒画面停住"的反馈，expo_agent_server全部模型调用改流式（stream=True，0.5秒节流），思考过程以think事件实时推到UI：画面显示"正在起草"面板，模型写的JSON随写随现带呼吸光标（coding agent式流式体验），等待期另有骨架屏shimmer；think到达即隐藏。实测线上60秒16次think推送正常，UI渲染验证通过（output/design-121/v7-*.png）。服务端与页面均已上线（v6备份index-agent-v6-backup.html）。未提交Git。
+
+## 最新生产变更（2026-11-14，125 MCP 密钥管理上线）
+MCP 密钥全生命周期已在生产生效：release 20261114-125（注册表 /var/lib/innovation-mcp/registry.sqlite3 + systemd drop-in GOODDESIGN_MCP_REGISTRY 与 ReadWritePaths）。生产四验通过：legacy key 哈希连续不断线、假 token 401、吊销即刻 401、真实调用入 usage（工具名/状态/耗时）。截图暴露的 legacy token 已吊销，用户新 key 已签发（KEY-210e376f，2027-11-14 到期）并交付。过程修复两个生产级问题：体缓冲 replay 对后续 receive 必须委派原始通道否则 SSE 自旋（99% CPU，已加回归测试）、ProtectSystem=strict 下注册表落 /var/lib。12 项单测通过。发现 mcp.haosheji.cc 无 DNS 与 nginx 配置（台账待办）。回滚＝摘 drop-in 指回 20261112-118 重启。详见 00-项目管理/密钥轮换台账.md 部署记录。
+
 ## 最新本地变更（2026-11-14，127应用中心真实产品地图补全）
 apps.json 六应用升七应用：新增 canvas 推理画布（pilot/受保护试点、runtime /canvas/、GD-CRE-0.1 available、writes=server_workspace_pilot 新枚举、tenant_isolation=false 如实标注），regional 更新为已上线产品面「产业创新 Agent」（pilot/试点运行、runtime /expo/、writes=none、id 不变）。schema writes 枚举追加 server_workspace_pilot，registry 版本保持 gd-app-registry-0.1。渲染器增 canvas 图标"画"与深青 #0F6674 色调、规划阶段空状态。状态分布 4 可用/3 试点/0 规划。111/101/103/096 测试同步 7 应用，17 项相关回归+全量通过，桌面/深色/390 浏览器验收通过；未部署生产，随下次页面族发布上线。详 specs/127。
 
