@@ -338,3 +338,8 @@ ML-029方法页标准与三类标杆：方法页标准-v1及specs/ML-029定义�
 127应用中心产品地图补全：apps.json七应用——新增canvas推理画布（pilot/受保护试点，runtime /canvas/，engine GD-CRE-0.1 available，writes=server_workspace_pilot新枚举，tenant_isolation=false如实标注）；regional改产业创新Agent（pilot/试点运行，runtime /expo/，writes=none，tenant_isolation=false，id不变）。schema的writes枚举追加server_workspace_pilot，registry版本不变。app_center_096增canvas图标"画"/深青#0F6674色调/case_map→rubber-tapping，规划阶段空列表显示诚实空状态。状态分布：现在可用4/试点推进3/规划建设0。111/101/103测试6→7，浏览器096计数同步。17项相关回归+全量通过，桌面/深色/390浏览器验收通过；未部署生产。
 
 128应用中心商店化简化：卡片只承载图标/状态徽章/名字/分类/价值一句话/开发者·案例，详情面板为名字+CTA+价值+分类状态开发者三行+案例卡；删除用户·任务行、长摘要、交付物chips、编号案例路径、底部应用规划区（侧栏状态行保留口径）。apps.json新增必填value与developer（全部好设计团队），schema同步，registry版本不变，完整Manifest仍供Agent。场景导航改名分类，共享底座一句话，搜索占位"搜索应用"。25项相关回归+全量通过，桌面/深色/390浏览器验收通过；未部署。
+
+
+129需求研究小好引导与画布交接：/needs/为小好统一确定性引导+实时任务卡，0模型调用；参考与路线可跳过，旧measure默认不冒充选择。gooddesign-canvas-handoff-1.0经同源localStorage进入/canvas/独立任务键，用户陈述不升事实，新任务不得混入割胶证据/子问题/概念/红队或套冻结GDRP。普通编辑仅本地，点击保存才POST。preview_gooddesign_site.py可在8899同源提供needs/canvas并代理至8978；129验收用独立临时库。需求资源按内容SHA加?v。40新浏览器+39动态案例+54相关测试通过，审计P0/P1=0；并行应用中心128的11旧契约失败不属于本任务。已窄范围部署static=20261115-129-needs、canvas=20261115-129-canvas；需求资源使用/inno/portal/技术路径，回滚=/var/www/innovation-design/release-backups/20261115-129。外网浏览器连接受限，登录后交接走查仍待。
+
+129应用中心市场式布局：推倒128三栏控制台，改单一视觉流——标题+搜索、分类页签（无计数）、auto-fill卡片网格、点卡片开原生dialog详情弹层（名字/徽章/价值/分类状态开发者/案例卡/进入按钮，Escape/背板/按钮关闭，焦点返回）。状态只靠徽章，删除侧栏/状态筛选/底部案例区/规划区；页宽1200。移动双列+底部抽屉。坑：JS引用元素必须在弹层HTML存在（app-detail-badge缺失致点击静默失败，已入101标记锁定）；弹层hero徽章须justify-items:start。095改查data-app-kind与/cases/chang-e/；096浏览器改弹层流程与分类计数2/3/2/7。25项相关回归+全量通过，1440/窄视口/深色/Escape验收通过。

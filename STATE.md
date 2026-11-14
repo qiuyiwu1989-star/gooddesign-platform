@@ -1,5 +1,14 @@
 # State
 
+## 最新本地变更（2026-11-15，129应用中心市场式布局）
+用户判断 128 仍太复杂，推倒三栏控制台按应用市场重做：标题+搜索 → 分类页签（无计数）→ 卡片网格 → 点卡片开原生 dialog 详情弹层（名字/徽章/价值/分类/状态/开发者/案例卡/进入按钮），状态只靠徽章表达。删除侧栏、状态筛选、底部案例区与应用规划区；页宽 1200；移动双列+底部抽屉。数据契约不变。坑：app-detail-badge 引用缺失导致点击静默失败，已修复并入 101 标记。25 项相关回归+全量通过；1440/窄视口/深色/Escape 浏览器验收通过。详 specs/129。已上线（release 20261115-129，收窄仅 inno/apps 三文件，克隆 20261115-128，回滚指回 128）。
+
+## 最新生产发布（2026-11-15，129需求研究小好引导与画布交接）
+用户授权部署后已窄范围上线https://haoshejiguan.com/needs/。static=/var/www/gooddesign-site/releases/20261115-129-needs（基线20261115-128），canvas=/var/www/innovation-design/releases/20261115-129-canvas（基线20261112-115），只覆盖11个需求页/画布交接文件；应用中心、方法库、MCP、数据库与nginx未改。需求资源迁到/inno/portal/以避开/inno/needs-v2/旧页301。线上needs与4资源、apps、projects均200，canvas匿名302，服务active且本机API正常；回滚=/var/www/innovation-design/release-backups/20261115-129。两次检查脚本失败均回滚并保留failed-attempt目录，最终激活通过。内置与Playwright外网浏览器均ERR_CONNECTION_CLOSED，线上视觉及登录后交接走查待真实浏览器确认。未提交Git。
+
+## 最新本地交付（2026-11-15，129需求研究小好引导与画布交接）
+按用户确认方向完成多Agent并行开发：/needs/采用小好统一引导+实时任务卡，首屏可选补充收起，参考/路线可跳过；gooddesign-canvas-handoff-1.0将任务包带入/canvas/独立工作区，不混割胶演示证据/概念/红队，普通编辑不POST，显式保存才写服务器，新任务禁用演示GDRP。8899同源预览接画布，8978 API使用129临时库。40项新浏览器+39动态案例+54相关测试通过，审计P0=0/P1=0；全量775另有并行应用中心128的11旧契约失败，与本任务无交集。产物output/design-129，详specs/129及00-项目管理/129验收。未提交Git，未部署生产。
+
 ## 最新生产发布（2026-11-15，128应用中心商店化简化上线）
 应用中心 127+128 已上线 https://haoshejiguan.com/apps/：七应用（新增推理画布受保护试点、区域产业赋能更新为产业创新 Agent /expo/）+ 商店式简化卡片（分类/名字/价值/开发者/案例）。收窄发布：仅静态 inno/apps/ 三个文件（index.html、registry.json、application.schema.json），脚本 scripts/package_inno_release_128.py 与 activate_inno_release_128.py（克隆 20261114-123-fix1 硬链接树、解除链接后覆盖、symlink 切换、失败自动回切）；methods/runtime/mcp 三 base 不动（mcp 仍为 20261114-125）。生产验证：/apps/ 200 且含新应用与商店文案、registry/schema 200、/projects/ 与 / 200；回滚=/var/lib/innovation-design/release-backups/20261115-128 记 previous-current 指回 20261114-123-fix1。注意：本地构建仍含 125 线 MCP 页面等未发布源码变更，本次刻意未全量发布。桌面浏览器工具对 haoshejiguan.com 连接中断属已知工具侧问题（curl 正常），线上浏览器走查待用户确认。
 

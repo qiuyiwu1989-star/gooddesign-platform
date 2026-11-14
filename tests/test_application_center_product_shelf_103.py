@@ -13,7 +13,7 @@ class ApplicationCenterProductShelf103Tests(unittest.TestCase):
             'data-tone=museum', 'data-tone=education', 'data-tone=needs',
             'data-tone=enterprise', 'data-tone=canvas', 'data-tone=mcp', 'data-tone=regional',
             'app-card-value', 'app-card-foot', 'app-detail-hero',
-            'activeKind', 'activeStatus', 'applyFilters',
+            'activeKind', 'applyFilters',
         ):
             self.assertIn(marker, text)
 
@@ -21,9 +21,9 @@ class ApplicationCenterProductShelf103Tests(unittest.TestCase):
         text = (ROOT / 'output/inno-preview/gooddesign-site/inno/apps/index.html').read_text()
         for marker in (
             '全部应用', '内容学习', '创新研究', '接入扩展',
-            '搜索应用', '点选卡片，右侧查看价值、开发者与案例',
+            '搜索应用', '点卡片看价值、开发者与案例',
             'app-card-value', 'app-card-foot', 'app-detail-hero',
-            'app-workbench', 'app-detail-title', 'app-case-title',
+            'app-store', 'app-detail-title', 'app-case-title',
             'app-data', 'selectApp',
         ):
             self.assertIn(marker, text)
@@ -36,10 +36,10 @@ class ApplicationCenterProductShelf103Tests(unittest.TestCase):
 
     def test_103_combined_filtering_and_mobile_detail_focus_are_defined(self):
         text = (ROOT / 'scripts/app_center_096.py').read_text()
-        self.assertIn('matchesKind&&matchesStatus', text)
+        self.assertIn("activeKind==='all'||card.dataset.kind===activeKind", text)
         self.assertIn('haystack.includes(query)', text)
-        self.assertIn("window.matchMedia('(max-width: 1020px)')", text)
-        self.assertIn('grid-auto-columns:minmax(255px,80%)', text)
+        self.assertIn('sheet.showModal', text)
+        self.assertIn('repeat(auto-fill,minmax(246px,1fr))', text)
 
 
 if __name__ == '__main__':

@@ -9,8 +9,8 @@ class ApplicationCenterInteractionContractsTests(unittest.TestCase):
     def test_application_center_keeps_core_detail_case_and_data_contracts(self):
         text = (ROOT / 'scripts/app_center_096.py').read_text()
         for marker in (
-            'app-workbench', 'app-dock', 'app-detail-title', 'app-case-title',
-            'app-card-value', 'app-card-foot', 'app-detail-developer', 'app-data', 'selectApp',
+            'app-store', 'app-store-tabs', 'app-detail-title', 'app-case-title',
+            'app-card-value', 'app-card-foot', 'app-detail-developer', 'app-detail-badge', 'app-data', 'selectApp',
         ):
             self.assertIn(marker, text)
 
@@ -18,8 +18,8 @@ class ApplicationCenterInteractionContractsTests(unittest.TestCase):
         text = (ROOT / 'output/inno-preview/gooddesign-site/inno/apps/index.html').read_text()
         for marker in (
             '全部应用', '内容学习', '创新研究', '接入扩展', '当前应用',
-            '分类', '开发者', '好设计团队', '应用案例',
-            '现在可用', '试点推进', '规划建设',
+            '分类', '开发者', '好设计团队', '查看完整案例',
+            'app-sheet', 'aria-haspopup="dialog"',
         ):
             self.assertIn(marker, text)
         data_text = text.split('id="app-data">', 1)[1].split('</script>', 1)[0]
@@ -29,10 +29,9 @@ class ApplicationCenterInteractionContractsTests(unittest.TestCase):
 
     def test_mobile_detail_focus_and_print_rules_are_defined(self):
         text = (ROOT / 'scripts/app_center_096.py').read_text()
-        self.assertIn("window.matchMedia('(max-width: 1020px)')", text)
-        self.assertIn('html:has(.app-workbench),body:has(.app-workbench){overflow-x:hidden}', text)
+        self.assertIn('html:has(.app-store),body:has(.app-store){overflow-x:hidden}', text)
         self.assertIn('prefers-reduced-motion: reduce', text)
-        self.assertIn('scroll-snap-type:x mandatory', text)
+        self.assertIn('showModal', text)
         self.assertIn('@media print', text)
 
 
