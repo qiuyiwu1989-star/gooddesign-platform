@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>割胶机器人末端与作业流程创新研究 · GDRP 可视化报告</title>
+<style>
+:root{
+  --bg:#f4f4f7;--panel:#ffffff;--ink:#1c1c22;--ink-2:#55555f;--ink-3:#8a8a94;
+  --line:#e4e4ea;--accent:#5a4fe6;--accent-soft:#efedfc;
+  --cover:#15151c;--cover-2:#1d1d27;--cover-ink:#f2f2f7;--cover-ink-2:rgba(236,238,255,.72);
+  --warn:#9a6a12;--radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#141419;--panel:#1d1d26;--ink:#e9eaf2;--ink-2:#b9bac6;--ink-3:#85868f;
+    --line:#2e2e3a;--accent:#8b81f2;--accent-soft:#26243a;}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.cover{background:linear-gradient(160deg,var(--cover) 0%,var(--cover-2) 100%);color:var(--cover-ink);padding:56px 24px 48px}
+.cover-inner{max-width:1200px;margin:0 auto}
+.cover .kicker{font-size:12px;letter-spacing:.12em;color:#9d95f5;font-weight:600;margin-bottom:14px}
+.cover h1{font-size:32px;line-height:1.35;font-weight:700;letter-spacing:.01em;max-width:760px}
+.cover .lede{margin-top:14px;max-width:720px;color:var(--cover-ink-2);font-size:15px}
+.meta-chips{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.meta-chips span{font-size:12.5px;padding:5px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:var(--cover-ink-2);white-space:nowrap}
+.meta-chips span strong{color:var(--cover-ink);font-weight:600}
+.shell{max-width:1200px;margin:0 auto;padding:36px 24px 80px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:36px;align-items:start}
+.toc{position:sticky;top:24px;font-size:13.5px}
+.toc .toc-title{font-size:12px;letter-spacing:.1em;color:var(--ink-3);font-weight:600;margin-bottom:10px}
+.toc a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink-2);line-height:1.5}
+.toc a:hover{background:var(--panel);color:var(--ink);text-decoration:none}
+.toc a .n{color:var(--ink-3);margin-right:6px;font-variant-numeric:tabular-nums}
+.section{margin-bottom:44px;scroll-margin-top:20px}
+.section > h2{font-size:21px;font-weight:700;letter-spacing:.01em;margin-bottom:6px}
+.section > .sub{color:var(--ink-2);font-size:14px;margin-bottom:18px;max-width:720px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+.panel + .panel{margin-top:14px}
+.badge{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap;vertical-align:1px}
+.badge-hard{color:var(--accent);background:var(--accent-soft)}
+.badge-neutral{color:var(--ink-2);background:var(--bg);border:1px solid var(--line)}
+.badge-warn{color:var(--warn);background:#faf3e3}
+@media (prefers-color-scheme: dark){.badge-warn{background:#2e2718}}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.stat .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.stat .k{font-size:12.5px;color:var(--ink-2);margin-top:2px}
+.decision{border-left:3px solid var(--accent)}
+.decision .big{font-size:17px;font-weight:650;line-height:1.7}
+.decision .why{margin-top:10px;color:var(--ink-2);font-size:14px}
+.decision code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:var(--accent-soft);color:var(--accent);padding:1px 7px;border-radius:6px}
+.req{padding:16px 0;border-bottom:1px solid var(--line)}
+.req:last-child{border-bottom:none}
+.req .head{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.req .rid{font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent);font-size:13.5px}
+.req .rtext{font-weight:600}
+.req .acc{color:var(--ink-2);font-size:13.5px;margin-top:5px}
+.req .acc b{color:var(--ink-3);font-weight:600}
+.req .refs{color:var(--ink-3);font-size:12.5px;margin-top:4px}
+.case-card h3{font-size:15.5px;font-weight:700}
+.case-card .who{color:var(--ink-3);font-size:12.5px;margin-top:2px}
+.case-card dl{margin-top:12px;display:grid;gap:10px}
+.case-card dt{font-size:12px;font-weight:600;color:var(--ink-3);letter-spacing:.04em}
+.case-card dd{font-size:14px;color:var(--ink)}
+.case-card dd ul{list-style:none}
+.case-card dd li{padding-left:14px;position:relative}
+.case-card dd li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:1.5px;background:var(--ink-3)}
+.fn-group{margin-bottom:8px}
+.fn-group h3{font-size:14.5px;font-weight:700;padding:12px 0 6px}
+.fn-group h3 .fid{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:6px}
+.opt{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.opt:last-child{border-bottom:none}
+.opt .oid{font-variant-numeric:tabular-nums;color:var(--ink-3);font-weight:600}
+.opt .ocond{color:var(--ink-3);font-size:12.5px;margin-top:2px}
+.flow-list{list-style:none;font-size:13.5px}
+.flow-list li{padding:7px 0;border-bottom:1px dashed var(--line);color:var(--ink-2)}
+.flow-list li:last-child{border-bottom:none}
+.flow-list b{color:var(--ink);font-variant-numeric:tabular-nums}
+.concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+.concept{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.concept .cid{font-size:17px;font-weight:700;color:var(--accent)}
+.concept .cname{font-weight:650;margin-top:2px}
+.concept .cpath{font-size:12px;color:var(--ink-3);margin-top:8px;font-variant-numeric:tabular-nums;word-break:break-all}
+.concept .cwhy{font-size:13px;color:var(--ink-2);margin-top:8px}
+.matrix-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.matrix{display:grid;grid-template-columns:72px repeat(15,minmax(46px,1fr));min-width:820px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel)}
+.matrix > div{padding:8px 6px;font-size:12px;text-align:center;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.matrix .mh{background:var(--accent-soft);color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+.matrix .mr{background:var(--bg);font-weight:700;font-variant-numeric:tabular-nums}
+.matrix .cell-u{color:var(--ink-3)}
+.matrix-note{font-size:13px;color:var(--ink-2);margin-top:12px}
+.gates{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.gate{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;border-top:3px solid var(--accent)}
+.gate .gid{font-weight:700;font-variant-numeric:tabular-nums;font-size:15px}
+.gate .gwhat{font-size:13.5px;margin-top:4px}
+.gate .gstatus{font-size:12px;color:var(--ink-3);margin-top:8px}
+.vmethods{list-style:none;font-size:13px}
+.vmethods li{padding:7px 0;border-bottom:1px dashed var(--line);display:grid;grid-template-columns:52px 76px 1fr;gap:10px}
+.vmethods li:last-child{border-bottom:none}
+.vmethods .vid{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600}
+.vmethods .vm{color:var(--ink-2)}
+.vmethods .vc{color:var(--ink-3)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{font:inherit;font-size:13.5px;font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:6px 18px;font-size:14px}
+.kv dt{color:var(--ink-3);font-size:13px;padding:6px 0}
+.kv dd{padding:6px 0;border-bottom:1px dashed var(--line)}
+.kv dd ul{list-style:none}
+.kv dd li{padding:2px 0}
+.empty{color:var(--ink-3);font-size:13.5px}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.review-item{border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;background:var(--panel);font-size:13px}
+.review-item .rk{color:var(--ink-3);font-size:12px}
+.review-item .rv{font-weight:650;margin-top:2px}
+.src-table{width:100%;border-collapse:collapse;font-size:13px}
+.src-table th,.src-table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+.src-table th{color:var(--ink-3);font-weight:600;font-size:12px;letter-spacing:.04em}
+.src-table td{font-variant-numeric:tabular-nums}
+.note-list{list-style:none}
+.note-list li{padding:10px 0 10px 16px;border-bottom:1px dashed var(--line);position:relative;color:var(--ink-2);font-size:14px}
+.note-list li:last-child{border-bottom:none}
+.note-list li::before{content:"";position:absolute;left:0;top:1.05em;width:7px;height:7px;border-radius:50%;background:var(--accent);opacity:.55}
+.foot{max-width:1200px;margin:0 auto;padding:0 24px 56px;color:var(--ink-3);font-size:12.5px}
+@media (max-width:960px){
+  .shell{grid-template-columns:minmax(0,1fr);padding-top:24px}
+  .toc{position:sticky;top:0;z-index:5;background:var(--bg);margin:0 -24px;padding:10px 24px;display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--line)}
+  .toc .toc-title{display:none}
+  .toc a{white-space:nowrap;padding:6px 10px;font-size:13px}
+  .cover{padding:40px 20px 36px}
+  .cover h1{font-size:24px}
+  .kv{grid-template-columns:1fr}
+  .kv dt{padding-bottom:0}
+  .vmethods li{grid-template-columns:44px 64px 1fr}
+}
+@media print{
+  .toc{display:none}
+  .shell{display:block;padding:0}
+  .cover{background:#15151c !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .matrix-scroll{overflow:visible}
+  .section{break-inside:avoid-page}
+  .tabpanel[hidden]{display:block}
+}
+</style>
+</head>
+<body>
+<header class="cover">
+  <div class="cover-inner">
+    <div class="kicker">GDRP 可视化报告 · 由 research-pack.json 生成</div>
+    <h1>割胶机器人末端与作业流程创新研究</h1>
+    <p class="lede">形成机械参考与双物流隔离、感知辅助可退让闭环、人机协作渐进改造三类候选；60格判断均保留unknown。</p>
+    <div class="meta-chips"><span>任务 <strong>RUBBER-20261026</strong></span><span>版本 <strong>r1</strong></span><span>交付层级 <strong>L1 概念研究包</strong></span><span>引擎 <strong>GD-CRE-0.1</strong></span><span>执行模式 <strong>host_agent</strong></span><span>状态 <strong>待审阅</strong></span><span>数据契约 <strong>gdrp-0.1</strong></span></div>
+  </div>
+</header>
+<div class="shell">
+  <nav class="toc" aria-label="章节目录">
+  <div class="toc-title">目录</div>
+  <a href="#s0"><span class="n">0</span>决策摘要</a>
+  <a href="#s1"><span class="n">1</span>问题与边界</a>
+  <a href="#s2"><span class="n">2</span>案例与机制</a>
+  <a href="#s3"><span class="n">3</span>功能与概念</a>
+  <a href="#s4"><span class="n">4</span>比较与推荐门禁</a>
+  <a href="#s5"><span class="n">5</span>验证计划</a>
+  <a href="#s6"><span class="n">6</span>领域扩展</a>
+  <a href="#s7"><span class="n">7</span>执行、审核与版本</a>
+  <a href="#s8"><span class="n">8</span>附录：证据与来源</a>
+</nav>
+  <main id="main">
+<section class="section" id="s0">
+  <h2>决策摘要</h2>
+  <p class="sub">30 秒读完：这次研究给出了什么、没给出什么、下一步做什么。</p>
+  <div class="panel decision">
+    <p class="big">本次不给出唯一工程推荐。<code>recommendations = []</code> 是合法完成状态。</p>
+    <p class="why">4 个概念组合对 15 项准则共 60 格判断，其中 60 格保留未知：未取得同条件客户基线、已冻结验收目标或实测，不以相同分或中分填补。N04/N05/N06/N08/N09/N10/N11/N12/N15硬软属性未决、没有可支持唯一技术路线推荐的证据、建议优先开展的补证活动不是对产品方案优劣排名。</p>
+  </div>
+  <div class="stat-row"><div class="stat"><div class="v">15</div><div class="k">研究需求</div></div><div class="stat"><div class="v">7</div><div class="k">必要功能</div></div><div class="stat"><div class="v">28</div><div class="k">机制选项</div></div><div class="stat"><div class="v">4</div><div class="k">概念组合</div></div><div class="stat"><div class="v">60</div><div class="k">未知判断</div></div><div class="stat"><div class="v">G0</div><div class="k">下一步门禁</div></div></div>
+</section><section class="section" id="s1">
+  <h2>问题与边界</h2>
+  <p class="sub">在树体保护、胶乳品质和全流程效率之间研究兼顾的改进路线，客户工况与目标值尚未确认。</p>
+  <div class="panel"><div class="req">
+  <div class="head"><span class="rid">N01</span><span class="badge badge-hard">硬性</span><span class="rtext">保护树体及长期割面资源：避免短期增产以伤树或过度耗皮为代价</span></div>
+  <p class="acc"><b>验收口径：</b>在定义明确的深度、耗皮与损伤口径下测量，并安排跨周期跟踪；阈值待客户及农艺人员确认</p>
+  <p class="refs">状态 proposed · 证据 S01、S06</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N02</span><span class="badge badge-hard">硬性</span><span class="rtext">区分表面跟随与真实限深：适应树干曲率及树皮差异，同时控制生物安全边界</span></div>
+  <p class="acc"><b>验收口径：</b>对曲率、厚度和旧割面分层试验；刀位移、剩余树皮及损伤分别记录；允许误差待定</p>
+  <p class="refs">状态 proposed · 证据 S02、S03、S04</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N03</span><span class="badge badge-hard">硬性</span><span class="rtext">隔离新切屑与胶乳：降低切屑混入及后续清理负担</span></div>
+  <p class="acc"><b>验收口径：</b>定义污染采样方法，比较杂质、损失胶乳及清理时间；限值待下游确认</p>
+  <p class="refs">状态 proposed · 证据 S01、S07</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N04</span><span class="badge badge-neutral">硬软未决</span><span class="rtext">处理旧胶线与黏附堵塞：处理已有胶线、刀面黏附和排屑阻塞</span></div>
+  <p class="acc"><b>验收口径：</b>记录堵塞、停机、清理及重启；阈值待定，不能以空载切削代替</p>
+  <p class="refs">状态 proposed · 证据 S05、S07</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N05</span><span class="badge badge-neutral">硬软未决</span><span class="rtext">提高全流程有效产出：提高单位人时的合格干胶产出，而非仅提高刀速</span></div>
+  <p class="acc"><b>验收口径：</b>同时记录定位、安装、切割、转场、收胶、清理、故障、人机协作时间及干胶口径；目标待实测</p>
+  <p class="refs">状态 proposed · 证据 S01、S06</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N06</span><span class="badge badge-neutral">硬软未决</span><span class="rtext">降低对熟练工的依赖：将关键判断转为可检查的设置与反馈</span></div>
+  <p class="acc"><b>验收口径：</b>新手与熟练人员分组，记录培训、误操作、返工与接管，不能仅调查喜欢程度</p>
+  <p class="refs">状态 proposed · 证据 S03、S05</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N07</span><span class="badge badge-hard">硬性</span><span class="rtext">异常时安全退让并可接管：失去接触、堵转或感知异常时停止危险切削并记录</span></div>
+  <p class="acc"><b>验收口径：</b>在受控环境验证急停、断电、传感异常、退出路径与复位条件；先安全审核</p>
+  <p class="refs">状态 proposed · 证据 S01、S02</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N08</span><span class="badge badge-neutral">硬软未决</span><span class="rtext">适应雨水与弱光的作业安排：识别不适合作业条件并避免为自动化强行作业</span></div>
+  <p class="acc"><b>验收口径：</b>现场调查光照、湿度、雨后割面和允许时段；雨水防护不等于雨中可割</p>
+  <p class="refs">状态 proposed · 证据 S02、S06</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N09</span><span class="badge badge-neutral">硬软未决</span><span class="rtext">可清洗维护和耗材更换：降低刀具、导向件与胶乳接触区维护负担</span></div>
+  <p class="acc"><b>验收口径：</b>计时清洗、换刀、复装校准，跟踪磨损和积胶；材料与费用未知</p>
+  <p class="refs">状态 proposed · 证据 S05、S07</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N10</span><span class="badge badge-neutral">硬软未决</span><span class="rtext">兼容现有胶园与装备：在手持、固定与移动架构之间避免过早锁定</span></div>
+  <p class="acc"><b>验收口径：</b>调查树距、坡度、挂载接口、供电与收胶流程，再确定目标平台</p>
+  <p class="refs">状态 proposed · 证据 S01、S02</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N11</span><span class="badge badge-neutral">硬软未决</span><span class="rtext">保持可追溯的作业与验收数据：知道哪棵树何时按何配置作业，问题可追查</span></div>
+  <p class="acc"><b>验收口径：</b>记录树ID、时间、工具版本、工况、异常和数据缺失，不编造客户已有数字化基础</p>
+  <p class="refs">状态 proposed · 证据 S01、S02</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N12</span><span class="badge badge-neutral">硬软未决</span><span class="rtext">可比较的全生命周期经济性：把人工、维护、停机、折旧及树体影响纳入选择</span></div>
+  <p class="acc"><b>验收口径：</b>采集实际成本与利用率，用情景区间比较；不输出无数据ROI</p>
+  <p class="refs">状态 proposed · 证据 S01、S06</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N13</span><span class="badge badge-hard">硬性</span><span class="rtext">保护胶乳有效品质与收集率：避免通过增加水分或牺牲品质制造表面增产</span></div>
+  <p class="acc"><b>验收口径：</b>由加工方确认干胶含量、杂质和收集损失测量方法；不能以初始流速代替季节产量</p>
+  <p class="refs">状态 proposed · 证据 S01、S06</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N14</span><span class="badge badge-hard">硬性</span><span class="rtext">识别不适用树株并保留人工例外：对厚度未知、旧伤、树结或状态异常的对象先停止或转人工</span></div>
+  <p class="acc"><b>验收口径：</b>定义适用树株与例外规则，记录覆盖率与误拒绝；识别能力需验证</p>
+  <p class="refs">状态 proposed · 证据 S02、S06</p>
+</div><div class="req">
+  <div class="head"><span class="rid">N15</span><span class="badge badge-neutral">硬软未决</span><span class="rtext">分阶段改造与可撤销试点：先验证末端或局部改造，再决定整机投入</span></div>
+  <p class="acc"><b>验收口径：</b>完成接口勘察与局部验证，不把试验优先顺序解释成已选定产品架构</p>
+  <p class="refs">状态 proposed · 证据 S03、S04</p>
+</div></div>
+  <div class="panel"><ul class="note-list"><li>研究边界：研究/概念/试验计划；平台架构、客户工况及目标值未知，不执行树体试验</li><li>未确认条件：目标企业、设备型号与架构；品系、树龄、树皮及树围分布；实际全流程效率与胶乳质量；预算、接口和验收负责人；农艺许可与现场试验条件。</li><li>相关方：潜在胶园经营者、操作与农艺人员、设备方、加工方，尚未访谈确认。</li></ul></div>
+</section><section class="section" id="s2">
+  <h2>案例与机制</h2>
+  <p class="sub">从项目库检索 5 个来源案例，逐项写明可借鉴的机制、关键差异、不能迁移的部分与证伪路径。检索合计 149 条记录。</p>
+  <div class="panel case-card">
+  <h3>来源项目 2025-00 <span class="badge badge-neutral">option_candidate</span></h3>
+  <p class="who">研究版 research-000001 · 102 条记录 · 目标功能 F5 监测异常并安全退出</p>
+  <dl>
+    <dt>可借鉴机制</dt><dd>驱动状态、故障预案和工况覆盖分别用于品质与安全判断</dd>
+    <dt>关键差异</dt><dd><ul><li>真空颗粒与黏弹树皮、胶乳不同</li><li>电流不能单独证明树体安全</li></ul></dd>
+    <dt>不能迁移</dt><dd><ul><li>钻具</li><li>功率裕度</li><li>任务阈值</li></ul></dd>
+    <dt>证伪路径</dt><dd>若驱动状态无法区分正常切削与异常，则不得用于自动续割</dd>
+  </dl>
+</div><div class="panel case-card">
+  <h3>来源项目 2024-06 <span class="badge badge-neutral">option_candidate</span></h3>
+  <p class="who">研究版 research-000002 · 26 条记录 · 目标功能 F2 约束切入与耗皮</p>
+  <dl>
+    <dt>可借鉴机制</dt><dd>力位协同、几何适应与过程质量监测分开建模</dd>
+    <dt>关键差异</dt><dd><ul><li>金属连接与可控生物损伤目标不同</li></ul></dd>
+    <dt>不能迁移</dt><dd><ul><li>恒力安全深度</li><li>焊接检测方法</li><li>控制增益</li></ul></dd>
+    <dt>证伪路径</dt><dd>若恒力随局部软硬变化产生不可接受切入差异，则必须限用或转人工</dd>
+  </dl>
+</div><div class="panel case-card">
+  <h3>来源项目 2024-s07 <span class="badge badge-neutral">option_candidate</span></h3>
+  <p class="who">研究版 research-000000 · 0 条记录 · 目标功能 F1 识别对象并建立局部轨迹</p>
+  <dl>
+    <dt>可借鉴机制</dt><dd>非规则形体分别处理定位标定、路径与材料响应</dd>
+    <dt>关键差异</dt><dd><ul><li>铸件余量与生物组织安全边界不同</li></ul></dd>
+    <dt>不能迁移</dt><dd><ul><li>外形等于内部厚度</li><li>控制增益与误差指标</li></ul></dd>
+    <dt>证伪路径</dt><dd>若表面定位无法给出独立安全边界，则只能作为粗定位</dd>
+  </dl>
+</div><div class="panel case-card">
+  <h3>来源项目 2025-03 <span class="badge badge-warn">research_only</span></h3>
+  <p class="who">研究版 research-000003 · 21 条记录 · 目标功能 F5 监测异常并安全退出</p>
+  <dl>
+    <dt>可借鉴机制</dt><dd>动作分解、运动解耦、局部感知与稳定操作的关系</dd>
+    <dt>关键差异</dt><dd><ul><li>医疗末端成本、环境与性能要求不同</li></ul></dd>
+    <dt>不能迁移</dt><dd><ul><li>丝鞘</li><li>光纤</li><li>医疗效果</li></ul></dd>
+    <dt>证伪路径</dt><dd>若新增机构与感知导致积胶、校准或维护失败，则不采用</dd>
+  </dl>
+</div><div class="panel case-card">
+  <h3>来源项目 2018-c01 <span class="badge badge-neutral">option_candidate</span></h3>
+  <p class="who">研究版 research-000000 · 0 条记录 · 目标功能 F4 排出并隔离切屑与旧胶线</p>
+  <dl>
+    <dt>可借鉴机制</dt><dd>获取动作与输送收集在功能上分开</dd>
+    <dt>关键差异</dt><dd><ul><li>果实与枝条分离不等于树皮采胶</li></ul></dd>
+    <dt>不能迁移</dt><dd><ul><li>拔离树皮动作</li><li>受力方式</li></ul></dd>
+    <dt>证伪路径</dt><dd>若隔离结构造成留胶、堵塞或回流，则排除该结构</dd>
+  </dl>
+</div>
+</section><section class="section" id="s3">
+  <h2>功能与概念</h2>
+  <p class="sub">7 个必要功能、6 条流、2 条接口、28 个机制选项，组合为 4 个概念。理论组合空间远大于已研究集合，本报告不宣称已研究全部方案。</p>
+  <div class="panel"><div class="fn-group"><h3><span class="fid">F1</span>识别对象并建立局部轨迹</h3><div class="opt"><span class="oid">F1O0</span><div>现有定位方式待现场采集<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认</div></div></div><div class="opt"><span class="oid">F1O1</span><div>局部机械导向与粗定位<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S03</div></div></div><div class="opt"><span class="oid">F1O2</span><div>表面视觉定位加局部机械参考<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S02、case-a81a5bd5f1f2e791d5e1371c</div></div></div><div class="opt"><span class="oid">F1O3</span><div>人工引导与可检查的定位标记<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S03</div></div></div></div><div class="fn-group"><h3><span class="fid">F2</span>约束切入与耗皮</h3><div class="opt"><span class="oid">F2O0</span><div>现有限深与基准待现场采集<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认</div></div></div><div class="opt"><span class="oid">F2O1</span><div>可调参考与限位；组织厚度未知时暂停<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S03</div></div></div><div class="opt"><span class="oid">F2O2</span><div>几何/力位信息协同但独立核查残余树皮<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S04、case-0205da2905f4ccacbbb38094</div></div></div><div class="opt"><span class="oid">F2O3</span><div>可检查限深基准加人工确认<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S03</div></div></div></div><div class="fn-group"><h3><span class="fid">F3</span>完成受控切削</h3><div class="opt"><span class="oid">F3O0</span><div>现有刀具与进给待现场采集<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认</div></div></div><div class="opt"><span class="oid">F3O1</span><div>比较连续条状切削与分阶段进给，不预定刀形<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S05</div></div></div><div class="opt"><span class="oid">F3O2</span><div>沿局部轨迹切削并允许中途退出<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S02</div></div></div><div class="opt"><span class="oid">F3O3</span><div>电动辅助切削，人工掌握例外处理<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S03</div></div></div></div><div class="fn-group"><h3><span class="fid">F4</span>排出并隔离切屑与旧胶线</h3><div class="opt"><span class="oid">F4O0</span><div>现有切屑/胶线去向待现场采集<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认</div></div></div><div class="opt"><span class="oid">F4O1</span><div>物理分隔废物流与胶乳，旧胶线独立处理<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S01、S05、case-c1dd39efa2c949b7b81a8a58</div></div></div><div class="opt"><span class="oid">F4O2</span><div>可拆卸隔离导流与堵塞观察，验证不阻流<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S01</div></div></div><div class="opt"><span class="oid">F4O3</span><div>人工可见清屑口及隔离托接，避免运行中接触刀具<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S01</div></div></div></div><div class="fn-group"><h3><span class="fid">F5</span>监测异常并安全退出</h3><div class="opt"><span class="oid">F5O0</span><div>现有异常保护与接管待现场采集<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认</div></div></div><div class="opt"><span class="oid">F5O1</span><div>驱动状态与接触状态交叉核查，异常退让<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S02、case-479a7157f5e4d5eecce6c304</div></div></div><div class="opt"><span class="oid">F5O2</span><div>多信号状态机及接管，不将恒力视作安全深度<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 case-0205da2905f4ccacbbb38094、case-0290060f5fbcac9f3803c823</div></div></div><div class="opt"><span class="oid">F5O3</span><div>停机后人工复核，切断危险能量再排障<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S01</div></div></div></div><div class="fn-group"><h3><span class="fid">F6</span>清理、更换与复核配置</h3><div class="opt"><span class="oid">F6O0</span><div>现有维护程序待现场采集<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认</div></div></div><div class="opt"><span class="oid">F6O1</span><div>可拆卸接触件，复装后校验基准<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S05</div></div></div><div class="opt"><span class="oid">F6O2</span><div>模块更换与可追溯复标，适配接口待核<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S02</div></div></div><div class="opt"><span class="oid">F6O3</span><div>简化清洗换刀与可视检查，耗时待测<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S03</div></div></div></div><div class="fn-group"><h3><span class="fid">F7</span>导流收集并记录作业</h3><div class="opt"><span class="oid">F7O0</span><div>现有收胶与记录方式待现场采集<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认</div></div></div><div class="opt"><span class="oid">F7O1</span><div>保留胶园收集方式，补充异常与品质记录<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S06</div></div></div><div class="opt"><span class="oid">F7O2</span><div>记录工况与结果，隔离新增导流部件造成的污染<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S01</div></div></div><div class="opt"><span class="oid">F7O3</span><div>人工收胶，记录总工时与有效产出<div class="ocond">研究选项；尺寸、材料、接口、允许损伤与安全条件待确认；证据 S06</div></div></div></div></div>
+  <div class="panel"><ul class="flow-list"><li><b>L1</b> F1 到 F2 · 信号 · 传递几何参考与未确认的不确定性，不代表内部组织深度已知</li><li><b>L2</b> F2 到 F3 · 信号 · 传递允许动作边界与暂停条件</li><li><b>L3</b> F3 到 F4 · 物料 · 新切屑与旧胶线进入废物流，避免与胶乳共通</li><li><b>L4</b> F3 到 F7 · 物料 · 胶乳进入独立收集路径，路径可行性待验</li><li><b>L5</b> F5 到 F3 · 信号 · 异常时停止切削并进入预定义退出状态</li><li><b>L6</b> F6 到 F2 · 信号 · 更换或清理后复核参考与限位，未经确认不复工</li><li><b>I1</b> 接口 · 末端与移动/固定/手持平台接口未知；本模型不预选客户架构</li><li><b>I2</b> 接口 · 农艺和加工端需共同确认树体边界与胶乳质量判据</li></ul></div>
+  <div class="concept-grid"><div class="concept">
+  <div class="cid">C0</div>
+  <div class="cname">状态 unknown</div>
+  <div class="cpath">F1O0 · F2O0 · F3O0 · F4O0 · F5O0 · F6O0 · F7O0</div>
+  <p class="cwhy">客户现状占位，不是已测基准；整体条件、机械兼容与所有关键门槛均未验证</p>
+</div><div class="concept">
+  <div class="cid">C1</div>
+  <div class="cname">状态 unknown</div>
+  <div class="cpath">F1O1 · F2O1 · F3O1 · F4O1 · F5O1 · F6O1 · F7O1</div>
+  <p class="cwhy">机械参考与双物流隔离模块；整体条件、机械兼容与所有关键门槛均未验证</p>
+</div><div class="concept">
+  <div class="cid">C2</div>
+  <div class="cname">状态 unknown</div>
+  <div class="cpath">F1O2 · F2O2 · F3O2 · F4O2 · F5O2 · F6O2 · F7O2</div>
+  <p class="cwhy">感知辅助与可退让闭环末端；整体条件、机械兼容与所有关键门槛均未验证</p>
+</div><div class="concept">
+  <div class="cid">C3</div>
+  <div class="cname">状态 unknown</div>
+  <div class="cpath">F1O3 · F2O3 · F3O3 · F4O3 · F5O3 · F6O3 · F7O3</div>
+  <p class="cwhy">人机协作的低门槛改造；整体条件、机械兼容与所有关键门槛均未验证</p>
+</div></div>
+</section><section class="section" id="s4">
+  <h2>比较与推荐门禁</h2>
+  <p class="sub">4 个候选对 15 项准则共 60 格判断。每一格保留原始判断值；未知不以相同或中分填补。</p>
+  <div class="matrix-scroll"><div class="matrix" role="table" style="grid-template-columns:72px repeat(15,minmax(46px,1fr))" aria-label="概念比较矩阵，60 格"><div class="mh" role="columnheader">准则</div><div class="mh" role="columnheader">K01</div><div class="mh" role="columnheader">K02</div><div class="mh" role="columnheader">K03</div><div class="mh" role="columnheader">K04</div><div class="mh" role="columnheader">K05</div><div class="mh" role="columnheader">K06</div><div class="mh" role="columnheader">K07</div><div class="mh" role="columnheader">K08</div><div class="mh" role="columnheader">K09</div><div class="mh" role="columnheader">K10</div><div class="mh" role="columnheader">K11</div><div class="mh" role="columnheader">K12</div><div class="mh" role="columnheader">K13</div><div class="mh" role="columnheader">K14</div><div class="mh" role="columnheader">K15</div><div class="mr" role="rowheader">C0</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="mr" role="rowheader">C1</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="mr" role="rowheader">C2</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="mr" role="rowheader">C3</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div><div class="cell-u" title="未取得同条件客户基线、已冻结验收目标或实测。该格保留未知，不以相同或中分填补。">未知</div></div></div>
+  <p class="matrix-note">准则 K01 至 K15 与需求 N01 至 N15 一一对应。给出推荐必须先确认需求与基线，再经门禁取得同条件证据。</p>
+  <div class="panel"><ul class="note-list"><li>敏感性：平台由手持变移动时，定位与转场代价可能改变路线取舍；树株差异、积胶速度及维护负担可能改变收益；所有硬软属性未决项暂按门槛保守处理，待客户澄清后再比较。</li><li>N04/N05/N06/N08/N09/N10/N11/N12/N15硬软属性未决</li><li>没有可支持唯一技术路线推荐的证据</li><li>建议优先开展的补证活动不是对产品方案优劣排名</li></ul></div>
+</section><section class="section" id="s5">
+  <h2>验证计划</h2>
+  <p class="sub">5 级门禁。15 项需求到验证方法的映射已建立，执行状态 planned。</p>
+  <div class="gates"><div class="gate"><div class="gid">G0</div><div class="gwhat">需求、现场基线、口径、许可与责任确认</div><div class="gstatus">状态 planned</div></div><div class="gate"><div class="gid">G1</div><div class="gwhat">非活树或替代件的机构、物流与退出检查</div><div class="gstatus">状态 planned</div></div><div class="gate"><div class="gid">G2</div><div class="gwhat">经许可的局部机制对照</div><div class="gstatus">状态 planned</div></div><div class="gate"><div class="gid">G3</div><div class="gwhat">受限现场试点与完整日志</div><div class="gstatus">状态 planned</div></div><div class="gate"><div class="gid">G4</div><div class="gwhat">跨周期影响、维护、成本与真实采用</div><div class="gstatus">状态 planned</div></div></div>
+  <div class="panel" style="margin-top:14px"><ul class="vmethods"><li><span class="vid">N01</span><span class="vm">test</span><span class="vc">在定义明确的深度、耗皮与损伤口径下测量，并安排跨周期跟踪；阈值待客户及农艺人员确认</span></li><li><span class="vid">N02</span><span class="vm">test</span><span class="vc">对曲率、厚度和旧割面分层试验；刀位移、剩余树皮及损伤分别记录；允许误差待定</span></li><li><span class="vid">N03</span><span class="vm">test</span><span class="vc">定义污染采样方法，比较杂质、损失胶乳及清理时间；限值待下游确认</span></li><li><span class="vid">N04</span><span class="vm">test</span><span class="vc">记录堵塞、停机、清理及重启；阈值待定，不能以空载切削代替</span></li><li><span class="vid">N05</span><span class="vm">analysis</span><span class="vc">同时记录定位、安装、切割、转场、收胶、清理、故障、人机协作时间及干胶口径；目标待实测</span></li><li><span class="vid">N06</span><span class="vm">analysis</span><span class="vc">新手与熟练人员分组，记录培训、误操作、返工与接管，不能仅调查喜欢程度</span></li><li><span class="vid">N07</span><span class="vm">test</span><span class="vc">在受控环境验证急停、断电、传感异常、退出路径与复位条件；先安全审核</span></li><li><span class="vid">N08</span><span class="vm">analysis</span><span class="vc">现场调查光照、湿度、雨后割面和允许时段；雨水防护不等于雨中可割</span></li><li><span class="vid">N09</span><span class="vm">test</span><span class="vc">计时清洗、换刀、复装校准，跟踪磨损和积胶；材料与费用未知</span></li><li><span class="vid">N10</span><span class="vm">analysis</span><span class="vc">调查树距、坡度、挂载接口、供电与收胶流程，再确定目标平台</span></li><li><span class="vid">N11</span><span class="vm">analysis</span><span class="vc">记录树ID、时间、工具版本、工况、异常和数据缺失，不编造客户已有数字化基础</span></li><li><span class="vid">N12</span><span class="vm">analysis</span><span class="vc">采集实际成本与利用率，用情景区间比较；不输出无数据ROI</span></li><li><span class="vid">N13</span><span class="vm">test</span><span class="vc">由加工方确认干胶含量、杂质和收集损失测量方法；不能以初始流速代替季节产量</span></li><li><span class="vid">N14</span><span class="vm">analysis</span><span class="vc">定义适用树株与例外规则，记录覆盖率与误拒绝；识别能力需验证</span></li><li><span class="vid">N15</span><span class="vm">analysis</span><span class="vc">完成接口勘察与局部验证，不把试验优先顺序解释成已选定产品架构</span></li></ul></div>
+</section><section class="section" id="s6">
+  <h2>领域扩展</h2>
+  <p class="sub">同一份研究包按产品创新、工程创新、AI4S 三个视角展开，字段均来自 research-pack 的 domain_extension。</p>
+  <div class="tabs" role="group" aria-label="领域切换"><button type="button" aria-pressed="true" data-tab="product">产品创新</button><button type="button" aria-pressed="false" data-tab="engineering">工程创新</button><button type="button" aria-pressed="false" data-tab="ai4s">AI4S</button></div>
+  <div class="panel tabpanel" data-panel="product"><dl class="kv"><dt>目标用户</dt><dd>潜在胶园经营者、操作与农艺人员、设备方、加工方，均未访谈确认</dd><dt>用户价值</dt><dd>减少污染、停机与维护负担，同时避免以伤树或胶乳品质换取表面效率。</dd><dt>使用旅程</dt><dd>选择树株、定位、切削、分流与收集、异常退出、清理复核与记录</dd><dt>概念架构</dt><dd>C1机械参考与双物流、C2感知辅助闭环、C3人机协作渐进改造</dd><dt>必须研究</dt><dd>真实限深、物流隔离、异常退出、可复核维护</dd><dt>可选</dt><dd>视觉辅助、新增传感与数据记录</dd><dt>暂缓</dt><dd>全自主整机</dd><dt>MVP 范围</dt><dd>先验证可撤销的末端或局部模块，不预定整机。</dd><dt>商业假设</dt><dd>成本、价格、利用率均未取得，原因：实际成本、利用率和采购偏好未取得</dd><dt>需求证据</dt><dd>状态 not_collected；下一步：现场观察熟练与新手完整作业、维护和接管过程</dd></dl></div><div class="panel tabpanel" data-panel="engineering" hidden><dl class="kv"><dt>系统边界</dt><dd>末端机构、作业控制与胶园管理接口；不包含未经确认的整机平台。</dd><dt>技术架构</dt><dd>F1 识别对象并建立局部轨迹、F2 约束切入与耗皮、F3 完成受控切削、F4 排出并隔离切屑与旧胶线、F5 监测异常并安全退出、F6 清理、更换与复核配置、F7 导流收集并记录作业</dd><dt>接口登记</dt><dd><ul><li>I1 末端与移动/固定/手持平台接口未知；本模型不预选客户架构（unknown）</li><li>I2 农艺和加工端需共同确认树体边界与胶乳质量判据（assumption）</li></ul></dd><dt>机制选项</dt><dd>28 个选项按功能分组，全部为研究选项，条件待确认</dd><dt>工程风险</dt><dd><ul><li>表面参考不等于内部安全深度</li><li>隔离件可能留胶或堵塞</li><li>恒力不等于限深</li><li>感知与复标可能失效</li><li>自动化可能增加总人时</li></ul></dd><dt>计算记录</dt><dd><span class="empty">空。本层级不包含工程计算。</span></dd><dt>求解器结果</dt><dd><span class="empty">空。未运行求解器。</span></dd><dt>验证矩阵</dt><dd>15 行，证据状态见验证计划章节</dd></dl></div><div class="panel tabpanel" data-panel="ai4s" hidden><dl class="kv"><dt>科学问题</dt><dd>不同定位、切削、分流、监测和维护机制如何共同影响树体损伤、胶乳品质与单位人时合格产出？</dd><dt>假设</dt><dd><ul><li>机械参考与物流隔离可能降低污染和维护中断</li><li>多信号闭环可能提高异常识别与接管能力</li><li>人机分工可能降低全流程负担</li></ul></dd><dt>自变量</dt><dd>定位方式、刀具与导向配置、导流结构、监测与接管策略、维护方式</dd><dt>因变量</dt><dd>切入位移与剩余树皮、杂质与收集损失、异常与复位、完整人时与合格产出</dd><dt>控制变量</dt><dd>树株与割面类型、环境、工具版本、人员熟练度</dd><dt>混杂因素</dt><dd>品系与树龄、旧割面状态、雨水弱光、下游检测差异</dd><dt>数据计划</dt><dd>按树株与割面类型分层；同树重复刀次不冒充独立树株；仪器、采样、对照和缺失记录先确认</dd><dt>实验设计</dt><dd>门禁 G0 至 G4；基线：客户现状待采集，不虚构C0性能；停止条件：许可与损伤判据缺失、约束冲突、测量不可靠</dd><dt>不确定性</dt><dd><ul><li>短期局部试验不能证明长期树体健康</li><li>初期流速不能替代季节产量</li><li>公开案例效果不能外推客户设备</li></ul></dd><dt>可复现性</dt><dd>任务 RUBBER-20261026 r1；方法版本 R48、R14、R17、R36、R44、R42；执行 host_agent；模型后台 429_timeout_not_success</dd><dt>科学证据</dt><dd>已支持：0 条；已证伪：0 条；未知：所有候选对目标胶园的效果与树体影响</dd></dl></div>
+</section><section class="section" id="s7">
+  <h2>执行、审核与版本</h2>
+  <p class="sub">谁做的、怎么做的、审核到哪一步。模型调用失败如实记录，不得隐藏。</p>
+  <div class="panel"><dl class="kv"><dt>执行模式</dt><dd>host_agent</dd><dt>模型调用</dt><dd>失败。成功调用 0 次。可选后台模型429并超时；Host Agent组织研究，方法MCP真实校验与回放。</dd><dt>方法版本</dt><dd>R48（read_and_applied）、R14（read_and_applied）、R17（read_and_applied）、R36（read_and_applied）、R44（read_and_applied）、R42（read_and_applied）</dd><dt>执行状态</dt><dd>review_pending</dd></dl></div>
+  <div class="review-grid" style="margin-top:14px"><div class="review-item"><div class="rk">客户确认</div><div class="rv">否</div></div><div class="review-item"><div class="rk">语义复核</div><div class="rv">pending</div></div><div class="review-item"><div class="rk">领域专家</div><div class="rv">否</div></div><div class="review-item"><div class="rk">工程验证</div><div class="rv">否</div></div><div class="review-item"><div class="rk">公开授权</div><div class="rv">否</div></div><div class="review-item"><div class="rk">训练授权</div><div class="rv">否</div></div></div>
+  <div class="panel" style="margin-top:14px">
+    <table class="src-table">
+      <thead><tr><th>来源项目</th><th>研究版本</th><th>记录数</th></tr></thead>
+      <tbody><tr><td>2025-00</td><td>research-000001</td><td>102</td></tr><tr><td>2024-06</td><td>research-000002</td><td>26</td></tr><tr><td>2024-s07</td><td>research-000000</td><td>0</td></tr><tr><td>2025-03</td><td>research-000003</td><td>21</td></tr><tr><td>2018-c01</td><td>research-000000</td><td>0</td></tr></tbody>
+    </table>
+  </div>
+</section><section class="section" id="s8">
+  <h2>附录：证据与来源</h2>
+  <p class="sub">证据形态、读取范围与边界原文。</p>
+  <div class="panel"><ul class="note-list"><li>证据 20 条：每条含来源 ID、来源修订指纹、块 ID、字符区间定位、文本指纹；读取范围 machine_text_extraction_not_human_read。</li><li>研究、概念与试验计划，不是工程定案</li><li>没有农艺许可、损伤判据、安全审核和现场条件，不安排活树试割</li><li>公开专利线索不构成新颖性、侵权或实施自由判断</li><li>私有原件不进入公开研究包</li><li>源事实未被修改（source_facts_modified = false）；物理试验授权（physical_test_authorized = false）。</li><li>本报告由 build_gdrp_report.py 从 research-pack.json 逐字段生成，未另写事实。</li></ul></div>
+</section>
+  </main>
+</div>
+<footer class="foot">
+  <p>好设计平台 · 创新研究输出物标准 GDRP · 模板结构见 specs/102-可视化报告模板结构.md · 本报告由 build_gdrp_report.py 生成。</p>
+</footer>
+<script>
+(function(){
+  var buttons=document.querySelectorAll('.tabs button');
+  var panels=document.querySelectorAll('.tabpanel');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      buttons.forEach(function(b){b.setAttribute('aria-pressed','false');});
+      btn.setAttribute('aria-pressed','true');
+      panels.forEach(function(p){
+        p.hidden = p.getAttribute('data-panel') !== btn.getAttribute('data-tab');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

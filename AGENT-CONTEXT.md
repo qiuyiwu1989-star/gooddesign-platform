@@ -1,8 +1,8 @@
 ---
 title: GoodDesign 多 Agent 共享背景页
-version: 2026-11-08
+version: 2026-11-12
 audience: agents, developers, product collaborators
-production_release: 20261106-112
+production_release: 20261112-115
 local_focus: application-center, agent-access, reasoning-canvas, research-engine
 ---
 
@@ -23,7 +23,8 @@ local_focus: application-center, agent-access, reasoning-canvas, research-engine
 
 ## 2. 当前生产与本地状态
 
-- 当前生产：`https://opendesign.cc/inno/`，生产基线 `20261106-112`。
+- 用户当前指定真实环境：`https://haoshejiguan.com/`；项目区为 `/inno/`。仓库 nginx 配置将根路径服务为好设计馆，并复用项目区路由。
+- 115部署验收记录的目标是 `https://opendesign.cc/inno/canvas/`，release `20261112-115`；不同域名是否同版需逐路由核实，不由首页200推断。
 - 应用中心控制台与应用注册规范已随 112 上线；线上 registry 是否公开仍由 111 线决定。
 - 推理画布本地 113/114 已完成状态、角色与报告；115 已部署为受保护试点 `/inno/canvas/`，登录后浏览器走招待完成。
 - 服务器发布前仍需先处理根分区空间；不要直接覆盖生产 release。
@@ -233,8 +234,8 @@ python3 -m unittest tests.test_application_registry_111
 ## 11. 当前建议的下一步
 
 1. 推理画布 113 已完成本机状态服务与 GDRP JSON 导出；114 已完成本地三角色视图与 GDRP 人读报告。
-2. 下一步做 RC-16 受保护试点部署，先处理登录保护、数据目录、健康检查和回滚。
-3. 同步修复 110 暴露的检索质量问题：匹配体归一化与查询词源语汇化。
+2. RC-16 已有115受保护试点部署记录；继续核新域名登录后画布、账号隔离、桌面移动及回滚，不重复部署。
+3. 110 暴露的检索质量问题已由 123 完成确定性修复：匹配体空白归一化（自召回 95.3%→100%，基线 15 个换行未中全闭合）与 build_queries 源语汇标注/零召回预警；语义召回与扩库仍另立任务。
 4. 为每个应用补一份由 Manifest 生成的 `APP_SKILL.md`。
 5. 为 Agent 增加最小示例：读取注册表、调用 capabilities、组装研究上下文、校验 GDRP。
 6. 等 Manifest、MCP 参数和 GDRP 输出稳定后，再决定 Python / TypeScript SDK。

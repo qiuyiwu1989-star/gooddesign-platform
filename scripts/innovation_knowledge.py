@@ -111,6 +111,12 @@ def _terms(v):
  if not isinstance(v,list) or len(v)>20 or any(not isinstance(t,str) or not 1<=len(t.strip())<=120 for t in v):raise ValueError('检索项须为最多20条非空短语')
  return [t.strip() for t in v]
 
+def _norm(s):
+ """123 匹配归一化：移除 JSON 转义空白序列与全部空白字符，跨行/排版差异不再丢命中。
+ 对匹配体与查询项施加同一变换，旧命中保持为子串（召回单调不减）；仍为逐字匹配。"""
+ for esc in ('\\r\\n','\\n','\\r','\\t'):s=s.replace(esc,'')
+ return ''.join(s.split()).casefold()
+
 def search(index,needs=None,functions=None,constraints=None,limit=8):
  """Literal phrase matching with contextual field priority, not similarity scoring.
  A text hit in a source constraint does NOT assert target feasibility.
@@ -120,11 +126,11 @@ def search(index,needs=None,functions=None,constraints=None,limit=8):
  priority={'needs':['problem','mechanism','choice','verification','boundary','constraint'],'functions':['mechanism','choice','problem','verification','boundary','constraint'],'constraints':['boundary','constraint','verification','mechanism','choice','problem']}
  rows=[];all_terms={(g,t) for g,ts in groups.items() for t in ts};matched=set()
  for n in index['nodes']:
-  body=json.dumps(n['value'],ensure_ascii=False)+' '+str(n.get('conditions') or '')+' '+str(n.get('limitations') or '')
-  hits=[dict(group=g,term=t) for g,ts in groups.items() for t in ts if t.casefold() in body.casefold()]
+  body=_norm(json.dumps(n['value'],ensure_ascii=False)+' '+str(n.get('conditions') or '')+' '+str(n.get('limitations') or ''))
+  hits=[dict(group=g,term=t) for g,ts in groups.items() for t in ts if _norm(t) in body]
   if not hits:continue
   matched.update((h['group'],h['term']) for h in hits)
   rank=min(priority[h['group']].index(k) for h in hits for k in n['dimensions'])
-  rows.append(dict(node=copy.deepcopy(n),hits=hits,context_priority=rank,match_reason='输入短语在字段正文/适用前提/限制中逐字命中',boundary_status='requires_target_validation',relationship_to_target='candidate_analogy_not_proven_transfer'))
+  rows.append(dict(node=copy.deepcopy(n),hits=hits,context_priority=rank,match_reason='输入短语在字段正文/适用前提/限制中命中（空白归一化后的逐字匹配，非相似度评分）',boundary_status='requires_target_validation',relationship_to_target='candidate_analogy_not_proven_transfer'))
  rows.sort(key=lambda r:(r['context_priority'],-len(r['hits']),r['node']['id']))
- return dict(project_id=index['project_id'],revision=index['revision'],index_sha256=index['index_sha256'],query=groups,retrieval_type='literal_phrase_with_explicit_context_priority_not_calibrated_similarity',context_priority=priority,matches=rows[:limit],total_matches=len(rows),unmatched=[dict(group=g,term=t,status='no_literal_evidence_not_proof_of_irrelevance') for g,t in sorted(all_terms-matched)],gaps=index['gaps'],limitations=['仅逐字检索，未命中不代表没有相关知识；不会自动扩展同义词或补造关系','来源约束和目标约束必须人工/Agent重新比较，命中不等于相容','历史引用仅保留题录定位，不能与冻结原文核验等同','索引为只读视图，不修改源项目事实或专家评分'])
+ return dict(project_id=index['project_id'],revision=index['revision'],index_sha256=index['index_sha256'],query=groups,retrieval_type='literal_phrase_with_explicit_context_priority_not_calibrated_similarity',context_priority=priority,matches=rows[:limit],total_matches=len(rows),unmatched=[dict(group=g,term=t,status='no_literal_evidence_not_proof_of_irrelevance') for g,t in sorted(all_terms-matched)],gaps=index['gaps'],limitations=['仅逐字检索（空白归一化，不扩展同义词），未命中不代表没有相关知识；不会补造关系','来源约束和目标约束必须人工/Agent重新比较，命中不等于相容','历史引用仅保留题录定位，不能与冻结原文核验等同','索引为只读视图，不修改源项目事实或专家评分'])

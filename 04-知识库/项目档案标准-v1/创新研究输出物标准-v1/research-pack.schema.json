@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendesign.cc/schemas/gdrp-0.1.json",
+  "title": "GoodDesign Research Pack 0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "package_id", "task", "execution", "review", "summary", "problem_brief", "function_model", "case_retrieval", "transfer_maps", "concept_set", "comparison", "validation_plan", "evidence", "domain_extension", "boundary"],
+  "properties": {
+    "schema_version": {"const": "gdrp-0.1"},
+    "package_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,119}$"},
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task_id", "revision", "title", "domains", "object", "delivery_level"],
+      "properties": {
+        "task_id": {"type": "string"},
+        "revision": {"type": "string"},
+        "title": {"type": "string"},
+        "domains": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["product", "engineering", "ai4s"]}},
+        "object": {"type": "string"},
+        "delivery_level": {"enum": ["L0_research_brief", "L1_concept_pack", "L2_engineering_pack", "L3_validation_pack"]}
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["engine_version", "mode", "status", "source_versions", "method_versions", "model_calls"],
+      "properties": {
+        "engine_version": {"type": "string"},
+        "mode": {"enum": ["rule_only", "host_agent", "model_assisted"]},
+        "status": {"enum": ["draft", "structured", "review_pending", "domain_reviewed", "validation_in_progress", "closed"]},
+        "source_versions": {"type": "array", "items": {"type": "object"}},
+        "method_versions": {"type": "array", "items": {"type": "object"}},
+        "model_calls": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "count"],
+          "properties": {
+            "status": {"enum": ["not_used", "succeeded", "failed", "partial"]},
+            "count": {"type": "integer", "minimum": 0},
+            "note": {"type": "string"}
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["customer_confirmed", "semantic_review", "domain_expert", "engineering_validated", "public_authorized", "training_authorized", "overall"],
+      "properties": {
+        "customer_confirmed": {"type": "boolean"},
+        "semantic_review": {"enum": ["pending", "passed", "issues_found"]},
+        "domain_expert": {"type": "boolean"},
+        "engineering_validated": {"type": "boolean"},
+        "public_authorized": {"type": "boolean"},
+        "training_authorized": {"type": "boolean"},
+        "overall": {"enum": ["pending_review", "accepted_for_research", "accepted_for_validation", "rejected"]}
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["problem", "outcome", "next_action", "recommendation_status"],
+      "properties": {
+        "problem": {"type": "string"},
+        "outcome": {"type": "string"},
+        "next_action": {"type": "string"},
+        "recommendation_status": {"enum": ["recommended", "conditional", "no_recommendation"]}
+      }
+    },
+    "problem_brief": {"type": "object"},
+    "function_model": {"type": "object"},
+    "case_retrieval": {"type": "array", "items": {"type": "object"}},
+    "transfer_maps": {"type": "array", "items": {"type": "object"}},
+    "concept_set": {
+      "type": "object",
+      "required": ["options", "combinations", "unknowns"],
+      "properties": {
+        "options": {"type": "array"},
+        "combinations": {"type": "array"},
+        "unknowns": {"type": "array"}
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "required": ["criteria", "judgments", "recommendations", "unknowns"],
+      "properties": {
+        "criteria": {"type": "array"},
+        "judgments": {"type": "array"},
+        "recommendations": {"type": "array"},
+        "unknowns": {"type": "array"}
+      }
+    },
+    "validation_plan": {
+      "type": "object",
+      "required": ["gates", "matrix", "execution_status"],
+      "properties": {
+        "gates": {"type": "array"},
+        "matrix": {"type": "array"},
+        "execution_status": {"enum": ["planned", "in_progress", "completed", "blocked"]}
+      }
+    },
+    "evidence": {"type": "array", "items": {"type": "object"}},
+    "domain_extension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product", "engineering", "ai4s"],
+      "properties": {
+        "product": {"type": ["object", "null"]},
+        "engineering": {"type": ["object", "null"]},
+        "ai4s": {"type": ["object", "null"]}
+      }
+    },
+    "boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_facts_modified", "physical_test_authorized", "notes"],
+      "properties": {
+        "source_facts_modified": {"type": "boolean"},
+        "physical_test_authorized": {"type": "boolean"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
