@@ -333,4 +333,4 @@ ML-029方法页标准与三类标杆：方法页标准-v1及specs/ML-029定义�
 
 123产业Agent真实后端：规范见specs/123。expo_agent_server.py（18792，innovation-expo.service）架构=模型起草+真实检索+契约校验，模型配置/etc/innovation-expo.env（勿读/etc/gooddesign.env，600拒绝过）。SSE事件log/stage/blk/pack/done/error，UI统一handleEvent回放与真实共用。映射项目必须来自innovation_knowledge真实召回，模型自选项目过validate_matches丢弃并记录。检索词由模型提议短词（源语汇化），板块长词召回必零。nginx limit_req_zone只能放http上下文（conf.d/expo-agent.conf）。本地Chromium偶发全域出站被重置属工具侧，curl与线上服务为准。
 
-123检索修复：ik.search匹配体经_norm归一化（去JSON转义空白与全部空白后casefold），跨行/排版差异不再丢命中，召回单调不减仍为逐字匹配；build_queries标注source_vocabulary，无query_hints功能附zero_recall_warning（110基线抽象词零触达，零结果不得解读为无相关知识）。修复后报告output/retrieval-eval-v1/post-fix-20261114.json：自召回100%（318/0未中），改写0%与抽象词零触达不变。语义召回与460不可检索项目扩库仍另立任务；割胶冻结run与110基线报告未重算。8专项+32相关回归+741全量通过；生产未改。
+126检索修复：ik.search匹配体经_norm归一化（去JSON转义空白与全部空白后casefold），跨行/排版差异不再丢命中，召回单调不减仍为逐字匹配；build_queries标注source_vocabulary，无query_hints功能附zero_recall_warning（110基线抽象词零触达，零结果不得解读为无相关知识）。修复后报告output/retrieval-eval-v1/post-fix-20261114.json：自召回100%（318/0未中），改写0%与抽象词零触达不变。语义召回与460不可检索项目扩库仍另立任务；割胶冻结run与110基线报告未重算。8专项+32相关回归+741全量通过；生产未改。

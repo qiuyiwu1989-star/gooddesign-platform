@@ -1,5 +1,185 @@
 # State
 
+## 最新本地修复（2026-11-14，126检索质量确定性修复）
+110 评估规定的两个 model_assisted 前置修复已完成：ik.search 匹配体经 `_norm` 空白归一化（去 JSON 转义空白+全部空白后 casefold，召回单调不减，仍逐字匹配），机械自召回 95.3%→100%，基线 15 个换行未中窗口全部闭合并有专项锁定；`build_queries` 新增 source_vocabulary 标注与无 hints 零召回预警（不改变检索行为）。修复后报告 output/retrieval-eval-v1/post-fix-20261114.json（生成即冻结）：改写 0% 与抽象词零触达不变，语义召回与 460 不可检索项目扩库另立任务。8 专项+32 相关回归+741 全量通过；冻结样例与 110 基线报告未重算；生产未改。编号说明：本会话原占用 123，与并行会话冲突后改 126（125 亦被并行 MCP 密钥会话占用），spec/验收/测试文件均已更名。详 specs/126 与 00-项目管理/126 验收。
+
+## 最新本地实现（2026-11-14，125 MCP 密钥申请管理与使用回流）
+按用户要求实现密钥全生命周期：scripts/mcp_key_registry.py（SQLite 注册表，只存哈希；申请四要素、批准签发、吊销、轮换、延期、导入既有 keys.json 不断线）+ scripts/mcp_key_admin.py（loopback 管理台：申请/批准/驳回/吊销/轮换/按 key 使用视图，CSRF 与 Host 检查，明文只在签发结果显示一次）+ innovation_gateway_http.py 接入（注册表优先、keys.json 回退；每次调用记录 key 归属、工具、参数摘要、状态、耗时；mcp.haosheji.cc 已入 allowed_hosts/origins，补主域迁移遗留）。数据回流 v1 即使用日志信号（外部在检索什么项目/关键词/组什么包）。11 项单测通过（签发/驳回留理由/吊销 401/轮换旧废新立/过期拒绝/使用聚合/兼容导入/新域名/管理台页面），管理台浏览器实测申请到签发全流程。specs/125。未部署生产，部署步骤已入密钥轮换台账待办。
+
+## 最新本地调研（2026-11-14，124地方产业DeepResearch方案）
+完成DeepResearch方案调研：目标=输入地名→真深度调研→产业×好设计HTML报告。四个候选：GPT Researcher改造（planner-executor+本地文档+MCP混合检索，需Tavily且纪律需外挂，适合做1-2天对照原型）、123骨架深化（推荐主线：火山方舟web_search联网搜索+planner多子问题循环+证据账本，纪律内生无重依赖）、smolagents改造（代码执行中心不合纪律）、火山托管形态（只用模型API不用托管）。推荐主线三阶段：A联网真实调研、B planner多步循环、C报告交付（格式用户定稿后接渲染层）；支线GPT Researcher挂我们MCP跑对照。详specs/124。未实施，待用户确认后开工阶段A。
+
+## 最新生产发布（2026-11-14，123产业创新Agent真实后端）
+展厅Agent从动画升级为真实研究：https://haoshejiguan.com/expo/ 输入地名后由scripts/expo_agent_server.py（18792端口，innovation-expo.service）执行"模型起草（火山方舟deepseek-v4）+真实检索（innovation_knowledge逐字召回103研究版）+确定性校验（transfer契约，非真实候选丢弃并记录）"，SSE实时推流；UI统一事件处理器，API不可达自动降级静态数据包。实测：玉环47秒全流程、真实召回4-8项目、7条机制关联（差异同列）、8需求全proposed/hard=null、3方向全标研究假设、0推荐；嘉善2候选6关联；降级路径本地验证。曾如实记录一次映射ReadTimeout（已提上限修复）。发布20261114-123-fix1，模型配置/etc/innovation-expo.env（640组读）。本机Chromium当时全域出站被重置，线上UI的EventSource路径未浏览器验证（SSE事件与降级路径已验）。详specs/123。未提交Git。
+
+## 最新本地变更（2026-11-14，MCP 新域名与 Agent 接入包）
+用户已将 MCP 迁至 mcp.haosheji.cc/mcp。MCP 接入中心源文件已更新：`scripts/innovation_gateway_page.py` 服务地址单源化为 ENDPOINT 常量并指向新域，新增「复制 Agent 接入包」按钮（onboard JSON 注入 8 工具清单、边界与示例任务）；`extensions/project-portal/mcp-guide.js` 从注入数据读地址并组装 Markdown 接入包（配置占位符 + 工具清单 + 边界 + 示例任务），密钥不落页面。页面构建断言与 077 五项回归通过，仓库内旧 mcp 地址无残留。推理画布桥接走本机 import，不受域名影响。新建 00-项目管理/密钥轮换台账.md（不记密钥值）；截图暴露的 token 建议吊销换新，吊销清单仍是 innovation_auth 既有缺口。仅源码变更，未经页面族发布流程，线上页面仍旧域名，待统一发布。
+
+## 最新生产变更（2026-11-14，121v3产业创新Agent Deep Research版）
+应用户"太轻了、要像真的"反馈，展厅Agent升级为Deep Research版：六阶段流程（产业扫描→企业深读→问题与需求→机制双侧映射→概念与验证规划→报告生成），终态为带目录的完整研究报告（摘要统计条/产业概况表/3类客户画像/7条需求表（全部proposed+hard=null引擎语言）/双侧映射（迁移点与差异同列）/概念方向（全标研究假设）/验证规划/附录含dossier深链），并嵌入割胶样例15/7/28/4/60/0引擎纪律。玉环数据包含6家上市公司深读要点（公开资料整理待核），嘉善为画像示例。scripts/build_expo_agent.py从catalog真源生成48KB单文件离线HTML；8张Playwright全流程抓拍验证通过（output/design-121/v3-*.png）。已上线https://haoshejiguan.com/expo/，v2备份index-agent-v2-backup.html。详specs/121。未提交Git。
+
+## 最新生产变更（2026-11-14，121v2产业创新Agent上线）
+应用户要求展厅应用从幻灯片改为交互Agent：https://haoshejiguan.com/expo/ 现为「好设计·产业创新Agent」——领导输入地方（玉环/嘉善快捷片，任意输入走通用兜底），小好现场四阶段演示：产业概况（板块+样本企业）、客户画像（3份）、机制匹配（真实获奖项目+迁移点，明示命中不等于可迁移）、应用方向（全部标"研究假设·未经验证"）；左侧日志流逐字动画+阶段进度点+计时，右侧内容级联入场。scripts/build_expo_agent.py从catalog真源生成单文件离线HTML（33KB，零外部依赖），数据包为builder顶部策展常量（玉环含6家上市公司示例标注"公开资料整理待核"）。浏览器全流程与四阶段Playwright抓拍验证通过（output/design-121/agent-*.png）。旧幻灯片版留档/var/www/expo/jiashan/index-slides-backup.html。详specs/121。未提交Git。
+
+## 最新生产发布（2026-11-14，122新旧馆链接整合）
+新旧馆并存问题收口：新馆为唯一门面，8个展品页获得博物馆系干净地址（/museum/hall、/museum/zones、/museum/x-ray、/museum/playground、/museum/laureates、/museum/assistant、/museum/connect、/museum/award），旧馆首页301退役、旧内容页8条301映射；atom/project旧项目页与/inno/legacy/资产留技术路径不动。关键决策：链接改写放构建期decorate（MUSEUM_LINK_MAP），不改original-app源文件（其同时服务旧渠道，直接改曾致005历史快照身份校验失败，已回退）。canonical与审计器同步。733项回归与审计P0=0/P1=0通过；线上重定向链与内容200实测通过；浏览器工具对全域名连接中断属工具侧问题（curl正常）。发布20261114-122（static/methods，runtime同版无变化，mcp保持118）。详specs/122。未提交Git。
+
+## 最新本地交付（2026-11-14，121嘉善展厅演示应用一期）
+按用户确认的嘉善测试场（大屏投影非触摸）完成演示应用一期：scripts/build_expo_jiashan.py从catalog真源生成单文件离线HTML（561KB，封面/二维码全内联，断网可播），9屏动线：吸引环→定位→3产业画像→3组产业×项目库（真实获奖项目+迁移点，明示命中不等于可迁移）→创新设计大模型S1-S8（割胶真实15/7/28/4/60/0）→3机会方向卡（均标研究假设未经验证）→二维码。演讲者←→/点击翻页，A自动播放，闲置90秒回吸引环。产物output/expo/jiashan/index.html，9屏浏览器截图验证通过（output/design-121），详specs/121。已上线 https://haoshejiguan.com/expo/（独立目录/var/www/expo/jiashan不动release本体，nginx路由deploy/nginx-haoshejiguan.com.conf）。主站发布仍120-fix2，唯一已知差异steward_dossier_ui阅读器微调未上线。未提交Git。
+
+## 最新本地规划（2026-11-14，121展厅数字展陈系统）
+用户提出展厅领导展示应用需求：好设计馆·数字展陈系统，一屏三态（大屏吸引环/大屏导览/扫码带走），五分钟内容动线（定位数字→展区地图→展品故事卡→小好检索演示→扫码带走），交互约束零输入/大字/三击必达/闲置回位/离线容错。复用现有设计系统与数据资产，新增/expo/展厅模式。一期1-2周纯静态可离线。待用户确认：展厅硬件、首个场地、一期是否含小好。详specs/121。未实施。
+
+## 最新生产发布（2026-11-13，120-fix2与浏览器套件收口）
+Playwright装齐后补齐脚本化浏览器回归并发布20261113-120-fix2：apps.json应用路由全部迁根路径（registry/schema同步）、portal.js项目卡改/dossier/、catalog.json改绝对路径、/apps/改alias前缀使registry.json公开可读（符合111规范Agent可读意图；原路径经rewrite 301）。五个浏览器套件全绿：086(34)、096、094(41)、075(36)、100(165，预览56061)；本地预览preview_gooddesign_site.py已同步根路径映射。733项全量回归与审计P0=0/P1=0保持。当前发布20261113-120-fix2（static/methods/runtime，mcp保持118）。未提交Git。
+
+## 最新生产发布（2026-11-13，120去inno路径改造）
+好设计馆主域名完成去/inno/化：项目库/projects/、方法库/methods/、应用中心/apps/、需求研究/needs/、数据总览/report/、档案/dossier/、画布/canvas/、登录/login/等全部根路径直达，21条server级rewrite把旧/inno/页面301到新路径（保留查询串，/inno/canvas/api等负向断言保护）；技术路径（portal资产、legacy、inno/api、mcp/api）不动。新增deploy/nginx-inno-root.conf（根路径静态+运行时反代+@root_login），method-library.conf改/methods/直出。Cookie Path改/（否则根路径登录失效），登录表单/login/，safe_next默认/loop/。/innovation/路由修复（此前线上404）。canonical同步根路径，审计器ROUTE_MAP同构。733项回归与审计P0=0/P1=0通过；线上14根路径200、旧路径301、登录200非403、MCP 401；fix1修portal.js相对fetch('catalog.json')在/projects/下404导致指标变"-"（改绝对路径）。当前发布20261113-120-fix1（static/methods/runtime，mcp保持118），nginx配置备份.bak-20261113。详specs/120。磁盘1.1G；运行时PREFIX翻转留待下轮；未提交Git。
+
+## 最新生产发布（2026-11-12，119方法页密度与发版细节）
+20261112-119已上线（static/methods/runtime，mcp无变更保持118）。方法页密度根因修复：hero的gap:28px同时是grid行距撑出112px空白，改column/row分离并收紧边距，"全部方法"返回链加‹符号改品牌色；档案页孤立>符号定位到workspace_ui.py:31正则不匹配闭合符（全档案页都多一个可见>），已修并加回归；replace_chrome移除旧skip link解决双跳转链接；portal与方法库CSS全部内容指纹版本化（发版后浏览器不再用旧缓存）；1248页注入canonical指向主域；深浅色域五条过渡规则入视觉规范v2第13节。4项新增回归+全量通过，审计P0=0/P1=0，线上7路由与档案/方法页实测通过，截图output/design-119。详specs/119。去/inno/路径改造留待下一轮。未提交Git。
+
+## 最新生产发布（2026-11-12，118全站视觉审计与四base发布）
+scripts/site_audit_118.py对全部1248页脚本化审计：首跑P0=352/P1=2，修复后P0=0/P1=0（P2=112全部为atom/project页第三方http来源链接，已登记接受；P3为语义header非违规）。关键修复：MCP页与配置预览改新域名、首页项目卡改相对链接、64方法页共320个档案死链移除、登录Origin白名单加haoshejiguan.com（主域切换后登录必坏的真P0）、apps页双main、67个legacy按钮type、两页补h1。发布20261112-118：打包与112全量SHA比对89文件变化与修复范围一一对应；innovation-mcp首次纳入统一发布（此前停在093e）；四服务重启健康检查通过；登录POST验证200而非403；回滚材料release-backups/20261112-118。全量Python回归通过；脚本化Playwright套件因本机无chromium未跑，已用桌面浏览器人工验证桌面/移动关键页。详specs/118。方法页密度等版式层打磨仍属117阶段二待办。未提交Git。
+
+## 最新生产变更（2026-11-12，117阶段一主域硬切换）
+用户决策haoshejiguan.com为平台主域名、opendesign.cc/inno/不再使用，并启动全站视觉统一（specs/117三阶段）。阶段一已完成：opendesign.cc摘除两个inno snippet（内容全为/inno/与/methods域内路由），/inno/*页面301、/inno/api与canvas/api与mcp/api为308到新域，opendesign.cc主站其余产品未动，配置入库deploy/nginx-opendesign.cc.conf（主站配置首次入版本管理，服务器备份.bak-20261112）。验证：301/308正确且保留查询串、POST经308到达MCP后端401、opendesign根与新域均200；Cookie无Domain属性登录态自动适用新域。阶段二（去/inno/路径+全站视觉统一合并一次重建）与阶段三（MCP口径收口）进行中。未提交Git。
+
+## 最新生产变更（2026-11-12，116好设计馆独立域名接入）
+haoshejiguan.com（@/www，泛解析未配）已接入：`/`直接服务好设计馆museum页面不跳转，`/inno/`复用现有snippet全量镜像主项目区路由，鉴权原样继承（canvas匿名302登录）。Let's Encrypt证书至2027-02-10自动续期。配置入库deploy/nginx-haoshejiguan.com.conf；过程坑：certbot需显式--account、`location = /`用alias指文件会报500须root+try_files。桌面/移动浏览器与关键路由验证通过，截图output/design-116，详specs/116。另查实：115推理画布已部署在产（innovation-canvas.service active，release 20261112-115），主站current仍为20261106-112；根分区可用约1.5G。未提交Git。
+
+## 最新本地开发（2026-11-11，113推理画布状态服务与GDRP导出）
+specs/113第一阶段完成：reasoning_canvas_server.py新增本机SQLite工作区状态API（GET/POST state、revisions、gdrp），canvas_gdrp_mapper.py以GD-CRE-0.1冻结割胶包为骨架映射画布证据裁决、毙掉方向、优先级、取舍、签署、检索留痕、引擎确认与推理运行记录；前端新增保存工作区、导出研究包与状态提示，localStorage仅降级。状态追加不可覆盖revision，base_revision冲突409；新workspace不再误报服务未启动。浏览器实测保存r1、刷新恢复“工作区r1”、下载GDRP；下载包Schema 0错误、execution=draft、recommendations=0。18项RC01/03/08回归通过，验收下载副本已清理。未接模型、未做用户系统、未部署生产，生产仍112。
+
+## 最新本地开发（2026-11-08，推理画布全屏工作台化）
+应用户要求升级为全屏工作台：100dvh 画布铺底、56px 顶栏、团队条/协作记录/缩放胶囊为画布浮层、详情右侧 430px 滑入面板（点空白或收起滑出）。动画：分批弹入错落、连线描边画出、平滑缩放、选中脉冲、团队条呼吸，reduced-motion 全降级；修复 transform 面板造成的页面横向溢出（stage overflow hidden）。浏览器实测通过，13 项单测通过。验收见 00-项目管理/推理画布-M2-执行计划与验收.md 追加节。本地未部署，生产以 112 为准。
+
+## 最新本地开发（2026-11-06，推理画布流程引擎与多 Agent 展开）
+用户确认画布逻辑：AI 推理自动生长节点如脑暴展开，人改条件后再次推理重展开，并以 DesignGPT 式多 Agent 数字员工协作呈现（arXiv:2311.11591）。已实现：七数字员工轮流上场（顶部团队条待命/工作中/已完成）、证据/子问题/功能/选项/质疑/验证节点分批生长、底部会议室日志、条件修改置脏后可再次推理、每轮条件快照入推理运行记录并随档案导出。展开数据为 GD-CRE-0.1 冻结样例回放，明示 0 次模型调用。浏览器实测两轮展开与导出核对通过，13 项单测通过。验收见 00-项目管理/推理画布-M2-执行计划与验收.md 追加节。本地未部署，生产以 112 为准。
+
+## 最新本地开发（2026-11-06，推理画布 ComfyUI 式自由节点画布）
+应用户要求参照 ComfyUI 交互，推理画布从纵向时间轴改为自由节点图：点阵底、端口圆点、状态着色贝塞尔连线、发散节点六输出槽连出 A-F 概念节点、卡片拖动位置持久化、平移/缩放/复位适配全图、移动端回退纵向列表。浏览器实测拖动改线、平移、缩放、点选、390 与深色通过；12 项单测不受影响仍通过。specs/105 信息架构与 specs/106 A1 已同步。验收见 00-项目管理/推理画布-M2-执行计划与验收.md 追加节。本地未部署，生产以 112 为准。
+
+## 最新生产发布（2026-11-06，112服务器瘦身与应用中心控制台上线）
+生产现为20261106-112（静态/方法/运行时三base同步切换，回滚材料/var/lib/innovation-design/release-backups/20261106-112指向097/097-fix1）。内容刻意收窄：静态仅inno/apps/index.html变更+新增registry.json与application.schema.json（111规范产物），运行时overlay仅app_center_096.py；打包后与097全量SHA比对确认仅此3文件，阅读区重构（100线进行中）未纳入。发布前根分区从580MB清到4.1G：38个9月旧gooddesign release与17个旧innovation-design release经流式备份校验后删除（备份在../本地备份归档/好设计平台/server-prune-20261106/，同卷非异地），另清apt/journal/docker构建缓存约170MB；docker镜像8.9G与html旧站媒体3.9G未动，长期方案为媒体进COS。13项应用中心回归、本地桌面/移动截图、线上9路由200与桌面截图通过，截图output/design-112。registry.json线上302到登录为既有nginx授权路由行为，是否放行由111线决定。当前树有11个阅读区测试错误系100并行会话进行中改动，与本发布无关。未提交Git。
+
+## 最新本地设计（2026-11-06，100知识图谱与评估可视化）
+通用知识图谱生成器scripts/archive_knowledge_graph.py已落地：2025-00含105记录/176来源/476事实，2021-00含24记录/8来源/51事实；默认项目→主题→记录，点选展开中文标签、来源与逐字证据，证据缺口367项不隐藏。评估区新增22.9%可追溯环图、内容构成、质量状态和八主题卡片，可直达图谱。41项相关Python、26项桌面/手机浏览器检查与720项全量Python回归全部通过，预览http://127.0.0.1:56061/graphs/2025-00.html，未部署，生产现112。
+
+## 最新本地实现（2026-11-06，111应用中心接入与Agent开发规范）
+specs/111按“任务定位→使用者→应用定义→共享底座→Agent接入→SDK决策”六步推理定义gd-app-0.1应用Manifest、统一状态、路由、输入输出、能力、权限、证据边界、发布门禁和Agent接入顺序。extensions/application-center/apps.json六应用已升级并通过application.schema.json；scripts/build_application_registry.py生成gd-app-registry-0.1，build_gooddesign_site输出/inno/apps/registry.json与application.schema.json。现有应用中心继续读取Manifest runtime路由，不改变页面视觉、案例或生产路由。构建1247页，096/101/103/109/111共17项回归通过；本地HTTP确认registry 6应用/5案例、远程只读边界，页面200且内联脚本语法通过。未部署、未提交Git，生产仍097。编号111（110为并行检索评估）。
+
+## 最新本地设计（2026-11-06，100完整阅读版复审）
+完成多视角阅读审计与完整版本调整：正文仅保留项目内容，空白保留/研究整理版/8个阅读模块/空字段提示等内部文案退出阅读区；引用按来源与引文去重为紧凑注号，完整原文集中在资料页，H01/H02直接展开且#record-H01深链保留，事件内部代号改成人读标题。105记录、476事实、249平台元数据、77平台分析及研究版本未改，2025-00仍有367项证据缺口，结构完整不等于研究完成或专家验收。2021-00共46条、2025-00共37条去重引用可核对。36项相关Python、165项桌面/手机浏览器检查与711项全量Python回归全部通过，预览http://127.0.0.1:56061/，未部署，生产现112。
+
+## 最新本地开发（2026-11-05，推理画布 M2：RC-03/05/06）
+推理画布已接真实检索与引擎骨架：`scripts/reasoning_canvas_server.py` 本机只读桥接（loopback、仅 GET、写方法 405），查证节点真实检索 64 方法目录与 560 项目目录（分离→R23 实测），检索留痕与「加入证据池」进入导出档案；发散节点虚线候选区读取 GD-CRE-0.1 冻结样例 28 选项（review_pending 原样显示），确认写入才进痕迹。rc01+rc03 共 12 项单测通过；8978 浏览器实测与导出核对通过，已重置。验收见 00-项目管理/推理画布-M2-执行计划与验收.md。未接模型、未部署、未提交 Git，生产仍 097。
+
+## 最新本地评估（2026-11-05，110检索质量评估V1基线）
+098规定的model_assisted前置评估已完成：scripts/retrieval_eval_v1.py四指标只读评估器+16组改写/对照评估集，基线报告output/retrieval-eval-v1/baseline-20261105.json。基线：可检索103/578项目（460个无原生研究版本不可见）、1068节点（冻结943/旧引用125）、三维齐全仅21项目；机械自召回95.3%（15项未中全因json.dumps换行转义，属046模块真实缺口）；词表差距为完全缺口（逐字对照16/16、人工改写0/16）；割胶功能抽象词全库零触达（S3查询词必须源语汇化）。结论：model_assisted前先修匹配体归一化与查询词源语汇化两件确定性事项，扩库优先于扩算法。7项专项通过，两次运行逐字节一致。详specs/110（编号109被并行会话应用中心占用后改号）。全量回归另有不相关的档案阅读测试失败（041/044/045/100），系100并行会话进行中改动，与本任务无关。未部署、未提交Git，生产仍097。
+
+## 最新本地设计（2026-11-05，109应用中心桌面控制台视觉）
+/inno/apps/针对103宽屏空白和模板化问题重构为桌面控制台：左侧场景导航、中间产品卡货架、右侧固定应用详情；页面和公共导航内容宽至1680px，2000px下三栏比例稳定。去掉大渐变地图与浅色圆点，保留六应用低饱和色调、真实搜索、场景/状态组合筛选、交付物和案例路径。构建1247页，096/101/103/109共13项回归通过；2000/1440/390、深色、移动场景按钮和点击定位通过，截图output/design-109。未部署、未提交Git，生产仍097。
+
+## 最新本地开发（2026-11-05，推理画布 M1：RC-01/02/04）
+企业创新工作台「推理画布」首个里程碑完成：`extensions/reasoning-canvas/` 独立小应用（GoodDesign UI 令牌，不另造主题），七节点画布、状态机与重开涟漪、证据裁决、毙掉留痕、红队裁决带驳回理由、优先级、签署、三身份旁注、Markdown 导出已移植；发问意图与子问题可编辑。状态逻辑独立 state.js。割胶真实研究材料，未接模型与 MCP。6 项静态单测通过；8977 浏览器实测桌面交互、390 单列、深色、localStorage 持久通过。验收见 00-项目管理/推理画布-M1-执行计划与验收.md。108 已落地 098 确定性骨架，RC-05 接入对象由草案变为 GD-CRE-0.1 实现。未部署、未提交 Git，生产仍 097。
+
+## 最新本地实现（2026-11-05，108引擎确定性骨架GD-CRE-0.1）
+specs/098第一阶段已落地：五模块（engine/retrieval/transfer/concepts/validation）覆盖S0-S10无模型流程，rule_only与host_agent两模式，model_assisted拒绝并记录。Host提议文件为待审核输入，禁写字段递归扫描（approved/hard/pass/recommendations等），迁移映射8字段契约，C0全O0基线，理论空间声明不等于已研究，推荐门禁必返空。割胶基线锁定：15需求/7功能/28选项/4组合/60判断全unknown，产物与099割胶标准主数据逐段一致，唯一例外是判据hard由需求派生为null（GDRP示例早于098禁升格规则写成true，指纹锁定不改，差异由负例测试锁定）。13项专项含真实库检索集成（2025-00逐字召回），全量686项通过。CLI端到端冻结至output/engine-runs/RUBBER-20261026/run-20261105T140200Z（gitignore），指纹复核通过，build_gdrp_report.py渲染闭环无破折号。详见specs/108。未做model_assisted后端与混合召回，未部署、未提交Git，生产仍097。
+
+## 最新本地规划（2026-11-05，企业创新工作台「推理画布」产品三件套）
+用户明确节点化推理画布为好设计项目，从创新设计大模型做企业创新工作台应用。specs/104 产品定义（方向已确认）、105 设计规划、106 功能描述、107 开发任务拆解（RC-01 至 RC-16，M1 至 M5）已就位。定位为 098 引擎算法之人侧工作台、099 GDRP 之输入层、076 loop 之未来交互面；视觉复用 GoodDesign UI，写路径按决策 B 独立成层。配套 demo 在割胶项目目录推理画布/index.html（浏览器实测通过，未接模型）。未实施、未部署、未提交 Git，生产仍 097。
+
+## 最新本地设计（2026-11-05，103应用中心产品货架视觉）
+/inno/apps/在101基础上改为产品应用货架：三组场景标签、真实搜索、状态筛选、六个独立色调文字图标与完整产品卡；卡片含人群任务、摘要、交付物标签和入口，详情区变为随应用换色的产品主页。构建1247页，096/101/103共10项回归通过；桌面1440、移动390、深色、搜索MCP收敛1项、企业应用橙色详情与移动点击定位均通过，截图output/design-103。未部署、未提交Git，生产仍097。
+
+## 最新本地研究（2026-11-05，100项目档案治理与双视图首批）
+已按specs/100完成备份与统一基线、MVA/sources/claims规范门禁、9个项目MVA、中文阅读层和10个阅读预览。备份增量同步后54,201文件/8,051,334,744字节与源一致，关键真源（含research-000006/7/8与9份MVA）SHA一致；副本在同一工作区卷，异地灾备未完成。当前基线output/research-100/current-baseline.json：560题录、103原生版、457未研究、缺07明细199。9个MVA共510条可追溯事实；2025-00未通过门禁未写MVA。四批98字段同值重绑形成research-000005/6/7/8，11→109可追溯，剩余367项；9个表格粘连数值与9个未归属来源字段未强行通过。人读与展示/研究分组分离，中文单位、来源引用、证据缺口和旧评估失效明确显示。35项相关Python、667项全量Python与110项桌面/手机浏览器检查全部通过。预览http://127.0.0.1:56061/，未部署、未提交Git，生产仍097。下一步A04表格与复杂字段核读、其余94原生版及数据总览双投影。
+
+## 最新本地设计（2026-11-05，101应用中心应用化视觉）
+/inno/apps/已完成本地视觉与应用化重构：首屏共享底座应用地图，左侧应用Dock，右侧产品式详情面板，详情含适用人群、任务、状态、交付物Chips、真实案例路径、边界与唯一行动入口；下方仅按live/pilot/planned聚合应用规划。保留096的筛选、案例联动、app-data和selectApp契约。桌面1440、移动390、深浅色、筛选与两次应用切换通过；构建1247页，7项专项/096回归通过，截图output/design-101。全量610项有6项既有环境失败（5项缺mcp包，1项登录服务未在线），与本页无关；未部署，生产仍097。
+
+## 最新本地工具（2026-11-05，102渲染器与四件套）
+scripts/build_gdrp_report.py已实现specs/102第6节的渲染器：research-pack.json先过JSON Schema再逐字段渲染九章HTML报告，只搬运字段不发明事实（pack中无项目名称则只显示ID），recommendations=[]明示，破折号字符渲染时替换并断言。支持--md/--manifest四件套输出：report.html+report.md+manifest.json，源pack副本随目录交付，manifest指纹目录内可复核。割胶包已生成04-知识库/项目档案标准-v1/创新研究输出物标准-v1/examples/report-rendered.html（不入099 manifest，三个指纹文件未动）和output/gdrp/RUBBER-20261026-r1/四件套（已入gitignore）。输出自检：15需求/7功能/28选项/4概念/60格全未知；桌面1440与移动390无横向溢出、标签页切换、截图output/design-102均通过，8898可预览。生产仍097，未提交Git。
+
+
+## 最新本地标准（2026-11-05，102可视化报告模板）
+已定义GDRP研究包的人读报告模板：specs/102-可视化报告模板结构.md，割胶填充示例在04-知识库/项目档案标准-v1/创新研究输出物标准-v1/templates/report.html。三层阅读（30秒决策/5分钟审阅/深度复核），九章固定骨架：封套、决策摘要、问题与边界、案例与机制、功能与概念、比较与推荐门禁、验证计划、领域扩展三标签页、执行审核版本与证据附录。模板只搬运research-pack字段：recommendations=[]明示、60格未知中性呈现、模型429失败如实、审核五状态逐项可见。桌面1440与移动390均无横向溢出、60未知格、标签页与暗色变量通过，截图output/design-100，8898本地预览。未实现自动渲染器、未上线，生产仍097。编号102（100/101为并行会话档案治理与应用中心）。
+
+
+## 最新本地标准（2026-11-05，099创新研究输出物GDRP）
+已定义产品创新、工程创新、AI4S共用的GDRP创新研究包：research-pack.json+report.html+report.md+manifest.json，统一任务、执行、摘要、问题、功能、案例、迁移、候选、比较、验证、领域扩展、审核和边界。规范specs/099，Schema与割胶完整示例在04-知识库/项目档案标准-v1/创新研究输出物标准-v1。15需求/7功能/28选项/4组合/60未知判断与原文一致，recommendations=[]合法。JSON Schema和全部文件指纹通过，未实施生产。
+
+
+## 最新本地研究（2026-11-05，098引擎算法V1草案）
+已完成specs/098-创新研究引擎算法V1-割胶机器人样板.md。以割胶真实15需求/7功能/28选项/4组合/60未知判断为固定样例，定义S0—S10：预检、需求、功能、查询、混合召回、双侧映射、选项、概念组合、比较、验证、保存。算法采用确定性骨架+设计案例推理+可选模型辅助，recommendations=[]是当前的正确结果；未实施、未获客户/领域验收，不改变097生产。下一步先评审算法，再实现无模型确定性骨架和负例，不直接扩语义模型或自动工程执行。
+
+
+## 最新生产发布（2026-11-05，097统一设计与大模型V2.0）
+全站公共导航、底部栏与正文焦点统一，创新设计大模型官方介绍页已上线https://opendesign.cc/inno/model/。静态站和方法库为20261105-097，档案运行为20261105-097-fix1；整体回滚20261104-096，fix1运行回滚20261105-097。模型页采用三层两环一网络、四种核心能力和真实应用，明确领域智能系统及未自主训练基础大模型的边界。635项本地测试、52项线上浏览器及11个关键页面检查通过，截图output/design-097，验收00-项目管理/097-全站设计统一与大模型官方介绍验收.md。根分区可用约91MB，下一轮发布前必须先处理空间；未提交Git。
+
+
+## 最新生产发布（2026-11-04，096视觉重构）
+首页模型区和应用中心已完成视觉重构并上线。静态站与档案运行均为20261104-096，回滚095-authfix2。模型区以079真实四层研究路径替代三卡片，应用中心使用任务/详情/案例三层联动，标题与深色对比度、移动布局正常。630项本地测试、线上29项浏览器检查通过，截图output/design-096，验收00-项目管理/096-模型与应用中心视觉重构验收.md。长期设计规范v3第23节已更新，未提交Git。
+
+
+## 最新生产发布（2026-11-04，095统一封版）
+095已上线https://opendesign.cc/inno/。静态站=/var/www/gooddesign-site/releases/20261104-095，档案运行=/var/www/innovation-design/releases/20261104-095-authfix2，回滚094-fix1。新增/about、/model、/guide、/apps及5个真实案例，导航与重定向统一，needs-v2/projects/learn已301。引用为桌面预览、移动底部面板及打印来源列表。innovation-auth统一登录启用，签名Cookie、同源提交、错误提示和退出通过；ubuntu已加入www-data组以读取既有640账号文件，MCP仍独立Bearer。626项本地测试、80项线上页面、9项真实登录检查通过，截图output/design-095，未提交Git。
+
+
+## 最新信息架构规划（2026-11-04，095，未实施）
+七大区域信息架构已整理到03-平台规划/网站信息架构-v2.md，specs/095记录封版清单。目标为项目库/好设计馆/方法库/应用中心/需求研究/企业创新/数据总览主导航，关于/MCP/资料管理辅助，科技教育归馆；/apps及案例用应用清单连接既有应用，/about项目介绍、/model大模型定义、/guide使用指南，旧站model/index.html为内容来源并更新当前能力。needs-v2/projects/learn重定向，legacy仅兼容，四类页面模板与引用预览统一。当前只是已确认的信息结构，095重定向、项目/模型介绍、登录页、引用浮层和统一封版尚未实施或上线；生产仍为094-fix1。
+
+
+## 最新生产发布（2026-11-04，094）
+项目档案核心阅读版已上线https://opendesign.cc/inno/dossier/?project=2025-00，运行release=/var/www/innovation-design/releases/20261104-094-fix1。核心四模块默认展开并支持多开，079的45条已知记录直读，原文/AI/待补保留分层；生产包装器single_chrome强制导航/底部各一个，历史重复DOM也清理。研究事实、版本、评分与093e研究快照未变。6项专项、618项全量、线上41项浏览器及5项目顶底栏计数通过，截图output/design-094。回滚目录20261104-093e-fix1及配置备份/var/lib/innovation-design/release-backups/20261104-094，未提交Git。
+
+
+## 最新生产发布（2026-11-04，093e + fix1）
+GoodDesign主项目区已整体更新到https://opendesign.cc/inno/。静态站current=/var/www/gooddesign-site/releases/20261104-093e-fix1，方法库=/var/www/gooddesign-methods/releases/20261104-093e，档案运行=/var/www/innovation-design/releases/20261104-093e-fix1，MCP=/var/www/innovation-mcp/releases/20261104-093e；研究快照=/var/lib/innovation-design/snapshots/20261104-093e/library，含103个原生研究版，560题录。needs主入口为V2，展馆/报告/MCP/about/learn公开，loop授权访问并启用独立SQLite。私有API/原件和MCP未授权仍401。612项本地测试、58项线上浏览器、1777项静态路由、企业隔离写入通过。回滚材料/var/lib/innovation-design/release-backups/20261104-093e，旧runtime可用20261027-ML016-needs与20261027-057/library。未使用COS（无可用凭据），未关闭旧站，未提交Git。
+
+## 最新本地设计（2026-11-04，092）
+项目进展HTML汇报页的数据资产已改为四层关系流与8张知识资产卡，支持类型筛选、原生dialog详情、真实证据入口和打印状态恢复。090 JSON新增method_count，从方法目录动态取得64项；079显示45记录/180事实/42AI，所有状态与090数据一致。移动关系流为两列，卡片桌面四列/平板两列/手机单列。5项静态、56项新浏览器、32项旧页面浏览器与606项全量测试通过，截图output/design-092，验收00-项目管理/092-知识资产可视化卡片验收.md。8896预览继续运行，未提交Git、未部署生产。
+
+## 最新本地研究（2026-11-04，091）
+项目进展HTML汇报页已完成：output/reports/项目进展汇报-2026-11-04.html，8896只读预览。使用090 JSON真源，首屏KPI与18.4%原生覆盖，完整架构、队列、风险、P0-P3和证据入口；统一品牌/顶底栏/小好，支持深色、移动和打印。5项静态、32项浏览器、601项全量测试通过，截图output/design-091，未提交Git、未部署生产。
+
+## 最新本地研究（2026-11-04，090）
+今日项目进展汇报已生成：output/reports/项目进展汇报-2026-11-04.md及项目进展数据-2026-11-04.json。数据来自最新088/089快照，103/560原生版，full 205/patents 127批结构问题，2025-00旧底稿791项证据待重绑；产品/设计系统/079/队列/素材与下阶段计划完整。5项专项与596项全量测试通过，未提交Git、未部署生产。
+
+## 最新本地研究（2026-11-04，089）
+560项目素材总表已生成：output/research-089/material-inventory.csv/json与summary，逐项目含字节、原始来源文件、full/patents来源条目、图片、原生研究版与缺口。来源条目按JSONL实际数量，不因校验失败归零；记录快照时间。当前full 205/patents 127批待修主要为越界路径与非法role，任务书已补修正要求。5项专项与591项全量测试通过，未提交Git、未部署生产；持续写入后需重建清单。
+
+## 最新本地研究（2026-11-04，088）
+560项目深研质量审计与下一轮队列已完成：原生研究版103，标准full/patents各467；队列A60/B397/C70/D33闭合。2021-c30引用断裂已按lead修复并通过，2025-00旧底稿791项冻结evidence缺失待重绑。后续新增文件出现越界路径/非法role，当前full 262通过/205待修、patents 340通过/127待修，已补入任务书，不能沿用此前全通过口径。可复跑脚本audit_research_round_088、审计JSON、逐项目queues与豆包任务书已落盘。6项专项与586项全量测试通过，未提交Git、未部署生产；下一步先修批次再由豆包检索、主Agent核读入档。
+
+## 最新本地设计（2026-11-04，087）
+馆首页和三大展区首屏已由高饱和蓝紫渐变改为低饱和石墨色，系统无衬线、珊瑚提示、清晰正文与移动布局完成。museum-hero.css在旧内联样式后加载，文案/图片/URL/统一顶底栏不变。34项专项检查、580项全量测试及首页/小好/展馆回归通过，截图output/design-087，详087验收；未提交Git、未部署生产。
+
+## 最新本地设计（2026-11-04，086）
+顶部/底部栏统一已完成：categories双重导航和旧纸色样式污染移除，categories/award/laureates正确高亮好设计馆，旧copilot不再重复。共享replace_chrome只清理旧brand导航与旧footer，功能steps及gd-live组件footer保留。34项专项检查、575项全量测试及首页/小好/展馆/动态案例/档案回归通过，截图output/design-086，详086验收；未提交Git、未部署生产。
+
+## 最新本地设计（2026-11-04，085）
+小好Copilot打开时背景已取消灰色遮罩和模糊滤镜，桌面/移动/深色其他区域保持清晰。右下角面板、ARIA、Escape、焦点返回与项目链接不变。12项专项检查、43项旧角色回归与570项全量测试通过，截图output/design-085，详085验收；未提交Git、未部署生产。
+
+## 最新本地设计（2026-11-04，084）
+品牌Logo已改为中文“好”主体与珊瑚探索光点，导航/页脚统一好设计20px、GoodDesign 10px，资源?v=084。1239构建页与动态档案同步，六宽度/深色/小好交互正常。40项品牌浏览器检查、568项全量测试及首页/小好/展馆回归通过，截图与报告output/design-084，详084验收；未提交Git、未部署生产。
+
+## 最新本地设计（2026-11-04，083）
+/inno/museum/图片已恢复，根因是子路径别名导致相对资源404，并非原图丢失。真实展馆页以base=/复用旧站98张封面，现存图片全部加载、0个404响应；好设计馆已加入统一主导航并高亮，旧顶栏和重复copilot已移除，平板/手机导航局部滚动。40项展馆浏览器检查、563项全量测试及首页/小好/动态案例/档案回归通过。截图与报告output/design-083，详083验收；未提交Git、未部署生产。
+
+## 最新本地设计（2026-11-04，082）
+/inno/needs-v2/已新增Deep Research式动态案例，12动作/五阶段/四份079真实来源，显著标注模拟与0次模型调用。播放/暂停/继续/重播/关闭、真实进度、证据深链、结论草案、减少动态和原需求流程实测通过。11项新旧静态、39项浏览器、558项全量测试通过，首页86/小好43/档案33回归通过。预览与截图output/design-082，详082验收；未提交Git、未部署生产，真实Agent未接入。
+
+## 最新本地设计（2026-11-04，081）
+小好已从顶部导航迁移为右下角Copilot入口，桌面头像+名称、移动48px圆形，导览面板锚定入口上方；导航backdrop-filter定位问题与旧组件重复已修复。1238构建页各一个入口/面板，ARIA、Escape、焦点返回和项目深链完整。43项专项、19项旧角色、86项首页、33项档案浏览器检查及552项全量测试通过。8892本地预览可看，截图在output/design-081，详081验收；未提交Git、未部署生产。
+
+## 最新本地设计（2026-11-04，080）
+/inno/首页已完成GoodDesign UI 0.1.1本地精修，8892可直接走查。保留真实目录、品牌、路由与全部发现交互，重排首屏/统计/筛选/项目卡，研究统计动态计算，补齐禁用/错误/焦点/移动/深色状态。86项首页浏览器检查、9项专项与旧首页测试、546项全量回归通过，079档案33项和小好19项回归通过，diff check通过。前后截图与报告在output/design-080，详00-项目管理/080验收。未提交Git、未部署生产，其他页面不自动套用新版。
+
+## 最新本地研究（2026-11-04，079）
+2019-s19宏华6000HP电动压裂泵已发布本机研究版research-000001，45记录/180有值事实/42AI；导读与评估0.1.0绑定数据指纹，180/180事实和42/42AI追溯通过。8892 /inno/dossier/?project=2019-s19可读，统一导航/底部、无链接箭头、移动和深色对比度实测。540项全量测试及33项浏览器检查通过，构建重复运行no_changes。来源/原件仍为私有；未改生产、未提交Git、未评分或专家审核。四项P0补证未结，详00-项目管理/079-6000HP电动压裂泵档案验收.md。8893旧进程未重启，共享代码变更将在其下次受控重启生效。
+
 ## 最新任务（2026-10-23，050）
 用户授权全部金奖网络资料采集。当前98金奖题录已建持久SQLite/10维980任务；98均实际首轮名称检索，256旧链接加新发现去重1324项目—URL候选。采集正在本机bounded worker运行，PID以output/research-050/worker.json为准，最多1000项/3600秒；不等于持续联网Deep Research。新原件pending，initial_scope保证后续第一入库快照待核；既有归属/研究/评分不改，不同步云端/不恢复automation。已387回归通过，首批4原件SHA/可读稿/归属实测。进度HTML/JSON/SQLite在04-知识库/历史素材登记/金奖全量采集任务，实际数字持续变化。881专项查询未执行，档案关联审核/论文专利验证仍待；98题录全量性与2016/跨届年份继续核。详050任务与操作文档。
 
@@ -581,3 +761,205 @@ Userwebsitearchitecture:核原026/027信息架构，output/inno-preview平台首
 063用户要求数据汇报总页已上线/inno/report/：560题录/98研究版与基础报告/21深化报告/64方法；98案1234记录2528已知值679来源登记条目，统计范围注明。独立对账5失配隐藏分数、16校准53初评24待评；64方法47.5–61.25，教学组合另列不覆基线。8HTTPS及实际桌面/375、162行/切换搜索分页/CSP检查通过，导航新增数据总览、本地8775同步。public快照无路径/runID/原件，原件/API/admin仍401，062可回滚。
 
 持续补证续接：batch02/03三原PDF已实际pending导入；政府整目录及混合论文父件shared、专利related_only按原件SHA记录归属版本。根显式选政府已独审quote子范围，原生精确重绑创建4条pending（政府1/专利2/论文1）；其余4因引文不唯一或不精确仍hold，不改字、不批准、不发布。R04v0.2.1独立32复测已派。当前公开汇报仍为已注明时间的063快照，不冒实时自动同步。
+
+064用户指出公网说明仍指硬盘，现已补真实远程Streamable HTTP MCP：/inno/mcp/api，Bearer key逐请求SHA校验可撤销；8只读，无模型/写入/私有历史，证据只返发布引用。独立loopback18779服务与资料快照分离，公开guide改URL+key/JSON和Codex环境变量，不含本机路径或密钥；私有协作配置600外置盘，不入Git。真实HTTPS initialize/list8/项目方法读取/prepare过，匿名坏key401、后台原件API401。064-guide从当时最新ML015-shell-v2克隆仅改两guide文件，保其他会话站点改动。服务不等98/64内容80完成，维护见064文档。
+
+064独立验收补齐：remote-runtime-fix2实际HTTPS字段2024-08 research2→7条发布引用中逐字核中目标quote，revision/sourceSHA/chunksSHA一致；匿名坏key401，8只读。独立本机撤销/跨项目/shared/pending/reassigned隔离及恶构key表401过，测试服务已停key禁用。根实际服务active双核与文件指纹交接见output/remote-mcp-review/root-handoff.json；不宣称OAuth/逐用户ACL/全客户端兼容。恢复主线：四native pending已派独立现状复核；R04展示准备只读核现版，保其他会话ML015改动，不重复部署或覆盖冻结。
+
+本轮继续：四native pending独审通过后，root先核原版档案原字节SHA/逐字证据和pending状态，再以agent身份显式批准仅这4项并selected发布：2024-08 research3机制1、2023-05 research3相关专利题录2、2023-06 research2验证条件1。其余4hold不动，质量分/专家/采用均未提升，cloud仍旧快照。ledger root-published-v1.json；新版导读六维payload已派独立准备，尚未冻结，不继承旧版MCP成功。R04 0.2.1已按最小提案接入cases分派与固定教学函数，指纹门及函数渲染通过；冻结正文未动，独立局部预览验收已派，不覆其他会话ML015页面、不部署。
+
+补证新版闭环：根复核三项目八模块/六维文字及当前SHA后分别冻结reader/assessment 0.1.0（2024-08r3/2023-05r3/2023-06r2），原旧版保留。实际stdio SDK逐案overview/本次新增字段/同版证据/changes/AI分层共15调用通过，current_evidence traceable、8模块、quality_score null、expert false；报告output/research-051/root/sdk_deepening02-03-result.json。未更新cloud或汇报快照，评分不沿旧版。下一未做3案深化按真实队列/worker去重交triage，R04局部预览结构/8资源过但视觉未验，未公网发布。
+
+065用户要求多Agent分担资料收集：沿稳定560项目ID创建04-深研素材/外部投递/，唯一批次隔离，豆包已有01–09/原始信息原样保留。统一任务书、模板、560派单CSV、接收流程和管理入口已落盘；agent_intake.py init拒覆盖、validate只读核结构/SHA/引用/阅读范围/执行查询，11项夹具实际通过，原件SHA不变。空目录不是已覆盖，机械pass不是语义真实或80；不自动导入/审批/公开。无磁盘权限外部Agent交ZIP/Markdown待转换；无自动上传服务。代码与规范065，接收后沿native流程，不重写MCP或站点。
+
+用户最新分工：外部各Agent负责按065收集，root优先加工新提交批次与既有豆包包，缺口明确后才定向重复检索。以后续接先扫描真实项目04-深研素材/外部投递/*/batch.json中submitted批次，按接收流程去重登记，未提交草稿不当已交付；当前没有新收集批次被自动入档。065目录/协议/工具已提交7ad7e94，正式档案仍需明确审核版本链。
+
+用户要求检查豆包63项目交接：根实际重跑126批全机械pass，汇总433sources/393claims/343queries（报告389算错），227source_statement/166lead；282不同URL，178原件引用/86不同SHA。抽查发现22Crossref元数据误标fulltext、单篇URL对work-list响应/重组可读件谱系不足、e00/s12长陈述仅DOI或标题不能支持作者日期法律状态等。原始信息仍有摘要不能统一叫全文。13短引文多断言仅复核标记非断错。只保存root-63-audit检查报告，未改原包/native/分数；可接待核不能批量直接入档。
+
+066用户已明确启动63项目持续加工：新63行进度含126批输入SHA，原包433来源/393候选/343日志重盘点；22范围纠正overlay保存。既有3Agent分工核读/安全准备/21批队列。第一批2025-01r6/02r2/03r3身份多同值，独审在核不强造新增；第二批2025-s00/s01/s02原0版空记录已实际导入同官方PDF，先pending后shared归属冻结、分别连续选录，原生propose 6/10/9共25身份字段pending，原包未动，未审批发布。届次10与原中文十、内部ORG-ID及role跨表关系共16项hold，不放松原生字面证据守卫。ledger preparation/batch02/root-native-pending.json，独审已派。新持续automation按用户最新授权ACTIVE，优先消化63已有资料，不沿旧广搜/旧进度。progress页面已显示待审核25字段，无80分或全案完成声明。
+
+066续接实进展：独审batch01完成20候选处置，3身份重复（25原子同值）不新增，17hold（15lead/2元数据多断言），16缺失关系/数值原生守卫仍hold。root核batch02独审25实际pending、空基线版本0与quote后显式agent审核selected发布三银奖2025-s00/s01/s02 research1，6/10/9字段，未抬评分/性能/采用。root-published.json落盘，进度63行更新发布25字段、身份部分完成而非全案完成；三新版导读/六维payload独立准备中，尚未MCP验收。pilot转2024-00/01/02已有资料安全准备，不新广搜；cloud未同步此轮。
+
+用户问进度时实际推进：066三银奖2025-s00/s01/s02 research1八模块导读/六维评估已root复核冻结0.1.0，真实stdio SDK 15调用过（当前身份overview/本次字段/同版证据/版本/AI分层，traceable、不评分）。进度实际23候选已处置，25字段发布，3案身份版reader/MCP闭环；明确仅身份版，不认全案完成或80，cloud未同步。下一2024-00/01/02安全准备已交，11重复/19缺失身份与1机制候选待独立审核。保留上述目录与进度源，不沿心跳旧数。
+
+066本轮batch03独审已落：2024-00/01/02 r3身份30格=11duplicate/4可准备/15hold（含“好设计”表头不能硬当“好设计奖”），技术前2已有不同cell不覆盖，2024-02水压工装内力密封1机制可有界补。root已实际归档单项目申报JSON S699c1f3fce113714、核对象与designFeatures、真实B0007创建CAND-8613c682b3c42be7 pending，r3未改，无审批评分。来源URL纠正为投递声明单案页并注明非根联网请求，旧origin保留审计，不改原字节；补独立actual candidate核验已派。进度新增待审1、三案局部核读状态但不把原子格数计成已核外部claim；其他阶段沿实际。pilot只读准备batch04。
+
+066 batch04（2024-03/04/05）pilot准备9重复/17缺身份字段，技术03压气机2014–18分段全级1/2缩尺部件试验、05溜渣伸缩转换机制可有界提案；04分数阶建模已有覆盖不增。root核原件SHA/单案opusName/当前版与cell、实际原生块，生成03 CAND-b99646eee447b1f1 B0009、05 CAND-4796ed35c056edfc B0004 pending，单案源待定→project范围独立于事实审批，未发布。quality已派实际native核验（含batch03的2024-02）。进度待审共3，三案身份版闭环不等全案完成。triage并行将166lead/误标/短引文转63案定向补证需求，供外部Agent收集；不广搜不改原包。
+
+用户本次问进度实际续推：root核3技术native独审各20检查、当前datasetSHA及pending后选集agent审核发布2024-02r4（工装内力密封）、2024-03r4（2014–18压气机1/2缩尺部件method）、2024-05r3（伸缩溜渣转换principle），各1格共3；总本轮6案28字段，仍3身份版已reader/MCP验，三技术新版导读准备已派，cloud不变。root-technical-published-batch03-04.json为ledger，未升分或试验/采用/专家认定。63案113项定向补证任务已交collection-requests，保166lead与审计旗标出处供外部Agent收集。
+
+066三技术新版2024-02r4/03r4/05r3八模块导读与六维评估root核后冻结0.1.0；真实stdio SDK15调用过，另补精确定位本次新增字段的冻结chunk offset+chunksSHA，逐字quote与chunkID一致，避免只验来源首块。root-sdk-exact-result.json保留初版调用报告不覆；进度reader/MCP已验6案仅相应身份/技术增量范围，整案未完成，28发布字段与23外部候选处置口径不混算。cloud未同步，不改评分。先完成这轮已有材料闭环再继续新批。
+
+066 batch05（2024-06r2/07r1/08r3）根从只读preparation核原字节/单案对象/当前dataset及cell，正常化工作副本保原准备包，实际导入单案申报源并安全范围核定、native提3机制pending：06 CAND-eb1b4c8c99cbc599小样本增强分析相控阵；07 CAND-23370ffb087fc7f2吹扫/隔离光液声干扰；08 CAND-eff9cb14f188fb4d涂层+快速启停减磨损。真实块B0004/8/2，质量独审已派。未审批，99%/寿命32年/气流角冲突数据不入候选。进度待审3、已发布28与局部版MCP验6案不变；pilot续batch06既有三案，不重复检索或身份填数。
+
+066批05三机制独审后根selected发布2024-06r3/07r2/08r4各1格，总31字段；新版8模块/6维0.1.0已核冻结，stdio15调用及精确offset/chunksSHA/quote匹配过，reader-preparation/batch05/root-sdk-exact-result.json，局部版验收9案不等全案完成。批06 2024-09液压缸+位移传感器耦合控制实际pending CAND-94885219f3c7fff5 S0bf1ee3d10181290 B0004，r2未变独审中；2025-00/04只得链接说明/旧档循环引用，缺技术正文hold不造新增。pilot续batch07并要求逐原claim处置，避免只加旁支字段却不消化393候选。
+
+066 batch06唯一同步顶升机制已根核独审/current r2/source/cell后selected agent发布2024-09r3，总32字段；reader-preparation/batch06待准备，9案已局部版MCP验不变。batch07 2025-05/06/07原21claim逐条处置已由pilot交付，root实核21映射当前cellSHA与冻结quote通过；quality进一步发现“全库无原文/授权15项”等旧理由需收窄：现native申报正文确有首台套/MTI/85%以上/暴露时间/主持标准陈述，但缺原始目录基线与独立验证；不以缺本次投递原件冒全库缺，获发明总数不等授权状态。尚未采用旧理由更新receipt计数，等独立修订dispositions再入进度，原包保留。pilot续batch08。
+
+067用户最新再次明确主动深度Research并保存项目文件夹再处理，安排两线：066现存63逐原claim加工继续；triage定向2025-00/04原始验证/机制/对标边界查询，独占项目20261028-root-deepresearch-01，先核重复不无差别广搜。pilot续batch09只读，quality核batch08原22claim。根已采用batch07最终修正21dispositions（7重复/3partial/11hold，非独立性能通过），原候选处置总44；2024-09r3导读六维0.1.0已核冻结且精确SDK5调用过，局部版验收10案，总32发布字段不等全案完成。计划067与Research实际产物入口明确，未新增评分或公网上线。
+
+068用户明确全项目授权，根实核560唯一ID：98金/199银/3菁英/190创意/70提名。全库范围队列HTML/JSON建立，当前63阶段继承，其余仅“本轮尚未核读”不冒检索完成或否认旧档。原065/066/067工作持续不重启，优先金奖/缺口/可得原件，研究原件放项目唯一批次再加工。主动Research首00/04已真实9查询/5原件/4有界陈述机械过，独立语义核读已派；仍不加分或自动公开。最新batch08最终22处置已交待root采用，pilotbatch09原18处置待独审，下一批不要重复旧案。
+
+068续接：root采用batch08独审最终22原候选处置前重核3项目r1/r1/空基线semanticSHA，66/393原候选已处置（含待核，不是66通过）；560全库队列同步当前63阶段。067 Research首00/04四陈述独审后根按当前版/原件SHA/唯一实际nativequote准备2pending：00 CAND-5abeed37b1988b0d CNSA任务1.1m采访→METRIC-CE6-REPORTED-DEPTH.original_statement；04 CAND-6583ed9c4ada0954 related专利tradeoffs，非采用。shared Luna与长quote跨块仍hold，未拼引文/放松守卫。2pending实际独审已派；另triage启动金奖63范围外3案Research02，先核重复/失败。pilot续原claim批10，quality后接批09。原393分母与新Research4条分开计数，不拿新增旁支冒原候选完成。
+
+068续接实进展：Research01两项独审真实native后root selected agent发布2025-00r2任务1.1m采访原陈述、2025-04r5 related旧专利取舍各1格，原Luna/shared与跨块长quote hold，不改baseline/能力/分项量/采用。总34发布字段，新增两版reader/assessment准备已派，cloud未同步。采用batch09独审18条处置前核r0空基线语义SHA，原候选处置84/393（包括hold不代表通过）；160m/mm为同原JSON不同字段冲突而非投递单方改字，准确理由已保。Research02三案13实际查询6原件6有界陈述已落项目新包，独审后续；560范围/63进度双刷新，score仍未知未凑80。
+
+Research01两新版reader/assessment已根核冻结0.1.0。实际SDK通用traceable断言在2025-00历史baseline失败，已保初失败报告：800known只有6按现native审计可追，status attention（不据此否认历史原材料真伪），不能冒全数据集通过。另独立增量测试精确offset/chunksSHA/quote过00和04，04r5全当前审计traceable；00仅新增引用调用通过、整版reader/MCP验收仍false，receipt明确基线待转换/核对，未改审计或评分。报告root-sdk-increment-result.json与root-sdk-initial-failure.json。Research02四项真实native pending已创建（2023-04 related论文摘要取舍/局部试验2，2023-07厂家模型研发/联合迭代2），独审已派，2021-02跨块2hold，不拼造引文。批10原18候选准备已交待独审，不能因新增旁支忽略393原claim。
+
+068本轮推进：Research02/03六新项目包根实际065机械+index来源/候选文件SHA重核通过；全库queue补2021-02与Research03三案真实Research阶段（未语义审批，不再显示仅范围未开始），原2023-04/07四真实pending保留独审中。quality旧send只递信不触发闲置，根已followup明确重启四native独审→batch10/11；pilotbatch11原16处置已交。triage先消化Research03，转只读调查嫦娥旧证据格式→native映射（仅3代表字段，禁改audit/benchmark/评分），解决attention缺口而非绕守卫。无新发布或全版通过声明。
+
+068/066本轮root核Research02四native独审（含标签剥离的连续HTML真实原段证明，保初裸串失败不伪造）及当前版/指纹后selected发布2023-04r3两related论文局部字段、2023-07r2两厂家研发过程字段。全库本轮38发布字段（63内34+范围外4），两新版导读评估准备已派，尚未call验，不认采用/性能/专家。root采用batch10/11最终34原claim处置前核r0语义SHA，原候选处置118/393含hold不代表118事实通过；API description匹配与设计段不匹配分开，不沿pilot错误理由。全库队列现有范围外实际receipt与本轮发布汇总，不混历史档案总数。legacy3同值证据映射只读准备已派，禁自动全量迁移和改audit；pilot续batch12，qualityResearch03独审排程。
+
+068本轮Research02两新版阅读/六维已核冻结0.1.0，原SDK总览10调用过，根新增verify_published_changes_sdk.py实际遍历全部4新事实字段→各自精确冻结块/quote/chunksSHA/value验过（非只第一字段）；范围外两案局部版已验，cloud未更。Research03全向论文原件命中旧shared父，首次直接admission被门禁拦，未改共享归属；改按真实连续原段建两project限定子选录、propose2related构型/模型前提pending，独审已派，不认500kg实机。batch12最终14claim独审root核3r0语义后采用，原处置132/393含hold不等事实通过。legacy3只读native准备已交，2ready+官方号需选录仍待独审，不全量800替换。pilot续batch13。
+
+068本轮rootselected发布Research03 2020-03r3两related原型构型/模型前提字段，shared父不改，40全库本轮发布字段（63内34+外6），新阅读payload已派。嫦娥legacy3代表根先核r2档案/单元格SHA与BENCH base未变，执行官方号共享父连续本案行真实child S8a8fcc923f118952 B0001，连同260克/论文题名两既有project源，原生提3同值证据pending：CAND-6c2d080613a4f54f / CAND-907a94a20c58d320 / CAND-ec0a85e5e6a4821b。只补native证据，语义/原BENCH不改，不计新增知识；实际独审已派，仍attention不可称整版通过。pilotbatch13原14已准备待独审，续batch14不重做旧批，score/cloud均不动。
+
+068本轮嫦娥legacy3实际独审后root selected同值发布research3，全部cell.value前后逐格相同，new_knowledge0/evidence_rebindings3。原BENCH/audit不变，现审计800known/9native仍attention，不称全版通过。三个重绑字段实际SDK逐字quote/chunk/hash均过，r3导读评估准备已派；未把同值3补证加进40新发布字段计数。Research03 2020-03r3阅读六维0.1.0已核冻结，实际总览SDK与全部2新增字段精确引用过，related原型/模型前提不升实机性能。原claim132/393与全库40新字段口径保留；batch13/14原处置待独审，pilot下一批不重复。
+
+legacy嫦娥r3阅读8模块/6维0.1.0已根核冻结，实际stdio overview确按r3返回导读与assessment，800known/9native attention原样保留（root-sdk-overview.json full_dataset_passed=false）；先前3同值字段精确quote调用已过，闭环仅这3补证，不新增知识/不升分。Research03原型新版已验，triage恢复下一3案Research04定向补证，排近期避免重复；quality续13/14原claim独审，pilot续15。原件及公网快照未改。
+
+068/066本轮采纳batch13/14独审31原claim处置前逐案核r0语义SHA，原候选处置163/393（可拆/partial/hold不是事实通过）。Research04三包根实际机械+sources/claims索引SHA复核，0候选液压剪切原稿获取失败保留、光伏abstract线索不升全文、FAST两工程安排待范围核读；全库队列显示真实收集阶段，不冒审批。quality续batch15原23与Research04独审，pilotbatch16继续后续原claim，s00/s01/s02身份版已发不吞整案。原件/private/public权限与score不动。
+
+068/066本轮root采用batch15独审23原候选前核r0语义，累计186/393处置（含hold，不当事实通过）；CRLF坐标/预计采收/幅宽另源支持与精确值缺证据按最终理由保留。Research04独审不建事实，FAST缺获奖配置桥接/光伏仅abstract/原剪原文失败，scope队列已更新hold。Research05三新包root实际065+sources/claimsSHA复核，半物理/缩尺/VIP摘要/综述边界交quality，未发布。为减少心跳空档，pilot授权本轮自主batch17→18→19最多9案，每批完整落盘再下一；quality可在真产物齐后自主批审最多3，未齐不猜；triage自主Research06–08最多9案，逐批真实查询/原件/失败指纹后续，不空宣执行或升分。
+
+068/066本轮root采用batch16–19独审80原claim处置前核mixed r0/r1，保留3silver旧身份发布/调用计数并去掉先前重复身份计数，原处置263/393（不是266、不是263事实通过）。Research05 QMJ多装备综述父pending→shared并连续目标选录，真实CAND-52b7094a20dcf292 pending，五组成仅related2014系统，不归2020获奖配置；独审待交。Research06–08九新包根实际065及index sources/claimsSHA重核，index facts仅收集侧候选字段名，不称事实审核；全库queue真实研究状态已补。pilot自主20–22剩9银奖，完成后列早期01–06原claim遗留，不凭目录数冒63全完成；quality可逐真产物连续审最多3批。
+
+068/066 2026-10-28本轮root采用batch20–22独审60原claim处置前核当前语义SHA并保既有发布验收计数，累计323/393（含hold/partial/related，非323事实通过）；早期12案余70原claim已派pilot逐批补完整映射。QMJ候选CAND-52b7094a20dcf292根逐项重核独审全部pins后selected发布2020-02r3，新增1个related2014主机/后配套系统组成字段，shared综述父不改、不带系统进尺或2020采用；全库本轮41新知识字段，另嫦娥3同值重绑不混计。新版导读/六维实际payload已派，reader/MCP尚未验不冒通过，公网快照未同步。Research09–11实际8收集候选独审已续派，未因下载自动入档或提分。现存8776 PID3570未重复启动服务。
+
+068续接QMJ2020-02r3：独审新版8模块/6维payload逐文件SHA及当前dataset核定后冻结0.1.0，真实stdio总览/记录/版本/解读与精确quote通过；verify_published_changes_sdk逐本次唯一新增组成字段按冻结chunksSHA/offset/value再次验过，结果reader-preparation/deepresearch05/root-sdk-overview.json、root-sdk-all-changes.json。仅related2014组成局部闭环，未改分或同步公网。pilot早期12案70原claim准备已齐；quality23–25独审50已交、26最后20已实际续派，尚未根采用进323计数，避免将准备等同处置。
+
+066 2026-10-28 07:33根采用batch23–26最终独审70原claim：逐条重核原batch的original_claim完全相等、当前dataset语义SHA、12案receipt输入pin、每案原候选数与唯一键全覆盖；保原34字段发布/11局部MCP计数。现63案126批393/393均有独立核读处置（含duplicate/partial/hold，非393事实通过、更非63高质量完成）。进度HTML/JSON及560队列已实际刷新；全库本轮新字段41不变，尚无80声明。下一优先消化已审Research06–08四条有界可准备候选，pilot只读native准备已派，跨块引文hold保留，停止用新下载替代处理积压。
+
+068本轮消化Research06–08只读准备首条：根核2019-05当前r1语义SHA、空cell、既有原件/chunksSHA及单块唯一quote后，将后期厂家案例pending父限定shared，真实连续子段Sfea339a534f7ca00 B0001提CAND-bc82636196931268待独审。仅两台XGC11000/42m主臂/60t梁特定作业厂家陈述，非2019获奖原型额定、安全裕量或成本验证。ledger在native-preparation/research06-08/root-xgc-native-pending.json，未审批/发布，quality已续派实际核；余3需根实际导入再选录，另外4跨块hold保留。8776 PID3570未重复启动，cloud/评分不改。
+
+068本轮XGC实际native独审全部pins复核后selected发布2019-05r2，一条后期厂家特定作业情境，全库本轮42字段；新版阅读评估已派，未验不冒完成。其余3准备首2016-00 PDF实际导入shared后rw.source按项目范围门禁正常拒绝，未绕归属；仅从显式parent state核连续quote并保存root-remaining-ingest-checkpoint.json，尚未提案。此为共享父读取路径需按source_excerpt处理，不代表资料不可读或事实通过；余两原件未处理，下一续接先核checkpoint避免重复。评分/public不动。
+
+068续接XGC2019-05r2新8模块/6维0.1.0根核SHA冻结，实际stdio5调用及全部1新增情境字段精确quote/value/冻结块验过，局部闭环已更新receipt，不升质量。Research06–08余3根从显式shared父state读取原生块，不改project门禁，真实唯一连续子段提pending：2016-00 CAND-6963d8321a680874 related砂层改良方法；2020-00 CAND-bf3438d6b5d172e7 彩云监测研究用途；2018-08 CAND-5dd8204d41af13e1 厂商规则诊断。ledger root-remaining-native-pending.json，当前dataset/空cell与原件SHA先核，3实际独审已派，未审批或发布。旧4跨块hold保持，public/score不变。
+
+068本轮Research07–08余3独审真实native全部checks及所有输入pins根复核后selected发布2016-00r2相关砂层改良方法、2020-00r3监测数据与预警研究用途、2018-08r2厂商FMS规则机制，各1字段；whole父保持shared，获奖采用/原始性能/准确率不由此推出。ledger native-preparation/research06-08/root-remaining-published.json；新版8模块/6维payload已派，reader/MCP待实际验，暂不继承旧版成功。全库本轮45新增字段、63原处置393/393口径分开，未提升质量分或同步公网。下一Research09–11三有界可准备项只读映射已派pilot，原五跨块hold不解除，不用新广搜代替积压消化。
+
+068本轮2016-00r2/2020-00r3/2018-08r2八模块及六维独审payload逐文件SHA根核后冻结0.1.0；真实stdio15调用总览/记录/引用/版本/解读及额外逐全部3新增字段精确offset/chunksSHA/quote/value过，reader-preparation/research07-08-remaining保存报告，仅局部版本闭环不升分。Research09–11三已审准备根实际导入shared父、单块唯一quote选录child并提native pending：2020-04 CAND-76b30639e9eefd92 CQC公告；2019-01 CAND-a2b3e2620dae06b8 related磨垫平台方法；2018-07 CAND-f30aef5cde08eff9 历史冷却励磁路线。实际独审已派，原5 span hold保留；本轮45发布字段不变，cloud未同步。
+
+068本轮Research09–11三实际native独审全部checks/pins根复核通过后selected发布2020-04r3 CQC历史公告事件、2019-01r2相关2023磨垫检测平台方法、2018-07r2历史采访冷却/励磁路线。ledger native-preparation/research09-11/root-published.json；不把公告当证书/性能、平台当2019整机良率、采访当型式试验。全库本轮48字段，新版8模块/6维已派，reader/MCP尚待实际验，不继承旧成功或升分，cloud未同步。Research01–11已审可准备积压全部进入局部发布，既有5 span hold继续留；triage续下一小批3金奖定向Research12，先核去重与原始验证/工况/采用缺口，不无差别广搜。
+
+068本轮Research09–11三新版8模块/六维根核独审文件SHA冻结0.1.0，真实stdio15调用及全部3新增字段冻结块/quote/value验过，报告reader-preparation/research09-11/root-sdk-overview.json、root-sdk-all-changes.json；限定局部闭环不等80/公网上线。Research12三新包根065机械和sources/claims索引SHA复核过：11真实查询、2可读原件、3候选，北人原件TLS失败0候选，坏字体PDF数字不猜；真源index及root-mechanical-check.json已保存，quality已派语义独审，queue真实收集阶段刷新。原件/分数/公网不变。
+
+2026-10-28用户要求制定今日剩余任务并安排找资料协作：已建立00-项目管理/20261028-执行与外协/今日执行计划.md、4独立可转交任务书与外协派单登记.json。外部未发消息/未称接单；pilot已派Research12两项只读准备，quality派QMJ/XGC/彩云当前版按既有基线独立复评，triage派Research13下一3案并排除4外协重叠主题。今日按证据收益/真实验收推进，不承诺560全完或自动80；公网快照另计。
+
+2026-10-28今日计划续执行：63进度按当前输入重新构建393/393处置不冒通过，生成缺口分组-20261028.json/md（关键词辅助分派、需人工复核）；Research12摄像系列两条真实native独审后根核全部pins/checks选集发布2019-04r2，新增2字段全库本轮50，厂述不证2019获奖配置或独立性能；新版8模块/六维准备已派、真实MCP待验。热锻论文第3物理页图根目视生成有PDF/页图SHA的人工转录及边界，独立校对与原生谱系待审，维持hold、不猜数字。QMJ/XGC/彩云三案v2十维质量试评已交，另一Agent独立校准中，未改正式分。
+
+2026-10-28今日计划实绩：Research12摄像模组2厂述独审selected发布2019-04r2，新版8模块/6维0.1.0根核冻结，真实stdio总览及全部2新增字段quote/chunks/value精确回查过；本轮50字段/23项目局部reader-MCP，不等整体80。P0缺口关键词辅助分组已落、并标非事实裁决。热锻第3页视觉转录根与独立Agent核对，原PDF/页图/报告SHA留痕，仍hold待衍生源谱系+真实native审核。三案v2试评经另一Agent独立校准及原评者回应一致40/22.5/33.75，派生稿逐维修正6处旧等级锚点文案并绑定当前SHA，不覆旧报告、不写生产分。Research13三案14实际查询、1新原件+1复用、3失败、2候选，根065/索引SHA已核，非采集Agent独审中；4外协目录未出现，尚未收到。今日实绩文档已写，继续在途。
+
+2026-10-28续：Research13两候选非收集Agent独审：2016-03样本模型句跨native块hold、2019-07承包商Woodhaven同品牌场址段可有界准备，2016-04零候选。根已核实际原件SHA/current/空cell，shared父→唯一连续子段CAND-63babe05ca7f9dcc独审后selected发布2019-07r2；承包商场址不证71000kN/杭州获奖版采用，阅读评估待准备。本轮51字段。热锻转录经原PDF/页图/独立校对报告SHA及视觉原文核对，独立衍生Markdown实际native导入为限定related来源并提CAND-b05aa72f7f9a3eb4待独审；不覆盖原坏字体source、不称原PDF可搜索文字或获奖整线采用，原hold保留。外协4指定目录未出现。
+
+2026-10-28继续完成今日在途：Research13 Woodhaven 2019-07r2独审selected发布后，新版8模块/六维0.1.0根核冻结，真实stdio总览及新增字段精确quote验证通过，related承包商自述不证获奖型号。热锻2021-05视觉转录独立衍生源实际pending 22项独审通过后，根复核原PDF/页图/校对SHA及全部pins，selected发布research3，相关2018滤波机制1字段；原PDF坏字体/旧hold保留，不称机器可搜索原文、不认获奖整线采用或量化精度。当前本轮52字段，热锻新版导读/六维准备已派、MCP待实际验；不升分/不同步公网。
+
+今日执行收口：热锻2021-05 research3绑定独立校对视觉转录、原PDF/页图/报告SHA，新版8模块/六维0.1.0根核冻结，真实stdio总览及全部1新增字段精确quote/chunks/value通过；2019-07r2同样新版与精确MCP通过。全库本轮52字段/25项目局部阅读MCP，63案34字段/11局部，不等全部完成。三案质量校准共识40/22.5/33.75绑定版本，无专家/生产改分；外协4包仍未收到。今日执行实绩.md已按现状更新，持续任务和受限hold保留。
+
+2026-10-28用户要求直接安排4份外协收集，已分派既有Agent：triage顺序A嫦娥/C北人EB，pilot B QMJ，quality D热锻，各按唯一目录065保存并先查旧源；C排A后，实际查询/取得未完成不可冒收集完成。外协派单登记.json标记内部派遣，无外发信息；项目方未公开计量/运行台账或具体配置如公开渠道不可得须保留协助缺口。收集结果由其他Agent独立复核，root审批与验收。
+
+2026-10-28用户继续要求全库剩余项目：A嫦娥/C北人/B QMJ/D热锻收集包均实际到达。根用本库agent_intake.validate重验并保存external-execution/root-reception-ABCD.json：A/C无机械错误；B有34项、D有26项schema错误，不能沿收集者所称通过；原包保留，已分别派pilot/quality做新批规范转换含真实SHA/失败不猜。A/C交quality、B交triage、D交pilot独立内容核读；Research14续派triage避重，队列分配不等检索。现有嫦娥样品分项/项目方原台账、QMJ获奖配置、EB剂量测试、热锻整线采用桥接未取得，继续保缺口。
+
+用户要求继续剩余项目：Research14三案9实际查询/2新原件/1复用/3候选，根用065与sources/claims索引SHA实核通过，语义独审待quality；零候选不冒完成。外协B独审保2019PDF与旧HTML同篇及相关系统边界，B/D原包schema异常已由各收集Agent另建规范副本并本库validate通过，不覆盖原包。D独审新请求200实际PDF与旧SHA相同，历史403与新200均保、不冒新清晰全文。外协A/C根核实际原件和版本后共享父→4唯一连续child提native pending（2025-00两、2019-03两），嫦娥人工BENCH未改，quality已派实际独审；证据不足的连续块/采用/分项计量hold保留，尚未发布。560范围继续，不因排队认研究完成。
+
+2026-10-28继续：A/C实际4候选独审后根复核所有pins/checks及嫦娥BENCH，selected发布2025-00r4、2019-03r2各2字段（任务时序/地面分装、2017演示配置/速度自述），不认持续纯钻、分项实测、获奖配置或固化验证。63内36字段、本轮全库56字段，新版阅读/六维准备已派，MCP待验；嫦娥历史证据audit仍attention。Research14候选2024-02厂商2026回顾已提真实native CAND-e6e9694ba8662b11待独审；Research15三案9查询复用3PDF/0新原件/2候选，根065与原始索引SHA核过，pilot独审中。B/D另版规范副本根实际validate通过；D新HTTP200得到PDF与旧SHA完全相同不冒新清晰件，原403与新请求均保。原本62/393等关键词分组仅启发式不得用作裁判；score/public不动。
+
+2026-10-28续：外协A/C 2025-00r4、2019-03r2新版导读/六维0.1.0已根核冻结，真实stdio逐4新增字段quote/chunk/value及总览过；嫦娥audit仍attention、802known/11native，局部增量通过不称全版reader/MCP通过，BENCH/分数不动。Research14 2024-02厂家2026回顾候选独审selected发布r5并完成新版8模块/6维与精确MCP，非原试验/所有配置；63内37字段/11局部验收，全库57字段。Research15三案9真实查询/复用3原PDF/0新原件/2候选经065根核及pilot独审：FAST馈源舱跨块hold，复兴0新候选，SPERF 2023-06理论参考场来自实测电流驱动有限元之相关PDF唯一连续child已真实提CAND-eef345add6ed5153 pending待quality独审，非独立标准场/整装3%精度。
+
+2026-10-28继续剩余：Research15三案9查询/复用3既有PDF/无新原件，SPERF 2023-06理论参考场（实测线圈电流驱动FEM，非独立标准场/整装精度）经独审根选集发布r3，8模块/6维根核冻结及实际stdio精确新增字段回查通过；FAST馈源舱跨块hold。全库本轮58字段。Research16三案triage实际收集进行中；本机资料/私有原件不自动同步公网。外协A/C资料四字段2025-00r4/2019-03r2完成新版导读及逐字段MCP，嫦娥历史802known/11native仍attention、不认全版通过。历史自动跟进automation配置当前PAUSED（核本机toml），用户未明确要求恢复定时配置，本次不擅自改状态，不能声称定时自动连续运行；如后续主动继续须以实际会话/授权为准。
+
+Research16实收2020-06/2017-04/2017-02：9实际查询、1新正文/1旧SHA复访/1导航伪PDF/1既存PDF复用、2候选，3包根实际065和index来源/候选SHA核过，quality独审已派；2017-02 0候选如实保留。全库58新增字段不因候选增加；原Research14/15各限定增量已独审选集发布并同版导读/MCP验。automation当前PAUSED，未擅自更改，不能宣称自动连续运行；公网与本机不同快照。
+
+2026-10-28用户询问任务进度及可交豆包工作：根据真实Research14–16和既有外协缺口，形成00-项目管理/20261028-执行与外协/豆包第二批-精准补证任务.md，分防冰试验、轨交储能车型工况、QMJ获奖配置桥接、热锻整线采用4项，附唯一批次及原件/引文/失败/私有交付规范；仅写任务书，未外发或称豆包已接单。外协登记A/C已独审局部发布、B独审、D独审同SHA补正为真实状态。定时automation仍PAUSED，明确不得声称自动连续运行。
+
+2026-10-28用户要求继续挖掘后续项目：Research16已审CAAC历史公告根核当前版/空cell/原件SHA，shared父唯一连续child提2017-04 CAND-d759968214e4a036 pending，实际native独审待派；不是逐项报告或交付单机适航。Research17已分派并实际选2015-03/04/05，已有真实查询进行；quality的Research18五案仅只读排单，避开在途三案，分配不等执行。上次豆包四案ZIP仍未在本机发现，交接内容保未验证，不冒入库；自动化仍暂停，不冒持续运行。
+
+2026-10-28继续深挖：Research17大疆2015-03/海尔2015-04/滴滴2015-05三案真实9query/3新原件/5候选，根实际065和来源/claim索引SHA通过，pilot独审在途；模型容量报错后核实已完成，未重复抓取。Research18五案仅只读排单未检索（2024-04/2024-09/2025-03/2016-07/2024-03），避17在途。Research16 CAAC2014公告实际native独审后root复核pins并selected发2017-04r2，局方型号审定统计不当交付单机适航/逐项报告，新导读六维待准备/MCP待验；全库本轮59字段。豆包四案ZIP仍未实际收到，任何报告数值不冒验证；定时仍暂停。
+
+Research16民航局公告2017-04r2八模块/六维payload根核冻结，实际stdio总览和唯一新增字段逐字/冻结chunk/value验证通过，仅审定工作量公告的局部版本、不证单机适航。Research17三案9实际query/3新原件/5候选根065及索引SHA核验，pilot独立核读在途；Research18五案只读排单未开始查询。全库本轮59发布字段，下一批不能以排单计完成，豆包交付ZIP仍未到、自动续接暂停。
+
+2026-10-29续接：Research17五候选pilot独审，海尔2015组织宣示单句可准备，4个PDF准确引文未匹配native块保持hold；根核现版/空cell/原件SHA，实际shared父→唯一连续child提2015-04 CAND-d628c6ec67d41cd3待quality独审，不能把can become认作全员已获权或收益因果。Research18 triage执行前三案2024-04/09、2025-03；Research19余案只读派单中，分配不等执行。本轮59字段不因pending增加。豆包报告ZIP路径仍不可见、automation仍暂停。
+
+2026-10-29续：Research17海尔2015组织宣示已提真实native待独审（CAND-d628c6ec67d41cd3），另4 PDF引用hold。Research18 2024-04/09、2025-03实际9查询/复用3旧PDF/0新原件/2候选，根065/索引SHA过，pilot独审在途；不得把300kg平台当15t或数据集当临床人数/获奖采用，2024-04零候选。Research19三案2016-07/2024-03/2018-04仅派单后已派triage实际执行，尚无结果，分配不计完成。全库本轮59字段；豆包ZIP未收到/自动续接暂停，原件私有。
+
+2026-10-29续：Research17海尔2015-04组织宣示实际native独审selected发布r2，8模块/六维根核冻结、真实stdio总览及新增字段精确quote验收；can become不认全员已授权/收益因果，全库60字段。Research18三案9查询/3旧PDF/0新原件/2候选，根065及索引SHA核过、pilot独审限定两条可准备；下一步只读原生准备，不将300kg平台当15t或三元组当临床人数。Research19 2016-07/2024-03/2018-04实际9query、2新原件/1旧件复访、3候选，根065/index SHA过、quality独审在途，避免35/45冲突、试验范围、磁浮年份混同。豆包四案ZIP仍未实际收到，automation仍暂停。
+
+2026-10-29继续Research18：两真实候选独审后root核全部pins/checks选集发布2024-09r4、2025-03r4各1字段；相关300kg平台不是15t整机、C3VD图像三元组不是病例数/临床验证。新版导读六维已派，旧版MCP不得继承，63内39字段/10局部已验，本轮全库62字段。Research19独审两可准备/一跨块hold，pilot准备中；Research20 triage已选2020-09/2018-09/2015-08正在查询，尚未认完成。无分数或公网改动，用户提供ZIP仍不可见。
+
+2026-10-29继续：Research18 2024-09r4/2025-03r4导读/六维根核冻结、真实stdio总览和全部2新增字段精确quote/chunk/value过；局部300kg平台/仿体图像不认15t整机或临床验证。63内39字段/12局部版本验收，全库62字段。Research19两项准备的独审批次日期与真实目录不一致，保原审等待quality更正附录，不默默改来源。Research20 2020-09/2018-09/2015-08 9实际查询/3HTTP原件/2候选，根065+index SHA已核，pilot独审在途；未明确MAC180 0候选、AG600后续构型不混、雨水报告原件未附不可认水质检测/饮用安全。
+
+Research19质量独审对旧报告误写20261028批次已出独立附录，逐条证明与实际20261029目录/index/原字节/引文一致；根核附录与全部pins后实际提2016-07 CAND-71110da31714c2f8、2024-03 CAND-91d52a9d17e3683c pending，前者保已有project来源、后者shared父唯一child；quality实际候选独审已派，未认盈利或检测曲线。Research20三案根065/index SHA过并由非采集Agent独审中；本轮62字段、63案39字段，局部MCP计数以queue为准。
+
+2026-10-29续：Research19两局部新版2016-07r4/2024-03r5八模块/六维根核冻结，真实stdio总览+全部新增字段精确quote/chunk/value过；4S作者机制不证盈利、试验范围不认原始曲线。Research20两独审可准备项根核版本/原件SHA并真实shared父→唯一连续child提pending：2018-09 CAND-99d27ac06663baec 2022 AG600阶段公告、2015-08 CAND-cd5c70003a21fc1f 目录转述检测；quality实际独审已派，不认2018取证或饮用安全，水质目录未附报告/未现场核验。63内40字段12局部验收，全库64字段，不计未审候选。
+
+Research21 2015-00/2016-02/2016-01实际9查询、2新原件/1旧件复访、4候选，根065/索引来源声明SHA核过，pilot独立核读在途；简化模型不认量产采用，1101 CATI/9018反馈不混月活，华为战略不认因果/坏编码不猜。Research20 AG600/雨水两真实pending独审在途。全库仍64新增字段，收集/排队不等通过。
+
+2026-10-29续：Research19两实际候选经独审及批次更正附录，root复核pins选集发布2016-07r4/2024-03r5，并完成新版8模块/六维冻结与真实stdio逐全部新增字段回查；服务作者机制不认盈利、试验范围不认原始结果。Research20两实际候选独审后root选集发布2018-09r2/2015-08r2，AG600后续阶段公告、目录转述水质检测，未认2018取证/饮水安全；新版导读六维已派，MCP待验。本轮全库66字段，63案40字段/12局部MCP。Research21 3案4候选独审在途，Research22已派但不计已搜索。定时automation暂停/用户ZIP未收到。
+
+2026-10-29本轮Research20 AG600/雨水2018-09r2、2015-08r2新版8模块六维根核冻结，真实stdio总览及两新增字段精确quote/chunks/value通过；历史阶段不证单机适航，目录转述不证饮水安全。Research21三案4候选独审：原页可见但原提交quote均不匹配native单块，保4 hold并更新queue，不伪造原文；Research22天鲸/咕咚/蛟龙实际查询在途未计完成。全库本轮66字段，具体局部验收数以queue为准，用户豆包ZIP仍缺、自动化仍暂停、不得称已全完成。
+
+Research22 天鲸2017-05/咕咚2016-05/蛟龙2015-02三案已实际9查询/3原件/4候选，根065及索引来源声明SHA核过，quality独审已派；报道和媒体体验非独立性能试验，后续型号/海试范围不混获奖版。全库66新增字段不因候选增加，原件私有；定时automation暂停，豆包ZIP仍未收到。
+
+2026-10-29 Research22四候选独审后根核版本/原件SHA/空字段，实际shared父→唯一连续child提4 native pending：天鲸1、咕咚2（媒体体验及配套洗涤液共同条件）、蛟龙1，ledger native-preparation/research22/root-native-pending.json；quality独审实际候选在途，不能将媒体体验、航行报道或海试报道升级为标准性能/清水去油/全性能证明。Research23三案正在实际查询，数据不以派遣计完成。ZIP未收到，定时automation暂停。
+
+Research23农业2018-02/轧线2023-01/齿轮2017-08实际9查询、3响应含1旧SHA复访和1摘要、1相关候选；根065/index SHA核过，pilot独审。轧线/齿轮各0候选，不把摘要/不同型号作验证。Research22四actual候选独审发现咕咚method仅在同record另一environment字段有洗涤液，method自身未载条件，根明确单独hold不得审批或靠默认同显遮盖；其余项独审继续。
+
+Research22 actual4独审发现咕咚method条件未显式洗涤液，根按needs_more保留原候选、environment pending，未靠同屏显示绕过；pilot只读准备新有界method。天鲸2017-05r2/蛟龙2015-02r9另两已通过独审selected发布，仅历史航行/海试报道；新版导读六维已派/MCP待验。Research23三案9查询/3响应(旧SHA复访/摘要分开)/1农业related候选，根065/index SHA过并派pilot独审；另两0候选。全库68新字段，待验不冒完成，automation暂停/豆包ZIP未收到。
+
+Research22两案天鲸2017-05r2/蛟龙2015-02r9导读六维根核冻结、真实stdio总览及两新增字段精确quote/chunk/value已验；仅历史航行/第五潜报道，不认性能。咕咚原method因漏洗涤液被needs_more保留；pilot独立只读设计后根另提CAND-3fc2bf4173e536f5，conditions显式洗涤液及未知用量/配方、同父environment依据，连同CAND-7ae5afa11158aef1待quality成对独审，不靠同屏隐藏条件。Research23农业2018-02相关2020栅格算法根核原文/版本后shared父唯一child提CAND-e64d9af253958ccd待独审，不认2018获奖平台采用/精度。全库68字段，automation暂停、豆包ZIP未收到。
+
+Research23农业actual独审发现字段语义：原candidate validation.method为试验方法，但原文是栅格/GNSS算法，根将CAND-e64d9af253958ccd设needs_more保留，pilot按字段字典只读准备正确technology字段，不冒试验完成。Research22咕咚method/环境经补洗涤液条件独审后root选集成对发布2016-05r3，新版阅读/MCP待验；原遗漏条件候选保留needs_more。全库70字段，不改质量分/公网，豆包ZIP未收到、定时暂停。
+
+2026-10-29 Research22咕咚r3成对method/environment显式洗涤液条件，新8模块/六维根核冻结，真实stdio总览和两新增字段精确quote/chunks/value过，媒体体验非清水或定量去污试验；原漏条件候选needs_more保留。Research23农业validation.method误映射已needs_more，pilot核字典无technology.algorithm后提出technology.principle，根按实际源/版/空cell新提CAND-b2f4aa978c70db08待独审，不伪称2018获奖采用或试验；原候选不覆盖。全库本轮70字段，项目库原件仍私有，豆包ZIP未收到/定时暂停。
+
+2026-10-29续：Research23农业2018-02 原validation.method误映射仍needs_more；重映technology.principle新candidate经独审root核pins/checks selected发布r2，相关2020栅格/GNSS算法非2018获奖采用/精度测试，新版导读六维待验。Research22咕咚r3显式洗涤液条件成对发布后，8模块六维根核冻结并逐两字段实际MCP回查过，非标准净度或清水去油。全库本轮71字段，当前版验收状态见queue；Research24收集在途不可计完成，豆包ZIP未收到/自动续接暂停。
+
+2026-10-29 Research23农业2018-02 r2新版8模块/六维根核冻结，真实stdio总览及新增原理字段精确quote/chunk/value回查通过；算法相关不证获奖采用或试验，旧误映validation.method仍needs_more。全库本轮71字段；Research24 2023-02/2025-08/2025-09收集进行中尚未报告结果。定时automation暂停、豆包ZIP仍未收到。
+
+2026-10-29续Research23农业2018-02r2新8模块六维根核冻结及真实stdio新增字段精确quote/chunk/value通过，仅相关算法原理不证2018采用/精度；全库本轮71字段。Research24三案2023-02/2025-08/2025-09实际9查询/4原件/1请求403/2候选，根065与索引SHA核过、pilot独审在途；摘要非全文、授权专利不等项目采用，政府调研不等整车验证；0候选保留。豆包ZIP未收到/自动续接仍暂停。
+
+Research24 2023-02/2025-08/2025-09实际9查询、4来源响应/1 403/2候选根065索引SHA核；pilot独审授权B专利页可见但原文span hold、source_type误标保原包；NDRC历史调研可限定，根核current/源SHA后shared父→子段提2025-09 CAND-4b66e2523a4366d4待quality独审，不认2025整车验证/效益。Research25三案定向查询在途未计完成；豆包ZIP未收到，自动化仍暂停。
+
+Research24 NDRC历史跨厂设备调研actual候选独审后root核pins/checks selected发2025-09r2，局部导读六维准备中/MCP待验，不认2025整车验证或收益；专利跨块及类型误标保留。Research25 2024-05/2018-03/2025-02 9实际查询、1新授权专利/1旧PDF复访/1请求403、3候选，根065/index SHA过，pilot独审在途；工作行程与刻划面积、提名与奖项、专利方案与GP300采用严格分开。63内41字段、全库72字段；豆包ZIP仍未收到/定时暂停。
+
+Research24 NDRC调研2025-09r2独审selected发布后，同版八模块/六维根核冻结及真实stdio精确字段quote/chunk/value验过，历史跨厂示范不证获奖As整车验证/收益；63案41发布字段/13局部验收，全库72字段。Research25独审3候选均原生准确quote跨块hold：2018-03原页简介mm与检测结论nm的原印冲突并列保留，不是可静默修OCR；长quote还混经济/提名等过宽需缩；2025-02 B专利方案不认GP300采用，2024-05 403无候选。核对记录deepresearch25-independent；未改事实/评分。豆包ZIP仍未收到，定时automation暂停。
+
+2026-10-30续：Research26实际三案9查询、3份来源保存、1次PDF读取失败；根核065三包及sources/claims SHA通过（deepresearch-round26/root-mechanical-check.json），独审见reviews/deepresearch26-independent。2017-09一条2020展会合作方式宣传可有界准备，非合同或2017平台全量能力；2018-05 2020漳州转子与目标对象不一致、2016-06未取得测试正文均零候选。Research21 2016-01华为2015年报新连续quote独审通过进入原生准备，旧hold不覆；仅当年公司战略声明，不证实施效果。两项均未提原生pending、未审批发布、未更新分数或MCP；下一轮先核版本及原文后原生精录/候选与独立审核。全库最近队列72字段/38案局部MCP；63案41字段/13案局部MCP，均非全案完成。自动续接状态本轮未核，豆包外部ZIP本轮未核。
+
+2026-10-31 ML024仅完成架构任务计划与验收规范：三任务样板、六经验、需求版本/条件化路线/反馈、四组实验协议，A/B/C首波并行后D/Q集成；工期8—13有效工作日为估计，客户专家等待另计。本轮未派发代码、未调用收费模型、未部署、未改项目数据或评分。
+
+2026-10-31 ML024用户明确启动多Agent：实际spawn A证据经验/B需求决策/C对照评估；首波接口v0.1与旧代码SHA已保存output/innovation-loop-024/contracts。进程核未见旧workbench/gateway重复服务。本轮先独立模块，不改线上与原项目事实，待真实交付后独审集成。
+
+2026-10-31 ML024首轮实际集成：A/B/C交叉复核修类型/空配置冻结/重复评审/预算/引用/刷新漏洞；59模块测试+旧网关6回归通过。根本机6工具stdio真实需求/方法/经验/路线/迁移/行动/反馈链过，独立B HTTP/存储并发/精确版本负例过；18784 loopback服务会话25058，浏览器保存刷新和390/1440截图已核。仅教学本机闭环；六经验缺取舍/三任务未齐/24实验仍draft/客户专家未到位，未公网部署或升分。逐项AC见ML024首轮实施与验收.md。
+
+2026-10-31 ML024第二轮：实际3任务各3路线/3行动/3方法及私有反馈隔离；真实SDK及独立HTTP/键盘切换/断服务恢复过。72模块+6旧网关回归过。24fresh原稿+两fresh AI48匿名评审已实际保存，169短引文零不匹配、非盲第三Agent13项重算过。验证决策均值A3.167/B3.667/C3.833/D3.917（0—4），其余多数同分，不证整体/工程优越；耗时/token/费缺、非严格双盲、非客户输入。经验v0.5继承引用元数据错误另修0.5.1并独审；活动目录6条有界，不倒灌试验v0.4。报告ML024第二轮完成与验收.md。未部署公网或自动原件/分数公开，客户/领域依赖明确保留。
+
+ML024第二轮收口：仅本轮27个代码/spec/计划文件提交3af9e8e，私有原稿/评审/映射和客户资料均不入Git；其他会话改动保留。当前本机18784服务会话8684（PID需续接实时核），72+6测试、3task真实SDK、24/48独审完成。精确源级/native绑定新增探针已过；完整产品仍有客户与领域依赖，不报全完成。
+
+2026-11-01 ML025本机交互实现：首屏判断/下一步、三路线卡、证据侧栏与Escape、就地反馈、缺口待核保存刷新；独立5类后端QA与78模块测试过，真实浏览器1440/390和保存/R2绑定已核。18784会话55703，不冒持续运行；无公网发布。验收见ML-025-交互改进验收.md。
+
+2026-11-03 069平台UI视觉规范v2已交付：以原站纸色/墨蓝/印章/宋体和/inno/真实页面、ML025截图为审计依据，确定“创新档案馆”与双密度方向。规范在03-平台规划/好设计平台UI视觉规范-v2.md，spec在specs/069。墨蓝主操作、印章红少量强调、旧紫色逐步退出；事实/AI/待核/冲突/未知形成统一视觉语言。关键色对比度已计算满足AA，文档链接与结构检查通过。未改任何线上样式、路由、研究内容或权限，未声称全站迁移完成；下一步真实组件样板页走查。
+
+2026-11-03 069后续用户明确否定既有视觉并选择长期GoodDesign UI：v2已标取代，现以造物云离线V2.3为稳定底座，Apple级精致度作为质量要求，不再另起风格。交付03-平台规划/好设计平台设计系统-v3.md、extensions/design-system真实样板及长期贡献治理。vendor只读/核心集中/页面组合分层，公开契约按语义化版本，当前0.1候选。5项测试、6宽度无溢出、18项浏览器检查、浅色AA已过，最终浅色/深色/移动/证据截图已实际查看；复验记录output/playwright/design069-apple-report.json。未改生产、路由、研究事实或权限；首个真实页面验收后再评估1.0。
+
+2026-11-03 070主站定位更新：用户明确opendesign.cc/inno/为好设计唯一主要项目区，gooddesign.qiuyiwu.com转为旧站资产来源，不再作为长期平行频道。specs/070已记录资产映射与退役门禁；当前未执行迁移、关站、DNS或API变更。现有旧站仍按原状提供回滚与资产核对，后续展馆/教育/教师/互动/助手/企业服务逐项迁移并真实验收，完成301和独立运行验证后才可安排退役。
+
+2026-11-03 069项目库首页首次真实采纳完成：extensions/design-system/portal.html及portal.css/js以GoodDesign UI重做/inno/首页，scripts/preview_gooddesign_portal.py在8891提供本机公开目录与静态资产。560真实项目/98封面/5奖项，研究状态动态读取，关键词/年份/奖项/阅读状态/47页/空态/URL恢复完整。8项Python与33项浏览器检查通过，6宽度无溢出，无脚本或本地资源失败；最终桌面/手机/深色截图已看，报告output/playwright/design069-portal-report.json。未部署生产，未改公开数据或权限。
+
+2026-11-03 071全站GoodDesign UI迁移与验收完成：旧站1165页、方法库67页和5动态公共页共1237静态页全部接入统一资产，动态档案/资料后台/方法工作台/企业闭环同步。总入口8892/site-index.html，资料后台8893、工作台8894、闭环8895。1237/1237真实HTTP双宽度检查零溢出/加载/资产错误；17类代表页面、19交互、78闭环、5方法阅读器及494全量回归通过。教师看板刷新循环、动态暗色、移动长文本/A4、需求资产和私有路径已修。报告00-项目管理/071，生产未改、未提交Git、未执行070退役。
+
+2026-11-03 072全站导航品牌与IP完成：统一scripts/gooddesign_chrome.py，1237页均一个GoodDesign导航/底部与Logo/小好，链接箭头清零，主题只由chrome.js管理，工作区保留project及feedback/print。R50方法页完成左侧目录/输入产物/步骤/蓝图表精修。17类浏览器无溢出/资源/脚本问题，20项项目绑定与498项全量回归通过。验收00-项目管理/072，生产未改、未提交Git。
+
+2026-11-03 073奖项系列图标重做完成：按用户“太丑”反馈废弃星芒/灯泡/书签/桂冠，改为统一细线几何。金奖单菱形、银奖双圆环横线、铜奖六边形短线、创意三节点、提名开放圆环中心点、菁英四有序节点，均按真实奖项接入卡片并保留文字。首页与总览已验，桌面/390无溢出，073回归通过。验收00-项目管理/073，生产未改、未提交Git。
+
+2026-11-03 074需求工作台本地完成：/inno/needs-v2/为真实问题→参考资料→研究路线→核对计划，桌面三层、移动单列；不是AI推荐或自动研究。17项主流程与4项边界/视觉检查共21项通过；修复错误重绘清空补充、操作反馈不可见，复制改为JSON预览+全选+系统快捷键，Escape有效。走查索引也接统一导航，全站页脚补gd-shell边距。当前1238静态页，固定环境507回归通过。验收00-项目管理/074，生产未改、未提交Git，未替换/needs/或执行070退役。
+
+2026-11-03 075数据总览本地完成：/inno/report/以图表展示560/98/21、679来源、2528已知字段、1234记录和64方法。奖项5类、有数据年度10个、98证据点、4质量状态与7方法分类均由真源动态计算，无硬编码年度。图表接真实筛选/档案，质量可过滤清单，未评不画0。36浏览器检查含6宽度/深浅主题/键盘/打印/减少动态通过，7静态测试与514全量回归通过。replace_chrome同时修复重复chrome.js。报告output/playwright/gooddesign-report-075，生产未改、未提交Git。
+
+2026-11-04 076企业创新工作台本地完成：/inno/loop/由产业Demo转为研究任务工作台，8895预览。五视图复用三任务六经验与原API；首屏为任务/路线/未知/下一步，非自动演示。需求补充真实保存不重复，反馈精确绑定、授权、同身份重试、刷新及跨任务隔离通过；验证计划可导出且无模型执行。45项SQLite副本浏览器检查、519全站测试及原ML024模块回归通过。证据output/playwright/gooddesign-enterprise-076。未提交Git，未替换旧生产URL或退役旧站。
+
+2026-11-04 077 MCP接入中心本地完成：/inno/mcp/重构为配置、8工具目录、调用流程和权限排障。目录发现3/深读4/组包1，与远程064契约一致，不含本机写/历史工具。JSON/TOML切换、工具搜索、参数展开、真实剪贴板与降级全选均验；密钥仅复制时进入剪贴板，预览占位、pagehide清空，TOML无明文。5静态测试、34浏览器检查与524全站回归通过，证据output/playwright/gooddesign-mcp-077。生产未改、未提交Git。
+
+2026-11-04 078小好AI Agent角色完成：原创薄荷绿研究搭子替换机器人，默认挥手/读方法/核证据三个SVG已接导航与真实导览，主图?v=078防缓存。打开/动作跳转/Escape/焦点返回/项目绑定/深浅主题/360与390均验，19浏览器检查与529全站回归通过。动态档案此前未加载共享组件样式致角色放大，已补gooddesign_links并验证58/44px。证据output/playwright/gooddesign-ip-078，生产未改、未提交Git。
+
+2026-11-12环境接续：核本地HEAD 8ea8039、真实域名首页200及nginx域名映射；共享背景更新115，旧重复部署待办纠正。远端查询超时未同步Git，既有大量修改保留；详见20261112-协作环境同步.md。

@@ -112,7 +112,7 @@ def _terms(v):
  return [t.strip() for t in v]
 
 def _norm(s):
- """123 匹配归一化：移除 JSON 转义空白序列与全部空白字符，跨行/排版差异不再丢命中。
+ """126 匹配归一化：移除 JSON 转义空白序列与全部空白字符，跨行/排版差异不再丢命中。
  对匹配体与查询项施加同一变换，旧命中保持为子串（召回单调不减）；仍为逐字匹配。"""
  for esc in ('\\r\\n','\\n','\\r','\\t'):s=s.replace(esc,'')
  return ''.join(s.split()).casefold()

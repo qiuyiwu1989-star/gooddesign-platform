@@ -16,7 +16,7 @@ TIER_ORDER = {"frozen_traceable": 0, "legacy_reference_only": 1, "unverified": 2
 def build_queries(functions, query_hints=None):
     """按功能生成检索计划。术语只来自功能定义与人工提示，不按行业或企业名称检索。
 
-    123：无人工 query_hints 的功能以功能抽象词回退，并标注 source_vocabulary=false
+    126：无人工 query_hints 的功能以功能抽象词回退，并标注 source_vocabulary=false
     与零召回预警（110 基线：抽象词全库零触达）；预警是标注，不改变检索行为。
     """
     hints = query_hints or {}
