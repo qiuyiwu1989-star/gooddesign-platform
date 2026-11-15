@@ -1,0 +1,58 @@
+{
+  "contract_ref": null,
+  "engine_stages": [
+    "S8",
+    "S9"
+  ],
+  "existing_mcp_tools": [
+    "method_get"
+  ],
+  "forbidden_operations": [
+    "method_run_submit",
+    "strict_artifact_claim"
+  ],
+  "host_operations": [
+    "guided_elicitation",
+    "artifact_draft",
+    "human_review",
+    "feedback_record"
+  ],
+  "limitations": [
+    "仅引导；没有严格执行契约或生产求解器"
+  ],
+  "logical_outputs": [
+    "ResearchPriorityRecord"
+  ],
+  "primary_capability": "research_prioritization",
+  "public_authorized": false,
+  "required_inputs": [
+    {
+      "description": "可选行动、价值或损失口径与时间范围",
+      "key": "task",
+      "label": "要作出的决策",
+      "missing_action": "ask_or_stop",
+      "required": true,
+      "type": "object"
+    },
+    {
+      "description": "参数、假设、关联性和当前证据",
+      "key": "uncertainties",
+      "label": "影响决策的未知",
+      "missing_action": "ask_or_stop",
+      "required": true,
+      "type": "array"
+    },
+    {
+      "description": "可观察结果、研究质量、成本和等待时间",
+      "key": "studies",
+      "label": "可选研究",
+      "missing_action": "ask_or_stop",
+      "required": true,
+      "type": "array"
+    }
+  ],
+  "research_id": "R52",
+  "schema_version": "method-invocation-0.1",
+  "skill_level": "S1",
+  "training_authorized": false
+}

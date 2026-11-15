@@ -1,0 +1,39 @@
+{
+  "artifact_ref": {
+    "artifact_id": "TEACHING-R02-001",
+    "revision": "r1",
+    "sha256": "a2579392a3c0d9e8b9e7178523c22a3d9557f0fed72ded0c43577fc5a684dfae"
+  },
+  "checks": {
+    "cross_media_excluded": true,
+    "plan_not_result": true,
+    "problem_definition_changed": true,
+    "same_media_retained": true,
+    "total_preserved": true
+  },
+  "engineering_validated": false,
+  "events": [
+    {
+      "event_id": "evt-R02-input",
+      "event_type": "input_checked",
+      "evidence_status": "constructed_teaching_only"
+    },
+    {
+      "event_id": "evt-R02-redefine",
+      "event_type": "artifact_revised",
+      "reason": "normal40/recovery60使恢复负担成为暂定挑战"
+    },
+    {
+      "condition": "新证据否定恢复负担为主的问题理解时返回Define",
+      "event_id": "evt-R02-return",
+      "event_type": "step_returned",
+      "target": "Define"
+    }
+  ],
+  "expert_certified": false,
+  "mode": "deterministic_guided_teaching_replay",
+  "research_id": "R02",
+  "run_id": "guided-R02-teaching-r1",
+  "schema_version": "method-reference-run-0.1",
+  "status": "teaching_replay_passed_not_real_user_research"
+}

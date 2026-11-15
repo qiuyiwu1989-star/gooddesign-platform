@@ -1,0 +1,72 @@
+{
+  "evaluations": [
+    {
+      "actual": "structure_and_declared_consistency_passed",
+      "expected": "structure_and_declared_consistency_passed",
+      "id": "R17-REPLAY",
+      "kind": "positive",
+      "passed": true
+    },
+    {
+      "actual": "blocked",
+      "expected": "blocked",
+      "id": "R17-MISSING-FUNCTION",
+      "kind": "missing_input",
+      "passed": true
+    },
+    {
+      "actual": [
+        {
+          "code": "candidate_contains_incompatibility:C0"
+        }
+      ],
+      "expected": "candidate_contains_incompatibility",
+      "id": "R17-INCOMPATIBLE-CANDIDATE",
+      "kind": "negative",
+      "passed": true
+    },
+    {
+      "actual_before": "structure_and_declared_consistency_passed",
+      "actual_candidate": [
+        {
+          "candidate_id": "C0",
+          "code": "candidate_contains_unknown_compatibility"
+        }
+      ],
+      "expected": "candidate_contains_unknown_compatibility",
+      "id": "R17-UNKNOWN-CANDIDATE",
+      "kind": "boundary",
+      "passed_before": false,
+      "passed_candidate": true,
+      "requires_contract_candidate": true
+    },
+    {
+      "actual": [
+        {
+          "code": "unresolved_evidence",
+          "id": "EV-NOT-FOUND"
+        }
+      ],
+      "expected": "unresolved_evidence",
+      "id": "R17-UNRESOLVED-EVIDENCE",
+      "kind": "negative",
+      "passed": true
+    },
+    {
+      "actual": [
+        "S6",
+        "S7"
+      ],
+      "expected": [
+        "S6",
+        "S7"
+      ],
+      "id": "R17-ROUTE",
+      "kind": "route",
+      "passed": true
+    }
+  ],
+  "research_id": "R17",
+  "schema_version": "method-evaluations-0.1",
+  "scope": "确定性资产回放；语义和领域效果另行审核"
+}

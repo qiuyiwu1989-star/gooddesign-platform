@@ -1,0 +1,92 @@
+{
+  "artifact_ref": {
+    "artifact_id": "RUBBER-R17",
+    "revision": "r1",
+    "sha256": "7d6dc64fcff543844e0bd88376826e8ddacc819a5ce8ba06cf44c34309fa620b"
+  },
+  "authoring_mode": "host_agent_using_MCP_read_method_and_case_content_not_backend_model_generation",
+  "check": {
+    "artifact_sha256": "7d6dc64fcff543844e0bd88376826e8ddacc819a5ce8ba06cf44c34309fa620b",
+    "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+    "cross_method_check": "performed",
+    "declared_unknowns": [
+      "C0仅为客户现状待调查占位；不得比较其虚构性能",
+      "C1—C3不是完整工程图或独立验证方案",
+      "公开专利后置检索涉及柔顺仿形与排屑，组合名称不代表新颖性"
+    ],
+    "engineering_validated": false,
+    "evidence_refs": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "case-0205da2905f4ccacbbb38094",
+      "case-0290060f5fbcac9f3803c823",
+      "case-479a7157f5e4d5eecce6c304",
+      "case-a81a5bd5f1f2e791d5e1371c",
+      "case-c1dd39efa2c949b7b81a8a58"
+    ],
+    "issues": [],
+    "semantic_support": "not_independently_verified",
+    "status": "structure_and_declared_consistency_passed"
+  },
+  "combination_statuses": [
+    "unknown"
+  ],
+  "compatibility_statuses": [
+    "unknown"
+  ],
+  "counts": {
+    "combinations": 4,
+    "compatibility_rows": 2,
+    "evidence": 28,
+    "functions": 7,
+    "options": 28
+  },
+  "engineering_validated": false,
+  "events": [
+    {
+      "event_id": "evt-R17-reference-replay",
+      "event_type": "artifact_submitted",
+      "status": "structure_and_declared_consistency_passed"
+    },
+    {
+      "before_status": "structure_and_declared_consistency_passed",
+      "candidate_issues": [
+        {
+          "candidate_id": "C0",
+          "code": "candidate_contains_unknown_compatibility"
+        }
+      ],
+      "event_id": "evt-R17-unknown-candidate",
+      "event_type": "review_recorded",
+      "finding": "现有契约允许未知相容性组合标为candidate；候选修订阻断"
+    }
+  ],
+  "expert_certified": false,
+  "mode": "historical_host_agent_plus_real_method_MCP_current_contract_replay",
+  "replay_dependencies": [
+    {
+      "path": "output/rubber-tapping-pilot/Agent推理产物.json",
+      "sha256": "b1124f97cace24015a75f04f57933cb31e8dfa0503b4eb1c9e4d31fe53784c03"
+    },
+    {
+      "path": "output/rubber-tapping-pilot/private/research-evidence.json",
+      "sha256": "f8d0d160d69923c38a35d48d41be9ac4a08dd200ce1f2bafae7259239eb09e72"
+    },
+    {
+      "path": "output/rubber-tapping-pilot/private/case-evidence.json",
+      "sha256": "9ff455dc6ef8a51976168a81af7ab2f8ca169d29f38001f3f5d1b61cbdd7191b"
+    }
+  ],
+  "research_id": "R17",
+  "run_id": "run-4dd2685d93584aa7b80e144610cd39bc",
+  "schema_version": "method-reference-run-0.1",
+  "task_ref": {
+    "revision": "r1",
+    "sha256": "09fd9fd9a592845d0bb9b4bd9f0f8ce12b93b6ee0a6d2293227e80d9a4ec40a7",
+    "task_id": "RUBBER-20261026"
+  }
+}

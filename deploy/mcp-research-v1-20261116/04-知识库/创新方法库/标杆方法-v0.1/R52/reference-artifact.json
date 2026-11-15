@@ -1,0 +1,95 @@
+{
+  "artifact_id": "TEACHING-R52-001",
+  "payload": {
+    "analysis_mode": "quantitative_teaching",
+    "base_case": {
+      "EVPI": 20.0,
+      "EVSI": 6.0,
+      "R0": 20.0,
+      "RPI": 0.0,
+      "RSI": 14.0,
+      "current_action": "B",
+      "current_risks": {
+        "A": 50.0,
+        "B": 20.0
+      },
+      "losses": {
+        "A": {
+          "bad": 100,
+          "good": 0
+        },
+        "B": {
+          "bad": 0,
+          "good": 40
+        }
+      },
+      "negative_posterior_good": 0.2,
+      "negative_risks": {
+        "A": 80.0,
+        "B": 8.0
+      },
+      "net_value": 3.0,
+      "p_positive": 0.5,
+      "positive_posterior_good": 0.8,
+      "positive_risks": {
+        "A": 20.0,
+        "B": 32.0
+      },
+      "prior": {
+        "bad": 0.5,
+        "good": 0.5
+      },
+      "study_cost": 2,
+      "waiting_loss": 1
+    },
+    "decision": "仅在本教学模型成立时开展研究；净价值3大于0",
+    "mandatory_rule": "安全与法规必需验证不因VOI低而取消",
+    "qualitative_fallback": {
+      "output": "未知—观测—行动分支，不输出EVPI/EVSI",
+      "when": "缺先验、损失或似然"
+    },
+    "zero_value_case": {
+      "EVPI": 20.0,
+      "EVSI": 0.0,
+      "R0": 20.0,
+      "RPI": 0.0,
+      "RSI": 20.0,
+      "current_action": "B",
+      "current_risks": {
+        "A": 50.0,
+        "B": 20.0
+      },
+      "losses": {
+        "A": {
+          "bad": 100,
+          "good": 0
+        },
+        "B": {
+          "bad": 0,
+          "good": 40
+        }
+      },
+      "negative_posterior_good": 0.4,
+      "negative_risks": {
+        "A": 60.0,
+        "B": 16.0
+      },
+      "net_value_before_cost": 0.0,
+      "p_positive": 0.5,
+      "positive_posterior_good": 0.6,
+      "positive_risks": {
+        "A": 40.0,
+        "B": 24.0
+      },
+      "prior": {
+        "bad": 0.5,
+        "good": 0.5
+      }
+    }
+  },
+  "revision": "r1",
+  "scope": "全构造教学数值；不是客户概率、损失或投资建议",
+  "task_id": "TEACHING-R52-001",
+  "task_revision": "r1",
+  "type": "ResearchPriorityRecord"
+}

@@ -1,0 +1,48 @@
+{
+  "analysis": "仅作同输入描述性对照；不预设赢家，不推断普遍效果",
+  "arms": [
+    {
+      "arm": "control",
+      "method_asset": null,
+      "replicates": 2
+    },
+    {
+      "arm": "with_R17",
+      "method_asset": "R17标杆方法-v0.1",
+      "replicates": 2
+    }
+  ],
+  "backend_probe": {
+    "codex_cli_available": false,
+    "scope": "当前PATH及常见安装路径未找到；未使用规则文本模拟模型输出"
+  },
+  "fixed_conditions": [
+    "相同ProblemBrief/FunctionModel/证据",
+    "相同ConceptSet Schema",
+    "相同模型、超时和输出预算",
+    "相同两次重复",
+    "不读取对方臂输出"
+  ],
+  "generation_calls_actual": 0,
+  "generation_calls_planned": 4,
+  "independent_blind_review_calls_planned": 2,
+  "isolated_effect_established": false,
+  "protocol_frozen_before_generation": true,
+  "research_id": "R17",
+  "review_calls_actual": 0,
+  "rubric": [
+    "机制选项差异性",
+    "功能覆盖",
+    "相容性与未知纪律",
+    "下游交接",
+    "人工修改量",
+    "失败与成本"
+  ],
+  "schema_version": "method-isolated-evaluation-0.1",
+  "status": "blocked_backend_unavailable",
+  "task_ref": {
+    "revision": "r1",
+    "sha256": "09fd9fd9a592845d0bb9b4bd9f0f8ce12b93b6ee0a6d2293227e80d9a4ec40a7",
+    "task_id": "RUBBER-20261026"
+  }
+}

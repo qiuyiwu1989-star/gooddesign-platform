@@ -1,0 +1,54 @@
+{
+  "contract_ref": {
+    "sha256": "da3ed64e64ca5a7c7a853a7107390f2c9122fe4fc8f428a0fad036046acdb69d",
+    "version": "0.2.0"
+  },
+  "engine_stages": [
+    "S6",
+    "S7"
+  ],
+  "existing_mcp_tools": [
+    "method_get",
+    "method_check_inputs",
+    "method_check_output",
+    "method_run_create",
+    "method_run_submit"
+  ],
+  "forbidden_operations": [],
+  "host_operations": [
+    "guided_elicitation",
+    "artifact_draft",
+    "human_review",
+    "feedback_record"
+  ],
+  "limitations": [
+    "严格结构通过不等于专家或工程验证"
+  ],
+  "logical_outputs": [
+    "ConceptSet"
+  ],
+  "primary_capability": "concept_composition",
+  "public_authorized": false,
+  "required_inputs": [
+    {
+      "description": "对象、目标、系统边界和硬约束；目标与事实分开",
+      "key": "task",
+      "label": "问题简报",
+      "missing_action": "ask_or_stop",
+      "required": true,
+      "type": "object"
+    },
+    {
+      "description": "动词加对象、输入输出和接口",
+      "key": "functions",
+      "label": "必要子功能",
+      "missing_action": "ask_or_stop",
+      "required": true,
+      "type": "array"
+    }
+  ],
+  "research_id": "R17",
+  "schema_version": "method-invocation-0.1",
+  "skill_level": "S2",
+  "training_authorized": false
+}
