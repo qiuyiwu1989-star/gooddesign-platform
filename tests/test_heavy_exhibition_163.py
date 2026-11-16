@@ -30,8 +30,6 @@ class HeavyExhibition163Tests(unittest.TestCase):
                 self.assertIn('data-cover-kind="scene_illustration"', self.html)
             else:
                 self.assertIn('/inno/portal/' + self.catalog[slug]['cover'], self.html)
-            self.assertIn(f'/museum/x-ray?slug={slug}', self.html)
-            self.assertIn(f'/museum/playground?slug={slug}', self.html)
             self.assertIn(f'/dossier/?project={slug}', self.html)
             self.assertIn(item['maturity'], self.html)
 
@@ -45,8 +43,8 @@ class HeavyExhibition163Tests(unittest.TestCase):
         self.assertIn('href="/needs/"', self.html)
 
     def test_accessible_responsive_reduced_motion_and_no_arrow_links(self):
-        self.assertIn('aria-label="专题展章节"', self.html)
-        self.assertIn('aria-label="继续探索', self.html)
+        self.assertIn('aria-label="观展控制"', self.html)
+        self.assertIn('aria-label="真实任务"', self.html)
         for arrow in ('↗', '↘', '→', '←', '↔', '⇄'):
             self.assertNotIn(arrow, self.html)
         css = (ROOT / 'extensions/design-system/heavy-exhibition.css').read_text()
@@ -54,7 +52,7 @@ class HeavyExhibition163Tests(unittest.TestCase):
         self.assertIn('@media(prefers-reduced-motion:reduce)', css)
         self.assertIn('@media print', css)
         js = (ROOT / 'extensions/design-system/heavy-exhibition.js').read_text()
-        self.assertIn("setAttribute('aria-current', 'true')", js)
+        self.assertIn('IntersectionObserver', js)
         self.assertIn("prefers-reduced-motion: reduce", js)
 
 

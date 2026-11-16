@@ -420,3 +420,6 @@ ML-029方法页标准与三类标杆：方法页标准-v1及specs/ML-029定义�
 
 
 163国之重器专题展：/museum/hall只保留四章八件项目，由heavy_exhibition_163从exhibits-heavy.json和catalog构建；不改original-app或museum首页。项目保留真实任务/看点/追问/边界及拆解/互动/档案链接，旧编年锚点落结束页。800px以下单列，减少动态和A4可读。发布只含hall.html与heavy-exhibition.css/js，生产20261116-163-heavy-exhibition，基线158-reviewed-project-covers；构建补齐xiaohao-bot-20261115.png但生产已有不覆盖。并行CSS/STATE修改不得随本任务提交。GitHub=276e1ff，远端已核一致。详specs/163。
+
+
+164沉浸滚动策展：163结构升级为三镜头（真实任务/设计局部/策展收束），首屏96px/600、项目36px，避免异常字距字重。原生sticky+IntersectionObserver，不scroll-jack；快速浏览可跳8项目，细看隐藏chrome且可退出，每项目仅一个dossier证据入口。控制条桌面底部中央，移动为Copilot预留右侧84px。生产20261117-164-immersive-exhibition，仅三文件，回滚163。STATE并行hunks不得随本任务提交。详specs/164。
