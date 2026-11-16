@@ -419,4 +419,4 @@ ML-029方法页标准与三类标杆：方法页标准-v1及specs/ML-029定义�
 162公开研究同步：package_research_sync_162复用093 research_files白名单，不整库公开。激活从runtime实际library克隆，逐文件核SHA、相同跳过、替换先解除硬链接并chmod 644；runtime/MCP必须同时切换。`.file-admin/jobs.json`是运行状态不计发布差异。生产560题录/103原生/221版，实际34文件/10项目更新，旧093字节未变，回滚runtime123-fix1/MCP research-services-v1。GitHub main=7ee0b7f已同步；Git进程未继承macOS代理时，显式HTTPS_PROXY=127.0.0.1:7897，不改全局配置。详specs/162。
 
 
-163国之重器专题展：/museum/hall只保留四章八件项目，由heavy_exhibition_163从exhibits-heavy.json和catalog构建；不改original-app或museum首页。项目保留真实任务/看点/追问/边界及拆解/互动/档案链接，旧编年锚点落结束页。800px以下单列，减少动态和A4可读。发布只含hall.html与heavy-exhibition.css/js，生产20261116-163-heavy-exhibition，基线158-reviewed-project-covers；构建补齐xiaohao-bot-20261115.png但生产已有不覆盖。并行CSS/STATE修改不得随本任务提交。详specs/163。
+163国之重器专题展：/museum/hall只保留四章八件项目，由heavy_exhibition_163从exhibits-heavy.json和catalog构建；不改original-app或museum首页。项目保留真实任务/看点/追问/边界及拆解/互动/档案链接，旧编年锚点落结束页。800px以下单列，减少动态和A4可读。发布只含hall.html与heavy-exhibition.css/js，生产20261116-163-heavy-exhibition，基线158-reviewed-project-covers；构建补齐xiaohao-bot-20261115.png但生产已有不覆盖。并行CSS/STATE修改不得随本任务提交。GitHub=276e1ff，远端已核一致。详specs/163。

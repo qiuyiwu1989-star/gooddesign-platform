@@ -1,7 +1,7 @@
 # State
 
-## 163 国之重器专题展（2026-11-16，已上线，GitHub待同步）
-[x] `/museum/hall`从混合门户收敛为“国之重器·在极限中设计”单一专题：四章八件真实项目，首屏大图、章节进度、真实任务/设计看点/核心追问/证据边界及24个项目入口，旧全馆介绍/应用货架/十年编年退出。[x] 163静态4+联合15+专项浏览器34通过，六宽度无溢出、8图加载、减少动态、8页A4、零资源/脚本错误；站点审计1250页P0=0/P1=0。专题→蛟龙号拆解5部件及结束页→项目库通过。[x] 生产current=/var/www/gooddesign-site/releases/20261116-163-heavy-exhibition，仅hall.html与专题CSS/JS三文件变化，线上SHA全一致；基线158-reviewed-project-covers，未带并行首页/Logo变更。回滚=/var/lib/innovation-design/release-backups/20261116-163-heavy-exhibition。[ ] 只提交本任务文件并同步GitHub，不收编并行CSS/STATE hunks。
+## 163 国之重器专题展（2026-11-16，已上线，GitHub=276e1ff）
+[x] `/museum/hall`从混合门户收敛为“国之重器·在极限中设计”单一专题：四章八件真实项目，首屏大图、章节进度、真实任务/设计看点/核心追问/证据边界及24个项目入口，旧全馆介绍/应用货架/十年编年退出。[x] 163静态4+联合15+专项浏览器34通过，六宽度无溢出、8图加载、减少动态、8页A4、零资源/脚本错误；站点审计1250页P0=0/P1=0。专题→蛟龙号拆解5部件及结束页→项目库通过。[x] 生产current=/var/www/gooddesign-site/releases/20261116-163-heavy-exhibition，仅hall.html与专题CSS/JS三文件变化，线上SHA全一致；基线158-reviewed-project-covers，未带并行首页/Logo变更。回滚=/var/lib/innovation-design/release-backups/20261116-163-heavy-exhibition。[x] 仅13个本任务文件提交276e1ff并同步GitHub，未收编并行CSS/STATE hunks。
 
 ## 162 公开研究快照同步（2026-11-16，已上线，GitHub已同步）
 [x] 本地与旧线上均560题录/103原生项目；研究版本217→221。公开白名单7286文件中7252一致，实际更新34文件/10项目，含2025-00 research-000005—000008和9个MVA治理档案。[x] runtime与MCP均为20261116-162-research-sync，library=/var/lib/innovation-design/snapshots/20261116-162-research-sync/library；线上7286文件SHA256全一致，旧093快照保持嫦娥4版、新版8版，旧字节未改。[x] 新文件权限统一644；公开档案2025-00/2019-s19/2015-02/2021-00及项目/报告/MCP页面200，私有API与MCP匿名401。`.file-admin/jobs.json`为运行状态，不计发布差异。[x] 回滚runtime=20261114-123-fix1、MCP=20261116-research-services-v1、library=20261104-093e，备份=/var/lib/innovation-design/release-backups/20261116-162-research-sync。[x] GitHub main已推送7ee0b7f，含1406个审查后源码/文档/公开设计资产，output与私有资料不提交；本地与远端一致。162专项3项+联合9项通过；全量865有既有11失败/14错误，未在同步任务中改写。
