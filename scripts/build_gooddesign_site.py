@@ -203,7 +203,7 @@ def build():
     for name in ORDER:
         source = FILES[name]
         write(Path('inno/portal') / name, source.read_text(encoding='utf-8'))
-    for name in ['brand-logo.svg', 'ip-xiaohao.svg', 'ip-xiaohao-method.svg', 'ip-xiaohao-evidence.svg', 'chrome.js']:
+    for name in ['brand-logo.svg', 'ip-xiaohao.svg', 'ip-xiaohao-method.svg', 'ip-xiaohao-evidence.svg', 'xiaohao-bot-20261115.png', 'chrome.js']:
         shutil.copy2(ROOT / 'extensions/design-system' / name, OUT / 'inno/portal' / name)
     shutil.copytree(ROOT / 'extensions/design-system/awards', OUT / 'inno/portal/awards', dirs_exist_ok=True)
     shutil.copy2(ROOT / 'extensions/design-system/museum-hero.css', OUT / 'inno/portal/museum-hero.css')
@@ -284,6 +284,10 @@ def build():
     write('assistant.html', build_museum_assistant_page.render())
     for asset in ('css', 'js'):
         shutil.copy2(ROOT / 'extensions/museum-assistant' / ('assistant.' + asset), OUT / 'inno/portal' / ('museum-assistant.' + asset))
+    from heavy_exhibition_163 import render as render_heavy_exhibition
+    write('hall.html', render_heavy_exhibition())
+    for asset in ('heavy-exhibition.css', 'heavy-exhibition.js'):
+        shutil.copy2(ROOT / 'extensions/design-system' / asset, OUT / 'inno/portal' / asset)
     pages = sorted(path for path in OUT.rglob('*.html') if path.name != 'site-index.html')
     groups = Counter()
     for path in pages:
