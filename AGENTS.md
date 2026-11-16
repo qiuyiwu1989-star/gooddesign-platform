@@ -416,4 +416,4 @@ ML-029方法页标准与三类标杆：方法页标准-v1及specs/ML-029定义�
 160+161应用与项目库统一及模型可视化：拆解实验室xray为第8应用，/cases/chang-e只解释项目证据如何支撑应用，不是第二档案。全部560 project+560 atom有对应slug的拆解/互动入口，互动仅教学模拟。/museum/laureates合并/projects；nginx禁止nested if，查询拼接由独立separator变量完成且8组合实测。161模型含mo-architecture-map双环SVG、2×2非胶囊能力卡和一证据四路径。发布包只含560个atom项目页而非atom/index；replace_file先解除硬链接再覆盖，禁止copytree写穿旧release。生产20261116-157-museum-apps，1142变更与线上SHA全核通过，回滚20261116-156-report。详specs/157—161。
 
 
-162公开研究同步：package_research_sync_162复用093 research_files白名单，不整库公开。激活从runtime实际library克隆，逐文件核SHA、相同跳过、替换先解除硬链接并chmod 644；runtime/MCP必须同时切换。`.file-admin/jobs.json`是运行状态不计发布差异。生产560题录/103原生/221版，实际34文件/10项目更新，旧093字节未变，回滚runtime123-fix1/MCP research-services-v1。详specs/162。
+162公开研究同步：package_research_sync_162复用093 research_files白名单，不整库公开。激活从runtime实际library克隆，逐文件核SHA、相同跳过、替换先解除硬链接并chmod 644；runtime/MCP必须同时切换。`.file-admin/jobs.json`是运行状态不计发布差异。生产560题录/103原生/221版，实际34文件/10项目更新，旧093字节未变，回滚runtime123-fix1/MCP research-services-v1。GitHub main=7ee0b7f已同步；Git进程未继承macOS代理时，显式HTTPS_PROXY=127.0.0.1:7897，不改全局配置。详specs/162。
