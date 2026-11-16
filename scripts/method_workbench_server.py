@@ -178,8 +178,13 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                 if path in ('/inno/portal/portal.css','/inno/portal/system.css'):
                     asset=ROOT/('extensions/project-portal/portal.css' if path.endswith('/portal.css') else 'extensions/inno/system.css')
                     return self.send(200,asset.read_bytes(),'text/css; charset=utf-8')
+                if path.startswith('/inno/portal/'):
+                    from gooddesign_assets import content_type,path as gooddesign_path
+                    try:asset=gooddesign_path(path.rsplit('/',1)[-1])
+                    except ValueError:raise KeyError()
+                    return self.send(200,asset.read_bytes(),content_type(path))
                 if path in ('/inno/','/inno/projects/','/inno/report/','/inno/mcp/','/inno/admin/','/inno/about/'):
-                    self.send_response(302);self.send_header('Location','https://opendesign.cc'+path);self.end_headers();return
+                    self.send_response(302);self.send_header('Location','https://haoshejiguan.com'+path);self.end_headers();return
                 if path == '/api/session':
                     return self.send(200, {'csrf': token, 'mode': 'local_single_user', 'model_connected': None, 'model_execution_available': (ROOT / '.runtime/pipeline/bin/python').is_file(), 'model_connection_status': 'checked_on_explicit_generation_not_preverified'})
                 if path == '/api/methods':
@@ -249,7 +254,12 @@ def make_server(port=8786, db_path=DEFAULT_DB):
                 target = (base / rel).resolve()
                 if base.resolve() not in target.parents or not target.is_file():
                     raise KeyError()
-                return self.send(200, target.read_bytes(), mimetypes.guess_type(target.name)[0] or 'application/octet-stream')
+                content = target.read_bytes()
+                if target.suffix == '.html':
+                    from gooddesign_chrome import replace_chrome
+                    active = 'methods' if path.startswith(('/library', '/inno/methods')) else 'needs'
+                    content = replace_chrome(content.decode('utf-8'), active).encode('utf-8')
+                return self.send(200, content, mimetypes.guess_type(target.name)[0] or 'application/octet-stream')
             except (KeyError, ValueError):
                 return self.send(404, {'error': '未找到该资源'})
             except Exception:

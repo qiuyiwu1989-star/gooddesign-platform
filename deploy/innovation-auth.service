@@ -1,0 +1,22 @@
+[Unit]
+Description=GoodDesign unified session login
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/innovation-design/current
+Environment=GOODDESIGN_AUTH_KEY_FILE=/etc/innovation-auth/session.key
+Environment=GOODDESIGN_AUTH_USERS_FILE=/etc/nginx/inno.htpasswd
+ExecStart=/var/www/innovation-design/venv/bin/python scripts/innovation_auth.py --port 18785
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/etc/innovation-auth
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

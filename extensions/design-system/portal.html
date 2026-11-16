@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" data-zw-mode="product">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>项目库 · GoodDesign UI</title>
+  <link rel="stylesheet" href="../method-workbench/vendor/tokens.css">
+  <link rel="stylesheet" href="../method-workbench/vendor/design-system.css">
+  <link rel="stylesheet" href="gooddesign.css">
+  <link rel="stylesheet" href="portal.css">
+  <link rel="stylesheet" href="site-bridge.css">
+<script src="/inno/portal/project-cover-display.js?v=e424588c94"></script></head>
+<body>
+  <a class="gd-skip" href="#collection">跳到项目列表</a>
+  <header class="gd-nav">
+    <div class="gd-shell gd-nav-inner">
+      <a class="gd-brand" href="index.html" aria-label="好设计 GoodDesign 首页">
+        <img class="gd-brand-logo" src="brand-logo.svg?v=084" alt="">
+        <span class="gd-brand-text"><strong>好设计</strong><small>GoodDesign</small></span>
+      </a>
+      <nav class="gd-links" aria-label="平台导航">
+        <a href="portal.html" aria-current="page">项目库</a>
+        <a href="https://opendesign.cc/inno/methods/">方法库</a>
+        <a href="https://opendesign.cc/inno/needs/">需求研究</a>
+        <a href="https://opendesign.cc/inno/report/">数据总览</a>
+      </nav>
+      <div class="gd-nav-actions">
+        <button class="gd-button gd-button--quiet" id="theme-toggle" type="button">深色</button>
+        <a class="gd-button gd-button--primary" href="https://opendesign.cc/inno/needs/">带入我的问题</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="gd-shell">
+      <section class="gd-portal-hero" aria-labelledby="portal-title">
+        <div class="gd-portal-hero-grid">
+          <div class="gd-portal-intro">
+            <span class="gd-kicker">项目知识库</span>
+            <h1 id="portal-title">看见好设计，<br>读懂创新如何发生。</h1>
+            <p class="gd-lead">从真实项目理解问题、设计取舍与技术原理，找到可核对的创新启发。</p>
+            <form class="gd-hero-search" id="hero-search" role="search">
+              <label class="gd-sr-only" for="hero-query">搜索项目或完成单位</label>
+              <input class="gd-input" id="hero-query" type="search" placeholder="搜索项目、单位或关键词" autocomplete="off">
+              <button class="gd-button gd-button--primary" type="submit">搜索项目</button>
+            </form>
+          </div>
+          <a class="gd-panel gd-feature" href="/inno/dossier/?project=2025-00" aria-labelledby="feature-title">
+            <div class="gd-feature-cover"><img src="/inno/portal/illustrations/2025-pixel-v1/2025-00-r1.webp?v=93a2d741d6" alt="嫦娥月球钻取采样系统项目示意 · 场景插画" fetchpriority="high" data-cover-kind="scene_illustration" title="应用场景插画，非现场照片"></div>
+            <div class="gd-feature-copy">
+              <span class="gd-badge gd-badge--accent">精选项目档案</span>
+              <h2 id="feature-title">把月壤带回来，设计要跨过哪些难题？</h2>
+              <p>沿任务、系统设计与验证线索，理解嫦娥月球钻取采样系统的关键取舍。</p>
+              <span class="gd-feature-link">阅读项目档案</span>
+            </div>
+          </a>
+        </div>
+        <dl class="gd-library-facts" aria-label="当前项目目录统计">
+          <div><dt>真实项目</dt><dd id="stats-projects">560</dd></div>
+          <div><dt>项目封面</dt><dd id="stats-covers">98</dd></div>
+          <div><dt>研究整理版</dt><dd id="stats-research">-</dd></div>
+          <div><dt>奖项类别</dt><dd id="stats-awards">5</dd></div>
+        </dl>
+      </section>
+
+      <!-- MODEL_EXPLORER -->
+
+      <section class="gd-collection" id="collection" aria-labelledby="collection-title">
+        <div class="gd-collection-heading">
+          <h2 id="collection-title">从这里找到研究起点</h2>
+          <p id="result-count" role="status" aria-live="polite">正在加载项目…</p>
+        </div>
+        <form class="gd-filter-panel" id="filters" role="search">
+          <div class="gd-field"><label for="query">搜索项目</label><input class="gd-input" id="query" type="search" placeholder="项目名称、单位或关键词" autocomplete="off"></div>
+          <div class="gd-field"><label for="year">获奖年份</label><select class="gd-select" id="year"><option value="">全部年份</option></select></div>
+          <div class="gd-field"><label for="award">奖项</label><select class="gd-select" id="award"><option value="">全部奖项</option></select></div>
+          <div class="gd-field"><label for="status">阅读内容</label><select class="gd-select" id="status"><option value="">全部项目</option><option value="research">研究整理版</option><option value="basic">基础条目</option></select></div>
+          <button class="gd-button gd-button--ghost" type="button" id="clear" disabled>清除筛选</button>
+        </form>
+        <p class="gd-filter-note">研究整理版表示已形成版本化档案，不代表专家审核或工程验证。</p>
+        <div class="gd-project-grid" id="projects" aria-busy="true">
+          <div class="gd-project-skeleton"></div><div class="gd-project-skeleton"></div><div class="gd-project-skeleton"></div>
+        </div>
+        <div class="gd-empty" id="empty" hidden><h3>暂时没有匹配的项目</h3><p>试试其他关键词，或清除筛选重新浏览。</p><button class="gd-button" id="empty-clear" type="button">清除筛选</button></div>
+        <div class="gd-pagination" id="pagination" hidden><button class="gd-button" id="previous" type="button">上一页</button><span id="page-state" role="status"></span><button class="gd-button" id="next" type="button">下一页</button></div>
+        <noscript>请启用 JavaScript 进行筛选，或先<a href="/inno/dossier/?project=2025-00">阅读嫦娥档案</a>。</noscript>
+      </section>
+    </div>
+  </main>
+
+  <footer class="gd-shell gd-footer"><p>好设计 · 从真实项目出发</p><p><a href="https://opendesign.cc/inno/about/">资料与使用说明</a></p></footer>
+  <script src="portal.js"></script>
+</body>
+</html>

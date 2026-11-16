@@ -1,0 +1,99 @@
+{
+  "artifact_id": "LIVE-TEACH-CLAMP-prototype-plan",
+  "revision": "r1",
+  "task_id": "LIVE-TEACH-CLAMP",
+  "task_revision": "t1",
+  "type": "PrototypePlan",
+  "scope": "Teaching hypothesis and conditional prototype-test planning for a bench clamp intended to hold a workpiece without damage. No concept recommendation, approved requirement, executed test or engineering validation is established.",
+  "conditions": [
+    {
+      "id": "C01",
+      "text": "The supplied task specifies a bench clamp and the desired outcome of holding a workpiece without damage.",
+      "kind": "fact",
+      "evidence_refs": []
+    },
+    {
+      "id": "C02",
+      "text": "Customer loads, workpiece material, geometry, allowable movement and damage criterion are unknown. REQ01 and REQ02 remain proposed, and their hardness remains unknown.",
+      "kind": "unknown",
+      "evidence_refs": []
+    },
+    {
+      "id": "C03",
+      "text": "M01 and M02 are unresolved teaching concepts. Neither has evidence establishing retention, acceptable contact effects or selection-readiness gate passage.",
+      "kind": "unknown",
+      "evidence_refs": []
+    },
+    {
+      "id": "C04",
+      "text": "A functional contact-and-restraint bench prototype is proposed as the minimum carrier for investigating retention and contact effects together. Its suitability depends on subsequently defined conditions and available resources.",
+      "kind": "assumption",
+      "evidence_refs": []
+    },
+    {
+      "id": "C05",
+      "text": "The supplied lunar-sampling excerpt has unestablished transferability. Its parameters and reported achievements cannot establish customer clamp conditions or clamp performance.",
+      "kind": "fact",
+      "evidence_refs": [
+        "case-98b73a9c96af1f9408721571"
+      ]
+    }
+  ],
+  "evidence_refs": [
+    "case-98b73a9c96af1f9408721571"
+  ],
+  "payload": {
+    "hypothesis": "Proposed, untested hypothesis: for a subsequently specified workpiece and operating condition, a candidate clamp route can provide sufficient restraint while leaving the workpiece within an agreed damage criterion through engagement, holding and release. The hypothesis is not yet operationally testable because its conditions and thresholds are unknown.",
+    "learning_goal": "Determine whether adequate retention and acceptable workpiece condition can coexist within the conditions actually examined, and identify whether uncertainty arises from the contact arrangement, restraint mechanism, prototype limitations or observation method. This learning does not select a route or establish rated performance.",
+    "scope": "Conditional functional-prototype plan covering contact establishment, restraint application and maintenance, release, and before-and-after condition assessment. M01 and M02 remain separate candidate routes with no preferred concept. Appearance models cannot answer the physical hypothesis. Customer suitability, lifetime, reliability and safety acceptance remain outside this teaching plan.",
+    "procedure": [
+      "Before fabrication or execution, resolve the intended operation, representative workpiece material, finish and geometry, applied loads and directions, holding duration, allowable movement, damage definition and requirement authority. Record unresolved items; pause physical testing while essential conditions remain undefined.",
+      "With the responsible stakeholder, propose and record observation methods, thresholds, relevant observation uncertainty and decision rules before collecting data. Define resources, repetitions and any sampling rationale without assuming statistical representativeness. Requirements remain proposed until confirmation is supplied.",
+      "Prepare an engagement–holding–release–assessment storyboard. Define a functional prototype that represents the relevant contact interface, restraint path and support reaction. Record its version, materials, geometry, actuation, limitations and differences from intended use. Select a route for a learning round only when resources and controllable conditions are established; this is not a concept recommendation.",
+      "For M01, retain investigation of screw-position persistence and reverse-screw release. For M02, retain investigation of sustained input, intentional pressure release and elastic return. Include input-loss scenarios only in a separately defined, controlled setup; otherwise leave their behavior unknown.",
+      "Plan condition records before clamping, during engagement and holding, and after release. Keep restraint input, imposed disturbance, movement, workpiece changes, prototype faults and researcher intervention separately traceable. Vary one defined factor at a time where feasible; label coupled changes as exploratory.",
+      "Before any later execution, define containment, observation access and stopping rules appropriate to the specified loads, workpiece and prototype. Stop upon uncontrolled motion, support instability, unexpected workpiece change or other conditions outside the planned envelope. If hazards cannot be controlled, pause and revise the carrier or learning goal.",
+      "If prerequisites are later satisfied, execute only the documented procedure and retain raw observations separately from interpretations. No execution or observations are supplied in this artifact.",
+      "Apply the predeclared rules: observations meeting both criteria support the hypothesis only within the examined conditions; a valid observation violating either criterion challenges it at that condition. Inadequate prototype fidelity, ambiguous inspection, uncontrolled conditions or insufficient evidence leave the hypothesis unknown. Examine alternative explanations before changing the design.",
+      "Use findings, if later obtained, to propose a targeted iteration, additional investigation or cessation of that configuration. Unknown hard gates continue to block recommendation. Any claim requiring rated-load, durability, reliability or intended-use validation needs a separate formal verification and validation plan."
+    ],
+    "measurements": [
+      {
+        "id": "M01",
+        "observable": "Workpiece movement relative to the defined reference during the specified holding task.",
+        "unit_or_scale": "Displacement and, if relevant, rotation; units, reference and observation resolution remain to be defined.",
+        "criterion": "Proposed: compare movement against a stakeholder-defined allowable limit under documented loads and duration. No threshold is supplied; retention remains unknown until conditions and observation capability are adequate."
+      },
+      {
+        "id": "M02",
+        "observable": "Change in workpiece condition between the pre-clamping record and observations after engagement, holding and release.",
+        "unit_or_scale": "Damage categories and/or dimensional or surface-change measures appropriate to the specified material; method and scale remain unknown.",
+        "criterion": "Proposed: assess against a predeclared damage definition and limits. An inability to detect relevant damage yields an unknown result, not evidence of no damage."
+      },
+      {
+        "id": "M03",
+        "observable": "Restraint input and imposed disturbance associated with each movement and condition observation.",
+        "unit_or_scale": "Route-appropriate input, load, direction and duration measures; quantities, units and instruments remain to be defined.",
+        "criterion": "Proposed: interpret retention and damage only where these conditions are recorded adequately and fall within the planned envelope. No force, torque, pressure or duration value is prescribed."
+      },
+      {
+        "id": "M04",
+        "observable": "Completion of intentional release, residual contact, unexpected motion and researcher intervention.",
+        "unit_or_scale": "Event record with released, incomplete or indeterminate state; any clearance measure remains to be defined.",
+        "criterion": "Proposed: judge release using a predeclared removal condition and damage criterion. Unexpected motion or incomplete release triggers the planned stop and investigation; missing observations remain unknown."
+      }
+    ],
+    "uncovered_questions": [
+      "Who operates the clamp, for what operation, and with which bench and actuation resources?",
+      "Which workpiece materials, finishes, geometries and variations must the plan represent?",
+      "What loads, directions, durations and allowable movement define retention?",
+      "What constitutes damage, and can the available inspection method detect it?",
+      "Who can confirm requirements, acceptance criteria and requirement hardness?",
+      "Which prototype resources, observation tools and controllable conditions are available?",
+      "What repetitions and coverage are appropriate for the intended learning claim?",
+      "Can either route maintain restraint and permit acceptable release under the eventual conditions, including relevant input-loss behavior?",
+      "Which questions require separate formal engineering verification and validation?"
+    ],
+    "execution_status": "planned"
+  }
+}

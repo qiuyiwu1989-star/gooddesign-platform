@@ -1,0 +1,1439 @@
+{
+  "payload": {
+    "task": {
+      "task_id": "RUBBER-20261026",
+      "revision": "workbench-v1",
+      "object": "割胶机器人改进研究",
+      "desired_outcome": "形成可验证的机械改进候选路线",
+      "boundary": "研究提案，未客户确认；",
+      "delivery_level": "concept",
+      "stage": "frame",
+      "demand_packet_sha256": "297a57ac2619d176b36cb88ac3f64af3179d572c291afb722e36d7f383e0477d",
+      "demand_snapshot": {
+        "approved": false,
+        "baseline_packet_sha256": "5cd9a9d4bcbd5f5a54b4f87c5976127c4cf5858e3e5dd2f0ac364567dd60018a",
+        "conditions": [
+          "",
+          "",
+          ""
+        ],
+        "goal": "形成可验证的机械改进候选路线",
+        "id": "RUBBER-20261026",
+        "note": "从ML-005研究包导入；非客户批准。",
+        "problem": "出胶效率、胶乳洁净与树体保护需要共同研究；现场工况与目标值待客户确认。",
+        "requirements": [
+          {
+            "acceptance_proposal": "在定义明确的深度、耗皮与损伤口径下测量，并安排跨周期跟踪；阈值待客户及农艺人员确认",
+            "hard_proposal": true,
+            "id": "N01",
+            "need": "避免短期增产以伤树或过度耗皮为代价",
+            "source_refs": [
+              "S01",
+              "S06"
+            ],
+            "stakeholder": "胶园经营者/农艺人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "保护树体及长期割面资源"
+          },
+          {
+            "acceptance_proposal": "对曲率、厚度和旧割面分层试验；刀位移、剩余树皮及损伤分别记录；允许误差待定",
+            "hard_proposal": true,
+            "id": "N02",
+            "need": "适应树干曲率及树皮差异，同时控制生物安全边界",
+            "source_refs": [
+              "S02",
+              "S03",
+              "S04"
+            ],
+            "stakeholder": "设备研发/农艺人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "区分表面跟随与真实限深"
+          },
+          {
+            "acceptance_proposal": "定义污染采样方法，比较杂质、损失胶乳及清理时间；限值待下游确认",
+            "hard_proposal": true,
+            "id": "N03",
+            "need": "降低切屑混入及后续清理负担",
+            "source_refs": [
+              "S01",
+              "S07"
+            ],
+            "stakeholder": "收胶人员/加工方",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "隔离新切屑与胶乳"
+          },
+          {
+            "acceptance_proposal": "记录堵塞、停机、清理及重启；阈值待定，不能以空载切削代替",
+            "hard_proposal": null,
+            "id": "N04",
+            "need": "处理已有胶线、刀面黏附和排屑阻塞",
+            "source_refs": [
+              "S05",
+              "S07"
+            ],
+            "stakeholder": "操作员/维护人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "处理旧胶线与黏附堵塞"
+          },
+          {
+            "acceptance_proposal": "同时记录定位、安装、切割、转场、收胶、清理、故障、人机协作时间及干胶口径；目标待实测",
+            "hard_proposal": null,
+            "id": "N05",
+            "need": "提高单位人时的合格干胶产出，而非仅提高刀速",
+            "source_refs": [
+              "S01",
+              "S06"
+            ],
+            "stakeholder": "胶园经营者",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "提高全流程有效产出"
+          },
+          {
+            "acceptance_proposal": "新手与熟练人员分组，记录培训、误操作、返工与接管，不能仅调查喜欢程度",
+            "hard_proposal": null,
+            "id": "N06",
+            "need": "将关键判断转为可检查的设置与反馈",
+            "source_refs": [
+              "S03",
+              "S05"
+            ],
+            "stakeholder": "操作员/经营者",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "降低对熟练工的依赖"
+          },
+          {
+            "acceptance_proposal": "在受控环境验证急停、断电、传感异常、退出路径与复位条件；先安全审核",
+            "hard_proposal": true,
+            "id": "N07",
+            "need": "失去接触、堵转或感知异常时停止危险切削并记录",
+            "source_refs": [
+              "S01",
+              "S02"
+            ],
+            "stakeholder": "操作员/研发人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "异常时安全退让并可接管"
+          },
+          {
+            "acceptance_proposal": "现场调查光照、湿度、雨后割面和允许时段；雨水防护不等于雨中可割",
+            "hard_proposal": null,
+            "id": "N08",
+            "need": "识别不适合作业条件并避免为自动化强行作业",
+            "source_refs": [
+              "S02",
+              "S06"
+            ],
+            "stakeholder": "胶园经营者/操作员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "适应雨水与弱光的作业安排"
+          },
+          {
+            "acceptance_proposal": "计时清洗、换刀、复装校准，跟踪磨损和积胶；材料与费用未知",
+            "hard_proposal": null,
+            "id": "N09",
+            "need": "降低刀具、导向件与胶乳接触区维护负担",
+            "source_refs": [
+              "S05",
+              "S07"
+            ],
+            "stakeholder": "维护人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "可清洗维护和耗材更换"
+          },
+          {
+            "acceptance_proposal": "调查树距、坡度、挂载接口、供电与收胶流程，再确定目标平台",
+            "hard_proposal": null,
+            "id": "N10",
+            "need": "在手持、固定与移动架构之间避免过早锁定",
+            "source_refs": [
+              "S01",
+              "S02"
+            ],
+            "stakeholder": "设备方/胶园",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "兼容现有胶园与装备"
+          },
+          {
+            "acceptance_proposal": "记录树ID、时间、工具版本、工况、异常和数据缺失，不编造客户已有数字化基础",
+            "hard_proposal": null,
+            "id": "N11",
+            "need": "知道哪棵树何时按何配置作业，问题可追查",
+            "source_refs": [
+              "S01",
+              "S02"
+            ],
+            "stakeholder": "经营者/研发人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "保持可追溯的作业与验收数据"
+          },
+          {
+            "acceptance_proposal": "采集实际成本与利用率，用情景区间比较；不输出无数据ROI",
+            "hard_proposal": null,
+            "id": "N12",
+            "need": "把人工、维护、停机、折旧及树体影响纳入选择",
+            "source_refs": [
+              "S01",
+              "S06"
+            ],
+            "stakeholder": "采购方/运营方",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "可比较的全生命周期经济性"
+          },
+          {
+            "acceptance_proposal": "由加工方确认干胶含量、杂质和收集损失测量方法；不能以初始流速代替季节产量",
+            "hard_proposal": true,
+            "id": "N13",
+            "need": "避免通过增加水分或牺牲品质制造表面增产",
+            "source_refs": [
+              "S01",
+              "S06"
+            ],
+            "stakeholder": "加工方/收胶人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "保护胶乳有效品质与收集率"
+          },
+          {
+            "acceptance_proposal": "定义适用树株与例外规则，记录覆盖率与误拒绝；识别能力需验证",
+            "hard_proposal": true,
+            "id": "N14",
+            "need": "对厚度未知、旧伤、树结或状态异常的对象先停止或转人工",
+            "source_refs": [
+              "S02",
+              "S06"
+            ],
+            "stakeholder": "农艺人员/操作员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "识别不适用树株并保留人工例外"
+          },
+          {
+            "acceptance_proposal": "完成接口勘察与局部验证，不把试验优先顺序解释成已选定产品架构",
+            "hard_proposal": null,
+            "id": "N15",
+            "need": "先验证末端或局部改造，再决定整机投入",
+            "source_refs": [
+              "S03",
+              "S04"
+            ],
+            "stakeholder": "经营者/设备研发",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "分阶段改造与可撤销试点"
+          }
+        ],
+        "selected_methods": [
+          "R48",
+          "R14",
+          "R17",
+          "R36",
+          "R44",
+          "R42"
+        ],
+        "title": "割胶机器人改进研究"
+      },
+      "input_status": "research_proposed_not_customer_confirmed"
+    },
+    "method": {
+      "schema_version": "method-dossier-1.0",
+      "research_id": "R17",
+      "method_id": "IM-ML-017",
+      "version": "0.1.0",
+      "name": "形态学分析",
+      "english_name": "Morphological Analysis",
+      "kind": "method",
+      "category": "B功能分析与概念生成",
+      "lineage": [
+        "形态学研究",
+        "系统化工程设计"
+      ],
+      "aliases": [],
+      "summary": "把子功能或问题维度的候选状态显式列出，通过一致性检查形成可追溯的概念组合。",
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "sections": {
+        "identity": "形态学分析源于Fritz Zwicky的广义形态研究，Tom Ritchey进一步发展了面向复杂、非量化问题的GMA与交叉一致性分析。本档案讨论工程概念阶段的子功能—解法表，并借用GMA的一致性思想。两者是有亲缘的用法，不等于同一套完整软件或统一算法。采用的是网页所述概念及平台操作适配，未复制专用工具。",
+        "problem": "设计团队常把现有机构当作问题本身，只改变尺寸或外观，因而错过其他作用原理。形态学分析把“必须完成的作用”和“怎样实现”分开：例如输送、定位、夹持、释放各自可能有不同解法。它处理的是概念组合空间，不负责发现真实用户需求，也不替代已定原理后的精确参数优化。如果功能拆分不合理，组合表越大反而越容易产生伪方案。",
+        "principle": "方法先定义维度和候选值，再考察组合之间是否一致。工程应用中可把维度取为子功能、候选值取为实现原理。每一列选项不只写零件名，还写输入输出和作用条件。交叉一致性是在判断条件能否共存，不直接表示因果。平台把逻辑冲突、实证限制、用户硬约束和未知分别保存；不能因为某方案不受偏爱，就把它写成物理上不可能。成对相容也不足以证明多部件整体可行。",
+        "applicability": "适合已能说明目标功能、允许更换技术路线、又存在若干可选原理的概念阶段。至少要知道哪些功能不可丢失、系统内外边界和关键接口。对于只需调整一个已成熟机构尺寸的任务，应先考虑分析和优化。若材料、尺度、动力或安全要求未知，仍可做初步概念枚举，但兼容结论必须写成待验证；若对象和目标都未知，应返回问题定义，不用随机组合制造热闹。",
+        "interpretation": "有用的产物不是一个巨大排列清单，而是每条保留路线的功能分配、接口解释、出处、排除理由和未知项。读者应能复查某一组合为什么留下、删去哪个约束会多出什么路线。组合数量只是形式空间大小，不是创新性、质量或成功率。没有统一的工程最优评分，不能因为一种组合涉及更多新技术就给它更高分；筛选准则应从任务要求另行建立。",
+        "example": "教学演示：探索一个物件夹持工具，假设必要功能为定位、产生夹持作用和释放，真实载荷、材料、节拍均未知。第1步产出功能边界；第2步分别列基准定位/自定心、手动螺旋/气动、反向释放/弹性复位等概念方向。第3步发现目标气源未知，且弹性复位与持续保持的关系尚未说明，记录unknown而非通过。第4步保留手动与气动两条结构待细化路线，不宣称已可制造。第5步输出补查载荷、空间、接触材料和保持条件的任务，再进入比较。这里没有真实企业或实测效果。 补充一条可跟随组合：在“低速、允许手动、固定形状工件”的教学假设下，固定基准定位＋手动螺旋夹紧＋反向旋松释放，三者在作用原理层面可连接，作为组合M1保留；这不是载荷和寿命已合格。明确排除组合M2：仅有单向气缸夹紧、无螺旋传动，却要求靠反向旋松同一传动件释放；在该拓扑假设下没有对应自由度和载体，故为逻辑不相容。若新增螺旋机构，应登记成新的选项与组合，不能把M2原样改判通过。",
+        "pitfalls": "误用一：把笛卡尔积所有排列叫创新方案，正确做法是先核接口再保留有意义的组合。误用二：把同一原理的不同尺寸当成不同技术路线，应标为参数变体。误用三：把未知兼容性自动当作通过，应显示缺失条件及验证方法。反例是只允许更换某零件公差而不允许改机构的任务，此时大范围组合会违反任务边界，应换成参数或公差分析。",
+        "validation": "方法执行检查关注维度定义是否清晰、选项是否混层、冲突是否有依据、候选路线是否能说明全功能链。工程验证则要看实际模型、运动干涉、载荷、材料与制造条件，不能由一张形态学表证明。可用明确冲突输入检查程序是否剔除，用未知接口输入检查是否保留unknown；但软件筛选通过只说明规则执行一致。没有几何或求解器时，只输出概念与验证问题。",
+        "adaptation": "原典支持维度、状态、组合空间与交叉一致性等概念。本平台将其落实成问题简报、功能选项表、兼容日志和后续输入包；三态检查、证据字段、工程接口清单与教学例子都是平台适配，不作为Zwicky或Ritchey逐字流程。未来引擎可以从项目库补选项，但每个原理都应带源条件，不能把案例标题相似当作接口兼容。",
+        "gaps": "已核读Ritchey网页的定义、形态空间和CCA相关段落，未取得工程教材完整概念设计章节，也未采用其专用GMA软件。本条可供有边界的概念研究，尚缺真实企业任务、工程兼容性复核和方法效果评价。后续需要选择一个资料充分的机械设计过程，对功能拆分、被排除路线和验证结果作可追溯回看；本档案不认定任何获奖团队曾实际使用此法。"
+      },
+      "inputs": [
+        {
+          "key": "task",
+          "label": "问题简报",
+          "type": "object",
+          "required": true,
+          "description": "对象、目标、系统边界和硬约束；目标与事实分开",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "functions",
+          "label": "必要子功能",
+          "type": "array",
+          "required": true,
+          "description": "动词加对象、输入输出和接口",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "options",
+          "label": "已知候选原理",
+          "type": "array",
+          "required": false,
+          "description": "来源、作用条件及未知；允许后续检索补充",
+          "missing_action": "mark_unknown"
+        },
+        {
+          "key": "conditions",
+          "label": "工况与资源",
+          "type": "object",
+          "required": false,
+          "description": "材料、尺度、动力、载荷、空间及验收口径",
+          "missing_action": "concept_only"
+        }
+      ],
+      "steps": [
+        {
+          "step_id": "R17-S01",
+          "title": "界定可变功能和边界",
+          "input_refs": [
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [],
+          "operation": "逐一确认必要功能及不可改变条件，将已指定零件与真正作用分开；建立功能到目标要求的联系。",
+          "decision": "对象或目标未知则追问；功能只是零件清单则返回分解。",
+          "output_key": "function_scope",
+          "output_description": "必要功能、可变范围、接口和硬约束。",
+          "checks": [
+            "每个功能说明对何对象产生什么作用。"
+          ],
+          "stop_condition": "不能明确任务对象或必要功能时停止。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "查询案例的功能结构、输入输出及系统边界，不先找同形零件。"
+          ]
+        },
+        {
+          "step_id": "R17-S02",
+          "title": "组织候选原理",
+          "input_refs": [
+            "function_scope",
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [
+            "R17-S01"
+          ],
+          "operation": "按子功能列出不同作用机制；相同原理的尺寸变化单列为参数变体，保存来源或平台假设。",
+          "decision": "每个必要功能无解法则补检索；只有单一路线时说明原因。",
+          "output_key": "option_matrix",
+          "output_description": "子功能—解法表及每项接口条件。",
+          "checks": [
+            "原理与部件名、参数变体不混层。"
+          ],
+          "stop_condition": "关键必要功能无候选且无法补充时返回前步。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+          ]
+        },
+        {
+          "step_id": "R17-S03",
+          "title": "检查交叉与整体一致性",
+          "input_refs": [
+            "option_matrix",
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [
+            "R17-S02"
+          ],
+          "operation": "逐对核对能量、运动、空间、载荷和控制条件，再检查三项以上交互；明确分离逻辑冲突、实证限制和目标约束。",
+          "decision": "有明确冲突排除；证据不足记unknown；成对通过仍需整体检查。",
+          "output_key": "compatibility_log",
+          "output_description": "每个检查对象、状态、理由、证据和待验证点。",
+          "checks": [
+            "未知不记通过，偏好不冒充物理冲突。"
+          ],
+          "stop_condition": "全部组合违反同一硬约束则返回选项或任务定义。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+          ]
+        },
+        {
+          "step_id": "R17-S04",
+          "title": "形成可解释概念路线",
+          "input_refs": [
+            "compatibility_log",
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [
+            "R17-S03"
+          ],
+          "operation": "选择原理组合，说明全功能链及接口如何工作，保留不同机制路线及复杂性代价。",
+          "decision": "路线须覆盖全部必要功能；欠缺功能则返回组合。",
+          "output_key": "concept_set",
+          "output_description": "候选方案、功能分配、差异、代价、出处及未知。",
+          "checks": [
+            "不以组合数量冒充创新质量。"
+          ],
+          "stop_condition": "无法说明必要功能接替和接口时不形成确定方案。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+          ]
+        },
+        {
+          "step_id": "R17-S05",
+          "title": "交接比较与验证",
+          "input_refs": [
+            "concept_set",
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [
+            "R17-S04"
+          ],
+          "operation": "把候选和关键未知转成比较输入及验证问题，指出需要何种模型、数据与测试。",
+          "decision": "缺载荷或材料只做概念比较，不唯一选型。",
+          "output_key": "handoff",
+          "output_description": "比较准则、基线、待验证假设和后续方法输入。",
+          "checks": [
+            "每个核心未知对应具体补证或验证动作。"
+          ],
+          "stop_condition": "没有验收口径时不得宣称方案已达标。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "key": "option_matrix",
+          "label": "功能解法表",
+          "required_fields": [
+            "function",
+            "principle",
+            "interfaces",
+            "source_or_hypothesis"
+          ],
+          "interpretation": "解释组合空间，不证明可行。"
+        },
+        {
+          "key": "concept_set",
+          "label": "候选原理路线",
+          "required_fields": [
+            "function_allocation",
+            "interfaces",
+            "tradeoffs",
+            "unknowns"
+          ],
+          "interpretation": "仅概念层保留。"
+        },
+        {
+          "key": "handoff",
+          "label": "比较与验证输入",
+          "required_fields": [
+            "criteria",
+            "baseline",
+            "validation_questions"
+          ],
+          "interpretation": "衔接后续，不是结果。"
+        }
+      ],
+      "relations": [
+        {
+          "target_research_id": "R14",
+          "relation": "requires",
+          "binding": "function_model→functions",
+          "condition": "必要功能和边界可说明"
+        },
+        {
+          "target_research_id": "R27",
+          "relation": "parallel",
+          "binding": "机制候选→options",
+          "condition": "缺替代原理"
+        },
+        {
+          "target_research_id": "R36",
+          "relation": "precedes",
+          "binding": "concept_set→候选集",
+          "condition": "共同要求可比较"
+        },
+        {
+          "target_research_id": "R42",
+          "relation": "precedes",
+          "binding": "validation_questions→验证计划",
+          "condition": "关键假设可测"
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "S01",
+          "publisher": "Swedish Morphological Society",
+          "authors": [
+            "Tom Ritchey"
+          ],
+          "title": "General Morphological Analysis",
+          "url": "https://swemorph.com/ma.html",
+          "locator": "General Morphology；Cross Consistency Assessment",
+          "read_scope": "网页相关主体段落核读",
+          "accessed_at": "2026-10-23",
+          "supports": [
+            "维度与状态",
+            "组合空间",
+            "成对一致性而非因果",
+            "逻辑/实证/规范判断区别"
+          ],
+          "evidence_note": "已核到概念建模与CCA原理，工程接口清单及日志状态由平台适配。",
+          "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+        }
+      ],
+      "evaluations": [
+        {
+          "scenario": "功能和选项充分且一组明显冲突",
+          "expected": "保留相容候选并说明被排除组合的依据。"
+        },
+        {
+          "scenario": "动力条件未知",
+          "expected": "气动等路线标条件未知，不当已可行。"
+        },
+        {
+          "scenario": "已定机构仅需公差调整",
+          "expected": "指出本法不是首选，转参数/公差分析。"
+        }
+      ],
+      "search_terms": [
+        "形态学",
+        "Zwicky",
+        "形态学矩阵",
+        "CCA",
+        "功能组合"
+      ],
+      "change_log": [
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "051逐项检索与平台操作适配；保留原典核读范围"
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "跨组复核后补充可跟随教学推演，明确假设与未执行状态"
+        }
+      ]
+    },
+    "contract": {
+      "contract_version": "0.2.1",
+      "research_id": "R17",
+      "artifact_type": "ConceptSet",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ConceptSet"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "fact",
+                    "assumption",
+                    "unknown"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "kind",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "payload": {
+            "type": "object",
+            "properties": {
+              "function_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "function_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "principle": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "conditions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "function_id",
+                    "principle",
+                    "conditions",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "combinations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "option_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "candidate",
+                        "excluded",
+                        "unknown"
+                      ]
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "option_ids",
+                    "status",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "compatibility": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "option_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 2,
+                      "maxItems": 200
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "compatible",
+                        "incompatible",
+                        "unknown"
+                      ]
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "option_ids",
+                    "status",
+                    "reason",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 200
+              },
+              "unknowns": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "maxItems": 200
+              }
+            },
+            "required": [
+              "function_ids",
+              "options",
+              "combinations",
+              "compatibility",
+              "unknowns"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "artifact_id",
+          "revision",
+          "task_id",
+          "task_revision",
+          "type",
+          "scope",
+          "conditions",
+          "evidence_refs",
+          "payload"
+        ],
+        "additionalProperties": false
+      },
+      "purpose": "从子功能选项组合候选概念",
+      "requires": [
+        "ProblemBrief",
+        "FunctionModel"
+      ],
+      "stage": "generate",
+      "next": [
+        "R36"
+      ],
+      "stop": "成对相容不代表整体可行；矛盾或条件未知要保留。",
+      "input_bindings": {
+        "task": "artifact:ProblemBrief",
+        "functions": "artifact:FunctionModel.payload.functions",
+        "options": "task.known_options",
+        "conditions": "artifact:ProblemBrief.payload.conditions"
+      },
+      "status": "platform_authored_not_expert_reviewed",
+      "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+    },
+    "inputs": [
+      {
+        "artifact_id": "PB-RUBBER-20261026",
+        "revision": "draft-v1-host-baseline-restored",
+        "task_id": "RUBBER-20261026",
+        "task_revision": "workbench-v1",
+        "type": "ProblemBrief",
+        "scope": "依据所供研究任务整理问题框架与15项拟议要求，为后续功能分析和机械改进候选路线研究提供输入。当前不确定产品架构、不推荐具体方案、不建立客户批准基线；所有验证描述均为计划，未执行。",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "任务输入明确为研究提案，需求快照未获客户批准。",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "本次未提供项目证据；快照中的来源编号不能在本次证据集中解析，故不作为项目事实依据引用。",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "hard=true沿用输入的硬要求提议，不代表客户已批准；hard=null表示硬度尚未确定。",
+            "kind": "fact",
+            "evidence_refs": []
+          }
+        ],
+        "evidence_refs": [],
+        "payload": {
+          "actor": "拟涉及胶园经营者、操作员、收胶人员、维护人员、加工方、农艺人员及设备研发人员；实际参与者、代表性与确认权限待核实。",
+          "object": "割胶机器人改进研究：共同研究有效产出、胶乳洁净与树体保护之间的关系；现场缺口、成因及影响程度尚未证实。",
+          "boundary": "研究提案，未客户确认。保留手持、固定及移动架构的探索空间；局部改造仅为待研究路径，不构成架构选择。关键使用对象、工况与安全边界明确前，不确定产品规格或判定方案可接受。本文不构成工程验证、专家批准或产品验收。",
+          "desired_outcome": "形成可验证的机械改进候选路线，并明确其适用条件、拟议要求、待补证问题和后续验证方向。",
+          "requirements": [
+            {
+              "id": "N01",
+              "text": "拟议要求：保护树体及长期割面资源，避免以伤树或过度耗皮换取短期增产。",
+              "hard": true,
+              "acceptance": "在定义明确的深度、耗皮与损伤口径下测量，并安排跨周期跟踪；阈值待客户及农艺人员确认",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N02",
+              "text": "拟议要求：适应树干曲率与树皮差异，区分表面跟随能力与真实限深能力。",
+              "hard": true,
+              "acceptance": "对曲率、厚度和旧割面分层试验；刀位移、剩余树皮及损伤分别记录；允许误差待定",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N03",
+              "text": "拟议要求：隔离新切屑与胶乳，降低杂质混入和清理负担。",
+              "hard": true,
+              "acceptance": "定义污染采样方法，比较杂质、损失胶乳及清理时间；限值待下游确认",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N04",
+              "text": "拟议要求：处理已有胶线、刀面黏附与排屑堵塞。",
+              "hard": null,
+              "acceptance": "记录堵塞、停机、清理及重启；阈值待定，不能以空载切削代替",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N05",
+              "text": "拟议要求：提高单位人时的合格干胶产出。",
+              "hard": null,
+              "acceptance": "同时记录定位、安装、切割、转场、收胶、清理、故障、人机协作时间及干胶口径；目标待实测",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N06",
+              "text": "拟议要求：将关键操作判断转为可检查的设置与反馈，降低对熟练工的依赖。",
+              "hard": null,
+              "acceptance": "新手与熟练人员分组，记录培训、误操作、返工与接管，不能仅调查喜欢程度",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N07",
+              "text": "拟议要求：失去接触、堵转或感知异常时停止危险切削，支持安全退让、人工接管及异常记录。",
+              "hard": true,
+              "acceptance": "在受控环境验证急停、断电、传感异常、退出路径与复位条件；先安全审核",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N08",
+              "text": "拟议要求：识别不适合作业的环境条件，并支持雨水、弱光条件下的作业安排。",
+              "hard": null,
+              "acceptance": "现场调查光照、湿度、雨后割面和允许时段；雨水防护不等于雨中可割",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N09",
+              "text": "拟议要求：支持刀具、导向件和胶乳接触区的清洗维护及耗材更换。",
+              "hard": null,
+              "acceptance": "计时清洗、换刀、复装校准，跟踪磨损和积胶；材料与费用未知",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N10",
+              "text": "拟议要求：使改进路线与目标胶园及装备接口相适配。",
+              "hard": null,
+              "acceptance": "调查树距、坡度、挂载接口、供电与收胶流程，再确定目标平台",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N11",
+              "text": "拟议要求：保留可追溯的作业与验收数据。",
+              "hard": null,
+              "acceptance": "记录树ID、时间、工具版本、工况、异常和数据缺失，不编造客户已有数字化基础",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N12",
+              "text": "拟议要求：支持包含人工、维护、停机、折旧及树体影响的全生命周期经济性比较。",
+              "hard": null,
+              "acceptance": "采集实际成本与利用率，用情景区间比较；不输出无数据ROI",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N13",
+              "text": "拟议要求：保护胶乳有效品质与收集率，避免以增加水分或牺牲品质形成表面增产。",
+              "hard": true,
+              "acceptance": "由加工方确认干胶含量、杂质和收集损失测量方法；不能以初始流速代替季节产量",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N14",
+              "text": "拟议要求：对厚度未知、旧伤、树结或状态异常等不适用树株停止作业或转人工处理。",
+              "hard": true,
+              "acceptance": "定义适用树株与例外规则，记录覆盖率与误拒绝；识别能力需验证",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "N15",
+              "text": "拟议要求：支持分阶段、可撤销的局部改造研究，再决定整机投入。",
+              "hard": null,
+              "acceptance": "完成接口勘察与局部验证，不把试验优先顺序解释成已选定产品架构",
+              "status": "proposed",
+              "evidence_refs": []
+            }
+          ],
+          "conditions": [
+            {
+              "id": "PC01",
+              "text": "出胶效率、洁净与树体保护是输入提出的共同研究方向，其现场表现及冲突程度尚未取得项目证据。",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "PC02",
+              "text": "局部机械改进可能提供可学习的研究入口，但其可行性与收益尚未验证。",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "PC03",
+              "text": "要求确认、冲突取舍和变更批准的责任人及机制尚未指定；本版本仅为草稿，后续修订需保留原因及对设计、验证的影响。",
+              "kind": "unknown",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "目标胶园、实际用户任务、现有设备、操作流程及痛点证据是什么？",
+            "适用树株、树皮厚度、曲率、旧割面及异常状态的范围是什么？",
+            "现场树距、坡度、光照、湿度、供电、挂载接口与允许作业时段是什么？",
+            "哪些安全及农艺要求适用，由谁确认安全边界、树体损伤和长期耗皮判据？",
+            "各项测量口径、基线、目标、容差、跟踪周期与验证资源是什么？",
+            "N04、N05、N06、N08、N09、N10、N11、N12、N15的硬度与优先级如何确定？硬度未决前不形成候选路线推荐。",
+            "当产出、洁净、树体保护、操作负担和经济性发生冲突时，由谁按什么规则取舍？",
+            "加工方认可的品质、干胶及收集损失口径是什么，是否具备跨周期数据？",
+            "局部改造的接口、试点范围、人工接管及撤销条件是什么？",
+            "谁有权批准要求及变更？关键使用对象与边界澄清后，如何组织利益相关方和技术评审？"
+          ]
+        }
+      },
+      {
+        "artifact_id": "FM-RUBBER-20261026",
+        "revision": "draft-v1",
+        "task_id": "RUBBER-20261026",
+        "task_revision": "workbench-v1",
+        "type": "FunctionModel",
+        "scope": "依据ProblemBrief（PB-RUBBER-20261026，revision=draft-v1-host-baseline-restored）的N01—N15建立拟议功能、功能流及接口缺口，供机械改进候选路线生成使用。功能必要性仅相对于拟议研究目标判断，不代表客户批准。运行情景未获确认，本模型采用明确标注的情景假设，不冻结功能架构、不推荐路线；所有验证描述均为计划。",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "任务及上游ProblemBrief均明确为未获客户确认的研究提案，N01—N15均为proposed。",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "暂以作业准备、对象与环境筛查、定位设置、受控切削、切屑隔离与胶乳收集、结束记录作为正常情景；实际顺序及人工参与方式待现场确认。",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "暂以接触丢失、堵转、感知异常、断电、不适用树株及维护后恢复作为异常与生命周期情景；检测能力、退出能力和安全状态均未验证。",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C04",
+            "text": "N04、N05、N06、N08、N09、N10、N11、N12、N15的硬度仍未知；其余hard=true仅是上游硬要求提议。硬度未决前不形成候选路线推荐。",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C05",
+            "text": "所供月球钻取案例为未审查、截断的机器提取文本，向割胶工况的可迁移性未建立；本模型不采用其性能或成功表述作为割胶功能可行性的依据。",
+            "kind": "fact",
+            "evidence_refs": [
+              "case-98b73a9c96af1f9408721571"
+            ]
+          }
+        ],
+        "evidence_refs": [],
+        "payload": {
+          "boundary": "研究边界覆盖作业准备至切削、收集、异常接管、维护恢复和记录评价之间的功能关系。外部对象包括树株、环境、操作员、农艺人员、加工方、供能与挂载平台及数据使用者；其实际能力和责任待确认。保留人工、机械及控制系统的不同功能分配，不预选手持、固定或移动架构。树体长期反应、胶乳品质和经济性属于需跨边界跟踪的评价对象，不能由本功能图证明。下列功能及作用关系均为提案，不是已证实根因或已闭合接口。",
+          "functions": [
+            {
+              "id": "F01",
+              "verb_object": "组织作业任务与平台接入：承接N05、N10、N15，协调定位、安装、转场与收胶环节，保留局部改造和撤销路径。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F02",
+              "verb_object": "筛查树株与环境适用性：承接N08、N14，对厚度未知、旧伤、树结及环境不适用情况形成停止或转人工的拟议判定。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F03",
+              "verb_object": "建立接触与割面位置参照：承接N02、N10，形成表面位置和接触状态输入；表面参照不能单独证明剩余树皮厚度。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F04",
+              "verb_object": "设置作业参数并反馈状态：承接N06，支持操作者检查参数依据、适用范围、异常提示与接管状态。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F05",
+              "verb_object": "约束切削深度与耗皮：承接N01、N02，将待确认的树体保护边界转为切削约束；真实限深能力待独立验证。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F06",
+              "verb_object": "执行受控切削：承接N01、N02、N05，在作业许可和切削约束成立的条件下实施切削并输出过程状态。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F07",
+              "verb_object": "分离并导出新切屑：承接N03，研究切屑通路与胶乳通路的隔离；隔离效果尚未证实。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F08",
+              "verb_object": "管理旧胶线与黏附堵塞：承接N04、N09，处理积胶和阻塞并提供清理、停机或人工处理状态。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F09",
+              "verb_object": "引导并收集胶乳：承接N03、N13，研究收集路径、污染暴露与收集损失，保持品质评价所需的样品关联。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F10",
+              "verb_object": "中止危险切削并管理接管复位：承接N07、N14，响应异常与不适用判定，协调停止、退出、人工接管及重新许可。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F11",
+              "verb_object": "恢复清洁与作业校准状态：承接N09、N15，支持清洗、换刀、复装、校准检查与改造撤销后的恢复。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F12",
+              "verb_object": "接入并管理作业能量：承接N07、N10，向切削功能提供所需能量并处理供能异常；能量形式与失能行为待定。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F13",
+              "verb_object": "记录作业与配置关联：承接N11，关联树ID、时间、版本、工况、人工操作、异常及数据缺失。",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F14",
+              "verb_object": "汇集全流程效果与成本评价输入：承接N01、N05、N06、N12、N13，组织人时、干胶、品质、损失、树体跟踪、维护与成本口径；不在缺少数据时输出收益结论。",
+              "necessity": "supporting",
+              "evidence_refs": []
+            }
+          ],
+          "flows": [
+            {
+              "id": "FL01",
+              "from_function": "F01",
+              "to_function": "F02",
+              "flow_type": "signal",
+              "description": "拟议正常路径起点：传递待作业树株标识、任务及已知工况；身份或工况缺失时如何处理待定义。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL02",
+              "from_function": "F02",
+              "to_function": "F04",
+              "flow_type": "signal",
+              "description": "传递适用、拒绝或未知状态及判定依据；未知状态不得默认为适用。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL03",
+              "from_function": "F03",
+              "to_function": "F05",
+              "flow_type": "signal",
+              "description": "传递表面位置、接触状态及不确定性；剩余树皮信息若无生产来源，应保留为缺失，不能由表面跟随结果替代。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL04",
+              "from_function": "F04",
+              "to_function": "F05",
+              "flow_type": "signal",
+              "description": "传递经检查的拟议参数、依据与适用范围；许可权限及检查方式未确定。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL05",
+              "from_function": "F05",
+              "to_function": "F06",
+              "flow_type": "signal",
+              "description": "传递允许切削范围及禁止条件；约束不可得或失效时进入何种安全状态待定义。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL06",
+              "from_function": "F12",
+              "to_function": "F06",
+              "flow_type": "energy",
+              "description": "提供切削所需能量；形式、负载、瞬态及切断后的残余能量均未知。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL07",
+              "from_function": "F06",
+              "to_function": "F07",
+              "flow_type": "material",
+              "description": "新切屑进入拟议隔离与导出通路；流量、含胶状态和实际去向待勘察。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL08",
+              "from_function": "F06",
+              "to_function": "F09",
+              "flow_type": "material",
+              "description": "表达切削后树体流出胶乳进入收集功能的拟议物料路径，不表示切削机构自身产生胶乳，也不保证流量或持续时间。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL09",
+              "from_function": "F08",
+              "to_function": "F10",
+              "flow_type": "signal",
+              "description": "传递旧胶线处理失败、黏附或堵塞状态；检测方式与触发阈值待研究。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL10",
+              "from_function": "F06",
+              "to_function": "F10",
+              "flow_type": "signal",
+              "description": "传递切削执行、堵转及异常状态；状态反馈失效本身的处理规则待定义。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL11",
+              "from_function": "F03",
+              "to_function": "F10",
+              "flow_type": "signal",
+              "description": "传递接触丢失或位置参照无效状态，用于研究停止与退出联锁。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL12",
+              "from_function": "F02",
+              "to_function": "F10",
+              "flow_type": "signal",
+              "description": "传递不适用或无法判定状态，进入停止或人工例外处理路径。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL13",
+              "from_function": "F10",
+              "to_function": "F06",
+              "flow_type": "signal",
+              "description": "传递禁止切削、停止或经重新许可后的状态；不假设退出动作在所有异常下均可执行。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL14",
+              "from_function": "F10",
+              "to_function": "F12",
+              "flow_type": "signal",
+              "description": "传递能量隔离或受控保持请求；停止切削与完成退让所需能量可能不同，须协调。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL15",
+              "from_function": "F11",
+              "to_function": "F04",
+              "flow_type": "signal",
+              "description": "维护后返回工具版本、复装与校准检查状态；未完成检查不得默认恢复原参数有效性。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL16",
+              "from_function": "F10",
+              "to_function": "F13",
+              "flow_type": "signal",
+              "description": "传递异常、停止、接管和复位事件；断电时能否保留记录待确定。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL17",
+              "from_function": "F09",
+              "to_function": "F13",
+              "flow_type": "signal",
+              "description": "传递收集批次、树株关联和损失记录；品质与干胶测量由待确认的外部流程提供。",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL18",
+              "from_function": "F13",
+              "to_function": "F14",
+              "flow_type": "signal",
+              "description": "传递带版本、时间及缺失标识的作业记录，用于后续评价计划；记录存在不代表测量有效。",
+              "evidence_refs": []
+            }
+          ],
+          "interfaces": [
+            {
+              "id": "I01",
+              "text": "F01与外部平台：拟定义挂载、定位、供能、转场和收胶交接边界，并保留局部改造及撤销接口。接口尺寸、载荷、单位、允许范围、责任双方和检查方法均待勘察；不据此选择整机架构。",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "I02",
+              "text": "树株、环境及人工判断至F02：拟输入树ID、树皮与旧割面状态、光照、湿度及允许时段，并输出适用/不适用/未知及依据。信息生产者、有效时长、更新条件和农艺确认权限未定；雨水防护不等于雨中可割。",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I03",
+              "text": "F03—F05—F06：拟将表面位置、刀位移、剩余树皮与损伤评价作为不同语义量管理。坐标、单位、误差、更新时序及真实限深所需信息来源未知；派生研究项是明确哪些信息足以支持切削许可，不能用跟随良好关闭限深问题。",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "I04",
+              "text": "操作员与F04/F10：拟定义参数设置、状态提示、停止、人工接管、例外授权及复位交互。权限、培训要求、反馈可理解性和响应时序待确认；人工接管不能默认随时可达。",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I05",
+              "text": "F06/F07/F08/F09及外部收集端：拟区分新切屑、旧胶线、黏附物和胶乳的去向，记录污染、损失与清理状态。通路几何、材料、流动范围及隔离效果未知；后续仅计划比较真实含胶工况，不能以空载运行关闭接口。",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "I06",
+              "text": "F10/F12与切削及退出功能：拟明确急停、断电、接触丢失、堵转、感知失效下的状态转换。停止时间、残余能量、退让方向、卡住时的处置及复位条件未知；先明确安全审核责任，再制定受控验证计划。",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "I07",
+              "text": "维护人员与F11：拟交接清洗、换刀、耗材版本、磨损积胶状态、复装和校准记录；恢复时向F04提供可检查状态。清洗介质、材料兼容性、校准依据及撤销后的恢复标准待定。",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I08",
+              "text": "F01—F13及F03—F12的状态记录：拟按同一树ID、任务和工具版本关联定位、安装、切割、转场、收集、清理、故障、维护与接管事件。数据字段、时钟、单位、版本、缺失编码、存储载体和责任人未定，不假设客户已有数字系统。",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I09",
+              "text": "加工方、农艺人员及运营方至F14：拟提供干胶、杂质、收集损失、跨周期树体影响、人时、成本及利用率输入。测量方法、样品关联、跟踪周期和数据责任未确定；不得用初始流速替代季节产量或据缺失数据计算ROI。",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "I10",
+              "text": "功能分配与验证责任接口：F01—F14目前均未分配到确定的机械、电气、控制或人工承担方。后续拟逐项指定输入提供者、输出接收者、失效处置责任及验证责任；未闭合关键安全与限深接口前不提出集成基线。",
+              "kind": "unknown",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "缺少客户确认的运行情景；需确认正常流程、异常处理、维护与转场顺序，再修订本模型。",
+            "N01—N15均为拟议要求；N04、N05、N06、N08、N09、N10、N11、N12、N15的硬度及优先级尚未解决，不形成路线推荐。",
+            "树皮厚度、剩余树皮、生物损伤边界与表面参照之间的关系未知；F05所需关键输入尚无确定生产者。",
+            "F02识别不适用树株和环境的能力未知；误许可、误拒绝及未知状态的人工处理规则待确认。",
+            "供能、挂载、执行、感知及退出机构未选定；断电停止、残余能量与安全退让是否兼容尚不明确。",
+            "切屑隔离、旧胶线处理、黏附控制与胶乳收集之间可能存在相互影响，但本次未提供证明其方向或程度的项目证据。",
+            "各功能失效后果需进一步分析，尤其是限深失效导致的树体损伤风险、隔离失效导致的污染风险及复位错误导致的再次切削风险；这些是待分析情景，不是已发生事实。",
+            "F07的切屑、F08的清理物和F09的胶乳离开边界后的接收者及处置规则尚未确定，物料路径尚未闭合。",
+            "品质、干胶、树体长期影响和经济性评价均依赖外部数据；测量口径、阈值、周期及责任尚未确定。",
+            "尚无接口双方确认、模型情景走查结果、计算、样机试验或工程验证；功能覆盖候选不等于内部一致性或物理可行性已获证明。",
+            "局部改造范围、撤销条件及手持、固定、移动架构之间的功能分配仍开放；案例不能支持其中任何架构优先。"
+          ]
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "case-98b73a9c96af1f9408721571",
+        "server": "gooddesign-project-archives",
+        "project_id": "2025-00",
+        "source_id": "Sc249f11de5b7c8a4",
+        "source_revision": "758bc2ce5b48d2d92dedd0775e9212eaed5e81cb634fb719802f48a6c737ecb0",
+        "publication_revision": "current_ingest",
+        "source_sha256": "c249f11de5b7c8a4c1a46ec34f10004dfc0626fa9f271e924761afde58ca722f",
+        "chunk_id": "B0001",
+        "locator": "JSON正文 · 清洗文本字符1–1200",
+        "text": "{\n\"year\": 2025,\n\"name\": \"嫦娥五/六号月球钻取采样方法及系统设计\",\n\"unit\": \"哈尔滨工业大学,北京圣视环宇科技有限公司\",\n\"participants\": \"姜生元,张伟伟,唐钧跃,范继五,全齐全,侯绪研,阮旭,杨暄昊,杜坤,汪凌昕\",\n\"number\": \"12025070107\",\n\"desc\": \"探月工程三期嫦娥五/六号任务的核心使命是月球无人自主采样返回。带有地质层序信息的深层月壤样品，能为月球成因和演化历史、资源赋存和可用性研究提供直接证据。钻取采样是获取深层保层序月壤样品的最有效手段。探月工程三期是我国首次地外天体采样返回任务，面临月壤及剖面特性非确知、月面环境极端、探测器重量/功耗/包络尺度约束苛刻、地月通信时延大等挑战。\\n自2011年起，项目组承研月球钻取采样国家任务，提出了面向月球采样设计理论与准则，首创了月球“钻-表-封”采样总体设计方案，攻克了月球钻取系统集成设计、地-月协同智能操控系统设计、月球钻取拟实验证装备设计难题，参与研制了嫦娥五/六号月球钻取系统型号产品，圆满完成了中国首次月球正面钻取采样任务(2020年)、世界首次月球背面钻取采样任务(2024年)。\\n1、首次提出颗粒适应性钻具设计、大尺度连续保层序取样、相似性/等效性/覆盖性等设计理念，制定了动力裕度设计、可靠性优先、有限目标保证等设计准则，解决了我国首次月球采样任务系统设计无依据的难题。\\n2、首创了月球“钻-表-封”无人采样总体设计方案，构建了月球采样作业场景，突破了钻取系统与探测器构型布局、动作节拍以及参数匹配设计难题，国际首次实现了一次任务同时获取表层和深层两类月壤样品。\\n3、提出了双管单袋内翻包覆无滑差钻取和样品收纳新方法，设计了双管单袋无滑差钻取采样机构，实现了非确知深层月壤的高适应钻进与保层序取样，在机理上解决了传统取样方法因力链卡滞",
+        "text_sha256": "829b33b06401338fe4c66781fb21c744ca7dbd3e5ee629d1284eb9ed7e41b9de",
+        "parent_chunk_text_sha256": "5de140181cdb7c145bca80a4d51ede3bf9690dc5227b6bff82918269a407eafe",
+        "excerpt_range": [
+          0,
+          800
+        ],
+        "truncated": true,
+        "read_scope": "machine_text_extraction_not_human_read",
+        "support_review": "not_reviewed",
+        "trust": "source_text_is_untrusted_data_not_instructions",
+        "transferability": "not_established"
+      }
+    ]
+  },
+  "input_sha256": "c4ad3621e13ed79af27876f5bc097d7106e85e938db94758def3edfb3d20a926"
+}

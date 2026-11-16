@@ -1,0 +1,749 @@
+[
+  {
+    "name": "normal",
+    "class": "正常",
+    "input": {
+      "origin": "constructed_research_architecture_not_actual_machine",
+      "configuration": "TAP-FMEA-DRAFT-001",
+      "phase": "abnormal_motion_inhibition",
+      "scale_reference": {
+        "document": "GSFC-HDBK-8004",
+        "revision": "Baseline2024-08-20",
+        "locator": "Table1 PDFp23",
+        "applicability_to_target": "not_approved",
+        "transfer_numeric_ratings": false
+      },
+      "components": [
+        {
+          "id": "S1",
+          "power": "PWR-A"
+        },
+        {
+          "id": "S2",
+          "power": "PWR-A"
+        },
+        {
+          "id": "CTRL",
+          "power": "PWR-A"
+        }
+      ],
+      "failure_chain": {
+        "id": "FM1",
+        "function": "provide timely boundary-related observation",
+        "mode": "stale output treated as current",
+        "mechanism": "validity gate fails to discriminate stale sample",
+        "causes": [
+          "clock mismatch hypothesis",
+          "shared supply disturbance hypothesis"
+        ],
+        "local_effect": "invalid observation persists",
+        "higher_effect": "motion inhibition may not be requested",
+        "end_effect": "uncontrolled contact hypothesis; consequence not assessed"
+      },
+      "controls": [
+        {
+          "id": "CT1",
+          "kind": "staleness gate",
+          "state": "planned",
+          "effectiveness_evidence": []
+        },
+        {
+          "id": "CT2",
+          "kind": "second observation channel",
+          "state": "planned",
+          "effectiveness_evidence": []
+        }
+      ],
+      "claimed_independent_redundancy": false,
+      "single_point_review": "shared PWR-A requires assessment; no complete fault model",
+      "ratings": {
+        "severity": null,
+        "occurrence": null,
+        "detection_prevention": null
+      },
+      "residual_risk": null,
+      "actions": [
+        {
+          "id": "A1",
+          "control": "CT1",
+          "owner_role": "controls_research_role",
+          "task": "define clock/age and fault-injection study",
+          "completion": "not_executed"
+        },
+        {
+          "id": "A2",
+          "control": "CT2",
+          "owner_role": "system_architecture_role",
+          "task": "investigate supply independence/common cause and latent faults",
+          "completion": "not_executed"
+        }
+      ],
+      "customer_approved": false,
+      "engineering_validated": false
+    },
+    "output": {
+      "failure_mode": "FM1",
+      "common_cause_groups": {
+        "PWR-A": [
+          "S1",
+          "S2",
+          "CTRL"
+        ]
+      },
+      "independent_backup_demonstrated": false,
+      "single_point_failure_status": "requires_system_model_not_proved_away",
+      "control_effectiveness": "unknown",
+      "ratings": {
+        "severity": null,
+        "occurrence": null,
+        "detection_prevention": null
+      },
+      "residual_risk": null,
+      "action_queue": [
+        {
+          "id": "A1",
+          "control": "CT1",
+          "owner_role": "controls_research_role",
+          "task": "define clock/age and fault-injection study",
+          "completion": "not_executed"
+        },
+        {
+          "id": "A2",
+          "control": "CT2",
+          "owner_role": "system_architecture_role",
+          "task": "investigate supply independence/common cause and latent faults",
+          "completion": "not_executed"
+        }
+      ],
+      "release_decision": null,
+      "engineering_validated": false,
+      "reason": "configuration-bound hypotheses, no control evidence or applicable calibrated rating basis"
+    },
+    "actual": "accepted",
+    "expected": "accepted",
+    "pass": true
+  },
+  {
+    "name": "shared_supply_as_independent",
+    "class": "冲突",
+    "input": {
+      "origin": "constructed_research_architecture_not_actual_machine",
+      "configuration": "TAP-FMEA-DRAFT-001",
+      "phase": "abnormal_motion_inhibition",
+      "scale_reference": {
+        "document": "GSFC-HDBK-8004",
+        "revision": "Baseline2024-08-20",
+        "locator": "Table1 PDFp23",
+        "applicability_to_target": "not_approved",
+        "transfer_numeric_ratings": false
+      },
+      "components": [
+        {
+          "id": "S1",
+          "power": "PWR-A"
+        },
+        {
+          "id": "S2",
+          "power": "PWR-A"
+        },
+        {
+          "id": "CTRL",
+          "power": "PWR-A"
+        }
+      ],
+      "failure_chain": {
+        "id": "FM1",
+        "function": "provide timely boundary-related observation",
+        "mode": "stale output treated as current",
+        "mechanism": "validity gate fails to discriminate stale sample",
+        "causes": [
+          "clock mismatch hypothesis",
+          "shared supply disturbance hypothesis"
+        ],
+        "local_effect": "invalid observation persists",
+        "higher_effect": "motion inhibition may not be requested",
+        "end_effect": "uncontrolled contact hypothesis; consequence not assessed"
+      },
+      "controls": [
+        {
+          "id": "CT1",
+          "kind": "staleness gate",
+          "state": "planned",
+          "effectiveness_evidence": []
+        },
+        {
+          "id": "CT2",
+          "kind": "second observation channel",
+          "state": "planned",
+          "effectiveness_evidence": []
+        }
+      ],
+      "claimed_independent_redundancy": true,
+      "single_point_review": "shared PWR-A requires assessment; no complete fault model",
+      "ratings": {
+        "severity": null,
+        "occurrence": null,
+        "detection_prevention": null
+      },
+      "residual_risk": null,
+      "actions": [
+        {
+          "id": "A1",
+          "control": "CT1",
+          "owner_role": "controls_research_role",
+          "task": "define clock/age and fault-injection study",
+          "completion": "not_executed"
+        },
+        {
+          "id": "A2",
+          "control": "CT2",
+          "owner_role": "system_architecture_role",
+          "task": "investigate supply independence/common cause and latent faults",
+          "completion": "not_executed"
+        }
+      ],
+      "customer_approved": false,
+      "engineering_validated": false
+    },
+    "output": {
+      "error": "shared_power_not_independent"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "proposed_control_as_proven",
+    "class": "缺材料",
+    "input": {
+      "origin": "constructed_research_architecture_not_actual_machine",
+      "configuration": "TAP-FMEA-DRAFT-001",
+      "phase": "abnormal_motion_inhibition",
+      "scale_reference": {
+        "document": "GSFC-HDBK-8004",
+        "revision": "Baseline2024-08-20",
+        "locator": "Table1 PDFp23",
+        "applicability_to_target": "not_approved",
+        "transfer_numeric_ratings": false
+      },
+      "components": [
+        {
+          "id": "S1",
+          "power": "PWR-A"
+        },
+        {
+          "id": "S2",
+          "power": "PWR-A"
+        },
+        {
+          "id": "CTRL",
+          "power": "PWR-A"
+        }
+      ],
+      "failure_chain": {
+        "id": "FM1",
+        "function": "provide timely boundary-related observation",
+        "mode": "stale output treated as current",
+        "mechanism": "validity gate fails to discriminate stale sample",
+        "causes": [
+          "clock mismatch hypothesis",
+          "shared supply disturbance hypothesis"
+        ],
+        "local_effect": "invalid observation persists",
+        "higher_effect": "motion inhibition may not be requested",
+        "end_effect": "uncontrolled contact hypothesis; consequence not assessed"
+      },
+      "controls": [
+        {
+          "id": "CT1",
+          "kind": "staleness gate",
+          "state": "effective",
+          "effectiveness_evidence": []
+        },
+        {
+          "id": "CT2",
+          "kind": "second observation channel",
+          "state": "planned",
+          "effectiveness_evidence": []
+        }
+      ],
+      "claimed_independent_redundancy": false,
+      "single_point_review": "shared PWR-A requires assessment; no complete fault model",
+      "ratings": {
+        "severity": null,
+        "occurrence": null,
+        "detection_prevention": null
+      },
+      "residual_risk": null,
+      "actions": [
+        {
+          "id": "A1",
+          "control": "CT1",
+          "owner_role": "controls_research_role",
+          "task": "define clock/age and fault-injection study",
+          "completion": "not_executed"
+        },
+        {
+          "id": "A2",
+          "control": "CT2",
+          "owner_role": "system_architecture_role",
+          "task": "investigate supply independence/common cause and latent faults",
+          "completion": "not_executed"
+        }
+      ],
+      "customer_approved": false,
+      "engineering_validated": false
+    },
+    "output": {
+      "error": "planned_control_has_no_effectiveness_evidence"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "residual_zero_without_evidence",
+    "class": "边界",
+    "input": {
+      "origin": "constructed_research_architecture_not_actual_machine",
+      "configuration": "TAP-FMEA-DRAFT-001",
+      "phase": "abnormal_motion_inhibition",
+      "scale_reference": {
+        "document": "GSFC-HDBK-8004",
+        "revision": "Baseline2024-08-20",
+        "locator": "Table1 PDFp23",
+        "applicability_to_target": "not_approved",
+        "transfer_numeric_ratings": false
+      },
+      "components": [
+        {
+          "id": "S1",
+          "power": "PWR-A"
+        },
+        {
+          "id": "S2",
+          "power": "PWR-A"
+        },
+        {
+          "id": "CTRL",
+          "power": "PWR-A"
+        }
+      ],
+      "failure_chain": {
+        "id": "FM1",
+        "function": "provide timely boundary-related observation",
+        "mode": "stale output treated as current",
+        "mechanism": "validity gate fails to discriminate stale sample",
+        "causes": [
+          "clock mismatch hypothesis",
+          "shared supply disturbance hypothesis"
+        ],
+        "local_effect": "invalid observation persists",
+        "higher_effect": "motion inhibition may not be requested",
+        "end_effect": "uncontrolled contact hypothesis; consequence not assessed"
+      },
+      "controls": [
+        {
+          "id": "CT1",
+          "kind": "staleness gate",
+          "state": "planned",
+          "effectiveness_evidence": []
+        },
+        {
+          "id": "CT2",
+          "kind": "second observation channel",
+          "state": "planned",
+          "effectiveness_evidence": []
+        }
+      ],
+      "claimed_independent_redundancy": false,
+      "single_point_review": "shared PWR-A requires assessment; no complete fault model",
+      "ratings": {
+        "severity": null,
+        "occurrence": null,
+        "detection_prevention": null
+      },
+      "residual_risk": 0,
+      "actions": [
+        {
+          "id": "A1",
+          "control": "CT1",
+          "owner_role": "controls_research_role",
+          "task": "define clock/age and fault-injection study",
+          "completion": "not_executed"
+        },
+        {
+          "id": "A2",
+          "control": "CT2",
+          "owner_role": "system_architecture_role",
+          "task": "investigate supply independence/common cause and latent faults",
+          "completion": "not_executed"
+        }
+      ],
+      "customer_approved": false,
+      "engineering_validated": false
+    },
+    "output": {
+      "error": "unearned_rating_or_residual_claim"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "cross_industry_scale",
+    "class": "不适用",
+    "input": {
+      "origin": "constructed_research_architecture_not_actual_machine",
+      "configuration": "TAP-FMEA-DRAFT-001",
+      "phase": "abnormal_motion_inhibition",
+      "scale_reference": {
+        "document": "automotive_1to10",
+        "revision": "Baseline2024-08-20",
+        "locator": "Table1 PDFp23",
+        "applicability_to_target": "not_approved",
+        "transfer_numeric_ratings": false
+      },
+      "components": [
+        {
+          "id": "S1",
+          "power": "PWR-A"
+        },
+        {
+          "id": "S2",
+          "power": "PWR-A"
+        },
+        {
+          "id": "CTRL",
+          "power": "PWR-A"
+        }
+      ],
+      "failure_chain": {
+        "id": "FM1",
+        "function": "provide timely boundary-related observation",
+        "mode": "stale output treated as current",
+        "mechanism": "validity gate fails to discriminate stale sample",
+        "causes": [
+          "clock mismatch hypothesis",
+          "shared supply disturbance hypothesis"
+        ],
+        "local_effect": "invalid observation persists",
+        "higher_effect": "motion inhibition may not be requested",
+        "end_effect": "uncontrolled contact hypothesis; consequence not assessed"
+      },
+      "controls": [
+        {
+          "id": "CT1",
+          "kind": "staleness gate",
+          "state": "planned",
+          "effectiveness_evidence": []
+        },
+        {
+          "id": "CT2",
+          "kind": "second observation channel",
+          "state": "planned",
+          "effectiveness_evidence": []
+        }
+      ],
+      "claimed_independent_redundancy": false,
+      "single_point_review": "shared PWR-A requires assessment; no complete fault model",
+      "ratings": {
+        "severity": null,
+        "occurrence": null,
+        "detection_prevention": null
+      },
+      "residual_risk": null,
+      "actions": [
+        {
+          "id": "A1",
+          "control": "CT1",
+          "owner_role": "controls_research_role",
+          "task": "define clock/age and fault-injection study",
+          "completion": "not_executed"
+        },
+        {
+          "id": "A2",
+          "control": "CT2",
+          "owner_role": "system_architecture_role",
+          "task": "investigate supply independence/common cause and latent faults",
+          "completion": "not_executed"
+        }
+      ],
+      "customer_approved": false,
+      "engineering_validated": false
+    },
+    "output": {
+      "error": "unapproved_scale_transfer"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "missing_action_reference",
+    "class": "缺材料",
+    "input": {
+      "origin": "constructed_research_architecture_not_actual_machine",
+      "configuration": "TAP-FMEA-DRAFT-001",
+      "phase": "abnormal_motion_inhibition",
+      "scale_reference": {
+        "document": "GSFC-HDBK-8004",
+        "revision": "Baseline2024-08-20",
+        "locator": "Table1 PDFp23",
+        "applicability_to_target": "not_approved",
+        "transfer_numeric_ratings": false
+      },
+      "components": [
+        {
+          "id": "S1",
+          "power": "PWR-A"
+        },
+        {
+          "id": "S2",
+          "power": "PWR-A"
+        },
+        {
+          "id": "CTRL",
+          "power": "PWR-A"
+        }
+      ],
+      "failure_chain": {
+        "id": "FM1",
+        "function": "provide timely boundary-related observation",
+        "mode": "stale output treated as current",
+        "mechanism": "validity gate fails to discriminate stale sample",
+        "causes": [
+          "clock mismatch hypothesis",
+          "shared supply disturbance hypothesis"
+        ],
+        "local_effect": "invalid observation persists",
+        "higher_effect": "motion inhibition may not be requested",
+        "end_effect": "uncontrolled contact hypothesis; consequence not assessed"
+      },
+      "controls": [
+        {
+          "id": "CT1",
+          "kind": "staleness gate",
+          "state": "planned",
+          "effectiveness_evidence": []
+        },
+        {
+          "id": "CT2",
+          "kind": "second observation channel",
+          "state": "planned",
+          "effectiveness_evidence": []
+        }
+      ],
+      "claimed_independent_redundancy": false,
+      "single_point_review": "shared PWR-A requires assessment; no complete fault model",
+      "ratings": {
+        "severity": null,
+        "occurrence": null,
+        "detection_prevention": null
+      },
+      "residual_risk": null,
+      "actions": [
+        {
+          "id": "A1",
+          "control": "MISSING",
+          "owner_role": "controls_research_role",
+          "task": "define clock/age and fault-injection study",
+          "completion": "not_executed"
+        },
+        {
+          "id": "A2",
+          "control": "CT2",
+          "owner_role": "system_architecture_role",
+          "task": "investigate supply independence/common cause and latent faults",
+          "completion": "not_executed"
+        }
+      ],
+      "customer_approved": false,
+      "engineering_validated": false
+    },
+    "output": {
+      "error": "action_reference_or_execution_claim"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "fake_lower_detection_score",
+    "class": "冲突",
+    "input": {
+      "origin": "constructed_research_architecture_not_actual_machine",
+      "configuration": "TAP-FMEA-DRAFT-001",
+      "phase": "abnormal_motion_inhibition",
+      "scale_reference": {
+        "document": "GSFC-HDBK-8004",
+        "revision": "Baseline2024-08-20",
+        "locator": "Table1 PDFp23",
+        "applicability_to_target": "not_approved",
+        "transfer_numeric_ratings": false
+      },
+      "components": [
+        {
+          "id": "S1",
+          "power": "PWR-A"
+        },
+        {
+          "id": "S2",
+          "power": "PWR-A"
+        },
+        {
+          "id": "CTRL",
+          "power": "PWR-A"
+        }
+      ],
+      "failure_chain": {
+        "id": "FM1",
+        "function": "provide timely boundary-related observation",
+        "mode": "stale output treated as current",
+        "mechanism": "validity gate fails to discriminate stale sample",
+        "causes": [
+          "clock mismatch hypothesis",
+          "shared supply disturbance hypothesis"
+        ],
+        "local_effect": "invalid observation persists",
+        "higher_effect": "motion inhibition may not be requested",
+        "end_effect": "uncontrolled contact hypothesis; consequence not assessed"
+      },
+      "controls": [
+        {
+          "id": "CT1",
+          "kind": "staleness gate",
+          "state": "planned",
+          "effectiveness_evidence": []
+        },
+        {
+          "id": "CT2",
+          "kind": "second observation channel",
+          "state": "planned",
+          "effectiveness_evidence": []
+        }
+      ],
+      "claimed_independent_redundancy": false,
+      "single_point_review": "shared PWR-A requires assessment; no complete fault model",
+      "ratings": {
+        "severity": null,
+        "occurrence": null,
+        "detection_prevention": 1
+      },
+      "residual_risk": null,
+      "actions": [
+        {
+          "id": "A1",
+          "control": "CT1",
+          "owner_role": "controls_research_role",
+          "task": "define clock/age and fault-injection study",
+          "completion": "not_executed"
+        },
+        {
+          "id": "A2",
+          "control": "CT2",
+          "owner_role": "system_architecture_role",
+          "task": "investigate supply independence/common cause and latent faults",
+          "completion": "not_executed"
+        }
+      ],
+      "customer_approved": false,
+      "engineering_validated": false
+    },
+    "output": {
+      "error": "unearned_rating_or_residual_claim"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  },
+  {
+    "name": "changed_configuration",
+    "class": "不适用",
+    "input": {
+      "origin": "constructed_research_architecture_not_actual_machine",
+      "configuration": "PRODUCTION-V2",
+      "phase": "abnormal_motion_inhibition",
+      "scale_reference": {
+        "document": "GSFC-HDBK-8004",
+        "revision": "Baseline2024-08-20",
+        "locator": "Table1 PDFp23",
+        "applicability_to_target": "not_approved",
+        "transfer_numeric_ratings": false
+      },
+      "components": [
+        {
+          "id": "S1",
+          "power": "PWR-A"
+        },
+        {
+          "id": "S2",
+          "power": "PWR-A"
+        },
+        {
+          "id": "CTRL",
+          "power": "PWR-A"
+        }
+      ],
+      "failure_chain": {
+        "id": "FM1",
+        "function": "provide timely boundary-related observation",
+        "mode": "stale output treated as current",
+        "mechanism": "validity gate fails to discriminate stale sample",
+        "causes": [
+          "clock mismatch hypothesis",
+          "shared supply disturbance hypothesis"
+        ],
+        "local_effect": "invalid observation persists",
+        "higher_effect": "motion inhibition may not be requested",
+        "end_effect": "uncontrolled contact hypothesis; consequence not assessed"
+      },
+      "controls": [
+        {
+          "id": "CT1",
+          "kind": "staleness gate",
+          "state": "planned",
+          "effectiveness_evidence": []
+        },
+        {
+          "id": "CT2",
+          "kind": "second observation channel",
+          "state": "planned",
+          "effectiveness_evidence": []
+        }
+      ],
+      "claimed_independent_redundancy": false,
+      "single_point_review": "shared PWR-A requires assessment; no complete fault model",
+      "ratings": {
+        "severity": null,
+        "occurrence": null,
+        "detection_prevention": null
+      },
+      "residual_risk": null,
+      "actions": [
+        {
+          "id": "A1",
+          "control": "CT1",
+          "owner_role": "controls_research_role",
+          "task": "define clock/age and fault-injection study",
+          "completion": "not_executed"
+        },
+        {
+          "id": "A2",
+          "control": "CT2",
+          "owner_role": "system_architecture_role",
+          "task": "investigate supply independence/common cause and latent faults",
+          "completion": "not_executed"
+        }
+      ],
+      "customer_approved": false,
+      "engineering_validated": false
+    },
+    "output": {
+      "error": "configuration_or_scope"
+    },
+    "actual": "rejected",
+    "expected": "rejected",
+    "pass": true
+  }
+]

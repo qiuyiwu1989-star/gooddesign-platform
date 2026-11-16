@@ -1,0 +1,86 @@
+{
+  "artifact_id": "LIVE-TEACH-CLAMP-brief",
+  "revision": "r1",
+  "task_id": "LIVE-TEACH-CLAMP",
+  "task_revision": "t1",
+  "type": "ProblemBrief",
+  "scope": "Frame the bench-clamp holding and damage-prevention problem for teaching and subsequent test planning. This is a draft problem brief, not an approved requirements baseline or evidence of product performance.",
+  "conditions": [
+    {
+      "id": "C01",
+      "text": "The supplied task specifies a bench clamp and the desired outcome of holding a workpiece without damage.",
+      "kind": "fact",
+      "evidence_refs": []
+    },
+    {
+      "id": "C02",
+      "text": "Customer load, workpiece material, geometry and damage criterion are unknown; specifications and acceptance thresholds cannot yet be fixed.",
+      "kind": "unknown",
+      "evidence_refs": []
+    },
+    {
+      "id": "C03",
+      "text": "The supplied lunar-sampling excerpt concerns a different environment. Its transferability is not established; its parameters and reported achievements provide no proof of bench-clamp performance.",
+      "kind": "fact",
+      "evidence_refs": [
+        "case-98b73a9c96af1f9408721571"
+      ]
+    }
+  ],
+  "evidence_refs": [
+    "case-98b73a9c96af1f9408721571"
+  ],
+  "payload": {
+    "actor": "Intended bench-clamp operator; customer identity, capabilities and work context are unknown.",
+    "object": "bench clamp",
+    "boundary": "Teaching concept and test planning only; customer load, material, geometry and damage criterion unknown. Stop specification finalization until these conditions are clarified. No concept selection, physical testing or engineering validation is established.",
+    "desired_outcome": "hold a workpiece without damage",
+    "requirements": [
+      {
+        "id": "REQ01",
+        "text": "The bench clamp should retain the intended workpiece during the intended operation under use conditions to be established.",
+        "hard": null,
+        "acceptance": "Proposed verification plan only: first establish workpiece geometry, applied loads, load directions, holding duration and allowable movement with the responsible stakeholder; then plan a retention test against those agreed conditions. No threshold or result is available.",
+        "status": "proposed",
+        "evidence_refs": []
+      },
+      {
+        "id": "REQ02",
+        "text": "Clamping and release should leave the workpiece within an agreed damage criterion.",
+        "hard": null,
+        "acceptance": "Proposed verification plan only: identify material, surface condition and unacceptable changes; agree inspection methods and acceptance limits before planning a before-and-after assessment. Damage criteria and results remain unknown.",
+        "status": "proposed",
+        "evidence_refs": []
+      }
+    ],
+    "conditions": [
+      {
+        "id": "PC01",
+        "text": "Whether adequate retention and acceptable workpiece condition can be achieved together is unresolved for the customer's unknown use conditions.",
+        "kind": "unknown",
+        "evidence_refs": []
+      },
+      {
+        "id": "PC02",
+        "text": "Requirement owners, confirmation authority, priority rules and change-approval responsibilities have not been supplied. Both requirements remain draft proposals.",
+        "kind": "unknown",
+        "evidence_refs": []
+      },
+      {
+        "id": "PC03",
+        "text": "Proposed change process: retain requirement IDs and revision history, record the reason for each change, and revisit affected concepts and verification plans before establishing a confirmed baseline.",
+        "kind": "assumption",
+        "evidence_refs": []
+      }
+    ],
+    "unknowns": [
+      "Who operates the clamp, for which work operation, and in what bench environment?",
+      "What are the workpiece material, surface finish, geometry and dimensional variation?",
+      "What loads, directions, durations and allowable movements define successful holding?",
+      "What constitutes damage, and how should it be inspected or measured?",
+      "What bench interfaces, operating constraints and applicable safety requirements must be investigated?",
+      "Which requirements are hard constraints, and who can confirm them and approve changes?",
+      "What representative workpieces and verification resources would be available for a later test plan?"
+    ]
+  }
+}

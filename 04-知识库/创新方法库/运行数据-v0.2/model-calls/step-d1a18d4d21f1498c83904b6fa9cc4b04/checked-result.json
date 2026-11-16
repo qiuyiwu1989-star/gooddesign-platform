@@ -1,0 +1,128 @@
+{
+  "status": "draft_requires_semantic_and_domain_review",
+  "artifact": {
+    "artifact_id": "TEACH-CLAMP-brief",
+    "revision": "r1",
+    "task_id": "TEACH-CLAMP",
+    "task_revision": "t1",
+    "type": "ProblemBrief",
+    "scope": "Frame the bench clamp teaching task and draft requirements. No project evidence is supplied. This artifact does not establish an approved requirements baseline or demonstrate product performance.",
+    "conditions": [
+      {
+        "id": "C01",
+        "text": "The task specifies bench teaching only and the desired outcome of holding a workpiece without visible damage.",
+        "kind": "fact",
+        "evidence_refs": []
+      },
+      {
+        "id": "C02",
+        "text": "Load and workpiece material are explicitly unknown.",
+        "kind": "unknown",
+        "evidence_refs": []
+      }
+    ],
+    "evidence_refs": [],
+    "payload": {
+      "actor": "Bench teaching participant; operator identity, experience and needs are unknown.",
+      "object": "bench clamp",
+      "boundary": "bench teaching only; load and material unknown",
+      "desired_outcome": "hold a workpiece without visible damage",
+      "requirements": [
+        {
+          "id": "REQ01",
+          "text": "The bench clamp should hold the workpiece during the defined teaching activity.",
+          "hard": null,
+          "acceptance": "Pending clarification of workpiece geometry, load magnitude and direction, holding duration and permissible movement. A verification procedure can be planned once these conditions are agreed; no result is available.",
+          "status": "proposed",
+          "evidence_refs": []
+        },
+        {
+          "id": "REQ02",
+          "text": "Clamping and release should leave the workpiece without visible damage.",
+          "hard": null,
+          "acceptance": "Pending agreement on material, initial surface condition, what counts as damage, and viewing conditions. A before-and-after inspection is a proposed verification direction only; no inspection has occurred.",
+          "status": "proposed",
+          "evidence_refs": []
+        },
+        {
+          "id": "REQ03",
+          "text": "The scope of this clamp study should remain limited to bench teaching.",
+          "hard": true,
+          "acceptance": "Review the study brief and any later verification plan against the task boundary; operating conditions within bench teaching still require clarification.",
+          "status": "proposed",
+          "evidence_refs": []
+        }
+      ],
+      "conditions": [
+        {
+          "id": "C03",
+          "text": "Actual slipping, damage, its causes and its consequences have not been documented in the supplied input.",
+          "kind": "unknown",
+          "evidence_refs": []
+        },
+        {
+          "id": "C04",
+          "text": "Requirement ownership, approval authority and change authority are unspecified. Requirements remain drafts; later revisions should retain the reason for change and affected requirements.",
+          "kind": "unknown",
+          "evidence_refs": []
+        },
+        {
+          "id": "C05",
+          "text": "Specific performance thresholds and implementation choices remain unresolved until the teaching activity and operating conditions are clarified.",
+          "kind": "unknown",
+          "evidence_refs": []
+        }
+      ],
+      "unknowns": [
+        "Who operates the clamp, and what teaching activity requires workpiece restraint?",
+        "What are the workpiece material, geometry, dimensions and initial surface condition?",
+        "What loads, directions, holding duration and permissible movement define successful holding?",
+        "What visible changes count as damage, and under what inspection conditions?",
+        "What bench attachment, interfaces and applicable safety constraints govern the activity?",
+        "Who confirms acceptance criteria, requirement priorities and subsequent changes?"
+      ]
+    }
+  },
+  "check": {
+    "status": "structure_and_declared_consistency_passed",
+    "issues": [],
+    "artifact_sha256": "15d92d8026f9f45539b9395b552f808e30a4e423fedbbc6205d5b53e2893c039",
+    "evidence_refs": [],
+    "declared_unknowns": [
+      "Who operates the clamp, and what teaching activity requires workpiece restraint?",
+      "What are the workpiece material, geometry, dimensions and initial surface condition?",
+      "What loads, directions, holding duration and permissible movement define successful holding?",
+      "What visible changes count as damage, and under what inspection conditions?",
+      "What bench attachment, interfaces and applicable safety constraints govern the activity?",
+      "Who confirms acceptance criteria, requirement priorities and subsequent changes?"
+    ],
+    "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+    "semantic_support": "not_independently_verified",
+    "engineering_validated": false
+  },
+  "model_mode": "real_codex_model",
+  "call_id": "step-d1a18d4d21f1498c83904b6fa9cc4b04",
+  "attempts": [
+    {
+      "attempt": 0,
+      "check": {
+        "status": "structure_and_declared_consistency_passed",
+        "issues": [],
+        "artifact_sha256": "15d92d8026f9f45539b9395b552f808e30a4e423fedbbc6205d5b53e2893c039",
+        "evidence_refs": [],
+        "declared_unknowns": [
+          "Who operates the clamp, and what teaching activity requires workpiece restraint?",
+          "What are the workpiece material, geometry, dimensions and initial surface condition?",
+          "What loads, directions, holding duration and permissible movement define successful holding?",
+          "What visible changes count as damage, and under what inspection conditions?",
+          "What bench attachment, interfaces and applicable safety constraints govern the activity?",
+          "Who confirms acceptance criteria, requirement priorities and subsequent changes?"
+        ],
+        "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+        "semantic_support": "not_independently_verified",
+        "engineering_validated": false
+      }
+    }
+  ],
+  "expert_certified": false
+}

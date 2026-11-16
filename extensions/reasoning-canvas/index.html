@@ -5,17 +5,35 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <title>推理画布 · 企业创新工作台 · GoodDesign</title>
-  <link rel="stylesheet" href="../method-workbench/vendor/tokens.css">
-  <link rel="stylesheet" href="../method-workbench/vendor/design-system.css">
-  <link rel="stylesheet" href="../design-system/gooddesign.css">
-  <link rel="stylesheet" href="reasoning-canvas.css?v=studio4">
-</head>
-<body>
+  <link rel="stylesheet" href="/inno/method-workbench/vendor/tokens.css" onerror="this.onerror=null;this.href='../method-workbench/vendor/tokens.css'">
+  <link rel="stylesheet" href="/inno/method-workbench/vendor/design-system.css" onerror="this.onerror=null;this.href='../method-workbench/vendor/design-system.css'">
+  <link rel="stylesheet" href="/inno/design-system/gooddesign.css" onerror="this.onerror=null;this.href='../design-system/gooddesign.css'">
+  <link rel="stylesheet" href="reasoning-canvas.css?v=story134b">
+<link rel="stylesheet" href="/inno/portal/tokens.css?v=16247843"><link rel="stylesheet" href="/inno/portal/design-system.css?v=16247843"><link rel="stylesheet" href="/inno/portal/gooddesign.css?v=16247843"><link rel="stylesheet" href="/inno/portal/site-bridge.css?v=16247843"><style data-gd-immersive-chrome>body{overflow:auto}body>.gd-rc--app{height:calc(100dvh - var(--site-nav-height,80px));min-height:420px}body>footer.gd-footer{margin:0 auto}
+@media print{body>header.gd-nav,body>footer.gd-footer{display:none!important}}</style></head>
+<body><a class="gd-skip" href="#main">跳到主要内容</a>
+<header class="gd-nav" data-gd-chrome="navigation">
+  <div class="gd-shell gd-nav-inner">
+    <a class="gd-brand" href="/" aria-label="好设计 GoodDesign 首页">
+      <img class="gd-brand-logo" src="/inno/portal/brand-logo.svg?v=084" alt="">
+      <span class="gd-brand-text"><strong>好设计</strong><small>GoodDesign</small></span>
+    </a>
+    <nav class="gd-links" aria-label="主导航"><a href="/projects/" data-gd-nav="projects">项目库</a><a href="/museum/" data-gd-nav="museum">好设计馆</a><a href="/methods/" data-gd-nav="methods">方法库</a><a href="/apps/" data-gd-nav="apps" aria-current="page">应用中心</a><a href="/needs/" data-gd-nav="needs">需求研究</a><a href="/report/" data-gd-nav="report">数据总览</a></nav>
+    <div class="gd-nav-actions">
+      <a href="/about/" data-gd-nav="about">关于</a>
+      <a href="/mcp/" data-gd-nav="mcp">MCP 接入</a>
+      <a href="/admin/" data-gd-nav="admin">资料管理</a>
+      <button class="gd-button gd-button--quiet" id="theme-toggle" type="button" data-gd-theme-toggle aria-label="切换为深色主题">深色</button>
+    </div>
+  </div>
+</header>
+
+<script src="/inno/portal/chrome.js" defer></script>
   <main id="main" class="gd-rc gd-rc--app">
     <header class="gd-rc-topbar">
       <div class="gd-rc-topbar-brand">
         <span class="gd-kicker">GoodDesign · 企业创新工作台</span>
-        <strong>推理画布 · 割胶机器人</strong>
+        <strong id="rc-workspace-title">推理画布 · 割胶机器人</strong>
       </div>
       <div class="gd-rc-topbar-actions">
         <span id="rc-flow-hint" class="gd-rc-flow-hint">数字员工按逻辑逐步展开，0 次模型调用</span>
@@ -27,15 +45,25 @@
             <option value="expert">专家</option>
           </select>
         </label>
+        <button class="gd-button gd-button--quiet gd-rc-mini-btn" id="rc-story-view" type="button" hidden>当前步骤</button>
+        <button class="gd-button gd-button--quiet gd-rc-mini-btn" id="rc-overview" type="button" hidden>研究总览</button>
         <button class="gd-button gd-rc-mini-btn" id="rc-save" type="button">保存工作区</button>
-        <button class="gd-button gd-rc-mini-btn" id="rc-gdrp" type="button">导出研究包</button>
-        <button class="gd-button gd-rc-mini-btn" id="rc-report" type="button">导出报告</button>
-        <button class="gd-button gd-button--primary gd-rc-mini-btn" id="rc-flow-run" type="button">开始推理</button>
-        <button class="gd-button gd-rc-mini-btn" id="rc-export" type="button">导出推理档案</button>
-        <button class="gd-button gd-button--quiet gd-rc-mini-btn" id="rc-reset" type="button">重置</button>
+        <details class="gd-rc-more" id="rc-more">
+          <summary class="gd-button gd-button--quiet gd-rc-mini-btn">更多</summary>
+          <div class="gd-rc-more-menu">
+            <button class="gd-button gd-rc-mini-btn" id="rc-gdrp" type="button">导出研究包</button>
+            <button class="gd-button gd-rc-mini-btn" id="rc-report" type="button">导出报告</button>
+            <button class="gd-button gd-button--primary gd-rc-mini-btn" id="rc-flow-run" type="button">开始推理</button>
+            <button class="gd-button gd-rc-mini-btn" id="rc-export" type="button">导出推理档案</button>
+            <button class="gd-button gd-button--quiet gd-rc-mini-btn" id="rc-reset" type="button">重置</button>
+          </div>
+        </details>
       </div>
     </header>
+    <section id="rc-handoff-error" class="gd-rc-handoff-error" role="alert" hidden></section>
     <div class="gd-rc-stage">
+      <section class="gd-rc-story-home" id="rc-story-home" aria-label="研究首页" hidden></section>
+      <nav class="gd-rc-story-nav" id="rc-story-nav" aria-label="研究阶段" hidden></nav>
       <div class="gd-rc-viewport" id="rc-viewport">
         <div class="gd-rc-world" id="rc-world">
           <svg class="gd-rc-edges" id="rc-edges" aria-hidden="true"></svg>
@@ -56,8 +84,12 @@
       <aside class="gd-rc-detail" id="rc-detail" aria-label="节点详情" aria-live="polite"></aside>
     </div>
   </main>
-  <script src="data.js?v=studio4"></script>
-  <script src="state.js?v=studio4"></script>
-  <script src="reasoning-canvas.js?v=studio4"></script>
-</body>
+  <script src="data.js?v=story134"></script>
+  <script src="state.js?v=story134"></script>
+  <script src="reasoning-canvas.js?v=story134"></script>
+<footer class="gd-shell gd-footer" data-gd-chrome="footer">
+  <div class="gd-footer-brand"><a class="gd-brand" href="/"><img class="gd-brand-logo" src="/inno/portal/brand-logo.svg?v=084" alt=""><span class="gd-brand-text"><strong>好设计</strong><small>GoodDesign</small></span></a><p>从真实项目出发，连接设计知识与创新应用。</p></div>
+  <nav class="gd-footer-links" aria-label="相关栏目"><a href="/projects/">项目库</a><a href="/methods/">方法库</a><a href="/apps/">应用中心</a><a href="/museum/#education">科技教育</a><a href="/loop/">企业创新</a><a href="/model/">创新设计大模型</a><a href="/guide/">使用指南</a><a href="/about/">关于</a><a href="/mcp/">MCP 接入</a><a href="/admin/">资料管理</a></nav>
+  <p class="gd-footer-note">GoodDesign · OpenDesign 创新项目区</p>
+</footer><script data-gd-immersive-chrome>const siteNav=document.querySelector('body>header.gd-nav');if(siteNav){new ResizeObserver(entries=>{document.documentElement.style.setProperty('--site-nav-height',entries[0].target.getBoundingClientRect().height+'px')}).observe(siteNav)}</script></body>
 </html>

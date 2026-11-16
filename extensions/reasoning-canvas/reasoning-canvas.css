@@ -1,6 +1,14 @@
 /* 推理画布：全屏工作台。画布铺满，团队栏/日志/缩放条浮于画布，详情右側滑入。只用 GoodDesign UI 令牌。 */
 html, body { height: 100%; }
 .gd-rc--app { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; }
+.gd-rc-roster[hidden], .gd-rc-feedwrap[hidden], .gd-rc-stage[hidden], .gd-rc-handoff-error[hidden],
+.gd-rc-story-home[hidden], .gd-rc-story-nav[hidden], .gd-rc-viewport[hidden], .gd-rc-detail[hidden],
+#rc-story-view[hidden], #rc-overview[hidden] { display: none; }
+.gd-rc-handoff-error { flex: none; margin: 24px; padding: 20px 22px; border: 1px solid var(--gd-err-text); border-radius: 16px; background: var(--card); color: var(--gd-err-text); line-height: 1.7; }
+.gd-rc-source-clues { margin: 14px 0; padding: 14px 16px; border: 1px solid var(--bdr); border-radius: 16px; background: var(--demo); }
+.gd-rc-source-clues h4 { margin: 0 0 8px; font-size: var(--fs-sm); }
+.gd-rc-source-clues ul { margin: 0; padding-left: 20px; }
+.gd-rc-source-clues li { margin: 5px 0; font-size: var(--fs-sm); line-height: 1.6; }
 
 .gd-rc-topbar {
   flex: none; display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -16,6 +24,11 @@ html, body { height: 100%; }
 .gd-rc-workspace-status.is-warn { color: var(--gd-warn-text); border-color: var(--warnBg); background: var(--warnBg); }
 .gd-rc-role { display: inline-flex; align-items: center; gap: 6px; color: var(--fg2); font-size: var(--fs-xs); white-space: nowrap; }
 .gd-rc-role-select { min-height: 34px; padding: 5px 28px 5px 10px; }
+.gd-rc-more { position: relative; flex: none; }
+.gd-rc-more summary { display: inline-flex; align-items: center; justify-content: center; list-style: none; cursor: pointer; }
+.gd-rc-more summary::-webkit-details-marker { display: none; }
+.gd-rc-more-menu { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; display: grid; gap: 6px; min-width: 190px; max-width: calc(100vw - 28px); padding: 8px; border: 1px solid var(--bdr); border-radius: 14px; background: var(--card); box-shadow: var(--sh2); }
+.gd-rc-more-menu .gd-button { width: 100%; justify-content: flex-start; }
 
 .gd-rc-stage { position: relative; flex: 1; min-height: 0; overflow: hidden; }
 
@@ -291,11 +304,61 @@ html, body { height: 100%; }
 .gd-rc-fnode.is-doubt { border-style: dashed; border-color: var(--gd-warn-text); }
 .gd-rc-fnode.is-manual { border-color: var(--accent); }
 
+/* 134 新任务研究故事线：首页、当前步骤与高级总览 */
+.gd-rc-stage.is-story-home { overflow: auto; background: var(--demo); }
+.gd-rc-story-home { min-height: 100%; padding: clamp(24px, 4vw, 56px) var(--page-gutter); }
+.gd-rc-story-home-inner { width: min(1120px, 100%); margin: 0 auto; }
+.gd-rc-story-home-topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; color: var(--fg2); font-size: var(--fs-xs); }
+.gd-rc-story-back { color: var(--accentDeep); text-decoration: none; font-weight: 600; }
+.gd-rc-story-back:focus-visible { outline: 3px solid var(--acBg); outline-offset: 4px; }
+.gd-rc-story-home-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(280px, .8fr); gap: 24px; align-items: start; }
+.gd-rc-story-hero, .gd-rc-story-summary { min-width: 0; padding: clamp(24px, 3vw, 40px); border: 1px solid var(--bdr); border-radius: 24px; background: var(--card); box-shadow: var(--sh1); }
+.gd-rc-story-hero h1 { margin: 12px 0 28px; font-size: clamp(30px, 4vw, 46px); line-height: 1.18; letter-spacing: -.03em; overflow-wrap: anywhere; }
+.gd-rc-story-problem { margin-bottom: 28px; padding-left: 18px; border-left: 3px solid var(--accent); }
+.gd-rc-story-problem > span { color: var(--fg2); font-size: var(--fs-xs); font-weight: 600; }
+.gd-rc-story-problem p { margin: 8px 0 0; font-size: clamp(17px, 2vw, 21px); line-height: 1.75; overflow-wrap: anywhere; }
+.gd-rc-story-start { min-height: 48px; padding: 11px 26px; font-size: var(--fs-sm); }
+.gd-rc-story-action-note { margin: 12px 0 0; color: var(--fg2); font-size: var(--fs-xs); line-height: 1.6; }
+.gd-rc-story-summary h2 { margin: 0 0 22px; font-size: 20px; }
+.gd-rc-story-counts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.gd-rc-story-counts > div { display: grid; gap: 4px; padding: 16px; border-radius: 14px; background: var(--demo); }
+.gd-rc-story-counts strong { font-size: 30px; font-weight: 600; }
+.gd-rc-story-counts span { color: var(--fg2); font-size: var(--fs-xs); }
+.gd-rc-story-pending { margin-top: 26px; }
+.gd-rc-story-pending h3 { margin: 0 0 12px; font-size: 15px; }
+.gd-rc-story-pending ol { display: grid; gap: 12px; margin: 0; padding-left: 22px; }
+.gd-rc-story-pending li { padding-left: 4px; line-height: 1.65; overflow-wrap: anywhere; }
+.gd-rc-story-pending p { color: var(--fg2); font-size: var(--fs-sm); line-height: 1.65; }
+.gd-rc-story-more-note { margin-top: 16px; font-size: var(--fs-xs) !important; }
+
+.gd-rc-stage.is-story-step { display: grid; grid-template-rows: auto minmax(0, 1fr); overflow: hidden; background: var(--demo); }
+.gd-rc-story-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 10px 18px; border-bottom: 1px solid var(--bdr); background: var(--surface-content); }
+.gd-rc-story-stages, .gd-rc-story-substeps { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.gd-rc-story-stage { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 8px 13px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--fg2); font-size: var(--fs-sm); white-space: nowrap; cursor: pointer; }
+.gd-rc-story-stage > span { font-size: 10px; opacity: .65; }
+.gd-rc-story-stage.is-active { border-bottom-color: var(--accent); color: var(--accentDeep); font-weight: 600; }
+.gd-rc-story-stage:focus-visible, .gd-rc-story-substep:focus-visible { outline: 3px solid var(--acBg); outline-offset: 2px; }
+.gd-rc-story-substeps { padding-left: 16px; border-left: 1px solid var(--bdr); }
+.gd-rc-story-substep { display: inline-flex; align-items: center; gap: 7px; min-height: 34px; padding: 5px 10px; border: 1px solid var(--bdrSoft); border-radius: var(--r-full); background: var(--card); color: var(--fg2); font-size: var(--fs-xs); white-space: nowrap; cursor: pointer; }
+.gd-rc-story-substep small { font-size: 10px; opacity: .75; }
+.gd-rc-story-substep.is-active { border-color: var(--accent); color: var(--accentDeep); background: var(--acBg); }
+.is-story-step .gd-rc-detail { position: relative; inset: auto; grid-row: 2; width: 100%; max-width: none; overflow: auto; transform: none; border-left: 0; background: transparent; box-shadow: none; }
+.is-story-step .gd-rc-detail-inner { width: min(980px, 100%); margin: 0 auto; padding: 24px var(--page-gutter) 40px; }
+.is-story-step .gd-rc-detail-close { display: none; }
+.is-story-step .gd-rc-detail-head { padding: 4px 2px; }
+.is-story-step .gd-rc-block { box-shadow: none; }
+
 /* ============ 移动端回退：纵向列表 ============ */
 @media (max-width: 980px) {
   .gd-rc--app { height: auto; overflow: visible; }
   .gd-rc-topbar { flex-wrap: wrap; padding: 10px 14px; gap: 10px; }
-  .gd-rc-stage { position: static; }
+  .gd-rc-topbar-brand { flex-wrap: wrap; row-gap: 4px; }
+  .gd-rc-topbar-brand strong { white-space: normal; overflow-wrap: anywhere; }
+  .gd-rc-topbar-actions { width: 100%; flex-wrap: wrap; }
+  .gd-rc-flow-hint { width: 100%; white-space: normal; line-height: 1.6; }
+  .gd-rc-stage { position: static; min-width: 0; }
+  .gd-rc-detail, .gd-rc-detail-inner, .gd-rc-detail-inner > * { min-width: 0; max-width: 100%; }
+  .gd-rc-detail-inner * { overflow-wrap: anywhere; }
   .gd-rc-viewport { position: static; height: auto; overflow: visible; cursor: default; background-image: none; touch-action: auto; user-select: auto; -webkit-user-select: auto; background-color: transparent; }
   .gd-rc-world { position: static; width: auto; height: auto; transform: none !important; display: grid; gap: 12px; padding: 16px var(--page-gutter); }
   .gd-rc-edges, .gd-rc-zoombar, .gd-rc-roster, .gd-rc-feedwrap, .gd-rc-foot { display: none; }
@@ -303,6 +366,23 @@ html, body { height: 100%; }
   .gd-rc-port { display: none; }
   .gd-rc-detail { position: static; width: 100%; transform: none; border-left: 0; border-top: 1px solid var(--bdr); box-shadow: none; }
   .gd-rc-fnode { position: static; width: 100%; opacity: 1; transform: none; }
+  .gd-rc-story-home { min-height: auto; padding: 22px var(--page-gutter) 32px; }
+  .gd-rc-story-home-topline { align-items: flex-start; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+  .gd-rc-story-home-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .gd-rc-story-hero, .gd-rc-story-summary { padding: 22px 20px; border-radius: 18px; }
+  .gd-rc-story-hero h1 { margin-bottom: 22px; font-size: 30px; }
+  .gd-rc-story-problem p { font-size: 17px; }
+  .gd-rc-story-start { width: 100%; }
+  .gd-rc-story-nav { align-items: stretch; flex-direction: column; gap: 8px; padding: 8px 12px; }
+  .gd-rc-story-stages, .gd-rc-story-substeps { width: 100%; overflow-x: auto; padding-bottom: 2px; }
+  .gd-rc-story-stage { flex: 0 0 auto; padding: 7px 10px; }
+  .gd-rc-story-substeps { padding-left: 0; border-left: 0; }
+  .is-story-step .gd-rc-detail-inner { padding: 18px var(--page-gutter) 30px; }
+  .is-story-step .gd-rc-evrow { flex-direction: column; }
+  .is-story-step .gd-rc-search-row { flex-wrap: wrap; }
+  .is-story-step .gd-rc-search-row input { min-width: 0; }
+  .is-story-step .gd-rc-iadd, .is-story-step .gd-rc-noteadd { flex-wrap: wrap; }
+  .is-story-step .gd-rc-iadd input, .is-story-step .gd-rc-noteadd input { min-width: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

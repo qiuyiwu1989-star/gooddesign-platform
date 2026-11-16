@@ -11,7 +11,12 @@ def verify_experience_files(record,library_root=ROOT/'04-知识库/项目库'):
  def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
  for e in r['evidence_refs']:
   if not re.fullmatch(r'[0-9]{4}-[a-z0-9]+',e['project_id']):raise ValueError('invalid_project_id')
-  project=lib/e['project_id'];chunk=(project/e['chunks_path']).resolve();dataset=Path(e['dataset_path']).resolve()
+  project=lib/e['project_id'];chunk=(project/e['chunks_path']).resolve();dataset=Path(e['dataset_path'])
+  if e.get('provenance_layer')=='source_level':dataset=chunk
+  else:
+   if dataset.is_absolute() and not dataset.is_relative_to(project):dataset=project/'研究工作区/版本'/e['research_revision']/'档案.json'
+   elif not dataset.is_absolute():dataset=project/dataset
+   dataset=dataset.resolve()
   if not chunk.is_relative_to(project.resolve()) or not dataset.is_relative_to(project.resolve()):raise ValueError('evidence_path_outside_project')
   if sha(chunk)!=e['chunks_sha256'] or sha(dataset)!=e['dataset_sha256']:raise ValueError('evidence_file_hash_mismatch')
   source=pp.state(project)['sources'].get(e['source_id'])

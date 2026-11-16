@@ -1,0 +1,872 @@
+{
+  "payload": {
+    "task": {
+      "task_id": "RUBBER-20261026",
+      "revision": "workbench-v1",
+      "object": "割胶机器人改进研究",
+      "desired_outcome": "形成可验证的机械改进候选路线",
+      "boundary": "研究提案，未客户确认；",
+      "delivery_level": "concept",
+      "stage": "frame",
+      "demand_packet_sha256": "297a57ac2619d176b36cb88ac3f64af3179d572c291afb722e36d7f383e0477d",
+      "demand_snapshot": {
+        "approved": false,
+        "baseline_packet_sha256": "5cd9a9d4bcbd5f5a54b4f87c5976127c4cf5858e3e5dd2f0ac364567dd60018a",
+        "conditions": [
+          "",
+          "",
+          ""
+        ],
+        "goal": "形成可验证的机械改进候选路线",
+        "id": "RUBBER-20261026",
+        "note": "从ML-005研究包导入；非客户批准。",
+        "problem": "出胶效率、胶乳洁净与树体保护需要共同研究；现场工况与目标值待客户确认。",
+        "requirements": [
+          {
+            "acceptance_proposal": "在定义明确的深度、耗皮与损伤口径下测量，并安排跨周期跟踪；阈值待客户及农艺人员确认",
+            "hard_proposal": true,
+            "id": "N01",
+            "need": "避免短期增产以伤树或过度耗皮为代价",
+            "source_refs": [
+              "S01",
+              "S06"
+            ],
+            "stakeholder": "胶园经营者/农艺人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "保护树体及长期割面资源"
+          },
+          {
+            "acceptance_proposal": "对曲率、厚度和旧割面分层试验；刀位移、剩余树皮及损伤分别记录；允许误差待定",
+            "hard_proposal": true,
+            "id": "N02",
+            "need": "适应树干曲率及树皮差异，同时控制生物安全边界",
+            "source_refs": [
+              "S02",
+              "S03",
+              "S04"
+            ],
+            "stakeholder": "设备研发/农艺人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "区分表面跟随与真实限深"
+          },
+          {
+            "acceptance_proposal": "定义污染采样方法，比较杂质、损失胶乳及清理时间；限值待下游确认",
+            "hard_proposal": true,
+            "id": "N03",
+            "need": "降低切屑混入及后续清理负担",
+            "source_refs": [
+              "S01",
+              "S07"
+            ],
+            "stakeholder": "收胶人员/加工方",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "隔离新切屑与胶乳"
+          },
+          {
+            "acceptance_proposal": "记录堵塞、停机、清理及重启；阈值待定，不能以空载切削代替",
+            "hard_proposal": null,
+            "id": "N04",
+            "need": "处理已有胶线、刀面黏附和排屑阻塞",
+            "source_refs": [
+              "S05",
+              "S07"
+            ],
+            "stakeholder": "操作员/维护人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "处理旧胶线与黏附堵塞"
+          },
+          {
+            "acceptance_proposal": "同时记录定位、安装、切割、转场、收胶、清理、故障、人机协作时间及干胶口径；目标待实测",
+            "hard_proposal": null,
+            "id": "N05",
+            "need": "提高单位人时的合格干胶产出，而非仅提高刀速",
+            "source_refs": [
+              "S01",
+              "S06"
+            ],
+            "stakeholder": "胶园经营者",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "提高全流程有效产出"
+          },
+          {
+            "acceptance_proposal": "新手与熟练人员分组，记录培训、误操作、返工与接管，不能仅调查喜欢程度",
+            "hard_proposal": null,
+            "id": "N06",
+            "need": "将关键判断转为可检查的设置与反馈",
+            "source_refs": [
+              "S03",
+              "S05"
+            ],
+            "stakeholder": "操作员/经营者",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "降低对熟练工的依赖"
+          },
+          {
+            "acceptance_proposal": "在受控环境验证急停、断电、传感异常、退出路径与复位条件；先安全审核",
+            "hard_proposal": true,
+            "id": "N07",
+            "need": "失去接触、堵转或感知异常时停止危险切削并记录",
+            "source_refs": [
+              "S01",
+              "S02"
+            ],
+            "stakeholder": "操作员/研发人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "异常时安全退让并可接管"
+          },
+          {
+            "acceptance_proposal": "现场调查光照、湿度、雨后割面和允许时段；雨水防护不等于雨中可割",
+            "hard_proposal": null,
+            "id": "N08",
+            "need": "识别不适合作业条件并避免为自动化强行作业",
+            "source_refs": [
+              "S02",
+              "S06"
+            ],
+            "stakeholder": "胶园经营者/操作员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "适应雨水与弱光的作业安排"
+          },
+          {
+            "acceptance_proposal": "计时清洗、换刀、复装校准，跟踪磨损和积胶；材料与费用未知",
+            "hard_proposal": null,
+            "id": "N09",
+            "need": "降低刀具、导向件与胶乳接触区维护负担",
+            "source_refs": [
+              "S05",
+              "S07"
+            ],
+            "stakeholder": "维护人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "可清洗维护和耗材更换"
+          },
+          {
+            "acceptance_proposal": "调查树距、坡度、挂载接口、供电与收胶流程，再确定目标平台",
+            "hard_proposal": null,
+            "id": "N10",
+            "need": "在手持、固定与移动架构之间避免过早锁定",
+            "source_refs": [
+              "S01",
+              "S02"
+            ],
+            "stakeholder": "设备方/胶园",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "兼容现有胶园与装备"
+          },
+          {
+            "acceptance_proposal": "记录树ID、时间、工具版本、工况、异常和数据缺失，不编造客户已有数字化基础",
+            "hard_proposal": null,
+            "id": "N11",
+            "need": "知道哪棵树何时按何配置作业，问题可追查",
+            "source_refs": [
+              "S01",
+              "S02"
+            ],
+            "stakeholder": "经营者/研发人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "保持可追溯的作业与验收数据"
+          },
+          {
+            "acceptance_proposal": "采集实际成本与利用率，用情景区间比较；不输出无数据ROI",
+            "hard_proposal": null,
+            "id": "N12",
+            "need": "把人工、维护、停机、折旧及树体影响纳入选择",
+            "source_refs": [
+              "S01",
+              "S06"
+            ],
+            "stakeholder": "采购方/运营方",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "可比较的全生命周期经济性"
+          },
+          {
+            "acceptance_proposal": "由加工方确认干胶含量、杂质和收集损失测量方法；不能以初始流速代替季节产量",
+            "hard_proposal": true,
+            "id": "N13",
+            "need": "避免通过增加水分或牺牲品质制造表面增产",
+            "source_refs": [
+              "S01",
+              "S06"
+            ],
+            "stakeholder": "加工方/收胶人员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "保护胶乳有效品质与收集率"
+          },
+          {
+            "acceptance_proposal": "定义适用树株与例外规则，记录覆盖率与误拒绝；识别能力需验证",
+            "hard_proposal": true,
+            "id": "N14",
+            "need": "对厚度未知、旧伤、树结或状态异常的对象先停止或转人工",
+            "source_refs": [
+              "S02",
+              "S06"
+            ],
+            "stakeholder": "农艺人员/操作员",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "识别不适用树株并保留人工例外"
+          },
+          {
+            "acceptance_proposal": "完成接口勘察与局部验证，不把试验优先顺序解释成已选定产品架构",
+            "hard_proposal": null,
+            "id": "N15",
+            "need": "先验证末端或局部改造，再决定整机投入",
+            "source_refs": [
+              "S03",
+              "S04"
+            ],
+            "stakeholder": "经营者/设备研发",
+            "status": "research_proposed_not_customer_confirmed",
+            "target_value": null,
+            "title": "分阶段改造与可撤销试点"
+          }
+        ],
+        "selected_methods": [
+          "R48",
+          "R14",
+          "R17",
+          "R36",
+          "R44",
+          "R42"
+        ],
+        "title": "割胶机器人改进研究"
+      },
+      "input_status": "research_proposed_not_customer_confirmed"
+    },
+    "method": {
+      "research_id": "R48",
+      "method_id": "IM-PD-001",
+      "name": "问题定义与要求管理",
+      "english_name": "Problem Framing and Requirements Management",
+      "kind": "framework",
+      "category": "A问题发现与需求定义",
+      "lineage": [
+        "设计问题框定",
+        "系统工程要求定义"
+      ],
+      "aliases": [
+        "设计任务澄清",
+        "需求基线",
+        "要求追溯"
+      ],
+      "summary": "从用户情境和事实澄清待解问题，把期望转为有条件、可验证、可追溯的要求，并管理假设、冲突和版本变更。",
+      "sections": {
+        "identity": "本档深化映射现有IM-PD-001身份，作为0.1.0研究草稿保存在建设工作区，不覆盖旧卡运行版本。问题框定面向为何解决、为谁解决和边界；工程要求管理面向必须实现什么、怎样判断及变更影响。Design Council支持发现与定义的迭代，NASA手册支持期望转技术要求；两者在本卡整合不是某一作者的新原创方法。",
+        "problem": "“做一台更智能的机器”可能同时包含真实痛点、预设方案、技术兴趣和营销愿望，直接进入解法会优化错误问题。即使需求列表很长，若“方便、可靠、低成本”没有对象、条件和判据，设计与测试也无法一致。本法先识别事实与假设，再把可支持的需要转成问题陈述、约束和验收方向，使后续方法调用围绕同一个任务。",
+        "principle": "问题陈述描述目标用户/系统在情境下的缺口、影响及目标，不预先锁定没有必要的实现。利益相关方需要、期望、目标、约束、功能、性能和接口不是同层信息。要求应尽量单一、清楚、必要、可行、可验证且可追溯，包含量值/容差/条件或客观判定方式，避免只有形容词。硬约束与优化偏好分开，派生要求记录依据和分配关系，实施约束说明为何必须限制解法。每条保留来源、理由、责任、状态与版本，并建立双向追溯。",
+        "applicability": "适合项目前期、研究转产品、设计变更、需求冲突或测试验收困难时，也是多数引擎方法的前置。需要实际用户/业务/工程证据及有权确认目标的人；研究不足时可形成假设问题和补证计划，不能把AI推测写成客户已确认。探索任务不应过早锁死所有规格，但仍需写清目标和可学习条件；法规安全要求需独立查适用来源。",
+        "interpretation": "输出不是越多越好的要求清单，而是经确认的问题边界、要求基线、追溯、未决与变更机制。要求质量确认（requirements validation）是审要求本身是否正确可行可验证，不是已证明产品符合。利益冲突、不可行目标或信息不足应外显，并由有权责任方决定取舍。引擎应先路由问题澄清、需求发现、功能分析或实验补证，而不是把所有输入直接翻成规格。基线不是不可变；变更需保留原因、影响、批准与受影响的设计/验证版本。 当前未做与旧卡的专家冲突审查；新档仅作为深化材料，不提升旧版本的验证状态。",
+        "example": "教学演示，未有客户访谈：团队提出“做智能搬运车”。S01列用户、路线、载荷和场地都未知，不直接推荐自动驾驶。S02拟问题为“目标人员在特定搬运任务中存在效率或负担缺口”，标待证。S03把载荷、安全、人机接口与通行环境分组，区分“使用某传感器”是解法假设而非需求。S04为已证实任务规划可测成功条件，具体数值由现场与责任人确认，不凭空设门槛。S05审必要性、可行性、冲突和验证方式。S06只有确认后建立基线，场地改变时回查接口和试验。本例未声称访谈完成、要求已批准或方案可行。 要求草稿行可为“ID:REQ-待定；父源:任务观察待取得；功能:搬运；性能/条件:待确认；验证方式:待定；理由:效率或负担缺口待证；owner:未指定；status:draft”。该行展示缺口，不冒充有效产品要求；补证审查后才可形成可验证基线。",
+        "pitfalls": "一是把客户说的部件直接当不可变要求，误锁解空间；先问作用及必要理由。二是“尽量快、便宜、可靠”互相冲突但没有优先规则；分硬要求与偏好。三是需求分解后丢失来源，新增指标无人负责；保留父子追溯。四是失败后悄改要求，让测试看似通过；走变更与复验。反例：纯粹探索未知物理现象时，强行写成完整量产产品要求可能虚构精度，应先形成研究问题与实验成功条件。",
+        "validation": "先看问题有没有事实来源、用户情境与边界，再审每条要求的清楚性、唯一性、必要性、一致性、可行性、可验证性和追溯。利益相关方评审与技术审查各有作用，不能由措辞整齐代替。产品实际符合与用途适合需要后续V&V证据；该卡只能验证要求质量和规划覆盖，不能生成产品验收结果。",
+        "adaptation": "Design Council提供先理解问题及非线性迭代，NASA提供约束接口、要求陈述、理由、追溯、要求质量确认与基线。平台将其组合为六步，增加事实/假设、缺失行动、引擎路由及状态；搬运车情境为教学演示。未要求所有产品采用NASA的审批名称或特定工具。",
+        "gaps": "暂无具体项目的访谈、任务观测、法规、工程边界与可行性证据，也没有责任人确认要求。量值、优先级、接受标准和变更权责都需项目补充。与旧IM-PD-001的内容和接口差异应在后续审稿/发布时比较，不在本阶段自动覆盖现有生产卡。"
+      },
+      "inputs": [
+        {
+          "key": "initial_request",
+          "label": "初始意图与问题材料",
+          "type": "object",
+          "required": true,
+          "description": "原话、项目背景、范围及期望改变",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "stakeholder_evidence",
+          "label": "利益相关方与任务证据",
+          "type": "array",
+          "required": false,
+          "description": "用户观察、访谈、业务和工程事实，附来源",
+          "missing_action": "mark_unknown"
+        },
+        {
+          "key": "constraints_context",
+          "label": "约束与系统环境",
+          "type": "object",
+          "required": false,
+          "description": "接口、法规安全、技术资源、生命周期",
+          "missing_action": "mark_unknown"
+        },
+        {
+          "key": "decision_authority",
+          "label": "确认与变更权责",
+          "type": "object",
+          "required": false,
+          "description": "目标责任、评审人员及批准机制",
+          "missing_action": "mark_unknown"
+        }
+      ],
+      "steps": [
+        {
+          "step_id": "R48-S01",
+          "title": "拆分原话与证据状态",
+          "input_refs": [
+            "initial_request",
+            "stakeholder_evidence"
+          ],
+          "depends_on": [],
+          "operation": "区分事实、需要、方案偏好、目标和假设，确认用户及任务情境缺口。",
+          "decision": "无实际证据标假设，不写成客户已确认。",
+          "output_key": "intent_evidence_map",
+          "output_description": "原话、事实/假设和补证问题",
+          "checks": [
+            "来源保留",
+            "方案未强当需求"
+          ],
+          "stop_condition": "关键用户任务未知停止确定规格",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查原始访谈、任务观测和项目资料"
+          ]
+        },
+        {
+          "step_id": "R48-S02",
+          "title": "定义问题与成功方向",
+          "input_refs": [
+            "intent_evidence_map",
+            "constraints_context"
+          ],
+          "depends_on": [
+            "R48-S01"
+          ],
+          "operation": "形成用户/系统、情境、缺口、影响、目标和范围，明确不应预锁的解法。",
+          "decision": "根因未证不写因果事实，问题冲突先外显。",
+          "output_key": "problem_frame",
+          "output_description": "问题陈述、边界、成功方向和待证",
+          "checks": [
+            "谁在何情境清楚",
+            "目标可学习"
+          ],
+          "stop_condition": "无法形成共同任务先补研究",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "查需求发现和根因证据"
+          ]
+        },
+        {
+          "step_id": "R48-S03",
+          "title": "组织约束功能性能接口",
+          "input_refs": [
+            "problem_frame",
+            "constraints_context"
+          ],
+          "depends_on": [
+            "R48-S02"
+          ],
+          "operation": "把需要转成分层功能、性能、接口和生命周期要求，区分硬约束与偏好。",
+          "decision": "指定实施方式须有必要理由，派生要求留依据。",
+          "output_key": "requirement_structure",
+          "output_description": "要求层级、来源和取舍问题",
+          "checks": [
+            "约束不被评分抵消",
+            "父子关系可追踪"
+          ],
+          "stop_condition": "硬约束互斥升级责任方决策",
+          "source_refs": [
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查功能分解、接口和适用要求"
+          ]
+        },
+        {
+          "step_id": "R48-S04",
+          "title": "编写可验证单条要求",
+          "input_refs": [
+            "requirement_structure",
+            "decision_authority"
+          ],
+          "depends_on": [
+            "R48-S03"
+          ],
+          "operation": "给条目编号、责任、条件、量值/判据、理由与计划验证方式，未知阈值不编造。",
+          "decision": "不可观察的形容词退回澄清；探索指标保留待定状态。",
+          "output_key": "requirement_draft",
+          "output_description": "可审要求与验证方向",
+          "checks": [
+            "单一明确",
+            "条件和判据足够"
+          ],
+          "stop_condition": "关键判据缺失不认定可验收",
+          "source_refs": [
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查实际能力、量测和任务成功条件"
+          ]
+        },
+        {
+          "step_id": "R48-S05",
+          "title": "审查正确可行与一致",
+          "input_refs": [
+            "requirement_draft",
+            "stakeholder_evidence"
+          ],
+          "depends_on": [
+            "R48-S04"
+          ],
+          "operation": "由技术与利益相关方审必要性、可行、冲突、过度规定和双向追溯。",
+          "decision": "措辞合格不等需求正确，冲突和未知不得隐藏。",
+          "output_key": "requirements_review",
+          "output_description": "评审问题、修订及确认状态",
+          "checks": [
+            "用户与技术都覆盖",
+            "可验证性有依据"
+          ],
+          "stop_condition": "未决核心要求不标批准",
+          "source_refs": [
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查性能预算和验证资源"
+          ]
+        },
+        {
+          "step_id": "R48-S06",
+          "title": "建立基线与变更追溯",
+          "input_refs": [
+            "requirements_review",
+            "decision_authority"
+          ],
+          "depends_on": [
+            "R48-S05"
+          ],
+          "operation": "在责任方确认后固定版本，维护来源—要求—设计—验证关系与变更影响。",
+          "decision": "未获确认保留draft；变化需回查产品和测试，不覆盖历史。",
+          "output_key": "problem_requirements_dossier",
+          "output_description": "问题、要求基线、追溯与变更档案",
+          "checks": [
+            "历史可还原",
+            "批准不由AI伪造"
+          ],
+          "stop_condition": "关键变更未评审不沿用旧结论",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "为后续方法提供目标、约束和证据需求"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "key": "problem_requirements_dossier",
+          "label": "问题与要求档案",
+          "required_fields": [
+            "evidence",
+            "problem_frame",
+            "scope",
+            "requirements",
+            "rationale",
+            "traceability",
+            "review",
+            "baseline",
+            "changes",
+            "open_questions"
+          ],
+          "interpretation": "要求质量与基线状态不代表产品已通过验证"
+        }
+      ],
+      "relations": [
+        {
+          "target_research_id": "R01",
+          "relation": "parallel",
+          "binding": "需求发现→stakeholder_evidence",
+          "condition": "事实不足先补研究"
+        },
+        {
+          "target_research_id": "R14",
+          "relation": "precedes",
+          "binding": "功能要求→功能分析",
+          "condition": "解法前澄清作用"
+        },
+        {
+          "target_research_id": "R42",
+          "relation": "precedes",
+          "binding": "要求/用途→V&V目标",
+          "condition": "判据及追溯前置"
+        },
+        {
+          "target_research_id": "R44",
+          "relation": "parallel",
+          "binding": "待证问题→假设测试",
+          "condition": "探索与规格迭代"
+        }
+      ],
+      "search_terms": [
+        "问题定义",
+        "要求管理",
+        "需求澄清",
+        "requirements",
+        "双向追溯",
+        "IM-PD-001"
+      ],
+      "sources": [
+        {
+          "publisher": "Design Council",
+          "authors": [
+            "Design Council"
+          ],
+          "title": "Framework for Innovation",
+          "url": "https://www.designcouncil.org.uk/resources/framework-for-innovation/",
+          "locator": "Discover / Define及非线性迭代说明",
+          "read_scope": "官方正文四阶段、以人为先、协作和迭代相关段落核读",
+          "supports": [
+            "理解而非假定问题",
+            "发现与定义可迭代"
+          ],
+          "evidence_note": "双钻是过程表达，本档问题结构和工程要求字段为平台整合，网页作品CC BY4.0",
+          "source_id": "S01",
+          "accessed_at": "2026-10-23",
+          "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+        },
+        {
+          "publisher": "NASA",
+          "authors": [
+            "NASA"
+          ],
+          "title": "Systems Engineering Handbook 4.2 Technical Requirements Definition",
+          "url": "https://www.nasa.gov/reference/4-2-technical-requirements-definition/",
+          "locator": "4.2.1输入、活动、验证要求、基线与输出",
+          "read_scope": "公开手册正文需求来源、约束接口、可接受陈述、追溯、可行可验证与基线段落核读",
+          "supports": [
+            "期望转技术要求",
+            "可验证、追溯与变更控制"
+          ],
+          "evidence_note": "NASA项目流程适配，不是所有产品必须采用其审批机制",
+          "source_id": "S02",
+          "accessed_at": "2026-10-23",
+          "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+        }
+      ],
+      "schema_version": "method-dossier-1.0",
+      "version": "0.1.0",
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "evaluations": [
+        {
+          "scenario": "输入足够的研究任务",
+          "expected": "产生problem_requirements_dossier，每项判断保留依据、假设和适用范围"
+        },
+        {
+          "scenario": "缺少initial_request",
+          "expected": "追问目标与边界，停止确定性分析，不编造输入"
+        },
+        {
+          "scenario": "候选违反明确硬约束",
+          "expected": "排除并解释，不用总分或统计指标抵消要求"
+        },
+        {
+          "scenario": "实际数据、测量或分析工具不可用",
+          "expected": "只保存研究/验证计划，不填造实际结果、通过或风险降低"
+        }
+      ],
+      "change_log": [
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "逐项核读专业来源并编写平台深度操作草稿"
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "批次复核：补具体中间产物、教学模型与边界；不提升执行/验证状态"
+        }
+      ]
+    },
+    "contract": {
+      "contract_version": "0.2.1",
+      "research_id": "R48",
+      "artifact_type": "ProblemBrief",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ProblemBrief"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "fact",
+                    "assumption",
+                    "unknown"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "kind",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "payload": {
+            "type": "object",
+            "properties": {
+              "actor": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 6000,
+                "pattern": "\\S"
+              },
+              "object": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 6000,
+                "pattern": "\\S"
+              },
+              "boundary": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 6000,
+                "pattern": "\\S"
+              },
+              "desired_outcome": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 6000,
+                "pattern": "\\S"
+              },
+              "requirements": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "hard": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "acceptance": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "confirmed",
+                        "proposed",
+                        "unknown"
+                      ]
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "text",
+                    "hard",
+                    "acceptance",
+                    "status",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "conditions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "fact",
+                        "assumption",
+                        "unknown"
+                      ]
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "text",
+                    "kind",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 200
+              },
+              "unknowns": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "maxItems": 200
+              }
+            },
+            "required": [
+              "actor",
+              "object",
+              "boundary",
+              "desired_outcome",
+              "requirements",
+              "conditions",
+              "unknowns"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "artifact_id",
+          "revision",
+          "task_id",
+          "task_revision",
+          "type",
+          "scope",
+          "conditions",
+          "evidence_refs",
+          "payload"
+        ],
+        "additionalProperties": false
+      },
+      "purpose": "澄清对象、目标、需求和约束",
+      "requires": [],
+      "stage": "frame",
+      "next": [
+        "R14"
+      ],
+      "stop": "关键对象或使用边界未知时先澄清；愿望不能伪装成已批准要求。",
+      "input_bindings": {
+        "initial_request": "task",
+        "stakeholder_evidence": "evidence",
+        "constraints_context": "task.boundary",
+        "decision_authority": "task.decision_authority"
+      },
+      "status": "platform_authored_not_expert_reviewed",
+      "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+    },
+    "inputs": [],
+    "evidence": []
+  },
+  "input_sha256": "8f334ce7605a127a3dbf7e66792baed3f0931be26e3529cc65887fb4bc43c6e0"
+}

@@ -1,0 +1,84 @@
+{
+  "method": "R42",
+  "date": "2026-10-27",
+  "claims": [
+    {
+      "claim_id": "C42-01",
+      "claim": "确认指向使用者期望与预期环境；要求符合性与用途满足不能混同。",
+      "claim_type": "author_process_scope",
+      "source_id": "NASA-VAL",
+      "url": "https://www.nasa.gov/reference/5-4-product-validation/",
+      "source_raw_sha256": "93051f00a9b0b655e39b8e08d2eaf9cad14cb92ae81921970beb7c4f50581f34",
+      "local_raw_path": "02-研究/方法深化执行/MD-005-R36/private-sources/NASA-VAL.html",
+      "local_text_path": "02-研究/方法深化执行/MD-005-R36/private-sources/NASA-VAL.txt",
+      "local_text_sha256": "9cc10bda032a313b6fc494ecda39a85004e3dba5a944986fc1c1fad780628586",
+      "locator": "5.4开头两段",
+      "short_anchor": "intended environment",
+      "anchor_start_in_normalized_text": 6809,
+      "read_scope": "selected sections only; source acquired privately; not full original method monograph",
+      "does_not_support": [
+        "真实割胶性能",
+        "用户研究已实施",
+        "客户批准目标",
+        "专家认证",
+        "本平台完整实现原典所有规则"
+      ]
+    },
+    {
+      "claim_id": "C42-02",
+      "claim": "偏差须进入记录与分析；平台固定夹具仅检查记录结构。",
+      "claim_type": "author_process_plus_platform_adaptation",
+      "source_id": "NASA-V",
+      "url": "https://www.nasa.gov/reference/5-3-product-verification/",
+      "source_raw_sha256": "7f8a3bbd2687ff75328ca892e5711a9018b9e4df470d378e7ff9d4d751b5e525",
+      "local_raw_path": "02-研究/方法深化执行/MD-005-R36/private-sources/NASA-V.html",
+      "local_text_path": "02-研究/方法深化执行/MD-005-R36/private-sources/NASA-V.txt",
+      "local_text_sha256": "cb4bf8ceee605cf46507249e5a0267eb57b6caffbd507e3615fcf55fdef8c4e2",
+      "locator": "5.3.1.2 Conduct Planned Product Verifications",
+      "short_anchor": "When a “discrepancy”",
+      "anchor_start_in_normalized_text": 27040,
+      "read_scope": "selected sections only; source acquired privately; not full original method monograph",
+      "does_not_support": [
+        "真实割胶性能",
+        "用户研究已实施",
+        "客户批准目标",
+        "专家认证",
+        "本平台完整实现原典所有规则"
+      ]
+    },
+    {
+      "claim_id": "C42-03",
+      "claim": "验证产物关联配置、校准和异常记录；本包配置SHA绑定是平台实现建议。",
+      "claim_type": "author_process_plus_platform_adaptation",
+      "source_id": "NASA-V",
+      "url": "https://www.nasa.gov/reference/5-3-product-verification/",
+      "source_raw_sha256": "7f8a3bbd2687ff75328ca892e5711a9018b9e4df470d378e7ff9d4d751b5e525",
+      "local_raw_path": "02-研究/方法深化执行/MD-005-R36/private-sources/NASA-V.html",
+      "local_text_path": "02-研究/方法深化执行/MD-005-R36/private-sources/NASA-V.txt",
+      "local_text_sha256": "cb4bf8ceee605cf46507249e5a0267eb57b6caffbd507e3615fcf55fdef8c4e2",
+      "locator": "5.3.1.3 Outputs / Product verification work products",
+      "short_anchor": "configuration drawings",
+      "anchor_start_in_normalized_text": 33546,
+      "read_scope": "selected sections only; source acquired privately; not full original method monograph",
+      "does_not_support": [
+        "真实割胶性能",
+        "用户研究已实施",
+        "客户批准目标",
+        "专家认证",
+        "本平台完整实现原典所有规则"
+      ]
+    }
+  ],
+  "platform_adaptations": [
+    "未知不当持平或0",
+    "硬失败不可由偏好总分抵消",
+    "研究假设不得升级为批准要求",
+    "版本与SHA绑定",
+    "计划结果保持空且不伪造执行"
+  ],
+  "gaps": [
+    "没有真实用户/原型/工程试验数据",
+    "实际工况及判据尚未确认"
+  ],
+  "source_license_handling": "公开原件仅private-sources保留；不复制原卡、图表或完整网页为公开正文。"
+}

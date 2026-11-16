@@ -1,0 +1,351 @@
+{
+  "research_id": "R40",
+  "method_id": "IM-ML-040",
+  "name": "失效模式与影响分析",
+  "english_name": "Failure Modes and Effects Analysis / FMECA",
+  "kind": "method",
+  "category": "F方案决策与验证评价",
+  "lineage": [
+    "可靠性工程",
+    "质量风险分析"
+  ],
+  "aliases": [
+    "FMEA",
+    "DFMEA",
+    "PFMEA"
+  ],
+  "summary": "从系统功能出发逐项识别可能怎样失效、影响什么、原因和控制在哪里，再据风险依据安排措施并跟踪验证。",
+  "sections": {
+    "identity": "FMEA是前瞻性风险分析方法，设计、过程、软件和接口均可按相应边界应用；FMECA增加关键性分析。本档用ASQ公开步骤与IEC 60812:2018公开范围说明，未取得付费标准全文，也未移植汽车行业专有评分或行动优先级表。不同体系的严重度、发生度、检测度和优先级规则不能混用。平台输入、证据状态和措施闭环是适配，不是某行业认证版本。",
+    "problem": "团队容易在故障发生后追责某个零件，却没有系统查哪些功能可能失效、后果会传到哪里、已有控制能否发现或预防。也可能做一张很长的FMEA表，最后只留下RPN数字而没人执行措施。本法把功能、失效模式、影响、原因、控制和行动串成可维护记录，帮助在设计早期发现遗漏。它不证明列出的原因已发生，也不能保证枚举完所有系统性危险。",
+    "principle": "失效模式描述功能怎样没有按预期实现；影响是对局部、上层系统和用户的后果；原因是促成该模式的机制或条件；控制要区分预防和检测。风险评价可考虑后果严重性、发生可能和检测能力，但所采用尺度须明确来源和证据。发生度未知不等于低，检测存在也不等于有效。措施应指向减少原因、降低后果或改善控制，并在实施后用证据重新评估，不能通过改分数完成闭环。接口信息与过程变更需要纳入维护，旧分析不能因表格存在就永远有效。",
+    "applicability": "适合新设计、设计变更、工艺开发或旧系统用于新环境时。前提是边界、功能、工况和责任清楚，通常需要设计、制造、维护、质量及使用方共同参与。资料不足时可列潜在模式与补证问题，但不猜概率。对系统级危险、复杂多故障、共因或控制交互，还需其他安全和可靠性方法；不能仅靠单模式表替代完整机械风险评估。",
+    "interpretation": "有效档案不只是排名，而是功能链、风险依据、行动责任、时间、验证证据和剩余未知。严重后果即使低发生也不能因为乘积低就被忽略；相同RPN可能来自不同风险结构。采取措施前后要保留基线，只有实际实施和验证后才重新评价。没有数据可以写定性依据或unknown，不能由AI口吻生成精确发生率、检出率或产品可靠度。",
+    "example": "教学演示，非真实失效记录：一套夹持装置的必要功能是保持物件位置。第一步固定夹持、解锁和维护阶段。第二步列潜在模式“夹持作用不足”与影响“物件移动”，不把影响当模式。第三步列压力不足、磨损或设定错误为原因候选，各自需要证据，不宣称已查明。第四步检查有无压力监测、位置确认或维护控制，存在传感器仍需检出能力验证。第五步提出与每条原因对应的预防/检测或结构措施并列责任、验证和剩余问题。本演示不填写严重度数字、发生概率和措施后风险下降比例。 单条中间行可为“功能保持位置→模式夹持作用不足→系统影响物件移动→原因候选压力不足(待证)→预防未知→检测压力信号(检出覆盖待核)→行动验证压力与接触状态关系→状态open”。这行不是已确认根因，也不因为检测字段非空就给低风险。",
+    "pitfalls": "一是把原因、模式和影响写成同一句，造成措施无靶点；先回功能链。二是套固定评分给未知故障，得到伪精确RPN；先收证据或标未知。三是把检测措施存在当已能检出；确认覆盖、响应与失效情境。四是填完表就说安全问题解决，措施未实施、共因未分析；保留未闭环状态。反例：要判断某实际故障根因时，FMEA只提供候选，还需根因分析与试验，不可用潜在分析代替诊断事实。",
+    "validation": "执行质量检查模式是否对应功能、影响是否跨层追踪、原因是否有机理或假设标签、控制是否区分预防检测、评价尺度是否一致，以及行动是否有责任与复查。工程验证需要实际设计变更、过程控制试验、故障注入或性能测试；验证方式随行业和风险确定。结构表检查不代表危险已被充分识别，软件通过也不能提升为工程可靠性结论。",
+    "adaptation": "ASQ支持FMEA的用途、分析链和措施维护；IEC公开摘要支持方法覆盖和FMECA关系，并指出通用标准不提供所有安全应用细则。本文使用六步平台流程，增加未知、来源定位、硬约束和验证分层。示例是教学情境，不是已发生事故或某型号实际采用记录。",
+    "gaps": "未取得IEC标准全文及具体行业FMEA手册，未建立行业评分、AP或关键性计算规则。当前没有真实故障率、检出能力和供应商控制数据，不能给发生度数值。若用于汽车、医疗、航空或特种设备等，需核适用行业规范、完整危险分析及有责任人员的评审，不能从此通用卡自动生成合规结论。"
+  },
+  "inputs": [
+    {
+      "key": "system_scope",
+      "label": "系统边界与功能",
+      "type": "object",
+      "required": true,
+      "description": "产品/过程层级、阶段、接口、目标功能和版本",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "operating_conditions",
+      "label": "工况与要求",
+      "type": "object",
+      "required": true,
+      "description": "使用、维护、异常及安全质量要求",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "failure_evidence",
+      "label": "失效与控制资料",
+      "type": "array",
+      "required": false,
+      "description": "机理、测试、故障、控制效果，事实与假设分开",
+      "missing_action": "mark_unknown"
+    },
+    {
+      "key": "rating_policy",
+      "label": "评价与行动规则",
+      "type": "object",
+      "required": false,
+      "description": "行业版本、尺度、阈值、权责，缺失不伪造分数",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R40-S01",
+      "title": "固定范围和功能结构",
+      "input_refs": [
+        "system_scope",
+        "operating_conditions"
+      ],
+      "depends_on": [],
+      "operation": "明确设计/过程FMEA边界、系统层级与生命周期阶段，列必要功能和接口。",
+      "decision": "边界或功能不清先补，不从零件名称直接跳评分。",
+      "output_key": "fmea_boundary",
+      "output_description": "功能、层级、阶段和接口基准",
+      "checks": [
+        "功能非部件清单",
+        "版本固定"
+      ],
+      "stop_condition": "核心功能未知停止风险排序",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查任务功能、接口、使用维护条件"
+      ]
+    },
+    {
+      "step_id": "R40-S02",
+      "title": "识别模式及影响",
+      "input_refs": [
+        "fmea_boundary",
+        "failure_evidence"
+      ],
+      "depends_on": [
+        "R40-S01"
+      ],
+      "operation": "描述各功能可能怎样失效，分别追踪局部、系统与用户后果，保留未覆盖模式。",
+      "decision": "模式与原因/影响混淆则重写；潜在模式不标已发生。",
+      "output_key": "failure_modes",
+      "output_description": "模式—影响链及证据状态",
+      "checks": [
+        "影响跨层清楚",
+        "潜在与实际分离"
+      ],
+      "stop_condition": "严重影响缺信息先升级补证",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查同功能失效机制及上层影响"
+      ]
+    },
+    {
+      "step_id": "R40-S03",
+      "title": "分析原因和现有控制",
+      "input_refs": [
+        "failure_modes",
+        "failure_evidence"
+      ],
+      "depends_on": [
+        "R40-S02"
+      ],
+      "operation": "为各模式列原因候选，区分预防控制与检测控制，记录实际覆盖和未知。",
+      "decision": "无机理只保留假设；控制未经证实不判有效。",
+      "output_key": "cause_control_map",
+      "output_description": "原因、预防、检测与证据",
+      "checks": [
+        "原因不是症状",
+        "检测能力有依据"
+      ],
+      "stop_condition": "关键控制资料缺失不评低风险",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查现场故障、磨损、误设与控制验证"
+      ]
+    },
+    {
+      "step_id": "R40-S04",
+      "title": "按选定政策评价优先级",
+      "input_refs": [
+        "cause_control_map",
+        "rating_policy"
+      ],
+      "depends_on": [
+        "R40-S03"
+      ],
+      "operation": "选择明确体系评估后果、发生和检测等，不混不同量表；未知不自动填中或低。",
+      "decision": "没有政策或数据则定性列优先问题，不计算伪精确RPN。",
+      "output_key": "risk_priorities",
+      "output_description": "依据、优先项、未知和高后果关注",
+      "checks": [
+        "尺度一致",
+        "严重风险不被乘积掩盖"
+      ],
+      "stop_condition": "重大风险不能由总分自动放行",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查适用行业评价规则而非随意套表"
+      ]
+    },
+    {
+      "step_id": "R40-S05",
+      "title": "制定针对性措施",
+      "input_refs": [
+        "risk_priorities",
+        "cause_control_map"
+      ],
+      "depends_on": [
+        "R40-S04"
+      ],
+      "operation": "针对原因、后果或控制缺陷安排设计/过程措施，明确责任、资源及验证条件。",
+      "decision": "措施只改分不改机制则退回；新增失效须分析。",
+      "output_key": "action_plan",
+      "output_description": "措施、责任、验证和剩余风险",
+      "checks": [
+        "措施对应风险链",
+        "新增代价可见"
+      ],
+      "stop_condition": "硬要求无法满足则不批准方向",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查结构替代、控制和维护措施的证据"
+      ]
+    },
+    {
+      "step_id": "R40-S06",
+      "title": "跟踪实施和重新评价",
+      "input_refs": [
+        "action_plan",
+        "failure_evidence"
+      ],
+      "depends_on": [
+        "R40-S05"
+      ],
+      "operation": "实际实施与验证后再更新评价，保留前后依据及未闭环项；未实施写计划。",
+      "decision": "没有效果证据不降低风险状态，需求变更需复审。",
+      "output_key": "fmea_dossier",
+      "output_description": "完整FMEA、行动和验证闭环记录",
+      "checks": [
+        "前后记录留存",
+        "计划不是结果"
+      ],
+      "stop_condition": "关键措施未验证不闭环",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "将措施效果交V&V与风险评估"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "fmea_dossier",
+      "label": "失效模式与行动档案",
+      "required_fields": [
+        "scope",
+        "functions",
+        "modes",
+        "effects",
+        "causes",
+        "controls",
+        "priorities",
+        "actions",
+        "verification",
+        "residual_unknowns"
+      ],
+      "interpretation": "前瞻风险研究，不代表根因确认、可靠度或安全认证"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "功能与接口→system_scope",
+      "condition": "风险从功能开始"
+    },
+    {
+      "target_research_id": "R16",
+      "relation": "parallel",
+      "binding": "原因候选→根因证据",
+      "condition": "实际故障需独立诊断"
+    },
+    {
+      "target_research_id": "R41",
+      "relation": "parallel",
+      "binding": "失效影响→机械危险",
+      "condition": "FMEA不替代机械风险流程"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "行动验证→V&V计划",
+      "condition": "需实施证据闭环"
+    }
+  ],
+  "search_terms": [
+    "FMEA",
+    "DFMEA",
+    "PFMEA",
+    "FMECA",
+    "失效模式",
+    "RPN",
+    "风险行动"
+  ],
+  "sources": [
+    {
+      "publisher": "American Society for Quality",
+      "authors": [
+        "ASQ"
+      ],
+      "title": "What is FMEA? Failure Mode & Effects Analysis",
+      "url": "https://asq.org/quality-resources/fmea",
+      "locator": "Overview / When to Use / FMEA Procedure",
+      "read_scope": "专业机构公开网页定义、使用与步骤相关段落核读",
+      "supports": [
+        "功能—失效模式—影响—原因—控制",
+        "措施与再评估"
+      ],
+      "evidence_note": "FMEA旨在前瞻识别和处理失效，覆盖设计与过程；优先级应建立在后果、发生和检测等所选尺度上。",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；第三方全文、表格和算法实现权利另行核对"
+    },
+    {
+      "publisher": "International Electrotechnical Commission",
+      "authors": [
+        "IEC"
+      ],
+      "title": "IEC 60812:2018 Failure modes and effects analysis (FMEA and FMECA)",
+      "url": "https://webstore.iec.ch/en/publication/26359",
+      "locator": "公开说明/适用范围",
+      "read_scope": "官方公开摘要核读，未取得付费标准全文",
+      "supports": [
+        "FMEA/FMECA范围及方法目的",
+        "通用标准不提供特定安全应用全部指导"
+      ],
+      "evidence_note": "标准描述规划、实施、文档与维护，硬件、软件、过程和接口均可适用；不能把摘要视作完整执行条文。",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；第三方全文、表格和算法实现权利另行核对"
+    }
+  ],
+  "schema_version": "method-dossier-1.0",
+  "version": "0.1.0",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "evaluations": [
+    {
+      "scenario": "输入足够的研究任务",
+      "expected": "产生fmea_dossier，每项判断保留依据、假设和适用范围"
+    },
+    {
+      "scenario": "缺少system_scope",
+      "expected": "追问目标与边界，停止确定性分析，不编造输入"
+    },
+    {
+      "scenario": "候选违反明确硬约束",
+      "expected": "排除并解释，不用总分或统计指标抵消要求"
+    },
+    {
+      "scenario": "实际数据、测量或分析工具不可用",
+      "expected": "只保存研究/验证计划，不填造统计结果、有效性或风险降低"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项核读专业来源并编写平台深度操作草稿"
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "批次复核：补具体中间产物、教学模型与边界；不提升执行/验证状态"
+    }
+  ]
+}

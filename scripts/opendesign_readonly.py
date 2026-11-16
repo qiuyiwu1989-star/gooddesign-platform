@@ -13,6 +13,14 @@ def prefixed(text):
     text=re.sub(r'([\"\x27`])/(?='+ROOTS+r')',lambda m:m[1]+PREFIX+'/',text)
     return text.replace('href="/"','href="/inno/"').replace("href='/'","href='/inno/'")
 
+def single_chrome(text):
+    for tag,name in [('header','navigation'),('footer','footer')]:
+        pattern=r'<'+tag+r'\b(?=[^>]*\bdata-gd-chrome="'+name+r'")[^>]*>.*?</'+tag+'>'
+        matches=list(re.finditer(pattern,text,flags=re.S|re.I))
+        for match in reversed(matches[1:]):
+            text=text[:match.start()]+text[match.end():]
+    return text
+
 class Handler(app.Handler):
     def do_GET(self):
         path=self.path.split('?')[0]
@@ -30,8 +38,21 @@ class Handler(app.Handler):
             self.guard();import innovation_gateway_page
             self.send(200,innovation_gateway_page.page(),'text/html; charset=utf-8');return
         if path=='/about/':
-            self.guard();import project_portal
-            self.send(200,project_portal.about(),'text/html; charset=utf-8');return
+            self.guard();import info_pages_095
+            self.send(200,info_pages_095.about(),'text/html; charset=utf-8');return
+        if path=='/model/':
+            self.guard();import info_pages_095
+            self.send(200,info_pages_095.model(),'text/html; charset=utf-8');return
+        if path=='/guide/':
+            self.guard();import info_pages_095
+            self.send(200,info_pages_095.guide(),'text/html; charset=utf-8');return
+        if path=='/apps/':
+            self.guard();import info_pages_095
+            self.send(200,info_pages_095.apps(),'text/html; charset=utf-8');return
+        if path.startswith('/cases/'):
+            self.guard();import info_pages_095
+            try:self.send(200,info_pages_095.case(path[len('/cases/'):].strip('/')), 'text/html; charset=utf-8')
+            except StopIteration:self.send(404,dict(error='案例不存在'));return
         if path.startswith('/portal/'):
             self.guard();import project_portal
             rel=path[len('/portal/'):]
@@ -41,7 +62,13 @@ class Handler(app.Handler):
                 self.send(200,target.read_bytes(),mimetypes.guess_type(str(target))[0] or 'application/octet-stream');return
             if rel=='system.css':
                 self.send(200,(project_portal.ROOT/'extensions/inno/system.css').read_bytes(),'text/css; charset=utf-8');return
+            if rel in ('tokens.css','design-system.css','gooddesign.css','site-bridge.css','brand-logo.svg','ip-xiaohao.svg','chrome.js'):
+                from gooddesign_assets import content_type,path as gooddesign_path
+                self.send(200,gooddesign_path(rel).read_bytes(),content_type(rel));return
             if rel=='catalog.json':self.send(200,project_portal.catalog(self.server.store.lib));return
+            if re.fullmatch(r'awards/(?:gold|silver|bronze|creative|nominee|elite)\.svg',rel):
+                target=project_portal.ROOT/'extensions/design-system'/rel
+                if target.is_file():self.send(200,target.read_bytes(),'image/svg+xml');return
             if rel in ('portal.css','portal.js','mcp-guide.js','data-report.css','data-report.js') or re.fullmatch(r'covers/case-[A-Za-z0-9_-]+\.jpg',rel):
                 target=project_portal.ASSETS/rel
                 if target.is_file():
@@ -63,11 +90,12 @@ class Handler(app.Handler):
                     body=body.replace('</head>','<link rel="stylesheet" href="/inno/portal/portal.css"><link rel="stylesheet" href="/inno/portal/system.css"></head>',1)
                     project_id=urllib.parse.parse_qs(urllib.parse.urlsplit(self.path).query).get('project',[''])[0]
                     if re.fullmatch(r'[A-Za-z0-9_-]{1,80}',project_id):
-                        bridge='<aside class="nr-bridge"><div><b>把这个项目带入你的研究</b><p>作为你选择的阅读参考；方法关联和迁移条件仍需核对。</p></div><a class="pp-button" href="/inno/needs/?project='+urllib.parse.quote(project_id,safe='')+'">从这个项目开始 →</a></aside>'
+                        bridge='<aside class="nr-bridge"><div><b>把这个项目带入你的研究</b><p>作为你选择的阅读参考；方法关联和迁移条件仍需核对。</p></div><a class="pp-button" href="/inno/needs/?project='+urllib.parse.quote(project_id,safe='')+'">从这个项目开始</a></aside>'
                         body=body.replace('</main>',bridge+'</main>',1)
                         body=body.replace('</head>','<link rel="stylesheet" href="/inno/portal/needs.css"></head>',1)
-                    if '<footer class="pp-footer">' not in body:
+                    if '<footer class="pp-footer">' not in body and 'data-gd-chrome="footer"' not in body:
                         body=body.replace('</body>',project_portal.footer()+'</body>',1) if '</body>' in body else body.replace('</html>',project_portal.footer()+'</html>',1)
+                body=single_chrome(body)
                 if ctype.startswith('text/html'):
                     body=body.replace('● 本地私有','● 登录可见 · 只读')
         if isinstance(body,dict) and body.get('service')=='gooddesign-archive-pipeline':body.update(cloud_read_only=True,watcher_running=False)

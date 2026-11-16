@@ -1,0 +1,105 @@
+{
+  "artifact_id": "LIVE-TEACH-CLAMP-vv-plan",
+  "revision": "r1",
+  "task_id": "LIVE-TEACH-CLAMP",
+  "task_revision": "t1",
+  "type": "VerificationPlan",
+  "scope": "Teaching verification and intended-use validation planning for the bench clamp, traced to ProblemBrief revision r1. REQ01 and REQ02 remain proposed with unknown hardness. Activities are conditional plans; acceptance criteria, configuration and execution readiness must be established before execution. No concept selection, measured performance, acceptance or engineering validation is established.",
+  "conditions": [
+    {
+      "id": "C01",
+      "text": "The supplied ProblemBrief r1 contains REQ01 for retention and REQ02 for workpiece damage prevention. Both are proposed; their hardness and acceptance limits remain unknown.",
+      "kind": "fact",
+      "evidence_refs": []
+    },
+    {
+      "id": "C02",
+      "text": "Customer operation, loads, load directions, duration, allowable movement, workpiece material, finish, geometry and damage criterion remain unknown.",
+      "kind": "unknown",
+      "evidence_refs": []
+    },
+    {
+      "id": "C03",
+      "text": "No physical configuration is baselined. The supplied PrototypePlan proposes a paper task sequence followed conditionally by a representative contact-and-restraint fixture; neither M01 nor M02 is selected.",
+      "kind": "fact",
+      "evidence_refs": []
+    },
+    {
+      "id": "C04",
+      "text": "Representative specimens, equipment, measurement capability, personnel, facilities, applicable safety constraints and stopping limits have not been established. Physical execution depends on resolving these gaps.",
+      "kind": "unknown",
+      "evidence_refs": []
+    },
+    {
+      "id": "C05",
+      "text": "Proposed record control: before execution, identify requirement and configuration revisions, procedure, specimens, equipment capability, personnel, environment and criteria. Preserve raw observations, deviations and anomalies. Assess changes to requirements, contact conditions, actuation, support or release for their effect on planned coverage and any later evidence.",
+      "kind": "assumption",
+      "evidence_refs": []
+    },
+    {
+      "id": "C06",
+      "text": "The supplied lunar-sampling excerpt has unestablished transferability. Its reported achievements and parameters provide no evidence of bench-clamp performance.",
+      "kind": "fact",
+      "evidence_refs": [
+        "case-98b73a9c96af1f9408721571"
+      ]
+    }
+  ],
+  "evidence_refs": [
+    "case-98b73a9c96af1f9408721571"
+  ],
+  "payload": {
+    "requirements_revision": "r1",
+    "matrix": [
+      {
+        "requirement_id": "REQ01",
+        "purpose": "verification",
+        "method": "test",
+        "criterion": "Proposed: after the responsible stakeholder establishes loads, directions, holding duration and allowable movement, compare recorded workpiece movement and restraint continuity against those agreed limits throughout the specified operation. Define measurement capability, procedure and sampling rationale before execution. Limits are currently unknown; no conformity determination is possible.",
+        "configuration": "Unbaselined future fixture representing the investigated route's contact geometry, force path, actuation, restraint maintenance, support interface and release behavior. Record fixture revision, operating setting, specimen properties, support, loading arrangement, environment and measurement equipment. Establish safe operating boundaries and stopping actions before physical execution.",
+        "evidence_status": "planned",
+        "evidence_refs": []
+      },
+      {
+        "requirement_id": "REQ02",
+        "purpose": "verification",
+        "method": "test",
+        "criterion": "Proposed: agree the damage definition, inspection method and acceptance limits for the actual workpiece material and finish before execution. Compare recorded baseline condition with condition after engagement, holding and release. Inspection capability must address the defined damage modes; an absence of visible marks alone cannot establish conformity. Criteria remain unknown.",
+        "configuration": "Use the same identified fixture, operating setting and load conditions as the associated retention assessment so retention and damage findings can be considered together. Record specimen identity, initial condition, contact surfaces, engagement and release sequence, handling, inspection equipment and environmental conditions. Define specimen reuse or replacement rules before execution.",
+        "evidence_status": "planned",
+        "evidence_refs": []
+      },
+      {
+        "requirement_id": "REQ01",
+        "purpose": "validation",
+        "method": "demonstration",
+        "criterion": "Proposed: once intended users, task and environment are defined, observe whether a representative operator can establish and maintain restraint through the intended work sequence under agreed task-success conditions. Record interventions and interruptions separately. User satisfaction cannot substitute for the retention measurements required by the verification row. Task-success criteria remain unresolved.",
+        "configuration": "A future identified configuration with task-representative workpiece, bench interface, actuation resources and operator interaction. Establish representativeness, observation procedure and safe scenario boundaries before execution; a paper walkthrough can refine the plan but cannot establish physical retention.",
+        "evidence_status": "planned",
+        "evidence_refs": []
+      },
+      {
+        "requirement_id": "REQ02",
+        "purpose": "validation",
+        "method": "demonstration",
+        "criterion": "Proposed: observe engagement, holding, intentional release and removal in the defined intended task, and assess workpiece condition against the stakeholder-agreed damage criterion. Define successful task completion and acceptable condition before execution. Operator opinion alone cannot replace the agreed condition assessment; no acceptance is currently possible.",
+        "configuration": "The identified task-representative configuration used for intended-use retention observation, with documented operator, workpiece, contact conditions, handling sequence and condition-assessment capability. Record deviations from the intended environment and limit any future interpretation accordingly.",
+        "evidence_status": "planned",
+        "evidence_refs": []
+      }
+    ],
+    "validation_questions": [
+      "Who operates the clamp, for which work operation, and in what bench environment?",
+      "What materials, finishes, geometries and dimensional variation must representative workpieces cover?",
+      "What loads, directions, durations and allowable movements define successful holding?",
+      "What changes constitute damage, including effects arising during engagement, release and removal, and how can they be detected?",
+      "Who can confirm requirement hardness, acceptance criteria and changes? Both requirements remain proposed.",
+      "What applicable safety constraints and responses to slip, input loss, unexpected motion or incomplete release must be established? These unresolved topics are not assigned invented requirement IDs.",
+      "Are manual input or pneumatic resources available and acceptable, and which configuration should be investigated for learning?",
+      "Which specimens, equipment, personnel and facilities are available, and can their capabilities resolve the eventual criteria?",
+      "What intended-use claims concerning repeated use, durability or reliability require additional requirements and activities beyond this limited plan?"
+    ],
+    "uncovered_requirements": [],
+    "execution_status": "planned"
+  }
+}

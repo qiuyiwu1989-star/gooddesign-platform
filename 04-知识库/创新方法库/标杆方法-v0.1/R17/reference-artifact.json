@@ -1,0 +1,411 @@
+{
+  "artifact_id": "RUBBER-R17",
+  "conditions": [],
+  "evidence_refs": [],
+  "payload": {
+    "combinations": [
+      {
+        "id": "C0",
+        "option_ids": [
+          "F1O0",
+          "F2O0",
+          "F3O0",
+          "F4O0",
+          "F5O0",
+          "F6O0",
+          "F7O0"
+        ],
+        "reason": "客户现状占位，不是已测基准；整体条件、机械兼容与所有关键门槛均未验证",
+        "status": "unknown"
+      },
+      {
+        "id": "C1",
+        "option_ids": [
+          "F1O1",
+          "F2O1",
+          "F3O1",
+          "F4O1",
+          "F5O1",
+          "F6O1",
+          "F7O1"
+        ],
+        "reason": "机械参考与双物流隔离模块；整体条件、机械兼容与所有关键门槛均未验证",
+        "status": "unknown"
+      },
+      {
+        "id": "C2",
+        "option_ids": [
+          "F1O2",
+          "F2O2",
+          "F3O2",
+          "F4O2",
+          "F5O2",
+          "F6O2",
+          "F7O2"
+        ],
+        "reason": "感知辅助与可退让闭环末端；整体条件、机械兼容与所有关键门槛均未验证",
+        "status": "unknown"
+      },
+      {
+        "id": "C3",
+        "option_ids": [
+          "F1O3",
+          "F2O3",
+          "F3O3",
+          "F4O3",
+          "F5O3",
+          "F6O3",
+          "F7O3"
+        ],
+        "reason": "人机协作的低门槛改造；整体条件、机械兼容与所有关键门槛均未验证",
+        "status": "unknown"
+      }
+    ],
+    "compatibility": [
+      {
+        "evidence_refs": [
+          "S03",
+          "case-0205da2905f4ccacbbb38094"
+        ],
+        "option_ids": [
+          "F2O1",
+          "F5O1"
+        ],
+        "reason": "柔顺或力反馈不能单独证明组织限深，需验证基准与退出动作",
+        "status": "unknown"
+      },
+      {
+        "evidence_refs": [
+          "S01"
+        ],
+        "option_ids": [
+          "F4O1",
+          "F7O1"
+        ],
+        "reason": "废物流隔离不得造成胶乳滞留或接触件污染",
+        "status": "unknown"
+      }
+    ],
+    "function_ids": [
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6",
+      "F7"
+    ],
+    "options": [
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [],
+        "function_id": "F1",
+        "id": "F1O0",
+        "principle": "现有定位方式待现场采集"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S03"
+        ],
+        "function_id": "F1",
+        "id": "F1O1",
+        "principle": "局部机械导向与粗定位"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S02",
+          "case-a81a5bd5f1f2e791d5e1371c"
+        ],
+        "function_id": "F1",
+        "id": "F1O2",
+        "principle": "表面视觉定位加局部机械参考"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S03"
+        ],
+        "function_id": "F1",
+        "id": "F1O3",
+        "principle": "人工引导与可检查的定位标记"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [],
+        "function_id": "F2",
+        "id": "F2O0",
+        "principle": "现有限深与基准待现场采集"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S03"
+        ],
+        "function_id": "F2",
+        "id": "F2O1",
+        "principle": "可调参考与限位；组织厚度未知时暂停"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S04",
+          "case-0205da2905f4ccacbbb38094"
+        ],
+        "function_id": "F2",
+        "id": "F2O2",
+        "principle": "几何/力位信息协同但独立核查残余树皮"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S03"
+        ],
+        "function_id": "F2",
+        "id": "F2O3",
+        "principle": "可检查限深基准加人工确认"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [],
+        "function_id": "F3",
+        "id": "F3O0",
+        "principle": "现有刀具与进给待现场采集"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S05"
+        ],
+        "function_id": "F3",
+        "id": "F3O1",
+        "principle": "比较连续条状切削与分阶段进给，不预定刀形"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S02"
+        ],
+        "function_id": "F3",
+        "id": "F3O2",
+        "principle": "沿局部轨迹切削并允许中途退出"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S03"
+        ],
+        "function_id": "F3",
+        "id": "F3O3",
+        "principle": "电动辅助切削，人工掌握例外处理"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [],
+        "function_id": "F4",
+        "id": "F4O0",
+        "principle": "现有切屑/胶线去向待现场采集"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S01",
+          "S05",
+          "case-c1dd39efa2c949b7b81a8a58"
+        ],
+        "function_id": "F4",
+        "id": "F4O1",
+        "principle": "物理分隔废物流与胶乳，旧胶线独立处理"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S01"
+        ],
+        "function_id": "F4",
+        "id": "F4O2",
+        "principle": "可拆卸隔离导流与堵塞观察，验证不阻流"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S01"
+        ],
+        "function_id": "F4",
+        "id": "F4O3",
+        "principle": "人工可见清屑口及隔离托接，避免运行中接触刀具"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [],
+        "function_id": "F5",
+        "id": "F5O0",
+        "principle": "现有异常保护与接管待现场采集"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S02",
+          "case-479a7157f5e4d5eecce6c304"
+        ],
+        "function_id": "F5",
+        "id": "F5O1",
+        "principle": "驱动状态与接触状态交叉核查，异常退让"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "case-0205da2905f4ccacbbb38094",
+          "case-0290060f5fbcac9f3803c823"
+        ],
+        "function_id": "F5",
+        "id": "F5O2",
+        "principle": "多信号状态机及接管，不将恒力视作安全深度"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S01"
+        ],
+        "function_id": "F5",
+        "id": "F5O3",
+        "principle": "停机后人工复核，切断危险能量再排障"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [],
+        "function_id": "F6",
+        "id": "F6O0",
+        "principle": "现有维护程序待现场采集"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S05"
+        ],
+        "function_id": "F6",
+        "id": "F6O1",
+        "principle": "可拆卸接触件，复装后校验基准"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S02"
+        ],
+        "function_id": "F6",
+        "id": "F6O2",
+        "principle": "模块更换与可追溯复标，适配接口待核"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S03"
+        ],
+        "function_id": "F6",
+        "id": "F6O3",
+        "principle": "简化清洗换刀与可视检查，耗时待测"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [],
+        "function_id": "F7",
+        "id": "F7O0",
+        "principle": "现有收胶与记录方式待现场采集"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S06"
+        ],
+        "function_id": "F7",
+        "id": "F7O1",
+        "principle": "保留胶园收集方式，补充异常与品质记录"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S01"
+        ],
+        "function_id": "F7",
+        "id": "F7O2",
+        "principle": "记录工况与结果，隔离新增导流部件造成的污染"
+      },
+      {
+        "conditions": [
+          "研究选项；尺寸、材料、接口、允许损伤与安全条件待确认"
+        ],
+        "evidence_refs": [
+          "S06"
+        ],
+        "function_id": "F7",
+        "id": "F7O3",
+        "principle": "人工收胶，记录总工时与有效产出"
+      }
+    ],
+    "unknowns": [
+      "C0仅为客户现状待调查占位；不得比较其虚构性能",
+      "C1—C3不是完整工程图或独立验证方案",
+      "公开专利后置检索涉及柔顺仿形与排屑，组合名称不代表新颖性"
+    ]
+  },
+  "revision": "r1",
+  "scope": "Host Agent研究草稿；客户型号、目标值、树体条件未确认；没有实验、专业审核或工程认证",
+  "task_id": "RUBBER-20261026",
+  "task_revision": "r1",
+  "type": "ConceptSet"
+}

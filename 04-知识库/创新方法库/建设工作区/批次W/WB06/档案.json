@@ -1,0 +1,336 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "WB06",
+  "method_id": "IM-WB-006",
+  "version": "0.1.0",
+  "name": "面向结构性能的动态设计",
+  "english_name": "Dynamics-Based Design for Structural Performance",
+  "kind": "工程方法族专题",
+  "category": "E性能优化与工程实现",
+  "lineage": [
+    "闻邦椿等系统化设计体系",
+    "机械动力学与试验辨识"
+  ],
+  "aliases": [
+    "结构性能动态优化",
+    "一般动态设计"
+  ],
+  "summary": "在系统化设计中围绕结构动态性能，联结运动分析、线性或非线性模型、动态响应、试验辨识与设计修正的工程方法族。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "本专题位于闻邦椿等系统化设计体系的科学实施阶段，面向结构性能，不是另计一套独立原创的全部动力学算法。高等教育出版社《系统化设计的理论和方法》第8章目录把一般与深层次动态设计分开，并列出运动学、建模、动态特性、试验、参数辨识及修改设计环节。线性模态分析、有限元和试验辨识各有广泛学术谱系，不能因在书中出现就归为闻邦椿本人独创。",
+    "problem": "适合静态强度或几何运动看似满足，但运行时出现振动、动态变形、噪声、冲击、失稳或寿命问题的机械系统。结构性能关心运行状态下的响应和承载能力，不能只检查静载应力。振动利用机械则可能需要保留有用振动，目标不总是振幅越小越好；应区分有用运动、损害响应及基础传递。",
+    "principle": "把质量、刚度、阻尼、连接和激励映射到动力学模型，再分析自由与受迫响应及工况变化，通过试验校准未知参数并修改设计。线性系统可借模态展开理解不同振型对响应的贡献；非线性、接触、摩擦或大幅运动明显时须检查线性化范围。动态设计的价值在模型—试验—修正闭环，而不是一次求出若干固有频率后停止。",
+    "applicability": "输入需要结构及连接、材料、质量分布、安装边界、激励来源、转速或工作循环、响应限值及已知数据。边界条件要与实际安装相符，支承刚度不能随意设无限大。仅有CAD而没有载荷和约束，不能宣称完成动态分析。模型复杂度应由目标与工况决定，必要时转深层次专题，而不是所有项目都从最高维非线性模型起步。",
+    "interpretation": "平台根据出版社公开目录建立可审查的工程任务编排，具体执行细节为平台适配。先把性能指标分为工作点、频带、瞬态和寿命相关要求；再选择足以回答问题的模型，记录假设、参数来源与适用范围。计算结果需与测量对象、方向、位置和采样条件对应；模型修正要有物理依据，不能通过任意调参数使一条曲线吻合。",
+    "example": "教学例：便携检测支架静态挠度合格，但电机启动时检测头晃动，影响读数。先测启动转速历程与头部加速度，检查支承和连接；建立低阶模型估计主要振型，再比较改变支承刚度、质量布置、阻尼或启动策略的候选。若增加刚度把共振移到正常工作频段，方案并不合格。此例为原创示范，未用闻邦椿书中脱水机案例参数，也没有实际仿真或测试。",
+    "pitfalls": "固有频率与激励频率不相同不代表必然安全，还要考虑谐波、宽带激励、启动经过和局部模态。把阻尼当任意拟合常数可能掩盖连接非线性。有限元网格更密不自动等于模型更真实；载荷、接触、支承及材料假设错误会主导结果。降振措施也可能降低有用工艺运动或增加其他部件载荷，应评价系统整体。",
+    "validation": "首先核验质量、单位、边界和激励，再做数值收敛与简化模型对照。试验应明确输入与输出、传感位置、频带和重复性，避免把环境背景当结构响应。参数辨识使用一组数据后，应以独立工况验证；仅在同一曲线上拟合不算预测能力。最终验收覆盖规定工况内性能、失效风险和制造变异，不从漂亮动画推出安全结论。",
+    "adaptation": "引擎调用需要动力学目标和足够工况，缺少参数时输出试验或调查任务，不虚构计算值。产物包括模型规范、参数证据、计算计划、试验对应表、修改理由和待验证项。与R32机构综合的关系是从运动可行进一步进入载荷与结构响应；与WB09的关系是检查时变、强非线性、耦合等因素是否需要更深入模型。当前是任务编排，未接CAE运行。",
+    "gaps": "实际核读HEP第8章公开目录而非章正文，故只能确认内容环节与专题位置，不能宣称复现作者具体审核准则。MIT公开课程说明用于补充线性模态的一般学理，不代表闻邦椿原法。2003论文已核读官网题录摘要及检索返回选段，PDF直接打开超时；全部数值、具体模型和验证阈值仍需项目资料与专业审查。 追加进展：methods_c正常取得官方2003论文PDF，本组已核读分类与动态设计相关节；原先本组直接打开失败保留为获取历史，当前不再是全文未取得。仍未通读全部10页或复核全部理论。"
+  },
+  "inputs": [
+    {
+      "key": "structure",
+      "label": "结构与安装边界",
+      "type": "object",
+      "required": true,
+      "description": "几何、材料、质量连接和支承",
+      "missing_action": "补设计资料"
+    },
+    {
+      "key": "operation",
+      "label": "工况与激励",
+      "type": "object",
+      "required": true,
+      "description": "工作循环、转速、载荷和外部激励",
+      "missing_action": "补测运行数据"
+    },
+    {
+      "key": "criteria",
+      "label": "性能与试验证据",
+      "type": "object",
+      "required": true,
+      "description": "响应限值和测量记录",
+      "missing_action": "定义验收量"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "WB06-S01",
+      "title": "界定结构动态目标",
+      "input_refs": [
+        "structure",
+        "operation",
+        "criteria"
+      ],
+      "depends_on": [],
+      "operation": "区分有用运动与有害响应，明确工作点、频带、瞬态及限制。",
+      "decision": "静态任务可简化；有用振动不能全部消除。",
+      "output_key": "dynamic_targets",
+      "output_description": "动态性能规格",
+      "checks": [
+        "指标有方向位置和工况"
+      ],
+      "stop_condition": "激励未知则先调查",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "WB06-S02",
+      "title": "建立运动与动力学模型",
+      "input_refs": [
+        "dynamic_targets",
+        "structure",
+        "operation",
+        "criteria"
+      ],
+      "depends_on": [
+        "WB06-S01"
+      ],
+      "operation": "根据任务选择低阶或有限元、线性或非线性模型，记录假设参数。",
+      "decision": "明显非线性超出线性化范围则转深入分析。",
+      "output_key": "dynamic_model",
+      "output_description": "模型与参数证据",
+      "checks": [
+        "单位边界与质量一致"
+      ],
+      "stop_condition": "关键边界未知不报计算结论",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "WB06-S03",
+      "title": "分析动态特性与响应",
+      "input_refs": [
+        "dynamic_model",
+        "structure",
+        "operation",
+        "criteria"
+      ],
+      "depends_on": [
+        "WB06-S02"
+      ],
+      "operation": "按模型计算计划检查模态、受迫和瞬态，比较结构参数候选。",
+      "decision": "无计算器只交计划，不能生成虚假频率。",
+      "output_key": "response_plan",
+      "output_description": "响应分析与敏感因素",
+      "checks": [
+        "区分固有特性与激励响应"
+      ],
+      "stop_condition": "数值结果未收敛则待查",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "WB06-S04",
+      "title": "设计试验并辨识",
+      "input_refs": [
+        "response_plan",
+        "structure",
+        "operation",
+        "criteria"
+      ],
+      "depends_on": [
+        "WB06-S03"
+      ],
+      "operation": "按对应输入输出获取数据，识别未知参数并检查模型差异。",
+      "decision": "拟合数据与独立验证工况分开。",
+      "output_key": "identified_model",
+      "output_description": "参数辨识与模型修正",
+      "checks": [
+        "修正有物理依据"
+      ],
+      "stop_condition": "测量不能对应模型则重设计试验",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "WB06-S05",
+      "title": "修改设计并独立验证",
+      "input_refs": [
+        "identified_model",
+        "structure",
+        "operation",
+        "criteria"
+      ],
+      "depends_on": [
+        "WB06-S04"
+      ],
+      "operation": "结合响应与试验修改结构，复查工艺性能及新增负担。",
+      "decision": "原模型不适用时重建而非继续调数。",
+      "output_key": "dynamic_design_review",
+      "output_description": "修改依据和验收记录",
+      "checks": [
+        "覆盖启动运行停机及制造变异"
+      ],
+      "stop_condition": "未验证关键载荷不交工程定型",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "dynamic_design_review",
+      "label": "结构动态设计专题档案",
+      "required_fields": [
+        "性能目标",
+        "模型规范",
+        "参数证据",
+        "响应计划",
+        "试验辨识",
+        "修改依据",
+        "验证边界"
+      ],
+      "interpretation": "平台编排，不等于已运行CAE或复现作者章内准则。"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R32",
+      "relation": "requires",
+      "binding": "承接机构运动结果",
+      "condition": "运动机构需动态响应设计"
+    },
+    {
+      "target_research_id": "R39",
+      "relation": "parallel",
+      "binding": "建立仿真与验证",
+      "condition": "需要模型计算与试验对应"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "publisher": "高等教育出版社",
+      "authors": [
+        "闻邦椿",
+        "刘树英",
+        "郑玲"
+      ],
+      "title": "系统化设计的理论和方法 第8章",
+      "url": "https://academic.hep.com.cn/br/CN/chapter/978-7-04-048177-8/chapter08",
+      "locator": "8.3与8.4.1–8目录",
+      "read_scope": "实际直接打开章目录全文；未取得章正文，在线阅读图标只到图片",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "一般与深层次分类",
+        "运动建模分析试验辨识修改环节"
+      ],
+      "evidence_note": "目录支持编排范围，不支持具体方程与审核阈值。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S02",
+      "publisher": "中国机械工程学会 / 机械工程学报",
+      "authors": [
+        "闻邦椿",
+        "周知承",
+        "韩清凯",
+        "苏保群"
+      ],
+      "title": "现代机械产品设计在新产品开发中的重要作用",
+      "url": "https://qikan.cmes.org/jxgcxb/CN/Y2003/V39/I10",
+      "locator": "2003,39(10):43–52摘要",
+      "read_scope": "官网题录摘要和检索返回选段；PDF直接打开超时，未读全文",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "结构性能与动态设计的体系位置"
+      ],
+      "evidence_note": "三化综合框架为原论文共同作者成果，不把通用动力学归为个人原创。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S03",
+      "publisher": "MIT OpenCourseWare",
+      "authors": [],
+      "title": "Vibration of Multi-Degree-of-Freedom Systems",
+      "url": "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/pages/vibration-of-multi-degree-of-freedom-systems/",
+      "locator": "Session Overview与课程主题",
+      "read_scope": "实际核读官网检索返回的总览与主题，未观看视频",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "线性模态叠加范围",
+        "模型参数与阻尼课程范围"
+      ],
+      "evidence_note": "只补一般学理，不替代闻邦椿原著。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S04",
+      "publisher": "机械工程学报 / 闻邦椿等",
+      "authors": [
+        "闻邦椿",
+        "周知承",
+        "韩清凯",
+        "苏保群"
+      ],
+      "title": "现代机械产品设计在新产品开发中的重要作用（官方PDF）",
+      "url": "https://qikan.cmes.org/jxgcxb/CN/PDF/16926",
+      "locator": "印刷p44图2及§1.2；p45动态设计段；§3.2",
+      "read_scope": "methods_c正常取得官方PDF；本组实际核读共享文本相关节并目读印刷p44图2；未通读全部10页",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "原分类四视角",
+        "七种代表方法而非七大类",
+        "高层次动态设计边界"
+      ],
+      "evidence_note": "本地来源位于建设工作区/批次W/WB07/闻邦椿等-2003-三化综合设计-来源.pdf；获取全文与实际节选核读分开。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "只给CAD就要求报告共振转速",
+      "expected": "输出缺载荷支承和质量证据，不虚构计算"
+    },
+    {
+      "scenario": "静态合格但启动响应超限",
+      "expected": "要求瞬态模型与对应试验"
+    }
+  ],
+  "search_terms": [
+    "闻邦椿 面向结构性能 动态设计 8.4",
+    "机械动态设计 模态 试验 辨识"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "051逐项检索与平台操作适配；保留原典核读范围"
+    }
+  ]
+}

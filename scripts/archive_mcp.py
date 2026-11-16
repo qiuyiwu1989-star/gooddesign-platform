@@ -129,10 +129,10 @@ def gd_read_archive_updates(project_id:str,revision:str|None=None,offset:int=0,l
  from archive_updates import read
  bounds(offset,limit);return read(LIB,project_id,revision,offset,limit)
 @MCP.tool(annotations=ANNOTATIONS)
-def gd_search_project_fields(query:str,project_ids:list[str]|None=None,entity:str='',field:str='',offset:int=0,limit:int=5)->dict:
- """跨项目逐字检索已发布且有证据的字段值；排除AI与待审候选。可限定1–20项目、实体和字段，返回版本/记录/证据，再用gd_read_records及gd_read_evidence深入。不是语义匹配或工程推荐。"""
+def gd_search_project_fields(query:str,project_ids:list[str]|None=None,entity:str='',field:str='',offset:int=0,limit:int=5,snapshot:dict|None=None)->dict:
+ """跨项目逐字检索已发布且有证据的字段值；排除AI与待审候选。可限定1–20项目、实体和字段，返回版本/记录/证据，再用gd_read_records及gd_read_evidence深入。不是语义匹配或工程推荐。返回coverage和snapshot；后续页传回snapshot固定版本，快照校验不代表认证。"""
  from archive_knowledge_search import search
- result=search(LIB,query,project_ids,entity,field,offset,limit)
+ result=search(LIB,query,project_ids,entity,field,offset,limit,snapshot)
  if len(json.dumps(result,ensure_ascii=False))>60000:raise ValueError('结果过大，请减小limit或限定字段')
  return result
 

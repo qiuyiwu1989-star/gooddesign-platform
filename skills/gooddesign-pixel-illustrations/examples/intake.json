@@ -1,0 +1,13 @@
+{
+  "project_id": "PROJECT-ID",
+  "project_name": "项目名称",
+  "mode": "reference_redraw",
+  "reference_status": "available",
+  "references": [{"path_or_url": "实际原图位置", "sha256": "填写实际SHA256", "role": "object_reference"}],
+  "purpose_source": {"path_or_url": "实际用途依据", "excerpt": "只摘录本次使用的用途"},
+  "observed_features": [],
+  "unknowns": [],
+  "output_directory": "由宿主项目指定",
+  "allowed_actions": ["create_candidate_illustration", "write_review"],
+  "not_authorized": ["change_project_facts", "change_scores", "deploy"]
+}

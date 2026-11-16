@@ -1,0 +1,370 @@
+{
+  "research_id": "WB07",
+  "method_id": "IM-WB-007",
+  "name": "面向使用性能的智能设计",
+  "english_name": "Intelligent Design Oriented to Product Service Performance",
+  "kind": "lineage_topic",
+  "category": "E性能优化与工程实现",
+  "lineage": [
+    "闻邦椿产品系统化/综合设计体系",
+    "三化及1+3+X实施谱系",
+    "使用性能与工作过程控制"
+  ],
+  "aliases": [
+    "使用性能优化",
+    "工作参数智能控制",
+    "运行状态监测与诊断设计"
+  ],
+  "summary": "围绕实际使用性能，把操作、运动、工作参数和过程控制及状态监测组成研究任务，再选择模型、感知控制与验证方法；属于体系专题而非单一通用算法。",
+  "sections": {
+    "identity": "本专题位于闻邦椿及合作者系统化/综合设计体系的性能实施层，连接使用性能与智能化设计。2003原论文明确区分“用智能方法设计”和“使设计对象智能化”，其所论重点是产品工作参数与工作过程控制优化。2017第9章目录扩展到操作、运动、参数、过程及状态监测诊断，但正文未取得。它不是新命名的一套独立原创算法，更不能直接解释为LLM自动生成机械设计。",
+    "problem": "机械结构可以足够强，却因操作不便、参数不随任务变化、状态信息不足或过程控制失配而达不到实际工效。反之，加传感器和算法不自动提高使用性能。本专题帮助引擎从工作任务与效果出发，判断需改操作、运动、工作参数、过程控制还是状态监测，并把每个智能化功能同使用目标和验证证据连接，而不是先选AI技术。",
+    "principle": "核心连接是使用任务—工作性能目标—可观测状态—可调作用—控制或决策逻辑—实际效果。2003论文强调状态监测对工作过程控制及维护的作用，亦讨论非稳态、非线性、耦合和多变量带来的复杂性。是否用智能控制、规则、传统控制或其他技术必须由对象与问题决定；专题没有提供适用于所有机械的控制器。测到信号不等于观察到关键状态，预测准确也不等于闭环控制有效，性能优化还受结构安全、执行能力和实时限制。",
+    "applicability": "适合工作参数受工况影响、操作或运动控制复杂、连续运行状态需要监测的机械产品。必须先有具体使用任务、对象模型及可评估成功条件；是否加入智能化取决于实际收益。功能已锁定但使用表现不足时可优先匹配。简单被动结构若无需感知和调节，强行增加智能模块可能增加故障与维护负担，应采用更直接设计。",
+    "interpretation": "产物是使用性能研究分解、状态/作用和信息链、候选技术、数据/模型依赖及验证计划，不是自动可部署控制代码。原论文的优化与效益表述应作为作者观点与研究目标，而不是证明当前设备能达到最优。引擎须区分监测、诊断、预测和控制，分别记录输出影响、错误后果和人工介入。若只有状态数据没有故障真值，不应给确定诊断准确率；没有实际闭环试验也不声称性能已提升。 后续知识匹配应返回技术子法与需要的证据，而不是从专题名称直接给唯一解法。",
+    "example": "平台教学例，未复制书中筛机或阻抗模型：送料设备在不同物料条件下工效变化。S01定义目标是规定任务内稳定送料而非“加AI”。S02将问题分成物料状态未知、驱动可调和操作反馈三项。S03画状态—测量—调节链，记录信号能否代表堵料尚待验证。S04比较固定参数、规则调节或模型控制等候选，不预判智能控制必优。S05计划在可控安全台架上测试扰动、延迟和传感器异常。S06把结构振动问题交动态设计，把使用反馈交确认。当前仅形成研究档案，没有真实数据、控制参数或效果结论。",
+    "pitfalls": "一是把“智能设计”统一翻成大模型设计，混淆对象智能化与设计工具；先解释本谱系语义。二是从章节目录脑补预测算法和阻抗方程；取得正文再建算法卡。三是只优化平均工效，忽略异常、延迟和操作者；同时列工况与错误后果。四是拿离线分类精度替代闭环性能；分层验证。反例：一把无需传感与控制的简单扳手若仅握持困难，优先人机与结构原型，不应为了专题覆盖添加联网算法。",
+    "validation": "检查每个使用目标有对应状态、测量、作用和判断证据，数据是否代表真实环境，模型是否考虑所需非线性与时滞，失效与人工处置是否明确。工程上需仿真与模型校核、台架、故障情境和预期用户任务；控制系统安全要求另行确定。文字推理或生成流程图不证控制稳定性、诊断可靠性或产品安全。",
+    "adaptation": "2003正文支持使用性能、工作参数/过程控制与状态监测的联系；HEP目录只支持主题组织，未取得2017章细节。以下六步、字段、送料例和停止规则都是平台研究适配，不能署为闻邦椿原文六步。监测控制技术本身有独立谱系，合著与体系组织贡献须分开标注。",
+    "gaps": "未获得第9章付费正文、实际对象模型、传感执行能力、控制周期、数据集和性能基线，故不复建预测算法、阻抗模型或直接参数整定。后续应为具体控制/诊断子法另建来源与工具接口，并由相应工程人员审查，当前保持非运行时专题草稿。"
+  },
+  "inputs": [
+    {
+      "key": "service_task",
+      "label": "使用任务与性能目标",
+      "type": "object",
+      "required": true,
+      "description": "目标人员、物料环境、任务、工况与成功条件",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "machine_behaviour",
+      "label": "对象与工作过程",
+      "type": "object",
+      "required": true,
+      "description": "机构、执行器、运动、参数和已知动态",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "sensing_control_evidence",
+      "label": "感知控制资料",
+      "type": "object",
+      "required": false,
+      "description": "信号、可观测性、数据、模型、控制及人工接口",
+      "missing_action": "mark_unknown"
+    },
+    {
+      "key": "engineering_limits",
+      "label": "安全与执行约束",
+      "type": "object",
+      "required": false,
+      "description": "危险、延迟、实时、能源、设备及验证能力",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "WB07-S01",
+      "title": "明确使用表现缺口",
+      "input_refs": [
+        "service_task",
+        "machine_behaviour"
+      ],
+      "depends_on": [],
+      "operation": "把智能化诉求转为实际工效、稳定性、操作或使用表现目标，标明事实和假设。",
+      "decision": "不从技术热词预选算法，缺任务先补证。",
+      "output_key": "service_performance_brief",
+      "output_description": "使用目标、工况和缺口",
+      "checks": [
+        "目标非AI功能清单",
+        "基线可追踪"
+      ],
+      "stop_condition": "任务与工况未知停止控制建议",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查使用调查、任务和性能要求"
+      ]
+    },
+    {
+      "step_id": "WB07-S02",
+      "title": "分解使用性能研究主题",
+      "input_refs": [
+        "service_performance_brief",
+        "machine_behaviour"
+      ],
+      "depends_on": [
+        "WB07-S01"
+      ],
+      "operation": "区分操作、运动、参数、过程及状态监测诊断，判断与结构/制造问题的耦合。",
+      "decision": "主题取自体系定位，不由目录推算法。",
+      "output_key": "service_research_map",
+      "output_description": "专题、目标和跨域接口",
+      "checks": [
+        "不同输出不混淆",
+        "结构风险另列"
+      ],
+      "stop_condition": "关键作用机制未知先补模型",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查功能模型和工作过程"
+      ]
+    },
+    {
+      "step_id": "WB07-S03",
+      "title": "建立状态测量与作用链",
+      "input_refs": [
+        "service_research_map",
+        "sensing_control_evidence"
+      ],
+      "depends_on": [
+        "WB07-S02"
+      ],
+      "operation": "描述需知状态、传感信号、可调变量、执行器与人工操作，列观测和控制未知。",
+      "decision": "有数据不等状态可辨，有执行器不等可控。",
+      "output_key": "state_action_map",
+      "output_description": "感知—判断—作用及数据缺口",
+      "checks": [
+        "测量作用对应目标",
+        "延迟噪声可见"
+      ],
+      "stop_condition": "关键状态无证据不定诊断结论",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查信号意义、数据质量和动态模型"
+      ]
+    },
+    {
+      "step_id": "WB07-S04",
+      "title": "匹配候选控制/监测方法",
+      "input_refs": [
+        "state_action_map",
+        "engineering_limits"
+      ],
+      "depends_on": [
+        "WB07-S03"
+      ],
+      "operation": "比较传统控制、规则或智能方法的适用条件、数据模型与工具依赖，选择待研究路线。",
+      "decision": "专题不替代子法算法；无模型不自动整定。",
+      "output_key": "intelligence_options",
+      "output_description": "候选、依据和依赖",
+      "checks": [
+        "不默认复杂更优",
+        "错误后果纳入"
+      ],
+      "stop_condition": "违反安全实时约束排除",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "转专业控制、诊断和优化子法核读"
+      ]
+    },
+    {
+      "step_id": "WB07-S05",
+      "title": "规划仿真台架与使用验证",
+      "input_refs": [
+        "intelligence_options",
+        "engineering_limits"
+      ],
+      "depends_on": [
+        "WB07-S04"
+      ],
+      "operation": "为模型、监测、闭环与用户表现分别确定验证目标，覆盖扰动、异常和人工接管。",
+      "decision": "无执行条件只保存计划，不编造稳定性/精度。",
+      "output_key": "service_validation_plan",
+      "output_description": "分层验证与开放风险",
+      "checks": [
+        "离线与闭环分开",
+        "仿真不冒充实物"
+      ],
+      "stop_condition": "存在未控制危险停止试验",
+      "source_refs": [
+        "S01",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "交动态设计、机械风险和V&V"
+      ]
+    },
+    {
+      "step_id": "WB07-S06",
+      "title": "形成专题研究与迭代档案",
+      "input_refs": [
+        "service_validation_plan",
+        "service_research_map"
+      ],
+      "depends_on": [
+        "WB07-S05"
+      ],
+      "operation": "记录方法选择、实际证据状态、跨域变更和下一轮所需知识。",
+      "decision": "未执行不报告提升；对象条件改变需复评。",
+      "output_key": "intelligent_service_dossier",
+      "output_description": "使用性能智能设计专题档案",
+      "checks": [
+        "原创适配标明",
+        "未取得细节保留"
+      ],
+      "stop_condition": "关键证据缺失保留研究状态",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "为引擎返回匹配子法与补证任务"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "intelligent_service_dossier",
+      "label": "使用性能智能设计专题档案",
+      "required_fields": [
+        "task",
+        "targets",
+        "research_topics",
+        "state_action_chain",
+        "candidate_methods",
+        "dependencies",
+        "verification_plan",
+        "evidence_status",
+        "gaps"
+      ],
+      "interpretation": "专题组织和方法选择，不是可部署控制器"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "使用目标→service_task",
+      "condition": "先澄清目标"
+    },
+    {
+      "target_research_id": "R32",
+      "relation": "parallel",
+      "binding": "动态响应→machine_behaviour",
+      "condition": "结构使用性能有耦合"
+    },
+    {
+      "target_research_id": "R41",
+      "relation": "parallel",
+      "binding": "智能化失效→机械风险",
+      "condition": "感知控制失效需独立分析"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "分层验证→V&V",
+      "condition": "需实际证据"
+    }
+  ],
+  "search_terms": [
+    "闻邦椿",
+    "使用性能",
+    "智能设计",
+    "三化",
+    "工作参数控制",
+    "状态监测"
+  ],
+  "sources": [
+    {
+      "publisher": "机械工程学报",
+      "authors": [
+        "闻邦椿",
+        "周知承",
+        "韩清凯",
+        "苏保群"
+      ],
+      "title": "现代机械产品设计在新产品开发中的重要作用——兼论面向产品总体质量的动态优化、智能化和可视化三化综合设计法 (2003,39(10):43–52)",
+      "url": "https://qikan.cmes.org/jxgcxb/CN/PDF/16926",
+      "locator": "1.2与3.1–3.3、4.2相关正文",
+      "read_scope": "期刊公开10页PDF取得，文本定位后实质核读智能设计定义、三化具体内容/关联和高层次特征；非逐项核验论文所有历史性主张",
+      "supports": [
+        "智能设计在本体系面向工作参数/过程控制",
+        "可视化关联可制造可装配及局部虚拟设计"
+      ],
+      "evidence_note": "此处智能设计不是现今LLM；历史效益主张不是本平台工程验证",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅研究链接、题录和原创释义；第三方全文/图片仅研究存档，未授权商业再分发"
+    },
+    {
+      "publisher": "高等教育出版社",
+      "authors": [
+        "闻邦椿",
+        "刘树英",
+        "郑玲"
+      ],
+      "title": "系统化设计的理论和方法 第9章 面向使用性能的智能设计 (2017)",
+      "url": "https://academic.hep.com.cn/br/CN/chapter/978-7-04-048177-8/chapter09",
+      "locator": "出版社题录及9.1–9.7目录",
+      "read_scope": "只读官方章节目录；正常在线阅读权限检查返回购章信息，未获取正文、未绕过付费",
+      "supports": [
+        "章节在体系中的位置",
+        "操作、运动、参数、过程、状态监测诊断等主题范围"
+      ],
+      "evidence_note": "目录仅证明覆盖主题，不支持复建章节算法或案例方程",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅研究链接、题录和原创释义；第三方全文/图片仅研究存档，未授权商业再分发"
+    },
+    {
+      "publisher": "NASA",
+      "authors": [
+        "NASA"
+      ],
+      "title": "Systems Engineering Handbook 5.4 Product Validation",
+      "url": "https://www.nasa.gov/reference/5-4-product-validation/",
+      "locator": "5.4.1目的、输入、活动与方法",
+      "read_scope": "公开手册有关预期环境、预期用户和利益相关方期待的正文核读",
+      "supports": [
+        "确认预期使用",
+        "异常闭环与结果报告"
+      ],
+      "evidence_note": "验证与确认目的分开，方法可能共用但追溯对象不同",
+      "source_id": "S03",
+      "accessed_at": "2026-10-23",
+      "rights": "仅研究链接、题录和原创释义；第三方全文/图片仅研究存档，未授权商业再分发"
+    }
+  ],
+  "schema_version": "method-dossier-1.0",
+  "version": "0.1.0",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "evaluations": [
+    {
+      "scenario": "输入足够的专题研究任务",
+      "expected": "产生intelligent_service_dossier，区分谱系来源与平台适配"
+    },
+    {
+      "scenario": "缺少service_task",
+      "expected": "追问目标与边界，不由目录生成算法或数据"
+    },
+    {
+      "scenario": "候选违反明确硬约束",
+      "expected": "排除并说明，综合效益不可抵消"
+    },
+    {
+      "scenario": "模型、工具或实际证据不可用",
+      "expected": "保留计划和缺口，不宣称原论文复现或工程通过"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "核读官方书目录及合著论文正文，建立体系专题研究档案"
+    }
+  ]
+}

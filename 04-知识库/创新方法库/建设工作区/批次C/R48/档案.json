@@ -1,0 +1,349 @@
+{
+  "research_id": "R48",
+  "method_id": "IM-PD-001",
+  "name": "问题定义与要求管理",
+  "english_name": "Problem Framing and Requirements Management",
+  "kind": "framework",
+  "category": "A问题发现与需求定义",
+  "lineage": [
+    "设计问题框定",
+    "系统工程要求定义"
+  ],
+  "aliases": [
+    "设计任务澄清",
+    "需求基线",
+    "要求追溯"
+  ],
+  "summary": "从用户情境和事实澄清待解问题，把期望转为有条件、可验证、可追溯的要求，并管理假设、冲突和版本变更。",
+  "sections": {
+    "identity": "本档深化映射现有IM-PD-001身份，作为0.1.0研究草稿保存在建设工作区，不覆盖旧卡运行版本。问题框定面向为何解决、为谁解决和边界；工程要求管理面向必须实现什么、怎样判断及变更影响。Design Council支持发现与定义的迭代，NASA手册支持期望转技术要求；两者在本卡整合不是某一作者的新原创方法。",
+    "problem": "“做一台更智能的机器”可能同时包含真实痛点、预设方案、技术兴趣和营销愿望，直接进入解法会优化错误问题。即使需求列表很长，若“方便、可靠、低成本”没有对象、条件和判据，设计与测试也无法一致。本法先识别事实与假设，再把可支持的需要转成问题陈述、约束和验收方向，使后续方法调用围绕同一个任务。",
+    "principle": "问题陈述描述目标用户/系统在情境下的缺口、影响及目标，不预先锁定没有必要的实现。利益相关方需要、期望、目标、约束、功能、性能和接口不是同层信息。要求应尽量单一、清楚、必要、可行、可验证且可追溯，包含量值/容差/条件或客观判定方式，避免只有形容词。硬约束与优化偏好分开，派生要求记录依据和分配关系，实施约束说明为何必须限制解法。每条保留来源、理由、责任、状态与版本，并建立双向追溯。",
+    "applicability": "适合项目前期、研究转产品、设计变更、需求冲突或测试验收困难时，也是多数引擎方法的前置。需要实际用户/业务/工程证据及有权确认目标的人；研究不足时可形成假设问题和补证计划，不能把AI推测写成客户已确认。探索任务不应过早锁死所有规格，但仍需写清目标和可学习条件；法规安全要求需独立查适用来源。",
+    "interpretation": "输出不是越多越好的要求清单，而是经确认的问题边界、要求基线、追溯、未决与变更机制。要求质量确认（requirements validation）是审要求本身是否正确可行可验证，不是已证明产品符合。利益冲突、不可行目标或信息不足应外显，并由有权责任方决定取舍。引擎应先路由问题澄清、需求发现、功能分析或实验补证，而不是把所有输入直接翻成规格。基线不是不可变；变更需保留原因、影响、批准与受影响的设计/验证版本。 当前未做与旧卡的专家冲突审查；新档仅作为深化材料，不提升旧版本的验证状态。",
+    "example": "教学演示，未有客户访谈：团队提出“做智能搬运车”。S01列用户、路线、载荷和场地都未知，不直接推荐自动驾驶。S02拟问题为“目标人员在特定搬运任务中存在效率或负担缺口”，标待证。S03把载荷、安全、人机接口与通行环境分组，区分“使用某传感器”是解法假设而非需求。S04为已证实任务规划可测成功条件，具体数值由现场与责任人确认，不凭空设门槛。S05审必要性、可行性、冲突和验证方式。S06只有确认后建立基线，场地改变时回查接口和试验。本例未声称访谈完成、要求已批准或方案可行。 要求草稿行可为“ID:REQ-待定；父源:任务观察待取得；功能:搬运；性能/条件:待确认；验证方式:待定；理由:效率或负担缺口待证；owner:未指定；status:draft”。该行展示缺口，不冒充有效产品要求；补证审查后才可形成可验证基线。",
+    "pitfalls": "一是把客户说的部件直接当不可变要求，误锁解空间；先问作用及必要理由。二是“尽量快、便宜、可靠”互相冲突但没有优先规则；分硬要求与偏好。三是需求分解后丢失来源，新增指标无人负责；保留父子追溯。四是失败后悄改要求，让测试看似通过；走变更与复验。反例：纯粹探索未知物理现象时，强行写成完整量产产品要求可能虚构精度，应先形成研究问题与实验成功条件。",
+    "validation": "先看问题有没有事实来源、用户情境与边界，再审每条要求的清楚性、唯一性、必要性、一致性、可行性、可验证性和追溯。利益相关方评审与技术审查各有作用，不能由措辞整齐代替。产品实际符合与用途适合需要后续V&V证据；该卡只能验证要求质量和规划覆盖，不能生成产品验收结果。",
+    "adaptation": "Design Council提供先理解问题及非线性迭代，NASA提供约束接口、要求陈述、理由、追溯、要求质量确认与基线。平台将其组合为六步，增加事实/假设、缺失行动、引擎路由及状态；搬运车情境为教学演示。未要求所有产品采用NASA的审批名称或特定工具。",
+    "gaps": "暂无具体项目的访谈、任务观测、法规、工程边界与可行性证据，也没有责任人确认要求。量值、优先级、接受标准和变更权责都需项目补充。与旧IM-PD-001的内容和接口差异应在后续审稿/发布时比较，不在本阶段自动覆盖现有生产卡。"
+  },
+  "inputs": [
+    {
+      "key": "initial_request",
+      "label": "初始意图与问题材料",
+      "type": "object",
+      "required": true,
+      "description": "原话、项目背景、范围及期望改变",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "stakeholder_evidence",
+      "label": "利益相关方与任务证据",
+      "type": "array",
+      "required": false,
+      "description": "用户观察、访谈、业务和工程事实，附来源",
+      "missing_action": "mark_unknown"
+    },
+    {
+      "key": "constraints_context",
+      "label": "约束与系统环境",
+      "type": "object",
+      "required": false,
+      "description": "接口、法规安全、技术资源、生命周期",
+      "missing_action": "mark_unknown"
+    },
+    {
+      "key": "decision_authority",
+      "label": "确认与变更权责",
+      "type": "object",
+      "required": false,
+      "description": "目标责任、评审人员及批准机制",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R48-S01",
+      "title": "拆分原话与证据状态",
+      "input_refs": [
+        "initial_request",
+        "stakeholder_evidence"
+      ],
+      "depends_on": [],
+      "operation": "区分事实、需要、方案偏好、目标和假设，确认用户及任务情境缺口。",
+      "decision": "无实际证据标假设，不写成客户已确认。",
+      "output_key": "intent_evidence_map",
+      "output_description": "原话、事实/假设和补证问题",
+      "checks": [
+        "来源保留",
+        "方案未强当需求"
+      ],
+      "stop_condition": "关键用户任务未知停止确定规格",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查原始访谈、任务观测和项目资料"
+      ]
+    },
+    {
+      "step_id": "R48-S02",
+      "title": "定义问题与成功方向",
+      "input_refs": [
+        "intent_evidence_map",
+        "constraints_context"
+      ],
+      "depends_on": [
+        "R48-S01"
+      ],
+      "operation": "形成用户/系统、情境、缺口、影响、目标和范围，明确不应预锁的解法。",
+      "decision": "根因未证不写因果事实，问题冲突先外显。",
+      "output_key": "problem_frame",
+      "output_description": "问题陈述、边界、成功方向和待证",
+      "checks": [
+        "谁在何情境清楚",
+        "目标可学习"
+      ],
+      "stop_condition": "无法形成共同任务先补研究",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查需求发现和根因证据"
+      ]
+    },
+    {
+      "step_id": "R48-S03",
+      "title": "组织约束功能性能接口",
+      "input_refs": [
+        "problem_frame",
+        "constraints_context"
+      ],
+      "depends_on": [
+        "R48-S02"
+      ],
+      "operation": "把需要转成分层功能、性能、接口和生命周期要求，区分硬约束与偏好。",
+      "decision": "指定实施方式须有必要理由，派生要求留依据。",
+      "output_key": "requirement_structure",
+      "output_description": "要求层级、来源和取舍问题",
+      "checks": [
+        "约束不被评分抵消",
+        "父子关系可追踪"
+      ],
+      "stop_condition": "硬约束互斥升级责任方决策",
+      "source_refs": [
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查功能分解、接口和适用要求"
+      ]
+    },
+    {
+      "step_id": "R48-S04",
+      "title": "编写可验证单条要求",
+      "input_refs": [
+        "requirement_structure",
+        "decision_authority"
+      ],
+      "depends_on": [
+        "R48-S03"
+      ],
+      "operation": "给条目编号、责任、条件、量值/判据、理由与计划验证方式，未知阈值不编造。",
+      "decision": "不可观察的形容词退回澄清；探索指标保留待定状态。",
+      "output_key": "requirement_draft",
+      "output_description": "可审要求与验证方向",
+      "checks": [
+        "单一明确",
+        "条件和判据足够"
+      ],
+      "stop_condition": "关键判据缺失不认定可验收",
+      "source_refs": [
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查实际能力、量测和任务成功条件"
+      ]
+    },
+    {
+      "step_id": "R48-S05",
+      "title": "审查正确可行与一致",
+      "input_refs": [
+        "requirement_draft",
+        "stakeholder_evidence"
+      ],
+      "depends_on": [
+        "R48-S04"
+      ],
+      "operation": "由技术与利益相关方审必要性、可行、冲突、过度规定和双向追溯。",
+      "decision": "措辞合格不等需求正确，冲突和未知不得隐藏。",
+      "output_key": "requirements_review",
+      "output_description": "评审问题、修订及确认状态",
+      "checks": [
+        "用户与技术都覆盖",
+        "可验证性有依据"
+      ],
+      "stop_condition": "未决核心要求不标批准",
+      "source_refs": [
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查性能预算和验证资源"
+      ]
+    },
+    {
+      "step_id": "R48-S06",
+      "title": "建立基线与变更追溯",
+      "input_refs": [
+        "requirements_review",
+        "decision_authority"
+      ],
+      "depends_on": [
+        "R48-S05"
+      ],
+      "operation": "在责任方确认后固定版本，维护来源—要求—设计—验证关系与变更影响。",
+      "decision": "未获确认保留draft；变化需回查产品和测试，不覆盖历史。",
+      "output_key": "problem_requirements_dossier",
+      "output_description": "问题、要求基线、追溯与变更档案",
+      "checks": [
+        "历史可还原",
+        "批准不由AI伪造"
+      ],
+      "stop_condition": "关键变更未评审不沿用旧结论",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "为后续方法提供目标、约束和证据需求"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "problem_requirements_dossier",
+      "label": "问题与要求档案",
+      "required_fields": [
+        "evidence",
+        "problem_frame",
+        "scope",
+        "requirements",
+        "rationale",
+        "traceability",
+        "review",
+        "baseline",
+        "changes",
+        "open_questions"
+      ],
+      "interpretation": "要求质量与基线状态不代表产品已通过验证"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R01",
+      "relation": "parallel",
+      "binding": "需求发现→stakeholder_evidence",
+      "condition": "事实不足先补研究"
+    },
+    {
+      "target_research_id": "R14",
+      "relation": "precedes",
+      "binding": "功能要求→功能分析",
+      "condition": "解法前澄清作用"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "要求/用途→V&V目标",
+      "condition": "判据及追溯前置"
+    },
+    {
+      "target_research_id": "R44",
+      "relation": "parallel",
+      "binding": "待证问题→假设测试",
+      "condition": "探索与规格迭代"
+    }
+  ],
+  "search_terms": [
+    "问题定义",
+    "要求管理",
+    "需求澄清",
+    "requirements",
+    "双向追溯",
+    "IM-PD-001"
+  ],
+  "sources": [
+    {
+      "publisher": "Design Council",
+      "authors": [
+        "Design Council"
+      ],
+      "title": "Framework for Innovation",
+      "url": "https://www.designcouncil.org.uk/resources/framework-for-innovation/",
+      "locator": "Discover / Define及非线性迭代说明",
+      "read_scope": "官方正文四阶段、以人为先、协作和迭代相关段落核读",
+      "supports": [
+        "理解而非假定问题",
+        "发现与定义可迭代"
+      ],
+      "evidence_note": "双钻是过程表达，本档问题结构和工程要求字段为平台整合，网页作品CC BY4.0",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+    },
+    {
+      "publisher": "NASA",
+      "authors": [
+        "NASA"
+      ],
+      "title": "Systems Engineering Handbook 4.2 Technical Requirements Definition",
+      "url": "https://www.nasa.gov/reference/4-2-technical-requirements-definition/",
+      "locator": "4.2.1输入、活动、验证要求、基线与输出",
+      "read_scope": "公开手册正文需求来源、约束接口、可接受陈述、追溯、可行可验证与基线段落核读",
+      "supports": [
+        "期望转技术要求",
+        "可验证、追溯与变更控制"
+      ],
+      "evidence_note": "NASA项目流程适配，不是所有产品必须采用其审批机制",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+    }
+  ],
+  "schema_version": "method-dossier-1.0",
+  "version": "0.1.0",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "evaluations": [
+    {
+      "scenario": "输入足够的研究任务",
+      "expected": "产生problem_requirements_dossier，每项判断保留依据、假设和适用范围"
+    },
+    {
+      "scenario": "缺少initial_request",
+      "expected": "追问目标与边界，停止确定性分析，不编造输入"
+    },
+    {
+      "scenario": "候选违反明确硬约束",
+      "expected": "排除并解释，不用总分或统计指标抵消要求"
+    },
+    {
+      "scenario": "实际数据、测量或分析工具不可用",
+      "expected": "只保存研究/验证计划，不填造实际结果、通过或风险降低"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项核读专业来源并编写平台深度操作草稿"
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "批次复核：补具体中间产物、教学模型与边界；不提升执行/验证状态"
+    }
+  ]
+}

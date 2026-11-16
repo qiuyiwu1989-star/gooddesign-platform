@@ -1,0 +1,76 @@
+{
+  "schema": "fixed_constructed_observation_fixture-1",
+  "source_binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "path": "../../MD-001-R48-v0.1.1/教学包/00-共享教学输入-v0.1.0.json",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+  },
+  "all_records_constructed": true,
+  "field_research_conducted": false,
+  "real_participants": 0,
+  "consent_status": "not_applicable_no_real_participants",
+  "records": [
+    {
+      "id": "NOTE-T01",
+      "event_id": "EV-T01",
+      "session": "S-T01",
+      "actor": "ACT-OP",
+      "kind": "constructed_observation",
+      "text": "构造记录：一次暂停之后看到残留，操作者停机并清理；没有记录材料状态。",
+      "pause_before": true,
+      "residue_observed": true,
+      "independent_observation": true
+    },
+    {
+      "id": "NOTE-T02",
+      "event_id": "EV-T01",
+      "session": "S-T01",
+      "actor": "ACT-OP",
+      "kind": "constructed_participant_statement",
+      "text": "构造原话：上次停过以后又要清理。此话描述EV-T01，不是第二次事件。",
+      "independent_observation": false
+    },
+    {
+      "id": "NOTE-T03",
+      "event_id": "EV-T01",
+      "session": "S-T01",
+      "actor": "ACT-OP",
+      "kind": "constructed_researcher_paraphrase",
+      "text": "构造研究笔记：暂停可能使残留增加；这是对EV-T01的解释。",
+      "independent_observation": false
+    },
+    {
+      "id": "NOTE-T04",
+      "event_id": "EV-T02",
+      "session": "S-T02",
+      "actor": "ACT-OP",
+      "kind": "constructed_observation",
+      "text": "构造记录：本段连续作业未记录暂停，也观察到残留；材料和表面条件未记录。",
+      "pause_before": false,
+      "residue_observed": true,
+      "independent_observation": true
+    },
+    {
+      "id": "NOTE-T05",
+      "event_id": "EV-T03",
+      "session": "S-T03",
+      "actor": "ACT-OP",
+      "kind": "constructed_observation",
+      "text": "构造记录：另一段暂停之后未观察到明显残留；其他工况是否相同未知。",
+      "pause_before": true,
+      "residue_observed": false,
+      "independent_observation": true
+    },
+    {
+      "id": "NOTE-T06",
+      "event_id": null,
+      "session": "S-T04",
+      "actor": "ACT-OWNER",
+      "kind": "constructed_general_opinion",
+      "text": "构造原话：总之维护很麻烦。未指向可定位的具体事件。",
+      "independent_observation": false
+    }
+  ],
+  "package_version": "0.1.1"
+}

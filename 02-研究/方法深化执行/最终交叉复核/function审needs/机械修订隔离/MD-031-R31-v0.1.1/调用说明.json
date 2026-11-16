@@ -1,0 +1,19 @@
+{
+  "method": "R31",
+  "contract_status": "proposed_only_not_implemented_MCP",
+  "trigger": "research question matching this method and declared scope",
+  "input": "versioned context, unit-aware model, explicit unknowns and provenance; see fixed teaching input",
+  "output": "intermediate reasoning and qualified result with unresolved conditions",
+  "actual_implementation": "教学计算.py fixed mathematical/structural fixture only",
+  "does_not_do": [
+    "arbitrary natural-language research",
+    "customer approval",
+    "engineering certification"
+  ],
+  "unknown_policy": "retain unknown; never substitute zero or approve",
+  "handoff": [
+    "R05 interface definitions",
+    "R47 concurrent work planning"
+  ],
+  "scope": "constructed information task graph; SCC via transitive closure"
+}

@@ -1,0 +1,42 @@
+{
+  "artifact_ref": {
+    "artifact_id": "TEACHING-R52-001",
+    "revision": "r1",
+    "sha256": "064f8416b266480fa2a6e9a3d70b5b96d1076573a6e439d45e3f8d3a474bfafa"
+  },
+  "checks": {
+    "evpi_20": true,
+    "evsi_6": true,
+    "mandatory_not_waived": true,
+    "net_3": true,
+    "qualitative_when_missing": true,
+    "zero_when_no_action_flip": true
+  },
+  "engineering_validated": false,
+  "events": [
+    {
+      "EVPI": 20,
+      "EVSI": 6,
+      "event_id": "evt-R52-base",
+      "event_type": "step_completed",
+      "net_value": 3
+    },
+    {
+      "event_id": "evt-R52-zero",
+      "event_type": "review_recorded",
+      "finding": "0.6/0.4信号不改变行动，EVSI=0"
+    }
+  ],
+  "expert_certified": false,
+  "formulas": {
+    "EVPI": "R0-RPI",
+    "EVSI": "R0-RSI",
+    "R0": "min_a sum_s p(s)L(a,s)",
+    "RPI": "sum_s p(s)min_a L(a,s)"
+  },
+  "mode": "deterministic_numeric_teaching_replay",
+  "research_id": "R52",
+  "run_id": "guided-R52-numeric-teaching-r1",
+  "schema_version": "method-reference-run-0.1",
+  "status": "numeric_teaching_replay_passed_not_real_decision"
+}

@@ -16,26 +16,33 @@ CATS={m['category'][0]:m['category'][1:] for m in json.loads((LIB/'目录.json')
 
 from method_reader_visuals import dependency_svg
 from method_supplement_visuals import icon
+from method_glass_icons import VERSION as ICON_VERSION
 
 def paras(s):return ''.join('<p>'+E(p)+'</p>' for p in str(s).split('\n') if p.strip())
 from method_reader_markdown import document
 
 def page(title,body):
     from inno_site_chrome import navigation,footer
-    return '<!doctype html><html lang="zh-CN" data-theme="light" data-zw-mode="product"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+E(title)+' · 好设计</title><link rel="stylesheet" href="/vendor/tokens.css"><link rel="stylesheet" href="/vendor/design-system.css"><link rel="stylesheet" href="/inno/portal/portal.css"><link rel="stylesheet" href="/inno/portal/system.css"><link rel="stylesheet" href="/library/reader.css"></head><body class="inno-method-site">'+navigation('methods','main')+body+footer()+'<script src="/library/reader.js"></script></body></html>'
+    from gooddesign_assets import links as gooddesign_links
+    import hashlib
+    digest=hashlib.sha256()
+    for name in ('reader.css','method-detail.css','reader.js'):
+        f=OUT/name
+        if f.exists():digest.update(name.encode());digest.update(f.read_bytes())
+    v=digest.hexdigest()[:8]
+    return '<!doctype html><html lang="zh-CN" data-theme="light" data-zw-mode="product"><head><meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+E(title)+' · 好设计</title><link rel="stylesheet" href="/inno/portal/portal.css"><link rel="stylesheet" href="/inno/portal/system.css">'+gooddesign_links()+'<link rel="stylesheet" href="/methods/reader.css?v='+v+'"><link rel="stylesheet" href="/methods/method-detail.css?v='+v+'"></head><body class="inno-method-site">'+navigation('methods','main')+body+footer()+'<script src="/methods/reader.js?v='+v+'"></script></body></html>'
 
 def block(title,text):return '<section><h2>'+E(title)+'</h2>'+paras(text)+'</section>'
 def code(text):return '<div class="code"><button class="zw-btn copy" type="button">复制</button><pre tabindex="0"><code>'+E(text)+'</code></pre><span role="status" aria-live="polite"></span></div>'
 
 def detail(d,records):
     rid=d['research_id'];sec=d['sections']
-    body=f'<main id="main" class="reader"><a href="../index.html">← 全部方法</a><div class="hero cat-{d["category"][0]}"><img class="method-icon" src="../icons/{rid}.svg" alt=""><p class="eyebrow">{E(d["category"][1:])}</p><h1>{E(d["name"])}</h1><p class="english">{E(d["english_name"])}</p><p class="lead">{E(d["summary"])}</p><p class="boundary">研究稿 · {"闻邦椿谱系专题" if rid.startswith("WB") else "创新方法"} · 尚未独立专家审核或工程验证</p></div>'
+    body=f'<main id="main" class="reader method-detail"><a href="../index.html">全部方法</a><div class="hero cat-{d["category"][0]}"><img class="method-icon" src="../icons/{rid}.svg?v={ICON_VERSION}" alt=""><p class="eyebrow">{E(d["category"][1:])}</p><h1>{E(d["name"])}</h1><p class="english">{E(d["english_name"])}</p><p class="lead">{E(d["summary"])}</p><p class="boundary">研究稿 · {"闻邦椿谱系专题" if rid.startswith("WB") else "创新方法"} · 尚未独立专家审核或工程验证</p></div>'
     if d.get('source_readiness')=='limited_excerpt_only':body+='<p class="decision"><b>原典补证中：</b>当前仅有作者目录及论文检索摘录，直接全文访问失败；请按有限核读研究稿使用。</p>'
     if d.get('integration_rationale'):body+='<div class="decision"><b>本轮增补 · 为什么加入</b>'+paras(d['integration_rationale'])+'<p>内容可读，尚无执行契约。</p></div>'
     if rid=='R35':
         body+='<aside class="notice"><h2>先区分原典与本页示例</h2><p>Sigmund原论文第2页式(1)采用体积分数等式 V/V₀=f。本档教学模型写为体积上限约束，是平台的一般化适配，不能直接当作原代码逐式复现。比较结果前，先固定采用哪一种约束、载荷与边界条件。</p><a href="https://www.topopt.mek.dtu.dk/-/media/subsites/topopt/apps/dokumenter-og-filer-til-apps/matlab-1-.pdf" target="_blank" rel="noopener noreferrer">核对原论文</a></aside>'
-    body+='<p><a class="zw-btn zw-btn--primary" href="/inno/needs/?method='+E(rid)+'">带着这个方法研究问题 →</a></p>'
-    body+='<nav class="contents" aria-label="文章目录">'+''.join(f'<a href="#{key}">{name}</a>' for key,name in [('understand','理解方法'),('structure','结构图'),('operate','怎么使用'),('example','例子与边界'),('relations','关联方法'),('sources','原始依据'),('connect','调用与档案')])+'</nav>'
+    body+='<nav class="contents" aria-label="文章目录">'+''.join(f'<a href="#{key}">{name}</a>' for key,name in [('understand','理解方法'),('structure','结构图'),('operate','怎么使用'),('example','例子与边界'),('relations','关联方法'),('sources','原始依据'),('connect','调用与档案')])+f'<a href="/needs/?method={E(rid)}">带着这个方法研究问题</a></nav>'
     body+='<section id="understand"><h2>先理解这个方法</h2>'+''.join('<h3>'+LABELS[k]+'</h3>'+paras(sec[k]) for k in ['problem','principle','applicability'])+'</section>'
     body+='<section id="structure"><h2>一张图看懂结构</h2><p>依据本档案的输入、步骤与产物生成；卡片按档案顺序排列，具体依赖以“承接”标注为准，不强制串行。未表示实际运行已完成。</p><div class="io-grid"><article><h3>开始前准备</h3>'+''.join('<p>'+E(x['label'])+(' · 必需' if x.get('required') else ' · 可补充')+'</p><small>'+E(x.get('description',''))+'</small>' for x in d['inputs'])+'</article><article><h3>结束时带走</h3>'+''.join('<p>'+E(x['label'])+'</p>' for x in d['outputs'])+'</article></div><ol class="flow">'
     stepmap={s['step_id']:s['title'] for s in d['steps']}
@@ -44,10 +51,18 @@ def detail(d,records):
         body+=f'<li><a href="#{E(s["step_id"])}"><span>{i:02}</span><strong>{E(s["title"])}</strong></a><p>{E(s["output_description"])}</p>'+('<small>承接：'+E(deps)+'</small>' if deps else '<small>起点或独立准备</small>')+'</li>'
     body+='</ol><div class="dependency-map">'+dependency_svg(d)+'</div></section><section id="operate"><h2>一步一步怎么做</h2>'
     for i,s in enumerate(d['steps'],1):
-        body+=f'<article class="step" id="{E(s["step_id"])}"><span class="number">{i:02}</span><h3>{E(s["title"])}</h3>'+paras(s['operation'])+'<div class="decision"><b>到这里，先判断</b>'+paras(s['decision'])+'</div><p><b>本步产物：</b>'+E(s['output_description'])+'</p><p><b>检查：</b>'+E('；'.join(s['checks']))+'</p><p class="stop"><b>何时返回或停下：</b>'+E(s['stop_condition'])+'</p></article>'
+        body+=f'<details class="step" id="{E(s["step_id"])}"'+(' open' if i==1 else '')+'><summary><span class="number">'+f'{i:02}'+'</span><h3>'+E(s['title'])+'</h3><span class="step-output">'+E(s['output_description'])+'</span></summary>'+paras(s['operation'])+'<div class="decision"><b>到这里，先判断</b>'+paras(s['decision'])+'</div><p><b>本步产物：</b>'+E(s['output_description'])+'</p><p><b>检查：</b>'+E('；'.join(s['checks']))+'</p><p class="stop"><b>何时返回或停下：</b>'+E(s['stop_condition'])+'</p></details>'
     body+='<h3>如何理解结果</h3>'+paras(sec['interpretation'])+'</section><section id="example"><h2>例子与使用边界</h2>'+''.join('<h3>'+LABELS[k]+'</h3>'+paras(sec[k]) for k in ['example','pitfalls','validation'])+'<h3>用这些情境检查你的理解</h3><p>以下为检查设想，未表示真实试验已经执行。</p><div class="relation-grid">'+''.join('<article class="relation"><h3>'+E(x['scenario'])+'</h3><p>'+E(x['expected'])+'</p></article>' for x in d.get('evaluations',[]))+'</div></section>'
     from method_reader_cases import teaching_case
     body+=teaching_case(rid)
+    if rid=='R50':
+        rows=[
+            ('报异常','已提交，不宣称已接单','接单协调角色','队列、时间与接收身份','无人接单则升级协调'),
+            ('等待处理','显示当前责任与未决','维护分派角色','工单与资源状态','资源不足保留未决，不自动结案'),
+            ('维护记录完成','处理完，恢复待核','维护执行角色','范围与状态记录','缺实际状态则回核查'),
+            ('请求恢复','显示恢复审查状态','恢复授权角色','实际状态与授权依据','不得用维护完成按钮代授权'),
+        ]
+        body+='<section class="method-blueprint" aria-labelledby="blueprint-title"><h3 id="blueprint-title">把责任落到蓝图表</h3><p>这是平台构造的教学回放，角色均待实际任命，不是客户现场记录。它展示“提交、接单、处理、恢复”为什么必须是不同责任与证据状态。</p><div class="blueprint-legend"><span>可见接触</span><span>后台责任</span><span>支撑与证据</span><span>失败与恢复</span></div><table class="blueprint-table"><thead><tr><th>用户事件</th><th>可见接触</th><th>后台责任</th><th>支撑与证据</th><th>失败与恢复</th></tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+E(cell)+'</td>' for cell in row)+'</tr>' for row in rows)+'</tbody></table></section>'
     body+='<section id="relations"><h2>可以接着用哪些方法</h2><div class="relation-grid">'
     words={'requires':'前置准备','precedes':'下一步','parallel':'配合使用','complements':'配合使用','alternative':'替代选择'}
     relation_holds={('WB04','WB05'):'这条交接的描述指向深层次设计，但目标页为主辅功能专题，关系意图待核。',('WB06','R39'):'稳健参数与公差设计不等于通用仿真验证，需先明确不确定性或公差输入。',('WB09','R39'):'此目标不代表通用数值求解或仿真验证能力，交接依据待核。',('WB07','R32'):'机构综合可给运动拓扑与几何，不能直接当作结构动态响应。'}
@@ -60,20 +75,20 @@ def detail(d,records):
     body+='</div><h3>平台适配说明</h3>'+paras(sec['adaptation'])+'</section><section id="sources"><h2>原典与依据</h2>'+paras(sec['identity'])
     for s in d['sources']:
         body+='<article class="source" id="source-'+E(s['source_id'])+'"><h3><a target="_blank" rel="noopener noreferrer" href="'+E(s['url'])+'">'+E(s['title'])+' ↗</a></h3><p>'+E(s['publisher'])+'</p><p><b>核读位置：</b>'+E(s['locator'])+'</p><p><b>已读范围：</b>'+E(s['read_scope'])+'</p>'+paras(s['evidence_note'])+'</article>'
-    body+='<h3>尚待补证</h3>'+paras(sec['gaps'])+'</section><section id="connect"><h2>调用与档案</h2><p>'+('此方法已有执行契约，仍须检查输入、证据和后续交接。' if rid in EXEC else '此条目目前可检索、阅读；尚无对应的执行契约，不代表可直接自动执行。')+'</p>'+code(json.dumps({'name':'method_supplement_get','arguments':{'method_id':rid}} if d.get('integration_rationale') else {'name':'method_get','arguments':{'method_id':rid,'view':'overview'}},ensure_ascii=False,indent=2))+'<div class="actions"><a class="zw-btn" href="#example">实践档案（教学与验证设想）</a><a class="zw-btn" href="../integration.html">配置方法引擎与MCP</a><a class="zw-btn" href="../contributing.html">方法写入规范</a></div><h3>完整研究档案</h3><p>结构字段和原始资料单独保留，便于复核与开发调用。</p><div class="actions">'
-    for file,label in [('方法结构.md','方法结构'),('操作指南.md','操作文档'),('档案.json','原始档案 JSON'),('深度说明.md','深度文档'),('来源核读.md','来源核读')]:body+=f'<a class="zw-btn" href="../档案/{rid}/{E(file)}">{label}</a>'
-    return page(d['name'],body+'</div></section></main>')
+    body+='<h3>尚待补证</h3>'+paras(sec['gaps'])+'</section><section id="connect"><h2>调用与档案</h2><p>'+('此方法已有执行契约，仍须检查输入、证据和后续交接。' if rid in EXEC else '此条目目前可检索、阅读；尚无对应的执行契约，不代表可直接自动执行。')+'</p>'+code(json.dumps({'name':'method_supplement_get','arguments':{'method_id':rid}} if d.get('integration_rationale') else {'name':'method_get','arguments':{'method_id':rid,'view':'overview'}},ensure_ascii=False,indent=2))+'<div class="actions"><a class="zw-btn" href="#example">实践档案（教学与验证设想）</a><a class="zw-btn" href="../integration.html">配置方法引擎与MCP</a><a class="zw-btn" href="../contributing.html">方法写入规范</a></div><h3>完整研究档案</h3><p>结构字段和原始资料单独保留，便于复核与开发调用。完整档案通过上方 MCP 只读调用获取，公开页面不直接提供原件下载。</p>'
+    return page(d['name'],body+'</section></main>')
 
 def build():
     OUT.mkdir(exist_ok=True);(OUT/'methods').mkdir(exist_ok=True);(OUT/'icons').mkdir(exist_ok=True)
     records={m['research_id']:read(m['research_id']) for m in catalog()['methods']}
     for rid,d in records.items():
         (OUT/'icons'/f'{rid}.svg').write_text(icon(d));(OUT/'methods'/f'{rid}.html').write_text(detail(d,records))
-    body='<main id="main" class="overview"><p class="eyebrow">好设计 · 方法库</p><h1>为真实问题，找到合适的方法</h1><p class="lead">从理解需求、构思原理到验证方案，探索52份方法档案与12份闻邦椿谱系专题，其中4份为本轮增补研究稿。</p><div class="actions"><a href="integration.html">引擎与MCP接入</a><a href="contributing.html">方法写入规范</a></div><label for="method-search">搜索方法</label><input id="method-search" type="search" placeholder="输入问题、方法名称或关键词"><nav class="categories" aria-label="方法分类"><button class="zw-btn" data-category="" aria-pressed="true">全部</button>'+''.join(f'<button class="zw-btn" data-category="{k}" aria-pressed="false">{E(v)}</button>' for k,v in sorted(CATS.items()))+'</nav><p id="search-status" role="status"></p><div class="cards">'
-    for rid,d in records.items():
-        search=' '.join([rid,d['method_id'],d['name'],d['english_name'],d['summary']]+d.get('search_terms',[])+d.get('aliases',[])).lower()
-        body+=f'<a class="method-card cat-{d["category"][0]}" data-cat="{d["category"][0]}" data-search="{E(search)}" href="methods/{rid}.html"><img src="icons/{rid}.svg" alt=""><h2>{E(d["name"])}</h2><p>{E(d["summary"])}</p><span>{"谱系专题" if rid.startswith("WB") else "方法"} · 阅读 →</span></a>'
-    (OUT/'index.html').write_text(page('方法库',body+'</div><p id="empty" hidden>没有找到匹配方法，可以换个关键词或选择其他分类。</p></main>'))
+    from method_library_home import render
+    import hashlib
+    version=hashlib.sha256((OUT/'method-home.css').read_bytes()).hexdigest()[:10]
+    home=page('方法库',render(records)).replace('</head>','<link rel="stylesheet" href="/methods/method-home.css?v='+version+'"></head>')
+    (OUT/'index.html').write_text(home)
+
     integration(records)
     print('Built',len(records),'readers and icons')
 
@@ -94,7 +109,7 @@ def integration(records):
         body=body.replace('</main>',technical+'</section></main>')
     (OUT/'integration.html').write_text(page('引擎与MCP',body))
     template={'schema_version':'method-dossier-1.0','research_id':'待分配稳定ID','method_id':'待分配稳定ID','version':'0.1.0','name':'方法名称','category':'从A—G中选择','summary':'解决什么问题及边界','sections':{k:'待撰写与核读' for k in LABELS},'inputs':[],'steps':[],'outputs':[],'relations':[],'sources':[],'evaluations':[],'change_log':[]}
-    body='<main id="main" class="reader"><h1>方法写入规范</h1><p class="lead">先有可追溯的方法内容，再有可执行契约。资料齐全、程序可读和专家认可分别验收。</p><h2>提交前，写清这七件事</h2><ol class="standards">'+''.join('<li><h3>'+a+'</h3><p>'+b+'</p></li>' for a,b in [('身份和分类','沿用稳定research_id、method_id，填写版本；A需求、B功能概念、C发明矛盾、D架构、E工程优化、F评价验证、G全流程管理。闻邦椿谱系专题与独立方法分开标注。'),('原典与平台适配','区分原典主张、平台操作编排、教学假设和真实实践；不得把获奖项目推断成方法应用实例。'),('来源与核读范围','每条来源保留作者/机构、题名、URL、定位、核读范围、日期、支持内容和权利；摘要或目录不能冒称全文。'),('输入、操作和产物','每项输入写必需性和缺失处置；步骤写稳定ID、依赖、动作、判断、产物、检查和停止条件；输出写含义与字段。'),('关系与示例','关系目标必须存在、交接条件明确；示例写假设和未知，真实实践须有案例及证据定位，不捏造效果。'),('版本与发布','在新版本工作区编辑，不覆盖冻结v0.1.0；记录变更原因、来源变化和关联契约影响。先结构验收，再语义复核，专家审核及工程验证另列。'),('执行与负例','新增执行契约前检查Schema、输入缺失、悬空引用、硬约束冲突、未知保留及跨方法交接；模型自评不能替代独立领域专家。')])+'</ol><h2>起草骨架（不是可直接入库的完整档案）</h2>'+code(json.dumps(template,ensure_ascii=False,indent=2))+'<p>骨架中的占位与空数组必须补齐，并通过项目现有结构验收；不要直接发布为完整方法。</p><h2>当前规范原件</h2><div class="actions"><a href="方法库结构规范.md">方法库结构规范</a><a href="入库依据与类型边界.md">入库依据与类型边界</a><a href="引擎接入说明.md">历史内容版接入说明</a></div><p>历史内容版说明反映冻结时状态；当前执行能力以本页关联的MCP接入页和六项契约为准。</p></main>'
+    body='<main id="main" class="reader"><h1>方法写入规范</h1><p class="lead">先有可追溯的方法内容，再有可执行契约。资料齐全、程序可读和专家认可分别验收。</p><h2>提交前，写清这七件事</h2><ol class="standards">'+''.join('<li><h3>'+a+'</h3><p>'+b+'</p></li>' for a,b in [('身份和分类','沿用稳定research_id、method_id，填写版本；A需求、B功能概念、C发明矛盾、D架构、E工程优化、F评价验证、G全流程管理。闻邦椿谱系专题与独立方法分开标注。'),('原典与平台适配','区分原典主张、平台操作编排、教学假设和真实实践；不得把获奖项目推断成方法应用实例。'),('来源与核读范围','每条来源保留作者/机构、题名、URL、定位、核读范围、日期、支持内容和权利；摘要或目录不能冒称全文。'),('输入、操作和产物','每项输入写必需性和缺失处置；步骤写稳定ID、依赖、动作、判断、产物、检查和停止条件；输出写含义与字段。'),('关系与示例','关系目标必须存在、交接条件明确；示例写假设和未知，真实实践须有案例及证据定位，不捏造效果。'),('版本与发布','在新版本工作区编辑，不覆盖冻结v0.1.0；记录变更原因、来源变化和关联契约影响。先结构验收，再语义复核，专家审核及工程验证另列。'),('执行与负例','新增执行契约前检查Schema、输入缺失、悬空引用、硬约束冲突、未知保留及跨方法交接；模型自评不能替代独立领域专家。')])+'</ol><h2>起草骨架（不是可直接入库的完整档案）</h2>'+code(json.dumps(template,ensure_ascii=False,indent=2))+'<p>骨架中的占位与空数组必须补齐，并通过项目现有结构验收；不要直接发布为完整方法。</p><h2>当前规范原件</h2><p>方法库结构规范、入库依据与类型边界、历史内容版接入说明三份原件随平台版本库管理，公开页面暂不提供下载。历史内容版说明反映冻结时状态；当前执行能力以本页关联的MCP接入页和六项契约为准。</p></main>'
     body=body.replace('</main>','<h2>完整字段形状参考</h2><p>以下为现有形态分析档案的真实结构，只用于理解字段；新增方法必须重新分配身份、撰写内容、核读来源并验收，不能复制后改名发布。</p>'+code(json.dumps(records['R17'],ensure_ascii=False,indent=2))+'<h2>质量目标与发布门槛</h2><p>逐法目标80分，评分分开记录内容质量、执行就绪与专家审核。来源、原理、适用边界、操作、示例和验证须有证据；未知保留，图标、页面或测试通过不能替代内容审核。</p><p>未核读不得按0代填，正分必须有具体原文与字段锚点；存在来源缺失、对象错配、虚构实践或关键调用错误时不得标记达标。</p></main>')
     rubric_path=ROOT/'output/method-reader-review/mcp-standard/rubric-v1.json'
     if rubric_path.exists():

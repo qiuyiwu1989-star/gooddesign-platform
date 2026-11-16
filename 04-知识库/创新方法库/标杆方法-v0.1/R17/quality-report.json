@@ -1,0 +1,130 @@
+{
+  "content": {
+    "expert_certified": false,
+    "seven_dimensions": {
+      "依据可追溯": {
+        "dimension": "依据可追溯",
+        "evidence": {
+          "line": 3,
+          "path": "02-研究/ML-021-内容质量深化/needs/稿件/R17.md"
+        },
+        "rating": "充分",
+        "reason": "Ritchey GMA/CCA范围不冒全部社会建模"
+      },
+      "判断可操作": {
+        "dimension": "判断可操作",
+        "evidence": {
+          "line": 25,
+          "path": "02-研究/ML-021-内容质量深化/needs/稿件/R17.md"
+        },
+        "rating": "充分",
+        "reason": "协议排2留2；总65W违50W回整体约束"
+      },
+      "反例与迁移": {
+        "dimension": "反例与迁移",
+        "evidence": {
+          "line": 29,
+          "path": "02-研究/ML-021-内容质量深化/needs/稿件/R17.md"
+        },
+        "rating": "充分",
+        "reason": "偏好当不可能；配对过冒整体过"
+      },
+      "完整示范": {
+        "dimension": "完整示范",
+        "evidence": {
+          "line": 11,
+          "path": "02-研究/ML-021-内容质量深化/needs/稿件/R17.md"
+        },
+        "rating": "充分",
+        "reason": "8组合未知与独立有充分协议例并存"
+      },
+      "机制讲透": {
+        "dimension": "机制讲透",
+        "evidence": {
+          "line": 5,
+          "path": "02-研究/ML-021-内容质量深化/needs/稿件/R17.md"
+        },
+        "rating": "充分",
+        "reason": "维度/选项/配对/整体判断不同层次"
+      },
+      "身份与边界准确": {
+        "dimension": "身份与边界准确",
+        "evidence": {
+          "line": 3,
+          "path": "02-研究/ML-021-内容质量深化/needs/稿件/R17.md"
+        },
+        "rating": "充分",
+        "reason": "Ritchey GMA/CCA范围不冒全部社会建模"
+      },
+      "阅读与交接": {
+        "dimension": "阅读与交接",
+        "evidence": {
+          "line": 31,
+          "path": "02-研究/ML-021-内容质量深化/needs/稿件/R17.md"
+        },
+        "rating": "充分",
+        "reason": "产物、近邻差别与其他情境边界具体，读者可找到下一步交接"
+      }
+    },
+    "status": "independent_agent_candidate_within_declared_scope"
+  },
+  "engine_contribution": {
+    "failure_signals": [
+      "零件或属性变体冒充机制差异",
+      "未知相容性被列为候选",
+      "组合数量冒充研究质量"
+    ],
+    "historical_method_package_context": {
+      "C_minus_A": {
+        "evidence": 0,
+        "feasibility": 0,
+        "mechanism": 0.0,
+        "problem": 0,
+        "validation": 0.666
+      },
+      "D_minus_B": {
+        "evidence": 0,
+        "feasibility": 0,
+        "mechanism": 0.0,
+        "problem": 0,
+        "validation": 0.25
+      },
+      "ai_reviews": 48,
+      "attribution": "R48/R14/R17方法包整体，不可单独归因R17；评分压缩且为有限遮盲AI评审",
+      "reports": 24
+    },
+    "improves": [
+      "机制选项的差异性",
+      "功能覆盖",
+      "接口与相容性判断",
+      "排除理由可追溯性"
+    ],
+    "isolated_effect_established": false,
+    "reason": "当前为资产回放与历史方法包背景，未形成该方法专属性的同输入两臂模型实验"
+  },
+  "execution": {
+    "candidate_contract_improvement": {
+      "before_status": "structure_and_declared_consistency_passed",
+      "candidate_issues": [
+        {
+          "candidate_id": "C0",
+          "code": "candidate_contains_unknown_compatibility"
+        }
+      ],
+      "result": "原契约未阻断未知候选；0.3.0-candidate.1新增阻断，未冻结或接生产"
+    },
+    "evaluation_count": 6,
+    "evaluation_passed": true,
+    "reference_run_status": "structure_and_declared_consistency_passed",
+    "skill_level": "S2"
+  },
+  "real_context": {
+    "customer_confirmed": false,
+    "domain_expert_reviewed": false,
+    "engineering_validated": false,
+    "status": "not_established"
+  },
+  "release_status": "benchmark_candidate_not_production",
+  "research_id": "R17",
+  "schema_version": "method-quality-report-0.1"
+}

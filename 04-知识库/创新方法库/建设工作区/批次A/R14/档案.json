@@ -1,0 +1,261 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R14",
+  "method_id": "IM-FA-001",
+  "version": "0.1.0",
+  "name": "功能分解与接口分析",
+  "english_name": "Functional Decomposition",
+  "kind": "method",
+  "category": "B功能分析与概念生成",
+  "lineage": [
+    "系统工程逻辑分解",
+    "功能架构"
+  ],
+  "aliases": [
+    "功能分析与分配"
+  ],
+  "summary": "从目标要求建立功能与输入输出关系，再定义子系统接口，使后续原理和结构选择有可追溯边界。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "此卡沿用库内身份IM-FA-001，研究编号R14。功能分解与接口分析是一组系统建模活动，NASA系统工程手册公开逻辑分解章节是本轮核心依据。它不同于FAST的目的—手段逻辑，也不同于TRIZ组件之间有益有害相互作用模型。平台用统一字段串起这些活动，未重写现有冻结档案。",
+    "problem": "项目直接按既有零件列任务，会把历史结构当成唯一解；各专业分别完成设计，联调才发现输入输出、时序或异常状态不一致。需要先回答系统应做什么、子功能之间交换什么、谁负责接口、凭什么验证。功能模型帮助发现遗漏和冲突，但不能仅靠画框图证明物理可行。",
+    "principle": "把父级要求转译为功能，再把功能分解与分配到足以开展设计的层次，同时识别接口和派生要求。NASA强调每个功能的输入、输出、失效模式、失效后果与接口要求，并沿运行情景形成端到端路径。分解是递归迭代的，可能有多个合理架构，而非唯一正确树。",
+    "applicability": "适用于跨机械、电气、控制、软件和人工环节的产品，尤其是概念设计、系统集成和变更影响分析。需要基本运行概念和技术要求。若只需分析单件材料强度，本方法只是背景；若顶层目标含糊，先澄清需求，不通过无限细分掩盖目标不清。",
+    "interpretation": "功能覆盖、关系一致和实现可行是三层不同结论。父级要求有功能负责，表示覆盖候选；所有流有来源去向且时序与状态兼容，表示模型内部一致；功率、刚度、延迟和成本满足约束仍需计算及验证。一个部件可承担多个功能，一个功能也可由多个部件共同承担，所以功能树与BOM不必一一对应。接口审查尤其关注边界双方的假设：一方认为保证按时到达，另一方只保证最终到达，就算字段名称完全一致仍是冲突。",
+    "example": "完整教学演示：自动分拣装置将入口物件送到指定出口，输入要求尚待真实确认。步骤1输出边界表与运行情景，列上游供料、出口、操作员和卡料恢复；步骤2输出识别、跟踪、判定和转移的功能目录，每项附父级要求。步骤3输出功能关联：物件继续流动而身份及位置数据在功能间传递，二者必须对应。步骤4输出接口行：传感端提供物件ID、采集时间和结果状态；控制端定义迟到结果如何处理；执行端定义接受指令、完成与异常反馈，具体数值待工程确定。步骤5按正常、识别迟到、物件间距变化及断电恢复走查。若判定依赖的身份在重启后丢失，就返回功能与状态模型补恢复功能，而非只在电缆接口上加字段。最终包保留缺失阈值、责任和试验任务，不宣称系统可投产。",
+    "pitfalls": "把电机、PLC、机架当功能，会过早锁定结构。只有树没有流，会漏掉相互依赖。只列正常输入输出，会漏掉异常后的状态复位。把所有接口都写成‘电气连接’无法支持联调。分解到每颗螺钉也不自动增加理解，停止深度应由设计、分配和验证所需决定。",
+    "validation": "检查顶层每条要求能否映射到功能及验证责任；每个子功能是否有父级目的；端到端情景是否能够走通；接口双方的单位、范围、时序、状态和版本是否一致。未闭合接口须显式列缺口，不能在模型中默认为匹配。工程仿真和样机测试仍需独立完成。 审查可逐项使用四种查询：无父级要求的功能是否属范围蔓延；有要求无功能是否属遗漏；有输出无消费者是否为无用或漏建接口；有消费者无生产者是否为隐藏外部依赖。每一类都先查语义再判错误，例如监测输出用于存档，消费者可能是生命周期中的维护角色。反例是用‘电源满足24V’关闭电源接口：除了名义电压，负载范围、启动瞬态、失电行为与接地等仍可能影响功能，具体字段须由工程人员依设备确定。模型审查发现疑问应创建派生要求或分析任务，不由语言模型填入惯用数值。",
+    "adaptation": "引擎将需求和运行情景作为必需输入，输出功能清单、功能关系、接口契约及派生要求，并保留每一次分解或分配的理由。遇到结构方案可生成替代架构候选，再交形态学、原理检索或权衡方法；不在本卡内自动宣布最优。",
+    "gaps": "已读NASA §4.3.1输入、活动、输出，未读其扩展指南中的全部功能分析技术。接口字段为平台操作结构，尚未与企业正式ICD模板对齐。本轮没有真实产品需求集、接口双方签署或集成测试结果，因此本档案为建模草案。"
+  },
+  "inputs": [
+    {
+      "key": "requirements",
+      "label": "技术要求",
+      "type": "array",
+      "required": true,
+      "description": "来源、条件、性能与约束",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "conops",
+      "label": "运行情景",
+      "type": "array",
+      "required": true,
+      "description": "正常、异常和生命周期场景",
+      "missing_action": "ask_or_stop"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R14-S01",
+      "title": "确定建模边界与端到端情景",
+      "input_refs": [
+        "requirements",
+        "conops"
+      ],
+      "depends_on": [],
+      "operation": "列系统边界、外部对象与要求来源，选覆盖目标的运行情景。",
+      "decision": "目标或外部对象缺失则退回需求澄清。",
+      "output_key": "model_scope",
+      "output_description": "边界和情景集",
+      "checks": [
+        "边界有理由",
+        "含异常情景"
+      ],
+      "stop_condition": "顶层要求未明确暂停",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "同类系统 运行概念 外部接口"
+      ]
+    },
+    {
+      "step_id": "R14-S02",
+      "title": "转译并分解功能",
+      "input_refs": [
+        "model_scope",
+        "requirements"
+      ],
+      "depends_on": [
+        "R14-S01"
+      ],
+      "operation": "将顶层要求转为动作对象功能，逐层建立父子关系与分配理由。",
+      "decision": "停止于足以分配设计与验证责任的层次。",
+      "output_key": "function_catalog",
+      "output_description": "功能层级与要求映射",
+      "checks": [
+        "不是零件清单",
+        "子功能支撑父目标"
+      ],
+      "stop_condition": "无法解释父子支撑关系退回",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "功能分析 逻辑分解"
+      ]
+    },
+    {
+      "step_id": "R14-S03",
+      "title": "描述功能输入输出与路径",
+      "input_refs": [
+        "function_catalog",
+        "conops"
+      ],
+      "depends_on": [
+        "R14-S02"
+      ],
+      "operation": "逐项写输入输出、触发、行为与失败后果，建立情景路径。",
+      "decision": "无来源输入或无去向输出需查漏。",
+      "output_key": "functional_links",
+      "output_description": "功能关联和路径模型",
+      "checks": [
+        "所有流有端点",
+        "记录失效与后果"
+      ],
+      "stop_condition": "关键路径断裂不冻结",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "物料 能量 信号 功能流"
+      ]
+    },
+    {
+      "step_id": "R14-S04",
+      "title": "定义接口及派生要求",
+      "input_refs": [
+        "functional_links"
+      ],
+      "depends_on": [
+        "R14-S03"
+      ],
+      "operation": "为跨边界关系填写双方、参数、时序、状态、责任与验证方式。",
+      "decision": "双方约束冲突则协调架构或要求。",
+      "output_key": "interface_register",
+      "output_description": "接口契约与未决项",
+      "checks": [
+        "单位明确",
+        "双向责任可追溯"
+      ],
+      "stop_condition": "关键接口未闭合不进入集成基线",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "接口控制文档 时序 状态"
+      ]
+    },
+    {
+      "step_id": "R14-S05",
+      "title": "审查覆盖并记录基线候选",
+      "input_refs": [
+        "interface_register",
+        "function_catalog",
+        "requirements"
+      ],
+      "depends_on": [
+        "R14-S04"
+      ],
+      "operation": "按端到端场景审查覆盖、一致性与替代分配，记录决定及假设。",
+      "decision": "可行、可验证且内部一致才提出基线候选。",
+      "output_key": "functional_architecture",
+      "output_description": "功能架构与审查记录",
+      "checks": [
+        "保留替代方案",
+        "缺口不隐去"
+      ],
+      "stop_condition": "工程可行性未知标待验证",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "功能架构 需求追溯 审查"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "functional_architecture",
+      "label": "功能与接口建模包",
+      "required_fields": [
+        "功能目录",
+        "输入输出",
+        "情景路径",
+        "接口",
+        "派生要求",
+        "未决项"
+      ],
+      "interpretation": "供原理设计与集成计划使用"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R04",
+      "relation": "part_of",
+      "binding": "逻辑分解",
+      "condition": "系统工程设计阶段"
+    },
+    {
+      "target_research_id": "R15",
+      "relation": "parallel",
+      "binding": "功能表述复用",
+      "condition": "需检验目的手段逻辑时"
+    },
+    {
+      "target_research_id": "R01",
+      "relation": "precedes",
+      "binding": "方案综合输入",
+      "condition": "开始选择物理原理前"
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "NASA",
+      "authors": [
+        "NASA"
+      ],
+      "title": "SEH 4.0 System Design Processes",
+      "url": "https://www.nasa.gov/reference/4-0-system-design-processes/",
+      "locator": "§4.3 Logical Decomposition；§4.3.1.1–4.3.1.3",
+      "read_scope": "实际核读公开章节中逻辑分解的输入、活动、输出相关段落",
+      "supports": [
+        "要求到功能分解分配",
+        "功能接口",
+        "递归与冲突解决"
+      ],
+      "evidence_note": "平台接口字段与分拣例子为适配；未使用未读扩展指南内容。",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "输入只有BOM零件表",
+      "expected": "应要求目标功能和场景，不把零件树直接当功能树"
+    },
+    {
+      "scenario": "接口双方分别用ms和s且无明确范围",
+      "expected": "应标冲突待协调，不宣称接口闭合"
+    }
+  ],
+  "search_terms": [
+    "功能分解",
+    "接口分析",
+    "逻辑分解",
+    "Functional Analysis"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项第一方检索核读、原创释义和平台操作适配"
+    }
+  ]
+}

@@ -19,6 +19,6 @@ class CloudTests(unittest.TestCase):
   self.assertNotIn('start_watch(',inspect.getsource(cloud.main))
  def test_nginx_auth_all_routes(self):
   text=(Path(__file__).resolve().parents[1]/'deploy/nginx-inno-readonly.conf').read_text()
-  self.assertIn('location ^~ /inno/',text);self.assertIn('auth_basic_user_file /etc/nginx/inno.htpasswd',text)
+  self.assertIn('location ^~ /inno/',text);self.assertIn('auth_request /inno/auth/check;',text)
   self.assertIn('limit_except GET HEAD { deny all; }',text)
 if __name__=='__main__':unittest.main()

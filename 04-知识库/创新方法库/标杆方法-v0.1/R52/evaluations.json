@@ -1,0 +1,46 @@
+{
+  "evaluations": [
+    {
+      "actual": {
+        "EVPI": 20.0,
+        "EVSI": 6.0,
+        "net": 3.0
+      },
+      "expected": {
+        "EVPI": 20,
+        "EVSI": 6,
+        "net": 3
+      },
+      "id": "R52-BASE",
+      "kind": "numeric_positive",
+      "passed": true
+    },
+    {
+      "actual": 0.0,
+      "expected": "信息改变信念但不改变行动，EVSI=0",
+      "id": "R52-ZERO",
+      "kind": "numeric_boundary",
+      "passed": true
+    },
+    {
+      "actual": {
+        "output": "未知—观测—行动分支，不输出EVPI/EVSI",
+        "when": "缺先验、损失或似然"
+      },
+      "expected": "降级定性",
+      "id": "R52-MISSING-PRIOR",
+      "kind": "missing_input",
+      "passed": true
+    },
+    {
+      "actual": "安全与法规必需验证不因VOI低而取消",
+      "expected": "强制验证不被豁免",
+      "id": "R52-MANDATORY",
+      "kind": "negative",
+      "passed": true
+    }
+  ],
+  "research_id": "R52",
+  "schema_version": "method-evaluations-0.1",
+  "scope": "确定性资产回放；语义和领域效果另行审核"
+}

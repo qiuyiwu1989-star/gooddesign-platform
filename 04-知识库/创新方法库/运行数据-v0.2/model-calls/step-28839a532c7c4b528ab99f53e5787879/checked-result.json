@@ -1,0 +1,142 @@
+{
+  "status": "draft_requires_semantic_and_domain_review",
+  "artifact": {
+    "artifact_id": "LIVE-TEACH-CLAMP-vv-plan",
+    "revision": "r1",
+    "task_id": "LIVE-TEACH-CLAMP",
+    "task_revision": "t1",
+    "type": "VerificationPlan",
+    "scope": "Conditional teaching plan for verifying proposed retention and damage requirements and clarifying intended-use validation. No activity has been executed, no concept is recommended, and no compliance, acceptance or engineering validation is established. Execution depends on defined criteria, controlled configurations and suitable resources.",
+    "conditions": [
+      {
+        "id": "C01",
+        "text": "Upstream ProblemBrief revision r1 contains REQ01 and REQ02. Both remain proposed; requirement hardness and confirmation authority are unknown.",
+        "kind": "fact",
+        "evidence_refs": []
+      },
+      {
+        "id": "C02",
+        "text": "Customer loads, workpiece material, geometry, allowable movement, damage criterion, operators and operating environment remain unknown.",
+        "kind": "unknown",
+        "evidence_refs": []
+      },
+      {
+        "id": "C03",
+        "text": "The supplied PrototypePlan proposes a functional contact-and-restraint prototype. M01 and M02 remain separate unresolved routes; no physical configuration or prototype fidelity has been established.",
+        "kind": "fact",
+        "evidence_refs": []
+      },
+      {
+        "id": "C04",
+        "text": "Equipment, observation capability, measurement uncertainty, personnel, representative workpieces, sampling rationale and execution readiness are unknown. Essential gaps must be resolved before execution.",
+        "kind": "unknown",
+        "evidence_refs": []
+      },
+      {
+        "id": "C05",
+        "text": "Proposed record controls: baseline criteria before data collection; bind raw records to requirement, route, prototype version, workpiece and conditions; record deviations separately. Investigate anomalies and assess affected activities after configuration, requirement or method changes before reusing evidence.",
+        "kind": "assumption",
+        "evidence_refs": []
+      },
+      {
+        "id": "C06",
+        "text": "The supplied lunar-sampling excerpt has unestablished transferability and provides no customer clamp parameters or evidence of clamp performance.",
+        "kind": "fact",
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ]
+      }
+    ],
+    "evidence_refs": [
+      "case-98b73a9c96af1f9408721571"
+    ],
+    "payload": {
+      "requirements_revision": "r1",
+      "matrix": [
+        {
+          "requirement_id": "REQ01",
+          "purpose": "verification",
+          "method": "test",
+          "criterion": "Proposed, conditional criterion: workpiece movement remains within a stakeholder-defined limit under specified loads, directions and holding duration. Establish limits, observation uncertainty and decision rules before execution. Missing criteria or inadequate observations leave retention unverified.",
+          "configuration": "Functional contact-and-restraint prototype as scoped in PrototypePlan r1; route and physical version not yet selected. Before execution, record actuation, contact geometry and materials, support interface, representative workpiece, load application, environment and observation equipment. Define containment and stopping rules; pause if essential conditions or controls are unavailable.",
+          "evidence_status": "planned",
+          "evidence_refs": []
+        },
+        {
+          "requirement_id": "REQ02",
+          "purpose": "verification",
+          "method": "test",
+          "criterion": "Proposed, conditional criterion: changes from the recorded initial workpiece condition through engagement, holding and release remain within a stakeholder-defined damage criterion. Define relevant damage types, inspection capability and limits before execution. Failure to detect relevant changes cannot establish absence of damage. Evaluate alongside REQ01 under the same documented conditions.",
+          "configuration": "Same traceable prototype and workpiece configuration used for the associated retention activity. Record initial condition, contact arrangement, restraint input, load history, release sequence, assessment method and handling effects. Observation stages and their ability to distinguish damage sources remain to be defined.",
+          "evidence_status": "planned",
+          "evidence_refs": []
+        },
+        {
+          "requirement_id": "REQ01",
+          "purpose": "validation",
+          "method": "demonstration",
+          "criterion": "Proposed intended-use criterion: a representative operator completes the subsequently defined work operation while the workpiece remains adequately restrained under representative conditions. Define task success, permitted interventions and representativeness before execution. User impressions alone cannot establish quantitative retention compliance.",
+          "configuration": "Representative operator, work operation, workpiece, bench environment and candidate configuration remain unknown. Document differences between the functional prototype and intended use; restrict any future interpretation to the represented conditions.",
+          "evidence_status": "planned",
+          "evidence_refs": []
+        },
+        {
+          "requirement_id": "REQ02",
+          "purpose": "validation",
+          "method": "demonstration",
+          "criterion": "Proposed intended-use criterion: engagement, holding and release leave the workpiece suitable for its stakeholder-defined subsequent use. Define unacceptable functional and surface changes before execution and pair task observations with the planned condition assessment. Demonstration alone cannot establish absence of undetectable damage.",
+          "configuration": "Use the documented representative task configuration associated with REQ01 validation. Define subsequent workpiece use, operator handling, release and removal conditions, and assessment responsibilities. Customer suitability remains unresolved until these conditions are established.",
+          "evidence_status": "planned",
+          "evidence_refs": []
+        }
+      ],
+      "validation_questions": [
+        "Who operates the clamp, for which work operation, and in which bench environment?",
+        "Which materials, finishes, geometries and variations represent the intended workpieces?",
+        "What loads, directions, durations and allowable movement define successful holding?",
+        "What constitutes damage, including effects on subsequent workpiece use, and which assessment methods can detect it?",
+        "What operator effort, actuation resources, release behavior and permitted interventions are acceptable?",
+        "Which slip, input-loss or incomplete-release scenarios are relevant, and what controlled setup would be needed to investigate them?",
+        "Who can confirm requirements, hardness, criteria and changes?",
+        "What prototype fidelity, equipment, personnel, observation uncertainty and sampling coverage are adequate for the intended claims?",
+        "Which safety, durability or reliability questions require separately defined requirements and activities beyond this teaching plan?"
+      ],
+      "uncovered_requirements": [],
+      "execution_status": "planned"
+    }
+  },
+  "check": {
+    "status": "structure_and_declared_consistency_passed",
+    "issues": [],
+    "artifact_sha256": "367da488a1075b71f256b97fe991781e869db089d2f65fead0d764c6ce775b00",
+    "evidence_refs": [
+      "case-98b73a9c96af1f9408721571"
+    ],
+    "declared_unknowns": [],
+    "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+    "semantic_support": "not_independently_verified",
+    "engineering_validated": false,
+    "cross_method_check": "performed"
+  },
+  "model_mode": "real_codex_model",
+  "call_id": "step-28839a532c7c4b528ab99f53e5787879",
+  "attempts": [
+    {
+      "attempt": 0,
+      "check": {
+        "status": "structure_and_declared_consistency_passed",
+        "issues": [],
+        "artifact_sha256": "367da488a1075b71f256b97fe991781e869db089d2f65fead0d764c6ce775b00",
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "declared_unknowns": [],
+        "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+        "semantic_support": "not_independently_verified",
+        "engineering_validated": false,
+        "cross_method_check": "performed"
+      }
+    }
+  ],
+  "expert_certified": false
+}

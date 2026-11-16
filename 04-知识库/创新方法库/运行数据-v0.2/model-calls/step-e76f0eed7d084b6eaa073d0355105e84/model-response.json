@@ -1,0 +1,117 @@
+{
+  "artifact_id": "LIVE-TEACH-CLAMP-comparison",
+  "revision": "r1",
+  "task_id": "LIVE-TEACH-CLAMP",
+  "task_revision": "t1",
+  "type": "ComparisonRecord",
+  "scope": "Teaching comparison frame for the supplied bench-clamp concepts. Both requirements remain proposed with unknown hardness. Criteria are conservatively treated as hard gates pending clarification; no performance scoring, recommendation, test execution or engineering validation is established.",
+  "conditions": [
+    {
+      "id": "C01",
+      "text": "ProblemBrief revision r1 supplies proposed REQ01 retention and REQ02 damage prevention. Both have unknown hardness and undefined acceptance limits.",
+      "kind": "fact",
+      "evidence_refs": []
+    },
+    {
+      "id": "C02",
+      "text": "M01 is a provisional teaching datum because its supplied description connects screw closing and reverse-screw release. This choice implies no customer preference, approval or demonstrated feasibility.",
+      "kind": "assumption",
+      "evidence_refs": []
+    },
+    {
+      "id": "C03",
+      "text": "Customer loads, workpiece properties, geometry, damage criteria, available actuation resources and applicable safety constraints remain unknown.",
+      "kind": "unknown",
+      "evidence_refs": []
+    },
+    {
+      "id": "C04",
+      "text": "The supplied lunar-sampling excerpt has unestablished transferability and provides no basis for clamp performance judgments.",
+      "kind": "fact",
+      "evidence_refs": [
+        "case-98b73a9c96af1f9408721571"
+      ]
+    },
+    {
+      "id": "C05",
+      "text": "M03 retains its upstream conditional exclusion: its assumed pneumatic topology lacks the screw transmission required by its release option. This is a conceptual inconsistency, not a measured retention or damage failure.",
+      "kind": "fact",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_refs": [
+    "case-98b73a9c96af1f9408721571"
+  ],
+  "payload": {
+    "requirements_revision": "r1",
+    "baseline_id": "M01",
+    "candidate_ids": [
+      "M01",
+      "M02"
+    ],
+    "criteria": [
+      {
+        "id": "CR01",
+        "text": "Gate pending hardness resolution: retain the intended workpiece throughout the intended operation under conditions and allowable movement yet to be established. Include unresolved support reactions, disturbance and input-loss behavior in later review; no separate approved safety requirement exists.",
+        "hard": true,
+        "requirement_ids": [
+          "REQ01"
+        ]
+      },
+      {
+        "id": "CR02",
+        "text": "Gate pending hardness resolution: engagement, holding and release must meet a damage criterion yet to be agreed. Material, finish, geometry, contact effects and inspection method remain unresolved.",
+        "hard": true,
+        "requirement_ids": [
+          "REQ02"
+        ]
+      }
+    ],
+    "judgments": [
+      {
+        "candidate_id": "M01",
+        "criterion_id": "CR01",
+        "value": "unknown",
+        "basis": "The supplied screw route hypothesizes position retention after input stops. Transmission geometry, friction, disturbances, support conditions and required loads are undefined. Datum status does not establish gate passage.",
+        "evidence_refs": []
+      },
+      {
+        "candidate_id": "M01",
+        "criterion_id": "CR02",
+        "value": "unknown",
+        "basis": "The proposed contact-distribution option and reverse-screw release have no supplied damage assessment. Workpiece properties, contact conditions and acceptable changes are unknown.",
+        "evidence_refs": []
+      },
+      {
+        "candidate_id": "M02",
+        "criterion_id": "CR01",
+        "value": "unknown",
+        "basis": "The supplied pneumatic route assumes sustained supply and coordinated return behavior. Supply availability, leakage, input-loss response, load conditions and support reactions are unresolved. No relative advantage over M01 or gate passage can be established.",
+        "evidence_refs": []
+      },
+      {
+        "candidate_id": "M02",
+        "criterion_id": "CR02",
+        "value": "unknown",
+        "basis": "The shared contact-management hypothesis does not establish equal damage performance. Pneumatic closing and elastic return introduce undefined contact and release conditions; neither acceptance limits nor comparative evidence is supplied.",
+        "evidence_refs": []
+      }
+    ],
+    "recommendations": [],
+    "sensitivity": [
+      "An eventual holding load, duration and allowable movement could change the assessment of screw position retention and sustained pneumatic restraint; no ordering is currently supported.",
+      "Material, finish and damage limits could change acceptable contact conditions for either route. Shared contact-distribution language cannot justify a same judgment.",
+      "Supply availability and required input-loss behavior could constrain M02; operator capabilities and release clearance could constrain M01. These are unresolved use conditions, not confirmed customer preferences.",
+      "Changing the datum to M02 would leave all current gate judgments unknown. Counting symbols or assigning weights would not resolve the missing acceptance criteria or evidence."
+    ],
+    "unknowns": [
+      "Who can confirm REQ01 and REQ02, their hardness and acceptance criteria? Recommendations remain empty until unknown hardness is resolved.",
+      "What work operation, loads, directions, durations, workpiece properties and allowable movements define retention?",
+      "What constitutes damage during engagement, holding and release, and how will condition be assessed?",
+      "What applicable safety requirements, operator constraints and bench interfaces must be established? No additional requirement IDs or approved safety gates are invented here.",
+      "Is manual input or pneumatic supply available and acceptable, and what response is required after input loss, slip or incomplete release?",
+      "After use conditions are defined, plan comparable retention and before-and-after condition assessments for M01 and M02 using agreed workpieces, loads and limits. No procedure execution, measurements or acceptance results are supplied.",
+      "M03 requires a revised release mechanism or explicitly revised topology before reconsideration. Its conditional exclusion establishes no performance ranking among M01 and M02."
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" data-zw-mode="product">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>需求研究工作台 · GoodDesign</title>
+  <link rel="stylesheet" href="../method-workbench/vendor/tokens.css">
+  <link rel="stylesheet" href="../method-workbench/vendor/design-system.css">
+  <link rel="stylesheet" href="gooddesign.css">
+  <link rel="stylesheet" href="needs-workspace.css">
+  <link rel="stylesheet" href="needs-live-demo.css">
+</head>
+<body class="gd-needs-page">
+  <main id="main" class="gd-needs">
+    <header class="gd-needs-heading">
+      <div><span class="gd-kicker">GoodDesign · 需求研究工作台</span><h1>从一个真实问题开始。</h1><p class="gd-lead">小好帮你把问题、参考和研究路线整理成可核对的任务卡。全程 0 次模型调用，内容由你确认。</p></div>
+      <div class="gd-needs-heading-actions"><button class="gd-button" id="live-demo-start" type="button">观看动态研究案例</button><button class="gd-button gd-button--quiet" id="example" type="button">使用割胶研究示例</button></div>
+    </header>
+    <section class="gd-live" id="live-demo" aria-labelledby="live-title" aria-busy="false" hidden>
+      <header class="gd-live-head">
+        <div class="gd-live-identity"><img src="/inno/portal/ip-xiaohao.svg?v=078" alt=""><div><span class="gd-kicker">Deep Research 动态案例</span><h2 id="live-title">高功率工业泵电驱改造研究</h2><p>模拟演示 · 真实资料 · 0 次模型调用</p></div></div>
+        <div class="gd-live-controls"><button class="gd-button" id="live-pause" type="button">暂停</button><button class="gd-button gd-button--quiet" id="live-replay" type="button">重新播放</button><button class="gd-button gd-button--quiet" id="live-close" type="button" aria-label="关闭动态案例">关闭</button></div>
+      </header>
+      <div class="gd-live-layout">
+        <aside class="gd-live-plan" aria-label="研究计划"><h3>研究计划</h3><ol><li data-live-stage="0"><span>拆解问题</span><small>明确对象与未知</small></li><li data-live-stage="1"><span>规划检索</span><small>确定来源与口径</small></li><li data-live-stage="2"><span>阅读证据</span><small>定位参数与现场</small></li><li data-live-stage="3"><span>交叉核对</span><small>比较差异与缺口</small></li><li data-live-stage="4"><span>形成结论</span><small>保留验证条件</small></li></ol></aside>
+        <div class="gd-live-activity"><div class="gd-live-current" role="status" aria-live="polite"><span id="live-current-label">准备开始</span><strong id="live-current-title">等待播放动态案例</strong><p id="live-current-detail">小好会逐项展示研究动作，不使用模拟打字或虚假联网状态。</p></div><ol class="gd-live-log" id="live-log" aria-label="研究动作记录"></ol></div>
+        <aside class="gd-live-findings"><h3>证据与结论</h3><div id="live-evidence"><p class="gd-live-empty">阅读到的原文会在这里保留，可以跳回项目档案核对。</p></div><div id="live-report"></div></aside>
+      </div>
+      <footer class="gd-live-progress"><progress id="live-progress" max="12" value="0" aria-label="动态案例已完成研究动作"></progress><span id="live-count">0 / 12 项动作</span><span id="live-state">尚未开始</span></footer>
+    </section>
+    <div class="gd-needs-layout">
+      <nav class="gd-needs-steps" id="steps" aria-label="研究步骤"></nav>
+      <section class="gd-needs-task" id="task" aria-live="polite"></section>
+      <aside class="gd-needs-status" id="status" aria-label="实时研究任务卡"></aside>
+    </div>
+    <noscript><p>此工作台需要 JavaScript 才能保存草稿与导出研究上下文。你仍可以浏览项目库和方法库。</p></noscript>
+  </main>
+  <dialog class="gd-needs-handoff" id="handoff" aria-labelledby="handoff-title">
+    <form method="dialog" class="gd-needs-handoff-head"><h2 id="handoff-title">核对并复制研究交接</h2><button type="button" class="gd-button gd-button--quiet" value="close">关闭</button></form>
+    <p>内容已全选，使用 Command+C 或 Ctrl+C 复制。这里仍是待确认研究上下文，不是已执行的研究结论。</p>
+    <textarea id="handoff-text" class="gd-needs-handoff-text" readonly aria-label="研究交接 JSON"></textarea>
+  </dialog>
+  <script src="needs-workspace.js"></script>
+  <script src="needs-live-demo.js"></script>
+</body>
+</html>

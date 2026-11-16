@@ -13,6 +13,6 @@ def _base_icon(d):
 
 
 def icon(d):
-    """Unified engineering line weight; geometry and editorial meanings unchanged."""
-    import re
-    return re.sub(r'stroke-width="[0-9.]+"', 'stroke-width="2.6"', _base_icon(d)).replace('stroke="currentColor"','stroke="#252a36"')
+    """Current B optical-glass visual projection; frozen contents stay unchanged."""
+    from method_glass_icons import icon as glass_icon
+    return glass_icon(d)

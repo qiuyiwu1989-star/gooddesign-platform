@@ -240,3 +240,15 @@ python3 -m unittest tests.test_application_registry_111
 4. 为每个应用补一份由 Manifest 生成的 `APP_SKILL.md`。
 5. 为 Agent 增加最小示例：读取注册表、调用 capabilities、组装研究上下文、校验 GDRP。
 6. 等 Manifest、MCP 参数和 GDRP 输出稳定后，再决定 Python / TypeScript SDK。
+
+2026-11-15信息结构整合入口：03-平台规划/20261115-全站信息架构与入口整理.md。该文档为待实施方案，保留现有导航，优先路由/权限/对象身份对账。
+
+2026-11-15用户新要求取代115登录门禁：canvas、loop免登录，采用签名访客Cookie隔离研究数据，expo本已公开；私有原件与管理接口保护不因本项更改。
+
+## 2026-11-16 方法图标上线增补
+用户选定B光学磨砂玻璃，64独立原生SVG已全部上线。真源scripts/method_glass_icons.py，经method_supplement_visuals.icon及build_method_reader生成；不要恢复旧细线图或把60映射当64。版号glass-b-20261116；64线上SHA和260真实页面场景通过。源/正文/评分冻结不变，详同日64方法图标验收。
+
+## 2026-11-16 2025项目封面正在局部发布（请保留）
+用户已要求替换2025全33插画。展示层真源extensions/project-portal/illustrations/2025-pixel-v1/display-manifest.json与project-cover-display.js；scripts/project_cover_display.py负责HTML静态封面投影，build_gooddesign_site已接入。原catalog/旧covers不覆，前端读GD_PROJECT_COVERS覆展示；全尺寸无损WebP保留且列表960px缩略图。其他会话发版需带此目录和脚本，勿以旧构建覆盖。当前线上指针已见20261116-156-report，本站此次只局部补丁，不切指针、不覆盖MCP/汇报更新。
+
+2026-11-16上述33封面局部发布完成：实际静态真根20261116-156-report，73文件；MCP/汇报原SHA保护，current未切。33项目真实HTTPS与8892分页已验；display-manifest/前端临时行投影，canonical catalog保持原cover字段。build_gooddesign_site生成展示JS并带illustrations全目录，勿回退。回滚按20261116-project-covers-2025清单检查后执行。

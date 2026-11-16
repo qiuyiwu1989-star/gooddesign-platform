@@ -1,0 +1,21 @@
+[Unit]
+Description=GoodDesign authenticated enterprise innovation workbench
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/innovation-design/current
+Environment=GOODDESIGN_LOOP_DB=/var/lib/innovation-loop/loop.sqlite3
+ExecStart=/var/www/innovation-design/venv/bin/python scripts/innovation_loop_server.py --port 18784
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/innovation-loop
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

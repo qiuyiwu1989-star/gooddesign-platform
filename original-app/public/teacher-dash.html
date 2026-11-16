@@ -48,12 +48,13 @@
 <footer>好设计馆教育线 · 教师看板 · 数据源:本机观展闯关记录(localStorage),仅作教学参考</footer>
 <script>
 (function(){
+ function init(){
   var QUESTS = window.PLAY_DATA ? window.PLAY_DATA.quest : null;
   if (!QUESTS) {
     document.getElementById('body').innerHTML = '<div class="empty">数据加载中…</div>';
     var s = document.createElement('script');
     s.src = 'js/play-data.js';
-    s.onload = function(){ location.reload(); };
+    s.onload = init;
     document.head.appendChild(s);
     return;
   }
@@ -87,6 +88,8 @@
   });
   html += '</table>';
   document.getElementById('body').innerHTML = answered ? html : '<div class="empty">还没有闯关记录——让学生在「互动乐园 → 观展闯关」作答后,这里会显示每题掌握情况。</div>';
+}
+ init();
 })();
 </script>
 </body>

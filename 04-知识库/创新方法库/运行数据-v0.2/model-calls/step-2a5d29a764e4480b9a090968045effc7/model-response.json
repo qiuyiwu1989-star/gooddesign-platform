@@ -1,0 +1,97 @@
+{
+  "artifact_id": "LIVE-TEACH-CLAMP-prototype-plan",
+  "revision": "r1",
+  "task_id": "LIVE-TEACH-CLAMP",
+  "task_revision": "t1",
+  "type": "PrototypePlan",
+  "scope": "Teaching hypothesis and conditional prototype planning for the bench clamp. No concept recommendation, fabrication, test execution, measured result or engineering validation is established.",
+  "conditions": [
+    {
+      "id": "C01",
+      "text": "The supplied task seeks to hold a workpiece without damage. Upstream REQ01 and REQ02 are proposed, with unknown hardness and acceptance criteria.",
+      "kind": "fact",
+      "evidence_refs": []
+    },
+    {
+      "id": "C02",
+      "text": "Customer loads, workpiece material, geometry, surface condition, allowable movement, damage criterion, operator context and applicable safety constraints remain unknown.",
+      "kind": "unknown",
+      "evidence_refs": []
+    },
+    {
+      "id": "C03",
+      "text": "Proposed learning focus: investigate whether retention and acceptable workpiece condition can coexist for a defined configuration. Neither M01 nor M02 is selected or recommended.",
+      "kind": "assumption",
+      "evidence_refs": []
+    },
+    {
+      "id": "C04",
+      "text": "Prototype resources, representative specimens, instrumentation, personnel and safe operating limits have not been supplied. Physical testing is conditional on resolving these gaps.",
+      "kind": "unknown",
+      "evidence_refs": []
+    },
+    {
+      "id": "C05",
+      "text": "The supplied lunar-sampling case has unestablished transferability and supplies no customer parameters or proof of bench-clamp performance.",
+      "kind": "fact",
+      "evidence_refs": [
+        "case-98b73a9c96af1f9408721571"
+      ]
+    }
+  ],
+  "evidence_refs": [
+    "case-98b73a9c96af1f9408721571"
+  ],
+  "payload": {
+    "hypothesis": "Proposed, untested hypothesis: for a subsequently defined representative workpiece, operating load and clamp configuration, there exists an operating setting that both limits movement according to REQ01 and keeps engagement, holding and release effects within the damage criterion for REQ02. All conditions and limits remain to be established; this hypothesis currently has no supporting clamp-performance evidence.",
+    "learning_goal": "Plan how to investigate the coexistence of retention and acceptable contact effects, while distinguishing an unsuccessful configuration from inadequate prototype fidelity, instrumentation limits or uncontrolled conditions.",
+    "scope": "Begin with a paper task sequence and capability review. A later functional contact-and-restraint fixture is proposed only after conditions and hazards are defined. It must represent the selected route's force path, support interface, restraint maintenance and release behavior. A paper or appearance model cannot establish retention, damage prevention, durability or safety. Any subsequent observation applies only to its recorded configuration and conditions.",
+    "procedure": [
+      "Retain REQ01 and REQ02 as proposed. Obtain the intended operation, representative workpiece properties, load directions and duration, allowable movement, damage definition, requirement hardness and responsible confirmation authority. Pause physical protocol finalization while these are unresolved.",
+      "Storyboard engagement, restraint application, holding, release and condition assessment for M01 and M02. Record slip, input loss and incomplete release as proposed abnormal scenarios, not observed failures. Keep recommendations empty while requirement hardness remains unknown.",
+      "Define the configuration to investigate without treating it as a preferred customer solution. Document prototype version, contact region, actuation, support and release mechanism. Identify which target mechanisms the prototype represents and which remain outside its capability.",
+      "Before any physical work, establish resources, instrumentation capability, representative specimens, safe operating boundaries and stopping actions for the defined setup. Stop planning execution if relevant hazards cannot be controlled or the prototype cannot represent the learning target.",
+      "Predefine the load sequence, operating-setting changes, observation intervals, specimen handling, baseline inspection and recording method. Keep conditions comparable and isolate setting changes where feasible; otherwise label the work exploratory. Establish any repetition and sample rationale before execution without claiming statistical representativeness.",
+      "Plan to record initial specimen condition, operating input, applied disturbance, relative movement, restraint continuity and condition after release. Record interventions, unexpected behavior, instrument limits and prototype changes separately from interpretations. No observations are supplied or generated here.",
+      "Predefine interpretation: results within both agreed limits would support the hypothesis only for the investigated conditions. Failure of either limit would count against that configuration at that setting. Missing limits, inadequate resolution or uncontrolled conditions would leave the finding unknown. Failure across investigated settings would not prove that every possible setting or concept is infeasible.",
+      "After future execution, preserve raw records and assess alternative explanations before deciding whether to revise contact conditions, actuation, prototype fidelity or the protocol. Refer broader load, reliability and intended-use claims to a separately defined engineering verification and validation plan."
+    ],
+    "measurements": [
+      {
+        "id": "ME01",
+        "observable": "Workpiece movement relative to the clamp or defined support during the planned holding interval.",
+        "unit_or_scale": "Displacement and direction; units, resolution and observation interval to be defined.",
+        "criterion": "Proposed: compare against an agreed allowable movement under agreed loads and duration. Thresholds are unknown; no pass or fail determination is currently possible."
+      },
+      {
+        "id": "ME02",
+        "observable": "Change in workpiece condition from the recorded baseline through engagement, holding and release.",
+        "unit_or_scale": "Damage-specific inspection scale or physical quantity to be agreed for the actual material and finish.",
+        "criterion": "Proposed: assess against the agreed damage definition and inspection limits. Absence of visible marks alone cannot establish absence of damage when the inspection capability is undefined."
+      },
+      {
+        "id": "ME03",
+        "observable": "Operating input and applied disturbance associated with each retention and condition observation.",
+        "unit_or_scale": "Route-appropriate input and load quantities, directions and duration; units and instrument capability to be defined.",
+        "criterion": "Proposed: interpret observations only when recorded conditions correspond to the predefined protocol. This is a condition-control check, not an acceptance threshold for customer performance."
+      },
+      {
+        "id": "ME04",
+        "observable": "Restraint continuity, release completion, unexpected motion and researcher intervention.",
+        "unit_or_scale": "Timestamped event record with configuration, sequence step and intervention description.",
+        "criterion": "Proposed: stop according to setup-specific safety limits to be defined before execution. Treat an intervention or interrupted sequence as qualified evidence requiring explanation, not successful unaided operation."
+      }
+    ],
+    "uncovered_questions": [
+      "Who is the intended operator, and what operation and bench environment must be represented?",
+      "What workpiece materials, finishes, geometries and variation are relevant?",
+      "What loads, directions, durations, allowable movements and damage limits should govern the plan?",
+      "Who can confirm requirement hardness, acceptance criteria and applicable safety constraints?",
+      "Which prototype resources and measurement capabilities are available, and can they resolve the proposed limits?",
+      "Which route and configuration should be investigated first for learning, and why? No customer preference or recommendation is established.",
+      "What input-loss and release behavior is required, and can abnormal scenarios be investigated safely?",
+      "What later evidence would be needed for durability, reliability and intended-use claims beyond this limited learning plan?"
+    ],
+    "execution_status": "planned"
+  }
+}

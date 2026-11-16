@@ -1,0 +1,42 @@
+{
+  "method": "R31",
+  "source_identity": "DSM Web Introduction to DSM",
+  "source_url": "https://dsmweb.org/introduction-to-dsm/",
+  "selected_read_scope": "matrix definition, edge direction conventions, task information sequencing and cycle selected paragraphs",
+  "claims": [
+    {
+      "id": "C31-01",
+      "source_url": "https://dsmweb.org/introduction-to-dsm/",
+      "locator": "The matrix layout is as follows",
+      "supported_claim": "row-to-column direction",
+      "support_level": "selected_primary_passage",
+      "not_supported": "platform fixture empirical validity or customer suitability"
+    },
+    {
+      "id": "C31-02",
+      "source_url": "https://dsmweb.org/introduction-to-dsm/",
+      "locator": "This second convention is the transpose",
+      "supported_claim": "alternative legend must accompany transpose",
+      "support_level": "selected_primary_passage",
+      "not_supported": "platform fixture empirical validity or customer suitability"
+    },
+    {
+      "id": "C31-03",
+      "source_url": "https://dsmweb.org/introduction-to-dsm/",
+      "locator": "Finally, in the coupled system",
+      "supported_claim": "mutual information influence creates cycle",
+      "support_level": "selected_primary_passage",
+      "not_supported": "platform fixture empirical validity or customer suitability"
+    }
+  ],
+  "source_raw_sha256": "c532102e1952cb2086cd34aa194dd2f61d8c9dca2ed25f3bf818e4db7b484d24",
+  "platform_adaptation": "constructed information task graph; SCC via transitive closure",
+  "originals_private": true,
+  "full_monograph_read": false,
+  "gaps": [
+    "edges constructed not observed",
+    "no schedule or optimal-module claim",
+    "interface costs unknown",
+    "graph reorder does not remove physical dependencies"
+  ]
+}

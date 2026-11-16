@@ -2,12 +2,13 @@
 import copy
 import hashlib
 import json
+import os
 import sqlite3
 from pathlib import Path
 from innovation_loop_decision import validate_requirement, compare_routes, validate_feedback, validate_route_transfer, validate_research_action
 
 ROOT=Path(__file__).resolve().parents[1]
-DEFAULT=ROOT/'output/innovation-loop-024/integration/loop.sqlite3'
+DEFAULT=Path(os.environ.get('GOODDESIGN_LOOP_DB', str(ROOT/'output/innovation-loop-024/integration/loop.sqlite3')))
 
 def digest(value):
     return hashlib.sha256(json.dumps(value,ensure_ascii=False,sort_keys=True,allow_nan=False).encode()).hexdigest()

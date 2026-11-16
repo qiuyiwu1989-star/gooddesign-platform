@@ -1,0 +1,1429 @@
+{
+  "input_sha256": "1aad015821523c9c05484d664decf3b4653560ff2366400a49d62a95dad62237",
+  "payload": {
+    "task": {
+      "task_id": "LIVE-TEACH-CLAMP",
+      "revision": "t1",
+      "object": "bench clamp",
+      "desired_outcome": "hold a workpiece without damage",
+      "boundary": "teaching concept and test planning only; customer load, material, geometry and damage criterion unknown",
+      "stage": "frame",
+      "delivery_level": "concept",
+      "source_policy": "Lunar sampling case is provided as a deliberately different environment; do not transfer its parameters or cite it as proof of clamp performance."
+    },
+    "artifact": {
+      "artifact_id": "LIVE-TEACH-CLAMP-vv-plan",
+      "revision": "r1",
+      "task_id": "LIVE-TEACH-CLAMP",
+      "task_revision": "t1",
+      "type": "VerificationPlan",
+      "scope": "Conditional teaching plan for verifying proposed retention and damage requirements and clarifying intended-use validation. No activity has been executed, no concept is recommended, and no compliance, acceptance or engineering validation is established. Execution depends on defined criteria, controlled configurations and suitable resources.",
+      "conditions": [
+        {
+          "id": "C01",
+          "text": "Upstream ProblemBrief revision r1 contains REQ01 and REQ02. Both remain proposed; requirement hardness and confirmation authority are unknown.",
+          "kind": "fact",
+          "evidence_refs": []
+        },
+        {
+          "id": "C02",
+          "text": "Customer loads, workpiece material, geometry, allowable movement, damage criterion, operators and operating environment remain unknown.",
+          "kind": "unknown",
+          "evidence_refs": []
+        },
+        {
+          "id": "C03",
+          "text": "The supplied PrototypePlan proposes a functional contact-and-restraint prototype. M01 and M02 remain separate unresolved routes; no physical configuration or prototype fidelity has been established.",
+          "kind": "fact",
+          "evidence_refs": []
+        },
+        {
+          "id": "C04",
+          "text": "Equipment, observation capability, measurement uncertainty, personnel, representative workpieces, sampling rationale and execution readiness are unknown. Essential gaps must be resolved before execution.",
+          "kind": "unknown",
+          "evidence_refs": []
+        },
+        {
+          "id": "C05",
+          "text": "Proposed record controls: baseline criteria before data collection; bind raw records to requirement, route, prototype version, workpiece and conditions; record deviations separately. Investigate anomalies and assess affected activities after configuration, requirement or method changes before reusing evidence.",
+          "kind": "assumption",
+          "evidence_refs": []
+        },
+        {
+          "id": "C06",
+          "text": "The supplied lunar-sampling excerpt has unestablished transferability and provides no customer clamp parameters or evidence of clamp performance.",
+          "kind": "fact",
+          "evidence_refs": [
+            "case-98b73a9c96af1f9408721571"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        "case-98b73a9c96af1f9408721571"
+      ],
+      "payload": {
+        "requirements_revision": "r1",
+        "matrix": [
+          {
+            "requirement_id": "REQ01",
+            "purpose": "verification",
+            "method": "test",
+            "criterion": "Proposed, conditional criterion: workpiece movement remains within a stakeholder-defined limit under specified loads, directions and holding duration. Establish limits, observation uncertainty and decision rules before execution. Missing criteria or inadequate observations leave retention unverified.",
+            "configuration": "Functional contact-and-restraint prototype as scoped in PrototypePlan r1; route and physical version not yet selected. Before execution, record actuation, contact geometry and materials, support interface, representative workpiece, load application, environment and observation equipment. Define containment and stopping rules; pause if essential conditions or controls are unavailable.",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "REQ02",
+            "purpose": "verification",
+            "method": "test",
+            "criterion": "Proposed, conditional criterion: changes from the recorded initial workpiece condition through engagement, holding and release remain within a stakeholder-defined damage criterion. Define relevant damage types, inspection capability and limits before execution. Failure to detect relevant changes cannot establish absence of damage. Evaluate alongside REQ01 under the same documented conditions.",
+            "configuration": "Same traceable prototype and workpiece configuration used for the associated retention activity. Record initial condition, contact arrangement, restraint input, load history, release sequence, assessment method and handling effects. Observation stages and their ability to distinguish damage sources remain to be defined.",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "REQ01",
+            "purpose": "validation",
+            "method": "demonstration",
+            "criterion": "Proposed intended-use criterion: a representative operator completes the subsequently defined work operation while the workpiece remains adequately restrained under representative conditions. Define task success, permitted interventions and representativeness before execution. User impressions alone cannot establish quantitative retention compliance.",
+            "configuration": "Representative operator, work operation, workpiece, bench environment and candidate configuration remain unknown. Document differences between the functional prototype and intended use; restrict any future interpretation to the represented conditions.",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          },
+          {
+            "requirement_id": "REQ02",
+            "purpose": "validation",
+            "method": "demonstration",
+            "criterion": "Proposed intended-use criterion: engagement, holding and release leave the workpiece suitable for its stakeholder-defined subsequent use. Define unacceptable functional and surface changes before execution and pair task observations with the planned condition assessment. Demonstration alone cannot establish absence of undetectable damage.",
+            "configuration": "Use the documented representative task configuration associated with REQ01 validation. Define subsequent workpiece use, operator handling, release and removal conditions, and assessment responsibilities. Customer suitability remains unresolved until these conditions are established.",
+            "evidence_status": "planned",
+            "evidence_refs": []
+          }
+        ],
+        "validation_questions": [
+          "Who operates the clamp, for which work operation, and in which bench environment?",
+          "Which materials, finishes, geometries and variations represent the intended workpieces?",
+          "What loads, directions, durations and allowable movement define successful holding?",
+          "What constitutes damage, including effects on subsequent workpiece use, and which assessment methods can detect it?",
+          "What operator effort, actuation resources, release behavior and permitted interventions are acceptable?",
+          "Which slip, input-loss or incomplete-release scenarios are relevant, and what controlled setup would be needed to investigate them?",
+          "Who can confirm requirements, hardness, criteria and changes?",
+          "What prototype fidelity, equipment, personnel, observation uncertainty and sampling coverage are adequate for the intended claims?",
+          "Which safety, durability or reliability questions require separately defined requirements and activities beyond this teaching plan?"
+        ],
+        "uncovered_requirements": [],
+        "execution_status": "planned"
+      }
+    },
+    "upstream_inputs": [
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-brief",
+        "revision": "r1",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "ProblemBrief",
+        "scope": "Frame the bench-clamp holding and damage-prevention problem for teaching and subsequent test planning. This is a draft problem brief, not an approved requirements baseline or evidence of product performance.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The supplied task specifies a bench clamp and the desired outcome of holding a workpiece without damage.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Customer load, workpiece material, geometry and damage criterion are unknown; specifications and acceptance thresholds cannot yet be fixed.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "The supplied lunar-sampling excerpt concerns a different environment. Its transferability is not established; its parameters and reported achievements provide no proof of bench-clamp performance.",
+            "kind": "fact",
+            "evidence_refs": [
+              "case-98b73a9c96af1f9408721571"
+            ]
+          }
+        ],
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "payload": {
+          "actor": "Intended bench-clamp operator; customer identity, capabilities and work context are unknown.",
+          "object": "bench clamp",
+          "boundary": "Teaching concept and test planning only; customer load, material, geometry and damage criterion unknown. Stop specification finalization until these conditions are clarified. No concept selection, physical testing or engineering validation is established.",
+          "desired_outcome": "hold a workpiece without damage",
+          "requirements": [
+            {
+              "id": "REQ01",
+              "text": "The bench clamp should retain the intended workpiece during the intended operation under use conditions to be established.",
+              "hard": null,
+              "acceptance": "Proposed verification plan only: first establish workpiece geometry, applied loads, load directions, holding duration and allowable movement with the responsible stakeholder; then plan a retention test against those agreed conditions. No threshold or result is available.",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "REQ02",
+              "text": "Clamping and release should leave the workpiece within an agreed damage criterion.",
+              "hard": null,
+              "acceptance": "Proposed verification plan only: identify material, surface condition and unacceptable changes; agree inspection methods and acceptance limits before planning a before-and-after assessment. Damage criteria and results remain unknown.",
+              "status": "proposed",
+              "evidence_refs": []
+            }
+          ],
+          "conditions": [
+            {
+              "id": "PC01",
+              "text": "Whether adequate retention and acceptable workpiece condition can be achieved together is unresolved for the customer's unknown use conditions.",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "PC02",
+              "text": "Requirement owners, confirmation authority, priority rules and change-approval responsibilities have not been supplied. Both requirements remain draft proposals.",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "PC03",
+              "text": "Proposed change process: retain requirement IDs and revision history, record the reason for each change, and revisit affected concepts and verification plans before establishing a confirmed baseline.",
+              "kind": "assumption",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "Who operates the clamp, for which work operation, and in what bench environment?",
+            "What are the workpiece material, surface finish, geometry and dimensional variation?",
+            "What loads, directions, durations and allowable movements define successful holding?",
+            "What constitutes damage, and how should it be inspected or measured?",
+            "What bench interfaces, operating constraints and applicable safety requirements must be investigated?",
+            "Which requirements are hard constraints, and who can confirm them and approve changes?",
+            "What representative workpieces and verification resources would be available for a later test plan?"
+          ]
+        }
+      },
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-functions",
+        "revision": "r1",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "FunctionModel",
+        "scope": "Proposed functional model for teaching and later test planning. Maps draft REQ01 retention and REQ02 damage prevention to candidate functions and interfaces. No requirements approval, concept selection, physical feasibility or test execution is established.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The task requests a bench clamp that holds a workpiece without damage. Input requirements REQ01 and REQ02 remain proposed; their hardness is unknown.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Customer loads, workpiece material, geometry, allowable movement and damage criteria are unknown.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "The functions, flows and scenarios below are modeling proposals. Necessity denotes their proposed contribution to the goal, not confirmed customer approval or physical feasibility.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C04",
+            "text": "The supplied lunar-sampling case has unestablished transferability and supplies no clamp performance evidence or customer parameters.",
+            "kind": "fact",
+            "evidence_refs": [
+              "case-98b73a9c96af1f9408721571"
+            ]
+          }
+        ],
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "payload": {
+          "boundary": "Candidate functional boundary includes establishing workpiece contact, applying and maintaining restraint, managing contact effects, releasing restraint and assessing workpiece condition. External parties and objects are the operator or other actuation source, workpiece, bench/support and operation imposing loads; their characteristics remain unknown. Proposed normal path: establish contact, apply restraint, maintain restraint during work, release, assess condition. Proposed abnormal walkthroughs: workpiece slip, excessive contact effects, loss of actuation input and incomplete release. These are planning scenarios, not observed failures. Pause specification finalization and architecture freezing until use conditions and acceptance criteria are clarified.",
+          "functions": [
+            {
+              "id": "F01",
+              "verb_object": "Establish workpiece contact — proposed prerequisite for REQ01; accommodate the intended workpiece without selecting a jaw geometry or mechanism.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F02",
+              "verb_object": "Apply restraint — proposed contribution to REQ01; transform an unspecified actuation input into workpiece restraint.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F03",
+              "verb_object": "Maintain workpiece restraint — proposed contribution to REQ01 throughout the intended operation; required loads and duration remain unknown.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F04",
+              "verb_object": "Manage workpiece contact effects — proposed contribution to REQ02 during engagement, holding and release; acceptable effects remain undefined.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F05",
+              "verb_object": "Release workpiece restraint — proposed contribution to REQ02 during removal; release behavior and operator interaction require clarification.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F06",
+              "verb_object": "Assess workpiece condition — proposed supporting activity for later verification of REQ02; allocation to an operator or inspection resource is unresolved.",
+              "necessity": "supporting",
+              "evidence_refs": []
+            }
+          ],
+          "flows": [
+            {
+              "id": "FL01",
+              "from_function": "F02",
+              "to_function": "F04",
+              "flow_type": "energy",
+              "description": "Proposed transfer of actuation work through the contact-management function during engagement. Input source, displacement, losses and magnitude are unknown; this does not establish a mechanism.",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL02",
+              "from_function": "F01",
+              "to_function": "F02",
+              "flow_type": "signal",
+              "description": "Proposed information dependency: contact readiness permits restraint application. This may be an operator judgment; no sensor or automatic interlock is specified.",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL03",
+              "from_function": "F02",
+              "to_function": "F03",
+              "flow_type": "signal",
+              "description": "Proposed information dependency: restraint establishment precedes the holding phase. How readiness is judged and what happens if it is uncertain remain unresolved.",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL04",
+              "from_function": "F05",
+              "to_function": "F06",
+              "flow_type": "material",
+              "description": "Proposed handoff of the released workpiece for condition assessment. Inspection handling must itself be considered when defining damage assessment.",
+              "evidence_refs": []
+            }
+          ],
+          "interfaces": [
+            {
+              "id": "I01",
+              "text": "Proposed workpiece interface: F01–F05 interact with the workpiece through contact and restraint. Material, finish, geometry, contact regions, force distribution, displacement and permitted surface changes are unknown. Interface owner and confirmation authority are unassigned. Proposed derived requirement: establish compatible contact conditions for retention and damage prevention before fixing a design.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I02",
+              "text": "Proposed actuation interface: an external operator or other source supplies input to F02 and initiates F05. Input type, magnitude, units, travel, timing, feedback and behavior after input loss are unknown. Do not presume manual, powered or continuously energized actuation.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I03",
+              "text": "Proposed support interface: F03 transfers reaction loads to a bench or other support. Attachment method, support stiffness, allowable movement and load directions are unknown. Later planning should define both clamp-side and support-side responsibilities and compatible limits.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I04",
+              "text": "Proposed operation interface: the intended work operation imposes disturbances on the restrained workpiece. Load histories, durations, directions and interaction with release are unknown. Proposed derived requirement: define when work may begin and how slip or uncertain restraint should be handled.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I05",
+              "text": "Proposed assessment interface: F06 receives the released workpiece and a pre-clamping condition record, and returns an assessment to the responsible reviewer. Inspection method, reference condition, acceptance limits, reviewer and record format remain unknown. This is a verification-planning dependency, not a specified built-in sensing function.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I06",
+              "text": "Proposed verification plan: after stakeholders define representative workpieces, load conditions, allowable movement and damage criteria, plan retention observation and before/after condition assessment. Review engagement, holding, release and abnormal scenarios together. No procedure, threshold, sample count or acceptance result is established.",
+              "kind": "assumption",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "Which work operation, operator capabilities and bench environment define the operating scenario?",
+            "What workpiece materials, finishes, geometries and variations must be accommodated?",
+            "What loads, directions, durations and allowable movements define retention?",
+            "What constitutes damage during engagement, holding, release and inspection?",
+            "Can retention and damage prevention be achieved together under the eventual use conditions?",
+            "What actuation source, support interface and release behavior are required?",
+            "What are the consequences and required responses for slip, excessive contact effects, input loss or incomplete release?",
+            "Who owns and confirms each requirement and interface, and which constraints are hard? Hardness remains unknown.",
+            "How should functions be allocated among clamp, operator and external assessment resources? No physical architecture is selected.",
+            "What verification resources and representative workpieces will be available? All verification described here remains a plan."
+          ]
+        }
+      },
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-concepts",
+        "revision": "r1",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "ConceptSet",
+        "scope": "Teaching concept enumeration and verification planning for a bench clamp intended to hold a workpiece without damage. Uses the supplied proposed functional model and morphological-analysis method. All implementation principles below are teaching hypotheses, not customer requirements or demonstrated solutions. No preferred concept, approved specification, prototype execution or engineering validation is established. The lunar-sampling case supplies no clamp performance evidence and contributes no parameters to these concepts.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The task specifies a bench clamp and the desired outcome of holding a workpiece without damage.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Customer loads, workpiece material, geometry, allowable movement and damage criteria remain unknown. REQ01 and REQ02 remain proposed; their hardness is unknown.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "F01 establishes contact; F02 applies restraint; F03 maintains restraint; F04 manages contact effects; F05 releases restraint; F06 assesses workpiece condition. These allocations remain modeling proposals from the supplied FunctionModel.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C04",
+            "text": "Manual input, pneumatic supply, fixed-reference contact and external inspection are alternative teaching assumptions. None is established as available or acceptable for the customer.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C05",
+            "text": "The proposed contact-management option is a hypothesis to investigate; distributing contact does not by itself establish adequate retention or freedom from damage.",
+            "kind": "assumption",
+            "evidence_refs": []
+          }
+        ],
+        "evidence_refs": [],
+        "payload": {
+          "function_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06"
+          ],
+          "options": [
+            {
+              "id": "O01",
+              "function_id": "F01",
+              "principle": "Establish workpiece contact against a fixed reference before applying restraint.",
+              "conditions": [
+                "Teaching hypothesis derived from the method example.",
+                "Requires compatible workpiece geometry, accessible contact regions and a reaction path to the support; all remain unknown."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O02",
+              "function_id": "F02",
+              "principle": "Convert manual rotation through a screw transmission into closing displacement and restraint.",
+              "conditions": [
+                "Manual operation is an assumption, not a customer constraint.",
+                "Operator input, travel, transmission geometry and resulting contact forces require definition."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O03",
+              "function_id": "F02",
+              "principle": "Use a pneumatic cylinder to produce closing displacement and restraint.",
+              "conditions": [
+                "Pneumatic supply availability and acceptability are unknown.",
+                "For the exclusion example only, assume a single-direction closing cylinder with no screw transmission.",
+                "Pressure, stroke, control and support interfaces remain unspecified."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O04",
+              "function_id": "F03",
+              "principle": "Investigate retaining the screw position through transmission resistance after manual input stops.",
+              "conditions": [
+                "Position retention is a hypothesis, not an established self-locking property.",
+                "Requires review of transmission geometry, friction, disturbances, load duration and support reactions."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O05",
+              "function_id": "F03",
+              "principle": "Investigate maintaining restraint through sustained pneumatic input.",
+              "conditions": [
+                "Continuous supply and control are assumed for this teaching route.",
+                "Leakage, supply loss, movement and required holding duration remain unresolved."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O06",
+              "function_id": "F04",
+              "principle": "Investigate distributing restraint over a defined contact region to manage local workpiece effects.",
+              "conditions": [
+                "Proposed interpretation of F04, not an evidenced damage-prevention solution.",
+                "Contact area, material, surface interaction and deformation require definition.",
+                "Any effect on slip resistance must be evaluated together with damage."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O07",
+              "function_id": "F05",
+              "principle": "Reverse the same screw transmission to withdraw contact and release restraint.",
+              "conditions": [
+                "Requires an actual reversible screw transmission connected to the moving contact.",
+                "Release travel, residual contact and removal clearance remain unknown."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O08",
+              "function_id": "F05",
+              "principle": "Investigate elastic return after pneumatic closing input is removed.",
+              "conditions": [
+                "Requires a return element and a defined pressure-release path.",
+                "Return force, sticking, release travel and behavior during unintended supply loss remain unknown.",
+                "Compatibility with sustained holding must be investigated."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O09",
+              "function_id": "F06",
+              "principle": "Allocate before-and-after workpiece condition assessment to an external operator or inspection resource.",
+              "conditions": [
+                "Supporting verification activity rather than a specified built-in sensing mechanism.",
+                "Requires an agreed reference condition, damage criterion, inspection method and responsible reviewer.",
+                "No assessment has been performed."
+              ],
+              "evidence_refs": []
+            }
+          ],
+          "combinations": [
+            {
+              "id": "M01",
+              "option_ids": [
+                "O01",
+                "O02",
+                "O04",
+                "O06",
+                "O07",
+                "O09"
+              ],
+              "status": "unknown",
+              "reason": "Manual screw route covers all six proposed functions: reference contact, screw closing, hypothesized position retention, contact management, reverse-screw release and external assessment. The screw supplies a conceptual connection between closing and release, but holding behavior, contact effects and bench reactions remain unknown. Manual operation and reverse travel introduce operator and clearance dependencies. Retained for investigation only; no recommendation is supported."
+            },
+            {
+              "id": "M02",
+              "option_ids": [
+                "O01",
+                "O03",
+                "O05",
+                "O06",
+                "O08",
+                "O09"
+              ],
+              "status": "unknown",
+              "reason": "Pneumatic route covers all six proposed functions through reference contact, pneumatic closing, sustained input, contact management, elastic return and external assessment. It adds supply, control and return-element dependencies. Whether pressure can maintain restraint while permitting intentional release, including behavior after supply loss, remains unresolved. No recommendation is supported."
+            },
+            {
+              "id": "M03",
+              "option_ids": [
+                "O01",
+                "O03",
+                "O05",
+                "O06",
+                "O07",
+                "O09"
+              ],
+              "status": "excluded",
+              "reason": "Under the explicit O03 topology assumption of a closing cylinder without a screw transmission, O07 cannot release restraint by reversing that absent transmission. This is a conditional logical conflict, not an empirical performance judgment. Adding a screw would require a newly defined option and combination."
+            }
+          ],
+          "compatibility": [
+            {
+              "option_ids": [
+                "O02",
+                "O07"
+              ],
+              "status": "compatible",
+              "reason": "At the stated principle level only, forward and reverse operation refer to the same reversible screw transmission. This conditional connection establishes neither release clearance nor overall feasibility.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O02",
+                "O04"
+              ],
+              "status": "unknown",
+              "reason": "Screw-driven closing does not establish that position or restraint will persist after input stops; transmission and disturbance conditions are missing.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O03",
+                "O07"
+              ],
+              "status": "incompatible",
+              "reason": "O03 explicitly excludes a screw transmission for this topology, whereas O07 requires that transmission as the release mechanism.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O03",
+                "O05",
+                "O08"
+              ],
+              "status": "unknown",
+              "reason": "Closing, sustained holding and elastic return require a coordinated pressure and motion sequence. Available supply, intentional venting, return force and input-loss behavior are undefined.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O01",
+                "O02",
+                "O04",
+                "O06",
+                "O07",
+                "O09"
+              ],
+              "status": "unknown",
+              "reason": "Whole-route check for M01 remains open: contact geometry, force transmission, restraint persistence, support reactions, release and assessment must jointly satisfy retention and damage criteria that are not yet defined.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O01",
+                "O03",
+                "O05",
+                "O06",
+                "O08",
+                "O09"
+              ],
+              "status": "unknown",
+              "reason": "Whole-route check for M02 remains open: supply and return behavior interact with contact forces, restraint continuity, support reactions and damage. Pairwise consistency cannot resolve these system interactions.",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "Confirm the intended operation, operator capabilities and available actuation resources before comparing manual and pneumatic routes.",
+            "Obtain workpiece materials, finishes, geometries and variation; then plan contact and clearance review for engagement, holding and release.",
+            "Establish loads, directions, duration and allowable movement; then plan restraint and bench-reaction analysis for each retained route.",
+            "Agree damage criteria and inspection methods with the responsible stakeholder before planning before-and-after assessment.",
+            "Investigate whether retention and acceptable contact effects can coexist; no acceptable force range has been established.",
+            "For M01, plan review of screw position retention, disturbance sensitivity and release behavior once transmission and load conditions are available.",
+            "For M02, define the supply, control and return sequence; then plan walkthroughs of intentional release, supply loss and incomplete release.",
+            "Identify requirement owners, confirmation authority and hard constraints. Unknown hard gates prevent recommendation or unique selection.",
+            "No approved comparison baseline exists. After requirements are clarified, use the same workpiece, load, movement and damage criteria for both routes; compare operator effort, resource dependence and interface complexity without inventing scores.",
+            "Prototype and verification activities remain proposals only. Define representative workpieces, resources, procedures and acceptance limits before any later execution; no tests, measurements or acceptance results are supplied."
+          ]
+        }
+      },
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-comparison",
+        "revision": "r2",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "ComparisonRecord",
+        "scope": "Teaching comparison frame and test-planning record only. M01 is a provisional datum, not an approved or demonstrated clamp. Performance comparisons stop because retention conditions and damage criteria are undefined. No concept is recommended, tested or engineering validated.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The supplied task seeks a bench clamp that holds a workpiece without damage. REQ01 and REQ02 remain proposed; customer requirement hardness remains unknown.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Use M01, the manual screw route, as a provisional teaching datum and compare M02, the pneumatic route. This datum choice is a planning assumption, not a customer preference.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "The Boolean hard field below describes a proposed procedural gate for permitting selection, not the unknown hardness of customer requirements. Unknown customer hardness is not represented as false.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C04",
+            "text": "M03 remains conditionally excluded under its supplied topology: its release option requires a screw transmission that its closing option explicitly omits. This logical conflict establishes no performance result for M01 or M02.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C05",
+            "text": "The lunar-sampling excerpt has unestablished transferability and supplies neither customer clamp parameters nor evidence of clamp performance.",
+            "kind": "fact",
+            "evidence_refs": [
+              "case-98b73a9c96af1f9408721571"
+            ]
+          }
+        ],
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "payload": {
+          "baseline_id": "M01",
+          "candidate_ids": [
+            "M01",
+            "M02"
+          ],
+          "criteria": [
+            {
+              "id": "G01",
+              "text": "Proposed selection-readiness gate: establish applicable constraints and demonstrate retention and acceptable workpiece condition against stakeholder-defined use conditions before recommending a route. This procedural gate does not assign hardness to REQ01 or REQ02.",
+              "hard": true
+            }
+          ],
+          "judgments": [
+            {
+              "candidate_id": "M01",
+              "criterion_id": "G01",
+              "value": "unknown",
+              "basis": "Record author: planning assessment from supplied inputs only. Datum designation does not establish gate passage. Loads, material, geometry, allowable movement, damage limits and requirement authority remain unknown; no evidence establishes retention or acceptable workpiece condition for M01.",
+              "evidence_refs": []
+            },
+            {
+              "candidate_id": "M02",
+              "criterion_id": "G01",
+              "value": "unknown",
+              "basis": "Record author: planning assessment from supplied inputs only. Loads, material, geometry, allowable movement, damage limits and requirement authority are unknown. Neither M02 nor datum M01 has evidence establishing this gate. Their shared contact-management option does not establish equivalent damage or retention performance. No relative performance score is justified.",
+              "evidence_refs": []
+            }
+          ],
+          "recommendations": [],
+          "sensitivity": [
+            "Datum choice cannot resolve missing acceptance criteria. Switching the datum to M02 would leave selection readiness unknown.",
+            "M01 assumes manual input and hypothesized screw-position retention; M02 assumes pneumatic supply, sustained input and elastic return. Resource availability and acceptable input-loss behavior could change which routes merit further investigation.",
+            "Contact geometry, material and surface interaction could change retention and damage together. No ranking, weights or symbol totals are justified."
+          ],
+          "unknowns": [
+            "Confirm the intended work operation, operator capabilities, bench interface and available actuation resources.",
+            "Define representative workpiece materials, finishes, geometries and variation.",
+            "Establish loads, directions, holding duration and allowable movement; agree what constitutes damage and how it will be assessed.",
+            "Identify requirement owners and confirmation authority; determine customer requirement hardness without treating the proposed procedural gate as approval.",
+            "After criteria are defined, plan comparisons under common workpiece and loading conditions, including engagement, holding, release and before-and-after condition assessment. Procedures, thresholds, sample counts and resources remain to be defined; nothing has been executed.",
+            "For M01, plan investigation of restraint persistence, disturbance sensitivity and reverse-screw release. For M02, plan investigation of sustained supply, intentional venting, return behavior and supply loss.",
+            "Reopen the Pugh performance matrix only after its criteria and supporting evidence are sufficiently defined. Retain both routes as unresolved teaching hypotheses, without a preferred concept."
+          ]
+        }
+      },
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-prototype-plan",
+        "revision": "r1",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "PrototypePlan",
+        "scope": "Teaching hypothesis and conditional prototype-test planning for a bench clamp intended to hold a workpiece without damage. No concept recommendation, approved requirement, executed test or engineering validation is established.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The supplied task specifies a bench clamp and the desired outcome of holding a workpiece without damage.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Customer loads, workpiece material, geometry, allowable movement and damage criterion are unknown. REQ01 and REQ02 remain proposed, and their hardness remains unknown.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "M01 and M02 are unresolved teaching concepts. Neither has evidence establishing retention, acceptable contact effects or selection-readiness gate passage.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C04",
+            "text": "A functional contact-and-restraint bench prototype is proposed as the minimum carrier for investigating retention and contact effects together. Its suitability depends on subsequently defined conditions and available resources.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C05",
+            "text": "The supplied lunar-sampling excerpt has unestablished transferability. Its parameters and reported achievements cannot establish customer clamp conditions or clamp performance.",
+            "kind": "fact",
+            "evidence_refs": [
+              "case-98b73a9c96af1f9408721571"
+            ]
+          }
+        ],
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "payload": {
+          "hypothesis": "Proposed, untested hypothesis: for a subsequently specified workpiece and operating condition, a candidate clamp route can provide sufficient restraint while leaving the workpiece within an agreed damage criterion through engagement, holding and release. The hypothesis is not yet operationally testable because its conditions and thresholds are unknown.",
+          "learning_goal": "Determine whether adequate retention and acceptable workpiece condition can coexist within the conditions actually examined, and identify whether uncertainty arises from the contact arrangement, restraint mechanism, prototype limitations or observation method. This learning does not select a route or establish rated performance.",
+          "scope": "Conditional functional-prototype plan covering contact establishment, restraint application and maintenance, release, and before-and-after condition assessment. M01 and M02 remain separate candidate routes with no preferred concept. Appearance models cannot answer the physical hypothesis. Customer suitability, lifetime, reliability and safety acceptance remain outside this teaching plan.",
+          "procedure": [
+            "Before fabrication or execution, resolve the intended operation, representative workpiece material, finish and geometry, applied loads and directions, holding duration, allowable movement, damage definition and requirement authority. Record unresolved items; pause physical testing while essential conditions remain undefined.",
+            "With the responsible stakeholder, propose and record observation methods, thresholds, relevant observation uncertainty and decision rules before collecting data. Define resources, repetitions and any sampling rationale without assuming statistical representativeness. Requirements remain proposed until confirmation is supplied.",
+            "Prepare an engagement–holding–release–assessment storyboard. Define a functional prototype that represents the relevant contact interface, restraint path and support reaction. Record its version, materials, geometry, actuation, limitations and differences from intended use. Select a route for a learning round only when resources and controllable conditions are established; this is not a concept recommendation.",
+            "For M01, retain investigation of screw-position persistence and reverse-screw release. For M02, retain investigation of sustained input, intentional pressure release and elastic return. Include input-loss scenarios only in a separately defined, controlled setup; otherwise leave their behavior unknown.",
+            "Plan condition records before clamping, during engagement and holding, and after release. Keep restraint input, imposed disturbance, movement, workpiece changes, prototype faults and researcher intervention separately traceable. Vary one defined factor at a time where feasible; label coupled changes as exploratory.",
+            "Before any later execution, define containment, observation access and stopping rules appropriate to the specified loads, workpiece and prototype. Stop upon uncontrolled motion, support instability, unexpected workpiece change or other conditions outside the planned envelope. If hazards cannot be controlled, pause and revise the carrier or learning goal.",
+            "If prerequisites are later satisfied, execute only the documented procedure and retain raw observations separately from interpretations. No execution or observations are supplied in this artifact.",
+            "Apply the predeclared rules: observations meeting both criteria support the hypothesis only within the examined conditions; a valid observation violating either criterion challenges it at that condition. Inadequate prototype fidelity, ambiguous inspection, uncontrolled conditions or insufficient evidence leave the hypothesis unknown. Examine alternative explanations before changing the design.",
+            "Use findings, if later obtained, to propose a targeted iteration, additional investigation or cessation of that configuration. Unknown hard gates continue to block recommendation. Any claim requiring rated-load, durability, reliability or intended-use validation needs a separate formal verification and validation plan."
+          ],
+          "measurements": [
+            {
+              "id": "M01",
+              "observable": "Workpiece movement relative to the defined reference during the specified holding task.",
+              "unit_or_scale": "Displacement and, if relevant, rotation; units, reference and observation resolution remain to be defined.",
+              "criterion": "Proposed: compare movement against a stakeholder-defined allowable limit under documented loads and duration. No threshold is supplied; retention remains unknown until conditions and observation capability are adequate."
+            },
+            {
+              "id": "M02",
+              "observable": "Change in workpiece condition between the pre-clamping record and observations after engagement, holding and release.",
+              "unit_or_scale": "Damage categories and/or dimensional or surface-change measures appropriate to the specified material; method and scale remain unknown.",
+              "criterion": "Proposed: assess against a predeclared damage definition and limits. An inability to detect relevant damage yields an unknown result, not evidence of no damage."
+            },
+            {
+              "id": "M03",
+              "observable": "Restraint input and imposed disturbance associated with each movement and condition observation.",
+              "unit_or_scale": "Route-appropriate input, load, direction and duration measures; quantities, units and instruments remain to be defined.",
+              "criterion": "Proposed: interpret retention and damage only where these conditions are recorded adequately and fall within the planned envelope. No force, torque, pressure or duration value is prescribed."
+            },
+            {
+              "id": "M04",
+              "observable": "Completion of intentional release, residual contact, unexpected motion and researcher intervention.",
+              "unit_or_scale": "Event record with released, incomplete or indeterminate state; any clearance measure remains to be defined.",
+              "criterion": "Proposed: judge release using a predeclared removal condition and damage criterion. Unexpected motion or incomplete release triggers the planned stop and investigation; missing observations remain unknown."
+            }
+          ],
+          "uncovered_questions": [
+            "Who operates the clamp, for what operation, and with which bench and actuation resources?",
+            "Which workpiece materials, finishes, geometries and variations must the plan represent?",
+            "What loads, directions, durations and allowable movement define retention?",
+            "What constitutes damage, and can the available inspection method detect it?",
+            "Who can confirm requirements, acceptance criteria and requirement hardness?",
+            "Which prototype resources, observation tools and controllable conditions are available?",
+            "What repetitions and coverage are appropriate for the intended learning claim?",
+            "Can either route maintain restraint and permit acceptable release under the eventual conditions, including relevant input-loss behavior?",
+            "Which questions require separate formal engineering verification and validation?"
+          ],
+          "execution_status": "planned"
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "case-98b73a9c96af1f9408721571",
+        "server": "gooddesign-project-archives",
+        "project_id": "2025-00",
+        "source_id": "Sc249f11de5b7c8a4",
+        "source_revision": "758bc2ce5b48d2d92dedd0775e9212eaed5e81cb634fb719802f48a6c737ecb0",
+        "publication_revision": "current_ingest",
+        "source_sha256": "c249f11de5b7c8a4c1a46ec34f10004dfc0626fa9f271e924761afde58ca722f",
+        "chunk_id": "B0001",
+        "locator": "JSON正文 · 清洗文本字符1–1200",
+        "text": "{\n\"year\": 2025,\n\"name\": \"嫦娥五/六号月球钻取采样方法及系统设计\",\n\"unit\": \"哈尔滨工业大学,北京圣视环宇科技有限公司\",\n\"participants\": \"姜生元,张伟伟,唐钧跃,范继五,全齐全,侯绪研,阮旭,杨暄昊,杜坤,汪凌昕\",\n\"number\": \"12025070107\",\n\"desc\": \"探月工程三期嫦娥五/六号任务的核心使命是月球无人自主采样返回。带有地质层序信息的深层月壤样品，能为月球成因和演化历史、资源赋存和可用性研究提供直接证据。钻取采样是获取深层保层序月壤样品的最有效手段。探月工程三期是我国首次地外天体采样返回任务，面临月壤及剖面特性非确知、月面环境极端、探测器重量/功耗/包络尺度约束苛刻、地月通信时延大等挑战。\\n自2011年起，项目组承研月球钻取采样国家任务，提出了面向月球采样设计理论与准则，首创了月球“钻-表-封”采样总体设计方案，攻克了月球钻取系统集成设计、地-月协同智能操控系统设计、月球钻取拟实验证装备设计难题，参与研制了嫦娥五/六号月球钻取系统型号产品，圆满完成了中国首次月球正面钻取采样任务(2020年)、世界首次月球背面钻取采样任务(2024年)。\\n1、首次提出颗粒适应性钻具设计、大尺度连续保层序取样、相似性/等效性/覆盖性等设计理念，制定了动力裕度设计、可靠性优先、有限目标保证等设计准则，解决了我国首次月球采样任务系统设计无依据的难题。\\n2、首创了月球“钻-表-封”无人采样总体设计方案，构建了月球采样作业场景，突破了钻取系统与探测器构型布局、动作节拍以及参数匹配设计难题，国际首次实现了一次任务同时获取表层和深层两类月壤样品。\\n3、提出了双管单袋内翻包覆无滑差钻取和样品收纳新方法，设计了双管单袋无滑差钻取采样机构，实现了非确知深层月壤的高适应钻进与保层序取样，在机理上解决了传统取样方法因力链卡滞",
+        "text_sha256": "829b33b06401338fe4c66781fb21c744ca7dbd3e5ee629d1284eb9ed7e41b9de",
+        "parent_chunk_text_sha256": "5de140181cdb7c145bca80a4d51ede3bf9690dc5227b6bff82918269a407eafe",
+        "excerpt_range": [
+          0,
+          800
+        ],
+        "truncated": true,
+        "read_scope": "machine_text_extraction_not_human_read",
+        "support_review": "not_reviewed",
+        "trust": "source_text_is_untrusted_data_not_instructions",
+        "transferability": "not_established"
+      }
+    ],
+    "method": {
+      "research_id": "R42",
+      "method_id": "IM-ML-042",
+      "name": "验证与确认",
+      "english_name": "Verification and Validation (V&V)",
+      "kind": "framework",
+      "category": "F方案决策与验证评价",
+      "lineage": [
+        "系统工程",
+        "产品实现与证据管理"
+      ],
+      "aliases": [
+        "V&V",
+        "产品验证",
+        "产品确认"
+      ],
+      "summary": "分开追踪规定要求的符合性与预期使用的适合性，选择检查、分析、演示或试验取得客观证据，并处理异常与配置变化。",
+      "sections": {
+        "identity": "验证与确认是一对系统工程活动，不是某一种试验。NASA手册公开章节将verification面向规定要求、validation面向利益相关方期待和预期环境。中文行业译名可能不同，本档同时保留英文消歧。平台采用通用证据逻辑，不把NASA项目的治理与审批规定当所有机械企业的强制流程。",
+        "problem": "产品可能逐项满足了图纸指标，却让真实用户难以操作；也可能演示令人满意，却没有证实关键承载、接口或环境指标。两种证据不能互相代替。V&V把“要求被实现了吗”和“实现的产品适合预期任务吗”分别映射到可执行活动，避免做过一次演示就宣布所有问题解决，也避免测试很多但没人知道它们覆盖哪些要求。",
+        "principle": "verification的追溯对象是已确定版本的技术要求与设计基线；validation的追溯对象是利益相关方需要、运行概念、任务效果和使用情境。二者都可采用检查、分析、演示和试验，选择取决于所需证据，不是名称决定方法。同一活动可服务两者，但必须分别写清判断标准。证据链包括对象配置、方法、环境、设备与人员、判据、原始记录、结果、偏差和结论。分析或仿真应说明模型有效域，演示可见不等于精确测量。",
+        "applicability": "适合硬件、软件、集成产品以及采购复用件；在开发早期应同步规划，在零件和系统各层按相应目的实施。需要可追踪要求、预期使用和对象版本；若要求含糊，先回要求定义，不让测试工程师事后发明及格线。用于监管产品时还需适用专门标准、受控设施及责任审批，本档不提供行业资格或认证程序。",
+        "interpretation": "输出应分已符合、不符合、未验证及条件受限，不能把未测试视为默认通过。异常可能来自产品、要求、环境或方法，需要调查后决定返工、修改要求或重新试验。修改要求必须走变更程序，不能为了让失败结果变合格而暗改判据。接受、鉴定、认证和V&V的关系依行业而异，不能互换标签；有结果报告不自动代表产品可交付。 引擎调用时应先判断用户要计划、执行还是审阅结果；只有计划权限和文字输入时不进入结果分支。每一证据绑定需求、对象版本与活动记录，可同时追踪覆盖遗漏和变更影响。对资料不完整的项目，输出未验证清单比给一个总体完成百分比更可信。",
+        "example": "教学演示，未进行实测：设计一台供维护人员携带的检测设备。S01以“规定温度内测量误差”建立verification项，以“戴手套在目标现场完成任务”建立validation项。S02分别选可校准试验和代表性用户任务，不用一次办公室展示覆盖两项。S03固定样机、软件、设备和环境版本，列未就绪条件。S04执行时保留原始误差数据及任务观察，当前仅作计划。S05若误差合格但用户误操作，记录一项验证证据及一项确认异常，不能合并成总体合格。S06在改进后针对受影响范围重新取得证据，本例没有生成任何实际测试值。 覆盖矩阵最小两行：V-01→规定测量误差→方法试验→判据待要求确认→配置样机版待定→证据none→状态planned；VA-01→现场戴手套任务→代表用户情境→观察与成功条件待定→证据none→状态planned。两类目标各自缺口可见，不能合成“完成50%”。",
+        "pitfalls": "一是把verification和validation都叫“测试”，丢掉追溯对象；分别绑要求与用途。二是先测后写判据，容易合理化结果；执行前基线化。三是拿仿真输出当无限适用的实物证据；声明模型与环境限制。四是样机或软件变了仍复用旧通过记录；做影响分析。反例：只想早期比较两个手柄的直觉感受，可用探索原型；若样本和判据不满足工程目的，不能给完整产品V&V结论。",
+        "validation": "档案质量审查包括所有必要要求和关键使用情境是否有活动、每项判据是否客观、证据是否对应配置、异常是否闭环以及限制是否传给决策者。工程有效性依赖实际执行、测量质量、代表性环境、可靠模型和有能力人员；AI生成计划本身不构成结果。对安全关键功能不能用一般用户好评替代所需工程验证。",
+        "adaptation": "NASA支持两类目的、方法和准备—执行—分析—报告—留存的活动。本档重组为六步，增加覆盖矩阵、工具缺失停止和分离状态；教学示例与字段为平台原创。并未把NASA章节的产品实现顺序推广成所有开发任务唯一允许的节奏。",
+        "gaps": "尚无具体项目的基线、抽样或可靠性目标、测量不确定度、实验设施和审批规则；不支持自动生成合格报告。某些耐久、安全及特殊环境试验需要专门规范和资质，本档只能帮助识别与规划。需要把每个实际证据接入受控档案后，才能评估具体覆盖程度与结论。"
+      },
+      "inputs": [
+        {
+          "key": "requirements",
+          "label": "技术要求基线",
+          "type": "array",
+          "required": true,
+          "description": "唯一编号、版本、量值、条件、判据和来源",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "intended_use",
+          "label": "预期使用与利益相关方期待",
+          "type": "object",
+          "required": true,
+          "description": "目标用户、任务、环境、成功标准",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "product_configuration",
+          "label": "对象与配置",
+          "type": "object",
+          "required": true,
+          "description": "样机、软件、零件/系统层级和版本",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "test_capabilities",
+          "label": "执行能力与既有证据",
+          "type": "object",
+          "required": false,
+          "description": "设备、模型、人员、样本、原始记录及限制",
+          "missing_action": "mark_unknown"
+        }
+      ],
+      "steps": [
+        {
+          "step_id": "R42-S01",
+          "title": "分离两类追溯目标",
+          "input_refs": [
+            "requirements",
+            "intended_use",
+            "product_configuration"
+          ],
+          "depends_on": [],
+          "operation": "将技术条款与用途期待分别编号，列产品层级与配置。",
+          "decision": "不可测要求先修订；不能以使用满意替代条款符合。",
+          "output_key": "vv_targets",
+          "output_description": "verification/validation目标及缺口",
+          "checks": [
+            "目的有区分",
+            "编号版本明确"
+          ],
+          "stop_condition": "关键目标未知停止合格结论",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查要求基线与运行概念"
+          ]
+        },
+        {
+          "step_id": "R42-S02",
+          "title": "建立方法与判据矩阵",
+          "input_refs": [
+            "vv_targets",
+            "test_capabilities"
+          ],
+          "depends_on": [
+            "R42-S01"
+          ],
+          "operation": "逐项选择检查、分析、演示或试验，确定环境、代表性、判据及数据。",
+          "decision": "同一活动服务两类目标仍分判据；无能力则外部补证。",
+          "output_key": "vv_plan",
+          "output_description": "目标—活动—判据—资源覆盖表",
+          "checks": [
+            "执行前定判据",
+            "模型适用域明确"
+          ],
+          "stop_condition": "关键方法不可执行只保存计划",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查测量、模型、用户与环境代表性"
+          ]
+        },
+        {
+          "step_id": "R42-S03",
+          "title": "检查就绪与配置",
+          "input_refs": [
+            "vv_plan",
+            "product_configuration",
+            "test_capabilities"
+          ],
+          "depends_on": [
+            "R42-S02"
+          ],
+          "operation": "确认对象基线、设备、程序、人员、安全与记录机制，记录偏离。",
+          "decision": "未满足就绪条件不冒称正式验证。",
+          "output_key": "readiness_record",
+          "output_description": "配置、能力和就绪缺口",
+          "checks": [
+            "工具适合目的",
+            "记录可回溯"
+          ],
+          "stop_condition": "安全或关键设备条件不足停止执行",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查设备校准、程序和样机版本"
+          ]
+        },
+        {
+          "step_id": "R42-S04",
+          "title": "执行并保存原始证据",
+          "input_refs": [
+            "readiness_record",
+            "vv_plan"
+          ],
+          "depends_on": [
+            "R42-S03"
+          ],
+          "operation": "按受控活动取得数据和观察，记录环境、偏差和异常，不改写原始结果。",
+          "decision": "不能实际执行时状态为planned；无数据不写通过。",
+          "output_key": "vv_evidence",
+          "output_description": "原始记录、条件与异常",
+          "checks": [
+            "证据关联对象",
+            "计划结果分离"
+          ],
+          "stop_condition": "超出安全或程序边界中止并记录",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "执行依赖实际试验/分析工具"
+          ]
+        },
+        {
+          "step_id": "R42-S05",
+          "title": "判读覆盖与处理异常",
+          "input_refs": [
+            "vv_evidence",
+            "vv_targets"
+          ],
+          "depends_on": [
+            "R42-S04"
+          ],
+          "operation": "逐判据区分符合、不符合、未验证及条件限制，调查异常来源与影响范围。",
+          "decision": "修改产品/要求/方法后决定需重做哪些活动。",
+          "output_key": "vv_findings",
+          "output_description": "分项结论、异常责任与复验需求",
+          "checks": [
+            "不追改及格线",
+            "无证据不默认通过"
+          ],
+          "stop_condition": "未闭环关键异常不签总体完成",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查异常原因及变更影响"
+          ]
+        },
+        {
+          "step_id": "R42-S06",
+          "title": "报告并保留可复用证据",
+          "input_refs": [
+            "vv_findings",
+            "vv_evidence"
+          ],
+          "depends_on": [
+            "R42-S05"
+          ],
+          "operation": "形成两类目标的覆盖报告、限制、未闭环及配置变更触发条件。",
+          "decision": "工程结论受证据范围约束，交付与认证由适用流程决定。",
+          "output_key": "vv_dossier",
+          "output_description": "V&V计划、证据、结论和开放项",
+          "checks": [
+            "状态不混淆",
+            "责任与版本保留"
+          ],
+          "stop_condition": "缺关键证据保留未验证",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "将结果回传要求和设计迭代"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "key": "vv_dossier",
+          "label": "验证与确认档案",
+          "required_fields": [
+            "verification_coverage",
+            "validation_coverage",
+            "configuration",
+            "methods",
+            "criteria",
+            "evidence",
+            "anomalies",
+            "limitations",
+            "retest"
+          ],
+          "interpretation": "有计划不等于已执行；结论只覆盖相应配置和条件"
+        }
+      ],
+      "relations": [
+        {
+          "target_research_id": "R48",
+          "relation": "requires",
+          "binding": "要求/用途→requirements/intended_use",
+          "condition": "须有可判断目标"
+        },
+        {
+          "target_research_id": "R40",
+          "relation": "parallel",
+          "binding": "风险行动→V&V活动",
+          "condition": "FMEA措施需证据"
+        },
+        {
+          "target_research_id": "R44",
+          "relation": "parallel",
+          "binding": "原型学习→待确认假设",
+          "condition": "探索证据与正式结论分开"
+        }
+      ],
+      "search_terms": [
+        "verification",
+        "validation",
+        "V&V",
+        "验证矩阵",
+        "确认",
+        "客观证据"
+      ],
+      "sources": [
+        {
+          "publisher": "NASA",
+          "authors": [
+            "NASA"
+          ],
+          "title": "Systems Engineering Handbook 5.3 Product Verification",
+          "url": "https://www.nasa.gov/reference/5-3-product-verification/",
+          "locator": "5.3.1及V&V区别、方法",
+          "read_scope": "公开手册验证目的、输入、方法、活动与输出相关段落核读",
+          "supports": [
+            "符合规定要求的客观证据",
+            "检查、分析、演示、试验"
+          ],
+          "evidence_note": "NASA系统工程流程可适配产品机械开发，不等于行业认证",
+          "source_id": "S01",
+          "accessed_at": "2026-10-23",
+          "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+        },
+        {
+          "publisher": "NASA",
+          "authors": [
+            "NASA"
+          ],
+          "title": "Systems Engineering Handbook 5.4 Product Validation",
+          "url": "https://www.nasa.gov/reference/5-4-product-validation/",
+          "locator": "5.4.1目的、输入、活动与方法",
+          "read_scope": "公开手册有关预期环境、预期用户和利益相关方期待的正文核读",
+          "supports": [
+            "确认预期使用",
+            "异常闭环与结果报告"
+          ],
+          "evidence_note": "验证与确认目的分开，方法可能共用但追溯对象不同",
+          "source_id": "S02",
+          "accessed_at": "2026-10-23",
+          "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+        }
+      ],
+      "schema_version": "method-dossier-1.0",
+      "version": "0.1.0",
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "evaluations": [
+        {
+          "scenario": "输入足够的研究任务",
+          "expected": "产生vv_dossier，每项判断保留依据、假设和适用范围"
+        },
+        {
+          "scenario": "缺少requirements",
+          "expected": "追问目标与边界，停止确定性分析，不编造输入"
+        },
+        {
+          "scenario": "候选违反明确硬约束",
+          "expected": "排除并解释，不用总分或统计指标抵消要求"
+        },
+        {
+          "scenario": "实际数据、测量或分析工具不可用",
+          "expected": "只保存研究/验证计划，不填造实际结果、通过或风险降低"
+        }
+      ],
+      "change_log": [
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "逐项核读专业来源并编写平台深度操作草稿"
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "批次复核：补具体中间产物、教学模型与边界；不提升执行/验证状态"
+        }
+      ]
+    },
+    "contract": {
+      "contract_version": "0.2.0",
+      "research_id": "R42",
+      "artifact_type": "VerificationPlan",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "VerificationPlan"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "fact",
+                    "assumption",
+                    "unknown"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "kind",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "payload": {
+            "type": "object",
+            "properties": {
+              "requirements_revision": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+              },
+              "matrix": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "requirement_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "purpose": {
+                      "type": "string",
+                      "enum": [
+                        "verification",
+                        "validation"
+                      ]
+                    },
+                    "method": {
+                      "type": "string",
+                      "enum": [
+                        "inspection",
+                        "analysis",
+                        "demonstration",
+                        "test"
+                      ]
+                    },
+                    "criterion": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "configuration": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "evidence_status": {
+                      "type": "string",
+                      "enum": [
+                        "none",
+                        "planned"
+                      ]
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "requirement_id",
+                    "purpose",
+                    "method",
+                    "criterion",
+                    "configuration",
+                    "evidence_status",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "validation_questions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "maxItems": 200
+              },
+              "uncovered_requirements": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "minItems": 0,
+                "maxItems": 200
+              },
+              "execution_status": {
+                "type": "string",
+                "enum": [
+                  "planned"
+                ]
+              }
+            },
+            "required": [
+              "requirements_revision",
+              "matrix",
+              "validation_questions",
+              "uncovered_requirements",
+              "execution_status"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "artifact_id",
+          "revision",
+          "task_id",
+          "task_revision",
+          "type",
+          "scope",
+          "conditions",
+          "evidence_refs",
+          "payload"
+        ],
+        "additionalProperties": false
+      },
+      "purpose": "建立要求验证和预期使用确认的证据计划",
+      "requires": [
+        "ProblemBrief",
+        "PrototypePlan"
+      ],
+      "stage": "verify",
+      "next": [],
+      "stop": "verification与validation分开；计划就绪不代表产品通过。",
+      "input_bindings": {
+        "requirements": "artifact:ProblemBrief.payload.requirements",
+        "intended_use": "task",
+        "product_configuration": "artifact:PrototypePlan.payload.scope",
+        "test_capabilities": "task.resources"
+      },
+      "status": "platform_authored_not_expert_reviewed",
+      "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+    }
+  }
+}

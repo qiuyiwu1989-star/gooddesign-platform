@@ -1,0 +1,363 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "WB12",
+  "method_id": "IM-WB-012",
+  "version": "0.1.0",
+  "name": "国内外设计方法分类研究与出处去重",
+  "english_name": "Design-Method Classification and Provenance Study",
+  "kind": "文献分类研究专题",
+  "category": "G全流程规划与创新管理",
+  "lineage": [
+    "闻邦椿2003设计方法分类线索",
+    "方法谱系与知识组织"
+  ],
+  "aliases": [
+    "七大类设计方法研究",
+    "70多种方法原典追溯"
+  ],
+  "summary": "追溯闻邦椿对国内外设计方法分类的原文，区分既有方法、综合框架、编纂收录与平台分类，并建立别名和出处去重档案。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "本条是文献分类与方法谱系研究专题，不计为闻邦椿独创70多种方法。2016学校介绍和2019作者本人回顾称其2003论文将国内外70多种方法分为七大类；本轮已取得官方PDF并实际核读印刷p44图2及第1.2节，发现图2采用四个分类视角，第1.2节另列七种代表方法，尚不能把它们对应为回顾中的七大类。因此同时保留原文结构和历史说法，明确差异。",
+    "problem": "方法库容易混入三种错误：将一个方法的多个译名重复计数，将方法族和子工具相加作为彼此独立方法，以及把手册主编身份误当收录内容的原创归属。分类研究的实际任务是让引擎知道每个名称是什么层级、出自哪里、能做什么以及与其他条目的关系。方法数量不应通过拆章节、拆例题或给通用技术套作者姓名来增加。",
+    "principle": "平台将来源主张与方法实体分开保存：前者记录谁在何时如何分类，后者记录定义、谱系、别名、版本和功能，两者以收录关系连接。实际目读图2可确认四个视角是设计步骤、设计内容、设计方法、设计思想；它们不是互斥的单一方法分类树，同一方法可能从不同视角被组织。第1.2节另列七种代表方向，与图2及回顾中七大类须分开，不以数字相同假设等同。",
+    "applicability": "适合导入书籍目录、研究综述、专家方法清单和已有库去重。输入可以只有题录或目录，但应按可证明范围使用：题录支持文献身份，目录支持收录和结构，摘要支持作者摘要中的主张，正文才可能支持精确分类定义及步骤。相同文字的转载不是多项独立证据；本人回顾也不能替代原分类表的所有细节。",
+    "interpretation": "平台暂以当前库的七个任务类别组织检索，并明确其为平台分类，不能称为已复原的闻氏七类。每个待归并名称建立身份记录：原词、译名、类型、父子关系、作者角色、来源位置、版本、适用任务、证据状态。只有定义与机制足够一致时才合并别名；近似而不等同的框架建立相关关系，保留差异和争议。",
+    "example": "教学示例：某资料列“TRIZ、技术矛盾、矛盾矩阵、40发明原理、ARIZ”五项。去重不把它们全部合成一个名称，也不把它们计作五套互无关系的方法；应存一个方法族及其模型、检索工具、启发集合和算法关系。另一个资料标闻邦椿主编的仿生机械设计篇，只能证明手册收录及主编角色，不能推断该篇所有生物机制均为本人发现。此例是平台分类规则说明。",
+    "pitfalls": "避免为使七类凑齐而从其他教材拼出七个名称；也不要把平台A—G七类当历史原文。方法更名、版本升级与真正新方法要分别判断。纯目录页不能支持可执行步骤，宣传稿中关于首创和效果的评价须作为来源主张保留，而非直接转成普遍公认事实。文献引错作者、页码或把合著缩成单作者时，应回官方题录核正。",
+    "validation": "分类档案验收要检查每个类名和成员是否有原文位置、是否能解释同义与上下位关系、是否区分提出者、发展者、综述者和编者。去重变更必须可撤销，保存原始名称与导入来源，避免合并后丢失历史。统计同时给出实体数、方法族数、子工具数和研究专题数，不能混成一个夸大的总量。",
+    "adaptation": "引擎把分类作为检索导航和匹配元数据，不据分类归属自动断定适用性。真正调用还需方法对象、阶段、输入和证据门槛。在已取得2003正文基础上逐条恢复原分类，保存出版年代下的术语，再与现有实体映射；当前先提供出处核验、去重和分类恢复的可用流程。研究缺口是待补原表，不是允许模型自行补全的空白。",
+    "gaps": "methods_c已正常取得2003原论文官方PDF，本组实际核读共享提取文本中的题录、分类、代表方法与高层次动态设计相关节，并目读印刷p44图2；未通读全部十页。原文确认图2四分类视角与第1.2节七种代表方向，尚未核得70多种归七大类的完整对应表。当前不再把原论文记为未取得，但不能把取得全文偷换成分类差异已解决；需进一步核读剩余正文或相关版本，保留来源差异。"
+  },
+  "inputs": [
+    {
+      "key": "literature",
+      "label": "文献与原始名称",
+      "type": "array",
+      "required": true,
+      "description": "题录、原词、角色及可读范围",
+      "missing_action": "先取得可核对来源"
+    },
+    {
+      "key": "registry",
+      "label": "已有方法实体",
+      "type": "array",
+      "required": true,
+      "description": "ID、别名、层级和定义",
+      "missing_action": "导出当前库"
+    },
+    {
+      "key": "claims",
+      "label": "分类主张",
+      "type": "array",
+      "required": false,
+      "description": "谁声称何种分类及位置",
+      "missing_action": "从原文提取"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "WB12-S01",
+      "title": "核验文献身份与读取范围",
+      "input_refs": [
+        "literature",
+        "registry",
+        "claims"
+      ],
+      "depends_on": [],
+      "operation": "核对作者、题名、年份、页码，标明题录目录摘要或正文。",
+      "decision": "转载只作线索，原文未读不标已核验。",
+      "output_key": "source_identity",
+      "output_description": "来源身份与范围表",
+      "checks": [
+        "每项有可定位URL或馆藏"
+      ],
+      "stop_condition": "身份不明不得归属作者",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "WB12-S02",
+      "title": "提取名称与角色",
+      "input_refs": [
+        "source_identity",
+        "literature",
+        "registry",
+        "claims"
+      ],
+      "depends_on": [
+        "WB12-S01"
+      ],
+      "operation": "分开方法名称、章节名、案例、工具和作者的提出合著主编等角色。",
+      "decision": "仅主编或收录不推断原创。",
+      "output_key": "term_roles",
+      "output_description": "原词及角色记录",
+      "checks": [
+        "保留原始用词"
+      ],
+      "stop_condition": "类名未见原文则标待恢复",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "WB12-S03",
+      "title": "判定同义与层级",
+      "input_refs": [
+        "term_roles",
+        "literature",
+        "registry",
+        "claims"
+      ],
+      "depends_on": [
+        "WB12-S02"
+      ],
+      "operation": "对照定义机制和版本，区分别名、方法族、子工具及相关方法。",
+      "decision": "定义不足不强并，近似概念保留差异。",
+      "output_key": "identity_links",
+      "output_description": "候选合并与关系图",
+      "checks": [
+        "每条合并有依据"
+      ],
+      "stop_condition": "合并会丢失关键机制则拒绝",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "WB12-S04",
+      "title": "恢复原分类并映射平台",
+      "input_refs": [
+        "identity_links",
+        "literature",
+        "registry",
+        "claims"
+      ],
+      "depends_on": [
+        "WB12-S03"
+      ],
+      "operation": "实际读到类名与成员才建立原分类树，另映射平台类别。",
+      "decision": "原七类未取得时输出未恢复状态，不借平台七类替代。",
+      "output_key": "classification_map",
+      "output_description": "原分类状态及映射",
+      "checks": [
+        "原类与平台类字段分开"
+      ],
+      "stop_condition": "无原文定位不标完整恢复",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "WB12-S05",
+      "title": "复核统计与可撤销归并",
+      "input_refs": [
+        "classification_map",
+        "literature",
+        "registry",
+        "claims"
+      ],
+      "depends_on": [
+        "WB12-S04"
+      ],
+      "operation": "检查身份、角色、来源独立性和计数，保存变更前后与争议。",
+      "decision": "研究专题不计独立原创方法。",
+      "output_key": "classification_review",
+      "output_description": "可追溯分类去重档案",
+      "checks": [
+        "数量按实体类型分别统计"
+      ],
+      "stop_condition": "争议未解保持并列候选",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "classification_review",
+      "label": "分类谱系与出处去重档案",
+      "required_fields": [
+        "文献身份",
+        "读取范围",
+        "原始名称",
+        "作者角色",
+        "别名层级",
+        "原分类恢复状态",
+        "平台映射",
+        "计数口径"
+      ],
+      "interpretation": "目前原七类名单未恢复，但可用于来源治理和后续原文整合。"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R01",
+      "relation": "parallel",
+      "binding": "全流程与分类组织",
+      "condition": "库级方法结构需一致"
+    },
+    {
+      "target_research_id": "R21",
+      "relation": "parallel",
+      "binding": "方法族及子工具去重",
+      "condition": "TRIZ名称存在上下位关系"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "publisher": "东北大学新闻网 / 闻邦椿",
+      "authors": [
+        "闻邦椿"
+      ],
+      "title": "人人都能挖掘和被利用的巨大潜能——科学方法论运用可取得的效果（上）",
+      "url": "https://neunews.neu.edu.cn/info/1002/849441.htm",
+      "locator": "第四节第1项；2019-09-10",
+      "read_scope": "实际打开本人署名文，核读分类自述与上下文",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "70多种分类主张",
+        "2003论文线索"
+      ],
+      "evidence_note": "本人自述明确将国内外既有方法进行分类，不等于本人原创70多种。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S02",
+      "publisher": "东北大学新闻网",
+      "authors": [
+        "郝建山",
+        "李朝峰"
+      ],
+      "title": "闻邦椿院士积六十载之努力获取辉煌创新成果",
+      "url": "https://neunews.neu.edu.cn/info/1007/301801.htm",
+      "locator": "第二节第1项；2016-05-30",
+      "read_scope": "实际打开并核读分类段落；未使用未核实奖项评价",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "同一分类线索的学校介绍"
+      ],
+      "evidence_note": "与本人回顾重复同一主张，不当作两个独立原分类表。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S03",
+      "publisher": "中国机械工程学会 / 机械工程学报",
+      "authors": [
+        "闻邦椿",
+        "周知承",
+        "韩清凯",
+        "苏保群"
+      ],
+      "title": "现代机械产品设计在新产品开发中的重要作用",
+      "url": "https://qikan.cmes.org/jxgcxb/CN/Y2003/V39/I10",
+      "locator": "2003,39(10):43–52及官方PDF16926",
+      "read_scope": "题录摘要与检索返回PDF选段；直接PDF超时；未读分类页",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "原论文身份",
+        "合著角色"
+      ],
+      "evidence_note": "不能从摘要或搜索选段恢复七类名称。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S04",
+      "publisher": "高等教育出版社",
+      "authors": [
+        "闻邦椿",
+        "刘树英",
+        "郑玲"
+      ],
+      "title": "系统化设计的理论和方法 第8章",
+      "url": "https://academic.hep.com.cn/br/CN/chapter/978-7-04-048177-8/chapter08",
+      "locator": "作者与章节目录",
+      "read_scope": "实际打开目录；未读正文",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "目录与方法实体层级区别"
+      ],
+      "evidence_note": "章节出现只支持收录结构，不支持每个子技术为作者原创。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S05",
+      "publisher": "机械工程学报 / 闻邦椿等",
+      "authors": [
+        "闻邦椿",
+        "周知承",
+        "韩清凯",
+        "苏保群"
+      ],
+      "title": "现代机械产品设计在新产品开发中的重要作用（官方PDF）",
+      "url": "https://qikan.cmes.org/jxgcxb/CN/PDF/16926",
+      "locator": "印刷p44图2及§1.2；p45动态设计段；§3.2",
+      "read_scope": "methods_c正常取得官方PDF；本组实际核读共享文本相关节并目读印刷p44图2；未通读全部10页",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "原分类四视角",
+        "七种代表方法而非七大类",
+        "高层次动态设计边界"
+      ],
+      "evidence_note": "本地来源位于建设工作区/批次W/WB07/闻邦椿等-2003-三化综合设计-来源.pdf；获取全文与实际节选核读分开。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "把平台七类标成闻邦椿原七类",
+      "expected": "判定伪归属，分开字段并标未恢复"
+    },
+    {
+      "scenario": "将TRIZ与ARIZ计为互无关系两套方法",
+      "expected": "要求保存族与子算法关系并分类计数"
+    }
+  ],
+  "search_terms": [
+    "闻邦椿 70多种 7大类 2003",
+    "现代机械产品设计在新产品开发中的重要作用 分类 原文"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "051逐项检索与平台操作适配；保留原典核读范围"
+    }
+  ]
+}

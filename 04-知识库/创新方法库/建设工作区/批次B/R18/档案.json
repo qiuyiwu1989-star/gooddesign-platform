@@ -1,0 +1,363 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R18",
+  "method_id": "IM-ML-018",
+  "version": "0.1.0",
+  "name": "仿生设计",
+  "english_name": "Biomimetics / Biomimicry",
+  "kind": "method_family",
+  "category": "B功能分析与概念生成",
+  "lineage": [
+    "仿生设计",
+    "Biomimicry"
+  ],
+  "aliases": [],
+  "summary": "把工程功能转成生物功能问题，抽象自然策略后检验它在目标材料、尺度和环境中的适配。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "仿生设计是方法族，不是单一作者的一张图。本档案以Biomimicry Institute的公开Design Spiral为操作参照，采用定义、生物化、发现、抽象、模拟和评价的循环思想。工程仿生、较宽泛的生物启发和面向可持续性的biomimicry有重叠但不完全相同；本档案不据此把所有自然外形产品称为仿生，也不宣称取得ISO标准全文。",
+    "problem": "当团队只在同行产品里寻找方案，容易沿用同样的运动、材料和能量路径。自然策略可提供新的功能实现线索，但最常见的错误是先喜欢某种动物，再为它硬找用途。方法要求先明确要完成什么及处于何种环境，再去观察相似功能。它尤其适合减阻、附着、缓冲、展开、热交换等原理探索，不保证每个生物策略都能被低成本工业制造。",
+    "principle": "核心跨越是从生物描述到工程机制：某个生物体在什么条件下通过哪些结构和物理作用完成何功能，抽象后如何成为可测试的设计命题。抽象时去掉物种名，保留相互作用、几何尺度、材料特性和作用条件。生物系统的结构可能同时服务多个功能，不能只截取一个漂亮局部。工程迁移需重新核查尺度效应、寿命、污染、制造、维护以及对环境的整体影响。",
+    "applicability": "适用前提是已明确目标功能、成功准则和不可改变条件，并能接触可靠生物学资料或专家。若只是要给产品做动物造型，它属于形式设计任务，不能以本方法证明性能。若生物机制尚有争议，应保留多个解释，不把科普比喻当事实。缺少材料、尺度或介质条件时，可提出探索路线；一旦要求性能承诺，就必须补工程模型和实验。",
+    "interpretation": "好的产物能沿“功能需求—自然策略—抽象机制—工程实现—迁移差异—验证”反查。每条自然策略要区分观察到的现象和解释该现象的机制证据。某生物具备能力，不代表复制外观就具备能力；某概念源于自然，也不必然更环保。评价同时回到任务约束、技术可行性和生命周期，不用自然来源替代证据，也不设置虚构的仿生成功分。",
+    "example": "教学演示：探索一个在轻微尺寸变化下仍能接触物件的夹持端。第1步将挑战写成“适应几何变化并限制局部接触作用”，载荷和材料未知。第2步生物化为不同表面条件下的抓持与贴合；第3步搜寻柔顺接触、分布式接触等生物策略，而非先选章鱼造型。第4步将策略抽象为可变形接触面和多点分担，物种名不进入工程因果。第5步形成柔性垫面与分段接触两个概念。第6步提出压力分布、污染、疲劳和清洁试验。没有证据证明某一生物机制已经可迁移或一定优于现有夹爪。",
+    "pitfalls": "误用一：把外形相似当作功能相同，正确做法是给出作用机制与条件。误用二：从未经核验的科普段子直接生成工程参数，应回原始生物研究或专家。误用三：默认自然策略环保，应检查材料、制造与使用负担。反例是任务强制不允许更改接触材料和形状，而被借鉴策略依赖这些变化，此时应标路径不适用，不能只因为创意新奇而保留为实施建议。",
+    "validation": "执行质量检查要求自然策略和工程命题之间不跳步，每项迁移差异都有影响说明。技术验证需要按具体功能选择台架、材料、污染或环境试验，并同现有基线比较。生物样本能工作只验证原环境；工程样机能演示不验证批量寿命。没有数据或试验工具时，输出文献搜索、专家咨询和验证计划。生态效果则需独立环境评价，不能从方法名称推出。",
+    "adaptation": "公开螺旋流程是原方法参照，档案中的机制映射表、来源状态、工程差异字段和停止条件是平台为引擎调用增加的结构。我们允许从挑战出发再回到生物，也允许偶然发现生物策略后重新定义挑战，但两条路径都需保留目标与证据。方法与项目关联只代表机制参考或平台回看，没有设计者记录不能说原团队使用了此螺旋流程。",
+    "gaps": "本轮核读了Biomimicry Toolbox的整体流程，并取得机制抽象与适配评价页面。没有逐篇核读任一生物策略的原始实验，也未取得目标夹持案例的工程数据；案例为教学构造。后续应选具体功能，由生物与工程两侧共同核查机制、尺度和材料，形成带失败边界的真实迁移档案。科学术语和可持续性要求不宜压缩成任意可替换的提示词标签。"
+  },
+  "inputs": [
+    {
+      "key": "challenge",
+      "label": "设计挑战",
+      "type": "object",
+      "required": true,
+      "description": "目标功能、用户、成功准则、边界和硬约束",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "context",
+      "label": "作用环境",
+      "type": "object",
+      "required": true,
+      "description": "尺度、介质、材料、温度、载荷等；未知显式标出",
+      "missing_action": "concept_only"
+    },
+    {
+      "key": "biology",
+      "label": "生物资料",
+      "type": "array",
+      "required": false,
+      "description": "原始研究或可信机构策略材料，区分现象与机制",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R18-S01",
+      "title": "定义功能挑战",
+      "input_refs": [
+        "challenge",
+        "context",
+        "biology"
+      ],
+      "depends_on": [],
+      "operation": "把期待效果转成明确功能和成功准则，不先锁定某种生物或外形。",
+      "decision": "若只是造型意向则转形式设计；功能未知先追问。",
+      "output_key": "defined_challenge",
+      "output_description": "功能、准则、限制与未知。",
+      "checks": [
+        "挑战不预设动物模板。"
+      ],
+      "stop_condition": "无法说明要改善的作用时停止。",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R18-S02",
+      "title": "将功能与情境生物化",
+      "input_refs": [
+        "defined_challenge",
+        "challenge",
+        "context",
+        "biology"
+      ],
+      "depends_on": [
+        "R18-S01"
+      ],
+      "operation": "以生物如何完成相同作用提问，并保留介质、尺度与环境信息。",
+      "decision": "问题必须同时含功能和条件；不能只搜相似外观。",
+      "output_key": "biological_questions",
+      "output_description": "可检索的生物功能问题。",
+      "checks": [
+        "避免把工程材料或现成机构强植入生物问题。"
+      ],
+      "stop_condition": "问题仅剩物种或造型名时返回。",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R18-S03",
+      "title": "发现并比较自然策略",
+      "input_refs": [
+        "biological_questions",
+        "challenge",
+        "context",
+        "biology"
+      ],
+      "depends_on": [
+        "R18-S02"
+      ],
+      "operation": "阅读可信资料，分别记录物种、功能、策略、条件和证据强度；保留多个策略。",
+      "decision": "只有现象无机制者作为线索，不直接进入工程参数。",
+      "output_key": "strategy_set",
+      "output_description": "策略、来源、已知条件与争议。",
+      "checks": [
+        "自然策略不等于单个视觉部件。"
+      ],
+      "stop_condition": "关键机制无可靠支持时暂停该策略。",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R18-S04",
+      "title": "抽象作用机制",
+      "input_refs": [
+        "strategy_set",
+        "challenge",
+        "context",
+        "biology"
+      ],
+      "depends_on": [
+        "R18-S03"
+      ],
+      "operation": "去掉物种专名，用结构、行为和物理作用描述机制，并写清不确定解释。",
+      "decision": "能说明作用链才继续；仅有外形相似则退回。",
+      "output_key": "abstracted_mechanisms",
+      "output_description": "不含生物专名的机制命题与前提。",
+      "checks": [
+        "抽象仍保留必要尺度与材料条件。"
+      ],
+      "stop_condition": "不能解释作用链时不宣称成功抽象。",
+      "source_refs": [
+        "S02"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R18-S05",
+      "title": "形成工程模拟方向",
+      "input_refs": [
+        "abstracted_mechanisms",
+        "challenge",
+        "context",
+        "biology"
+      ],
+      "depends_on": [
+        "R18-S04"
+      ],
+      "operation": "将抽象机制映射到可制造材料、几何和作用方式，逐项列源目标差异。",
+      "decision": "违反硬约束的迁移排除；差异未知者标条件性。",
+      "output_key": "engineering_concepts",
+      "output_description": "工程概念、迁移差异、代价和未知。",
+      "checks": [
+        "不把生物功能直接换算成工程性能。"
+      ],
+      "stop_condition": "必须条件不能实现时返回其他策略。",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R18-S06",
+      "title": "评价适配并规划验证",
+      "input_refs": [
+        "engineering_concepts",
+        "challenge",
+        "context",
+        "biology"
+      ],
+      "depends_on": [
+        "R18-S05"
+      ],
+      "operation": "回到挑战检查功能、技术、商业及环境影响，设计对照和证伪任务。",
+      "decision": "无试验仅产计划；评价失败可回任何前步。",
+      "output_key": "evaluation_plan",
+      "output_description": "验证问题、指标口径、对照及生命周期疑问。",
+      "checks": [
+        "性能与环境收益分别需要证据。"
+      ],
+      "stop_condition": "没有接受条件时不输出达标结论。",
+      "source_refs": [
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "abstracted_mechanisms",
+      "label": "自然机制抽象",
+      "required_fields": [
+        "strategy",
+        "mechanism",
+        "conditions",
+        "evidence"
+      ],
+      "interpretation": "为工程探索提供机制，不证明目标有效。"
+    },
+    {
+      "key": "engineering_concepts",
+      "label": "迁移概念",
+      "required_fields": [
+        "implementation",
+        "differences",
+        "tradeoffs",
+        "unknowns"
+      ],
+      "interpretation": "条件性方向。"
+    },
+    {
+      "key": "evaluation_plan",
+      "label": "适配验证计划",
+      "required_fields": [
+        "questions",
+        "baseline",
+        "measures",
+        "environmental_questions"
+      ],
+      "interpretation": "未执行的验证安排。"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R14",
+      "relation": "requires",
+      "binding": "功能模型→challenge",
+      "condition": "目标功能清晰"
+    },
+    {
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "工程概念→候选原理",
+      "condition": "需要与其他原理组合"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "evaluation_plan→V&V计划",
+      "condition": "形成可验证命题"
+    },
+    {
+      "target_research_id": "R43",
+      "relation": "parallel",
+      "binding": "环境疑问→LCA范围",
+      "condition": "拟提出环境收益"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "publisher": "Biomimicry Institute",
+      "authors": [],
+      "title": "The Biomimicry Design Process",
+      "url": "https://toolbox.biomimicry.org/methods/process/",
+      "locator": "Process Overview 六阶段",
+      "read_scope": "网页主体流程核读",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "功能导向",
+        "循环式过程",
+        "回到准则与约束"
+      ],
+      "evidence_note": "页面给出自然策略进入设计的过程骨架，强调迭代，不等于工程验证。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S02",
+      "publisher": "Biomimicry Institute",
+      "authors": [],
+      "title": "Abstract Design Strategies",
+      "url": "https://toolbox.biomimicry.org/methods/abstract/",
+      "locator": "机制抽象方法页",
+      "read_scope": "页面已打开，相关抽象定义与指导核读",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "从生物策略抽象设计机制"
+      ],
+      "evidence_note": "工程机制表达须超越物种名称，具体差异表由平台增加。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S03",
+      "publisher": "Biomimicry Institute",
+      "authors": [],
+      "title": "Evaluate Fit & Function",
+      "url": "https://toolbox.biomimicry.org/methods/evaluate/",
+      "locator": "适配与功能评价页",
+      "read_scope": "页面已打开，相关评价范围核读",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "评价设计与目标适配"
+      ],
+      "evidence_note": "技术和系统层适配需重新评价，不从自然来源直接推导收益。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "目标功能明确但缺生物机制证据",
+      "expected": "输出研究与策略线索，不生成确定工程参数。"
+    },
+    {
+      "scenario": "仅给动物造型图片",
+      "expected": "澄清是否形式设计，不能声称性能仿生。"
+    },
+    {
+      "scenario": "策略需要违反目标材料约束",
+      "expected": "排除该迁移或重新定义任务，不用创意价值覆盖限制。"
+    }
+  ],
+  "search_terms": [
+    "仿生",
+    "Biomimicry",
+    "生物启发",
+    "功能生物化",
+    "机制抽象"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "051逐项检索与平台操作适配；保留原典核读范围"
+    }
+  ]
+}

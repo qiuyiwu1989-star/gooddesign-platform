@@ -29,19 +29,19 @@
     <div class="workspace-toolbar app-commandbar">
       <label>课题 <select id="projects" aria-label="我的课题"></select></label>
       <label>证据对象 <select id="research-choice" aria-label="研究方向"></select></label>
-      <button id="start-research">生成节点</button>
-      <button id="sample">双环样例</button>
-      <button id="create">空白项目</button>
-      <button id="save">保存</button>
-      <button id="export">导出</button>
-      <button id="zoom-out">缩小</button>
-      <button id="zoom-in">放大</button>
-      <button id="reset-view">复位视图</button>
-      <button id="remove-node">移除节点</button>
-      <button id="restore-nodes">复原画布</button>
-      <button id="focus-flow">聚焦流程</button>
-      <button id="play-flow">演示模式</button>
-      <button id="theme-toggle">深色模式</button>
+      <button type="button" id="start-research">生成节点</button>
+      <button type="button" id="sample">双环样例</button>
+      <button type="button" id="create">空白项目</button>
+      <button type="button" id="save">保存</button>
+      <button type="button" id="export">导出</button>
+      <button type="button" id="zoom-out">缩小</button>
+      <button type="button" id="zoom-in">放大</button>
+      <button type="button" id="reset-view">复位视图</button>
+      <button type="button" id="remove-node">移除节点</button>
+      <button type="button" id="restore-nodes">复原画布</button>
+      <button type="button" id="focus-flow">聚焦流程</button>
+      <button type="button" id="play-flow">演示模式</button>
+      <button type="button" id="theme-toggle">深色模式</button>
     </div>
 
     <div id="workspace" hidden class="node-workspace">
@@ -79,9 +79,9 @@
           </div>
           <textarea id="co-create-input" maxlength="240" placeholder="例如：客户希望同一关节平台覆盖 20kg 和 50kg 两类负载，但不能显著增加装配复杂度。"></textarea>
           <div class="co-create-actions">
-            <button data-co-create="constraint">加入约束</button>
-            <button data-co-create="idea">生成想法</button>
-            <button data-co-create="challenge">提出反驳</button>
+            <button type="button" data-co-create="constraint">加入约束</button>
+            <button type="button" data-co-create="idea">生成想法</button>
+            <button type="button" data-co-create="challenge">提出反驳</button>
           </div>
         </div>
         <div id="canvas-viewport">

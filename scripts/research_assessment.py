@@ -127,7 +127,7 @@ def render(result,data,url):
  h=lambda x:html.escape(str(x),quote=True)
  if result['status']!='available':return ''
  report=result['report'];j=report['judgment'];a=result.get('current_evidence_audit')or report['evidence_audit'];titles={r['id']:r['title']for r in data['records']}
- def refs(ids):return '<details><summary>查看档案依据</summary>'+''.join('<p><a href="#record-'+h(r)+'" data-review-record="'+h(r)+'">'+h(titles[r])+' →</a></p>'for r in ids)+'</details>'if ids else''
+ def refs(ids):return '<details><summary>查看档案依据</summary>'+''.join('<p><a href="#record-'+h(r)+'" data-review-record="'+h(r)+'">'+h(titles[r])+'</a></p>'for r in ids)+'</details>'if ids else''
  intro='<div class="research-box"><span class="research-tag">AI研究评估 · 非专家意见</span><p>'+h(j['summary'])+'</p><p class="research-note">绑定 '+h(j['research_revision'])+' · 评估 '+h(j['version'])+'。质量总分仍未评，不能据此判断技术水平或企业应用效果。</p><a download href="'+h(url('/api/research-document',document='review',revision=j['research_revision'],review_version=j['version']))+'">下载评估与补证建议</a></div>'
  intro+='<div class="research-box"><h3>资料能否追溯？</h3><p>已知字段：'+str(a['traceable_known_cells'])+' / '+str(a['known_cells'])+' 可追溯；AI解读：'+str(a['traceable_bounded_ai_items'])+' / '+str(a['ai_items'])+' 有可追溯依据及边界。</p><p class="research-note">截至 '+h(a['checked_at'][:16].replace('T',' '))+' UTC；这只检查文件与引文，不代表内容真实、研究完整或专家认可。</p>'+('<p>存在 '+str(len(a['issues']))+' 项需要检查，见下载报告。</p>'if a['issues']else'')+'</div>'
  for d,(_,label)in zip(j['dimensions'],DIMENSIONS):intro+='<details class="research-box"><summary>'+h(label)+'<small>'+h(STAGES[d['stage']])+'</small></summary><p>'+h(d['basis'])+'</p><h4>还需要补什么</h4><ul>'+''.join('<li>'+h(g)+'</li>'for g in d['gaps'])+'</ul>'+refs(d['record_ids'])+'</details>'

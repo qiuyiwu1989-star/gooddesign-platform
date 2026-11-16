@@ -1,0 +1,4914 @@
+{
+  "capabilities": {
+    "analogy_generation": {
+      "engine_stages": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "label": "类比与迁移",
+      "logical_outputs": [
+        "TransferMap",
+        "MechanismOptions"
+      ]
+    },
+    "architecture_analysis": {
+      "engine_stages": [
+        "S2",
+        "S7",
+        "S8"
+      ],
+      "label": "架构分析",
+      "logical_outputs": [
+        "ArchitectureRecord"
+      ]
+    },
+    "causal_analysis": {
+      "engine_stages": [
+        "S1",
+        "S5"
+      ],
+      "label": "因果分析",
+      "logical_outputs": [
+        "CausalRecord"
+      ]
+    },
+    "concept_comparison": {
+      "engine_stages": [
+        "S8"
+      ],
+      "label": "概念比较",
+      "logical_outputs": [
+        "ComparisonRecord"
+      ]
+    },
+    "concept_composition": {
+      "engine_stages": [
+        "S6",
+        "S7"
+      ],
+      "label": "概念组合",
+      "logical_outputs": [
+        "ConceptSet"
+      ]
+    },
+    "concept_transformation": {
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "label": "概念变换",
+      "logical_outputs": [
+        "ConceptSet"
+      ]
+    },
+    "contradiction_solving": {
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "label": "矛盾求解",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ]
+    },
+    "evidence_collection": {
+      "engine_stages": [
+        "S1"
+      ],
+      "label": "证据采集",
+      "logical_outputs": [
+        "EvidencePackage"
+      ]
+    },
+    "experiment_design": {
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "label": "试验设计",
+      "logical_outputs": [
+        "ExperimentPlan"
+      ]
+    },
+    "function_modeling": {
+      "engine_stages": [
+        "S2",
+        "S5"
+      ],
+      "label": "功能建模",
+      "logical_outputs": [
+        "FunctionModel"
+      ]
+    },
+    "intelligent_system_design": {
+      "engine_stages": [
+        "S5",
+        "S6",
+        "S7",
+        "S9"
+      ],
+      "label": "智能使用性能设计",
+      "logical_outputs": [
+        "ConceptSet",
+        "ValidationPlan"
+      ]
+    },
+    "manufacturability": {
+      "engine_stages": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "label": "制造与装配分析",
+      "logical_outputs": [
+        "ManufacturabilityRecord"
+      ]
+    },
+    "material_selection": {
+      "engine_stages": [
+        "S6",
+        "S7",
+        "S8"
+      ],
+      "label": "材料选择",
+      "logical_outputs": [
+        "MaterialSelectionRecord"
+      ]
+    },
+    "mechanism_synthesis": {
+      "engine_stages": [
+        "S5",
+        "S6",
+        "S7",
+        "S9"
+      ],
+      "label": "机构与动态综合",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ]
+    },
+    "method_governance": {
+      "engine_stages": [
+        "S0",
+        "S1",
+        "S3"
+      ],
+      "label": "方法知识与规则治理",
+      "logical_outputs": [
+        "MethodRegistryRecord"
+      ]
+    },
+    "need_interpretation": {
+      "engine_stages": [
+        "S1"
+      ],
+      "label": "需求解释",
+      "logical_outputs": [
+        "NeedEvidence"
+      ]
+    },
+    "problem_framing": {
+      "engine_stages": [
+        "S1"
+      ],
+      "label": "问题定义",
+      "logical_outputs": [
+        "ProblemBrief"
+      ]
+    },
+    "process_orchestration": {
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "label": "流程编排",
+      "logical_outputs": [
+        "ResearchPlan"
+      ]
+    },
+    "quality_evaluation": {
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "label": "质量评价",
+      "logical_outputs": [
+        "QualityAssessment"
+      ]
+    },
+    "requirement_deployment": {
+      "engine_stages": [
+        "S1",
+        "S2"
+      ],
+      "label": "要求展开",
+      "logical_outputs": [
+        "RequirementDeployment"
+      ]
+    },
+    "research_prioritization": {
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "label": "验证优先级",
+      "logical_outputs": [
+        "ResearchPriorityRecord"
+      ]
+    },
+    "risk_analysis": {
+      "engine_stages": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "label": "风险分析",
+      "logical_outputs": [
+        "RiskRegister"
+      ]
+    },
+    "service_design": {
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S6",
+        "S7"
+      ],
+      "label": "服务协同设计",
+      "logical_outputs": [
+        "ServiceBlueprint"
+      ]
+    },
+    "structural_optimization": {
+      "engine_stages": [
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "label": "结构与参数优化",
+      "logical_outputs": [
+        "OptimizationRecord"
+      ]
+    },
+    "sustainability_assessment": {
+      "engine_stages": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "label": "生命周期与生态评价",
+      "logical_outputs": [
+        "SustainabilityRecord"
+      ]
+    },
+    "technology_intelligence": {
+      "engine_stages": [
+        "S1",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "label": "技术情报与路线",
+      "logical_outputs": [
+        "TechnologyLandscape"
+      ]
+    },
+    "value_analysis": {
+      "engine_stages": [
+        "S6",
+        "S7",
+        "S8"
+      ],
+      "label": "价值分析",
+      "logical_outputs": [
+        "ValueRecord"
+      ]
+    },
+    "verification_validation": {
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "label": "验证与确认",
+      "logical_outputs": [
+        "ValidationPlan"
+      ]
+    }
+  },
+  "map_version": "0.1.0",
+  "methods": [
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "df70817ffb85b42cefe223b840953d20bb31c24a5546f3ae14dd5a115439e8db",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "task_brief",
+          "required": true
+        },
+        {
+          "key": "design_resources",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "design_stage_record"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-001",
+      "name": "系统化工程设计",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "问题简报→任务输入",
+          "condition": "对象目标须可辨",
+          "relation": "requires",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "要求→功能模型",
+          "condition": "进入概念设计",
+          "relation": "precedes",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "要求和结构定义→验证计划",
+          "condition": "需要确认工程结果",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R01",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "problem_framing",
+        "function_modeling",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "549a9c543f6ee6d9b51b75553fbb8bd8a6fb0d5f7cfe83840cb78095766ab218",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "challenge",
+          "required": true
+        },
+        {
+          "key": "evidence_access",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "learning_and_delivery"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-002",
+      "name": "双钻",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "研究记录→发现活动",
+          "condition": "需要理解用户",
+          "relation": "requires",
+          "target_research_id": "R08"
+        },
+        {
+          "binding": "定义挑战→原理组合",
+          "condition": "概念路线需拓宽",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "方案假设→验证计划",
+          "condition": "判断实际用途",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R02",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "evidence_collection",
+        "concept_transformation",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "3db9485fce7a4337b4e2b5f2259c57be8f266000fdf6893c3e3e36ddffe34834",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "challenge",
+          "required": true
+        },
+        {
+          "key": "research_material",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "iteration_record"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-003",
+      "name": "设计思维",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "现场证据→理解活动",
+          "condition": "进入用户研究",
+          "relation": "requires",
+          "target_research_id": "R08"
+        },
+        {
+          "binding": "假设→原型计划",
+          "condition": "需要低成本学习",
+          "relation": "parallel",
+          "target_research_id": "R44"
+        },
+        {
+          "binding": "概念→工程验证和用途确认",
+          "condition": "关键假设需实证",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R03",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "need_interpretation",
+        "concept_transformation",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "c04e01a2a0b2933e9528aea2b25a3f4ed41db2dde643389d2ebc07376fd15dff",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "mission_context",
+          "required": true
+        },
+        {
+          "key": "system_inventory",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "system_assurance_package"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S7",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-004",
+      "name": "系统工程",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "要求→功能分解",
+          "condition": "需分配功能",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "系统元素接口→DSM",
+          "condition": "需要分析依赖",
+          "relation": "parallel",
+          "target_research_id": "R31"
+        },
+        {
+          "binding": "要求与用途→V&V",
+          "condition": "进入实现与集成",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R04",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "requirement_deployment",
+        "architecture_analysis",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "1abd6d8d009aedd9205fe635f8ddc5eea30784134920513e883e8d44efd61275",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "system_task",
+          "required": true
+        },
+        {
+          "key": "discipline_context",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "v_model_record"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S7",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-005",
+      "name": "机电系统V模型",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "生命周期过程→机电开发活动",
+          "condition": "多学科系统任务",
+          "relation": "part_of",
+          "target_research_id": "R04"
+        },
+        {
+          "binding": "接口→依赖分析",
+          "condition": "存在复杂耦合",
+          "relation": "parallel",
+          "target_research_id": "R31"
+        },
+        {
+          "binding": "分层依据→验证确认",
+          "condition": "实现后核查",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R05",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "architecture_analysis",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "2ba132d12dad76372ed4a4b462a005dc23cf66bda77a0a94e09cad6b35e6050c",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "initiative",
+          "required": true
+        },
+        {
+          "key": "governance",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "stage_gate_record"
+      ],
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-006",
+      "name": "阶段门",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "关口备选→权衡分析",
+          "condition": "取舍复杂",
+          "relation": "parallel",
+          "target_research_id": "R37"
+        },
+        {
+          "binding": "技术不确定性→试验计划",
+          "condition": "需检验工程假设",
+          "relation": "parallel",
+          "target_research_id": "R42"
+        },
+        {
+          "binding": "候选集→阶段投入决定",
+          "condition": "保留多路线",
+          "relation": "parallel",
+          "target_research_id": "R47"
+        }
+      ],
+      "research_id": "R06",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "quality_evaluation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "6c334cd41ef73bc8d764c542ebd2e8fc32e565d5d0a8bebbb255cd68043f9cbd",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "design_project",
+          "required": true
+        },
+        {
+          "key": "measurement_context",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "dfss_quality_package"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-007",
+      "name": "六西格玛设计",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "需求→QFD特性",
+          "condition": "需展开质量响应",
+          "relation": "requires",
+          "target_research_id": "R12"
+        },
+        {
+          "binding": "影响因素→试验设计",
+          "condition": "可获得量测",
+          "relation": "parallel",
+          "target_research_id": "R38"
+        },
+        {
+          "binding": "噪声因素→稳健设计",
+          "condition": "变异重要",
+          "relation": "parallel",
+          "target_research_id": "R39"
+        },
+        {
+          "binding": "设计功能→FMEA",
+          "condition": "需识别失效",
+          "relation": "parallel",
+          "target_research_id": "R40"
+        }
+      ],
+      "research_id": "R07",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "requirement_deployment",
+        "experiment_design",
+        "structural_optimization"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "1b0b73c8acd81dc60daacc0d7fe24e4f4aa620716c8e0b108f3e054d94cb180b",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "research_question",
+          "required": true
+        },
+        {
+          "key": "field_access",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "need_evidence_package"
+      ],
+      "engine_stages": [
+        "S1"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "EvidencePackage"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-008",
+      "name": "用户观察与需求证据化",
+      "primary_capability": "evidence_collection",
+      "relations": [
+        {
+          "binding": "需求候选→问题简报",
+          "condition": "需要形成设计任务",
+          "relation": "precedes",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "需求及依据→QFD",
+          "condition": "进入工程响应",
+          "relation": "precedes",
+          "target_research_id": "R12"
+        },
+        {
+          "binding": "选择事件→JTBD",
+          "condition": "需解释替代和进步",
+          "relation": "parallel",
+          "target_research_id": "R09"
+        }
+      ],
+      "research_id": "R08",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "need_interpretation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "b41fda66dff35c45fd0c2cd9ba6e642b789f795cfc634235915084cc17228912",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "choice_events",
+          "required": true
+        },
+        {
+          "key": "product_context",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "jtbd_research_package"
+      ],
+      "engine_stages": [
+        "S1"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "NeedEvidence"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-009",
+      "name": "待办任务理论",
+      "primary_capability": "need_interpretation",
+      "relations": [
+        {
+          "binding": "事件证据→选择情境",
+          "condition": "需真实研究",
+          "relation": "requires",
+          "target_research_id": "R08"
+        },
+        {
+          "binding": "任务与需要→设计简报",
+          "condition": "定义产品任务",
+          "relation": "precedes",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "需求候选→工程响应",
+          "condition": "进入技术定义",
+          "relation": "precedes",
+          "target_research_id": "R12"
+        }
+      ],
+      "research_id": "R09",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "evidence_collection"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "16e5bcecace1a6256ef42f54011e4a82fe465a9f222bf37d5d16179e67badc71",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "research_domain",
+          "required": true
+        },
+        {
+          "key": "trend_network",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "lead_user_concepts"
+      ],
+      "engine_stages": [
+        "S1"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "EvidencePackage"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-010",
+      "name": "领先用户法",
+      "primary_capability": "evidence_collection",
+      "relations": [
+        {
+          "binding": "真实事件→筛选与访谈",
+          "condition": "需用户材料",
+          "relation": "requires",
+          "target_research_id": "R08"
+        },
+        {
+          "binding": "机制线索→概念组合",
+          "condition": "需扩大解法",
+          "relation": "precedes",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "转化假设→验证",
+          "condition": "需目标场景确认",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R10",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "need_interpretation",
+        "analogy_generation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "25f7e56089264d6c4467e0f61bc80b51e128a5a2e403e952099aa2dc8cdcad67",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "feature_context",
+          "required": true
+        },
+        {
+          "key": "survey_data",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "kano_need_package"
+      ],
+      "engine_stages": [
+        "S1"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool",
+      "logical_outputs": [
+        "NeedEvidence"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-011",
+      "name": "Kano需求分类",
+      "primary_capability": "need_interpretation",
+      "relations": [
+        {
+          "binding": "真实需求→特性候选",
+          "condition": "需先发现需要",
+          "relation": "requires",
+          "target_research_id": "R08"
+        },
+        {
+          "binding": "需求分类与依据→QFD",
+          "condition": "工程响应展开",
+          "relation": "precedes",
+          "target_research_id": "R12"
+        },
+        {
+          "binding": "价值证据→综合权衡",
+          "condition": "资源取舍",
+          "relation": "precedes",
+          "target_research_id": "R37"
+        }
+      ],
+      "research_id": "R11",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "requirement_deployment"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "04fae068ad1bb9a55781f7e1c7288cc5b88f7c6b0afccb28fb90e8eaa449cb85",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "customer_needs",
+          "required": true
+        },
+        {
+          "key": "technical_context",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "qfd_deployment_package"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "RequirementDeployment"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-012",
+      "name": "质量功能展开",
+      "primary_capability": "requirement_deployment",
+      "relations": [
+        {
+          "binding": "需求证据→顾客需要",
+          "condition": "需有材料",
+          "relation": "requires",
+          "target_research_id": "R08"
+        },
+        {
+          "binding": "满意度类别→需求理解",
+          "condition": "已有问卷时",
+          "relation": "parallel",
+          "target_research_id": "R11"
+        },
+        {
+          "binding": "技术响应→功能分析",
+          "condition": "进一步生成原理",
+          "relation": "precedes",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "目标与口径→验证",
+          "condition": "需要实证",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R12",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "function_modeling",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "db590a758372dcc9c97bd160732bb4d3c059bfba6a74f2a7407f3d1e4a21ea15",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "users",
+          "required": true
+        },
+        {
+          "key": "tasks",
+          "required": true
+        },
+        {
+          "key": "evidence",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "human_factors_plan"
+      ],
+      "engine_stages": [
+        "S1"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "NeedEvidence"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-013",
+      "name": "人机工程与人本设计",
+      "primary_capability": "need_interpretation",
+      "relations": [
+        {
+          "binding": "现场证据",
+          "condition": "任务事实不充分时",
+          "relation": "requires",
+          "target_research_id": "R08"
+        },
+        {
+          "binding": "系统级人因要求",
+          "condition": "多人机协同系统",
+          "relation": "part_of",
+          "target_research_id": "R04"
+        }
+      ],
+      "research_id": "R13",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "requirement_deployment",
+        "risk_analysis"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "8c09baad967ca18561c1cd67d9c8f96e65184e3b26222b44af6bccd641a8cac3",
+        "version": "0.1.0"
+      },
+      "contract_ref": {
+        "sha256": "e395e3f1c7e382547da3b42ffb0a36d7ae8f9fcf77092e4de47008429f170bfa",
+        "version": "0.2.0"
+      },
+      "dossier_inputs": [
+        {
+          "key": "requirements",
+          "required": true
+        },
+        {
+          "key": "conops",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "functional_architecture"
+      ],
+      "engine_stages": [
+        "S2",
+        "S5"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "FunctionModel"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-FA-001",
+      "name": "功能分解与接口分析",
+      "primary_capability": "function_modeling",
+      "relations": [
+        {
+          "binding": "逻辑分解",
+          "condition": "系统工程设计阶段",
+          "relation": "part_of",
+          "target_research_id": "R04"
+        },
+        {
+          "binding": "功能表述复用",
+          "condition": "需检验目的手段逻辑时",
+          "relation": "parallel",
+          "target_research_id": "R15"
+        },
+        {
+          "binding": "方案综合输入",
+          "condition": "开始选择物理原理前",
+          "relation": "precedes",
+          "target_research_id": "R01"
+        }
+      ],
+      "research_id": "R14",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "architecture_analysis"
+      ],
+      "skill_level": "S2",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "00a6e7c50ed23cb84674cab2d4d2f2bc0960c74cff83a25e50b30be9a6e381ef",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "scope",
+          "required": true
+        },
+        {
+          "key": "functions",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "opportunity_brief"
+      ],
+      "engine_stages": [
+        "S2",
+        "S5"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool",
+      "logical_outputs": [
+        "FunctionModel"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-015",
+      "name": "FAST功能逻辑分析",
+      "primary_capability": "function_modeling",
+      "relations": [
+        {
+          "binding": "复用功能目录",
+          "condition": "需要接口与行为细化时",
+          "relation": "parallel",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "需求来源",
+          "condition": "客户价值需澄清时",
+          "relation": "requires",
+          "target_research_id": "R12"
+        }
+      ],
+      "research_id": "R15",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_transformation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "bfed7a07b5cf3e1b9a3b972324fb49c22485dd95c5f7322825b31bdd5cd95d87",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "problem",
+          "required": true
+        },
+        {
+          "key": "records",
+          "required": true
+        },
+        {
+          "key": "authority",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "rca_record"
+      ],
+      "engine_stages": [
+        "S1",
+        "S5"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "CausalRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-016",
+      "name": "根因分析",
+      "primary_capability": "causal_analysis",
+      "relations": [
+        {
+          "binding": "功能接口模型",
+          "condition": "故障涉及跨功能交互时",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "任务与人因",
+          "condition": "人机行为是候选条件时",
+          "relation": "parallel",
+          "target_research_id": "R13"
+        }
+      ],
+      "research_id": "R16",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "problem_framing",
+        "risk_analysis"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "84256c0208f0849670df5f0e39a119b4e9f6cfaf468bc731b7b0b58be6370e5d",
+        "version": "0.1.0"
+      },
+      "contract_ref": {
+        "sha256": "da3ed64e64ca5a7c7a853a7107390f2c9122fe4fc8f428a0fad036046acdb69d",
+        "version": "0.2.0"
+      },
+      "dossier_inputs": [
+        {
+          "key": "task",
+          "required": true
+        },
+        {
+          "key": "functions",
+          "required": true
+        },
+        {
+          "key": "options",
+          "required": false
+        },
+        {
+          "key": "conditions",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "option_matrix",
+        "concept_set",
+        "handoff"
+      ],
+      "engine_stages": [
+        "S6",
+        "S7"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "ConceptSet"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-017",
+      "name": "形态学分析",
+      "primary_capability": "concept_composition",
+      "relations": [
+        {
+          "binding": "function_model→functions",
+          "condition": "必要功能和边界可说明",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "机制候选→options",
+          "condition": "缺替代原理",
+          "relation": "parallel",
+          "target_research_id": "R27"
+        },
+        {
+          "binding": "concept_set→候选集",
+          "condition": "共同要求可比较",
+          "relation": "precedes",
+          "target_research_id": "R36"
+        },
+        {
+          "binding": "validation_questions→验证计划",
+          "condition": "关键假设可测",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R17",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_transformation",
+        "architecture_analysis"
+      ],
+      "skill_level": "S2",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "a723a589df441f7f8377ad9ff0ce32d93c6557f743b38ee916ca514b67f6a5bb",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "challenge",
+          "required": true
+        },
+        {
+          "key": "context",
+          "required": true
+        },
+        {
+          "key": "biology",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "abstracted_mechanisms",
+        "engineering_concepts",
+        "evaluation_plan"
+      ],
+      "engine_stages": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "TransferMap",
+        "MechanismOptions"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-018",
+      "name": "仿生设计",
+      "primary_capability": "analogy_generation",
+      "relations": [
+        {
+          "binding": "功能模型→challenge",
+          "condition": "目标功能清晰",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "工程概念→候选原理",
+          "condition": "需要与其他原理组合",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "evaluation_plan→V&V计划",
+          "condition": "形成可验证命题",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        },
+        {
+          "binding": "环境疑问→LCA范围",
+          "condition": "拟提出环境收益",
+          "relation": "parallel",
+          "target_research_id": "R43"
+        }
+      ],
+      "research_id": "R18",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_transformation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "5f8b27b151d78fb882bc8aac8ecc6ea27bedff8a14b26569874b6d6404330c25",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "brief",
+          "required": true
+        },
+        {
+          "key": "concept",
+          "required": true
+        },
+        {
+          "key": "prompts",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "concept_variants",
+        "selection_package"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool_family",
+      "logical_outputs": [
+        "ConceptSet"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-019",
+      "name": "设计启发式",
+      "primary_capability": "concept_transformation",
+      "relations": [
+        {
+          "binding": "变体→功能选项",
+          "condition": "可抽出不同原理",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "selection_package→候选集",
+          "condition": "准则可定义",
+          "relation": "precedes",
+          "target_research_id": "R36"
+        },
+        {
+          "binding": "验证问题→测试计划",
+          "condition": "需检查真实适用性",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R19",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_composition"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "8903092f146ad3897fd0deebb711afcae04bf9b59e77ac214e8e3e7bb6a26c52",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "concept",
+          "required": true
+        },
+        {
+          "key": "knowledge",
+          "required": true
+        },
+        {
+          "key": "constraints",
+          "required": true
+        },
+        {
+          "key": "resources",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "concept_tree",
+        "knowledge_tasks",
+        "ck_record"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "theory",
+      "logical_outputs": [
+        "ConceptSet"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-020",
+      "name": "C-K设计理论",
+      "primary_capability": "concept_transformation",
+      "relations": [
+        {
+          "binding": "属性分支→概念组合维度",
+          "condition": "需组织已知候选",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "知识缺口→自然策略探索",
+          "condition": "需寻找未知功能机制",
+          "relation": "parallel",
+          "target_research_id": "R18"
+        },
+        {
+          "binding": "待判属性→验证任务",
+          "condition": "形成具体试验命题",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R20",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "evidence_collection"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "c2b5ded370a6d1c4fbcdd8b9096084c4888f83aed808f97023353aa5cd4ce9e6",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "system",
+          "required": true
+        },
+        {
+          "key": "problem",
+          "required": true
+        },
+        {
+          "key": "constraints",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "verified_plan"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-021",
+      "name": "TRIZ体系",
+      "primary_capability": "contradiction_solving",
+      "relations": [
+        {
+          "binding": "技术矛盾子入口",
+          "condition": "改善和恶化指标可描述",
+          "relation": "precedes",
+          "target_research_id": "R22"
+        },
+        {
+          "binding": "作用结构子入口",
+          "condition": "作用缺失、有害或不足",
+          "relation": "precedes",
+          "target_research_id": "R25"
+        },
+        {
+          "binding": "复杂问题重构入口",
+          "condition": "简单工具无效且需严格资源求解",
+          "relation": "precedes",
+          "target_research_id": "R28"
+        }
+      ],
+      "research_id": "R21",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "process_orchestration"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "0f94ccc6c144d26c692e49a740d88e7b5de0b3c9fbce368b6e1ba4ca86b9f2e9",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "intervention",
+          "required": true
+        },
+        {
+          "key": "metrics",
+          "required": true
+        },
+        {
+          "key": "constraints",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "validation_plan"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-022",
+      "name": "技术矛盾与发明原理",
+      "primary_capability": "contradiction_solving",
+      "relations": [
+        {
+          "binding": "TRIZ技术矛盾路线",
+          "condition": "两指标在具体措施下发生权衡",
+          "relation": "part_of",
+          "target_research_id": "R21"
+        },
+        {
+          "binding": "转同一属性相反要求",
+          "condition": "能够定位同一属性及两种必要状态",
+          "relation": "alternative",
+          "target_research_id": "R23"
+        },
+        {
+          "binding": "扩展具体化候选",
+          "condition": "有多个可组合结构选项",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        }
+      ],
+      "research_id": "R22",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_transformation",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "cff40a6cd7ebacf6511d2020ca5a48a9334660ac1e91c397e1985353c6f38eda",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "object_property",
+          "required": true
+        },
+        {
+          "key": "requirements",
+          "required": true
+        },
+        {
+          "key": "conditions",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "test_matrix"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-023",
+      "name": "物理矛盾与分离",
+      "primary_capability": "contradiction_solving",
+      "relations": [
+        {
+          "binding": "TRIZ物理矛盾路线",
+          "condition": "同属性相反要求",
+          "relation": "part_of",
+          "target_research_id": "R21"
+        },
+        {
+          "binding": "检索属性切换效应",
+          "condition": "分离方向明确但实现机制缺失",
+          "relation": "precedes",
+          "target_research_id": "R27"
+        },
+        {
+          "binding": "机构实现条件分离",
+          "condition": "需要空间或时序组织",
+          "relation": "parallel",
+          "target_research_id": "R32"
+        }
+      ],
+      "research_id": "R23",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_transformation",
+        "experiment_design"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "31fd0e09e75e487138a5e380532031b0ecd5a87874368c3907c5b2cd0422c4b0",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "problem_model",
+          "required": true
+        },
+        {
+          "key": "functions",
+          "required": true
+        },
+        {
+          "key": "available",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "resource_validation"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool_family",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-024",
+      "name": "理想解与资源分析",
+      "primary_capability": "contradiction_solving",
+      "relations": [
+        {
+          "binding": "TRIZ资源视角",
+          "condition": "需要减少系统负担",
+          "relation": "part_of",
+          "target_research_id": "R21"
+        },
+        {
+          "binding": "ARIZ资源与IFR环节",
+          "condition": "严格算法执行需专门版本",
+          "relation": "part_of",
+          "target_research_id": "R28"
+        },
+        {
+          "binding": "接管被裁剪功能",
+          "condition": "已有资源可能承担功能",
+          "relation": "parallel",
+          "target_research_id": "R26"
+        }
+      ],
+      "research_id": "R24",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "function_modeling",
+        "concept_transformation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "9fb819d53a2d667ad293dbcfecc9bf823c3e8b6067d8e417c09d1eb0cd5a852b",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "interaction",
+          "required": true
+        },
+        {
+          "key": "defect",
+          "required": true
+        },
+        {
+          "key": "resources",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "sufield_validation"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool_family",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-025",
+      "name": "物场分析与标准解",
+      "primary_capability": "contradiction_solving",
+      "relations": [
+        {
+          "binding": "TRIZ作用结构路线",
+          "condition": "关键作用已定位",
+          "relation": "part_of",
+          "target_research_id": "R21"
+        },
+        {
+          "binding": "选择现有资源",
+          "condition": "新增物质或场受限",
+          "relation": "parallel",
+          "target_research_id": "R24"
+        },
+        {
+          "binding": "检索场与材料效应",
+          "condition": "解决模型缺具体机制",
+          "relation": "precedes",
+          "target_research_id": "R27"
+        }
+      ],
+      "research_id": "R25",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "function_modeling"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "760f65b75522fc8326a7b82172c6bfa19f72012780bcc1a289929c489c87f477",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "function_model",
+          "required": true
+        },
+        {
+          "key": "goal",
+          "required": true
+        },
+        {
+          "key": "constraints",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "trimming_validation"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-026",
+      "name": "功能裁剪",
+      "primary_capability": "contradiction_solving",
+      "relations": [
+        {
+          "binding": "TRIZ功能重构路线",
+          "condition": "已有功能模型",
+          "relation": "part_of",
+          "target_research_id": "R21"
+        },
+        {
+          "binding": "寻找接管资源",
+          "condition": "新载体能力尚不明确",
+          "relation": "parallel",
+          "target_research_id": "R24"
+        },
+        {
+          "binding": "检索接管机制",
+          "condition": "裁剪问题需要外部技术",
+          "relation": "precedes",
+          "target_research_id": "R27"
+        }
+      ],
+      "research_id": "R26",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "function_modeling",
+        "architecture_analysis"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "dc8fde926f926207a33d7ba57595a8037a41396ec70e251e699b086ff8a45498",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "function",
+          "required": true
+        },
+        {
+          "key": "parameters",
+          "required": true
+        },
+        {
+          "key": "evidence",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "fos_validation"
+      ],
+      "engine_stages": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "TransferMap",
+        "MechanismOptions"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-027",
+      "name": "功能导向检索与科学效应",
+      "primary_capability": "analogy_generation",
+      "relations": [
+        {
+          "binding": "TRIZ功能路线",
+          "condition": "功能已明确",
+          "relation": "part_of",
+          "target_research_id": "R21"
+        },
+        {
+          "binding": "承接裁剪问题",
+          "condition": "需新载体接管功能",
+          "relation": "requires",
+          "target_research_id": "R26"
+        },
+        {
+          "binding": "生物机制检索",
+          "condition": "自然系统可能实现同功能",
+          "relation": "parallel",
+          "target_research_id": "R18"
+        }
+      ],
+      "research_id": "R27",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "technology_intelligence",
+        "concept_transformation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "5ae50251aa65719adc033b5f5865697ab68a0ff5e7a2736d102dd7aed0fad0a7",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "system_problem",
+          "required": true
+        },
+        {
+          "key": "constraints",
+          "required": true
+        },
+        {
+          "key": "history",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "ariz_trace"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-028",
+      "name": "ARIZ发明问题求解算法",
+      "primary_capability": "contradiction_solving",
+      "relations": [
+        {
+          "binding": "复杂TRIZ问题入口",
+          "condition": "简单工具不够",
+          "relation": "part_of",
+          "target_research_id": "R21"
+        },
+        {
+          "binding": "作用区资源与IFR",
+          "condition": "进入模型具体化",
+          "relation": "requires",
+          "target_research_id": "R24"
+        },
+        {
+          "binding": "物理矛盾求解",
+          "condition": "形成相反要求",
+          "relation": "requires",
+          "target_research_id": "R23"
+        }
+      ],
+      "research_id": "R28",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "process_orchestration"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "0926fa62c8bbd7a7b325db6e92cf28c158aa9ab9072fca8d07e5e150c829dd7e",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "baseline",
+          "required": true
+        },
+        {
+          "key": "performance",
+          "required": true
+        },
+        {
+          "key": "bottlenecks",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "evolution_validation"
+      ],
+      "engine_stages": [
+        "S3",
+        "S5",
+        "S6"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool_family",
+      "logical_outputs": [
+        "TechnologyLandscape"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-029",
+      "name": "技术系统进化趋势",
+      "primary_capability": "technology_intelligence",
+      "relations": [
+        {
+          "binding": "TRIZ演化视角",
+          "condition": "已有技术系统",
+          "relation": "part_of",
+          "target_research_id": "R21"
+        },
+        {
+          "binding": "裁剪方向",
+          "condition": "减少载体而保留功能",
+          "relation": "parallel",
+          "target_research_id": "R26"
+        },
+        {
+          "binding": "验证路线实现技术",
+          "condition": "趋势提示尚缺机制",
+          "relation": "precedes",
+          "target_research_id": "R27"
+        }
+      ],
+      "research_id": "R29",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "contradiction_solving",
+        "concept_transformation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "a0d476d3b2ce63e0d6077066fa2abe463d71fcfbb53611d85ed52b34a4ed05a0",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "needs",
+          "required": true
+        },
+        {
+          "key": "fr",
+          "required": true
+        },
+        {
+          "key": "dp",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "ad_validation"
+      ],
+      "engine_stages": [
+        "S2",
+        "S7",
+        "S8"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "theory_method",
+      "logical_outputs": [
+        "ArchitectureRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-030",
+      "name": "公理化设计",
+      "primary_capability": "architecture_analysis",
+      "relations": [
+        {
+          "binding": "生成替代DP",
+          "condition": "架构耦合需新实现",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "分离相反要求",
+          "condition": "同一属性冲突",
+          "relation": "parallel",
+          "target_research_id": "R23"
+        },
+        {
+          "binding": "同类元素依赖分析",
+          "condition": "需模块与接口设计",
+          "relation": "alternative",
+          "target_research_id": "R31"
+        }
+      ],
+      "research_id": "R30",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "function_modeling",
+        "concept_comparison"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "360a01ee7cf8639f37653805f74f3500a454591c02dfe38e6f46e15b195cc774",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "elements",
+          "required": true
+        },
+        {
+          "key": "dependencies",
+          "required": true
+        },
+        {
+          "key": "objective",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "dsm_validation"
+      ],
+      "engine_stages": [
+        "S2",
+        "S7",
+        "S8"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "ArchitectureRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-031",
+      "name": "DSM与模块化架构",
+      "primary_capability": "architecture_analysis",
+      "relations": [
+        {
+          "binding": "功能实现与架构交叉审查",
+          "condition": "同时需要FR/DP与部件依赖",
+          "relation": "parallel",
+          "target_research_id": "R30"
+        },
+        {
+          "binding": "组合模块方案",
+          "condition": "已有模块候选",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "机构接口与运动约束",
+          "condition": "机械模块边界涉及运动传递",
+          "relation": "parallel",
+          "target_research_id": "R32"
+        }
+      ],
+      "research_id": "R31",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_composition"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "609ceefc18a826cd835ec5a21d1bc32965c2e838c22ee8da986f84b2871bd00f",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "motion",
+          "required": true
+        },
+        {
+          "key": "boundary",
+          "required": true
+        },
+        {
+          "key": "loads",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "mechanism_validation"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6",
+        "S7",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-032",
+      "name": "机构综合",
+      "primary_capability": "mechanism_synthesis",
+      "relations": [
+        {
+          "binding": "机构形式候选组合",
+          "condition": "存在多个功能实现",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "实现时空分离",
+          "condition": "需要特定运动时序",
+          "relation": "precedes",
+          "target_research_id": "R23"
+        },
+        {
+          "binding": "模块接口与运动依赖",
+          "condition": "机构嵌入产品架构",
+          "relation": "parallel",
+          "target_research_id": "R31"
+        }
+      ],
+      "research_id": "R32",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "architecture_analysis",
+        "structural_optimization"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "d08e1efcdbb8550a14841dfe681753d948e3fdd06a35cc1a4c37237df1d42457",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "design_task",
+          "required": true
+        },
+        {
+          "key": "service_conditions",
+          "required": true
+        },
+        {
+          "key": "material_data",
+          "required": true
+        },
+        {
+          "key": "candidate_models",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "selection_dossier"
+      ],
+      "engine_stages": [
+        "S6",
+        "S7",
+        "S8"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "MaterialSelectionRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-033",
+      "name": "Ashby材料选择",
+      "primary_capability": "material_selection",
+      "relations": [
+        {
+          "binding": "问题简报→design_task",
+          "condition": "目标和边界可识别",
+          "relation": "requires",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "selection_dossier→材料工艺输入",
+          "condition": "剩余候选需制造装配权衡",
+          "relation": "precedes",
+          "target_research_id": "R34"
+        },
+        {
+          "binding": "验证任务→验证计划",
+          "condition": "方案需要性能确认",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R33",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_comparison"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "c861aff76cc53865077584c32d50b64b6dea78d73603266e3c64eaf56861d728",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "product_definition",
+          "required": true
+        },
+        {
+          "key": "production_context",
+          "required": true
+        },
+        {
+          "key": "baseline_operations",
+          "required": false
+        },
+        {
+          "key": "cost_data",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "dfma_dossier"
+      ],
+      "engine_stages": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "ManufacturabilityRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-034",
+      "name": "面向制造与装配设计",
+      "primary_capability": "manufacturability",
+      "relations": [
+        {
+          "binding": "功能模型→product_definition",
+          "condition": "必要功能可识别",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "材料工艺候选↔manufacturing_tradeoffs",
+          "condition": "材料与工艺共同约束",
+          "relation": "parallel",
+          "target_research_id": "R33"
+        },
+        {
+          "binding": "功能接替→simplification_candidates",
+          "condition": "裁剪方向需制造装配检验",
+          "relation": "parallel",
+          "target_research_id": "R26"
+        },
+        {
+          "binding": "dfma_dossier验证任务→V&V",
+          "condition": "结构变更需实证",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R34",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "function_modeling",
+        "value_analysis"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "7791f309de0ce2e1ffb2b1ba385773cfb4155a6a92857fd614d794f668a66ca4",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "structural_task",
+          "required": true
+        },
+        {
+          "key": "load_cases",
+          "required": true
+        },
+        {
+          "key": "material_model",
+          "required": true
+        },
+        {
+          "key": "solver_context",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "topology_dossier"
+      ],
+      "engine_stages": [
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "computational_method",
+      "logical_outputs": [
+        "OptimizationRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-035",
+      "name": "拓扑优化",
+      "primary_capability": "structural_optimization",
+      "relations": [
+        {
+          "binding": "问题与边界→structural_task",
+          "condition": "设计域和目标明确",
+          "relation": "requires",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "材料候选→material_model",
+          "condition": "物性和状态可追溯",
+          "relation": "requires",
+          "target_research_id": "R33"
+        },
+        {
+          "binding": "制造约束→重构与模型",
+          "condition": "需实现而非仅展示布局",
+          "relation": "parallel",
+          "target_research_id": "R34"
+        },
+        {
+          "binding": "最终结构→V&V计划",
+          "condition": "最终几何和工况可验证",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R35",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "mechanism_synthesis"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "3275add428e0cd2a90d31190ada3b6a41232de1b41acdcd8ee7210d224c53065",
+        "version": "0.1.0"
+      },
+      "contract_ref": {
+        "sha256": "7c00f2dd044f7127d999f391c159d417f884667b74d98dd66bf7f915a4e92ee3",
+        "version": "0.2.0"
+      },
+      "dossier_inputs": [
+        {
+          "key": "problem_requirements",
+          "required": true
+        },
+        {
+          "key": "concepts",
+          "required": true
+        },
+        {
+          "key": "evidence",
+          "required": false
+        },
+        {
+          "key": "decision_preferences",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "selection_dossier"
+      ],
+      "engine_stages": [
+        "S8"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "tool",
+      "logical_outputs": [
+        "ComparisonRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-036",
+      "name": "Pugh概念筛选",
+      "primary_capability": "concept_comparison",
+      "relations": [
+        {
+          "binding": "概念组合→concepts",
+          "condition": "候选有真正原理差异",
+          "relation": "requires",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "需多属性量化时→权衡分析",
+          "condition": "数据和偏好模型足够",
+          "relation": "alternative",
+          "target_research_id": "R37"
+        },
+        {
+          "binding": "关键差异→验证问题",
+          "condition": "仍有未知影响选择",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R36",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [],
+      "skill_level": "S2",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "3a0c37f8ef9d656a4baf7c06f8976d587fa819f45ef9daa45ae98367d3d1873c",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "decision_task",
+          "required": true
+        },
+        {
+          "key": "alternatives",
+          "required": true
+        },
+        {
+          "key": "criterion_data",
+          "required": true
+        },
+        {
+          "key": "preferences",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "decision_dossier"
+      ],
+      "engine_stages": [
+        "S8"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "ComparisonRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-037",
+      "name": "多准则权衡分析",
+      "primary_capability": "concept_comparison",
+      "relations": [
+        {
+          "binding": "相对基准矩阵↔量化权衡",
+          "condition": "数据与决策深度不同",
+          "relation": "alternative",
+          "target_research_id": "R36"
+        },
+        {
+          "binding": "敏感输入→验证计划",
+          "condition": "需要降低足以改变选择的不确定性",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        },
+        {
+          "binding": "接近候选→集合保留",
+          "condition": "不确定性尚不足以淘汰",
+          "relation": "parallel",
+          "target_research_id": "R47"
+        }
+      ],
+      "research_id": "R37",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "b7a996d63b6c12c988b93973a8f0061b786ea7843f15ebfea37fc70ffca6516b",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "experiment_goal",
+          "required": true
+        },
+        {
+          "key": "factors",
+          "required": true
+        },
+        {
+          "key": "measurement_context",
+          "required": true
+        },
+        {
+          "key": "observations",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "doe_dossier"
+      ],
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "ExperimentPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-038",
+      "name": "试验设计与响应面",
+      "primary_capability": "experiment_design",
+      "relations": [
+        {
+          "binding": "任务指标→experiment_goal",
+          "condition": "可测目标与边界明确",
+          "relation": "requires",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "因素模型↔稳健参数设计",
+          "condition": "需要降低噪声敏感性",
+          "relation": "parallel",
+          "target_research_id": "R39"
+        },
+        {
+          "binding": "参数建议→独立验证",
+          "condition": "性能与用途仍需确认",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R38",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "structural_optimization"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "b85d824a32841cd4e00f990194197b1de407d55a2efb949088d951ffa1be5819",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "robustness_goal",
+          "required": true
+        },
+        {
+          "key": "control_factors",
+          "required": true
+        },
+        {
+          "key": "noise_factors",
+          "required": true
+        },
+        {
+          "key": "model_or_data",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "robust_design_dossier"
+      ],
+      "engine_stages": [
+        "S6",
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "OptimizationRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-039",
+      "name": "稳健参数与公差设计",
+      "primary_capability": "structural_optimization",
+      "relations": [
+        {
+          "binding": "因素空间↔稳健试验设计",
+          "condition": "需要实际统计设计",
+          "relation": "parallel",
+          "target_research_id": "R38"
+        },
+        {
+          "binding": "公差候选→工艺能力与成本",
+          "condition": "制造代价影响可行性",
+          "relation": "parallel",
+          "target_research_id": "R34"
+        },
+        {
+          "binding": "边界噪声→验证计划",
+          "condition": "最终性能需确认",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R39",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "experiment_design"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "c87c6138a25ba578d19e30ae975fc0115ddd8945cbe4cdfda13480bf69beb57f",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "system_scope",
+          "required": true
+        },
+        {
+          "key": "operating_conditions",
+          "required": true
+        },
+        {
+          "key": "failure_evidence",
+          "required": false
+        },
+        {
+          "key": "rating_policy",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "fmea_dossier"
+      ],
+      "engine_stages": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "RiskRegister"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-040",
+      "name": "失效模式与影响分析",
+      "primary_capability": "risk_analysis",
+      "relations": [
+        {
+          "binding": "功能与接口→system_scope",
+          "condition": "风险从功能开始",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "原因候选→根因证据",
+          "condition": "实际故障需独立诊断",
+          "relation": "parallel",
+          "target_research_id": "R16"
+        },
+        {
+          "binding": "失效影响→机械危险",
+          "condition": "FMEA不替代机械风险流程",
+          "relation": "parallel",
+          "target_research_id": "R41"
+        },
+        {
+          "binding": "行动验证→V&V计划",
+          "condition": "需实施证据闭环",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R40",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "causal_analysis",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "affbc3c2767cbd8903d81d479a2e8fc46ce4f95631cc8b3e06adcadc7ac5cc41",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "machine_scope",
+          "required": true
+        },
+        {
+          "key": "lifecycle_tasks",
+          "required": true
+        },
+        {
+          "key": "risk_policy",
+          "required": false
+        },
+        {
+          "key": "safety_evidence",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "machinery_safety_dossier"
+      ],
+      "engine_stages": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "RiskRegister"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-041",
+      "name": "机械风险评估与风险降低",
+      "primary_capability": "risk_analysis",
+      "relations": [
+        {
+          "binding": "失效影响→危险情境",
+          "condition": "FMEA不能覆盖全部机械危险",
+          "relation": "parallel",
+          "target_research_id": "R40"
+        },
+        {
+          "binding": "safety_verification→验证计划",
+          "condition": "措施效果须取得证据",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        },
+        {
+          "binding": "硬性安全要求→risk_policy",
+          "condition": "边界与要求先明确",
+          "relation": "requires",
+          "target_research_id": "R48"
+        }
+      ],
+      "research_id": "R41",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "f55eb1f505c1674eec28b07c8de7c50dff341d3a26cac8db917cda0ac5c243d4",
+        "version": "0.1.0"
+      },
+      "contract_ref": {
+        "sha256": "ff4474d401e5b1562e0c3770674ab1abc5e385ed56f427d947377096628c9873",
+        "version": "0.2.0"
+      },
+      "dossier_inputs": [
+        {
+          "key": "requirements",
+          "required": true
+        },
+        {
+          "key": "intended_use",
+          "required": true
+        },
+        {
+          "key": "product_configuration",
+          "required": true
+        },
+        {
+          "key": "test_capabilities",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "vv_dossier"
+      ],
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "VerificationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-042",
+      "name": "验证与确认",
+      "primary_capability": "verification_validation",
+      "relations": [
+        {
+          "binding": "要求/用途→requirements/intended_use",
+          "condition": "须有可判断目标",
+          "relation": "requires",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "风险行动→V&V活动",
+          "condition": "FMEA措施需证据",
+          "relation": "parallel",
+          "target_research_id": "R40"
+        },
+        {
+          "binding": "原型学习→待确认假设",
+          "condition": "探索证据与正式结论分开",
+          "relation": "parallel",
+          "target_research_id": "R44"
+        }
+      ],
+      "research_id": "R42",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "quality_evaluation"
+      ],
+      "skill_level": "S2",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "cf467a4b672c378615f7125d4aca3eb6d1c0811cde77fc8cf925b2c2138abacd",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "comparison_goal",
+          "required": true
+        },
+        {
+          "key": "functional_service",
+          "required": true
+        },
+        {
+          "key": "product_inventory",
+          "required": false
+        },
+        {
+          "key": "lca_resources",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "ecodesign_dossier"
+      ],
+      "engine_stages": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "SustainabilityRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-043",
+      "name": "生命周期评价与生态设计",
+      "primary_capability": "sustainability_assessment",
+      "relations": [
+        {
+          "binding": "材料候选→清单和性能比较",
+          "condition": "需服务等效",
+          "relation": "parallel",
+          "target_research_id": "R33"
+        },
+        {
+          "binding": "制造装配→过程和报废数据",
+          "condition": "查负担转移",
+          "relation": "parallel",
+          "target_research_id": "R34"
+        },
+        {
+          "binding": "环境条件性结论→决策准则",
+          "condition": "环境不是唯一硬约束",
+          "relation": "precedes",
+          "target_research_id": "R37"
+        }
+      ],
+      "research_id": "R43",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "value_analysis"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "165f6a16cab771df77a42fade561e2be89a90ce765b0f4cd4989b6d1da5f7291",
+        "version": "0.1.0"
+      },
+      "contract_ref": {
+        "sha256": "9156b63cfed6a2004062460aabefe9c05ea9f2beec0d0c842b0e8a7197f82e12",
+        "version": "0.2.0"
+      },
+      "dossier_inputs": [
+        {
+          "key": "design_intent",
+          "required": true
+        },
+        {
+          "key": "assumptions",
+          "required": true
+        },
+        {
+          "key": "experiment_resources",
+          "required": false
+        },
+        {
+          "key": "prototype_evidence",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "prototype_learning_dossier"
+      ],
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "PrototypePlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-044",
+      "name": "原型与假设测试",
+      "primary_capability": "verification_validation",
+      "relations": [
+        {
+          "binding": "问题/用户任务→design_intent",
+          "condition": "学习围绕实际意图",
+          "relation": "requires",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "定量机理问题→DOE",
+          "condition": "需要统计因果研究时",
+          "relation": "parallel",
+          "target_research_id": "R38"
+        },
+        {
+          "binding": "待确认性能→正式V&V目标",
+          "condition": "探索不替代正式证据",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R44",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "experiment_design"
+      ],
+      "skill_level": "S2",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "42ffb6a90102289761140fbc1f42aef5e2ee70bc44948eb5b7b64eb8933dfdf2",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "value_target",
+          "required": true
+        },
+        {
+          "key": "cost_baseline",
+          "required": true
+        },
+        {
+          "key": "design_options",
+          "required": false
+        },
+        {
+          "key": "value_resources",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "ve_dossier"
+      ],
+      "engine_stages": [
+        "S6",
+        "S7",
+        "S8"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "ValueRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-045",
+      "name": "价值工程",
+      "primary_capability": "value_analysis",
+      "relations": [
+        {
+          "binding": "功能结构→value_target",
+          "condition": "摆脱既定零件",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "DFMA候选→替代和成本",
+          "condition": "检查可制造装配",
+          "relation": "parallel",
+          "target_research_id": "R34"
+        },
+        {
+          "binding": "必要功能保持→验证",
+          "condition": "收益不能替代性能证据",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R45",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "function_modeling",
+        "manufacturability"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "9a501a56b5a1e7a3f292135961315c0c6b1c4e8fa148497050ef99f0819f0c8b",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "patent_question",
+          "required": true
+        },
+        {
+          "key": "search_scope",
+          "required": true
+        },
+        {
+          "key": "seed_terms",
+          "required": false
+        },
+        {
+          "key": "patent_data",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "patent_landscape_dossier"
+      ],
+      "engine_stages": [
+        "S1",
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method_family",
+      "logical_outputs": [
+        "TechnologyLandscape"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-046",
+      "name": "专利景观与技术路线分析",
+      "primary_capability": "technology_intelligence",
+      "relations": [
+        {
+          "binding": "问题功能→patent_question",
+          "condition": "不能只按产品名检索",
+          "relation": "requires",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "技术矛盾→专利问题方案分类",
+          "condition": "检索帮助发现解法线索",
+          "relation": "parallel",
+          "target_research_id": "R19"
+        },
+        {
+          "binding": "路线候选→原型假设",
+          "condition": "专利披露不等于性能已证",
+          "relation": "precedes",
+          "target_research_id": "R44"
+        }
+      ],
+      "research_id": "R46",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "evidence_collection"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "8f470f1faea327bd0b80a861a4549c853cca8082ee8119375095aaeb3a182806",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "sbce_targets",
+          "required": true
+        },
+        {
+          "key": "domain_options",
+          "required": true
+        },
+        {
+          "key": "interface_conditions",
+          "required": false
+        },
+        {
+          "key": "learning_capacity",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "sbce_dossier"
+      ],
+      "engine_stages": [
+        "S2",
+        "S7",
+        "S8"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "ArchitectureRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-047",
+      "name": "集合式并行工程",
+      "primary_capability": "architecture_analysis",
+      "relations": [
+        {
+          "binding": "目标硬要求→sbce_targets",
+          "condition": "规格可探索边界先定",
+          "relation": "requires",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "边界知识→DOE实验",
+          "condition": "量化性能范围时",
+          "relation": "parallel",
+          "target_research_id": "R38"
+        },
+        {
+          "binding": "证据充分选项→决策",
+          "condition": "总分不能替代兼容约束",
+          "relation": "parallel",
+          "target_research_id": "R37"
+        }
+      ],
+      "research_id": "R47",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_composition",
+        "experiment_design"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "1742b8ff1ba4a6212ea6e3ff240ea29244387cebcdc092ae9edb699bf868b828",
+        "version": "0.1.0"
+      },
+      "contract_ref": {
+        "sha256": "5b57f41878a5cfdb2cf08412e4901449a89f36564adb70fe28812eedbbd8cbae",
+        "version": "0.2.0"
+      },
+      "dossier_inputs": [
+        {
+          "key": "initial_request",
+          "required": true
+        },
+        {
+          "key": "stakeholder_evidence",
+          "required": false
+        },
+        {
+          "key": "constraints_context",
+          "required": false
+        },
+        {
+          "key": "decision_authority",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "problem_requirements_dossier"
+      ],
+      "engine_stages": [
+        "S1"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "framework",
+      "logical_outputs": [
+        "ProblemBrief"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-PD-001",
+      "name": "问题定义与要求管理",
+      "primary_capability": "problem_framing",
+      "relations": [
+        {
+          "binding": "需求发现→stakeholder_evidence",
+          "condition": "事实不足先补研究",
+          "relation": "parallel",
+          "target_research_id": "R01"
+        },
+        {
+          "binding": "功能要求→功能分析",
+          "condition": "解法前澄清作用",
+          "relation": "precedes",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "要求/用途→V&V目标",
+          "condition": "判据及追溯前置",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        },
+        {
+          "binding": "待证问题→假设测试",
+          "condition": "探索与规格迭代",
+          "relation": "parallel",
+          "target_research_id": "R44"
+        }
+      ],
+      "research_id": "R48",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "requirement_deployment"
+      ],
+      "skill_level": "S2",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "76c20f9ef168928d8a4e9e230a5e5cd0dd19a46ea38f74629152e941bf1e8efc",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "task_brief",
+          "required": true
+        },
+        {
+          "key": "context_evidence",
+          "required": true
+        },
+        {
+          "key": "resources",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "systematic_design_package"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S6",
+        "S7",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "lineage_framework_topic",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-001",
+      "name": "产品系统化与综合设计体系",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "总体任务→调研对象及问题",
+          "condition": "需要需求、环境和风险补证",
+          "relation": "requires",
+          "target_research_id": "WB02"
+        },
+        {
+          "binding": "调研与总体要求→规划输入",
+          "condition": "边界和关键未知已明确",
+          "relation": "precedes",
+          "target_research_id": "WB03"
+        },
+        {
+          "binding": "总体规划→综合实施的目标与限制",
+          "condition": "方法输入和资源可识别",
+          "relation": "precedes",
+          "target_research_id": "WB04"
+        },
+        {
+          "binding": "设计要求与方案→V&V计划",
+          "condition": "必须保持要求、计划与真实结果分层",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "WB01",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "evidence_collection",
+        "function_modeling",
+        "quality_evaluation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "5dae7864a5217707f9dca9c3bec37669650f6a3b340d0f5b181bfbd453270db1",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "brief",
+          "required": true
+        },
+        {
+          "key": "evidence",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "investigation_brief"
+      ],
+      "engine_stages": [
+        "S1"
+      ],
+      "execution_status": "research_only_not_runtime_integrated",
+      "kind": "谱系专题（非独立原创方法）",
+      "logical_outputs": [
+        "EvidencePackage"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-002",
+      "name": "3I调研",
+      "primary_capability": "evidence_collection",
+      "relations": [
+        {
+          "binding": "需求研究",
+          "condition": "需实际用户证据时",
+          "relation": "parallel",
+          "target_research_id": "R08"
+        },
+        {
+          "binding": "规划输入",
+          "condition": "三类证据足以进入规划时",
+          "relation": "precedes",
+          "target_research_id": "WB03"
+        }
+      ],
+      "research_id": "WB02",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "need_interpretation",
+        "risk_analysis"
+      ],
+      "skill_level": "S0",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "64c870047f1d049a81ec79afc0e28a711fc866d0350845a09907d9676f942837",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "task_brief",
+          "required": true
+        },
+        {
+          "key": "context_evidence",
+          "required": true
+        },
+        {
+          "key": "resources",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "planning_package"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S7",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "lineage_framework_topic",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-003",
+      "name": "7D总体规划",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "总体设计任务→规划阶段产物",
+          "condition": "需要规划而非单次作业执行",
+          "relation": "part_of",
+          "target_research_id": "WB01"
+        },
+        {
+          "binding": "需求/环境/风险记录→七域草图",
+          "condition": "调研证据够用或未知明确",
+          "relation": "requires",
+          "target_research_id": "WB02"
+        },
+        {
+          "binding": "planning_package→综合实施的目标与方法安排",
+          "condition": "关键约束已明确",
+          "relation": "precedes",
+          "target_research_id": "WB04"
+        },
+        {
+          "binding": "检验域→验证计划；验证反馈→规划修订",
+          "condition": "要求与接受口径随版本可追溯",
+          "relation": "parallel",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "WB03",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "requirement_deployment",
+        "quality_evaluation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "16d2e3f6120e02396d3404977801141cc7a3c904adc605693ca35a8f62af87e0",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "task_brief",
+          "required": true
+        },
+        {
+          "key": "context_evidence",
+          "required": true
+        },
+        {
+          "key": "resources",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "integrated_design_package"
+      ],
+      "engine_stages": [
+        "S2",
+        "S6",
+        "S7"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "lineage_framework_topic",
+      "logical_outputs": [
+        "ResearchPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-004",
+      "name": "1+3+X综合设计",
+      "primary_capability": "process_orchestration",
+      "relations": [
+        {
+          "binding": "总体任务→综合实施",
+          "condition": "总体任务明确",
+          "relation": "part_of",
+          "target_research_id": "WB01"
+        },
+        {
+          "binding": "planning_package→方法安排",
+          "condition": "规划已明确",
+          "relation": "requires",
+          "target_research_id": "WB03"
+        },
+        {
+          "binding": "功能模型→功能基线",
+          "condition": "必要功能已识别",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "关键问题→深层次设计",
+          "condition": "存在深入求解需求",
+          "relation": "parallel",
+          "target_research_id": "WB05"
+        },
+        {
+          "binding": "设计包→质量评价",
+          "condition": "证据状态标明",
+          "relation": "precedes",
+          "target_research_id": "WB10"
+        }
+      ],
+      "research_id": "WB04",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "function_modeling",
+        "architecture_analysis"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "bd44f9ffaa49f1256f688ecc5f1d902a60a0e92b19d1a5d555d46950f95e22bb",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "task",
+          "required": true
+        },
+        {
+          "key": "functions",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "functional_concept_brief"
+      ],
+      "engine_stages": [
+        "S2",
+        "S5"
+      ],
+      "execution_status": "research_only_not_runtime_integrated",
+      "kind": "谱系专题（非独立原创方法）",
+      "logical_outputs": [
+        "FunctionModel"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-005",
+      "name": "主辅功能与功能优化",
+      "primary_capability": "function_modeling",
+      "relations": [
+        {
+          "binding": "功能接口分析",
+          "condition": "需要详细建模时",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "方案综合",
+          "condition": "选择实现原理时",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "功能层线索",
+          "condition": "综合设计实施层",
+          "relation": "part_of",
+          "target_research_id": "WB04"
+        }
+      ],
+      "research_id": "WB05",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_composition"
+      ],
+      "skill_level": "S0",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "3bc43531ff497c1ce25fe012b851d48b8e46b6ef77934811943d7f36544bee9f",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "structure",
+          "required": true
+        },
+        {
+          "key": "operation",
+          "required": true
+        },
+        {
+          "key": "criteria",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "dynamic_design_review"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6",
+        "S7",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "工程方法族专题",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-006",
+      "name": "面向结构性能的动态设计",
+      "primary_capability": "mechanism_synthesis",
+      "relations": [
+        {
+          "binding": "承接机构运动结果",
+          "condition": "运动机构需动态响应设计",
+          "relation": "requires",
+          "target_research_id": "R32"
+        },
+        {
+          "binding": "建立仿真与验证",
+          "condition": "需要模型计算与试验对应",
+          "relation": "parallel",
+          "target_research_id": "R39"
+        }
+      ],
+      "research_id": "WB06",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "structural_optimization",
+        "experiment_design"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "a9ec52985090c21b44fced6843deb9e3e82a42485b4612b8ddb26921ea2191d1",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "service_task",
+          "required": true
+        },
+        {
+          "key": "machine_behaviour",
+          "required": true
+        },
+        {
+          "key": "sensing_control_evidence",
+          "required": false
+        },
+        {
+          "key": "engineering_limits",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "intelligent_service_dossier"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6",
+        "S7",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "lineage_topic",
+      "logical_outputs": [
+        "ConceptSet",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-007",
+      "name": "面向使用性能的智能设计",
+      "primary_capability": "intelligent_system_design",
+      "relations": [
+        {
+          "binding": "使用目标→service_task",
+          "condition": "先澄清目标",
+          "relation": "requires",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "动态响应→machine_behaviour",
+          "condition": "结构使用性能有耦合",
+          "relation": "parallel",
+          "target_research_id": "R32"
+        },
+        {
+          "binding": "智能化失效→机械风险",
+          "condition": "感知控制失效需独立分析",
+          "relation": "parallel",
+          "target_research_id": "R41"
+        },
+        {
+          "binding": "分层验证→V&V",
+          "condition": "需实际证据",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "WB07",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "function_modeling",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "c5c4259aeb6120c6b69913f75a0396d425e432652a8e550e2d81c9ea1a483f9d",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "manufacturing_question",
+          "required": true
+        },
+        {
+          "key": "product_geometry",
+          "required": true
+        },
+        {
+          "key": "process_resources",
+          "required": false
+        },
+        {
+          "key": "simulation_capability",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "manufacturing_visual_dossier"
+      ],
+      "engine_stages": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "lineage_topic",
+      "logical_outputs": [
+        "ManufacturabilityRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-008",
+      "name": "面向制造性能的可视化设计",
+      "primary_capability": "manufacturability",
+      "relations": [
+        {
+          "binding": "DFMA问题→manufacturing_question",
+          "condition": "制造装配规则配合模型",
+          "relation": "parallel",
+          "target_research_id": "R34"
+        },
+        {
+          "binding": "过程假设→原型检查",
+          "condition": "低成本装拆学习",
+          "relation": "parallel",
+          "target_research_id": "R44"
+        },
+        {
+          "binding": "模型/实物结果→V&V证据",
+          "condition": "须分仿真和实物",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        },
+        {
+          "binding": "使用与制造耦合→接口复核",
+          "condition": "结构或控制变更影响过程",
+          "relation": "parallel",
+          "target_research_id": "WB07"
+        }
+      ],
+      "research_id": "WB08",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "mechanism_synthesis",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "0747523172c02de1313e6c3f4f951644df1b8fa09cc598cad85943b394674f08",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "anomaly",
+          "required": true
+        },
+        {
+          "key": "physics",
+          "required": true
+        },
+        {
+          "key": "scope",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "nonlinear_review"
+      ],
+      "engine_stages": [
+        "S5",
+        "S6",
+        "S7",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "专项工程研究专题",
+      "logical_outputs": [
+        "MechanismOptions",
+        "ValidationPlan"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-009",
+      "name": "深层次动态设计",
+      "primary_capability": "mechanism_synthesis",
+      "relations": [
+        {
+          "binding": "机构运动与约束",
+          "condition": "运动副及接触决定非线性",
+          "relation": "requires",
+          "target_research_id": "R32"
+        },
+        {
+          "binding": "仿真及数值验证",
+          "condition": "需实际计算与模型校核",
+          "relation": "parallel",
+          "target_research_id": "R39"
+        }
+      ],
+      "research_id": "WB09",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "structural_optimization",
+        "experiment_design"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "05b3fa3ecad2dbe263d966fd381fce971e5b19a4f513e23351ac5e672a5e1218",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "quality_objective",
+          "required": true
+        },
+        {
+          "key": "quality_criteria",
+          "required": true
+        },
+        {
+          "key": "assessment_evidence",
+          "required": false
+        },
+        {
+          "key": "assessment_policy",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "generalized_quality_dossier"
+      ],
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "lineage_topic",
+      "logical_outputs": [
+        "QualityAssessment"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-010",
+      "name": "设计质量检验与综合评价",
+      "primary_capability": "quality_evaluation",
+      "relations": [
+        {
+          "binding": "多准则任务→评价模型选择",
+          "condition": "不能混量表与赋权",
+          "relation": "parallel",
+          "target_research_id": "R37"
+        },
+        {
+          "binding": "硬要求/真实性能→V&V",
+          "condition": "评分与检验独立",
+          "relation": "parallel",
+          "target_research_id": "R42"
+        },
+        {
+          "binding": "功能全寿命成本→价值评价",
+          "condition": "不必每次调用全部方法",
+          "relation": "parallel",
+          "target_research_id": "R45"
+        },
+        {
+          "binding": "使用性能→质量指标证据",
+          "condition": "评价对应设计目标",
+          "relation": "requires",
+          "target_research_id": "WB07"
+        },
+        {
+          "binding": "制造性能→质量指标证据",
+          "condition": "仿真限制须传递",
+          "relation": "requires",
+          "target_research_id": "WB08"
+        }
+      ],
+      "research_id": "WB10",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_comparison",
+        "verification_validation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "c39e30817d5deb75856b5016b4f1af83e5be5b05dca2bf93923393f889e06905",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "source_material",
+          "required": true
+        },
+        {
+          "key": "use_case",
+          "required": true
+        }
+      ],
+      "dossier_outputs": [
+        "expert_system_research"
+      ],
+      "engine_stages": [
+        "S0",
+        "S1",
+        "S3"
+      ],
+      "execution_status": "research_only_not_runtime_integrated",
+      "kind": "谱系专题（非独立原创方法）",
+      "logical_outputs": [
+        "MethodRegistryRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-011",
+      "name": "科学方法论规则与设计专家系统",
+      "primary_capability": "method_governance",
+      "relations": [
+        {
+          "binding": "故障调查边界",
+          "condition": "讨论诊断用例时",
+          "relation": "parallel",
+          "target_research_id": "R16"
+        },
+        {
+          "binding": "方法选择",
+          "condition": "构造推荐解释时",
+          "relation": "parallel",
+          "target_research_id": "R48"
+        }
+      ],
+      "research_id": "WB11",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "process_orchestration"
+      ],
+      "skill_level": "S0",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "frozen_0.1.0",
+        "sha256": "5acf85cdea9a07f241f8e38dd6b5b3a9b18bcc27a23953e9b1a96e2e69122243",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "literature",
+          "required": true
+        },
+        {
+          "key": "registry",
+          "required": true
+        },
+        {
+          "key": "claims",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "classification_review"
+      ],
+      "engine_stages": [
+        "S0",
+        "S1",
+        "S3"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "文献分类研究专题",
+      "logical_outputs": [
+        "MethodRegistryRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-WB-012",
+      "name": "国内外设计方法分类研究与出处去重",
+      "primary_capability": "method_governance",
+      "relations": [
+        {
+          "binding": "全流程与分类组织",
+          "condition": "库级方法结构需一致",
+          "relation": "parallel",
+          "target_research_id": "R01"
+        },
+        {
+          "binding": "方法族及子工具去重",
+          "condition": "TRIZ名称存在上下位关系",
+          "relation": "parallel",
+          "target_research_id": "R21"
+        }
+      ],
+      "research_id": "WB12",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "technology_intelligence"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "supplement_0.1.0",
+        "sha256": "3dbb7fd0065651678a22fbb566170161050323e9eca720b79f25f7e4ae320070",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "task",
+          "required": true
+        },
+        {
+          "key": "behaviours",
+          "required": true
+        },
+        {
+          "key": "structures",
+          "required": false
+        },
+        {
+          "key": "analysis",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "reasoning_chain",
+        "handoff"
+      ],
+      "engine_stages": [
+        "S2",
+        "S5"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "FunctionModel"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-049",
+      "name": "功能—行为—结构推理（FBS）",
+      "primary_capability": "function_modeling",
+      "relations": [
+        {
+          "binding": "function_model→功能边界",
+          "condition": "功能能与结构分开",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "结构假设→候选原理",
+          "condition": "需要多路线组合",
+          "relation": "parallel",
+          "target_research_id": "R17"
+        },
+        {
+          "binding": "行为缺口→验证问题",
+          "condition": "存在可观察口径",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R49",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "causal_analysis",
+        "concept_transformation"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "supplement_0.1.0",
+        "sha256": "32aac7aa749e5d33fe91e86478af272e8ad3bea8d4e963fcfd2882e68241a936",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "task",
+          "required": true
+        },
+        {
+          "key": "observations",
+          "required": true
+        },
+        {
+          "key": "roles",
+          "required": false
+        },
+        {
+          "key": "constraints",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "blueprint",
+        "handoff"
+      ],
+      "engine_stages": [
+        "S1",
+        "S2",
+        "S6",
+        "S7"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "ServiceBlueprint"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-050",
+      "name": "服务蓝图与产品服务系统协同",
+      "primary_capability": "service_design",
+      "relations": [
+        {
+          "binding": "观察记录→动作证据",
+          "condition": "有具体任务场景",
+          "relation": "requires",
+          "target_research_id": "R08"
+        },
+        {
+          "binding": "交接痛点→需求提案",
+          "condition": "仍须客户确认",
+          "relation": "precedes",
+          "target_research_id": "R48"
+        },
+        {
+          "binding": "交接假设→服务原型",
+          "condition": "异常路径可模拟",
+          "relation": "precedes",
+          "target_research_id": "R44"
+        }
+      ],
+      "research_id": "R50",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "need_interpretation",
+        "function_modeling"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "supplement_0.1.0",
+        "sha256": "1290b5d96ee441b71705aa3f6a48f39236df040893158b844ea2a71767d153ea",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "task",
+          "required": true
+        },
+        {
+          "key": "losses",
+          "required": true
+        },
+        {
+          "key": "controls",
+          "required": true
+        },
+        {
+          "key": "evidence",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "uca_log",
+        "handoff"
+      ],
+      "engine_stages": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "RiskRegister"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-051",
+      "name": "系统理论过程分析（STPA）",
+      "primary_capability": "risk_analysis",
+      "relations": [
+        {
+          "binding": "接口功能→控制结构线索",
+          "condition": "需要补实际控制与反馈",
+          "relation": "requires",
+          "target_research_id": "R14"
+        },
+        {
+          "binding": "部件失效↔控制交互",
+          "condition": "两者范围互补不相互取代",
+          "relation": "parallel",
+          "target_research_id": "R40"
+        },
+        {
+          "binding": "系统危险→机械风险审查",
+          "condition": "由专业人员整合",
+          "relation": "parallel",
+          "target_research_id": "R41"
+        },
+        {
+          "binding": "安全约束→验证问题",
+          "condition": "不作为安全认证",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R51",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "causal_analysis",
+        "function_modeling"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    },
+    {
+      "content_ref": {
+        "collection": "supplement_0.1.0",
+        "sha256": "8c8520ce4f5ddef4ffa1004e9cdd4f063f17933734e3999eb89120275e91b656",
+        "version": "0.1.0"
+      },
+      "contract_ref": null,
+      "dossier_inputs": [
+        {
+          "key": "task",
+          "required": true
+        },
+        {
+          "key": "uncertainties",
+          "required": true
+        },
+        {
+          "key": "studies",
+          "required": true
+        },
+        {
+          "key": "probabilities",
+          "required": false
+        },
+        {
+          "key": "constraints",
+          "required": false
+        }
+      ],
+      "dossier_outputs": [
+        "decision_branches",
+        "handoff"
+      ],
+      "engine_stages": [
+        "S8",
+        "S9"
+      ],
+      "execution_status": "documented_not_runtime_integrated",
+      "kind": "method",
+      "logical_outputs": [
+        "ResearchPriorityRecord"
+      ],
+      "mapping_status": "platform_candidate_not_independently_reviewed",
+      "method_id": "IM-ML-052",
+      "name": "信息价值与验证优先级（VOI）",
+      "primary_capability": "research_prioritization",
+      "relations": [
+        {
+          "binding": "候选比较→决策问题",
+          "condition": "存在共同准则与候选行动",
+          "relation": "requires",
+          "target_research_id": "R36"
+        },
+        {
+          "binding": "关键研究→试验设计",
+          "condition": "不是替代试验设计",
+          "relation": "precedes",
+          "target_research_id": "R38"
+        },
+        {
+          "binding": "学习目标→原型",
+          "condition": "研究结果可观察",
+          "relation": "precedes",
+          "target_research_id": "R44"
+        },
+        {
+          "binding": "验证理由→计划",
+          "condition": "强制验证仍保留",
+          "relation": "precedes",
+          "target_research_id": "R42"
+        }
+      ],
+      "research_id": "R52",
+      "review_status": "not_expert_reviewed",
+      "secondary_capabilities": [
+        "concept_comparison",
+        "experiment_design"
+      ],
+      "skill_level": "S1",
+      "validation_status": "not_engineering_validated"
+    }
+  ],
+  "schema_version": "method-capability-map-0.1",
+  "scope": "64份现有档案的平台能力映射候选；不是独立语义专家审核、执行契约或工程验证",
+  "source_catalog_version": "base_0.1.0+supplement_0.1.0",
+  "stage_index": {
+    "S0": [
+      "WB11",
+      "WB12"
+    ],
+    "S1": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R07",
+      "R08",
+      "R09",
+      "R10",
+      "R11",
+      "R12",
+      "R13",
+      "R16",
+      "R46",
+      "R48",
+      "WB01",
+      "WB02",
+      "WB03",
+      "WB11",
+      "WB12",
+      "R50"
+    ],
+    "S10": [],
+    "S2": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R07",
+      "R12",
+      "R14",
+      "R15",
+      "R30",
+      "R31",
+      "R47",
+      "WB01",
+      "WB03",
+      "WB04",
+      "WB05",
+      "R49",
+      "R50"
+    ],
+    "S3": [
+      "R18",
+      "R27",
+      "R29",
+      "R46",
+      "WB11",
+      "WB12"
+    ],
+    "S4": [
+      "R18",
+      "R27",
+      "R46"
+    ],
+    "S5": [
+      "R14",
+      "R15",
+      "R16",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R32",
+      "R46",
+      "WB05",
+      "WB06",
+      "WB07",
+      "WB09",
+      "R49"
+    ],
+    "S6": [
+      "R01",
+      "R02",
+      "R03",
+      "R17",
+      "R18",
+      "R19",
+      "R20",
+      "R21",
+      "R22",
+      "R23",
+      "R24",
+      "R25",
+      "R26",
+      "R27",
+      "R28",
+      "R29",
+      "R32",
+      "R33",
+      "R35",
+      "R39",
+      "R45",
+      "WB01",
+      "WB04",
+      "WB06",
+      "WB07",
+      "WB09",
+      "R50"
+    ],
+    "S7": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R07",
+      "R17",
+      "R30",
+      "R31",
+      "R32",
+      "R33",
+      "R34",
+      "R35",
+      "R39",
+      "R40",
+      "R41",
+      "R43",
+      "R45",
+      "R47",
+      "WB01",
+      "WB03",
+      "WB04",
+      "WB06",
+      "WB07",
+      "WB08",
+      "WB09",
+      "R50",
+      "R51"
+    ],
+    "S8": [
+      "R01",
+      "R02",
+      "R03",
+      "R06",
+      "R07",
+      "R30",
+      "R31",
+      "R33",
+      "R34",
+      "R35",
+      "R36",
+      "R37",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "R45",
+      "R47",
+      "WB08",
+      "WB10",
+      "R51",
+      "R52"
+    ],
+    "S9": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R32",
+      "R34",
+      "R35",
+      "R38",
+      "R39",
+      "R40",
+      "R41",
+      "R42",
+      "R43",
+      "R44",
+      "WB01",
+      "WB03",
+      "WB06",
+      "WB07",
+      "WB08",
+      "WB09",
+      "WB10",
+      "R51",
+      "R52"
+    ]
+  },
+  "stages": {
+    "S0": "资产、权限与版本预检",
+    "S1": "需求结构化",
+    "S10": "保存、回放与有限回流",
+    "S2": "功能图与接口建模",
+    "S3": "生成检索计划",
+    "S4": "案例召回与分层",
+    "S5": "机制抽象与双侧映射",
+    "S6": "功能选项形成",
+    "S7": "概念组合与约束剪枝",
+    "S8": "逐项比较与推荐门禁",
+    "S9": "生成验证计划"
+  },
+  "status": "candidate_not_production_routing"
+}

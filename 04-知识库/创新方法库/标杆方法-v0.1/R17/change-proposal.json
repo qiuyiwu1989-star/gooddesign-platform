@@ -1,0 +1,28 @@
+{
+  "base_asset_sha256": "84256c0208f0849670df5f0e39a119b4e9f6cfaf468bc731b7b0b58be6370e5d",
+  "before_status": "structure_and_declared_consistency_passed",
+  "candidate_issues": [
+    {
+      "candidate_id": "C0",
+      "code": "candidate_contains_unknown_compatibility"
+    }
+  ],
+  "change_scope": [
+    "contract",
+    "evaluator"
+  ],
+  "evidence_event_refs": [
+    "evt-R17-unknown-candidate"
+  ],
+  "expected_effect": "负例由放行变阻断，参考unknown组合仍可回放",
+  "holdout_set_ref": null,
+  "hypothesis": "增加候选组合与未知配对互斥检查，可在不改变合法unknown组合的情况下减少过度放行",
+  "pattern": "未知相容性组合仍可标为candidate",
+  "proposal_id": "mcp-R17-unknown-candidate",
+  "regression_set_ref": "R17/evaluations.json",
+  "research_id": "R17",
+  "risks": [
+    "未登记配对覆盖仍不完整；候选版不证明整体工程相容"
+  ],
+  "status": "evaluated_candidate_requires_independent_review"
+}

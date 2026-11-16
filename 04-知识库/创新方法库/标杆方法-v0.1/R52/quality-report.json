@@ -1,0 +1,79 @@
+{
+  "content": {
+    "expert_certified": false,
+    "seven_dimensions": {
+      "判断回返与操作": {
+        "assessment": "充分",
+        "evidence": "列出现在能做的行动，包括暂缓或保守选择；再列会改变结果的状态。损失必须是行动—状态的组合，而非只给状态一个严重度。记录损失单位、承担者、时间范围和遗漏后果。对安全等不可豁免条件先作可行性约束，不允许靠较小平均损失越过硬门槛。",
+        "locator": "稿件/R52.md:9",
+        "scope": "本文明确限定的教学/适配范围；非原著全部实现或工程认证"
+      },
+      "可读性与交接": {
+        "assessment": "充分",
+        "evidence": "形成研究候选表，逐项写可观察信号、似然依据、可能后验行动、成本/延误及未覆盖后果。先校概率和损失的定义、维度与域，再计算；缺先验就返回待建模，不能默认0.5。若似然无法支持，应讨论研究可辨识性或情景范围；不能把理想完全信息当现实研究质量。若研究成本超过EVPI，可在同一模型下直接排除该研究，无需精算EVSI。",
+        "locator": "稿件/R52.md:33",
+        "scope": "本文明确限定的教学/适配范围；非原著全部实现或工程认证"
+      },
+      "完整例与中间产物": {
+        "assessment": "充分",
+        "evidence": "所有数值均为教学，非客户概率或真实损失。状态good/bad先验各0.5。行动A在两状态损失[0,100]，行动B为[40,0]，单位统一为教学损失单位。当前A风险50、B风险20，选择B。完全知道状态就可分别选A或B达到零损失，因此EVPI=20，这是当前模型中任何信息研究的毛价值上界。",
+        "locator": "稿件/R52.md:17",
+        "scope": "本文明确限定的教学/适配范围；非原著全部实现或工程认证"
+      },
+      "实质失败与迁移": {
+        "assessment": "充分",
+        "evidence": "两类误用需在评审时主动寻找：把试验能准确测一个参数当作它必然改变决策；或者只扣实验室费用而漏掉等待、机会成本和采样风险。还有一类是模型结构错误：状态遗漏或损失承担者被删，计算完全正确也会导向错误研究。",
+        "locator": "稿件/R52.md:35",
+        "scope": "本文明确限定的教学/适配范围；非原著全部实现或工程认证"
+      },
+      "机制及前提": {
+        "assessment": "充分",
+        "evidence": "在损失表L(a,s)、先验p(s)下，当前风险R₀=min_a∑p(s)L(a,s)。完全信息风险R_PI=∑p(s)min_a L(a,s)，EVPI=R₀−R_PI。样本信息应对每个信号更新p(s|y)，选该信号下的最优行动，然后对信号概率平均，得到R_SI；EVSI=R₀−R_SI。取最小值与求期望的位置不能互换，否则会假装尚未观察就能按真实状态行动。",
+        "locator": "稿件/R52.md:13",
+        "scope": "本文明确限定的教学/适配范围；非原著全部实现或工程认证"
+      },
+      "来源与适配区分": {
+        "assessment": "充分",
+        "evidence": "Johnson等的作者论文用预期损失说明决策与信息价值，并讨论模型不确定性；其中主要示例是部分完全信息价值。本文的两状态有限信号例为平台独立构造和贝叶斯推导，不假称该文提供了割胶概率或本例EVSI。[作者论文，Value of Information，PDF6—7](https://arxiv.org/abs/1905.00008)",
+        "locator": "稿件/R52.md:5",
+        "scope": "本文明确限定的教学/适配范围；非原著全部实现或工程认证"
+      },
+      "身份边界与邻近法": {
+        "assessment": "充分",
+        "evidence": "一份新报告能让团队更有把握，却未必让下一步做法改变。VOI把研究价值放回行动：当前会选什么，结果出现后会选什么，避免的损失有多少，是否足以支付研究及等待代价。它适合可明确行动、状态与损失，并能说明信息如何产生的决策；不适合用AI猜出的概率包装尚未定义的问题。",
+        "locator": "稿件/R52.md:3",
+        "scope": "本文明确限定的教学/适配范围；非原著全部实现或工程认证"
+      }
+    },
+    "status": "independent_agent_candidate_within_declared_scope"
+  },
+  "engine_contribution": {
+    "failure_signals": [
+      "缺先验默认0.5",
+      "信息更准但不改变行动仍算有价值",
+      "经济价值豁免强制验证"
+    ],
+    "improves": [
+      "研究与决策分支的连接",
+      "验证优先级",
+      "概率和行动阈值复算"
+    ],
+    "isolated_effect_established": false,
+    "reason": "当前为资产回放与历史方法包背景，未形成该方法专属性的同输入两臂模型实验"
+  },
+  "execution": {
+    "evaluation_count": 4,
+    "evaluation_passed": true,
+    "reference_run_status": "numeric_teaching_replay_passed_not_real_decision",
+    "skill_level": "S1"
+  },
+  "real_context": {
+    "customer_confirmed": false,
+    "domain_expert_reviewed": false,
+    "engineering_validated": false,
+    "status": "not_established"
+  },
+  "release_status": "benchmark_candidate_not_production",
+  "research_id": "R52",
+  "schema_version": "method-quality-report-0.1"
+}

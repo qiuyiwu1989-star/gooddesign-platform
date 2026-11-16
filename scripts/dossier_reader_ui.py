@@ -1,6 +1,8 @@
 # coding: utf-8
 """021: human archive presentation; no project facts or evaluation logic."""
 
+CORE_MODULES = ('overview', 'technical', 'innovation', 'validation')
+
 ICONS = {
  'overview':'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/>',
  'technical':'<path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/>',
@@ -45,21 +47,23 @@ progress,progress::-webkit-progress-bar{background:var(--line)}progress::-webkit
 @media(max-width:850px){.shell{display:block;padding:0 20px}header{padding:16px 20px;height:64px}.reader-shell .hero{padding:24px 0 12px}.reader-overview-heading{flex-direction:row;align-items:center}.reader-overview-heading>span{display:none}.reader-metrics{padding:20px 0;gap:20px 0;grid-template-columns:1fr 1fr}.reader-metrics>div:nth-child(2){border-right:0}.reader-metrics>div:first-child,.reader-metrics>div{padding:0 20px}.reader-metrics b{font-size:28px}.reader-metrics span{font-size:12px}.reader-hero-meta{gap:8px}.hero-graph{flex-wrap:wrap;font-size:12px;padding:10px 14px}.hero-graph small{display:none}#view-bar{flex-wrap:nowrap;gap:0;padding:10px 0}#view-bar button{font-size:12px;padding:10px 12px;white-space:nowrap}#view-bar #print{font-size:0;padding:10px;margin-left:auto}#view-bar #print .ui-icon{width:18px;height:18px}#view-bar button .ui-icon{display:none}#view-bar #print .ui-icon{display:block}.project-story{padding:20px;gap:16px}.project-story h3{font-size:20px}.module-list-heading{align-items:flex-start;flex-direction:column;gap:8px;margin-top:24px}.module-list-heading h2{font-size:20px}.reader-module>summary{grid-template-columns:36px minmax(0,1fr) 16px;gap:12px;padding:18px 16px}.module-icon{width:36px;height:36px;border-radius:10px}.module-title h2{font-size:15px}.module-title p{font-size:12px}.module-meter{grid-column:2;grid-row:2;text-align:left;display:flex;gap:10px;align-items:center}.module-meter progress{max-width:80px;margin:0}.module-meter span{display:inline}.module-chevron{grid-column:3;grid-row:1}.module-content{padding:20px 16px}.reader-properties>div{grid-template-columns:90px minmax(0,1fr)}.reader-quality{grid-template-columns:1fr;padding:20px}.quality-row{grid-template-columns:100px minmax(20px,1fr) 62px;gap:8px}.quality-total>b{font-size:44px}.paper-reading>summary{padding:20px 44px 20px 20px}.paper-reading>summary>.ui-icon{right:16px;top:24px}.paper-reading-top{align-items:flex-start;gap:8px}.paper-body{padding:0 20px 20px}.paper-reading h3{font-size:16px}.paper-reading .reader-properties>div{grid-template-columns:72px minmax(0,1fr)}.reader-paper-list li{align-items:flex-start;flex-direction:column;gap:4px}.reader-section-heading h2{font-size:22px}.reader-view-heading h2{font-size:22px}.reader-timeline li{grid-template-columns:86px minmax(0,1fr);gap:12px}.system-flow{gap:8px;padding:16px 12px}.system-flow span{font-size:12px}.reader-note{font-size:12px!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 @media print{body{background:white;font-size:10pt}.hero-graph,.module-list-heading p,.stats-definition,.module-footer{display:none!important}.shell{display:block;padding:0;max-width:none}.reader-module{box-shadow:none;border:0;border-radius:0;margin:24px 0;break-inside:auto}.reader-module>summary{display:flex;border:0!important;padding:12px 0;gap:12px}.reader-module>summary .module-meter,.module-chevron{display:none}.module-content{padding:12px 0}.reader-module>summary .module-title h2{font-size:16pt}.reader-module .module-icon{width:32px;height:32px}.project-story{padding:16px;grid-template-columns:1fr 1fr}.reader-metrics{box-shadow:none}.reader-metrics b{font-size:24pt}.reader-metrics{grid-template-columns:repeat(4,1fr)}.quality-total>b{font-size:30pt}.reader-quality{grid-template-columns:130px 1fr}.reader-module .reader-properties{display:grid;grid-template-columns:1fr 1fr}.missing-fields{border:0;padding:0}.module-content p{font-size:10pt}.reader-insight{background:white}.reader-section{padding:12px 0}.sampling-figure{max-width:320px}.reader-module>summary{break-after:avoid}}
+.reader-module[open]{border-color:var(--line)}.reader-module[open]>summary{background:var(--ui-surface);border-bottom-color:var(--line)}.reader-module[open] .module-title h2{font-size:19px}.reader-module[open] .module-content{padding-top:28px}.research-record[open]{border:1px solid var(--line);border-radius:14px;padding:0 18px;background:var(--ui-surface)}.research-record[open]>summary{border-bottom:1px solid var(--line);padding:14px 0}.research-record>summary{list-style:none}.research-record>summary::-webkit-details-marker{display:none}@media(max-width:850px){.reader-module[open] .module-title h2{font-size:17px}.reader-module[open] .module-content{padding-top:20px}.research-record[open]{padding:0 14px}}@media print{.research-record[open]{border:0;padding:0}}
+.module-content,.reader-table{min-width:0;max-width:100%}.reader-table{overflow-x:auto}.reader-table table{min-width:520px}@media(max-width:850px){.reader-table{margin-right:0}.reader-table table{min-width:480px}}@media print{.reader-table table{min-width:0}}
 '''
 
 JS = '''
-function selectReaderModule(module){
- document.querySelectorAll('.reader-module').forEach(el=>el.open=el===module);
+function markReaderModule(module){
  document.querySelectorAll('#toc-reader [data-reader-view]').forEach(el=>el.removeAttribute('aria-current'));
  document.querySelectorAll('#toc-reader [data-reader-section]').forEach(el=>{
   const active=module ? el.dataset.readerSection===module.id.slice(7) : el.dataset.readerSection==='top';
   if(active)el.setAttribute('aria-current','location');else el.removeAttribute('aria-current');
  });
 }
+function selectReaderModule(module){if(module)module.open=true;markReaderModule(module);}
 document.querySelectorAll('.reader-module>summary').forEach(summary=>summary.addEventListener('click',ev=>{
- ev.preventDefault();const module=summary.parentElement;
- selectReaderModule(module.open?null:module);
+ ev.preventDefault();const module=summary.parentElement;module.open=!module.open;
+ markReaderModule(module.open?module:null);
  history.replaceState(null,'','#'+(module.open?module.id:'reader-top'));
 }));
-selectReaderModule(null);
+markReaderModule(null);
 '''

@@ -52,6 +52,9 @@ def _canvas_trace(state):
 
 
 def map_canvas_to_gdrp(state, workspace_id, revision):
+    workspace = state.get("workspace")
+    if isinstance(workspace, dict) and workspace.get("kind") == "needs-research":
+        raise ValueError("needs-research 工作区未接入通用 GDRP 导出，拒绝套用割胶冻结研究包")
     if not FROZEN_PACK.is_file():
         raise FileNotFoundError("GD-CRE 冻结研究包不存在，无法生成画布 GDRP")
     pack = deepcopy(json.loads(FROZEN_PACK.read_text(encoding="utf-8")))

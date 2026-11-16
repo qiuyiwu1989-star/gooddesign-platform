@@ -1,0 +1,275 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R32",
+  "method_id": "IM-ML-032",
+  "version": "0.1.0",
+  "name": "机构综合",
+  "english_name": "Kinematic Synthesis",
+  "kind": "method_family",
+  "category": "D机构架构与系统设计",
+  "lineage": [
+    "机构学",
+    "运动学分析与综合"
+  ],
+  "aliases": [
+    "Mechanism Synthesis",
+    "运动综合",
+    "尺度综合"
+  ],
+  "summary": "从期望运动、轨迹或输入输出关系反求机构形式与尺寸，区分结构选择、几何求解和全过程运动验证。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "机构综合从期望行为出发构造机构；机构分析从给定机构出发预测行为。二者在设计中反复交替。机构综合包含选择运动副与拓扑、确定运动关系、求解尺寸和位置等工作，不是从常见连杆图片中挑一个外形。MIT机构课程明确区分分析与综合，并展示自由度和三位置综合。本条以平面刚体连杆为入门范围，不把它泛化为空间、柔顺及并联机构的完整算法。",
+    "problem": "适合把回转变往复、引导部件经过指定姿态、让端点沿某路径运动或建立特定输入输出关系的任务。先区分需要控制整个刚体的位姿、一个点的轨迹，还是输入输出函数；它们对约束的要求不同。若只是某个运动动画看上去相似，仍不足以判断机构适配，必须说明行程、时间、负载、包络和驱动条件。",
+    "principle": "几何综合利用运动副和闭环约束把期望位置联系到杆长、铰点和运动关系。自由度用于检查允许的独立运动，但简单计数公式有刚体、独立约束和特定运动副等前提；冗余约束和特殊几何会使计数失真。经过若干精确位置只说明这些离散约束被满足，不能证明机构会以正确顺序、同一装配分支连续通过全过程。",
+    "applicability": "输入需有参考坐标、固定机架、目标点或刚体位姿、精度、顺序、驱动、允许空间和载荷。轨迹若只有图片应先提取尺度和容差。平面连杆只是候选，可与凸轮、齿轮、滑块或多驱动组合比较；不同机构的摩擦、回差、制造和控制成本不同。复杂空间与柔顺机构应调用专门模型及工程人员，而不是套平面自由度公式。",
+    "interpretation": "平台将综合分成任务形式化、机构形式选择、尺寸约束求解、连续运动分析、力学与工程化验证。求解器可生成多组数学解，但应保存初值、约束、可行域和失败分支；没有实际运行求解器不声称已得到精确尺寸。图解三位置综合可作为教学和候选生成方式，完整实现仍需查看原图或建立约束方程，不从文字摘要擅造图解结果。",
+    "example": "教学例：托盘需要从水平待机位置移动到两个倾斜倒料姿态。先定义托盘三个位置及姿态、固定地面区域和禁止碰撞空间，再试四杆机构引导。数学上能通过三个位置的连杆组合，可能在中途经过死点或切换装配分支；因此要扫描整个输入角并确认连贯性。加入真实托盘质量后还需检查重力力矩与驱动力。此例未求尺寸、未运行仿真，不把三姿态示意当成可制造设计。",
+    "pitfalls": "自由度为一不等于运动唯一、稳定或顺畅；满足端点行程不等于中段轨迹正确。对同一闭环方程的多根解不能随角度任意挑选，否则会产生虚假的连续运动。死点可能被用于锁紧，也可能导致驱动失效，必须按任务判断。只看运动而不看力传递会在机械优势、接触应力、轴承载荷和结构变形处失败。",
+    "validation": "运动验收覆盖全过程位置、速度、加速度、分支、奇异和碰撞，并检验目标顺序与精度。力学验收覆盖载荷、惯性、摩擦、驱动余量、刚度及寿命。制造阶段要分析孔位公差、间隙、装配及维护对运动的影响。低速纸板或打印样机可验证拓扑和干涉，但不能证明高载荷、高速或疲劳性能；证据层级应明确。",
+    "adaptation": "引擎先按任务是函数生成、轨迹生成还是刚体导引选择知识与求解器，再按空间、驱动和制造约束推荐机构族。输出应包含运动要求、机构图、几何参数、约束模型、解状态、验证工况和风险。机构库是实现知识，综合方法是从需求到实现的推理，两者分别存储；不要用一个机构名称直接回答尺寸设计任务。",
+    "gaps": "已实际核读MIT2.007的38页机构运动学分析与综合讲义文本，包括自由度、冗余约束、四杆与滑块及三位置综合部分；未逐图重建图解，也未核读全部引用书籍。当前无求解器、CAD或动力学模型运行证据。本档为平面刚体机构的范围明确工作流，空间、柔顺、并联与复杂接触需独立深研。"
+  },
+  "inputs": [
+    {
+      "key": "motion",
+      "label": "期望运动",
+      "type": "object",
+      "required": true,
+      "description": "点轨迹、刚体位姿或输入输出关系及精度顺序",
+      "missing_action": "先形式化"
+    },
+    {
+      "key": "boundary",
+      "label": "空间与驱动边界",
+      "type": "object",
+      "required": true,
+      "description": "机架、包络、运动副、驱动和接口",
+      "missing_action": "补坐标和约束"
+    },
+    {
+      "key": "loads",
+      "label": "载荷与工程条件",
+      "type": "object",
+      "required": true,
+      "description": "质量、速度、力、寿命和制造条件",
+      "missing_action": "概念阶段标范围待确认"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R32-S01",
+      "title": "定义运动任务",
+      "input_refs": [
+        "motion",
+        "boundary",
+        "loads"
+      ],
+      "depends_on": [],
+      "operation": "区分函数、轨迹和刚体导引，建立坐标、位姿顺序、容差和工况。",
+      "decision": "无尺度图片不直接给尺寸。",
+      "output_key": "motion_spec",
+      "output_description": "可求解运动规格",
+      "checks": [
+        "运动与时间要求分开"
+      ],
+      "stop_condition": "任务类型不明则暂停",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R32-S02",
+      "title": "选择拓扑和自由度",
+      "input_refs": [
+        "motion_spec",
+        "motion",
+        "boundary",
+        "loads"
+      ],
+      "depends_on": [
+        "R32-S01"
+      ],
+      "operation": "比较机构族及运动副，检查独立运动、驱动数量和冗余约束。",
+      "decision": "计数公式只在适用前提下使用。",
+      "output_key": "mechanism_topology",
+      "output_description": "机构图与自由度说明",
+      "checks": [
+        "固定机架及副类型明确"
+      ],
+      "stop_condition": "无法解释实际运动则重建",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R32-S03",
+      "title": "建立并求解几何约束",
+      "input_refs": [
+        "mechanism_topology",
+        "motion",
+        "boundary",
+        "loads"
+      ],
+      "depends_on": [
+        "R32-S02"
+      ],
+      "operation": "用图解或闭环方程求铰点杆长，保存求解状态、多解及边界。",
+      "decision": "未运行求解不报精确解。",
+      "output_key": "dimension_solutions",
+      "output_description": "尺寸候选与约束日志",
+      "checks": [
+        "满足所选精确位置"
+      ],
+      "stop_condition": "无现实尺度解则换拓扑",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R32-S04",
+      "title": "分析连续运动",
+      "input_refs": [
+        "dimension_solutions",
+        "motion",
+        "boundary",
+        "loads"
+      ],
+      "depends_on": [
+        "R32-S03"
+      ],
+      "operation": "扫描完整运动区间，检查顺序、装配分支、死点、速度及碰撞。",
+      "decision": "离散点通过不能代替全过程。",
+      "output_key": "kinematic_review",
+      "output_description": "连续运动证据",
+      "checks": [
+        "同一物理分支连续"
+      ],
+      "stop_condition": "分支跳变或不可达则淘汰",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R32-S05",
+      "title": "检验力传递与制造",
+      "input_refs": [
+        "kinematic_review",
+        "motion",
+        "boundary",
+        "loads"
+      ],
+      "depends_on": [
+        "R32-S04"
+      ],
+      "operation": "加入负载摩擦惯性及公差，检查驱动、刚度、寿命与装配。",
+      "decision": "低速样机不替代高速高载验证。",
+      "output_key": "mechanism_validation",
+      "output_description": "工程化验证与风险",
+      "checks": [
+        "力学和运动验收分开"
+      ],
+      "stop_condition": "关键承载未验不建议制造使用",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "mechanism_validation",
+      "label": "机构综合档案",
+      "required_fields": [
+        "运动规格",
+        "拓扑",
+        "自由度",
+        "几何约束",
+        "尺寸解状态",
+        "连续运动",
+        "力学公差",
+        "风险"
+      ],
+      "interpretation": "从目标运动到机构候选，未求解状态必须明确。"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R17",
+      "relation": "parallel",
+      "binding": "机构形式候选组合",
+      "condition": "存在多个功能实现"
+    },
+    {
+      "target_research_id": "R23",
+      "relation": "precedes",
+      "binding": "实现时空分离",
+      "condition": "需要特定运动时序"
+    },
+    {
+      "target_research_id": "R31",
+      "relation": "parallel",
+      "binding": "模块接口与运动依赖",
+      "condition": "机构嵌入产品架构"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "publisher": "MIT OpenCourseWare",
+      "authors": [
+        "Dan Frey"
+      ],
+      "title": "2.007 Mechanisms: Kinematic Analysis and Synthesis",
+      "url": "https://ocw.mit.edu/courses/2-007-design-and-manufacturing-i-spring-2009/3ad37424e0a9ae4ef3350892aa492ebe_MIT2_007s09_lec06.pdf",
+      "locator": "38页讲义；第8、11–12、27、32、35页",
+      "read_scope": "实际打开并核读讲义文本，未逐图重建图解",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "分析与综合区别",
+        "自由度与冗余",
+        "三位置综合"
+      ],
+      "evidence_note": "课程主要平面机构；讲义引用第三方图片未纳入本库。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "满足三个姿态却中途跳装配分支",
+      "expected": "判定综合不通过连续验证"
+    },
+    {
+      "scenario": "自由度计数为负但存在特殊几何运动",
+      "expected": "要求检查冗余约束，不以公式直接判无机构"
+    }
+  ],
+  "search_terms": [
+    "MIT mechanism kinematic analysis synthesis three position",
+    "mechanism synthesis mobility redundancy"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "051逐项检索与平台操作适配；保留原典核读范围"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>好设计馆 · 嘉善展厅演示</title>
+<style>
+:root{--ink:#eef0f6;--mut:#9aa1b5;--dim:#6b7285;--acc:#8b7cf7;--acc-deep:#5a4fe6;--gold:#d4a94e;--card:#16171d;--line:#2a2c37;--bg:#0b0c10}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;overflow:hidden}
+.slide{position:fixed;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vh 7vw;opacity:0;transition:opacity .5s}
+.slide.on{display:flex;opacity:1}
+.kick{color:var(--acc);font-size:clamp(18px,1.6vw,26px);letter-spacing:.35em;margin-bottom:2.2vh}
+h1{font-size:clamp(44px,4.6vw,84px);line-height:1.2;letter-spacing:-.01em}
+h2{font-size:clamp(34px,3.4vw,62px);line-height:1.25;margin-bottom:3vh}
+.sub{color:var(--mut);font-size:clamp(18px,1.7vw,28px);line-height:1.7;margin-top:2vh;max-width:60ch}
+.big-nums{display:flex;gap:6vw;margin-top:6vh}
+.big-nums b{font-size:clamp(72px,8vw,150px);line-height:1;font-weight:800;letter-spacing:-.03em}
+.big-nums span{display:block;color:var(--mut);font-size:clamp(15px,1.3vw,22px);margin-top:1.2vh}
+.gold{color:var(--gold)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2vw;margin-top:4vh}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:3vh 2vw;display:flex;flex-direction:column}
+.card h3{font-size:clamp(22px,1.9vw,32px);margin-bottom:1.4vh}
+.card .scene{color:var(--mut);font-size:clamp(15px,1.3vw,21px);line-height:1.65}
+.card ul{list-style:none;margin-top:2.2vh;border-top:1px solid var(--line);padding-top:2vh}
+.card li{color:var(--dim);font-size:clamp(14px,1.2vw,19px);line-height:1.9}
+.card li::before{content:"·";color:var(--acc);margin-right:.6em;font-weight:700}
+.award{display:inline-block;font-size:clamp(12px,1vw,16px);color:var(--gold);border:1px solid rgba(212,169,78,.4);border-radius:999px;padding:.2em .8em;margin-bottom:1.6vh;align-self:flex-start}
+.award.silver{color:#c9cede;border-color:rgba(201,206,222,.35)}
+.award.elite{color:#8fd0c5;border-color:rgba(143,208,197,.35)}
+.pj{border-top:1px solid var(--line);margin-top:2vh;padding-top:2vh}
+.pj b{font-size:clamp(17px,1.45vw,24px);display:block;line-height:1.5}
+.pj small{color:var(--dim);font-size:clamp(13px,1.1vw,17px);display:block;margin-top:.8vh;line-height:1.6}
+.pj .lk{color:var(--acc);font-size:clamp(13px,1.15vw,18px);display:block;margin-top:1.2vh;line-height:1.6}
+.pj .lk::before{content:"迁移点 · ";color:var(--dim)}
+.note{color:var(--dim);font-size:clamp(13px,1.1vw,17px);margin-top:2.5vh}
+.pipe{display:flex;flex-direction:column;gap:1.6vh;margin-top:3vh}
+.pipe-row{display:grid;grid-template-columns:64px 200px 1fr;align-items:baseline;gap:1.6vw;border-bottom:1px solid var(--line);padding-bottom:1.4vh}
+.pipe-row b{color:var(--acc);font-size:clamp(18px,1.6vw,26px)}
+.pipe-row strong{font-size:clamp(20px,1.8vw,30px)}
+.pipe-row span{color:var(--mut);font-size:clamp(14px,1.25vw,20px)}
+.sample{margin-top:4vh;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:2.4vh 2vw;display:flex;gap:3.4vw;align-items:baseline}
+.sample b{font-size:clamp(34px,3.2vw,56px);color:var(--gold)}
+.sample span{color:var(--mut);font-size:clamp(13px,1.15vw,18px)}
+.hypo .card{position:relative}
+.hypo .card::after{content:"研究假设 · 未经验证";position:absolute;top:2vh;right:1.4vw;color:var(--gold);font-size:clamp(12px,1vw,15px);border:1px solid rgba(212,169,78,.45);border-radius:999px;padding:.2em .8em}
+.hypo .card{padding-top:7vh}
+.qr-row{display:flex;gap:4vw;margin-top:5vh;align-items:flex-start}
+.qr-box{text-align:center}
+.qr-box img{width:clamp(120px,10vw,190px);border-radius:14px;background:#fff;padding:8px}
+.qr-box span{display:block;color:var(--mut);font-size:clamp(13px,1.1vw,17px);margin-top:1.2vh}
+.hud{position:fixed;left:2.4vw;bottom:3vh;color:var(--dim);font-size:clamp(12px,1vw,15px);letter-spacing:.12em;z-index:9}
+.hud b{color:var(--mut)}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--acc-deep);width:0;transition:width .4s;z-index:9}
+.tag{position:fixed;right:2.4vw;bottom:3vh;color:var(--dim);font-size:clamp(12px,1vw,15px);z-index:9}
+.cover-strip{display:flex;gap:2vw;margin-top:5vh}
+.cover-strip .cov{flex:1;border-radius:18px;border:1px solid var(--line);overflow:hidden;background:var(--card)}
+.cover-strip .cov img{width:100%;height:24vh;object-fit:cover;display:block;filter:saturate(.9)}
+.cover-strip .cov div{padding:1.6vh 1.2vw}
+.cover-strip b{font-size:clamp(15px,1.3vw,20px);line-height:1.5;display:block}
+.cover-strip small{color:var(--gold);font-size:clamp(12px,1.05vw,16px)}
+.autoplay-dot{position:fixed;top:3vh;right:2.4vw;color:var(--dim);font-size:clamp(12px,1vw,15px);letter-spacing:.15em;z-index:9}
+.autoplay-dot.on{color:var(--acc)}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="autoplay-dot" id="apd">自动播放 关</div>
+
+<section class="slide" data-auto="8000">
+  <p class="kick">中国创新设计能力档案馆</p>
+  <h1>好设计馆<span style="color:var(--acc)">。</span></h1>
+  <p class="sub" id="attract-line">真实获奖项目，真实证据链。</p>
+  <div class="big-nums">
+    <div><b id="n-projects">560</b><span>获奖项目</span></div>
+    <div><b id="n-research">103</b><span>研究整理版</span></div>
+    <div><b id="n-awards">5</b><span>奖项类别</span></div>
+  </div>
+  <div class="cover-strip" id="attract-covers"></div>
+</section>
+
+<section class="slide">
+  <p class="kick">这里收藏什么</p>
+  <h2>不是"好看的东西"，<br>是中国制造业十年间从跟踪模仿走向原创设计的<span class="gold">证据</span>。</h2>
+  <p class="sub">每一件展品都挂着可溯源的数据档案：问题、取舍、机制、验证、来源。<br>别的展厅讲故事，这里的故事每一个字都有出处。</p>
+</section>
+
+<section class="slide">
+  <p class="kick">今天，嘉善的产业走进来</p>
+  <h2>三个产业画像<span style="color:var(--dim);font-size:.5em">（演示示例）</span></h2>
+  <div class="cards" id="industry-cards"></div>
+</section>
+
+<section class="slide" data-industry="0"></section>
+<section class="slide" data-industry="1"></section>
+<section class="slide" data-industry="2"></section>
+
+<section class="slide">
+  <p class="kick">创新设计大模型怎么工作</p>
+  <h2>不替你下结论，帮你把研究做扎实。</h2>
+  <div class="pipe" id="pipe"></div>
+  <div class="sample" id="sample"></div>
+</section>
+
+<section class="slide">
+  <p class="kick">那么，可能会长出什么</p>
+  <h2>三个可供讨论的方向</h2>
+  <div class="cards hypo" id="oppo-cards"></div>
+  <p class="note">方向来自真实项目的机制关联，尚未经过企业验证与专家审核。平台保留全部未知与边界。</p>
+</section>
+
+<section class="slide">
+  <p class="kick">继续深入</p>
+  <h2>这个档案馆是活的，每周都在变厚。</h2>
+  <p class="sub">项目库、好设计馆、方法库、需求研究、企业创新工作台、MCP 开放接入。<br>今天看到的一切，手机上都能继续。</p>
+  <div class="qr-row" id="qr-row"></div>
+</section>
+
+<div class="hud"><b>← →</b> 切换 · <b>A</b> 自动播放 · <b>R</b> 回首页</div>
+<div class="tag" id="venue-tag"></div>
+
+<script>
+const D = /*__EXPO_DATA__*/;
+const $ = s => document.querySelector(s);
+const slides = [...document.querySelectorAll('.slide')];
+let cur = 0, timer = null, auto = false;
+
+document.getElementById('n-projects').textContent = D.stats.projects;
+document.getElementById('n-research').textContent = D.stats.research;
+document.getElementById('n-awards').textContent = D.stats.awards;
+document.getElementById('venue-tag').textContent = D.venue;
+
+// 吸引环项目条
+document.getElementById('attract-covers').innerHTML = D.attract.map(p => `
+  <div class="cov">${p.cover_url ? `<img src="${p.cover_url}" alt="">` : ''}
+  <div><small>${p.award}</small><b>${p.name}</b></div></div>`).join('');
+
+// 产业画像卡
+document.getElementById('industry-cards').innerHTML = D.industries.map(ind => `
+  <div class="card"><h3>${ind.name}</h3><p class="scene">${ind.scene}</p>
+  <ul>${ind.questions.map(q => `<li>${q}</li>`).join('')}</ul></div>`).join('');
+
+// 产业 × 项目库 三页
+const awardCls = a => a === '金奖' ? '' : (a === '银奖' ? 'silver' : 'elite');
+slides.forEach(sl => {
+  const i = sl.dataset.industry;
+  if (i === undefined) return;
+  const ind = D.industries[+i];
+  sl.innerHTML = `
+    <p class="kick">${ind.name} × 获奖项目库</p>
+    <h2>别的领域里，已经有获奖的解。</h2>
+    <div class="cards">${ind.projects.map(p => `
+      <div class="card"><span class="award ${awardCls(p.award)}">${p.award}${p.research ? ' · 有研究整理版' : ''}</span>
+      <div class="pj" style="border:0;margin:0;padding:0"><b>${p.name}</b>
+      <small>${p.summary.slice(0, 90)}…</small>
+      <span class="lk">${p.link}</span></div></div>`).join('')}</div>
+    <p class="note">命中不等于可迁移：每个类比都要说清差异与不可迁移的部分，这是平台的工作方式。</p>`;
+});
+
+// 大模型流程
+document.getElementById('pipe').innerHTML = D.pipeline.map(([s, t, d]) => `
+  <div class="pipe-row"><b>${s}</b><strong>${t}</strong><span>${d}</span></div>`).join('');
+const E = D.engine_sample;
+document.getElementById('sample').innerHTML = `
+  <div><b>${E.requirements}</b><span> 真实需求</span></div>
+  <div><b>${E.functions}</b><span> 功能</span></div>
+  <div><b>${E.options}</b><span> 选项</span></div>
+  <div><b>${E.combinations}</b><span> 组合</span></div>
+  <div><b>${E.judgments}</b><span> 格判断全未知</span></div>
+  <div><b>${E.recommendations}</b><span> 推荐（空集也是诚实结果）</span></div>`;
+
+// 机会方向
+document.getElementById('oppo-cards').innerHTML = D.opportunities.map(o => `
+  <div class="card"><h3>${o.title}</h3><p class="scene">${o.text}</p>
+  <ul><li>${o.basis}</li></ul></div>`).join('');
+
+// 二维码
+document.getElementById('qr-row').innerHTML = [
+  [D.qr_home, '好设计馆首页'],
+  [D.qr_museum, '好设计馆 · 展厅'],
+  [D.qr_projects, '项目库 · 560 个项目'],
+].map(([q, t]) => `<div class="qr-box"><img src="${q}" alt="${t}"><span>${t}</span></div>`).join('');
+
+function show(i) {
+  cur = (i + slides.length) % slides.length;
+  slides.forEach((s, k) => s.classList.toggle('on', k === cur));
+  document.getElementById('prog').style.width = (cur / (slides.length - 1) * 100) + '%';
+}
+function next() { show(cur + 1); }
+function prev() { show(cur - 1); }
+function setAuto(v) {
+  auto = v;
+  document.getElementById('apd').textContent = '自动播放 ' + (auto ? '开' : '关');
+  document.getElementById('apd').classList.toggle('on', auto);
+  clearInterval(timer);
+  if (auto) timer = setInterval(next, 9000);
+}
+addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { setAuto(false); next(); }
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { setAuto(false); prev(); }
+  else if (e.key === 'a' || e.key === 'A') setAuto(!auto);
+  else if (e.key === 'r' || e.key === 'R') { setAuto(false); show(0); }
+});
+addEventListener('click', e => {
+  if (e.clientX > innerWidth * 0.66) { setAuto(false); next(); }
+  else if (e.clientX < innerWidth * 0.33) { setAuto(false); prev(); }
+});
+let idle = null;
+function armIdle() {
+  clearTimeout(idle);
+  idle = setTimeout(() => { show(0); setAuto(true); }, 90000);
+}
+['keydown', 'click', 'mousemove'].forEach(ev => addEventListener(ev, armIdle, { passive: true }));
+show(0);
+setAuto(true);
+armIdle();
+</script>
+</body>
+</html>

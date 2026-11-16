@@ -1,0 +1,49 @@
+﻿research_id,category,name,english_name,kind,priority,recognition_basis,trigger,inputs_summary,procedure_summary,outputs_summary,limitations,execution_mode,source_ids,record_status,executable
+R01,A开发框架,系统化工程设计,Systematic Engineering Design,framework,P1,标准; 经典,需要组织实体产品从任务到详细设计,任务、约束、生命周期,澄清任务；概念设计；实体设计；详细设计并迭代,阶段成果及决策链,框架不能替代机构计算或验证,orchestrator,S01; S02,research_candidate,False
+R02,A开发框架,双钻,Double Diamond,framework,P1,专业机构,问题模糊或过早锁定方案,初始挑战、利益相关者,发现与定义问题；开发和交付方案，允许回返,问题定义与候选方案,四阶段不是线性审批流程,orchestrator,S03,research_candidate,False
+R03,A开发框架,设计思维,Design Thinking,framework,P1,专业机构,用户体验与产品概念不清,用户接触、场景、初始挑战,同理、定义、构思、原型、测试,需求洞察及学习记录,五模式不等于唯一标准流程；AI不能代替真实访谈,human_research,S04,research_candidate,False
+R04,A开发框架,系统工程,Systems Engineering,framework,P1,标准,多子系统、接口与生命周期复杂,系统目标、利益相关者、要求,管理需求、架构、接口、集成与验证过程,系统模型和可追溯要求,15288是过程框架，不规定唯一设计方法,orchestrator,S05,research_candidate,False
+R05,A开发框架,机电系统V模型,V-model for Mechatronic Systems,framework,P1,标准,机械、电气、控制需联合设计,系统要求、学科边界、集成条件,跨学科分解与设计；集成并对应层级验证,层级设计和集成验证计划,V模型不是瀑布式一次完成；具体工具另选,orchestrator,S06,research_candidate,False
+R06,A开发框架,阶段门,Stage-Gate,framework,P2,专业机构; 专有体系,研发投资和推进需分阶段决策,市场、技术、资源与风险证据,按阶段形成证据；关口决定继续、调整或终止,阶段决策与资源配置,不负责生成具体机械原理；采用商标和原图需核权利,human_decision,S07,research_candidate,False
+R07,A开发框架,六西格玛设计,DFSS / DMADV,framework,P2,专业机构,新产品需从设计阶段满足质量目标,顾客需求、质量指标、数据计划,定义、测量、分析、设计、验证,质量目标及设计验证包,DFSS有多种路线；不与改善现有过程的DMAIC混用,orchestrator,S08,research_candidate,False
+R08,B需求与定义,用户观察与需求证据化,Field Research / Voice of Customer,method_family,P0,专业机构,愿望与真实使用困难混杂,观察记录、访谈原话、使用场景,采集行为和原话；分离事实与解释；归纳需求,需求证据及问题简报,无真实访谈只能输出研究计划；不编造用户痛点,human_research,S04; S11,research_candidate,False
+R09,B需求与定义,待办任务理论,Jobs to Be Done,framework,P1,经典; 专业机构,需要解释用户何时为何选择替代方案,情境、选择事件、替代品、期望进步,分析情境与动机；描述功能及社会情感进步,任务陈述和研究假设,不把JTBD等同功能清单；不混同专有ODI算法,llm_assisted,S09,research_candidate,False
+R10,B需求与定义,领先用户法,Lead User Method,method,P1,经典,常规用户需求难以引导突破,趋势、领域网络、领先需求,寻找提前遭遇需求且收益显著的用户；共同开发,前沿需求与概念候选,领先用户不等于大客户或意见领袖；需后续市场验证,human_research,S10,research_candidate,False
+R11,B需求与定义,Kano需求分类,Kano Model,tool,P1,专业机构; 经典,需求很多而满意度影响不同,目标用户、需求项、配对问卷,采集具备/不具备特性的反应；分类并解释分群,需求类别及不确定性,不得由模型直接猜分类；缺问卷仅为假设,human_research,S11,research_candidate,False
+R12,B需求与定义,质量功能展开,Quality Function Deployment / QFD,method,P0,标准,用户语言需要转成工程参数,有证据需求、重要度、工程特性,建立需求与技术响应关系并核对相关性,需求到指标映射,质量屋是工具不是QFD全部；权重与关系须有依据,llm_plus_calculation,S12,research_candidate,False
+R13,B需求与定义,人机工程与人本设计,Ergonomics / Human-centred Design,method_family,P1,标准,操作、维护、可达性或交互存在问题,用户能力、任务、环境、人群数据,研究人与系统匹配；原型评估与迭代,操作要求和体验验证计划,6385与9241-210适用范围不同；不能套用平均人体尺寸,human_research,S13; S14,research_candidate,False
+R14,C功能与概念,功能分解与接口分析,Functional Decomposition,method,P0,专业机构,需求尚未转成可替代的功能结构,问题简报、边界、要求,建立功能层级、输入输出和接口关系,功能结构与接口风险,不同于部件清单；NASA功能分解与TRIZ功能模型不完全等同,llm_assisted,S15,research_candidate,False
+R15,C功能与概念,FAST功能逻辑分析,Function Analysis System Technique,tool,P2,专业机构,需梳理功能的为什么和如何,必要功能、边界与目标,组织功能逻辑关系并检查边界,FAST图,不把时间流程图当FAST；指南正文尚待授权核读,expert_assisted,S16,research_candidate,False
+R16,C功能与概念,根因分析,Root Cause Analysis,method_family,P0,专业机构,已有故障或异常，需要定位原因,异常定义、时序、工况、测量,提出因果候选；通过证据或试验排除,因果假设、证据与验证任务,五问和鱼骨图仅是工具；先后出现不证明因果,llm_plus_measurement,S17,research_candidate,False
+R17,C功能与概念,形态学分析,Morphological Analysis,method,P0,经典; 专业机构,想系统产生不同原理组合,子功能、各自解法、接口约束,构建解法表；组合；交叉一致性筛选,可追溯的概念组合,组合数量不等于创新质量；GMA与工程形态学表标记适配关系,llm_plus_rules,S18; S02,research_candidate,False
+R18,C功能与概念,仿生设计,Biomimetics / Biomimicry,method_family,P1,标准; 专业机构,常规方案受限，需探索自然机制,功能、环境、尺度、物理条件,功能生物化；找策略；抽象机制；迁移验证,生物策略到工程概念映射,形似不等于机制迁移；尺度、材料和环境可能失配,llm_plus_retrieval,S19; S20,research_candidate,False
+R19,C功能与概念,设计启发式,Design Heuristics,tool_family,P2,研究; 专有素材,概念单一，需要拓展变体,已有概念、设计边界,选择启发策略并形成有差异的概念,概念变体及改变理由,研究支持不等于全球统一标准；77张卡片不默认可复制入库,llm_assisted,S21,research_candidate,False
+R20,C功能与概念,C-K设计理论,Concept–Knowledge Theory,theory,P2,研究,未知问题需要概念与知识共同扩展,概念命题、已知知识、知识缺口,分别扩展概念和知识并记录相互作用,概念树与知识探索任务,概念不是事实；研究理论不能冒称行业通用标准,llm_plus_retrieval,S22,research_candidate,False
+R21,D技术发明,TRIZ体系,Theory of Inventive Problem Solving,method_family,P1,经典; 专业机构,存在技术瓶颈需系统化发明,系统、功能、问题与证据,按问题模型选矛盾、物场、资源或其他工具,工具选择与求解记录,TRIZ不是单张矩阵；各流派和版本须绑定,orchestrator,S23,research_candidate,False
+R22,D技术发明,技术矛盾与发明原理,Engineering Contradiction / Matrix,tool,P0,专业机构; 经典,改善某性能导致另一性能恶化,改善参数、恶化参数、关联依据,抽象参数；查询指定矩阵；把原理转成机制,映射理由、查询记录及概念,未查询不得声称矩阵命中；不能强迫所有问题映射39参数,llm_plus_lookup,S24; S25,research_candidate,False
+R23,D技术发明,物理矛盾与分离,Physical Contradiction / Separation,tool,P0,专业机构; 经典,同一属性有相反要求,同一对象属性、双向需求及条件,检验冲突；寻找可分离或满足的条件,分离机制及验证假设,正常工序阶段变化不自动成为发明矛盾,llm_assisted,S24; S26,research_candidate,False
+R24,D技术发明,理想解与资源分析,Ideal Final Result / Resource Analysis,tool_family,P1,经典,方案持续增加零件、能耗和复杂度,目标功能、现有物质能量信息空间时间资源,描述理想结果；寻找已有资源承担作用,理想化方向和资源候选,理想结果是探索目标，不是可行性证明,llm_assisted,S28,research_candidate,False
+R25,D技术发明,物场分析与标准解,Substance–Field Analysis / Standard Solutions,tool_family,P2,经典; 专业机构,作用不足、有害或交互结构需改变,作用对象、载体、场、问题类型,建立物场模型；选择适用标准解方向,作用模型及变换概念,不能把一切关系生硬套成物场；标准解具体版本需核读,expert_assisted,S23,research_candidate,False
+R26,D技术发明,功能裁剪,Trimming,tool,P0,专业机构,需减少部件同时保持必要功能,有用功能、承担者、受体、约束,提出删除候选；重新分配其必要功能,裁剪方案和功能接替记录,删除零件不等于裁剪成功；本轮仅知识体系层入口，细则待补,llm_plus_rules,S23,research_candidate,False
+R27,D技术发明,功能导向检索与科学效应,Function-Oriented Search / Scientific Effects,method_family,P0,专业机构,行业内方案枯竭，需跨行业迁移,抽象功能、对象、约束、工况,去除行业名词；检索同功能机制；比较迁移条件,机制候选及适配差异,同功能不等于同工况；效应数据库需独立授权和参数依据,llm_plus_retrieval,S27,research_candidate,False
+R28,D技术发明,ARIZ发明问题求解算法,ARIZ-85C,method,P2,经典,常规工具不能解决复杂矛盾,精确定义的问题与充分系统信息,按指定版本逐步转化问题并分析资源和矛盾,完整步骤链与方案检验,不可用几段提示词声称执行完整ARIZ；需专业复核,expert_assisted,S28,research_candidate,False
+R29,D技术发明,技术系统进化趋势,Trends of Engineering Systems Evolution,tool_family,P2,经典; 专业机构,需探索产品代际演化方向,系统历史、功能变化、当前瓶颈,对照趋势提出可检验演化路径,路线假设与支持证据,趋势不等于必然预测；不从S曲线外观推断成熟度,expert_assisted,S23,research_candidate,False
+R30,E架构与工程,公理化设计,Axiomatic Design,theory_method,P1,经典,调一个参数引发多功能相互干扰,功能要求、设计参数和映射,建立FR–DP关系并分析耦合,设计矩阵及解耦方案,独立性不等于零交互；信息公理需概率模型,expert_plus_calculation,S29,research_candidate,False
+R31,E架构与工程,DSM与模块化架构,Design Structure Matrix / Modular Architecture,method_family,P1,经典,接口复杂、变更传播或平台复用困难,系统元素、依赖类型、接口证据,建依赖矩阵并分析耦合和聚类,模块边界及接口改进,模块化是设计策略；DSM是分析工具，二者不混称,llm_plus_calculation,S30,research_candidate,False
+R32,E架构与工程,机构综合,Kinematic Synthesis,method_family,P1,学科经典,需实现特定轨迹、位姿、运动或传力,运动目标、空间、载荷、自由度,选择机构类型；求尺寸；分析运动与载荷,机构候选及计算模型,柔顺/欠驱动是可选路线；本轮仅教学入口，需专题深研和求解器,solver_required,S31,research_candidate,False
+R33,E架构与工程,Ashby材料选择,Ashby Materials Selection,method,P1,经典; 专业工具,性能、重量、成本和工艺相互制约,功能、约束、目标、材料数据,筛选约束；以性能指标比较材料并核查工艺,材料候选及选择依据,性能指数依受力模型；图表不替代疲劳/腐蚀/制造验证,solver_and_data_required,S32,research_candidate,False
+R34,E架构与工程,面向制造与装配设计,Design for Manufacture and Assembly / DFMA,method_family,P1,经典; 专有体系,概念可用但生产装配复杂或昂贵,零件、装配顺序、工艺、批量、成本,分别检查制造和装配并简化结构,结构、工艺及装配优化,专有评分和软件规则不默认可复制；本地成本须采集,expert_plus_calculation,S33,research_candidate,False
+R35,E架构与工程,拓扑优化,Topology Optimization,computational_method,P2,研究; 学科经典,在既定载荷与边界下探索材料分布,设计域、载荷、边界、材料、目标及制造约束,建立优化模型；求解；重构并验证,材料布局及约束满足报告,示例代码不代表所有工况；无求解器只可提出分析计划,solver_required,S34,research_candidate,False
+R36,F筛选与验证,Pugh概念筛选,Pugh Concept Selection,tool,P0,经典; 大学教学,已有多个概念需初步比较,基准、候选、准则和依据,相对基准比较；分析差异并迭代方案,比较矩阵与保留/合并理由,主观偏好需标注；未知项不当作零或平局,llm_plus_calculation,S35,research_candidate,False
+R37,F筛选与验证,多准则权衡分析,Trade Studies / MCDA,method_family,P1,专业机构,性能、成本、风险之间需取舍,可行候选、准则、权重、数据和不确定性,先筛硬约束；比较准则并检查敏感性,方案排序及敏感性,综合高分不能抵消硬约束；AHP仅为子工具且须专项核验,llm_plus_calculation,S36,research_candidate,False
+R38,F筛选与验证,试验设计与响应面,Design of Experiments / Response Surface,method_family,P1,专业机构; 学科经典,多因素影响不清或参数需优化,响应、因素、范围、测量和资源,按目标选择设计；执行；建模；确认,试验矩阵、效应分析与确认结果,无数据不输出显著性或最优值；目录核读不足以执行统计,statistical_tool_required,S37,research_candidate,False
+R39,F筛选与验证,稳健参数与公差设计,Robust Parameter / Tolerance Design,method_family,P1,经典; 专业机构,平均性能达标但环境变化造成不稳定,控制因素、噪声因素、响应和变异,识别对噪声敏感性；设计试验降低变异,稳健参数及公差分配方向,田口正交表不是全部稳健设计；公差堆栈算法另需建模,statistical_tool_required,S38,research_candidate,False
+R40,F筛选与验证,失效模式与影响分析,FMEA / FMECA,method,P1,标准,需提前发现失效及影响,功能、工况、失效模式、现有控制,分析模式与局部整体影响；制定措施,失效清单和改进验证任务,无依据不猜发生率；RPN/AP依所选体系，不与根因确认混淆,expert_assisted,S39,research_candidate,False
+R41,F筛选与验证,机械风险评估与风险降低,Machinery Risk Assessment / Reduction,method,P1,标准,机械设计涉及人的危险暴露,机械边界、生命周期、任务与危险,识别危险；评估风险；降低并复核,风险评估和残余风险记录,FMEA不替代机械安全流程；须查适用B/C类标准,expert_assisted,S40,research_candidate,False
+R42,F筛选与验证,验证与确认,Verification and Validation / V&V,process_method,P0,专业机构,方案需判断是否符合要求和实际用途,要求、使用情境、验收口径、测试条件,分别规划符合要求的验证和满足用途的确认,指标到证据的验证矩阵,方案计划不等于结果；原型、仿真、实物证据级别不同,human_and_solver,S41; S42,research_candidate,False
+R43,F筛选与验证,生命周期评价与生态设计,Life Cycle Assessment / Ecodesign,method_family,P2,标准,局部改进可能把环境负担转移到别处,功能单位、边界、清单、生命周期数据,评价环境影响并反馈设计,环境热点与设计取舍,LCA评价与生态设计过程分开；缺数据不宣称减碳比例,data_and_calculation,S43; S44,research_candidate,False
+R44,F筛选与验证,原型与假设测试,Prototyping / Hypothesis Testing,method_family,P1,专业机构,关键假设缺证据或方案理解不一致,明确假设、学习目标、原型保真度和指标,选择最能检验假设的原型；测试并更新,学习证据与保留/调整决定,外观原型不证明强度或寿命；不同原型只回答对应问题,human_and_solver,S04; S42,research_candidate,False
+R45,G价值与研发组织,价值工程,Value Engineering / Value Methodology,method,P1,专业机构; 经典,需在保证必要功能下改善价值,功能、性能、成本和用户价值,分析必要功能与成本；提出并比较替代,功能成本关系及替代方案,价值不等于最低采购价；指南正文待核读,expert_plus_calculation,S16,research_candidate,False
+R46,G价值与研发组织,专利景观与技术路线分析,Patent Landscape / Patent Analytics,method_family,P1,专业机构,需了解已有技术和替代路径,检索范围、分类、时间、同族去重规则,检索、清洗、分类并分析技术分布,技术地图与候选机制,专利公开不等于有效、采用、可自由实施；不输出FTO法律结论,retrieval_and_expert,S45; S46,research_candidate,False
+R47,G价值与研发组织,集合式并行工程,Set-Based Concurrent Engineering,development_strategy,P2,专业机构,过早选唯一方案导致反复返工,候选集合、可行域、权衡曲线和试验资源,并行探索；以证据淘汰；延迟不可逆选择,候选集收敛记录,不是无限保留所有方案；需设资源与学习门槛,orchestrator,S47,research_candidate,False
+R48,G价值与研发组织,问题定义与要求管理,Problem Framing / Requirements Definition,platform_method,P0,专业机构; 平台适配,需求只有愿望、对象边界不清,原始需求、对象、工况、约束、未知,形成问题简报并识别待确认要求,版本化问题简报,平台整合的方法名，不冒称独立国际标准；未知不填造,llm_assisted,S03; S15,research_candidate,False

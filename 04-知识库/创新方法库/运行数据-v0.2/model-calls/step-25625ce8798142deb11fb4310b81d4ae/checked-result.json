@@ -1,0 +1,168 @@
+{
+  "status": "draft_requires_semantic_and_domain_review",
+  "artifact": {
+    "artifact_id": "LIVE-TEACH-CLAMP-comparison",
+    "revision": "r2",
+    "task_id": "LIVE-TEACH-CLAMP",
+    "task_revision": "t1",
+    "type": "ComparisonRecord",
+    "scope": "Teaching comparison frame and test-planning record only. M01 is a provisional datum, not an approved or demonstrated clamp. Performance comparisons stop because retention conditions and damage criteria are undefined. No concept is recommended, tested or engineering validated.",
+    "conditions": [
+      {
+        "id": "C01",
+        "text": "The supplied task seeks a bench clamp that holds a workpiece without damage. REQ01 and REQ02 remain proposed; customer requirement hardness remains unknown.",
+        "kind": "fact",
+        "evidence_refs": []
+      },
+      {
+        "id": "C02",
+        "text": "Use M01, the manual screw route, as a provisional teaching datum and compare M02, the pneumatic route. This datum choice is a planning assumption, not a customer preference.",
+        "kind": "assumption",
+        "evidence_refs": []
+      },
+      {
+        "id": "C03",
+        "text": "The Boolean hard field below describes a proposed procedural gate for permitting selection, not the unknown hardness of customer requirements. Unknown customer hardness is not represented as false.",
+        "kind": "assumption",
+        "evidence_refs": []
+      },
+      {
+        "id": "C04",
+        "text": "M03 remains conditionally excluded under its supplied topology: its release option requires a screw transmission that its closing option explicitly omits. This logical conflict establishes no performance result for M01 or M02.",
+        "kind": "fact",
+        "evidence_refs": []
+      },
+      {
+        "id": "C05",
+        "text": "The lunar-sampling excerpt has unestablished transferability and supplies neither customer clamp parameters nor evidence of clamp performance.",
+        "kind": "fact",
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ]
+      }
+    ],
+    "evidence_refs": [
+      "case-98b73a9c96af1f9408721571"
+    ],
+    "payload": {
+      "baseline_id": "M01",
+      "candidate_ids": [
+        "M01",
+        "M02"
+      ],
+      "criteria": [
+        {
+          "id": "G01",
+          "text": "Proposed selection-readiness gate: establish applicable constraints and demonstrate retention and acceptable workpiece condition against stakeholder-defined use conditions before recommending a route. This procedural gate does not assign hardness to REQ01 or REQ02.",
+          "hard": true
+        }
+      ],
+      "judgments": [
+        {
+          "candidate_id": "M01",
+          "criterion_id": "G01",
+          "value": "unknown",
+          "basis": "Record author: planning assessment from supplied inputs only. Datum designation does not establish gate passage. Loads, material, geometry, allowable movement, damage limits and requirement authority remain unknown; no evidence establishes retention or acceptable workpiece condition for M01.",
+          "evidence_refs": []
+        },
+        {
+          "candidate_id": "M02",
+          "criterion_id": "G01",
+          "value": "unknown",
+          "basis": "Record author: planning assessment from supplied inputs only. Loads, material, geometry, allowable movement, damage limits and requirement authority are unknown. Neither M02 nor datum M01 has evidence establishing this gate. Their shared contact-management option does not establish equivalent damage or retention performance. No relative performance score is justified.",
+          "evidence_refs": []
+        }
+      ],
+      "recommendations": [],
+      "sensitivity": [
+        "Datum choice cannot resolve missing acceptance criteria. Switching the datum to M02 would leave selection readiness unknown.",
+        "M01 assumes manual input and hypothesized screw-position retention; M02 assumes pneumatic supply, sustained input and elastic return. Resource availability and acceptable input-loss behavior could change which routes merit further investigation.",
+        "Contact geometry, material and surface interaction could change retention and damage together. No ranking, weights or symbol totals are justified."
+      ],
+      "unknowns": [
+        "Confirm the intended work operation, operator capabilities, bench interface and available actuation resources.",
+        "Define representative workpiece materials, finishes, geometries and variation.",
+        "Establish loads, directions, holding duration and allowable movement; agree what constitutes damage and how it will be assessed.",
+        "Identify requirement owners and confirmation authority; determine customer requirement hardness without treating the proposed procedural gate as approval.",
+        "After criteria are defined, plan comparisons under common workpiece and loading conditions, including engagement, holding, release and before-and-after condition assessment. Procedures, thresholds, sample counts and resources remain to be defined; nothing has been executed.",
+        "For M01, plan investigation of restraint persistence, disturbance sensitivity and reverse-screw release. For M02, plan investigation of sustained supply, intentional venting, return behavior and supply loss.",
+        "Reopen the Pugh performance matrix only after its criteria and supporting evidence are sufficiently defined. Retain both routes as unresolved teaching hypotheses, without a preferred concept."
+      ]
+    }
+  },
+  "check": {
+    "status": "structure_and_declared_consistency_passed",
+    "issues": [],
+    "artifact_sha256": "7716c090634c5844fc273ca4e06ca6089c8200b2411e6d8df035288946ebfbd9",
+    "evidence_refs": [
+      "case-98b73a9c96af1f9408721571"
+    ],
+    "declared_unknowns": [
+      "Confirm the intended work operation, operator capabilities, bench interface and available actuation resources.",
+      "Define representative workpiece materials, finishes, geometries and variation.",
+      "Establish loads, directions, holding duration and allowable movement; agree what constitutes damage and how it will be assessed.",
+      "Identify requirement owners and confirmation authority; determine customer requirement hardness without treating the proposed procedural gate as approval.",
+      "After criteria are defined, plan comparisons under common workpiece and loading conditions, including engagement, holding, release and before-and-after condition assessment. Procedures, thresholds, sample counts and resources remain to be defined; nothing has been executed.",
+      "For M01, plan investigation of restraint persistence, disturbance sensitivity and reverse-screw release. For M02, plan investigation of sustained supply, intentional venting, return behavior and supply loss.",
+      "Reopen the Pugh performance matrix only after its criteria and supporting evidence are sufficiently defined. Retain both routes as unresolved teaching hypotheses, without a preferred concept."
+    ],
+    "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+    "semantic_support": "not_independently_verified",
+    "engineering_validated": false
+  },
+  "model_mode": "real_codex_model",
+  "call_id": "step-25625ce8798142deb11fb4310b81d4ae",
+  "attempts": [
+    {
+      "attempt": 0,
+      "check": {
+        "status": "blocked",
+        "issues": [
+          {
+            "code": "baseline_not_in_candidates"
+          }
+        ],
+        "artifact_sha256": "341a464d925e54f9e3cd98abbf3ac93d5756a8d71c538b669b7e4a222babb84a",
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "declared_unknowns": [
+          "Confirm the intended work operation, operator capabilities, bench interface and available actuation resources.",
+          "Define representative workpiece materials, finishes, geometries and variation.",
+          "Establish loads, directions, holding duration and allowable movement; agree what constitutes damage and how it will be assessed.",
+          "Identify requirement owners and confirmation authority; determine customer requirement hardness without treating the proposed procedural gate as approval.",
+          "After criteria are defined, plan comparisons under common workpiece and loading conditions, including engagement, holding, release and before-and-after condition assessment. Procedures, thresholds, sample counts and resources remain to be defined; nothing has been executed.",
+          "For M01, plan investigation of restraint persistence, disturbance sensitivity and reverse-screw release. For M02, plan investigation of sustained supply, intentional venting, return behavior and supply loss.",
+          "Reopen the Pugh performance matrix only after its criteria and supporting evidence are sufficiently defined. Retain both routes as unresolved teaching hypotheses, without a preferred concept."
+        ],
+        "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+        "semantic_support": "not_independently_verified",
+        "engineering_validated": false
+      }
+    },
+    {
+      "attempt": 1,
+      "check": {
+        "status": "structure_and_declared_consistency_passed",
+        "issues": [],
+        "artifact_sha256": "7716c090634c5844fc273ca4e06ca6089c8200b2411e6d8df035288946ebfbd9",
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "declared_unknowns": [
+          "Confirm the intended work operation, operator capabilities, bench interface and available actuation resources.",
+          "Define representative workpiece materials, finishes, geometries and variation.",
+          "Establish loads, directions, holding duration and allowable movement; agree what constitutes damage and how it will be assessed.",
+          "Identify requirement owners and confirmation authority; determine customer requirement hardness without treating the proposed procedural gate as approval.",
+          "After criteria are defined, plan comparisons under common workpiece and loading conditions, including engagement, holding, release and before-and-after condition assessment. Procedures, thresholds, sample counts and resources remain to be defined; nothing has been executed.",
+          "For M01, plan investigation of restraint persistence, disturbance sensitivity and reverse-screw release. For M02, plan investigation of sustained supply, intentional venting, return behavior and supply loss.",
+          "Reopen the Pugh performance matrix only after its criteria and supporting evidence are sufficiently defined. Retain both routes as unresolved teaching hypotheses, without a preferred concept."
+        ],
+        "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+        "semantic_support": "not_independently_verified",
+        "engineering_validated": false
+      }
+    }
+  ],
+  "expert_certified": false
+}

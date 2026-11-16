@@ -1,0 +1,138 @@
+{
+  "runner": "构建教学包.py check()",
+  "executed": true,
+  "scope": "fixed declared structure/event identity/promotion guards, not semantic inference",
+  "tests": [
+    {
+      "name": "normal-six-notes-three-events",
+      "category": "正常",
+      "expected": "accepted_for_bounded_research",
+      "actual": "accepted_for_bounded_research",
+      "result": {
+        "note_count": 6,
+        "independent_constructed_event_count": 3,
+        "independent_events": [
+          "EV-T01",
+          "EV-T02",
+          "EV-T03"
+        ],
+        "source_representations_for_EV_T01": 3,
+        "generic_opinions_not_counted": 1,
+        "customer_findings": [],
+        "status": "fixed_fixture_structure_checked_not_field_validated"
+      },
+      "input_sha256": "8064d476715128180b2beef502b2542ff62ad7851059ed147a5c5e388572c57d"
+    },
+    {
+      "name": "missing-context-binding",
+      "category": "缺材料",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "shared_context_binding_changed"
+      },
+      "input_sha256": "c667ee5125131c2d4e94a27004fa2c508a193b205865e3e2682b320ac9223af9"
+    },
+    {
+      "name": "fixture-is-not-field-research",
+      "category": "不适用",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "teaching_promoted_to_field_evidence"
+      },
+      "input_sha256": "ab006f6874928188fd4b626bcaae5fc6da06198b3969b0a0839528b3d28fa2fd"
+    },
+    {
+      "name": "three-representations-one-event",
+      "category": "边界",
+      "expected": "accepted_for_bounded_research",
+      "actual": "accepted_for_bounded_research",
+      "result": {
+        "note_count": 3,
+        "independent_constructed_event_count": 1,
+        "independent_events": [
+          "EV-T01"
+        ],
+        "source_representations_for_EV_T01": 3,
+        "generic_opinions_not_counted": 0,
+        "customer_findings": [],
+        "status": "fixed_fixture_structure_checked_not_field_validated"
+      },
+      "input_sha256": "1b1308bdbdd4c0cf986f40a5fce5efe47aaab209c187e52232104db5877c261f"
+    },
+    {
+      "name": "same-event-contradiction",
+      "category": "冲突或边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "conflicting_same_event_observations"
+      },
+      "input_sha256": "dceb80dd77ed6482f811a34db1ba9be39b1ec6a3eb188a67244744dc7e9d3fe5"
+    },
+    {
+      "name": "general-opinion-not-event",
+      "category": "冲突或边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "non_event_counted_as_observation"
+      },
+      "input_sha256": "1d58d5fb49e35f65f1cd285bd494f817f4cf630e10f65833ea69962734a17fb3"
+    },
+    {
+      "name": "duplicate-note-id",
+      "category": "冲突或边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "duplicate_note_id"
+      },
+      "input_sha256": "c734f7484647a437fb67cbcd97fb4df3eca972307fe545d595cabddec3b846bc"
+    },
+    {
+      "name": "unknown-condition-not-default-false",
+      "category": "冲突或边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "unknown_filled_or_missing_condition"
+      },
+      "input_sha256": "2a1b4271e3908d524d425ff9868b87a29215e0e05ec35acf4e787bb39fa12084"
+    },
+    {
+      "name": "source-version-mismatch",
+      "category": "冲突或边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "shared_context_binding_changed"
+      },
+      "input_sha256": "5ca508f56ab0809e3fbe40777af1acd94ec2219d8291baa8f0bb33e93010cdaa"
+    },
+    {
+      "name": "empty-records",
+      "category": "冲突或边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "missing_event_records"
+      },
+      "input_sha256": "ce0a912e742897dca734a82b4b2d36b95b04973a77adf780b2f04a363fde19af"
+    },
+    {
+      "name": "unknown-actor",
+      "category": "冲突或边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "unknown_actor"
+      },
+      "input_sha256": "94c72c4f8e02d776619582086492874a6982ea472faa1e8a41c3205e4fef0fac"
+    }
+  ],
+  "passed": 11,
+  "failed": 0,
+  "package_version": "0.1.1"
+}

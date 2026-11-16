@@ -1,0 +1,48 @@
+{
+  "artifact_id": "TEACHING-R02-001",
+  "payload": {
+    "alternatives": [
+      "改正常动作",
+      "改恢复与状态支持",
+      "改清理服务组织"
+    ],
+    "learning_status": "planned_not_executed",
+    "original_challenge": "工作更快，初始偏好是加快驱动",
+    "protocol_routes": [
+      {
+        "archive": "paper",
+        "formation": "paper",
+        "status": "retained"
+      },
+      {
+        "archive": "electronic",
+        "formation": "paper",
+        "status": "excluded_by_protocol"
+      },
+      {
+        "archive": "paper",
+        "formation": "electronic",
+        "status": "excluded_by_protocol"
+      },
+      {
+        "archive": "electronic",
+        "formation": "electronic",
+        "status": "retained"
+      }
+    ],
+    "redefined_challenge": "减少完整作业中恢复与清理的负担，并核定其与正常动作的关系",
+    "return_conditions": [
+      "新证据否定恢复负担为主的问题理解时返回Define",
+      "缺真实观察时只输出发现计划"
+    ],
+    "segments": {
+      "normal": 40,
+      "recovery": 60
+    }
+  },
+  "revision": "r1",
+  "scope": "全构造教学回放；tick不是秒或真实劳动数据，不代表用户研究或测试",
+  "task_id": "TEACHING-R02-001",
+  "task_revision": "r1",
+  "type": "GuidedLearningDelivery"
+}

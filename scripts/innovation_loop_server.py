@@ -35,15 +35,24 @@ class Handler(BaseHTTPRequestHandler):
    parsed=urlparse(self.path);query=parse_qs(parsed.query);task_id=query.get('task',['rubber-v1'])[0]
    if parsed.path=='/':return self.respond(200,page(bundle(task_id)),'text/html; charset=utf-8')
    if parsed.path=='/api/bundle':return self.respond(200,bundle(task_id))
+   if parsed.path in ('/workspace/enterprise-workbench.css','/workspace/enterprise-workbench.js','/inno/loop/workspace/enterprise-workbench.css','/inno/loop/workspace/enterprise-workbench.js'):
+    target=ROOT/'extensions/enterprise-workbench'/parsed.path.rsplit('/',1)[-1]
+    ctype='text/css; charset=utf-8' if target.suffix=='.css' else 'text/javascript; charset=utf-8'
+    return self.respond(200,target.read_text(),ctype)
    if self.path in ['/inno/','/inno/projects/','/inno/methods/','/inno/needs/','/inno/report/','/inno/mcp/','/inno/about/']:
-    self.send_response(302);self.send_header('Location','https://opendesign.cc'+self.path);self.end_headers();return
+    self.send_response(302);self.send_header('Location','https://haoshejiguan.com'+self.path);self.end_headers();return
    if self.path=='/inno/portal/system.css':return self.respond(200,(ROOT/'extensions/inno/system.css').read_text(),'text/css; charset=utf-8')
+   if self.path.startswith('/inno/portal/'):
+    from gooddesign_assets import content_type,path as gooddesign_path
+    try:target=gooddesign_path(parsed.path.rsplit('/',1)[-1])
+    except ValueError:return self.respond(404,{'error':'not_found'})
+    return self.respond(200,target.read_text(),content_type(parsed.path))
    return self.respond(404,{'error':'not_found'})
   except FileNotFoundError:return self.respond(503,{'error':'资料缺失或外置盘不可读，请恢复资料后重试'})
   except ValueError as e:return self.respond(400,{'error':str(e)})
  def do_POST(self):
-  origin=f'http://127.0.0.1:{self.server.server_port}'
-  if not self.allowed() or self.headers.get('Origin')!=origin:return self.respond(403,{'error':'invalid_origin'})
+  origins={f'http://127.0.0.1:{self.server.server_port}','https://opendesign.cc','https://haoshejiguan.com'}
+  if not self.allowed() or self.headers.get('Origin')not in origins:return self.respond(403,{'error':'invalid_origin'})
   if self.path not in ('/api/feedback','/api/clarifications'):return self.respond(404,{'error':'not_found'})
   try:
    if self.headers.get('Content-Type','').split(';')[0]!='application/json':raise ValueError('json_required')

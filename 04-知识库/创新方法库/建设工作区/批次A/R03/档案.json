@@ -1,0 +1,262 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R03",
+  "method_id": "IM-ML-003",
+  "version": "0.1.0",
+  "name": "设计思维",
+  "english_name": "Design Thinking",
+  "kind": "framework",
+  "category": "G全流程规划与创新管理",
+  "lineage": [
+    "以人为本设计",
+    "Stanford d.school"
+  ],
+  "aliases": [
+    "Design Thinking"
+  ],
+  "summary": "通过理解人的经历、定义挑战、构思、原型与测试反复学习，发展有依据的产品概念。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "设计思维是多来源的方法与实践传统，本卡采用Stanford d.school Bootleg公开介绍的五种模式，不将其归为某一人独创或全球唯一标准。2018版资源由其教学团队制作，页面明确工具会演进并可从不同位置开始。本卡不复制整套方法卡或图版；仅提炼五模式及面向产品任务的操作接口。Bootleg的资源许可带非商业与相同方式共享条件，不能因可下载就默认可商业再分发。",
+    "problem": "产品团队容易把自己喜欢的功能当作用户需要，把访谈中最响亮的建议当作目标，或者为了证明已经选中的方案而测试。设计思维要求把人的具体经历作为问题理解的材料，再用可体验的原型降低误解。它处理的是探索与学习，不是用同理心口号代替事实，也不是让工程师不必关心安全、成本与制造。",
+    "principle": "同理模式关注人怎样做、想什么和受什么环境影响；定义模式将材料聚焦为可行动的挑战；构思模式扩大可选解；原型模式让假设以某种可体验形式呈现；测试模式从参与者行为和反馈继续学习。模式之间可以跳转。原型的价值在于回答问题，低保真并非低质量；一个纸面或角色演示可以检查流程，却不能证明结构强度。共情是研究立场，不等于研究者可以准确猜测他人内心。",
+    "applicability": "适合使用任务、体验和产品概念尚不清楚，且允许参与者接触研究或原型的情境。对纯粹确定性计算问题可作为上游需求背景，而不必占据求解过程。涉及弱势参与者、隐私或危险动作时，要设计适当同意与安全边界。没有真实接触时，用户画像和体验结论只能是待验证假设；不能凭模型合成人群回应再称用户测试。",
+    "interpretation": "产物应说明对某个具体人群和情境学到了什么，哪一假设被支持、反驳或仍未知。构思结果看路线差异，原型看是否适合学习目标，测试看是否允许发现不喜欢和失败。方法不自带需求真伪分数，也不保证所有用户都会喜欢某个概念。一次访谈不能代表人群分布；测试参与者的偏好也不能直接代替长期行为或购买。",
+    "example": "教学演示：研究老年人用药收纳盒的开启方式，不含药物或医疗建议。Empathize产物为情境研究计划，分别观察开启、取物、关合和收纳，记录能力差异及原话；没有实际研究，不能写成‘老人都手弱’。Define产物为待核问题声明：某类手部能力用户希望独立开启并确认关合。Ideate产物为翻盖、旋转、滑动三个方向及所依赖动作，不按熟悉程度提前淘汰。Prototype产物为分别表达抓握、动作与关闭反馈的低成本样模，每个样模只回答一个学习问题。Test产物为完成、误操作、求助、动作解释和未预料困难的记录模板。若使用者误把样模阻力解释为已锁闭，就先返回Define核查‘确认关闭’是否核心，再改原型反馈；不能只让参与者学会设计者的动作。防误开、耐久、材料和卫生另行工程验证，本演示不宣称样模可投产。",
+    "pitfalls": "一是“共情”后直接断言用户动机，应保留原话、观察和解释差异。二是所有模式都举行一次工作坊便称完成，应按知识缺口选择回返。三是用漂亮高保真原型引导参与者称赞，掩盖真实问题，应明确任务并观察行为。反例：只需要求解已知载荷结构的应力分布，五模式不能代替有限元模型和材料数据。",
+    "validation": "执行检查包括研究参与者是否匹配目标、挑战是否来自材料、原型是否检验关键假设、测试是否记录反证、迭代是否改变了设计。工程验证另行处理材料、性能、安全、环境和制造。无现场条件时可输出访谈与原型实验设计；无功能样机不能声称功能已验证。对真实产品需要纵向观察，不能把一次喜欢当持续使用。",
+    "adaptation": "原典公开页面支持五模式、灵活起点与工具演进；本卡将它们组织为可追溯产物，不复制工具卡操作原文。问题陈述、原型问题单、证据分类和本例都是平台编排。平台为商业引擎使用外部材料时应逐项核权利，链接不等于授权整个素材库。",
+    "gaps": "已读Bootleg介绍而非逐卡完整核读；具体访谈技巧、测试设计和同意流程仍需专项资料与领域审核。尚无本平台真实参与者研究和迭代记录，不能作为设计思维效果认证。后续应选一个非高风险产品，保存研究原件、原型版本、测试与变更链。"
+  },
+  "inputs": [
+    {
+      "key": "challenge",
+      "label": "探索任务",
+      "type": "object",
+      "required": true,
+      "description": "目标人群、情境与初始问题",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "research_material",
+      "label": "参与者或材料条件",
+      "type": "object",
+      "required": true,
+      "description": "实际研究可达性、记录、同意与安全条件",
+      "missing_action": "ask_or_stop"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R03-S01",
+      "title": "理解人的行为与情境",
+      "input_refs": [
+        "challenge",
+        "research_material"
+      ],
+      "depends_on": [],
+      "operation": "采集具体任务经历，记录行为与原话并标解释。",
+      "decision": "无法真实接触时仅形成研究计划。",
+      "output_key": "empathy_evidence",
+      "output_description": "观察与解释分层材料",
+      "checks": [
+        "不假设他人动机"
+      ],
+      "stop_condition": "参与者安全或同意条件不具备则暂停",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "用户任务、替代方案与情境材料"
+      ]
+    },
+    {
+      "step_id": "R03-S02",
+      "title": "定义当前要学习的问题",
+      "input_refs": [
+        "empathy_evidence",
+        "challenge"
+      ],
+      "depends_on": [
+        "R03-S01"
+      ],
+      "operation": "把需要和情境整合为具体挑战及可检验假设。",
+      "decision": "陈述含未证动机则保留假设标签。",
+      "output_key": "design_question",
+      "output_description": "人群、需要、情境和知识缺口",
+      "checks": [
+        "不把技术功能当需求"
+      ],
+      "stop_condition": "关键对象不清则回研究",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "需求反例及差异群体"
+      ]
+    },
+    {
+      "step_id": "R03-S03",
+      "title": "构思有差异的概念",
+      "input_refs": [
+        "design_question"
+      ],
+      "depends_on": [
+        "R03-S02"
+      ],
+      "operation": "发散候选再以挑战和约束聚焦，不在生成期只支持首选。",
+      "decision": "候选仅外形变体时寻找不同交互或作用原理。",
+      "output_key": "idea_set",
+      "output_description": "概念差异与假设",
+      "checks": [
+        "保留非首选路线"
+      ],
+      "stop_condition": "明显危险方向排除",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "同任务不同交互与产品原理"
+      ]
+    },
+    {
+      "step_id": "R03-S04",
+      "title": "制作能回答问题的原型",
+      "input_refs": [
+        "idea_set",
+        "research_material"
+      ],
+      "depends_on": [
+        "R03-S03"
+      ],
+      "operation": "选择保真度与形式，只实现学习所需部分。",
+      "decision": "外观原型不能用于推断承载或寿命。",
+      "output_key": "prototype_plan",
+      "output_description": "原型版本、学习目标和测试任务",
+      "checks": [
+        "形式对应假设"
+      ],
+      "stop_condition": "危险功能不实作则采用安全模拟",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "适合目标的原型与测试方法"
+      ]
+    },
+    {
+      "step_id": "R03-S05",
+      "title": "测试并迭代理解",
+      "input_refs": [
+        "prototype_plan",
+        "design_question"
+      ],
+      "depends_on": [
+        "R03-S04"
+      ],
+      "operation": "实际执行与计划分开保存，依据行为和反馈调整问题或概念。",
+      "decision": "出现反证时返回相应模式；未执行则只有计划。",
+      "output_key": "iteration_record",
+      "output_description": "反馈、反证、设计改变和未解问题",
+      "checks": [
+        "不把赞美当行为验证"
+      ],
+      "stop_condition": "无实际参与者不报测试结果",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "后续性能和使用确认要求"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "iteration_record",
+      "label": "设计思维学习记录",
+      "required_fields": [
+        "participants_scope",
+        "hypotheses",
+        "prototype_ref",
+        "observations",
+        "changes",
+        "unknowns"
+      ],
+      "interpretation": "反映特定情境的学习，不代表市场或工程普遍成立"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R08",
+      "relation": "requires",
+      "binding": "现场证据→理解活动",
+      "condition": "进入用户研究"
+    },
+    {
+      "target_research_id": "R44",
+      "relation": "parallel",
+      "binding": "假设→原型计划",
+      "condition": "需要低成本学习"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "概念→工程验证和用途确认",
+      "condition": "关键假设需实证"
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "Stanford d.school",
+      "authors": [
+        "Scott Doorley",
+        "Sarah Holcomb",
+        "Perry Klebahn",
+        "Kathryn Segovia",
+        "Jeremy Utley"
+      ],
+      "title": "Design Thinking Bootleg",
+      "url": "https://dschool.stanford.edu/tools/design-thinking-bootleg",
+      "locator": "How does it work? / Credit / License",
+      "read_scope": "官方介绍、五模式、作者与许可说明已读；未逐卡核读",
+      "supports": [
+        "五模式、灵活起点、资源作者及许可"
+      ],
+      "evidence_note": "工具被组织为同理、定义、构思、原型与测试模式，可按学习需要选择起点。",
+      "rights": "网页标CC BY-NC-SA 4.0；本卡只链接和原创概述，不复制卡片、图片或逐项原文",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "无用户材料",
+      "expected": "输出研究与原型计划，不合成反馈"
+    },
+    {
+      "scenario": "外观样模被要求证明强度",
+      "expected": "拒绝该推断并要求工程测试"
+    },
+    {
+      "scenario": "测试否定挑战",
+      "expected": "返回定义而不是只改外观"
+    }
+  ],
+  "search_terms": [
+    "设计思维",
+    "同理",
+    "原型",
+    "Stanford",
+    "五模式"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项第一方检索核读、原创释义和平台操作适配"
+    }
+  ]
+}

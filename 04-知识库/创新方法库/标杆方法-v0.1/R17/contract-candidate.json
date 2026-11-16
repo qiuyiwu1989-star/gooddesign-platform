@@ -1,0 +1,311 @@
+{
+  "additional_semantic_rules": [
+    {
+      "action": "blocked",
+      "id": "candidate_contains_unknown_compatibility",
+      "rule": "候选组合不得包含任何状态为unknown的已登记配对"
+    }
+  ],
+  "artifact_type": "ConceptSet",
+  "contract_version": "0.3.0-candidate.1",
+  "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。",
+  "implementation_scope": "concept_research_and_planning_only",
+  "input_bindings": {
+    "conditions": "artifact:ProblemBrief.payload.conditions",
+    "functions": "artifact:FunctionModel.payload.functions",
+    "options": "task.known_options",
+    "task": "artifact:ProblemBrief"
+  },
+  "next": [
+    "R36"
+  ],
+  "purpose": "从子功能选项组合候选概念",
+  "requires": [
+    "ProblemBrief",
+    "FunctionModel"
+  ],
+  "research_id": "R17",
+  "schema": {
+    "additionalProperties": false,
+    "properties": {
+      "artifact_id": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+        "type": "string"
+      },
+      "conditions": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "evidence_refs": {
+              "items": {
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+                "type": "string"
+              },
+              "maxItems": 200,
+              "minItems": 0,
+              "type": "array"
+            },
+            "id": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "fact",
+                "assumption",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            "text": {
+              "maxLength": 6000,
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "text",
+            "kind",
+            "evidence_refs"
+          ],
+          "type": "object"
+        },
+        "maxItems": 200,
+        "minItems": 0,
+        "type": "array"
+      },
+      "evidence_refs": {
+        "items": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+          "type": "string"
+        },
+        "maxItems": 200,
+        "minItems": 0,
+        "type": "array"
+      },
+      "payload": {
+        "additionalProperties": false,
+        "properties": {
+          "combinations": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+                  "type": "string"
+                },
+                "option_ids": {
+                  "items": {
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+                    "type": "string"
+                  },
+                  "maxItems": 200,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "reason": {
+                  "maxLength": 6000,
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "candidate",
+                    "excluded",
+                    "unknown"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "option_ids",
+                "status",
+                "reason"
+              ],
+              "type": "object"
+            },
+            "maxItems": 200,
+            "minItems": 1,
+            "type": "array"
+          },
+          "compatibility": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "evidence_refs": {
+                  "items": {
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+                    "type": "string"
+                  },
+                  "maxItems": 200,
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "option_ids": {
+                  "items": {
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+                    "type": "string"
+                  },
+                  "maxItems": 200,
+                  "minItems": 2,
+                  "type": "array"
+                },
+                "reason": {
+                  "maxLength": 6000,
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "compatible",
+                    "incompatible",
+                    "unknown"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "option_ids",
+                "status",
+                "reason",
+                "evidence_refs"
+              ],
+              "type": "object"
+            },
+            "maxItems": 200,
+            "minItems": 0,
+            "type": "array"
+          },
+          "function_ids": {
+            "items": {
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+              "type": "string"
+            },
+            "maxItems": 200,
+            "minItems": 1,
+            "type": "array"
+          },
+          "options": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "conditions": {
+                  "items": {
+                    "maxLength": 6000,
+                    "minLength": 1,
+                    "pattern": "\\S",
+                    "type": "string"
+                  },
+                  "maxItems": 200,
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "evidence_refs": {
+                  "items": {
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+                    "type": "string"
+                  },
+                  "maxItems": 200,
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "function_id": {
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+                  "type": "string"
+                },
+                "id": {
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+                  "type": "string"
+                },
+                "principle": {
+                  "maxLength": 6000,
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "function_id",
+                "principle",
+                "conditions",
+                "evidence_refs"
+              ],
+              "type": "object"
+            },
+            "maxItems": 200,
+            "minItems": 1,
+            "type": "array"
+          },
+          "unknowns": {
+            "items": {
+              "maxLength": 6000,
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            "maxItems": 200,
+            "minItems": 0,
+            "type": "array"
+          }
+        },
+        "required": [
+          "function_ids",
+          "options",
+          "combinations",
+          "compatibility",
+          "unknowns"
+        ],
+        "type": "object"
+      },
+      "revision": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+        "type": "string"
+      },
+      "scope": {
+        "maxLength": 6000,
+        "minLength": 1,
+        "pattern": "\\S",
+        "type": "string"
+      },
+      "task_id": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+        "type": "string"
+      },
+      "task_revision": {
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$",
+        "type": "string"
+      },
+      "type": {
+        "enum": [
+          "ConceptSet"
+        ],
+        "type": "string"
+      }
+    },
+    "required": [
+      "artifact_id",
+      "revision",
+      "task_id",
+      "task_revision",
+      "type",
+      "scope",
+      "conditions",
+      "evidence_refs",
+      "payload"
+    ],
+    "type": "object"
+  },
+  "source_content_sha256": "c0195c0ce63e28b6eab07d6007533913350aade08c33d040534650bff0bd23a4",
+  "source_content_version": "0.1.0",
+  "source_contract_sha256": "da3ed64e64ca5a7c7a853a7107390f2c9122fe4fc8f428a0fad036046acdb69d",
+  "source_method_id": "IM-ML-017",
+  "stage": "generate",
+  "status": "candidate_not_frozen_not_production",
+  "stop": "成对相容不代表整体可行；矛盾或条件未知要保留。"
+}

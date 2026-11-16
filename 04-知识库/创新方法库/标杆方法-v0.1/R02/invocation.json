@@ -1,0 +1,54 @@
+{
+  "contract_ref": null,
+  "engine_stages": [
+    "S1",
+    "S2",
+    "S6",
+    "S7",
+    "S8",
+    "S9"
+  ],
+  "existing_mcp_tools": [
+    "method_get"
+  ],
+  "forbidden_operations": [
+    "method_run_submit",
+    "strict_artifact_claim"
+  ],
+  "host_operations": [
+    "guided_elicitation",
+    "artifact_draft",
+    "human_review",
+    "feedback_record"
+  ],
+  "limitations": [
+    "仅引导；没有严格执行契约或生产求解器"
+  ],
+  "logical_outputs": [
+    "ResearchPlan"
+  ],
+  "primary_capability": "process_orchestration",
+  "public_authorized": false,
+  "required_inputs": [
+    {
+      "description": "原始委托、受影响者、现有方案和未知",
+      "key": "challenge",
+      "label": "初始挑战",
+      "missing_action": "ask_or_stop",
+      "required": true,
+      "type": "object"
+    },
+    {
+      "description": "可接触人群、现场记录、原型与资源",
+      "key": "evidence_access",
+      "label": "研究与试验条件",
+      "missing_action": "ask_or_stop",
+      "required": true,
+      "type": "object"
+    }
+  ],
+  "research_id": "R02",
+  "schema_version": "method-invocation-0.1",
+  "skill_level": "S1",
+  "training_authorized": false
+}

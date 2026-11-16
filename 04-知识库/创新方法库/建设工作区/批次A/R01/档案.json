@@ -1,0 +1,278 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R01",
+  "method_id": "IM-ML-001",
+  "version": "0.1.0",
+  "name": "系统化工程设计",
+  "english_name": "Systematic Engineering Design",
+  "kind": "framework",
+  "category": "G全流程规划与创新管理",
+  "lineage": [
+    "系统化工程设计",
+    "VDI 2221",
+    "Pahl–Beitz"
+  ],
+  "aliases": [
+    "系统设计方法",
+    "系统化设计"
+  ],
+  "summary": "把技术产品从任务澄清、功能原理到实体和详细设计组织成可回返、有阶段产物的开发过程。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "系统化工程设计是设计工作的组织方法族，不是一条自动产生最优产品的算法。本档以Pahl–Beitz《Engineering Design: A Systematic Approach》第二版的公开书目结构及VDI 2221 Blatt 1:2019-11的公开范围为原典入口。两者在学术传统上相关，但不可把教材四阶段名称当成2019版VDI标准逐字流程。此卡提炼面向实体产品的阶段产物与回返条件，是平台适配。",
+    "problem": "工程团队常在需求模糊时直接画零件，然后在装配或测试阶段才发现必要功能缺失。另一个极端是一直讨论概念，没有把作用原理变成空间布局、载荷路径、材料和工艺。系统化设计要使“为什么需要这个产品—必须完成什么作用—靠什么原理—如何实现”逐层连贯，记录选择和淘汰理由。它不替代具体学科的计算，也不要求简单任务复制全部文档。",
+    "principle": "其核心是由抽象到具体逐步承诺，并在每一层保留替代方案。任务澄清形成要求；概念设计研究功能和工作原理；实体设计形成结构布局并协调性能、空间与制造；详细设计给出足以制造、检验和使用的定义。前一层限制后一层，但后续发现矛盾可以返回。阶段不是日历上的四块固定时间，若一个接口仍未知，就不能因进度表到期而把它写成确定事实。结构化搜索与评价分别对应发散和收敛。",
+    "applicability": "适合新技术产品、复杂改型和多专业交叉研发，尤其适合存在若干原理路线、要求和制造条件尚需逐步协调的任务。已有成熟零件仅需校核一个尺寸时，可裁剪到要求、计算和确认活动，不必重跑概念探索。必须至少知道处理对象、预期作用与不可改变条件；只有市场口号时先做问题定义。安全或法规关键任务需相应专业流程，不能以本框架替代合规工作。",
+    "interpretation": "好的阶段包不以图纸数量衡量，而看跨层追溯：每个必要功能能回到要求，每个重要结构承担明确作用，每项关键要求有确认方式，主要取舍和未知有记录。概念方案“可讨论”不等于实体方案“可制造”，详细图纸完整也不等于实际性能通过。若只有一个概念，应说明它是约束决定还是搜索不足；未知不得通过默认分值掩盖。",
+    "example": "教学演示：为实验室设计可重复装卸的试样夹具，所有任务条件均是待确认教学假设。步骤1的任务书将‘好用’拆成定位、保持、释放、操作空间和不损伤试样，分别列验收证据；载荷与允许表面压痕仍空缺。步骤2产出功能结构，显示保持力须经接触面作用于试样，同时释放动作不能破坏基准。步骤3产出螺旋夹紧与杠杆锁止两个概念表，逐项写物理原理、依赖和待算项，不以外观草图代替概念。步骤4产出两种实体布局的作用路径与取样空间包络，发现杠杆手柄侵入取样路径，返回概念步骤比较改变手柄位置或原理，记录回返原因。步骤5只输出细化任务及工件几何、材料、基准和检验要求，不发布制造图。若载荷补证改变了接触需求，任务书、概念表与布局都应重新审查。完整产物是带版本的设计包，仍非已验证夹具。",
+    "pitfalls": "一是把阶段做成单向审批，后续发现接口问题也不允许返回；正确做法是记录影响范围后迭代。二是概念未澄清就靠CAD精细化制造“已成熟”的印象；应先说明原理、要求和关键未知。三是把标准框架当现成设计答案；应明确每阶段具体调用功能、机构、材料、制造或试验方法。反例：已经确认构型的单根轴强度校核，不应机械套出几十种全新产品概念。",
+    "validation": "执行质量可检查要求—功能—原理—结构—检验的链是否断裂，所比较方案是否真正存在原理差异，接口与假设是否受控。工程有效性仍需按目标建立载荷、寿命、制造和使用验证，记录仿真模型、材料数据与原始测量。没有求解工具时，只输出模型需求和验证计划；不宣称结构达标。一次教学样例可说明流程，但不能证明方法提高研发成功率。",
+    "adaptation": "公开VDI摘要支持该指南以目标、活动和工作成果组织跨学科产品开发；教材目录支持概念、实体及详细设计的区分。本卡的输入键、五步划分、夹具演示、产物检查和内容匹配规则均由平台编写，不是原典逐字操作规定。正式用于标准符合性时，应取得并核读授权版本。",
+    "gaps": "尚未取得VDI标准全部条文，也未核读教材全书；阶段细则暂按公开概念与工程解释适配。后续应补概念设计和实体设计的相关章节，建立一个有真实设计记录的案例，并验证裁剪规则是否适用于目标团队。当前不注册为通用自动研发流程。"
+  },
+  "inputs": [
+    {
+      "key": "task_brief",
+      "label": "任务简报",
+      "type": "object",
+      "required": true,
+      "description": "对象、预期作用、用户、边界和硬约束",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "design_resources",
+      "label": "设计资源",
+      "type": "object",
+      "required": true,
+      "description": "现有知识、制造条件、时间及待补输入",
+      "missing_action": "ask_or_stop"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R01-S01",
+      "title": "澄清任务并固定要求口径",
+      "input_refs": [
+        "task_brief",
+        "design_resources"
+      ],
+      "depends_on": [],
+      "operation": "整理必须满足、希望改善和未知事项；把指定构型与功能目标分开。",
+      "decision": "对象和目标明确才进入功能层，否则追问。",
+      "output_key": "requirements_baseline",
+      "output_description": "要求、依据、未知与决策层级",
+      "checks": [
+        "不以愿望代替可确认要求"
+      ],
+      "stop_condition": "对象或主要作用未知则停止",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查目标产品使用工况与已有需求证据"
+      ]
+    },
+    {
+      "step_id": "R01-S02",
+      "title": "建立功能与工作原理候选",
+      "input_refs": [
+        "requirements_baseline"
+      ],
+      "depends_on": [
+        "R01-S01"
+      ],
+      "operation": "分解必要功能，列可替代原理并说明接口。",
+      "decision": "候选违反硬约束则排除；只有一条时解释原因。",
+      "output_key": "principle_concepts",
+      "output_description": "功能到原理解法映射",
+      "checks": [
+        "不把部件名称当功能"
+      ],
+      "stop_condition": "必要功能未覆盖则回任务澄清",
+      "source_refs": [
+        "S02"
+      ],
+      "knowledge_queries": [
+        "按功能检索原理、作用条件及失败边界"
+      ]
+    },
+    {
+      "step_id": "R01-S03",
+      "title": "形成实体布局并核对取舍",
+      "input_refs": [
+        "principle_concepts",
+        "design_resources"
+      ],
+      "depends_on": [
+        "R01-S02"
+      ],
+      "operation": "组织几何布局、载荷路径、材料和制造方向，逐项暴露耦合。",
+      "decision": "原理不能满足空间/工艺条件则回概念层。",
+      "output_key": "embodiment_options",
+      "output_description": "结构布局、接口、主要代价和未证条件",
+      "checks": [
+        "结构承担的功能明确"
+      ],
+      "stop_condition": "关键接口冲突未解决则不冻结布局",
+      "source_refs": [
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查相似机制的装配、载荷和制造限制"
+      ]
+    },
+    {
+      "step_id": "R01-S04",
+      "title": "细化定义与验证安排",
+      "input_refs": [
+        "embodiment_options",
+        "requirements_baseline"
+      ],
+      "depends_on": [
+        "R01-S03"
+      ],
+      "operation": "对具备依据的方案定义制造/装配/检验信息，缺依据项保持待定。",
+      "decision": "输入不足不能发布定型文件。",
+      "output_key": "detail_package",
+      "output_description": "要求追溯、制造定义及检验计划",
+      "checks": [
+        "不把图纸完成当性能验证"
+      ],
+      "stop_condition": "缺关键工况或尺寸则限概念交付",
+      "source_refs": [
+        "S02"
+      ],
+      "knowledge_queries": [
+        "查适用制造工艺与检测方法"
+      ]
+    },
+    {
+      "step_id": "R01-S05",
+      "title": "审查并决定冻结或返回",
+      "input_refs": [
+        "detail_package"
+      ],
+      "depends_on": [
+        "R01-S04"
+      ],
+      "operation": "核对跨层追溯，列出需要回返的要求、原理或结构。",
+      "decision": "关键假设未关闭则返回，具备阶段证据才形成基线。",
+      "output_key": "design_stage_record",
+      "output_description": "阶段结论、取舍、基线和回返任务",
+      "checks": [
+        "保留淘汰理由和未知"
+      ],
+      "stop_condition": "未经验证不得宣称达到工程目标",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "核项目证据是否覆盖当前目标"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "design_stage_record",
+      "label": "系统化设计阶段包",
+      "required_fields": [
+        "requirements",
+        "functions",
+        "principles",
+        "embodiment",
+        "verification_plan",
+        "unknowns"
+      ],
+      "interpretation": "说明设计逻辑和成熟范围，不证明实物达标"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R48",
+      "relation": "requires",
+      "binding": "问题简报→任务输入",
+      "condition": "对象目标须可辨"
+    },
+    {
+      "target_research_id": "R14",
+      "relation": "precedes",
+      "binding": "要求→功能模型",
+      "condition": "进入概念设计"
+    },
+    {
+      "target_research_id": "R42",
+      "relation": "precedes",
+      "binding": "要求和结构定义→验证计划",
+      "condition": "需要确认工程结果"
+    }
+  ],
+  "sources": [
+    {
+      "publisher": "VDI",
+      "authors": [
+        "VDI"
+      ],
+      "title": "VDI 2221 Blatt 1:2019-11",
+      "url": "https://www.vdi.de/en/home/vdi-standards/details/vdi-2221-blatt-1-design-of-technical-products-and-systems-model-of-product-design",
+      "locator": "Abstract",
+      "read_scope": "官方公开摘要与版本信息；未读付费全文",
+      "supports": [
+        "技术产品跨学科开发的目标、活动与成果"
+      ],
+      "evidence_note": "公开范围确认该指南用于多类技术产品与系统的开发组织。",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    },
+    {
+      "publisher": "Springer",
+      "authors": [
+        "Gerhard Pahl",
+        "Wolfgang Beitz"
+      ],
+      "title": "Engineering Design: A Systematic Approach, 2nd edition",
+      "url": "https://link.springer.com/book/10.1007/978-1-4471-3581-4",
+      "locator": "About this book；目录Product Planning / Conceptual / Embodiment Design",
+      "read_scope": "出版社介绍、目录与版次信息，非全书",
+      "supports": [
+        "由任务到概念、实体和详细定义的经典设计传统"
+      ],
+      "evidence_note": "目录显示任务澄清、概念设计、实体设计等主题；本卡不冒称教材原文流程。",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接及原创释义；未复制外部全文或图表，第三方权利保留"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "任务清晰但工况未知",
+      "expected": "形成阶段计划与未知清单，不发布制造达标结论"
+    },
+    {
+      "scenario": "只有市场口号",
+      "expected": "返回问题定义"
+    },
+    {
+      "scenario": "简单尺寸校核",
+      "expected": "裁剪到所需分析，不强制全链"
+    }
+  ],
+  "search_terms": [
+    "系统化设计",
+    "VDI2221",
+    "Pahl Beitz",
+    "概念设计",
+    "实体设计"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项第一方检索核读、原创释义和平台操作适配"
+    }
+  ]
+}

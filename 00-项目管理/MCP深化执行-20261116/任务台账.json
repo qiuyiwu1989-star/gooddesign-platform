@@ -1,0 +1,256 @@
+{
+  "date": "2026-11-16",
+  "scope": "MCP可靠接入、知识读取、召回和三任务验收",
+  "tasks": [
+    {
+      "id": "T01",
+      "title": "生产基线与发布差异收编",
+      "priority": "P0",
+      "dependencies": [],
+      "work": "核对线上9工具、release、回滚与本地三模块指纹；建立可重建最小清单，逐文件提交，不混入并行开发。",
+      "acceptance": "线上与本地来源差异逐项解释；不暴露原件/凭据；发布清单可重建。",
+      "boundary": "先读核验，不切换服务",
+      "status": "captured_overlay_committed_full_base_provenance_limited",
+      "owner": "mcp_baseline + 主Agent",
+      "evidence": [
+        "T01-生产基线核对.md",
+        "上线交付与未结项.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T02",
+      "title": "认证诊断与请求编号",
+      "priority": "P0",
+      "dependencies": [
+        "T01"
+      ],
+      "work": "鉴权失败生成请求编号；服务端记录原因类别与时间，不存Bearer/完整头/正文；对外保持安全通用响应，管理员按编号查原因。",
+      "acceptance": "覆盖未知、撤销、过期、配置不可读、无头、正确凭据；无密钥日志；日志失败不放行。",
+      "boundary": "实现与独立负例复核后部署",
+      "status": "implemented_independently_tested_deployed",
+      "owner": "mcp_auth_diag + 主Agent集成",
+      "evidence": [
+        "首批执行交付.md",
+        "tests/test_mcp_auth_integration.py"
+      ],
+      "completed": true
+    },
+    {
+      "id": "T03",
+      "title": "密钥交付与轮换闭环",
+      "priority": "P0",
+      "dependencies": [
+        "T01"
+      ],
+      "work": "交付状态与密钥有效状态分开；保留安全渠道交付、客户更新、客户验收回执，不重复保存明文；撤销旧钥不自动等客户迁移成功。",
+      "acceptance": "可见待交付/待客户更新/待验收/已恢复；暴露旧钥不恢复；管理员记录有主体与时间。",
+      "boundary": "客户归属和交付回执需要实际配合",
+      "status": "ledger_implemented_customer_receipts_pending",
+      "owner": "mcp_baseline",
+      "evidence": [
+        "T03-密钥交付验收流程.md",
+        "上线交付与未结项.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T04",
+      "title": "公网客户端验收工具",
+      "priority": "P0",
+      "dependencies": [
+        "T02"
+      ],
+      "work": "提供客户本机可运行检查：TLS/跳转、初始化、工具列表、能力、字段及证据读取；保留请求编号，输出脱敏报告。",
+      "acceptance": "不向其他域转发凭据；不打印token；区分网络/401/协议/工具错；Windows及macOS至少声明实际测试范围。",
+      "boundary": "客户本机验收需客户执行，不用服务器测试代替",
+      "status": "client_implemented_linux_verified_customer_windows_pending",
+      "owner": "mcp_client_check",
+      "evidence": [
+        "scripts/check_mcp_connection.py",
+        "首批执行交付.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T05",
+      "title": "生产冒烟与回滚演练",
+      "priority": "P0",
+      "dependencies": [
+        "T01",
+        "T04"
+      ],
+      "work": "独立监测凭据受控管理；准备人工可跑只读检查及阈值；发布前后核工具schema与数据读取，回滚演练优先隔离环境。",
+      "acceptance": "故障通知可定位；凭据失效不等业务服务故障；演练不撤销客户钥；保留前后版本。",
+      "boundary": "不创建定时任务或发通知直到具体监测安排明确",
+      "status": "isolated_full_http_rollback_and_restore_passed_monitoring_pending",
+      "owner": "主Agent待执行；未委派外部人员",
+      "evidence": [
+        "上线交付与未结项.md",
+        "回滚演练与客户验收交接.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T06",
+      "title": "统一质量与能力信封",
+      "priority": "P1",
+      "dependencies": [
+        "T01"
+      ],
+      "work": "统一版本、内容性质、证据状态、核读范围、审核状态、目标适用性和缺口；旧接口字段保持兼容；未知不默认false/已审。",
+      "acceptance": "九工具逐项契约对照；legacy/current/frozen范围清楚；服务版本与工具数量真实。",
+      "boundary": "先加字段、兼容回归，再小版本发布",
+      "status": "additive_envelope_deployed_semantic_review_not_asserted",
+      "owner": "主Agent待执行；未委派外部人员",
+      "evidence": [
+        "上线交付与未结项.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T07",
+      "title": "证据包与快照完整性强化",
+      "priority": "P1",
+      "dependencies": [
+        "T01"
+      ],
+      "work": "扩充原件/块/引文损坏、来源移交、缺证、跨版本、并发发布、快照篡改与失效测试；不把校验和当签名。",
+      "acceptance": "损坏拒绝且错误不泄露内部路径；固定版本分页不漂移；缺证不冒通过；错误分类可追溯。",
+      "boundary": "线上接口已存在，此任务补验证与发现修复",
+      "status": "integrity_fixed_tested_deployed",
+      "owner": "主Agent待执行；未委派外部人员",
+      "evidence": [
+        "上线交付与未结项.md"
+      ],
+      "completed": true
+    },
+    {
+      "id": "T08",
+      "title": "封存查询与候选相关性集",
+      "priority": "P1",
+      "dependencies": [
+        "T01"
+      ],
+      "work": "针对割胶/齿轮/内腔抛光形成需求查询、改写、否定、无关和歧义题；隔离开发集，记录样题来源与标注依据。",
+      "acceptance": "开发集与封存集分开；目标节点不是唯一相关答案；记录相关/部分/无关/无法判断；标注冲突保留。",
+      "boundary": "独立领域审查未取得时明确AI研究评议",
+      "status": "query_set_and_host_labels_complete_independent_validation_limited",
+      "owner": "主Agent待执行；未委派外部人员",
+      "evidence": [
+        "上线交付与未结项.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T09",
+      "title": "可解释扩展召回验收",
+      "priority": "P1",
+      "dependencies": [
+        "T07",
+        "T08"
+      ],
+      "work": "冻结当前六组扩展规则，以封存集比较逐字/扩展；逐条检查新增候选，保留逐字优先和可选通道。",
+      "acceptance": "报告Recall@K及有标签候选Precision@K、增量误召回、无覆盖率和范围；不把开发5/16当独立成绩；未通过不上默认。",
+      "boundary": "只读候选，不新增事实或专家结论",
+      "status": "evaluated_not_approved_for_default",
+      "owner": "主Agent待执行；未委派外部人员",
+      "evidence": [
+        "上线交付与未结项.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T10",
+      "title": "三任务端到端质量验收",
+      "priority": "P2",
+      "dependencies": [
+        "T04",
+        "T06",
+        "T09"
+      ],
+      "work": "同任务同资料比较发现→证据包→目标条件对照→方法调用→研究行动，保存版本和失败案例。",
+      "acceptance": "同时审找全/引对/解释/迁移边界/行动价值；客户、领域、工程验收分开；无资格不称专家级。",
+      "boundary": "需要真实需求与专业审查的环节单独留阻断，不伪造",
+      "status": "two_task_traces_passed_gear_evidence_gap",
+      "owner": "主Agent待执行；未委派外部人员",
+      "evidence": [
+        "上线交付与未结项.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T11",
+      "title": "统一方法资产版本",
+      "priority": "P1",
+      "dependencies": [
+        "T01",
+        "T06"
+      ],
+      "work": "梳理冻结库、ML021深化稿、ML029标杆及执行契约的版本映射，入口显式选择和声明，禁止静默混版。",
+      "acceptance": "有版本化schema、真实正反例与实际调用；明确未实现边界，不改原事实或专家状态。",
+      "boundary": "架构提案待实现，不代表线上能力。",
+      "status": "profiles_verified_deployed",
+      "owner": "主Agent待执行",
+      "evidence": [
+        "上线交付与未结项.md"
+      ],
+      "completed": true
+    },
+    {
+      "id": "T12",
+      "title": "案例机制经验包",
+      "priority": "P1",
+      "dependencies": [
+        "T06",
+        "T07"
+      ],
+      "work": "从唯一真源投影原问题、机制、取舍、前提、验证及失效边界，缺项明确；不由AI补造历史决策。",
+      "acceptance": "有版本化schema、真实正反例与实际调用；明确未实现边界，不改原事实或专家状态。",
+      "boundary": "架构提案待实现，不代表线上能力。",
+      "status": "bounded_mechanism_projection_deployed_cloud_gaps_open",
+      "owner": "主Agent待执行",
+      "evidence": [
+        "上线交付与未结项.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T13",
+      "title": "迁移对照与方法路由协议",
+      "priority": "P1",
+      "dependencies": [
+        "T09",
+        "T11",
+        "T12"
+      ],
+      "work": "绑定需求版本，逐项比对源与目标条件，路由给输入就绪、选法理由、产物交接和返回点；不冒工程许可。",
+      "acceptance": "有版本化schema、真实正反例与实际调用；明确未实现边界，不改原事实或专家状态。",
+      "boundary": "架构提案待实现，不代表线上能力。",
+      "status": "comparison_worksheet_deployed_semantic_routing_not_implemented",
+      "owner": "主Agent待执行",
+      "evidence": [
+        "上线交付与未结项.md"
+      ],
+      "completed": false
+    },
+    {
+      "id": "T14",
+      "title": "资源与模板客户端适配",
+      "priority": "P2",
+      "dependencies": [
+        "T06",
+        "T11"
+      ],
+      "work": "按实际客户端支持增加版本化Resources及用户可选Prompts，保留工具读取降级，继承服务端权限。",
+      "acceptance": "有版本化schema、真实正反例与实际调用；明确未实现边界，不改原事实或专家状态。",
+      "boundary": "架构提案待实现，不代表线上能力。",
+      "status": "resources_prompts_deployed_sdk_verified",
+      "owner": "主Agent待执行",
+      "evidence": [
+        "上线交付与未结项.md"
+      ],
+      "completed": true
+    }
+  ]
+}

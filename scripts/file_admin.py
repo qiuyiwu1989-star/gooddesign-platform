@@ -177,6 +177,12 @@ class Handler(BaseHTTPRequestHandler):
    self.guard();u=urllib.parse.urlsplit(self.path);q=urllib.parse.parse_qs(u.query);one=lambda k,d='':q.get(k,[d])[0];store=self.server.store
    if u.path=='/api/health':self.send(200,dict(service='gooddesign-archive-pipeline',version='1.0.0',research_policy=research.POLICY,ocr_available=(ROOT/'.runtime/vision-ocr').exists(),watcher_running=bool(getattr(store,'watch_thread',None)and store.watch_thread.is_alive())));return
    if u.path=='/favicon.ico':self.send(204,b'','image/x-icon');return
+   if u.path.startswith('/inno/portal/'):
+    from gooddesign_assets import content_type,path as gooddesign_path
+    name=u.path.rsplit('/',1)[-1]
+    try:target=gooddesign_path(name)
+    except ValueError:raise ValueError('设计资源不存在')
+    self.send(200,target.read_bytes(),content_type(name));return
    if u.path in ('/','/app.js','/style.css','/workflow.js','/workflow.css','/workspace.css','/workspace.js','/agent.js'):
     name={'/':'index.html','/app.js':'app.js','/style.css':'style.css','/workflow.js':'workflow.js','/workflow.css':'workflow.css','/workspace.css':'workspace.css','/workspace.js':'workspace.js','/agent.js':'agent.js'}[u.path];p=ROOT/'extensions/file-admin'/name;
     if u.path=='/':

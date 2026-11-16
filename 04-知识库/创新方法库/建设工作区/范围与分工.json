@@ -1,0 +1,2031 @@
+{
+  "version": "0.1.0",
+  "methods": [
+    {
+      "research_id": "R01",
+      "method_id": "IM-ML-001",
+      "name": "系统化工程设计",
+      "group": "A",
+      "research": {
+        "research_id": "R01",
+        "category": "A开发框架",
+        "name": "系统化工程设计",
+        "english_name": "Systematic Engineering Design",
+        "kind": "framework",
+        "priority": "P1",
+        "source_ids": [
+          "S01",
+          "S02"
+        ],
+        "recognition_basis": [
+          "标准",
+          "经典"
+        ],
+        "trigger": "需要组织实体产品从任务到详细设计",
+        "inputs_summary": "任务、约束、生命周期",
+        "procedure_summary": "澄清任务；概念设计；实体设计；详细设计并迭代",
+        "outputs_summary": "阶段成果及决策链",
+        "limitations": "框架不能替代机构计算或验证",
+        "execution_mode": "orchestrator",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R02",
+      "method_id": "IM-ML-002",
+      "name": "双钻",
+      "group": "A",
+      "research": {
+        "research_id": "R02",
+        "category": "A开发框架",
+        "name": "双钻",
+        "english_name": "Double Diamond",
+        "kind": "framework",
+        "priority": "P1",
+        "source_ids": [
+          "S03"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "问题模糊或过早锁定方案",
+        "inputs_summary": "初始挑战、利益相关者",
+        "procedure_summary": "发现与定义问题；开发和交付方案，允许回返",
+        "outputs_summary": "问题定义与候选方案",
+        "limitations": "四阶段不是线性审批流程",
+        "execution_mode": "orchestrator",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R03",
+      "method_id": "IM-ML-003",
+      "name": "设计思维",
+      "group": "A",
+      "research": {
+        "research_id": "R03",
+        "category": "A开发框架",
+        "name": "设计思维",
+        "english_name": "Design Thinking",
+        "kind": "framework",
+        "priority": "P1",
+        "source_ids": [
+          "S04"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "用户体验与产品概念不清",
+        "inputs_summary": "用户接触、场景、初始挑战",
+        "procedure_summary": "同理、定义、构思、原型、测试",
+        "outputs_summary": "需求洞察及学习记录",
+        "limitations": "五模式不等于唯一标准流程；AI不能代替真实访谈",
+        "execution_mode": "human_research",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R04",
+      "method_id": "IM-ML-004",
+      "name": "系统工程",
+      "group": "A",
+      "research": {
+        "research_id": "R04",
+        "category": "A开发框架",
+        "name": "系统工程",
+        "english_name": "Systems Engineering",
+        "kind": "framework",
+        "priority": "P1",
+        "source_ids": [
+          "S05"
+        ],
+        "recognition_basis": [
+          "标准"
+        ],
+        "trigger": "多子系统、接口与生命周期复杂",
+        "inputs_summary": "系统目标、利益相关者、要求",
+        "procedure_summary": "管理需求、架构、接口、集成与验证过程",
+        "outputs_summary": "系统模型和可追溯要求",
+        "limitations": "15288是过程框架，不规定唯一设计方法",
+        "execution_mode": "orchestrator",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R05",
+      "method_id": "IM-ML-005",
+      "name": "机电系统V模型",
+      "group": "A",
+      "research": {
+        "research_id": "R05",
+        "category": "A开发框架",
+        "name": "机电系统V模型",
+        "english_name": "V-model for Mechatronic Systems",
+        "kind": "framework",
+        "priority": "P1",
+        "source_ids": [
+          "S06"
+        ],
+        "recognition_basis": [
+          "标准"
+        ],
+        "trigger": "机械、电气、控制需联合设计",
+        "inputs_summary": "系统要求、学科边界、集成条件",
+        "procedure_summary": "跨学科分解与设计；集成并对应层级验证",
+        "outputs_summary": "层级设计和集成验证计划",
+        "limitations": "V模型不是瀑布式一次完成；具体工具另选",
+        "execution_mode": "orchestrator",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R06",
+      "method_id": "IM-ML-006",
+      "name": "阶段门",
+      "group": "A",
+      "research": {
+        "research_id": "R06",
+        "category": "A开发框架",
+        "name": "阶段门",
+        "english_name": "Stage-Gate",
+        "kind": "framework",
+        "priority": "P2",
+        "source_ids": [
+          "S07"
+        ],
+        "recognition_basis": [
+          "专业机构",
+          "专有体系"
+        ],
+        "trigger": "研发投资和推进需分阶段决策",
+        "inputs_summary": "市场、技术、资源与风险证据",
+        "procedure_summary": "按阶段形成证据；关口决定继续、调整或终止",
+        "outputs_summary": "阶段决策与资源配置",
+        "limitations": "不负责生成具体机械原理；采用商标和原图需核权利",
+        "execution_mode": "human_decision",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R07",
+      "method_id": "IM-ML-007",
+      "name": "六西格玛设计",
+      "group": "A",
+      "research": {
+        "research_id": "R07",
+        "category": "A开发框架",
+        "name": "六西格玛设计",
+        "english_name": "DFSS / DMADV",
+        "kind": "framework",
+        "priority": "P2",
+        "source_ids": [
+          "S08"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "新产品需从设计阶段满足质量目标",
+        "inputs_summary": "顾客需求、质量指标、数据计划",
+        "procedure_summary": "定义、测量、分析、设计、验证",
+        "outputs_summary": "质量目标及设计验证包",
+        "limitations": "DFSS有多种路线；不与改善现有过程的DMAIC混用",
+        "execution_mode": "orchestrator",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R08",
+      "method_id": "IM-ML-008",
+      "name": "用户观察与需求证据化",
+      "group": "A",
+      "research": {
+        "research_id": "R08",
+        "category": "B需求与定义",
+        "name": "用户观察与需求证据化",
+        "english_name": "Field Research / Voice of Customer",
+        "kind": "method_family",
+        "priority": "P0",
+        "source_ids": [
+          "S04",
+          "S11"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "愿望与真实使用困难混杂",
+        "inputs_summary": "观察记录、访谈原话、使用场景",
+        "procedure_summary": "采集行为和原话；分离事实与解释；归纳需求",
+        "outputs_summary": "需求证据及问题简报",
+        "limitations": "无真实访谈只能输出研究计划；不编造用户痛点",
+        "execution_mode": "human_research",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R09",
+      "method_id": "IM-ML-009",
+      "name": "待办任务理论",
+      "group": "A",
+      "research": {
+        "research_id": "R09",
+        "category": "B需求与定义",
+        "name": "待办任务理论",
+        "english_name": "Jobs to Be Done",
+        "kind": "framework",
+        "priority": "P1",
+        "source_ids": [
+          "S09"
+        ],
+        "recognition_basis": [
+          "经典",
+          "专业机构"
+        ],
+        "trigger": "需要解释用户何时为何选择替代方案",
+        "inputs_summary": "情境、选择事件、替代品、期望进步",
+        "procedure_summary": "分析情境与动机；描述功能及社会情感进步",
+        "outputs_summary": "任务陈述和研究假设",
+        "limitations": "不把JTBD等同功能清单；不混同专有ODI算法",
+        "execution_mode": "llm_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R10",
+      "method_id": "IM-ML-010",
+      "name": "领先用户法",
+      "group": "A",
+      "research": {
+        "research_id": "R10",
+        "category": "B需求与定义",
+        "name": "领先用户法",
+        "english_name": "Lead User Method",
+        "kind": "method",
+        "priority": "P1",
+        "source_ids": [
+          "S10"
+        ],
+        "recognition_basis": [
+          "经典"
+        ],
+        "trigger": "常规用户需求难以引导突破",
+        "inputs_summary": "趋势、领域网络、领先需求",
+        "procedure_summary": "寻找提前遭遇需求且收益显著的用户；共同开发",
+        "outputs_summary": "前沿需求与概念候选",
+        "limitations": "领先用户不等于大客户或意见领袖；需后续市场验证",
+        "execution_mode": "human_research",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R11",
+      "method_id": "IM-ML-011",
+      "name": "Kano需求分类",
+      "group": "A",
+      "research": {
+        "research_id": "R11",
+        "category": "B需求与定义",
+        "name": "Kano需求分类",
+        "english_name": "Kano Model",
+        "kind": "tool",
+        "priority": "P1",
+        "source_ids": [
+          "S11"
+        ],
+        "recognition_basis": [
+          "专业机构",
+          "经典"
+        ],
+        "trigger": "需求很多而满意度影响不同",
+        "inputs_summary": "目标用户、需求项、配对问卷",
+        "procedure_summary": "采集具备/不具备特性的反应；分类并解释分群",
+        "outputs_summary": "需求类别及不确定性",
+        "limitations": "不得由模型直接猜分类；缺问卷仅为假设",
+        "execution_mode": "human_research",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R12",
+      "method_id": "IM-ML-012",
+      "name": "质量功能展开",
+      "group": "A",
+      "research": {
+        "research_id": "R12",
+        "category": "B需求与定义",
+        "name": "质量功能展开",
+        "english_name": "Quality Function Deployment / QFD",
+        "kind": "method",
+        "priority": "P0",
+        "source_ids": [
+          "S12"
+        ],
+        "recognition_basis": [
+          "标准"
+        ],
+        "trigger": "用户语言需要转成工程参数",
+        "inputs_summary": "有证据需求、重要度、工程特性",
+        "procedure_summary": "建立需求与技术响应关系并核对相关性",
+        "outputs_summary": "需求到指标映射",
+        "limitations": "质量屋是工具不是QFD全部；权重与关系须有依据",
+        "execution_mode": "llm_plus_calculation",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R13",
+      "method_id": "IM-ML-013",
+      "name": "人机工程与人本设计",
+      "group": "A",
+      "research": {
+        "research_id": "R13",
+        "category": "B需求与定义",
+        "name": "人机工程与人本设计",
+        "english_name": "Ergonomics / Human-centred Design",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S13",
+          "S14"
+        ],
+        "recognition_basis": [
+          "标准"
+        ],
+        "trigger": "操作、维护、可达性或交互存在问题",
+        "inputs_summary": "用户能力、任务、环境、人群数据",
+        "procedure_summary": "研究人与系统匹配；原型评估与迭代",
+        "outputs_summary": "操作要求和体验验证计划",
+        "limitations": "6385与9241-210适用范围不同；不能套用平均人体尺寸",
+        "execution_mode": "human_research",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R14",
+      "method_id": "IM-FA-001",
+      "name": "功能分解与接口分析",
+      "group": "A",
+      "research": {
+        "research_id": "R14",
+        "category": "C功能与概念",
+        "name": "功能分解与接口分析",
+        "english_name": "Functional Decomposition",
+        "kind": "method",
+        "priority": "P0",
+        "source_ids": [
+          "S15"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "需求尚未转成可替代的功能结构",
+        "inputs_summary": "问题简报、边界、要求",
+        "procedure_summary": "建立功能层级、输入输出和接口关系",
+        "outputs_summary": "功能结构与接口风险",
+        "limitations": "不同于部件清单；NASA功能分解与TRIZ功能模型不完全等同",
+        "execution_mode": "llm_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [
+          "IM-FA-001"
+        ],
+        "mapping_note": "仅建议映射；未修改现有方法目录/卡片或运行记录",
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R15",
+      "method_id": "IM-ML-015",
+      "name": "FAST功能逻辑分析",
+      "group": "A",
+      "research": {
+        "research_id": "R15",
+        "category": "C功能与概念",
+        "name": "FAST功能逻辑分析",
+        "english_name": "Function Analysis System Technique",
+        "kind": "tool",
+        "priority": "P2",
+        "source_ids": [
+          "S16"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "需梳理功能的为什么和如何",
+        "inputs_summary": "必要功能、边界与目标",
+        "procedure_summary": "组织功能逻辑关系并检查边界",
+        "outputs_summary": "FAST图",
+        "limitations": "不把时间流程图当FAST；指南正文尚待授权核读",
+        "execution_mode": "expert_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R16",
+      "method_id": "IM-ML-016",
+      "name": "根因分析",
+      "group": "A",
+      "research": {
+        "research_id": "R16",
+        "category": "C功能与概念",
+        "name": "根因分析",
+        "english_name": "Root Cause Analysis",
+        "kind": "method_family",
+        "priority": "P0",
+        "source_ids": [
+          "S17"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "已有故障或异常，需要定位原因",
+        "inputs_summary": "异常定义、时序、工况、测量",
+        "procedure_summary": "提出因果候选；通过证据或试验排除",
+        "outputs_summary": "因果假设、证据与验证任务",
+        "limitations": "五问和鱼骨图仅是工具；先后出现不证明因果",
+        "execution_mode": "llm_plus_measurement",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R17",
+      "method_id": "IM-ML-017",
+      "name": "形态学分析",
+      "group": "B",
+      "research": {
+        "research_id": "R17",
+        "category": "C功能与概念",
+        "name": "形态学分析",
+        "english_name": "Morphological Analysis",
+        "kind": "method",
+        "priority": "P0",
+        "source_ids": [
+          "S18",
+          "S02"
+        ],
+        "recognition_basis": [
+          "经典",
+          "专业机构"
+        ],
+        "trigger": "想系统产生不同原理组合",
+        "inputs_summary": "子功能、各自解法、接口约束",
+        "procedure_summary": "构建解法表；组合；交叉一致性筛选",
+        "outputs_summary": "可追溯的概念组合",
+        "limitations": "组合数量不等于创新质量；GMA与工程形态学表标记适配关系",
+        "execution_mode": "llm_plus_rules",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R18",
+      "method_id": "IM-ML-018",
+      "name": "仿生设计",
+      "group": "B",
+      "research": {
+        "research_id": "R18",
+        "category": "C功能与概念",
+        "name": "仿生设计",
+        "english_name": "Biomimetics / Biomimicry",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S19",
+          "S20"
+        ],
+        "recognition_basis": [
+          "标准",
+          "专业机构"
+        ],
+        "trigger": "常规方案受限，需探索自然机制",
+        "inputs_summary": "功能、环境、尺度、物理条件",
+        "procedure_summary": "功能生物化；找策略；抽象机制；迁移验证",
+        "outputs_summary": "生物策略到工程概念映射",
+        "limitations": "形似不等于机制迁移；尺度、材料和环境可能失配",
+        "execution_mode": "llm_plus_retrieval",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R19",
+      "method_id": "IM-ML-019",
+      "name": "设计启发式",
+      "group": "B",
+      "research": {
+        "research_id": "R19",
+        "category": "C功能与概念",
+        "name": "设计启发式",
+        "english_name": "Design Heuristics",
+        "kind": "tool_family",
+        "priority": "P2",
+        "source_ids": [
+          "S21"
+        ],
+        "recognition_basis": [
+          "研究",
+          "专有素材"
+        ],
+        "trigger": "概念单一，需要拓展变体",
+        "inputs_summary": "已有概念、设计边界",
+        "procedure_summary": "选择启发策略并形成有差异的概念",
+        "outputs_summary": "概念变体及改变理由",
+        "limitations": "研究支持不等于全球统一标准；77张卡片不默认可复制入库",
+        "execution_mode": "llm_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R20",
+      "method_id": "IM-ML-020",
+      "name": "C-K设计理论",
+      "group": "B",
+      "research": {
+        "research_id": "R20",
+        "category": "C功能与概念",
+        "name": "C-K设计理论",
+        "english_name": "Concept–Knowledge Theory",
+        "kind": "theory",
+        "priority": "P2",
+        "source_ids": [
+          "S22"
+        ],
+        "recognition_basis": [
+          "研究"
+        ],
+        "trigger": "未知问题需要概念与知识共同扩展",
+        "inputs_summary": "概念命题、已知知识、知识缺口",
+        "procedure_summary": "分别扩展概念和知识并记录相互作用",
+        "outputs_summary": "概念树与知识探索任务",
+        "limitations": "概念不是事实；研究理论不能冒称行业通用标准",
+        "execution_mode": "llm_plus_retrieval",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R21",
+      "method_id": "IM-ML-021",
+      "name": "TRIZ体系",
+      "group": "B",
+      "research": {
+        "research_id": "R21",
+        "category": "D技术发明",
+        "name": "TRIZ体系",
+        "english_name": "Theory of Inventive Problem Solving",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S23"
+        ],
+        "recognition_basis": [
+          "经典",
+          "专业机构"
+        ],
+        "trigger": "存在技术瓶颈需系统化发明",
+        "inputs_summary": "系统、功能、问题与证据",
+        "procedure_summary": "按问题模型选矛盾、物场、资源或其他工具",
+        "outputs_summary": "工具选择与求解记录",
+        "limitations": "TRIZ不是单张矩阵；各流派和版本须绑定",
+        "execution_mode": "orchestrator",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R22",
+      "method_id": "IM-ML-022",
+      "name": "技术矛盾与发明原理",
+      "group": "B",
+      "research": {
+        "research_id": "R22",
+        "category": "D技术发明",
+        "name": "技术矛盾与发明原理",
+        "english_name": "Engineering Contradiction / Matrix",
+        "kind": "tool",
+        "priority": "P0",
+        "source_ids": [
+          "S24",
+          "S25"
+        ],
+        "recognition_basis": [
+          "专业机构",
+          "经典"
+        ],
+        "trigger": "改善某性能导致另一性能恶化",
+        "inputs_summary": "改善参数、恶化参数、关联依据",
+        "procedure_summary": "抽象参数；查询指定矩阵；把原理转成机制",
+        "outputs_summary": "映射理由、查询记录及概念",
+        "limitations": "未查询不得声称矩阵命中；不能强迫所有问题映射39参数",
+        "execution_mode": "llm_plus_lookup",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [
+          "R21"
+        ],
+        "existing_method_candidates": [
+          "IM-CA-001"
+        ],
+        "mapping_note": "仅建议映射；未修改现有方法目录/卡片或运行记录",
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R23",
+      "method_id": "IM-ML-023",
+      "name": "物理矛盾与分离",
+      "group": "B",
+      "research": {
+        "research_id": "R23",
+        "category": "D技术发明",
+        "name": "物理矛盾与分离",
+        "english_name": "Physical Contradiction / Separation",
+        "kind": "tool",
+        "priority": "P0",
+        "source_ids": [
+          "S24",
+          "S26"
+        ],
+        "recognition_basis": [
+          "专业机构",
+          "经典"
+        ],
+        "trigger": "同一属性有相反要求",
+        "inputs_summary": "同一对象属性、双向需求及条件",
+        "procedure_summary": "检验冲突；寻找可分离或满足的条件",
+        "outputs_summary": "分离机制及验证假设",
+        "limitations": "正常工序阶段变化不自动成为发明矛盾",
+        "execution_mode": "llm_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [
+          "R21"
+        ],
+        "existing_method_candidates": [
+          "IM-CA-001"
+        ],
+        "mapping_note": "仅建议映射；未修改现有方法目录/卡片或运行记录",
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R24",
+      "method_id": "IM-ML-024",
+      "name": "理想解与资源分析",
+      "group": "B",
+      "research": {
+        "research_id": "R24",
+        "category": "D技术发明",
+        "name": "理想解与资源分析",
+        "english_name": "Ideal Final Result / Resource Analysis",
+        "kind": "tool_family",
+        "priority": "P1",
+        "source_ids": [
+          "S28"
+        ],
+        "recognition_basis": [
+          "经典"
+        ],
+        "trigger": "方案持续增加零件、能耗和复杂度",
+        "inputs_summary": "目标功能、现有物质能量信息空间时间资源",
+        "procedure_summary": "描述理想结果；寻找已有资源承担作用",
+        "outputs_summary": "理想化方向和资源候选",
+        "limitations": "理想结果是探索目标，不是可行性证明",
+        "execution_mode": "llm_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [
+          "R21"
+        ],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R25",
+      "method_id": "IM-ML-025",
+      "name": "物场分析与标准解",
+      "group": "B",
+      "research": {
+        "research_id": "R25",
+        "category": "D技术发明",
+        "name": "物场分析与标准解",
+        "english_name": "Substance–Field Analysis / Standard Solutions",
+        "kind": "tool_family",
+        "priority": "P2",
+        "source_ids": [
+          "S23"
+        ],
+        "recognition_basis": [
+          "经典",
+          "专业机构"
+        ],
+        "trigger": "作用不足、有害或交互结构需改变",
+        "inputs_summary": "作用对象、载体、场、问题类型",
+        "procedure_summary": "建立物场模型；选择适用标准解方向",
+        "outputs_summary": "作用模型及变换概念",
+        "limitations": "不能把一切关系生硬套成物场；标准解具体版本需核读",
+        "execution_mode": "expert_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [
+          "R21"
+        ],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R26",
+      "method_id": "IM-ML-026",
+      "name": "功能裁剪",
+      "group": "B",
+      "research": {
+        "research_id": "R26",
+        "category": "D技术发明",
+        "name": "功能裁剪",
+        "english_name": "Trimming",
+        "kind": "tool",
+        "priority": "P0",
+        "source_ids": [
+          "S23"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "需减少部件同时保持必要功能",
+        "inputs_summary": "有用功能、承担者、受体、约束",
+        "procedure_summary": "提出删除候选；重新分配其必要功能",
+        "outputs_summary": "裁剪方案和功能接替记录",
+        "limitations": "删除零件不等于裁剪成功；本轮仅知识体系层入口，细则待补",
+        "execution_mode": "llm_plus_rules",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [
+          "R21"
+        ],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R27",
+      "method_id": "IM-ML-027",
+      "name": "功能导向检索与科学效应",
+      "group": "B",
+      "research": {
+        "research_id": "R27",
+        "category": "D技术发明",
+        "name": "功能导向检索与科学效应",
+        "english_name": "Function-Oriented Search / Scientific Effects",
+        "kind": "method_family",
+        "priority": "P0",
+        "source_ids": [
+          "S27"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "行业内方案枯竭，需跨行业迁移",
+        "inputs_summary": "抽象功能、对象、约束、工况",
+        "procedure_summary": "去除行业名词；检索同功能机制；比较迁移条件",
+        "outputs_summary": "机制候选及适配差异",
+        "limitations": "同功能不等于同工况；效应数据库需独立授权和参数依据",
+        "execution_mode": "llm_plus_retrieval",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [
+          "R21"
+        ],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R28",
+      "method_id": "IM-ML-028",
+      "name": "ARIZ发明问题求解算法",
+      "group": "B",
+      "research": {
+        "research_id": "R28",
+        "category": "D技术发明",
+        "name": "ARIZ发明问题求解算法",
+        "english_name": "ARIZ-85C",
+        "kind": "method",
+        "priority": "P2",
+        "source_ids": [
+          "S28"
+        ],
+        "recognition_basis": [
+          "经典"
+        ],
+        "trigger": "常规工具不能解决复杂矛盾",
+        "inputs_summary": "精确定义的问题与充分系统信息",
+        "procedure_summary": "按指定版本逐步转化问题并分析资源和矛盾",
+        "outputs_summary": "完整步骤链与方案检验",
+        "limitations": "不可用几段提示词声称执行完整ARIZ；需专业复核",
+        "execution_mode": "expert_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [
+          "R21"
+        ],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R29",
+      "method_id": "IM-ML-029",
+      "name": "技术系统进化趋势",
+      "group": "B",
+      "research": {
+        "research_id": "R29",
+        "category": "D技术发明",
+        "name": "技术系统进化趋势",
+        "english_name": "Trends of Engineering Systems Evolution",
+        "kind": "tool_family",
+        "priority": "P2",
+        "source_ids": [
+          "S23"
+        ],
+        "recognition_basis": [
+          "经典",
+          "专业机构"
+        ],
+        "trigger": "需探索产品代际演化方向",
+        "inputs_summary": "系统历史、功能变化、当前瓶颈",
+        "procedure_summary": "对照趋势提出可检验演化路径",
+        "outputs_summary": "路线假设与支持证据",
+        "limitations": "趋势不等于必然预测；不从S曲线外观推断成熟度",
+        "execution_mode": "expert_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [
+          "R21"
+        ],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R30",
+      "method_id": "IM-ML-030",
+      "name": "公理化设计",
+      "group": "B",
+      "research": {
+        "research_id": "R30",
+        "category": "E架构与工程",
+        "name": "公理化设计",
+        "english_name": "Axiomatic Design",
+        "kind": "theory_method",
+        "priority": "P1",
+        "source_ids": [
+          "S29"
+        ],
+        "recognition_basis": [
+          "经典"
+        ],
+        "trigger": "调一个参数引发多功能相互干扰",
+        "inputs_summary": "功能要求、设计参数和映射",
+        "procedure_summary": "建立FR–DP关系并分析耦合",
+        "outputs_summary": "设计矩阵及解耦方案",
+        "limitations": "独立性不等于零交互；信息公理需概率模型",
+        "execution_mode": "expert_plus_calculation",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R31",
+      "method_id": "IM-ML-031",
+      "name": "DSM与模块化架构",
+      "group": "B",
+      "research": {
+        "research_id": "R31",
+        "category": "E架构与工程",
+        "name": "DSM与模块化架构",
+        "english_name": "Design Structure Matrix / Modular Architecture",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S30"
+        ],
+        "recognition_basis": [
+          "经典"
+        ],
+        "trigger": "接口复杂、变更传播或平台复用困难",
+        "inputs_summary": "系统元素、依赖类型、接口证据",
+        "procedure_summary": "建依赖矩阵并分析耦合和聚类",
+        "outputs_summary": "模块边界及接口改进",
+        "limitations": "模块化是设计策略；DSM是分析工具，二者不混称",
+        "execution_mode": "llm_plus_calculation",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R32",
+      "method_id": "IM-ML-032",
+      "name": "机构综合",
+      "group": "B",
+      "research": {
+        "research_id": "R32",
+        "category": "E架构与工程",
+        "name": "机构综合",
+        "english_name": "Kinematic Synthesis",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S31"
+        ],
+        "recognition_basis": [
+          "学科经典"
+        ],
+        "trigger": "需实现特定轨迹、位姿、运动或传力",
+        "inputs_summary": "运动目标、空间、载荷、自由度",
+        "procedure_summary": "选择机构类型；求尺寸；分析运动与载荷",
+        "outputs_summary": "机构候选及计算模型",
+        "limitations": "柔顺/欠驱动是可选路线；本轮仅教学入口，需专题深研和求解器",
+        "execution_mode": "solver_required",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R33",
+      "method_id": "IM-ML-033",
+      "name": "Ashby材料选择",
+      "group": "C",
+      "research": {
+        "research_id": "R33",
+        "category": "E架构与工程",
+        "name": "Ashby材料选择",
+        "english_name": "Ashby Materials Selection",
+        "kind": "method",
+        "priority": "P1",
+        "source_ids": [
+          "S32"
+        ],
+        "recognition_basis": [
+          "经典",
+          "专业工具"
+        ],
+        "trigger": "性能、重量、成本和工艺相互制约",
+        "inputs_summary": "功能、约束、目标、材料数据",
+        "procedure_summary": "筛选约束；以性能指标比较材料并核查工艺",
+        "outputs_summary": "材料候选及选择依据",
+        "limitations": "性能指数依受力模型；图表不替代疲劳/腐蚀/制造验证",
+        "execution_mode": "solver_and_data_required",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R34",
+      "method_id": "IM-ML-034",
+      "name": "面向制造与装配设计",
+      "group": "C",
+      "research": {
+        "research_id": "R34",
+        "category": "E架构与工程",
+        "name": "面向制造与装配设计",
+        "english_name": "Design for Manufacture and Assembly / DFMA",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S33"
+        ],
+        "recognition_basis": [
+          "经典",
+          "专有体系"
+        ],
+        "trigger": "概念可用但生产装配复杂或昂贵",
+        "inputs_summary": "零件、装配顺序、工艺、批量、成本",
+        "procedure_summary": "分别检查制造和装配并简化结构",
+        "outputs_summary": "结构、工艺及装配优化",
+        "limitations": "专有评分和软件规则不默认可复制；本地成本须采集",
+        "execution_mode": "expert_plus_calculation",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R35",
+      "method_id": "IM-ML-035",
+      "name": "拓扑优化",
+      "group": "C",
+      "research": {
+        "research_id": "R35",
+        "category": "E架构与工程",
+        "name": "拓扑优化",
+        "english_name": "Topology Optimization",
+        "kind": "computational_method",
+        "priority": "P2",
+        "source_ids": [
+          "S34"
+        ],
+        "recognition_basis": [
+          "研究",
+          "学科经典"
+        ],
+        "trigger": "在既定载荷与边界下探索材料分布",
+        "inputs_summary": "设计域、载荷、边界、材料、目标及制造约束",
+        "procedure_summary": "建立优化模型；求解；重构并验证",
+        "outputs_summary": "材料布局及约束满足报告",
+        "limitations": "示例代码不代表所有工况；无求解器只可提出分析计划",
+        "execution_mode": "solver_required",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R36",
+      "method_id": "IM-ML-036",
+      "name": "Pugh概念筛选",
+      "group": "C",
+      "research": {
+        "research_id": "R36",
+        "category": "F筛选与验证",
+        "name": "Pugh概念筛选",
+        "english_name": "Pugh Concept Selection",
+        "kind": "tool",
+        "priority": "P0",
+        "source_ids": [
+          "S35"
+        ],
+        "recognition_basis": [
+          "经典",
+          "大学教学"
+        ],
+        "trigger": "已有多个概念需初步比较",
+        "inputs_summary": "基准、候选、准则和依据",
+        "procedure_summary": "相对基准比较；分析差异并迭代方案",
+        "outputs_summary": "比较矩阵与保留/合并理由",
+        "limitations": "主观偏好需标注；未知项不当作零或平局",
+        "execution_mode": "llm_plus_calculation",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R37",
+      "method_id": "IM-ML-037",
+      "name": "多准则权衡分析",
+      "group": "C",
+      "research": {
+        "research_id": "R37",
+        "category": "F筛选与验证",
+        "name": "多准则权衡分析",
+        "english_name": "Trade Studies / MCDA",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S36"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "性能、成本、风险之间需取舍",
+        "inputs_summary": "可行候选、准则、权重、数据和不确定性",
+        "procedure_summary": "先筛硬约束；比较准则并检查敏感性",
+        "outputs_summary": "方案排序及敏感性",
+        "limitations": "综合高分不能抵消硬约束；AHP仅为子工具且须专项核验",
+        "execution_mode": "llm_plus_calculation",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R38",
+      "method_id": "IM-ML-038",
+      "name": "试验设计与响应面",
+      "group": "C",
+      "research": {
+        "research_id": "R38",
+        "category": "F筛选与验证",
+        "name": "试验设计与响应面",
+        "english_name": "Design of Experiments / Response Surface",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S37"
+        ],
+        "recognition_basis": [
+          "专业机构",
+          "学科经典"
+        ],
+        "trigger": "多因素影响不清或参数需优化",
+        "inputs_summary": "响应、因素、范围、测量和资源",
+        "procedure_summary": "按目标选择设计；执行；建模；确认",
+        "outputs_summary": "试验矩阵、效应分析与确认结果",
+        "limitations": "无数据不输出显著性或最优值；目录核读不足以执行统计",
+        "execution_mode": "statistical_tool_required",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R39",
+      "method_id": "IM-ML-039",
+      "name": "稳健参数与公差设计",
+      "group": "C",
+      "research": {
+        "research_id": "R39",
+        "category": "F筛选与验证",
+        "name": "稳健参数与公差设计",
+        "english_name": "Robust Parameter / Tolerance Design",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S38"
+        ],
+        "recognition_basis": [
+          "经典",
+          "专业机构"
+        ],
+        "trigger": "平均性能达标但环境变化造成不稳定",
+        "inputs_summary": "控制因素、噪声因素、响应和变异",
+        "procedure_summary": "识别对噪声敏感性；设计试验降低变异",
+        "outputs_summary": "稳健参数及公差分配方向",
+        "limitations": "田口正交表不是全部稳健设计；公差堆栈算法另需建模",
+        "execution_mode": "statistical_tool_required",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R40",
+      "method_id": "IM-ML-040",
+      "name": "失效模式与影响分析",
+      "group": "C",
+      "research": {
+        "research_id": "R40",
+        "category": "F筛选与验证",
+        "name": "失效模式与影响分析",
+        "english_name": "FMEA / FMECA",
+        "kind": "method",
+        "priority": "P1",
+        "source_ids": [
+          "S39"
+        ],
+        "recognition_basis": [
+          "标准"
+        ],
+        "trigger": "需提前发现失效及影响",
+        "inputs_summary": "功能、工况、失效模式、现有控制",
+        "procedure_summary": "分析模式与局部整体影响；制定措施",
+        "outputs_summary": "失效清单和改进验证任务",
+        "limitations": "无依据不猜发生率；RPN/AP依所选体系，不与根因确认混淆",
+        "execution_mode": "expert_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R41",
+      "method_id": "IM-ML-041",
+      "name": "机械风险评估与风险降低",
+      "group": "C",
+      "research": {
+        "research_id": "R41",
+        "category": "F筛选与验证",
+        "name": "机械风险评估与风险降低",
+        "english_name": "Machinery Risk Assessment / Reduction",
+        "kind": "method",
+        "priority": "P1",
+        "source_ids": [
+          "S40"
+        ],
+        "recognition_basis": [
+          "标准"
+        ],
+        "trigger": "机械设计涉及人的危险暴露",
+        "inputs_summary": "机械边界、生命周期、任务与危险",
+        "procedure_summary": "识别危险；评估风险；降低并复核",
+        "outputs_summary": "风险评估和残余风险记录",
+        "limitations": "FMEA不替代机械安全流程；须查适用B/C类标准",
+        "execution_mode": "expert_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R42",
+      "method_id": "IM-ML-042",
+      "name": "验证与确认",
+      "group": "C",
+      "research": {
+        "research_id": "R42",
+        "category": "F筛选与验证",
+        "name": "验证与确认",
+        "english_name": "Verification and Validation / V&V",
+        "kind": "process_method",
+        "priority": "P0",
+        "source_ids": [
+          "S41",
+          "S42"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "方案需判断是否符合要求和实际用途",
+        "inputs_summary": "要求、使用情境、验收口径、测试条件",
+        "procedure_summary": "分别规划符合要求的验证和满足用途的确认",
+        "outputs_summary": "指标到证据的验证矩阵",
+        "limitations": "方案计划不等于结果；原型、仿真、实物证据级别不同",
+        "execution_mode": "human_and_solver",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R43",
+      "method_id": "IM-ML-043",
+      "name": "生命周期评价与生态设计",
+      "group": "C",
+      "research": {
+        "research_id": "R43",
+        "category": "F筛选与验证",
+        "name": "生命周期评价与生态设计",
+        "english_name": "Life Cycle Assessment / Ecodesign",
+        "kind": "method_family",
+        "priority": "P2",
+        "source_ids": [
+          "S43",
+          "S44"
+        ],
+        "recognition_basis": [
+          "标准"
+        ],
+        "trigger": "局部改进可能把环境负担转移到别处",
+        "inputs_summary": "功能单位、边界、清单、生命周期数据",
+        "procedure_summary": "评价环境影响并反馈设计",
+        "outputs_summary": "环境热点与设计取舍",
+        "limitations": "LCA评价与生态设计过程分开；缺数据不宣称减碳比例",
+        "execution_mode": "data_and_calculation",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R44",
+      "method_id": "IM-ML-044",
+      "name": "原型与假设测试",
+      "group": "C",
+      "research": {
+        "research_id": "R44",
+        "category": "F筛选与验证",
+        "name": "原型与假设测试",
+        "english_name": "Prototyping / Hypothesis Testing",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S04",
+          "S42"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "关键假设缺证据或方案理解不一致",
+        "inputs_summary": "明确假设、学习目标、原型保真度和指标",
+        "procedure_summary": "选择最能检验假设的原型；测试并更新",
+        "outputs_summary": "学习证据与保留/调整决定",
+        "limitations": "外观原型不证明强度或寿命；不同原型只回答对应问题",
+        "execution_mode": "human_and_solver",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R45",
+      "method_id": "IM-ML-045",
+      "name": "价值工程",
+      "group": "C",
+      "research": {
+        "research_id": "R45",
+        "category": "G价值与研发组织",
+        "name": "价值工程",
+        "english_name": "Value Engineering / Value Methodology",
+        "kind": "method",
+        "priority": "P1",
+        "source_ids": [
+          "S16"
+        ],
+        "recognition_basis": [
+          "专业机构",
+          "经典"
+        ],
+        "trigger": "需在保证必要功能下改善价值",
+        "inputs_summary": "功能、性能、成本和用户价值",
+        "procedure_summary": "分析必要功能与成本；提出并比较替代",
+        "outputs_summary": "功能成本关系及替代方案",
+        "limitations": "价值不等于最低采购价；指南正文待核读",
+        "execution_mode": "expert_plus_calculation",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R46",
+      "method_id": "IM-ML-046",
+      "name": "专利景观与技术路线分析",
+      "group": "C",
+      "research": {
+        "research_id": "R46",
+        "category": "G价值与研发组织",
+        "name": "专利景观与技术路线分析",
+        "english_name": "Patent Landscape / Patent Analytics",
+        "kind": "method_family",
+        "priority": "P1",
+        "source_ids": [
+          "S45",
+          "S46"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "需了解已有技术和替代路径",
+        "inputs_summary": "检索范围、分类、时间、同族去重规则",
+        "procedure_summary": "检索、清洗、分类并分析技术分布",
+        "outputs_summary": "技术地图与候选机制",
+        "limitations": "专利公开不等于有效、采用、可自由实施；不输出FTO法律结论",
+        "execution_mode": "retrieval_and_expert",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R47",
+      "method_id": "IM-ML-047",
+      "name": "集合式并行工程",
+      "group": "C",
+      "research": {
+        "research_id": "R47",
+        "category": "G价值与研发组织",
+        "name": "集合式并行工程",
+        "english_name": "Set-Based Concurrent Engineering",
+        "kind": "development_strategy",
+        "priority": "P2",
+        "source_ids": [
+          "S47"
+        ],
+        "recognition_basis": [
+          "专业机构"
+        ],
+        "trigger": "过早选唯一方案导致反复返工",
+        "inputs_summary": "候选集合、可行域、权衡曲线和试验资源",
+        "procedure_summary": "并行探索；以证据淘汰；延迟不可逆选择",
+        "outputs_summary": "候选集收敛记录",
+        "limitations": "不是无限保留所有方案；需设资源与学习门槛",
+        "execution_mode": "orchestrator",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [],
+        "mapping_note": null,
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    },
+    {
+      "research_id": "R48",
+      "method_id": "IM-PD-001",
+      "name": "问题定义与要求管理",
+      "group": "C",
+      "research": {
+        "research_id": "R48",
+        "category": "G价值与研发组织",
+        "name": "问题定义与要求管理",
+        "english_name": "Problem Framing / Requirements Definition",
+        "kind": "platform_method",
+        "priority": "P0",
+        "source_ids": [
+          "S03",
+          "S15"
+        ],
+        "recognition_basis": [
+          "专业机构",
+          "平台适配"
+        ],
+        "trigger": "需求只有愿望、对象边界不清",
+        "inputs_summary": "原始需求、对象、工况、约束、未知",
+        "procedure_summary": "形成问题简报并识别待确认要求",
+        "outputs_summary": "版本化问题简报",
+        "limitations": "平台整合的方法名，不冒称独立国际标准；未知不填造",
+        "execution_mode": "llm_assisted",
+        "record_status": "research_candidate",
+        "executable": false,
+        "expert_review": "not_reviewed",
+        "engineering_validation": "not_validated",
+        "priority_nature": "平台针对当前引擎的建设建议，不是行业排名",
+        "summary_nature": "平台研究概述及调用适配，非标准原文",
+        "parent_research_ids": [],
+        "existing_method_candidates": [
+          "IM-PD-001"
+        ],
+        "mapping_note": "仅建议映射；未修改现有方法目录/卡片或运行记录",
+        "required_before_executable": [
+          "补足与拟执行步骤一致的直接出处及读取位置",
+          "形成版本化输入输出和步骤契约",
+          "核清工具/数据/素材许可与依赖",
+          "完成适用性、缺失输入与硬约束反例检查"
+        ]
+      }
+    }
+  ],
+  "wen_topics": 12,
+  "note": "IM-ML为本次内容档案身份，不注册既有执行器；R14/R48复用身份但不覆盖1.0.0"
+}

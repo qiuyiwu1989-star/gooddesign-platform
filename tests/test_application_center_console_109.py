@@ -9,7 +9,7 @@ class ApplicationCenterConsole109Tests(unittest.TestCase):
         text = (ROOT / 'scripts/app_center_096.py').read_text()
         for marker in (
             'app-store', 'app-store-tabs', 'app-store-grid', 'app-detail',
-            'repeat(auto-fill,minmax(246px,1fr))',
+            'repeat(3,minmax(0,1fr))',
             'max-width:1200px', 'app-sheet', 'showModal',
         ):
             self.assertIn(marker, text)
@@ -29,7 +29,7 @@ class ApplicationCenterConsole109Tests(unittest.TestCase):
         text = (ROOT / 'scripts/app_center_096.py').read_text()
         for query in ('@media(max-width:760px)', '@media(max-width:390px)'):
             self.assertIn(query, text)
-        self.assertIn('max-height:88vh', text)
+        self.assertIn('max-height:88dvh', text)
         self.assertIn('@media print', text)
 
 

@@ -1,0 +1,302 @@
+{
+  "version": "0.1.0",
+  "date": "2026-10-23",
+  "status": "research_only",
+  "note": "12模块非12套独立原创方法，不改旧48条计数；未接入执行目录",
+  "sources": [
+    {
+      "id": "WB-S01",
+      "title": "基于系统工程的产品设计7D规划及1+3+X综合设计法",
+      "authors": "闻邦椿",
+      "publication": "东北大学学报（自然科学版）,2008,29(9):1217–1223",
+      "url": "https://xuebao.neu.edu.cn/natural/CN/volumn/volumn_1218.shtml",
+      "scope": "期刊官网题录与摘要已读；HTML正文404，PDF直取403，未取得全文"
+    },
+    {
+      "id": "WB-S02",
+      "title": "面向产品广义质量的综合设计理论与方法",
+      "authors": "闻邦椿、张国忠、柳洪义",
+      "publication": "科学出版社,2007-01,ISBN 9787030177377",
+      "url": "https://book.sciencereading.cn/shop/book/Booksimple/show.do?id=B59CB61F46CD34ED996DC93E95E247080000",
+      "scope": "出版社题录与简介已读，未读全书"
+    },
+    {
+      "id": "WB-S03",
+      "title": "系统化设计的理论和方法",
+      "authors": "闻邦椿、刘树英、郑玲",
+      "publication": "高等教育出版社,ISBN 9787040481778；页面出版与印刷日期字段不一致，年份使用2017",
+      "url": "https://xuanshu.hep.com.cn/front/h5Mobile/bookDetails?bookId=59cf87baba9eb884cf8238c4",
+      "scope": "出版社简介与章节目录已读；正文未取得；简介7P与目录7D不一致"
+    },
+    {
+      "id": "WB-S04",
+      "title": "现代机械产品设计在新产品开发中的重要作用",
+      "authors": "闻邦椿、周知承、韩清凯、苏保群",
+      "publication": "机械工程学报,2003,39(10):43–52",
+      "url": "https://qikan.cmes.org/jxgcxb/CN/Y2003/V39/I10",
+      "scope": "期刊官方题录与摘要已读；PDF网页工具不支持响应类型，直接请求403，未取得全文"
+    },
+    {
+      "id": "WB-S05",
+      "title": "“三化”综合设计法在产品质量综合评价中的应用",
+      "authors": "李小彭、任朝晖、宋乃慧、闻邦椿",
+      "publication": "东北大学学报（自然科学版）,2006,27(5):532–535",
+      "url": "https://xuebao.neu.edu.cn/natural/CN/volumn/volumn_1244.shtml",
+      "scope": "官网题录与检索返回摘要；未读论文全文"
+    },
+    {
+      "id": "WB-S06",
+      "title": "闻邦椿院士积六十载之努力获取辉煌创新成果",
+      "authors": "东北大学机械工程与自动化学院发布",
+      "publication": "2016-06-03",
+      "url": "https://www.me.neu.edu.cn/2016/0603/c3401a56936/pagem.htm",
+      "scope": "学校官网检索片段已读，直接打开超时；70多种/7类是该介绍转述，待原论文核验"
+    },
+    {
+      "id": "WB-S07",
+      "title": "机械设计手册 第6版 第7卷",
+      "authors": "闻邦椿主编",
+      "publication": "机械工业出版社",
+      "url": "https://www.cmpedu.com/books/book/100007.htm",
+      "scope": "出版社检索返回目录片段已读；直接页面超时；主编身份不等于各篇均为本人原创"
+    }
+  ],
+  "modules": [
+    {
+      "research_id": "WB01",
+      "layer": "总体体系",
+      "name": "产品系统化／综合设计",
+      "source_ids": [
+        "WB-S01",
+        "WB-S02",
+        "WB-S03"
+      ],
+      "related_previous_ids": [
+        "R01",
+        "R04"
+      ],
+      "kind": "编排框架",
+      "purpose": "把调研、规划、实施和检验组织为全流程",
+      "engine_adaptation_proposal": "形成阶段与方法选择记录",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB02",
+      "layer": "调研层",
+      "name": "3I调研",
+      "source_ids": [
+        "WB-S03"
+      ],
+      "related_previous_ids": [
+        "R08",
+        "R48",
+        "R41"
+      ],
+      "kind": "研究方法族",
+      "purpose": "并行核查需求、环境与风险",
+      "engine_adaptation_proposal": "补充问题简报的环境与风险字段",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB03",
+      "layer": "规划层",
+      "name": "7D总体规划",
+      "source_ids": [
+        "WB-S01"
+      ],
+      "related_previous_ids": [
+        "R48",
+        "R04"
+      ],
+      "kind": "顶层规划模型",
+      "purpose": "从目标、思想、环境、过程、内容、方法与质量检验规划任务",
+      "engine_adaptation_proposal": "建立规划完整性检查",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB04",
+      "layer": "实施层",
+      "name": "1+3+X综合设计",
+      "source_ids": [
+        "WB-S01",
+        "WB-S02"
+      ],
+      "related_previous_ids": [
+        "R14",
+        "R32",
+        "R34",
+        "R42"
+      ],
+      "kind": "方法组合框架",
+      "purpose": "功能优化加三类优化及特殊要求方法",
+      "engine_adaptation_proposal": "按任务选择方法而非一次跑完",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB05",
+      "layer": "功能层",
+      "name": "主辅功能与功能优化",
+      "source_ids": [
+        "WB-S03"
+      ],
+      "related_previous_ids": [
+        "R14",
+        "R17"
+      ],
+      "kind": "分析与方案设计",
+      "purpose": "区分主要作用和支撑作用，组织功能实现",
+      "engine_adaptation_proposal": "补功能模型与原理组合",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB06",
+      "layer": "性能层",
+      "name": "面向结构性能的动态设计",
+      "source_ids": [
+        "WB-S04",
+        "WB-S06"
+      ],
+      "related_previous_ids": [
+        "R32",
+        "R39"
+      ],
+      "kind": "工程方法族",
+      "purpose": "考察运动、振动和结构响应",
+      "engine_adaptation_proposal": "接入动力学模型与试验",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB07",
+      "layer": "性能层",
+      "name": "面向使用性能的智能设计",
+      "source_ids": [
+        "WB-S03"
+      ],
+      "related_previous_ids": [
+        "R05",
+        "R31"
+      ],
+      "kind": "工程方法族",
+      "purpose": "研究感知、控制和使用性能的关系",
+      "engine_adaptation_proposal": "不能直接解释成大模型生成设计",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB08",
+      "layer": "性能层",
+      "name": "面向制造性能的可视化设计",
+      "source_ids": [
+        "WB-S03"
+      ],
+      "related_previous_ids": [
+        "R34",
+        "R44"
+      ],
+      "kind": "工程方法族",
+      "purpose": "支持加工、装配与拆卸过程分析",
+      "engine_adaptation_proposal": "输出几何过程及干涉等待检事项",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB09",
+      "layer": "专项层",
+      "name": "深层次动态设计",
+      "source_ids": [
+        "WB-S06"
+      ],
+      "related_previous_ids": [
+        "R32",
+        "R39"
+      ],
+      "kind": "专项工程研究",
+      "purpose": "非线性动力学相关设计",
+      "engine_adaptation_proposal": "需另核方程、求解和稳定性分析",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB10",
+      "layer": "评价层",
+      "name": "设计质量检验与综合评价",
+      "source_ids": [
+        "WB-S01",
+        "WB-S05"
+      ],
+      "related_previous_ids": [
+        "R37",
+        "R42"
+      ],
+      "kind": "评价方法族",
+      "purpose": "设计目标、性能指标与检验相连",
+      "engine_adaptation_proposal": "模糊综合评价并非闻邦椿独创",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB11",
+      "layer": "方法论层",
+      "name": "科学方法论规则与设计专家系统",
+      "source_ids": [
+        "WB-S03"
+      ],
+      "related_previous_ids": [
+        "R21",
+        "R48"
+      ],
+      "kind": "规则与知识组织",
+      "purpose": "研究通用规则如何支持设计推理",
+      "engine_adaptation_proposal": "先补规则原文，不靠章节名生成规则全集",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    },
+    {
+      "research_id": "WB12",
+      "layer": "文献索引层",
+      "name": "国内外设计方法分类研究",
+      "source_ids": [
+        "WB-S06",
+        "WB-S04"
+      ],
+      "related_previous_ids": [
+        "R01"
+      ],
+      "kind": "分类来源线索",
+      "purpose": "查回70多种、7大类的原文与名单",
+      "engine_adaptation_proposal": "不把分类整理误写成本人原创70多种",
+      "status": "research_candidate",
+      "executable": false,
+      "attribution_note": "体系原典、书中综述、合著成果与平台适配须分开；不因主编或目录出现就认定独创",
+      "next_gate": "取得相关正文，核对定义、步骤、输入输出、适用条件与权利边界"
+    }
+  ]
+}

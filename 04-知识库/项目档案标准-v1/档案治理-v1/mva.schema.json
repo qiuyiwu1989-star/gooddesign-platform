@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gooddesign.local/schema/mva-1.0.json",
+  "title": "GoodDesign Minimum Viable Archive 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "project", "research_revision", "dataset_sha256", "sources", "claims", "platform_entries", "review", "metrics", "status", "gaps", "provenance"],
+  "properties": {
+    "schema": {"const": "gooddesign-mva-1.0"},
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "year", "award"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string", "minLength": 1},
+        "year": {"type": ["integer", "string"]},
+        "award": {"type": "string"}
+      }
+    },
+    "research_revision": {"type": "string", "pattern": "^research-[0-9]{6}$"},
+    "dataset_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "sources": {"type": "array", "items": {"type": "object"}},
+    "claims": {"type": "array", "items": {"type": "object"}},
+    "platform_entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["record_id", "field", "content_nature", "value"],
+        "properties": {
+          "record_id": {"type": "string"},
+          "field": {"type": "string"},
+          "content_nature": {"enum": ["platform_metadata", "platform_analysis"]},
+          "value": {}
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agent_assessment", "human_read", "expert_reviewed", "engineering_validated", "full_research_complete", "official_ingestion", "semantic_review", "quality_score"],
+      "properties": {
+        "agent_assessment": {"type": "object"},
+        "human_read": {"const": false},
+        "expert_reviewed": {"const": false},
+        "engineering_validated": {"const": false},
+        "full_research_complete": {"const": false},
+        "official_ingestion": {"const": false},
+        "semantic_review": {"const": false},
+        "quality_score": {"type": "null"}
+      }
+    },
+    "metrics": {"type": "object"},
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mva_ready", "blockers", "warnings"],
+      "properties": {
+        "mva_ready": {"type": "boolean"},
+        "blockers": {"type": "array", "items": {"type": "string"}},
+        "warnings": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "gaps": {"type": "array", "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator", "source_archive_path", "generated_at", "derived_not_hand_edited"],
+      "properties": {
+        "generator": {"const": "archive_governance.py/1.0"},
+        "source_archive_path": {"type": "string"},
+        "generated_at": {"type": "string"},
+        "derived_not_hand_edited": {"const": true}
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "runner": "构建教学包.py check()",
+  "executed": true,
+  "scope": "fixed declared structure, source closure and status checks; no engine/MCP change",
+  "tests": [
+    {
+      "name": "normal-unknowns-retained",
+      "category": "正常",
+      "expected": "accepted_for_bounded_research",
+      "actual": "accepted_for_bounded_research",
+      "result": {
+        "status": "research_draft_structure_and_declared_fidelity_passed",
+        "requirement_candidates": 4,
+        "all_incomplete": true,
+        "ready_for_customer_baseline": false,
+        "permitted_next_action": "function_research_with_unknowns",
+        "does_not_check": [
+          "arbitrary_text_semantic_correctness",
+          "customer_truth",
+          "physical_feasibility",
+          "actual_measurability",
+          "safety"
+        ]
+      },
+      "input_sha256": "5ea7d7ece0a9f67c92c9f05e719b659b3cb61dcedf608563ad5ddde3f02d2b93"
+    },
+    {
+      "name": "missing-one-need",
+      "category": "缺材料",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "unallocated_research_need"
+      },
+      "input_sha256": "1ff7ecd15b4961240dfd295e03c23ee0ea957844313b93687f7e101f54919715"
+    },
+    {
+      "name": "not-a-customer-baseline",
+      "category": "不适用",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "unauthorized_status_promotion"
+      },
+      "input_sha256": "77af201a6b6f295f442a31981bd747c21cec9b435d62391abb62420d73cf65fc"
+    },
+    {
+      "name": "zero-is-not-unknown",
+      "category": "边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "unsupported_numeric_or_acceptance_completion"
+      },
+      "input_sha256": "f4fc21c45bc578878d7b15ba55fb5159abfddefbc9c87ab69fc8b1d0c44688b9"
+    },
+    {
+      "name": "conflicting-version",
+      "category": "冲突或来源边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "binding_mismatch"
+      },
+      "input_sha256": "57115c8e3dc560ab5dd30ee38c37eb4cc9eb729fed3a5a430e3ce71ff1f9f627"
+    },
+    {
+      "name": "actor-provenance-loss",
+      "category": "冲突或来源边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "actor_identity_or_provenance_changed"
+      },
+      "input_sha256": "95868ef083354d70eaf0cd0cfb58f539e4b847b4bc38233da2a5c3f3dc0f14ae"
+    },
+    {
+      "name": "dangling-basis",
+      "category": "冲突或来源边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "dangling_need_or_basis"
+      },
+      "input_sha256": "78268746c12ae7efa9b44952c3a9f1ba27e7bcbdd6dded7b03eb44427f7b2fd0"
+    },
+    {
+      "name": "inferred-direction",
+      "category": "冲突或来源边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "unsupported_numeric_or_acceptance_completion"
+      },
+      "input_sha256": "dbc77f88286844392438cef6962fa8de83c176409fe50d3c5190397e4d6686c6"
+    },
+    {
+      "name": "accepted-causal-overclaim",
+      "category": "冲突或来源边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "rejected_cause_promoted"
+      },
+      "input_sha256": "7fba9637bf1ac137dfd0020395dab9400dd8eda1ace2bfa61698c55146a8b68e"
+    },
+    {
+      "name": "duplicate-candidate",
+      "category": "冲突或来源边界",
+      "expected": "rejected",
+      "actual": "rejected",
+      "result": {
+        "error": "duplicate_requirement_id"
+      },
+      "input_sha256": "15f8b9b046f147096dffcf4d5fb29cf1808bd27716eb431a81cf18302d940c04"
+    }
+  ],
+  "passed": 10,
+  "failed": 0
+}

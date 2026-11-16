@@ -346,7 +346,7 @@
 </style>
 <link rel="stylesheet" href="gd-ds.css">
 </head>
-<body class="page-pad">
+<body class="page-pad"><h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0">历届获奖名录</h1>
 <nav>
   <a class="brand" href="index.html"><img class="mark-img" src="assets/brand/logo-seal.svg" alt="好设计馆" width="30" height="30"><span><span class="bt">好设计馆</span><span class="en">Good Design Museum</span></span></a>
   <div class="links">
@@ -394,26 +394,26 @@
     <span class="dot"></span>
     <span class="name">好设计助手</span>
     <span class="sub" id="chatMode">连接中…</span>
-    <button class="close-btn" id="copilotClose" title="收起面板">×</button>
+    <button type="button" class="close-btn" id="copilotClose" title="收起面板">×</button>
   </div>
   <div class="chat-log" id="chatLog">
     <div class="hello"><img class="hi-av" src="assets/brand/mascot-head.webp" alt="好设计助手"><div class="msg bot">您好，我是「好设计助手」，也是好设计馆的导览员。我可以为您介绍好设计奖的背景与导向、历届获奖项目（十届 560 项档案）、2026 年申报要点，或带您参观馆里的「国之重器」特展。请问您想了解什么？</div></div>
   </div>
   <div class="suggests" id="suggests">
-    <button>好设计奖是什么？</button>
-    <button>什么是“好设计”？</button>
-    <button>和红点、iF 有什么区别？</button>
-    <button>2025 年有哪些金奖项目？</button>
-    <button>2026 年怎么申报好设计奖？</button>
-    <button>带我参观好设计馆</button>
+    <button type="button">好设计奖是什么？</button>
+    <button type="button">什么是“好设计”？</button>
+    <button type="button">和红点、iF 有什么区别？</button>
+    <button type="button">2025 年有哪些金奖项目？</button>
+    <button type="button">2026 年怎么申报好设计奖？</button>
+    <button type="button">带我参观好设计馆</button>
   </div>
   <div class="chat-input">
     <input id="chatInput" type="text" placeholder="请输入您的问题…" maxlength="500" autocomplete="off">
-    <button id="sendBtn">发送</button>
+    <button type="button" id="sendBtn">发送</button>
   </div>
 </aside>
 
-<button id="fab" title="好设计助手"><img src="assets/brand/mascot-head.webp" alt="好设计助手"><span class="tip">好设计助手 · 点击提问</span></button>
+<button type="button" id="fab" title="好设计助手"><img src="assets/brand/mascot-head.webp" alt="好设计助手"><span class="tip">好设计助手 · 点击提问</span></button>
 
 <script>
 (function(){
@@ -588,7 +588,7 @@
           '<div class="body">' + zoneChip(c.slug) + '<h3>' + esc(c.name) + '</h3>' +
           '<div class="unit">' + esc(c.unit) + '</div>' +
           '<div class="sum">' + esc(c.summary) + '</div>' +
-          '<button class="ask">ASK AGENT →</button></div>';
+          '<button type="button" class="ask">ASK AGENT →</button></div>';
         card.querySelector('.ask').addEventListener('click', function(ev){
           ev.stopPropagation();
           openCopilot();

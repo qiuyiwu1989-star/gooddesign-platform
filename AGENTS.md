@@ -339,7 +339,81 @@ ML-029方法页标准与三类标杆：方法页标准-v1及specs/ML-029定义�
 
 128应用中心商店化简化：卡片只承载图标/状态徽章/名字/分类/价值一句话/开发者·案例，详情面板为名字+CTA+价值+分类状态开发者三行+案例卡；删除用户·任务行、长摘要、交付物chips、编号案例路径、底部应用规划区（侧栏状态行保留口径）。apps.json新增必填value与developer（全部好设计团队），schema同步，registry版本不变，完整Manifest仍供Agent。场景导航改名分类，共享底座一句话，搜索占位"搜索应用"。25项相关回归+全量通过，桌面/深色/390浏览器验收通过；未部署。
 
+130 expo县级地图：首页地图为真实县级边界（2875县+34省+九段线），数据阿里云DataV areas_v3，scripts/build_expo_geo.py重建（34个省直辖县级单位按childrenNum==0回退省级几何，网络失败中止不得冒充）。geo资产在extensions/expo/geo/，部署/var/www/expo/geo/（nginx location ^~ /expo/geo/长缓存7天）。县级JSON约17MB勿入构建内联；台湾要素同时出现在两文件，keep()不得原地改共享对象。地级点亮地名（如嘉兴）无同名县级单元不标为已知边界。边界数据合规评估（审图号）未做，详specs/130。
+
 
 129需求研究小好引导与画布交接：/needs/为小好统一确定性引导+实时任务卡，0模型调用；参考与路线可跳过，旧measure默认不冒充选择。gooddesign-canvas-handoff-1.0经同源localStorage进入/canvas/独立任务键，用户陈述不升事实，新任务不得混入割胶证据/子问题/概念/红队或套冻结GDRP。普通编辑仅本地，点击保存才POST。preview_gooddesign_site.py可在8899同源提供needs/canvas并代理至8978；129验收用独立临时库。需求资源按内容SHA加?v。40新浏览器+39动态案例+54相关测试通过，审计P0/P1=0；并行应用中心128的11旧契约失败不属于本任务。已窄范围部署static=20261115-129-needs、canvas=20261115-129-canvas；需求资源使用/inno/portal/技术路径，回滚=/var/www/innovation-design/release-backups/20261115-129。外网浏览器连接受限，登录后交接走查仍待。
 
 129应用中心市场式布局：推倒128三栏控制台，改单一视觉流——标题+搜索、分类页签（无计数）、auto-fill卡片网格、点卡片开原生dialog详情弹层（名字/徽章/价值/分类状态开发者/案例卡/进入按钮，Escape/背板/按钮关闭，焦点返回）。状态只靠徽章，删除侧栏/状态筛选/底部案例区/规划区；页宽1200。移动双列+底部抽屉。坑：JS引用元素必须在弹层HTML存在（app-detail-badge缺失致点击静默失败，已入101标记锁定）；弹层hero徽章须justify-items:start。095改查data-app-kind与/cases/chang-e/；096浏览器改弹层流程与分类计数2/3/2/7。25项相关回归+全量通过，1440/窄视口/深色/Escape验收通过。
+
+
+133产业看台：已有报告优先直达（start默认先等litReady并查精确地名，openReport失败用force=true防循环），重新研究必须显式触发。运行页七角色与真实activity事件共用LIVE计数，不按时间虚构文章/工作量；think只驱动阶段认知构件，不展示原始JSON。retrieve_candidates支持found累积与on_hit绝对数量；event形参须为event_type，不能与activity的kind载荷冲突。页面v14/服务端v13，3单测+13浏览器及线上绍兴真实SSE通过。详specs/133。
+
+
+134研究故事线与任务摘要：/needs/四步置顶，摘要参考只显示数量、未知前三项其余折叠，导出unknowns仍全量；对话不重复模型边界。新任务默认rc-story-home，开始查证只本地选n2且不POST；四阶段define/research/direction/action映射原七节点，不得另建状态机。步骤视图与节点总览可切换，演示仍默认总览。原导出/重置ID保留在rc-more。60相关+44交接+29故事线+39动态案例+全量784通过，审计P0/P1=0；产物output/design-134，未部署，线上仍129。
+
+
+135+136报告交付与运行控制：打印必须用`#report.on{display:block!important}`覆盖运行态网格，否则正文会落入230px目录栏逐字换行；A4实测15页。保存HTML复用#rdoc克隆，DELIVERY_CSS全内联、无脚本、链接转主域绝对地址。暂停只暂停前端呈现/计时，SSE事件排队、静态sleep协作暂停，不宣称暂停远端模型。POST /expo/api/archive只收place并操作服务器已有报告，curated区分确认收录；不得接受客户端pack覆盖。页面v15/服务端v14，5单测+17浏览器验收及线上接口通过。
+
+
+137+138扫码交付与深研增强：报告专属地址/expo/?report=地名，启动时litReady后openReport；二维码复用original-app/public/vendor/qrcode.min.js构建内联，qrData必须加白色静区且项目码160px生成（96px实测不可解码）。静态封面真源extensions/project-portal/covers并构建内嵌；动态pack.projects携带cover绝对地址，保存HTML时fetch转dataURL。标准/深研新增prompt_facts与联网企业深读，validate_research/company URL白名单，opportunity必须有falsify；所有新增量入activity/metrics。玉环deep实测178秒/11调用/5事实/3对标/5企业/6项目；事实和对标URL为0须保持待核，不得补造。详specs/137、138。
+
+
+139政府领导版语言：报告面向地方领导，核心口径“先开展验证，再研究推广”；正文不得出现旧口号、proposed/hard=null、确定性层、逐字召回、模型调用等内部术语。章节与状态采用139/131对照表，案例依据用basisText去掉静态项目ID；模型SYS_JSON同步咨政写作要求。数据层状态/字段不变，只改呈现。页面v17/服务端v16，7单测+38浏览器/文件验收通过。
+
+
+140报告链接与浅色双版式：报告URL用/expo/?report=yuhuan等ASCII slug；PLACE_SLUGS+模型overview.slug校验+稳定hash兜底，list/load同时接受place/slug，旧中文链接不得删。LIT同时登记place/slug别名，openReport解析真实地名；pack.slug是前后端真源。body.report-mode浅色只影响报告，首页/运行页深色；屏幕rdoc容器/间距与A4规则必须用print高优先级覆盖。在线rtoc品牌及独立HTML头部均返回/expo/。10单测+42浏览器/文件检查、线上slug兼容通过。
+
+
+141多Agent角色与思考流：顶部/中央/左侧均用D.ip_logo+角色徽章，不再只显示字块。每角色member-process保留最近notes/draft；activity/log进入STAGE_AGENT对应角色，think经readableThought去JSON字段/括号（先引号括号再字段名），不得把不同角色事件混到全局。静态与SSE共用handleEvent，暂停仍排队。页面v19，服务端保持v17；11单测+55浏览器/文件检查通过。
+
+
+142上方分工+单Agent执行流：上方graph是唯一角色分工主视图；左侧team隐藏，显示orchestrator与log连续过程。typeLog结构化生成阶段/动作，activity逐条追加，think由upsertThinking按阶段原位更新，blk追加真实阶段计数；updateOrchestrator同步目标/阶段/过程数/暂停。隐藏角色状态测试改state=attached，不以视觉隐藏判失败。页面v20，服务端v17；12单测+68浏览器/文件检查通过。
+
+
+143实时调研展开：右侧think内research-stream由expandResearch接收activity/think，卡片类型来自RESEARCH_KIND，最多六项；think卡原位更新。阶段切换时showThink必须克隆保留previous stream，禁止清空造成等待空档。静态回放90/65ms，ark_chat推送0.25秒节流；暂停仍由统一队列控制。页面v21/服务端v18，13单测+13专项+68回归通过。
+
+
+144-146中文地名+高速真实工作量+历史：place_label/report_slug分离中文内容与ASCII地址，jiashan输入/旧pack读取均规范为嘉善。动画0.12s思考节流、静态45/35ms、0.16s卡片；角色指针仅作分工可视化。retrieve_candidates新增on_scan，terms/scans/matches逐项activity，第二轮scans可计真实重复动作，metrics scanned仍唯一档案数。报告存储read_reports按ts+mtime_ns倒序；store每次新slug-id不可覆盖，load无id最新/有id指定，archive原地curated不复制，legacy生成稳定ID。首页history用真实独立链接，pack.report_id驱动QR/收录。IP由build内嵌最新PNG，不依赖线上路径。15单测+91浏览器/文件检查与嘉善真实新历史版本通过。
+
+
+147同名区县消歧：build_expo_admin.py由缓存生成admin.json（2875县），城市代码为县adcode前4位+00；330106=杭州市西湖区、360103=南昌市西湖区。地图rec含adcode/identity，点击/悬停/点亮不得只用short；同名输入由ambiguousPlaces/showPlaceChoices先选后研究。slug hangzhou-xihu/nanchang-xihu。并行角色命名/avatar保留，build将team-20261115图片与封面WebP缩略内联（192/256/480px），不依赖线上路径。页面v23/服务端v20，17单测+99浏览器/文件检查通过。
+
+
+148多角色工位：renderWorkers(stage)在每次阶段切换立即生成三个具体分工工位，rolePointer/avatar/worker-line持续动效；工位不改LIVE.c/processCount，不冒充真实鼠标操作。旧工位不跨阶段carry，真实成果仍保留；暂停由#run.paused冻结。角色图使用D.team_avatars内嵌WebP，禁止退回未部署路径。页面v24，服务端保持v20；18单测+102浏览器/文件检查通过。
+
+
+149路径聚焦与深度：无新库，实现trace动线、makeResearchFocusable点击/Enter/Escape与主视区浮层；clone卡片经dataset恢复监听。左侧depth-panel仅真实sources/companies/checked/matches，不综合评分。暂停不得用#run.paused *全局冻结（会把入场/聚焦冻在透明帧），只暂停工作循环；详情浮层opacity=1且须在#think边界内。页面v25，服务端v20；19单测+15专项+102回归通过。
+
+
+150+151地方产业与工作指针：parseResearchTarget拆region/industry/question，API同名参数，Agent.normalize_target统一中文label；chat每次附target_brief，外部趋势≠本地事实，案例由需求驱动。pack.target入历史，报告封面/研究问题/relation-flow呈现五层关系。moveResearchCursor按卡片与#think坐标移动并显示角色，不造假计数；研究卡div需min-width:0。真实玉环水暖阀门128秒/4企业/8需求/8候选/11关联，slug yuhuan-shuinuan-famen独立版本回读通过。页面v26/服务端v21，21单测+115浏览器检查。
+
+
+152报告内容双视角：decision-grid四区使用真实headline/requirements/cases/firstOp；核心判断需展示note或待核实说明。pilot-framework为供会商、非既定分工，含对象/协同/评价/推广前提，不写无依据预算收益或职责承诺。独立HTML同步移动与打印break规则。页面v27，服务端v21；22单测+61关键验收，PDF16/17页视觉通过。
+
+
+153信息吸收与真实频次：expandResearch真实activity/think调用recordRoleActivity+spawnInfoParticle，粒子从卡片到thought-orb，最多36且760ms淡出；工位不触发。roleEvents按角色时间戳复算total/近10秒，指针/聚焦/顶部title展示，禁止换算能力评分。减少动态跳过粒子，暂停由队列阻止新增；粒子与吸收环加入定向暂停。页面v28，服务端v21；22单测+126浏览器/文件检查通过。
+
+
+154浅色与纯净全屏：产业看台明暗由全站chrome.js唯一管理，页面不得重复绑定theme toggle；浅色变量须覆盖首页/地图/运行日志/工位/研究卡/聚焦，report-mode纸张阅读不变。纯净展示用body.expo-presenting+用户点击Fullscreen API，权限拒绝保留CSS兜底；隐藏body>header.gd-nav、.gd-skip、#home>footer.gd-footer、run-controls/rbar/map-tools，仅留fullscreen-exit。Esc/fullscreenchange同步，展示时空闲自动返回禁用，打印隐藏全部展示控件。页面v29/服务端v21，28单测+184浏览器/文件检查通过，详specs/154。
+
+
+155关于页对外展示：/about/以“让真实创新，成为下一次创新的起点”为品牌主线，真实项目与场景优先于内部架构；名称/奖项/封面从catalog读取，560/103/64/7构建时动态计算，不虚构客户合作/联系方式/官方身份。专属about-page.css由info_pages_095.about内联，project_portal.shell支持可选description；/expo/为118动态路由。5单测+53本页浏览器+40品牌检查通过，本页审计P0/P1/P2=0，PDF6页。已上线static=20261116-155-about，仅替换about/index.html，线上SHA256=693d0cef3ffc08e89eeb7e9a8ea621f80fc5dad1fd5ffe3387f82ee5320469c3，回滚指向20261115-129。详specs/155。
+
+
+156数据总览双视图：/report/默认数据价值、?view=quality专业研究质量；全库560/103/64/7与98金奖专项分口径。奖项/年度原生SVG筛选同步代表项目、URL与项目库入口；SVGAnchorElement须用getAttribute('href')构造URL。build_data_report刷新24补证/726来源/2579字段/1279记录，旧分随版本失效不沿用。专业散点/质量/方法/清单保留，CSS/JS内容指纹。13Python+52新版+40旧浏览器通过，PDF5页。已上线20261116-156-report，仅报告HTML/CSS/JS三文件变化，资源版本8108f800，回滚指向20261116-mcp-guide-12-tools，其他MCP页面未改。详specs/156。
+
+
+157展馆+应用中心：旧馆首页与categories构建基址统一/inno/legacy/，preview和118审计同映射；不修改original-app。首页隐藏cosmos，6精选展项及产业/生活/社会筛选；应用中心三列+regional整幅特色卡、移动单列，dialog保持Escape/背板/焦点返回。33静态+175浏览器通过，三页P0/P1/P2=0。已随157联合发布上线。
+
+
+158需求研究精修：不改变四步/草稿/参考/路线/交接协议和model_calls=0；轻量步骤条与引导，全部待确认用一个details收合。移动live-layout必须minmax(0,1fr)，阶段条只在自身滚动，播放按钮>=44px。5静态+37专项+39动态+44交接通过，本页P0/P1/P2=0。已随157联合发布上线。
+
+
+159模型+关于页：/model/以价值—三层协同—四能力—真实应用—建设边界组织，MCP当前12项只读工具，不宣称自主训练或工程结论；/about/新增about-model显著三层板块。5静态+44专项+53关于回归，模型PDF6页/关于7页。已随157联合发布上线。
+
+
+160+161应用与项目库统一及模型可视化：拆解实验室xray为第8应用，/cases/chang-e只解释项目证据如何支撑应用，不是第二档案。全部560 project+560 atom有对应slug的拆解/互动入口，互动仅教学模拟。/museum/laureates合并/projects；nginx禁止nested if，查询拼接由独立separator变量完成且8组合实测。161模型含mo-architecture-map双环SVG、2×2非胶囊能力卡和一证据四路径。发布包只含560个atom项目页而非atom/index；replace_file先解除硬链接再覆盖，禁止copytree写穿旧release。生产20261116-157-museum-apps，1142变更与线上SHA全核通过，回滚20261116-156-report。详specs/157—161。
+
+
+162公开研究同步：package_research_sync_162复用093 research_files白名单，不整库公开。激活从runtime实际library克隆，逐文件核SHA、相同跳过、替换先解除硬链接并chmod 644；runtime/MCP必须同时切换。`.file-admin/jobs.json`是运行状态不计发布差异。生产560题录/103原生/221版，实际34文件/10项目更新，旧093字节未变，回滚runtime123-fix1/MCP research-services-v1。详specs/162。

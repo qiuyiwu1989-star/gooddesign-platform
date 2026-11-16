@@ -1,0 +1,80 @@
+{
+  "schema": "R42-teaching-input-1",
+  "binding": {
+    "problem_id": "TAP-TEACH-001",
+    "problem_version": "0.1.0",
+    "source_problem_path": "02-研究/方法深化执行/MD-001-R48/教学包/00-共享教学输入-v0.1.0.json",
+    "source_problem_sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70",
+    "source_concept_path": "02-研究/方法深化执行/MD-004-R17/教学包/03-交给R36的候选-v0.1.0.json",
+    "source_concept_sha256": "0bd1d1c5b80ff16ada391014d1778c76034c39b44569522e1d388824b03e6c21",
+    "customer_approved": false,
+    "engineering_validated": false
+  },
+  "source_r44": {
+    "path": "../MD-006-R44/教学包/02-能力与解释分支计划.json",
+    "sha256": "baa65b1a9204794c593336ffc6c8fb1f3c2deb8b92659719ab19ec4bd487ef22"
+  },
+  "source_requirement_candidates": {
+    "path": "02-研究/方法深化执行/MD-001-R48/教学包/02-要求候选与双向追溯.json",
+    "sha256": "5f076916551b3119902183ad45629ee29d9efce7a3e2196f30c7dd789652bf34"
+  },
+  "configuration_id": "CFG-TAP-RESEARCH-0.1",
+  "items": [
+    {
+      "source_need": "N-T01",
+      "source_requirement_candidate": "RQ-T01",
+      "identity": "research_hypothesis_not_baselined_requirement",
+      "approved_target": null,
+      "unit": null
+    },
+    {
+      "source_need": "N-T02",
+      "source_requirement_candidate": "RQ-T02",
+      "identity": "research_hypothesis_not_baselined_requirement",
+      "approved_target": null,
+      "unit": null
+    },
+    {
+      "source_need": "N-T03",
+      "source_requirement_candidate": "RQ-T03",
+      "identity": "research_hypothesis_not_baselined_requirement",
+      "approved_target": null,
+      "unit": null
+    }
+  ],
+  "activities": [
+    {
+      "id": "V-P01",
+      "source_need": "N-T01",
+      "type": "proposed_analysis_or_test",
+      "objective": "研究如何形成可检验的边界要求",
+      "configuration_id": "CFG-TAP-RESEARCH-0.1",
+      "threshold": null,
+      "resources": "unknown",
+      "result": null
+    },
+    {
+      "id": "VAL-P03",
+      "source_need": "N-T03",
+      "type": "proposed_use_context_research",
+      "objective": "形成目标操作者状态理解的确认问题",
+      "configuration_id": "CFG-TAP-RESEARCH-0.1",
+      "threshold": null,
+      "resources": "unknown",
+      "result": null
+    }
+  ],
+  "coverage": {
+    "planned": [
+      "N-T01",
+      "N-T03"
+    ],
+    "uncovered": [
+      "N-T02",
+      "N-T04"
+    ]
+  },
+  "ready": false,
+  "results": [],
+  "engineering_pass": false
+}

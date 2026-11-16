@@ -1,0 +1,414 @@
+{
+  "status": "draft_requires_semantic_and_domain_review",
+  "artifact": {
+    "artifact_id": "FM-RUBBER-20261026",
+    "revision": "draft-v1",
+    "task_id": "RUBBER-20261026",
+    "task_revision": "workbench-v1",
+    "type": "FunctionModel",
+    "scope": "依据ProblemBrief（PB-RUBBER-20261026，revision=draft-v1-host-baseline-restored）的N01—N15建立拟议功能、功能流及接口缺口，供机械改进候选路线生成使用。功能必要性仅相对于拟议研究目标判断，不代表客户批准。运行情景未获确认，本模型采用明确标注的情景假设，不冻结功能架构、不推荐路线；所有验证描述均为计划。",
+    "conditions": [
+      {
+        "id": "C01",
+        "text": "任务及上游ProblemBrief均明确为未获客户确认的研究提案，N01—N15均为proposed。",
+        "kind": "fact",
+        "evidence_refs": []
+      },
+      {
+        "id": "C02",
+        "text": "暂以作业准备、对象与环境筛查、定位设置、受控切削、切屑隔离与胶乳收集、结束记录作为正常情景；实际顺序及人工参与方式待现场确认。",
+        "kind": "assumption",
+        "evidence_refs": []
+      },
+      {
+        "id": "C03",
+        "text": "暂以接触丢失、堵转、感知异常、断电、不适用树株及维护后恢复作为异常与生命周期情景；检测能力、退出能力和安全状态均未验证。",
+        "kind": "assumption",
+        "evidence_refs": []
+      },
+      {
+        "id": "C04",
+        "text": "N04、N05、N06、N08、N09、N10、N11、N12、N15的硬度仍未知；其余hard=true仅是上游硬要求提议。硬度未决前不形成候选路线推荐。",
+        "kind": "unknown",
+        "evidence_refs": []
+      },
+      {
+        "id": "C05",
+        "text": "所供月球钻取案例为未审查、截断的机器提取文本，向割胶工况的可迁移性未建立；本模型不采用其性能或成功表述作为割胶功能可行性的依据。",
+        "kind": "fact",
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ]
+      }
+    ],
+    "evidence_refs": [],
+    "payload": {
+      "boundary": "研究边界覆盖作业准备至切削、收集、异常接管、维护恢复和记录评价之间的功能关系。外部对象包括树株、环境、操作员、农艺人员、加工方、供能与挂载平台及数据使用者；其实际能力和责任待确认。保留人工、机械及控制系统的不同功能分配，不预选手持、固定或移动架构。树体长期反应、胶乳品质和经济性属于需跨边界跟踪的评价对象，不能由本功能图证明。下列功能及作用关系均为提案，不是已证实根因或已闭合接口。",
+      "functions": [
+        {
+          "id": "F01",
+          "verb_object": "组织作业任务与平台接入：承接N05、N10、N15，协调定位、安装、转场与收胶环节，保留局部改造和撤销路径。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F02",
+          "verb_object": "筛查树株与环境适用性：承接N08、N14，对厚度未知、旧伤、树结及环境不适用情况形成停止或转人工的拟议判定。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F03",
+          "verb_object": "建立接触与割面位置参照：承接N02、N10，形成表面位置和接触状态输入；表面参照不能单独证明剩余树皮厚度。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F04",
+          "verb_object": "设置作业参数并反馈状态：承接N06，支持操作者检查参数依据、适用范围、异常提示与接管状态。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F05",
+          "verb_object": "约束切削深度与耗皮：承接N01、N02，将待确认的树体保护边界转为切削约束；真实限深能力待独立验证。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F06",
+          "verb_object": "执行受控切削：承接N01、N02、N05，在作业许可和切削约束成立的条件下实施切削并输出过程状态。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F07",
+          "verb_object": "分离并导出新切屑：承接N03，研究切屑通路与胶乳通路的隔离；隔离效果尚未证实。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F08",
+          "verb_object": "管理旧胶线与黏附堵塞：承接N04、N09，处理积胶和阻塞并提供清理、停机或人工处理状态。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F09",
+          "verb_object": "引导并收集胶乳：承接N03、N13，研究收集路径、污染暴露与收集损失，保持品质评价所需的样品关联。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F10",
+          "verb_object": "中止危险切削并管理接管复位：承接N07、N14，响应异常与不适用判定，协调停止、退出、人工接管及重新许可。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F11",
+          "verb_object": "恢复清洁与作业校准状态：承接N09、N15，支持清洗、换刀、复装、校准检查与改造撤销后的恢复。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F12",
+          "verb_object": "接入并管理作业能量：承接N07、N10，向切削功能提供所需能量并处理供能异常；能量形式与失能行为待定。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F13",
+          "verb_object": "记录作业与配置关联：承接N11，关联树ID、时间、版本、工况、人工操作、异常及数据缺失。",
+          "necessity": "necessary",
+          "evidence_refs": []
+        },
+        {
+          "id": "F14",
+          "verb_object": "汇集全流程效果与成本评价输入：承接N01、N05、N06、N12、N13，组织人时、干胶、品质、损失、树体跟踪、维护与成本口径；不在缺少数据时输出收益结论。",
+          "necessity": "supporting",
+          "evidence_refs": []
+        }
+      ],
+      "flows": [
+        {
+          "id": "FL01",
+          "from_function": "F01",
+          "to_function": "F02",
+          "flow_type": "signal",
+          "description": "拟议正常路径起点：传递待作业树株标识、任务及已知工况；身份或工况缺失时如何处理待定义。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL02",
+          "from_function": "F02",
+          "to_function": "F04",
+          "flow_type": "signal",
+          "description": "传递适用、拒绝或未知状态及判定依据；未知状态不得默认为适用。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL03",
+          "from_function": "F03",
+          "to_function": "F05",
+          "flow_type": "signal",
+          "description": "传递表面位置、接触状态及不确定性；剩余树皮信息若无生产来源，应保留为缺失，不能由表面跟随结果替代。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL04",
+          "from_function": "F04",
+          "to_function": "F05",
+          "flow_type": "signal",
+          "description": "传递经检查的拟议参数、依据与适用范围；许可权限及检查方式未确定。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL05",
+          "from_function": "F05",
+          "to_function": "F06",
+          "flow_type": "signal",
+          "description": "传递允许切削范围及禁止条件；约束不可得或失效时进入何种安全状态待定义。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL06",
+          "from_function": "F12",
+          "to_function": "F06",
+          "flow_type": "energy",
+          "description": "提供切削所需能量；形式、负载、瞬态及切断后的残余能量均未知。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL07",
+          "from_function": "F06",
+          "to_function": "F07",
+          "flow_type": "material",
+          "description": "新切屑进入拟议隔离与导出通路；流量、含胶状态和实际去向待勘察。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL08",
+          "from_function": "F06",
+          "to_function": "F09",
+          "flow_type": "material",
+          "description": "表达切削后树体流出胶乳进入收集功能的拟议物料路径，不表示切削机构自身产生胶乳，也不保证流量或持续时间。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL09",
+          "from_function": "F08",
+          "to_function": "F10",
+          "flow_type": "signal",
+          "description": "传递旧胶线处理失败、黏附或堵塞状态；检测方式与触发阈值待研究。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL10",
+          "from_function": "F06",
+          "to_function": "F10",
+          "flow_type": "signal",
+          "description": "传递切削执行、堵转及异常状态；状态反馈失效本身的处理规则待定义。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL11",
+          "from_function": "F03",
+          "to_function": "F10",
+          "flow_type": "signal",
+          "description": "传递接触丢失或位置参照无效状态，用于研究停止与退出联锁。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL12",
+          "from_function": "F02",
+          "to_function": "F10",
+          "flow_type": "signal",
+          "description": "传递不适用或无法判定状态，进入停止或人工例外处理路径。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL13",
+          "from_function": "F10",
+          "to_function": "F06",
+          "flow_type": "signal",
+          "description": "传递禁止切削、停止或经重新许可后的状态；不假设退出动作在所有异常下均可执行。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL14",
+          "from_function": "F10",
+          "to_function": "F12",
+          "flow_type": "signal",
+          "description": "传递能量隔离或受控保持请求；停止切削与完成退让所需能量可能不同，须协调。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL15",
+          "from_function": "F11",
+          "to_function": "F04",
+          "flow_type": "signal",
+          "description": "维护后返回工具版本、复装与校准检查状态；未完成检查不得默认恢复原参数有效性。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL16",
+          "from_function": "F10",
+          "to_function": "F13",
+          "flow_type": "signal",
+          "description": "传递异常、停止、接管和复位事件；断电时能否保留记录待确定。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL17",
+          "from_function": "F09",
+          "to_function": "F13",
+          "flow_type": "signal",
+          "description": "传递收集批次、树株关联和损失记录；品质与干胶测量由待确认的外部流程提供。",
+          "evidence_refs": []
+        },
+        {
+          "id": "FL18",
+          "from_function": "F13",
+          "to_function": "F14",
+          "flow_type": "signal",
+          "description": "传递带版本、时间及缺失标识的作业记录，用于后续评价计划；记录存在不代表测量有效。",
+          "evidence_refs": []
+        }
+      ],
+      "interfaces": [
+        {
+          "id": "I01",
+          "text": "F01与外部平台：拟定义挂载、定位、供能、转场和收胶交接边界，并保留局部改造及撤销接口。接口尺寸、载荷、单位、允许范围、责任双方和检查方法均待勘察；不据此选择整机架构。",
+          "kind": "unknown",
+          "evidence_refs": []
+        },
+        {
+          "id": "I02",
+          "text": "树株、环境及人工判断至F02：拟输入树ID、树皮与旧割面状态、光照、湿度及允许时段，并输出适用/不适用/未知及依据。信息生产者、有效时长、更新条件和农艺确认权限未定；雨水防护不等于雨中可割。",
+          "kind": "assumption",
+          "evidence_refs": []
+        },
+        {
+          "id": "I03",
+          "text": "F03—F05—F06：拟将表面位置、刀位移、剩余树皮与损伤评价作为不同语义量管理。坐标、单位、误差、更新时序及真实限深所需信息来源未知；派生研究项是明确哪些信息足以支持切削许可，不能用跟随良好关闭限深问题。",
+          "kind": "unknown",
+          "evidence_refs": []
+        },
+        {
+          "id": "I04",
+          "text": "操作员与F04/F10：拟定义参数设置、状态提示、停止、人工接管、例外授权及复位交互。权限、培训要求、反馈可理解性和响应时序待确认；人工接管不能默认随时可达。",
+          "kind": "assumption",
+          "evidence_refs": []
+        },
+        {
+          "id": "I05",
+          "text": "F06/F07/F08/F09及外部收集端：拟区分新切屑、旧胶线、黏附物和胶乳的去向，记录污染、损失与清理状态。通路几何、材料、流动范围及隔离效果未知；后续仅计划比较真实含胶工况，不能以空载运行关闭接口。",
+          "kind": "unknown",
+          "evidence_refs": []
+        },
+        {
+          "id": "I06",
+          "text": "F10/F12与切削及退出功能：拟明确急停、断电、接触丢失、堵转、感知失效下的状态转换。停止时间、残余能量、退让方向、卡住时的处置及复位条件未知；先明确安全审核责任，再制定受控验证计划。",
+          "kind": "unknown",
+          "evidence_refs": []
+        },
+        {
+          "id": "I07",
+          "text": "维护人员与F11：拟交接清洗、换刀、耗材版本、磨损积胶状态、复装和校准记录；恢复时向F04提供可检查状态。清洗介质、材料兼容性、校准依据及撤销后的恢复标准待定。",
+          "kind": "assumption",
+          "evidence_refs": []
+        },
+        {
+          "id": "I08",
+          "text": "F01—F13及F03—F12的状态记录：拟按同一树ID、任务和工具版本关联定位、安装、切割、转场、收集、清理、故障、维护与接管事件。数据字段、时钟、单位、版本、缺失编码、存储载体和责任人未定，不假设客户已有数字系统。",
+          "kind": "assumption",
+          "evidence_refs": []
+        },
+        {
+          "id": "I09",
+          "text": "加工方、农艺人员及运营方至F14：拟提供干胶、杂质、收集损失、跨周期树体影响、人时、成本及利用率输入。测量方法、样品关联、跟踪周期和数据责任未确定；不得用初始流速替代季节产量或据缺失数据计算ROI。",
+          "kind": "unknown",
+          "evidence_refs": []
+        },
+        {
+          "id": "I10",
+          "text": "功能分配与验证责任接口：F01—F14目前均未分配到确定的机械、电气、控制或人工承担方。后续拟逐项指定输入提供者、输出接收者、失效处置责任及验证责任；未闭合关键安全与限深接口前不提出集成基线。",
+          "kind": "unknown",
+          "evidence_refs": []
+        }
+      ],
+      "unknowns": [
+        "缺少客户确认的运行情景；需确认正常流程、异常处理、维护与转场顺序，再修订本模型。",
+        "N01—N15均为拟议要求；N04、N05、N06、N08、N09、N10、N11、N12、N15的硬度及优先级尚未解决，不形成路线推荐。",
+        "树皮厚度、剩余树皮、生物损伤边界与表面参照之间的关系未知；F05所需关键输入尚无确定生产者。",
+        "F02识别不适用树株和环境的能力未知；误许可、误拒绝及未知状态的人工处理规则待确认。",
+        "供能、挂载、执行、感知及退出机构未选定；断电停止、残余能量与安全退让是否兼容尚不明确。",
+        "切屑隔离、旧胶线处理、黏附控制与胶乳收集之间可能存在相互影响，但本次未提供证明其方向或程度的项目证据。",
+        "各功能失效后果需进一步分析，尤其是限深失效导致的树体损伤风险、隔离失效导致的污染风险及复位错误导致的再次切削风险；这些是待分析情景，不是已发生事实。",
+        "F07的切屑、F08的清理物和F09的胶乳离开边界后的接收者及处置规则尚未确定，物料路径尚未闭合。",
+        "品质、干胶、树体长期影响和经济性评价均依赖外部数据；测量口径、阈值、周期及责任尚未确定。",
+        "尚无接口双方确认、模型情景走查结果、计算、样机试验或工程验证；功能覆盖候选不等于内部一致性或物理可行性已获证明。",
+        "局部改造范围、撤销条件及手持、固定、移动架构之间的功能分配仍开放；案例不能支持其中任何架构优先。"
+      ]
+    }
+  },
+  "check": {
+    "status": "structure_and_declared_consistency_passed",
+    "issues": [],
+    "artifact_sha256": "6a3bddb979513221959b54af112511fb087f9ad6f08dc63dd3e1d5f384462ccc",
+    "evidence_refs": [
+      "case-98b73a9c96af1f9408721571"
+    ],
+    "declared_unknowns": [
+      "缺少客户确认的运行情景；需确认正常流程、异常处理、维护与转场顺序，再修订本模型。",
+      "N01—N15均为拟议要求；N04、N05、N06、N08、N09、N10、N11、N12、N15的硬度及优先级尚未解决，不形成路线推荐。",
+      "树皮厚度、剩余树皮、生物损伤边界与表面参照之间的关系未知；F05所需关键输入尚无确定生产者。",
+      "F02识别不适用树株和环境的能力未知；误许可、误拒绝及未知状态的人工处理规则待确认。",
+      "供能、挂载、执行、感知及退出机构未选定；断电停止、残余能量与安全退让是否兼容尚不明确。",
+      "切屑隔离、旧胶线处理、黏附控制与胶乳收集之间可能存在相互影响，但本次未提供证明其方向或程度的项目证据。",
+      "各功能失效后果需进一步分析，尤其是限深失效导致的树体损伤风险、隔离失效导致的污染风险及复位错误导致的再次切削风险；这些是待分析情景，不是已发生事实。",
+      "F07的切屑、F08的清理物和F09的胶乳离开边界后的接收者及处置规则尚未确定，物料路径尚未闭合。",
+      "品质、干胶、树体长期影响和经济性评价均依赖外部数据；测量口径、阈值、周期及责任尚未确定。",
+      "尚无接口双方确认、模型情景走查结果、计算、样机试验或工程验证；功能覆盖候选不等于内部一致性或物理可行性已获证明。",
+      "局部改造范围、撤销条件及手持、固定、移动架构之间的功能分配仍开放；案例不能支持其中任何架构优先。"
+    ],
+    "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+    "semantic_support": "not_independently_verified",
+    "engineering_validated": false,
+    "cross_method_check": "performed"
+  },
+  "model_mode": "real_codex_model",
+  "call_id": "step-3c496fb353054d549147bcb113ff46b6",
+  "attempts": [
+    {
+      "attempt": 0,
+      "check": {
+        "status": "structure_and_declared_consistency_passed",
+        "issues": [],
+        "artifact_sha256": "6a3bddb979513221959b54af112511fb087f9ad6f08dc63dd3e1d5f384462ccc",
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "declared_unknowns": [
+          "缺少客户确认的运行情景；需确认正常流程、异常处理、维护与转场顺序，再修订本模型。",
+          "N01—N15均为拟议要求；N04、N05、N06、N08、N09、N10、N11、N12、N15的硬度及优先级尚未解决，不形成路线推荐。",
+          "树皮厚度、剩余树皮、生物损伤边界与表面参照之间的关系未知；F05所需关键输入尚无确定生产者。",
+          "F02识别不适用树株和环境的能力未知；误许可、误拒绝及未知状态的人工处理规则待确认。",
+          "供能、挂载、执行、感知及退出机构未选定；断电停止、残余能量与安全退让是否兼容尚不明确。",
+          "切屑隔离、旧胶线处理、黏附控制与胶乳收集之间可能存在相互影响，但本次未提供证明其方向或程度的项目证据。",
+          "各功能失效后果需进一步分析，尤其是限深失效导致的树体损伤风险、隔离失效导致的污染风险及复位错误导致的再次切削风险；这些是待分析情景，不是已发生事实。",
+          "F07的切屑、F08的清理物和F09的胶乳离开边界后的接收者及处置规则尚未确定，物料路径尚未闭合。",
+          "品质、干胶、树体长期影响和经济性评价均依赖外部数据；测量口径、阈值、周期及责任尚未确定。",
+          "尚无接口双方确认、模型情景走查结果、计算、样机试验或工程验证；功能覆盖候选不等于内部一致性或物理可行性已获证明。",
+          "局部改造范围、撤销条件及手持、固定、移动架构之间的功能分配仍开放；案例不能支持其中任何架构优先。"
+        ],
+        "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+        "semantic_support": "not_independently_verified",
+        "engineering_validated": false,
+        "cross_method_check": "performed"
+      }
+    }
+  ],
+  "expert_certified": false
+}

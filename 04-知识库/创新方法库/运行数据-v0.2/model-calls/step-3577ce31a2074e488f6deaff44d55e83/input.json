@@ -1,0 +1,904 @@
+{
+  "payload": {
+    "task": {
+      "task_id": "LIVE-TEACH-CLAMP",
+      "revision": "t1",
+      "object": "bench clamp",
+      "desired_outcome": "hold a workpiece without damage",
+      "boundary": "teaching concept and test planning only; customer load, material, geometry and damage criterion unknown",
+      "stage": "frame",
+      "delivery_level": "concept",
+      "source_policy": "Lunar sampling case is provided as a deliberately different environment; do not transfer its parameters or cite it as proof of clamp performance."
+    },
+    "method": {
+      "schema_version": "method-dossier-1.0",
+      "research_id": "R17",
+      "method_id": "IM-ML-017",
+      "version": "0.1.0",
+      "name": "形态学分析",
+      "english_name": "Morphological Analysis",
+      "kind": "method",
+      "category": "B功能分析与概念生成",
+      "lineage": [
+        "形态学研究",
+        "系统化工程设计"
+      ],
+      "aliases": [],
+      "summary": "把子功能或问题维度的候选状态显式列出，通过一致性检查形成可追溯的概念组合。",
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "sections": {
+        "identity": "形态学分析源于Fritz Zwicky的广义形态研究，Tom Ritchey进一步发展了面向复杂、非量化问题的GMA与交叉一致性分析。本档案讨论工程概念阶段的子功能—解法表，并借用GMA的一致性思想。两者是有亲缘的用法，不等于同一套完整软件或统一算法。采用的是网页所述概念及平台操作适配，未复制专用工具。",
+        "problem": "设计团队常把现有机构当作问题本身，只改变尺寸或外观，因而错过其他作用原理。形态学分析把“必须完成的作用”和“怎样实现”分开：例如输送、定位、夹持、释放各自可能有不同解法。它处理的是概念组合空间，不负责发现真实用户需求，也不替代已定原理后的精确参数优化。如果功能拆分不合理，组合表越大反而越容易产生伪方案。",
+        "principle": "方法先定义维度和候选值，再考察组合之间是否一致。工程应用中可把维度取为子功能、候选值取为实现原理。每一列选项不只写零件名，还写输入输出和作用条件。交叉一致性是在判断条件能否共存，不直接表示因果。平台把逻辑冲突、实证限制、用户硬约束和未知分别保存；不能因为某方案不受偏爱，就把它写成物理上不可能。成对相容也不足以证明多部件整体可行。",
+        "applicability": "适合已能说明目标功能、允许更换技术路线、又存在若干可选原理的概念阶段。至少要知道哪些功能不可丢失、系统内外边界和关键接口。对于只需调整一个已成熟机构尺寸的任务，应先考虑分析和优化。若材料、尺度、动力或安全要求未知，仍可做初步概念枚举，但兼容结论必须写成待验证；若对象和目标都未知，应返回问题定义，不用随机组合制造热闹。",
+        "interpretation": "有用的产物不是一个巨大排列清单，而是每条保留路线的功能分配、接口解释、出处、排除理由和未知项。读者应能复查某一组合为什么留下、删去哪个约束会多出什么路线。组合数量只是形式空间大小，不是创新性、质量或成功率。没有统一的工程最优评分，不能因为一种组合涉及更多新技术就给它更高分；筛选准则应从任务要求另行建立。",
+        "example": "教学演示：探索一个物件夹持工具，假设必要功能为定位、产生夹持作用和释放，真实载荷、材料、节拍均未知。第1步产出功能边界；第2步分别列基准定位/自定心、手动螺旋/气动、反向释放/弹性复位等概念方向。第3步发现目标气源未知，且弹性复位与持续保持的关系尚未说明，记录unknown而非通过。第4步保留手动与气动两条结构待细化路线，不宣称已可制造。第5步输出补查载荷、空间、接触材料和保持条件的任务，再进入比较。这里没有真实企业或实测效果。 补充一条可跟随组合：在“低速、允许手动、固定形状工件”的教学假设下，固定基准定位＋手动螺旋夹紧＋反向旋松释放，三者在作用原理层面可连接，作为组合M1保留；这不是载荷和寿命已合格。明确排除组合M2：仅有单向气缸夹紧、无螺旋传动，却要求靠反向旋松同一传动件释放；在该拓扑假设下没有对应自由度和载体，故为逻辑不相容。若新增螺旋机构，应登记成新的选项与组合，不能把M2原样改判通过。",
+        "pitfalls": "误用一：把笛卡尔积所有排列叫创新方案，正确做法是先核接口再保留有意义的组合。误用二：把同一原理的不同尺寸当成不同技术路线，应标为参数变体。误用三：把未知兼容性自动当作通过，应显示缺失条件及验证方法。反例是只允许更换某零件公差而不允许改机构的任务，此时大范围组合会违反任务边界，应换成参数或公差分析。",
+        "validation": "方法执行检查关注维度定义是否清晰、选项是否混层、冲突是否有依据、候选路线是否能说明全功能链。工程验证则要看实际模型、运动干涉、载荷、材料与制造条件，不能由一张形态学表证明。可用明确冲突输入检查程序是否剔除，用未知接口输入检查是否保留unknown；但软件筛选通过只说明规则执行一致。没有几何或求解器时，只输出概念与验证问题。",
+        "adaptation": "原典支持维度、状态、组合空间与交叉一致性等概念。本平台将其落实成问题简报、功能选项表、兼容日志和后续输入包；三态检查、证据字段、工程接口清单与教学例子都是平台适配，不作为Zwicky或Ritchey逐字流程。未来引擎可以从项目库补选项，但每个原理都应带源条件，不能把案例标题相似当作接口兼容。",
+        "gaps": "已核读Ritchey网页的定义、形态空间和CCA相关段落，未取得工程教材完整概念设计章节，也未采用其专用GMA软件。本条可供有边界的概念研究，尚缺真实企业任务、工程兼容性复核和方法效果评价。后续需要选择一个资料充分的机械设计过程，对功能拆分、被排除路线和验证结果作可追溯回看；本档案不认定任何获奖团队曾实际使用此法。"
+      },
+      "inputs": [
+        {
+          "key": "task",
+          "label": "问题简报",
+          "type": "object",
+          "required": true,
+          "description": "对象、目标、系统边界和硬约束；目标与事实分开",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "functions",
+          "label": "必要子功能",
+          "type": "array",
+          "required": true,
+          "description": "动词加对象、输入输出和接口",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "options",
+          "label": "已知候选原理",
+          "type": "array",
+          "required": false,
+          "description": "来源、作用条件及未知；允许后续检索补充",
+          "missing_action": "mark_unknown"
+        },
+        {
+          "key": "conditions",
+          "label": "工况与资源",
+          "type": "object",
+          "required": false,
+          "description": "材料、尺度、动力、载荷、空间及验收口径",
+          "missing_action": "concept_only"
+        }
+      ],
+      "steps": [
+        {
+          "step_id": "R17-S01",
+          "title": "界定可变功能和边界",
+          "input_refs": [
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [],
+          "operation": "逐一确认必要功能及不可改变条件，将已指定零件与真正作用分开；建立功能到目标要求的联系。",
+          "decision": "对象或目标未知则追问；功能只是零件清单则返回分解。",
+          "output_key": "function_scope",
+          "output_description": "必要功能、可变范围、接口和硬约束。",
+          "checks": [
+            "每个功能说明对何对象产生什么作用。"
+          ],
+          "stop_condition": "不能明确任务对象或必要功能时停止。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "查询案例的功能结构、输入输出及系统边界，不先找同形零件。"
+          ]
+        },
+        {
+          "step_id": "R17-S02",
+          "title": "组织候选原理",
+          "input_refs": [
+            "function_scope",
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [
+            "R17-S01"
+          ],
+          "operation": "按子功能列出不同作用机制；相同原理的尺寸变化单列为参数变体，保存来源或平台假设。",
+          "decision": "每个必要功能无解法则补检索；只有单一路线时说明原因。",
+          "output_key": "option_matrix",
+          "output_description": "子功能—解法表及每项接口条件。",
+          "checks": [
+            "原理与部件名、参数变体不混层。"
+          ],
+          "stop_condition": "关键必要功能无候选且无法补充时返回前步。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+          ]
+        },
+        {
+          "step_id": "R17-S03",
+          "title": "检查交叉与整体一致性",
+          "input_refs": [
+            "option_matrix",
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [
+            "R17-S02"
+          ],
+          "operation": "逐对核对能量、运动、空间、载荷和控制条件，再检查三项以上交互；明确分离逻辑冲突、实证限制和目标约束。",
+          "decision": "有明确冲突排除；证据不足记unknown；成对通过仍需整体检查。",
+          "output_key": "compatibility_log",
+          "output_description": "每个检查对象、状态、理由、证据和待验证点。",
+          "checks": [
+            "未知不记通过，偏好不冒充物理冲突。"
+          ],
+          "stop_condition": "全部组合违反同一硬约束则返回选项或任务定义。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+          ]
+        },
+        {
+          "step_id": "R17-S04",
+          "title": "形成可解释概念路线",
+          "input_refs": [
+            "compatibility_log",
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [
+            "R17-S03"
+          ],
+          "operation": "选择原理组合，说明全功能链及接口如何工作，保留不同机制路线及复杂性代价。",
+          "decision": "路线须覆盖全部必要功能；欠缺功能则返回组合。",
+          "output_key": "concept_set",
+          "output_description": "候选方案、功能分配、差异、代价、出处及未知。",
+          "checks": [
+            "不以组合数量冒充创新质量。"
+          ],
+          "stop_condition": "无法说明必要功能接替和接口时不形成确定方案。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+          ]
+        },
+        {
+          "step_id": "R17-S05",
+          "title": "交接比较与验证",
+          "input_refs": [
+            "concept_set",
+            "task",
+            "functions",
+            "options",
+            "conditions"
+          ],
+          "depends_on": [
+            "R17-S04"
+          ],
+          "operation": "把候选和关键未知转成比较输入及验证问题，指出需要何种模型、数据与测试。",
+          "decision": "缺载荷或材料只做概念比较，不唯一选型。",
+          "output_key": "handoff",
+          "output_description": "比较准则、基线、待验证假设和后续方法输入。",
+          "checks": [
+            "每个核心未知对应具体补证或验证动作。"
+          ],
+          "stop_condition": "没有验收口径时不得宣称方案已达标。",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "key": "option_matrix",
+          "label": "功能解法表",
+          "required_fields": [
+            "function",
+            "principle",
+            "interfaces",
+            "source_or_hypothesis"
+          ],
+          "interpretation": "解释组合空间，不证明可行。"
+        },
+        {
+          "key": "concept_set",
+          "label": "候选原理路线",
+          "required_fields": [
+            "function_allocation",
+            "interfaces",
+            "tradeoffs",
+            "unknowns"
+          ],
+          "interpretation": "仅概念层保留。"
+        },
+        {
+          "key": "handoff",
+          "label": "比较与验证输入",
+          "required_fields": [
+            "criteria",
+            "baseline",
+            "validation_questions"
+          ],
+          "interpretation": "衔接后续，不是结果。"
+        }
+      ],
+      "relations": [
+        {
+          "target_research_id": "R14",
+          "relation": "requires",
+          "binding": "function_model→functions",
+          "condition": "必要功能和边界可说明"
+        },
+        {
+          "target_research_id": "R27",
+          "relation": "parallel",
+          "binding": "机制候选→options",
+          "condition": "缺替代原理"
+        },
+        {
+          "target_research_id": "R36",
+          "relation": "precedes",
+          "binding": "concept_set→候选集",
+          "condition": "共同要求可比较"
+        },
+        {
+          "target_research_id": "R42",
+          "relation": "precedes",
+          "binding": "validation_questions→验证计划",
+          "condition": "关键假设可测"
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "S01",
+          "publisher": "Swedish Morphological Society",
+          "authors": [
+            "Tom Ritchey"
+          ],
+          "title": "General Morphological Analysis",
+          "url": "https://swemorph.com/ma.html",
+          "locator": "General Morphology；Cross Consistency Assessment",
+          "read_scope": "网页相关主体段落核读",
+          "accessed_at": "2026-10-23",
+          "supports": [
+            "维度与状态",
+            "组合空间",
+            "成对一致性而非因果",
+            "逻辑/实证/规范判断区别"
+          ],
+          "evidence_note": "已核到概念建模与CCA原理，工程接口清单及日志状态由平台适配。",
+          "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+        }
+      ],
+      "evaluations": [
+        {
+          "scenario": "功能和选项充分且一组明显冲突",
+          "expected": "保留相容候选并说明被排除组合的依据。"
+        },
+        {
+          "scenario": "动力条件未知",
+          "expected": "气动等路线标条件未知，不当已可行。"
+        },
+        {
+          "scenario": "已定机构仅需公差调整",
+          "expected": "指出本法不是首选，转参数/公差分析。"
+        }
+      ],
+      "search_terms": [
+        "形态学",
+        "Zwicky",
+        "形态学矩阵",
+        "CCA",
+        "功能组合"
+      ],
+      "change_log": [
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "051逐项检索与平台操作适配；保留原典核读范围"
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "跨组复核后补充可跟随教学推演，明确假设与未执行状态"
+        }
+      ]
+    },
+    "contract": {
+      "contract_version": "0.2.0",
+      "research_id": "R17",
+      "artifact_type": "ConceptSet",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ConceptSet"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "fact",
+                    "assumption",
+                    "unknown"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "kind",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "payload": {
+            "type": "object",
+            "properties": {
+              "function_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "function_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "principle": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000
+                    },
+                    "conditions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 6000
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "function_id",
+                    "principle",
+                    "conditions",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "combinations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "option_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 1,
+                      "maxItems": 200
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "candidate",
+                        "excluded",
+                        "unknown"
+                      ]
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "option_ids",
+                    "status",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "compatibility": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "option_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 2,
+                      "maxItems": 200
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "compatible",
+                        "incompatible",
+                        "unknown"
+                      ]
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "option_ids",
+                    "status",
+                    "reason",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0,
+                "maxItems": 200
+              },
+              "unknowns": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                },
+                "minItems": 0,
+                "maxItems": 200
+              }
+            },
+            "required": [
+              "function_ids",
+              "options",
+              "combinations",
+              "compatibility",
+              "unknowns"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "artifact_id",
+          "revision",
+          "task_id",
+          "task_revision",
+          "type",
+          "scope",
+          "conditions",
+          "evidence_refs",
+          "payload"
+        ],
+        "additionalProperties": false
+      },
+      "purpose": "从子功能选项组合候选概念",
+      "requires": [
+        "ProblemBrief",
+        "FunctionModel"
+      ],
+      "stage": "generate",
+      "next": [
+        "R36"
+      ],
+      "stop": "成对相容不代表整体可行；矛盾或条件未知要保留。",
+      "input_bindings": {
+        "task": "artifact:ProblemBrief",
+        "functions": "artifact:FunctionModel.payload.functions",
+        "options": "task.known_options",
+        "conditions": "artifact:ProblemBrief.payload.conditions"
+      },
+      "status": "platform_authored_not_expert_reviewed",
+      "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+    },
+    "inputs": [
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-brief",
+        "revision": "r1",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "ProblemBrief",
+        "scope": "Frame the bench-clamp holding and damage-prevention problem for teaching and subsequent test planning. This is a draft problem brief, not an approved requirements baseline or evidence of product performance.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The supplied task specifies a bench clamp and the desired outcome of holding a workpiece without damage.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Customer load, workpiece material, geometry and damage criterion are unknown; specifications and acceptance thresholds cannot yet be fixed.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "The supplied lunar-sampling excerpt concerns a different environment. Its transferability is not established; its parameters and reported achievements provide no proof of bench-clamp performance.",
+            "kind": "fact",
+            "evidence_refs": [
+              "case-98b73a9c96af1f9408721571"
+            ]
+          }
+        ],
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "payload": {
+          "actor": "Intended bench-clamp operator; customer identity, capabilities and work context are unknown.",
+          "object": "bench clamp",
+          "boundary": "Teaching concept and test planning only; customer load, material, geometry and damage criterion unknown. Stop specification finalization until these conditions are clarified. No concept selection, physical testing or engineering validation is established.",
+          "desired_outcome": "hold a workpiece without damage",
+          "requirements": [
+            {
+              "id": "REQ01",
+              "text": "The bench clamp should retain the intended workpiece during the intended operation under use conditions to be established.",
+              "hard": null,
+              "acceptance": "Proposed verification plan only: first establish workpiece geometry, applied loads, load directions, holding duration and allowable movement with the responsible stakeholder; then plan a retention test against those agreed conditions. No threshold or result is available.",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "REQ02",
+              "text": "Clamping and release should leave the workpiece within an agreed damage criterion.",
+              "hard": null,
+              "acceptance": "Proposed verification plan only: identify material, surface condition and unacceptable changes; agree inspection methods and acceptance limits before planning a before-and-after assessment. Damage criteria and results remain unknown.",
+              "status": "proposed",
+              "evidence_refs": []
+            }
+          ],
+          "conditions": [
+            {
+              "id": "PC01",
+              "text": "Whether adequate retention and acceptable workpiece condition can be achieved together is unresolved for the customer's unknown use conditions.",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "PC02",
+              "text": "Requirement owners, confirmation authority, priority rules and change-approval responsibilities have not been supplied. Both requirements remain draft proposals.",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "PC03",
+              "text": "Proposed change process: retain requirement IDs and revision history, record the reason for each change, and revisit affected concepts and verification plans before establishing a confirmed baseline.",
+              "kind": "assumption",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "Who operates the clamp, for which work operation, and in what bench environment?",
+            "What are the workpiece material, surface finish, geometry and dimensional variation?",
+            "What loads, directions, durations and allowable movements define successful holding?",
+            "What constitutes damage, and how should it be inspected or measured?",
+            "What bench interfaces, operating constraints and applicable safety requirements must be investigated?",
+            "Which requirements are hard constraints, and who can confirm them and approve changes?",
+            "What representative workpieces and verification resources would be available for a later test plan?"
+          ]
+        }
+      },
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-functions",
+        "revision": "r1",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "FunctionModel",
+        "scope": "Proposed functional model for teaching and later test planning. Maps draft REQ01 retention and REQ02 damage prevention to candidate functions and interfaces. No requirements approval, concept selection, physical feasibility or test execution is established.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The task requests a bench clamp that holds a workpiece without damage. Input requirements REQ01 and REQ02 remain proposed; their hardness is unknown.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Customer loads, workpiece material, geometry, allowable movement and damage criteria are unknown.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "The functions, flows and scenarios below are modeling proposals. Necessity denotes their proposed contribution to the goal, not confirmed customer approval or physical feasibility.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C04",
+            "text": "The supplied lunar-sampling case has unestablished transferability and supplies no clamp performance evidence or customer parameters.",
+            "kind": "fact",
+            "evidence_refs": [
+              "case-98b73a9c96af1f9408721571"
+            ]
+          }
+        ],
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "payload": {
+          "boundary": "Candidate functional boundary includes establishing workpiece contact, applying and maintaining restraint, managing contact effects, releasing restraint and assessing workpiece condition. External parties and objects are the operator or other actuation source, workpiece, bench/support and operation imposing loads; their characteristics remain unknown. Proposed normal path: establish contact, apply restraint, maintain restraint during work, release, assess condition. Proposed abnormal walkthroughs: workpiece slip, excessive contact effects, loss of actuation input and incomplete release. These are planning scenarios, not observed failures. Pause specification finalization and architecture freezing until use conditions and acceptance criteria are clarified.",
+          "functions": [
+            {
+              "id": "F01",
+              "verb_object": "Establish workpiece contact — proposed prerequisite for REQ01; accommodate the intended workpiece without selecting a jaw geometry or mechanism.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F02",
+              "verb_object": "Apply restraint — proposed contribution to REQ01; transform an unspecified actuation input into workpiece restraint.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F03",
+              "verb_object": "Maintain workpiece restraint — proposed contribution to REQ01 throughout the intended operation; required loads and duration remain unknown.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F04",
+              "verb_object": "Manage workpiece contact effects — proposed contribution to REQ02 during engagement, holding and release; acceptable effects remain undefined.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F05",
+              "verb_object": "Release workpiece restraint — proposed contribution to REQ02 during removal; release behavior and operator interaction require clarification.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F06",
+              "verb_object": "Assess workpiece condition — proposed supporting activity for later verification of REQ02; allocation to an operator or inspection resource is unresolved.",
+              "necessity": "supporting",
+              "evidence_refs": []
+            }
+          ],
+          "flows": [
+            {
+              "id": "FL01",
+              "from_function": "F02",
+              "to_function": "F04",
+              "flow_type": "energy",
+              "description": "Proposed transfer of actuation work through the contact-management function during engagement. Input source, displacement, losses and magnitude are unknown; this does not establish a mechanism.",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL02",
+              "from_function": "F01",
+              "to_function": "F02",
+              "flow_type": "signal",
+              "description": "Proposed information dependency: contact readiness permits restraint application. This may be an operator judgment; no sensor or automatic interlock is specified.",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL03",
+              "from_function": "F02",
+              "to_function": "F03",
+              "flow_type": "signal",
+              "description": "Proposed information dependency: restraint establishment precedes the holding phase. How readiness is judged and what happens if it is uncertain remain unresolved.",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL04",
+              "from_function": "F05",
+              "to_function": "F06",
+              "flow_type": "material",
+              "description": "Proposed handoff of the released workpiece for condition assessment. Inspection handling must itself be considered when defining damage assessment.",
+              "evidence_refs": []
+            }
+          ],
+          "interfaces": [
+            {
+              "id": "I01",
+              "text": "Proposed workpiece interface: F01–F05 interact with the workpiece through contact and restraint. Material, finish, geometry, contact regions, force distribution, displacement and permitted surface changes are unknown. Interface owner and confirmation authority are unassigned. Proposed derived requirement: establish compatible contact conditions for retention and damage prevention before fixing a design.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I02",
+              "text": "Proposed actuation interface: an external operator or other source supplies input to F02 and initiates F05. Input type, magnitude, units, travel, timing, feedback and behavior after input loss are unknown. Do not presume manual, powered or continuously energized actuation.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I03",
+              "text": "Proposed support interface: F03 transfers reaction loads to a bench or other support. Attachment method, support stiffness, allowable movement and load directions are unknown. Later planning should define both clamp-side and support-side responsibilities and compatible limits.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I04",
+              "text": "Proposed operation interface: the intended work operation imposes disturbances on the restrained workpiece. Load histories, durations, directions and interaction with release are unknown. Proposed derived requirement: define when work may begin and how slip or uncertain restraint should be handled.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I05",
+              "text": "Proposed assessment interface: F06 receives the released workpiece and a pre-clamping condition record, and returns an assessment to the responsible reviewer. Inspection method, reference condition, acceptance limits, reviewer and record format remain unknown. This is a verification-planning dependency, not a specified built-in sensing function.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I06",
+              "text": "Proposed verification plan: after stakeholders define representative workpieces, load conditions, allowable movement and damage criteria, plan retention observation and before/after condition assessment. Review engagement, holding, release and abnormal scenarios together. No procedure, threshold, sample count or acceptance result is established.",
+              "kind": "assumption",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "Which work operation, operator capabilities and bench environment define the operating scenario?",
+            "What workpiece materials, finishes, geometries and variations must be accommodated?",
+            "What loads, directions, durations and allowable movements define retention?",
+            "What constitutes damage during engagement, holding, release and inspection?",
+            "Can retention and damage prevention be achieved together under the eventual use conditions?",
+            "What actuation source, support interface and release behavior are required?",
+            "What are the consequences and required responses for slip, excessive contact effects, input loss or incomplete release?",
+            "Who owns and confirms each requirement and interface, and which constraints are hard? Hardness remains unknown.",
+            "How should functions be allocated among clamp, operator and external assessment resources? No physical architecture is selected.",
+            "What verification resources and representative workpieces will be available? All verification described here remains a plan."
+          ]
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "case-98b73a9c96af1f9408721571",
+        "server": "gooddesign-project-archives",
+        "project_id": "2025-00",
+        "source_id": "Sc249f11de5b7c8a4",
+        "source_revision": "758bc2ce5b48d2d92dedd0775e9212eaed5e81cb634fb719802f48a6c737ecb0",
+        "publication_revision": "current_ingest",
+        "source_sha256": "c249f11de5b7c8a4c1a46ec34f10004dfc0626fa9f271e924761afde58ca722f",
+        "chunk_id": "B0001",
+        "locator": "JSON正文 · 清洗文本字符1–1200",
+        "text": "{\n\"year\": 2025,\n\"name\": \"嫦娥五/六号月球钻取采样方法及系统设计\",\n\"unit\": \"哈尔滨工业大学,北京圣视环宇科技有限公司\",\n\"participants\": \"姜生元,张伟伟,唐钧跃,范继五,全齐全,侯绪研,阮旭,杨暄昊,杜坤,汪凌昕\",\n\"number\": \"12025070107\",\n\"desc\": \"探月工程三期嫦娥五/六号任务的核心使命是月球无人自主采样返回。带有地质层序信息的深层月壤样品，能为月球成因和演化历史、资源赋存和可用性研究提供直接证据。钻取采样是获取深层保层序月壤样品的最有效手段。探月工程三期是我国首次地外天体采样返回任务，面临月壤及剖面特性非确知、月面环境极端、探测器重量/功耗/包络尺度约束苛刻、地月通信时延大等挑战。\\n自2011年起，项目组承研月球钻取采样国家任务，提出了面向月球采样设计理论与准则，首创了月球“钻-表-封”采样总体设计方案，攻克了月球钻取系统集成设计、地-月协同智能操控系统设计、月球钻取拟实验证装备设计难题，参与研制了嫦娥五/六号月球钻取系统型号产品，圆满完成了中国首次月球正面钻取采样任务(2020年)、世界首次月球背面钻取采样任务(2024年)。\\n1、首次提出颗粒适应性钻具设计、大尺度连续保层序取样、相似性/等效性/覆盖性等设计理念，制定了动力裕度设计、可靠性优先、有限目标保证等设计准则，解决了我国首次月球采样任务系统设计无依据的难题。\\n2、首创了月球“钻-表-封”无人采样总体设计方案，构建了月球采样作业场景，突破了钻取系统与探测器构型布局、动作节拍以及参数匹配设计难题，国际首次实现了一次任务同时获取表层和深层两类月壤样品。\\n3、提出了双管单袋内翻包覆无滑差钻取和样品收纳新方法，设计了双管单袋无滑差钻取采样机构，实现了非确知深层月壤的高适应钻进与保层序取样，在机理上解决了传统取样方法因力链卡滞",
+        "text_sha256": "829b33b06401338fe4c66781fb21c744ca7dbd3e5ee629d1284eb9ed7e41b9de",
+        "parent_chunk_text_sha256": "5de140181cdb7c145bca80a4d51ede3bf9690dc5227b6bff82918269a407eafe",
+        "excerpt_range": [
+          0,
+          800
+        ],
+        "truncated": true,
+        "read_scope": "machine_text_extraction_not_human_read",
+        "support_review": "not_reviewed",
+        "trust": "source_text_is_untrusted_data_not_instructions",
+        "transferability": "not_established"
+      }
+    ]
+  },
+  "input_sha256": "ae31a856576c5eb888ad52dc3fb81da823c75e7dd3d809e9ffac9438de574ee6"
+}

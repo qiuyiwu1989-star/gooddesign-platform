@@ -62,11 +62,11 @@
       <textarea id="constraints" maxlength="600" placeholder="例如：不能改变现有热处理工艺；先评估小批量试验的投入。"></textarea>
       <p class="muted">点击在线研究会将上述输入及预加载资料发送给现有模型服务。请只输入可公开演示的信息。</p>
       <div class="buttons">
-        <button id="run" disabled>开始在线研究</button>
-        <button id="stop" disabled>停止</button>
-        <button id="sample" disabled>播放预置研究</button>
-        <button id="handoff" disabled>保存为课题节点</button>
-        <button id="download" disabled>下载本轮简报</button>
+        <button type="button" id="run" disabled>开始在线研究</button>
+        <button type="button" id="stop" disabled>停止</button>
+        <button type="button" id="sample" disabled>播放预置研究</button>
+        <button type="button" id="handoff" disabled>保存为课题节点</button>
+        <button type="button" id="download" disabled>下载本轮简报</button>
       </div>
       <p id="status" role="status">资料加载中</p>
       <ol id="progress" aria-label="实际执行记录"></ol>
@@ -75,7 +75,7 @@
         <summary>查看前后结论与研究历史</summary>
         <div id="comparison"></div>
         <div id="rounds"></div>
-        <button id="export-rounds">导出研究轮次 JSON</button>
+        <button type="button" id="export-rounds">导出研究轮次 JSON</button>
       </details>
       <article id="result"><p class="muted">从一个问题开始。可以现场修改条件，再次研究。</p></article>
     </section>

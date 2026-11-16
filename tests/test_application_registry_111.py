@@ -13,7 +13,7 @@ class ApplicationRegistry111Tests(unittest.TestCase):
 
         registry = build_application_registry.build_registry()
         self.assertEqual(registry['app_schema_version'], 'gd-app-0.1')
-        self.assertEqual(len(registry['apps']), 7)
+        self.assertEqual(len(registry['apps']), 8)
         self.assertEqual({app['schema_version'] for app in registry['apps']}, {'gd-app-0.1'})
         self.assertEqual({app['category'] for app in registry['apps']}, {'experience', 'innovation', 'access'})
         self.assertEqual(registry['boundaries']['mcp'], 'remote_read_only')
@@ -25,7 +25,7 @@ class ApplicationRegistry111Tests(unittest.TestCase):
 
         registry = build_application_registry.build_registry()
         case_ids = set(registry['cases'])
-        self.assertEqual(case_ids, {'chang-e', 'pump-079', 'rubber-tapping', 'mcp-research', 'yuhuan'})
+        self.assertEqual(case_ids, {'chang-e', 'pump-079', 'rubber-tapping', 'mcp-research', 'yuhuan', 'x-ray'})
         for app in registry['apps']:
             self.assertTrue(app['evidence']['case_ids'])
             self.assertTrue(app['evidence']['must_show_boundary'])
@@ -40,7 +40,7 @@ class ApplicationRegistry111Tests(unittest.TestCase):
         self.assertTrue(schema_path.exists())
         registry = json.loads(registry_path.read_text())
         self.assertEqual(registry['registry_schema_version'], 'gd-app-registry-0.1')
-        self.assertEqual(len(registry['apps']), 7)
+        self.assertEqual(len(registry['apps']), 8)
 
     def test_111_app_page_uses_manifest_runtime_route(self):
         text = (ROOT / 'output/inno-preview/gooddesign-site/inno/apps/index.html').read_text()

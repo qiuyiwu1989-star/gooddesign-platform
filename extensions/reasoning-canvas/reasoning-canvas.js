@@ -2,17 +2,59 @@
 (() => {
   const S = RC_State;
   const D = RC_DATA;
-  let state = S.load();
+  const boot = S.boot();
+  let state = boot.state || null;
+  let workspaceId = boot.workspaceId || S.DEMO_WORKSPACE_ID;
 
-  /* RC-08 本机工作区：localStorage 仍是降级层，服务可达时追加不可覆盖修订 */
-  const WORKSPACE_ID = 'rubber-tapping-demo';
-  const RC_API = location.pathname.startsWith('/inno/canvas/') ? '/inno/canvas/api/rc' : '/api/rc';
+  const isResearch = () => S.isResearch(state);
+  const activeNodes = () => isResearch() ? D.researchNodes : D.nodes;
+  const activeEvidence = () => isResearch() ? [] : D.evidence;
+  const activeConcepts = () => isResearch() ? [] : D.concepts;
+  const activeRedteam = () => isResearch() ? [] : D.redteam;
+  const RC_API = /^\/(?:inno\/)?canvas\//.test(location.pathname) ? '/inno/canvas/api/rc' : '/api/rc';
   const workspaceStatusEl = document.getElementById('rc-workspace-status');
+  const saveBtn = document.getElementById('rc-save');
   let workspaceRevision = 0;
   let remoteAvailable = false;
   let remoteSaving = false;
-  let remoteQueued = false;
-  let remoteTimer = null;
+  let localEditVersion = 0;
+  const stageEl = document.querySelector('.gd-rc-stage');
+  const storyHomeEl = document.getElementById('rc-story-home');
+  const storyNavEl = document.getElementById('rc-story-nav');
+  const storyViewBtn = document.getElementById('rc-story-view');
+  const overviewBtn = document.getElementById('rc-overview');
+  const STORY_STAGES = [
+    { id: 'define', label: '定义问题', nodes: ['n1'] },
+    { id: 'research', label: '查证研究', nodes: ['n2', 'n3'] },
+    { id: 'direction', label: '形成方向', nodes: ['n4', 'n5', 'n6'] },
+    { id: 'action', label: '验证行动', nodes: ['n7'] }
+  ];
+
+  function hasResearchActivity() {
+    if (!isResearch()) return false;
+    for (const key of ['searchLog', 'extraEvidence', 'subproblems', 'engineConfirmed']) {
+      if (Array.isArray(state[key]) && state[key].length) return true;
+    }
+    for (const key of ['evMarks', 'killed', 'priorities']) {
+      if (Object.keys(state[key] || {}).length) return true;
+    }
+    if (Object.values(state.notes || {}).some(notes => Array.isArray(notes) && notes.length)) return true;
+    if (String((state.reasons || {}).main || '').trim() || state.committed || (state.flow || {}).runs) return true;
+    if (Object.entries(state.statuses || {}).some(([id, status]) => status !== (id === 'n1' ? 'doing' : 'todo'))) return true;
+    try {
+      const baseline = S.researchState({
+        schema: S.HANDOFF_SCHEMA,
+        task_id: state.workspace.id,
+        created_at: state.workspace.createdAt,
+        packet: state.workspace.sourcePacket
+      });
+      return JSON.stringify(state.intent) !== JSON.stringify(baseline.intent);
+    } catch (e) {
+      return true;
+    }
+  }
+
+  let researchView = isResearch() ? (hasResearchActivity() ? 'step' : 'home') : 'overview';
 
   function setWorkspaceStatus(text, tone) {
     workspaceStatusEl.textContent = text;
@@ -31,43 +73,56 @@
     });
   }
 
-  function queueRemoteSave() {
-    if (!remoteAvailable && workspaceRevision === 0) return;
-    setWorkspaceStatus('待保存', 'warn');
-    clearTimeout(remoteTimer);
-    remoteTimer = setTimeout(persistRemote, 500);
-  }
-
   async function persistRemote() {
-    if (remoteSaving) { remoteQueued = true; return; }
+    if (!state || remoteSaving) return;
     remoteSaving = true;
+    saveBtn.disabled = true;
+    setWorkspaceStatus('正在保存…', 'warn');
     const snapshot = JSON.parse(JSON.stringify(state));
+    const snapshotVersion = localEditVersion;
     const base = workspaceRevision;
+    const savingWorkspace = workspaceId;
     try {
-      const j = await apiPost(`${RC_API}/state`, { workspace_id: WORKSPACE_ID, base_revision: base, state: snapshot });
+      const j = await apiPost(`${RC_API}/state`, { workspace_id: savingWorkspace, base_revision: base, state: snapshot });
+      if (savingWorkspace !== workspaceId) return;
       workspaceRevision = j.result.revision;
       remoteAvailable = true;
-      setWorkspaceStatus(`已保存 · r${workspaceRevision}`, 'ok');
+      setWorkspaceStatus(snapshotVersion === localEditVersion ? `已保存 · r${workspaceRevision}` : `r${workspaceRevision} 已保存 · 有本地修改未同步`, snapshotVersion === localEditVersion ? 'ok' : 'warn');
     } catch (e) {
+      if (savingWorkspace !== workspaceId) return;
       if (e.code === 'revision_conflict') setWorkspaceStatus('版本冲突，本地保留', 'warn');
-      else setWorkspaceStatus('服务未启动，仅本地', 'warn');
+      else setWorkspaceStatus(`保存失败，本地保留：${e.message}`, 'warn');
       remoteAvailable = false;
     } finally {
       remoteSaving = false;
-      if (remoteQueued) { remoteQueued = false; queueRemoteSave(); }
+      saveBtn.disabled = false;
     }
   }
 
   async function restoreWorkspace() {
+    if (!state) return;
+    const restoringWorkspace = workspaceId;
     try {
-      const j = await apiGet(`${RC_API}/state?workspace_id=${encodeURIComponent(WORKSPACE_ID)}`);
-      state = Object.assign(S.defaultState(), j.result.state || {});
+      const j = await apiGet(`${RC_API}/state?workspace_id=${encodeURIComponent(restoringWorkspace)}`);
+      if (restoringWorkspace !== workspaceId) return;
       workspaceRevision = j.result.revision;
       remoteAvailable = true;
-      setWorkspaceStatus(`工作区 r${workspaceRevision}`, 'ok');
+      if (!boot.hasLocal && !boot.imported) {
+        state = isResearch()
+          ? S.normalizeResearchState(j.result.state, restoringWorkspace)
+          : Object.assign(S.defaultState(), j.result.state || {});
+        S.save(state);
+        if (isResearch()) researchView = hasResearchActivity() ? 'step' : 'home';
+        setWorkspaceStatus(`工作区 r${workspaceRevision}`, 'ok');
+      } else {
+        setWorkspaceStatus(`本地草稿 · 服务器 r${workspaceRevision}`, 'warn');
+      }
       render(); fitView(); updateFlowUI(); restoreFlow();
     } catch (e) {
+      if (restoringWorkspace !== workspaceId) return;
       setWorkspaceStatus(e.code === 'workspace_not_found' ? '新工作区 · 本地草稿' : '服务未启动，仅本地', 'warn');
+    } finally {
+      if (restoringWorkspace === workspaceId && boot.warning) setWorkspaceStatus(boot.warning, 'warn');
     }
   }
 
@@ -81,14 +136,15 @@
     expert: { status: false, evidence: false, concept: false, priority: false, reason: false, commit: false, intent: false, subproblem: false, note: true, reset: false }
   };
   const roleEl = document.getElementById('rc-role');
-  let currentRole = localStorage.getItem(ROLE_KEY) || 'designer';
+  let currentRole = 'designer';
+  try { currentRole = localStorage.getItem(ROLE_KEY) || 'designer'; } catch (e) {}
   if (!ROLE_PERMS[currentRole]) currentRole = 'designer';
   roleEl.value = currentRole;
   const can = key => ROLE_PERMS[currentRole][key];
 
   roleEl.addEventListener('change', () => {
     currentRole = roleEl.value;
-    localStorage.setItem(ROLE_KEY, currentRole);
+    try { localStorage.setItem(ROLE_KEY, currentRole); } catch (e) {}
     applyRoleChrome();
     render();
   });
@@ -123,7 +179,7 @@
   ];
   const FN_W = 220, FN_H = 58;
   const CHAIN = [['n1', 'n2'], ['n2', 'n3'], ['n3', 'n4'], ['n4', 'n5'], ['n5', 'n6'], ['n6', 'n7']];
-  const BRANCHES = D.concepts.map(c => ['n4', c.id]);
+  const branches = () => activeConcepts().map(c => ['n4', c.id]);
   const NODE_TONE = { n1: 'warn', n2: 'info', n3: 'plain', n4: 'accent', n5: 'err', n6: 'ok', n7: 'plain' };
   let view = { x: 28, y: 28, k: 1 };
   let focusConcept = null;
@@ -241,6 +297,11 @@
   }
 
   function updateFlowUI() {
+    if (isResearch()) {
+      flowBtn.textContent = '推理未接入';
+      flowHint.textContent = '当前仅人工编辑与真实检索 · 0 次模型调用';
+      return;
+    }
     const runs = state.flow.runs;
     flowBtn.textContent = runs > 0 ? '再次推理' : '开始推理';
     flowHint.textContent = state.flow.dirty
@@ -284,7 +345,7 @@
   }
 
   async function runFlow() {
-    if (flowRunning || isMobileCanvas()) return;
+    if (isResearch() || flowRunning || isMobileCanvas()) return;
     flowRunning = true;
     flowBtn.disabled = true;
     if (!flowEngineData) {
@@ -327,7 +388,7 @@
   }
 
   async function restoreFlow() {
-    if (!state.flow.runs || isMobileCanvas()) return;
+    if (isResearch() || !state.flow.runs || isMobileCanvas()) return;
     if (!flowEngineData) {
       try { flowEngineData = (await apiGet(`${RC_API}/engine_candidates`)).result; } catch (e) { flowEngineData = null; }
     }
@@ -342,10 +403,119 @@
   function esc(s) {
     return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   }
-  function save() { S.save(state); queueRemoteSave(); }
+  function save() {
+    localEditVersion += 1;
+    const persisted = S.save(state);
+    setWorkspaceStatus(persisted ? '本地已保存 · 未同步' : '本地保存失败 · 请导出档案', 'warn');
+  }
+
+  function storyStageForNode(nodeId) {
+    return STORY_STAGES.find(stage => stage.nodes.includes(nodeId)) || STORY_STAGES[0];
+  }
+
+  function renderStoryHome() {
+    if (!isResearch()) return;
+    const workspace = state.workspace;
+    const packet = workspace.sourcePacket;
+    const pending = (state.intent.find(group => group.key === '待补证') || { items: [] }).items;
+    const firstPending = pending.slice(0, 3);
+    storyHomeEl.innerHTML = `
+      <div class="gd-rc-story-home-inner">
+        <div class="gd-rc-story-home-topline">
+          <a class="gd-rc-story-back" href="/needs/">返回需求研究</a>
+          <span>研究任务 · 尚未开始查证</span>
+        </div>
+        <div class="gd-rc-story-home-grid">
+          <section class="gd-rc-story-hero">
+            <span class="gd-kicker">研究首页</span>
+            <h1>${esc(workspace.title)}</h1>
+            <div class="gd-rc-story-problem">
+              <span>原始问题</span>
+              <p>${esc(workspace.problem)}</p>
+            </div>
+            <button class="gd-button gd-button--primary gd-rc-story-start" id="rc-start-research" type="button">开始查证</button>
+            <p class="gd-rc-story-action-note">进入查证研究，不调用模型，不向服务器保存。</p>
+          </section>
+          <aside class="gd-rc-story-summary" aria-label="任务摘要">
+            <h2>任务摘要</h2>
+            <div class="gd-rc-story-counts">
+              <div><strong>${packet.project_references.length}</strong><span>参考项目</span></div>
+              <div><strong>${packet.method_references.length}</strong><span>参考方法</span></div>
+            </div>
+            <section class="gd-rc-story-pending">
+              <h3>待确认项</h3>
+              ${firstPending.length ? `<ol>${firstPending.map(item => `<li>${esc(item)}</li>`).join('')}</ol>` : '<p>暂无待确认项。</p>'}
+              ${pending.length > 3 ? `<p class="gd-rc-story-more-note">其余 ${pending.length - 3} 项保留在任务中，可在后续步骤继续核对。</p>` : ''}
+            </section>
+          </aside>
+        </div>
+      </div>`;
+    document.getElementById('rc-start-research').addEventListener('click', () => selectStoryNode('n2'));
+  }
+
+  function renderStoryNav() {
+    if (!isResearch()) return;
+    const currentStage = storyStageForNode(state.selected);
+    const stageButtons = STORY_STAGES.map((stage, index) => {
+      const active = stage.id === currentStage.id;
+      const target = stage.nodes.includes(state.selected) ? state.selected : stage.nodes[0];
+      return `<button class="gd-rc-story-stage ${active ? 'is-active' : ''}" type="button" data-story-node="${target}" aria-current="${active ? 'step' : 'false'}"><span>0${index + 1}</span>${stage.label}</button>`;
+    }).join('');
+    let substeps = '';
+    if (currentStage.nodes.length > 1) {
+      substeps = '<div class="gd-rc-story-substeps" aria-label="当前阶段节点">' + currentStage.nodes.map(id => {
+        const node = activeNodes().find(item => item.id === id);
+        const active = id === state.selected;
+        return `<button class="gd-rc-story-substep ${active ? 'is-active' : ''}" type="button" data-story-node="${id}" aria-current="${active ? 'step' : 'false'}">${esc(node.title)}<small>${S.STATUS_LABEL[state.statuses[id]]}</small></button>`;
+      }).join('') + '</div>';
+    }
+    storyNavEl.innerHTML = `<div class="gd-rc-story-stages">${stageButtons}</div>${substeps}`;
+    storyNavEl.querySelectorAll('[data-story-node]').forEach(button => {
+      button.addEventListener('click', () => selectStoryNode(button.dataset.storyNode));
+    });
+  }
+
+  function applyResearchView() {
+    const research = isResearch();
+    const home = research && researchView === 'home';
+    const step = research && researchView === 'step';
+    const graph = !research || researchView === 'overview';
+    stageEl.classList.toggle('is-story-home', home);
+    stageEl.classList.toggle('is-story-step', step);
+    stageEl.classList.toggle('is-story-overview', graph);
+    storyHomeEl.hidden = !home;
+    storyNavEl.hidden = !step;
+    viewportEl.hidden = !graph;
+    detailEl.hidden = home;
+    storyViewBtn.hidden = !research || researchView !== 'overview';
+    overviewBtn.hidden = !research || researchView === 'overview';
+  }
+
+  function setResearchView(mode) {
+    if (!isResearch() || !['home', 'step', 'overview'].includes(mode)) return;
+    researchView = mode;
+    render();
+    if (mode === 'overview') fitView();
+  }
+
+  function selectStoryNode(id) {
+    if (!isResearch() || !activeNodes().some(node => node.id === id)) return;
+    state.selected = id;
+    focusConcept = null;
+    panelOpen = true;
+    researchView = 'step';
+    save();
+    render();
+  }
+
   function render() {
-    renderCanvas(); renderDetail();
-    detailEl.classList.toggle('is-open', panelOpen || isMobileCanvas());
+    if (!state) return;
+    renderStoryHome();
+    renderStoryNav();
+    renderCanvas();
+    renderDetail();
+    detailEl.classList.toggle('is-open', panelOpen || isMobileCanvas() || (isResearch() && researchView === 'step'));
+    applyResearchView();
   }
 
   /* ============ 画布 ============ */
@@ -354,7 +524,7 @@
     const p = posOf(n.id);
     const notes = (state.notes[n.id] || []).length;
     const branchSlots = n.id === 'n4'
-      ? '<div class="gd-rc-cnode-outputs">' + D.concepts.map(c =>
+      ? '<div class="gd-rc-cnode-outputs">' + activeConcepts().map(c =>
           `<div class="gd-rc-out-slot"><span>${c.id} ${esc(c.title.slice(0, 6))}</span><i class="gd-rc-port gd-rc-port--slot" data-out-slot="${c.id}"></i></div>`).join('') + '</div>'
       : '';
     return `<div class="gd-rc-cnode tone-${NODE_TONE[n.id]} is-${st} ${n.id === state.selected ? 'is-selected' : ''}"
@@ -363,7 +533,7 @@
       <div class="gd-rc-cnode-title"><span>${n.num} · ${n.title}</span><span class="gd-rc-status gd-rc-status--${st}">${S.STATUS_LABEL[st]}</span></div>
       <div class="gd-rc-cnode-body">
         <div class="gd-rc-cnode-row">${esc(n.method)}</div>
-        <div class="gd-rc-cnode-row gd-rc-cnode-roles"><span>人：思考</span><span>AI：${n.aiRole}</span></div>
+        <div class="gd-rc-cnode-row gd-rc-cnode-roles"><span>人：思考</span><span>${isResearch() ? '提示' : 'AI'}：${n.aiRole}</span></div>
         ${notes ? `<div class="gd-rc-cnode-row gd-rc-cnode-notes">${notes} 条旁注</div>` : ''}
         ${branchSlots}
       </div>
@@ -407,7 +577,7 @@
       paths.push(`<path class="${cls}" d="${wirePath(portCenter(a), portCenter(b))}"/>`);
     };
     CHAIN.forEach(([f, t]) => chainWire(f, t));
-    BRANCHES.forEach(([f, t]) => {
+    branches().forEach(([f, t]) => {
       const a = worldEl.querySelector(`[data-node="${f}"] [data-out-slot="${t}"]`);
       const b = worldEl.querySelector(`[data-concept="${t}"] [data-port-in]`);
       if (!a || !b) return;
@@ -464,7 +634,7 @@
 
   function renderCanvas() {
     worldEl.querySelectorAll('.gd-rc-cnode').forEach(el => el.remove());
-    const html = D.nodes.map(mainNodeHtml).join('') + D.concepts.map(conceptNodeHtml).join('');
+    const html = activeNodes().map(mainNodeHtml).join('') + activeConcepts().map(conceptNodeHtml).join('');
     worldEl.insertAdjacentHTML('beforeend', html);
     if (isMobileCanvas()) {
       worldEl.querySelectorAll('.gd-rc-cnode').forEach(el => { el.style.left = ''; el.style.top = ''; });
@@ -571,7 +741,7 @@
 
   /* ============ 详情 ============ */
   function block(kind, title, inner) {
-    const label = { human: '人做什么', ai: 'AI 帮什么', trace: '思考痕迹' }[kind];
+    const label = { human: '人做什么', ai: isResearch() ? '辅助说明' : 'AI 帮什么', trace: '思考痕迹' }[kind];
     return `<section class="gd-rc-block gd-rc-block--${kind}">
       <h3><span class="gd-rc-kind gd-rc-kind--${kind}">${label}</span>${title ? `<span class="gd-rc-kind-note">${esc(title)}</span>` : ''}</h3>
       ${inner}</section>`;
@@ -601,7 +771,7 @@
       </div>`).join('');
     }
     if (id === 'n2') {
-      const rows = D.evidence.map(e => {
+      const rows = activeEvidence().map(e => {
         const m = state.evMarks[e.id];
         return `<div class="gd-rc-evrow">
           <div><b>[${e.id}] ${esc(e.t)}</b><p>${esc(e.d)}</p></div>
@@ -623,6 +793,14 @@
         ? '<p class="gd-rc-meta">检索留痕：' + state.searchLog.map(s =>
             `${s.time} ${s.domain === 'methods' ? '方法库' : '项目库'}「${esc(s.query) || '全部'}」命中 ${s.total} 条`).join('；') + '</p>'
         : '';
+      let clues = '';
+      if (isResearch()) {
+        const packet = state.workspace.sourcePacket;
+        const projects = packet.project_references.map(ref => `<li>[${esc(ref.id)}] ${esc(ref.name)}：仅为参考线索，未作为证据或采用证明</li>`).join('');
+        const methods = packet.method_references.length ? packet.method_references.map(esc).join('、') : '暂无';
+        clues = `<section class="gd-rc-source-clues"><h4>交接参考线索</h4><ul>${projects || '<li>暂无参考项目</li>'}</ul><p>参考方法：${methods}。这些线索未执行，也未加入证据池。</p></section>`;
+      }
+      const empty = !rows && !extras ? '<p class="gd-rc-empty">证据池为空。你可以先检索，再决定是否加入。</p>' : '';
       return `<div class="gd-rc-search">
           <div class="gd-rc-search-row">
             <select id="rc-search-domain" class="gd-rc-select gd-rc-search-domain" aria-label="检索范围">
@@ -635,16 +813,18 @@
           <div id="rc-search-status" class="gd-rc-search-status" role="status">${searchUI.error ? esc(searchUI.error) : ''}</div>
           <div id="rc-search-results"></div>
         </div>
-        ${log}${rows}${extras}`;
+        ${clues}${log}${empty}${rows}${extras}`;
     }
     if (id === 'n3') {
-      return `<div class="gd-rc-sublist">${state.subproblems.map((s, i) =>
+      const empty = state.subproblems.length ? '' : '<p class="gd-rc-empty">子问题为空，等待你根据当前任务拆解。</p>';
+      return `${empty}<div class="gd-rc-sublist">${state.subproblems.map((s, i) =>
         `<div class="gd-rc-subitem"><span>${esc(s)}</span><button class="gd-rc-mini" type="button" data-sub-del="${i}" aria-label="移除该子问题" ${can('subproblem') ? '' : 'disabled'}>移除</button></div>`).join('')}</div>
       <div class="gd-rc-iadd" style="margin-top:14px"><input data-sub-input placeholder="新增一个子问题，写清它可独立验证什么" aria-label="新增子问题" ${can('subproblem') ? '' : 'disabled'}><button class="gd-button gd-button--quiet gd-rc-mini-btn" type="button" data-sub-add ${can('subproblem') ? '' : 'disabled'}>添加</button></div>
-      <p class="gd-rc-note-text">${esc(D.subproblemNote)}</p>`;
+      <p class="gd-rc-note-text">${esc(isResearch() ? '子问题应来自当前任务，并能独立核对边界与验证责任。' : D.subproblemNote)}</p>`;
     }
     if (id === 'n4') {
-      const cards = D.concepts.map(c => {
+      if (isResearch()) return '<p class="gd-rc-empty">概念为空。通用概念生成未接入，本任务不会读取演示概念或冻结引擎候选。</p>';
+      const cards = activeConcepts().map(c => {
         const k = state.killed[c.id];
         return `<article class="gd-rc-concept ${k ? 'is-killed' : ''} ${c.id === focusConcept ? 'is-focus' : ''}" data-focus="${c.id}">
           <div class="gd-rc-concept-head"><b>${c.id} · ${esc(c.title)}</b><span class="gd-rc-tag ${k ? 'gd-rc-tag--warm' : ''}">${k ? '已毙，保留备查' : esc(state.priorities[c.id] || c.tag)}</span></div>
@@ -666,7 +846,8 @@
       </div>`;
     }
     if (id === 'n5') {
-      return D.redteam.map((r, i) => {
+      if (isResearch()) return '<p class="gd-rc-empty">质疑记录为空，当前未执行自动红队。</p>';
+      return activeRedteam().map((r, i) => {
         const v = state.redteam[i];
         const label = v === 'accept' ? '已接受，写入免责声明' : v === 'reject' ? '已驳回' : '待你裁决';
         return `<div class="gd-rc-rt">
@@ -682,22 +863,27 @@
       }).join('');
     }
     if (id === 'n6') {
-      return D.concepts.map(c => `<div class="gd-rc-pri">
+      const priorities = activeConcepts().map(c => `<div class="gd-rc-pri">
           <label for="rc-pri-${c.id}"><b>${c.id} · ${esc(c.title)}</b></label>
           <select id="rc-pri-${c.id}" class="gd-rc-select" data-pri="${c.id}" ${can('priority') ? '' : 'disabled'}>
             ${D.priorityOptions.map(o => `<option ${state.priorities[c.id] === o ? 'selected' : ''}>${o}</option>`).join('')}
-          </select></div>`).join('') +
+          </select></div>`).join('');
+      const empty = isResearch() ? '<p class="gd-rc-empty">暂无可比较的候选，不自动生成优先级或推荐。</p>' : '';
+      return empty + priorities +
         `<label class="gd-rc-label" for="rc-reason">取舍理由（写给未来的自己）</label>
-        <textarea class="gd-rc-reason" id="rc-reason" placeholder="例如：D 是门槛，因为测量误差大于农艺余量时，后面所有自动化都不成立。" ${can('reason') ? '' : 'disabled'}>${esc(state.reasons.main || '')}</textarea>`;
+        <textarea class="gd-rc-reason" id="rc-reason" placeholder="写下比较依据、适用前提、代价与暂不选择的原因。" ${can('reason') ? '' : 'disabled'}>${esc(state.reasons.main || '')}</textarea>`;
     }
     if (id === 'n7') {
-      return D.concepts.map(c => `<div class="gd-rc-teststop">
+      const plans = activeConcepts().map(c => `<div class="gd-rc-teststop">
           <b>${c.id} · ${esc(c.title)}</b>
           <p>验证：${esc(c.test)}</p>
           <p class="gd-rc-stopline">放弃条件：${esc(c.stop)}</p>
-        </div>`).join('') +
+        </div>`).join('');
+      const empty = isResearch() ? '<p class="gd-rc-empty">验证计划仍待补充。签署不代表客户确认、专家评审或工程验证。</p>' : '';
+      const commitment = isResearch() ? '我承诺先核对验证条件再行动' : '我承诺按上面的放弃条件执行';
+      return empty + plans +
         `<label class="gd-rc-commit"><input type="checkbox" id="rc-commit" ${state.committed ? 'checked' : ''} ${can('commit') ? '' : 'disabled'}>
-          <span><b>我承诺按上面的放弃条件执行</b><small>勾选后，这轮推理才算定稿。未来的你看到停止条件触发时，不许找借口。</small></span></label>`;
+          <span><b>${commitment}</b><small>承诺只记录人的决定，不改变证据与审核状态。</small></span></label>`;
     }
     return '';
   }
@@ -754,7 +940,7 @@
   }
 
   function renderDetail() {
-    const n = D.nodes.find(x => x.id === state.selected);
+    const n = activeNodes().find(x => x.id === state.selected);
     const st = state.statuses[n.id];
     const notes = state.notes[n.id] || [];
     let toolbar = '';
@@ -772,7 +958,7 @@
           <div class="gd-rc-toolbar">${toolbar}</div>
         </div>
         ${block('human', '', `<p>${esc(n.human)}</p>`)}
-        ${block('ai', 'AI 在这一步是' + n.aiRole, `<p>${esc(n.ai)}</p>`)}
+        ${block('ai', (isResearch() ? '辅助提示 · ' : 'AI 在这一步是') + n.aiRole, `<p>${esc(n.ai)}</p>`)}
         ${block('trace', '', nodeSpecific(n.id))}
         <section class="gd-rc-block">
           <h3><span class="gd-rc-kind gd-rc-kind--note">旁注</span><span class="gd-rc-kind-note">自己、顾问、专家的意见挂在这一步旁边</span></h3>
@@ -875,14 +1061,44 @@
   }
 
   /* ============ 顶部动作 ============ */
-  document.getElementById('rc-save').addEventListener('click', () => {
-    setWorkspaceStatus('正在保存…', 'warn');
-    clearTimeout(remoteTimer);
-    persistRemote();
-  });
+  function applyWorkspaceChrome() {
+    const research = isResearch();
+    const title = research ? state.workspace.title : '割胶机器人';
+    document.getElementById('rc-workspace-title').textContent = '推理画布 · ' + title;
+    document.title = title + ' · 推理画布 · GoodDesign';
+    document.querySelector('.gd-rc-foot').textContent = research
+      ? '任务来自需求研究交接。内容为用户陈述与待确认线索，0 次模型调用。'
+      : '静态原型：内容来自割胶机器人真实研究材料，未调用在线模型。';
+    for (const id of ['rc-gdrp', 'rc-report']) {
+      const button = document.getElementById(id);
+      button.disabled = research;
+      button.title = research ? '新任务未接入通用 GDRP 导出，不套用演示研究包' : '';
+    }
+    flowBtn.disabled = research;
+    flowBtn.title = research ? '新任务未接入自动推理，不会执行演示展开' : '';
+    rosterEl.hidden = research;
+    document.querySelector('.gd-rc-feedwrap').hidden = research;
+    updateFlowUI();
+  }
+
+  function showFatalError(message) {
+    document.getElementById('rc-workspace-title').textContent = '推理画布 · 导入失败';
+    document.title = '导入失败 · 推理画布 · GoodDesign';
+    const errorEl = document.getElementById('rc-handoff-error');
+    errorEl.textContent = message + '。未打开演示工作区，请返回需求研究重新生成交接。';
+    errorEl.hidden = false;
+    document.querySelector('.gd-rc-stage').hidden = true;
+    document.querySelectorAll('.gd-rc-topbar-actions button, .gd-rc-topbar-actions select').forEach(el => { el.disabled = true; });
+    setWorkspaceStatus('交接未导入', 'warn');
+  }
+
+  storyViewBtn.addEventListener('click', () => setResearchView('step'));
+  overviewBtn.addEventListener('click', () => setResearchView('overview'));
+  document.getElementById('rc-save').addEventListener('click', persistRemote);
   document.getElementById('rc-gdrp').addEventListener('click', () => {
+    if (isResearch()) return setWorkspaceStatus('新任务未接入通用 GDRP 导出', 'warn');
     setWorkspaceStatus('正在生成研究包…', 'warn');
-    apiGet(`${RC_API}/gdrp?workspace_id=${encodeURIComponent(WORKSPACE_ID)}`)
+    apiGet(`${RC_API}/gdrp?workspace_id=${encodeURIComponent(workspaceId)}`)
       .then(j => {
         const name = `${j.result.research_pack.package_id}.research-pack.json`;
         const blob = new Blob([JSON.stringify(j.result.research_pack, null, 2)], { type: 'application/json;charset=utf-8' });
@@ -896,8 +1112,9 @@
       .catch(err => setWorkspaceStatus(`研究包失败：${err.message}`, 'warn'));
   });
   document.getElementById('rc-report').addEventListener('click', () => {
+    if (isResearch()) return setWorkspaceStatus('新任务未接入通用报告导出', 'warn');
     setWorkspaceStatus('正在生成报告…', 'warn');
-    apiGet(`${RC_API}/gdrp_package?workspace_id=${encodeURIComponent(WORKSPACE_ID)}`)
+    apiGet(`${RC_API}/gdrp_package?workspace_id=${encodeURIComponent(workspaceId)}`)
       .then(j => {
         const name = `${j.result.research_pack.package_id}.report.html`;
         const blob = new Blob([j.result.report_html], { type: 'text/html;charset=utf-8' });
@@ -913,19 +1130,43 @@
   document.getElementById('rc-export').addEventListener('click', () => {
     const blob = new Blob([S.exportMarkdown(state)], { type: 'text/markdown;charset=utf-8' });
     const a = document.createElement('a');
+    const title = isResearch() ? state.workspace.title : '割胶机器人';
     a.href = URL.createObjectURL(blob);
-    a.download = '割胶机器人-推理档案.md';
+    a.download = title.replace(/[\\/:*?"<>|]/g, '-') + '-推理档案.md';
     a.click();
     URL.revokeObjectURL(a.href);
   });
   document.getElementById('rc-reset').addEventListener('click', () => {
-    if (!confirm('重置会清空所有裁决、毙掉记录、旁注与承诺，回到初始状态。确定吗？')) return;
-    state = S.reset(); render();
+    const message = isResearch()
+      ? '重置只清除当前任务的本地内容并回到演示，不删除服务器历史修订。确定吗？'
+      : '重置会清空本地演示的裁决、旁注与承诺，不删除服务器历史修订。确定吗？';
+    if (!confirm(message)) return;
+    state = S.reset(state);
+    workspaceId = S.DEMO_WORKSPACE_ID;
+    workspaceRevision = 0;
+    remoteAvailable = false;
+    boot.hasLocal = false;
+    boot.imported = false;
+    boot.warning = '';
+    researchView = 'overview';
+    history.replaceState(null, '', location.pathname);
+    clearFlowDom();
+    applyWorkspaceChrome();
+    setWorkspaceStatus('已重置当前本地任务 · 演示草稿', 'warn');
+    render(); fitView();
   });
 
-  render();
-  fitView();
-  updateFlowUI();
-  restoreFlow();
-  restoreWorkspace();
+  if (boot.error) {
+    showFatalError(boot.error);
+  } else {
+    if (boot.imported) history.replaceState(null, '', `${location.pathname}?workspace=${encodeURIComponent(workspaceId)}`);
+    applyWorkspaceChrome();
+    if (boot.warning) setWorkspaceStatus(boot.warning, 'warn');
+    else if (isResearch()) setWorkspaceStatus('任务已导入 · 本地草稿', 'ok');
+    render();
+    fitView();
+    updateFlowUI();
+    restoreFlow();
+    restoreWorkspace();
+  }
 })();

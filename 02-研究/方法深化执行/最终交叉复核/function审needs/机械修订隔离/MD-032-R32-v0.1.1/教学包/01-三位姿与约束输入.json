@@ -1,0 +1,60 @@
+{
+  "origin": "independent_planar_rigid_geometry_fixture",
+  "length_unit": "mm",
+  "angle_unit": "degree",
+  "topology": "four_bar_4R",
+  "poses": [
+    {
+      "input_deg": 30,
+      "A": [
+        34.64101615137755,
+        19.999999999999996
+      ],
+      "B": [
+        134.64101615137756,
+        19.999999999999996
+      ],
+      "body_orientation_deg": 0
+    },
+    {
+      "input_deg": 90,
+      "A": [
+        2.4492935982947065e-15,
+        40.0
+      ],
+      "B": [
+        100.0,
+        40.0
+      ],
+      "body_orientation_deg": 0
+    },
+    {
+      "input_deg": 150,
+      "A": [
+        -34.64101615137755,
+        19.999999999999996
+      ],
+      "B": [
+        65.35898384862244,
+        19.999999999999996
+      ],
+      "body_orientation_deg": 0
+    }
+  ],
+  "tolerance_mm": 1e-07,
+  "scan_start": 30,
+  "scan_end": 150,
+  "scan_step_deg": 1,
+  "selected_branch": "parallelogram",
+  "switch_at_deg": null,
+  "obstacle": {
+    "center": [
+      0,
+      80
+    ],
+    "radius_mm": 5,
+    "identity": "constructed_circle_not_actual_tree_or_person"
+  },
+  "physical_envelope_known": false,
+  "engineering_pass": false
+}

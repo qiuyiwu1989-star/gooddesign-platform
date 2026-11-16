@@ -1,7 +1,7 @@
 # coding: utf-8
 """017: a reader-facing dossier; research tools stay available behind the reading layer."""
 import html,json
-from dossier_reader_ui import icon, overview_visual, CSS as UI_CSS, JS as UI_JS
+from dossier_reader_ui import CORE_MODULES, icon, overview_visual, CSS as UI_CSS, JS as UI_JS
 from pathlib import Path
 
 def build(root,p):
@@ -40,7 +40,7 @@ def build(root,p):
   i=[x['id']for x in s['blocks']].index(key)+1
   status=next(x for x in stats if x['id']==key)
   ai_note=(' · '+str(reasoning['count'])+' 条AI推演')if key=='applications'and reasoning['count']else ''
-  sections.append(f'<details class="reader-section reader-module" id="reader-{key}" tabindex="-1"><summary><span class="module-icon">{icon(key)}</span><div class="module-title"><h2><span>{i:02d}</span>{e(status["title"])}</h2><p>{e(status["assessment"])} · {status["records"]} 条资料记录{ai_note}</p></div><div class="module-meter"><span>字段填充 {status["percent"]}%</span><progress value="{status["known"]}" max="{status["total"]}" aria-label="{e(status["title"])}当前字段填充率"></progress></div><span class="module-chevron">{icon("chevron")}</span></summary><div class="module-content">'+('<p class="section-caption">'+e(intro)+'</p>'if intro else '')+body+'<div class="module-footer"><button class="reader-link" data-reader-section="top">回到档案总览 ↑</button></div></div></details>')
+  sections.append(f'<details class="reader-section reader-module" id="reader-{key}" tabindex="-1"{(" open" if key in CORE_MODULES else "")}><summary><span class="module-icon">{icon(key)}</span><div class="module-title"><h2><span>{i:02d}</span>{e(status["title"])}</h2><p>{e(status["assessment"])} · {status["records"]} 条资料记录{ai_note}</p></div><div class="module-meter"><span>字段填充 {status["percent"]}%</span><progress value="{status["known"]}" max="{status["total"]}" aria-label="{e(status["title"])}当前字段填充率"></progress></div><span class="module-chevron">{icon("chevron")}</span></summary><div class="module-content">'+('<p class="section-caption">'+e(intro)+'</p>'if intro else '')+body+'<div class="module-footer"><button class="reader-link" data-reader-section="top">回到档案总览 ↑</button></div></div></details>')
 
  # Eight concise sections, using the same canonical project data.
  section('overview',properties([('项目全称',d['title']),('获奖年份',d['award']['year']),('奖项','第十届好设计奖 · 金奖'),('完成单位',d['award']['organizations']),('公开报道团队牵头人','邓宗全'),('完整获奖完成人',None)]))
@@ -66,7 +66,7 @@ def build(root,p):
  quality_body=quality_panel(q,e)
  section('governance',quality_body+'<p class="reader-note">评分评价档案资料与研究质量；当前为平台自评，尚未完成项目方与专业审核。</p><button class="reader-link" data-reader-view="assessment">查看各模块统计与完善方向 ↗</button>')
  metrics=f'<div class="reader-metrics"><div><b>8</b><span>内容模块</span></div><div><b>{totals["records"]}</b><span>信息记录</span></div><div><b>{totals["sources"]}</b><span>参考资料</span></div><div><b>{q["score"]:g}<em>/100</em></b><span>档案质量自评</span></div></div>'
- board='<div id="reader-view"><section id="reader-top" tabindex="-1"><div class="reader-overview-heading"><h2>档案概览</h2><span class="ui-badge pending">'+icon('info')+'公开资料整理 · 待专业审核</span></div>'+metrics+overview_visual()+'<details class="stats-definition"><summary>'+icon('info')+'如何理解这里的统计与评分？</summary><p>字段填充率只统计当前已建记录中的已填项：'+str(totals['known'])+' / '+str(totals['total'])+'。它不代表研究穷尽或事实准确率；质量分是档案研究质量的平台自评，尚待专业审核。</p></details></section><div class="module-list-heading"><h2>深入了解这个项目</h2><p>8 个板块 · 点开阅读，一次聚焦一个主题</p></div>'+''.join(sections)+'</div>'
+ board='<div id="reader-view"><section id="reader-top" tabindex="-1"><div class="reader-overview-heading"><h2>档案概览</h2><span class="ui-badge pending">'+icon('info')+'公开资料整理 · 待专业审核</span></div>'+metrics+overview_visual()+'<details class="stats-definition"><summary>'+icon('info')+'如何理解这里的统计与评分？</summary><p>字段填充率只统计当前已建记录中的已填项：'+str(totals['known'])+' / '+str(totals['total'])+'。它不代表研究穷尽或事实准确率；质量分是档案研究质量的平台自评，尚待专业审核。</p></details></section><div class="module-list-heading"><h2>深入了解这个项目</h2><p>核心 4 个板块已展开 · 可同时阅读多个主题</p></div>'+''.join(sections)+'</div>'
 
  # Paper interpretations precede a quieter, numbered source index.
  explain={x['paper_id']:x for x in c['papers']};paper_cards=[]

@@ -1,0 +1,54 @@
+{
+  "edge_direction": "provider_to_recipient",
+  "SCC": [
+    [
+      "A-reference-study",
+      "B-geometry-study"
+    ],
+    [
+      "C-integration-study"
+    ],
+    [
+      "D-test-plan"
+    ]
+  ],
+  "condensation_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "known_graph_order": [
+    [
+      "A-reference-study",
+      "B-geometry-study"
+    ],
+    [
+      "C-integration-study"
+    ],
+    [
+      "D-test-plan"
+    ]
+  ],
+  "complete_order": [
+    [
+      "A-reference-study",
+      "B-geometry-study"
+    ],
+    [
+      "C-integration-study"
+    ],
+    [
+      "D-test-plan"
+    ]
+  ],
+  "unknown_relations": false,
+  "interface_costs": null,
+  "schedule_benefit": null,
+  "physical_decoupling": false,
+  "qualification": "graph calculation only; cyclic group needs iteration planning, not automatically a physical module"
+}

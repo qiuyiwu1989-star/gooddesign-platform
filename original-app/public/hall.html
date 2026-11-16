@@ -443,10 +443,10 @@
         <p>把获奖项目转成“看懂、玩懂、教懂”的学习路径，衔接课程和科学课件。</p>
         <span class="go">查看课程 →</span>
       </a>
-      <a class="experience" id="expTransfer" href="backstage/biomimetic-blender-report.html">
+      <a class="experience" id="expTransfer" href="industry-demo/">
         <span class="type">TRANSFER DEMO</span>
         <h3>产业迁移样板</h3>
-        <p>示范如何把好设计获奖技术迁移到小家电产品，形成仿生易洁低噪破壁机方案。</p>
+        <p>示范如何把好设计获奖技术迁移到小家电产品，把获奖技术迁移为新的产品方向。</p>
         <span class="go">查看方案 →</span>
       </a>
     </div>
@@ -464,7 +464,7 @@
       <div class="route">
         <b>90 分钟企业共创</b>
         <span>先浏览案例墙找到相关技术，再用产业迁移样板把获奖成果转成新产品方向。</span>
-        <a href="backstage/biomimetic-blender-report.html">查看共创样板 →</a>
+        <a href="industry-demo/">查看共创样板 →</a>
       </div>
     </div>
   </div>
@@ -552,7 +552,7 @@
       expPlay: 'playground.html?slug=' + encodeURIComponent(f.slug),
       expCase: 'project/' + f.slug + '.html',
       expLearn: 'learn.html?slug=' + encodeURIComponent(f.slug),
-      expTransfer: 'backstage/biomimetic-blender-report.html?slug=' + encodeURIComponent(f.slug)
+      expTransfer: '/needs/'
     };
     Object.keys(links).forEach(function(id){
       var el = document.getElementById(id);
@@ -623,7 +623,7 @@
       title: '把好设计迁移成新产品。',
       desc: '以小家电方案为样板，展示如何把获奖技术从原始场景中抽取出来，转译成新的产品创新方向。',
       path: ['识别行业痛点', '匹配获奖技术', '生成产品概念'],
-      action: function(f){ return ['查看迁移样板', 'backstage/biomimetic-blender-report.html?slug=' + encodeURIComponent(f.slug)]; }
+      action: function(f){ return ['查看迁移样板', '/needs/']; }
     }
   };
 
@@ -672,7 +672,7 @@
       desc: '适合企业、园区和产业团队。先从案例墙寻找可迁移技术，再查看小家电样板，理解如何把获奖技术转成产品概念。',
       steps: ['浏览相关获奖案例', '识别可迁移技术标签', '查看产业迁移样板', '向助手生成产品方案'],
       actions: [
-        ['查看迁移样板', 'backstage/biomimetic-blender-report.html', true],
+        ['查看迁移样板', 'industry-demo/', true],
         ['生成行业方案', 'index.html?ask=' + encodeURIComponent('我是小家电企业，请从好设计获奖案例里推荐可迁移技术，并给我一个新产品方向。'), false]
       ]
     },
@@ -711,7 +711,7 @@
       return [['进入当前展品拆解', 'x-ray.html?slug=' + encodeURIComponent(f.slug), true], ['打开互动乐园', 'playground.html?slug=' + encodeURIComponent(f.slug), false]];
     }
     if (role === 'enterprise') {
-      return [['查看迁移样板', 'backstage/biomimetic-blender-report.html?slug=' + encodeURIComponent(f.slug), true], ['生成行业方案', 'index.html?ask=' + encodeURIComponent('请基于当前好设计馆展品「' + f.title + '」分析它对小家电或本地产业的可迁移方向，并区分概念启发与待专家验证内容。'), false]];
+      return [['查看迁移样板', '/needs/', true], ['生成行业方案', 'index.html?ask=' + encodeURIComponent('请基于当前好设计馆展品「' + f.title + '」分析它对小家电或本地产业的可迁移方向，并区分概念启发与待专家验证内容。'), false]];
     }
     if (role === 'curator') {
       return [['查看规划汇报', 'backstage/good-design-museum-plan.html', true], ['查看当前项目档案', 'project/' + f.slug + '.html', false]];
@@ -747,9 +747,9 @@
         '<div class="curator-note">' + esc(clip(f.note, 82)) + '</div>' +
         renderMission(f) +
         '<div class="acts"><a class="btn btn-primary" href="x-ray.html?slug=' + esc(f.slug) + '">进入拆解</a>' +
-        '<button class="btn btn-ghost" data-q="' + esc('请围绕「' + d.name + '」回答这个展品问题：' + f.ask) + '">问助手</button>' +
+        '<button type="button" class="btn btn-ghost" data-q="' + esc('请围绕「' + d.name + '」回答这个展品问题：' + f.ask) + '">问助手</button>' +
         '<a class="minor-link" href="project/' + esc(f.slug) + '.html">' + esc(f.deepLabel || '看档案') + '</a>' +
-        '<button class="minor-link" data-set-exhibit="' + esc(f.slug) + '">加入当前参观</button></div>' +
+        '<button type="button" class="minor-link" data-set-exhibit="' + esc(f.slug) + '">加入当前参观</button></div>' +
         '</div></div></div>';
       sec.querySelector('[data-q]').addEventListener('click', function(){
         window.location.href = 'index.html?ask=' + encodeURIComponent(this.getAttribute('data-q'));

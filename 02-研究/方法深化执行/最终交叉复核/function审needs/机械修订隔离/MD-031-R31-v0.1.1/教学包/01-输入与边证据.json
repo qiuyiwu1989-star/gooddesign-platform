@@ -1,0 +1,61 @@
+{
+  "origin": "constructed_task_information_model",
+  "objects": [
+    "A-reference-study",
+    "B-geometry-study",
+    "C-integration-study",
+    "D-test-plan"
+  ],
+  "convention": "row_provides_to_column",
+  "dependency_type": "task_information",
+  "matrix": [
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "edge_evidence": [
+    {
+      "from": 0,
+      "to": 1,
+      "basis": "constructed A output is B input"
+    },
+    {
+      "from": 1,
+      "to": 0,
+      "basis": "constructed B feedback revises A"
+    },
+    {
+      "from": 1,
+      "to": 2,
+      "basis": "constructed B output is C input"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "basis": "constructed C output is D input"
+    }
+  ],
+  "interface_costs": null,
+  "claim_physical_decoupling": false
+}

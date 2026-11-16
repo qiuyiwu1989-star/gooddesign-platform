@@ -1,0 +1,61 @@
+{
+  "source_binding": {
+    "problem_id": "TAP-TEACH-001",
+    "version": "0.1.0",
+    "sha256": "c9d262d505656bcaf6c76edee99e3615440f5e2d1c6ef4067e9c1b15a2ddcd70"
+  },
+  "evidence_binding": {
+    "path": "../../MD-002-R08/教学包/03-竞争解释与修订.json",
+    "sha256": "7b4d25ed4323d05ec67eb2888d44f326fa344cff977dabd23a0fb0884691c3a4",
+    "scope": "constructed_coding_not_field_evidence"
+  },
+  "initial_sentence": "构造教学委托：希望机器更智能、更快，停下来以后不要老清理。",
+  "initial_sentence_provenance": "authored_teaching_prompt_not_user_quote",
+  "issues": [
+    {
+      "id": "Q-T01",
+      "type": "ambiguous_success",
+      "question": "边界指什么对象与量？如何在目标条件测量？",
+      "need_id": "N-T01",
+      "owner_role": "客户/技术共同确认",
+      "due": "before_requirement_baseline",
+      "estimate": null,
+      "reason_no_estimate": "无目标树体或测量材料，不能形成有依据估计"
+    },
+    {
+      "id": "Q-T02",
+      "type": "missing_context",
+      "question": "异常、停止、恢复与转交人工分别是什么情境？",
+      "need_id": "N-T02",
+      "owner_role": "现场研究与操作方",
+      "due": "before_baseline",
+      "estimate": null
+    },
+    {
+      "id": "Q-T03",
+      "type": "possible_solution_bias",
+      "question": "需要知道哪些状态，不先指定传感器或界面形式？",
+      "need_id": "N-T03",
+      "owner_role": "操作方与系统设计",
+      "due": "before_architecture_commitment",
+      "estimate": null
+    },
+    {
+      "id": "Q-T04",
+      "type": "causal_overclaim",
+      "question": "撤回消除所有暂停即解决残留的单因表述，调查竞争条件。",
+      "need_id": "N-T04",
+      "owner_role": "用户研究",
+      "due": "next_observation_round",
+      "estimate": null
+    }
+  ],
+  "assumptions": [
+    "存在边界作用与恢复任务，仅作为研究切入",
+    "尚无材料、市场和验收目标，不能定基线"
+  ],
+  "withdrawn_platform_hypothesis_ids": [
+    "H-T01"
+  ],
+  "withdrawal_scope": "仅构造集上的强必要条件被反例推翻，不代表真实现场因果已知"
+}

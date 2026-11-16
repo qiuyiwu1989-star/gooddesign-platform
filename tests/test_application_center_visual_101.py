@@ -24,8 +24,8 @@ class ApplicationCenterInteractionContractsTests(unittest.TestCase):
             self.assertIn(marker, text)
         data_text = text.split('id="app-data">', 1)[1].split('</script>', 1)[0]
         data = json.loads(data_text)
-        self.assertEqual(len(data['apps']), 7)
-        self.assertEqual(len(data['cases']), 5)
+        self.assertEqual(len(data['apps']), 8)
+        self.assertEqual(len(data['cases']), 6)
 
     def test_mobile_detail_focus_and_print_rules_are_defined(self):
         text = (ROOT / 'scripts/app_center_096.py').read_text()

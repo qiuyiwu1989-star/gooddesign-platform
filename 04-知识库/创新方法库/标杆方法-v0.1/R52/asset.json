@@ -1,0 +1,45 @@
+{
+  "archetype": "qualitative_quantitative_decision",
+  "asset_schema_version": "method-asset-0.1",
+  "benchmark_version": "0.1.0",
+  "content_ref": {
+    "sha256": "8c8520ce4f5ddef4ffa1004e9cdd4f063f17933734e3999eb89120275e91b656",
+    "version": "0.1.0"
+  },
+  "contract_ref": null,
+  "deep_content_ref": {
+    "review": "independent_agent_candidate",
+    "sha256": "34bed2e401f4fca88b7fea9b582f8efea085c94156d6efcc76a00600d8754eb2",
+    "version": "0.1.1"
+  },
+  "engine_stages": [
+    "S8",
+    "S9"
+  ],
+  "failure_signals": [
+    "缺先验默认0.5",
+    "信息更准但不改变行动仍算有价值",
+    "经济价值豁免强制验证"
+  ],
+  "improves": [
+    "研究与决策分支的连接",
+    "验证优先级",
+    "概率和行动阈值复算"
+  ],
+  "isolated_effect_established": false,
+  "kind": "method",
+  "logical_outputs": [
+    "ResearchPriorityRecord"
+  ],
+  "method_id": "IM-ML-052",
+  "name": "信息价值与验证优先级（VOI）",
+  "primary_capability": "research_prioritization",
+  "research_id": "R52",
+  "review_status": "not_expert_reviewed",
+  "secondary_capabilities": [
+    "concept_comparison",
+    "experiment_design"
+  ],
+  "skill_level": "S1",
+  "validation_status": "not_engineering_validated"
+}

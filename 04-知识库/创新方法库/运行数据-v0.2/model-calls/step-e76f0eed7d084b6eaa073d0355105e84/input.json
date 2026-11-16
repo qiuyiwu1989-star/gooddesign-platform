@@ -1,0 +1,1148 @@
+{
+  "payload": {
+    "task": {
+      "task_id": "LIVE-TEACH-CLAMP",
+      "revision": "t1",
+      "object": "bench clamp",
+      "desired_outcome": "hold a workpiece without damage",
+      "boundary": "teaching concept and test planning only; customer load, material, geometry and damage criterion unknown",
+      "stage": "frame",
+      "delivery_level": "concept",
+      "source_policy": "Lunar sampling case is provided as a deliberately different environment; do not transfer its parameters or cite it as proof of clamp performance."
+    },
+    "method": {
+      "research_id": "R36",
+      "method_id": "IM-ML-036",
+      "name": "Pugh概念筛选",
+      "english_name": "Pugh Concept Selection",
+      "kind": "tool",
+      "category": "F方案决策与验证评价",
+      "lineage": [
+        "概念设计",
+        "受控收敛"
+      ],
+      "aliases": [
+        "Pugh矩阵",
+        "基准相对比较"
+      ],
+      "summary": "选一个共同基准，按源于要求的准则比较各概念的相对优劣，用差异和未知驱动概念改进与下一轮验证。",
+      "sections": {
+        "identity": "Pugh概念筛选与Stuart Pugh的概念选择思想相联系。本档以MIT D-Lab公开课程的Pugh Chart Analysis和ASQ决策矩阵说明为操作入口；未声称核读Pugh全部原著。Pugh常用相对基准的更好、相同、较差判断，一般加权决策矩阵可能使用不同评分刻度，两者在本库保持关系而不完全混同。硬约束预筛、未知单列和证据状态是平台补充。",
+        "problem": "团队容易偏爱自己提出的方案，或把某个突出的优点等同整体优越；还有的比较表用不一致指标给不同方案打分，最后总分看似严谨却不可复查。Pugh把比较对象、准则与基准固定，让分歧成为可以讨论和补证的差异。它尤其适合概念阶段信息尚不完整的收敛，但不擅长替代精确工程计算，也不能靠投票证明安全、市场需求或制造能力。",
+        "principle": "比较矩阵的行来自要求，列是可比较的完整概念；选择datum作为共同参照，每格判断相对它更好、相当或更差，并写依据。平台另设未知状态，避免缺信息自动记成相同。汇总只帮助发现优势、弱项和需要改进的组合，不能把符号视为等距物理测量。更换合理基准、复核准则和整合优点，可减少对单一初始方案的依赖。控制收敛意味着以学习改进概念，而不是一次打分宣布永远最佳。基准不是不变真理，应与设计阶段和候选变化一起复审，保留前后轮次差异。",
+        "applicability": "适合已有少量不同概念、需要选择下一轮原型或研究重点时使用，前提是目标、共同准则和基本方案表达足够清楚。若候选只有不同名称而机制相同，先回概念生成；若关键要求未知，先定义任务。对法规、安全或性能硬门槛，先判断是否满足，不能把它们当可由其他优点补偿的普通行。商业、工程与体验准则可同表讨论，但要解释判断来源和不确定性。",
+        "interpretation": "矩阵每格都应能追溯依据、判断者和信息状态，汇总报告优劣分布、未知项及最敏感准则。低分方案可能包含有价值子机制，可用来改进领先概念。若合理改变基准或权重就改变排序，应保留接近方案并优先补证。不能把总符号数解释成百分比适配度，也不把“更好”直接换成可承诺收益。最终选择仍属于有责任的决策者，矩阵是依据之一。",
+        "example": "教学演示，非实测：比较三种物件夹持概念，以现有手动机构为基准，准则包括装卸动作、供能、表面损伤风险和维护。第一步先排除明确违反既定空间约束的方向，若尺寸未知则不假排除。第二步把基准与两条新路线按同一功能讲清。第三步依据动作描述可以讨论操作复杂度，但对损伤和寿命仍记未知。第四步不强算完整总分，把未知集中成接触压力与重复拆装测试。第五步提出可能借鉴新路线定位方式、同时保留手动供能的改进概念，再做一轮比较。结论是研究优先项与融合方向，不是某夹具性能已胜出。 矩阵行的教学记录可为“准则:表面损伤；基准:手动夹持；概念B:未知；依据:未取得接触压力；下一步:相同工件试验”。操作动作可由有来源流程给相对判断；维护或寿命未知则不以相同符号填平。每轮保留基准、判断依据与待补证。",
+        "pitfalls": "一是先有偏爱方案再选有利准则；应回要求与用户目标。二是未知记零，与真正相当混在一起；单列待证据。三是用总分覆盖明确的安全或空间冲突；硬约束优先排除。四是把每个加号看成同等收益，忽略等级和尺度；用解释与敏感性代替伪精确。反例：只有一个方案且问题是缺疲劳数据，此时不必凑出多个假候选，应做验证与确认。",
+        "validation": "执行质量通过同准则、同基准、同口径、每格依据及未知处理检查；可以让不同专业独立判断后解释分歧。方法的输出不是工程测试结果。概念关键差异需研究、原型或实测支持，尤其涉及时间、载荷、损伤和成本时。若工具只做矩阵展示，它不代表AI已自动理解工程差异；没有真实数据就保存判断假设和后续试验，不标排名经验证。",
+        "adaptation": "MIT来源支持datum、相对符号判断、来自规格的准则，以及结合不同概念特征。ASQ补充准则共识与加权比较的基本程序。本文用五步封装，增加硬约束门、未知状态、依赖绑定、来源定位与敏感性，是平台操作改编。教学夹持案例为说明判读逻辑而写，未声称原课程或实际企业采用。",
+        "gaps": "未核读Pugh原著完整受控收敛流程，当前说明侧重公开教学可支持的矩阵使用。具体任务还需确定准则、判断尺度、参与者、基准及权重依据，不能套固定权重。未开展真实团队决策对照实验，也无选择后产品结果；内容状态仅研究操作草稿。"
+      },
+      "inputs": [
+        {
+          "key": "problem_requirements",
+          "label": "任务要求与硬约束",
+          "type": "object",
+          "required": true,
+          "description": "目标、验收口径、准则来源与禁止条件",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "concepts",
+          "label": "候选概念",
+          "type": "array",
+          "required": true,
+          "description": "至少能按同一功能比较的不同路线，含原理和限制",
+          "missing_action": "ask_or_stop"
+        },
+        {
+          "key": "evidence",
+          "label": "比较依据",
+          "type": "array",
+          "required": false,
+          "description": "计算、测试、观察或专业判断，区分状态",
+          "missing_action": "mark_unknown"
+        },
+        {
+          "key": "decision_preferences",
+          "label": "偏好与资源",
+          "type": "object",
+          "required": false,
+          "description": "基准选择、权重理由、后续试验资源",
+          "missing_action": "mark_unknown"
+        }
+      ],
+      "steps": [
+        {
+          "step_id": "R36-S01",
+          "title": "检查可比较性与硬约束",
+          "input_refs": [
+            "problem_requirements",
+            "concepts"
+          ],
+          "depends_on": [],
+          "operation": "核对各候选提供同一核心功能，先标明确约束冲突与未知；不为凑表造候选。",
+          "decision": "不具备共同任务返回定义；硬冲突排除，未知待补。",
+          "output_key": "feasible_concepts",
+          "output_description": "候选边界、排除与未知",
+          "checks": [
+            "同一功能目标",
+            "硬约束不被补偿"
+          ],
+          "stop_condition": "无可比较概念则停止矩阵",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "查概念的功能、接口、工况与目标约束"
+          ]
+        },
+        {
+          "step_id": "R36-S02",
+          "title": "确定准则与共同基准",
+          "input_refs": [
+            "feasible_concepts",
+            "problem_requirements",
+            "decision_preferences"
+          ],
+          "depends_on": [
+            "R36-S01"
+          ],
+          "operation": "从要求提炼可解释准则，固定datum并说明理由，避免重复计算同一价值。",
+          "decision": "准则只偏向某候选时重审；关键尺度不清先定义。",
+          "output_key": "comparison_frame",
+          "output_description": "基准、准则、口径及偏好理由",
+          "checks": [
+            "准则有要求来源",
+            "尺度与基准一致"
+          ],
+          "stop_condition": "关键准则未定义不打分",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查任务指标口径与用户价值依据"
+          ]
+        },
+        {
+          "step_id": "R36-S03",
+          "title": "逐格比较并标信息状态",
+          "input_refs": [
+            "comparison_frame",
+            "evidence"
+          ],
+          "depends_on": [
+            "R36-S02"
+          ],
+          "operation": "用更好、相同、较差及平台未知状态比较，逐格写依据与判断者。",
+          "decision": "缺证据不记相当；不同工况数据不直接比较。",
+          "output_key": "pugh_matrix",
+          "output_description": "符号、依据、未知与分歧",
+          "checks": [
+            "每格可追溯",
+            "同号非等量收益"
+          ],
+          "stop_condition": "关键判断仅猜测则不唯一选型",
+          "source_refs": [
+            "S01"
+          ],
+          "knowledge_queries": [
+            "查支持具体性能比较的原文、数据与限制"
+          ]
+        },
+        {
+          "step_id": "R36-S04",
+          "title": "分析优势弱项并改进概念",
+          "input_refs": [
+            "pugh_matrix",
+            "feasible_concepts"
+          ],
+          "depends_on": [
+            "R36-S03"
+          ],
+          "operation": "观察优势分布、关键弱项与可结合的机制，必要时换合理基准检查稳定性。",
+          "decision": "排序随合理假设改变则保留接近路线并补证，不强推总分。",
+          "output_key": "concept_review",
+          "output_description": "候选改进、敏感项和补证任务",
+          "checks": [
+            "不只数符号",
+            "机制融合检查新复杂性"
+          ],
+          "stop_condition": "硬弱项无法改善则淘汰方向",
+          "source_refs": [
+            "S01",
+            "S02"
+          ],
+          "knowledge_queries": [
+            "查可融合子机制及接口代价"
+          ]
+        },
+        {
+          "step_id": "R36-S05",
+          "title": "形成下一轮选择与验证",
+          "input_refs": [
+            "concept_review",
+            "problem_requirements"
+          ],
+          "depends_on": [
+            "R36-S04"
+          ],
+          "operation": "向决策者报告保留、合并、排除理由和最有价值的下一试验，不输出伪精确适配率。",
+          "decision": "证据不足时输出条件性研究优先序；验证后再更新。",
+          "output_key": "selection_dossier",
+          "output_description": "比较依据、决定候选与验证问题",
+          "checks": [
+            "计划与结果分离",
+            "保留未知和反例"
+          ],
+          "stop_condition": "缺关键工程验证不定型",
+          "source_refs": [
+            "S02"
+          ],
+          "knowledge_queries": [
+            "把差异假设交给V&V或DOE"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "key": "selection_dossier",
+          "label": "概念筛选档案",
+          "required_fields": [
+            "datum",
+            "criteria",
+            "matrix",
+            "evidence",
+            "unknowns",
+            "retained_concepts",
+            "validation_questions"
+          ],
+          "interpretation": "支持下一轮研究决策，不证明工程最优"
+        }
+      ],
+      "relations": [
+        {
+          "target_research_id": "R17",
+          "relation": "requires",
+          "binding": "概念组合→concepts",
+          "condition": "候选有真正原理差异"
+        },
+        {
+          "target_research_id": "R37",
+          "relation": "alternative",
+          "binding": "需多属性量化时→权衡分析",
+          "condition": "数据和偏好模型足够"
+        },
+        {
+          "target_research_id": "R42",
+          "relation": "precedes",
+          "binding": "关键差异→验证问题",
+          "condition": "仍有未知影响选择"
+        }
+      ],
+      "search_terms": [
+        "Pugh",
+        "概念筛选",
+        "datum",
+        "决策矩阵",
+        "受控收敛"
+      ],
+      "sources": [
+        {
+          "publisher": "MIT OpenCourseWare",
+          "authors": [
+            "Amy J. Smith",
+            "Victor Grau Serrat"
+          ],
+          "title": "D-Lab II: Design Packet Phase 2 — Ideas",
+          "url": "https://ocw.mit.edu/courses/ec-720j-d-lab-ii-design-spring-2010/pages/projects/ideas/",
+          "locator": "Concept Evaluation / Pugh Chart Analysis",
+          "read_scope": "课程网页Pugh与分析试验段落核读",
+          "supports": [
+            "以datum作相对比较",
+            "按设计规格选准则",
+            "允许结合方案特征"
+          ],
+          "evidence_note": "课程用基准方案组织更好、相同、较差的比较，并强调比较前的研究与试验，比较结果可用于迭代概念。",
+          "source_id": "S01",
+          "accessed_at": "2026-10-23",
+          "rights": "仅链接、题录和原创释义；不复制完整第三方表格、教材、数据库或软件规则"
+        },
+        {
+          "publisher": "American Society for Quality",
+          "authors": [
+            "ASQ"
+          ],
+          "title": "What is a Decision Matrix?",
+          "url": "https://asq.org/quality-resources/decision-matrix",
+          "locator": "When to Use / Decision Matrix Procedure",
+          "read_scope": "专业机构网页用途与操作段落选读",
+          "supports": [
+            "准则共识与相对权重",
+            "多准则比较"
+          ],
+          "evidence_note": "ASQ将矩阵用于多个准则下缩小候选，权重由讨论或成员判断形成；它是决策工具，不是客观测量的替代。",
+          "source_id": "S02",
+          "accessed_at": "2026-10-23",
+          "rights": "仅链接、题录和原创释义；不复制完整第三方表格、教材、数据库或软件规则"
+        }
+      ],
+      "schema_version": "method-dossier-1.0",
+      "version": "0.1.0",
+      "content_status": "substantive_draft",
+      "execution_status": "documented_not_runtime_integrated",
+      "review_status": "not_expert_reviewed",
+      "validation_status": "not_engineering_validated",
+      "evaluations": [
+        {
+          "scenario": "输入足够的概念研究",
+          "expected": "产生selection_dossier并保留每个判断的依据、假设与未覆盖条件"
+        },
+        {
+          "scenario": "缺少problem_requirements",
+          "expected": "追问对象与目标，停止给出确定方案，不用生成数据补齐"
+        },
+        {
+          "scenario": "候选违反任务明确硬约束",
+          "expected": "排除该方向并写冲突依据，不让综合优势抵消硬约束"
+        },
+        {
+          "scenario": "必要计算、成本数据或试验工具不可用",
+          "expected": "保留研究计划与待验证项，不标计算完成、工程有效或收益成立"
+        }
+      ],
+      "change_log": [
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "逐项核读原典/专业指南并编写平台深度操作草稿"
+        },
+        {
+          "version": "0.1.0",
+          "date": "2026-10-23",
+          "reason": "批次复核：补具体中间产物、教学模型与边界；不提升执行/验证状态"
+        }
+      ]
+    },
+    "contract": {
+      "contract_version": "0.2.1",
+      "research_id": "R36",
+      "artifact_type": "ComparisonRecord",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "task_revision": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ComparisonRecord"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "fact",
+                    "assumption",
+                    "unknown"
+                  ]
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "kind",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "payload": {
+            "type": "object",
+            "properties": {
+              "requirements_revision": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+              },
+              "baseline_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+              },
+              "candidate_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "criteria": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "hard": {
+                      "type": "boolean"
+                    },
+                    "requirement_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "text",
+                    "hard",
+                    "requirement_ids"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "judgments": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "candidate_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "criterion_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                    },
+                    "value": {
+                      "type": "string",
+                      "enum": [
+                        "better",
+                        "same",
+                        "worse",
+                        "unknown",
+                        "pass",
+                        "fail"
+                      ]
+                    },
+                    "basis": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 6000,
+                      "pattern": "\\S"
+                    },
+                    "evidence_refs": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                      },
+                      "minItems": 0,
+                      "maxItems": 200
+                    }
+                  },
+                  "required": [
+                    "candidate_id",
+                    "criterion_id",
+                    "value",
+                    "basis",
+                    "evidence_refs"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1,
+                "maxItems": 200
+              },
+              "recommendations": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,99}$"
+                },
+                "minItems": 0,
+                "maxItems": 200
+              },
+              "sensitivity": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "maxItems": 200
+              },
+              "unknowns": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000,
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "maxItems": 200
+              }
+            },
+            "required": [
+              "requirements_revision",
+              "baseline_id",
+              "candidate_ids",
+              "criteria",
+              "judgments",
+              "recommendations",
+              "sensitivity",
+              "unknowns"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "artifact_id",
+          "revision",
+          "task_id",
+          "task_revision",
+          "type",
+          "scope",
+          "conditions",
+          "evidence_refs",
+          "payload"
+        ],
+        "additionalProperties": false
+      },
+      "purpose": "用硬门槛和相对判断筛选概念",
+      "requires": [
+        "ProblemBrief",
+        "ConceptSet"
+      ],
+      "stage": "compare",
+      "next": [
+        "R44"
+      ],
+      "stop": "硬门槛未知或失败的候选不能作为已通过的推荐。",
+      "input_bindings": {
+        "problem_requirements": "artifact:ProblemBrief.payload.requirements",
+        "concepts": "artifact:ConceptSet.payload",
+        "evidence": "evidence",
+        "decision_preferences": "task.preferences"
+      },
+      "status": "platform_authored_not_expert_reviewed",
+      "evidence_rule": "引用必须解析；字段存在不证明内容受证据支持。"
+    },
+    "inputs": [
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-brief",
+        "revision": "r1",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "ProblemBrief",
+        "scope": "Frame the bench-clamp holding and damage-prevention problem for teaching and subsequent test planning. This is a draft problem brief, not an approved requirements baseline or evidence of product performance.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The supplied task specifies a bench clamp and the desired outcome of holding a workpiece without damage.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Customer load, workpiece material, geometry and damage criterion are unknown; specifications and acceptance thresholds cannot yet be fixed.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "The supplied lunar-sampling excerpt concerns a different environment. Its transferability is not established; its parameters and reported achievements provide no proof of bench-clamp performance.",
+            "kind": "fact",
+            "evidence_refs": [
+              "case-98b73a9c96af1f9408721571"
+            ]
+          }
+        ],
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "payload": {
+          "actor": "Intended bench-clamp operator; customer identity, capabilities and work context are unknown.",
+          "object": "bench clamp",
+          "boundary": "Teaching concept and test planning only; customer load, material, geometry and damage criterion unknown. Stop specification finalization until these conditions are clarified. No concept selection, physical testing or engineering validation is established.",
+          "desired_outcome": "hold a workpiece without damage",
+          "requirements": [
+            {
+              "id": "REQ01",
+              "text": "The bench clamp should retain the intended workpiece during the intended operation under use conditions to be established.",
+              "hard": null,
+              "acceptance": "Proposed verification plan only: first establish workpiece geometry, applied loads, load directions, holding duration and allowable movement with the responsible stakeholder; then plan a retention test against those agreed conditions. No threshold or result is available.",
+              "status": "proposed",
+              "evidence_refs": []
+            },
+            {
+              "id": "REQ02",
+              "text": "Clamping and release should leave the workpiece within an agreed damage criterion.",
+              "hard": null,
+              "acceptance": "Proposed verification plan only: identify material, surface condition and unacceptable changes; agree inspection methods and acceptance limits before planning a before-and-after assessment. Damage criteria and results remain unknown.",
+              "status": "proposed",
+              "evidence_refs": []
+            }
+          ],
+          "conditions": [
+            {
+              "id": "PC01",
+              "text": "Whether adequate retention and acceptable workpiece condition can be achieved together is unresolved for the customer's unknown use conditions.",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "PC02",
+              "text": "Requirement owners, confirmation authority, priority rules and change-approval responsibilities have not been supplied. Both requirements remain draft proposals.",
+              "kind": "unknown",
+              "evidence_refs": []
+            },
+            {
+              "id": "PC03",
+              "text": "Proposed change process: retain requirement IDs and revision history, record the reason for each change, and revisit affected concepts and verification plans before establishing a confirmed baseline.",
+              "kind": "assumption",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "Who operates the clamp, for which work operation, and in what bench environment?",
+            "What are the workpiece material, surface finish, geometry and dimensional variation?",
+            "What loads, directions, durations and allowable movements define successful holding?",
+            "What constitutes damage, and how should it be inspected or measured?",
+            "What bench interfaces, operating constraints and applicable safety requirements must be investigated?",
+            "Which requirements are hard constraints, and who can confirm them and approve changes?",
+            "What representative workpieces and verification resources would be available for a later test plan?"
+          ]
+        }
+      },
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-functions",
+        "revision": "r1",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "FunctionModel",
+        "scope": "Proposed functional model for teaching and later test planning. Maps draft REQ01 retention and REQ02 damage prevention to candidate functions and interfaces. No requirements approval, concept selection, physical feasibility or test execution is established.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The task requests a bench clamp that holds a workpiece without damage. Input requirements REQ01 and REQ02 remain proposed; their hardness is unknown.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Customer loads, workpiece material, geometry, allowable movement and damage criteria are unknown.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "The functions, flows and scenarios below are modeling proposals. Necessity denotes their proposed contribution to the goal, not confirmed customer approval or physical feasibility.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C04",
+            "text": "The supplied lunar-sampling case has unestablished transferability and supplies no clamp performance evidence or customer parameters.",
+            "kind": "fact",
+            "evidence_refs": [
+              "case-98b73a9c96af1f9408721571"
+            ]
+          }
+        ],
+        "evidence_refs": [
+          "case-98b73a9c96af1f9408721571"
+        ],
+        "payload": {
+          "boundary": "Candidate functional boundary includes establishing workpiece contact, applying and maintaining restraint, managing contact effects, releasing restraint and assessing workpiece condition. External parties and objects are the operator or other actuation source, workpiece, bench/support and operation imposing loads; their characteristics remain unknown. Proposed normal path: establish contact, apply restraint, maintain restraint during work, release, assess condition. Proposed abnormal walkthroughs: workpiece slip, excessive contact effects, loss of actuation input and incomplete release. These are planning scenarios, not observed failures. Pause specification finalization and architecture freezing until use conditions and acceptance criteria are clarified.",
+          "functions": [
+            {
+              "id": "F01",
+              "verb_object": "Establish workpiece contact — proposed prerequisite for REQ01; accommodate the intended workpiece without selecting a jaw geometry or mechanism.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F02",
+              "verb_object": "Apply restraint — proposed contribution to REQ01; transform an unspecified actuation input into workpiece restraint.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F03",
+              "verb_object": "Maintain workpiece restraint — proposed contribution to REQ01 throughout the intended operation; required loads and duration remain unknown.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F04",
+              "verb_object": "Manage workpiece contact effects — proposed contribution to REQ02 during engagement, holding and release; acceptable effects remain undefined.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F05",
+              "verb_object": "Release workpiece restraint — proposed contribution to REQ02 during removal; release behavior and operator interaction require clarification.",
+              "necessity": "necessary",
+              "evidence_refs": []
+            },
+            {
+              "id": "F06",
+              "verb_object": "Assess workpiece condition — proposed supporting activity for later verification of REQ02; allocation to an operator or inspection resource is unresolved.",
+              "necessity": "supporting",
+              "evidence_refs": []
+            }
+          ],
+          "flows": [
+            {
+              "id": "FL01",
+              "from_function": "F02",
+              "to_function": "F04",
+              "flow_type": "energy",
+              "description": "Proposed transfer of actuation work through the contact-management function during engagement. Input source, displacement, losses and magnitude are unknown; this does not establish a mechanism.",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL02",
+              "from_function": "F01",
+              "to_function": "F02",
+              "flow_type": "signal",
+              "description": "Proposed information dependency: contact readiness permits restraint application. This may be an operator judgment; no sensor or automatic interlock is specified.",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL03",
+              "from_function": "F02",
+              "to_function": "F03",
+              "flow_type": "signal",
+              "description": "Proposed information dependency: restraint establishment precedes the holding phase. How readiness is judged and what happens if it is uncertain remain unresolved.",
+              "evidence_refs": []
+            },
+            {
+              "id": "FL04",
+              "from_function": "F05",
+              "to_function": "F06",
+              "flow_type": "material",
+              "description": "Proposed handoff of the released workpiece for condition assessment. Inspection handling must itself be considered when defining damage assessment.",
+              "evidence_refs": []
+            }
+          ],
+          "interfaces": [
+            {
+              "id": "I01",
+              "text": "Proposed workpiece interface: F01–F05 interact with the workpiece through contact and restraint. Material, finish, geometry, contact regions, force distribution, displacement and permitted surface changes are unknown. Interface owner and confirmation authority are unassigned. Proposed derived requirement: establish compatible contact conditions for retention and damage prevention before fixing a design.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I02",
+              "text": "Proposed actuation interface: an external operator or other source supplies input to F02 and initiates F05. Input type, magnitude, units, travel, timing, feedback and behavior after input loss are unknown. Do not presume manual, powered or continuously energized actuation.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I03",
+              "text": "Proposed support interface: F03 transfers reaction loads to a bench or other support. Attachment method, support stiffness, allowable movement and load directions are unknown. Later planning should define both clamp-side and support-side responsibilities and compatible limits.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I04",
+              "text": "Proposed operation interface: the intended work operation imposes disturbances on the restrained workpiece. Load histories, durations, directions and interaction with release are unknown. Proposed derived requirement: define when work may begin and how slip or uncertain restraint should be handled.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I05",
+              "text": "Proposed assessment interface: F06 receives the released workpiece and a pre-clamping condition record, and returns an assessment to the responsible reviewer. Inspection method, reference condition, acceptance limits, reviewer and record format remain unknown. This is a verification-planning dependency, not a specified built-in sensing function.",
+              "kind": "assumption",
+              "evidence_refs": []
+            },
+            {
+              "id": "I06",
+              "text": "Proposed verification plan: after stakeholders define representative workpieces, load conditions, allowable movement and damage criteria, plan retention observation and before/after condition assessment. Review engagement, holding, release and abnormal scenarios together. No procedure, threshold, sample count or acceptance result is established.",
+              "kind": "assumption",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "Which work operation, operator capabilities and bench environment define the operating scenario?",
+            "What workpiece materials, finishes, geometries and variations must be accommodated?",
+            "What loads, directions, durations and allowable movements define retention?",
+            "What constitutes damage during engagement, holding, release and inspection?",
+            "Can retention and damage prevention be achieved together under the eventual use conditions?",
+            "What actuation source, support interface and release behavior are required?",
+            "What are the consequences and required responses for slip, excessive contact effects, input loss or incomplete release?",
+            "Who owns and confirms each requirement and interface, and which constraints are hard? Hardness remains unknown.",
+            "How should functions be allocated among clamp, operator and external assessment resources? No physical architecture is selected.",
+            "What verification resources and representative workpieces will be available? All verification described here remains a plan."
+          ]
+        }
+      },
+      {
+        "artifact_id": "LIVE-TEACH-CLAMP-concepts",
+        "revision": "r1",
+        "task_id": "LIVE-TEACH-CLAMP",
+        "task_revision": "t1",
+        "type": "ConceptSet",
+        "scope": "Teaching concept enumeration and verification planning for a bench clamp intended to hold a workpiece without damage. Uses the supplied proposed functional model and morphological-analysis method. All implementation principles below are teaching hypotheses, not customer requirements or demonstrated solutions. No preferred concept, approved specification, prototype execution or engineering validation is established. The lunar-sampling case supplies no clamp performance evidence and contributes no parameters to these concepts.",
+        "conditions": [
+          {
+            "id": "C01",
+            "text": "The task specifies a bench clamp and the desired outcome of holding a workpiece without damage.",
+            "kind": "fact",
+            "evidence_refs": []
+          },
+          {
+            "id": "C02",
+            "text": "Customer loads, workpiece material, geometry, allowable movement and damage criteria remain unknown. REQ01 and REQ02 remain proposed; their hardness is unknown.",
+            "kind": "unknown",
+            "evidence_refs": []
+          },
+          {
+            "id": "C03",
+            "text": "F01 establishes contact; F02 applies restraint; F03 maintains restraint; F04 manages contact effects; F05 releases restraint; F06 assesses workpiece condition. These allocations remain modeling proposals from the supplied FunctionModel.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C04",
+            "text": "Manual input, pneumatic supply, fixed-reference contact and external inspection are alternative teaching assumptions. None is established as available or acceptable for the customer.",
+            "kind": "assumption",
+            "evidence_refs": []
+          },
+          {
+            "id": "C05",
+            "text": "The proposed contact-management option is a hypothesis to investigate; distributing contact does not by itself establish adequate retention or freedom from damage.",
+            "kind": "assumption",
+            "evidence_refs": []
+          }
+        ],
+        "evidence_refs": [],
+        "payload": {
+          "function_ids": [
+            "F01",
+            "F02",
+            "F03",
+            "F04",
+            "F05",
+            "F06"
+          ],
+          "options": [
+            {
+              "id": "O01",
+              "function_id": "F01",
+              "principle": "Establish workpiece contact against a fixed reference before applying restraint.",
+              "conditions": [
+                "Teaching hypothesis derived from the method example.",
+                "Requires compatible workpiece geometry, accessible contact regions and a reaction path to the support; all remain unknown."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O02",
+              "function_id": "F02",
+              "principle": "Convert manual rotation through a screw transmission into closing displacement and restraint.",
+              "conditions": [
+                "Manual operation is an assumption, not a customer constraint.",
+                "Operator input, travel, transmission geometry and resulting contact forces require definition."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O03",
+              "function_id": "F02",
+              "principle": "Use a pneumatic cylinder to produce closing displacement and restraint.",
+              "conditions": [
+                "Pneumatic supply availability and acceptability are unknown.",
+                "For the exclusion example only, assume a single-direction closing cylinder with no screw transmission.",
+                "Pressure, stroke, control and support interfaces remain unspecified."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O04",
+              "function_id": "F03",
+              "principle": "Investigate retaining the screw position through transmission resistance after manual input stops.",
+              "conditions": [
+                "Position retention is a hypothesis, not an established self-locking property.",
+                "Requires review of transmission geometry, friction, disturbances, load duration and support reactions."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O05",
+              "function_id": "F03",
+              "principle": "Investigate maintaining restraint through sustained pneumatic input.",
+              "conditions": [
+                "Continuous supply and control are assumed for this teaching route.",
+                "Leakage, supply loss, movement and required holding duration remain unresolved."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O06",
+              "function_id": "F04",
+              "principle": "Investigate distributing restraint over a defined contact region to manage local workpiece effects.",
+              "conditions": [
+                "Proposed interpretation of F04, not an evidenced damage-prevention solution.",
+                "Contact area, material, surface interaction and deformation require definition.",
+                "Any effect on slip resistance must be evaluated together with damage."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O07",
+              "function_id": "F05",
+              "principle": "Reverse the same screw transmission to withdraw contact and release restraint.",
+              "conditions": [
+                "Requires an actual reversible screw transmission connected to the moving contact.",
+                "Release travel, residual contact and removal clearance remain unknown."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O08",
+              "function_id": "F05",
+              "principle": "Investigate elastic return after pneumatic closing input is removed.",
+              "conditions": [
+                "Requires a return element and a defined pressure-release path.",
+                "Return force, sticking, release travel and behavior during unintended supply loss remain unknown.",
+                "Compatibility with sustained holding must be investigated."
+              ],
+              "evidence_refs": []
+            },
+            {
+              "id": "O09",
+              "function_id": "F06",
+              "principle": "Allocate before-and-after workpiece condition assessment to an external operator or inspection resource.",
+              "conditions": [
+                "Supporting verification activity rather than a specified built-in sensing mechanism.",
+                "Requires an agreed reference condition, damage criterion, inspection method and responsible reviewer.",
+                "No assessment has been performed."
+              ],
+              "evidence_refs": []
+            }
+          ],
+          "combinations": [
+            {
+              "id": "M01",
+              "option_ids": [
+                "O01",
+                "O02",
+                "O04",
+                "O06",
+                "O07",
+                "O09"
+              ],
+              "status": "unknown",
+              "reason": "Manual screw route covers all six proposed functions: reference contact, screw closing, hypothesized position retention, contact management, reverse-screw release and external assessment. The screw supplies a conceptual connection between closing and release, but holding behavior, contact effects and bench reactions remain unknown. Manual operation and reverse travel introduce operator and clearance dependencies. Retained for investigation only; no recommendation is supported."
+            },
+            {
+              "id": "M02",
+              "option_ids": [
+                "O01",
+                "O03",
+                "O05",
+                "O06",
+                "O08",
+                "O09"
+              ],
+              "status": "unknown",
+              "reason": "Pneumatic route covers all six proposed functions through reference contact, pneumatic closing, sustained input, contact management, elastic return and external assessment. It adds supply, control and return-element dependencies. Whether pressure can maintain restraint while permitting intentional release, including behavior after supply loss, remains unresolved. No recommendation is supported."
+            },
+            {
+              "id": "M03",
+              "option_ids": [
+                "O01",
+                "O03",
+                "O05",
+                "O06",
+                "O07",
+                "O09"
+              ],
+              "status": "excluded",
+              "reason": "Under the explicit O03 topology assumption of a closing cylinder without a screw transmission, O07 cannot release restraint by reversing that absent transmission. This is a conditional logical conflict, not an empirical performance judgment. Adding a screw would require a newly defined option and combination."
+            }
+          ],
+          "compatibility": [
+            {
+              "option_ids": [
+                "O02",
+                "O07"
+              ],
+              "status": "compatible",
+              "reason": "At the stated principle level only, forward and reverse operation refer to the same reversible screw transmission. This conditional connection establishes neither release clearance nor overall feasibility.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O02",
+                "O04"
+              ],
+              "status": "unknown",
+              "reason": "Screw-driven closing does not establish that position or restraint will persist after input stops; transmission and disturbance conditions are missing.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O03",
+                "O07"
+              ],
+              "status": "incompatible",
+              "reason": "O03 explicitly excludes a screw transmission for this topology, whereas O07 requires that transmission as the release mechanism.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O03",
+                "O05",
+                "O08"
+              ],
+              "status": "unknown",
+              "reason": "Closing, sustained holding and elastic return require a coordinated pressure and motion sequence. Available supply, intentional venting, return force and input-loss behavior are undefined.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O01",
+                "O02",
+                "O04",
+                "O06",
+                "O07",
+                "O09"
+              ],
+              "status": "unknown",
+              "reason": "Whole-route check for M01 remains open: contact geometry, force transmission, restraint persistence, support reactions, release and assessment must jointly satisfy retention and damage criteria that are not yet defined.",
+              "evidence_refs": []
+            },
+            {
+              "option_ids": [
+                "O01",
+                "O03",
+                "O05",
+                "O06",
+                "O08",
+                "O09"
+              ],
+              "status": "unknown",
+              "reason": "Whole-route check for M02 remains open: supply and return behavior interact with contact forces, restraint continuity, support reactions and damage. Pairwise consistency cannot resolve these system interactions.",
+              "evidence_refs": []
+            }
+          ],
+          "unknowns": [
+            "Confirm the intended operation, operator capabilities and available actuation resources before comparing manual and pneumatic routes.",
+            "Obtain workpiece materials, finishes, geometries and variation; then plan contact and clearance review for engagement, holding and release.",
+            "Establish loads, directions, duration and allowable movement; then plan restraint and bench-reaction analysis for each retained route.",
+            "Agree damage criteria and inspection methods with the responsible stakeholder before planning before-and-after assessment.",
+            "Investigate whether retention and acceptable contact effects can coexist; no acceptable force range has been established.",
+            "For M01, plan review of screw position retention, disturbance sensitivity and release behavior once transmission and load conditions are available.",
+            "For M02, define the supply, control and return sequence; then plan walkthroughs of intentional release, supply loss and incomplete release.",
+            "Identify requirement owners, confirmation authority and hard constraints. Unknown hard gates prevent recommendation or unique selection.",
+            "No approved comparison baseline exists. After requirements are clarified, use the same workpiece, load, movement and damage criteria for both routes; compare operator effort, resource dependence and interface complexity without inventing scores.",
+            "Prototype and verification activities remain proposals only. Define representative workpieces, resources, procedures and acceptance limits before any later execution; no tests, measurements or acceptance results are supplied."
+          ]
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "case-98b73a9c96af1f9408721571",
+        "server": "gooddesign-project-archives",
+        "project_id": "2025-00",
+        "source_id": "Sc249f11de5b7c8a4",
+        "source_revision": "758bc2ce5b48d2d92dedd0775e9212eaed5e81cb634fb719802f48a6c737ecb0",
+        "publication_revision": "current_ingest",
+        "source_sha256": "c249f11de5b7c8a4c1a46ec34f10004dfc0626fa9f271e924761afde58ca722f",
+        "chunk_id": "B0001",
+        "locator": "JSON正文 · 清洗文本字符1–1200",
+        "text": "{\n\"year\": 2025,\n\"name\": \"嫦娥五/六号月球钻取采样方法及系统设计\",\n\"unit\": \"哈尔滨工业大学,北京圣视环宇科技有限公司\",\n\"participants\": \"姜生元,张伟伟,唐钧跃,范继五,全齐全,侯绪研,阮旭,杨暄昊,杜坤,汪凌昕\",\n\"number\": \"12025070107\",\n\"desc\": \"探月工程三期嫦娥五/六号任务的核心使命是月球无人自主采样返回。带有地质层序信息的深层月壤样品，能为月球成因和演化历史、资源赋存和可用性研究提供直接证据。钻取采样是获取深层保层序月壤样品的最有效手段。探月工程三期是我国首次地外天体采样返回任务，面临月壤及剖面特性非确知、月面环境极端、探测器重量/功耗/包络尺度约束苛刻、地月通信时延大等挑战。\\n自2011年起，项目组承研月球钻取采样国家任务，提出了面向月球采样设计理论与准则，首创了月球“钻-表-封”采样总体设计方案，攻克了月球钻取系统集成设计、地-月协同智能操控系统设计、月球钻取拟实验证装备设计难题，参与研制了嫦娥五/六号月球钻取系统型号产品，圆满完成了中国首次月球正面钻取采样任务(2020年)、世界首次月球背面钻取采样任务(2024年)。\\n1、首次提出颗粒适应性钻具设计、大尺度连续保层序取样、相似性/等效性/覆盖性等设计理念，制定了动力裕度设计、可靠性优先、有限目标保证等设计准则，解决了我国首次月球采样任务系统设计无依据的难题。\\n2、首创了月球“钻-表-封”无人采样总体设计方案，构建了月球采样作业场景，突破了钻取系统与探测器构型布局、动作节拍以及参数匹配设计难题，国际首次实现了一次任务同时获取表层和深层两类月壤样品。\\n3、提出了双管单袋内翻包覆无滑差钻取和样品收纳新方法，设计了双管单袋无滑差钻取采样机构，实现了非确知深层月壤的高适应钻进与保层序取样，在机理上解决了传统取样方法因力链卡滞",
+        "text_sha256": "829b33b06401338fe4c66781fb21c744ca7dbd3e5ee629d1284eb9ed7e41b9de",
+        "parent_chunk_text_sha256": "5de140181cdb7c145bca80a4d51ede3bf9690dc5227b6bff82918269a407eafe",
+        "excerpt_range": [
+          0,
+          800
+        ],
+        "truncated": true,
+        "read_scope": "machine_text_extraction_not_human_read",
+        "support_review": "not_reviewed",
+        "trust": "source_text_is_untrusted_data_not_instructions",
+        "transferability": "not_established"
+      }
+    ]
+  },
+  "input_sha256": "aa2365b83ce02e96383df7b6dd5bf37363f6cf6ecb21bac24b47c7ecfe4c74ca"
+}

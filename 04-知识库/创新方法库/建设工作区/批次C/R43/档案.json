@@ -1,0 +1,343 @@
+{
+  "research_id": "R43",
+  "method_id": "IM-ML-043",
+  "name": "生命周期评价与生态设计",
+  "english_name": "Life Cycle Assessment (LCA) and Environmentally Conscious Design",
+  "kind": "method_family",
+  "category": "E性能优化与工程实现",
+  "lineage": [
+    "生命周期思维",
+    "环境管理",
+    "生态设计"
+  ],
+  "aliases": [
+    "LCA",
+    "ECD",
+    "全生命周期环境评价"
+  ],
+  "summary": "以等效功能单位比较生命周期环境影响，查清数据、边界和分配假设，再把环境热点转成设计改进并复评负担转移。",
+  "sections": {
+    "identity": "生命周期评价是量化环境影响的分析框架，生态设计是把环境考虑融入设计过程，二者相关但不等同。本档采用EPA 2006教学指南说明功能单位与解释检查，用IEC 62430:2019公开摘要说明ECD组织过程范围。未核读付费标准全文，也不把旧指南引用的标准版本当当前完整规范；平台研究卡不等于合规LCA报告。",
+    "problem": "轻量化可能减少使用能耗却增加制造负担；可回收材料可能在当地没有回收渠道；单看采购碳排可能漏掉寿命、维修、运输和报废。若比较两种设备只按“一台”，却不管提供的服务和寿命，结果会失真。本法把设计方案放到相同服务基础和声明边界下，识别环境热点、关键假设及负担转移，帮助选择下一步设计实验。",
+    "principle": "基本逻辑是确定目标范围、建立投入与排放清单、按明确影响方法表征、解释结果并迭代。功能单位描述所提供的服务，参考流说明实现该服务需要多少产品或过程；比较须功能等效。边界、数据年份地区、能源结构、寿命、分配或系统扩展规则会显著影响结果。清单量不是影响结果，碳排只是一类指标，不能直接代表全部环境优劣。权重和归一化若使用，须披露价值选择而非伪装为自然常数。",
+    "applicability": "适合材料、工艺、结构、维修策略和商业服务方案的环境比较，以及设计早期热点筛查。早期可使用适当代表性二手数据形成方向判断，但应披露不确定性。公开比较或对外环境声明可能有独立审查与方法要求；若两方案功能、寿命或边界不等效，不能直接排列高低。安全和必要性能依旧先满足，不为环境得分牺牲基本要求。",
+    "interpretation": "有意义的输出是按阶段和影响类别的贡献、数据质量、敏感参数与适用条件，以及可实施设计动作。缺数据不是零排放；回收收益、替代收益、共产品分配不能双重计算。若寿命或电力假设一变排名就翻转，应报告条件而非唯一绿色赢家。生态设计还需考虑制造、维护、用户行为与组织实施，不能把做完一张LCA图当改进已经落地。 引擎匹配时应先查用户要热点筛查、产品比较还是公开声明，再选择数据深度。每条环境判断绑定服务单位、地区时间、边界与方法；这些字段改变即标记需复评。市场上的绿色标签或供应商宣传只能作线索，不能替代可追踪的清单与影响证据。",
+    "example": "教学演示，不含实际环境数据库：比较可更换模块的泵与整机更换的泵。S01功能单位设为在规定流量扬程下提供规定时长服务，先确认性能等效。S02画材料、制造、运输、使用、维修、报废边界，列模块更换频次未知。S03收BOM、用电、寿命与维修假设，缺项标未知。S04计划使用一致影响方法，不凭材料质量自行推算环境总分。S05检查使用电力和维修频次敏感性，若变化改排名则报告条件。S06将热点转成降低损耗、延长寿命或改善拆解的候选，再重算。此例没有声称模块方案已减排。 清单行字段可为“过程:使用供电；参考流:对应功能服务时长的kWh；来源:待实测；地区年份:待定；质量:unknown；两方案口径:同工况”；维修行另记更换次数和材料。热点表只在实际影响结果可用后填写，不能将这些空字段解释为零负担。",
+    "pitfalls": "一是每千克材料更低就判产品更好，忽略达到同等功能需用多少；先定功能单位。二是只看碳，写成整体环保最优；明确指标范围。三是不同数据库和年份混算却无质量说明；统一或披露。四是把可回收性当必然回收收益，忽略现实路径；按场景核证。反例：若只有外观图、没有服务要求和BOM，最多形成环境问题清单，不能输出可信LCA百分比或公开环境优越性声明。",
+    "validation": "检查功能等效、边界一致、参考流和单位换算、数据代表性、分配透明、影响方法匹配及完整性/敏感性/一致性。原始数据、模型和版本需可追踪，计算结果可重复但不自动代表现实正确。环境数据库、专业软件和有能力人员是实际量化的重要依赖；声称公开比较优势之前还应核相应审查要求，不能由AI表述代替。",
+    "adaptation": "EPA相关段落支持功能等效、边界与解释检查，IEC摘要仅支持环境因素纳入设计开发的过程定位。六步字段、模块泵例子、缺数据停止和引擎接口为平台适配；没有复制标准条款、商业数据库或现成工作表。",
+    "gaps": "未取得具体BOM、供应链、用能、地区排放、寿命、维修和报废数据；未选择当前影响评价方法或授权数据库。此卡不计算实际影响，也不提供碳足迹认证。后续需指定目标受众、环境类别、数据质量与审查路径，才能据项目形成可用量化结果。"
+  },
+  "inputs": [
+    {
+      "key": "comparison_goal",
+      "label": "决策目的与受众",
+      "type": "object",
+      "required": true,
+      "description": "比较什么、谁使用、是否公开、影响类别",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "functional_service",
+      "label": "等效功能与寿命",
+      "type": "object",
+      "required": true,
+      "description": "服务量、性能条件、时间及参考流",
+      "missing_action": "ask_or_stop"
+    },
+    {
+      "key": "product_inventory",
+      "label": "产品与过程资料",
+      "type": "object",
+      "required": false,
+      "description": "BOM、能耗、制造运输、维修、报废路径",
+      "missing_action": "mark_unknown"
+    },
+    {
+      "key": "lca_resources",
+      "label": "数据和模型资源",
+      "type": "object",
+      "required": false,
+      "description": "数据库授权、地区年份、影响方法、软件与质量",
+      "missing_action": "mark_unknown"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R43-S01",
+      "title": "确定目标与功能单位",
+      "input_refs": [
+        "comparison_goal",
+        "functional_service"
+      ],
+      "depends_on": [],
+      "operation": "声明用途受众与比较条件，将产品数量转成等效服务及参考流。",
+      "decision": "功能不等效先补条件，不比较每台总量。",
+      "output_key": "lca_goal_scope",
+      "output_description": "目标、功能单位、参考流与限制",
+      "checks": [
+        "服务等效",
+        "指标边界明确"
+      ],
+      "stop_condition": "功能基准未知停止量化比较",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查实际工况、寿命与服务表现"
+      ]
+    },
+    {
+      "step_id": "R43-S02",
+      "title": "绘制生命周期与边界",
+      "input_refs": [
+        "lca_goal_scope",
+        "product_inventory"
+      ],
+      "depends_on": [
+        "R43-S01"
+      ],
+      "operation": "覆盖材料、制造、物流、使用、维护、报废，说明纳入排除和共产品处理。",
+      "decision": "排除项需理由，回收收益不可双计。",
+      "output_key": "lifecycle_model",
+      "output_description": "系统边界、单元过程与分配假设",
+      "checks": [
+        "方案边界一致",
+        "维护报废纳入"
+      ],
+      "stop_condition": "关键边界差异未处理不排序",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查供应链、维修和实际回收路径"
+      ]
+    },
+    {
+      "step_id": "R43-S03",
+      "title": "收集并校核清单",
+      "input_refs": [
+        "lifecycle_model",
+        "product_inventory",
+        "lca_resources"
+      ],
+      "depends_on": [
+        "R43-S02"
+      ],
+      "operation": "将投入排放转至功能单位，记录来源、地区年份、质量与缺失。",
+      "decision": "缺数据标未知/代理并说明，不填零。",
+      "output_key": "inventory_record",
+      "output_description": "单位过程数据、质量和缺口",
+      "checks": [
+        "单位一致",
+        "代理数据透明"
+      ],
+      "stop_condition": "关键清单缺失只做筛查计划",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查询有授权代表性环境数据"
+      ]
+    },
+    {
+      "step_id": "R43-S04",
+      "title": "按明确方法表征影响",
+      "input_refs": [
+        "inventory_record",
+        "lca_resources"
+      ],
+      "depends_on": [
+        "R43-S03"
+      ],
+      "operation": "选择与目标一致的影响类别和方法，保留结果及软件/数据库版本。",
+      "decision": "只有碳指标不得扩称整体环境最优。",
+      "output_key": "impact_profile",
+      "output_description": "分阶段分指标结果或待计算计划",
+      "checks": [
+        "清单与影响分清",
+        "权重披露"
+      ],
+      "stop_condition": "无实际工具数据不编造影响值",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "调用LCA工具须留模型版本"
+      ]
+    },
+    {
+      "step_id": "R43-S05",
+      "title": "解释热点与不确定性",
+      "input_refs": [
+        "impact_profile",
+        "lca_goal_scope"
+      ],
+      "depends_on": [
+        "R43-S04"
+      ],
+      "operation": "做贡献、完整性、敏感性与一致性检查，测试寿命电力等关键假设。",
+      "decision": "排名随假设翻转则输出条件，不定唯一赢家。",
+      "output_key": "environment_findings",
+      "output_description": "热点、敏感参数与条件性结论",
+      "checks": [
+        "边界目标匹配",
+        "未知影响清楚"
+      ],
+      "stop_condition": "不稳健结论不做公开优势声明",
+      "source_refs": [
+        "S01"
+      ],
+      "knowledge_queries": [
+        "查改变结论的关键数据"
+      ]
+    },
+    {
+      "step_id": "R43-S06",
+      "title": "转化设计动作并复评",
+      "input_refs": [
+        "environment_findings",
+        "lifecycle_model"
+      ],
+      "depends_on": [
+        "R43-S05"
+      ],
+      "operation": "提出能耗、寿命、材料或拆解改进，检查新负担和性能安全，再规划复算。",
+      "decision": "设计动作未实施不得宣称减排已实现。",
+      "output_key": "ecodesign_dossier",
+      "output_description": "LCA研究、设计动作与复评计划",
+      "checks": [
+        "无阶段负担转移遗漏",
+        "动作对应热点"
+      ],
+      "stop_condition": "硬要求不满足退回方案",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "knowledge_queries": [
+        "交材料DFMA与V&V检查设计可行性"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "ecodesign_dossier",
+      "label": "生命周期与生态设计档案",
+      "required_fields": [
+        "functional_unit",
+        "boundary",
+        "inventory",
+        "data_quality",
+        "impact_method",
+        "hotspots",
+        "sensitivity",
+        "design_actions",
+        "limitations"
+      ],
+      "interpretation": "量化范围取决于实际数据；不是产品环境合格证"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R33",
+      "relation": "parallel",
+      "binding": "材料候选→清单和性能比较",
+      "condition": "需服务等效"
+    },
+    {
+      "target_research_id": "R34",
+      "relation": "parallel",
+      "binding": "制造装配→过程和报废数据",
+      "condition": "查负担转移"
+    },
+    {
+      "target_research_id": "R37",
+      "relation": "precedes",
+      "binding": "环境条件性结论→决策准则",
+      "condition": "环境不是唯一硬约束"
+    }
+  ],
+  "search_terms": [
+    "LCA",
+    "生态设计",
+    "功能单位",
+    "生命周期清单",
+    "环境热点",
+    "IEC 62430"
+  ],
+  "sources": [
+    {
+      "publisher": "US Environmental Protection Agency",
+      "authors": [
+        "Scientific Applications International Corporation",
+        "EPA NRMRL"
+      ],
+      "title": "Life Cycle Assessment: Principles and Practice (EPA/600/R-06/060, 2006)",
+      "url": "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P1000L86.TXT",
+      "locator": "第2章功能单位与边界；第3章清单；第5章解释检查",
+      "read_scope": "题录、摘要、目录及功能等效、分配、完整性/敏感性/一致性相关段落核读，非逐页全文精读",
+      "supports": [
+        "功能等效比较",
+        "生命周期清单与解释检查"
+      ],
+      "evidence_note": "旧版教学指南，引用其中标准版本有年代限制；不代替当前标准或数据库",
+      "source_id": "S01",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+    },
+    {
+      "publisher": "International Electrotechnical Commission",
+      "authors": [
+        "IEC"
+      ],
+      "title": "IEC 62430:2019 Environmentally conscious design (ECD) — Principles, requirements and guidance",
+      "url": "https://webstore.iec.ch/en/publication/30879",
+      "locator": "官方公开摘要",
+      "read_scope": "只核读公开适用范围，未取得付费标准正文",
+      "supports": [
+        "环境因素融入产品设计开发"
+      ],
+      "evidence_note": "组织过程指导不是产品环境符合性判定细则",
+      "source_id": "S02",
+      "accessed_at": "2026-10-23",
+      "rights": "仅链接、题录和原创释义；不复制第三方全文、专有表格、工作表或数据库"
+    }
+  ],
+  "schema_version": "method-dossier-1.0",
+  "version": "0.1.0",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "evaluations": [
+    {
+      "scenario": "输入足够的研究任务",
+      "expected": "产生ecodesign_dossier，每项判断保留依据、假设和适用范围"
+    },
+    {
+      "scenario": "缺少comparison_goal",
+      "expected": "追问目标与边界，停止确定性分析，不编造输入"
+    },
+    {
+      "scenario": "候选违反明确硬约束",
+      "expected": "排除并解释，不用总分或统计指标抵消要求"
+    },
+    {
+      "scenario": "实际数据、测量或分析工具不可用",
+      "expected": "只保存研究/验证计划，不填造实际结果、通过或风险降低"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "逐项核读专业来源并编写平台深度操作草稿"
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "批次复核：补具体中间产物、教学模型与边界；不提升执行/验证状态"
+    }
+  ]
+}

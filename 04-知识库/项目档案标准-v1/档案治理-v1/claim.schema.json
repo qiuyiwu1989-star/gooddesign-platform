@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gooddesign.local/schema/claim-1.0.json",
+  "title": "GoodDesign Claim 1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "claim_id", "identity_key", "project_id", "research_revision", "record_id", "field", "title", "value", "content_nature", "verification_state", "evidence", "conditions", "limitations", "human_read", "expert_reviewed", "engineering_validated"],
+  "properties": {
+    "schema": {"const": "gooddesign-claim-1.0"},
+    "claim_id": {"type": "string", "pattern": "^CLAIM-[0-9a-f]{16}$"},
+    "identity_key": {"type": "string", "minLength": 3},
+    "project_id": {"type": "string", "pattern": "^[0-9]{4}-[a-z]?[0-9]{2}$"},
+    "research_revision": {"type": "string", "pattern": "^research-[0-9]{6}$"},
+    "record_id": {"type": "string", "minLength": 1},
+    "field": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "value": {},
+    "content_nature": {"const": "source_statement"},
+    "verification_state": {"type": "string", "minLength": 1},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "source_sha256", "chunk_id", "chunks_path", "chunks_sha256", "locator", "quote", "quote_sha256", "source_read_scope"],
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{1,80}$"},
+          "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "chunk_id": {"type": "string", "minLength": 1},
+          "chunks_path": {"type": "string", "minLength": 1},
+          "chunks_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "locator": {"type": "string", "minLength": 1},
+          "quote": {"type": "string", "minLength": 1},
+          "quote_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_read_scope": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "conditions": {"type": "string"},
+    "limitations": {"type": "string"},
+    "human_read": {"const": false},
+    "expert_reviewed": {"const": false},
+    "engineering_validated": {"const": false}
+  }
+}

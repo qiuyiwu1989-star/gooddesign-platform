@@ -1,0 +1,39 @@
+{
+  "evaluations": [
+    {
+      "expected": "恢复段促使问题重定义",
+      "id": "R02-REDEFINE",
+      "kind": "positive",
+      "passed": true
+    },
+    {
+      "expected": "跨介质排除，同介质保留",
+      "id": "R02-PROTOCOL",
+      "kind": "positive",
+      "passed": true
+    },
+    {
+      "actual": "discovery_plan_only",
+      "expected": "只输出发现计划",
+      "id": "R02-NO-EVIDENCE",
+      "kind": "missing_input",
+      "passed": true
+    },
+    {
+      "actual": "新证据否定恢复负担为主的问题理解时返回Define",
+      "expected": "新证据推翻问题时返回Define",
+      "id": "R02-RETURN-DEFINE",
+      "kind": "return",
+      "passed": true
+    },
+    {
+      "expected": "计划不冒充实测",
+      "id": "R02-PLAN-NOT-RESULT",
+      "kind": "negative",
+      "passed": true
+    }
+  ],
+  "research_id": "R02",
+  "schema_version": "method-evaluations-0.1",
+  "scope": "确定性资产回放；语义和领域效果另行审核"
+}

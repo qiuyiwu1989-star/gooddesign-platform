@@ -1,0 +1,318 @@
+{
+  "schema_version": "method-dossier-1.0",
+  "research_id": "R25",
+  "method_id": "IM-ML-025",
+  "version": "0.1.0",
+  "name": "物场分析与标准解",
+  "english_name": "Substance–Field Analysis / Standard Solutions",
+  "kind": "tool_family",
+  "category": "C技术发明与矛盾求解",
+  "lineage": [
+    "经典TRIZ",
+    "物场建模与76标准解"
+  ],
+  "aliases": [
+    "Su-Field Analysis",
+    "物质场分析",
+    "标准发明解"
+  ],
+  "summary": "把关键作用抽象成物质与场的交互模型，按缺失、不足、有害或检测问题选择标准变换，再回译为具体工程机制。",
+  "content_status": "substantive_draft",
+  "execution_status": "documented_not_runtime_integrated",
+  "review_status": "not_expert_reviewed",
+  "validation_status": "not_engineering_validated",
+  "sections": {
+    "identity": "物场是TRIZ对工程作用的专门抽象，不是把任何两个名词画成三角形。最简单的有效作用模型通常包含两个物质对象和使其交互的场；测量模型可具有不同输出结构。76标准解是一套问题模型到解决模型的典型变换，分五类。本条介绍建模与查用协议，不将全部标准文本、配图或某流派扩展树直接复制入库。",
+    "problem": "适合已定位关键相互作用，例如两个表面作用不足、接触同时带来磨损，或者对象状态难以检测。若只有宏观愿望而不知问题在哪发生，应先做功能或因果分析。物场模型刻意简化结构，必须保留影响问题的材料、能量、空间和工况；需要多作用耦合时，单一三角形不够，应建立相互关联的多个子模型。",
+    "principle": "S1、S2与F分别标记相互作用的物质对象及作用场，工程场的分类可涉及机械、声、热、化学、电、磁等。模型描述有用作用是否成立及有害作用是否并存。标准解提出改变模型的典型方向，例如补全缺失作用、改变既有作用结构、引入更可控相互作用或寻找检测输出。图上的新增物质和场只是解决模型，尚需确定实际载体与参数。",
+    "applicability": "输入需要作用载体、作用对象、期望参数变化、实际缺陷与允许引入或改变的资源。对于检测问题，应说明被测量、可接近性、分辨率、响应时间和环境，避免套用只关心加工效率的模型。资源限制可引导查第五类实施建议；安全、污染和材料兼容性仍是约束，不因标准名称而自动满足。",
+    "interpretation": "核读来源把五类区分为物场建立与破坏、物场发展、转向超系统和微观层级、检测测量、标准应用建议。平台应保存原模型、模型缺陷、标准版本与编号、适用前提、变换后模型、具体实现和验证。没有实际读取某标准条文时，只能选类并提出查阅任务，不能编造编号或声称标准匹配已完成。",
+    "example": "教学例：柔软工件运输时夹持力不足，增加接触力又易留下压痕。可将夹爪与工件作为物质对象，接触力作为机械作用，标记保持不足与损伤并存。考虑改变接触结构或增加可控作用的模型方向，形成柔顺接触垫、负压辅助或形状约束候选。本例没有执行完整76解索引，不报具体标准命中。负压候选必须检查工件孔隙、泄漏、清洁度与失压后果；换了场也可能引入新的伤害。 中间记录示范：同一夹爪—工件作用可写两条而不混为一种缺陷：U1＝在载荷L、摩擦条件μ下保持力不足；H1＝在同一接触力下局部压强超过无压痕允许值。U1的目标是使有用保持作用达到阈值，H1的目标是减轻损伤且不丢失保持；不能只把整条边标“有问题”。若尚无压痕测试，H1应是风险假设，不是已发生事实。解决图若新增负压作用，需同时记录它补充哪条有用作用、是否保留原接触、有哪些新泄漏或失压问题。变换后的图到具体工程之间仍有机制和参数缺口，不报标准编号，也不把此示范当数据库匹配结果。",
+    "pitfalls": "不要把信息系统术语直接硬塞为物质，也不要把TRIZ的工程场术语解释成严格物理学中所有场的统一定义。缺失三角形元素不一定是实际问题，关键是所需功能能否实现。有害作用不能只靠提高同一作用强度解决；引入中介层也可能降低热导、精度或寿命。画得更复杂并不证明方案更好。",
+    "validation": "先让熟悉对象的工程师复核模型是否忠实于真实相互作用。查标准时核对前提与禁止改变项；回译后检查作用强度、分布、时序、能量和材料相容性。实验既测期望功能也测损伤、污染、噪声与控制负担。模型层面成立但缺少现实载体的结果保持“解决模型”，不能列成可实施方案。",
+    "adaptation": "引擎可将作用图存为带类型边的图谱：物质节点、场节点、作用方向、作用质量、证据和工况。先按缺陷类型与约束筛选标准类别，再检索具体条文，由模型解释推荐依据。对同一作用的多个变换保留分支，配合资源分析优先考虑现有载体；最终输出可交给效应检索补充机制，再交工程分析确定参数。",
+    "gaps": "已核读MATRIZ官网检索返回的物场建模、物场模型和标准解主体，包括五类与部分示例条文；未逐项核读全部76条及图片。本文没有建立完整可运行的标准解知识库，也没有给教学案例报某编号命中。经典物场与现代因果分析的使用顺序有流派差异，当前档案不将其中一种描述为强制统一规范。"
+  },
+  "inputs": [
+    {
+      "key": "interaction",
+      "label": "关键相互作用",
+      "type": "object",
+      "required": true,
+      "description": "载体、对象、作用和工况",
+      "missing_action": "先做功能分析"
+    },
+    {
+      "key": "defect",
+      "label": "作用缺陷",
+      "type": "object",
+      "required": true,
+      "description": "缺失、不足、有害或测量困难及证据",
+      "missing_action": "补问题定位"
+    },
+    {
+      "key": "resources",
+      "label": "约束与资源",
+      "type": "array",
+      "required": true,
+      "description": "可改物质场、禁止变化和安全边界",
+      "missing_action": "确认边界"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "R25-S01",
+      "title": "定位最小有意义作用",
+      "input_refs": [
+        "interaction",
+        "defect",
+        "resources"
+      ],
+      "depends_on": [],
+      "operation": "从问题中选载体、对象和期望参数变化，保留必要关联作用。",
+      "decision": "单一子模型遗漏关键耦合则拆分关联模型。",
+      "output_key": "interaction_scope",
+      "output_description": "作用边界与质量",
+      "checks": [
+        "功能与缺陷都有对象"
+      ],
+      "stop_condition": "只剩宏观愿望则停止建模",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R25-S02",
+      "title": "建立问题物场",
+      "input_refs": [
+        "interaction_scope",
+        "interaction",
+        "defect",
+        "resources"
+      ],
+      "depends_on": [
+        "R25-S01"
+      ],
+      "operation": "标记物质、场、作用方向及缺失不足有害检测等属性。",
+      "decision": "检测模型单独标明输出，不硬套普通作用模型。",
+      "output_key": "problem_sufield",
+      "output_description": "可追溯问题图",
+      "checks": [
+        "节点映射到现实对象"
+      ],
+      "stop_condition": "模型与现场不符则返查",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R25-S03",
+      "title": "筛选标准类别和条文",
+      "input_refs": [
+        "problem_sufield",
+        "interaction",
+        "defect",
+        "resources"
+      ],
+      "depends_on": [
+        "R25-S02"
+      ],
+      "operation": "按缺陷及约束先选类，再实际查阅可用标准版本，记录编号和前提。",
+      "decision": "未读条文不得报编号命中。",
+      "output_key": "standard_record",
+      "output_description": "标准查询与适用性记录",
+      "checks": [
+        "明确五类功能及版本"
+      ],
+      "stop_condition": "无适用标准则转其他模型",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R25-S04",
+      "title": "构造解决模型",
+      "input_refs": [
+        "standard_record",
+        "interaction",
+        "defect",
+        "resources"
+      ],
+      "depends_on": [
+        "R25-S03"
+      ],
+      "operation": "将标准变换作用于原图，标明新增删除或改变的作用。",
+      "decision": "模型冲突硬约束则另选变换。",
+      "output_key": "solution_sufield",
+      "output_description": "带差异的解决图",
+      "checks": [
+        "有用作用保留"
+      ],
+      "stop_condition": "只有口号无图变化则回退",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    },
+    {
+      "step_id": "R25-S05",
+      "title": "回译并验证机制",
+      "input_refs": [
+        "solution_sufield",
+        "interaction",
+        "defect",
+        "resources"
+      ],
+      "depends_on": [
+        "R25-S04"
+      ],
+      "operation": "用实际材料、场与结构实现解决图，测期望作用和副作用。",
+      "decision": "无现实载体只保留解决模型状态。",
+      "output_key": "sufield_validation",
+      "output_description": "机制候选与验证计划",
+      "checks": [
+        "覆盖资源与安全约束"
+      ],
+      "stop_condition": "关键作用无参数依据不建议实施",
+      "source_refs": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "knowledge_queries": [
+        "按本步对象查询功能、机制、工况及验证边界，并保留原文位置"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "key": "sufield_validation",
+      "label": "物场与标准解求解档案",
+      "required_fields": [
+        "原作用",
+        "问题模型",
+        "查询状态",
+        "标准版本前提",
+        "解决模型",
+        "具体机制",
+        "验证"
+      ],
+      "interpretation": "区分模型变换与现实方案。"
+    }
+  ],
+  "relations": [
+    {
+      "target_research_id": "R21",
+      "relation": "part_of",
+      "binding": "TRIZ作用结构路线",
+      "condition": "关键作用已定位"
+    },
+    {
+      "target_research_id": "R24",
+      "relation": "parallel",
+      "binding": "选择现有资源",
+      "condition": "新增物质或场受限"
+    },
+    {
+      "target_research_id": "R27",
+      "relation": "precedes",
+      "binding": "检索场与材料效应",
+      "condition": "解决模型缺具体机制"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S01",
+      "publisher": "MATRIZ",
+      "authors": [],
+      "title": "Substance-Field Modeling",
+      "url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/substance-field-modeling/",
+      "locator": "主体",
+      "read_scope": "官网检索返回主体核读；直接打开部分超时",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "物场最小作用模型",
+        "流派使用差异"
+      ],
+      "evidence_note": "不等于所有对象均强制画三角形。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S02",
+      "publisher": "MATRIZ",
+      "authors": [],
+      "title": "Substance-Field Model",
+      "url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/substance-field-modeling/standard-inventive-solutions/substance-field-model/",
+      "locator": "模型类型与测量模型",
+      "read_scope": "官网检索返回主体核读",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "物质场节点与模型类型",
+        "测量模型特性"
+      ],
+      "evidence_note": "工程抽象需回到具体机制。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    },
+    {
+      "source_id": "S03",
+      "publisher": "MATRIZ",
+      "authors": [],
+      "title": "Standard Inventive Solutions",
+      "url": "https://wiki.matriz.org/docs/triz/problem-solving-tools-5890/substance-field-modeling/standard-inventive-solutions/",
+      "locator": "五类结构与公开选录条文",
+      "read_scope": "检索返回主文，实际核读五类、2.1/2.2及4.1/4.2选段；未读全76条",
+      "accessed_at": "2026-10-23",
+      "supports": [
+        "76解五类",
+        "标准是模型变换"
+      ],
+      "evidence_note": "五类和部分变换可核验，不足以声称拥有全量标准解资产。",
+      "rights": "仅链接、题录和平台原创释义；未取得外部全文、图表或专有卡片再分发许可"
+    }
+  ],
+  "evaluations": [
+    {
+      "scenario": "未读标准条文却报2.x.x命中",
+      "expected": "拒绝作为标准解结果，改为类别待查"
+    },
+    {
+      "scenario": "解决图新增一个场却无能量来源",
+      "expected": "保持解决模型状态并要求机制与预算"
+    }
+  ],
+  "search_terms": [
+    "MATRIZ standard inventive solutions five classes",
+    "substance field model measurement"
+  ],
+  "change_log": [
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "051逐项检索与平台操作适配；保留原典核读范围"
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-10-23",
+      "reason": "补充有用/有害作用分记、趋势反证或DSM小矩阵，均为教学假设"
+    }
+  ]
+}

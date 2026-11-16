@@ -1,0 +1,269 @@
+--- PDF page 1 ---
+收稿日期 : 2006204203
+基金项目 : 国家自然科学基金资助项目(50535010)·
+作者简介 : 孙　伟(1975 - ) ,男 ,辽宁营口人 ,东北大学博士研究生 ; 闻邦椿(1930 - ) ,男 ,浙江温岭人 ,东北大学教授 ,博士生导师 ,
+中国科学院院士·
+第28卷第3期
+2 0 0 7 年 3 月
+东 北 大 学 学 报 ( 自 然 科 学 版 )
+Journal of Northeastern University (Natural Science)
+Vol128 ,No. 3
+Mar. 2 0 0 7
+现代机械可视优化设计方法研究
+孙 　伟 , 任朝晖 , 于 　涛 , 闻邦椿
+(东北大学 机械工程与自动化学院 , 辽宁 沈阳　110004)
+摘 　　　要 : 在总结前人研究成果的基础上 ,提出了面向现代机械的可视优化设计法·该方法以可视化为设
+计手段 ,可以在设计过程中完成对机械产品各方面性能的检验与优化·通过对现代机械设计特点的具体分析 ,
+确定了可视优化设计法的研究内涵、研究内容、技术流程、关键技术、研发支撑软件以及具体的应用原则 ,从而
+建立了可视优化设计法的理论框架·以某企业大型直线振动筛为研究实例 ,对其装配过程、动态性能、运动状
+态及工作过程进行了可视优化设计研究 ,证明了该方法的有效性·实践表明 ,应用该方法可全面提高产品的设
+计质量·
+关 　键 　词 : 现代机械 ;产品设计 ;可视化 ;优化设计 ;综合设计法
+中图分类号 : TH 122 　　　文献标识码 : A　　　文章编号 : 100523026 (2007) 0320385204
+Study on Visual Optimization Design for Modern Machinery
+S U N Wei , R EN Zhao2hui , Y U Tao , W EN B ang2chun
+( School of Mechanical Engineering & Automation , Northeastern University , Shenyang 110004 , China.
+Correspondent : SUN Wei , E2mail : ddsw @ sina. com)
+Abstract : Based on the achievements of early works , a modern2machinery2oriented visual
+optimization design (VOD) is put forward trying to take visualization as design means to inspect
+and optimize the performance of a mechanical product at every aspect . Analyzing the
+characteristics in designing modern machinery , the connotation and research contents to be
+studied , technical flow , key techniques , R &D of supporting software and application rules of
+VOD are all determined so as to build a theoretical frame of methodology. Taking a large2size
+linear vibration screen as example , the VOD proposed was applied to studying its assembling
+process , dynamics performance , kinematic state and working process , and the result showed the
+validity of the VOD. In addition , the application results revealed that the VOD can improve the
+design quality of products in an all2round way.
+Key words : modern machinery ; design of product ; visualization ; optimization design ; synthetic
+design
+随着对机械产品设计质量 (狭义质量 Q、价格
+C、生产周期 T、环境 E、售后服务 S 等)的要求不
+断提高 ,可视优化设计方法 ( visual optimization
+design ,VOD)越来越多地应用到产品设计中·可
+视优化设计方法可以对机械产品整个生命周期各
+个环节进行模拟 ,从而加快设计进度、降低研发成
+本和优化产品性能·
+目前 ,国内外学者们对机械可视优化设计方
+法的研究及应用往往集中于一个方面 ,已经取得
+了很多成果[1 - 5 ]
+·但是 ,尚没有人从宏观上进行
+总体性研究 ,提出便于工程人员使用的理论方法·
+如果在这些研究成果的基础上 ,将宏观研究与微
+观研究很好结合起来 ,必将促进可视优化设计理
+论及方法的应用和发展·
+本文将对可视优化设计方法进行综合性研
+究 ,通过总结与归纳 ,确定了可视优化设计法的理
+论框架及应用方法 ,并给出相应实例·实践表明 ,
+可视优化设计法对于提高产品的设计质量具有重
+
+--- PDF page 2 ---
+要意义·
+1 　可视优化设计法的内涵
+东北大学闻邦椿教授在多年从事机械设计工
+作和机械设计方法研究的基础上 ,提出面向产品
+全功能与全性能的综合设计法[6 - 7 ]
+·可视优化设
+计法是其重要组成部分 ,可全面提高产品的设计
+质量·
+1. 1 　可视优化设计法的定义
+可视优化设计是在可视的操作环境中 ,以建
+模仿真技术、动态优化分析方法为核心技术 ,对整
+个产品的各方面性能进行模拟 ,达到在设计阶段
+检验和优化产品设计质量的目的·可视优化设计
+法具有可视性、预测性和优化性的特点·
+可视性是指在应用可视优化设计法时 ,可以
+通过可视的软件界面、计算过程、各种功能模拟、
+结果曲线向设计者提供各种信息·预测性是指应
+用可视优化设计法 ,在真实产品被制造出之前 ,就
+可以对机器的各种性能进行预测·优化性是指应
+用可视优化设计法 ,可以优化产品各方面性能·
+1. 2 　可视优化设计与虚拟设计的区别
+近年来对虚拟技术的研究不断加强 ,与机械
+产品开发相关的术语也不断出现 ,主要有虚拟制
+造[8 ]、虚拟装配[9 ]、虚拟样机[10 ]等·虚拟技术与可
+视化技术不是一个概念 ,虚拟技术通常以虚拟现
+实技术作为支撑技术 ,它不仅强调可视 ,而且包括
+可听、可触等·另外 ,虚拟技术与可视化技术相比 ,
+通常需要更多的软件及硬件支持·可视化技术仅
+强调可视 ,在硬件上要求不高 ,一般高档微机就可
+以进行设计研究了·对于国内目前现状 ,可视优化
+设计技术更适合企业的应用·
+2 　可视优化设计法具体研究内容
+对机械产品进行可视优化设计 ,通常包括以
+下 6 个方面 ,即加工制造过程可视化、装配过程可
+视化、运动学设计可视化、动力学设计可视化、工
+作过程可视化和控制过程可视化·整个逻辑框图
+见图 1·
+从框图中可知 , 可视优化设计法从研究内容
+上主要体现两方面 : 一是“检验”; 二是“优化”·
+“检验”是指应用可视优化设计法 , 在设计阶段就
+能完成对可加工性、可装配性、运动形态、动态性
+能、工作状况、控制方案的全面检验·“优化”是指
+在可视优化设计中 , 可以通过优化理论寻优或方
+案对比寻优 , 达到在设计阶段优化加工工艺、装
+配工艺、运动参数、动态特性、工作参数、控制策略
+的目的·
+图 1 　机械可视优化设计法内容
+Fig. 1 　Contents of VOD for machinery
+3 　可视优化设计法技术流程
+对机械产品进行可视优化设计 ,因最终目标
+不同 ,整个过程会有一定的差异 ,但通常要经过以
+下 4 个步骤 ,即创建模型、可视化仿真、结果分析、
+缺陷修改 ,整个技术流程见图 2·
+图 2 　可视优化设计法技术流程
+Fig. 2 　Technical flow of VOD
+(1) 创建模型·用可视优化设计法进行机械
+产品设计时 ,第一步就要创建模型 ,模型在整个研
+究的各个阶段都发挥着重要作用·
+(2) 可视化仿真·进行可视化仿真一般都包
+括图 2 中所示的 3 方面内容 ,即模型验证、数据监
+测和变参数试验·只有经过验证的模型方可进行
+仿真试验研究·监测的数据通常包括运动轨迹、位
+683 东北大学学报 (自然科学版) 　　　　　　 　　　　　第 28 卷
+
+--- PDF page 3 ---
+移、速度、加速度、应力、支反力、作用力、响应时间
+等·变参数试验就是通过改变结构参数、运行参
+数、控制参数等 ,检验产品的性能·
+(3) 结果分析·结果分析就是要在设计阶段 ,
+及时地发现各种缺陷和错误 ,判断所选方案的可
+行性和优越性等 ,这正是可视化仿真的意义所在·
+(4) 缺陷修改·经过对仿真结果的分析 ,一般
+都会发现一些错误和缺陷 ,这些错误包括零部件
+结构的缺陷、各种参数的缺陷和方案的缺陷等·
+需要指出的是可视化仿真研究是一个循环反
+复的过程 ,经过修改的模型还要进行可视化仿真
+实验 ,直到各方面性能都没有问题且主要功能参
+数达到最优为止·
+4 　可视优化设计法关键技术
+可视优化设计是建立在交叉学科基础上的应
+用性方法 ,涉及的主要关键技术可概括为以下4
+方面 ,见图 3·三维 CAD 建模理论是可视化仿真
+的基础 ,而机械基础理论是研究者必须掌握的技
+术·优化理论、有限元和工程仿真技术是进行可视
+化仿真的功能性技术·
+图 3 　可视优化设计法关键技术
+Fig. 3 　Key technique s of VOD
+5 　可视优化设计法研发软件
+进行可视化仿真研究必须具备强大的软件系
+统支持 ,常用的软件按其重点应用领域可分为 6
+类 ,即三维建模、工程模拟、控制仿真、有限元计
+算、软件开发编程及其他软件 ,见表 1·
+　
+表 1 　可视优化设计法研发软件
+Table 1 　Developing software of VOD
+类 　别 研 　　　　发 　　　　软 　　　　件
+三维建模 用于创建实体模型 ,常见的有 SolidWorks ,Pro/ E ,Catia ,U G等.
+工程模拟 模拟研究对象的运动学、动力学特性及工作运行状况 ,常见的有 ADAMS ,DADS ,SIMPACK等.
+控制仿真 用于模拟产品的控制过程 ,优化控制策略 ,最常见的软件是 Matlab.
+有限元计算
+　
+用于求解动应力、动应变、固有动态特性、动响应等. 常见的软件有 ANSYS ,NASTRAN ,MARC
+等.
+软件开发编程
+　
+用于二次开发或自行开发可视化仿真系统.常见的软件有 VB ,VC + + ,Delphi ,Visual Fortran 等和
+图形化编程语言 Open GL .
+其他软件 实际研究中可能用到的其他软件 ,如 CAM ,CAPP ,数据库技术 ,网络技术等.
+6 　可视优化设计法应用原则
+机械产品可视优化设计法大体上包含以上 6
+方面内容 ,但并非对任何机械产品的设计都要进
+行这 6 方面的可视化仿真 ,应当有所侧重·表 2 列
+出了每种可视优化设计法对应的重点研究产品类
+型·
+表 2 　可视优化设计法应用原则
+Table 2 　Application rule s of VOD
+类 　别 应 　　　　用 　　　　原 　　　　则
+加工可视化 用于毛坯制造困难、原材料价格昂贵、零件结构复杂、需要繁琐的加工工艺方能完成的零件.
+装配可视化 用于零件数目多、装配工艺复杂、产品柔性度大的机械产品 ,如汽车.
+运动学可视化
+　
+用于运动情况难以想象、运动空间难以确定、运动轨迹要求严格的机构 , 如汽车、并联机床、工业
+机器人等.
+动力学可视化 用于对结构可靠性要求较高的机械设备 ,如大型旋转压缩机、大型振动筛等.
+工作可视化
+　
+用于运行参数难以确定、样机费用高、工作环境难以模拟的复杂机械系统 ,如在深海或太空工作
+的机器人、武器等.
+控制可视化 用于控制过程复杂、对控制效果要求高 ,用常规方法很难找到最佳控制策略和控制参数的机械系
+统 ,如混合动力汽车.
+7 　可视优化设计法研究实例
+以某企业大型惯性激振直线振动筛为研究实
+例进行可视优化设计研究·研究中主要应用了装
+配过程、运动学、动力学、工作过程 4 种可视化方
+法·
+783第 3 期 　　　 　　　　　孙 　伟等 : 现代机械可视优化设计方法研究
+
+--- PDF page 4 ---
+装配过程可视化用于检验所设计的筛箱零部
+件、惯性激振器零部件及整机的可装配性·动力学
+可视化用于研究振动筛筛箱的固有模态特性 ,以
+及在正常工作、停车过共振区时 ,整个筛箱动应力
+的分布情况·运动学可视化用于判定筛箱的运动
+轨迹是否为直线 ,能否实现指定的运动形式·工作
+过程可视化用于研究激振力幅、频率、振动方向
+角、安装倾角等对筛箱振幅的影响情况 ,从而确定
+合适的参数 ,以保证振动筛完成相关的工艺过程·
+图 4 为激振器零部件同筛箱侧板的装配情况·图
+5 为振动筛运动及工作过程可视化仿真模型·
+图 4 　激振器零部件与筛箱侧板的装配
+Fig. 4 　Assembly of vibrator parts and sideboard
+图 5 　工作及运动学状况可视化仿真
+Fig. 5 　Visual simulation : working and
+kinematic conditions
+通过以上可视优化设计研究 ,可以确定该振
+动筛原始设计结构合理 ,基本参数选择正确 ,筛机
+能适应用户生产要求·
+8 　结　　语
+本文在总结与可视化设计相关研究成果的基
+础上 ,对可视优化设计法进行了综合性研究·建立
+了可视优化设计法的理论框架 ,包括可视优化设
+计法的含义、研究内容、技术流程、关键技术、研发
+软件和应用原则等内容·理论框架的建立可更好
+地促进该方法的应用和发展·最后 ,结合某企业大
+型振动筛 ,给出了具体的研究实例 ,证明了该方法
+的有效性·
+参考文献 :
+[ 1 ] Han U L , Cho D W. An intelligent feedrate scheduling based
+on virtual machining[J ] . International Journal of A dvanced
+M anuf act uring Technology , 2003 ,22 (11) : 873 - 882.
+[ 2 ] Lin YJ , Farahat R. CAD2based virtual assembly prototyping
+—a case study [ J ] . International Journal of A dvanced
+M anuf act uring Technology , 2003 ,21 (4) :263 - 274.
+[ 3 ] Lau H Y K , Mak K L , Lu M T H. A virtual design platform
+for interactive product design and visualization [J ] . Journal
+of M aterials Processing Technology , 2003 ,139 (1/ 2/ 3) :402
+- 407.
+[ 4 ] Stephane R. Fast continuous collision detection and handling
+for desktop virtual prototyping[J ] . V irt ual Reality , 2004 ,8
+(1) : 63 - 70.
+[ 5 ] 李兴山 ,孙奕澎 ,冯宝富 ,等·2 TPT2PTT 并联机床结构参
+数优化及工作空间仿真[J ]·东北大学学报 :自然科学版 ,
+2002 ,23 (10) :1060 - 1062·
+( Li Xing2shan , Sun Yi2peng , Feng Bao2fu , et al .
+Optimization of structural parameters and simulation of
+workspace on 2 TPT2PTT PMT[J ] . Journal of Northeastern
+U niversity : Nat ural Science , 2002 ,23 (10) :1060 - 1062. )
+[ 6 ] 闻邦椿 ,周知承 ,韩清凯 ,等·现代机械产品设计在新产品
+开发中的重要作用[J ]·机械工程学报 , 2003 ,39 (10) :43
+- 52·
+(Wen Bang2chun , Zhou Zhi2cheng , Han Qing2kai , et al .
+Important role of products design of modern machinery in the
+research and development of new products [J ] . Journal of
+Mechanical Engineering , 2003 ,39 (10) :43 - 52. )
+[ 7 ] 闻邦椿 ,韩清凯·产品设计的重要性和面向产品总体质量
+的综合设计法[J ]·科技和产业 , 2003 ,3(11) :13 - 23·
+( Wen Bang2chun , Han Qing2kai. Importance on products
+design and synthesis design facing quality of products [ J ] .
+Science Technology and Indust ry. 2003 ,3 (11) :13 - 23. )
+[ 8 ] Michael W , Paul D. An interactive environment for virtual
+manufacturing: the virtual workbench [ J ] . Com puters in
+Indust ry , 1999 ,38 (1) :5 - 15.
+[ 9 ] Ramaswamy S , Yan Y. Interactive modeling and simulation
+of virtual manufacturing assemblies : an agent2based approach
+[J ] . Journal of Intelligent M anuf act uring , 1999 ,10 (6) :
+503 - 518.
+[ 10 ] Wang G G. Definition and review of virtual prototyping[J ] .
+Com puting and Inf ormation Science in Engineering , 2002 ,
+2 (9) :232 - 236.
+883 东北大学学报 (自然科学版) 　　　　　　 　　　　　第 28 卷

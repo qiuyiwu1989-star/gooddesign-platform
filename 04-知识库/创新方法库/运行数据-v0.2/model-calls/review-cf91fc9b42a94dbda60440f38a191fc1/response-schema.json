@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "properties": {
+    "conclusion": {
+      "type": "string",
+      "enum": [
+        "issues_found",
+        "no_issues_identified",
+        "cannot_assess"
+      ]
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": [
+              "critical",
+              "major",
+              "minor",
+              "needs_domain_review"
+            ]
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "finding": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "basis": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          },
+          "suggested_action": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "severity",
+          "location",
+          "finding",
+          "basis",
+          "suggested_action"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 200
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6000,
+        "pattern": "\\S"
+      },
+      "minItems": 0,
+      "maxItems": 200
+    },
+    "expert_certified": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "conclusion",
+    "issues",
+    "limitations",
+    "expert_certified"
+  ],
+  "additionalProperties": false
+}

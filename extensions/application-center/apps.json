@@ -537,5 +537,74 @@
     },
     "value": "输入地方产业，生成调研报告",
     "developer": "好设计团队"
+  },
+  {
+    "schema_version": "gd-app-0.1",
+    "id": "xray",
+    "title": "拆解实验室",
+    "kind": "interactive_exhibit",
+    "category": "experience",
+    "user": "公众与教育",
+    "audience": [
+      "公众",
+      "教育工作者",
+      "设计与工程学习者"
+    ],
+    "task": "拆解真实项目",
+    "status": "live",
+    "status_label": "已上线",
+    "summary": "通过项目图片、部件热点、设计说明与图纸，理解真实装备的结构、原理和设计取舍。",
+    "output": "部件拆解、设计解释、图纸与项目档案",
+    "outputs": [
+      "部件拆解",
+      "设计解释",
+      "图纸与项目档案"
+    ],
+    "route": {
+      "catalog": "/apps/",
+      "detail": null,
+      "runtime": "/museum/x-ray"
+    },
+    "action": "进入拆解实验室",
+      "inputs": [
+        "ProjectRef",
+        "ExhibitContentRef",
+        "EvidenceBoundary"
+      ],
+      "capabilities": {
+        "mcp_status": "not_connected",
+        "mcp_tools": [],
+        "engine": null,
+        "engine_status": "not_connected",
+        "writes": "client_local"
+      },
+      "permissions": {
+        "public_read": true,
+        "requires_login": false,
+        "tenant_isolation": false,
+        "mcp_access": "none"
+      },
+      "evidence": {
+        "case_ids": [
+          "x-ray"
+        ],
+        "must_show_boundary": true,
+        "forbidden_claims": [
+          "engineering_validated",
+          "expert_reviewed",
+          "customer_confirmed"
+        ]
+      },
+      "release": {
+        "requires": [
+          "schema_check",
+          "desktop_1440_check",
+          "mobile_390_check",
+          "dark_mode_check",
+          "rollback_ready"
+        ]
+      },
+      "value": "把获奖装备拆开看，理解结构、原理与设计取舍",
+      "developer": "好设计团队"
   }
 ]

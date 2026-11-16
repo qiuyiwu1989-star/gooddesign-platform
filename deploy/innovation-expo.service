@@ -1,0 +1,17 @@
+[Unit]
+Description=GoodDesign Expo Agent (live research backend)
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/var/www/innovation-design/current
+ExecStart=/var/www/innovation-design/venv/bin/python scripts/expo_agent_server.py --port 18792
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=full
+ReadWritePaths=/var/lib/innovation-design
+
+[Install]
+WantedBy=multi-user.target

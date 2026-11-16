@@ -1,0 +1,21 @@
+{
+  "status": "structure_and_declared_consistency_passed",
+  "issues": [],
+  "artifact_sha256": "7ff9ed64ef15e852ea09fe1f6ce7c2592804b8b89a9b993266b66bf0ddb5df00",
+  "evidence_refs": [
+    "case-98b73a9c96af1f9408721571"
+  ],
+  "declared_unknowns": [
+    "Who can confirm REQ01 and REQ02, their hardness and acceptance criteria? Recommendations remain empty until unknown hardness is resolved.",
+    "What work operation, loads, directions, durations, workpiece properties and allowable movements define retention?",
+    "What constitutes damage during engagement, holding and release, and how will condition be assessed?",
+    "What applicable safety requirements, operator constraints and bench interfaces must be established? No additional requirement IDs or approved safety gates are invented here.",
+    "Is manual input or pneumatic supply available and acceptable, and what response is required after input loss, slip or incomplete release?",
+    "After use conditions are defined, plan comparable retention and before-and-after condition assessments for M01 and M02 using agreed workpieces, loads and limits. No procedure execution, measurements or acceptance results are supplied.",
+    "M03 requires a revised release mechanism or explicitly revised topology before reconsideration. Its conditional exclusion establishes no performance ranking among M01 and M02."
+  ],
+  "conclusion_level": "conditional_research_or_plan_not_engineering_result",
+  "semantic_support": "not_independently_verified",
+  "engineering_validated": false,
+  "cross_method_check": "performed"
+}

@@ -12,3 +12,11 @@
 
 /* ML-019: compact stage mark and stronger engineering icon silhouettes. */
 .method-card{position:relative}.method-card .category-badge{position:absolute;top:24px;right:24px;display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--inno-border,#d8dce4);border-radius:8px;background:var(--icon-tint,#eeeaff);color:#394150;font:700 15px/1 var(--inno-font,system-ui);letter-spacing:.02em}.method-card img{width:76px;height:76px;padding:7px;border-radius:14px;margin-bottom:12px}.method-card h2{margin-top:10px}.hero .method-icon{padding:9px}@media(max-width:600px){.method-card .category-badge{top:22px;right:22px;width:30px;height:30px}.method-card img{width:72px;height:72px}}
+
+/* B / optical frosted glass: intrinsic transparent SVG; no colored icon tile. */
+body .method-card img, body .method-icon {background:transparent;padding:0;border:0;border-radius:0;object-fit:contain;filter:none;}
+body .method-card img {width:88px;height:88px;margin:0 0 14px -2px;flex:none;}
+body .method-card {transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;}
+body .method-card:hover {box-shadow:0 12px 32px -24px rgba(83,67,142,.4);}
+@media(max-width:600px){body .method-card img{width:80px;height:80px;}}
+@media(prefers-reduced-motion:reduce){body .method-card{transition:none;}}

@@ -1,0 +1,62 @@
+{
+  "candidate_contract_comparison": {
+    "before_over_permissive": true,
+    "before_status": "structure_and_declared_consistency_passed",
+    "candidate_issues": [
+      {
+        "candidate_id": "C0",
+        "code": "candidate_contains_unknown_compatibility"
+      }
+    ],
+    "candidate_status": "blocked",
+    "case": "未知相容性组合标为candidate",
+    "constraint_improvement_demonstrated": true,
+    "scope": "仅证明该确定性负例的约束改进，不证明模型研究质量普遍提升"
+  },
+  "conclusion": {
+    "asset_replay_passed": true,
+    "candidate_contract_negative_case_improved": true,
+    "r17_research_uplift_established": false,
+    "required_next": "后端可用时按isolated-evaluation-protocol.json执行4次生成和2次独立盲评"
+  },
+  "historical_method_package": {
+    "C_minus_A": {
+      "evidence": 0,
+      "feasibility": 0,
+      "mechanism": 0.0,
+      "problem": 0,
+      "validation": 0.666
+    },
+    "D_minus_B": {
+      "evidence": 0,
+      "feasibility": 0,
+      "mechanism": 0.0,
+      "problem": 0,
+      "validation": 0.25
+    },
+    "ai_reviews": 48,
+    "attribution": "R48/R14/R17方法包整体，不可单独归因R17；评分压缩且为有限遮盲AI评审",
+    "reports": 24
+  },
+  "isolated_model_comparison": {
+    "generation_calls_actual": 0,
+    "isolated_effect_established": false,
+    "review_calls_actual": 0,
+    "status": "blocked_backend_unavailable"
+  },
+  "reference_replay": {
+    "combination_statuses": [
+      "unknown"
+    ],
+    "counts": {
+      "combinations": 4,
+      "compatibility_rows": 2,
+      "evidence": 28,
+      "functions": 7,
+      "options": 28
+    },
+    "status": "structure_and_declared_consistency_passed"
+  },
+  "research_id": "R17",
+  "schema_version": "method-engine-quality-0.1"
+}

@@ -1,0 +1,118 @@
+/* Museum-only finishing layer, 2026-11-16. */
+.foyer .btn-gold,.guide .btn-gold{background:#6550e8;color:#fff!important;font-weight:600;min-height:48px;justify-content:center;box-shadow:0 3px 12px #080b221f}
+.foyer .btn-gold:hover,.guide .btn-gold:hover{background:#7764f1}
+.foyer .btn-frosted{min-height:48px;color:#fff}
+.foyer .sub-en{color:#bfc0d3}
+.foyer .lead{color:#d1d2de;max-width:39em;line-height:1.9}
+.foyer h1 .dot{color:#b2a5ff}
+.foyer .watermark{opacity:.35}
+.foyer .col-tag{color:#c1b5ff;letter-spacing:.16em}
+.foyer .hc{border-width:3px;box-shadow:0 16px 36px #07091440}
+.foyer .hc figcaption{font-family:var(--font-sans),sans-serif;font-size:11px;line-height:1.6;padding:32px 12px 10px;text-shadow:0 1px 3px #000}
+.hc-link{position:absolute;inset:0;z-index:2;border-radius:inherit}
+.foyer a:focus-visible,.wrap a:focus-visible,.guide a:focus-visible,.ticker button:focus-visible{outline:3px solid #b4a4ff;outline-offset:5px}
+#zones{scroll-margin-top:120px}
+.zpanel{isolation:isolate;box-shadow:0 5px 18px #11182712;border:1px solid #ffffff18}
+.zpanel .zno,.zpanel .zslogan{color:#ffcfb7!important}
+.zpanel .zcount{color:#f2f2f6;font-size:12px;letter-spacing:.02em}
+.zpanel .zname{letter-spacing:.015em;line-height:1.25}
+.zpanel .zin{padding:32px 36px}
+.zpanel::after{background:linear-gradient(100deg,#0b1026e8 12%,#0b1026a6 54%,#0b102633),linear-gradient(0deg,#0b102680,transparent 70%)}
+.zpanel .ztheme{font-family:var(--font-sans),sans-serif;font-size:24px;letter-spacing:0}
+.zpanel .chip{background:#ffffff14;border-color:#ffffff42;line-height:1.4;padding:6px 12px}
+.zpanel:hover{box-shadow:0 12px 32px #11182724}
+.sec-h{flex-wrap:wrap;row-gap:8px}
+.sec-sub{max-width:72ch}
+.xrow{position:relative;border-radius:12px;padding-right:42px!important;transition:background .18s,transform .18s}
+.xrow::after{content:'›';position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:25px;color:var(--ink-mute);line-height:1}
+.xrow:hover{background:var(--gd-surface,#ffffff09)}
+.xrow h3{line-height:1.5}
+.guide{background:#11192e}
+.guide .q i{color:#c5b7ff!important}
+.guide p{color:#c8cede!important;font-size:14px;line-height:1.9;font-weight:400}
+.guide .wm{opacity:.35}
+.ticker{position:relative;padding-right:64px}
+.ticker-control{position:absolute;right:10px;top:50%;transform:translateY(-50%);z-index:2;min-width:44px;min-height:32px;border:1px solid #ffffff48;border-radius:8px;background:#171b2e;color:#fff;font:12px/1 var(--font-sans),sans-serif;cursor:pointer}
+.ticker[data-paused=true] .tk-track{animation-play-state:paused}
+@media(max-width:960px){.foyer .inner{gap:24px}.foyer .collage{height:310px;margin-inline:auto;width:360px;max-width:100%}.foyer .hc{width:190px}.foyer .hc1{left:140px;top:58px}.foyer .hc2{left:70px;top:158px}.foyer .col-tag{bottom:0}.zpanel .zin{padding:24px}.zpanel .zbottom{display:grid;grid-template-columns:50px minmax(0,1fr);align-items:start;gap:16px}.zpanel .ztext{gap:9px}.zpanel .ztheme{font-size:21px}.zpanel .zname{font-size:26px}.zpanel .zslogan{font-size:12px;letter-spacing:.04em}.sec{padding-top:64px}.sec-sub{margin-bottom:28px}.guide .inner{gap:28px}.xrow{min-height:104px}.stats{margin-block:56px 0}}
+@media(max-width:480px){.foyer .inner{padding:40px 24px 30px}.foyer .kicker{font-size:10px;letter-spacing:.04em;margin-bottom:16px}.foyer .sub-en{font-size:10px;letter-spacing:.025em;margin-top:12px}.foyer .lead{margin-top:20px;font-size:14px;line-height:1.85}.foyer .cta{margin-top:24px;gap:10px}.foyer .cta .btn{flex:1;padding-inline:16px}.foyer .collage{height:260px;width:310px}.foyer .hc{width:166px}.foyer .hc0{top:8px;left:4px}.foyer .hc1{left:137px;top:55px}.foyer .hc2{left:68px;top:130px}.foyer .col-tag{display:none}.wrap{padding-inline:24px}.sec-h{gap:12px}.sec-h h2{font-size:27px;letter-spacing:0}.sec-h .en{font-size:10px;letter-spacing:.1em}.zpanel,.zpanel .zin{min-height:288px}.zpanel .zno{font-size:10px;letter-spacing:.1em}.zpanel .zcount{font-size:10px}.zpanel .zno::before{width:16px;margin-right:7px}.zpanel .zin{padding:22px 20px}.zpanel .zname{font-size:24px}.zpanel .zbottom{gap:12px;grid-template-columns:44px minmax(0,1fr)}.zpanel .ztheme{width:44px;height:44px;font-size:18px}.zpanel .zchips{gap:6px;margin-top:4px}.zpanel .chip{font-size:11px;padding:5px 8px}.stat .num{font-size:27px}.stat .lbl{line-height:1.8}.xrow{padding:20px 32px 20px 12px!important}.xrow h3{font-size:17px}.xrow p{font-size:13px;line-height:1.8}.guide{margin-top:64px}.guide .inner{padding:40px 24px}.guide .q{font-size:25px;letter-spacing:0}.guide p{margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.tk-track{animation:none!important}.hc,.zbg,.zpanel,.xrow,.btn{transition:none!important}.zpanel:hover .zbg,.hc:hover{transform:none!important}}
+.foyer .cta .btn{justify-content:center}
+.stats .stat:last-child .num{font-size:clamp(19px,2vw,26px);letter-spacing:-.03em;white-space:nowrap}
+/* Deep-space foyer: spatial atmosphere, readable content, compositor-only motion. */
+.foyer{background:radial-gradient(ellipse at 81% 29%,#39236c8c 0%,transparent 44%),radial-gradient(ellipse at 58% 98%,#114b813d 0%,transparent 54%),linear-gradient(118deg,#060b1c 0%,#101537 48%,#21153c 100%);isolation:isolate}
+.foyer .inner{z-index:2}
+.foyer .watermark{display:none}
+.museum-cosmos{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.museum-nebula{position:absolute;width:90%;height:110%;top:-24%;right:-22%;background:radial-gradient(ellipse at 48% 48%,#7655d740 0%,#3b4ac72c 30%,transparent 63%);transform:rotate(-18deg);animation:museum-nebula 18s ease-in-out infinite alternate}
+.museum-horizon{position:absolute;left:38%;right:-18%;height:56%;bottom:-43%;border-radius:50%;border-top:1px solid #979cf966;box-shadow:0 -22px 100px #546af51a,0 -2px 22px #8493ff1f;transform:rotate(-11deg)}
+.museum-star{position:absolute;width:2px;height:2px;border-radius:50%;background:#d5ddff;opacity:var(--star-alpha,.5);box-shadow:0 0 5px #c5d5ff55}
+.museum-star.is-live{animation:museum-twinkle var(--star-time,7s) ease-in-out infinite alternate}
+.foyer h1{color:#f6f7ff;text-shadow:0 2px 30px #6987ff18}
+.foyer h1 .dot{color:#b9adff}
+.foyer .kicker{color:#b5c3ff}
+.foyer .kicker::before{background:#9faeff;box-shadow:0 0 12px #9faeff4d}
+.foyer .sub-en{color:#b9c3dd}
+.foyer .lead{color:#cbd3e7}
+.foyer .lead b{color:#c7baff}
+.foyer .btn-gold{background:linear-gradient(135deg,#7464ee,#5745ce);border:1px solid #b9adff40;box-shadow:0 4px 20px #4330c12e,inset 0 1px #ffffff26}
+.foyer .btn-gold:hover{background:linear-gradient(135deg,#8475fa,#6553de);box-shadow:0 8px 28px #5946d647}
+.foyer .btn-frosted{background:#ffffff09;border-color:#ccd6ff42;backdrop-filter:blur(12px)}
+.foyer .hc{border-color:#e4e9ffdc;box-shadow:0 18px 38px #01051866,0 0 30px #6d6bff0a}
+.foyer .col-tag{color:#c2c9e4}
+.hero-motion-control{position:absolute;z-index:3;right:24px;bottom:16px;min-height:32px;padding:7px 11px;border:1px solid #b2c3ee38;border-radius:8px;background:#10172b8c;color:#c9d2ea;font:11px/1.3 var(--font-sans),sans-serif;cursor:pointer;transition:background .2s}
+.hero-motion-control:hover{background:#20294dcc;color:#fff}
+.hero-motion-control:focus-visible{outline:3px solid #b4a4ff;outline-offset:4px}
+@keyframes museum-nebula{from{transform:translate3d(-1%,0,0) rotate(-18deg);opacity:.65}to{transform:translate3d(2%,2%,0) rotate(-14deg);opacity:1}}
+@keyframes museum-twinkle{from{opacity:calc(var(--star-alpha,.5) * .4)}to{opacity:var(--star-alpha,.5)}}
+@keyframes museum-appear{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes museum-card-in{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+@keyframes museum-float{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@media(prefers-reduced-motion:no-preference){
+ .foyer .kicker{animation:museum-appear .65s .03s both}
+ .foyer h1{animation:museum-appear .7s .1s both}
+ .foyer .sub-en{animation:museum-appear .7s .17s both}
+ .foyer .lead{animation:museum-appear .7s .24s both}
+ .foyer .cta{animation:museum-appear .7s .31s both}
+ .foyer .collage{animation:museum-float 9s 1.2s ease-in-out infinite}
+ .foyer .hc0{animation:museum-card-in .85s .15s both}
+ .foyer .hc1{animation:museum-card-in .85s .28s both}
+ .foyer .hc2{animation:museum-card-in .85s .41s both}
+}
+.foyer[data-motion=paused] .museum-nebula,.foyer[data-motion=paused] .museum-star,.foyer[data-motion=paused] .collage,.foyer[data-away=true] .museum-nebula,.foyer[data-away=true] .museum-star,.foyer[data-away=true] .collage{animation-play-state:paused}
+@media(max-width:960px){.museum-horizon{left:4%;right:-70%;bottom:-38%}.museum-nebula{width:130%;right:-50%}.hero-motion-control{right:20px;bottom:10px;font-size:10px}}
+@media(max-width:480px){.foyer .inner{padding-bottom:46px}.museum-star:nth-child(2n){display:none}.museum-nebula{opacity:.7}.hero-motion-control{min-height:32px}.foyer .btn{transition:background .2s,box-shadow .2s}}
+@media(prefers-reduced-motion:reduce){.foyer *,.foyer *::before,.foyer *::after{animation:none!important;transition:none!important}.hero-motion-control{display:none}}
+
+/* 157 真实展品主导的策展首屏与精选展项 */
+.foyer{background:linear-gradient(135deg,#15151c 0%,#1d1d27 52%,#27232f 100%)}
+.museum-cosmos,.hero-motion-control{display:none!important}
+.foyer .collage{animation:none!important}
+.foyer .hc0{z-index:2;border-color:#fff;transform:scale(1.045)}
+.foyer .hc1,.foyer .hc2{opacity:.82;transition:opacity .2s}
+.foyer .collage:hover .hc{opacity:1}
+.foyer .hc figcaption{font-size:12px;line-height:1.55;padding:34px 14px 12px}
+.zpanel::after{background:linear-gradient(100deg,rgba(11,16,38,.9) 0%,rgba(11,16,38,.62) 45%,rgba(11,16,38,.1) 82%)}
+.zpanel .zthumbs{display:none}
+.zpanel .zbg{filter:saturate(.86);transform:scale(1.01)}
+.zpanel:hover .zbg{transform:scale(1.035)}
+.museum-featured{scroll-margin-top:90px}
+.museum-exhibit-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.museum-exhibit-filters button{min-height:40px;padding:8px 15px;border:1px solid var(--bdrSoft);border-radius:999px;background:transparent;color:var(--fg2);font:inherit;font-size:12px;cursor:pointer}
+.museum-exhibit-filters button[aria-pressed=true]{border-color:var(--accent);background:var(--acBg);color:var(--accentDeep)}
+.museum-exhibit-filters button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.museum-exhibits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.museum-exhibit{min-width:0}
+.museum-exhibit[hidden]{display:none}
+.museum-exhibit>a{display:flex;height:100%;flex-direction:column;border:1px solid var(--bdrSoft);border-radius:18px;overflow:hidden;background:var(--card);color:inherit;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.museum-exhibit>a:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--sh1)}
+.museum-exhibit>a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.museum-exhibit img{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--demo)}
+.museum-exhibit-meta{display:flex;flex:1;flex-direction:column;padding:18px}
+.museum-exhibit-meta small{color:var(--fg2);font-size:10px;line-height:1.6}
+.museum-exhibit-meta strong{margin-top:10px;font-size:17px;line-height:1.55;letter-spacing:-.01em}
+.museum-exhibit-meta>span{margin-top:auto;padding-top:16px;color:var(--accentDeep);font-size:11px}
+@media(max-width:960px){.museum-exhibits{grid-template-columns:repeat(2,minmax(0,1fr))}.foyer .hc0{transform:none}}
+@media(max-width:600px){.museum-exhibits{grid-template-columns:1fr;gap:18px}.museum-exhibit>a{display:grid;grid-template-columns:132px minmax(0,1fr)}.museum-exhibit img{height:100%;aspect-ratio:auto}.museum-exhibit-meta{padding:14px}.museum-exhibit-meta strong{font-size:15px}.museum-exhibit-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.museum-exhibit-filters button{flex:none}.zpanel::after{background:linear-gradient(100deg,rgba(11,16,38,.9),rgba(11,16,38,.48))}}
+@media(prefers-reduced-motion:reduce){.foyer .hc1,.foyer .hc2,.museum-exhibit>a,.zpanel .zbg{transition:none!important}.museum-exhibit>a:hover,.zpanel:hover .zbg{transform:none}}
+@media print{.museum-exhibit-filters{display:none}.museum-exhibits{grid-template-columns:repeat(2,1fr)}.museum-exhibit{break-inside:avoid}.museum-cosmos{display:none!important}}

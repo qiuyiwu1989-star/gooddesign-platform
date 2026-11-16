@@ -26,7 +26,7 @@ class DesignRefinement096Tests(unittest.TestCase):
         self.assertIn('app-case-title', text)
         self.assertIn('app-data', text)
         self.assertIn('selectApp', text)
-        self.assertIn('<h1>应用中心</h1>', text)
+        self.assertIn('选择合适的应用', text)
 
     def test_096_responsive_and_print_are_defined(self):
         text = (ROOT / 'scripts/model_explorer_096.py').read_text() + (ROOT / 'scripts/app_center_096.py').read_text()

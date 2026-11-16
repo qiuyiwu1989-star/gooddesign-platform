@@ -1,0 +1,704 @@
+{
+  "schema_version": "R17-teaching-input-0.2.2",
+  "case_id": "TAP-TEACH-001-MORPH-0.1.0",
+  "mode": "teaching_assumptions_not_engineering",
+  "scope": {
+    "object": "构造割胶作业头的三个研究功能子问题",
+    "goal": "比较表面参考、相对约束和停止退出的组合；全部保留工程未知",
+    "hard_constraints": [
+      "只覆盖F-T02/F-T03/F-T06，其他功能沿R14共同包保留",
+      "表面参考不等生物组织边界",
+      "所有目标值未客户确认；不制造或批准设备"
+    ],
+    "not_claimed": [
+      "客户真实需求",
+      "已验证割胶方案",
+      "最优结构",
+      "专业安全认证",
+      "全部功能已实现"
+    ]
+  },
+  "requirements": [
+    {
+      "id": "F-T02",
+      "statement": "建立局部表面参考",
+      "kind": "functional",
+      "state": "teaching_assumption",
+      "mandatory": true,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ]
+    },
+    {
+      "id": "F-T03",
+      "statement": "约束相对切入作用",
+      "kind": "functional",
+      "state": "teaching_assumption",
+      "mandatory": true,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ]
+    },
+    {
+      "id": "F-T06",
+      "statement": "停止并退出/交接",
+      "kind": "functional",
+      "state": "teaching_assumption",
+      "mandatory": true,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "U-T01",
+      "name": "目标树种、树龄、组织状态与现场环境",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    },
+    {
+      "id": "U-T02",
+      "name": "切入/余皮限值、测量口径与客户验收标准",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    },
+    {
+      "id": "U-T03",
+      "name": "异常类型、发生频率及实际恢复过程",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    },
+    {
+      "id": "U-T04",
+      "name": "供能、执行器、结构载荷与防护配置",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    },
+    {
+      "id": "U-T05",
+      "name": "使用者能力、劳动安排与维护资源",
+      "state": "unknown",
+      "value": null,
+      "unit": null,
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "unknown_reason": "共享R48教学输入未给现场证据；不能自动补值"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "D-REF",
+      "function": "建立局部表面参考",
+      "requirement_refs": [
+        "F-T02"
+      ],
+      "option_ids": [
+        "O-REF-M",
+        "O-REF-S"
+      ]
+    },
+    {
+      "id": "D-LIMIT",
+      "function": "约束相对切入作用",
+      "requirement_refs": [
+        "F-T03"
+      ],
+      "option_ids": [
+        "O-LIM-G",
+        "O-LIM-C"
+      ]
+    },
+    {
+      "id": "D-STOP",
+      "function": "停止并退出/交接",
+      "requirement_refs": [
+        "F-T06"
+      ],
+      "option_ids": [
+        "O-STOP-P",
+        "O-STOP-A"
+      ]
+    }
+  ],
+  "options": [
+    {
+      "id": "O-REF-M",
+      "dimension_id": "D-REF",
+      "label": "接触基准",
+      "mechanism": "通过接触关系获得局部参考",
+      "provides": [
+        "接触基准的研究原理"
+      ],
+      "requires": [
+        "接触载荷/压陷未知"
+      ],
+      "interfaces": [
+        "R14相应接口需核查"
+      ],
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ]
+    },
+    {
+      "id": "O-REF-S",
+      "dimension_id": "D-REF",
+      "label": "非接触表面测距",
+      "mechanism": "由表面返回信号估计参考",
+      "provides": [
+        "非接触表面测距的研究原理"
+      ],
+      "requires": [
+        "光学/介质/污染影响未知"
+      ],
+      "interfaces": [
+        "R14相应接口需核查"
+      ],
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ]
+    },
+    {
+      "id": "O-LIM-G",
+      "dimension_id": "D-LIMIT",
+      "label": "几何相对限位",
+      "mechanism": "由相对几何约束限制位移",
+      "provides": [
+        "几何相对限位的研究原理"
+      ],
+      "requires": [
+        "表面到组织边界映射未知"
+      ],
+      "interfaces": [
+        "R14相应接口需核查"
+      ],
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ]
+    },
+    {
+      "id": "O-LIM-C",
+      "dimension_id": "D-LIMIT",
+      "label": "感测反馈约束",
+      "mechanism": "将状态估计用于相对运动约束",
+      "provides": [
+        "感测反馈约束的研究原理"
+      ],
+      "requires": [
+        "测量延迟/误差与生物限值未知"
+      ],
+      "interfaces": [
+        "R14相应接口需核查"
+      ],
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ]
+    },
+    {
+      "id": "O-STOP-P",
+      "dimension_id": "D-STOP",
+      "label": "被动储能退出概念",
+      "mechanism": "探索由预置储能提供退出作用",
+      "provides": [
+        "被动储能退出概念的研究原理"
+      ],
+      "requires": [
+        "方向/储能/卡阻能力未知"
+      ],
+      "interfaces": [
+        "R14相应接口需核查"
+      ],
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ]
+    },
+    {
+      "id": "O-STOP-A",
+      "dimension_id": "D-STOP",
+      "label": "受控执行退出概念",
+      "mechanism": "探索执行器在抑制后退出并反馈",
+      "provides": [
+        "受控执行退出概念的研究原理"
+      ],
+      "requires": [
+        "失能可用性/残能/控制可靠性未知"
+      ],
+      "interfaces": [
+        "R14相应接口需核查"
+      ],
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ]
+    }
+  ],
+  "pair_judgments": [
+    {
+      "id": "PJ-O-REF-M--O-LIM-G",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-G"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-REF-M--O-LIM-C",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-C"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-REF-S--O-LIM-G",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-G"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-REF-S--O-LIM-C",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-C"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-REF-M--O-STOP-P",
+      "option_ids": [
+        "O-REF-M",
+        "O-STOP-P"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-REF-M--O-STOP-A",
+      "option_ids": [
+        "O-REF-M",
+        "O-STOP-A"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-REF-S--O-STOP-P",
+      "option_ids": [
+        "O-REF-S",
+        "O-STOP-P"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-REF-S--O-STOP-A",
+      "option_ids": [
+        "O-REF-S",
+        "O-STOP-A"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-LIM-G--O-STOP-P",
+      "option_ids": [
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-LIM-G--O-STOP-A",
+      "option_ids": [
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-LIM-C--O-STOP-P",
+      "option_ids": [
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    },
+    {
+      "id": "PJ-O-LIM-C--O-STOP-A",
+      "option_ids": [
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "命名可组合不证明接口、时序、载荷或失效行为兼容",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ],
+      "verification_question": "核几何/时序/供能与组织作用边界，再判断此接口"
+    }
+  ],
+  "whole_judgments": [
+    {
+      "id": "PJ-O-REF-M--O-LIM-G",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ],
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分"
+    },
+    {
+      "id": "WJ-TAP-02",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ],
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分"
+    },
+    {
+      "id": "WJ-TAP-03",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ],
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分"
+    },
+    {
+      "id": "WJ-TAP-04",
+      "option_ids": [
+        "O-REF-M",
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ],
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分"
+    },
+    {
+      "id": "WJ-TAP-05",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-G",
+        "O-STOP-P"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ],
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分"
+    },
+    {
+      "id": "WJ-TAP-06",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-G",
+        "O-STOP-A"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ],
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分"
+    },
+    {
+      "id": "WJ-TAP-07",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-C",
+        "O-STOP-P"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ],
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分"
+    },
+    {
+      "id": "WJ-TAP-08",
+      "option_ids": [
+        "O-REF-S",
+        "O-LIM-C",
+        "O-STOP-A"
+      ],
+      "state": "unknown",
+      "basis": "unresolved",
+      "reason": "只有机制假设；整体组织损伤、性能、异常恢复和资源未核",
+      "evidence_refs": [
+        "A-TAP-TEACH"
+      ],
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T03",
+        "U-T04",
+        "U-T05"
+      ],
+      "verification_question": "优先确认最危险的边界识别/限制/异常停止假设，而非合计性能分"
+    }
+  ],
+  "evidence_registry": [
+    {
+      "id": "A-TAP-TEACH",
+      "kind": "teaching_assumption",
+      "description": "本平台构造机制选项，不来自树种、客户或实测",
+      "locator": "scope/options; upstream binding in separate file"
+    }
+  ],
+  "selection_policy": {
+    "decision": "comparison_only_not_unique_optimum",
+    "criteria": [
+      "仅按ID确定展示基线，不代表偏好或优越性",
+      "所有工程条件未决"
+    ],
+    "selected_option_ids": [
+      "O-REF-M",
+      "O-LIM-G",
+      "O-STOP-P"
+    ],
+    "reason": "固定第一组合便于复查；全部候选均待研究，不建议工程采用"
+  },
+  "validation_plan": [
+    {
+      "id": "VP-TAP-01",
+      "question": "表面参考能否为实际允许组织边界提供足够信息？",
+      "method": "先核目标树体/组织及测量原理，再设计受控非伤害研究；本轮未实施",
+      "conditions_to_fix": [
+        "树种组织",
+        "测量误差",
+        "客户/专业可接受边界",
+        "失效与保护"
+      ],
+      "acceptance_basis": "等待实际场景、专业依据和客户确认，不生成阈值",
+      "status": "not_executed",
+      "condition_refs": [
+        "U-T01",
+        "U-T02",
+        "U-T04"
+      ]
+    }
+  ]
+}

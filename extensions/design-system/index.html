@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" data-zw-mode="product">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>好设计 · 产品界面设计系统</title>
+  <link rel="stylesheet" href="../method-workbench/vendor/tokens.css">
+  <link rel="stylesheet" href="../method-workbench/vendor/design-system.css">
+  <link rel="stylesheet" href="gooddesign.css">
+</head>
+<body>
+  <a class="gd-skip" href="#main">跳到主要内容</a>
+  <header class="gd-nav">
+    <div class="gd-shell gd-nav-inner">
+      <a class="gd-brand" href="#top" aria-label="好设计设计系统首页">
+        <span class="gd-brand-mark" aria-hidden="true">好</span>
+        <span class="gd-brand-text"><strong>好设计</strong><small>OPENDESIGN</small></span>
+      </a>
+      <nav class="gd-links" aria-label="平台导航">
+        <a href="#components">项目库</a>
+        <a href="#methods">方法库</a>
+        <a href="#workspace" aria-current="page">需求研究</a>
+        <a href="#foundations">数据总览</a>
+      </nav>
+      <div class="gd-nav-actions">
+        <button class="gd-button gd-button--quiet" id="theme-toggle" type="button" aria-label="切换明暗主题">深色</button>
+        <a class="gd-button gd-button--primary" href="#workspace">进入研究</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="gd-shell" id="top">
+      <section class="gd-hero" aria-labelledby="hero-title">
+        <div>
+          <span class="gd-kicker">好设计产品界面语言</span>
+          <h1 id="hero-title">从真实项目，到可验证的下一步。</h1>
+          <p class="gd-lead">以造物云 V2.3 为基准，为项目档案、方法研究和企业创新打造统一、精致、可核对的界面。</p>
+          <div class="gd-actions">
+            <a class="gd-button gd-button--primary" href="#components">浏览组件</a>
+            <a class="gd-button" href="#workspace">查看研究样板</a>
+          </div>
+          <p class="gd-hero-note">本地设计样板，无模型调用，不修改研究档案。</p>
+        </div>
+        <article class="gd-panel gd-research-card" aria-labelledby="research-card-title">
+          <div class="gd-card-top">
+            <h2 id="research-card-title">当前研究判断</h2>
+            <span class="gd-badge gd-badge--pending">待确认提案</span>
+          </div>
+          <p class="gd-research-goal">保护树体和胶乳品质，研究切割、清理与转场如何影响全流程有效产出。</p>
+          <div class="gd-next">
+            <strong>建议下一步</strong>
+            <p>先补充作业条件、预算和验收口径，再决定优先验证哪条路线。</p>
+          </div>
+          <dl class="gd-facts">
+            <div><dt>研究任务</dt><dd>割胶机器人</dd></div>
+            <div><dt>候选路线</dt><dd>3 条</dd></div>
+            <div><dt>关键未知</dt><dd>3 项</dd></div>
+          </dl>
+        </article>
+      </section>
+
+      <section class="gd-section" id="foundations" aria-labelledby="foundations-title">
+        <div class="gd-section-heading">
+          <h2 id="foundations-title">精致来自一致，而非装饰</h2>
+          <p>沿用造物云冷灰、靛蓝和中文字重，以相同间距、边界与表面层级组织所有页面。</p>
+        </div>
+        <div class="gd-swatches" aria-label="核心色彩">
+          <div class="gd-swatch"><div class="gd-swatch-color" style="background:#F4F5F8"></div><div class="gd-swatch-copy"><strong>页面地基</strong><code>#F4F5F8</code></div></div>
+          <div class="gd-swatch"><div class="gd-swatch-color" style="background:#FFFFFF"></div><div class="gd-swatch-copy"><strong>内容表面</strong><code>#FFFFFF</code></div></div>
+          <div class="gd-swatch"><div class="gd-swatch-color" style="background:#5A4FE6"></div><div class="gd-swatch-copy"><strong>主操作靛蓝</strong><code>#5A4FE6</code></div></div>
+          <div class="gd-swatch"><div class="gd-swatch-color" style="background:#16181F"></div><div class="gd-swatch-copy"><strong>主要文字</strong><code>#16181F</code></div></div>
+        </div>
+        <div class="gd-type">
+          <div><p class="gd-type-meta">页面标题 · 600</p><p class="gd-type-display">读懂项目，也看清下一步</p></div>
+          <div><p class="gd-type-meta">正文 · 400 / 16px</p><p class="gd-type-body">每一个研究判断都应保留来源、适用条件和未知。界面让证据更容易被看见，而不是让结论看起来更肯定。</p><p class="gd-type-meta">辅助说明 · 13px，只承载次要信息</p></div>
+        </div>
+      </section>
+
+      <section class="gd-section" id="components" aria-labelledby="components-title">
+        <div class="gd-section-heading">
+          <h2 id="components-title">统一的操作与内容组件</h2>
+          <p>按钮、表单、卡片和状态遵循同一套规则，用户不必在每个页面重新学习。</p>
+        </div>
+        <div class="gd-panel gd-component">
+          <h3>按钮与操作层级</h3>
+          <div class="gd-inline">
+            <button class="gd-button gd-button--primary" type="button">保存研究</button>
+            <button class="gd-button" type="button">查看证据</button>
+            <button class="gd-button gd-button--ghost" type="button">稍后处理</button>
+            <button class="gd-button" type="button" disabled>暂不可发布</button>
+          </div>
+        </div>
+        <div class="gd-panel gd-component">
+          <h3>项目检索</h3>
+          <form class="gd-form-grid" id="search-form">
+            <div class="gd-field"><label for="project-search">项目或完成单位</label><input class="gd-input" id="project-search" placeholder="例如：嫦娥钻取采样"></div>
+            <div class="gd-field"><label for="award-filter">奖项</label><select class="gd-select" id="award-filter"><option>全部奖项</option><option>金奖</option><option>银奖</option></select></div>
+            <button class="gd-button gd-button--primary" type="submit">探索项目</button>
+          </form>
+          <p class="gd-status" id="search-status" role="status"></p>
+        </div>
+        <div class="gd-panel gd-component gd-project">
+          <div class="gd-project-cover"><img src="../project-portal/covers/case-2025-00.jpg" alt="嫦娥月球钻取采样系统项目示意"></div>
+          <div class="gd-project-copy">
+            <div class="gd-project-meta"><span class="gd-badge gd-badge--accent">2025 · 金奖</span><span class="gd-badge">持续补证</span></div>
+            <h3>把月壤带回来，设计要跨过哪些难题？</h3>
+            <p>沿任务、系统设计与验证线索，理解嫦娥月球钻取采样系统的关键取舍。资料与 AI 解读分别呈现，未知不被隐藏。</p>
+            <div class="gd-project-foot">研究档案与资料范围可分别核对，项目方审核尚未完成。</div>
+            <a class="gd-button" href="#workspace">用这个项目做研究</a>
+          </div>
+        </div>
+        <div class="gd-panel gd-component">
+          <h3>内容状态</h3>
+          <div class="gd-inline" aria-label="内容状态示例">
+            <span class="gd-badge gd-badge--source">来源陈述</span>
+            <span class="gd-badge gd-badge--ai">AI 假设</span>
+            <span class="gd-badge gd-badge--pending">待确认</span>
+            <span class="gd-badge gd-badge--ok">证据已核对</span>
+            <span class="gd-badge gd-badge--error">存在冲突</span>
+            <span class="gd-badge">尚未研究</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="gd-section" id="methods" aria-labelledby="methods-title">
+        <div class="gd-section-heading">
+          <h2 id="methods-title">方法在需要时出现</h2>
+          <p>方法卡说明用途和产物，不用装饰评分替代真实研究深度。</p>
+        </div>
+        <div class="gd-methods">
+          <article class="gd-method"><img src="../method-reader/icons/R48.svg" alt=""><h3>问题定义与要求管理</h3><p>把原始想法整理为对象、目标、约束、要求和未知。</p><small>产物：ProblemBrief</small></article>
+          <article class="gd-method"><img src="../method-reader/icons/R14.svg" alt=""><h3>功能分解与接口分析</h3><p>识别必要功能、作用流与接口，保留尚未证实的关系。</p><small>产物：FunctionModel</small></article>
+          <article class="gd-method"><img src="../method-reader/icons/R17.svg" alt=""><h3>形态学分析</h3><p>组合子功能选项，同时记录相容、冲突与未知。</p><small>产物：ConceptSet</small></article>
+        </div>
+      </section>
+
+      <section class="gd-section" id="workspace" aria-labelledby="workspace-title">
+        <div class="gd-section-heading">
+          <h2 id="workspace-title">研究判断与证据同屏</h2>
+          <p>路线没有无依据的排名。先比较条件和未知，再核对证据并留下反馈。</p>
+        </div>
+        <div class="gd-panel gd-workspace">
+          <div class="gd-workspace-head">
+            <div><h3>割胶末端与作业流程研究</h3><p>研究提案，非客户确认需求。当前选择只用于比较，不代表工程推荐。</p></div>
+            <span class="gd-badge gd-badge--pending">待确认提案</span>
+          </div>
+          <div class="gd-workspace-body">
+            <div class="gd-routes" role="group" aria-label="候选研究路线">
+              <button class="gd-route" type="button" data-route="r1" aria-pressed="true"><h4>接触模块与可拆卸胶路分离</h4><p><strong>成立条件：</strong>先确认树皮保护边界与清洁要求。</p><p><strong>关键未知：</strong>允许损伤、堵料位置和清洗资源。</p><span class="gd-route-action">当前比较路线</span></button>
+              <button class="gd-route" type="button" data-route="r2" aria-pressed="false"><h4>作用、退出与清理按状态分时</h4><p><strong>成立条件：</strong>不同作业阶段能够被可靠识别。</p><p><strong>关键未知：</strong>传感、控制与故障退回方式。</p><span class="gd-route-action">选择比较</span></button>
+              <button class="gd-route" type="button" data-route="r3" aria-pressed="false"><h4>独立参考量测后再研究感知调整</h4><p><strong>成立条件：</strong>先建立独立、可重复的量测基线。</p><p><strong>关键未知：</strong>参考真值、量测误差与校准资源。</p><span class="gd-route-action">选择比较</span></button>
+            </div>
+            <div class="gd-route-detail">
+              <p id="route-detail"><strong>下一步：</strong>先确认接触、排屑和清洁的边界，再讨论模块拆分。</p>
+              <button class="gd-button" id="evidence-open" type="button">核对相关证据</button>
+            </div>
+            <form class="gd-feedback" id="feedback-form">
+              <div class="gd-field"><label for="feedback-role">你的角色</label><input class="gd-input" id="feedback-role" placeholder="例如：研究人员"></div>
+              <div class="gd-field"><label for="feedback-body">对当前路线的反馈</label><textarea class="gd-textarea" id="feedback-body" placeholder="写下判断依据，保存为本机待审核反馈"></textarea><span class="gd-help">保存只影响浏览器本机记录，不修改需求、事实或评分。</span></div>
+              <div class="gd-feedback-actions"><button class="gd-button gd-button--primary" type="submit">保存待审核反馈</button><button class="gd-button" id="clarification-save" type="button">补充为待确认条件</button></div>
+              <p class="gd-status" id="feedback-status" role="status"></p>
+            </form>
+          </div>
+        </div>
+        <div class="gd-panel gd-component">
+          <h3>载入形态</h3>
+          <div class="gd-skeleton" style="width:42%"></div>
+          <div class="gd-skeleton" style="width:78%;margin-top:12px"></div>
+          <div class="gd-skeleton" style="width:64%;margin-top:12px"></div>
+          <p class="gd-help" style="margin-top:14px">骨架匹配最终内容结构，不使用假处理进度证明模型正在工作。</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="gd-shell gd-footer"><p>好设计 · 产品界面设计系统</p><p>基于造物云离线 V2.3 精致化打磨，本地样板未接入生产。</p></footer>
+
+  <dialog class="gd-drawer" id="evidence-dialog" aria-labelledby="evidence-title">
+    <div class="gd-drawer-head"><h2 id="evidence-title">可查阅证据</h2><button class="gd-button gd-button--quiet" id="evidence-close" type="button">关闭</button></div>
+    <p class="gd-help">2015 年媒体咕咚手持洗衣机体验，仅作为有边界的资料示例，尚未证明与当前路线匹配。</p>
+    <blockquote class="gd-quote">找一件纯白的T恤，分别用食用油、酱油、番茄酱、签字笔、果汁、咖啡、辣椒酱、茶等模拟日常常见污渍，涂抹在T恤上，然后用海尔咕咚手持式洗衣机对这些污渍进行清洗。</blockquote>
+    <dl class="gd-evidence-meta">
+      <div><dt>内容性质</dt><dd>来源陈述</dd></div>
+      <div><dt>项目</dt><dd>2016-05 · 咕咚手持洗衣机</dd></div>
+      <div><dt>研究版本</dt><dd>research-000003</dd></div>
+      <div><dt>证据位置</dt><dd>B0001 · 连续原文选录</dd></div>
+      <div><dt>核读范围</dt><dd>指定原文片段，不代表整篇或独立试验</dd></div>
+    </dl>
+    <p class="gd-boundary">媒体体验不是标准试验，清洗须配合使用洗涤液。不能据此推断清水单独去污、定量去污率或当前割胶路线的适用性。</p>
+  </dialog>
+  <script src="preview.js"></script>
+</body>
+</html>

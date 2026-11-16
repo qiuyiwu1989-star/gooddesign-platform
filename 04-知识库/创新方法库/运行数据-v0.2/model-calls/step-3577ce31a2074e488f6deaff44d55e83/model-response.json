@@ -1,0 +1,265 @@
+{
+  "artifact_id": "LIVE-TEACH-CLAMP-concepts",
+  "revision": "r1",
+  "task_id": "LIVE-TEACH-CLAMP",
+  "task_revision": "t1",
+  "type": "ConceptSet",
+  "scope": "Teaching concept enumeration and verification planning for a bench clamp intended to hold a workpiece without damage. Uses the supplied proposed functional model and morphological-analysis method. All implementation principles below are teaching hypotheses, not customer requirements or demonstrated solutions. No preferred concept, approved specification, prototype execution or engineering validation is established. The lunar-sampling case supplies no clamp performance evidence and contributes no parameters to these concepts.",
+  "conditions": [
+    {
+      "id": "C01",
+      "text": "The task specifies a bench clamp and the desired outcome of holding a workpiece without damage.",
+      "kind": "fact",
+      "evidence_refs": []
+    },
+    {
+      "id": "C02",
+      "text": "Customer loads, workpiece material, geometry, allowable movement and damage criteria remain unknown. REQ01 and REQ02 remain proposed; their hardness is unknown.",
+      "kind": "unknown",
+      "evidence_refs": []
+    },
+    {
+      "id": "C03",
+      "text": "F01 establishes contact; F02 applies restraint; F03 maintains restraint; F04 manages contact effects; F05 releases restraint; F06 assesses workpiece condition. These allocations remain modeling proposals from the supplied FunctionModel.",
+      "kind": "assumption",
+      "evidence_refs": []
+    },
+    {
+      "id": "C04",
+      "text": "Manual input, pneumatic supply, fixed-reference contact and external inspection are alternative teaching assumptions. None is established as available or acceptable for the customer.",
+      "kind": "assumption",
+      "evidence_refs": []
+    },
+    {
+      "id": "C05",
+      "text": "The proposed contact-management option is a hypothesis to investigate; distributing contact does not by itself establish adequate retention or freedom from damage.",
+      "kind": "assumption",
+      "evidence_refs": []
+    }
+  ],
+  "evidence_refs": [],
+  "payload": {
+    "function_ids": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05",
+      "F06"
+    ],
+    "options": [
+      {
+        "id": "O01",
+        "function_id": "F01",
+        "principle": "Establish workpiece contact against a fixed reference before applying restraint.",
+        "conditions": [
+          "Teaching hypothesis derived from the method example.",
+          "Requires compatible workpiece geometry, accessible contact regions and a reaction path to the support; all remain unknown."
+        ],
+        "evidence_refs": []
+      },
+      {
+        "id": "O02",
+        "function_id": "F02",
+        "principle": "Convert manual rotation through a screw transmission into closing displacement and restraint.",
+        "conditions": [
+          "Manual operation is an assumption, not a customer constraint.",
+          "Operator input, travel, transmission geometry and resulting contact forces require definition."
+        ],
+        "evidence_refs": []
+      },
+      {
+        "id": "O03",
+        "function_id": "F02",
+        "principle": "Use a pneumatic cylinder to produce closing displacement and restraint.",
+        "conditions": [
+          "Pneumatic supply availability and acceptability are unknown.",
+          "For the exclusion example only, assume a single-direction closing cylinder with no screw transmission.",
+          "Pressure, stroke, control and support interfaces remain unspecified."
+        ],
+        "evidence_refs": []
+      },
+      {
+        "id": "O04",
+        "function_id": "F03",
+        "principle": "Investigate retaining the screw position through transmission resistance after manual input stops.",
+        "conditions": [
+          "Position retention is a hypothesis, not an established self-locking property.",
+          "Requires review of transmission geometry, friction, disturbances, load duration and support reactions."
+        ],
+        "evidence_refs": []
+      },
+      {
+        "id": "O05",
+        "function_id": "F03",
+        "principle": "Investigate maintaining restraint through sustained pneumatic input.",
+        "conditions": [
+          "Continuous supply and control are assumed for this teaching route.",
+          "Leakage, supply loss, movement and required holding duration remain unresolved."
+        ],
+        "evidence_refs": []
+      },
+      {
+        "id": "O06",
+        "function_id": "F04",
+        "principle": "Investigate distributing restraint over a defined contact region to manage local workpiece effects.",
+        "conditions": [
+          "Proposed interpretation of F04, not an evidenced damage-prevention solution.",
+          "Contact area, material, surface interaction and deformation require definition.",
+          "Any effect on slip resistance must be evaluated together with damage."
+        ],
+        "evidence_refs": []
+      },
+      {
+        "id": "O07",
+        "function_id": "F05",
+        "principle": "Reverse the same screw transmission to withdraw contact and release restraint.",
+        "conditions": [
+          "Requires an actual reversible screw transmission connected to the moving contact.",
+          "Release travel, residual contact and removal clearance remain unknown."
+        ],
+        "evidence_refs": []
+      },
+      {
+        "id": "O08",
+        "function_id": "F05",
+        "principle": "Investigate elastic return after pneumatic closing input is removed.",
+        "conditions": [
+          "Requires a return element and a defined pressure-release path.",
+          "Return force, sticking, release travel and behavior during unintended supply loss remain unknown.",
+          "Compatibility with sustained holding must be investigated."
+        ],
+        "evidence_refs": []
+      },
+      {
+        "id": "O09",
+        "function_id": "F06",
+        "principle": "Allocate before-and-after workpiece condition assessment to an external operator or inspection resource.",
+        "conditions": [
+          "Supporting verification activity rather than a specified built-in sensing mechanism.",
+          "Requires an agreed reference condition, damage criterion, inspection method and responsible reviewer.",
+          "No assessment has been performed."
+        ],
+        "evidence_refs": []
+      }
+    ],
+    "combinations": [
+      {
+        "id": "M01",
+        "option_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O06",
+          "O07",
+          "O09"
+        ],
+        "status": "unknown",
+        "reason": "Manual screw route covers all six proposed functions: reference contact, screw closing, hypothesized position retention, contact management, reverse-screw release and external assessment. The screw supplies a conceptual connection between closing and release, but holding behavior, contact effects and bench reactions remain unknown. Manual operation and reverse travel introduce operator and clearance dependencies. Retained for investigation only; no recommendation is supported."
+      },
+      {
+        "id": "M02",
+        "option_ids": [
+          "O01",
+          "O03",
+          "O05",
+          "O06",
+          "O08",
+          "O09"
+        ],
+        "status": "unknown",
+        "reason": "Pneumatic route covers all six proposed functions through reference contact, pneumatic closing, sustained input, contact management, elastic return and external assessment. It adds supply, control and return-element dependencies. Whether pressure can maintain restraint while permitting intentional release, including behavior after supply loss, remains unresolved. No recommendation is supported."
+      },
+      {
+        "id": "M03",
+        "option_ids": [
+          "O01",
+          "O03",
+          "O05",
+          "O06",
+          "O07",
+          "O09"
+        ],
+        "status": "excluded",
+        "reason": "Under the explicit O03 topology assumption of a closing cylinder without a screw transmission, O07 cannot release restraint by reversing that absent transmission. This is a conditional logical conflict, not an empirical performance judgment. Adding a screw would require a newly defined option and combination."
+      }
+    ],
+    "compatibility": [
+      {
+        "option_ids": [
+          "O02",
+          "O07"
+        ],
+        "status": "compatible",
+        "reason": "At the stated principle level only, forward and reverse operation refer to the same reversible screw transmission. This conditional connection establishes neither release clearance nor overall feasibility.",
+        "evidence_refs": []
+      },
+      {
+        "option_ids": [
+          "O02",
+          "O04"
+        ],
+        "status": "unknown",
+        "reason": "Screw-driven closing does not establish that position or restraint will persist after input stops; transmission and disturbance conditions are missing.",
+        "evidence_refs": []
+      },
+      {
+        "option_ids": [
+          "O03",
+          "O07"
+        ],
+        "status": "incompatible",
+        "reason": "O03 explicitly excludes a screw transmission for this topology, whereas O07 requires that transmission as the release mechanism.",
+        "evidence_refs": []
+      },
+      {
+        "option_ids": [
+          "O03",
+          "O05",
+          "O08"
+        ],
+        "status": "unknown",
+        "reason": "Closing, sustained holding and elastic return require a coordinated pressure and motion sequence. Available supply, intentional venting, return force and input-loss behavior are undefined.",
+        "evidence_refs": []
+      },
+      {
+        "option_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O06",
+          "O07",
+          "O09"
+        ],
+        "status": "unknown",
+        "reason": "Whole-route check for M01 remains open: contact geometry, force transmission, restraint persistence, support reactions, release and assessment must jointly satisfy retention and damage criteria that are not yet defined.",
+        "evidence_refs": []
+      },
+      {
+        "option_ids": [
+          "O01",
+          "O03",
+          "O05",
+          "O06",
+          "O08",
+          "O09"
+        ],
+        "status": "unknown",
+        "reason": "Whole-route check for M02 remains open: supply and return behavior interact with contact forces, restraint continuity, support reactions and damage. Pairwise consistency cannot resolve these system interactions.",
+        "evidence_refs": []
+      }
+    ],
+    "unknowns": [
+      "Confirm the intended operation, operator capabilities and available actuation resources before comparing manual and pneumatic routes.",
+      "Obtain workpiece materials, finishes, geometries and variation; then plan contact and clearance review for engagement, holding and release.",
+      "Establish loads, directions, duration and allowable movement; then plan restraint and bench-reaction analysis for each retained route.",
+      "Agree damage criteria and inspection methods with the responsible stakeholder before planning before-and-after assessment.",
+      "Investigate whether retention and acceptable contact effects can coexist; no acceptable force range has been established.",
+      "For M01, plan review of screw position retention, disturbance sensitivity and release behavior once transmission and load conditions are available.",
+      "For M02, define the supply, control and return sequence; then plan walkthroughs of intentional release, supply loss and incomplete release.",
+      "Identify requirement owners, confirmation authority and hard constraints. Unknown hard gates prevent recommendation or unique selection.",
+      "No approved comparison baseline exists. After requirements are clarified, use the same workpiece, load, movement and damage criteria for both routes; compare operator effort, resource dependence and interface complexity without inventing scores.",
+      "Prototype and verification activities remain proposals only. Define representative workpieces, resources, procedures and acceptance limits before any later execution; no tests, measurements or acceptance results are supplied."
+    ]
+  }
+}
