@@ -29,8 +29,8 @@ class UnifiedRelease095Tests(unittest.TestCase):
         self.assertIn('项目档案数据库', model)
 
     def test_095_application_manifest_and_cases_are_real(self):
-        self.assertEqual(len(info_pages_095.APPS), 7)
-        self.assertEqual(len(info_pages_095.CASES), 5)
+        self.assertEqual(len(info_pages_095.APPS), 12)
+        self.assertEqual(len(info_pages_095.CASES), 6)
         page = info_pages_095.apps()
         self.assertIn('data-app-kind="innovation"', page)
         self.assertIn('/cases/chang-e/', page)

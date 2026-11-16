@@ -288,6 +288,11 @@ def build():
     write('hall.html', render_heavy_exhibition())
     for asset in ('heavy-exhibition.css', 'heavy-exhibition.js'):
         shutil.copy2(ROOT / 'extensions/design-system' / asset, OUT / 'inno/portal' / asset)
+    from interactive_apps_165 import RENDERERS
+    for app, renderer in RENDERERS.items():
+        write('playground.html' if app == 'playground' else Path('inno') / app / 'index.html', renderer())
+    for asset in ('interactive-apps.css', 'lab.js', 'quest.js', 'studio.js', 'transfer.js'):
+        shutil.copy2(ROOT / 'extensions/design-system' / asset, OUT / 'inno/portal' / asset)
     pages = sorted(path for path in OUT.rglob('*.html') if path.name != 'site-index.html')
     groups = Counter()
     for path in pages:

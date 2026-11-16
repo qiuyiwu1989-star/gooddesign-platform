@@ -39,7 +39,7 @@ class MuseumApps157Tests(unittest.TestCase):
         self.assertIn("self.path = '/' + parsed.path[len('/inno/legacy/'):]", preview)
 
     def test_apps_layout_and_regional_feature(self):
-        self.assertEqual(self.apps.count('class="app-card"'), 8)
+        self.assertEqual(self.apps.count('class="app-card"'), 12)
         self.assertIn('grid-template-columns:repeat(3,minmax(0,1fr))', self.apps)
         self.assertIn('data-app-id="regional"', self.apps)
         self.assertIn('grid-column:1/-1', self.apps)

@@ -29,7 +29,7 @@ with sync_playwright() as p:
     check(response.status == 200, '数据总览返回200')
     check(page.locator('[data-view-panel="value"]:visible').count() == 2, '默认显示完整价值视图')
     check(page.locator('[data-view-panel="quality"]:visible').count() == 0, '默认隐藏专业质量视图')
-    check(page.locator('.dr-core-facts strong').all_inner_texts() == ['560', '103', '64', '8'], '全库核心资产口径正确')
+    check(page.locator('.dr-core-facts strong').all_inner_texts() == ['560', '103', '64', '12'], '全库核心资产口径正确')
     check(page.locator('.dr-value-chain>div').count() == 5, '知识价值链五层完整')
     check(page.locator('.dr-showcase-card:visible').count() == 6, '默认展示六个代表项目')
     check(page.locator('.dr-depth-bars .dr-hbar b').evaluate_all('(els)=>els.reduce((n,e)=>n+parseInt(e.textContent),0)') == 98, '研究深度分档合计98案')

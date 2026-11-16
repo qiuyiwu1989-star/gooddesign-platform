@@ -49,12 +49,12 @@ with sync_playwright() as p:
 
     page.set_viewport_size({'width': 1440, 'height': 1000})
     page.goto('http://127.0.0.1:8892/apps/', wait_until='networkidle')
-    check(page.locator('.app-card').count() == 8, '七个应用完整')
+    check(page.locator('.app-card').count() == 12, '十二个应用完整')
     check(len(page.locator('.app-store-grid').evaluate('(el)=>getComputedStyle(el).gridTemplateColumns.split(" ")')) == 3, '桌面三列应用货架')
     grid_width = page.locator('.app-store-grid').evaluate('(el)=>el.getBoundingClientRect().width')
     regional_width = page.locator('[data-app-id="regional"]').evaluate('(el)=>el.getBoundingClientRect().width')
     check(abs(grid_width - regional_width) < 2, '产业创新Agent整幅特色卡')
-    for kind, count in (('experience', 3), ('innovation', 3), ('access', 2), ('all', 8)):
+    for kind, count in (('experience', 6), ('innovation', 4), ('access', 2), ('all', 12)):
         page.locator(f'[data-app-kind="{kind}"]').click()
         check(page.locator('.app-card:visible').count() == count, f'{kind}应用筛选数量正确')
         check(f'显示 {count} 项应用' in page.locator('#app-count').inner_text(), f'{kind}计数正确')
@@ -67,7 +67,7 @@ with sync_playwright() as p:
     check(page.locator('#app-empty').is_visible(), '无结果空态可见')
     check(page.locator('#app-clear').is_visible(), '清除搜索与筛选入口可见')
     page.locator('#app-clear').click()
-    check(page.locator('.app-card:visible').count() == 8, '清除后恢复七个应用')
+    check(page.locator('.app-card:visible').count() == 12, '清除后恢复十二个应用')
     check('q=' not in page.url and 'kind=' not in page.url, '清除同步清理URL')
 
     page.goto('http://127.0.0.1:8892/apps/?kind=access&q=MCP', wait_until='networkidle')

@@ -15,6 +15,10 @@ body:has(.app-store) .pp-page{max-width:1200px;padding-inline:40px}
 [data-tone=mcp]{--tone:#4C5BAA;--toneSoft:rgba(76,91,170,.12)}
 [data-tone=regional]{--tone:#A84C6D;--toneSoft:rgba(168,76,109,.12)}
 [data-tone=xray]{--tone:#34758B;--toneSoft:rgba(52,117,139,.12)}
+[data-tone=lab]{--tone:#147C64;--toneSoft:rgba(20,124,100,.12)}
+[data-tone=quest]{--tone:#8B6A27;--toneSoft:rgba(139,106,39,.13)}
+[data-tone=studio]{--tone:#A84C6D;--toneSoft:rgba(168,76,109,.12)}
+[data-tone=transfer]{--tone:#0F6674;--toneSoft:rgba(15,102,116,.11)}
 [data-theme=dark] [data-tone=xray]{--toneSoft:rgba(93,180,205,.16)}
 [data-theme=dark] [data-tone=museum]{--toneSoft:rgba(127,119,255,.18)}[data-theme=dark] [data-tone=education]{--toneSoft:rgba(74,162,230,.18)}[data-theme=dark] [data-tone=needs]{--toneSoft:rgba(49,190,151,.18)}[data-theme=dark] [data-tone=enterprise]{--toneSoft:rgba(230,157,74,.18)}[data-theme=dark] [data-tone=canvas]{--toneSoft:rgba(94,196,210,.16)}[data-theme=dark] [data-tone=mcp]{--toneSoft:rgba(116,132,225,.18)}[data-theme=dark] [data-tone=regional]{--toneSoft:rgba(220,109,150,.18)}
 .app-store{display:grid;gap:26px;padding-block:34px 40px}
@@ -91,8 +95,8 @@ body:has(.app-store) .pp-page{max-width:1200px;padding-inline:40px}
 @media print{.app-card[data-app-id="regional"]{display:block}.app-card[data-app-id="regional"] .app-card-foot{border-left:0}}
 '''
 
-ICONS = {'museum': '馆', 'education': '教', 'needs': '研', 'enterprise': '企', 'canvas': '画', 'mcp': '接', 'regional': '区', 'xray': '拆'}
-KINDS = {'museum': 'experience', 'education': 'experience', 'needs': 'innovation', 'enterprise': 'innovation', 'canvas': 'innovation', 'mcp': 'access', 'regional': 'access', 'xray': 'experience'}
+ICONS = {'museum': '馆', 'education': '教', 'needs': '研', 'enterprise': '企', 'canvas': '画', 'mcp': '接', 'regional': '区', 'xray': '拆', 'lab': '实', 'quest': '关', 'studio': '创', 'transfer': '迁'}
+KINDS = {'museum': 'experience', 'education': 'experience', 'needs': 'innovation', 'enterprise': 'innovation', 'canvas': 'innovation', 'mcp': 'access', 'regional': 'access', 'xray': 'experience', 'lab': 'experience', 'quest': 'experience', 'studio': 'experience', 'transfer': 'innovation'}
 KIND_LABELS = {'all': '全部应用', 'experience': '内容学习', 'innovation': '创新研究', 'access': '接入扩展'}
 STATUS_NAMES = {'live': '现在可用', 'pilot': '试点推进', 'planned': '规划建设'}
 
@@ -109,7 +113,7 @@ def app_icon(app, detail=False):
 
 
 def render(apps, cases):
-    case_map = {'museum': 'chang-e', 'education': 'chang-e', 'needs': 'pump-079', 'enterprise': 'rubber-tapping', 'canvas': 'rubber-tapping', 'mcp': 'mcp-research', 'regional': 'yuhuan', 'xray': 'x-ray'}
+    case_map = {'museum': 'chang-e', 'education': 'chang-e', 'needs': 'pump-079', 'enterprise': 'rubber-tapping', 'canvas': 'rubber-tapping', 'mcp': 'mcp-research', 'regional': 'yuhuan', 'xray': 'x-ray', 'lab': 'chang-e', 'quest': 'x-ray', 'studio': 'chang-e', 'transfer': 'rubber-tapping'}
     case_by_id = {case['id']: case for case in cases}
     tabs = ''.join(
         f'<button type="button" data-app-kind="{E(kind)}" aria-pressed="{str(kind == "all").lower()}">{E(label)}</button>'
@@ -123,7 +127,7 @@ def render(apps, cases):
     first = apps[0]
     first_case = case_by_id[case_map[first['id']]]
     script = f'''<script type="application/json" id="app-data">{data}</script><script>
-const appData=JSON.parse(document.getElementById('app-data').textContent);let activeAppId='{first['id']}',activeKind='all';const ICONS={{museum:'馆',education:'教',needs:'研',enterprise:'企',canvas:'画',mcp:'接',regional:'区',xray:'拆'}};const KINDS={json.dumps(KINDS)};const KIND_LABELS={json.dumps(KIND_LABELS, ensure_ascii=False)};
+const appData=JSON.parse(document.getElementById('app-data').textContent);let activeAppId='{first['id']}',activeKind='all';const ICONS={{museum:'馆',education:'教',needs:'研',enterprise:'企',canvas:'画',mcp:'接',regional:'区',xray:'拆',lab:'实',quest:'关',studio:'创',transfer:'迁'}};const KINDS={json.dumps(KINDS)};const KIND_LABELS={json.dumps(KIND_LABELS, ensure_ascii=False)};
 const $=selector=>document.querySelector(selector);const $$=selector=>Array.from(document.querySelectorAll(selector));
 const sheet=$('#app-sheet');let lastCard=null;
 function selectApp(id){{const app=appData.apps.find(item=>item.id===id);if(!app)return;activeAppId=id;$('.app-sheet-body').dataset.tone=id;$('#app-detail-cat').textContent=KIND_LABELS[KINDS[id]];const badge=$('#app-detail-badge');badge.textContent=app.status_label;badge.className='app-status app-status--'+app.status;$('#app-detail-status').textContent=app.status_label;$('#app-detail-developer').textContent=app.developer;$('#app-detail-title').textContent=app.title;$('#app-detail-icon').textContent=ICONS[id]||app.title.slice(0,1);$('#app-detail-value').textContent=app.value;const route=$('#app-detail-route');route.href=app.route.runtime;route.textContent=app.action;const item=appData.cases[appData.case_map[id]];$('#app-case-title').textContent=item.title;$('#app-case-summary').textContent=item.summary;$('#app-case-boundary').textContent=item.boundary;$('#app-case-link').href='/cases/'+item.id+'/'}}

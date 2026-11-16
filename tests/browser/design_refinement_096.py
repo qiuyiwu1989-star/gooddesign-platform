@@ -36,7 +36,7 @@ with sync_playwright() as p:
 
     page.goto(BASE + '/apps/', wait_until='networkidle')
     check(page.locator('.app-store').count() == 1, '应用中心为市场式布局')
-    check(page.locator('.app-card').count() == 8, '七个应用入口完整')
+    check(page.locator('.app-card').count() == 12, '十二个应用入口完整')
     page.locator('[data-app-id="needs"]').click()
     check(page.locator('#app-sheet').evaluate('el => el.open') is True, '详情弹层打开')
     check(page.locator('#app-detail-title').inner_text() == '需求研究', '应用详情切换')
@@ -48,7 +48,7 @@ with sync_playwright() as p:
     page.locator('#app-sheet-close').click()
     page.screenshot(path=str(OUT / 'apps-desktop.png'))
 
-    for kind, count in (('experience', 3), ('innovation', 3), ('access', 2), ('all', 8)):
+    for kind, count in (('experience', 6), ('innovation', 4), ('access', 2), ('all', 12)):
         page.locator(f'[data-app-kind="{kind}"]').click()
         check(page.locator('.app-card:visible').count() == count, f'{kind}筛选数量正确')
         check(f'显示 {count} 项应用' in page.locator('#app-count').inner_text(), f'{kind}计数正确')

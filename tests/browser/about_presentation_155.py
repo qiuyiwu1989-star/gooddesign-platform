@@ -38,7 +38,7 @@ with sync_playwright() as p:
     check(page.locator('.gd-nav').count() == 1 and page.locator('.gd-footer').count() == 1, '统一导航与页脚唯一')
     check(page.locator('.about-hero-art img').evaluate('(img)=>img.complete && img.naturalWidth > 0'), '首屏真实项目封面加载')
     check(page.locator('.about-fact').count() == 4, '四项真实资产数据可见')
-    check(page.locator('.about-fact strong').all_inner_texts() == ['560', '103', '64', '8'], '项目研究方法与应用计数正确')
+    check(page.locator('.about-fact strong').all_inner_texts() == ['560', '103', '64', '12'], '项目研究方法与应用计数正确')
     check(page.locator('.about-path-step').count() == 5, '作品到应用五步路径完整')
     check(page.locator('.about-case-layout img').count() == 3, '三个代表项目视觉完整')
     check(page.locator('.about-case-layout img').evaluate_all('(imgs)=>imgs.every(i=>i.complete && i.naturalWidth>0)'), '代表项目封面全部有效')

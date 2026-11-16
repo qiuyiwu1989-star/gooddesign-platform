@@ -29,7 +29,7 @@ class DataReport156Tests(unittest.TestCase):
 
     def test_current_overall_counts_and_refreshed_gold_snapshot(self):
         summary = self.data['summary']
-        for value in (560, 103, 64, 7):
+        for value in (560, 103, 64, 12):
             self.assertIn(f'<strong>{value}</strong>', self.html)
         for key in ('project_source_entries', 'known_cells', 'fact_records', 'deepening_reports'):
             self.assertIn(f'{summary[key]:,}', self.html)

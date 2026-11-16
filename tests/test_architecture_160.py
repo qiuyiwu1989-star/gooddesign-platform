@@ -26,12 +26,13 @@ class Architecture160Tests(unittest.TestCase):
         cls.playground = (ROOT / 'output/inno-preview/gooddesign-site/playground.html').read_text()
 
     def test_xray_is_eighth_real_application_with_schema_and_case(self):
-        self.assertEqual(len(self.apps), 8)
-        self.assertEqual(self.apps[-1]['id'], 'xray')
-        self.assertEqual(self.apps[-1]['route']['runtime'], '/museum/x-ray')
-        self.assertEqual(self.apps[-1]['evidence']['case_ids'], ['x-ray'])
+        self.assertEqual(len(self.apps), 12)
+        self.assertIn('xray', [app['id'] for app in self.apps])
+        xray = next(app for app in self.apps if app['id'] == 'xray')
+        self.assertEqual(xray['route']['runtime'], '/museum/x-ray')
+        self.assertEqual(xray['evidence']['case_ids'], ['x-ray'])
         registry = build_application_registry.build_registry()
-        self.assertEqual(len(registry['apps']), 8)
+        self.assertEqual(len(registry['apps']), 12)
         self.assertIn('x-ray', registry['cases'])
         self.assertIn('xray', self.page)
         self.assertIn('拆解一件国之重器', self.page)
@@ -47,8 +48,10 @@ class Architecture160Tests(unittest.TestCase):
     def test_playground_is_honest_interactive_learning(self):
         self.assertIn('互动学习', self.playground)
         self.assertNotIn('互动乐园', self.playground)
-        self.assertIn('模拟仅用于教学，结果不代表工程精确或实际验证', self.playground)
-        self.assertIn('教学模拟,非工程精确', self.playground)
+        for route in ('/lab/', '/quest/', '/studio/', '/transfer/'):
+            self.assertIn(f'href="{route}"', self.playground)
+        for tab in ('experiment', 'questline', 'create', 'migrate'):
+            self.assertIn(tab, self.playground)
 
     def test_case_page_is_not_second_archive(self):
         case_page = (ROOT / 'output/inno-preview/gooddesign-site/inno/cases/chang-e/index.html').read_text()

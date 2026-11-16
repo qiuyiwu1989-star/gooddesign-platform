@@ -20,9 +20,9 @@ with sync_playwright() as p:
     page = browser.new_page(viewport={'width': 1440, 'height': 1000}, color_scheme='light')
     page.on('pageerror', lambda error: errors.append(str(error)))
     page.goto('http://127.0.0.1:8892/apps/', wait_until='networkidle')
-    check(page.locator('.app-card').count() == 8, '应用中心八个应用')
+    check(page.locator('.app-card').count() == 12, '应用中心十二个应用')
     page.locator('[data-app-kind="experience"]').click()
-    check(page.locator('.app-card:visible').count() == 3, '内容学习含拆解实验室共三项')
+    check(page.locator('.app-card:visible').count() == 6, '内容学习含四个互动应用共六项')
     page.locator('[data-app-id="xray"]').click()
     check(page.locator('#app-detail-title').inner_text() == '拆解实验室', '拆解应用详情打开')
     check('拆解一件国之重器' in page.locator('.app-case-strip').inner_text(), '拆解真实案例联动')
@@ -40,8 +40,10 @@ with sync_playwright() as p:
 
     page.goto('http://127.0.0.1:8892/museum/playground', wait_until='domcontentloaded')
     check('互动学习' in page.locator('body').inner_text(), '互动页更名互动学习')
-    check('结果不代表工程精确或实际验证' in page.locator('.lead').inner_text(), '互动模拟边界清楚')
-    check(page.locator('[data-group="experiment"]').count() > 0, '动手实验入口保留')
+    check(page.locator('.ia-app-choices a[href="/lab/"]').count() == 1, '实验室入口保留')
+    check(page.locator('.ia-app-choices a[href="/quest/"]').count() == 1, '观展任务入口保留')
+    check(page.locator('.ia-app-choices a[href="/studio/"]').count() == 1, '创作室入口保留')
+    check(page.locator('.ia-app-choices a[href="/transfer/"]').count() == 1, '迁移研究所入口保留')
     page.screenshot(path=str(OUT / 'playground-learning.png'))
 
     page.goto('http://127.0.0.1:8892/project/2015-02.html', wait_until='networkidle')
@@ -58,9 +60,9 @@ with sync_playwright() as p:
     page.screenshot(path=str(OUT / 'case-positioning.png'))
 
     page.goto('http://127.0.0.1:8892/about/', wait_until='networkidle')
-    check(page.locator('.about-fact strong').all_inner_texts() == ['560', '103', '64', '8'], '关于页应用数同步为8')
+    check(page.locator('.about-fact strong').all_inner_texts() == ['560', '103', '64', '12'], '关于页应用数同步为12')
     page.goto('http://127.0.0.1:8892/report/', wait_until='networkidle')
-    check(page.locator('.dr-core-facts strong').all_inner_texts() == ['560', '103', '64', '8'], '数据总览应用数同步为8')
+    check(page.locator('.dr-core-facts strong').all_inner_texts() == ['560', '103', '64', '12'], '数据总览应用数同步为12')
 
     for route in ('/apps/', '/museum/playground', '/project/2015-02.html', '/atom/2015-02.html'):
         for width in (1280, 768, 390, 360):
