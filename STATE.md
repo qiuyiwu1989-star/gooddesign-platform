@@ -1,6 +1,6 @@
 # State
 
-## 164 国之重器沉浸式滚动策展（2026-11-17，已上线，GitHub待同步）
+## 164 国之重器沉浸式滚动策展（2026-11-17，已上线，GitHub=2fd37b6）
 [x] 字体回到GoodDesign尺度：首屏96px/600、项目36px，取消异常字距字重。八件项目改为真实任务/设计局部/策展收束三镜头，旧三按钮退出，仅保留快速浏览、纯净细看与单项目证据。[x] 164静态4+联合13+专项浏览器44通过，六宽度、8图、滚动镜头、快速跳转、细看进出、手机避让、减少动态、10页A4及零资源/脚本错误；审计1250页P0=0/P1=0。[x] 生产current=/var/www/gooddesign-site/releases/20261117-164-immersive-exhibition，仅hall.html与专题CSS/JS三文件变化，线上SHA全一致；基线163-heavy-exhibition。回滚=/var/lib/innovation-design/release-backups/20261117-164-immersive-exhibition。详specs/164。
 
 ## 163 国之重器专题展（2026-11-16，已上线，GitHub=276e1ff）
