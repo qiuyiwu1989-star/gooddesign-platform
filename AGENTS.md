@@ -425,4 +425,4 @@ ML-029方法页标准与三类标杆：方法页标准-v1及specs/ML-029定义�
 164沉浸滚动策展：163结构升级为三镜头（真实任务/设计局部/策展收束），首屏96px/600、项目36px，避免异常字距字重。原生sticky+IntersectionObserver，不scroll-jack；快速浏览可跳8项目，细看隐藏chrome且可退出，每项目仅一个dossier证据入口。控制条桌面底部中央，移动为Copilot预留右侧84px。生产20261117-164-immersive-exhibition，仅三文件，回滚163。STATE并行hunks不得随本任务提交。GitHub=2fd37b6，远端已核一致。详specs/164。
 
 
-165-169互动应用：Playground只作四应用入口，新增/lab/、/quest/、/studio/、/transfer/和interactive_apps_165构建；lab暂停/两次A/B、quest两问解锁、studio拖动/PNG、transfer双侧验证均真实本机运行，不冒AI或云端发布。应用中心12项，分类6/4/2。生产20261117-165-interactive-apps-fix1；nginx目录302到index.html并附$is_args$args，解决全局index与/inno代理，健康检查用HTTPS curl且reload后等待3s。构建与STATE并行hunks不得随本任务提交。详specs/165—169。
+165-169互动应用：Playground只作四应用入口，新增/lab/、/quest/、/studio/、/transfer/和interactive_apps_165构建；lab暂停/两次A/B、quest两问解锁、studio拖动/PNG、transfer双侧验证均真实本机运行，不冒AI或云端发布。应用中心12项，分类6/4/2。生产20261117-165-interactive-apps-fix1；nginx目录302到index.html并附$is_args$args，解决全局index与/inno代理，健康检查用HTTPS curl且reload后等待3s。构建与STATE并行hunks不得随本任务提交。GitHub=e0e8c61，远端已核一致。详specs/165—169。

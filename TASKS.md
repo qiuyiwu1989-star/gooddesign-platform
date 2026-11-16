@@ -1,7 +1,7 @@
 # State
 
-## 165-169 四个互动独立应用（2026-11-17，已上线，GitHub待同步）
-[x] Playground拆为/lab/、/quest/、/studio/、/transfer/，应用中心8→12；实验A/B复盘、八关解锁、画布创作与迁移双侧映射全部上线，旧tab参数保留。[x] 165静态3+联合23+线上浏览器43通过，含暂停、两次实验、两关、标题拖动、PNG、迁移导出；四应用四宽度无溢出，站点审计1254页P0=0/P1=0。[x] 生产current=/var/www/gooddesign-site/releases/20261117-165-interactive-apps-fix1，15文件SHA全一致；目录URL采用302到index.html并保留$is_args$args，避免全局index与/inno代理冲突。回滚=/var/lib/innovation-design/release-backups/20261117-165-interactive-apps-fix1。[ ] 只提交本任务文件并同步GitHub，构建与STATE并行hunks不收编。
+## 165-169 四个互动独立应用（2026-11-17，已上线，GitHub=e0e8c61）
+[x] Playground拆为/lab/、/quest/、/studio/、/transfer/，应用中心8→12；实验A/B复盘、八关解锁、画布创作与迁移双侧映射全部上线，旧tab参数保留。[x] 165静态3+联合23+线上浏览器43通过，含暂停、两次实验、两关、标题拖动、PNG、迁移导出；四应用四宽度无溢出，站点审计1254页P0=0/P1=0。[x] 生产current=/var/www/gooddesign-site/releases/20261117-165-interactive-apps-fix1，15文件SHA全一致；目录URL采用302到index.html并保留$is_args$args，避免全局index与/inno代理冲突。回滚=/var/lib/innovation-design/release-backups/20261117-165-interactive-apps-fix1。[x] 仅35个本任务文件提交e0e8c61并同步GitHub，构建与STATE并行hunks未收编。
 
 ## 164 国之重器沉浸式滚动策展（2026-11-17，已上线，GitHub=2fd37b6）
 [x] 字体回到GoodDesign尺度：首屏96px/600、项目36px，取消异常字距字重。八件项目改为真实任务/设计局部/策展收束三镜头，旧三按钮退出，仅保留快速浏览、纯净细看与单项目证据。[x] 164静态4+联合13+专项浏览器44通过，六宽度、8图、滚动镜头、快速跳转、细看进出、手机避让、减少动态、10页A4及零资源/脚本错误；审计1250页P0=0/P1=0。[x] 生产current=/var/www/gooddesign-site/releases/20261117-164-immersive-exhibition，仅hall.html与专题CSS/JS三文件变化，线上SHA全一致；基线163-heavy-exhibition。回滚=/var/lib/innovation-design/release-backups/20261117-164-immersive-exhibition。[x] 仅14个本任务文件提交2fd37b6并同步GitHub，STATE并行hunks未收编。

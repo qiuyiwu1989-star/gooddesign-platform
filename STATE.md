@@ -1,6 +1,6 @@
 # State
 
-## 165-169 四个互动独立应用（2026-11-17，已上线，GitHub待同步）
+## 165-169 四个互动独立应用（2026-11-17，已上线，GitHub=e0e8c61）
 [x] Playground拆为/lab/、/quest/、/studio/、/transfer/，应用中心8→12；实验A/B复盘、八关解锁、画布创作与迁移双侧映射全部上线，旧tab参数保留。[x] 165静态3+联合23+线上浏览器43通过，含暂停、两次实验、两关、标题拖动、PNG、迁移导出；四应用四宽度无溢出，站点审计1254页P0=0/P1=0。[x] 生产current=/var/www/gooddesign-site/releases/20261117-165-interactive-apps-fix1，15文件SHA全一致；目录URL采用302到index.html并保留$is_args$args，避免全局index与/inno代理冲突。回滚=/var/lib/innovation-design/release-backups/20261117-165-interactive-apps-fix1。详specs/165—169。
 
 ## 164 国之重器沉浸式滚动策展（2026-11-17，已上线，GitHub=2fd37b6）
